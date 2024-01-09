@@ -1,0 +1,1465 @@
+{
+  "_id": "ms",
+  "_rev": "182-aa105a352546021303c80cf5f0943ec4",
+  "name": "ms",
+  "description": "Tiny millisecond conversion utility",
+  "dist-tags": {
+    "latest": "2.1.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "ms",
+      "version": "0.1.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./ms",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "_id": "ms@0.1.0",
+      "dependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.4.12",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "f21fac490daf1d7667fd180fe9077389cc9442b2",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "ms",
+      "version": "0.2.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./ms",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "_id": "ms@0.2.0",
+      "dist": {
+        "shasum": "6edfc5a063471f7bfd35a5831831c24275ce9dc5",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.2.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "ms",
+      "version": "0.3.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./ms",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "_id": "ms@0.3.0",
+      "dist": {
+        "shasum": "03edc348d613e66a56486cfdac53bcbe899cbd61",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.3.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "ms",
+      "version": "0.4.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "_id": "ms@0.4.0",
+      "dist": {
+        "shasum": "77ade5470b099bb2d83e232c25763c18cd6963f1",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.4.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "ms",
+      "version": "0.5.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "_id": "ms@0.5.0",
+      "dist": {
+        "shasum": "8e52e7e1bf521f9cea30f726de958822eab0ee27",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.5.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "ms",
+      "version": "0.5.1",
+      "description": "Tiny ms conversion utility",
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "_id": "ms@0.5.1",
+      "dist": {
+        "shasum": "98058c8f9c64854d1703ab92bf3f1dcc8e713b4c",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.5.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.10",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "ms",
+      "version": "0.6.0",
+      "description": "Tiny ms conversion utility",
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "_id": "ms@0.6.0",
+      "dist": {
+        "shasum": "21dc16a7d1dc2d8ed244dc0e6a71a5c2612b623b",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.6.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.10",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.6.1": {
+      "name": "ms",
+      "version": "0.6.1",
+      "description": "Tiny ms conversion utility",
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "_id": "ms@0.6.1",
+      "dist": {
+        "shasum": "ed57e5f3fc736e09afc85017c5c912a47bc59ab9",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.6.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.18",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.6.2": {
+      "name": "ms",
+      "version": "0.6.2",
+      "description": "Tiny ms conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/guille/ms.js.git"
+      },
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/guille/ms.js/issues"
+      },
+      "_id": "ms@0.6.2",
+      "dist": {
+        "shasum": "d89c2124c6fdc1353d65a8b77bf1aac4b193708c",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.6.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.30",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "ms",
+      "version": "0.7.0",
+      "description": "Tiny ms conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/guille/ms.js.git"
+      },
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "gitHead": "1e9cd9b05ef0dc26f765434d2bfee42394376e52",
+      "bugs": {
+        "url": "https://github.com/guille/ms.js/issues"
+      },
+      "homepage": "https://github.com/guille/ms.js",
+      "_id": "ms@0.7.0",
+      "scripts": {},
+      "_shasum": "865be94c2e7397ad8a57da6a633a6e2f30798b83",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "865be94c2e7397ad8a57da6a633a6e2f30798b83",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.1": {
+      "name": "ms",
+      "version": "0.7.1",
+      "description": "Tiny ms conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/guille/ms.js.git"
+      },
+      "main": "./index",
+      "devDependencies": {
+        "mocha": "*",
+        "expect.js": "*",
+        "serve": "*"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "gitHead": "713dcf26d9e6fd9dbc95affe7eff9783b7f1b909",
+      "bugs": {
+        "url": "https://github.com/guille/ms.js/issues"
+      },
+      "homepage": "https://github.com/guille/ms.js",
+      "_id": "ms@0.7.1",
+      "scripts": {},
+      "_shasum": "9cd13c03adbff25b65effde7ce864ee952017098",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "rauchg",
+        "email": "rauchg@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9cd13c03adbff25b65effde7ce864ee952017098",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.7.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.2": {
+      "name": "ms",
+      "version": "0.7.2",
+      "description": "Tiny milisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "xo && mocha test/index.js",
+        "test-browser": "serve ./test"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "expect.js": "^0.3.1",
+        "mocha": "^3.0.2",
+        "serve": "^1.4.0",
+        "xo": "^0.17.0"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "xo": {
+        "space": true,
+        "semicolon": false,
+        "envs": [
+          "mocha"
+        ],
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "gitHead": "ac92a7e0790ba2622a74d9d60690ca0d2c070a45",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@0.7.2",
+      "_shasum": "ae25cf2512b3885a1d95d7f037868d8431124765",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.8.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "shasum": "ae25cf2512b3885a1d95d7f037868d8431124765",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.7.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ms-0.7.2.tgz_1477383407940_0.4743474116548896"
+      },
+      "directories": {}
+    },
+    "0.7.3": {
+      "name": "ms",
+      "version": "0.7.3",
+      "description": "Tiny milisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "xo && mocha test/index.js",
+        "test-browser": "serve ./test"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "expect.js": "0.3.1",
+        "mocha": "3.0.2",
+        "serve": "5.0.1",
+        "xo": "0.17.0"
+      },
+      "component": {
+        "scripts": {
+          "ms/index.js": "index.js"
+        }
+      },
+      "xo": {
+        "space": true,
+        "semicolon": false,
+        "envs": [
+          "mocha"
+        ],
+        "rules": {
+          "complexity": 0
+        }
+      },
+      "gitHead": "2006a7706041443fcf1f899b5752677bd7ae01a8",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@0.7.3",
+      "_shasum": "708155a5e44e33f5fd0fc53e81d0d40a91be1fff",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "shasum": "708155a5e44e33f5fd0fc53e81d0d40a91be1fff",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-0.7.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ms-0.7.3.tgz_1489010366101_0.14404030703008175"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ms",
+      "version": "1.0.0",
+      "description": "Tiny milisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "precommit": "lint-staged",
+        "lint": "eslint lib/* bin/*",
+        "test": "mocha tests.js"
+      },
+      "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+          "node": true,
+          "es6": true
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "npm run lint",
+          "prettier --single-quote --write",
+          "git add"
+        ]
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "3.18.0",
+        "expect.js": "0.3.1",
+        "husky": "0.13.2",
+        "lint-staged": "3.4.0",
+        "mocha": "3.0.2"
+      },
+      "gitHead": "7daf984a9011e720cc3c165ed82c4506f3471b37",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@1.0.0",
+      "_shasum": "59adcd22edc543f7b5381862d31387b1f4bc9473",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "shasum": "59adcd22edc543f7b5381862d31387b1f4bc9473",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ms-1.0.0.tgz_1489959793252_0.42147551802918315"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ms",
+      "version": "2.0.0",
+      "description": "Tiny milisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "precommit": "lint-staged",
+        "lint": "eslint lib/* bin/*",
+        "test": "mocha tests.js"
+      },
+      "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+          "node": true,
+          "es6": true
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "npm run lint",
+          "prettier --single-quote --write",
+          "git add"
+        ]
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "3.19.0",
+        "expect.js": "0.3.1",
+        "husky": "0.13.3",
+        "lint-staged": "3.4.1",
+        "mocha": "3.4.1"
+      },
+      "gitHead": "9b88d1568a52ec9bb67ecc8d2aa224fa38fd41f4",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@2.0.0",
+      "_shasum": "5608aeadfc00be6c2901df5f9861788de0d597c8",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "shasum": "5608aeadfc00be6c2901df5f9861788de0d597c8",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/ms-2.0.0.tgz_1494937565215_0.34005374647676945"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "ms",
+      "version": "2.1.0",
+      "description": "Tiny millisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "precommit": "lint-staged",
+        "lint": "eslint lib/* bin/*",
+        "test": "mocha tests.js"
+      },
+      "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+          "node": true,
+          "es6": true
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "npm run lint",
+          "prettier --single-quote --write",
+          "git add"
+        ]
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "4.12.1",
+        "expect.js": "0.3.1",
+        "husky": "0.14.3",
+        "lint-staged": "5.0.0",
+        "mocha": "4.0.1"
+      },
+      "gitHead": "845c302f155d955141d623a0276bbff3529ed626",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@2.1.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "integrity": "sha512-gVZHb22Z7YDyiiaoGld9LD4tUuDDxdkDJUEfTIej9LFePFqiE9JxI0qTFfu6tD7Wu03lg7skmVwTmA6XkeMlPQ==",
+        "shasum": "9a345be8f6a4aadc6686d74d88a23c1b84720549",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ms-2.1.0.tgz_1512060855394_0.6358025514055043"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "ms",
+      "version": "2.1.1",
+      "description": "Tiny millisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "precommit": "lint-staged",
+        "lint": "eslint lib/* bin/*",
+        "test": "mocha tests.js"
+      },
+      "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+          "node": true,
+          "es6": true
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "npm run lint",
+          "prettier --single-quote --write",
+          "git add"
+        ]
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "4.12.1",
+        "expect.js": "0.3.1",
+        "husky": "0.14.3",
+        "lint-staged": "5.0.0",
+        "mocha": "4.0.1"
+      },
+      "gitHead": "fe0bae301a6c41f68a01595658a4f4f0dcba0e84",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@2.1.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "leo",
+        "email": "leo@zeit.co"
+      },
+      "dist": {
+        "integrity": "sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==",
+        "shasum": "30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "leo",
+          "email": "leo@zeit.co"
+        },
+        {
+          "name": "rauchg",
+          "email": "rauchg@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ms-2.1.1.tgz_1512066615982_0.7117063472978771"
+      },
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "ms",
+      "version": "2.1.2",
+      "description": "Tiny millisecond conversion utility",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zeit/ms.git"
+      },
+      "main": "./index",
+      "scripts": {
+        "precommit": "lint-staged",
+        "lint": "eslint lib/* bin/*",
+        "test": "mocha tests.js"
+      },
+      "eslintConfig": {
+        "extends": "eslint:recommended",
+        "env": {
+          "node": true,
+          "es6": true
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "npm run lint",
+          "prettier --single-quote --write",
+          "git add"
+        ]
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "eslint": "4.12.1",
+        "expect.js": "0.3.1",
+        "husky": "0.14.3",
+        "lint-staged": "5.0.0",
+        "mocha": "4.0.1"
+      },
+      "gitHead": "7920885eb232fbe7a5efdab956d3e7c507c92ddf",
+      "bugs": {
+        "url": "https://github.com/zeit/ms/issues"
+      },
+      "homepage": "https://github.com/zeit/ms#readme",
+      "_id": "ms@2.1.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.3",
+      "_npmUser": {
+        "name": "styfle",
+        "email": "steven@ceriously.com"
+      },
+      "dist": {
+        "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==",
+        "shasum": "d09d1f357b443f493382a8eb3ccd183872ae6009",
+        "tarball": "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6842,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc+U4MCRA9TVsSAnZWagAA71AP/2rpu0zYdK5Z/BXrrKNW\nljsVOs4oHNJ2jeZrzpcV8eZUZ6zAi78plyxcnMCbbG+TrpjXrPcb8qFq630G\nS6+srbEF0lCGCc+ktJrNJPTeXkDxukQXVrepgZ2kxZ4m3q/QIAVoK4t9ebuH\nNYa+39wwET9oPuPsk+YY0Z7fQ1vadyuzHYOrRmtudV3ZtyT0k74Ec3IhKamW\nlLDJtCklD7IGcwirrvPssxmYu8WP+PAyFnrVaOW+iior1o07oWO2mk7sk3Fx\nwBSBFf7vZqFJP6Qg1m3TVBAiipL+Pf+b3Dy8fhmn4NhTGj/9Wl7f/LcqogOV\nV9l77qsZldCERBwmwLsHlMyCSSl/b2qaz28ZBTRwHtHdo19QT6MqX8Yvomy4\n+gyPBBAHC6bqqLZ0veRKzSNFfJYoFw8tQzyjSjpmYcdxaB5w4z4QPZAkZCku\ns+sooI5Xo33E9rcEDWmyqxdUud+Au/fTttg0dReYe8NVrUgzyk4T1W+D7I4k\nu3XV7O9bOaJiBTNsb22lGIC6E/HtjfoqW7iwl0cdZ8iZcPTBClkzsy9Hz6a4\nmNKDARFL0wjzWF/CoXyKcI6t9ruOepTQRfbAtZDAo4LEYj/bGiqm2kbX5AP6\nicCOlufTNip74l2bXv2sJNwtjGzEYF/S79Oyc49IP/ovIua4quXXtSjAh8Bg\nLrV/\r\n=GrYx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "alexandro@phi.nz",
+          "name": "alexaltea"
+        },
+        {
+          "email": "ana.trajkovska2015@gmail.com",
+          "name": "anatrajkovska"
+        },
+        {
+          "email": "artzbitz@gmail.com",
+          "name": "andybitz"
+        },
+        {
+          "email": "arunoda.susiripala@gmail.com",
+          "name": "arunoda"
+        },
+        {
+          "email": "franco@basement.studio",
+          "name": "arzafran"
+        },
+        {
+          "email": "atcastle@gmail.com",
+          "name": "atcastle"
+        },
+        {
+          "email": "ciao@sylin.me",
+          "name": "b3nnyl"
+        },
+        {
+          "email": "caarlos0@gmail.com",
+          "name": "caarlos0"
+        },
+        {
+          "email": "thecodetheory@gmail.com",
+          "name": "codetheory"
+        },
+        {
+          "email": "allenhai03@gmail.com",
+          "name": "coetry"
+        },
+        {
+          "email": "mail@connordav.is",
+          "name": "dav-is"
+        },
+        {
+          "email": "fivepointseven@icloud.com",
+          "name": "fivepointseven"
+        },
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "hharnisc@gmail.com",
+          "name": "hharnisc"
+        },
+        {
+          "email": "lukas@huvar.cz",
+          "name": "huvik"
+        },
+        {
+          "email": "hello@evilrabb.it",
+          "name": "iamevilrabbit"
+        },
+        {
+          "email": "igor@klopov.com",
+          "name": "igorklopov"
+        },
+        {
+          "email": "jj@jjsweb.site",
+          "name": "ijjk"
+        },
+        {
+          "email": "janicklasralph036@gmail.com",
+          "name": "janicklas-ralph"
+        },
+        {
+          "email": "javier.velasco86@gmail.com",
+          "name": "javivelasco"
+        },
+        {
+          "email": "joecohenr@gmail.com",
+          "name": "joecohens"
+        },
+        {
+          "email": "juancampa@gmail.com",
+          "name": "juancampa"
+        },
+        {
+          "email": "leo@zeit.co",
+          "name": "leo"
+        },
+        {
+          "email": "luisito453@gmail.com",
+          "name": "lfades"
+        },
+        {
+          "email": "luc.leray@gmail.com",
+          "name": "lucleray"
+        },
+        {
+          "email": "manovotny@gmail.com",
+          "name": "manovotny"
+        },
+        {
+          "email": "marcosnils@gmail.com",
+          "name": "marcosnils"
+        },
+        {
+          "email": "me@matheus.top",
+          "name": "matheuss"
+        },
+        {
+          "email": "mrfix84@gmail.com",
+          "name": "mfix22"
+        },
+        {
+          "email": "mark.glagola@gmail.com",
+          "name": "mglagola"
+        },
+        {
+          "email": "mail@msweeneydev.com",
+          "name": "msweeneydev"
+        },
+        {
+          "email": "naoyuki.kanezawa@gmail.com",
+          "name": "nkzawa"
+        },
+        {
+          "email": "olli@zeit.co",
+          "name": "olliv"
+        },
+        {
+          "email": "pvco.coursey@gmail.com",
+          "name": "paco"
+        },
+        {
+          "email": "paulogdemitri@gmail.com",
+          "name": "paulogdm"
+        },
+        {
+          "email": "ds303077135@gmail.com",
+          "name": "quietshu"
+        },
+        {
+          "email": "rabautse@gmail.com",
+          "name": "rabaut"
+        },
+        {
+          "email": "ragojosefrancisco@gmail.com",
+          "name": "ragojose"
+        },
+        {
+          "email": "rauchg@gmail.com",
+          "name": "rauchg"
+        },
+        {
+          "email": "sbanskota08@gmail.com",
+          "name": "sarupbanskota"
+        },
+        {
+          "email": "skllcrn@zeit.co",
+          "name": "skllcrn"
+        },
+        {
+          "email": "t.sophearak@gmail.com",
+          "name": "sophearak"
+        },
+        {
+          "email": "steven@ceriously.com",
+          "name": "styfle"
+        },
+        {
+          "email": "timer150@gmail.com",
+          "name": "timer"
+        },
+        {
+          "email": "tim@timneutkens.nl",
+          "name": "timneutkens"
+        },
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        },
+        {
+          "email": "iyatomi@gmail.com",
+          "name": "umegaya"
+        },
+        {
+          "email": "williamli@bbi.io",
+          "name": "williamli"
+        },
+        {
+          "email": "team@zeit.co",
+          "name": "zeit-bot"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ms_2.1.2_1559842315767_0.4700607530567853"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ms\n\n[![Build Status](https://travis-ci.org/zeit/ms.svg?branch=master)](https://travis-ci.org/zeit/ms)\n[![Join the community on Spectrum](https://withspectrum.github.io/badge/badge.svg)](https://spectrum.chat/zeit)\n\nUse this package to easily convert various time formats to milliseconds.\n\n## Examples\n\n```js\nms('2 days')  // 172800000\nms('1d')      // 86400000\nms('10h')     // 36000000\nms('2.5 hrs') // 9000000\nms('2h')      // 7200000\nms('1m')      // 60000\nms('5s')      // 5000\nms('1y')      // 31557600000\nms('100')     // 100\nms('-3 days') // -259200000\nms('-1h')     // -3600000\nms('-200')    // -200\n```\n\n### Convert from Milliseconds\n\n```js\nms(60000)             // \"1m\"\nms(2 * 60000)         // \"2m\"\nms(-3 * 60000)        // \"-3m\"\nms(ms('10 hours'))    // \"10h\"\n```\n\n### Time Format Written-Out\n\n```js\nms(60000, { long: true })             // \"1 minute\"\nms(2 * 60000, { long: true })         // \"2 minutes\"\nms(-3 * 60000, { long: true })        // \"-3 minutes\"\nms(ms('10 hours'), { long: true })    // \"10 hours\"\n```\n\n## Features\n\n- Works both in [Node.js](https://nodejs.org) and in the browser\n- If a number is supplied to `ms`, a string with a unit is returned\n- If a string that contains the number is supplied, it returns it as a number (e.g.: it returns `100` for `'100'`)\n- If you pass a string with a number and a valid unit, the number of equivalent milliseconds is returned\n\n## Related Packages\n\n- [ms.macro](https://github.com/knpwrs/ms.macro) - Run `ms` as a macro at build-time.\n\n## Caught a Bug?\n\n1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device\n2. Link the package to the global module directory: `npm link`\n3. Within the module you want to test your local development instance of ms, just link it to the dependencies: `npm link ms`. Instead of the default one from npm, Node.js will now use your clone of ms!\n\nAs always, you can run the tests using: `npm test`\n",
+  "maintainers": [
+    {
+      "email": "lrobinson2011@gmail.com",
+      "name": "leerobinson"
+    },
+    {
+      "email": "hank@vercel.com",
+      "name": "hankvercel"
+    },
+    {
+      "email": "belen@vercel.com",
+      "name": "okbel"
+    },
+    {
+      "email": "samko9522@gmail.com",
+      "name": "samsisle"
+    },
+    {
+      "email": "chris@leishman.org",
+      "name": "cleishm"
+    },
+    {
+      "email": "nazareno@basement.studio",
+      "name": "nazarenooviedo"
+    },
+    {
+      "email": "maxwell.leiter@gmail.com",
+      "name": "maxleiter"
+    },
+    {
+      "email": "shu@chibicode.com",
+      "name": "chibicode"
+    },
+    {
+      "email": "g.cobben@gmail.com",
+      "name": "gielcobben"
+    },
+    {
+      "email": "jared@palmer.net",
+      "name": "jaredpalmer"
+    },
+    {
+      "email": "jan.krems@gmail.com",
+      "name": "jkrems"
+    },
+    {
+      "email": "prateek89born@gmail.com",
+      "name": "prateekbh"
+    },
+    {
+      "email": "josefrancisco.verdu@gmail.com",
+      "name": "kikobeats"
+    },
+    {
+      "email": "gbmonaco@google.com",
+      "name": "gmonaco"
+    },
+    {
+      "email": "houssein.djirdeh@gmail.com",
+      "name": "housseindjirdeh"
+    },
+    {
+      "email": "jason@developit.ca",
+      "name": "developit"
+    },
+    {
+      "email": "shubhie@gmail.com",
+      "name": "spanicker"
+    },
+    {
+      "email": "npm@keanulee.com",
+      "name": "keanulee"
+    },
+    {
+      "email": "atcastle@gmail.com",
+      "name": "atcastle"
+    },
+    {
+      "email": "janicklasralph036@gmail.com",
+      "name": "janicklas-ralph"
+    },
+    {
+      "email": "skllcrn@zeit.co",
+      "name": "skllcrn"
+    },
+    {
+      "email": "pvco.coursey@gmail.com",
+      "name": "paco"
+    },
+    {
+      "email": "guybedford@gmail.com",
+      "name": "guybedford"
+    },
+    {
+      "email": "ragojosefrancisco@gmail.com",
+      "name": "ragojose"
+    },
+    {
+      "email": "williamli@bbi.io",
+      "name": "williamli"
+    },
+    {
+      "email": "mail@msweeneydev.com",
+      "name": "msweeneydev"
+    },
+    {
+      "email": "allenhai03@gmail.com",
+      "name": "coetry"
+    },
+    {
+      "email": "rabautse@gmail.com",
+      "name": "rabaut"
+    },
+    {
+      "email": "luisito453@gmail.com",
+      "name": "lfades"
+    },
+    {
+      "email": "mrfix84@gmail.com",
+      "name": "mfix22"
+    },
+    {
+      "email": "jj@jjsweb.site",
+      "name": "ijjk"
+    },
+    {
+      "email": "franco@basement.studio",
+      "name": "arzafran"
+    },
+    {
+      "email": "iyatomi@gmail.com",
+      "name": "umegaya"
+    },
+    {
+      "email": "sbanskota08@gmail.com",
+      "name": "sarupbanskota"
+    },
+    {
+      "email": "timer150@gmail.com",
+      "name": "timer"
+    },
+    {
+      "email": "ana.trajkovska2015@gmail.com",
+      "name": "anatrajkovska"
+    },
+    {
+      "email": "paulogdemitri@gmail.com",
+      "name": "paulogdm"
+    },
+    {
+      "email": "artzbitz@gmail.com",
+      "name": "andybitz"
+    },
+    {
+      "email": "mark.glagola@gmail.com",
+      "name": "mglagola"
+    },
+    {
+      "email": "luc.leray@gmail.com",
+      "name": "lucleray"
+    },
+    {
+      "email": "team@zeit.co",
+      "name": "zeit-bot"
+    },
+    {
+      "email": "steven@ceriously.com",
+      "name": "styfle"
+    },
+    {
+      "email": "juancampa@gmail.com",
+      "name": "juancampa"
+    },
+    {
+      "email": "mail@connordav.is",
+      "name": "dav-is"
+    },
+    {
+      "email": "ds303077135@gmail.com",
+      "name": "quietshu"
+    },
+    {
+      "email": "fivepointseven@icloud.com",
+      "name": "fivepointseven"
+    },
+    {
+      "email": "joecohenr@gmail.com",
+      "name": "joecohens"
+    },
+    {
+      "email": "thecodetheory@gmail.com",
+      "name": "codetheory"
+    },
+    {
+      "email": "matheus.frndes@gmail.com",
+      "name": "matheuss"
+    },
+    {
+      "email": "igor@klopov.com",
+      "name": "igorklopov"
+    },
+    {
+      "email": "mindrun@icloud.com",
+      "name": "leo"
+    },
+    {
+      "email": "naoyuki.kanezawa@gmail.com",
+      "name": "nkzawa"
+    },
+    {
+      "email": "nathan@tootallnate.net",
+      "name": "tootallnate"
+    },
+    {
+      "email": "rauchg@gmail.com",
+      "name": "rauchg"
+    },
+    {
+      "email": "tim@timneutkens.nl",
+      "name": "timneutkens"
+    },
+    {
+      "email": "javier.velasco86@gmail.com",
+      "name": "javivelasco"
+    },
+    {
+      "email": "hello@evilrabb.it",
+      "name": "iamevilrabbit"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-22T19:00:32.201Z",
+    "created": "2011-12-21T19:38:08.664Z",
+    "0.1.0": "2011-12-21T19:38:26.538Z",
+    "0.2.0": "2012-09-03T20:33:06.093Z",
+    "0.3.0": "2012-09-07T20:36:45.931Z",
+    "0.4.0": "2012-10-22T17:01:26.046Z",
+    "0.5.0": "2012-11-10T00:39:49.944Z",
+    "0.5.1": "2013-02-24T20:27:27.010Z",
+    "0.6.0": "2013-03-15T15:26:35.127Z",
+    "0.6.1": "2013-05-10T15:38:08.059Z",
+    "0.6.2": "2013-12-05T15:57:45.292Z",
+    "0.7.0": "2014-11-24T07:59:08.195Z",
+    "0.7.1": "2015-04-20T23:38:57.957Z",
+    "0.7.2": "2016-10-25T08:16:49.773Z",
+    "0.7.3": "2017-03-08T21:59:28.048Z",
+    "1.0.0": "2017-03-19T21:43:15.128Z",
+    "2.0.0": "2017-05-16T12:26:06.610Z",
+    "2.1.0": "2017-11-30T16:54:16.315Z",
+    "2.1.1": "2017-11-30T18:30:16.876Z",
+    "2.1.2": "2019-06-06T17:31:55.859Z"
+  },
+  "users": {
+    "285858315": true,
+    "dodo": true,
+    "aaron": true,
+    "pid": true,
+    "hughsk": true,
+    "eknkc": true,
+    "forbeslindesay": true,
+    "tur-nr": true,
+    "humantriangle": true,
+    "yasinaydin": true,
+    "silas": true,
+    "tunnckocore": true,
+    "coderaiser": true,
+    "fgribreau": true,
+    "awaterma": true,
+    "robermac": true,
+    "subso": true,
+    "rdcl": true,
+    "dimd13": true,
+    "stretchgz": true,
+    "battlemidget": true,
+    "pensierinmusica": true,
+    "mcortesi": true,
+    "pandao": true,
+    "cshao": true,
+    "intuitivcloud": true,
+    "bapinney": true,
+    "dac2205": true,
+    "jerrywu": true,
+    "crazyorr": true,
+    "jesusgoku": true,
+    "wangnan0610": true,
+    "algonzo": true,
+    "detj": true,
+    "sedge": true,
+    "hugojosefson": true,
+    "spanser": true,
+    "danielbankhead": true,
+    "princetoad": true,
+    "shanewholloway": true,
+    "snowdream": true,
+    "shlomi": true,
+    "xieranmaya": true,
+    "francisbrito": true,
+    "andreaspizsa": true,
+    "largepuma": true,
+    "isaacvitor": true,
+    "manikantag": true,
+    "cbetancourt": true,
+    "zoomyzoom": true,
+    "ash": true,
+    "neo1": true,
+    "michalskuza": true,
+    "writeosahon": true,
+    "rocket0191": true,
+    "lestad": true,
+    "mojaray2k": true,
+    "jondotsoy": true,
+    "ahsanshafiq": true,
+    "miguhruiz": true,
+    "seangenabe": true,
+    "mikestaub": true,
+    "panlw": true,
+    "hugovila": true,
+    "dpjayasekara": true,
+    "yatsu": true,
+    "abhisekp": true,
+    "daizch": true,
+    "jondashkyle": true,
+    "lichangwei": true,
+    "xinwangwang": true,
+    "ssljivic": true,
+    "terrychan": true,
+    "l3au": true,
+    "brend": true,
+    "nisimjoseph": true,
+    "raycharles": true,
+    "travis346": true,
+    "nalindak": true,
+    "usex": true,
+    "hitalos": true,
+    "machinabio": true,
+    "h0ward": true,
+    "larrychen": true,
+    "anhulife": true,
+    "shuoshubao": true,
+    "shushanfx": true,
+    "ahmedelgabri": true,
+    "edwardxyt": true,
+    "danieljameskay": true,
+    "monkeyyy11": true,
+    "bhaskarmelkani": true,
+    "gtopia": true,
+    "ccastelli": true,
+    "mjurincic": true,
+    "ganeshkbhat": true,
+    "dexfs": true,
+    "rajiff": true,
+    "roccomuso": true,
+    "hayathuk": true,
+    "parkerproject": true,
+    "xgheaven": true,
+    "zhenguo.zhao": true,
+    "hearsid": true,
+    "kamikadze4game": true,
+    "chrisx": true,
+    "cr8tiv": true,
+    "gerst20051": true,
+    "losymear": true,
+    "zuojiang": true,
+    "xiechao06": true,
+    "huiyifyj": true,
+    "yuler": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeit/ms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zeit/ms/issues"
+  },
+  "readmeFilename": "readme.md",
+  "homepage": "https://github.com/zeit/ms#readme",
+  "license": "MIT"
+}

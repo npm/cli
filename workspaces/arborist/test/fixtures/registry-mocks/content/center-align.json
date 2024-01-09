@@ -1,0 +1,557 @@
+{
+  "_id": "center-align",
+  "_rev": "10-9af38cf44f2e525cb3f6fa7f2875f0bf",
+  "name": "center-align",
+  "description": "Center-align the text in a string.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "center-align",
+      "description": "Right-align the text in a string.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/center-align/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.0",
+        "should": "*"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "_id": "center-align@0.1.0",
+      "_shasum": "98bb4753243d9ca024425752eed55678fdae0f50",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "98bb4753243d9ca024425752eed55678fdae0f50",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "center-align",
+      "description": "Center-align the text in a string.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/center-align/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.0",
+        "should": "*"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "gitHead": "b50640baaab413835ff0a6c97cacf503e8d38491",
+      "_id": "center-align@0.1.1",
+      "_shasum": "54d204bfa61b3fefb786cfd8482f7c4e090231cd",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "54d204bfa61b3fefb786cfd8482f7c4e090231cd",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "center-align",
+      "description": "Center-align the text in a string.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^0.1.0",
+        "lazy-cache": "^0.2.4"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.0"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "verb": {
+        "related": {
+          "description": "",
+          "list": [
+            "align-text",
+            "right-align",
+            "justified",
+            "word-wrap"
+          ]
+        }
+      },
+      "gitHead": "b3af961dcbe6072aaa94503585a16434234c0a8b",
+      "_id": "center-align@0.1.2",
+      "_shasum": "74fa8540fc19b26aae6edc7e031cd6993d495ba0",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "74fa8540fc19b26aae6edc7e031cd6993d495ba0",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "center-align",
+      "description": "Center-align the text in a string.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^0.1.3",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.0"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "verb": {
+        "related": {
+          "description": "",
+          "list": [
+            "align-text",
+            "right-align",
+            "justified",
+            "word-wrap"
+          ]
+        }
+      },
+      "gitHead": "5c5fab5012fceaa3e21a00162958c0ed11109419",
+      "_id": "center-align@0.1.3",
+      "_shasum": "aa0d32629b6ee972200411cbd4461c907bc2b7ad",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "aa0d32629b6ee972200411cbd4461c907bc2b7ad",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-0.1.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/center-align-0.1.3.tgz_1454366538829_0.9471865000668913"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "center-align",
+      "description": "Center-align the text in a string.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^0.1.4",
+        "repeat-string": "^1.6.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "align-text",
+            "justified",
+            "right-align",
+            "word-wrap"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1d6fc28f140be7d5c1a0e854805170501c516d57",
+      "_id": "center-align@1.0.0",
+      "_shasum": "1510cfc373c2e159ec2222873d7d7113db64c330",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1510cfc373c2e159ec2222873d7d7113db64c330",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/center-align-1.0.0.tgz_1495771817396_0.5750206259544939"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "center-align",
+      "description": "Center-align the text in a string.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/center-align",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/center-align.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/center-align/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "align-text": "^1.0.0",
+        "repeat-string": "^1.6.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.4.2"
+      },
+      "keywords": [
+        "align",
+        "align-center",
+        "center",
+        "center-align",
+        "right",
+        "right-align",
+        "text",
+        "typography"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "align-text",
+            "justified",
+            "right-align",
+            "word-wrap"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "19e5b3a167adec5e8871081d6655c2ea17314108",
+      "_id": "center-align@1.0.1",
+      "_shasum": "2a1fdfdb6cd0dd2d25fbfcf6751e746b313e50a4",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2a1fdfdb6cd0dd2d25fbfcf6751e746b313e50a4",
+        "tarball": "https://registry.npmjs.org/center-align/-/center-align-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/center-align-1.0.1.tgz_1495774155222_0.5952917255926877"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# center-align [![NPM version](https://img.shields.io/npm/v/center-align.svg?style=flat)](https://www.npmjs.com/package/center-align) [![NPM monthly downloads](https://img.shields.io/npm/dm/center-align.svg?style=flat)](https://npmjs.org/package/center-align) [![NPM total downloads](https://img.shields.io/npm/dt/center-align.svg?style=flat)](https://npmjs.org/package/center-align) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/center-align.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/center-align)\n\n> Center-align the text in a string.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save center-align\n```\n\n## Usage\n\n```js\nvar center = require('center-align');\ncenter(val, width);\n```\n\n**Params**\n\n* `val` **{String|Array}**: the string or array of strings to center align\n* `width` **{Number}** (optional): the total width of each line in the expected result, after it's centered.\n\n## Examples\n\n```js\nconsole.log(center('foo')); //=> 'foo' (does nothing)\nconsole.log(center('foo', 12)); //=> '    foo    '\nconsole.log(center('foo', 10)); //=> '   foo   '\nconsole.log(center('foo', 8));  //=> '  foo  '\n```\n\n### Multiple lines\n\nIf expected `width` is not provided, the _length of the longest line_ will be used.\n\n**Example**\n\nIf used on the following:\n\n```js\n// value can be a string, or an array of strings\ncenter([\n  'Lorem ipsum dolor sit amet,',\n  'consectetur adipiscing',\n  'elit, sed do eiusmod tempor incididunt',\n  'ut labore et dolore',\n  'magna aliqua. Ut enim ad minim',\n  'veniam, quis'\n]);\n```\n\nThe result would be:\n\n```\n     Lorem ipsum dolor sit amet,\n        consectetur adipiscing\nelit, sed do eiusmod tempor incididunt\n         ut labore et dolore\n    magna aliqua. Ut enim ad minim\n             veniam, quis\n```\n\n## About\n\n### Related projects\n\n* [align-text](https://www.npmjs.com/package/align-text): Align the text in a string. | [homepage](https://github.com/jonschlinkert/align-text \"Align the text in a string.\")\n* [justified](https://www.npmjs.com/package/justified): Wrap words to a specified length and justified the text. | [homepage](https://github.com/jonschlinkert/justified \"Wrap words to a specified length and justified the text.\")\n* [right-align](https://www.npmjs.com/package/right-align): Right-align the text in a string. | [homepage](https://github.com/jonschlinkert/right-align \"Right-align the text in a string.\")\n* [word-wrap](https://www.npmjs.com/package/word-wrap): Wrap words to a specified length. | [homepage](https://github.com/jonschlinkert/word-wrap \"Wrap words to a specified length.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 26, 2017._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-05-26T04:49:16.185Z",
+    "created": "2015-03-08T01:11:49.677Z",
+    "0.1.0": "2015-03-08T01:11:49.677Z",
+    "0.1.1": "2015-03-08T01:23:26.759Z",
+    "0.1.2": "2015-10-27T09:28:24.840Z",
+    "0.1.3": "2016-02-01T22:42:21.133Z",
+    "1.0.0": "2017-05-26T04:10:18.309Z",
+    "1.0.1": "2017-05-26T04:49:16.185Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/center-align",
+  "keywords": [
+    "align",
+    "align-center",
+    "center",
+    "center-align",
+    "right",
+    "right-align",
+    "text",
+    "typography"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/center-align.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/center-align/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "bcoe": true
+  },
+  "_attachments": {}
+}

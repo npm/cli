@@ -1,0 +1,156 @@
+{
+  "_id": "@types/is-windows",
+  "_rev": "404-432bbaa666afc648a2c598300d40849b",
+  "name": "@types/is-windows",
+  "description": "TypeScript definitions for is-windows",
+  "dist-tags": {
+    "latest": "1.0.0",
+    "ts2.0": "0.2.0",
+    "ts2.1": "0.2.0",
+    "ts2.2": "0.2.0",
+    "ts2.3": "0.2.0",
+    "ts2.4": "0.2.0",
+    "ts2.5": "0.2.0",
+    "ts2.6": "0.2.0",
+    "ts2.7": "0.2.0",
+    "ts2.8": "1.0.0",
+    "ts2.9": "1.0.0",
+    "ts3.0": "1.0.0",
+    "ts3.1": "1.0.0",
+    "ts3.2": "1.0.0",
+    "ts3.3": "1.0.0",
+    "ts3.4": "1.0.0",
+    "ts3.5": "1.0.0",
+    "ts3.6": "1.0.0",
+    "ts3.7": "1.0.0",
+    "ts3.8": "1.0.0",
+    "ts3.9": "1.0.0",
+    "ts4.0": "1.0.0",
+    "ts4.1": "1.0.0"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "@types/is-windows",
+      "version": "0.2.0",
+      "description": "TypeScript definitions for is-windows",
+      "license": "MIT",
+      "author": "Mizunashi Mana <https://github.com/mizunashi-mana>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "a4795d3d741a0354f8b005b74325d8dbf941e1e4b5bbaa395a9905d22b82dfb1",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/is-windows@0.2.0",
+      "dist": {
+        "shasum": "6f24ee48731d31168ea510610d6dd15e5fc9c6ff",
+        "tarball": "https://registry.npmjs.org/@types/is-windows/-/is-windows-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-windows-0.2.0.tgz_1483053082287_0.9072695020586252"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "@types/is-windows",
+      "version": "1.0.0",
+      "description": "TypeScript definitions for is-windows",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Mizunashi Mana",
+          "url": "https://github.com/mizunashi-mana",
+          "githubUsername": "mizunashi-mana"
+        },
+        {
+          "name": "ExE Boss",
+          "url": "https://github.com/ExE-Boss",
+          "githubUsername": "ExE-Boss"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/is-windows"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "610e9345c2ee603cac49f854943aa9bd570a312784d4c04e67730275bcfa2de0",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/is-windows@1.0.0",
+      "dist": {
+        "integrity": "sha512-tJ1rq04tGKuIJoWIH0Gyuwv4RQ3+tIu7wQrC0MV47raQ44kIzXSSFKfrxFUOWVRvesoF7mrTqigXmqoZJsXwTg==",
+        "shasum": "1011fa129d87091e2f6faf9042d6704cdf2e7be0",
+        "tarball": "https://registry.npmjs.org/@types/is-windows/-/is-windows-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3089,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1ESUCRA9TVsSAnZWagAA0dMQAJbK4iabURmMDM+C7QWI\nWS0kdC1ZbMA4oLPss8egQnjJtgfwAkOhtyJFu78c2iCHKNgfkWVfO4W0ra+z\nI8RletT7Y7G0Sko0Zqd2SfK6j8gi8A9kyFRW/cLk38uvV273yKJKerPsE7r7\ni2yP1XiPJpDeTI5wkNdqY4bQ6OnwVQzUAoKEqN13uBbLZDFeQh4El22COpKc\nVb6Xy8xdfn4KFw1WJys9vaZLSXzBYufzwhUBphoy1zivR0xgtB9dFnNP44I1\nvsFybNetPJ0Ssq93UAlsWchGqQneaag5B+3IBgqjz25g9ZwZh9WBLK5kI4Sn\nLuVGZ/oWP3lC75YdqCQvBfFxKXgzoKWUpv04/av472j6EDv5Jl9Ev+Oy1Hhc\n6uIY45YWC3eWqyhwT8s8mxkggnBoQdCmY6R9aDtiBmvdK51FTSVgpfVixEAy\n/YqJ5pspsAbhsRrQcjFthu8JPv49IlkkXdCnWJnH0n+HyIv0/dofbZ2co47o\n4RojoQQ543qMQIXoHQ43B5iQl0cm5thG0im327N+bZoH6+ABro2NiFSwlWZx\n+KqFw6CqANEdME82rnb67AbZOD3x+UX3BWPApr6HG2QdmV0FNEUhcbffQsKH\nsmeBBwVu+Ltj1HqAUKj+DD+05j1QrR+qzkXHa9ApuiwfatZ6T7nTbKjDAx7U\nsv3b\r\n=x22l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-windows_1.0.0_1574192275881_0.02072635017827551"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/is-windows`\r\n\r\n# Summary\r\nThis package contains type definitions for is-windows (https://github.com/jonschlinkert/is-windows).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/is-windows.\r\n\r\n### Additional Details\r\n * Last updated: Tue, 19 Nov 2019 19:37:32 GMT\r\n * Dependencies: none\r\n * Global values: `isWindows`\r\n\r\n# Credits\r\nThese definitions were written by Mizunashi Mana (https://github.com/mizunashi-mana), and ExE Boss (https://github.com/ExE-Boss).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:25:35.930Z",
+    "created": "2016-12-29T23:11:24.513Z",
+    "0.2.0": "2016-12-29T23:11:24.513Z",
+    "1.0.0": "2019-11-19T19:37:55.992Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/is-windows"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "contributors": [
+    {
+      "name": "Mizunashi Mana",
+      "url": "https://github.com/mizunashi-mana",
+      "githubUsername": "mizunashi-mana"
+    },
+    {
+      "name": "ExE Boss",
+      "url": "https://github.com/ExE-Boss",
+      "githubUsername": "ExE-Boss"
+    }
+  ]
+}

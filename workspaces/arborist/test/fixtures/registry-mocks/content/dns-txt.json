@@ -1,0 +1,218 @@
+{
+  "_id": "dns-txt",
+  "_rev": "2-97ac992b6b25c4711cd76709742ffa30",
+  "name": "dns-txt",
+  "description": "Encode/decode DNS-SD TXT record RDATA fields",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "2.0.1": {
+      "name": "dns-txt",
+      "version": "2.0.1",
+      "description": "Encode/decode DNS-SD TXT record RDATA fields",
+      "main": "index.js",
+      "dependencies": {
+        "buffer-indexof": "^1.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/dns-txt.git"
+      },
+      "keywords": [
+        "rfc6763",
+        "6763",
+        "rfc6762",
+        "6762",
+        "dns",
+        "mdns",
+        "multicast",
+        "txt",
+        "rdata",
+        "dns-sd",
+        "encode",
+        "decode",
+        "parse",
+        "encoder",
+        "decoder",
+        "parser",
+        "service",
+        "discovery"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/dns-txt/issues"
+      },
+      "homepage": "https://github.com/watson/dns-txt",
+      "coordinates": [
+        55.6665557,
+        12.5801645
+      ],
+      "gitHead": "b0fc6f0ef22c9789e9e378ff0262e23feb789b8a",
+      "_id": "dns-txt@2.0.1",
+      "_shasum": "8ea16313f4b59ee9d2cfc8f64be413b25e227a4e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "8ea16313f4b59ee9d2cfc8f64be413b25e227a4e",
+        "tarball": "https://registry.npmjs.org/dns-txt/-/dns-txt-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/dns-txt-2.0.1.tgz_1456770217606_0.9772624913603067"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "dns-txt",
+      "version": "2.0.2",
+      "description": "Encode/decode DNS-SD TXT record RDATA fields",
+      "main": "index.js",
+      "dependencies": {
+        "buffer-indexof": "^1.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.2.2",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/dns-txt.git"
+      },
+      "keywords": [
+        "rfc6763",
+        "6763",
+        "rfc6762",
+        "6762",
+        "dns",
+        "mdns",
+        "multicast",
+        "txt",
+        "rdata",
+        "dns-sd",
+        "encode",
+        "decode",
+        "parse",
+        "encoder",
+        "decoder",
+        "parser",
+        "service",
+        "discovery"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/dns-txt/issues"
+      },
+      "homepage": "https://github.com/watson/dns-txt",
+      "coordinates": [
+        55.6465696,
+        12.5491067
+      ],
+      "gitHead": "8c48aed198f9eb1840e7d12c37a84fcba545c8fa",
+      "_id": "dns-txt@2.0.2",
+      "_shasum": "b91d806f5d27188e4ab3e7d107d881a1cc4642b6",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "b91d806f5d27188e4ab3e7d107d881a1cc4642b6",
+        "tarball": "https://registry.npmjs.org/dns-txt/-/dns-txt-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/dns-txt-2.0.2.tgz_1461509147614_0.3867966157849878"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# dns-txt\n\nEncode or decode the RDATA field in multicast DNS TXT records. For use\nwith DNS-Based Service Discovery. For details see [RFC\n6763](https://tools.ietf.org/html/rfc6763).\n\n[![Build status](https://travis-ci.org/watson/dns-txt.svg?branch=master)](https://travis-ci.org/watson/dns-txt)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n[![abstract-encoding](https://img.shields.io/badge/abstract--encoding-compliant-brightgreen.svg?style=flat)](https://github.com/mafintosh/abstract-encoding)\n\n## Installation\n\n```\nnpm install dns-txt\n```\n\n## Usage\n\n```js\nvar txt = require('dns-txt')()\n\nvar obj = {\n  foo: 1,\n  bar: 2\n}\n\nvar enc = txt.encode(obj) // <Buffer 05 66 6f 6f 3d 31 05 62 61 72 3d 32>\n\ntxt.decode(enc) // { foo: '1', bar: '2' }\n```\n\n## API\n\nThe encoder and decoder conforms to [RFC 6763](https://tools.ietf.org/html/rfc6763).\n\n### Initialize\n\nThe module exposes a constructor function which can be called with an\noptional options object:\n\n```js\nvar txt = require('dns-txt')({ binary: true })\n```\n\nThe options are:\n\n- `binary` - If set to `true` all values will be returned as `Buffer`\n  objects. The default behavior is to turn all values into strings. But\n  according to the RFC the values can be any binary data. If you expect\n  binary data, use this option.\n\n#### `txt.encode(obj, [buffer], [offset])`\n\nTakes a key/value object and returns a buffer with the encoded TXT\nrecord. If a buffer is passed as the second argument the object should\nbe encoded into that buffer. Otherwise a new buffer should be allocated\nIf an offset is passed as the third argument the object should be\nencoded at that byte offset. The byte offset defaults to `0`.\n\nThis module does not actively validate the key/value pairs, but keep the\nfollowing in rules in mind:\n\n- To be RFC compliant, each key should conform with the rules as\n  specified in [section\n  6.4](https://tools.ietf.org/html/rfc6763#section-6.4).\n\n- To be RFC compliant, each value should conform with the rules as\n  specified in [section\n  6.5](https://tools.ietf.org/html/rfc6763#section-6.5).\n\nAfter encoding `txt.encode.bytes` is set to the amount of bytes used to\nencode the object.\n\n#### `txt.decode(buffer, [offset], [length])`\n\nTakes a buffer and returns a decoded key/value object. If an offset is\npassed as the second argument the object should be decoded from that\nbyte offset. The byte offset defaults to `0`. Note that all keys will be\nlowercased and all values will be Buffer objects.\n\nAfter decoding `txt.decode.bytes` is set to the amount of bytes used to\ndecode the object.\n\n#### `txt.encodingLength(obj)`\n\nTakes a single key/value object and returns the number of bytes that the given\nobject would require if encoded.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2016-04-24T14:45:50.069Z",
+    "created": "2016-02-29T18:23:41.106Z",
+    "2.0.1": "2016-02-29T18:23:41.106Z",
+    "2.0.2": "2016-04-24T14:45:50.069Z"
+  },
+  "homepage": "https://github.com/watson/dns-txt",
+  "keywords": [
+    "rfc6763",
+    "6763",
+    "rfc6762",
+    "6762",
+    "dns",
+    "mdns",
+    "multicast",
+    "txt",
+    "rdata",
+    "dns-sd",
+    "encode",
+    "decode",
+    "parse",
+    "encoder",
+    "decoder",
+    "parser",
+    "service",
+    "discovery"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/dns-txt.git"
+  },
+  "author": {
+    "name": "Thomas Watson Steen",
+    "email": "w@tson.dk",
+    "url": "https://twitter.com/wa7son"
+  },
+  "bugs": {
+    "url": "https://github.com/watson/dns-txt/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

@@ -1,0 +1,3328 @@
+{
+  "_id": "fill-range",
+  "_rev": "55-0997b267b0582e68adeb59b7b3ccb2d1",
+  "name": "fill-range",
+  "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+  "dist-tags": {
+    "latest": "7.0.1",
+    "patch": "2.2.4"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "_id": "fill-range@0.1.0",
+      "_shasum": "2d7e5a265c18b3571d3fdf0e59be1026049f3fa1",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d7e5a265c18b3571d3fdf0e59be1026049f3fa1",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "_id": "fill-range@0.1.1",
+      "_shasum": "6a88bcca5b6dbe26f605c64ce7f6642b8b6b0c0f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6a88bcca5b6dbe26f605c64ce7f6642b8b6b0c0f",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "alphabet": "^0.1.0",
+        "is-number": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "_id": "fill-range@0.2.0",
+      "_shasum": "78651bb4b153d0fc482bdedb7be169645ea9d6e5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "78651bb4b153d0fc482bdedb7be169645ea9d6e5",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1",
+        "randomatic": "^1.0.1",
+        "repeat-string": "^1.2.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "78263be7de77ce0ad458e485436d3f32bab026dc",
+      "_id": "fill-range@1.0.0",
+      "_shasum": "8c39058e297ac6523c6daf336dca2f0bd62efc8e",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c39058e297ac6523c6daf336dca2f0bd62efc8e",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1",
+        "randomatic": "^1.0.1",
+        "repeat-string": "^1.2.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "2ff624da23b354d6637b6b1803856bbea0aff739",
+      "_id": "fill-range@1.1.0",
+      "_shasum": "1d459e01c0d41e85dba1287d83bdd9b246b8572c",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1d459e01c0d41e85dba1287d83bdd9b246b8572c",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1",
+        "randomatic": "^1.0.1",
+        "repeat-string": "^1.2.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "91a181e661652a431fc308576f3d6255d0ebd7e0",
+      "_id": "fill-range@1.2.0",
+      "_shasum": "47a9311bc4edbef4ccb95a426fd20c2d83d5c4e1",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "47a9311bc4edbef4ccb95a426fd20c2d83d5c4e1",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.3.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.2.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "8feab621033bae8276138909d61a89e267434934",
+      "_id": "fill-range@1.3.0",
+      "_shasum": "6d3541ac148a216c3a0fd39c4717e563926fcfee",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6d3541ac148a216c3a0fd39c4717e563926fcfee",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.4.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "docs": "update && license && npmignore && deps && verb",
+        "all": "npm run test && npm run docs"
+      },
+      "dependencies": {
+        "is-number": "^0.1.1",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.2.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "8feab621033bae8276138909d61a89e267434934",
+      "_id": "fill-range@1.4.0",
+      "_shasum": "e6d1e18ee733452ab608a74e181d2c41f6291ba3",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e6d1e18ee733452ab608a74e181d2c41f6291ba3",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.5.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "a578d682adf97538bcd321ee32deda2c6f7bcb6c",
+      "_id": "fill-range@1.5.0",
+      "_shasum": "3cf1025e5b4a65f6b0b492d3116c0dbdf75d5f85",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3cf1025e5b4a65f6b0b492d3116c0dbdf75d5f85",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.6.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.4.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "a95fece96f7d525edf0bd7b92b88753b89ac5420",
+      "_id": "fill-range@1.6.0",
+      "_shasum": "3a18b7ecb2a61700a2005c8a5c8e8de65950f4d1",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3a18b7ecb2a61700a2005c8a5c8e8de65950f4d1",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.7.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.4.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "bbda14384c98093788b85cfbf427b509390d84ad",
+      "_id": "fill-range@1.7.0",
+      "_shasum": "b55f1bb5aea102eb7ed89e2718510ec3ad23d86d",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b55f1bb5aea102eb7ed89e2718510ec3ad23d86d",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.7.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.7.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.4.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "2251a06a67ae6093d5457091c95a347d1aabbaa7",
+      "_id": "fill-range@1.7.1",
+      "_shasum": "73bf1ab3f5e1dc91945824db7d82f475d40ba136",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "73bf1ab3f5e1dc91945824db7d82f475d40ba136",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.7.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.8.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.8.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "isobject": "^0.2.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.4.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "55792c320bed0ada3e1ed1a53628b6c799fb495e",
+      "_id": "fill-range@1.8.0",
+      "_shasum": "6d90816c856b7ca7a47c443dfcfbebab9c8c365e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6d90816c856b7ca7a47c443dfcfbebab9c8c365e",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.8.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.9.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "1.9.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "isobject": "^0.2.0",
+        "randomatic": "^1.0.1",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.4.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "55792c320bed0ada3e1ed1a53628b6c799fb495e",
+      "_id": "fill-range@1.9.0",
+      "_shasum": "a15facff50d734df2d35a8303510b81fce2fb894",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a15facff50d734df2d35a8303510b81fce2fb894",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-1.9.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "isobject": "^0.2.0",
+        "randomatic": "^1.1.0",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.5.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "68bcd3e18c04698147ae7701c7c9c73427007d30",
+      "_id": "fill-range@2.0.0",
+      "_shasum": "4957d921e1737e13160da91f274bc2f066552897",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4957d921e1737e13160da91f274bc2f066552897",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.1.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "isobject": "^0.2.0",
+        "randomatic": "^1.1.0",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.5.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "965fc42da05330741d85f842e52f4d625b1e242b",
+      "_id": "fill-range@2.1.0",
+      "_shasum": "6c6ef3a318872fae7e17b8bbd6c4b97a792b0903",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6c6ef3a318872fae7e17b8bbd6c4b97a792b0903",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.2.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^1.1.0",
+        "isobject": "^0.2.0",
+        "randomatic": "^1.1.0",
+        "repeat-element": "^1.0.0",
+        "repeat-string": "^1.5.0"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "b403fefd2d8c5ba134239824cec118cfe4c19393",
+      "_id": "fill-range@2.2.0",
+      "_shasum": "60ed5d1ca44aba3e7f86b0b72e1fadbabe56f37a",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "60ed5d1ca44aba3e7f86b0b72e1fadbabe56f37a",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.2.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^1.1.2",
+        "isobject": "^1.0.0",
+        "randomatic": "^1.1.0",
+        "repeat-element": "^1.1.0",
+        "repeat-string": "^1.5.2"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "dafcb07a8cb9d8138543234fde0cc92340248cb1",
+      "_id": "fill-range@2.2.1",
+      "_shasum": "80bb64f2af0505fab78166e6508d7ac9ca8b118d",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "80bb64f2af0505fab78166e6508d7ac9ca8b118d",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.2": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.2.2",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/fill-range/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^1.1.2",
+        "isobject": "^1.0.0",
+        "randomatic": "^1.1.0",
+        "repeat-element": "^1.1.0",
+        "repeat-string": "^1.5.2"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "gitHead": "dafcb07a8cb9d8138543234fde0cc92340248cb1",
+      "_id": "fill-range@2.2.2",
+      "_shasum": "2ad9d158a6a666f9fb8c9f9f05345dff68d45760",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2ad9d158a6a666f9fb8c9f9f05345dff68d45760",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.3": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.2.3",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.1.0",
+        "isobject": "^2.0.0",
+        "randomatic": "^1.1.3",
+        "repeat-element": "^1.1.2",
+        "repeat-string": "^1.5.2"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "should": "*"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "micromatch",
+            "expand-range",
+            "braces",
+            "is-glob"
+          ]
+        }
+      },
+      "gitHead": "6cb50d5c679d9e6d9e8ad97bb2efd63a8c8da610",
+      "_id": "fill-range@2.2.3",
+      "_shasum": "50b77dfd7e469bc7492470963699fe7a8485a723",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "50b77dfd7e469bc7492470963699fe7a8485a723",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.5.4",
+        "to-regex-range": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "array",
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "regex",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "to-regex-range",
+            "expand-range",
+            "micromatch"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "53bc0f1e4933dbd56ab9cfe0b7759945d1d513ac",
+      "_id": "fill-range@3.0.0",
+      "_shasum": "4388a4a5163cca338d04f96b871cb800615cc042",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4388a4a5163cca338d04f96b871cb800615cc042",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.0.0.tgz_1473922297104_0.9279654189012945"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.0.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.5.4",
+        "to-regex-range": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "array",
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "regex",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "to-regex-range",
+            "expand-range",
+            "micromatch"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "1b70ecc3ae59706d333dad49288fe2044af385f7",
+      "_id": "fill-range@3.0.1",
+      "_shasum": "56bd878c6f484ccbd89e201da429ed555e0816a6",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "56bd878c6f484ccbd89e201da429ed555e0816a6",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.0.1.tgz_1473922409682_0.8862245734781027"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.0.2",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.5.4",
+        "to-regex-range": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "array",
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "regex",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "to-regex-range",
+            "expand-range",
+            "micromatch"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "2cceeec1988e1e274e8b4c54c57d42636f8c7145",
+      "_id": "fill-range@3.0.2",
+      "_shasum": "e09db2fe9f8162bceb7e553a7a022008ab98e5bc",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e09db2fe9f8162bceb7e553a7a022008ab98e5bc",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.0.2.tgz_1473922792882_0.997952681966126"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.0.3",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.5.4",
+        "to-regex-range": "^0.2.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "array",
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "regex",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "to-regex-range",
+            "expand-range",
+            "micromatch"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "f7aad9db3ef14dbd96b8ddeb8fc57bc72963127a",
+      "_id": "fill-range@3.0.3",
+      "_shasum": "7579a71c8c107a655ef8a648d3ab247a7ef71ab4",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7579a71c8c107a655ef8a648d3ab247a7ef71ab4",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.0.3.tgz_1473925592132_0.7065864582546055"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.1.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.6.1",
+        "to-regex-range": "^1.0.2"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^0.2.5",
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "yargs-parser": "^4.2.1"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "micromatch",
+            "to-regex-range"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "a9695951860354a4f325df6603e16f5e6ff3c4c4",
+      "_id": "fill-range@3.1.0",
+      "_shasum": "0e8a147de15405875fb6545767ffed6836f6d860",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0e8a147de15405875fb6545767ffed6836f6d860",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.1.0.tgz_1486963334932_0.8219265819061548"
+      },
+      "directories": {}
+    },
+    "3.1.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "3.1.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Edo Rivai",
+          "email": "edo.rivai@gmail.com",
+          "url": "ilumbo.org"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.6.1",
+        "to-regex-range": "^1.0.2"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^0.2.5",
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "yargs-parser": "^4.2.1"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "micromatch",
+            "to-regex-range"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "59af6ebcc76256befc51e3100672469ccfdc4d44",
+      "_id": "fill-range@3.1.1",
+      "_shasum": "0eee8fec871bd2680414dd99f734b2f699594d3f",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0eee8fec871bd2680414dd99f734b2f699594d3f",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-3.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fill-range-3.1.1.tgz_1486963789835_0.7738824000116438"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "4.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Edo Rivai",
+          "email": "edo.rivai@gmail.com",
+          "url": "edo.rivai.nl"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "email": "paul+gh@paulmillr.com",
+          "url": "paulmillr.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^3.0.0",
+        "repeat-string": "^1.6.1",
+        "to-regex-range": "^2.1.0"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^1.0.0",
+        "gulp-format-md": "^0.1.12",
+        "minimist": "^1.2.0",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "micromatch",
+            "to-regex-range"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e5a21feaac23f3f34bb4d7ca8e65393e18b451b6",
+      "_id": "fill-range@4.0.0",
+      "_shasum": "d544811d428f98eb06a63dc402d2403c328c38f7",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d544811d428f98eb06a63dc402d2403c328c38f7",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-4.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fill-range-4.0.0.tgz_1492928233145_0.05832168669439852"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "5.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Edo Rivai",
+          "url": "edo.rivai.nl"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "extend-shallow": "^2.0.1",
+        "is-number": "^4.0.0",
+        "repeat-string": "^1.6.1",
+        "to-regex-range": "^2.1.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^2.0.0",
+        "gulp-format-md": "^1.0.0",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "micromatch",
+            "to-regex-range"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "24a18b1aeb322522e13e438c96697d511ae81f9c",
+      "_id": "fill-range@5.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-df1KCjiiQ8GoKIe6n2jLknXEoE51D7faMl4CEyu5dHCkVG3fkQUW3mI2x9zPpZ/eqH5Y7c8fno1BXbCmKzQQgA==",
+        "shasum": "c75d61ddaf3205412a43549f0d63b8a15aa7c9e0",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fill-range-5.0.0.tgz_1509513246131_0.3813085681758821"
+      },
+      "directories": {}
+    },
+    "2.2.4": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.",
+      "version": "2.2.4",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^2.1.0",
+        "isobject": "^2.0.0",
+        "randomatic": "^3.0.0",
+        "repeat-element": "^1.1.2",
+        "repeat-string": "^1.5.2"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "gulp-format-md": "^1.0.0",
+        "should": "^13.2.1"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "sh"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "micromatch",
+          "randomatic"
+        ]
+      },
+      "readme": "# fill-range [![NPM version](https://img.shields.io/npm/v/fill-range.svg?style=flat)](https://www.npmjs.com/package/fill-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![NPM total downloads](https://img.shields.io/npm/dt/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/fill-range.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/fill-range)\n\n> Fill in a range of numbers or letters, optionally passing an increment or multiplier to use.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n- [Install](#install)\n- [Usage](#usage)\n  * [Invalid ranges](#invalid-ranges)\n  * [Custom function](#custom-function)\n  * [Special characters](#special-characters)\n    + [plus](#plus)\n    + [pipe and tilde](#pipe-and-tilde)\n    + [angle bracket](#angle-bracket)\n    + [question mark](#question-mark)\n- [About](#about)\n\n_(TOC generated by [verb](https://github.com/verbose/verb) using [markdown-toc](https://github.com/jonschlinkert/markdown-toc))_\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save fill-range\n```\n\n## Usage\n\n```js\nvar range = require('fill-range');\n\nrange('a', 'e');\n//=> ['a', 'b', 'c', 'd', 'e']\n```\n\n**Params**\n\n```js\nrange(start, stop, step, options, fn);\n```\n\n* `start`: **{String|Number}** the number or letter to start with\n* `end`: **{String|Number}** the number or letter to end with\n* `step`: **{String|Number}** optionally pass the step to use. works for letters or numbers.\n* `options`: **{Object}**:\n  - `makeRe`: return a regex-compatible string (still returned as an array for consistency)\n  - `step`: pass the step on the options as an alternative to passing it as an argument\n  - `silent`: `true` by default, set to false to throw errors for invalid ranges.\n* `fn`: **{Function}** optionally [pass a function](#custom-function) to modify each character\n\n**Examples**\n\n```js\nrange(1, 3)\n//=> ['1', '2', '3']\n\nrange('1', '3')\n//=> ['1', '2', '3']\n\nrange('0', '-5')\n//=> [ '0', '-1', '-2', '-3', '-4', '-5' ]\n\nrange(-9, 9, 3)\n//=> [ '-9', '-6', '-3', '0', '3', '6', '9' ])\n\nrange('-1', '-10', '-2')\n//=> [ '-1', '-3', '-5', '-7', '-9' ]\n\nrange('1', '10', '2')\n//=> [ '1', '3', '5', '7', '9' ]\n\nrange('a', 'e')\n//=> ['a', 'b', 'c', 'd', 'e']\n\nrange('a', 'e', 2)\n//=> ['a', 'c', 'e']\n\nrange('A', 'E', 2)\n//=> ['A', 'C', 'E']\n```\n\n### Invalid ranges\n\nWhen an invalid range is passed, `null` is returned.\n\n```js\nrange('1.1', '2');\n//=> null\n\nrange('a', '2');\n//=> null\n\nrange(1, 10, 'foo');\n//=> null\n```\n\nIf you want errors to be throw, pass `silent: false` on the options:\n\n### Custom function\n\nOptionally pass a custom function as the third or fourth argument:\n\n```js\nrange('a', 'e', function (val, isNumber, pad, i) {\n  if (!isNumber) {\n    return String.fromCharCode(val) + i;\n  }\n  return val;\n});\n//=> ['a0', 'b1', 'c2', 'd3', 'e4']\n```\n\n### Special characters\n\nA special character may be passed as the third arg instead of a step increment. These characters can be pretty useful for brace expansion, creating file paths, test fixtures and similar use case.\n\n```js\nrange('a', 'z', SPECIAL_CHARACTER_HERE);\n```\n\n**Supported characters**\n\n* `+`: repeat the given string `n` times\n* `|`: create a regex-ready string, instead of an array\n* `>`: join values to single array element\n* `?`: randomize the given pattern using [randomatic]\n\n#### plus\n\nCharacter: _(`+`)_\n\nRepeat the first argument the number of times passed on the second argument.\n\n**Examples:**\n\n```js\nrange('a', 3, '+');\n//=> ['a', 'a', 'a']\n\nrange('abc', 2, '+');\n//=> ['abc', 'abc']\n```\n\n#### pipe and tilde\n\nCharacters: _(`|` and `~`)_\n\nCreates a regex-capable string (either a logical `or` or a character class) from the expanded arguments.\n\n**Examples:**\n\n```js\nrange('a', 'c', '|');\n//=> ['(a|b|c)'\n\nrange('a', 'c', '~');\n//=> ['[a-c]'\n\nrange('a', 'z', '|5');\n//=> ['(a|f|k|p|u|z)'\n```\n\n**Automatic separator correction**\n\nTo avoid this error:\n\n> `Range out of order in character class`\n\nFill-range detects invalid sequences and uses the correct syntax. For example:\n\n**invalid** (regex)\n\nIf you pass these:\n\n```js\nrange('a', 'z', '~5');\n// which would result in this\n//=> ['[a-f-k-p-u-z]']\n\nrange('10', '20', '~');\n// which would result in this\n//=> ['[10-20]']\n```\n\n**valid** (regex)\n\nfill-range corrects them to this:\n\n```js\nrange('a', 'z', '~5');\n//=> ['(a|f|k|p|u|z)'\n\nrange('10', '20', '~');\n//=> ['(10-20)'\n```\n\n#### angle bracket\n\nCharacter: _(`>`)_\n\nJoins all values in the returned array to a single value.\n\n**Examples:**\n\n```js\nrange('a', 'e', '>');\n//=> ['abcde']\n\nrange('5', '8', '>');\n//=> ['5678']\n\nrange('2', '20', '2>');\n//=> ['2468101214161820']\n```\n\n#### question mark\n\nCharacter: _(`?`)_\n\nUses [randomatic] to generate randomized alpha, numeric, or alpha-numeric patterns based on the provided arguments.\n\n**Examples:**\n\n_(actual results would obviously be randomized)_\n\nGenerate a 5-character, uppercase, alphabetical string:\n\n```js\nrange('A', 5, '?');\n//=> ['NSHAK']\n```\n\nGenerate a 5-digit random number:\n\n```js\nrange('0', 5, '?');\n//=> ['36583']\n```\n\nGenerate a 10-character alpha-numeric string:\n\n```js\nrange('A0', 10, '?');\n//=> ['5YJD60VQNN']\n```\n\nSee the [randomatic] repo for all available options and or to create issues or feature requests related to randomization.\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [braces](https://www.npmjs.com/package/braces): Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support… [more](https://github.com/micromatch/braces) | [homepage](https://github.com/micromatch/braces \"Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.\")\n* [expand-range](https://www.npmjs.com/package/expand-range): Fast, bash-like range expansion. Expand a range of numbers or letters, uppercase or lowercase. Used… [more](https://github.com/jonschlinkert/expand-range) | [homepage](https://github.com/jonschlinkert/expand-range \"Fast, bash-like range expansion. Expand a range of numbers or letters, uppercase or lowercase. Used by [micromatch].\")\n* [is-glob](https://www.npmjs.com/package/is-glob): Returns `true` if the given string looks like a glob pattern or an extglob pattern… [more](https://github.com/jonschlinkert/is-glob) | [homepage](https://github.com/jonschlinkert/is-glob \"Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet\")\n* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/micromatch/micromatch \"Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 111 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [paulmillr](https://github.com/paulmillr) |\n| 1 | [edorivai](https://github.com/edorivai) |\n| 1 | [realityking](https://github.com/realityking) |\n| 1 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on May 08, 2018._",
+      "readmeFilename": "README.md",
+      "gitHead": "516e5ad9e40486c168b14062158d136aa3163f2b",
+      "_id": "fill-range@2.2.4",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-cnrcCbj01+j2gTG921VZPnHbjmdAf8oQV/iGeV2kZxGSyfYjjTyY79ErsK1WJWMpw6DaApEX72binqJE+/d+5Q==",
+        "shasum": "eb1e773abb056dcd8df2bfdf6af59b8b3a936565",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-2.2.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8docCRA9TVsSAnZWagAAW0YQAICq5oyYdKA/14W5RLQi\n9kUoWP84GurnrMLkqnpGfCnizMNsLWBwy1DNIvIA68U0ZffnTcZ54IBBlvut\n8V8iyYW32nTRkCobajyXfnt191dC0xMbuQ8z72QBX0BZ9HqNRj/f+9Ae+AgO\n2pffjKv28vUXvPr+Ive3Orw5wqw5WyRVbognrELjvK10ursPRrvSn3JLRNo4\n74dTHntxANmUpgAHedxK/g2e5Bb5NbHmPjd1X2Vb6hEAtZhI2pa9+LIRhSdW\nZ/hxepMfMb14a5VmbmSVR/zDSnpG5VB+0VnEoVn4MP6ktrxUcprD7AUAy8ms\nVS2Cqw//LCW1DM4iFqigFGH0wyrPqmq/fsvMkzUJ31VBe1aGPvZfnF2GkGkp\nLz0FuOFlYKL0yCt2AjnZqVov6mzHDmTtTnZSa+woLpR6IGaCic1rSZqz42wz\ng/dgPfIFhaJxhMkvDvJqgzuvTk9gLQZrOMHKdxJVmgJKFtzUKdTkFJ0IvDUB\nd8+V7yWy4dZgQvVVIksRLr3x+394ez0qw2y1Wbi5HHLQiWniKjOTFNov949K\nfHnXYhpYyHzJEfQGu6GrPpxkQa5+N23LOapvWqdq0vwQ22geP29IwM3xlF3n\nb18j8C4kdtyAAEOwjF68UJUWGKwY1g25hWa7Li+9ZoCpKETK9RvFygFMGvTf\nmKQf\r\n=8oPR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "elan.shanker+npm@gmail.com",
+          "name": "es128"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "paul@paulmillr.com",
+          "name": "paulmillr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fill-range_2.2.4_1525799451635_0.17654086212587705"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "6.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Edo Rivai",
+          "url": "edo.rivai.nl"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-number": "^7.0.0",
+        "to-regex-range": "^4.0.1"
+      },
+      "devDependencies": {
+        "benchmarked": "^2.0.0",
+        "gulp-format-md": "^1.0.0",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "write": "^1.0.3"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "braces",
+            "expand-range",
+            "micromatch",
+            "to-regex-range"
+          ]
+        },
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "134c90a04a1530874ecdd89658158bae4e3e39d5",
+      "_id": "fill-range@6.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-HaePWycCxz/O/VsefR6fRhhZ+64gSwUAy5GIN1gX+8Z+JPFWvNsz2qaeYLq/hS3RgC06MlkZFSE+4UObHvbpXw==",
+        "shasum": "322a3c8b45991d18d38a03a849661bcc4a32ea63",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-6.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 17246,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbPZ9eCRA9TVsSAnZWagAARSoP/AkyB4u5eCq5hCJtrBrZ\nXqxXbML+zs9G4WyBHzUjnvsMlSvBDh3o+PLn0OOOQbTTn0XR3QPrkrRiFv2b\nSUqxlvNnyC6qqhR6iOYMG5jCSdbr9/nuOctSIdWVlqUHvPJNkeyOU81t9bdv\nLUEMxhySDihHWdSSQqSU3sjQ/p5mvsG3+SdIVhamRA9bTQaHW/LK8GbnZXZN\nL39eqmW3vE6YXx2N4o3YbMh8sfN9D1BJf/9vY+pp9O0G1PnMay9miyjDKIj0\n99iUFGUp/jo+e3twdgb/I6IkI7vXp8bOM8toe7j3CTW7WB0I8dyveSifY2yI\n69Q6zwUgEDBNmwIgysiqRy0wwTgBraelZd3lw+SmZkMWieftSoq9ihlXJa3J\n9cq3V4zmyHqDV/9MM1zwhHSsuVSVvpweLgXAEv/foUu3DR3Uj/J9WPvS2XZi\nBE9U2gL5ooG6AtaZpglzKYBirc0Gcj416sGBwgbldOYXie5pONcYt/guS6ly\nPJWZ/OJv5y0gklQ9JkUKdVrJJujlWW+CIKvy7tplEBelK8Wt2T5Y0qLrjaSt\nGkQsIG6miJptmk8FVdJ2hQ3IobZdac8owRHtDa9Dfz9y2OfkdG6Jr5+QwntJ\n9glrt7tsNScK7Ax+L8hQJXOQ12hzTLWb1gyhwNXgW01wEcHgp8WF66jHA7RP\nArN8\r\n=nbCd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "elan.shanker+npm@gmail.com",
+          "name": "es128"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "paul@paulmillr.com",
+          "name": "paulmillr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fill-range_6.0.0_1530765150365_0.963582853347347"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "7.0.0",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Edo Rivai",
+          "url": "edo.rivai.nl"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "to-regex-range": "^5.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^6.1.1"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "23d5fef5f9e408b83fea152c6fa2d0833aa11e67",
+      "_id": "fill-range@7.0.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-DMDbFBnTeEy/hqngJduKhSMZ3J4gUpKmn2SIhEQehcEfiNsURc7ZkPchGW7B1eJPPTeVEBuC7j6uAgyXYggW8Q==",
+        "shasum": "b53e5948bca86376debf8202fe78c3689e315c63",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16302,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcq0okCRA9TVsSAnZWagAA9FsP/0duzUGEQy65yDJk1rrP\nkTqrIzAuJ2GObfgISZ6MIqB1zE/+XFptE3Z0iUUTT1ia3vBgIMRXG6R56FLM\n3uHF1IHLjTKFKaNJe9lilqk5KpngAKAieAz0S0K+hLEShHdEzaZb1AbWfT3t\nUI+wtimaXwpvfBzdSnKja6X/+iFFRMNdaBrHFDD667N1vSsLwlpGVTDL0uWM\nehdRl2Er0N15NDkxK+Sa0Y1qzuYaUDfX23hbQZT3o/Ii7IZy2wIiryj6giSY\nkJ6F5WWDcKGcmfy9PBsMbsnYz4ZVHAokjGi7x04MmmICIYMSlcKq3bLDYCG2\nZzFSeYidHQurM6SxDzpxeB11ZCg5KqhjXJ3vvf+WhaOU8/cT09iWu2c4FrEM\ntxP4aLICcvW4CaYhYGbkybUbm3g6CHTsbCVXTFeLSeKWs5XfYn5INlLoAwm4\nqLwesdyBo5xtZ5+aSxwrrbAnP5NPYDUJIlGw075doI4BubrNIr9qDyo0lFlw\n2xT4DPxaiW+/lsnyIBzf0jyoBmI6UF7HDXt2d7mtlgL9gmJj1bkuzklXbBHv\nSC0vW89ndHWla1LpFw6YEEzgq7TZO+b8LjMMd1fiHBAIr8P/L2PMSJjbsyWc\nTgRjQQaUDw8uhechrolHZUVwkZCSHQhId5+P8qw44q++C0KrdPUs0CCsCyye\n0B4Z\r\n=Q8SF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "elan.shanker+npm@gmail.com",
+          "name": "es128"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "paul@paulmillr.com",
+          "name": "paulmillr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fill-range_7.0.0_1554729508022_0.5796382644761904"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "fill-range",
+      "description": "Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`",
+      "version": "7.0.1",
+      "homepage": "https://github.com/jonschlinkert/fill-range",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Edo Rivai",
+          "url": "edo.rivai.nl"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Paul Miller",
+          "url": "paulmillr.com"
+        },
+        {
+          "name": "Rouven Weßling",
+          "url": "www.rouvenwessling.de"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/fill-range.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/fill-range/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "to-regex-range": "^5.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^6.1.1"
+      },
+      "keywords": [
+        "alpha",
+        "alphabetical",
+        "array",
+        "bash",
+        "brace",
+        "expand",
+        "expansion",
+        "fill",
+        "glob",
+        "match",
+        "matches",
+        "matching",
+        "number",
+        "numerical",
+        "range",
+        "ranges",
+        "regex",
+        "sh"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "39f421b499d5c97b62e955c179fa34c062aab2a5",
+      "_id": "fill-range@7.0.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
+        "shasum": "1919a6a7c75fe38b2c7c77e5198535da9acdda40",
+        "tarball": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16351,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcq0/MCRA9TVsSAnZWagAA2QoP/jm9y3QOxMY/yATtThb8\n/26EJkG/jUniHQgwcQS0/pDiqAdoY2Lu1paa78TVbTxyT02NtVb8J+uCRl1g\nF77E2GqbOin8ZnNZtxejW6pcl7STljitZZhsSfjMerQ/0VZJUAMy3v7bScM1\np4Beu7KvuYfhSM2PsP7vK0To4K+y+79FAu+6uUiomvSFVEBC80aZ344pKTu+\nnwoYTq6sf9VluazV0MyYrexPCcumIOh3PB/hvmHuG6yOxt41Z1m297Re7WHr\nn074IsouoOa5AQudgc+mKMSe3B1Sw5XhYWwwVAdfEGnmo9bPBGjbLjff99LF\nUv4JpkZX41n+hVGEIGS3SGWqJnNzA+xZtP6hcv6oJ82KtbynlHqJcmPyxlLS\nQ677HCNtP7CcqU7mCzjfJj36GAd0CkYdIeC0GnPUNRTTv/sU3mvUMeFLfXy/\n892Fc8+nELi3RLl2wj3vQRScpJqjMGRWU8sBN4YgplHF27to9aQgs52SlN+p\nfFVftQ4Tf/x5XCZ4G20ZgG2zJ+XiyCU/YAVyRwZSfbiiH8h/QLSqTi4HWev2\n1khy8c5VywCSlLRvWIuq5my9Blzqq4Uqax9AwqOtoxXBDpCCGcooIPXN6+v5\nRJpVw4A6pT5zi6NWkjSYCh9QSuCus2Pa/E0K21JfD9NeEYVqAbp0Mw9GgasV\nHv5J\r\n=06fX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "elan.shanker+npm@gmail.com",
+          "name": "es128"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "paul@paulmillr.com",
+          "name": "paulmillr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fill-range_7.0.1_1554730956068_0.6179347597646205"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# fill-range [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/fill-range.svg?style=flat)](https://www.npmjs.com/package/fill-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![NPM total downloads](https://img.shields.io/npm/dt/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/fill-range.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/fill-range)\n\n> Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save fill-range\n```\n\n## Usage\n\nExpands numbers and letters, optionally using a `step` as the last argument. _(Numbers may be defined as JavaScript numbers or strings)_.\n\n```js\nconst fill = require('fill-range');\n// fill(from, to[, step, options]);\n\nconsole.log(fill('1', '10')); //=> ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']\nconsole.log(fill('1', '10', { toRegex: true })); //=> [1-9]|10\n```\n\n**Params**\n\n* `from`: **{String|Number}** the number or letter to start with\n* `to`: **{String|Number}** the number or letter to end with\n* `step`: **{String|Number|Object|Function}** Optionally pass a [step](#optionsstep) to use.\n* `options`: **{Object|Function}**: See all available [options](#options)\n\n## Examples\n\nBy default, an array of values is returned.\n\n**Alphabetical ranges**\n\n```js\nconsole.log(fill('a', 'e')); //=> ['a', 'b', 'c', 'd', 'e']\nconsole.log(fill('A', 'E')); //=> [ 'A', 'B', 'C', 'D', 'E' ]\n```\n\n**Numerical ranges**\n\nNumbers can be defined as actual numbers or strings.\n\n```js\nconsole.log(fill(1, 5));     //=> [ 1, 2, 3, 4, 5 ]\nconsole.log(fill('1', '5')); //=> [ 1, 2, 3, 4, 5 ]\n```\n\n**Negative ranges**\n\nNumbers can be defined as actual numbers or strings.\n\n```js\nconsole.log(fill('-5', '-1')); //=> [ '-5', '-4', '-3', '-2', '-1' ]\nconsole.log(fill('-5', '5')); //=> [ '-5', '-4', '-3', '-2', '-1', '0', '1', '2', '3', '4', '5' ]\n```\n\n**Steps (increments)**\n\n```js\n// numerical ranges with increments\nconsole.log(fill('0', '25', 4)); //=> [ '0', '4', '8', '12', '16', '20', '24' ]\nconsole.log(fill('0', '25', 5)); //=> [ '0', '5', '10', '15', '20', '25' ]\nconsole.log(fill('0', '25', 6)); //=> [ '0', '6', '12', '18', '24' ]\n\n// alphabetical ranges with increments\nconsole.log(fill('a', 'z', 4)); //=> [ 'a', 'e', 'i', 'm', 'q', 'u', 'y' ]\nconsole.log(fill('a', 'z', 5)); //=> [ 'a', 'f', 'k', 'p', 'u', 'z' ]\nconsole.log(fill('a', 'z', 6)); //=> [ 'a', 'g', 'm', 's', 'y' ]\n```\n\n## Options\n\n### options.step\n\n**Type**: `number` (formatted as a string or number)\n\n**Default**: `undefined`\n\n**Description**: The increment to use for the range. Can be used with letters or numbers.\n\n**Example(s)**\n\n```js\n// numbers\nconsole.log(fill('1', '10', 2)); //=> [ '1', '3', '5', '7', '9' ]\nconsole.log(fill('1', '10', 3)); //=> [ '1', '4', '7', '10' ]\nconsole.log(fill('1', '10', 4)); //=> [ '1', '5', '9' ]\n\n// letters\nconsole.log(fill('a', 'z', 5)); //=> [ 'a', 'f', 'k', 'p', 'u', 'z' ]\nconsole.log(fill('a', 'z', 7)); //=> [ 'a', 'h', 'o', 'v' ]\nconsole.log(fill('a', 'z', 9)); //=> [ 'a', 'j', 's' ]\n```\n\n### options.strictRanges\n\n**Type**: `boolean`\n\n**Default**: `false`\n\n**Description**: By default, `null` is returned when an invalid range is passed. Enable this option to throw a `RangeError` on invalid ranges.\n\n**Example(s)**\n\nThe following are all invalid:\n\n```js\nfill('1.1', '2');   // decimals not supported in ranges\nfill('a', '2');     // incompatible range values\nfill(1, 10, 'foo'); // invalid \"step\" argument\n```\n\n### options.stringify\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\n**Description**: Cast all returned values to strings. By default, integers are returned as numbers.\n\n**Example(s)**\n\n```js\nconsole.log(fill(1, 5));                    //=> [ 1, 2, 3, 4, 5 ]\nconsole.log(fill(1, 5, { stringify: true })); //=> [ '1', '2', '3', '4', '5' ]\n```\n\n### options.toRegex\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\n**Description**: Create a regex-compatible source string, instead of expanding values to an array.\n\n**Example(s)**\n\n```js\n// alphabetical range\nconsole.log(fill('a', 'e', { toRegex: true })); //=> '[a-e]'\n// alphabetical with step\nconsole.log(fill('a', 'z', 3, { toRegex: true })); //=> 'a|d|g|j|m|p|s|v|y'\n// numerical range\nconsole.log(fill('1', '100', { toRegex: true })); //=> '[1-9]|[1-9][0-9]|100'\n// numerical range with zero padding\nconsole.log(fill('000001', '100000', { toRegex: true }));\n//=> '0{5}[1-9]|0{4}[1-9][0-9]|0{3}[1-9][0-9]{2}|0{2}[1-9][0-9]{3}|0[1-9][0-9]{4}|100000'\n```\n\n### options.transform\n\n**Type**: `function`\n\n**Default**: `undefined`\n\n**Description**: Customize each value in the returned array (or [string](#optionstoRegex)). _(you can also pass this function as the last argument to `fill()`)_.\n\n**Example(s)**\n\n```js\n// add zero padding\nconsole.log(fill(1, 5, value => String(value).padStart(4, '0')));\n//=> ['0001', '0002', '0003', '0004', '0005']\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 116 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 4   | [paulmillr](https://github.com/paulmillr) |  \n| 2   | [realityking](https://github.com/realityking) |  \n| 2   | [bluelovers](https://github.com/bluelovers) |  \n| 1   | [edorivai](https://github.com/edorivai) |  \n| 1   | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |  \n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\nPlease consider supporting me on Patreon, or [start your own Patreon page](https://patreon.com/invite/bxpbvm)!\n\n<a href=\"https://www.patreon.com/jonschlinkert\">\n<img src=\"https://c5.patreon.com/external/logo/become_a_patron_button@2x.png\" height=\"50\">\n</a>\n\n### License\n\nCopyright © 2019, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on April 08, 2019._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "elan.shanker+npm@gmail.com",
+      "name": "es128"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    },
+    {
+      "email": "paul@paulmillr.com",
+      "name": "paulmillr"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-08T13:42:40.764Z",
+    "created": "2014-11-25T07:08:17.514Z",
+    "0.1.0": "2014-11-25T07:08:17.514Z",
+    "0.1.1": "2014-11-25T07:26:24.847Z",
+    "0.2.0": "2014-11-25T18:38:44.757Z",
+    "1.0.0": "2015-01-04T18:00:33.433Z",
+    "1.1.0": "2015-01-09T02:51:52.156Z",
+    "1.2.0": "2015-01-09T16:21:12.863Z",
+    "1.3.0": "2015-01-12T00:23:30.192Z",
+    "1.4.0": "2015-01-14T22:03:45.204Z",
+    "1.5.0": "2015-01-24T10:56:51.026Z",
+    "1.6.0": "2015-01-24T11:06:24.383Z",
+    "1.7.0": "2015-01-24T23:27:49.974Z",
+    "1.7.1": "2015-01-24T23:39:53.337Z",
+    "1.8.0": "2015-01-25T05:31:07.083Z",
+    "1.9.0": "2015-01-25T06:03:42.536Z",
+    "2.0.0": "2015-01-26T16:56:12.970Z",
+    "2.1.0": "2015-01-30T13:33:09.891Z",
+    "2.2.0": "2015-02-25T16:21:11.297Z",
+    "2.2.1": "2015-04-07T08:43:18.684Z",
+    "2.2.2": "2015-04-07T08:50:55.860Z",
+    "2.2.3": "2015-12-06T22:15:02.623Z",
+    "3.0.0": "2016-09-15T06:51:38.296Z",
+    "3.0.1": "2016-09-15T06:53:31.812Z",
+    "3.0.2": "2016-09-15T06:59:54.132Z",
+    "3.0.3": "2016-09-15T07:46:33.372Z",
+    "3.1.0": "2017-02-13T05:22:15.663Z",
+    "3.1.1": "2017-02-13T05:29:51.800Z",
+    "4.0.0": "2017-04-23T06:17:15.434Z",
+    "5.0.0": "2017-11-01T05:14:07.216Z",
+    "2.2.4": "2018-05-08T17:10:51.757Z",
+    "6.0.0": "2018-07-05T04:32:30.450Z",
+    "7.0.0": "2019-04-08T13:18:28.205Z",
+    "7.0.1": "2019-04-08T13:42:36.186Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/fill-range",
+  "keywords": [
+    "alpha",
+    "alphabetical",
+    "array",
+    "bash",
+    "brace",
+    "expand",
+    "expansion",
+    "fill",
+    "glob",
+    "match",
+    "matches",
+    "matching",
+    "number",
+    "numerical",
+    "range",
+    "ranges",
+    "regex",
+    "sh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/fill-range.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/fill-range/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Edo Rivai",
+      "url": "edo.rivai.nl"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Paul Miller",
+      "url": "paulmillr.com"
+    },
+    {
+      "name": "Rouven Weßling",
+      "url": "www.rouvenwessling.de"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "users": {
+    "cbosco": true,
+    "xiaobing": true
+  }
+}

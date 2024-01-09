@@ -1,0 +1,403 @@
+{
+  "_id": "filename-regex",
+  "_rev": "14-dc86ffbf8c6a7ee5aba1df6db300410c",
+  "name": "filename-regex",
+  "description": "Regular expression for matching file names, with or without extension.",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "filename-regex",
+      "description": "Regular expression for matching file names, with or without extension.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/regexps/filename-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/filename-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/filename-regex/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/filename-regex/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "base",
+        "basename",
+        "expression",
+        "file",
+        "filename",
+        "filepath",
+        "fs",
+        "match",
+        "name",
+        "path",
+        "regex",
+        "regexp",
+        "regular",
+        "test"
+      ],
+      "_id": "filename-regex@0.1.0",
+      "_shasum": "df1420cf8db5c515f96d79acdc04f8889d849b2b",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "df1420cf8db5c515f96d79acdc04f8889d849b2b",
+        "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "filename-regex",
+      "description": "Regular expression for matching file names, with or without extension.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/regexps/filename-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/filename-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/filename-regex/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/filename-regex/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "base",
+        "basename",
+        "expression",
+        "file",
+        "filename",
+        "filepath",
+        "fs",
+        "match",
+        "name",
+        "path",
+        "regex",
+        "regexp",
+        "regular",
+        "test"
+      ],
+      "_id": "filename-regex@0.2.0",
+      "_shasum": "f872d08e3bd0f61646053cf8324252aab30454d4",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f872d08e3bd0f61646053cf8324252aab30454d4",
+        "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "filename-regex",
+      "description": "Regular expression for matching file names, with or without extension.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/regexps/filename-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/filename-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/filename-regex/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/filename-regex/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "basename",
+        "expression",
+        "file",
+        "filename",
+        "filepath",
+        "match",
+        "name",
+        "path",
+        "regex",
+        "regexp",
+        "regular"
+      ],
+      "gitHead": "5f10cf945655347f1be94ea37d90c3724219b9ff",
+      "_id": "filename-regex@1.0.0",
+      "_shasum": "c4d31dc8552c4129af4781ae3b42014b7a7dd5d9",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c4d31dc8552c4129af4781ae3b42014b7a7dd5d9",
+        "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "filename-regex",
+      "description": "Regular expression for matching file names, with or without extension.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/regexps/filename-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/regexps/filename-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexps/filename-regex/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/regexps/filename-regex/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "basename",
+        "regular expression",
+        "file",
+        "filename",
+        "filepath",
+        "match",
+        "name",
+        "path",
+        "regex",
+        "regexp"
+      ],
+      "gitHead": "aa0f2933322d38cf547ff4c8ced882fbd8422866",
+      "_id": "filename-regex@2.0.0",
+      "_shasum": "996e3e80479b98b9897f15a8a58b3d084e926775",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "996e3e80479b98b9897f15a8a58b3d084e926775",
+        "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "filename-regex",
+      "description": "Regular expression for matching file names, with or without extension.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/regexhq/filename-regex",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/regexhq/filename-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/regexhq/filename-regex/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "keywords": [
+        "basename",
+        "file",
+        "filename",
+        "filepath",
+        "match",
+        "name",
+        "path",
+        "regex",
+        "regexp",
+        "regular expression"
+      ],
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12"
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "821fec482acdb1ce3f23a804ce8a86724d02b4e6",
+      "_id": "filename-regex@2.0.1",
+      "_shasum": "c1c4b9bee3e09725ddb106b75c1e301fe2f18b26",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "c1c4b9bee3e09725ddb106b75c1e301fe2f18b26",
+        "tarball": "https://registry.npmjs.org/filename-regex/-/filename-regex-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/filename-regex-2.0.1.tgz_1493403379598_0.7071489882655442"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# filename-regex [![NPM version](https://img.shields.io/npm/v/filename-regex.svg?style=flat)](https://www.npmjs.com/package/filename-regex) [![NPM monthly downloads](https://img.shields.io/npm/dm/filename-regex.svg?style=flat)](https://npmjs.org/package/filename-regex)  [![NPM total downloads](https://img.shields.io/npm/dt/filename-regex.svg?style=flat)](https://npmjs.org/package/filename-regex) [![Linux Build Status](https://img.shields.io/travis/regexhq/filename-regex.svg?style=flat&label=Travis)](https://travis-ci.org/regexhq/filename-regex)\n\n> Regular expression for matching file names, with or without extension.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save filename-regex\n```\n\n## Usage\n\n```js\nvar regex = require('filename-regex');\n\n'a/b/c/d.min.js'.match(regex());\n//=> match[0] = 'd.min.js'\n\n'a/b/c/.dotfile'.match(regex());\n//=> match[0] = '.dotfile'\n```\n\n## About\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.4.3, on April 28, 2017._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-12-06T10:59:25.377Z",
+    "created": "2014-12-28T17:19:46.796Z",
+    "0.1.0": "2014-12-28T17:19:46.796Z",
+    "0.2.0": "2014-12-31T10:09:13.976Z",
+    "1.0.0": "2015-01-13T05:11:48.590Z",
+    "2.0.0": "2015-01-24T13:48:53.313Z",
+    "2.0.1": "2017-04-28T18:16:20.150Z"
+  },
+  "homepage": "https://github.com/regexhq/filename-regex",
+  "keywords": [
+    "basename",
+    "file",
+    "filename",
+    "filepath",
+    "match",
+    "name",
+    "path",
+    "regex",
+    "regexp",
+    "regular expression"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regexhq/filename-regex.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/regexhq/filename-regex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "edloidas": true,
+    "arteffeckt": true,
+    "rocket0191": true,
+    "xtx1130": true
+  },
+  "_attachments": {}
+}

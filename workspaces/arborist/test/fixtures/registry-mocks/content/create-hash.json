@@ -1,0 +1,586 @@
+{
+  "_id": "create-hash",
+  "_rev": "24-04a1cdd07224ad75c01d73a11d231c62",
+  "name": "create-hash",
+  "description": "create hashes for browserify",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "create-hash",
+      "version": "1.0.0",
+      "description": "create hashes for browserify",
+      "main": "create-hash.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:crypto-browserify/crypto-createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/crypto-createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "ripemd160": "^0.2.1",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "2cc3ae81f75634e1263e1fb643c734392edb7bf0",
+      "_id": "create-hash@1.0.0",
+      "_shasum": "4a8e85fb9d1cdef2fb31cae6871a5a8ef6cbe37c",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4a8e85fb9d1cdef2fb31cae6871a5a8ef6cbe37c",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "create-hash",
+      "version": "1.0.1",
+      "description": "create hashes for browserify",
+      "main": "create-hash.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:crypto-browserify/crypto-createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/crypto-createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "ripemd160": "^1.0.0",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "c5a7283804d4231d0f721f703cd60220ff7becd1",
+      "_id": "create-hash@1.0.1",
+      "_shasum": "e8204cf689b05c74c984b380f62a57de0e99a09a",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e8204cf689b05c74c984b380f62a57de0e99a09a",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "create-hash",
+      "version": "1.0.2",
+      "description": "create hashes for browserify",
+      "browser": "create-hash.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:crypto-browserify/crypto-createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/crypto-createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/crypto-createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "ripemd160": "^1.0.0",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "541763f999b2b4ffad9b23327a1df81579ba3fa8",
+      "_id": "create-hash@1.0.2",
+      "_shasum": "3cff6282a2bf1fa528b9ca8f7c1049535170776a",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3cff6282a2bf1fa528b9ca8f7c1049535170776a",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "create-hash",
+      "version": "1.1.0",
+      "description": "create hashes for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:crypto-browserify/createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "ripemd160": "^1.0.0",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "08badfc3bee31ac9c7b9310d9bb8f64f17218d90",
+      "_id": "create-hash@1.1.0",
+      "_shasum": "c2ab96b5d4ece5f22df2ef4306803d14da6931e7",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c2ab96b5d4ece5f22df2ef4306803d14da6931e7",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "create-hash",
+      "version": "1.1.1",
+      "description": "create hashes for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:crypto-browserify/createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "ripemd160": "^1.0.0",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "dcc25f9e0b66d07fbf76d13e2616ea4c34cbcc90",
+      "_id": "create-hash@1.1.1",
+      "_shasum": "a55424f97b5369bfb2a97e53bd9b7a1aa6dd3a17",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a55424f97b5369bfb2a97e53bd9b7a1aa6dd3a17",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "create-hash",
+      "version": "1.1.2",
+      "description": "create hashes for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.1",
+        "inherits": "^2.0.1",
+        "ripemd160": "^1.0.0",
+        "sha.js": "^2.3.6"
+      },
+      "gitHead": "426cefe8cae9feddda5af336d34e1d83bed13579",
+      "_id": "create-hash@1.1.2",
+      "_shasum": "51210062d7bb7479f6c65bb41a92208b1d61abad",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "51210062d7bb7479f6c65bb41a92208b1d61abad",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "create-hash",
+      "version": "1.1.3",
+      "description": "create hashes for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script standard && npm run-script unit",
+        "unit": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^5.3.1",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.1",
+        "inherits": "^2.0.1",
+        "ripemd160": "^2.0.0",
+        "sha.js": "^2.4.0"
+      },
+      "gitHead": "d78f61ebe25078d0020cd4b7088a9e745078db30",
+      "_id": "create-hash@1.1.3",
+      "_shasum": "606042ac8b9262750f483caddab0f5819172d8fd",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "606042ac8b9262750f483caddab0f5819172d8fd",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-hash-1.1.3.tgz_1494508195809_0.8463289202190936"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "create-hash",
+      "version": "1.2.0",
+      "description": "create hashes for browserify",
+      "browser": "browser.js",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script standard && npm run-script unit",
+        "unit": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/createHash.git"
+      },
+      "keywords": [
+        "crypto"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHash/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHash",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "safe-buffer": "^5.0.1",
+        "standard": "^10.0.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^4.6.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.1",
+        "inherits": "^2.0.1",
+        "md5.js": "^1.3.4",
+        "ripemd160": "^2.0.1",
+        "sha.js": "^2.4.0"
+      },
+      "gitHead": "6514b6ce14b5c097f1411b1a4bce095cbb115a56",
+      "_id": "create-hash@1.2.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-z00bCGNHDG8mHAkP7CtT1qVu+bFQUPjYq/4Iv3C3kWjTFV10zIjfSoeqXo9Asws8gwSHDGj/hl2u4OGIjapeCg==",
+        "shasum": "889078af11a63756bcfb59bd221996be3a9ef196",
+        "tarball": "https://registry.npmjs.org/create-hash/-/create-hash-1.2.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 5214
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-hash_1.2.0_1523451264591_0.41127376643860547"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# create-hash\n\n[![Build Status](https://travis-ci.org/crypto-browserify/createHash.svg)](https://travis-ci.org/crypto-browserify/createHash)\n\nNode style hashes for use in the browser, with native hash functions in node.\n\nAPI is the same as hashes in node:\n```js\nvar createHash = require('create-hash')\nvar hash = createHash('sha224')\nhash.update('synchronous write') // optional encoding parameter\nhash.digest() // synchronously get result with optional encoding parameter\n\nhash.write('write to it as a stream')\nhash.end() // remember it's a stream\nhash.read() // only if you ended it as a stream though\n```\n\nTo get the JavaScript version even in node do `require('create-hash/browser')`\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T16:56:54.352Z",
+    "created": "2015-01-14T13:04:23.530Z",
+    "1.0.0": "2015-01-14T13:04:23.530Z",
+    "1.0.1": "2015-01-14T13:17:46.336Z",
+    "1.0.2": "2015-01-14T15:20:25.599Z",
+    "1.1.0": "2015-01-16T12:44:28.344Z",
+    "1.1.1": "2015-03-18T08:34:45.526Z",
+    "1.1.2": "2015-09-27T23:01:28.933Z",
+    "1.1.3": "2017-05-11T13:10:18.358Z",
+    "1.2.0": "2018-04-11T12:54:24.678Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/createHash",
+  "keywords": [
+    "crypto"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/crypto-browserify/createHash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/createHash/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "larrychen": true,
+    "mohamadou": true
+  }
+}

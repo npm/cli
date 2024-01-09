@@ -1,0 +1,1568 @@
+{
+  "_id": "dot-prop",
+  "_rev": "44-9f4d12fb12ef6d043b55a65596d9cb9c",
+  "name": "dot-prop",
+  "description": "Get, set, or delete a property from a nested object using a dot path",
+  "dist-tags": {
+    "latest": "6.0.0",
+    "legacy": "4.2.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "dot-prop",
+      "version": "1.0.0",
+      "description": "Get a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "access"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "49293242e30040a5e2a6b1379a841f8825984b7e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@1.0.0",
+      "_shasum": "63338710356aefecd03cbf426411e8e2742bfac5",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "63338710356aefecd03cbf426411e8e2742bfac5",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "dot-prop",
+      "version": "1.0.1",
+      "description": "Get a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "access"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "d6bcff06ba32485cc6b2be901f70c0abc49920b5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@1.0.1",
+      "_shasum": "bff7c4ec7108efb3c8cb5b87f4b1426821b32139",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bff7c4ec7108efb3c8cb5b87f4b1426821b32139",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "dot-prop",
+      "version": "2.0.0",
+      "description": "Get or set a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "access",
+        "notation"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "dca46707135af1ec7155cf953a8bea7145728ff1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@2.0.0",
+      "_shasum": "2f753317b5cd3a038bbee7bba865bdc7ca1b3ba8",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2f753317b5cd3a038bbee7bba865bdc7ca1b3ba8",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "dot-prop",
+      "version": "2.1.0",
+      "description": "Get or set a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "access",
+        "notation"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "c91819235c4c2afb394b2d7b1a2df4605c7e2282",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@2.1.0",
+      "_shasum": "6bd199d80792d2323a2b7eb8175f4b32d76a7e72",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6bd199d80792d2323a2b7eb8175f4b32d76a7e72",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "dot-prop",
+      "version": "2.2.0",
+      "description": "Get or set a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "04e07dda49c69a407fb033e9a107acd718afd841",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@2.2.0",
+      "_shasum": "2adc26ec8fb4913282c074ec2eb189781394e89d",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2adc26ec8fb4913282c074ec2eb189781394e89d",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "dot-prop",
+      "version": "2.3.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava && xo"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "21870dfacd2c4b1f47937d4503b605fc6c8eeb84",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@2.3.0",
+      "_shasum": "271fc1eff8c6302b65bf1b4659324e1f36725013",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "271fc1eff8c6302b65bf1b4659324e1f36725013",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-2.3.0.tgz_1456390089590_0.9987524345051497"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "dot-prop",
+      "version": "2.4.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/dot-prop"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava && xo",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.6.1",
+        "xo": "*"
+      },
+      "gitHead": "c06a56f902db988af75da9955512556542d9fbe4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop",
+      "_id": "dot-prop@2.4.0",
+      "_shasum": "848e28f7f1d50740c6747ab3cb07670462b6f89c",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "848e28f7f1d50740c6747ab3cb07670462b6f89c",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-2.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-2.4.0.tgz_1456910059548_0.3175659680273384"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "dot-prop",
+      "version": "3.0.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.7.0",
+        "xo": "*"
+      },
+      "gitHead": "e50dd5becf66fda1e2307506eeb3162c0f9f3bb8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@3.0.0",
+      "_shasum": "1b708af094a49c9a0e7dbcad790aba539dac1177",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1b708af094a49c9a0e7dbcad790aba539dac1177",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-3.0.0.tgz_1463682431324_0.5166875969152898"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "dot-prop",
+      "version": "4.0.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.7.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "e03af43093bb2d44dcac99426767619c9aa2e773",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@4.0.0",
+      "_shasum": "9cbe8b4c47a12033d8c4e20be33db9a8f80bd188",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9cbe8b4c47a12033d8c4e20be33db9a8f80bd188",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-4.0.0.tgz_1473005808069_0.715334446169436"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "dot-prop",
+      "version": "4.1.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.7.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "d49fb11519d5cbb7974ec3d3b5b57719f3c17514",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@4.1.0",
+      "_shasum": "eb29eac57dfa31fda1edef50ea462ee3d38ff3ab",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.2.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "eb29eac57dfa31fda1edef50ea462ee3d38ff3ab",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-4.1.0.tgz_1480265156334_0.7113023274578154"
+      },
+      "directories": {}
+    },
+    "4.1.1": {
+      "name": "dot-prop",
+      "version": "4.1.1",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.7.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "49f0809db1201f2cf13735de4f3631191a692658",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@4.1.1",
+      "_shasum": "a8493f0b7b5eeec82525b5c7587fa7de7ca859c1",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a8493f0b7b5eeec82525b5c7587fa7de7ca859c1",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/dot-prop-4.1.1.tgz_1487442351691_0.9279007718432695"
+      },
+      "directories": {}
+    },
+    "4.2.0": {
+      "name": "dot-prop",
+      "version": "4.2.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "matcha": "^0.7.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "70f7ed8e5dfe72c726bebe9cef5c85c1fb3cd767",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@4.2.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tUMXrxlExSW6U2EXiiKGSBVdYgtV8qlHL+C10TsW4PURY/ic+eaysnSkwB4kA/mBlCyy/IKDJ+Lc3wbWeaXtuQ==",
+        "shasum": "1f19e0c2e1aa0e32797c49799f2837ac6af69c57",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop-4.2.0.tgz_1500926929238_0.7274610283784568"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "dot-prop",
+      "version": "5.0.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "3de4456a52fa1bb4b6a06c74e8053e4c40ac0f34",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-RTmaF2jx3nOBO2GvtFqjnDLycjFUMqt+2pwRx7JVYa81lDauoj9aNkyrJI2ikR58FbBIchiIlRiGG+muLJ4oHQ==",
+        "shasum": "64b7968af349c3a9f966aa12658dbd5829f6b953",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8377,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqMpNCRA9TVsSAnZWagAAmLIP/Rz+2xKrq9RuGMVQBISb\npGOLP456AS7ETuwFwQWn4k6U1IypiMZCPuOZk5LojGYcztTn/8H+aOgO7RE2\nUNzreGqoDpNG2DxxsctGZbmjhy1elp6BKG5dlfxwUdhqbZkZeFz9Lsbvrs3g\nHj9wikmXXBUMeW1NEMonFd/6RWa04hnZx3RaA1RSVXhUFKPC5qW8vl13qa0M\nyL8idUOiQ7Jg1II1FG9M00ucDXMMW45e6m8KXntixysNIBB54gfD9BDM8HlH\n5/GF1AYkRtyupz721HbZrrM5zpq9a7+hhg8qpFiqnYyJ/T05zCTkYcoS7V8M\nW3PaMmcNWoTDBh8BrkVUwkqo9yp1Jm90S4uFfdNR6XVXCR4wwfDrDu7KROnn\n2YFB4+fs9+p80hG3j1IYfA1DSmfgxnf6Mo9qbF1H1//q2onCykq4MCp4EsoW\n7+nZ5HjdL3vwz8NDtUZB9xKSopqsFH6SHyF7iD/J+W02oArT+fIv2IcV69r7\nKhS5ktXUUEXCtBv9HcXEaWAioFM4L3ldvxZInexS3LC6qYjL+dQDcEM0RYiM\nMKHC9Gaz1QXBnzzKQS34eUCC8Z2TAdfL4QTZIw7CMjSPbiDtQAVgrPnbFgr0\nitgjV3bY/aKoSWrnsBMpA9BUx4XesV+6Mr62shHApGdw+wGyGM1guklsN3nB\nFmLY\r\n=bKMK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.0.0_1554565708132_0.6366489959099464"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.1": {
+      "name": "dot-prop",
+      "version": "5.0.1",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "e7b1edff89e80d83521b3b84fae5ecd223ee8b22",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.0.1",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5BKAm3KC6kgHOm5WqekMXd0HHRhilE0aJzBuOqtrPo2RDS2FTaOeuF5CEsHvZ8ETfjC9N3BufL6sxEMV8w/IIA==",
+        "shasum": "e26c283bd1f10aab01e782371a751fb52cc3cb1c",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8724,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc+g8CCRA9TVsSAnZWagAAWBgP/iw7mPMLnHw0vZEVXruj\n7A4RPMF0nUyJkR/wgyL8uvlvv54sEN4hHjmBNsGpNQFTAD2OmdWgQHkqJIcs\n6GdnH2mrG1qeJJaoTBLtROOMZnMPOTp1jH+iJyIAFITa86RXmT7OXAqGXTas\nJ7OV+ndQXH/akkS+JL839wWZhuKLKEW8oWHjte+ZaFUcr9ZxBjq3McqJWo9v\nIm7ZRqjt1Lb7qbPshJcKpauM0XZq+JuoUUbh/+XYcM8n6b7hqnd7PKEDD/7s\nF2tPKazliA4c5dZSw8Ko5l7WuED2hQ4hvMrIpPYkAmvdvF5AtvvQMW9Cd05e\nbt4TJ6YEQvb0HQhTLn+0XbqPALvwUXZeYeSjhVPhORUPBuG6xvBazDGWZ+1k\n0QnqMTJF+Lv6e2rVCHNxQiBiBp8AK5Fg6E+iP5Q49Yio/IlXBjyHXrSYO8VI\nRM76YDJIDF/ZKwmji7dLs3FwSRgkn+nVmiqA+qWlMPxj7Pp8xyUnxzkGBGrA\nXgp4HVg3U57Sa68RUzUgUKfGSbdLmmFM/ZjzJCl32PNIAn4EFStV5VUs9FVh\npBe5PQ6JLjqdA7HKlvsSHCE48DtzFjA9OvfuG0aFJVIrOPp9TxJPHFc2GGnC\n+pUY+qiiVvPdpVyEt+w2twU1tbBcqqczIW/tdVfkdQonXMbNZ3acspsizFg+\nlz7M\r\n=GjvL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.0.1_1559891714147_0.8264957384453273"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "dot-prop",
+      "version": "5.1.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "b8b7124920b909bd829d689242324607e41fddc1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-n1oC6NBF+KM9oVXtjmen4Yo7HyAVWV2UUl50dCYJdw2924K6dX9bf9TTTWaKtYlRn0FEtxG27KS80ayVLixxJA==",
+        "shasum": "bdd8c986a77b83e3fca524e53786df916cabbd8a",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8724,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/94UCRA9TVsSAnZWagAAmhIP/jsMPdAZnv5X0CyPEppZ\nHqQS+wdthFvJNIrE0E24O7TN784vdhUtV96HTnKE4fR2es3YdMNxtNw0r9Wx\naPoUe41ByLojme3mcRqXPvuQi3CxkAWpFBf63UW74Vksdn2VugTHphFnC3hJ\ntHMhb97ar0d6Ci2Bv32AHrRRd2Q038+cVc962HyqmhEOVQGKu8+OjeGCk3zG\n00R5c0wLGlJR6HuzVndba5OprgEK+kgv65BBjcr+wY8fnfcMpyCwpOCS9vLr\nDtTsvo2jwgJwy1BCrX6KnM3+R+zWXmKYA+/VYhwezKH1jGdw4SpgLQf43EVf\nindW8ZADzNJXqMRz0L4pDyHCLcU1Db07sn/ei2f938JMdeow7k5GkE3RfxN7\npdM7O212norEmRwczwaoSXe7jAbyY4hFFZqxMSNTxpzkFuxv8bcjsBbjgFJl\nTRbhPF1YeA8Tn8hev98nq55uEV1AcPKRR8LD1e2iDGbNGaPqDvHFAsw5vHsJ\naIeWq1taFL1XETTBDA+0fcgaQeZDZ5EFYmFAV/v5WhNFqi2ItAMdrHqSv61Z\nu21kUrne0MvUokj8jN4MAMnj2GOSW0YXenmXmbhA1bbLbzbaPqWR7E6nihiC\nfbQX97bfDwGQggTd7MbzqjptsedkpqaIShjaGUV8moGf8RTmhcBRg353FhG5\nS6tr\r\n=IBhd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.1.0_1560272404118_0.561897408858369"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.1": {
+      "name": "dot-prop",
+      "version": "5.1.1",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "0efd03e2bffa6da4ebd69a3e5d43d6656b9b518e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QCHI6Lkf+9fJMpwfAFsTvbiSh6ujoPmhCLiDvD/n4dGtLvHfhuBwPdN6z2x4YSOwwtTcLoO/LP70xELWGF/JVA==",
+        "shasum": "85783b39f2a54e04ae1981489a0ef2b9719bbd7d",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9244,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdsBfvCRA9TVsSAnZWagAAGKYP/1h6fWreCd8PvK9GQuE/\nFOk0hnItLakwyFbgJSM2dzMbeZWGjJ42QJAL/vqbuNpCEVUs9LOVorabe74J\nRIU3oc5Pop/UknVKUOWyi37f3rwFA9CGiXVHKm2Nz28hBiIUpweLzWpXaUOx\nB5s5LxvCNCRpV4f62Zj9xO/fA0ru+ZFfKF/b29l/UdWWNHqXl4caNU4kZCDS\nUH98LmnYyLbC6pDmmQYt1gHF7PuNUsenRlOA/Aqx1D/AyXfmla2dM0sYlTfu\n8GptdAlHVDPAszJEeDNhkmgkuXEvOmCr+gAs6N961DV0ztCB/FOfIptJun4S\nXO28DUpx0kDqHmiihMEJTA9GLYBFJG5CpUx1zlLgg3jwYj+WBG043VRfDsP1\ndpxkuvr6KT58Na+Iouq9XjIKxAHeE30uZ904+feTCmDZhgbr3QIoP1NrKjk8\nNYSYGkYI/GFjlYBaNQhzoTLib7hENKuC6PCupeGcL64eDpKsFTpHMgYOmawH\n2ZpdXA8gt+L1e/H5YA6vdrL2cp0hDjxRZAO/6ct9g4AnXDaykto11oiV88eZ\nlAEIHmftz7iEuGSfpFa7/ZWdLuPYgSW4QJQtauVKgcDFigsHvXuSClo7iFB2\nEoKE7hwmaYi6gpXvFggKo4yluNF8uUW3b7qNnfH1KcC0QFdgMyUa0zgCiOUn\nY39V\r\n=M2Wp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.1.1_1571821550659_0.5116922757574385"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.0": {
+      "name": "dot-prop",
+      "version": "5.2.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "282e984eed35b62321966f21b8db96ab70221ebc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.2.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==",
+        "shasum": "c34ecc29556dc45f1f4c22697b6f4904e0cc4fcb",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9418,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvEhiCRA9TVsSAnZWagAAcO0P/0tJ/8bYe7BQyvw5cHbq\ncrz3BqSeNZGPt4QobxvDG+BQ4+nS6aloJhD5dvAKVRU42Pf1p55pP3cs0Gem\nk9ZtC/n+uYgslbx/TKcFaVvp0hEjTDQgyMAHd7EKjRCa+xQKLbhy6bplYWu0\nYhCpqEmm7wrAYoNogoGmbhVZg42B/WEE9RcIBTAdfGJv8ufZh5aqwhqHtwcv\n7YJFOcMH2ZIlMWLyqYmHEk83aT8WCoYSfCnwNbIHldvSHJCblkZEz6ub9b5F\nsucbh5T0YPJ2wTOSfAJpLeiYx3hStdGSfo1Jg02ErEK+G0vMjNJBxme/bULU\njRk8tpu1EOJx/j4A6OYh4nPcu6XGmjewznMdJbXMYCmucjHnitpFkrmgBEA2\nyuJhN5FyWmQmoPuDgeGv5XT1VKErY6LNeT814pqmmew0kGmUD6mVLQyv3PL4\nUseoi152ncyDPfw5gQ8Yza5h4h3RfK/udp8umjrQaX3G30Pz9yGi0uHboX5A\nXtZDr4eQbLV5SgDUtkzHQD1SyomOODEwah8H6zMmnDPG8rMhHjbHHK2wmPYj\nVTGt2JDpgMs3MbcO1xOzYxBSRMmjKEYioqaIt0DW2xmkJsiGS7FQR3yk9TRR\n/bUFDs+Pf0gNeY8m4KvkAhY9c1eTVohGmZUFlbEJK4SOnuH23tCv4F0W6NuA\nOma3\r\n=hnmr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.2.0_1572620385525_0.4753573366381234"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "dot-prop",
+      "version": "4.2.1",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "bench": "matcha bench.js"
+      },
+      "keywords": [
+        "obj",
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "del",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "1.4.1",
+        "matcha": "^0.7.0",
+        "xo": "0.24.0"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "readme": "# dot-prop [![Build Status](https://travis-ci.org/sindresorhus/dot-prop.svg?branch=master)](https://travis-ci.org/sindresorhus/dot-prop)\n\n> Get, set, or delete a property from a nested object using a dot path\n\n\n## Install\n\n```\n$ npm install --save dot-prop\n```\n\n\n## Usage\n\n```js\nconst dotProp = require('dot-prop');\n\n// getter\ndotProp.get({foo: {bar: 'unicorn'}}, 'foo.bar');\n//=> 'unicorn'\n\ndotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep');\n//=> undefined\n\ndotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep', 'default value');\n//=> 'default value'\n\ndotProp.get({foo: {'dot.dot': 'unicorn'}}, 'foo.dot\\\\.dot');\n//=> 'unicorn'\n\n// setter\nconst obj = {foo: {bar: 'a'}};\ndotProp.set(obj, 'foo.bar', 'b');\nconsole.log(obj);\n//=> {foo: {bar: 'b'}}\n\nconst foo = dotProp.set({}, 'foo.bar', 'c');\nconsole.log(foo);\n//=> {foo: {bar: 'c'}}\n\ndotProp.set(obj, 'foo.baz', 'x');\nconsole.log(obj);\n//=> {foo: {bar: 'b', baz: 'x'}}\n\n// has\ndotProp.has({foo: {bar: 'unicorn'}}, 'foo.bar');\n//=> true\n\n// deleter\nconst obj = {foo: {bar: 'a'}};\ndotProp.delete(obj, 'foo.bar');\nconsole.log(obj);\n//=> {foo: {}}\n\nobj.foo.bar = {x: 'y', y: 'x'};\ndotProp.delete(obj, 'foo.bar.x');\nconsole.log(obj);\n//=> {foo: {bar: {y: 'x'}}}\n```\n\n\n## API\n\n### get(obj, path, [defaultValue])\n\n### set(obj, path, value)\n\nReturns the object.\n\n### has(obj, path)\n\n### delete(obj, path)\n\n#### obj\n\nType: `Object`\n\nObject to get, set, or delete the `path` value.\n\n#### path\n\nType: `string`\n\nPath of the property in the object, using `.` to separate each nested key.\n\nUse `\\\\.` if you have a `.` in the key.\n\nThe following path components are invalid and results in `undefined` being returned: `__proto__`, `prototype`, `constructor`.\n\n#### value\n\nType: `any`\n\nValue to set at `path`.\n\n#### defaultValue\n\nType: `any`\n\nDefault value.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+      "readmeFilename": "readme.md",
+      "gitHead": "c914124f418f55edea27928e89c94d931babe587",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@4.2.1",
+      "_nodeVersion": "6.17.1",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-l0p4+mIuJIua0mhxGoh4a+iNL9bmeK5DvnSVQa6T0OhrVmaEa1XScX5Etc673FePCJOArq/4Pa2cLGODUWTPOQ==",
+        "shasum": "45884194a71fc2cda71cbb4bceb3a4dd2f433ba4",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6350,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfORTACRA9TVsSAnZWagAAL6IP/i46qLJ/TkMIJnf0nEMN\nNGrdGCFn0dsKCZ6J3MGa/iyBaryU5VbgUhJGwM3Fb5Q2nMh/4WVo1GCSq72p\nVSJQTdEWH2xn6Yx45tuByLU1QB7dekMraNr0eHzP6n4DNRzPCo1+x22c4UBt\nWt7ftZFbRvtM2h62+cbYBMhXLfUVOIdJ0/ZXjmW3edJ4OiPVjtLPoSHbADhj\nm7L8gttaovoz4fKz2Upv7lYiS9Wa8u8VldP+WdeqoRHyEHCXYtG3W3tpDpPu\n0zXSVE1Zds//NryPinBaRqHjgc/RqH72q0ZMSip+k5g0DL8euPj3O7K28PzC\nI/pn1/UDLeqDrQGLm8uXiVEejR0rIDxeuTDz9jgmyFqSI0Hjhq6422iDZ2H/\nau3KFWjQbQtNt5YSCC2oXwhTGl7eUBixMVqkpihQzFmnlMS6jSe6JRmuzh6f\nFBwIHC9vLMWHzKMatIpYt/pHJUtFkjiz0I4RneGzSmerxyJF9Az7br9uz+VT\nhcsf/v2TwAPeAzS+vFg8iL4sbnF5V/bq4FHPolJnElMQh/GucHxxPtVlPP1i\niSJwZh506QkfpUVT2yTvtSNMcOdKVkQLrmY8njyILu0YI8T+qLdoKr1uM6IN\njO1JXqQ1mvzIgqhq8dGqsLBNPmHF7VOMOcGnQAKRUiA21mucv2EF2zHoGAvd\nDnno\r\n=Q7Yg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_4.2.1_1597576383498_0.5643396673277659"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.3.0": {
+      "name": "dot-prop",
+      "version": "5.3.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.7.2",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "614e74abdfb49d59637155e77ea651af8f7988e3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@5.3.0",
+      "_nodeVersion": "10.22.0",
+      "_npmVersion": "6.14.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==",
+        "shasum": "90ccce708cd9cd82cc4dc8c3ddd9abdd55b20e88",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-5.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9607,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfVO7aCRA9TVsSAnZWagAALOwQAICNxVTmIYxPXfiZSKIj\nX5JNZDFma1TuYrSWoxOYH6GPf2LgWnHskpbwtnn3Y/vypXwdqZymUay+HgDa\nci8/tr/K1M3GcNimd2NC07K62dJC31vIinEnG8wpTErBx4fP5h1JGYNvX5uk\nn1p+FZsw/DpXhSO5cnmOZPsoIaRNWAPgWDPHucv6m/WfeaBvFA8ioQ4iqa9W\nSZvOdbNyRahvg98mmIPRGpztd8Rw2HeUzalVeKbLmf2Rh1IZp+9qt5MTsbvz\nDFqmemAF6eiVCIzCyVDNfXeb2bmeWRsAAGPNQroc+y4LXB4DLBg/S1XM9Pxr\nqLluxP6HKjSZO2JXxQ9O6ewnSB4PteWFch8T/Ktet347SxUim7R8BdVsoZ7A\nztR5SRsxFgvjBB8y2p63IzOawn/MqrvpLRXuXIwY/a9vdYtIkP9VrXIWmIYl\nJcBUnqI/mrq5GzzXzDt4K9nOhQDdQOglb1vxVeBaBwhYLzSP+gWI4Y9pmwRF\nJ6ApF4v5e1cVTkhBc4qeJJN0/f799i1CFhHSoqQDHDzPwncnJOpfoFogZmxq\n/WDR3CEwZ4xA8IToFNmW0U1mBgShHv4JbnBRMGaWQ6OovdnRk2SQ8SA/Hc17\nEeFrG/+ao6zvl3CKvpTYxR+zjxE40Hc0tOyRSjtGd4lN1Q5QdL3qiqIUZPFC\nMaOU\r\n=j5wd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_5.3.0_1599401690231_0.3119363844218699"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "dot-prop",
+      "version": "6.0.0",
+      "description": "Get, set, or delete a property from a nested object using a dot path",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/dot-prop.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node bench.js"
+      },
+      "keywords": [
+        "object",
+        "prop",
+        "property",
+        "dot",
+        "path",
+        "get",
+        "set",
+        "delete",
+        "access",
+        "notation",
+        "dotty"
+      ],
+      "dependencies": {
+        "is-obj": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "benchmark": "^2.1.4",
+        "tsd": "^0.13.1",
+        "xo": "^0.33.1"
+      },
+      "xo": {
+        "rules": {
+          "@typescript-eslint/method-signature-style": "off"
+        }
+      },
+      "gitHead": "0f8abf46dc35ea806ad046a3f1512455077752b2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/dot-prop/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+      "_id": "dot-prop@6.0.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xCbB8IN3IT+tdgoEPOnJmYTNJDrygGFOmiQEiVa5eAD+JEB1vTgMNhVGRnN5Eex/6amck7cdcrixb1qN9Go+GQ==",
+        "shasum": "bd579fd704d970981c4b05de591db648959f2ebb",
+        "tarball": "https://registry.npmjs.org/dot-prop/-/dot-prop-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10123,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJffi28CRA9TVsSAnZWagAASMcP/AsHbn2zlb1LJONcdUoE\njjWVOx4fnBSDYLf+5Txqu5p790VT8dWZLgYUXiPukEHmQEpRLk2NzcCFl5VW\nXPi7l3dz7YFqwhWBE0koAjYNHmiCAaSY1lVv2ESVRQYfSAmEOMBlCaR2xGCE\nxxAqVeQ19pYk3WlyKE5Yqv0fAJW8FEzrxwlWX5n1kvviQxz657V3knt8LG/7\nA4R2TfnbTIaDsTtNUvpnHK6aPgTijrNuA1ksVRjAQIj5Id3mnhGrU0Pw5cq1\nX7HDQFeASXn5PIGmTNl+Hjq+BBzYgIj7BHO+0MCP/Fg46982yF62eLjeUb1+\nlt189A3qeGLYtR8PBelSLQvomheT6iqXjQxXz62JY6z73kdmzY49pLvHGykb\nmGYkB9ng4/QZQMHMd0WeLe+wUoxcOEaDIZnbpr46Fvvqba/tyOKhpMIaE4pM\nwbl7/9AMSkYlpIlz0TA3b2XNMaKXfJy/FPld/mP792V1FT4KbD1l36y2x0+m\nPjiLBwywg4iAtjfCkWJgpaW0wy585kBmHByDI/OsCbwfsPKEwleDl1+xp4Fg\nGx2hO+yZlcRxJPcacgY643S0K18wv2QKxk7psJ79PUxjia2tCNY2+kGmfnLT\nuNWl2EzU77F2u+y/3mxqAaATNbh/9WsWyXkeAY7+z96aazV8DauUSSSXlcd4\n/xVI\r\n=Dxhz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dot-prop_6.0.0_1602104764275_0.07480599647640318"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# dot-prop [![Build Status](https://travis-ci.com/sindresorhus/dot-prop.svg?branch=master)](https://travis-ci.com/github/sindresorhus/dot-prop)\n\n> Get, set, or delete a property from a nested object using a dot path\n\n## Install\n\n```\n$ npm install dot-prop\n```\n\n## Usage\n\n```js\nconst dotProp = require('dot-prop');\n\n// Getter\ndotProp.get({foo: {bar: 'unicorn'}}, 'foo.bar');\n//=> 'unicorn'\n\ndotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep');\n//=> undefined\n\ndotProp.get({foo: {bar: 'a'}}, 'foo.notDefined.deep', 'default value');\n//=> 'default value'\n\ndotProp.get({foo: {'dot.dot': 'unicorn'}}, 'foo.dot\\\\.dot');\n//=> 'unicorn'\n\n// Setter\nconst object = {foo: {bar: 'a'}};\ndotProp.set(object, 'foo.bar', 'b');\nconsole.log(object);\n//=> {foo: {bar: 'b'}}\n\nconst foo = dotProp.set({}, 'foo.bar', 'c');\nconsole.log(foo);\n//=> {foo: {bar: 'c'}}\n\ndotProp.set(object, 'foo.baz', 'x');\nconsole.log(object);\n//=> {foo: {bar: 'b', baz: 'x'}}\n\n// Has\ndotProp.has({foo: {bar: 'unicorn'}}, 'foo.bar');\n//=> true\n\n// Deleter\nconst object = {foo: {bar: 'a'}};\ndotProp.delete(object, 'foo.bar');\nconsole.log(object);\n//=> {foo: {}}\n\nobject.foo.bar = {x: 'y', y: 'x'};\ndotProp.delete(object, 'foo.bar.x');\nconsole.log(object);\n//=> {foo: {bar: {y: 'x'}}}\n```\n\n## API\n\n### get(object, path, defaultValue?)\n\nGet the value of the property at the given path.\n\nReturns the value if any.\n\n### set(object, path, value)\n\nSet the property at the given path to the given value.\n\nReturns the object.\n\n### has(object, path)\n\nCheck whether the property at the given path exists.\n\nReturns a boolean.\n\n### delete(object, path)\n\nDelete the property at the given path.\n\nReturns a boolean of whether the property existed before being deleted.\n\n#### object\n\nType: `object`\n\nObject to get, set, or delete the `path` value.\n\nYou are allowed to pass in `undefined` as the object to the `get` and `has` functions.\n\n#### path\n\nType: `string`\n\nPath of the property in the object, using `.` to separate each nested key.\n\nUse `\\\\.` if you have a `.` in the key.\n\nThe following path components are invalid and results in `undefined` being returned: `__proto__`, `prototype`, `constructor`.\n\n#### value\n\nType: `unknown`\n\nValue to set at `path`.\n\n#### defaultValue\n\nType: `unknown`\n\nDefault value.\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-dot-prop?utm_source=npm-dot-prop&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-07T21:06:06.950Z",
+    "created": "2015-01-08T06:19:18.574Z",
+    "1.0.0": "2015-01-08T06:19:18.574Z",
+    "1.0.1": "2015-01-24T07:27:06.884Z",
+    "2.0.0": "2015-04-28T15:33:37.795Z",
+    "2.1.0": "2015-06-04T12:54:25.273Z",
+    "2.2.0": "2015-06-16T17:22:16.000Z",
+    "2.3.0": "2016-02-25T08:48:11.743Z",
+    "2.4.0": "2016-03-02T09:14:20.082Z",
+    "3.0.0": "2016-05-19T18:27:16.011Z",
+    "4.0.0": "2016-09-04T16:16:51.651Z",
+    "4.1.0": "2016-11-27T16:45:58.307Z",
+    "4.1.1": "2017-02-18T18:25:51.926Z",
+    "4.2.0": "2017-07-24T20:08:50.144Z",
+    "5.0.0": "2019-04-06T15:48:28.290Z",
+    "5.0.1": "2019-06-07T07:15:14.421Z",
+    "5.1.0": "2019-06-11T17:00:04.463Z",
+    "5.1.1": "2019-10-23T09:05:50.892Z",
+    "5.2.0": "2019-11-01T14:59:45.673Z",
+    "4.2.1": "2020-08-16T11:13:03.636Z",
+    "5.3.0": "2020-09-06T14:14:50.395Z",
+    "6.0.0": "2020-10-07T21:06:04.374Z"
+  },
+  "homepage": "https://github.com/sindresorhus/dot-prop#readme",
+  "keywords": [
+    "object",
+    "prop",
+    "property",
+    "dot",
+    "path",
+    "get",
+    "set",
+    "delete",
+    "access",
+    "notation",
+    "dotty"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/dot-prop.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/dot-prop/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "roryrjb": true,
+    "gmaclennan": true,
+    "akiva": true,
+    "steel1990": true,
+    "ubenzer": true,
+    "rocket0191": true,
+    "tur-nr": true,
+    "itonyyo": true,
+    "mysticatea": true,
+    "kostya.fokin": true,
+    "raybenefield": true,
+    "lamansky": true,
+    "isayme": true,
+    "evocateur": true
+  }
+}

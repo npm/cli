@@ -1,0 +1,160 @@
+{
+  "_id": "killable",
+  "_rev": "4-2bbf1c505f1505f2025d236a24139beb",
+  "name": "killable",
+  "description": "Keeps track of a server's open sockets so they can be destroyed at a moment's notice.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "killable",
+      "version": "1.0.0",
+      "description": "Keeps track of a server's open sockets so they can be destroyed at a moment's notice.",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/marten-de-vries/killable.git"
+      },
+      "keywords": [
+        "express",
+        "http",
+        "server",
+        "socket",
+        "kill",
+        "truncate",
+        "destroy",
+        "restart",
+        "shutdown",
+        "immeadiately"
+      ],
+      "author": {
+        "name": "Marten de Vries"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/marten-de-vries/killable/issues"
+      },
+      "gitHead": "cebeee0433e8bcfae70b313f007f52110e1e113b",
+      "_id": "killable@1.0.0",
+      "scripts": {},
+      "_shasum": "da8b84bd47de5395878f95d64d02f2449fe05e6b",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "commandoline",
+        "email": "marten@marten-de-vries.nl"
+      },
+      "maintainers": [
+        {
+          "name": "commandoline",
+          "email": "marten@marten-de-vries.nl"
+        }
+      ],
+      "dist": {
+        "shasum": "da8b84bd47de5395878f95d64d02f2449fe05e6b",
+        "tarball": "https://registry.npmjs.org/killable/-/killable-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "killable",
+      "version": "1.0.1",
+      "description": "Keeps track of a server's open sockets so they can be destroyed at a moment's notice.",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/marten-de-vries/killable.git"
+      },
+      "keywords": [
+        "express",
+        "http",
+        "server",
+        "socket",
+        "kill",
+        "truncate",
+        "destroy",
+        "restart",
+        "shutdown",
+        "immeadiately"
+      ],
+      "author": {
+        "name": "Marten de Vries"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/marten-de-vries/killable/issues"
+      },
+      "gitHead": "6f7d56fdd366a08fddbe4ff8438c77e8643a5241",
+      "homepage": "https://github.com/marten-de-vries/killable#readme",
+      "_id": "killable@1.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "commandoline",
+        "email": "marten@marten-de-vries.nl"
+      },
+      "dist": {
+        "integrity": "sha512-LzqtLKlUwirEUyl/nicirVmNiPvYs7l5n8wOPP7fyJVpUPkvCnW/vuiXGpylGUlnPDnB7311rARzAt3Mhswpjg==",
+        "shasum": "4c8ce441187a061c7474fb87ca08e2a638194892",
+        "tarball": "https://registry.npmjs.org/killable/-/killable-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2914,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbknv3CRA9TVsSAnZWagAAVxMP/149NZG4OszYW5Yqu7CM\nFjDVoZe3Atjq20aLpd9OzHaoK1p2EuGqLbJUSL/LZiQrm7AgzeuFv5olEO7G\nt9ucneVnVhShdutPyNr6wABbh/hFUFcOzLtnRIq02IJnfe8C8mw7itkqZ4tf\ntQvZdeGQdaX5YNwSfeySpGXa6R4Zd5jiVr0UR4qEhCW7XVwGmejGF0BXRlGF\na/X1H2EeRqmuY59ZYSrEiK//5wedH6lt6wyTtYzOLq78+QJUXzRTmgFDUMBc\ntAOzVanELu+hI8EvEW/PaoPnp/qDCuRJSIkxvwVyy5cjgL8zwWBEdaqLDYxe\nMv/ALBHamcaWjIoJzPdKqy3qGWmjaSJARTUE6uMJWswIog8Qo7eoRBtBpjcP\n6vdsZWT/FhSJx5mH7eSdj8+dibXtwf1fBE/hP97reR0V27GKlqgFnh/3zYQB\n6wnJaoQTQkSo3R59g8PwubsAqVlNyAJ5PS5eXzovKQMxQl7jzabC9Wa7Ula+\npyN2UdEF+wEncWOrsxyrbK9RYZby6wx5WxyQwhb7bbYzAYPcYu6ZFWiU0nhO\necH76lcjs5m7nOquwJR/MzncCgA0/yDkyawh67vK2oeS+VX4O7pgJsDJJSUj\nlTLnsXMzJ1FwDR+7YQzQM0gAARDfTyU/9B0QF573N8kZTI3z9eLokggC7wNH\nlMHC\r\n=8k6t\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "commandoline",
+          "email": "marten@marten-de-vries.nl"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/killable_1.0.1_1536326646938_0.1234895972624459"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "killable\n========\n\nKeeps track of a server's open sockets so they can be destroyed at a\nmoment's notice. This way, the server connection can be killed very\nfast.\n\nInstallation\n------------\n\n```\nnpm install killable\n```\n\nExample usage\n-------------\n\nUsing express:\n('server' in the example is just an ``http.server``, so other frameworks\nor pure Node should work just as well.)\n\n```javascript\nvar killable = require('killable');\n\nvar app = require('express')();\nvar server;\n\napp.route('/', function (req, res, next) {\n  res.send('Server is going down NOW!');\n\n  server.kill(function () {\n    //the server is down when this is called. That won't take long.\n  });\n});\n\nvar server = app.listen(8080);\nkillable(server);\n```\n\nAPI\n---\n\nThe ``killable`` module is callable. When you call it on a Node\n``http.Server`` object, it will add a ``server.kill()`` method on it. It\nreturns the server object.\n\n``server.kill([callback])`` closes all open sockets and calls\n``server.close()``, to which the ``callback`` is passed on.\n\nInspired by: http://stackoverflow.com/a/14636625\n\nLicense\n-------\n\nISC\n",
+  "maintainers": [
+    {
+      "name": "commandoline",
+      "email": "marten@marten-de-vries.nl"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-04T09:15:06.934Z",
+    "created": "2014-12-18T16:27:46.796Z",
+    "1.0.0": "2014-12-18T16:27:46.796Z",
+    "1.0.1": "2018-09-07T13:24:07.048Z"
+  },
+  "keywords": [
+    "express",
+    "http",
+    "server",
+    "socket",
+    "kill",
+    "truncate",
+    "destroy",
+    "restart",
+    "shutdown",
+    "immeadiately"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marten-de-vries/killable.git"
+  },
+  "author": {
+    "name": "Marten de Vries"
+  },
+  "bugs": {
+    "url": "https://github.com/marten-de-vries/killable/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/marten-de-vries/killable#readme",
+  "users": {
+    "daizch": true
+  }
+}

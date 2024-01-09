@@ -1,0 +1,463 @@
+{
+  "_id": "html-escaper",
+  "_rev": "7-0ba75ac45d08a642992b397cbea0a29a",
+  "name": "html-escaper",
+  "description": "fast and safe way to escape and unescape &<>'\" chars",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "html-escaper",
+      "version": "1.0.0",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "html.js",
+      "scripts": {
+        "test": "node ./test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "gitHead": "980c4ed627135dc317c9941c19f78b80f9ce6311",
+      "_id": "html-escaper@1.0.0",
+      "_shasum": "8c9b5cb10348b8933ea9d1dceb6d574ba24b95f8",
+      "_from": ".",
+      "_npmVersion": "2.6.0",
+      "_nodeVersion": "1.4.1",
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c9b5cb10348b8933ea9d1dceb6d574ba24b95f8",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "html-escaper",
+      "version": "1.0.1",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "html.js",
+      "scripts": {
+        "build": "npm run minify && npm test && npm run size",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "minify": "uglifyjs html.js --comments=/^!/ --compress --mangle -o min.js",
+        "size": "cat html.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+        "test": "istanbul cover ./test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "devDependencies": {
+        "coveralls": "^2.13.1",
+        "istanbul": "^0.4.5",
+        "uglify-js": "^3.0.15"
+      },
+      "gitHead": "11700cce7a4e9e087b0a74fece96348bda9df316",
+      "_id": "html-escaper@1.0.1",
+      "_shasum": "ee029e2862674017941355a7f61fc2c7c0a6fd72",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "dist": {
+        "shasum": "ee029e2862674017941355a7f61fc2c7c0a6fd72",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-escaper-1.0.1.tgz_1496780327260_0.589023131178692"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "html-escaper",
+      "version": "2.0.0",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "cjs/index.js",
+      "module": "esm/index.js",
+      "unpkg": "min.js",
+      "scripts": {
+        "build": "npm run cjs && npm run rollup && npm run minify && npm test && npm run size",
+        "cjs": "ascjs esm cjs",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+        "rollup": "rollup --config rollup.config.js",
+        "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+        "test": "istanbul cover ./test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "devDependencies": {
+        "ascjs": "^3.0.1",
+        "coveralls": "^3.0.5",
+        "istanbul": "^0.4.5",
+        "rollup": "^1.17.0",
+        "uglify-js": "^3.6.0"
+      },
+      "gitHead": "a9afff9a565b708b884b41b22db89e2367194e4a",
+      "_id": "html-escaper@2.0.0",
+      "_nodeVersion": "11.15.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-a4u9BeERWGu/S8JiWEAQcdrg9v4QArtP9keViQjGMdff20fBdd8waotXaNmODqBe6uZ3Nafi7K/ho4gCQHV3Ig==",
+        "shasum": "71e87f931de3fe09e56661ab9a29aadec707b491",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 12585,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdOh9tCRA9TVsSAnZWagAAu4YP/Amhr4HXAtHsbvfdf0fZ\nINi/hRw6YhUxSpuvx0XM62nvryhDNntW6+GiWVWPX2J7Ax515vV2LU+2BwMb\nFSmWN5zGYyEheoT0Ro3kTgjHn0b6tqgFg7zw4ciy0DUKK1R6wWXDfWkGrLag\noDigtoFszLNYF3dE91STMIoxPelf7Nwep2LOEGxFBPqY88UAV/P846ApnQt/\nAjZQiACtkSdsU0C46GPqJmmCoYFMqh3MmpDLTQy8QjjE9EpxJr9ONdwMSqXB\n5qspWbUDeYZ7gXoy/3y6JSjbT5qD0Hb8YYmatQh1xzd2XQQGId/iWn/0gRvp\nvPjYGrGEMV7UNQfkNXh78fcbduP6O222VydKLoujmcdxilIUtqwyA49FUVVx\nYRAUutAeiknrxdwcvJ2y/8oHCivux3O3RBUSaM6Z5Nr7xtc9/n9HniDMDx9E\ngQS4YoN1Zn+jTojeXGZozp+xx2yd1d30HgVZkzx+TdIegi98LhkQp3KOrfPk\nAHdbI4aToq2cq0TxTu0B/llsi8JlGvR6tnQJxEO8ayuOm4goip7lJpgCaw3/\n/KnA8w6iXXTFLfN88Le3C8G07rQUlbyAImlnjixpKlpGf0nU5o++eWAzOX11\nfuvFxdBzcUk3D0fObF4IYXZQMadaNgN/dTxBFFduwc3LQAygkrKOjHPYy18f\nsie4\r\n=6+eh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-escaper_2.0.0_1564090220918_0.06255172556387478"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "html-escaper",
+      "version": "2.0.1",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "./cjs/index.js",
+      "unpkg": "min.js",
+      "scripts": {
+        "build": "npm run cjs && npm run rollup && npm run minify && npm test && npm run size",
+        "cjs": "ascjs esm cjs",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+        "rollup": "rollup --config rollup.config.js",
+        "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+        "test": "istanbul cover ./test/index.js"
+      },
+      "module": "./esm/index.js",
+      "type": "module",
+      "exports": {
+        "import": "./esm/index.js",
+        "default": "./cjs/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "devDependencies": {
+        "ascjs": "^3.1.2",
+        "coveralls": "^3.0.11",
+        "istanbul": "^0.4.5",
+        "rollup": "^2.1.0",
+        "uglify-js": "^3.8.0"
+      },
+      "gitHead": "a4f8fdb57d350dd8665531c23962ef62f2e0f75f",
+      "_id": "html-escaper@2.0.1",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.14.3",
+      "dist": {
+        "integrity": "sha512-hNX23TjWwD3q56HpWjUHOKj1+4KKlnjv9PcmBUYKVpga+2cnb9nDx/B1o0yO4n+RZXZdiNxzx6B24C9aNMTkkQ==",
+        "shasum": "beed86b5d2b921e92533aa11bce6d8e3b583dee7",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 13196,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedgzyCRA9TVsSAnZWagAAUuEP/2VibuvvtK+Qs62Se+Ji\nbFaEY/7y8WyT3qWmdZr1PV0gED2U+kIv5qSx8TnvZNQZIAoCDIep91+3dvZ8\ndNx1bpvIxeuF/mwucKQmhmCYDCSjXx83tQ5o28cRH6jYYbNCjwMhogij96ju\nj24wq1oOW6uPQ9YZdNSp+Bg0R9T6GepH8TF2gTb7uWONW525VuWa7bgtwXJ/\ngDKvGCh0NHDs8vloset3ZhE/Op7JkYbovkzEDDK65T3VYiEWmgQ1Fnq8r65+\n1HyOHI/mhOXUnQ1HGdgWVrncZNx9TV56MW6f+OxCUgHdsX1OoPqC823TaxHH\n953J10DtEOAfKpbzAozPflbxjoieAeU2Iv9IdVWglDk6unPAKxlAgpzHsGgU\ncSygnwrAtj0U7jo7ZjdPWXD8k1wWkXk5unNSrBvqYJJ4S0Exu1qtWu6svoVu\nLszwgUVLj2xwSvzz33gEkUCiScV8Gt1gXrBG8V1Nt+smZjj55YSjJDgfwd+J\nfJeEzylAwSOKeu89C3qWVEtOUSPP7LXQ3uoF7D0rKYBUSj1glJ6JN+X8njwm\nehBnFO7to0KoBGpS7mmizBi5FrNtglrd5KEy9Ooo0wzpx0BMFe8k3PtamV5C\nu+z7/23s9mckxvt80XealwDIfAPnFtqcw1padZd6LD95+h97X/dx9YNnqDYG\n11tf\r\n=PKc7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-escaper_2.0.1_1584794865783_0.9755354287849227"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "html-escaper",
+      "version": "2.0.2",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "./cjs/index.js",
+      "unpkg": "min.js",
+      "scripts": {
+        "build": "npm run cjs && npm run rollup && npm run minify && npm test && npm run size",
+        "cjs": "ascjs esm cjs",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+        "rollup": "rollup --config rollup.config.js",
+        "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+        "test": "istanbul cover ./test/index.js"
+      },
+      "module": "./esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "devDependencies": {
+        "ascjs": "^3.1.2",
+        "coveralls": "^3.0.11",
+        "istanbul": "^0.4.5",
+        "rollup": "^2.1.0",
+        "uglify-js": "^3.8.0"
+      },
+      "gitHead": "88f420ad94369f9be46c24ca52eb77e3da224f37",
+      "_id": "html-escaper@2.0.2",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==",
+        "shasum": "dfd60027da36a36dfcbe236262c00a5822681453",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 13092,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeff/JCRA9TVsSAnZWagAAI8EP/2Kl5wIbol1oZbo/YgFs\nzIt4MgAil5cNYL4jTgzogXChBMWcikExOd+rSXpRHpBhTL9wTyfvCiVwVnSt\nWzck4Go2qm90r1d3ctCYSEaidWkX3NQmTT+3E5HT10uufVh3UXKc17cfjJJP\nJnyg4OxLbZy2eqc3Y3Nt01QHpYKrvY0fptMdNmSUZXp4TPFLvFYSUr/wcWDz\nNctBuLcuNOKdaoIEzUUOiF4tPV6PlxpWzZkYH9K2jsyTYYEAF03nzV1UH73y\n6yr/X0R3tctGm4/LzTlV4aps+kHOZ3aYoj8qKSOf4fUIzkMltkZ54jrvfhlt\nKpG9pH4WMfcwPungdmVDMrXB5aZRDnGJh09GzvvQvG92pK4GUe9NlFQTZPrk\n6+dKxryJur9IqQWN2rzu+IbDOILBWBpa9vJ8KKDjZoJZBnaD7I1qUaf4EQuS\n7naeUUI2MrQy3ikGixxXoewbvXsZaYtVyYa98PI2QwRm2UOYcBj0Eizpk7B6\n9qpIF4nNHs+g2XZk7ady9qT4WXa0YBHF4GbdZugSyD7fDgX3UYvNSNHCmOIw\nIDHrWTFMQD68mXbvWs3KkSjcwzK652Uw0BlW6bbRTkTy0ojGghg7pZVEg8Ji\nayCLhU1FwenA7bxPePui3oSRiUcKh/dW/oJndhOksBbZwz9I17cXSK5lyd2H\nxzDE\r\n=vLBP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-escaper_2.0.2_1585315785297_0.8365540046344511"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "html-escaper",
+      "version": "3.0.0",
+      "description": "fast and safe way to escape and unescape &<>'\" chars",
+      "main": "./cjs/index.js",
+      "unpkg": "min.js",
+      "scripts": {
+        "build": "npm run cjs && npm run rollup && npm run minify && npm test && npm run size",
+        "cjs": "ascjs esm cjs",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "minify": "uglifyjs index.js --comments=/^!/ --compress --mangle -o min.js",
+        "rollup": "rollup --config rollup.config.js",
+        "size": "cat index.js | wc -c;cat min.js | wc -c;gzip -c min.js | wc -c",
+        "test": "istanbul cover ./test/index.js"
+      },
+      "module": "./esm/index.js",
+      "type": "module",
+      "exports": {
+        "import": "./esm/index.js",
+        "default": "./cjs/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/WebReflection/html-escaper.git"
+      },
+      "keywords": [
+        "html",
+        "escape",
+        "encode",
+        "unescape",
+        "decode",
+        "entities"
+      ],
+      "author": {
+        "name": "Andrea Giammarchi"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/WebReflection/html-escaper/issues"
+      },
+      "homepage": "https://github.com/WebReflection/html-escaper",
+      "devDependencies": {
+        "ascjs": "^3.1.2",
+        "coveralls": "^3.0.11",
+        "istanbul": "^0.4.5",
+        "rollup": "^2.2.0",
+        "uglify-es": "^3.3.9"
+      },
+      "gitHead": "4bd39d024fba5cd84e9a30e67205b00b8232b120",
+      "_id": "html-escaper@3.0.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-69CofXDozHqdHDl1BZ3YiFp5rYN1qTwSXIVcBhVcZNkzj1vzx6Sko1nT58mzKip19DbKo8lHR9hf6/XeZ9+s3w==",
+        "shasum": "e4c85c7b599ea2f56436ca492ba5bab3ed76b3bf",
+        "tarball": "https://registry.npmjs.org/html-escaper/-/html-escaper-3.0.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 13300,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefgPqCRA9TVsSAnZWagAA6FAP/jwnG9u0GUZqhde1ljq+\nfVZm2fQIt/CtTFr0XtI+Bm1SA7AcW9AAi9P69VjyWIFnlVzu72IdfcIk3arh\nHsr1bQy38ebBhZdfe67CkmawUWe+e8CLVPTewR+WItGnmdiSdJVQ0mo0znA9\n/HcbWPzyoXbRAP1Vesi3P4kyNWH84DkBte0j6A62Pcwc333rmaIEoA4oRmZ4\nPCLNw5Ed/PxVwqS+QHH9JzAartZ3NJmWbQepZjpj5jiuYi2eTSd11tO5XzKq\nmzCZbHnrHNz2ZLbXs7oY2pr/EyiLwfE9GyNgLs8dFSXTMZZG+okUVCsx9hyX\nNsuxdxoR1qvUmOzA0jJRAra6ObifpFCsyDqSy51mTt8Wp2qE95w7CkJ8ifn2\n2FURyl0Ej5quvOhKwp/2DkAI5OH3FJYbAdvUaPQX8Wi1nXV48uW23SKSmzwS\npJ2Ni++LpRFY0PePNQxI2ZW41+a6HpHqHSUNKi7x6Sq/aSjE38E2Yk7xx5BZ\n6wzVwHfS2nCD5TaX4lMzNGJhXM2syr3DNAmJdJNMhsE7rf1TJxjxjDUFiKPZ\niAVb+YHyEbAobpD/yqE0XCVweLO4T6/+vsb9OyhjMECf1c8isA5WNohnDzLy\nJK8B6x89BjaWWUUu8MaC39fPS/VLFL/oUwMbpCZ37oZwZX7lwyDIrlJodfGa\npZVA\r\n=6oxd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "webreflection",
+          "email": "andrea.giammarchi@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "webreflection",
+        "email": "andrea.giammarchi@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-escaper_3.0.0_1585316842037_0.8435253118662485"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# html-escaper [![Build Status](https://travis-ci.org/WebReflection/html-escaper.svg?branch=master)](https://travis-ci.org/WebReflection/html-escaper) [![Coverage Status](https://coveralls.io/repos/github/WebReflection/html-escaper/badge.svg?branch=master)](https://coveralls.io/github/WebReflection/html-escaper?branch=master)\nA simple module to escape/unescape common problematic entities.\n\n\n## V3 ESM Only Release\n\nThe version 3 of this module ditches entirely legacy browsers and _nodejs_ with broken loaders, such as `v13.0.0` and `v13.1.0`.\n\nAs the code is basically identical, simply stick with version 2 if you have any issue with this one 👋\n\n\n### How\nThis package is available in npm so `npm install html-escaper` is all you need to do, using eventually the global flag too.\n\nOnce the module is present\n```js\nimport {escape, unescape} from 'html-escaper';\n\nescape('string');\nunescape('escaped string');\n```\n\n\n### Why\nthere is basically one rule only: do not **ever** replace one char after another if you are transforming a string into another.\n\n```js\n// WARNING: THIS IS WRONG\n// if you are that kind of dev that does this\nfunction escape(s) {\n  return s.replace(/&/g, \"&amp;\")\n          .replace(/</g, \"&lt;\")\n          .replace(/>/g, \"&gt;\")\n          .replace(/'/g, \"&#39;\")\n          .replace(/\"/g, \"&quot;\");\n}\n\n// you might be the same dev that does this too\nfunction unescape(s) {\n  return s.replace(/&amp;/g, \"&\")\n          .replace(/&lt;/g, \"<\")\n          .replace(/&gt;/g, \">\")\n          .replace(/&#39;/g, \"'\")\n          .replace(/&quot;/g, '\"');\n}\n\n// guess what we have here ?\nunescape('&amp;lt;');\n\n// now guess this XSS too ...\nunescape('&amp;lt;script&amp;gt;alert(\"yo\")&amp;lt;/script&amp;gt;');\n\n\n```\n\nThe last example will produce `<script>alert(\"yo\")</script>` instead of the expected `&lt;script&gt;alert(\"yo\")&lt;/script&gt;`.\n\nNothing like this could possibly happen if we grab all chars at once and either ways.\nIt's just a fortunate case that after swapping `&` with `&amp;` no other replace will be affected, but it's not portable and universally a bad practice.\n\nGrab all chars at once, no excuses!\n\n\n\n**more details**\nAs somebody might think it's an `unescape` issue only, it's not. Being an anti-pattern with side effects works both ways.\n\nAs example, changing the order of the replacement in escaping would produce the unexpected:\n```js\nfunction escape(s) {\n  return s.replace(/</g, \"&lt;\")\n          .replace(/>/g, \"&gt;\")\n          .replace(/'/g, \"&#39;\")\n          .replace(/\"/g, \"&quot;\")\n          .replace(/&/g, \"&amp;\");\n}\n\nescape('<'); // &amp;lt; instead of &lt;\n```\nIf we do not want to code with the fear that the order wasn't perfect or that our order in either escaping or unescaping is different from the order another method or function used, if we understand the issue and we agree it's potentially a disaster prone approach, if we add the fact in this case creating 4 RegExp objects each time and invoking 4 times `.replace` trough the `String.prototype` is also potentially slower than creating one function only holding one object, or holding the function too, we should agree there is not absolutely any valid reason to keep proposing a char-by-char implementation.\n\nWe have proofs this approach can fail already so ... why should we risk? Just avoid and grab all chars at once or simply use this tiny utility.\n\n### Backtick\nInternt explorer < 9 has [some backtick issue](https://html5sec.org/#102)\n\nFor compatibility sake with common server-side HTML entities encoders and decoders, and in order to have the most reliable I/O, this little utility will NOT fix this IE < 9 problem.\n\nIt is also important to note that if we create valid HTML and we set attributes at runtime through this utility, backticks in strings cannot possibly affect attribute behaviors.\n\n```js\nvar img = new Image();\nimg.src = html.escape(\n  'x` `<script>alert(1)</script>\"` `'\n);\n// it won't cause problems even in IE < 9\n```\n\n**However**, if you use `innerHTML` and you target IE < 9 then [this **might** be a problem](https://github.com/nette/nette/issues/1496).\n\nAccordingly, if you need more chars and/or backticks to be escaped and unescaped, feel free to use alternatives like [lodash](https://github.com/lodash/lodash) or [he](https://www.npmjs.com/package/he)\n\nHere a bit more of [my POV](https://github.com/WebReflection/html-escaper/commit/52d554fc6e8583b6ffdd357967cf71962fc07cf6#commitcomment-10625122) and why I haven't implemented same thing alternatives did. Good news: those are alternatives ;-)",
+  "maintainers": [
+    {
+      "name": "webreflection",
+      "email": "andrea.giammarchi@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-27T13:47:25.392Z",
+    "created": "2015-04-08T09:55:12.173Z",
+    "1.0.0": "2015-04-08T09:55:12.173Z",
+    "1.0.1": "2017-06-06T20:18:48.324Z",
+    "2.0.0": "2019-07-25T21:30:21.044Z",
+    "2.0.1": "2020-03-21T12:47:45.877Z",
+    "2.0.2": "2020-03-27T13:29:45.414Z",
+    "3.0.0": "2020-03-27T13:47:22.157Z"
+  },
+  "homepage": "https://github.com/WebReflection/html-escaper",
+  "keywords": [
+    "html",
+    "escape",
+    "encode",
+    "unescape",
+    "decode",
+    "entities"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebReflection/html-escaper.git"
+  },
+  "author": {
+    "name": "Andrea Giammarchi"
+  },
+  "bugs": {
+    "url": "https://github.com/WebReflection/html-escaper/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "webreflection": true
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "_id": "@isaacs/dedupe-tests-a",
+  "_rev": "1-02de6a9fc619e35ac534f1c9905209b6",
+  "name": "@isaacs/dedupe-tests-a",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/dedupe-tests-a",
+      "version": "1.0.0",
+      "dependencies": {
+        "@isaacs/dedupe-tests-b": "2"
+      },
+      "_id": "@isaacs/dedupe-tests-a@1.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-Y9sHdh0cE0fW0M8sn0DZ//vzOMplR5b/yvE7NKRFTpsI0hVbapYFuHRRJm8JZj9ODDNOFL8njErYiU5hm7//iw==",
+        "shasum": "2c6f4d5796f25a52bc9f1fb923303e388728105c",
+        "tarball": "https://registry.npmjs.org/@isaacs/dedupe-tests-a/-/dedupe-tests-a-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 120,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2s6cCRA9TVsSAnZWagAAWQIP/illQO/++XV/D5EkiKZv\nqNp8wrJpsaZ6LGIDKUEVDjgAbTtPrcG/2Ds+W4KnRnytHmNVezuOPfN2Vvg9\nRbTwwJXQ7VZgdlc1IPu0rzIPfg9eMkl2QfM4MVaQDPL7kcPbscr0vKeOUsAn\ncwek9M9lyguhOuMjOO3UfI6KNqj/9gWy6vk9sX3uylqdtRxLIvCmQHs558R4\nJzLK1CXYG8zErrIKggVNnDFmGKerAx+RMG6tMZ4G2+ovq8GSEtaw5fldU6pC\nGSTUaLi7yPEbGmUZSYm0/k/RSFh9tsEGT4Cc8pHZak4j2C9W2vF/wP8g74xf\n7w5xICKUIZJttEBhocPSvzi1RQoUm0XJXDMaISpAeaFFuoQoLrpOR84uC77c\n7yppxs8UR5npwxuia2Gs8MnB6VJq85+yo1x4H18e2/eJKTU0ZZUgQ3B7UmXH\ntHMcfSnk3J/7X/6u/rUv4rmX+aaA86BbJdDEIYQ2L+CaJgRn7P7bj07SE5JC\n3JQ+C0ZsodKiwTpkfjXpAp3DO0VF5m45R5xRWOc58zVefwKYWVEqIJUMlYwM\nGw+xBqHDez0t9M+bjH4MBGznKujxagr9W73WUEgcIGYgmCSSe0JOhGAi3Wfz\nkpsI3Y2ufWf0KfeupWJDcN8MRVdHmkQP1VtwaHgIjy4SxyTDi1IoweWNbmq2\nC2Sv\r\n=TzBd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dedupe-tests-a_1.0.0_1574620828101_0.9101229082980782"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@isaacs/dedupe-tests-a",
+      "version": "1.0.1",
+      "dependencies": {
+        "@isaacs/dedupe-tests-b": "1"
+      },
+      "_id": "@isaacs/dedupe-tests-a@1.0.1",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-8AN9lNCcBt5Xeje7fMEEpp5K3rgcAzIpTtAjYb/YMUYu8SbIVF6wz0WqACDVKvpQOUcSfNHZQNLNmue0QSwXOQ==",
+        "shasum": "621e921a76bb5504aaeb29019e25ca0fb8cbf869",
+        "tarball": "https://registry.npmjs.org/@isaacs/dedupe-tests-a/-/dedupe-tests-a-1.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 120,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2s9HCRA9TVsSAnZWagAAyyEP/0f3D7eF/hSJyDpJDZDv\nuiv0E8TYIw8sjB2jWqlMGP6Dc+kYFbYhD0YM3XYNoZBpPPQiAZ50/NsNWxTy\nfobCIloBZDkVnbkJlJpjs4jl0UdbbHyvb9D1V1L50Ld4vWSijdX1Ku6XVQBm\nAXEhKYhgnUnnS8Ng3n4dU/c7cbKePPlE+IiaXjZlxmIjBST8CtNs2LgpGItp\ny1oTPUDZsWv+GXfokTPgrcvZY0cfzzJzhMMLjLW2d2PCPRpS2ef+BzHD77HI\nBmpyRq5Ng4NwohRBVE7mgzv5E71cSdRwaM50UDfFrLxI/tNxkszWwTZod9O0\nh6u/SwY9GCEyb9ARg6R3q38lYo+M9mJi5ik3/QgfBj1tuQb38NHH3pzzHvIc\nfu2p0ZVu9Sh4XJHr+Hkb6cXMgLffXoqYFOX0cB7peSli9PsAhIkbmbApSB4h\nlF0OZoPZ3vKBJZ/BOuoJUcS7knsKyTfQPNWX+FUo6EbbCadzNid2OV4hS+PP\nhvA806r+BLiSp0+OiukucdEakC/e9oEgwob/Dsbju6EyP88ABWQHXvVft3Tu\nYdZEUpL2GFyuLyUXSfBugrmDym+FMk4o5vt7TRWOEpHKgDe8g4DAcvyz3taa\nRiO0HFuk6qZxhTCi+mq2GnoVYsZDntOZga3/kanMwtCcAJ5KiIwFiGmRaYc4\nWnFE\r\n=rmfl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dedupe-tests-a_1.0.1_1574620999492_0.47126475121384104"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-24T18:40:27.874Z",
+    "1.0.0": "2019-11-24T18:40:28.240Z",
+    "modified": "2019-11-24T18:43:21.933Z",
+    "1.0.1": "2019-11-24T18:43:19.608Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

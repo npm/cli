@@ -1,11 +1,38 @@
+const debug = require('./debug');
 const utils = require('./utils');
 const tableLayout = require('./layout-manager');
 
 class Table extends Array {
-  constructor(options) {
+  constructor(opts) {
     super();
 
-    this.options = utils.mergeOptions(options);
+    const options = utils.mergeOptions(opts);
+    Object.defineProperty(this, 'options', {
+      value: options,
+      enumerable: options.debug,
+    });
+
+    if (options.debug) {
+      switch (typeof options.debug) {
+        case 'boolean':
+          debug.setDebugLevel(debug.WARN);
+          break;
+        case 'number':
+          debug.setDebugLevel(options.debug);
+          break;
+        case 'string':
+          debug.setDebugLevel(parseInt(options.debug, 10));
+          break;
+        default:
+          debug.setDebugLevel(debug.WARN);
+          debug.warn(`Debug option is expected to be boolean, number, or string. Received a ${typeof options.debug}`);
+      }
+      Object.defineProperty(this, 'messages', {
+        get() {
+          return debug.debugMessages();
+        },
+      });
+    }
   }
 
   toString() {
@@ -22,8 +49,8 @@ class Table extends Array {
 
     let cells = tableLayout.makeTableLayout(array);
 
-    cells.forEach(function(row) {
-      row.forEach(function(cell) {
+    cells.forEach(function (row) {
+      row.forEach(function (cell) {
         cell.mergeTableOptions(this.options, cells);
       }, this);
     }, this);
@@ -31,8 +58,8 @@ class Table extends Array {
     tableLayout.computeWidths(this.options.colWidths, cells);
     tableLayout.computeHeights(this.options.rowHeights, cells);
 
-    cells.forEach(function(row) {
-      row.forEach(function(cell) {
+    cells.forEach(function (row) {
+      row.forEach(function (cell) {
         cell.init(this.options);
       }, this);
     }, this);
@@ -65,9 +92,11 @@ class Table extends Array {
   }
 }
 
+Table.reset = () => debug.reset();
+
 function doDraw(row, lineNum, result) {
   let line = [];
-  row.forEach(function(cell) {
+  row.forEach(function (cell) {
     line.push(cell.draw(lineNum));
   });
   let str = line.join('');

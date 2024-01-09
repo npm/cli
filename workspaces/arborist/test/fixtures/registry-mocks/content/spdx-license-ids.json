@@ -1,0 +1,1527 @@
+{
+  "_id": "spdx-license-ids",
+  "_rev": "20-0b8a2ea80d4e8a9b87e65fff9d100c13",
+  "name": "spdx-license-ids",
+  "description": "A list of SPDX license identifiers",
+  "dist-tags": {
+    "latest": "3.0.6",
+    "next": "3.0.0-1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "spdx-license-ids",
+      "version": "0.0.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "licenses": [
+        {
+          "type": "Unlicense",
+          "url": "https://github.com/shinnn/spdx-license-ids/blob/master/LICENSE"
+        }
+      ],
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.20.0",
+        "istanbul": "^0.3.13",
+        "istanbul-coveralls": "^1.0.2",
+        "require-bower-files": "^2.0.0",
+        "rm-rf": "^0.1.0",
+        "spdx-license-list": "^2.0.0",
+        "stringify-object": "^1.0.1",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "2589d340c49f48ad7b0392d6a0779e1a3a098e05",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@0.0.0",
+      "_shasum": "c422eb8c828255e6d85993b7203d14f8a3c35c15",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.8.1",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c422eb8c828255e6d85993b7203d14f8a3c35c15",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "spdx-license-ids",
+      "version": "1.0.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "licenses": [
+        {
+          "type": "Unlicense",
+          "url": "https://github.com/shinnn/spdx-license-ids/blob/master/LICENSE"
+        }
+      ],
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.20.0",
+        "istanbul": "^0.3.13",
+        "istanbul-coveralls": "^1.0.2",
+        "require-bower-files": "^2.0.0",
+        "rm-rf": "^0.1.0",
+        "spdx-license-list": "^2.0.0",
+        "stringify-object": "^1.0.1",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "64eecd85af21ddfc325dc024906b281b1ebdc120",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.0.0",
+      "_shasum": "a966050150dec883ffce877431b361b36742a28d",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.8.1",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a966050150dec883ffce877431b361b36742a28d",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "spdx-license-ids",
+      "version": "1.0.1",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.21.2",
+        "got": "^3.2.0",
+        "istanbul": "^0.3.14",
+        "istanbul-coveralls": "^1.0.2",
+        "require-bower-files": "^2.0.0",
+        "rm-rf": "^0.1.0",
+        "stringify-object": "^2.0.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "05c7466fcd62c8642006ef354c95064fcade3a03",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.0.1",
+      "_shasum": "8f7d365fbeb056f82d21d0c0e9c1ebbd676e6af4",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8f7d365fbeb056f82d21d0c0e9c1ebbd676e6af4",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "spdx-license-ids",
+      "version": "1.0.2",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.24.0",
+        "got": "^3.3.0",
+        "istanbul": "^0.3.17",
+        "istanbul-coveralls": "^1.0.3",
+        "require-bower-files": "^2.0.0",
+        "rimraf": "^2.4.1",
+        "stringify-object": "^2.2.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "df183ecdf1738f77b1e8e41f686ee56206a40693",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.0.2",
+      "_shasum": "0674e9c9a230f980016b5b073a10aa165701677c",
+      "_from": ".",
+      "_npmVersion": "2.12.1",
+      "_nodeVersion": "2.3.3",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0674e9c9a230f980016b5b073a10aa165701677c",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "spdx-license-ids",
+      "version": "1.1.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.24.0",
+        "got": "^3.3.0",
+        "istanbul": "^0.3.17",
+        "require-bower-files": "^2.0.0",
+        "rimraf": "^2.4.1",
+        "stringify-object": "^2.2.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "769b83e3335426bd45f70b58b194b79e1d6c0583",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.1.0",
+      "_shasum": "28694acdf39fe27de45143fff81f21f6c66d44ac",
+      "_from": ".",
+      "_npmVersion": "3.3.8",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "28694acdf39fe27de45143fff81f21f6c66d44ac",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "spdx-license-ids",
+      "version": "1.2.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --harmony_arrow_functions build.js",
+        "lint": "eslint --config node_modules/@shinnn/eslintrc/rc.json --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --harmony_arrow_functions test.js",
+        "coverage": "node --harmony_arrow_functions node_modules/.bin/istanbul cover test.js",
+        "coveralls": "${npm_package_scripts_coverage} && istanbul-coveralls"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslintrc": "^1.0.0",
+        "each-async": "^1.1.1",
+        "eslint": "^0.24.0",
+        "got": "^3.3.0",
+        "istanbul": "^0.3.17",
+        "require-bower-files": "^2.0.0",
+        "rimraf": "^2.4.1",
+        "stringify-object": "^2.2.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "f74a7a16ca05540e0e97f1bbb61da07829b5d9ab",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.2.0",
+      "_shasum": "b549dd0f63dcb745a17e2ea3a07402e0e332d1e2",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "b549dd0f63dcb745a17e2ea3a07402e0e332d1e2",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "spdx-license-ids",
+      "version": "1.2.1",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --strong_mode --harmony_destructuring build.js",
+        "lint": "eslint --config @shinnn/node --env browser --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --strong_mode test.js | tap-spec",
+        "coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^2.0.0",
+        "chalk": "^1.1.3",
+        "eslint": "^2.7.0",
+        "get-spdx-license-ids": "^1.0.0",
+        "istanbul": "^0.4.3",
+        "loud-rejection": "^1.3.0",
+        "rimraf-promise": "^2.0.0",
+        "stringify-object": "^2.3.1",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.5.1",
+        "write-file-atomically": "1.0.0"
+      },
+      "gitHead": "e907f783792ee05a85dbf66acd24cf1c3067bb76",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.2.1",
+      "_shasum": "d07ea17a4d2fd9351f9d94e2ff9cec74180fe8f3",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "d07ea17a4d2fd9351f9d94e2ff9cec74180fe8f3",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spdx-license-ids-1.2.1.tgz_1460030484408_0.8782658798154444"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "spdx-license-ids",
+      "version": "1.2.2",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node --strong_mode build.js",
+        "lint": "eslint --config @shinnn/node --env browser --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node --strong_mode test.js | tap-spec",
+        "coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
+      },
+      "license": "Unlicense",
+      "main": "spdx-license-ids.json",
+      "files": [
+        "spdx-license-ids.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss",
+        "browser",
+        "client-side"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^3.0.0",
+        "chalk": "^1.1.3",
+        "eslint": "^3.1.1",
+        "get-spdx-license-ids": "^1.0.0",
+        "istanbul": "^0.4.4",
+        "loud-rejection": "^1.6.0",
+        "rimraf-promise": "^2.0.0",
+        "stringify-object": "^2.4.0",
+        "tap-spec": "^4.1.1",
+        "tape": "^4.6.0",
+        "write-file-atomically": "1.0.0"
+      },
+      "gitHead": "70e2541bf04b4fbef4c5df52c581a1861fd355b2",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@1.2.2",
+      "_shasum": "c9df7a3424594ade6bd11900d596696dc06bac57",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "c9df7a3424594ade6bd11900d596696dc06bac57",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spdx-license-ids-1.2.2.tgz_1469529975605_0.35518706892617047"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "spdx-license-ids",
+      "version": "2.0.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node build.js",
+        "lint": "eslint --fix --format=codeframe --env=browser --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node test.js",
+        "coverage": "node node_modules/.bin/istanbul cover test.js"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        "index.json",
+        "module.js"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^3.0.0",
+        "chalk": "^1.1.3",
+        "eslint": "^3.10.2",
+        "get-spdx-license-ids": "^1.0.0",
+        "istanbul": "^0.4.5",
+        "loud-rejection": "^1.6.0",
+        "rmfr": "^1.0.1",
+        "stringify-object": "^3.0.0",
+        "tape": "^4.6.2",
+        "write-file-atomically": "1.0.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "6e6a2417f76b333f5c5415fe76c7dfb19bd5f6fd",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@2.0.0",
+      "_shasum": "0eb748e3c6fe7a80fa9f31eaab7d8f6c331b2173",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "0eb748e3c6fe7a80fa9f31eaab7d8f6c331b2173",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/spdx-license-ids-2.0.0.tgz_1482741813260_0.8923152482602745"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "spdx-license-ids",
+      "version": "2.0.1",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node build.js",
+        "lint": "eslint --fix --format=codeframe --env=browser --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node test.js",
+        "coverage": "node node_modules/.bin/istanbul cover test.js"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        "index.json",
+        "module.js"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^3.0.0",
+        "chalk": "^1.1.3",
+        "eslint": "^3.10.2",
+        "get-spdx-license-ids": "^1.0.0",
+        "istanbul": "^0.4.5",
+        "loud-rejection": "^1.6.0",
+        "rmfr": "^1.0.1",
+        "stringify-object": "^3.0.0",
+        "tape": "^4.6.2",
+        "write-file-atomically": "1.0.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "d9a03669172d5baba788011e09617313942acff0",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@2.0.1",
+      "_shasum": "02017bcc3534ee4ffef6d58d20e7d3e9a1c3c8ec",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "02017bcc3534ee4ffef6d58d20e7d3e9a1c3c8ec",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spdx-license-ids-2.0.1.tgz_1486371129713_0.03612973913550377"
+      },
+      "directories": {}
+    },
+    "3.0.0-0": {
+      "name": "spdx-license-ids",
+      "version": "3.0.0-0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node build.js",
+        "lint": "eslint --fix --format=codeframe --env=browser --ignore-path .gitignore .",
+        "pretest": "${npm_package_scripts_build} && ${npm_package_scripts_lint}",
+        "test": "node test.js",
+        "coverage": "node node_modules/.bin/istanbul cover test.js"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        "index.json",
+        "module.js"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^4.0.2",
+        "chalk": "^2.0.1",
+        "eslint": "^4.3.0",
+        "get-spdx-license-ids": "^1.1.0",
+        "istanbul": "^0.4.5",
+        "loud-rejection": "^1.6.0",
+        "rmfr": "^1.0.3",
+        "stringify-object": "^3.2.0",
+        "tape": "^4.8.0",
+        "write-file-atomically": "^1.0.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "7495a16b5d13b92344aa3e04a9cdeaa197cd3c74",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.0-0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xUkSOYgYysHMp173PADzBKOnuAdv0YvETy2syBD+AOWZYfV6Zb7iuUOY0FOniOEkFEujoLA4gCxUTLtJ95oWvA==",
+        "shasum": "b7e47584254ade1cca1f69344fc37457f961f341",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.0-0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids-3.0.0-0.tgz_1516942315504_0.43380842125043273"
+      },
+      "directories": {}
+    },
+    "3.0.0-1": {
+      "name": "spdx-license-ids",
+      "version": "3.0.0-1",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "prebuild": "eslint --fix --format=codeframe .",
+        "build": "node build.js",
+        "pretest": "npm run-script build",
+        "test": "node test.js"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        "index.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^5.0.0",
+        "chalk": "^2.3.0",
+        "eslint": "^4.16.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "loud-rejection": "^1.6.0",
+        "rmfr": "^2.0.0-3",
+        "tape": "^4.8.0",
+        "write-file-atomically": "^1.0.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "a4b00ce25076c9ec9e212cad8222830fade065d8",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.0-1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-m20oQkls+fkRBkMhlL5CFhs1wXMTi7Th9Rox1U6YHXarDzVdnIXesOkKsLGuNmanePoM8WMwFZXR2zL1FXaW4g==",
+        "shasum": "500d099bdb7f6c58678e2869e9444d13fac528fa",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.0-1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids-3.0.0-1.tgz_1516948070711_0.8446547978091985"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "spdx-license-ids",
+      "version": "3.0.0",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint --fix --format=codeframe .",
+        "test": "node test.js"
+      },
+      "license": "CC0-1.0",
+      "files": [
+        "deprecated.json",
+        "index.json"
+      ],
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^5.0.0",
+        "chalk": "^2.3.0",
+        "eslint": "^4.16.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "log-symbols": "^2.2.0",
+        "loud-rejection": "^1.6.0",
+        "rmfr": "^2.0.0-3",
+        "tape": "^4.8.0",
+        "write-file-atomically": "^1.0.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "bebc9a4ca38d67f94cd42e9beceaca2c7e647cfb",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2+EPwgbnmOIl8HjGBXXMd9NAu02vLjOO1nWw4kmeRDFyHn+M/ETfHxQUK0oXg8ctgVnl9t3rosNVsZ1jG61nDA==",
+        "shasum": "7a7cd28470cc6d3a1cfe6d66886f6bc430d3ac87",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids-3.0.0.tgz_1516951777702_0.9596464950591326"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "spdx-license-ids",
+      "version": "3.0.1",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "license": "CC0-1.0",
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^6.0.0",
+        "chalk": "^2.4.1",
+        "eslint": "^5.4.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node"
+      },
+      "gitHead": "27cd18eec90b4b2363f90c354242a89a9c443a63",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-TfOfPcYGBB5sDuPn3deByxPhmfegAhpDYKSOXZQN81Oyrrif8ZCodOLzK3AesELnCx03kikhyDwh0pfvvQvF8w==",
+        "shasum": "e2a303236cac54b04031fa7a5a79c7e701df852f",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7683,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkpHQCRA9TVsSAnZWagAAJvEP/3eb8b6goswJseUBYOgJ\nSCvKBTkzBFwd63mrybKm7ZYJ3LlV8KmJJ+ZE3vYBikp6DxK2jjj2yemY5yF0\nsaxDQO6PfVRRevrVWThm1evLpKSe/VKW/nvTpj3fz+9bXE+UG4qHydgSU1Ec\nHX+iddO2XH7egizPwm+MnnmLO7dU0Q/7xT2utym345oW8J0duSeed3gt3akU\n72oUwmhjFttu8S9djhr27DQmQBakTSskqTWRhmrORO84fVKSpOThInqmxOZi\n5mNnt+QiqLStaE48MD1jOPDxDtGzwH+nZaMCTx9V9a1H6gI/OOBBfMO8y2Gm\nOKAtkPhWfkWovR/jHyK7xBmDqVobGnlnae+QdMrc7zOWYZeQ3bj1QUbxPRq/\n/xJmGfbuwL6zYBug5A/eW/hxKCI2l/AVRI4GaZtATAjxjHN7J/7OK/qDZHAK\n2YOq4Qw36LKIlp8mNiBmI1RtcdZ6eNDkFsOxTZMEfpiAfovQ7GaKfVxJb1q0\n4Gc1b8bIVoeyRy9jqBEAT4LgHVYFnu2RH1gDO50TURwrXTdGrwKBQccYDsy9\nMocTJ0rtjW4HYfhbRP+gGhoNQnSAV7ASFFVvFF4MRW1xoc+p2Sh5XGXmbRLv\n3eYZfFw1hM/KvmD15WR2PDHybzjpW6u2565HLQ6toPR7oQ4aNTnBax+uM+qW\n9Q57\r\n=vUug\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.1_1536332239864_0.9352512702201243"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "spdx-license-ids",
+      "version": "3.0.2",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "license": "CC0-1.0",
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config": "^6.8.0",
+        "chalk": "^2.4.1",
+        "eslint": "^5.8.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn"
+      },
+      "gitHead": "5db0a9a2e8b8d2d2aa4ee0faed5886b7b0939ff2",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qky9CVt0lVIECkEsYbNILVnPvycuEBkXoMFLRWsREkomQLevYhtRKC+R91a5TOAQ3bCMjikRwhyaRqj1VYatYg==",
+        "shasum": "a59efc09784c2a5bada13cfeaf5c75dd214044d2",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7760,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2VkSCRA9TVsSAnZWagAAiv8QAIbUjxhGodXJ2GKWxzti\n2I3IObQCr4b2Xu5qRz+VEcGghORyAyFIraoGNk5yU2dEQ0LSqxyDqyXVDdhc\nFNHkU4T54080mCkY55bAStqix1nlpHPCzhdUygMk7FYGBTogQoioVbpXk5Hn\nAaUHS81y9XPm+Wq4+SHurT6xZdNiNYBSw9lJ0qEXJ7G4nfog/w35nLRDJu1X\n3GFOFuAoXUc8l9d5H+yOauDPhltSgWk+dz9N/4gegOQdWRZczuj7pKz5ckaK\nf5E8uavgOU9dKjSUZfnC/JJDI7aIShZZg4zwmVV/O4z3MtrDysoXO3oH2Baa\nGWnJrGTgmkTpmGeI5eH7Oh5M/7W3cqU2mSAoDCtlDp1N8rEcUmX+hwcL7CSX\n5sGnhaxzyWJVWV5Fx1kzl7fQPoKko4kB1NQMheLgrTsavxc2BN9ND+DmabeG\nrb3G4nTTmx7d+vFs4MPaxM6dCN29WzTcai3CvkAVYxl6Emcjza9+2062Y0Ay\nVKGHEEMY5PzHVHxACHS5teVhu/Vi+HN6CK8Tpz6999HD/KfFudHgiP7sq+RC\nAH4So/LOOYrIISwNy/47TQQk6EoB4NWyl3QkjqSjtH88GA7UHLCPdcDJf5Eq\nuf9uqtlNURmBkmqmgbFz4Gs/66UMr2uiBXzdBkHynSgnCNcqpD4EulKKvU5T\nbvXx\r\n=L1SH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.2_1540970769905_0.12952825272215063"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.3": {
+      "name": "spdx-license-ids",
+      "version": "3.0.3",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "license": "CC0-1.0",
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config": "^6.8.7",
+        "chalk": "^2.4.1",
+        "eslint": "^5.10.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn"
+      },
+      "gitHead": "9a23c2a5f1f6371ed61fc0ca81b79143020e027a",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.3",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.5.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-uBIcIl3Ih6Phe3XHK1NqboJLdGfwr1UN3k6wSD1dZpmPsIkb8AGNbZYJ1fOBk834+Gxy8rpfDxrS6XLEMZMY2g==",
+        "shasum": "81c0ce8f21474756148bbb5f3bfc0f36bf15d76e",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7785,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcG9ZUCRA9TVsSAnZWagAAYpMQAJGFwQcE0djxBCqxO7wX\nuZSy5PkzHhLdygj5zEFHJsMUbAyXC0rMPZNhb2Z9ezYWTS48o08fzVGpUYEl\nym+ZVWy/VfoytzGraZpPGV/vSOds4aEMbqPZK1L2gxLdfjbAA2kkwEumz7y/\nqem/ib3XvNowz7NBH33msXZdQmFa6wmu3Ga9/msElrrwxcF2uOqpQliIj/ij\nJJ8TgIAw68Sf4xYHSSOAX93tDkmtAvKc/MKiEIGxyHumBjcoH7t9i/hrj76y\nOE3t81zQxKJht/MJY6y3mACuGYGyYSkpS1UkYgYyHrZLUDKTbOygM/0cLtJF\n7cfZmoL99KPabzx8ZTDaeqb9IUp07zIQ67etdHjK030V6JyOSzjas2zDgy9j\n3fS+2IVJkaa8qoDcteY7WjK9iGoVrQduCg+hf6GmM0aVixDjCDtcXkCU4LNW\nHssDBDKtqQ40XZOTGzKbfClYNaLkNh8EQtA2aSDfe5gM6HsmMHHWHnspjeOJ\nV0s8NSy90tiqX1FYlTcab3kw09/IbakQSu8BERXZUI6xlx0pSu988Tn/09Df\n9RnxQCpOii+xn1QykMmLQa21Ocv5YmemlIN/BxZAOAfR4VRE3TvsKxdwyFY6\n1KJA/DQkRdjNVd8ayot1s0n5IPqtnOe2rKIgqRfUT3PQdYoK8PiHlpjIHNCd\nxzyO\r\n=xoiU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.3_1545328211681_0.5619309731207645"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.4": {
+      "name": "spdx-license-ids",
+      "version": "3.0.4",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "license": "CC0-1.0",
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config": "^6.8.7",
+        "chalk": "^2.4.1",
+        "eslint": "^5.10.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn"
+      },
+      "gitHead": "09f914ab6c75354b80c18d8343c5dbbd210adcb3",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.4",
+      "_nodeVersion": "11.13.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-7j8LYJLeY/Yb6ACbQ7F76qy5jHkp0U6jgBfJsk97bwWlVUnUWsAgpyaCvo17h0/RQGnQ036tVDomiwoI4pDkQA==",
+        "shasum": "75ecd1a88de8c184ef015eafb51b5b48bfd11bb1",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7903,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqK7cCRA9TVsSAnZWagAALWMP/1nr34W51ig8XQFRGAEY\n+TwOah3IAE5kQ5QEi047RtiPU66qGKmBRHZE0+rgRrcoIwIlPEUO7kKMt4RZ\n6jKTQ5QeLKst88NOQIzxJsRam85r5/fakCvdXjE+4mnVqYoI7kWLnnl7RTB/\n/VDpZONMgfdV3G2vTnf/OojDnz/7zhgQih/H7iA32WY5kzyF8fAY7/WvMjBc\nI3A1M47vmUTPyYv45qjZ5z7TC7b1wz3omatNnMVE0Mf1XIBTv/JJzyhXdZ9F\ndCuDuIQNEPZZKj3FTY/b28f76VxkuUohgxFWjRf97ge7Oi7XOBjw1JkHCHY/\nc4cmj0bJ4dlHVfvlgMJb2G+8dhhxj4GwBiF+c4enKSiIO/jR/51wPbGagbYS\nOoKpF1HqHA1CskPSeeqpk8rH2aO5CJafsWSFWQa//13HqD9L9Fo7mZsn8uaD\nwPO7v3PcJS7R2wqKtF14DUndyKDp3F8Da3gmXW9wH21T5Df2ZX2MCoCzkHdE\nCj3DCV36QLJGW9rLCJ4neoBjkfKz6ifZ7nwPFITQ2xtXG4artemSMHAXQpnC\n1SN9RICQzRQ1m14p316fQTAovWbmXpB0Ysohhuk7oMappntvjiMnZu21k6LG\nuBiFdoIzjbeX/wla4cmqeYh+9Nyf16VGAbY7AwMvU6sU3yNvfnKntBEIzT1R\nLxCB\r\n=sw+A\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.4_1554558683841_0.32336491674892054"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.5": {
+      "name": "spdx-license-ids",
+      "version": "3.0.5",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "license": "CC0-1.0",
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config": "^6.8.7",
+        "chalk": "^2.4.1",
+        "eslint": "^5.10.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn"
+      },
+      "gitHead": "2bc004aae6f30d625d3aad95eac09d9aaf1c97cc",
+      "bugs": {
+        "url": "https://github.com/shinnn/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/shinnn/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.5",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-J+FWzZoynJEXGphVIS+XEh3kFSjZX/1i9gFBaWQcB+/tmpe2qUsSBABpcxqxnAxFdiUFEgAX1bjYGQvIZmoz9Q==",
+        "shasum": "3694b5804567a458d3c8045842a6358632f62654",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8027,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdJvUaCRA9TVsSAnZWagAAjMkP/0Sd+5yZb69oUsEoJnmF\naKUyiZQy0Y9dLPkflRzERsAm+EPghE273DfkOX+RIivycNFuBeOIjOJYtfGo\nvVlNMUgH8visktCTkX3T2eioEcQyR6dQk1JQtyhwJUH2P916Q49HVVR+/hZj\nfi/BotbLC21+cIjRR2z1VkAe3OpPPUytGPRZdKj5qi4HF/gtsq3IxkEbbG2t\nMF5jLes3k4VVg0UMV9j3HQUhsc25dhzna/OMDKhDSfwaOgj4eNctDHga6LSh\nx0rlx2/lvnaTgmqm4JAwBbFVxEsTp+Alpp2uXC7z6v0NOori2YYBP2s7zhFO\ny0BEAeryLMGtwQ16rfr6bTTNd9aPmQSF8uUDJ2Iay9dS1GDTqiFvdN2BvM9+\n+GXES/xA5DhFtk2UWsBJt/udeh9eGxoZ4E7lORtdkdHFgqmO+hjJmrNNKegd\naKoGOaYnR1/l2BG0oQvlkiXiRjDpEzRMu6kH/rCPIXZrXTEPXezIcEn14Mwh\nPN+K1IjaZaepc3g3YNkL76QQX57VbslEk7Mdpr+X0ygFd/s60/KZsAjnF1Aq\nZzblCBuK58idvCrEr1s5z39A9NYZ0ka/EPaMt+hZPJQ8cry3euva6lZiXXKR\n8K60CPxnG7mqSVSdj4LR3kViLNUnGTh/wSddKcQPIBsD+Nn+KYbfvmFU03BI\nPD5D\r\n=rrT1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.5_1562834201821_0.7906489918867339"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.6": {
+      "name": "spdx-license-ids",
+      "version": "3.0.6",
+      "description": "A list of SPDX license identifiers",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-license-ids.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "license": "CC0-1.0",
+      "scripts": {
+        "build": "node build.js",
+        "pretest": "eslint .",
+        "test": "node test.js"
+      },
+      "keywords": [
+        "spdx",
+        "license",
+        "licenses",
+        "id",
+        "identifier",
+        "identifiers",
+        "json",
+        "array",
+        "oss"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config": "^6.8.7",
+        "chalk": "^2.4.1",
+        "eslint": "^5.10.0",
+        "get-spdx-license-ids": "^2.1.0",
+        "rmfr": "^2.0.0",
+        "tape": "^4.9.1"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn"
+      },
+      "gitHead": "c126466620d02a453a0d4305a53c811fa1cff928",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-license-ids/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-license-ids#readme",
+      "_id": "spdx-license-ids@3.0.6",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-+orQK83kyMva3WyPf59k1+Y525csj5JejicWut55zeTWANuN17qSiSLUXWtzHeNWORSvT7GLDJ/E/XiIWoXBTw==",
+        "shasum": "c80757383c28abf7296744998cbc106ae8b854ce",
+        "tarball": "https://registry.npmjs.org/spdx-license-ids/-/spdx-license-ids-3.0.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9030,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfYm8zCRA9TVsSAnZWagAA6wkP/jqQ9sQeWBnegJAxoNCT\n5qQ4/kilj5OblLJK8nBV8nl30AseLl8K01P4R5d9GDoM99VFBlrThpNMFrOH\n3pfSMl6MqMXQDgCJ620Q5zgNaNkiUO8rcGNV3pPywfHRlESQr+vqw/ARASUA\nYyQJwwrMiX2wx/XoZwstglkLv5LIaZKfFxPC5wek/FJCME3MA3g76Ov69fpu\ng+1/MkkRvyQSxLVd4StfynAkoGzOR5jIYcRiCGtVI8sZnHooIuJDwAkc+68E\ni2hm4H1ouQxVHgHwelSpvgS0qG44MHKukZzRdljZF847/cyga4eA5dGox2/Z\nfFi4kTKFiYymm7dI9tk6GX0AhH1VdVvLjupCk57dbRzp4WumgibkTpPlYva6\nwTLFRRzF3JzroBgr2wzI58utHbPrExsppWFELRXmDcrfRzlVxKGIHcOMJYKq\nG9uwn/Pmvyphlqd8jvsUFtNPm6jaz3dbZfwFlncYBkxC+b3v7QSEpHo2k+C9\nSqpRCwxrhqqbjKhVo5QyuuGX8+2aD+qot8hmPPNLaZXAvriE5bKEp7rMCEe4\n3FExo/XeUzVQDM7YhNTKTYtT6wXXD46yssxWAplIYAq223dQILfdMz9vNu5C\nSVLzHo5fchro6SsApz8OYnf20TWFCn9Rg42QAfJ9z9SdiA21g9mKkBBlqPLT\nJnPM\r\n=7pLi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-license-ids_3.0.6_1600286515182_0.14321729541281436"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# spdx-license-ids\n\n[![npm version](https://img.shields.io/npm/v/spdx-license-ids.svg)](https://www.npmjs.com/package/spdx-license-ids)\n[![Github Actions](https://action-badges.now.sh/shinnn/spdx-license-ids)](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/results/shinnn/spdx-license-ids)\n\nA list of [SPDX license](https://spdx.org/licenses/) identifiers\n\n## Installation\n\n[Download JSON directly](https://raw.githubusercontent.com/shinnn/spdx-license-ids/master/index.json), or [use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/about-npm/):\n\n```\nnpm install spdx-license-ids\n```\n\n## [Node.js](https://nodejs.org/) API\n\n### require('spdx-license-ids')\n\nType: `string[]`\n\nAll license IDs except for the currently deprecated ones.\n\n```javascript\nconst ids = require('spdx-license-ids');\n//=> ['0BSD', 'AAL', 'ADSL', 'AFL-1.1', 'AFL-1.2', 'AFL-2.0', 'AFL-2.1', 'AFL-3.0', 'AGPL-1.0-only', ...]\n\nids.includes('BSD-3-Clause'); //=> true\nids.includes('CC-BY-1.0'); //=> true\n\nids.includes('GPL-3.0'); //=> false\n```\n\n### require('spdx-license-ids/deprecated')\n\nType: `string[]`\n\nDeprecated license IDs.\n\n```javascript\nconst deprecatedIds = require('spdx-license-ids/deprecated');\n//=> ['AGPL-1.0', 'AGPL-3.0', 'GFDL-1.1', 'GFDL-1.2', 'GFDL-1.3', 'GPL-1.0', 'GPL-2.0', ...]\n\ndeprecatedIds.includes('BSD-3-Clause'); //=> false\ndeprecatedIds.includes('CC-BY-1.0'); //=> false\n\ndeprecatedIds.includes('GPL-3.0'); //=> true\n```\n\n## License\n\n[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)\n",
+  "maintainers": [
+    {
+      "name": "kemitchell",
+      "email": "kyle@kemitchell.com"
+    },
+    {
+      "name": "shinnn",
+      "email": "snnskwtnb@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-16T20:01:57.541Z",
+    "created": "2015-05-02T07:59:28.765Z",
+    "0.0.0": "2015-05-02T07:59:28.765Z",
+    "1.0.0": "2015-05-02T08:13:14.932Z",
+    "1.0.1": "2015-05-24T07:02:10.301Z",
+    "1.0.2": "2015-07-12T01:43:48.274Z",
+    "1.1.0": "2015-10-20T21:29:40.646Z",
+    "1.2.0": "2016-01-12T08:32:40.797Z",
+    "1.2.1": "2016-04-07T12:01:24.923Z",
+    "1.2.2": "2016-07-26T10:46:17.168Z",
+    "2.0.0": "2016-12-26T08:43:35.190Z",
+    "2.0.1": "2017-02-06T08:52:09.937Z",
+    "3.0.0-0": "2018-01-26T04:51:55.574Z",
+    "3.0.0-1": "2018-01-26T06:27:50.874Z",
+    "3.0.0": "2018-01-26T07:29:37.783Z",
+    "3.0.1": "2018-09-07T14:57:20.136Z",
+    "3.0.2": "2018-10-31T07:26:10.032Z",
+    "3.0.3": "2018-12-20T17:50:11.799Z",
+    "3.0.4": "2019-04-06T13:51:24.031Z",
+    "3.0.5": "2019-07-11T08:36:41.955Z",
+    "3.0.6": "2020-09-16T20:01:55.291Z"
+  },
+  "homepage": "https://github.com/jslicense/spdx-license-ids#readme",
+  "keywords": [
+    "spdx",
+    "license",
+    "licenses",
+    "id",
+    "identifier",
+    "identifiers",
+    "json",
+    "array",
+    "oss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jslicense/spdx-license-ids.git"
+  },
+  "author": {
+    "name": "Shinnosuke Watanabe",
+    "url": "https://github.com/shinnn"
+  },
+  "bugs": {
+    "url": "https://github.com/jslicense/spdx-license-ids/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "CC0-1.0"
+}

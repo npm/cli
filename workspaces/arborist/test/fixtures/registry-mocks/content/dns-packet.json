@@ -1,0 +1,2050 @@
+{
+  "_id": "dns-packet",
+  "_rev": "30-20f7f8874480341c2495c314c29c8c47",
+  "name": "dns-packet",
+  "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+  "dist-tags": {
+    "latest": "5.2.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "dns-packet",
+      "version": "1.0.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/dns-packet"
+      },
+      "dependencies": {
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "73df75ad3981b2b225d35c693c49a1a85333336c",
+      "_id": "dns-packet@1.0.0",
+      "_shasum": "e903db3569cfa59d3516995d5597880927872c97",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e903db3569cfa59d3516995d5597880927872c97",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/dns-packet-1.0.0.tgz_1455828678220_0.24197762180119753"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "dns-packet",
+      "version": "1.0.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/dns-packet"
+      },
+      "dependencies": {
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "d8d3514ea8019524230012e21411be552d0d3a8b",
+      "_id": "dns-packet@1.0.1",
+      "_shasum": "438f1b5df6df95a4ac44a42c6f0657954ea098b4",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "438f1b5df6df95a4ac44a42c6f0657954ea098b4",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/dns-packet-1.0.1.tgz_1455830160654_0.0021190382540225983"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "dns-packet",
+      "version": "1.0.2",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/dns-packet"
+      },
+      "dependencies": {
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "d939033c8317c13c873a26120f73d0ce3d01500b",
+      "_id": "dns-packet@1.0.2",
+      "_shasum": "1c9dd5acae514ccc323f143845cad928f73e5d6a",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1c9dd5acae514ccc323f143845cad928f73e5d6a",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/dns-packet-1.0.2.tgz_1455830472435_0.21476242318749428"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "dns-packet",
+      "version": "1.1.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/dns-packet"
+      },
+      "dependencies": {
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "b20b693267b60f9aeb83475988ef9d0a578798aa",
+      "_id": "dns-packet@1.1.0",
+      "_shasum": "c11ce43bd9977aa789af72de06b6e4ad6e84730d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c11ce43bd9977aa789af72de06b6e4ad6e84730d",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/dns-packet-1.1.0.tgz_1456191463412_0.7309758770279586"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "dns-packet",
+      "version": "1.1.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/dns-packet"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "412574eda8f4337b79310ca5f9c08a7e0a49e69f",
+      "_id": "dns-packet@1.1.1",
+      "_shasum": "2369d45038af045f3898e6fa56862aed3f40296c",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2369d45038af045f3898e6fa56862aed3f40296c",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/dns-packet-1.1.1.tgz_1478838452675_0.8937266955617815"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "dns-packet",
+      "version": "1.2.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "a39813b2d59c48472e870943913303c1c27b4289",
+      "_id": "dns-packet@1.2.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-1DeFd9NyoEuqdcmkGGEJP8ISvppF3VdqDhFV6q0gZxC0lJZIV0bfNqthMPuwoh/zYgMvOc7kpAKcDeszI0SYaA==",
+        "shasum": "ee98421cfdea017fa98e730c4ffd3ca513599297",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-1.2.0.tgz_1502556144060_0.2884097008500248"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "dns-packet",
+      "version": "1.2.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "c61f402d4808a4c072a4df7bbaa434517dfbc10a",
+      "_id": "dns-packet@1.2.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-eisukPHpsFmhEIDnm2mECIiT0huapmdkC0AH1Lvt613Kz2v1kwolrkecvguFazrqnpxvgYdtcMFTsmQzAeRXZQ==",
+        "shasum": "d0124c651d0efb969a80481dddeb25e6c2c12b44",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-1.2.1.tgz_1502569247215_0.9715713816694915"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "dns-packet",
+      "version": "1.2.2",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "f6869562f42584e3bd8d66fdc257965827e35b04",
+      "_id": "dns-packet@1.2.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-kN+DjfGF7dJGUL7nWRktL9Z18t1rWP3aQlyZdY8XlpvU3Nc6GeFTQApftcjtWKxAZfiggZSGrCEoszNgvnpwDg==",
+        "shasum": "a8a26bec7646438963fc86e06f8f8b16d6c8bf7a",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-1.2.2.tgz_1502879702458_0.3107227368745953"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "dns-packet",
+      "version": "1.3.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "0d8bb78efd89a8118168c1ca77baa7afa6e5d79a",
+      "_id": "dns-packet@1.3.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-uyOFFZ3elFVDZ7mq8bfl2PkgIbFr7+29RDyarF1maUuPNHNvBrlgcNkJaEYQh3KouqAyKzVLYvWRT3CWLSbNMA==",
+        "shasum": "7e2b33bf992678a44534c7117d39196bda684d33",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-1.3.0.tgz_1515609832455_0.5738444679882377"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "dns-packet",
+      "version": "1.3.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "dependencies": {
+        "ip": "^1.1.0",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.15.0",
+        "standard": "^6.0.5",
+        "tape": "^4.4.0"
+      },
+      "scripts": {
+        "test": "standard && eslint --color *.js && tape test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "main": "index.js",
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "gitHead": "7f35bac5b4680d7bfbb34fbc475ecfdbf9d25092",
+      "_id": "dns-packet@1.3.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-0UxfQkMhYAUaZI+xrNZOz/as5KgDU0M/fQ9b6SpkyLbk3GEswDi6PADJVaYJradtRVsRIlF1zLyOodbcTCDzUg==",
+        "shasum": "12aa426981075be500b910eedcd0b47dd7deda5a",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-1.3.1.tgz_1515702163054_0.20508755347691476"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "dns-packet",
+      "version": "2.0.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "standard && eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.15.0",
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js"
+      ],
+      "gitHead": "a77e1bbcc7cd0acd3cf46fe141df869d2b86f366",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-vaSVKJxPkSW/CNUNsyK+MFgH9GDsicNT7c097rZz5p+1U5cPQw1MPsSevl7xHpXmpedFXfTSFCLhtiYwVW5NGw==",
+        "shasum": "9e9ea4cb5d4d99efdde5a0c5f62406005fced685",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-2.0.0.tgz_1515703092174_0.3792294031009078"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "dns-packet",
+      "version": "3.0.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "standard && eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.15.0",
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js"
+      ],
+      "gitHead": "a7fd815e02f98b892fcfe92940df1c48d57d9d31",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-ooUyQgvagi3JcpilyPJLvatQNclz34Yd7wF83RWicQ7XWv4mrwoBR4f0d+eD9PkSpUT7BFvR58sy/HlIUZNEsg==",
+        "shasum": "b035ed7194a1995dcab047ae5d959e63a7859229",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-3.0.0.tgz_1515921443783_0.11186015279963613"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "dns-packet",
+      "version": "3.0.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "standard && eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.15.0",
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "cdf403f93c6603a0a923d0a79bce820ff51ebb8a",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@3.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-TAevu0t7MLB+Fd/ZzvG1AOW+bOuHWo3rerGxzoPMVn+YcmU6BPsltex5QN1XcBP2C7wX5Fysouir8KoqlG3r1Q==",
+        "shasum": "db2fe665093fb4953f4d2dd6165539e83c3e81c2",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-3.0.1.tgz_1515921928371_0.7476593842729926"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "dns-packet",
+      "version": "4.0.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.17.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-node": "^5.2.1",
+        "eslint-plugin-promise": "^3.6.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "tape": "^4.8.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "8000f406c8f4966c03c1813c5f35be5180ffaecb",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@4.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-Q+WQldVgB+QrIJArsJh7JkTAzPjzQVFSr9MUd0z9cTBGbfLWNrfDSec7b14HoYIdJ49hIvj0GrL3gAcMmR/cSg==",
+        "shasum": "38ba2618d6ef5a56209fe24b94a8c2752fb3434c",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet-4.0.0.tgz_1517775136448_0.05204262398183346"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "dns-packet",
+      "version": "4.1.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.17.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-node": "^5.2.1",
+        "eslint-plugin-promise": "^3.6.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "tape": "^4.8.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "889924d4f47da5a4df5af0bc86ee052a4d2a6d84",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@4.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-cNSQQy+92wZru/sBAEkNvaLozDIjpnAQnMs/RfzjYQtl5HyfIMKw0BevlwelA77UI/aq+mPteHNVyNpgq0k8ZQ==",
+        "shasum": "294ccce3508d2fe7e1f0ff4872f42284cc736f8f",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-4.1.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 33553
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_4.1.0_1518343747212_0.9313026839236831"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.1": {
+      "name": "dns-packet",
+      "version": "4.1.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.9.0",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.7.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "tape": "^4.9.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "40d8e5657f3309ee173a73d085d71d9c72377a8b",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@4.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-YwtiH6TWoXGIVHE/UgorccaS9qStav9yO5ToMy6R3MdCt1YBdiBRykTguTV7vfhHSnSsZzlZ1jNzGqP7VsKmEg==",
+        "shasum": "b676dea595848fd7c71d43b35c83b5fede469d96",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-4.1.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 33824
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_4.1.1_1522182605309_0.5821739392178391"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "dns-packet",
+      "version": "4.2.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5",
+        "safe-buffer": "^5.1.1"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.10.0",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.7.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "tape": "^4.9.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "eddb7ab7e40002db72b8beef9731477ed8200e9c",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@4.2.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.10.1",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-bn1AKpfkFbm0MIioOMHZ5qJzl2uypdBwI4nYNsqvhjsegBhcKJUlCrMPWLx6JEezRjxZmxhtIz/FkBEur2l8Cw==",
+        "shasum": "3fd6f5ff5a4ec3194ed0b15312693ffe8776b343",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-4.2.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 36719
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_4.2.0_1522854828945_0.005505700658886337"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "dns-packet",
+      "version": "5.0.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.10.0",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.7.0",
+        "eslint-plugin-standard": "^3.0.1",
+        "tape": "^4.9.0"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "622b9ea3bbdeb91d6377a87e8b0f3e8f3e941e69",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-2LXAFwItB3+/H493JcvCJVTLBSXPYYOlArUwrEziUWXvsB05CWL6k5T3Qk72IQbnjffe/FPbEjrJksDegWJPkw==",
+        "shasum": "c3d7bcb8a9ec333a6713ab5d954808b5e74eed09",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 47848,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbEPcVCRA9TVsSAnZWagAARe8P+wRDizJVXh4RtliJqXcV\nqxUX1rykgch/gBmvFFp7zW6eRBlHhxWU15LNJocyjL8KRmdJZvATjiZxKXuG\nc45u8VsRrBvTsB1qwwcRThHxRpWDczd9ZZw5iq9EbM55kADwJnkukjkfzzgv\nuC6aYl5qGPpAAydr7Z15AF3zPDJ6DXH+0+HENrW8mcTNy7TlA7zaw/qMb+a+\n2JgFJC1I17ruo4m+RjY7aerKAnz97MKfnALVt9Z8FdOT1G3ScJm+QCpk1A36\n05vLB4PjQ/2h6c+ThiS4szU6c+L0WVzQddZ7Tuoi9XafgiizTxpjvT/DxdPK\n94fi5dvyUFIddptDAggqwobx0QusP7f+GVms9XqBjC95q8NA9FRcua9DbU3R\negHsGGE7A/08Vdt2mizmzxLmDSvTaz+XfFjpF29CY/vvCAJ9Hp3VGr7akTHj\nXbtvg/OtHTEvXggDzP9TaVkpRJX+xAOQXY64g6lMX2+TgD5d0XRykoVxSnRN\nvVjjwKJemqxos4tY73srp0aWIbQvGcYoDyg7P2HmsuRtEHb5a51cH2nnCT6t\npoSD6HH2drbMnp7bXNx+KSXSwmcdH3FpLB8M/sV5WYxVP6y3C9s++B9MnPwg\ne0EvXxhEaXjy4Tzvt93fZdHIj9ZpHJwG2IDxx8IoKD8nTD+CFj39hSPaMS1s\nDrQQ\r\n=ebzy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.0.0_1527838484757_0.8657356893301125"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.1": {
+      "name": "dns-packet",
+      "version": "5.0.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.0.1",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-node": "^6.0.1",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-standard": "^3.1.0",
+        "tape": "^4.9.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "93b8c3c03bd834168b318dc9ea981ba03c98b864",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-1XE76Q6m/kNA+49qnDyoYagqzSDY8kgl7S9tPdkQGJMfER6EfgccDcBa7MgEgzjxgcam/E2sx5WGNIotMLulJg==",
+        "shasum": "bdc914c90cd1d346af89dd436b1135ddc680c57f",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 48069,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbOoJmCRA9TVsSAnZWagAANt8P/2WR5FcA38v63Yp/OnmC\nCXOakVSOt5Up1hSC2T0sAlXvLXfG6D4cTVNf0kiamhrj4z9YjbDax8ySWFgz\nPZXlER3a2VEU5oUBFeqbEQoPpNZdclc1t7JHT/DBByGOEIzwU31ApqWWk8Am\ncuurIrNqCWIV/NrQHYBJcAJH+C/Dqu6Qb2n1NAqPr8rFJK5zQ7btKrSoLlRB\nCmEGWCUUCZlHln758A8NOU4KsdsvtP4iHOQ60ouRDXcyW8rMajTBYP8/MuUG\nCOJY3fWFAJyNluYRmgc3bAt9eGKOsB5i+LSA4PuSMJjGQ4vodRkxOLnN0Epr\naqSoa+Z+DgtLK72VttQDgIyYCvsdo1eIVdr+zYhvZWJcRU9YhVQsVr0Ja2s1\nO8LjrTPnwUiNF6+OLmWTkZibaJe7wz6tOQ88unN++15oK5gyJCMD/xwRaSXT\nXNXmKP8tuT4JDRtpN05A9Y7LhnHO5MUu+dMSTmLI2pSb5o2vGRasWpibtNoS\n5JQ285rKJh7ijfvjNJZY4XpJMslcIn2Y6fm2Yyl6MD28mJhxjB+q3DQm4jQ8\nk/5GoHghaZ4XecFCvQNK2eNa1NyGwVtzi3lG5L1r88CXW1YON3H5Ih3QSnZY\nRPeL5oLz5qsyjUy7wbzGf7AiqHAXGYCCjlX4l26/G+pYCt6IsHPl10I0j4TJ\nerYF\r\n=nFIQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.0.1_1530561126507_0.496263093789713"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.2": {
+      "name": "dns-packet",
+      "version": "5.0.2",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.2.0",
+        "eslint-config-standard": "^11.0.0",
+        "eslint-plugin-import": "^2.13.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^3.8.0",
+        "eslint-plugin-standard": "^3.1.0",
+        "tape": "^4.9.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "files": [
+        "index.js",
+        "types.js",
+        "rcodes.js",
+        "opcodes.js",
+        "classes.js"
+      ],
+      "gitHead": "f4c95d6dda79d3fa95adbb8d94bddbb4418f9664",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.0.2",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-vHTr8EEx3R4SWk92Oaez/En9c2Rw20h/iLvxuSI8X7KBi8OW5clnHHFoaGbz2UkMoyWwsWveL9LLv33yONv5uQ==",
+        "shasum": "ac43c388ffb576a790c6dd71a517a72e3f0620ad",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.0.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 48069,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbV2flCRA9TVsSAnZWagAA0DsP/iIlpicNIlpdwe0LZOFp\nI2YF2qoO/ZmfcP3MXNegTr7rbTqAxL7MTEgbN17yyEB3nVz/4VY5gdC9JjrX\nh5dNhAQeYWds0B+lELeAS66n0mQuTSjDdKdq9+DhlvtZSiYvYcrOcVhDJ/Fz\nSQUjwjYBomZII0NLGKynxvUwoOW5aRow9r9Bksv0T2Lzmsl59q8SlUGjQ+Ss\nUZrT6ZlyeVpBw4jP8y7DK+Upjz+qYkC9GoWWvv/W6nSWQswFX0cg6KdoTBG3\n8PwiyQuNwVUIJa7y7lv8IF9qt9looyL7K/TA3WIrG13pwJRWlUz3kqiSyAET\nOqpvvkHDylrmTGfGhCdyJJ0gt5BVsB/u3rOt1Bvkmwl980K5/siaH2rIa336\n9aeNeDjdAkQm2HSPh6nNTtV9cp0zNRYOA8bZ1gDU9HBJqTmJXJ8RquYNs52c\nRgkSXCEe9YTXiiX8jnz1uQP0yZH/a7FuaeHXmILbhWlwFlYi4b2fnvqFp+jL\n98nWqVxbQlfT3+T5ckPDax+ke0fUWsKK1bnkz32QCUGkLuY0cwwmYBix1ty0\nECat89ZStr/TOqpSvoKMGnxUsDnD16UbWXHUbJbKHeGbVGcG+jgyoUHXFDvb\nnj4QNiYGnhj15Vl86HaLHm2Bxm9lYHpChcxv3132n82hziOQFnC/dgnoz/i8\njQ3L\r\n=1FwF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.0.2_1532454884934_0.07220768545546408"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.3": {
+      "name": "dns-packet",
+      "version": "5.0.3",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.5.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^4.0.0",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.9.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "1abf9949624c12f9e66f108be69dcf3ad11e25c5",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.0.3",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-CqR7YfVUdGqbAMipv+ui0AsLjD4af4K2JiKA/rq+pF1gQ1m+lB0G0B86G8z1ECf8f1bWhf/ZS1tG5yGicWWaRA==",
+        "shasum": "404530537e44bb36c1ac333f13db3b38828e5e3a",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.0.3.tgz",
+        "fileCount": 9,
+        "unpackedSize": 48068,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkAwuCRA9TVsSAnZWagAAneYP/2kIUP/7yKzWsgps8cUp\nyAuZbAtqqKc+4wdy9TsK/O/H24Y56yTUdqX2E11MnGfemZz+cm+aV5Az3arE\ndhRswQwa2YwnY+I0KWukyNWKG5u6AYEtiSmPRy7ZbBduuJYt4pryWbPf6G3r\nHq4wxY3MCKpjmouR4sVgwUVpKACfMzBxDpph6XaYTnZplwcFsDbGZ48tsB08\nIswZk5143G3TwKlOYJ0+f5g2M75qiCv8zy3gTCIEKFfSCP/JgMmZV0aBMAzA\nNEndK6vWC6zpKiXtMx1wTEqV2OSQc2d+YfOIDW/Tl306nYcTO3kDCbqBE2rm\npD+gzr9yFv+81+ZuiY55mLXVjUB0xTZyI5VIF+Ty3w2xID4MZKmBUfYX4qvS\nPifLn0qPJqX4ajZhpcAy1wfU2SWqDKpNCPO+mGPD+22fCTL+HReWY2fZ1PD/\nIFEsiGMjHitGSVAR2DnfKmtdU0UxlrZhwKmIzcv3lcLtXbB3jlLbb6Fhiig9\nLMOTYSXhfeUNFzPnE54G9n1Du6J2no26ISXECczPEAf7rDtk/7AV3YJJe+gS\n7SX+B8JhDiZWB9ibrzbqHWvzRjwE7/SkBMHscQ3Wx3Z4MY18wlqMKF6k1Ise\nBKxsB3q8Z/U+7L87AFPqfLxWp2JnGRg7MFTMJYPK6cLJimhYI6Qb67eF/zTR\npdeP\r\n=586L\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.0.3_1536166957716_0.26690714026733553"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.4": {
+      "name": "dns-packet",
+      "version": "5.0.4",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.7.0",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.9.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "85a4aaebd12c9e8031921a5f71a13d445177ff6b",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.0.4",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-tbBxz5nn6Xkw/xrZ9gLzpGMrnkHjEdoUdB4MaAOGkZdxe+Q2m9ojtuoP7dlGcmy7g9ix/H1qIUwUQBzUx7VVHA==",
+        "shasum": "2830b4630cef12b8c9ad9172843ac600527f31f7",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.0.4.tgz",
+        "fileCount": 9,
+        "unpackedSize": 48093,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbxg6tCRA9TVsSAnZWagAA3mAQAIYJdp/h7/u+PFmIozLC\nVZJyRZ6CXg0ZTBCB9zMZ10SDhyxsDkJg0u9C7GCkkBRzys9aStRsTtDPMAp0\npltbV/nvUca2Znej/o7K/BKpJY0hMLI59D3e+sDlEJt7lTLRbi3jp1h2fk1q\no0MG+y1KcCkmrbomCFzih6sdQv00nx3vUKB9NJXFH8gBPWGpqxv6GBKGgkQ1\n9bRMm4T2awa0hL4ZXzR0jGfLexagYaxHCSdgem84I3kCvLCdjjROtk2g7df/\neTpwfjWga+QlAPAiFv9fkmGxC+G4vgftEm/lHDtunn0ORvuT4yFixTd3gA8H\nvD9X9be/qLSiISjL7Qhc4f1ZYjlF8pwkg2yqMSBHgQOOOya/tj436djR5HLj\n+onW29zaIOFthJX8gus3l/GwanR4UX9xAWK82eSb0fMWCX16oweImvO9Ksjg\ns2DvCptmAm+DWXzd2tFTD8B6h7q2NyjmUOmF24aH+VSiFXf4VNVK4wrM8kp9\niu3INuAXnxixuURmkxr/+YRjeDaXNqy/YGJnks6QXlM55nmDVisQX+X0hjSr\nrg8da25Gz0rxX55bQRW48LBahyCr35qTG5LfM0r7KDFXN8e6IP+kw+uRpYWV\nNC4fIBHuhorGCAWkSdNQwkO2eHctamBwbOE7qNr3zokYLW54T+m4A/PPVQJO\n9Kok\r\n=Lds/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.0.4_1539706540487_0.2305758034123"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "dns-packet",
+      "version": "5.1.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.12.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.15.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.9.2"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "0d8791efad0a04f0871b4d1c8f0f983f5eb58055",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.1.0",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.6.0",
+      "dist": {
+        "integrity": "sha512-HFmORCqHq8/8oWQ0UNqpfyFiDvuxX+uw/k0wvu4gpRSo9ohOBwysS6GL1qd4BoYiVchzSOeEcSIUGcpcRvgp/A==",
+        "shasum": "4be2aec09aea7495ea2303e80828e849225dfd82",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.1.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 49159,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR44ZCRA9TVsSAnZWagAAFl8P+wXcBGGMGt7INwi04iGj\nNCGSFeeKWewFqsHLY/1kVq479w2E8MvIk32qkol5KHTgli6195wfnXzmeUhO\nprQnDElLon27C7AjPAN6fuZnqOY5086ENbIOJ7WA/JjVsUAgPrtoHGZ81WXV\nLe6CHLaF6aaIFQYFtvu3kjhyhuvJp09tJQvL62zUGFLZYAGn5AI005HAvobq\nHqBtOif/vdLDpI2FqdgX+AHnFaYBYLSX3YEz9jLGFw1ePVRqPGvQDw1R0DST\n8C/JntY4jlwa3pIY54XdsvmwLrnHxzCvUnHNeAzA1XUW/5j/GGGQbZYNAs4v\nE4NKRvWo8hhwkEVK18RFQIOFP7ZzVEYejjzUnQ+QGS5NZv1jw2BOAoAOTgvr\nOVQ0Faysr8beZeog76ZC7yD6Qq4yr4b1YfFp0RGRPwJ2rbMrj9BZXSkDPaDX\nUJ8N2QgWizX+BRl3AjeIUuANb8Pi9IxtYLH9e0HbM1G7VxVTNXi7W4GWsshC\nepwQ72Efq7LVl1Aj67asXKH8nzV1BCmwjAOFah6HmnDm5Bz4aKXP55MpZCTu\np83PCYZedJja/gv1MsB/Ptr9EsilVaj+RMnpkKX02YS8/fLLlRxij4NZRxN4\nE9ql2DSoLWz8dYymnRj9d7bc7V+LHkLjjLrihw0eembbxzwk1o4kteZQJg32\nlV3h\r\n=nZcW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.1.0_1548193304572_0.577893756100136"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.1": {
+      "name": "dns-packet",
+      "version": "5.1.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.12.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.15.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.9.2"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "b72cefd4c9617d10f71ba50dc355a3c2ab376625",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.1.1",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.6.0",
+      "dist": {
+        "integrity": "sha512-ae3OSrBktaQdUzG3qygjmp55XqP488Hhc9VE/pqSY7693z/9tmgZ7YYmH7Fjf5pY/xx69FHr6wnEXCYQpL9DHg==",
+        "shasum": "4e392a32bbfa08346c155055915499edce06dd7b",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.1.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 49149,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR5CaCRA9TVsSAnZWagAAlKwQAJM9fQr8lTDpYyu0bLg3\ntDjwOLtrwgoMaoKTIIqASDtZbLeJzBhkgB6u50dUQ6i3H3BlPmzqagCHVoL4\ngjqs38i1WdZgO4vxxCv8JKYJOmpRnZsGKHbR/qFXQZANVI0PaOzFDjS9SFjt\n2JSQpMUSj3yrpdJgU8BME0qOBbYBQJa7kH9f+qWbi3cT4BVIDzSeUakUyBiz\n+7/YtKT11ukNfn2WjuVufEPOddpLvBSd/61kTRv6aQjRW8Qr8luu9wn1xs6P\nla9Lk2goz6SOOi4Q9wRB1P+i78JNXVHyNYNxlM3cCJ+z3lSy+QjmmZqVVTec\n5mHFYkLTnhhUQi1TSpqYNrSNktAeJyP8j+TZwUYU9hkQWiWy4h+1bVnHImJv\nHgKze1GTJyBDjUrc/R3NOsHZgdfKGxBSbW+VEtdM4BBBbK7NEB3k3GHWgLD9\n0ROV8RuvLk6P70KMxTNytiEqX8MjELV1PDmKPyemSeosWP0Z+PFAMXW6n6KV\nHOt5MvElpOcJhMPTB/5KSuvQW/1m0Duovy9igcIuKyX25hTksQGuAkN/l/p8\nl71zuIpGbmlUM77IrJh76YdrrsKJumcuZlQ9d0icS1oZyiB2I5pcfLgqxxDU\nd1q2MF2NjMSBR8ELX0yKN8sEpYLsMIhFb6EyMioaxJc4Tjsg5daDAK+LyQIN\nxbV4\r\n=y8MU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.1.1_1548193946090_0.5658088676537918"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.2": {
+      "name": "dns-packet",
+      "version": "5.1.2",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.12.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.15.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.9.2"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "afa238119f7d6f3ef5b7c672493f8ea86f6d744e",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.1.2",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.6.0",
+      "dist": {
+        "integrity": "sha512-C+wCs4W1ZwTJLG/S8b9gst1dRD63bnY+o86lqVnxGAVUB9LN2Cq2zUKobaGv5kCqY/y7CJUh2kNEUTii7lcUng==",
+        "shasum": "9f1cbb02ff53edd59938cae6faa6a4f7aac7f922",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.1.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 49273,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcR6RxCRA9TVsSAnZWagAAEEMP+QABQ87ZYawy/jY6QVN9\nm9YadK8Mr+9dXXwLzYnl31pc/CG4QbGQr1OhXwyfj7ZhQOfQ0yGl1QZWPrkl\nZHdUplnqK3k0FzKXpzwmVyD2+2ap8I0SEzjqyR8j3AO/fN1hwByGHEpth3hA\nXLBksyeN0aY/bQ5v8ShxsXf1AzY1xHKHxDpXxUr0PX/L9SdoJ3VBXMPUZ3Q/\nK981JZ2EC8UaO4cJDGjbJMyZflb19trfmI8oIhk5+z0ym4cCLcgGW9UNu3Jr\n88/nO9S1dLoncS/l62D7W4Ec/z607CZNZv3yU8ydTT+v680IE6If2q2rlvgm\nQkb32KXNcUjr4lBOCNwNAhimLx4UlBg7rscFhC73Ih7IYrOLH1KQHh3UAAOh\nz0XU33uxOxGsBT+oxJQ6EAxyy8G5FaAyXDMgpPj1jseEf6JxKArfPf+PBJF2\nDwRYvaqFlv2/PZlefp7XpXUzrkbTQvifpaxMVJRlvJR//pom13sbkHBKH/3p\njeAIsNfFPgNPue0OxEP+VSSh4RZ0kUuBYdozXKGumRKKEP3U+6fPlZHoRwm2\nFumzmKA8iFttbF/t3W7UcEpHOeRysUDC8J/cB6kik40sqqsVxhd8dIVjs2mn\nUoWWTDG2/V9ha29tPUcdQbbgdN7RhvDhEIwKcyYIGf5egqq+8WhqsaU6h/Of\nA3hS\r\n=9VIr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.1.2_1548199025097_0.7562001862814034"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.0": {
+      "name": "dns-packet",
+      "version": "5.2.0",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "eslint --color *.js examples/*.js && tape test.js"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.14.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "tape": "^4.10.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "58801f83bc0e8965b4d942ed5e1cf066dc4e7d66",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.2.0",
+      "_nodeVersion": "11.10.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-1TJGl1axSqCzFe8fnUwyioGTfpXFX2gyG0+gEJtVuq0pN6YMqPRnQRXnBswl0GxxZKb3NTJd6F/zI++yjq4tsQ==",
+        "shasum": "d09167e02cc5224fb6d1547b379c3f756e963695",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 54670,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbydwCRA9TVsSAnZWagAAFbAP/1UH2rlspfDzEYgpd+VX\nSMoT5CX2/RMbbmbmlU/yDRbvprLDoipgs1fF69NvF6A546sJX7EwVxFLF0ts\nkQRam2ftsturZGABAJbKSslbZum6m0IMCOlnN4Viiw1Z1aRSEItlaWHrfZmG\nYxpep93/oSCQveyBzzjJBxOUB9gO5YHQNF3ZwB7D3knky+B0iYX9Cryjq1HF\n2uDvUZzeOyk7uqgSvSXs6aTdk9m+zBiJQyHnzI1iPY14Ng75acKxr6VgpBq+\nx3LKCfbGE6eTX1gNoOvzmdelgLSmbzZrTQzpu+QWFzv8BmTsIZ16Wq7Y4mxd\nhy6y7jeNzpDnTvaxYXrBhfKYpweT/JTbFcCMSgWJKtYIV1WMRh8OylIQqFYz\nVs1zi5l4hima6qJumQLNJT1t4WnC2leZcRY5ltXwqqREqXvolB3jXW5uEnxm\nItwSHcDr9vduoIyM+3NAPYtuSbR5SAF74lr3u0h9CB525kcUbPGD8mI8Z2gx\nL7zLi7TK9Hc3OpBRof1soV76Kwo4hdUHqiHw4xVbPnk/65cp2vFZrjb+/cnV\nLB0W/lXJqh92OGRM0Umu2grLF5cCeMmMVG6q9WZSM+/LqxoQ1YXOmcq/zgYA\nqgheANiITZIKPXVfooiRWj+qA294WFHqkQu/GumyN+/a8mr0Caw8s6EEC/hK\ncDtF\r\n=65NB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.2.0_1550788464071_0.7144023030682038"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.1": {
+      "name": "dns-packet",
+      "version": "5.2.1",
+      "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/dns-packet.git"
+      },
+      "homepage": "https://github.com/mafintosh/dns-packet",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "clean": "rm -rf coverage .nyc_output/",
+        "lint": "eslint --color *.js examples/*.js",
+        "pretest": "npm run lint",
+        "test": "tape test.js",
+        "coverage": "nyc -r html npm test"
+      },
+      "dependencies": {
+        "ip": "^1.1.5"
+      },
+      "devDependencies": {
+        "eslint": "^5.14.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.16.0",
+        "eslint-plugin-node": "^8.0.1",
+        "eslint-plugin-promise": "^4.0.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "nyc": "^13.3.0",
+        "tape": "^4.10.1"
+      },
+      "keywords": [
+        "dns",
+        "packet",
+        "encodings",
+        "encoding",
+        "encoder",
+        "abstract-encoding"
+      ],
+      "gitHead": "cbe05219b4f804bf790793b5d196f5616d1c2b97",
+      "bugs": {
+        "url": "https://github.com/mafintosh/dns-packet/issues"
+      },
+      "_id": "dns-packet@5.2.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JHj2yJeKOqlxzeuYpN1d56GfhzivAxavNwHj9co3qptECel27B1rLY5PifJAvubsInX5pGLDjAHuCfCUc2Zv/w==",
+        "shasum": "26cec0be92252a1b97ed106482921192a7e08f72",
+        "tarball": "https://registry.npmjs.org/dns-packet/-/dns-packet-5.2.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 55133,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcmhqDCRA9TVsSAnZWagAAmrcP/1Jfkvw52crN9gEwFVaf\nUb2VuKK8EoZzuZibq+Jv9k33z9cddF/AOeuDx8kFbw0DpobNozl4Zm/MvrhG\ngWx89PDv1a+0Yen+0GwygRVTK5xpvJLRARZQEnu4jFzfJrHtrNfJRREogFTI\na8Asd3GXBRg1LY/bj4uoJCedmm3xuzbjNb3DTR9oJSsl9y4HzwRd645jD8eW\nqDx7nXWqNlSTyN1U6Q2rCa4ezOz/Jj4PIoJPa4dW0MWuPZik5olNnCRgpI9g\nT1UZMaoVnmjY8PlbEtwTcGv+DhGEUMR7+vUcg97CClGvPZ+Y46Q1SRB+EAeR\nih3tTApZTLHQAAfJ35P/pKjEKqdznbPU6LLKw/qDQH8ZJsn6LmQtU42uxrZ3\nZW6v4MM6xvjnZ3GuAywg1BqJj5RLwDi0Wvi3HfRWUHNk33hogqiPi8aejsib\n+/mih+UxryxwMjhANC+0/FFvc1e9VOGPRvnyC+uasL42SQI0eMCE0GB34Hd0\np68FQxSGh6vQmykfxwQD4+TsZrd/b6fhyob4egCVg1HQm5FAl0fVhkgv7UYs\nnjGkhs0G2hYm/X3zQqrqaCZNBydSnrujUryvGXZ++hyXbfZiLBMsUM3BPO3D\n2ZqFgVQ5BxanfLdIGRpKu0IuULIhrFI2qpXRJxOM0SCXFkWocxSs7jrL75wK\nOaRE\r\n=1EFM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "silverwind",
+          "email": "npm@silverwind.io"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dns-packet_5.2.1_1553603203196_0.7618290820650895"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# dns-packet\n[![](https://img.shields.io/npm/v/dns-packet.svg?style=flat)](https://www.npmjs.org/package/dns-packet) [![](https://img.shields.io/npm/dm/dns-packet.svg)](https://www.npmjs.org/package/dns-packet) [![](https://api.travis-ci.org/mafintosh/dns-packet.svg?style=flat)](https://travis-ci.org/mafintosh/dns-packet) [![Coverage Status](https://coveralls.io/repos/github/mafintosh/dns-packet/badge.svg?branch=master)](https://coveralls.io/github/mafintosh/dns-packet?branch=master)\n\nAn [abstract-encoding](https://github.com/mafintosh/abstract-encoding) compliant module for encoding / decoding DNS packets. Lifted out of [multicast-dns](https://github.com/mafintosh/multicast-dns) as a separate module.\n\n```\nnpm install dns-packet\n```\n\n## UDP Usage\n\n``` js\nconst dnsPacket = require('dns-packet')\nconst dgram = require('dgram')\n\nconst socket = dgram.createSocket('udp4')\n\nconst buf = dnsPacket.encode({\n  type: 'query',\n  id: 1,\n  flags: dnsPacket.RECURSION_DESIRED,\n  questions: [{\n    type: 'A',\n    name: 'google.com'\n  }]\n})\n\nsocket.on('message', message => {\n  console.log(dnsPacket.decode(message)) // prints out a response from google dns\n})\n\nsocket.send(buf, 0, buf.length, 53, '8.8.8.8')\n```\n\nAlso see [the UDP example](examples/udp.js).\n\n## TCP, TLS, HTTPS\n\nWhile DNS has traditionally been used over a datagram transport, it is increasingly being carried over TCP for larger responses commonly including DNSSEC responses and TLS or HTTPS for enhanced security. See below examples on how to use `dns-packet` to wrap DNS packets in these protocols:\n\n- [TCP](examples/tcp.js)\n- [DNS over TLS](examples/tls.js)\n- [DNS over HTTPS](examples/doh.js)\n\n## API\n\n#### `var buf = packets.encode(packet, [buf], [offset])`\n\nEncodes a DNS packet into a buffer containing a UDP payload.\n\n#### `var packet = packets.decode(buf, [offset])`\n\nDecode a DNS packet from a buffer containing a UDP payload.\n\n#### `var buf = packets.streamEncode(packet, [buf], [offset])`\n\nEncodes a DNS packet into a buffer containing a TCP payload.\n\n#### `var packet = packets.streamDecode(buf, [offset])`\n\nDecode a DNS packet from a buffer containing a TCP payload.\n\n#### `var len = packets.encodingLength(packet)`\n\nReturns how many bytes are needed to encode the DNS packet\n\n## Packets\n\nPackets look like this\n\n``` js\n{\n  type: 'query|response',\n  id: optionalIdNumber,\n  flags: optionalBitFlags,\n  questions: [...],\n  answers: [...],\n  additionals: [...],\n  authorities: [...]\n}\n```\n\nThe bit flags available are\n\n``` js\npacket.RECURSION_DESIRED\npacket.RECURSION_AVAILABLE\npacket.TRUNCATED_RESPONSE\npacket.AUTHORITATIVE_ANSWER\npacket.AUTHENTIC_DATA\npacket.CHECKING_DISABLED\n```\n\nTo use more than one flag bitwise-or them together\n\n``` js\nvar flags = packet.RECURSION_DESIRED | packet.RECURSION_AVAILABLE\n```\n\nAnd to check for a flag use bitwise-and\n\n``` js\nvar isRecursive = message.flags & packet.RECURSION_DESIRED\n```\n\nA question looks like this\n\n``` js\n{\n  type: 'A', // or SRV, AAAA, etc\n  class: 'IN', // one of IN, CS, CH, HS, ANY. Default: IN\n  name: 'google.com' // which record are you looking for\n}\n```\n\nAnd an answer, additional, or authority looks like this\n\n``` js\n{\n  type: 'A', // or SRV, AAAA, etc\n  class: 'IN', // one of IN, CS, CH, HS\n  name: 'google.com', // which name is this record for\n  ttl: optionalTimeToLiveInSeconds,\n  (record specific data, see below)\n}\n```\n\n## Supported record types\n\n#### `A`\n\n``` js\n{\n  data: 'IPv4 address' // fx 127.0.0.1\n}\n```\n\n#### `AAAA`\n\n``` js\n{\n  data: 'IPv6 address' // fx fe80::1\n}\n```\n\n#### `CAA`\n\n``` js\n{\n  flags: 128, // octet\n  tag: 'issue|issuewild|iodef',\n  value: 'ca.example.net',\n  issuerCritical: false\n}\n```\n\n#### `CNAME`\n\n``` js\n{\n  data: 'cname.to.another.record'\n}\n```\n\n#### `DNAME`\n\n``` js\n{\n  data: 'dname.to.another.record'\n}\n```\n\n#### `DNSKEY`\n\n``` js\n{\n  flags: 257, // 16 bits\n  algorithm: 1, // octet\n  key: Buffer\n}\n```\n\n#### `DS`\n\n``` js\n{\n  keyTag: 12345,\n  algorithm: 8,\n  digestType: 1,\n  digest: Buffer\n}\n```\n\n#### `HINFO`\n\n``` js\n{\n  data: {\n    cpu: 'cpu info',\n    os: 'os info'\n  }\n}\n```\n\n#### `MX`\n\n``` js\n{\n  preference: 10,\n  exchange: 'mail.example.net'\n}\n```\n\n#### `NS`\n\n``` js\n{\n  data: nameServer\n}\n```\n\n#### `NSEC`\n\n``` js\n{\n  nextDomain: 'a.domain',\n  rrtypes: ['A', 'TXT', 'RRSIG']\n}\n```\n\n#### `NSEC3`\n\n``` js\n{\n  algorithm: 1,\n  flags: 0,\n  iterations: 2,\n  salt: Buffer,\n  nextDomain: Buffer, // Hashed per RFC5155\n  rrtypes: ['A', 'TXT', 'RRSIG']\n}\n```\n\n#### `NULL`\n\n``` js\n{\n  data: Buffer('any binary data')\n}\n```\n\n#### `OPT`\n\n[EDNS0](https://tools.ietf.org/html/rfc6891) options.\n\n``` js\n{\n  type: 'OPT',\n  name: '.',\n  udpPayloadSize: 4096,\n  flags: packet.DNSSEC_OK,\n  options: [{\n    // pass in any code/data for generic EDNS0 options\n    code: 12,\n    data: Buffer.alloc(31)\n  }, {\n    // Several EDNS0 options have enhanced support\n    code: 'PADDING',\n    length: 31,\n  }, {\n    code: 'CLIENT_SUBNET',\n    family: 2, // 1 for IPv4, 2 for IPv6\n    sourcePrefixLength: 64, // used to truncate IP address\n    scopePrefixLength: 0,\n    ip: 'fe80::',\n  }, {\n    code: 'TCP_KEEPALIVE',\n    timeout: 150 // increments of 100ms.  This means 15s.\n  }, {\n    code: 'KEY_TAG',\n    tags: [1, 2, 3],\n  }]\n}\n```\n\nThe options `PADDING`, `CLIENT_SUBNET`, `TCP_KEEPALIVE` and `KEY_TAG` support enhanced de/encoding. See [optionscodes.js](https://github.com/mafintosh/dns-packet/blob/master/optioncodes.js) for all supported option codes. If the `data` property is present on a option, it takes precedence. On decoding, `data` will always be defined.\n\n#### `PTR`\n\n``` js\n{\n  data: 'points.to.another.record'\n}\n```\n\n#### `RP`\n\n``` js\n{\n  mbox: 'admin.example.com',\n  txt: 'txt.example.com'\n}\n```\n\n#### `RRSIG`\n\n``` js\n{\n  typeCovered: 'A',\n  algorithm: 8,\n  labels: 1,\n  originalTTL: 3600,\n  expiration: timestamp,\n  inception: timestamp,\n  keyTag: 12345,\n  signersName: 'a.name',\n  signature: Buffer\n}\n```\n\n#### `SOA`\n\n``` js\n{\n  data:\n    {\n      mname: domainName,\n      rname: mailbox,\n      serial: zoneSerial,\n      refresh: refreshInterval,\n      retry: retryInterval,\n      expire: expireInterval,\n      minimum: minimumTTL\n    }\n}\n```\n\n#### `SRV`\n\n``` js\n{\n  data: {\n    port: servicePort,\n    target: serviceHostName,\n    priority: optionalServicePriority,\n    weight: optionalServiceWeight\n  }\n}\n```\n\n#### `TXT`\n\n``` js\n{\n  data: 'text' || Buffer || [ Buffer || 'text' ]\n}\n```\n\nWhen encoding, scalar values are converted to an array and strings are converted to UTF-8 encoded Buffers. When decoding, the return value will always be an array of Buffer.\n\nIf you need another record type, open an issue and we'll try to add it.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    },
+    {
+      "name": "silverwind",
+      "email": "npm@silverwind.io"
+    }
+  ],
+  "time": {
+    "modified": "2019-03-26T12:26:45.968Z",
+    "created": "2016-02-18T20:51:22.901Z",
+    "1.0.0": "2016-02-18T20:51:22.901Z",
+    "1.0.1": "2016-02-18T21:16:03.313Z",
+    "1.0.2": "2016-02-18T21:21:16.780Z",
+    "1.1.0": "2016-02-23T01:37:46.666Z",
+    "1.1.1": "2016-11-11T04:27:34.451Z",
+    "1.2.0": "2017-08-12T16:42:26.090Z",
+    "1.2.1": "2017-08-12T20:20:48.823Z",
+    "1.2.2": "2017-08-16T10:35:03.380Z",
+    "1.3.0": "2018-01-10T18:43:53.379Z",
+    "1.3.1": "2018-01-11T20:22:43.980Z",
+    "2.0.0": "2018-01-11T20:38:13.114Z",
+    "3.0.0": "2018-01-14T09:17:24.687Z",
+    "3.0.1": "2018-01-14T09:25:29.415Z",
+    "4.0.0": "2018-02-04T20:12:17.459Z",
+    "4.1.0": "2018-02-11T10:09:07.965Z",
+    "4.1.1": "2018-03-27T20:30:05.522Z",
+    "4.2.0": "2018-04-04T15:13:49.023Z",
+    "5.0.0": "2018-06-01T07:34:44.806Z",
+    "5.0.1": "2018-07-02T19:52:06.614Z",
+    "5.0.2": "2018-07-24T17:54:45.045Z",
+    "5.0.3": "2018-09-05T17:02:37.797Z",
+    "5.0.4": "2018-10-16T16:15:40.604Z",
+    "5.1.0": "2019-01-22T21:41:44.710Z",
+    "5.1.1": "2019-01-22T21:52:26.239Z",
+    "5.1.2": "2019-01-22T23:17:05.247Z",
+    "5.2.0": "2019-02-21T22:34:24.201Z",
+    "5.2.1": "2019-03-26T12:26:43.352Z"
+  },
+  "homepage": "https://github.com/mafintosh/dns-packet",
+  "keywords": [
+    "dns",
+    "packet",
+    "encodings",
+    "encoding",
+    "encoder",
+    "abstract-encoding"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/dns-packet.git"
+  },
+  "author": {
+    "name": "Mathias Buus"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/dns-packet/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "temasm": true,
+    "silverwind": true
+  }
+}

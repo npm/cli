@@ -1,0 +1,187 @@
+{
+  "_id": "decode-uri-component",
+  "_rev": "2-98d50a51a9681c8c1dbd92574c6022e5",
+  "name": "decode-uri-component",
+  "description": "A better decodeURIComponent",
+  "dist-tags": {
+    "latest": "0.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "decode-uri-component",
+      "version": "0.1.0",
+      "description": "A better decodeURIComponent",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samverschueren/decode-uri-component.git"
+      },
+      "author": {
+        "name": "Sam Verschueren",
+        "email": "sam.verschueren@gmail.com",
+        "url": "github.com/SamVerschueren"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coveralls": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "decode",
+        "uri",
+        "component",
+        "decodeuricomponent",
+        "components",
+        "decoder",
+        "url"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "coveralls": "^2.13.1",
+        "nyc": "^10.3.2",
+        "xo": "*"
+      },
+      "gitHead": "43d5a895a5dbcac13faf19d3235a155635f5feda",
+      "bugs": {
+        "url": "https://github.com/samverschueren/decode-uri-component/issues"
+      },
+      "homepage": "https://github.com/samverschueren/decode-uri-component#readme",
+      "_id": "decode-uri-component@0.1.0",
+      "_shasum": "6eb2ac05e5cf288590b4a8b60d774c027e3fd5ab",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "samverschueren",
+        "email": "sam.verschueren@gmail.com"
+      },
+      "dist": {
+        "shasum": "6eb2ac05e5cf288590b4a8b60d774c027e3fd5ab",
+        "tarball": "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decode-uri-component-0.1.0.tgz_1495226477010_0.7113540396094322"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "decode-uri-component",
+      "version": "0.2.0",
+      "description": "A better decodeURIComponent",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/samverschueren/decode-uri-component.git"
+      },
+      "author": {
+        "name": "Sam Verschueren",
+        "email": "sam.verschueren@gmail.com",
+        "url": "github.com/SamVerschueren"
+      },
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coveralls": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "decode",
+        "uri",
+        "component",
+        "decodeuricomponent",
+        "components",
+        "decoder",
+        "url"
+      ],
+      "devDependencies": {
+        "ava": "^0.17.0",
+        "coveralls": "^2.13.1",
+        "nyc": "^10.3.2",
+        "xo": "^0.16.0"
+      },
+      "gitHead": "52782a347527a6a05fed02434ffcf8f2ba1b19a3",
+      "bugs": {
+        "url": "https://github.com/samverschueren/decode-uri-component/issues"
+      },
+      "homepage": "https://github.com/samverschueren/decode-uri-component#readme",
+      "_id": "decode-uri-component@0.2.0",
+      "_shasum": "eb3913333458775cb84cd1a1fae062106bb87545",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "samverschueren",
+        "email": "sam.verschueren@gmail.com"
+      },
+      "dist": {
+        "shasum": "eb3913333458775cb84cd1a1fae062106bb87545",
+        "tarball": "https://registry.npmjs.org/decode-uri-component/-/decode-uri-component-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decode-uri-component-0.2.0.tgz_1498673766342_0.38562501198612154"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# decode-uri-component\n\n[![Build Status](https://travis-ci.org/SamVerschueren/decode-uri-component.svg?branch=master)](https://travis-ci.org/SamVerschueren/decode-uri-component) [![Coverage Status](https://coveralls.io/repos/SamVerschueren/decode-uri-component/badge.svg?branch=master&service=github)](https://coveralls.io/github/SamVerschueren/decode-uri-component?branch=master)\n\n> A better [decodeURIComponent](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/decodeURIComponent)\n\n\n## Why?\n\n- Decodes `+` to a space.\n- Converts the [BOM](https://en.wikipedia.org/wiki/Byte_order_mark) to a [replacement character](https://en.wikipedia.org/wiki/Specials_(Unicode_block)#Replacement_character) `�`.\n- Does not throw with invalid encoded input.\n- Decodes as much of the string as possible.\n\n\n## Install\n\n```\n$ npm install --save decode-uri-component\n```\n\n\n## Usage\n\n```js\nconst decodeUriComponent = require('decode-uri-component');\n\ndecodeUriComponent('%25');\n//=> '%'\n\ndecodeUriComponent('%');\n//=> '%'\n\ndecodeUriComponent('st%C3%A5le');\n//=> 'ståle'\n\ndecodeUriComponent('%st%C3%A5le%');\n//=> '%ståle%'\n\ndecodeUriComponent('%%7Bst%C3%A5le%7D%');\n//=> '%{ståle}%'\n\ndecodeUriComponent('%7B%ab%%7C%de%%7D');\n//=> '{%ab%|%de%}'\n\ndecodeUriComponent('%FE%FF');\n//=> '\\uFFFD\\uFFFD'\n\ndecodeUriComponent('%C2');\n//=> '\\uFFFD'\n\ndecodeUriComponent('%C2%B5');\n//=> 'µ'\n```\n\n\n## API\n\n### decodeUriComponent(encodedURI)\n\n#### encodedURI\n\nType: `string`\n\nAn encoded component of a Uniform Resource Identifier.\n\n\n## License\n\nMIT © [Sam Verschueren](https://github.com/SamVerschueren)\n",
+  "maintainers": [
+    {
+      "name": "samverschueren",
+      "email": "sam.verschueren@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-06-28T18:16:07.372Z",
+    "created": "2017-05-19T20:41:18.502Z",
+    "0.1.0": "2017-05-19T20:41:18.502Z",
+    "0.2.0": "2017-06-28T18:16:07.372Z"
+  },
+  "homepage": "https://github.com/samverschueren/decode-uri-component#readme",
+  "keywords": [
+    "decode",
+    "uri",
+    "component",
+    "decodeuricomponent",
+    "components",
+    "decoder",
+    "url"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samverschueren/decode-uri-component.git"
+  },
+  "author": {
+    "name": "Sam Verschueren",
+    "email": "sam.verschueren@gmail.com",
+    "url": "github.com/SamVerschueren"
+  },
+  "bugs": {
+    "url": "https://github.com/samverschueren/decode-uri-component/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "_attachments": {}
+}

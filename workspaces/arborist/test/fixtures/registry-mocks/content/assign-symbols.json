@@ -1,0 +1,557 @@
+{
+  "_id": "assign-symbols",
+  "_rev": "8-b951b80feed3a69b6f3e2d5654d80b38",
+  "name": "assign-symbols",
+  "description": "Assign the enumerable es6 Symbol properties from one or more objects to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable symbol properties from an object (or objects) to the first object passed on the arguments.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "assign",
+        "symbols"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "assign-deep",
+            "mixin-deep",
+            "merge-deep",
+            "extend-shallow",
+            "clone-deep"
+          ]
+        }
+      },
+      "gitHead": "bc03ebf4d900b6c76257735997fd1b12f7401b75",
+      "_id": "assign-symbols@0.1.0",
+      "_shasum": "bbfa7c01087b543c81a5883bc106f8333b85d696",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bbfa7c01087b543c81a5883bc106f8333b85d696",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable es6 Symbol properties from an object (or objects) to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "assign",
+        "symbols"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "assign-deep",
+            "mixin-deep",
+            "merge-deep",
+            "extend-shallow",
+            "clone-deep"
+          ]
+        }
+      },
+      "gitHead": "d89aa5d5433410b11c4e8ffb2bfa08be972d9b31",
+      "_id": "assign-symbols@0.1.1",
+      "_shasum": "cb025944ef4ec8a3693f086e9e112c74e3a0fed9",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cb025944ef4ec8a3693f086e9e112c74e3a0fed9",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable es6 Symbol properties from an object (or objects) to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "^3.0.0"
+      },
+      "keywords": [
+        "assign",
+        "symbols"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "assign-deep",
+            "mixin-deep",
+            "merge-deep",
+            "extend-shallow",
+            "clone-deep"
+          ]
+        }
+      },
+      "gitHead": "2df01f26fce8359fa75688eb89e2a1c65de6f237",
+      "_id": "assign-symbols@1.0.0",
+      "_shasum": "59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "0.12.18",
+      "_npmUser": {
+        "name": "phated",
+        "email": "blaine.bublitz@gmail.com"
+      },
+      "maintainers": [
+        {
+          "email": "blaine.bublitz@gmail.com",
+          "name": "phated"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "dist": {
+        "shasum": "59667f41fadd4f20ccbc2bb96b8d4f7f78ec0367",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assign-symbols-1.0.0.tgz_1513723533378_0.7385613690130413"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable es6 Symbol properties from one or more objects to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^5.2.0"
+      },
+      "keywords": [
+        "assign",
+        "es6",
+        "merge",
+        "mixin",
+        "polyfill",
+        "primitive",
+        "symbol",
+        "symbols"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-deep",
+            "clone-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1429f75d37e3d4d3b6aff684350332fb77621d26",
+      "_id": "assign-symbols@2.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-WMsBhayErMFzT2Tl8pCafJAwRz5G/0qwjptjgdu5CKXbLOivPQJZoBhjvQmVe0CyQLu0mj4RPm7XPcAckKjnvg==",
+        "shasum": "00b308df5e2eb7a2e9262d9c9ad62838f7b42374",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8423,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaRwYCRA9TVsSAnZWagAAkSQP/jRZ70FZJOWO3tBvGDzY\n5Z1tFiotvrkb2zze/gh+Gl2R84MeaYyEBv5QXrKd3aOUXQbvjpNveQEDt7P3\narzf3mt9QmSqprHYO+BFSgsnp0R/CiHJiKQVRECAa92+6zCBqYpIwzL4Hpvt\nxTAgql5UxXjAif7JY0j8eov5g8gnBbVwz9Kn8ClhQ1McYZcjhP/fhrGv8DeT\ntSENH4rDxDTIjFL5fvzWOz7yzw2/kz5uplPWV0KZKMxnroKaMGAHOBiEwvm6\nKuKq3Q9Cb6oeTwrp86Ohkhy8VATqOuTL15FJjBG39rOgCT72PF/adQWfWKfR\nRfNTZ6jwgrOdlUDUdbqVCYwmbBrEBTAP1p8T156U+aijeGR30wPEtpk0nATC\npgJB4IUindtd+UYWA7idWidqJh+HG78F3Nm0W8T+RfdZuMiP/3d+9RbMCs6t\niJ0AridNXRdL4vv81gGpNVFPVIweDyCbGoUp313f+ah5VPhcWxSKNaS3Ljlx\nUv+NEePJ0/dpbrvlRIk4IMb6KrbG2jsIOYu0JbwLUJDsTzjJLAFUlN+IiQ1U\nZSzYuNdyGB8AMcAZFmi3njWEwD2zSFQIc/Z3FntJio6Pgd+hHjbhhrpCsMpq\npaXX5sHpSxccXspAvdhyt7IwXUnlbRlEt59OPap3REk+l3qx3xZouRDccGip\n/jnP\r\n=cZkM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "blaine.bublitz@gmail.com",
+          "name": "phated"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assign-symbols_2.0.0_1533615127563_0.36901657182503"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable es6 Symbol properties from one or more objects to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^5.2.0"
+      },
+      "keywords": [
+        "assign",
+        "es6",
+        "merge",
+        "mixin",
+        "polyfill",
+        "primitive",
+        "symbol",
+        "symbols"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-deep",
+            "clone-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1429f75d37e3d4d3b6aff684350332fb77621d26",
+      "_id": "assign-symbols@2.0.1",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-uh09B7h3U6d/uGzJfg0m+LzAEb9sqmTaWhmWNcSF+XbwtovzMoLEJohlEI9405lssJ5t3FyLs9HPL4ed67USbQ==",
+        "shasum": "ef45aabe7c80db94660252a4a529e9d6791081ec",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8423,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaR6ACRA9TVsSAnZWagAA4wQQAIwgQrcfMWm+IQdHpufA\n+0vezZrTOKF4D0og8/Tkm+Ne5TjX80PdBR2WuxrL3XGBSAl5DoZ/f0jXh/l4\nYvPwXVKyNl6Mp7hDOHUh6sm6/jpHsmGZqcN2tkAwJ/WKA4KTaLoUCCtaZri9\nT1DeepgwPmgQ2bhn+G/ZcBG05U+mmSYfGGMJqWm61ZIwTSddd0fbCw8WHta9\nA0kvO1Esyy5oqtUt2e4b8FxA7biE/52xvt+IvWCKdQX1ouXgvHtZFm3l4gE2\n8vJqLFYXgqDtsuEDlnephciLZuegNPCiBTzK6bAMEBC1NgcH3XzroHWxxuXw\nFjAmu7ObUSdrQ1p+D7vXEFfCei3iv4O5BvktiQAafSryhQ/bnBgjGOki25wq\neeiM/E3FkSzS9kGU+9oL8Gc30VcANQrmvDKLnQWnBudkg6BT2PlPtFzlEj26\naOjWtbKXdPBw3fptJn+R58yfe96UP4od8y804XyVUMoXYiM/OzV7zyDEiDZZ\nC6RExLB+0RB1rs7FfID3ay2OiGCBiO/xa2AIuq4uvylYeCxeLpIENZVdgNuQ\n5ZNhtfkobPAQyvw4ffd0awrZv8XTvkYejbaDPWVMyIs47ZW6xjtX3oIhQlJv\nj55hcZAXpch4giYsmah4ZI2EOUhIZgSIxlrZCCsKSdXzNcxZKkSb4pFAfHmA\nUNWe\r\n=WBpl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "blaine.bublitz@gmail.com",
+          "name": "phated"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assign-symbols_2.0.1_1533615743929_0.31101681959925465"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "assign-symbols",
+      "description": "Assign the enumerable es6 Symbol properties from one or more objects to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/assign-symbols",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^5.2.0"
+      },
+      "keywords": [
+        "assign",
+        "es6",
+        "merge",
+        "mixin",
+        "polyfill",
+        "primitive",
+        "symbol",
+        "symbols"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "assign-deep",
+            "clone-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-deep"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "026e7f6343eee45ec606d5a42291d1bf670ec802",
+      "_id": "assign-symbols@2.0.2",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-9sBQUQZMKFKcO/C3Bo6Rx4CQany0R0UeVcefNGRRdW2vbmaMOhV1sbmlXcQLcD56juLXbSGTBm0GGuvmrAF8pA==",
+        "shasum": "0fb9191dd9d617042746ecfc354f3a3d768a0c98",
+        "tarball": "https://registry.npmjs.org/assign-symbols/-/assign-symbols-2.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8443,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbabo5CRA9TVsSAnZWagAAVt4P/0bC3q9T5EEwVrlR+kPv\nYLZPgNVpYgIus3wLt9r7lvKjJIr0xp6lRzT1sCTSZl7Tmdx5q26sJ5jnm0Fs\nvRlIPk+dIFF4KD7ZHmxInwrfPHWynveH+gYm8bTWaONU2hO8eiqvRkJk5RlY\nnxsvJH4wd8xM3F0laq6BR98yiUx1YwIjdoWXh0tqiGmv3Wjf2sm8OJ1n5xie\nCWAV6DCxysr+AFcH1y91gUKOatHMgJWmwIwBtTwrQS6wxkmxJWEvi6d7SsgB\nKI3c/ynEFnedrfiKr1NsSrEK961Dmiz8kdAPqfR75JVWDmGvD2M3iU7OD/8l\nfnP8rlLQjLuPHwDx1vc60Rni0H8Cs/g9f16v2nhDzmL+JNqs0PLy3PMcyXuk\nfy3URUlQ6U1gyLTOTIVxZSHkwJ7divYQ86KAMQGbzNSopvtx3dcNwSj6Ijxw\n6JmbmXfEW/Txpz8RHJTU6sMBy3ocqe9Z9tBhXAdwqm3LVdn6EMqZEuMrYHd6\ni98lLK0tnlIuCdaB23IXpYfrtX8ePkEZEA9gFEd07AZEvgUYYtPcPZdh4SBI\nCIH+tLY0Mf+zpJrl2p3bzbrdbAjoBNffBUeGA/EgzAK0sCbo9kwynLpCCEFp\nEnb2eRI4OmOMtyCzAg5Aao7wDv54+VjkjeIlYKPRmUa5UwuUTHo7AeVq39JO\n9tEB\r\n=5jR7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        },
+        {
+          "email": "blaine.bublitz@gmail.com",
+          "name": "phated"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assign-symbols_2.0.2_1533655598273_0.6467931863618057"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# assign-symbols [![NPM version](https://img.shields.io/npm/v/assign-symbols.svg?style=flat)](https://www.npmjs.com/package/assign-symbols) [![NPM monthly downloads](https://img.shields.io/npm/dm/assign-symbols.svg?style=flat)](https://npmjs.org/package/assign-symbols) [![NPM total downloads](https://img.shields.io/npm/dt/assign-symbols.svg?style=flat)](https://npmjs.org/package/assign-symbols) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/assign-symbols.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/assign-symbols)\n\n> Assign the enumerable es6 Symbol properties from one or more objects to the first object passed on the arguments. Can be used as a supplement to other extend, assign or merge methods as a polyfill for the Symbols part of the es6 Object.assign method.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save assign-symbols\n```\n\n## About\n\n> A symbol is a unique and immutable data type and may be used as an identifier for object properties. The symbol object is an implicit object wrapper for the symbol primitive data type. - [Mozilla Developer docs for Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)\n\n## Usage\n\n```js\nconst assignSymbols = require('assign-symbols');\nlet target = {};\n\n// add a symbol to object \"one\"\nlet one = {};\nlet symbolOne = Symbol('aaa');\none[symbolOne] = 'bbb';\n\n// add a symbol to object \"two\"\nlet two = {};\nlet symbolTwo = Symbol('ccc');\ntwo[symbolTwo] = 'ddd';\n\n// assign symbols from objects \"one\" and \"two\" to object \"target\"\nassignSymbols(target, one, two);\n\nconsole.log(target[symbolOne]); //=> 'bbb'\nconsole.log(target[symbolTwo]); //=> 'ddd'\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [assign-deep](https://www.npmjs.com/package/assign-deep): Deeply assign the enumerable properties and/or es6 Symbol properies of source objects to the target… [more](https://github.com/jonschlinkert/assign-deep) | [homepage](https://github.com/jonschlinkert/assign-deep \"Deeply assign the enumerable properties and/or es6 Symbol properies of source objects to the target (first) object.\")\n* [clone-deep](https://www.npmjs.com/package/clone-deep): Recursively (deep) clone JavaScript native types, like Object, Array, RegExp, Date as well as primitives. | [homepage](https://github.com/jonschlinkert/clone-deep \"Recursively (deep) clone JavaScript native types, like Object, Array, RegExp, Date as well as primitives.\")\n* [extend-shallow](https://www.npmjs.com/package/extend-shallow): Extend an object with the properties of additional objects. node.js/javascript util. | [homepage](https://github.com/jonschlinkert/extend-shallow \"Extend an object with the properties of additional objects. node.js/javascript util.\")\n* [merge-deep](https://www.npmjs.com/package/merge-deep): Recursively merge values in a javascript object. | [homepage](https://github.com/jonschlinkert/merge-deep \"Recursively merge values in a javascript object.\")\n* [mixin-deep](https://www.npmjs.com/package/mixin-deep): Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone… [more](https://github.com/jonschlinkert/mixin-deep) | [homepage](https://github.com/jonschlinkert/mixin-deep \"Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone. No dependencies.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 4 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [phated](https://github.com/phated) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on August 06, 2018._",
+  "maintainers": [
+    {
+      "email": "blaine.bublitz@gmail.com",
+      "name": "phated"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    },
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T06:07:08.904Z",
+    "created": "2015-11-06T05:18:26.962Z",
+    "0.1.0": "2015-11-06T05:18:26.962Z",
+    "0.1.1": "2015-11-06T05:27:22.236Z",
+    "1.0.0": "2017-12-19T22:45:34.190Z",
+    "2.0.0": "2018-08-07T04:12:07.665Z",
+    "2.0.1": "2018-08-07T04:22:23.999Z",
+    "2.0.2": "2018-08-07T15:26:38.594Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/assign-symbols",
+  "keywords": [
+    "assign",
+    "es6",
+    "merge",
+    "mixin",
+    "polyfill",
+    "primitive",
+    "symbol",
+    "symbols"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/assign-symbols.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/assign-symbols/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

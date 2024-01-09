@@ -1,0 +1,131 @@
+{
+  "_id": "watchpack-chokidar2",
+  "_rev": "1-502f713489efd59ed50dc6961f9d0d9e",
+  "name": "watchpack-chokidar2",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "watchpack-chokidar2",
+      "version": "2.0.0",
+      "engines": {
+        "node": "<8.10.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/watchpack.git"
+      },
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/watchpack/issues"
+      },
+      "homepage": "https://github.com/webpack/watchpack",
+      "dependencies": {
+        "chokidar": "^2.1.8"
+      },
+      "_id": "watchpack-chokidar2@2.0.0",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-9TyfOyN/zLUbA288wZ8IsMZ+6cbzvsNyEzSBp6e/zkifi6xxbl8SmQ/CxQq32k8NNqrdVEVUVSEf56L4rQ/ZxA==",
+        "shasum": "9948a1866cbbd6cb824dea13a7ed691f6c8ddff0",
+        "tarball": "https://registry.npmjs.org/watchpack-chokidar2/-/watchpack-chokidar2-2.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 469,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJev/00CRA9TVsSAnZWagAABaYP/Rx0Rm6ugUtlW8imQs3e\nc9CtCnIdG8BZ1lNuM+n+r/GP0G7lR2Dsn07W+SZuHAiw7ngdO7gSxDlZl7gl\n4igSQLFEMHV9GL4uxKn5W19Co0EvPH7UPkkRK1i28mpIHMzvLM/pz5ojehO4\nKsG++JabtLGfX/5wOgXtp4ZkWsgL+8Pyb37jMdZ85QDgLb51RfH7OBfcSiC7\nPPKZpaK90JqNg8E7xt5OpabNnHfQ/oohtriTPOPKISJCtLg3Kb/hQGHAGyuu\ntwk94/kWSsHPTJFR4hG8nXlLI0n267v9fpyD3t6mfXeh4PYfEi3lefMBEcoV\nvTco9r9fjfHzSuiMKKUJRhuyesmWgb/RWY9F+7FPjTRkdE5Fi42StOlWxypY\njMAoD0b7pup2C3qJKSkUGHkN0OfFV7+yTpc6eaRhipFYMvWVvesy4W2QbTa6\nSvV0eyUwrMdFYNmXqsfL+FNctAiw9iXtZtKtdTItrRD0yz2yHzKSBEH5gpzU\nqlkJwBajQOT8n7Q6DEkMaIvXS7nhHHfVQOszlJ0bZBzrUUvT1lri7zi3JDmA\n9ec4XzSxkU/499+PPJSUYSEBkH8mCT3l2I8D3waiA77ixrG6sA0I1R58lW56\n8I3/zHdu/clxrh7xVgDEl+S2tFFhQHrtuy1hurrAlVo5ozltZuaxJPFri/q9\nKN4x\r\n=qjeQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/watchpack-chokidar2_2.0.0_1589640499940_0.050286210101330164"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "watchpack-chokidar2",
+      "version": "2.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/watchpack.git"
+      },
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/watchpack/issues"
+      },
+      "homepage": "https://github.com/webpack/watchpack",
+      "dependencies": {
+        "chokidar": "^2.1.8"
+      },
+      "_id": "watchpack-chokidar2@2.0.1",
+      "_nodeVersion": "15.1.0",
+      "_npmVersion": "7.0.8",
+      "dist": {
+        "integrity": "sha512-nCFfBIPKr5Sh61s4LPpy1Wtfi0HE8isJ3d2Yb5/Ppw2P2B/3eVSEBjKfN0fmHJSK14+31KwMKmcrzs2GM4P0Ww==",
+        "shasum": "38500072ee6ece66f3769936950ea1771be1c957",
+        "tarball": "https://registry.npmjs.org/watchpack-chokidar2/-/watchpack-chokidar2-2.0.1.tgz",
+        "fileCount": 2,
+        "unpackedSize": 427,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfqjBDCRA9TVsSAnZWagAAqNgP/RZTe/3z8K0Dwcept8+W\nrKlz7tu2pkwLqTIM2A0YWRYWVrZB2WbMkCmt/p02dTApyvahusfeWPKCIQQt\nzZ6DQEADCZhkgA9OCxxVnlybe6THQuh/FaQMSENLaDyEVTIeQTsob0E5K1G2\nG+F09Js+tifNKxUvsMGbDzXBICFbA4DBjzi3ZphrtGICaXeUK+TeDmnu8GKW\nnetKFo8+odaR75uAUbzJq9w0/YDxwxtVTvdNSjKqGXAFZVEc+zNxcDytR0n2\n/Vm0/VGFRPy/rfcxRKlo3t9HD2i8sJ+mn7osbSF1ECotn99uKeI4vuvldZeV\n405ztHmU4bc+r098AqG3hDOkMCP8L4UvNqMzVxMZBMfUXSMf9yRKFlZihGpT\nAYILl6iDbaOs+0wDYkq/G2u4n/k2QRLwEh4v33eeSu+HZQkhtL+ELfhLL3wq\n4o3a5n/TCxFNFXvfcLNzQpjC+bOoaOMR00H1ZnOtW+DMneof8xTxwjs5wlbt\n+cQr+5Mh8BrEzbl/afTkVnem2n0jsC9Jxcne80RCxKZ76vZmJAASllShG4rF\ni//QprJXA/TwPajZGPJKt+FfNLWNYdi3x4VFsz545QfXCLkEH40pegIV9/CB\n0bsFqQEIdHA1uM8TX4vw0rbKUyqHSNd6DEEh2+6cY0aOs75gCJEtYG8Q4F45\nMCGv\r\n=r+YM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/watchpack-chokidar2_2.0.1_1604988995046_0.4847632983184944"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-05-16T14:48:19.939Z",
+    "2.0.0": "2020-05-16T14:48:20.061Z",
+    "modified": "2020-11-10T06:16:37.510Z",
+    "2.0.1": "2020-11-10T06:16:35.194Z"
+  },
+  "maintainers": [
+    {
+      "name": "sokra",
+      "email": "tobias.koppers@googlemail.com"
+    }
+  ],
+  "homepage": "https://github.com/webpack/watchpack",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/watchpack.git"
+  },
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/watchpack/issues"
+  },
+  "license": "MIT",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

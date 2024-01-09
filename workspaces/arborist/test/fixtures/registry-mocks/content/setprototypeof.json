@@ -1,0 +1,436 @@
+{
+  "_id": "setprototypeof",
+  "_rev": "14-fe7ed5e208ddd12980055beb47b4e8ec",
+  "name": "setprototypeof",
+  "description": "A small polyfill for Object.setprototypeof",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "setprototypeof",
+      "version": "1.0.0",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "gitHead": "737c200fa382c4d10466b48e7426f9c6b38ea358",
+      "_id": "setprototypeof@1.0.0",
+      "_shasum": "d5fafca01e1174d0079bd1bf881f09c8a339794c",
+      "_from": ".",
+      "_npmVersion": "2.1.4",
+      "_nodeVersion": "0.10.29",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d5fafca01e1174d0079bd1bf881f09c8a339794c",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "setprototypeof",
+      "version": "1.0.1",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "gitHead": "1e3d0cde6b7f4a9fba10cd28e62b200c9d8f899f",
+      "_id": "setprototypeof@1.0.1",
+      "_shasum": "52009b27888c4dc48f591949c0a8275834c1ca7e",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "shasum": "52009b27888c4dc48f591949c0a8275834c1ca7e",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/setprototypeof-1.0.1.tgz_1454803015119_0.7522649802267551"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "setprototypeof",
+      "version": "1.0.2",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "gitHead": "34da239ae7ab69b7b42791d5b928379ce51a0ff2",
+      "_id": "setprototypeof@1.0.2",
+      "_shasum": "81a552141ec104b88e89ce383103ad5c66564d08",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "shasum": "81a552141ec104b88e89ce383103ad5c66564d08",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/setprototypeof-1.0.2.tgz_1479056139581_0.43114364007487893"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "setprototypeof",
+      "version": "1.0.3",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "gitHead": "a8a71aab8118651b9b0ea97ecfc28521ec82b008",
+      "_id": "setprototypeof@1.0.3",
+      "_shasum": "66567e37043eeb4f04d91bd658c0cbefb55b8e04",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "shasum": "66567e37043eeb4f04d91bd658c0cbefb55b8e04",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/setprototypeof-1.0.3.tgz_1487607661334_0.977291816379875"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "setprototypeof",
+      "version": "1.1.0",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "gitHead": "8fc2c260d8b7da91133edefde49a3df461f220c8",
+      "_id": "setprototypeof@1.1.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "integrity": "sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==",
+        "shasum": "d0bd85536887b6fe7c0d818cb962d9d91c54e656",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/setprototypeof-1.1.0.tgz_1505346623089_0.6391460271552205"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "setprototypeof",
+      "version": "1.1.1",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "test": "standard && mocha",
+        "testallversions": "npm run node010 && npm run node4 && npm run node6 && npm run node9 && npm run node11",
+        "testversion": "docker run -it --rm -v $(PWD):/usr/src/app -w /usr/src/app node:${NODE_VER} npm install mocha@${MOCHA_VER:-latest} && npm t",
+        "node010": "NODE_VER=0.10 MOCHA_VER=3 npm run testversion",
+        "node4": "NODE_VER=4 npm run testversion",
+        "node6": "NODE_VER=6 npm run testversion",
+        "node9": "NODE_VER=9 npm run testversion",
+        "node11": "NODE_VER=11 npm run testversion"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "devDependencies": {
+        "mocha": "^5.2.0",
+        "standard": "^12.0.1"
+      },
+      "gitHead": "ae67afeeed1b9ba8b351674dd9ccf3b9716ad474",
+      "_id": "setprototypeof@1.1.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "integrity": "sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==",
+        "shasum": "7e95acb24aa92f5885e0abef5ba131330d4ae683",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3913,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcL6RHCRA9TVsSAnZWagAAwAwP/jcFCYLz/VPbvfeDih6A\nVTjvUfj2y2nNpkvBpHAaW5cX6Z44slEj3kRvaT7zcqaff1WAiZC5hFkxHn0X\nrRHcXffC2cSyNJ9AOSkTZG+H8GMUnhm1R/ueyzc5b3KHdLM69wCNRzsgftQJ\ndQV6/xTIdstCfNEySL8/rJcU1NaRXhnxb4TzPX2tVUk5reexYj2oyCD0b3ly\njwFZ1LK6KsrOrrm7pMf85qWtrlxR1AvQUV6VjWzD/ZhsPuyIiNtwtIWta9P/\nioMD5o5aKOF/Z0SBpk4aix9GzYZ6VjXq7RigKq4uKJfcA+RqSYaq+6KvJUFu\nGVQuAxSckvoXefySe240sE78R5aiWoc8xQJ+bU7OQBkTJ9xpljDtynQ+1P5C\nDIxhpslGtxjHB7N2oE6jsKF2X+Gx5a7gjvFsXLPQZETIBct7PKOjGScqFwfp\nD4xzXJFc5ckNXaaDLUymMno5M/61W2hc3wVaI33Dlj/c0N3wxmYOy5w5DcH3\nVRSQVJwHYm2NB565bdoHnnYyHuohrxpw5QMlF4KkL7xIDwEh+YIlsBp/JFpE\nT12NGnemKX++jXYrIjf1sbjcNWpwigjALNkKfP8i06/Ezhlxmc91oZg/ndxL\nfocbF/+cLh/ix2nt6h1J8E9cdSLKyrOqamfKXA5t9qYB17UZAJVCNS5bO2e+\nhE7g\r\n=4XiP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/setprototypeof_1.1.1_1546626118682_0.5274603400934563"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "setprototypeof",
+      "version": "1.2.0",
+      "description": "A small polyfill for Object.setprototypeof",
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "scripts": {
+        "test": "standard && mocha",
+        "testallversions": "npm run node010 && npm run node4 && npm run node6 && npm run node9 && npm run node11",
+        "testversion": "docker run -it --rm -v $(PWD):/usr/src/app -w /usr/src/app node:${NODE_VER} npm install mocha@${MOCHA_VER:-latest} && npm t",
+        "node010": "NODE_VER=0.10 MOCHA_VER=3 npm run testversion",
+        "node4": "NODE_VER=4 npm run testversion",
+        "node6": "NODE_VER=6 npm run testversion",
+        "node9": "NODE_VER=9 npm run testversion",
+        "node11": "NODE_VER=11 npm run testversion",
+        "prepublishOnly": "npm t",
+        "postpublish": "git push origin && git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+      },
+      "keywords": [
+        "polyfill",
+        "object",
+        "setprototypeof"
+      ],
+      "author": {
+        "name": "Wes Todd"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/wesleytodd/setprototypeof/issues"
+      },
+      "homepage": "https://github.com/wesleytodd/setprototypeof",
+      "devDependencies": {
+        "mocha": "^6.1.4",
+        "standard": "^13.0.2"
+      },
+      "gitHead": "52d00b3a6dbd92fbf36c8019a1e36179b4a0f308",
+      "_id": "setprototypeof@1.2.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "wesleytodd",
+        "email": "wes@wesleytodd.com"
+      },
+      "dist": {
+        "integrity": "sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==",
+        "shasum": "66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424",
+        "tarball": "https://registry.npmjs.org/setprototypeof/-/setprototypeof-1.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4025,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdL/p1CRA9TVsSAnZWagAAKAcQAI46fu9HmRW3DoNhyrCe\nfby3f4I77mNyE8wMYbKk2u++sApIkulCZdYulwGqKsnynjTtYUSSXETjQ1WH\nlbY8o2GO71azqpQcXCiMXAD7ERUTajp8T/5BIvnqxMtJt/czDaRJ3vLJDH/P\nj0i0S5siqfEUxxZsrerc8oHV6BIrBovTi654ZMHaUQ0DRTUiWutxDZGhhqhq\n3qVixd9p1zqHMK8ZLhwGlybWsVVh8yd6BsE6LvbhmnJkisJncOGek1C02Kbl\n8jRh+juAXV9UPWXBFYClmFAXQgI1YLcp35M7iHWRYc8IlvMqKbpa78Mhqr+q\nJgA9dMwNneF+g25tZYSS+HmP8uKaRofHqQqzzG0p6IuWfdykjiJ71/BaIXKf\nNttwxZoPU6K8yAFksT4BVUGVSY+yngTcsCv/ELYCHCiXtQAJTgCBJxNRhK6B\n6PiGLN/uH7YY7u/rjMhtoMC7+xS+R1M8YX3tcz4pdjbuvvSYUjmQ6xcojBDR\nUvoz0AqLUkx+p14s+NHA4uYkDpx4JqXdn2O3ncD2QCGc0rfP9YDyDhRLtDEf\nJkyWUUwX4F9JOfar2maT4J1wr5zPfRoawjI7AnDcjrclc0E6KItycDzw48pk\nGD8qIxdqpiLqGwtnnrzjdkplaccudApC2uK0dEuCvy37KRTl2M9gB3s+5rqo\ntA+9\r\n=jU56\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wesleytodd",
+          "email": "wes@wesleytodd.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/setprototypeof_1.2.0_1563425396455_0.08155255328700584"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Polyfill for `Object.setPrototypeOf`\n\n[![NPM Version](https://img.shields.io/npm/v/setprototypeof.svg)](https://npmjs.org/package/setprototypeof)\n[![NPM Downloads](https://img.shields.io/npm/dm/setprototypeof.svg)](https://npmjs.org/package/setprototypeof)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/standard/standard)\n\nA simple cross platform implementation to set the prototype of an instianted object.  Supports all modern browsers and at least back to IE8.\n\n## Usage:\n\n```\n$ npm install --save setprototypeof\n```\n\n```javascript\nvar setPrototypeOf = require('setprototypeof')\n\nvar obj = {}\nsetPrototypeOf(obj, {\n  foo: function () {\n    return 'bar'\n  }\n})\nobj.foo() // bar\n```\n\nTypeScript is also supported:\n\n```typescript\nimport setPrototypeOf from 'setprototypeof'\n```\n",
+  "maintainers": [
+    {
+      "name": "wesleytodd",
+      "email": "wes@wesleytodd.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-18T04:49:59.167Z",
+    "created": "2015-02-04T13:56:57.705Z",
+    "1.0.0": "2015-02-04T13:56:57.705Z",
+    "1.0.1": "2016-02-06T23:56:57.210Z",
+    "1.0.2": "2016-11-13T16:55:41.672Z",
+    "1.0.3": "2017-02-20T16:21:03.362Z",
+    "1.1.0": "2017-09-13T23:50:24.119Z",
+    "1.1.1": "2019-01-04T18:21:58.834Z",
+    "1.2.0": "2019-07-18T04:49:56.614Z"
+  },
+  "homepage": "https://github.com/wesleytodd/setprototypeof",
+  "keywords": [
+    "polyfill",
+    "object",
+    "setprototypeof"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesleytodd/setprototypeof.git"
+  },
+  "author": {
+    "name": "Wes Todd"
+  },
+  "bugs": {
+    "url": "https://github.com/wesleytodd/setprototypeof/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "mojaray2k": true,
+    "wangnan0610": true
+  }
+}

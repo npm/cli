@@ -1,0 +1,7 @@
+{
+  "name": "old-lock-with-link",
+  "version": "1.0.0",
+  "dependencies": {
+    "link-dep": "file:./link-dep"
+  }
+}

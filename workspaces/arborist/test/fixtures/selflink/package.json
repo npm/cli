@@ -1,0 +1,9 @@
+{
+  "name": "selflink",
+  "version": "1.2.3",
+  "dependencies": {
+    "foo": "",
+    "@scope/x": "",
+    "@scope/y": ""
+  }
+}

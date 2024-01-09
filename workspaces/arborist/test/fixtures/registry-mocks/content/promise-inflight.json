@@ -1,0 +1,153 @@
+{
+  "_id": "promise-inflight",
+  "_rev": "3-7eb34267282ff91218ae3c9ec106229a",
+  "name": "promise-inflight",
+  "description": "One promise for multiple requests in flight to avoid async duplication",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "promise-inflight",
+      "version": "1.0.0",
+      "description": "One promise for multiple requests in flight to avoid async duplication",
+      "main": "inflight.js",
+      "files": [
+        "inflight.js"
+      ],
+      "license": "ISC",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "dependencies": {
+        "bluebird": "^3.4.7"
+      },
+      "devDependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/promise-inflight.git"
+      },
+      "bugs": {
+        "url": "https://github.com/iarna/promise-inflight/issues"
+      },
+      "homepage": "https://github.com/iarna/promise-inflight#readme",
+      "gitHead": "38661dbd9f72c10f0553aa3c090a1c2bac7982f5",
+      "_id": "promise-inflight@1.0.0",
+      "_shasum": "94d19b043a508a584969bb15f675810569dbbb50",
+      "_from": ".",
+      "_npmVersion": "4.4.0",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "94d19b043a508a584969bb15f675810569dbbb50",
+        "tarball": "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/promise-inflight-1.0.0.tgz_1487994041894_0.7610008751507849"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "promise-inflight",
+      "version": "1.0.1",
+      "description": "One promise for multiple requests in flight to avoid async duplication",
+      "main": "inflight.js",
+      "files": [
+        "inflight.js"
+      ],
+      "license": "ISC",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "devDependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/promise-inflight.git"
+      },
+      "bugs": {
+        "url": "https://github.com/iarna/promise-inflight/issues"
+      },
+      "homepage": "https://github.com/iarna/promise-inflight#readme",
+      "gitHead": "9de9f26d8ecfe28d067cbd84630676dfea415e4a",
+      "_id": "promise-inflight@1.0.1",
+      "_shasum": "98472870bf228132fcbdd868129bad12c3c029e3",
+      "_from": ".",
+      "_npmVersion": "4.4.0",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "98472870bf228132fcbdd868129bad12c3c029e3",
+        "tarball": "https://registry.npmjs.org/promise-inflight/-/promise-inflight-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/promise-inflight-1.0.1.tgz_1488077339544_0.4008405189961195"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# promise-inflight\n\nOne promise for multiple requests in flight to avoid async duplication\n\n## USAGE\n\n```javascript\nconst inflight = require('promise-inflight')\n\n// some request that does some stuff\nfunction req(key) {\n  // key is any random string.  like a url or filename or whatever.\n  return inflight(key, () => {\n    // this is where you'd fetch the url or whatever\n    return Promise.delay(100)\n  })\n}\n\n// only assigns a single setTimeout\n// when it dings, all thens get called with the same result.  (There's only\n// one underlying promise.)\nreq('foo').then(…)\nreq('foo').then(…)\nreq('foo').then(…)\nreq('foo').then(…)\n```\n\n## SEE ALSO\n\n* [inflight](https://npmjs.com/package/inflight) - For the callback based function on which this is based.\n\n## STILL NEEDS\n\nTests!\n",
+  "maintainers": [
+    {
+      "name": "iarna",
+      "email": "me@re-becca.org"
+    }
+  ],
+  "time": {
+    "modified": "2017-08-14T22:43:57.269Z",
+    "created": "2017-02-25T03:40:42.163Z",
+    "1.0.0": "2017-02-25T03:40:42.163Z",
+    "1.0.1": "2017-02-26T02:48:59.798Z"
+  },
+  "homepage": "https://github.com/iarna/promise-inflight#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iarna/promise-inflight.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/promise-inflight/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "iarna": true
+  },
+  "_attachments": {}
+}

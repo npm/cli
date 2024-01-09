@@ -1,0 +1,2064 @@
+{
+  "_id": "boxen",
+  "_rev": "35-1332968b2ab203cfcc2dc500a35ec144",
+  "name": "boxen",
+  "description": "Create boxes in the terminal",
+  "dist-tags": {
+    "latest": "4.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "boxen",
+      "version": "0.1.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/boxen"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "b17f035a83304a180f04c7f80f0689376b0eb1ba",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen",
+      "_id": "boxen@0.1.0",
+      "_shasum": "8fe43ec1f64a1245e5bfa31d94b04b743af7417a",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8fe43ec1f64a1245e5bfa31d94b04b743af7417a",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "boxen",
+      "version": "0.2.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/boxen"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "ae4689348c5073119d5595332c35ebb613336aab",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen",
+      "_id": "boxen@0.2.0",
+      "_shasum": "84f88e2512e2c3eebacee799932fed0226de6dcb",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "84f88e2512e2c3eebacee799932fed0226de6dcb",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "boxen",
+      "version": "0.3.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "border-characters.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "2697d6bb43b508eca459639d21133091870c08d2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.3.0",
+      "_shasum": "657eb626e3834350d02fe9eda49dc188b646f18e",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "657eb626e3834350d02fe9eda49dc188b646f18e",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.3.0.tgz_1455096994757_0.34046311723068357"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "boxen",
+      "version": "0.3.1",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "border-characters.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "05c5f742a22962c4fc35344ecfba44f1e69528b3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.3.1",
+      "_shasum": "a7d898243ae622f7abb6bb604d740a76c6a5461b",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a7d898243ae622f7abb6bb604d740a76c6a5461b",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.3.1.tgz_1455102193900_0.9651177956257015"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "boxen",
+      "version": "0.4.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/boxen"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "aae3a63f8f45e9577f2636d3862609367fbd3a9f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen",
+      "_id": "boxen@0.4.0",
+      "_shasum": "d4364aa724328a1c3c0c18b22f5c419011fc4490",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d4364aa724328a1c3c0c18b22f5c419011fc4490",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.4.0.tgz_1456821040661_0.16337780095636845"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "boxen",
+      "version": "0.5.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/boxen"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "camelcase": "^2.1.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "223e51138077fd218f61ecfa885dfa7b598f5c72",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen",
+      "_id": "boxen@0.5.0",
+      "_shasum": "6a0fa43bc3c91b8e4544bcb080a1c4f92a445335",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6a0fa43bc3c91b8e4544bcb080a1c4f92a445335",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.5.0.tgz_1456854152369_0.16819665697403252"
+      },
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "boxen",
+      "version": "0.5.1",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "camelcase": "^2.1.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "52c8544cf284e254d9e4362f8b910c5b6f8cfcb8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.5.1",
+      "_shasum": "5b73d8840eb7f3c8a155cbf69ed3ed68d4720014",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "5b73d8840eb7f3c8a155cbf69ed3ed68d4720014",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.5.1.tgz_1459238954233_0.7597377062775195"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "boxen",
+      "version": "0.6.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^1.1.0",
+        "camelcase": "^2.1.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "b40d45a6290811acdc2a740580f60d00e88c12eb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.6.0",
+      "_shasum": "8364d4248ac34ff0ef1b2f2bf49a6c60ce0d81b6",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8364d4248ac34ff0ef1b2f2bf49a6c60ce0d81b6",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.6.0.tgz_1465297824027_0.5156188388355076"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "boxen",
+      "version": "0.7.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^1.1.0",
+        "camelcase": "^2.1.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "filled-array": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "repeating": "^2.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "87367b015fb39702503d94b52ddbb97b67c15e00",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.7.0",
+      "_shasum": "f7bb22c1e6bf258080c044abd84fb325ad4efaa3",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f7bb22c1e6bf258080c044abd84fb325ad4efaa3",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.7.0.tgz_1473163029717_0.294953242642805"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "boxen",
+      "version": "0.8.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^1.1.0",
+        "camelcase": "^3.0.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^1.0.1",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "ca284b319c69f88fd8b091f9e33e609e6988cb7e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.8.0",
+      "_shasum": "7b0d9c29b3026866babab62caca4331232b54d4e",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7b0d9c29b3026866babab62caca4331232b54d4e",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.8.0.tgz_1473164594833_0.03028635075315833"
+      },
+      "directories": {}
+    },
+    "0.8.1": {
+      "name": "boxen",
+      "version": "0.8.1",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^1.1.0",
+        "camelcase": "^3.0.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^1.0.1",
+        "term-size": "^0.1.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "b2378fae5faa3b5e4fe942a742165627b1c200a8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@0.8.1",
+      "_shasum": "aa68457f4643b820a9358c670d8a32f1c0956870",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "aa68457f4643b820a9358c670d8a32f1c0956870",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-0.8.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/boxen-0.8.1.tgz_1473516643993_0.26207770430482924"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "boxen",
+      "version": "1.0.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^1.1.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^0.1.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "e73c06d7eea87df51c0d3cd9ec0c574586606d7a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.0.0",
+      "_shasum": "b2694baf1f605f708ff0177c12193b22f29aaaab",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b2694baf1f605f708ff0177c12193b22f29aaaab",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/boxen-1.0.0.tgz_1484299763976_0.962533789454028"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "boxen",
+      "version": "1.1.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^1.1.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^0.1.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "nyc": "^10.3.0",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "61a6375cd90d99fdd28657908762db24d6cc248e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.1.0",
+      "_shasum": "b1b69dd522305e807a99deee777dbd6e5167b102",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b1b69dd522305e807a99deee777dbd6e5167b102",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/boxen-1.1.0.tgz_1494000696025_0.07278202869929373"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "boxen",
+      "version": "1.2.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^2.0.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "nyc": "^11.0.3",
+        "xo": "*"
+      },
+      "gitHead": "6b55cd2284cbd6804333173307eea992b7b04ef5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.2.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tfKK3nq0qXXOxvXEYW1k1XNRrDuQzO2oFPvLD3Fs1I58n0leuTNlftBmu3seUCyZvDfiqgRaxlqZs9WJAbSA7g==",
+        "shasum": "03478d84be7fe02189b80904d81d6a80384368f1",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen-1.2.0.tgz_1499864282950_0.6848751024808735"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "boxen",
+      "version": "1.2.1",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^2.0.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "nyc": "^11.0.3",
+        "xo": "*"
+      },
+      "gitHead": "f8bcc51c9581f077a8cead482b4c9ec062b20456",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.2.1",
+      "_shasum": "0f11e7fe344edb9397977fc13ede7f64d956481d",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "0f11e7fe344edb9397977fc13ede7f64d956481d",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen-1.2.1.tgz_1500831910911_0.13048138422891498"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "boxen",
+      "version": "1.2.2",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^2.0.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "nyc": "^11.0.3",
+        "xo": "*"
+      },
+      "gitHead": "b874bbbe9927c3cdb6c20f414622aefb63c34d99",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.2.2",
+      "_shasum": "3f1d4032c30ffea9d4b02c322eaf2ea741dcbce5",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3f1d4032c30ffea9d4b02c322eaf2ea741dcbce5",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen-1.2.2.tgz_1508256595292_0.8297682588454336"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "boxen",
+      "version": "1.3.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^4.0.0",
+        "chalk": "^2.0.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "nyc": "^11.0.3",
+        "xo": "*"
+      },
+      "gitHead": "f968a18b60af6aa05ca1ab572f7b50cb4310d013",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@1.3.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TNPjfTr432qx7yOjQyaXm3dSR0MH9vXp7eT1BFSl/C51g+EFnOR9hTg1IreahGBmDNCehscshe45f+C1TBZbLw==",
+        "shasum": "55c6c39a8ba58d9c61ad22cd877532deb665a20b",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen-1.3.0.tgz_1512091816286_0.3364733885973692"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "boxen",
+      "version": "2.0.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^2.0.0",
+        "camelcase": "^5.0.0",
+        "chalk": "^2.4.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^2.1.1",
+        "term-size": "^1.2.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "nyc": "^13.0.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "7e31c3cacdf99cb3e8e25cce935c8c26b9f142bf",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9DK9PQqcOpsvlKOK3f3lVK+vQsqH4JDGMX73FCWcHRxQQtop1U8urn4owrt5rnc2NgZAJ6wWjTDBc7Fhv+vz/w==",
+        "shasum": "46ba3953b1a3d99aaf89ad8c7104a32874934a58",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9002,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJblqpdCRA9TVsSAnZWagAANuMQAJtuO1aWnhO6y+yLXTC5\ndp5PZKIUKuE+T9/L1Bw/kW6igHKOxlyXGjVCosuulzxbqK1ff64cmi3x6VpZ\njUUi6dqMdtvYRgguwkWidJ8ZCQQOHNCvkjrQFqRFoMr0cIdLecSc3/s7oh3J\nI2p+qLFSmwLgyt9r703m0orWQJSJK6O6fcCH43kcQLtz1XpfNr1lVKGqlKn8\naHcTMNmD8q9SM54CBiccegHVd9k5NLiQlZmzKKrWVlsorMBJecB9avIu0VmD\nGR+tKD/1QEFFcjfdKcZBySbsbLgPxeTUCUXEORpS2Q80wkmJ/F+TBSylpdBR\ndbtSRlV2YIM0xvaKPgxBncVp0L0QHI15n4n6r28JQyE4SqajhnAAXiy5qjJM\nTIjeiISBx7hnPy9Uv+5RkMr6Jp+amjieURRB75jviOfAoGUoBYA7zj4rAEvW\nwClxTfdCP5Ahjfi+/Sr0rapsDX28R/bZ6SjgQeHKhEGQkAvtlqyo5JvlwlZ5\nNZ/MqqRsJbTUJbCLolG0E8Fux29kUYGmKb/32g1a8iR94YdvVHWgl0ryKWAo\nVO05iUGqARzp5H3JlsxVLltxd512JIME5E9pAp2eB5s3s/UYE/mD52JqE5By\neHgYlCa1k2RieHmAIz33EO4Xt9sELHYKOUo1ECA06ce4kcGWqp2vKrZ4Wzlc\nlFKd\r\n=BYiZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_2.0.0_1536600668260_0.9789760762690638"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "boxen",
+      "version": "2.1.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.0.0",
+        "chalk": "^2.4.1",
+        "cli-boxes": "^1.0.0",
+        "string-width": "^3.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "nyc": "^13.0.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "ae48864608b94bdf40b3b82aee30122cb4e4e10e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@2.1.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-luq3RQOt2U5sUX+fiu+qnT+wWnHDcATLpEe63jvge6GUZO99AKbVRfp97d2jgLvq1iQa0ORzaAm4lGVG52ZSlw==",
+        "shasum": "8d576156e33fc26a34d6be8635fd16b1d745f0b2",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-2.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9001,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcGP0cCRA9TVsSAnZWagAAe68QAKHH1LEDWaMS3dpWmOih\nPunoL/q+ROKmSEB5GsLRpUruX45iBo/NqI1y06By3csvjiCrr+hiQ8TPTv0E\nPIzd3Jkzrkx0omI0k/l69BRgHhAm7SM4Xf1S/PEU4seTdoo8eY1d4hnfgTOw\nWYlpHdaSFp/rNSD8fWBSWffAxaNAp+CwNTqUznK59gvzV1HKs0t0xZt+mvOl\neFP9zir1OXNwA6hsf7Ea56fRLtvnPLsCufPOr65pWGNecxJv4kQ7y3ZMbJPh\n5ZfauOR1YJIupqIA9TpkMJ2CzClHV+dzF91b+xvlOuq6Bwye7ipmCxbH8EEz\nBitY2HddLKh9z2P2g+Jxn1z1Ekenn85WhkRlH8rJLLMeFcZdErAiQPn4MAg0\nw+6OKS+GQvf6wSdG51v9cSmHz6UCKDlCqs7jXazRyvu8lsJvxlftqXcRmPkp\neYjpP02FO5sG17qlNDj5+GEbRTmxGX5uKeJ8Tidvw4H1pfJMFffaqywZcRDG\nyL9WLly8sS4m7r+VpU8hYTJ63mHSRfj5HjMWg9OXzobhNFAYHqtudyJrhYgI\nEeQwqcORhTuTnPK5j6uhSn+tK8VZRkGd4SKIuUmrJg2seoCGoN1jAUOuUFv/\ntCKwOO8Pg7XldAjWN85bnZygwxIlhWDTLv1ma9wwHLuwLJ2ANl6vvhsZyrFZ\nNlh8\r\n=qrmX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_2.1.0_1545141532111_0.8037105513754559"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "boxen",
+      "version": "3.0.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd-check"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.0.0",
+        "chalk": "^2.4.2",
+        "cli-boxes": "^2.0.0",
+        "string-width": "^3.0.0",
+        "term-size": "^1.2.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "nyc": "^13.3.0",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7fd83f0b8ea333af004872319fd2b83f2fab6996",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@3.0.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6BI51DCC62Ylgv78Kfn+MHkyPwSlhulks+b+wz7bK1vsTFgbSEy/E1DOxx1wjf/0YdkrfPUMh9NoaW419M7csQ==",
+        "shasum": "2e229f603c9c1da9d2966b7e9a5681eb692eca23",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11744,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbE83CRA9TVsSAnZWagAAOJAP/RZlmYPbLybVWWG2bAAx\n0pNWgeP8KTbKDfS/mIz54h1b696n/X/KulKhpN2PKhLakIeGdRdpfpbUZ2YK\nuA8I6O9uz6uV03V9YV5KziDFj1xAdOtKq1TZYgDdAvw3frZixAHjHK1GtGsP\nDNhkY4jsYuAAXPKzR6So+gQtofSuTtc3ZrWla2F4giu6enk1ECESuTGPW71h\n8B3P17UTcwhdJCV6/0zA+4Bj2Ufh7mSj8KfOco0UPYVeskpCocAttXbZ7LDI\nCIyMcOjPc29PJbqVwKY7B76b67V4VAES9u4chrHLOfgRDtqQC7HhKALViQyq\nVgHmxPo48FIZTkTn/AsQB3Ia2+SzRPGyhnLAMiLd92dqXS6FlXvyLeaSXOJU\nHXGotNwBuaOk8113hIQbOBtmV4ArsG+bVdtwILa+JmsV47whl2rnSQtFucYw\nUL6yZDfLJMHwqclUTazSXPQoYRkQWvJl8cxGSDKdSm8y1g/CyvE168oc7ze4\n98OobBSnbQWGwDeL02nQCRnnERAMdLMB/iVwZU4ku+7M5fv1u+eEXH187Ds/\nlxtusTZ1V9IeFwUNK2MXFTQ93atH6pUbvpzAam0jKT/A6noru+1CPbpLGHrI\nfokujfolEFUW+O4kBNX7+ZXVqJjvuLsDmHtnvyQacoZIIFk1WHIoYXJLIf0/\n8Iz4\r\n=KyYY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_3.0.0_1550602038332_0.731205996470075"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "boxen",
+      "version": "3.1.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.3.1",
+        "chalk": "^2.4.2",
+        "cli-boxes": "^2.1.0",
+        "string-width": "^3.0.0",
+        "term-size": "^1.2.0",
+        "type-fest": "^0.3.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "nyc": "^13.3.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d566dd484646185dbd007dfff36eed44f649ef14",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@3.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WiP53arM6cU2STTBYQ2we3viJkDqkthMYaTFnmXPZ/v3S4h43H5MHWpw5d85SgmHiYO/Y+2PoyXO8nTEURXNJA==",
+        "shasum": "0eced0ffde565c3d68cb7ba0bbae51d8c2eed95c",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12297,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqNaICRA9TVsSAnZWagAABd0P/0AfYMv8VdhfwRYn8gRh\nnuVRLA6GMy416Z84USRT3BRc3e48JL1UnUmfmh+QD7dLSoHTx6fr8jxS9xOR\n6cla7KG2IiSdUJBV6bcmBDMoECz1f11Tu7WBQLLzJDfP8b0oDNNCF4dUEEk3\n4aeGjdag1+Fg8Fq5y/olzZVLie1KG00zkU6dcZkE4xKkz1Mqfc7QV6Kt1e/7\ncXWUOCyru3IjjL0aow+y60smH6mMs5lkoiq/ijD6ZrVFJp7U+k6r4Dol7quL\nyca263jwmUHcnCIhBZ5oOPLwqrzEavA7DGLvG0yRgR1A9pnBDRiv0Gibs4w0\nhDLBQSGZAKP0ntnX4SYV+ovm+IfQ+Xn3TMjcK9KMP2Irae8GaKZYsbEXRyR4\n2m1lJwfC58YY0KUnXqWgRs8jZAINGoU/ThCStdHSN8AXV2BZCtA9Tou7l4GM\nu3+N8iPC9E7FCx81lr7DFB05RsOdfM44Bqc8s6XD2If9LcWdOVUl5U+E91Fw\n62cLY4JKvRRaMaU07NwV2KbwP25/m1GXVEuyHRAL3AB25TsaSACJ7g+g075o\nEU5+do+JHd17tCkKzysCZqq0gS2TVGcVWwpz6pmESQg0/nshYcSmF5CrId8w\nri8EJ4oAyS2mS+4qM9NkV4KVkf8ScXUcFN91AXLWOfgk/sEqpoYEqVjXiZJt\nJDj/\r\n=9JdQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_3.1.0_1554568839540_0.6055787648318853"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "boxen",
+      "version": "3.2.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.3.1",
+        "chalk": "^2.4.2",
+        "cli-boxes": "^2.2.0",
+        "string-width": "^3.0.0",
+        "term-size": "^1.2.0",
+        "type-fest": "^0.3.0",
+        "widest-line": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "nyc": "^13.3.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d58a3f0af219d837ed89396f985de42ea77881d1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@3.2.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cU4J/+NodM3IHdSL2yN8bqYqnmlBTidDR4RC7nJs61ZmtGz8VZzM3HLQX0zY5mrSmPtR3xWwsq2jOUQqFZN8+A==",
+        "shasum": "fbdff0de93636ab4450886b6ff45b92d098f45eb",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-3.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12370,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyDpeCRA9TVsSAnZWagAAmNwP/iEG2uOG24knJ0vjfl+i\n8JTbFLqq3WqLGlX1x7IxMrmu6kfFFy1SPJK2QdLoTo2bxz+5E71irHRBsByD\nlmsuQ3g0B9Fa5pyrLCBbgunFgNxgFEzfT1s0VEIttrH0O5aPGhPFbnAwLMxt\nIHv0Dl9g1/i1BVK6sgmAoK2QuMajpd5cVHKEthH+TEQcor4ywmRKyTDHnUgL\nbcA4IjQ38tEW4woyByTHE7C9k44oYtE79/TJqEKyuHD2tCQsxIU8gEFZQGJZ\nPs0vkRHhq2BXvvKeFRfeLl/CJ+DX7YOUmOJ3uFiI7g2snMZV24nWWuah0TOD\nCrSo1vrcyz+jp8JXI55TW6c/oSLTVcOHpeel2eVIO2HG/+NdhTuVWo0rxj8w\n34kN4fk67mEPN1hneCeFQQVkRTCFLhLnYKvPe0gu/RIbjdhQREhpjCE7eI1N\ntpozMpjdFflktbjJOYDDArFOBW7kHlf7AcBjhXiYauVA1aTZLZ4/imzk7YdX\n+5TBvODwjXkI0WST4N7+zbiqfEWPvDdIi8J4rIBBxagf4vdWorKnS6QHlkRp\nvgdUez0xqrGiTUJlRFrXSzOck6iAwlpqtJnga6f/1PiRbBr+SLzXSn4sMqjM\nm6USBEHEIl/9oYCVPlIEOqhStwSZNyT13+WsKMMSry6aAcg7O72aKgO6YU1n\nlOcP\r\n=w+3r\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_3.2.0_1556626013898_0.5249540305611833"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "boxen",
+      "version": "4.0.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.3.1",
+        "chalk": "^2.4.2",
+        "cli-boxes": "^2.2.0",
+        "string-width": "^3.1.0",
+        "term-size": "^2.1.0",
+        "type-fest": "^0.5.2",
+        "widest-line": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "nyc": "^14.1.1",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4c4d4525a8e0b2bd204536ca5db82be54d4e4298",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gBklgJ9hxaEG8AvEq6JmHns0qQh7JS0uRQtpk4r0OW9AJFKfvP0PVoltH0xzZt/OIio2Iy48xkiV3OaIun7GUw==",
+        "shasum": "7f706ae572868b9788bf8feb99e1157f2dcef332",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12209,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc7qHjCRA9TVsSAnZWagAAimAP/3Z//dtjScf7dm65Zzq2\nFLmCkCZCxU8EKNlqGQm+wliVyenRss9UrG/2BAQG7efR1OBKUWYdPSUfDFih\nuoY6aq7BE7TbIoFhe0znYROYfMTblIrwFagvxnX3pf1Qkp7LSZo2AVS3dmUe\n41TJBzYVnR4QqqOIYWLBp/l7+e+3IEa65xEkUT8ysBQx9RNNt+3hFFaUfHvl\n1Xsdwd9Wwf+8fDrzgknNf2sna4V76u+WGzI/QVpJDgO2Cqpzr8q2FWoenOMK\n90hZbMnOxDuIhnwvh9FekUKZTA7hTTD7c668IQqgxsDoR+FPs8x2D6sLck4s\nwN1SwDYmtbkyny1c/ZwRarMVtRsSlGGvnRjqUcr7uT3sr5FYhshcuywajuei\n1hPzLmF1j75H+6e2lV1i5t2/HMAjMn0dHct789Hgldyi9L/G5XY8794c4J/3\nKAOzem3iJJz72lr2HQ2NaVtOUEuIfBbh5428oWuOtBdEWyGFlRuyYhNwVLs8\nVBOb3Jj/kSsvMK9iUm3OtzI5vA2NflQ5bsXnbjhIoQhqC3pFsc0ilRMmZ6Op\nn+pJJe8UuhnOnulwBCNXxUYRSEQPp+FvZ+SWl3u84kw8gMquh7E+fUbjEC7A\nia4rp8oSZ0YE5hyRdztGEzAq44QzpJmhTQG0OgR2ZgCTRaXbGb5OSxQUwG3U\nMGRl\r\n=Lfwu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_4.0.0_1559142882585_0.9434836304653573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "boxen",
+      "version": "4.1.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.3.1",
+        "chalk": "^2.4.2",
+        "cli-boxes": "^2.2.0",
+        "string-width": "^4.1.0",
+        "term-size": "^2.1.0",
+        "type-fest": "^0.5.2",
+        "widest-line": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "nyc": "^14.1.1",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d839e71db74f471d61b888cff8c487d9aff07622",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@4.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Iwq1qOkmEsl0EVABa864Bbj3HCL4186DRZgFW/NrFs5y5GMM3ljsxzMLgOHdWISDRvcM8beh8q4tTNzXz+mSKg==",
+        "shasum": "256f6b2eb09ba22ea558e5acc0a5ff637bf8ed03",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12638,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/9mWCRA9TVsSAnZWagAAonoQAJzgw6h+Axpkgd244r1m\nwmmvsxPUPBqWsZWvm98Riab+pTM8e3pKMSHxpb6cW4Lw1/nN83pZcih7FmJ+\nar3TbIVtN83mwuaejd06HB/Z4DCFaZNf4Pch9bd1skqyH5dN1cNl6kUiXe0z\nHmKPqxkls7mLXIPlp6Fy06k7TCm+Q+eDPtS6Su2yV419SwUK83/SZsAGcaHb\nXpOaoPFSMkqlF01+lmbHA0epj+2btORc48VQlf9lXYLoh8ZStU066bm2Sutj\nLcRU+Ug8PEgYgjGKCXru678WSuIqcENfRoj4Lwm6iahob2kZa2gUqJrMVLh/\nIk9Om703jASYpbtWTrpxHBf/8yCJZermjJKXn1GIVgBOQJCwSnOYuBduSFbr\nuVMIPVNp0y1MQQ4nNixYx/S2r4uOKXhD8s1X/yW/qvs9hL9zjDACR+mSP2hE\nT+Oqzzld3RenUD1Xtg7xlvcUvE2u1JEIz7gEwtmDZ0NaQYGsvzIkX/O3Z0QV\n560BRUTqv9NxBV1NofAUGlUenAnDF5H6249kvmZ9J/E0sVsAO5JGvqv5Umrb\nc40bQhgrx39F5qsL9gb/6A0Hx+9vz+cGAvNwBFCniAxY7pPNH/15bx6wc8Lc\ny72ifM4jPlIfNk343t19/Hx7T6JJ1yObiAwv9DS+QtPluRs7lZmEq3KKBgqJ\nZUYS\r\n=aPNM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_4.1.0_1560271253779_0.3720277065533497"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "boxen",
+      "version": "4.2.0",
+      "description": "Create boxes in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/boxen.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "cli",
+        "box",
+        "boxes",
+        "terminal",
+        "term",
+        "console",
+        "ascii",
+        "unicode",
+        "border",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-align": "^3.0.0",
+        "camelcase": "^5.3.1",
+        "chalk": "^3.0.0",
+        "cli-boxes": "^2.2.0",
+        "string-width": "^4.1.0",
+        "term-size": "^2.1.0",
+        "type-fest": "^0.8.1",
+        "widest-line": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "nyc": "^14.1.1",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "c5776208a5aebd4883e9b06683710a3a19fb979f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/boxen/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/boxen#readme",
+      "_id": "boxen@4.2.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.13.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-eB4uT9RGzg2odpER62bBwSLvUeGC+WbRjjyyFhGsKnc8wp/m0+hQsMUvUe3H2V0D5vw0nBdO1hCJoZo5mKeuIQ==",
+        "shasum": "e411b62357d6d6d36587c8ac3d5d974daa070e64",
+        "tarball": "https://registry.npmjs.org/boxen/-/boxen-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12661,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6gaNCRA9TVsSAnZWagAA23kP/RCUdPULO6PokH2XV23U\n5PSA4wB65yCLKQmXtuNLCjFDLxkk1T0azUDpUXHQ6XRNAdS7003CN6ujwk36\ngsXbIl0qSlC6fK7KZZpSn0wWmXpLdNuJkkLdbdOUaERW7ZTuuQhe+NoZfPkV\njoulGEJyjdAvHc0GyE+c5tuXBhd6eh+05PumApbarfroiBr4W1KDzcGbGG9A\nCIG2wbRlU2xVSGHXHRI+bstqPixkL5VwcfTOyLA+1OTe6V+ri4AoHFebQoLA\nmwCs1ks5d/1UabU0j/YbbMR/mphLfBnTDlCLqB5E8Z0M5ENmfuUYrHI33GUm\nMc14f/zsRsxsiA1Zxa9qdkLTpxzQ40jBFJcs/lBxRcg6n/dH0sKAU7WgpgWW\nhgiqDrEsPO0q9oHUYvl0LxBbIIDV02RI5hGTuHuHp/CGJNZsUJw2Y9IP4kdi\n8UJVU9QpHlc73PCYDk1ZW5oiEdFp3MiyNfIkbhyQ1svNP8362RPaXKrqKU5O\nnU8jCitsRhFyVF0DSZ06MDlOzRuWz1pENC3YY8PIC5MO9ri5ozygUoJ/e9Rb\nyof+54Qm6TYBNzZC55pdzb45ag7VPuhqpzDpGu7OopFq5MVz01/frmCk9gav\n7RRUY6k+mqcnl1S3ziekj0VIviex/FTBEScYeIypDAhcNyMx2me92uhIn4NT\ntRhW\r\n=WiXb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/boxen_4.2.0_1575618189236_0.7095359180903849"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# boxen [![Build Status](https://travis-ci.org/sindresorhus/boxen.svg?branch=master)](https://travis-ci.org/sindresorhus/boxen)\n\n> Create boxes in the terminal\n\n![](screenshot.png)\n\n## Install\n\n```\n$ npm install boxen\n```\n\n## Usage\n\n```js\nconst boxen = require('boxen');\n\nconsole.log(boxen('unicorn', {padding: 1}));\n/*\n┌─────────────┐\n│             │\n│   unicorn   │\n│             │\n└─────────────┘\n*/\n\nconsole.log(boxen('unicorn', {padding: 1, margin: 1, borderStyle: 'double'}));\n/*\n\n   ╔═════════════╗\n   ║             ║\n   ║   unicorn   ║\n   ║             ║\n   ╚═════════════╝\n\n*/\n```\n\n## API\n\n### boxen(text, options?)\n\n#### text\n\nType: `string`\n\nText inside the box.\n\n#### options\n\nType: `object`\n\n##### borderColor\n\nType: `string`\\\nValues: `'black'` `'red'` `'green'` `'yellow'` `'blue'` `'magenta'` `'cyan'` `'white'` `'gray'` or a hex value like `'#ff0000'`\n\nColor of the box border.\n\n##### borderStyle\n\nType: `string | object`\\\nDefault: `'single'`\\\nValues:\n- `'single'`\n```\n┌───┐\n│foo│\n└───┘\n```\n- `'double'`\n```\n╔═══╗\n║foo║\n╚═══╝\n```\n- `'round'` (`'single'` sides with round corners)\n```\n╭───╮\n│foo│\n╰───╯\n```\n- `'bold'`\n```\n┏━━━┓\n┃foo┃\n┗━━━┛\n```\n- `'singleDouble'` (`'single'` on top and bottom, `'double'` on right and left)\n```\n╓───╖\n║foo║\n╙───╜\n```\n- `'doubleSingle'` (`'double'` on top and bottom, `'single'` on right and left)\n```\n╒═══╕\n│foo│\n╘═══╛\n```\n- `'classic'`\n```\n+---+\n|foo|\n+---+\n```\n\nStyle of the box border.\n\nCan be any of the above predefined styles or an object with the following keys:\n\n```js\n{\n\ttopLeft: '+',\n\ttopRight: '+',\n\tbottomLeft: '+',\n\tbottomRight: '+',\n\thorizontal: '-',\n\tvertical: '|'\n}\n```\n\n##### dimBorder\n\nType: `boolean`\\\nDefault: `false`\n\nReduce opacity of the border.\n\n##### padding\n\nType: `number | object`\\\nDefault: `0`\n\nSpace between the text and box border.\n\nAccepts a number or an object with any of the `top`, `right`, `bottom`, `left` properties. When a number is specified, the left/right padding is 3 times the top/bottom to make it look nice.\n\n##### margin\n\nType: `number | object`\\\nDefault: `0`\n\nSpace around the box.\n\nAccepts a number or an object with any of the `top`, `right`, `bottom`, `left` properties. When a number is specified, the left/right margin is 3 times the top/bottom to make it look nice.\n\n##### float\n\nType: `string`\\\nDefault: `'left'`\\\nValues: `'right'` `'center'` `'left'`\n\nFloat the box on the available terminal screen space.\n\n##### backgroundColor\n\nType: `string`\\\nValues: `'black'` `'red'` `'green'` `'yellow'` `'blue'` `'magenta'` `'cyan'` `'white'` `'gray'` or a hex value like `'#ff0000'`\n\nColor of the background.\n\n##### align\n\nType: `string`\\\nDefault: `'left'`\\\nValues: `'left'` `'center'` `'right'`\n\nAlign the text in the box based on the widest line.\n\n## Related\n\n- [boxen-cli](https://github.com/sindresorhus/boxen-cli) - CLI for this module\n- [cli-boxes](https://github.com/sindresorhus/cli-boxes) - Boxes for use in the terminal\n- [ink-box](https://github.com/sindresorhus/ink-box) - Box component for Ink that uses this package\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-boxen?utm_source=npm-boxen&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-06T07:43:13.437Z",
+    "created": "2015-12-21T21:16:48.167Z",
+    "0.1.0": "2015-12-21T21:16:48.167Z",
+    "0.2.0": "2015-12-23T11:36:38.292Z",
+    "0.3.0": "2016-02-10T09:36:36.162Z",
+    "0.3.1": "2016-02-10T11:03:16.610Z",
+    "0.4.0": "2016-03-01T08:30:42.315Z",
+    "0.5.0": "2016-03-01T17:42:34.147Z",
+    "0.5.1": "2016-03-29T08:09:14.659Z",
+    "0.6.0": "2016-06-07T11:10:25.803Z",
+    "0.7.0": "2016-09-06T11:57:09.945Z",
+    "0.8.0": "2016-09-06T12:23:15.066Z",
+    "0.8.1": "2016-09-10T14:10:44.235Z",
+    "1.0.0": "2017-01-13T09:29:25.847Z",
+    "1.1.0": "2017-05-05T16:11:40.499Z",
+    "1.2.0": "2017-07-12T12:58:03.897Z",
+    "1.2.1": "2017-07-23T17:45:11.854Z",
+    "1.2.2": "2017-10-17T16:09:55.401Z",
+    "1.3.0": "2017-12-01T01:30:17.242Z",
+    "2.0.0": "2018-09-10T17:31:08.439Z",
+    "2.1.0": "2018-12-18T13:58:52.294Z",
+    "3.0.0": "2019-02-19T18:47:18.561Z",
+    "3.1.0": "2019-04-06T16:40:39.741Z",
+    "3.2.0": "2019-04-30T12:06:54.048Z",
+    "4.0.0": "2019-05-29T15:14:42.719Z",
+    "4.1.0": "2019-06-11T16:40:53.925Z",
+    "4.2.0": "2019-12-06T07:43:09.434Z"
+  },
+  "homepage": "https://github.com/sindresorhus/boxen#readme",
+  "keywords": [
+    "cli",
+    "box",
+    "boxes",
+    "terminal",
+    "term",
+    "console",
+    "ascii",
+    "unicode",
+    "border",
+    "text"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/boxen.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/boxen/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "heartnett": true,
+    "nisimjoseph": true,
+    "xuu": true,
+    "zuojiang": true,
+    "yinfxs": true,
+    "x-cold": true,
+    "zhenguo.zhao": true,
+    "austinjk": true
+  }
+}

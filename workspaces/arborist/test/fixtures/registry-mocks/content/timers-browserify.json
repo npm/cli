@@ -1,0 +1,3893 @@
+{
+  "_id": "timers-browserify",
+  "_rev": "53-540300fa6caf5dfb51daf2e654006bc4",
+  "name": "timers-browserify",
+  "description": "timers module for browserify",
+  "dist-tags": {
+    "latest": "2.0.12"
+  },
+  "versions": {
+    "0.0.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "0.0.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "name": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "main": "main.js",
+      "dependencies": {},
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "_id": "timers-browserify@0.0.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.21",
+      "_nodeVersion": "v0.6.18",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "9deb3bf70e1155b7e608d9c0c552c5a55bd650f9",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "~1.0.1"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "_id": "timers-browserify@1.0.0",
+      "dist": {
+        "shasum": "6cff54619a7af3e0feb99dc60b85a883ee192fea",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.5.1"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "_id": "timers-browserify@1.0.1",
+      "dist": {
+        "shasum": "7c93257b543cb1e3003d3663b57d560ee1d27057",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.5.1"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "c67e388b2adf6d8df2de113d48dbbb1a323b0928",
+      "_id": "timers-browserify@1.0.2",
+      "scripts": {},
+      "_shasum": "33935e5d08a02a132cee6bfa45228a7d33ae8466",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "33935e5d08a02a132cee6bfa45228a7d33ae8466",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.5.1"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "26a6b9e81cc0f65d68678592c72d63636795fc93",
+      "_id": "timers-browserify@1.0.3",
+      "scripts": {},
+      "_shasum": "ffba70c9c12eed916fd67318e629ac6f32295551",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ffba70c9c12eed916fd67318e629ac6f32295551",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.5.1"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "0416ec07a897d7e2a5d1b9374b2fb90a36ceaf7e",
+      "_id": "timers-browserify@1.1.0",
+      "scripts": {},
+      "_shasum": "bffd11af00fe82b089b015e8de4dc6a911b7ec3e",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bffd11af00fe82b089b015e8de4dc6a911b7ec3e",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.10.0"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "657d34d6d974b6b96e2615250792ff6a2455a7b4",
+      "_id": "timers-browserify@1.2.0",
+      "scripts": {},
+      "_shasum": "411865ceba9e2c0fafc1d2f3b7a6a87bca44194b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "411865ceba9e2c0fafc1d2f3b7a6a87bca44194b",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.3.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.10.0"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "e3a7e858b3b2100303874e2ef0071d1c61e5b489",
+      "_id": "timers-browserify@1.3.0",
+      "scripts": {},
+      "_shasum": "c518e6ba39f19619e6ae464e447b1511e172e96f",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c518e6ba39f19619e6ae464e447b1511e172e96f",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.4.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.10.0"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "b8b35bcf4c95305db48a030d0f08b9bafdd6660d",
+      "_id": "timers-browserify@1.4.0",
+      "scripts": {},
+      "_shasum": "6b424b07688cd1978c2a3333ee618c46036d6ddb",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6b424b07688cd1978c2a3333ee618c46036d6ddb",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.4.1",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.11.0"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "gitHead": "e95b087592e08052d773efeec9412d480eb1c22b",
+      "_id": "timers-browserify@1.4.1",
+      "scripts": {},
+      "_shasum": "bf8afeb7b50d6c500e2b3e0a5d759c4005e985d7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bf8afeb7b50d6c500e2b3e0a5d759c4005e985d7",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.2": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "1.4.2",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "process": "~0.11.0"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "762af88b6ed1d9b2ac97110649b723391ddd6bdd",
+      "_id": "timers-browserify@1.4.2",
+      "scripts": {},
+      "_shasum": "c9c58b575be8407375cb5e2462dacee74359f41d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c9c58b575be8407375cb5e2462dacee74359f41d",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-1.4.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "6adac285092eaecbb38b74bf9d017c175219b1ff",
+      "_id": "timers-browserify@2.0.0",
+      "scripts": {},
+      "_shasum": "0cae1d5e8ce45f605590bb64331d0b1102eb265b",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0cae1d5e8ce45f605590bb64331d0b1102eb265b",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/timers-browserify-2.0.0.tgz_1459186350606_0.3618208144325763"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "60328740a05aa1bdf6783780fcff2943d54eee8f",
+      "_id": "timers-browserify@2.0.1",
+      "scripts": {},
+      "_shasum": "199291a9fb720ee19f58a611a699083396af1622",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "199291a9fb720ee19f58a611a699083396af1622",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/timers-browserify-2.0.1.tgz_1466555669433_0.2476723336149007"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "2b4f7e6f3eda4109e06f90b50ee3ec24fc386506",
+      "_id": "timers-browserify@2.0.2",
+      "scripts": {},
+      "_shasum": "ab4883cf597dcd50af211349a00fbca56ac86b86",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ab4883cf597dcd50af211349a00fbca56ac86b86",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/timers-browserify-2.0.2.tgz_1476882406189_0.28604227397590876"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.3",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "global": "^4.3.2",
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "f1b0bf3b6f1472cc5dc4f10f760ea37f6ecdddda",
+      "_id": "timers-browserify@2.0.3",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "8.1.3",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-+JAqyNgg+M8+gXIrq2EeUr4kZqRz47Ysco7X5QKRGScRE9HIHckyHD1asozSFGeqx2nmPCgA8T5tIGVO0ML7/w==",
+        "shasum": "41fd0bdc926a5feedc33a17a8e1f7d491925f7fc",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify-2.0.3.tgz_1501523397061_0.9377144535537809"
+      },
+      "directories": {}
+    },
+    "2.0.4": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.4",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "5529f60de812beb769be7c9afffa388184506072",
+      "_id": "timers-browserify@2.0.4",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-uZYhyU3EX8O7HQP+J9fTVYwsq90Vr68xPEFo7yrVImIxYvHgukBEgOB/SgGoorWVTzGM/3Z+wUNnboA4M8jWrg==",
+        "shasum": "96ca53f4b794a5e7c0e1bd7cc88a372298fa01e6",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify-2.0.4.tgz_1502722044314_0.054807583102956414"
+      },
+      "directories": {}
+    },
+    "2.0.5": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.5",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "92b9d23ee5bdc783f52315933bac80216a3449c6",
+      "_id": "timers-browserify@2.0.5",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BMeI1W6E2/mSaPVLUnH9rjEY1Ys2FEC/GKmE/101wusU3byZO5g68BJ5hpJEP8iD1qAJ6SzYAShGA+urHMxOzQ==",
+        "shasum": "04878fb12a155a159c9d1e59faa1f77bf4ecc44c",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify-2.0.5.tgz_1516764979767_0.6405671837273985"
+      },
+      "directories": {}
+    },
+    "2.0.6": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.6",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "106b52352aad119298c1fcdde36848969458cee4",
+      "_id": "timers-browserify@2.0.6",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HQ3nbYRAowdVd0ckGFvmJPPCOH/CHleFN/Y0YQCX1DVaB7t+KFvisuyN09fuP8Jtp1CpfSh8O8bMkHbdbPe6Pw==",
+        "shasum": "241e76927d9ca05f4d959819022f5b3664b64bae",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify-2.0.6.tgz_1516832790650_0.10070195351727307"
+      },
+      "directories": {}
+    },
+    "2.0.7": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.7",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "fc37ad35365a6bcbaa0b499d99e9c76619180f4e",
+      "_id": "timers-browserify@2.0.7",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-U7DtjfsHeYjNAyEz4MdCLGZMY3ySyHIgZZp6ba9uxZlMRMiK5yTHUYc2XfGQHKFgxGcmvBF2jafoNtQYvlDpOw==",
+        "shasum": "e74093629cb62c20332af587ddc0c86b4ba97a05",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.7.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9728,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa1RGjCRA9TVsSAnZWagAAP9IP/iAxaKHyKzzDwiW9jaZy\nDjK+FiB/X7ajwyqgJd/R33iYAc6o1BzIEzQAkCLSTcBydVER17GYNKkbPZJt\n15s8fPh6wjBloVFL1TcrfzFUZKWCxbf0nZN5t8HZ0oaABCrRC8qls7LXzurt\niuiSXZ+B25C6uBcRcouA47CFma4qS9w+LqfgSkY59AgBkmCsM6JRpYyJw3eV\nCwltlLSGNR4VswWAtNlWKqKXKwapB5+N4ZVFHH01hwEfrXIQp44Nnr+AqtOr\nT8U9ymqZnZmCxc0ZRoeKbpN+hliPwNk84D9ptPkSyYTnmgAAzGA0YzVSkGtR\nBfQ8RhpHriI5zx9RE0fVCNfGRY9JXLp38+CUkn0tZSB3lnweom/+QIvwxGrU\nnOT2j1tkrmbR3epUL96wr8yGhDVY2WfVkFgGPZmGDx6+t0CdzLNvfJ4h1JiN\ndFRxxeuSD/VP3GTy7qXVn70XJgFQqFcDxNFL5W0AldioJa4zULWXCPwQhjJF\n+otUPCU17sTqwc/qQVp62CsQZdTlqXEk/zPfHjlI+YdbPc646zH8dVoXsooB\nGDMuhMcwqHmjOQD6ljApJruCpstP3A0+CPw0fUVEnHuEjQpcHxwHfzG719ci\nZlalCHKm3zieDJPnLh7MJlKLqnEsd6kILIaRkWvx3PpKJcozuyDuGhC/BGpr\ncR0m\r\n=RAUX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.7_1523913121856_0.997974360028153"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.8": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.8",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "e32c7c44187f2058e172eca0c3ca9cb3e2ecd43a",
+      "_id": "timers-browserify@2.0.8",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-a+QofyerK/mw3zl0nOlU33TP0vnbaF8pDKevVI5hT5LMUFEUQPtbhSohuvRZWB8UW1bP9Bhfqqw6KA3gsbP4Uw==",
+        "shasum": "ad5ecbc2d081e038f8732406aeb723628b482494",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.8.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9907,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa1hhYCRA9TVsSAnZWagAA+8cP/j91nMh9uGa+LNfHN60r\nEDpHG8pWLilVYIi6dISM810NNHdwyT5ll9HXXfvDAcoxNcDmYPjwhKGPt/hN\nj8reAQVfNACgQjXFYS/JTVR82Oz+MvbMvviWuIqbImVd342e5hzNcH28OLt7\njNtwvyCXYNUZ9BV1++W4P2kq8hgSa6G0sxbywyYLR4y1HmeRtcHFSkkvbe43\nFffDl5o4X2GxmiTEjrh+a8syzB9OigUqtqf4ypEFZu83g9SbjbbNwlysUPVS\nTjsy5gxxwImdeBDvOJCS+fmap8xxgvO+fmVYMS2IlTHLhJ5a8lJglANaGdqq\nYig0TsEATITP4MZVBoSZ0iXDzT2/+InktVEeTkZn5YYySry3snbvDVNcznLe\nxA7MqcJqKUC3wix46EtySmaS2R+YOJTU4rdN/TJUCPIbkYZaYd5P1xTVdu8o\nIYSO7K+Tz+S6BRBQqzW6nSKCDzHvCrO2l+u2ZwQIBg6Vf0iSHZmLovrYXrJB\nKD2AoQGHSWBkM0ldd0IibjjBpSBM+6x9s8PckUFKZOogmZOjnEjCVREOvvih\n67oKR8/phNyLESFBRMETsj0A2I5E4HFO1/LtmyjECf6DU0S0pIWvn2QZ5/cK\n2/I16ADvbUHPyQgRDph2J9bD9eG+AX2nMp2guy1JwbQ8lPxfPnA3zON0v3MD\nQBRZ\r\n=bzWn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.8_1523980375790_0.020820278042240625"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.9": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.9",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "47a0b2dcd4a9a860ba8b397f84668418d80ca228",
+      "_id": "timers-browserify@2.0.9",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2DhyvVpCWwY7gk8UmKhYvgHQl9XTlO0Dg0/2UZcLgPnpulhdm2aGIlFy5rU5igmOCA51w6jPHqLRA4UH1YmhcA==",
+        "shasum": "3dea6faaab8038589dc6d0c4ccbc08b02698bab3",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.9.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10039,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa1nSGCRA9TVsSAnZWagAAENYP/1QvfKlPD0pn/pHfiICD\ny0cfoZxHdEdBMJl8xmyePBHDQvBJACs7DXyAtW0Exx3hHQcBvRFXlckcZqon\nnw7yuV6V9iC9325XFRBbUBzxcdyxn4CI6uytC1CdiO04/Zu1cBwfGOcbMKYC\nehJYUj+HFSwn4PSKu++AQsQ73SCYH/LGrbGeDjurrrL/628yK24AvJ0G/2Ut\njocYB5xcAHO9wLSinRov3forqKPv92glPQSxWTVgs/J7Cn4+/AiY/vrL2PUo\nFkjBow8N7s5GUzWImB+ZVY2XwSTwOI61WCMhXmOOzBa0BPWA79QgZXrwVKzq\nTMsofCjwqDURvE3lxgkB6oZZUwOCrlBUCxdLjXdLLWv+pu5HVW0dQ7yVyX/A\n0XkB7UW/Wo4Dip4TfyopPOB8vWf0I91GCaV4T0KPAVjwC5U3aXZrPlIYM+je\n4GRw98QjyiQFsmox7JWq1CpAptT/TUM92GVWVx/XfvAPLpY0tZqPsw1toP9X\nxhGFjfyZwbviU8GUkQPCTZ6obFF9xhttEPiAUVcslX9AeZuL+py197G2vO/s\nzPr0FPNMqp1aQi7de9Wz1s22RU97l3+XQY8OVRvzbqmlr8VJZ+5pKeCojlfZ\n1rGHd+chtqDEiMVa7uoG8tQQkK1AW7GVu87kPsbjSrWcD0QSswAhLn7o/rPJ\nW5PV\r\n=6noq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.9_1524003973284_0.7885091002376405"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.10": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.10",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jryans/timers-browserify/blob/master/LICENSE.md"
+        }
+      ],
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "bedb5290e1d2366e61b7882d25f44287a94f5cc1",
+      "_id": "timers-browserify@2.0.10",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YvC1SV1XdOUaL6gx5CoGroT3Gu49pK9+TZ38ErPldOWW4j49GI1HKs9DV+KGq/w6y+LZ72W1c8cKz2vzY+qpzg==",
+        "shasum": "1d28e3d2aadf1d5a5996c4e9f95601cd053480ae",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.10.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10203,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa13j2CRA9TVsSAnZWagAA6esP/jQtaJd3p6crEf1eKBG/\nQd+W8uVDhzZBM8SNkQmsqkV31HT8yQS3eQKw3cYUg9ey+Cc5+69vlxOxdLum\nDOE/7I2fOEA4Tff32kFtJDjuMGXGHPYEKmp+vWLi69wujL1PEBSfAKPGt+6d\n9R1Y9DlN1D7QGC9FvvP7nsRd/5hm6nI6MuVir/jYqcDZbp2/aWLsRrRQMah6\nZsjidznsPswovA2fVBaPBYZQ4yIZ3eE6IDnrXGzDT+U4G5YvFvAqvnW1pwbI\nkLoWFXro6jzsu+/cQ/n6zlmGGl6d2mcO4UzyTTeMa0y2MkshZR7HcGMGyL8B\nwbX4r1+szgKGQAylFcphZhzjOWYHIqHOKhIZp6aP2NHgfNmK8U/McIPQiqdK\n/MZCdNfhyZCvkK13BvtudRC/v3J+gOWY1QHvmljxxoKVhnS17XgO3Db2zV6U\nnYNwlJswUeiMvM/MdDoTuCezrd0jQSw2e2zCdSqLQBbKn1AOw3STsAX6WLRH\nCuUelloaACWQNV6NRAKH7YW2u9KljSBdwEILibk4OJnayGXNMkKdIbcmSEr/\naoExtCU8w/IkpmXkebTbp3KALO8bo5LfnzG1AyGR74VMLbPZRtaYARMmht00\nFyB9+WDk88zLbbA1uvOmS4xir75ToqLr3PNj053tXwQc5pOHhnplmSHXjK5D\nqYv+\r\n=xkle\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "rene@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.10_1524070645357_0.9856718108700573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.11": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "http://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.11",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "Simon Meusel",
+          "email": "info@simonmeusel.de"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "connect": "~2.3.0",
+        "browserify": "~1.10.16"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "license": "MIT",
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "31f5ad216b9174a7c0210d4184dc0df6fc3c14d5",
+      "_id": "timers-browserify@2.0.11",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-60aV6sgJ5YEbzUdn9c8kYGIqOubPoUdqQCul3SBAsRCZ40s6Y5cMcrW4dt3/k/EsbLVJNl9n6Vz3fTc+k2GeKQ==",
+        "shasum": "800b1f3eee272e5bc53ee465a04d0e804c31211f",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.11.tgz",
+        "fileCount": 6,
+        "unpackedSize": 16378,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTticCRA9TVsSAnZWagAAcTkP+wekHljR1vyy8wvG8tsD\n0+rWSAeFwQ5mJeopsQ2A1PNKJnu7wrT6xkGiqGxObU2nWxchltr7+RUYoS3J\nits5J7wZUYcgXvMg+rosnC29ywE9EixEnMjDOnCAyDvvkHFm4cbNiYMHWXFI\nmXBHeGbfK72tKSBMj0DcoJM/9bEdXcyTmG3oqj3pSBpNF8/YqlFo5DxjDisD\nHmmHzHEmdx+Gah/QJ6yv+o5u5tvKHm3hMH+qEoQVq5j3HxFxTnoZHcaolwoj\nUazehC7tdUHnZxgNlTg7yQ1l3YOp7OwLCqelIqHK0DvU400vxgekmcFSIUPA\nl9sX+yAUkWtpispCRZvuBfzWZqGps8KJGY3YYI6uDGi24jLcg8jC+D3E7pNS\nmqFR06aE2lrgbqn2Pb1WQRUNtVB/g3HzFwJ5KaERVUuNifJdDA6aLcLcOn1A\nFxZFJCPBhjZDYtx9xGsskpJ8ACy0aG5MkHM5cracQrTv8gQ3KfbOuZVhpTkV\nXl6c4aw8uAOSgr5LEFVJNCnbaDs/NawEApzylxN5HTODZZ4MOg4T0vyaF0Zt\nYRH40lNgIH+iQ1f07YM5pGxV7iBR+JRT8nQGzkqfCpSAtrdRULvwc4Z1TbqF\n5EN4YpQaJBUsS9uHzApKS1owApM+ad4dEAGfFHM/Yar45nYjeiENqh/sLjEn\nEc9J\r\n=HE7n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "lukechilds123@gmail.com",
+          "name": "lukechilds"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.11_1565448348034_0.8638810868930824"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.12": {
+      "author": {
+        "name": "J. Ryan Stinnett",
+        "email": "jryans@gmail.com",
+        "url": "https://convolv.es/"
+      },
+      "name": "timers-browserify",
+      "description": "timers module for browserify",
+      "version": "2.0.12",
+      "homepage": "https://github.com/jryans/timers-browserify",
+      "bugs": {
+        "url": "https://github.com/jryans/timers-browserify/issues"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jryans/timers-browserify.git"
+      },
+      "contributors": [
+        {
+          "name": "Colton Brown",
+          "email": "coltonTB@me.com"
+        },
+        {
+          "name": "Dario Segura",
+          "email": "dario.seco@gmail.com"
+        },
+        {
+          "name": "Guy Bedford",
+          "email": "guybedford@gmail.com"
+        },
+        {
+          "name": "Ionut-Cristian Florescu",
+          "email": "ionut.florescu@gmail.com"
+        },
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net"
+        },
+        {
+          "name": "Jan Schär",
+          "email": "jscissr@gmail.com"
+        },
+        {
+          "name": "Johannes Ewald",
+          "email": "johannes.ewald@peerigon.com"
+        },
+        {
+          "name": "Jonathan Prins",
+          "email": "jon@blip.tv"
+        },
+        {
+          "name": "Matt Esch",
+          "email": "matt@mattesch.info"
+        },
+        {
+          "name": "Renée Kooi",
+          "email": "renee@kooi.me"
+        },
+        {
+          "name": "Simon Meusel",
+          "email": "info@simonmeusel.de"
+        },
+        {
+          "name": "taoqf",
+          "email": "tao_qiufeng@126.com"
+        },
+        {
+          "name": "Thiago Felix",
+          "email": "thiago@thiagofelix.com"
+        },
+        {
+          "name": "wtgtybhertgeghgtwtg",
+          "email": "wtgtybhertgeghgtwtg@gmail.com"
+        }
+      ],
+      "main": "main.js",
+      "dependencies": {
+        "setimmediate": "^1.0.4"
+      },
+      "devDependencies": {
+        "browserify": "~1.10.16",
+        "connect": "~2.30.2"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "keywords": [
+        "timers",
+        "browserify",
+        "browser"
+      ],
+      "license": "MIT",
+      "jspm": {
+        "map": {
+          "./main.js": {
+            "node": "@node/timers"
+          }
+        }
+      },
+      "gitHead": "dd631db8b93df460e668d03406d35a53525253e6",
+      "_id": "timers-browserify@2.0.12",
+      "_nodeVersion": "14.14.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "jryans",
+        "email": "jryans@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9phl76Cqm6FhSX9Xe1ZUAMLtm1BLkKj2Qd5ApyWkXzsMRaA7dgr81kf4wJmQf/hAvg8EEyJxDo3du/0KlhPiKQ==",
+        "shasum": "44a45c11fbf407f34f97bccd1577c652361b00ee",
+        "tarball": "https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.12.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10382,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfl/oFCRA9TVsSAnZWagAAF/cP/0MqIr+rvm+iIxYiHcYl\nhx0mCia+fswcTLrUeUmI1xVvGgxHGc4SBi8MbDJtA+IzSK6uNBLkmdplEgqa\n7QaryKjR59mO+BLdf634WVXTkhjpF6F+NLobP61Jjb50Yp0V+JOboYxoLIKd\nozUPJCShOJqJ5p65/zhAO+C4edgkVcULYE1iWPmqwNtQyCeT97DqzT7u0U7e\nCsmbWWr5LltMoj5T0QfRNF4cSqNgP9J2icJbYCaK9i+c7Bk2uQpkDYn1n5kQ\nshMih2nECrUy8vFWp3ZBIcNtQEVx+3DB0I5ISPivnLREN5UAf64HXspo95VD\n2w1J9cRaSgFQ654E1M4u7/PmA4/P2O/8UVQMd5cI9clDKZMrOJrRhwvHWem5\nQiZ6b9zeBmbOBJqDrK4yuj/Hs58qcQ2fWG5AqsWqKgVIpvY8Sp9xjkYK8hk4\nhsJXyjcAVTgebbnqh9VZOiJuhy4mVizmVXhSi9dlMCpznyBJCcekZ59tKeAi\nPupMi9GQP+I+Wy8umOoDZf8ACgb+6GcZwOXjzTDO3tTkDA6rL+H0iWS1t9YV\nq534Qy8uGaw9K6GDhu3B2cWPd/ANQUhiRPGy6GkFF1QDSj6dTFkmis4pEUvS\nrMS996Ods/lgkK4YBA47GcMLUgPx7xp9kzAo4GjJmisQqNEgJe8294+9pz+o\n4erA\r\n=NhPz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "raynos",
+          "email": "raynos2@gmail.com"
+        },
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        },
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "gkatsev",
+          "email": "me@gkatsev.com"
+        },
+        {
+          "name": "zertosh",
+          "email": "zertosh@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "maxogden",
+          "email": "max@maxogden.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "thlorenz",
+          "email": "thlorenz10@gmail.com"
+        },
+        {
+          "name": "terinjokes",
+          "email": "terinjokes@gmail.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "mellowmelon",
+          "email": "palmermebane@gmail.com"
+        },
+        {
+          "name": "ashaffer88",
+          "email": "darawk@gmail.com"
+        },
+        {
+          "name": "balupton",
+          "email": "b@lupton.cc"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jryans",
+          "email": "jryans@gmail.com"
+        },
+        {
+          "name": "sethvincent",
+          "email": "sethvincent@gmail.com"
+        },
+        {
+          "name": "yoshuawuyts",
+          "email": "yoshuawuyts@gmail.com"
+        },
+        {
+          "name": "ungoldman",
+          "email": "ungoldman@gmail.com"
+        },
+        {
+          "name": "ahdinosaur",
+          "email": "michael.williams@enspiral.com"
+        },
+        {
+          "name": "elnounch",
+          "email": "contact@elnounch.net"
+        },
+        {
+          "name": "parshap",
+          "email": "parshap+npm@gmail.com"
+        },
+        {
+          "name": "yerkopalma",
+          "email": "yerko.palma@usach.cl"
+        },
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        },
+        {
+          "name": "leichtgewicht",
+          "email": "martin.heidegger@gmail.com"
+        },
+        {
+          "name": "garann",
+          "email": "garann@gmail.com"
+        },
+        {
+          "name": "bret",
+          "email": "bcomnes@gmail.com"
+        },
+        {
+          "name": "anandthakker",
+          "email": "vestibule@anandthakker.net"
+        },
+        {
+          "name": "mattdesl",
+          "email": "dave.des@gmail.com"
+        },
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "fpereira1",
+          "email": "pereira.filype@gmail.com"
+        },
+        {
+          "name": "goto-bus-stop",
+          "email": "renee@kooi.me"
+        },
+        {
+          "name": "bpostlethwaite",
+          "email": "post.ben.here@gmail.com"
+        },
+        {
+          "name": "emilbayes",
+          "email": "github@tixz.dk"
+        },
+        {
+          "name": "stevemao",
+          "email": "maochenyan@gmail.com"
+        },
+        {
+          "name": "pkrumins",
+          "email": "peteris.krumins@gmail.com"
+        },
+        {
+          "name": "tehshrike",
+          "email": "me@JoshDuff.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/timers-browserify_2.0.12_1603795460887_0.9157150168321269"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Overview\n\nAdds support for the `timers` module to browserify.\n\n## Wait, isn't it already supported in the browser?\n\nThe public methods of the `timers` module are:\n\n* `setTimeout(callback, delay, [arg], [...])`\n* `clearTimeout(timeoutId)`\n* `setInterval(callback, delay, [arg], [...])`\n* `clearInterval(intervalId)`\n\nand indeed, browsers support these already.\n\n## So, why does this exist?\n\nThe `timers` module also includes some private methods used in other built-in\nNode.js modules:\n\n* `enroll(item, delay)`\n* `unenroll(item)`\n* `active(item)`\n\nThese are used to efficiently support a large quantity of timers with the same\ntimeouts by creating only a few timers under the covers.\n\nNode.js also offers the `immediate` APIs, which aren't yet available cross-browser, so we polyfill those:\n\n* `setImmediate(callback, [arg], [...])`\n* `clearImmediate(immediateId)`\n\n## I need lots of timers and want to use linked list timers as Node.js does.\n\nLinked lists are efficient when you have thousands (millions?) of timers with the same delay.\nTake a look at [timers-browserify-full](https://www.npmjs.com/package/timers-browserify-full) in this case.\n\n# License\n\n[MIT](http://jryans.mit-license.org/)\n",
+  "maintainers": [
+    {
+      "name": "raynos",
+      "email": "raynos2@gmail.com"
+    },
+    {
+      "name": "lukechilds",
+      "email": "lukechilds123@gmail.com"
+    },
+    {
+      "name": "defunctzombie",
+      "email": "shtylman@gmail.com"
+    },
+    {
+      "name": "substack",
+      "email": "substack@gmail.com"
+    },
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    },
+    {
+      "name": "gkatsev",
+      "email": "me@gkatsev.com"
+    },
+    {
+      "name": "zertosh",
+      "email": "zertosh@gmail.com"
+    },
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    },
+    {
+      "name": "maxogden",
+      "email": "max@maxogden.com"
+    },
+    {
+      "name": "dominictarr",
+      "email": "dominic.tarr@gmail.com"
+    },
+    {
+      "name": "thlorenz",
+      "email": "thlorenz10@gmail.com"
+    },
+    {
+      "name": "terinjokes",
+      "email": "terinjokes@gmail.com"
+    },
+    {
+      "name": "jmm",
+      "email": "npm-public@jessemccarthy.net"
+    },
+    {
+      "name": "mellowmelon",
+      "email": "palmermebane@gmail.com"
+    },
+    {
+      "name": "ashaffer88",
+      "email": "darawk@gmail.com"
+    },
+    {
+      "name": "balupton",
+      "email": "b@lupton.cc"
+    },
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    },
+    {
+      "name": "jprichardson",
+      "email": "jprichardson@gmail.com"
+    },
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    },
+    {
+      "name": "jryans",
+      "email": "jryans@gmail.com"
+    },
+    {
+      "name": "sethvincent",
+      "email": "sethvincent@gmail.com"
+    },
+    {
+      "name": "yoshuawuyts",
+      "email": "yoshuawuyts@gmail.com"
+    },
+    {
+      "name": "ungoldman",
+      "email": "ungoldman@gmail.com"
+    },
+    {
+      "name": "ahdinosaur",
+      "email": "michael.williams@enspiral.com"
+    },
+    {
+      "name": "elnounch",
+      "email": "contact@elnounch.net"
+    },
+    {
+      "name": "parshap",
+      "email": "parshap+npm@gmail.com"
+    },
+    {
+      "name": "yerkopalma",
+      "email": "yerko.palma@usach.cl"
+    },
+    {
+      "name": "forbeslindesay",
+      "email": "forbes@lindesay.co.uk"
+    },
+    {
+      "name": "leichtgewicht",
+      "email": "martin.heidegger@gmail.com"
+    },
+    {
+      "name": "garann",
+      "email": "garann@gmail.com"
+    },
+    {
+      "name": "bret",
+      "email": "bcomnes@gmail.com"
+    },
+    {
+      "name": "anandthakker",
+      "email": "vestibule@anandthakker.net"
+    },
+    {
+      "name": "mattdesl",
+      "email": "dave.des@gmail.com"
+    },
+    {
+      "name": "hughsk",
+      "email": "hughskennedy@gmail.com"
+    },
+    {
+      "name": "fpereira1",
+      "email": "pereira.filype@gmail.com"
+    },
+    {
+      "name": "goto-bus-stop",
+      "email": "renee@kooi.me"
+    },
+    {
+      "name": "bpostlethwaite",
+      "email": "post.ben.here@gmail.com"
+    },
+    {
+      "name": "emilbayes",
+      "email": "github@tixz.dk"
+    },
+    {
+      "name": "stevemao",
+      "email": "maochenyan@gmail.com"
+    },
+    {
+      "name": "pkrumins",
+      "email": "peteris.krumins@gmail.com"
+    },
+    {
+      "name": "tehshrike",
+      "email": "me@JoshDuff.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-27T10:44:23.582Z",
+    "created": "2012-05-30T16:21:55.692Z",
+    "0.0.0": "2012-05-30T16:21:56.381Z",
+    "1.0.0": "2013-12-10T01:59:05.673Z",
+    "1.0.1": "2013-12-28T20:54:37.200Z",
+    "1.0.2": "2014-06-30T17:45:08.033Z",
+    "1.0.3": "2014-06-30T18:03:52.438Z",
+    "1.1.0": "2014-08-26T15:52:06.802Z",
+    "1.2.0": "2015-01-02T17:34:42.474Z",
+    "1.3.0": "2015-02-04T00:03:53.680Z",
+    "1.4.0": "2015-02-23T16:17:35.719Z",
+    "1.4.1": "2015-05-11T03:55:50.849Z",
+    "1.4.2": "2015-12-08T11:40:38.866Z",
+    "2.0.0": "2016-03-28T17:32:31.554Z",
+    "2.0.1": "2016-06-22T00:34:31.197Z",
+    "2.0.2": "2016-10-19T13:06:47.914Z",
+    "2.0.3": "2017-07-31T17:49:57.980Z",
+    "2.0.4": "2017-08-14T14:47:25.244Z",
+    "2.0.5": "2018-01-24T03:36:19.858Z",
+    "2.0.6": "2018-01-24T22:26:31.552Z",
+    "2.0.7": "2018-04-16T21:12:02.841Z",
+    "2.0.8": "2018-04-17T15:52:55.852Z",
+    "2.0.9": "2018-04-17T22:26:13.348Z",
+    "2.0.10": "2018-04-18T16:57:25.459Z",
+    "2.0.11": "2019-08-10T14:45:48.154Z",
+    "2.0.12": "2020-10-27T10:44:21.049Z"
+  },
+  "author": {
+    "name": "J. Ryan Stinnett",
+    "email": "jryans@gmail.com",
+    "url": "https://convolv.es/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jryans/timers-browserify.git"
+  },
+  "homepage": "https://github.com/jryans/timers-browserify",
+  "keywords": [
+    "timers",
+    "browserify",
+    "browser"
+  ],
+  "bugs": {
+    "url": "https://github.com/jryans/timers-browserify/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "wenbing": true,
+    "simplyianm": true,
+    "monjer": true
+  },
+  "contributors": [
+    {
+      "name": "Colton Brown",
+      "email": "coltonTB@me.com"
+    },
+    {
+      "name": "Dario Segura",
+      "email": "dario.seco@gmail.com"
+    },
+    {
+      "name": "Guy Bedford",
+      "email": "guybedford@gmail.com"
+    },
+    {
+      "name": "Ionut-Cristian Florescu",
+      "email": "ionut.florescu@gmail.com"
+    },
+    {
+      "name": "James Halliday",
+      "email": "mail@substack.net"
+    },
+    {
+      "name": "Jan Schär",
+      "email": "jscissr@gmail.com"
+    },
+    {
+      "name": "Johannes Ewald",
+      "email": "johannes.ewald@peerigon.com"
+    },
+    {
+      "name": "Jonathan Prins",
+      "email": "jon@blip.tv"
+    },
+    {
+      "name": "Matt Esch",
+      "email": "matt@mattesch.info"
+    },
+    {
+      "name": "Renée Kooi",
+      "email": "renee@kooi.me"
+    },
+    {
+      "name": "Simon Meusel",
+      "email": "info@simonmeusel.de"
+    },
+    {
+      "name": "taoqf",
+      "email": "tao_qiufeng@126.com"
+    },
+    {
+      "name": "Thiago Felix",
+      "email": "thiago@thiagofelix.com"
+    },
+    {
+      "name": "wtgtybhertgeghgtwtg",
+      "email": "wtgtybhertgeghgtwtg@gmail.com"
+    }
+  ],
+  "license": "MIT"
+}

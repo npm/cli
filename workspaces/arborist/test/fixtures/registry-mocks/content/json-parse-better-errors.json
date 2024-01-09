@@ -1,0 +1,271 @@
+{
+  "_id": "json-parse-better-errors",
+  "_rev": "3-fdac82ef20142fa22053eb933d151fa5",
+  "name": "json-parse-better-errors",
+  "description": "JSON.parse with context information on error",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "json-parse-better-errors",
+      "version": "1.0.0",
+      "description": "JSON.parse with context information on error",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/json-parse-better-errors.git"
+      },
+      "keywords": [
+        "JSON",
+        "parser"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "d7cdd98843abed62575ab8dbd8e3ab96554c0bb4",
+      "bugs": {
+        "url": "https://github.com/zkat/json-parse-better-errors/issues"
+      },
+      "homepage": "https://github.com/zkat/json-parse-better-errors#readme",
+      "_id": "json-parse-better-errors@1.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-NhjN2j2GdZ0ihMfvP7K1q+liSD5M/w82Qdn9Y7c4xAa6/TjVxFT99vQVMqe0a4ivGOh5p6y64Y5f2eJf/Y/Yfg==",
+        "shasum": "012d003181e0fdc113a3ab21fa5d54a29dba689d",
+        "tarball": "https://registry.npmjs.org/json-parse-better-errors/-/json-parse-better-errors-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-parse-better-errors-1.0.0.tgz_1502838929055_0.3476530278567225"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "json-parse-better-errors",
+      "version": "1.0.1",
+      "description": "JSON.parse with context information on error",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/json-parse-better-errors.git"
+      },
+      "keywords": [
+        "JSON",
+        "parser"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "54f1fae324b87944b72290299b3afbd4afef1139",
+      "bugs": {
+        "url": "https://github.com/zkat/json-parse-better-errors/issues"
+      },
+      "homepage": "https://github.com/zkat/json-parse-better-errors#readme",
+      "_id": "json-parse-better-errors@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-xyQpxeWWMKyJps9CuGJYeng6ssI5bpqS9ltQpdVQ90t4ql6NdnxFKh95JcRt2cun/DjMVNrdjniLPuMA69xmCw==",
+        "shasum": "50183cd1b2d25275de069e9e71b467ac9eab973a",
+        "tarball": "https://registry.npmjs.org/json-parse-better-errors/-/json-parse-better-errors-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-parse-better-errors-1.0.1.tgz_1502847941539_0.3455126660410315"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "json-parse-better-errors",
+      "version": "1.0.2",
+      "description": "JSON.parse with context information on error",
+      "main": "index.js",
+      "files": [
+        "*.js"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/json-parse-better-errors.git"
+      },
+      "keywords": [
+        "JSON",
+        "parser"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@zkat.tech"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "nyc": "^10.3.2",
+        "standard": "^9.0.2",
+        "standard-version": "^4.1.0",
+        "tap": "^10.3.3",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "config": {
+        "nyc": {
+          "exclude": [
+            "node_modules/**",
+            "test/**"
+          ]
+        }
+      },
+      "gitHead": "0f36e75d0add7e247d84a34361c8c01abd6e22c8",
+      "bugs": {
+        "url": "https://github.com/zkat/json-parse-better-errors/issues"
+      },
+      "homepage": "https://github.com/zkat/json-parse-better-errors#readme",
+      "_id": "json-parse-better-errors@1.0.2",
+      "_npmVersion": "6.0.0-next.0",
+      "_nodeVersion": "9.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==",
+        "shasum": "bb867cfb3450e69107c131d1c514bab3dc8bcaa9",
+        "tarball": "https://registry.npmjs.org/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6702
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-parse-better-errors_1.0.2_1522422483234_0.4644493341437723"
+      }
+    }
+  },
+  "readme": "# json-parse-better-errors [![npm version](https://img.shields.io/npm/v/json-parse-better-errors.svg)](https://npm.im/json-parse-better-errors) [![license](https://img.shields.io/npm/l/json-parse-better-errors.svg)](https://npm.im/json-parse-better-errors) [![Travis](https://img.shields.io/travis/zkat/json-parse-better-errors.svg)](https://travis-ci.org/zkat/json-parse-better-errors) [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/zkat/json-parse-better-errors?svg=true)](https://ci.appveyor.com/project/zkat/json-parse-better-errors) [![Coverage Status](https://coveralls.io/repos/github/zkat/json-parse-better-errors/badge.svg?branch=latest)](https://coveralls.io/github/zkat/json-parse-better-errors?branch=latest)\n\n[`json-parse-better-errors`](https://github.com/zkat/json-parse-better-errors) is a Node.js library for\ngetting nicer errors out of `JSON.parse()`, including context and position of the parse errors.\n\n## Install\n\n`$ npm install --save json-parse-better-errors`\n\n## Table of Contents\n\n* [Example](#example)\n* [Features](#features)\n* [Contributing](#contributing)\n* [API](#api)\n  * [`parse`](#parse)\n\n### Example\n\n```javascript\nconst parseJson = require('json-parse-better-errors')\n\nparseJson('\"foo\"')\nparseJson('garbage') // more useful error message\n```\n\n### Features\n\n* Like JSON.parse, but the errors are better.\n\n### Contributing\n\nThe npm team enthusiastically welcomes contributions and project participation! There's a bunch of things you can do if you want to contribute! The [Contributor Guide](CONTRIBUTING.md) has all the information you need for everything from reporting bugs to contributing entire new features. Please don't hesitate to jump in if you'd like to, or even ask us questions if something isn't clear.\n\nAll participants and maintainers in this project are expected to follow [Code of Conduct](CODE_OF_CONDUCT.md), and just generally be excellent to each other.\n\nPlease refer to the [Changelog](CHANGELOG.md) for project history details, too.\n\nHappy hacking!\n\n### API\n\n#### <a name=\"parse\"></a> `> parse(txt, ?reviver, ?context=20)`\n\nWorks just like `JSON.parse`, but will include a bit more information when an\nerror happens.\n",
+  "maintainers": [
+    {
+      "name": "zkat",
+      "email": "kat@sykosomatic.org"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-30T15:08:04.432Z",
+    "created": "2017-08-15T23:15:29.428Z",
+    "1.0.0": "2017-08-15T23:15:29.428Z",
+    "1.0.1": "2017-08-16T01:45:42.948Z",
+    "1.0.2": "2018-03-30T15:08:03.275Z"
+  },
+  "homepage": "https://github.com/zkat/json-parse-better-errors#readme",
+  "keywords": [
+    "JSON",
+    "parser"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zkat/json-parse-better-errors.git"
+  },
+  "author": {
+    "name": "Kat Marchán",
+    "email": "kzm@zkat.tech"
+  },
+  "bugs": {
+    "url": "https://github.com/zkat/json-parse-better-errors/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

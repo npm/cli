@@ -1,0 +1,11 @@
+{
+  "name": "@isaacs/test-peer-looser-than-dev",
+  "description": "an example package to reproduce/fix an ERESOLVE case",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@isaacs/test-peer-looser-than-dev-devdep": "1"
+  },
+  "peerDependencies": {
+    "@isaacs/test-peer-looser-than-dev-a-peer-dep": ">=0"
+  }
+}

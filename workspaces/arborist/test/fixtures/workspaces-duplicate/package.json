@@ -1,0 +1,6 @@
+{
+  "name": "workspace-duplicate",
+  "workspaces": [
+    "packages/*"
+  ]
+}

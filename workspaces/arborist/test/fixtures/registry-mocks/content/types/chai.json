@@ -1,0 +1,4078 @@
+{
+  "_id": "@types/chai",
+  "_rev": "768-728d38f293604918e458807ff10ca56f",
+  "name": "@types/chai",
+  "description": "TypeScript definitions for chai",
+  "dist-tags": {
+    "latest": "4.2.13",
+    "ts2.0": "4.1.7",
+    "ts2.1": "4.1.7",
+    "ts2.2": "4.1.7",
+    "ts2.3": "4.1.7",
+    "ts2.4": "4.1.7",
+    "ts2.5": "4.1.7",
+    "ts2.6": "4.1.7",
+    "ts2.7": "4.1.7",
+    "ts2.8": "4.1.7",
+    "ts2.9": "4.1.7",
+    "ts3.0": "4.2.12",
+    "ts3.1": "4.2.12",
+    "ts3.2": "4.2.13",
+    "ts3.3": "4.2.13",
+    "ts3.4": "4.2.13",
+    "ts3.5": "4.2.13",
+    "ts3.6": "4.2.13",
+    "ts3.7": "4.2.13",
+    "ts3.8": "4.2.13",
+    "ts3.9": "4.2.13",
+    "ts4.0": "4.2.13",
+    "ts4.1": "4.2.13"
+  },
+  "versions": {
+    "3.4.15-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.15-alpha",
+      "description": "Type definitions for chai 3.4.0 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.15-alpha",
+      "_shasum": "379f5ef6a618c649edcf75e34ecb625fb5c71340",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "379f5ef6a618c649edcf75e34ecb625fb5c71340",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.15-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.15-alpha.tgz_1463459782262_0.2583982343785465"
+      },
+      "directories": {}
+    },
+    "3.4.16-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.16-alpha",
+      "description": "Type definitions for chai 3.4.0 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.16-alpha",
+      "_shasum": "91dc22621239330ec82cfb6e790f37c3e1673cd1",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "91dc22621239330ec82cfb6e790f37c3e1673cd1",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.16-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.16-alpha.tgz_1463689654533_0.7403960390947759"
+      },
+      "directories": {}
+    },
+    "3.4.21-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.21-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.21-alpha",
+      "_shasum": "c2cadae9bcc187c61f5bd734e030145eb72aa04b",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "c2cadae9bcc187c61f5bd734e030145eb72aa04b",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.21-alpha.tgz_1463771894351_0.7747189570218325"
+      },
+      "directories": {}
+    },
+    "3.4.22-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.22-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.22-alpha",
+      "_shasum": "3afdc1b1959f2ee01ee3532084e5d2af3c367998",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3afdc1b1959f2ee01ee3532084e5d2af3c367998",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.22-alpha.tgz_1464150988297_0.09306176286190748"
+      },
+      "directories": {}
+    },
+    "3.4.23-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.23-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.23-alpha",
+      "_shasum": "3fae9937f71797c6de95abc905528ff6ef706441",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3fae9937f71797c6de95abc905528ff6ef706441",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.23-alpha.tgz_1467400083294_0.12842857441864908"
+      },
+      "directories": {}
+    },
+    "3.4.24-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.24-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.24-alpha",
+      "_shasum": "a9aaa3bb643eecb764226f89625dab956d33a133",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "a9aaa3bb643eecb764226f89625dab956d33a133",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.24-alpha.tgz_1467412154703_0.05558474035933614"
+      },
+      "directories": {}
+    },
+    "3.4.25-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.25-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.25-alpha",
+      "_shasum": "bd54cc43ee456e9eac2f7ce9f421a32a6f3dda77",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "bd54cc43ee456e9eac2f7ce9f421a32a6f3dda77",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.25-alpha.tgz_1467425322735_0.18185045360587537"
+      },
+      "directories": {}
+    },
+    "3.4.26-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.26-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.26-alpha",
+      "_shasum": "ba1fe518f74b1ac562b0cc97ae81a00d4ff1a6fa",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "ba1fe518f74b1ac562b0cc97ae81a00d4ff1a6fa",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.26-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.26-alpha.tgz_1467590076562_0.9209646736271679"
+      },
+      "directories": {}
+    },
+    "3.4.27-alpha": {
+      "name": "@types/chai",
+      "version": "3.4.27-alpha",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.27-alpha",
+      "_shasum": "d89622bc21097bbb1dd7c597151abc7f4f6f32c2",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "d89622bc21097bbb1dd7c597151abc7f4f6f32c2",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.27-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.27-alpha.tgz_1468007448059_0.3493742039427161"
+      },
+      "directories": {}
+    },
+    "3.4.28": {
+      "name": "@types/chai",
+      "version": "3.4.28",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/chai@3.4.28",
+      "_shasum": "2016827d46027774a4f2c717bcc6102b46feb83d",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "2016827d46027774a4f2c717bcc6102b46feb83d",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.28.tgz_1468505660697_0.0032977790106087923"
+      },
+      "directories": {}
+    },
+    "3.4.29": {
+      "name": "@types/chai",
+      "version": "3.4.29",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": {
+        "name": "Jed Mao",
+        "email": "https://github.com/jedmao/"
+      },
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/chai@3.4.29",
+      "_shasum": "7f1b0b413c210dcac85b122fd0652c635096fa33",
+      "_from": "output\\chai",
+      "_resolved": "file:output\\chai",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "7f1b0b413c210dcac85b122fd0652c635096fa33",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.29.tgz_1468933785182_0.41419073403812945"
+      },
+      "directories": {}
+    },
+    "3.4.30": {
+      "name": "@types/chai",
+      "version": "3.4.30",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>,",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/chai@3.4.30",
+      "dist": {
+        "shasum": "d1e90d48d5d844fe2f56f0caf7f5aaebd2e29187",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.30.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.30.tgz_1470152918170_0.8788965775165707"
+      },
+      "directories": {}
+    },
+    "3.4.31": {
+      "name": "@types/chai",
+      "version": "3.4.31",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>,",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/chai@3.4.31",
+      "dist": {
+        "shasum": "d45cffd639907b4d0720b1f6231751abe5fe5fb3",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.31.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.31.tgz_1471620110493_0.20573334116488695"
+      },
+      "directories": {}
+    },
+    "3.4.32": {
+      "name": "@types/chai",
+      "version": "3.4.32",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>,",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/chai@3.4.32",
+      "dist": {
+        "shasum": "aba2dd30cb213affc9396eb1e374af93b3f57433",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.32.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.32.tgz_1472150189938_0.13486884138546884"
+      },
+      "directories": {}
+    },
+    "3.4.33": {
+      "name": "@types/chai",
+      "version": "3.4.33",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>,",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "3b56dcf44260855104ca75e987ae9df2ac3ffb1ce75ae66a11df2b31db855ab4",
+      "_id": "@types/chai@3.4.33",
+      "dist": {
+        "shasum": "88a4a5650794acd37b2e03c2dc07b63954db8ba2",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.33.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.33.tgz_1474302435123_0.3312955810688436"
+      },
+      "directories": {}
+    },
+    "3.4.34": {
+      "name": "@types/chai",
+      "version": "3.4.34",
+      "description": "TypeScript definitions for chai 3.4.0",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>,",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "6b9459b0725e5d4000b5ac52f856d60dbb88e031b913677dd88bbc378a6e3764",
+      "_id": "@types/chai@3.4.34",
+      "dist": {
+        "shasum": "d5335792823bb09cddd5e38c3d211b709183854d",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.34.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.34.tgz_1475040630732_0.09585633594542742"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "@types/chai",
+      "version": "2.0.0",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "author": "Jed Mao <https://github.com/jedmao/>, Bart van der Schoor <https://github.com/Bartvds>, Andrew Brown <https://github.com/AGBrown>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "1d752b955474adc3080d2da4a78d37c2aadf7a44856e64483e4d837bb393ff35",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@2.0.0",
+      "dist": {
+        "shasum": "09bb2ed523d67d83d2e4f9f62a9be5faad85987b",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/chai-2.0.0.tgz_1484074389609_0.598972492152825"
+      },
+      "directories": {}
+    },
+    "3.4.35": {
+      "name": "@types/chai",
+      "version": "3.4.35",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "c89f6f5362f63ab1632dc554e3b31797d3d7be760bfb6d31dc09f56ab3d4b94a",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@3.4.35",
+      "dist": {
+        "shasum": "e8d65f83492d2944f816fc620741821c28a8c900",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.4.35.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-3.4.35.tgz_1487358345390_0.6306995821651071"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "@types/chai",
+      "version": "2.0.1",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "74b19564d538fc3c5f10fd29d727e869387408c52611ddacfbfbad142e239e38",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@2.0.1",
+      "dist": {
+        "shasum": "c87659db9ebf551c4ea97dc0028bd94b4e7fb7f9",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/chai-2.0.1.tgz_1488291767883_0.4463073897641152"
+      },
+      "directories": {}
+    },
+    "3.5.0": {
+      "name": "@types/chai",
+      "version": "3.5.0",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "37211be38b72bcf1c48f267078cd00e3abe9528a0297389a4e2afdcc21e6a6c0",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@3.5.0",
+      "dist": {
+        "shasum": "45e2dc2af9a5727be846af6e61d08ffc45d5b2ca",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.5.0.tgz_1491858950573_0.8838055680971593"
+      },
+      "directories": {}
+    },
+    "3.5.1": {
+      "name": "@types/chai",
+      "version": "3.5.1",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "48e16186ea0e827f8a1ae0ccdf3604c04d4773b82d5fb82381e11f4425cf0ce1",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@3.5.1",
+      "dist": {
+        "shasum": "9bd77fe12503ae00648b0945b38eab666adffe2e",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.5.1.tgz_1492527948662_0.3308671002741903"
+      },
+      "directories": {}
+    },
+    "3.5.2": {
+      "name": "@types/chai",
+      "version": "3.5.2",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "75c1ae4ba4e50a390c89a24d65a5d163b1fbdd830459a0ca2532abeec87e2002",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@3.5.2",
+      "dist": {
+        "shasum": "c11cd2817d3a401b7ba0f5a420f35c56139b1c1e",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-3.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/chai-3.5.2.tgz_1493414665668_0.010047170799225569"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "@types/chai",
+      "version": "4.0.0",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "de980879c0d4ce197468515eb88419bc8497e967ea0f6ac20742fe793ee6d50f",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.0",
+      "dist": {
+        "integrity": "sha512-B56eI1x+Av9A7XHsgF0+WyLyBytAQqvdBoaULY3c4TGeKwLm43myB78EeBA8/VQn74KblXM4/ecmjTJJXUUF1A==",
+        "shasum": "4c9adabd2d04265769e6d9e847e86cc404dc7dcd",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.0.tgz_1496293265349_0.17751967580989003"
+      },
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "@types/chai",
+      "version": "4.0.1",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "ab9728c58cd5913ce5dc9fee223771a1f4ba0c2ede1e2adaf1f6ec561969a183",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.1",
+      "dist": {
+        "integrity": "sha512-DWrdkraJO+KvBB7+Jc6AuDd2+fwV6Z9iK8cqEEoYpcurYrH7GiUZmwjFuQIIWj5HhFz6NsSxdN72YMIHT7Fy2Q==",
+        "shasum": "37fea779617cfec3fd2b19a0247e8bbdd5133bf6",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.1.tgz_1498239315137_0.7876206559594721"
+      },
+      "directories": {}
+    },
+    "4.0.2": {
+      "name": "@types/chai",
+      "version": "4.0.2",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "ee4102a68946ddeea9cdf7a2d569e86c3f8390d025cca9b738b34bad6324d4e5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.2",
+      "dist": {
+        "integrity": "sha512-0pHNZTD0SpQhz1kUM4Muhgdn4acxq21kp726pZfWMmKYGbmmv8XkGTt3k/0QDklhTUYBD6hknZ/1YFokyP/G7Q==",
+        "shasum": "cce9666f5ee2fa27ffd505d2dfaf53bb02ed2584",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.2.tgz_1501596334209_0.8014713379088789"
+      },
+      "directories": {}
+    },
+    "4.0.3": {
+      "name": "@types/chai",
+      "version": "4.0.3",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao/"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "82a6f862f669af0eaeb7c24d5742bde1d1cb9a11eb39381c0c20e9f61d946d4e",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.3",
+      "dist": {
+        "integrity": "sha512-AkwKxZJ3ml5OsKi0kNTzGBANM3vwcnNS8nu/geVFaM55raUQ8Gz5MhPuu2cQqhf3h829tFfIGD1pbZSc2lNJeg==",
+        "shasum": "6c2264b195cd2bb4c95c108487e13df0c8567c3e",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.3.tgz_1502458935094_0.4868107025977224"
+      },
+      "directories": {}
+    },
+    "4.0.4": {
+      "name": "@types/chai",
+      "version": "4.0.4",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "743fea2414fdbff733285e93a249fa7ab9e300f8297ece18b99808609f9f0905",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.4",
+      "dist": {
+        "integrity": "sha512-cvU0HomQ7/aGDQJZsbtJXqBQ7w4J4TqLB0Z/h8mKrpRjfeZEvTbygkfJEb7fWdmwpIeDeFmIVwAEqS0OYuUv3Q==",
+        "shasum": "fe86315d9a66827feeb16f73bc954688ec950e18",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.4.tgz_1503352185109_0.36888847895897925"
+      },
+      "directories": {}
+    },
+    "4.0.5": {
+      "name": "@types/chai",
+      "version": "4.0.5",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1570d965161edb174e1cbbaa1f207fc4dbc57606d598fe6e212da8d769049a87",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.5",
+      "dist": {
+        "integrity": "sha512-ZC4tZU+3rDblhVy9cUQp5u+Zw9M0geGY8tzUQgc+4CMIWQLUFpgvrHhaYrSq1TK2m0DjaYIp9yJPyTHN+qhBZg==",
+        "shasum": "b6e250e281b47e0192e236619e9b1afe62fd345c",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.5.tgz_1510788571297_0.13056295760907233"
+      },
+      "directories": {}
+    },
+    "4.0.6": {
+      "name": "@types/chai",
+      "version": "4.0.6",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "e5bc4910d0986308b72def79dadbd7c32d81461bd0047c465ef148a757dd3532",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.6",
+      "dist": {
+        "integrity": "sha512-IzRWv/7IpaMm41KLLJcaaD/UKit/MrHu4rWs61oWiVjuk4aKWe2eopx3XyhAHhSnMyB5EeCMRr2AsJtuQ8COWA==",
+        "shasum": "9cb5a7fb7dd83be0cfcaafdbd95a2b5dd351762f",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.6.tgz_1511829706407_0.7315926412120461"
+      },
+      "directories": {}
+    },
+    "4.0.7": {
+      "name": "@types/chai",
+      "version": "4.0.7",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "58cc3e5249d6a9b669ba76fa85d410d236705b74db03f3cf985af665313e56d1",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.7",
+      "dist": {
+        "integrity": "sha512-OsFOcyJH0SViMMHzDKZdapG8sfoH7qcpYgKhgyw9xn5MgkCvAplkf0FUaRFB+HTrVH6gQ/GU7sbIUDM1usVEUA==",
+        "shasum": "cab25b9fcb45903fe6c7fa716dc6394314c13dd8",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.7.tgz_1512318445481_0.28425616351887584"
+      },
+      "directories": {}
+    },
+    "4.0.8": {
+      "name": "@types/chai",
+      "version": "4.0.8",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1c89ea9e229c46de0cd9fc9a48b4ce18c27a3bab9d443d01bec054b1126ede4a",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.8",
+      "dist": {
+        "integrity": "sha512-m812CONwdZn/dMzkIJEY0yAs4apyTkTORgfB2UsMOxgkUbC205AHnm4T8I0I5gPg9MHrFc1dJ35iS75c0CJkjg==",
+        "shasum": "d27600e9ba2f371e08695d90a0fe0408d89c7be7",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.8.tgz_1512419504043_0.6489140810444951"
+      },
+      "directories": {}
+    },
+    "4.0.9": {
+      "name": "@types/chai",
+      "version": "4.0.9",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "3ad8921928167eedf4465b0b514ad9ffeeb026ead3348b74a7f0dfdc6611f8e4",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.9",
+      "dist": {
+        "integrity": "sha512-Vr1llSMwdJRIISR7kfeSZokL24942QLXcjjPv9xzIGWSXBu+cLeALSAqIe2sRKW1M+9R5c6v9E4BOGk6ewBOXQ==",
+        "shasum": "9897c0ca23acb117f8b4e3af2c81d85cccdd9bc0",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.9.tgz_1513019686714_0.38396010361611843"
+      },
+      "directories": {}
+    },
+    "4.0.10": {
+      "name": "@types/chai",
+      "version": "4.0.10",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1c89ea9e229c46de0cd9fc9a48b4ce18c27a3bab9d443d01bec054b1126ede4a",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.0.10",
+      "dist": {
+        "integrity": "sha512-Ejh1AXTY8lm+x91X/yar3G2z4x9RyKwdTVdyyu7Xj3dNB35fMNCnEWqTO9FgS3zjzlRNqk1MruYhgb8yhRN9rA==",
+        "shasum": "0eb222c7353adde8e0980bea04165d4d3b6afef3",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.0.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.0.10.tgz_1513035254608_0.5161084923893213"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "@types/chai",
+      "version": "4.1.0",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "eae38ec4a051958b8982f6e4166b517feddd36a7af9f5fef930cec2c2c860c0b",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.0",
+      "dist": {
+        "integrity": "sha512-OuYBlXWHYthxIudMXMeQr92f6D97YoT9CUYCRb0BEP4OavC95jNcczjjr4Ob3H5E1IqlWqwj+leUZPSeth27Qw==",
+        "shasum": "d9008fa4c06f6801f93396d121f0227cd4244ac6",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.1.0.tgz_1515174811666_0.6226312939543277"
+      },
+      "directories": {}
+    },
+    "4.1.1": {
+      "name": "@types/chai",
+      "version": "4.1.1",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "f539d31d1edbdce988582512a09977b008b99b011ada005684ccee2419fdc441",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.1",
+      "dist": {
+        "integrity": "sha512-nU82bD1xUJ1BKKPNQPJffXjNQtjh5XdF7hqKhnjrpLw+5jMJdJcx6UqwWycCPnKKWQbNszOq9g9vSn1Xc0Ll/Q==",
+        "shasum": "15f1257fab17b7acb9c413f9f88d3d87f834d11e",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.1.1.tgz_1516203127830_0.49615637911483645"
+      },
+      "directories": {}
+    },
+    "4.1.2": {
+      "name": "@types/chai",
+      "version": "4.1.2",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "4dc3eb34e568cbef4bf6617059fb5f1b2abc0a924bb17b2b146bd8e2f108c736",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.2",
+      "dist": {
+        "integrity": "sha512-D8uQwKYUw2KESkorZ27ykzXgvkDJYXVEihGklgfp5I4HUP8D6IxtcdLTMB1emjQiWzV7WZ5ihm1cxIzVwjoleQ==",
+        "shasum": "f1af664769cfb50af805431c407425ed619daa21",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai-4.1.2.tgz_1516737958280_0.751077770953998"
+      },
+      "directories": {}
+    },
+    "4.1.3": {
+      "name": "@types/chai",
+      "version": "4.1.3",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "0b42a8f01841ac0774393038ea15d374aa8a5f3ee56fe24efd5bb9344e39cb25",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.3",
+      "dist": {
+        "integrity": "sha512-f5dXGzOJycyzSMdaXVhiBhauL4dYydXwVpavfQ1mVCaGjR56a9QfklXObUxlIY9bGTmCPHEEZ04I16BZ/8w5ww==",
+        "shasum": "b8a74352977a23b604c01aa784f5b793443fb7dc",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 70344,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2iZbCRA9TVsSAnZWagAAk9gP/R3fKYXCzk413M8nHzrQ\n1gobmp2PkQ2bzi+tqGnJfD3ZvasxZQDFc+b9ipCd4tO/vAuqXDLZopCjiZ1Z\n7SdYtS5tckBTBLVL5VJRPa+HbvdMqOVsRyj47VDvgArdC52PfGJ5q6i47C4m\nBfdBX/PLnoZ5U7o91HNm9UIHPfburiWFYsz+QxJreJ52tmeSMj9Azl7gFDDv\n1pvFYHTipWZec26aw6GpZOObdR1Hrjzaj8Ra3wZXlpcjAmVL4aY2U+cHhtiE\n0/cKNuEztosZ3G49MaNGOJ7Fim3W9Gl8GvjsVrECT7PJqTvN9NbHNr5sE/wx\nc86dQ9IIknTEMJUkE+4ChahSgJNG7azWy201CPF16QIiNoM1Fu5f2okTy8CP\nSMilXp4wGAvONuxjciwV1NVLpzdXhfBDDKzwm3bX+fOW9hVE/NoXuiOv9jaY\ndXD/j4iGSpeExlOr7XmVe5poMgvHJvrsAzXsggbukwD4jJ6PuXC+ZOrSqeBE\n7mo1rAYTTIOUgzioP0xBfZSP5cLK+hPqfHrgEBimXhzTGU53pdhLmCRLdMX1\nmqrLJ200x5EF7zK4qs9k+0Y+a7w0BJJgYBTkv3pAGB2DjDUydmP6JPxg1BN2\njvGp40Pf8WozG9csncZVG9SyIl2qxCIfOOg1NbjIHWVCQy/3VdqtogVvCYvW\nSHQJ\r\n=fEqz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.1.3_1524246106964_0.7352508482404172"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.4": {
+      "name": "@types/chai",
+      "version": "4.1.4",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "c7559935cfa28a8da5ad863d28403c3fa2995f5cbafd7d6ed1d8c6680be11fe5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.4",
+      "dist": {
+        "integrity": "sha512-h6+VEw2Vr3ORiFCyyJmcho2zALnUq9cvdB/IO8Xs9itrJVCenC7o26A6+m7D0ihTTr65eS259H5/Ghl/VjYs6g==",
+        "shasum": "5ca073b330d90b4066d6ce18f60d57f2084ce8ca",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 69009,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbIW4VCRA9TVsSAnZWagAAG7sP/j0D1Sqf/fU9INBpwScd\nXTm0P+yclBRqdsk0q9v3Mnr5BJSsAi5Q8mc5+jaY2NkuZ73v/voybsIOJbfO\nODhpZKCeBNf8Z+m9o3SJCtbC4KQerClx6Q8ptL42IuLhoDYqZnPEM/ngUdM9\nZyyUdwVulqYei27VghzKdPx7x3A+SBi6rk1eMJ8ytIQZ2K2HQDvR8NAxLKRe\n8enC1eUKFSEFVzztP2rrPQwnEoYd5D7EbQqe4Pf5fP3I9Jyh35hLidubpeh4\ndghyA8IJMoD3WDT1+E8MqXaSjht2M2l8groMCAvsF+8PML7MIgVav3mWs0np\nMg61RFFsAogccquM6+M510rn+oeSpf+t7XlVgWhnLUQlY/YEakoKittRZwoI\nHgs9MgfPwkEdSJpFZZV6O2JzZyX2/gAoYbolA7Ou0wcT5880cpOuWicEYJHt\nFK43gzqTuqMHRF3EuXU27ZQ/Aqk4tO8jk9AFzvw0ipgsvY3ACt387Pq0NMc1\nSQMWp9tuahuPoEF2r/YGsZ8nC04+r2NcmhBp3Bo/5FMhJMBm0hvKHgEm+/7q\n3B0dyGZGDof9mc3u8fVRq9ZSECsASZt658aZPEBJYZoTteImajLgoCANpM0a\naeBs61LVSVu0UPDaNv2xa31ZLi2CBznC+D0lbVRv5EgO8xxpPqSzPY6wP3bg\nEUQV\r\n=GLZk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.1.4_1528917524824_0.2524298759283836"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.5": {
+      "name": "@types/chai",
+      "version": "4.1.5",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "72c80c4fbc37a6a5ee2f1646f5af8edd093047fdd42653cffe58ec6242e30f20",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.5",
+      "dist": {
+        "integrity": "sha512-nyzJ08qQMY4umgXD6SzbLflQucEnoAf2H5iUxPX5t0euDgXDV+bFTJlEmEepM35/2l07jYHdAfP6YEndeTWM0w==",
+        "shasum": "6163dc60078d215ec46186dc76062ef6ed68d39c",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 70761,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboW0oCRA9TVsSAnZWagAA5J8P/0SsrWoapy2rHEZezg9T\nwtDw/KOldstzrZhctnRtmmMW1Ptp7sIqML1wOwe/NzzlPrvK5j/U7FZCMBZQ\n+qaM3As8pAGTfF9dVFIPWlS71M+CHPyTCs1dkCM4VS9L+p7SOgrMM5SL/50B\nXnhSQcr5Y12NPVDgcgVp0tFHX7sjy7vrySImsGTtgQNSv3/2d/GDyvwzAPFe\n/NK3x7AyubJEA2nwqNR9c1P3BspuAcWp1QXcTiuXem3eHHpZKHhW7kNGpPNr\nBOuSar7fbEOFlCJdsPc5LENEmQ4ExLlPSqWOzBp58+0jM8BefOjmLRnif3ok\n1tOb4sR/yqqzN9fBPT6o00cW7vNL4gwPsgq3jdLaWfvwh6RRhlUwkQTE0+Kx\nQZucytaBBFQh3zvHhbcdh2+/h44B/kHrpLSvsSWXolNKgWHYEJSYTe2NXWmh\n3yEEDF2tCtAGfWs4a+F7rf9aazxqWPkj7w19pkcwJLQgsk25eAC44fAZKOMB\nkYAYclSuHzuD258NEfKgfexEow0svZ/Oj6/KQM1VsfZxKux9nMay6TL6nEVi\nUxKWLz5gNb65joXmjZYW2ulFJHL2DtvE7V7K6X+pIQ3X12US3H+O8hhy8pbA\nnOxFHqw9Kg4mYl9/cHcQ5PLFqXB23SM2sG7vkhRfS+MKhiGc5R5762qq7g+l\np9lg\r\n=jBIF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.1.5_1537305895870_0.040461805651986316"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.6": {
+      "name": "@types/chai",
+      "version": "4.1.6",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "fed9ff941d58913f6c908d0a087f66e392872a16509c34bb9d893883581032ee",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.6",
+      "dist": {
+        "integrity": "sha512-CBk7KTZt3FhPsEkYioG6kuCIpWISw+YI8o+3op4+NXwTpvAPxE1ES8+PY8zfaK2L98b1z5oq03UHa4VYpeUxnw==",
+        "shasum": "1eb26c040e3a84205b1008ad55c800e5e8a94e34",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 69059,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbrqDfCRA9TVsSAnZWagAAAXYP/1tN/vgDKY/gmZtJmq0o\n6wpIf+OJo4Vhs3gxxmYNfADRc6/x/9WBPxeoAuxtyrGG/SJ8m6gyC5EObZIb\nRB1KfAmWgMVDnLVZHpNdmyA+jGLL6FNNqNTdSO0Wv3H0K88tci5qjiVNFeg2\nfuiyjW5Ee7FT8lipjrTKrog1Mt8j0rDpmv/KlJ5hYFnTjxo6ARqThwQyOxF4\nE6QRWdnA3OSJhmf8Hjn7Gpt1hDH5pknnL73sFz8BDJ1Rq8/RL+3jzNlBflHs\nvcMzmoPtIDMA+Vz2+5SWQo9Hl4+yMWOJH39yTaObveJL0mHD6sNINyMt3I9+\nI9j9OTvXXtwrbrJhYVVxHLtEbenPD08226eUgbHZy3Xs8MJIIWlK8TyEqN6s\n8ZbnyUTueY6ve1sZfs4BjhVdJvEDj3qe/OFJQkLdd3YP2zdR73x9ouTLiSQw\nvHil1bdwG16GWvwij61GmmrsCNIX8HliyZMtvgT+IPezCHMJIfnIZhb+Z7V7\n/18I1RMQuSxHF6js7ElbP+2G2FZmC9CCGhJqpj4vmbEyE9WlBnzw9pqoQEeI\nzoYwko0YwOAfRqpVdy4KAjcxwkOYXNzUR0KVD+tR4oEHi0JbbMx4tiUpQjYJ\n6GNsiKHMhn01r/W3BQ/UXitY+50hFoluP87WDmgapU4KCwweavlFRFaUiNso\nSj9x\r\n=AzPr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.1.6_1538171103285_0.03635722479393899"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.7": {
+      "name": "@types/chai",
+      "version": "4.1.7",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        }
+      ],
+      "main": "",
+      "types": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "b209d59efd53be161ab3cf1f1172d37245e44815cfb7a43839001f0481545771",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/chai@4.1.7",
+      "dist": {
+        "integrity": "sha512-2Y8uPt0/jwjhQ6EiluT0XCri1Dbplr0ZxfFXUz+ye13gaqE8u5gL5ppao1JrUYr9cIip5S6MvQzBS7Kke7U9VA==",
+        "shasum": "1b8e33b61a8c09cbe1f85133071baa0dbf9fa71a",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.1.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 69175,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb1N0lCRA9TVsSAnZWagAAhDEP/3TUWhyM220i8/SGv2SO\nvLpzFV+NRMLcxQ2K4pNUaGRRZ7c5cOwUEjcNVHOoex62FFd3MlZ6/+wkqrL0\nhivhwpZ+6uLtuiE0sVXbutlCt3RGrumSD4cey8HVHmswMruIy482nrLofqOV\n6vn+jlP1HoUNxLYP7W0mzudzPSgxkgtsDXBxuN57WhN0eRnanDtTyDLd9RHX\nMzGRQTCDQk60X+bmnjIN78X+Vu4+eRzj9ZprA5fqXrT6E4ZicquXxgDV71s4\nHOkt7/UnQ08kWEOudj6uTJ9xWXgCJDp3nXWKpaRX2hwmoA+jjra9nLv9qzvz\nud3wNB8DYjdJ+oUkHEZcNErIHCEEKNdeMt70wZY4vKmRPy7BKbM6/8Mp/XIb\nEAHdL7M5GhpxyHcTyd7eVDMdPMScfCee8ILR2H29bRTa7mWKQt2+FYiCtFTy\nrLGDvW6KWqhUWEVItDqHa0Ol1Qz0DNZ2aocmHuWMbC5mFRFpr4HqtFPJadYp\nesDrXR+4joVff8yMHi5shvkA3qAKUekjzzQd2iioZQDMjnMOrESOFh6wKMgU\nmK8WLItmukshOW1mZFkmWyAGxdmBuXVXHgxQUvksKT9igafvYtkb30mqAu2v\nTT8XT/tZC5S7h31GPcR8wew+M6V0rkNfQV/qADmtD2qndR/Sd0U3g82cjfbh\nfdUl\r\n=ipSD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.1.7_1540676900530_0.21945063814311316"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "@types/chai",
+      "version": "4.2.0",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "5791fbf0a114ee36be0f6170bdb33e5b41b8881edb0346d86037b4b36dac197f",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.0",
+      "dist": {
+        "integrity": "sha512-zw8UvoBEImn392tLjxoavuonblX/4Yb9ha4KBU10FirCfwgzhKO0dvyJSF9ByxV1xK1r2AgnAi/tvQaLgxQqxA==",
+        "shasum": "2478260021408dec32c123a7cad3414beb811a07",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 74334,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTElICRA9TVsSAnZWagAA1/IP/1siWNwZx3GSYPhUbWK4\nZfAiK0qntK6uBb8F+51yXRCgH/fmVcFJGEsjOhZWjMJ3AW0ZvITide3tWuLz\nCSifX9RssvQesNBU28/EJ1TRGkSKJewXZu+UPnZtwAgLIAKww1P1hTD325n4\noldMhnJkbZ1f33ouZlXq5UOx1ah38D/ivZDyi+U3G3Fg6S6ZowccQA0JPsKy\nCfY6bPvatZAp6l1tnfuecbNIKSoRCtzf636h0F+Kui/KeJbdrMMAmo0iD/In\n6CW2WlfDirP4txXWMOvJkEp91Z5bCkwwMKGbD2NmrsxBD2zN93Z2vToDliTs\ndWXwczaMA7emmDtC30d4cdWHqNkXir9hJBGjq+GhQzDMn/W8f+7BioC9eFoF\nDPu+hrxvDQR9rpvqH2j+xDdLlH0pfJPdxi6gnl2K+efYGwSXs2y2mgE+YAtE\n5Sk909I5iCeWx8ETFi+U6HDBavEu0qW5Riyj5zgNsvmCAiqjibFWPU66szW1\nT8kQbwmqA2TC5TIKTVaKZPkaw1wuKuOvLIEpkoBBZHDM5paeSkFJgk4OXPzs\nBHQIudWi/qNQAxDTqwmgBfrxaY4Cviu4JqTBxKrq6z1f1ar6gkBa690N98t2\nGxgHnDKo7hwo+ChMH+zGqtMJ11BY3ZeauAhCT8nruaQ0jXpu/vmrgV+jTI0l\npLJ7\r\n=i4sq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.0_1565280583940_0.4964301132745994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "@types/chai",
+      "version": "4.2.1",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "e498ac7d1ece4b290bc162938f30af603ffd02edcced46c5133a576885a23828",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.1",
+      "dist": {
+        "integrity": "sha512-LDKlQW/V8bQr5p9aoHye9p7x9faxq0GVeWAkn/Zgyyn848LIAzuR1sHQjGmUBFUpINuGWDG2NTM/ofA2aLMIew==",
+        "shasum": "de162553aceca778d989929d821c5d4942921ebc",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 74451,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbwnhCRA9TVsSAnZWagAANIoQAIRHxplhs7iCfELlZJ2+\nC1T8zUU3AHfIhQHwjRgkzKTo1H+/WTIxuJXREqbtjwD8YUNEdFBE1rndcYXW\nyVvz/kFXDvHV1HlWFnBrMI+dz/iNAnbOQIeWD4dgtaMkOKib3LENclQlowRc\nBpVmiz8Lps33LgU91jTkbrEG0qvROoV2/CFnEYhK4duu3mmBjkzBVKXyJxEE\n4K5X4B11zoYjvMtsn93qHNKEsZLymn/Bd320DvAvTxHR8pFOvgjZvR85rY2N\neolhI7iFjdntec9kiY6ol6K0YbniKo0lFwwvnvnXO9OsY5U1A99mxx3T9mWP\nVnGiLywnlKLbVxfYqvwPZCAhBi4cwEcmlQlrBF05kB9TJIY6CKcyHjjidA1j\n6uuWCIRriDYPrQn5X0hmQJAr6I2ILLDITcvJomfXoUSxY7PTLT/DArHQRAce\nZp0MP36zYhai7Cd7j+Qaf5L7EMlFAJxLjxNV6a2Rq8S9FRQbEh34wXd6Nyue\noXUHKSj4+nmwJOMm3hES1bb21oF17ibdvr5JbdWPbvEcVDPSa/Zi151qaluX\nQIgs1OdGV/jdTXO63jiqR2b35F1b+8enOyG3YlV/jm0GCclW7ZAk2vK9bffU\nUKQrs6t1n+qjQ3EoYixfcbA6gKT+Jeh6ErTVCzfIN5P6D/lCg3u4okBoRJ6V\nIuQD\r\n=QCKn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.1_1567558113233_0.3040062593110304"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.2": {
+      "name": "@types/chai",
+      "version": "4.2.2",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "7a34782f19ce72465460199cb677823cfe634a573333db25f4131e5be4c3884b",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.2",
+      "dist": {
+        "integrity": "sha512-8V2aCcPM3WLuJvJpF6N60uUvdZb7NHjpjQlLk1QmZbTP4XZET/FX0c3TJ3K7qt4L98FS1Pifa8BVofTVuJFWVA==",
+        "shasum": "6b825013863d04868c15624ec8b7fdced88a47c6",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 77850,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJddk08CRA9TVsSAnZWagAAGlEP/jXb34ImoV6KbltW7yFu\nEBq9GERBDE+UHdd/MJBUx8nwrRcoJWC9fVnav/Htt5bbjVlIJvRIYnLeFsFs\n2/xOwHF9mKYvC7KHmrltDaP6e6/NSgNf6dXt0xPvDDl9Ne9ijUwpz1x9/Tri\nQN+gLrdtjp14c6+Axy4eyFrVGYTQ9bjn3JNgP2oJOLDQ6cF+YnVagVDyR11Z\nHxyjRAxIPXbwd3StQt09kohPKV5tgbfQoziyOXrxAofWy7IfDyPTdCPMp3gw\nFLzJXG7FI9HJeQOrVeLi6DxBquifSYXLlXCwd9xVz2bkbe/YaWkkItt0lr1T\n/0eVWqCiVTIrGbpj+RqSBp+p5yXkvSoYuRBQi64/zJV3Nj6uKO65JC8X7ZtU\nV3vO0kKsvXthzxkmEQQH3U+5icMpjvD+2kawwtO84fH5Qhx1Siy2B4DUQAPE\nVOW9TQ5Xz48nDq0RBING/xzZgjNCOb5asWLR+PZXkXQm5xa24t2z+jDQGRG0\njn7oKbyraNlHgctGC444c3JnMCJMOzQzAaQFoSHMEov3PSvu8Kq9uVwLlCoO\nM6UoO4qBFCFrIZJ9pUxLAx6WcdzyJi4Pj/AFl8y/SFVaXorEE/mcEL5Yd5op\nYbiRofhA2XX6jaBY2Yx9l6DGwRPGnKkdPev4/CnKlWgrh+VVFSz8CqoioSE+\n4DnD\r\n=k66c\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.2_1568034107811_0.05179216243396079"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.3": {
+      "name": "@types/chai",
+      "version": "4.2.3",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "29e71f133d0e319b66cd3e4dd3553c634757946c7d2c34e492844d32855a8cfb",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.3",
+      "dist": {
+        "integrity": "sha512-VRw2xEGbll3ZiTQ4J02/hUjNqZoue1bMhoo2dgM2LXjDdyaq4q80HgBDHwpI0/VKlo4Eg+BavyQMv/NYgTetzA==",
+        "shasum": "419477a3d5202bad19e14c787940a61dc9ea6407",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 77851,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdgLyTCRA9TVsSAnZWagAAUzAQAKPUtvQYIOxEITRN0iKx\n0RGtkIPXusAq82qbXkxLgvtYNORVSZ4EA7yLVe0fNNZW38Qxy8zrvjJImAIZ\n38Ktbs3R7a6i6S5ZskMqmuxglMuGPHVbI0QnWBZgzpUdoacdGrkGwUsfG7WA\nMWmZ53CNKJ5tz6wvNZvoZS0rPApuqsjAAKNv8P+phg2UIH6hfQEfIsVeSWT1\nALaJxxlAHAdfe7Gr6pQtg5jlxlakVWNRBfs2E/VNFHLSaYZM6uQQ0KfjsNu9\nsdep5r9nszOD5uBOXVHJvZL+9lfQedPybqBUUgHN4ctLtskUVnjP5sLTavuJ\nG+Ee9HicIqy5rPt2MWnPKANZxMi0pk3J2lcerTCCthmqoU0ssIZiNfPBQbfe\nT48WO6bopqZ/YtAvgUePHM2Dte3KhOrzsw6oFRheSdKjmfxPIIZr6IS4lV7B\nqF8GX7iZB5ZFprBVAET4JmKb1VM55Z0vRsxM6YVlLWHAyUbaJVc7aQRqL3aN\nPNUDJ+3Mslk/nPQDzlxIImk1d8YnaJbRym5GL0+dcwBPoR6Q48c24oD8QsL6\nfwILo8Gq6aQnwcL45A/mS5qDpZM7AttTRQQMDKFm9NbJ9nNTZM6U7smwXUyG\nJhjnfot51jqHr9QqJcAviBeNyyaL2tp7qZcEH9lVZQtOdxzFGVhSeenmK3z4\nhnrW\r\n=ww37\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.3_1568717970672_0.1728884233612249"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.4": {
+      "name": "@types/chai",
+      "version": "4.2.4",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "8ef2a564430b538942571bf40b300f8f9c59b9e165bdd4c3da41584a479f9512",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.4",
+      "dist": {
+        "integrity": "sha512-7qvf9F9tMTzo0akeswHPGqgUx/gIaJqrOEET/FCD8CFRkSUHlygQiM5yB6OvjrtdxBVLSyw7COJubsFYs0683g==",
+        "shasum": "8936cffad3c96ec470a2dc26a38c3ba8b9b6f619",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 77848,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdr2naCRA9TVsSAnZWagAAG+UP/2Lly79FQ+sKwhDCyz3y\nlC3WF+JA/BE76m/RQ8g5rvFluJB6YmBaa7ovA/SMkwTEd3GPAO8m44LUhGgB\nQqZh5cKTDkiSYjK8UcK6DS9OhJfzmfjsbM8CXi7pGo26IIwquv81IY6rsmho\nkiEyiKHLdzkBniC3A+m08BCDmUeQVeFWoAkKAIlmHXAPpx1x2EqOY1jLX+Od\niEkEJKcx9nxoTp/k+mBs7goc4iraVB4AziiUXaYovXASWis/k8phGDCCOXEB\nXY1P8bmdb8vkypTtWUB/hRYUr4nSBZQeP+Zk27QBBfaIr2D6ZkN3xGpneMf0\nQRnOO/rxuWna/0G0Psvs9j73ZXKYk4gnqvsKaduJXg9NwVh3eNDDtkMbEqyz\n6LcTSedsQmpq9KvmyD57DxE92qWAxw8GRqTNwmSuQZEDSnk5WEbYfWNjd8/z\nOPTkPw0YR+2W2nNCIgJrwGS1RVLIgJy67kDWVUnvVYPWC5Q0m676bUELbEtP\nfF802er/gac4HmpJZiXL4Xa5pFwoVqdqZYAGyOY1s4h/+75Zh9MAEewdV+dF\nnmnrRKglJSPJkqUBLCY9DONR/qLkZrbV/Q99s/iAEvHLbbXE/7hyJw0+izQZ\n9ppL1gr+VSyd5v5b4TrONteBloHj4X7f83KEyw7jSBr91TkU754TkP+2CUDb\npLfN\r\n=cWng\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.4_1571776986327_0.8070808103348761"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.5": {
+      "name": "@types/chai",
+      "version": "4.2.5",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "0f0892df37b9c2e94cd227126e358ac96b3a77c72eefe13f9b42e56acc6ad306",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.5",
+      "dist": {
+        "integrity": "sha512-YvbLiIc0DbbhiANrfVObdkLEHJksQZVq0Uvfg550SRAKVYaEJy+V70j65BVe2WNp6E3HtKsUczeijHFCjba3og==",
+        "shasum": "f8da153ebbe30babb0adc9a528b9ad32be3175a2",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78081,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyx9HCRA9TVsSAnZWagAAmMMP/2BWVDYiuw2FKwqlLfFY\ni/1FhpaeqUW1elU/ulp02OPZh0+SyqLrOajJJxKxSbYhF3LWdaPtb3EujOcZ\natR0bNrcZinJRmKcXF2YqcHab0R/ueQ7R+oz7HzUfiJ3gCEmJ3EcQXUFKD6J\nFfSur/E+WKydm2TV8DnJkwM5kKSZTSyqqztSEV42R/kpgMOkjoyuDPY/A47i\n2BGUn8oy2ap/rqu4qM4h8xqXly35PzVZxazFdBarwPlnTkSputpO6uqf2VQL\nIVN1meyiIqWoPB0+hFqZ+GG6MjC9W5FoWnLdcut6jnkDrSOiS49BhhY5p1Ey\nhQKH1JjgDo4oiWAS3sdb86XiEFF2AFNcniGxYu+XvqH+3v0JK055RTQAkml1\ndj+dCAqGDClslv7zNBxch2ph1O7qPkzvyz5f09KIi8dEw8SR2eVw9fdFm7zR\nYJFj1ljR2r2yNmetFQs7XBKJJ4XtU+xOe4a9FbKZToaXtXe/bGkOZC8dQxRb\nj49SKahy4B5Qi0BkMI7ylQcXUfQ4ymRiac8MWfSVAriMUrr5Dxmi7J8qIv9G\ncw/b+t8Wh/mB5E4//SOoCRxqd2187FZTaje257QBuRqksDdU7waDJqRUwLP2\nmbMHsTuj56++LvYTHUFUtco6RVhQz2jGRgSR16nWd4KZVtcWSwPYQX4DJc1B\nC0XH\r\n=aipT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.5_1573592902743_0.8051140947255275"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.6": {
+      "name": "@types/chai",
+      "version": "4.2.6",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "5e8b693368fdbdc3ef0fbdb6ab64bbf6faa9a0b53dabd0d2433c0518a4a01dfb",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.6",
+      "dist": {
+        "integrity": "sha512-HF8faEUA4JurIm+68VaA2KedtZf5LYdXpQEAbIAN79DwWQbO82BNTksZgCH3UMqbZHXex9C6TrBfg7OUInRISQ==",
+        "shasum": "a55625d151d9c7c7a0a95920632131d66480bce9",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78075,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5davCRA9TVsSAnZWagAAHJAP/3Sk4/nG7TaWGQ2RX9K7\nEDErgktxj/G1vWxi8qHeopQieIG9+LNnp4c5Dm6V0ivKsfycpawntAbhvuQB\nEXalp9/Jfn2G7jxnS+/AJp/UHMfOq0lR9tPW/1yndYPRPuf7FZMXVdU4Elvs\nJUw+rLqf7o2VZ6uVfWRBe7vTyexGeui/ryyVDImQi2qRVUiRuVfsvNQllrhV\nZIQkEI873OyX3pqIriqEHIanLWoemmt4y0Gw2nnKCVDEoXiEiE7FLoOubeO+\nb0j6O5dHnwkF7GEALUN7zxHkTjHfNd3mS5/pkYzmbhr8XcWqhRGiOpecRqC2\n+ggBqA3EV7vO41xOmTq9lv1hpqxDF/x4VMEcqkgP03Ts4gNi6dCdeOQw7tAv\nI2Zh+LbLi+8epoQDYwmI2CBkGpcNyjCKapsEEPg/bEefQJ+JYbCsMm4vN0qe\nX6nb7lwriC8KIgTvbyZfSiTyrdcZ/f1SvpcEYmocuMLhhyhNsnTn5Z0GwCtq\nZsuQb3DgDUTOfhtFD0ocbCLz/1PSqujp8oyEHSutqmIBOqr8MoAlHm8oRML8\nxa3q/DHRFpJ50hKmzADOtpz54WsBdu6BMMSm4yNqsgLk2f4ibhvwCf939B2y\nMVqKwwXtTfuLhMANzMos9C0xIuHKGSr2Xe3meJUbaePa9BAMPCQIT70/yMCF\n2+DP\r\n=fNJa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.6_1575343791343_0.12990983312484072"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.7": {
+      "name": "@types/chai",
+      "version": "4.2.7",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Rebecca Turner",
+          "url": "https://github.com/9999years",
+          "githubUsername": "9999years"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "24afab48ef4affaebddf5f2561b8b58927d32c51a07da102c86c0379536e93a8",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.7",
+      "dist": {
+        "integrity": "sha512-luq8meHGYwvky0O7u0eQZdA7B4Wd9owUCqvbw2m3XCrCU8mplYOujMBbvyS547AxJkC+pGnd0Cm15eNxEUNU8g==",
+        "shasum": "1c8c25cbf6e59ffa7d6b9652c78e547d9a41692d",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78321,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7/AZCRA9TVsSAnZWagAAs90P/0CFtMYXfAfvQUk4RBab\newLTqyQYqDyhJp3UvggTV0VxXmUAHtEpIo7biuk/9nlm40zKZiM0OBZCmZYt\nkHIDT62e4FkydW97WNbGuDn8+QPYoLHrXfjmzn7qDC9gYy/V2tIC84HpA6zn\nOvnAACh29lXsEWspoNHiG+cDTyq7xubXHNax7goEmJEyxFS4ITFXGiwe7rtg\nNE325lB287h/2fzfj2j7ygu8yMCaJmLFSOIOB+0TgmaS530wWAKBWdlTjZQm\nIcYFmoit+OodCOw2weI6nhB6WgVGVSZZK6+lG2bJTQgfZUj16L3bD0mMgJDv\nWbTKQj9SkB0FlLG18podoIjn9Rr5f+/cNuIXom15c1c4rET8FouGaj2YPH8F\nQx4ozlMbxS1kwywz7gVQCygKJU5RnNDfGvem6J8swzAn36dA78cBG1suqKws\nUATiRthE9j6G7PwpVALK+wFFGB24eXhf+dwKvhrax1lKdjLaQnGoU0RO3V1k\nsNIRAOM4FjwluMmV3aLj2iFPY9KslKyg8SHAwIElGvqXXZfiwuTnhYY/YHLH\nYRXw90p1zc5rT2jXGTuISiTQKrN+xM0gZAw01UkcZQ0uR0j8C4yArhRR+bft\nv6BOTpAGWPQSOmMXRMG+ZjBXA6Z13XpacoCtBCLx720CYoIXrVhxoqlk77w4\nwqFP\r\n=tLrT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.7_1576005657008_0.28081956224523963"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.8": {
+      "name": "@types/chai",
+      "version": "4.2.8",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "31e7a53731be0d6e751292146d92cee91a1d6116fd4186d7cb8179a6f1d38cc0",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.8",
+      "dist": {
+        "integrity": "sha512-U1bQiWbln41Yo6EeHMr+34aUhvrMVyrhn9lYfPSpLTCrZlGxU4Rtn1bocX+0p2Fc/Jkd2FanCEXdw0WNfHHM0w==",
+        "shasum": "c8d645506db0d15f4aafd4dfa873f443ad87ea59",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.8.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78057,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMdgMCRA9TVsSAnZWagAArmIQAI4g8Oet+s7G6HRVy8Pf\nWY8xiBBB4NSFQmsZSxFpwL4t+MOg6hGNXCROmSi6T3r2X0Leox0tEK7+lLeO\nC9elH/aVPkun93NCdE3naBJleAO/AYCejIW80F8LKiqVIs1ibTEWKVf34z7j\nyfZj3J86dDcPEXQOz9aoQHafrtxHZmJVEB7x+gOQhkU4w/HirNQd7z1DByRa\nmbcbRe9cb/3u6JKL7Wsdr3Aqoc6Q2YA2bITDoNXbp9t56/50S3R/LuQlWcV3\nGcIp/NXY55B5U3dAAGfHNsCTcsFjew6Xdv3TiC0rqUAPE/gjo1IIGWV5Az/D\nrl3JrMVsYs+58F8jEWRFLSyFLxfa3UQM9HMaoMgQZoICS+fFfqiIdDDYg4Aw\n0f9kSu+55NgDwHkwJY4JOanXUEanUC+pvBS+Et5YUXLWYMsf3saS8xhpEAZ1\n/JKhQu6D1a7pkZbJjUVpNAQN9IEBVQ9gpCaIhne1ZFaa4WF9d1v2gdcK+vsh\n6syV5CYEcu93ua9SwFOMMeTp3jSwY+kGQY2GOyRQlyWHrI1x+IPH9CH99zKB\nLNErMSf/bogPgjydvwXYdI6r6/dDe+b3n5aRd6l3b2dS1gqW1AidpHnI81p/\nU4L3n837A1db5bfVKT9Amf/IKXJ2NNBWBFPQzwFf3cGb+CmqQDehacL9dGRr\nJ8M4\r\n=LA42\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.8_1580324875650_0.5434587859786826"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.9": {
+      "name": "@types/chai",
+      "version": "4.2.9",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "3c0cda6cb7cbc5ab198c99d8b73142bc7f12e70f80854bc15f0f997b73d5eb41",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.9",
+      "dist": {
+        "integrity": "sha512-NeXgZj+MFL4izGqA4sapdYzkzQG+MtGra9vhQ58dnmDY++VgJaRUws+aLVV5zRJCYJl/8s9IjMmhiUw1WsKSmw==",
+        "shasum": "194332625ed2ae914aef00b8d5ca3b77e7924cc6",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.9.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78057,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeQtsHCRA9TVsSAnZWagAAmrsQAJhwN/aa7tsOdgJvO+9w\nGyORbyjuBokG/aLCyo/1wzpu5wQb8CNxRsN9HdwhmbwxXoSLWKBiLzSgS2ad\nwVrDUlrLQFgr57+vch1WjiTV7fIP4K/Vw0vUIv54NmfUvxGhj/Q5jY6JNGj8\nK4R3KI6gx9N8x+dg07629us0kov7ummITy539yf6MbZE03c2d7elCHraNN7D\nDQppUSEYvrCXT8sl4QycEwINNOmyY2b/0HqgbEcExQAGTQp7bk/ZhPP9P5Q0\nBY1objW4f9oXwDIbpuCFpUdKavJhLfhxBw4ddVj1N91yJS2RZOog7p6CS/7g\n0nuHfBQCMiQAPO5iPbXH+8l0ZV8b6lh6Mk3ekGxj9HmqoxDM6pmznGiK5ZyP\nuZDqhsG1PO+/0PdYZDXZajUuQe3D8DB/lVhNE9Z8DNUgWPlhZQ4P1Wz4KakV\nnpb7Og+R8XtJhuQ6cSdsm7OzebWM2gzyR+T9l1PKU8mzmPD1wOYpcaj8/5tN\nobyI+C+oxShmdWfi5HVbMT4ChHjNezCNaa+8wR5Zz9cFNrEAjJwmM/6mfg/n\np1zAVgi5XmoNHkgJDoX2PKQHZbYn+od/XueTTznKBqrz3Aor/hO9S6Gda5lA\nfrHq1xzwCr1EacIeznjnPm0/pAkM7hENCgcTMHDqywlQQ+8Ov9Gn+9DkLtey\nFIuR\r\n=W5Ml\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.9_1581439751030_0.6495026138544091"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.10": {
+      "name": "@types/chai",
+      "version": "4.2.10",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        },
+        {
+          "name": "CXuesong",
+          "url": "https://github.com/CXuesong",
+          "githubUsername": "CXuesong"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "025ea702678a4b02580c8b6e4ec66582173a4f94a3507b27f16fa0df600af00f",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.10",
+      "dist": {
+        "integrity": "sha512-TlWWgb21+0LdkuFqEqfmy7NEgfB/7Jjux15fWQAh3P93gbmXuwTM/vxEdzW89APIcI2BgKR48yjeAkdeH+4qvQ==",
+        "shasum": "1122da40faabb81795580dc9f06c1e71e2ebbbe4",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.10.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78447,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeXUXVCRA9TVsSAnZWagAA9GMQAJTWCibScUhu8HGJwpGF\nyYxAfNKCTQfsVT1FHV1x0F2xfupEjCzh0l1AdezXDgGjAi7VkAi/6iqnwbma\nDnbHcCNAuqYN8xXRamC0Dy6YC2QSEHvZk9UDh0cj+56QiphOoe7i9IfKvcao\n9Cje2ObAYGfuNzGLbirb2/lTIGM1Tv9WfHhk1Zu2XiCc4mkXfZimB5NDpsj6\nygi7u/BfxSXv321Bedi7+x1CkW0dmsafIWoQtjbKeXvxFJR+AJNvNWze1l0I\nqrXOUipJvIuUJkjKqpdsNpMqyN5bSrt7CHUKRlRLzJexQE6d9t8ix5nusjsx\ne7s+pNMZdv4OG0pDE7mtR+djqLn1LaCfS9GrODqB3b/JqumkTqwasr4BJivy\nveKYeHFJQJtb+IzeMNjBQ/7hcKp+wzIPtkIXR9pHVhTNhEKqRnX14t2+3R0U\nVjM23Gx2dVc8UQ7kVB3iUs3Tv0cMwhojXNNzTnDnv626PThgcC5SfceRFxhg\nPTRbgLgl+yb1905mL9uOoc2yBELWTeZCOhuFR/xUctLMTaS4UbULQiS4M2bW\nCDfot8927W/4sur1V0pQkkNq7sObxetobhAn1yaoSb1tdOOY2Q4IneyEeKOW\nWV71yNykOH87qUg0XTL4tMtcDd0adYmqIFGHMrtPhUak601o2bgAix0HjaGB\noPED\r\n=MzX+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.10_1583171028503_0.40234886935560166"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.11": {
+      "name": "@types/chai",
+      "version": "4.2.11",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        },
+        {
+          "name": "CXuesong",
+          "url": "https://github.com/CXuesong",
+          "githubUsername": "CXuesong"
+        },
+        {
+          "name": "Joey Kilpatrick",
+          "url": "https://github.com/joeykilpatrick",
+          "githubUsername": "joeykilpatrick"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "cf82015bfffcf58335170d12d5fcec41771f4661150b9a90034a3cb763a62e1d",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.11",
+      "dist": {
+        "integrity": "sha512-t7uW6eFafjO+qJ3BIV2gGUyZs27egcNRkUdalkud+Qa3+kg//f129iuOFivHDXQ+vnU3fDXuwgv0cqMCbcE8sw==",
+        "shasum": "d3614d6c5f500142358e6ed24e1bf16657536c50",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.11.tgz",
+        "fileCount": 4,
+        "unpackedSize": 79029,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJebDXnCRA9TVsSAnZWagAAdv0P/ifvAeQZi824MvMwsNz5\ncP94N3U/rLaIjTlWO0kBbmdm1zzoJzT13pULjR7eXskQcfJTYqDZZlUbd2f6\nH8AG2ehQhpHt5MiXbgjqOMUaXf0MSFofJijpAS/mcKHiA2DowQfaR2c7ZjML\nDptbpngk93e/wFR1F51ENS+aa/lErmquK3WmxJF0f0Hsa3tDqPwqTfeqm2dH\nwXM6EBwclvoohJiQcXtK2FokY2lQcaHtGLSQOz3Dk8kEiZDO09a5If/j8DN8\nxXAqNWlD+N7Tgv9SBNox81ZvRqe73XgYyOIAVuQ8Mk0C1wf8LtpemdY3ozFz\nVbWNiai9l84ZlSn53/ND80inXY4cPEzDvwssAiy6cHru1Mic4xqN9gcHuvyg\nddKg8o+H0tK/jzNJ5vZwW/Uac0ZnDbkJtnzMx1NdEU2h+EhKWKenbhQOaZhj\nWrRySBM81uUdCl0LUeqv59WCSfXwt3yoS9UWGLRQ0HsSBsry28E6sm+3x4qB\n2u54T75+Ws31e9MqjEhqOLuGTEaANN8co2XqIDdDENvKQB9yyzEgGfUZjG1p\nykdRguqLT/KEzb3lhirZaWeFG+lT5Cghmhd14iM6reLBhjywwhyc3xVlfAbx\nscm3DCIhHyefVweuTwGymrDcZDf25FN/O9VNxkLHjOAHNS3S6sEWH8rldUIP\nLnsD\r\n=wnHe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.11_1584149990586_0.9888481208761197"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.12": {
+      "name": "@types/chai",
+      "version": "4.2.12",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        },
+        {
+          "name": "CXuesong",
+          "url": "https://github.com/CXuesong",
+          "githubUsername": "CXuesong"
+        },
+        {
+          "name": "Joey Kilpatrick",
+          "url": "https://github.com/joeykilpatrick",
+          "githubUsername": "joeykilpatrick"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "037ace9224d89638479383c53a7a6fd12a2f2dc923b1043b4593bda07d1cba5d",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/chai@4.2.12",
+      "dist": {
+        "integrity": "sha512-aN5IAC8QNtSUdQzxu7lGBgYAOuU1tmRU4c9dIq5OKGf/SBVjXo+ffM2wEjudAWbgpOhy60nLoAGH1xm8fpCKFQ==",
+        "shasum": "6160ae454cd89dae05adc3bb97997f488b608201",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.12.tgz",
+        "fileCount": 4,
+        "unpackedSize": 78989,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfGdXICRA9TVsSAnZWagAArpAP/0P5xXkLHEaryP/5HEpL\niM+Pgh4STPwB8Fz2PHks6J8u/1sEOb1x4lFp1wdHXLVYITfTMqXjwM6Rc80C\nDqcXFZWA7P4KB+Bx2MLHIpcizjlU2tSr0NrA1zExuIdllOL1Z/vIPE/qoEtt\nLJLZ6kqy8n/sHhZWw6pz+t8HG7KtwK8ZiaB58t+pT8czmAQgUBmu4Krhiq+j\n7xzAlDtNjGwQtylGS7Y2zA95SzovPP9ScFWK+4MQIvSIXfdAt9Hv2Ur1/7gW\nX9NSA+uWHGcZNH1HOCKkxzgMPBXeFwaLgwNaXsHbyDlS4aicthmJAiaT54Ll\n1QXRAS4BT+tLJ/q+06yAjRAeekX7kb9FakgRk1sT4znvhnQvN8Xsw8l1tSr/\n6iU1j18vXixnWLtzJ3/rSgNdDzvDQ2cdr4rXtL9jc1zrRDsNoCtic7p0mrsg\nFgr7urMcyR6y5DiU9Cq+d86GVlFR5+MjsGTwR+xgR58na6s0Fm/prf6SvIDf\nE4C4DM4gwEV1lCbGnfq8RRszAqCrzglMK5a/x51sMO7i26yZRENNeBNO1f6I\ntr7TKuStj5qHB//sTXQ3OACnu5av4csvaj13iNYfzrSbIIMp8gOXnenEq2wa\nD4vP9L0TFmFgroVzJfG42Apk6lFcoPIuX2XWbPljsdeTL89uXXLKgxqPt1qx\n/uBS\r\n=NSyA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.12_1595528648018_0.9104384404077297"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.13": {
+      "name": "@types/chai",
+      "version": "4.2.13",
+      "description": "TypeScript definitions for chai",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Jed Mao",
+          "url": "https://github.com/jedmao",
+          "githubUsername": "jedmao"
+        },
+        {
+          "name": "Bart van der Schoor",
+          "url": "https://github.com/Bartvds",
+          "githubUsername": "Bartvds"
+        },
+        {
+          "name": "Andrew Brown",
+          "url": "https://github.com/AGBrown",
+          "githubUsername": "AGBrown"
+        },
+        {
+          "name": "Olivier Chevet",
+          "url": "https://github.com/olivr70",
+          "githubUsername": "olivr70"
+        },
+        {
+          "name": "Matt Wistrand",
+          "url": "https://github.com/mwistrand",
+          "githubUsername": "mwistrand"
+        },
+        {
+          "name": "Josh Goldberg",
+          "url": "https://github.com/joshuakgoldberg",
+          "githubUsername": "joshuakgoldberg"
+        },
+        {
+          "name": "Shaun Luttin",
+          "url": "https://github.com/shaunluttin",
+          "githubUsername": "shaunluttin"
+        },
+        {
+          "name": "Gintautas Miselis",
+          "url": "https://github.com/Naktibalda",
+          "githubUsername": "Naktibalda"
+        },
+        {
+          "name": "Satana Charuwichitratana",
+          "url": "https://github.com/micksatana",
+          "githubUsername": "micksatana"
+        },
+        {
+          "name": "Erik Schierboom",
+          "url": "https://github.com/ErikSchierboom",
+          "githubUsername": "ErikSchierboom"
+        },
+        {
+          "name": "Bogdan Paranytsia",
+          "url": "https://github.com/bparan",
+          "githubUsername": "bparan"
+        },
+        {
+          "name": "CXuesong",
+          "url": "https://github.com/CXuesong",
+          "githubUsername": "CXuesong"
+        },
+        {
+          "name": "Joey Kilpatrick",
+          "url": "https://github.com/joeykilpatrick",
+          "githubUsername": "joeykilpatrick"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/chai"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "922a93ada30cf8b5a456c64ad72cbe6970a25fe8bae77fd18503e5ae42e8f735",
+      "typeScriptVersion": "3.2",
+      "_id": "@types/chai@4.2.13",
+      "dist": {
+        "integrity": "sha512-o3SGYRlOpvLFpwJA6Sl1UPOwKFEvE4FxTEB/c9XHI2whdnd4kmPVkNLL8gY4vWGBxWWDumzLbKsAhEH5SKn37Q==",
+        "shasum": "8a3801f6655179d1803d81e94a2e4aaf317abd16",
+        "tarball": "https://registry.npmjs.org/@types/chai/-/chai-4.2.13.tgz",
+        "fileCount": 4,
+        "unpackedSize": 79361,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfe0MiCRA9TVsSAnZWagAAr9YP/i8Yqwr+9rqi16KAUOTT\nFtxVFPYymRxBADltBuwHzQqfs0iuQywiKZxTo+ee4CITH9KYyUt0d+JaLiTW\nlHEKtSatesbV+d9z9IuL9GCVjle5xbBAmCnNf1o2qpNVlICCUF2ASS3px066\nNI1960gK/z07ODcsJBf/m2Dq5ckgfwgTZ7NqHuiJenOnOOLrTT8/F6hcOx8W\nFQTj25eUUWAb6+P109hBtdY21zC+c88kP1160O2MVMAa6hGfCU0dGFjWH29b\n/fLjixIwzOLj5wwiHd0siuJxeqNX5CalKyLZex0OZ5nAYB27OlCite5cyaLr\n0XG35QU9itClMIzuyBcgS0f/wvSPcz7BDDCUXy99m5o2ayFvc//b9bo8T5XL\nsMeKKRBOjBgPOa6VsUx30IHyht5YhcfOiuDjPUn5Ckn+snhoxUi14CA8wx4R\njn+u/RGaF74GewvdBP9BMKYUN/7YXS1AHWCGqg1ZcRwdoc7QSPyEcWrO0+ew\nmSic37t90XSzbOrLDJJzgRLNJGMr8HRSw7ooHK2aKupG7QlfstLeOu5mtdgL\n+kSu6NV+wV4V5c/PM1evqjsvFRWQlgUtY5hnRUUe2us8rvVFsSpjga2i+7VU\n9I5JIKGRMgQc5BfSQAMj38orcr0kIG/Vqda+ESNYOK51p/zBCrSa9j1KqEQE\nGRzs\r\n=XF0e\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chai_4.2.13_1601913634419_0.21480851561217418"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/chai`\r\n\r\n# Summary\r\nThis package contains type definitions for chai (http://chaijs.com/).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chai.\r\n\r\n### Additional Details\r\n * Last updated: Mon, 05 Oct 2020 15:59:53 GMT\r\n * Dependencies: none\r\n * Global values: `Chai`, `chai`\r\n\r\n# Credits\r\nThese definitions were written by [Jed Mao](https://github.com/jedmao), [Bart van der Schoor](https://github.com/Bartvds), [Andrew Brown](https://github.com/AGBrown), [Olivier Chevet](https://github.com/olivr70), [Matt Wistrand](https://github.com/mwistrand), [Josh Goldberg](https://github.com/joshuakgoldberg), [Shaun Luttin](https://github.com/shaunluttin), [Gintautas Miselis](https://github.com/Naktibalda), [Satana Charuwichitratana](https://github.com/micksatana), [Erik Schierboom](https://github.com/ErikSchierboom), [Bogdan Paranytsia](https://github.com/bparan), [CXuesong](https://github.com/CXuesong), and [Joey Kilpatrick](https://github.com/joeykilpatrick).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-05T16:00:46.534Z",
+    "created": "2016-05-17T04:36:22.898Z",
+    "3.4.15-alpha": "2016-05-17T04:36:22.898Z",
+    "3.4.16-alpha": "2016-05-19T20:27:39.739Z",
+    "3.4.21-alpha": "2016-05-20T19:18:14.787Z",
+    "3.4.22-alpha": "2016-05-25T04:36:28.787Z",
+    "3.4.23-alpha": "2016-07-01T19:08:03.783Z",
+    "3.4.24-alpha": "2016-07-01T22:29:17.286Z",
+    "3.4.25-alpha": "2016-07-02T02:08:43.291Z",
+    "3.4.26-alpha": "2016-07-03T23:54:37.075Z",
+    "3.4.27-alpha": "2016-07-08T19:50:50.610Z",
+    "3.4.28": "2016-07-14T14:14:23.351Z",
+    "3.4.29": "2016-07-19T13:09:46.828Z",
+    "3.4.30": "2016-08-02T15:48:39.154Z",
+    "3.4.31": "2016-08-19T15:21:51.705Z",
+    "3.4.32": "2016-08-25T18:36:30.507Z",
+    "3.4.33": "2016-09-19T16:27:17.057Z",
+    "3.4.34": "2016-09-28T05:30:32.577Z",
+    "2.0.0": "2017-01-10T18:53:11.454Z",
+    "3.4.35": "2017-02-17T19:05:45.650Z",
+    "2.0.1": "2017-02-28T14:22:48.106Z",
+    "3.5.0": "2017-04-10T21:15:52.551Z",
+    "3.5.1": "2017-04-18T15:05:49.411Z",
+    "3.5.2": "2017-04-28T21:24:27.544Z",
+    "4.0.0": "2017-06-01T05:01:05.433Z",
+    "4.0.1": "2017-06-23T17:35:15.232Z",
+    "4.0.2": "2017-08-01T14:05:35.108Z",
+    "4.0.3": "2017-08-11T13:42:15.180Z",
+    "4.0.4": "2017-08-21T21:49:45.213Z",
+    "4.0.5": "2017-11-15T23:29:31.399Z",
+    "4.0.6": "2017-11-28T00:41:46.470Z",
+    "4.0.7": "2017-12-03T16:27:25.547Z",
+    "4.0.8": "2017-12-04T20:31:44.996Z",
+    "4.0.9": "2017-12-11T19:14:46.809Z",
+    "4.0.10": "2017-12-11T23:34:14.696Z",
+    "4.1.0": "2018-01-05T17:53:31.909Z",
+    "4.1.1": "2018-01-17T15:32:07.963Z",
+    "4.1.2": "2018-01-23T20:05:58.473Z",
+    "4.1.3": "2018-04-20T17:41:47.132Z",
+    "4.1.4": "2018-06-13T19:18:44.899Z",
+    "4.1.5": "2018-09-18T21:24:56.058Z",
+    "4.1.6": "2018-09-28T21:45:03.424Z",
+    "4.1.7": "2018-10-27T21:48:20.649Z",
+    "4.2.0": "2019-08-08T16:09:44.079Z",
+    "4.2.1": "2019-09-04T00:48:33.396Z",
+    "4.2.2": "2019-09-09T13:01:47.972Z",
+    "4.2.3": "2019-09-17T10:59:30.826Z",
+    "4.2.4": "2019-10-22T20:43:06.473Z",
+    "4.2.5": "2019-11-12T21:08:22.918Z",
+    "4.2.6": "2019-12-03T03:29:51.488Z",
+    "4.2.7": "2019-12-10T19:20:57.148Z",
+    "4.2.8": "2020-01-29T19:07:55.776Z",
+    "4.2.9": "2020-02-11T16:49:11.213Z",
+    "4.2.10": "2020-03-02T17:43:48.670Z",
+    "4.2.11": "2020-03-14T01:39:50.698Z",
+    "4.2.12": "2020-07-23T18:24:08.109Z",
+    "4.2.13": "2020-10-05T16:00:34.524Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/chai"
+  },
+  "users": {
+    "kontrax": true,
+    "rickyrattlesnake": true,
+    "renishskills": true
+  },
+  "contributors": [
+    {
+      "name": "Jed Mao",
+      "url": "https://github.com/jedmao",
+      "githubUsername": "jedmao"
+    },
+    {
+      "name": "Bart van der Schoor",
+      "url": "https://github.com/Bartvds",
+      "githubUsername": "Bartvds"
+    },
+    {
+      "name": "Andrew Brown",
+      "url": "https://github.com/AGBrown",
+      "githubUsername": "AGBrown"
+    },
+    {
+      "name": "Olivier Chevet",
+      "url": "https://github.com/olivr70",
+      "githubUsername": "olivr70"
+    },
+    {
+      "name": "Matt Wistrand",
+      "url": "https://github.com/mwistrand",
+      "githubUsername": "mwistrand"
+    },
+    {
+      "name": "Josh Goldberg",
+      "url": "https://github.com/joshuakgoldberg",
+      "githubUsername": "joshuakgoldberg"
+    },
+    {
+      "name": "Shaun Luttin",
+      "url": "https://github.com/shaunluttin",
+      "githubUsername": "shaunluttin"
+    },
+    {
+      "name": "Gintautas Miselis",
+      "url": "https://github.com/Naktibalda",
+      "githubUsername": "Naktibalda"
+    },
+    {
+      "name": "Satana Charuwichitratana",
+      "url": "https://github.com/micksatana",
+      "githubUsername": "micksatana"
+    },
+    {
+      "name": "Erik Schierboom",
+      "url": "https://github.com/ErikSchierboom",
+      "githubUsername": "ErikSchierboom"
+    },
+    {
+      "name": "Bogdan Paranytsia",
+      "url": "https://github.com/bparan",
+      "githubUsername": "bparan"
+    },
+    {
+      "name": "CXuesong",
+      "url": "https://github.com/CXuesong",
+      "githubUsername": "CXuesong"
+    },
+    {
+      "name": "Joey Kilpatrick",
+      "url": "https://github.com/joeykilpatrick",
+      "githubUsername": "joeykilpatrick"
+    }
+  ]
+}

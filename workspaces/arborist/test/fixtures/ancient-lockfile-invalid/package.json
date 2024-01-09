@@ -1,0 +1,7 @@
+{
+  "name": "ancient-lockfile-invalid",
+  "description": "a project with an ancient lockfile that is invalid",
+  "dependencies": {
+    "@isaacs/this-does-not-exist-at-all": "1"
+  }
+}

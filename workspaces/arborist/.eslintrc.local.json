@@ -1,0 +1,9 @@
+{
+  "ignorePatterns": [
+    "test/fixtures/*/"
+  ],
+  "rules": {
+    "max-len": "off",
+    "no-shadow": "off"
+  }
+}

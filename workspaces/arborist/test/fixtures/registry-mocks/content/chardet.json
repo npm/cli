@@ -1,0 +1,1759 @@
+{
+  "_id": "chardet",
+  "_rev": "33-bb303e6719caef693cadb8210ce8bfe7",
+  "name": "chardet",
+  "description": "Character encoding detector",
+  "dist-tags": {
+    "latest": "1.3.0"
+  },
+  "versions": {
+    "0.0.3": {
+      "name": "chardet",
+      "version": "0.0.3",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector"
+      ],
+      "author": {
+        "name": "Shirokov Dmitry",
+        "email": "deadrunk@gmail.com"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "mail": "deadrunk@gmail.com",
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "licences": [
+        {
+          "type": "LGPL2.1",
+          "url": "http://www.gnu.org/licenses/lgpl-2.1.txt"
+        }
+      ],
+      "_id": "chardet@0.0.3",
+      "dist": {
+        "shasum": "c95a8568f234e4176583f85d6a023cae4ab4e7a2",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.3.tgz"
+      },
+      "_from": "node-chardet/",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "chardet",
+      "version": "0.0.4",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector"
+      ],
+      "author": {
+        "name": "Shirokov Dmitry",
+        "email": "deadrunk@gmail.com"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "mail": "deadrunk@gmail.com",
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "licences": [
+        {
+          "type": "LGPL2.1",
+          "url": "http://www.gnu.org/licenses/lgpl-2.1.txt"
+        }
+      ],
+      "_id": "chardet@0.0.4",
+      "dist": {
+        "shasum": "c792d316c515b2f59819495f04e028f925e8860a",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.4.tgz"
+      },
+      "_from": "node-chardet/",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "chardet",
+      "version": "0.0.5",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "mail": "deadrunk@gmail.com",
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "_id": "chardet@0.0.5",
+      "dist": {
+        "shasum": "18a88820f8596debce8558331d4c6152a92ee912",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.5.tgz"
+      },
+      "_from": "node-chardet/",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "chardet",
+      "version": "0.0.6",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "mail": "deadrunk@gmail.com",
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "_id": "chardet@0.0.6",
+      "dist": {
+        "shasum": "59c7673920ee4148ba38c97a3fb4b84c2ac49180",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.6.tgz"
+      },
+      "_from": "node-chardet/",
+      "_npmVersion": "1.2.2",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "chardet",
+      "version": "0.0.7",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "devDependencies": {
+        "mocha": ">= 1.8"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "_id": "chardet@0.0.7",
+      "dist": {
+        "shasum": "46d29a0316d3c3f5ee80502b9510ac6e93a5f048",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.7.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.6",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ]
+    },
+    "0.0.8": {
+      "name": "chardet",
+      "version": "0.0.8",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "devDependencies": {
+        "mocha": ">= 1.8"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "_id": "chardet@0.0.8",
+      "dist": {
+        "shasum": "a0100b5cefe47dcd50136d1c0ba5beb893d98452",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.0.8.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ]
+    },
+    "0.1.0": {
+      "name": "chardet",
+      "version": "0.1.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        }
+      ],
+      "devDependencies": {
+        "mocha": ">= 1.8"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=0.8.0",
+        "npm": "1"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "45564fbfbe601ae691e90197143e83a27a35c768",
+      "_id": "chardet@0.1.0",
+      "_shasum": "e266612d5b78262e998663ef17d06eb7a1b7b8c2",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e266612d5b78262e998663ef17d06eb7a1b7b8c2",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.1.0.tgz"
+      }
+    },
+    "0.3.0": {
+      "name": "chardet",
+      "version": "0.3.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.0.0",
+        "mocha": "^4.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "15a25476013bd8dff660a21ee06baf9482909385",
+      "_id": "chardet@0.3.0",
+      "_shasum": "5d1df4ee1d09768e4b47c4b37390a0c1587ef926",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "shasum": "5d1df4ee1d09768e4b47c4b37390a0c1587ef926",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet-0.3.0.tgz_1508121766089_0.6457889846060425"
+      }
+    },
+    "0.4.0": {
+      "name": "chardet",
+      "version": "0.4.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.0.0",
+        "mocha": "^4.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "120faa7b0f6ad1acc93f165a9583c0df0ceab1bb",
+      "_id": "chardet@0.4.0",
+      "_shasum": "0bbe1355ac44d7a3ed4a925707c4ef70f8190f6c",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "shasum": "0bbe1355ac44d7a3ed4a925707c4ef70f8190f6c",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet-0.4.0.tgz_1508121891785_0.9284511094447225"
+      }
+    },
+    "0.4.1": {
+      "name": "chardet",
+      "version": "0.4.1",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.0.0",
+        "mocha": "^4.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "f5d2ca5d343f913e4a05313e13afb85e802f92c0",
+      "_id": "chardet@0.4.1",
+      "_shasum": "faa944e41818a0cf6945cbc1da070b8d26054483",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "shasum": "faa944e41818a0cf6945cbc1da070b8d26054483",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet-0.4.1.tgz_1511729656939_0.09512782748788595"
+      }
+    },
+    "0.4.2": {
+      "name": "chardet",
+      "version": "0.4.2",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.0.0",
+        "mocha": "^4.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "06ef1021ea35e1615e1641655cc405b2ba74e0c2",
+      "_id": "chardet@0.4.2",
+      "_shasum": "b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "shasum": "b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet-0.4.2.tgz_1511730123536_0.8843515114858747"
+      }
+    },
+    "0.5.0": {
+      "name": "chardet",
+      "version": "0.5.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.2.0",
+        "mocha": "^5.1.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive --bail",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "4987783a3132dd45d59f6b8451d93cc57f793b8c",
+      "_id": "chardet@0.5.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9ZTaoBaePSCFvNlNGrsyI8ZVACP2svUtq0DkM7t4K2ClAa96sqOIRjAzDTc8zXzFt1cZR46rRzLTiHFSJ+Qw0g==",
+        "shasum": "fe3ac73c00c3d865ffcc02a0682e2c20b6a06029",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.5.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 74025,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3RnpCRA9TVsSAnZWagAALFkP/i2z3pqA01bxKnZGdM4T\nFxzEw4jIHvWHm/uSo2JaaYi6rnxOOyVglNFGbSd8H1qlgwGho24tlNNv4V0o\nglEG9xYJmllkMEBeaZwnOHrQT//TDl//7lrcLDlzqgaRc3xu0wkjymo0XMZI\n3cp6ExbM6L9b0KsfprZh69DQLSaQq4KvhbbdC+i9MsCqnMcJG2E+e4NBnjRC\nyjqlSQmx3NeLb3vYLyY0nkAlEDILOufWXU+mg2tW6eh1cOF7tEvzNlCS7k06\nljiy2g+3LizH54+RvUWIEbA5GKGU24d6PuCLUMhI6QLIv2neetNIFNPEnOJ9\n26rOl5VH+KqVqcbrbIJWQRPuenQhOJe/KJOyrTOWsFVLRNXEnfP7Zsq/XY++\nKfZPEQA/irJRVcEKMyk69xjdw0++tkQHVPtV5oeJF9ui4S/cyMCdDSpzRsbu\nYPo9pHWkcpTeXpBno1hFI9MwNl9psv2J38LHk3vrTYLH9GoQye3RxNY3U4rm\nJoXoezlbdscFraSbWQ5SwUWagPghK1t7wA0TjfPUQOW3LCSONlfDxNpYbAsT\nW2dCNko8OciFnZ1096sqL7Ig8eUVzc0bW39kD0H0eeAPttp9v+5Gnps9ElCo\nxF5cBhen+mN+0NNHzmqJBXwxtoXDkU4ME/leRQw0GV1Xa8HIXuuQa6nonK+e\nZ0ki\r\n=glno\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_0.5.0_1524439528367_0.8453051365959163"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.6.0": {
+      "name": "chardet",
+      "version": "0.6.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^4.2.0",
+        "mocha": "^5.1.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive --bail",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "6ff1aea137cd3288d9a4c693d5389b88edac7bb1",
+      "_id": "chardet@0.6.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6oOgb0JQEsVfn64D9lWHxIj052QCn2CsdPGz9GLZfmss+6F8LWVOgFiKGSjEI8P0B3Ccdo9m7lU30VpOI9IyRg==",
+        "shasum": "9a9b264a18efeb9f797de19252fb1f2adccda616",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.6.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 74825,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbOvQrCRA9TVsSAnZWagAAw60P/2Qy05jAezCt0uNWo9yA\nGO2qZ4DDAKxAgR8AQgRkUVwbe5Ni1iNsZAjOIidHtBD6hcxfdlBHrMTTBi9U\niElcG6a3/5YHoE7MEVAJD5u1OQAYjQsiSEg6NfIIx2LgjwDC6TzfjMd0Qgss\npdLMeAT5J6CldaB1ruH6kAF4k+nbk67MuxTMqoIriAKI/DQCKcip0I84MwjK\nUvnnO0k63ah18f4eGmDGsBC2gdUIg4wQL5E5ZeKAvfDVdI3TuqwX0cxqU3Wy\nM4BRgQSAbnQYSwJP4XoxmVFUq6jR1LHszjWRF4UjmmcFSjcA6vxqC0NHPSKl\nQM5sgFI5QhrafDgmO5iFYI2aIbK8ZoDNA9NSiGPvZMFtqUupQSLu2Fln1I9b\neZPHKz6fvn/AmgB5ElMHf2DoLTn9Z1vkpt3OvSWwsriNr6G5I5ZrWxuQ4a33\nV+kj4byB1tjs7io2uR41BOimTasv9mSmSZjZ6KOnin441mzC+S0wjc9oVXKN\nz4p/o6e+rsTexvQwWsMwqKDDnJmulOSifuDfVNS8hGHkHCQ0iX25QNhkxkFR\nA00h2XOxc/z00Y6UluqzqlNOz+D52BS4xgyPDBhTD7oz6UPcnCmV4YOwCsDH\nCSIBPawkK4aSfHN5JR94UTQ1rPgUzYsOM5OSBXLi/dxre7Rt7QXzKeysUK7d\ndmd+\r\n=T+7B\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_0.6.0_1530590251335_0.11682330319261358"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.7.0": {
+      "name": "chardet",
+      "version": "0.7.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "devDependencies": {
+        "github-publish-release": "^5.0.0",
+        "mocha": "^5.2.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive --bail",
+        "release": "scripts/release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "5156e3063ae8e8ba7f0d599378d024a4f403993c",
+      "_id": "chardet@0.7.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==",
+        "shasum": "90094849f0937f2eedc2425d0d28a9e5f0cbad9e",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.7.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 74843,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbd1MXCRA9TVsSAnZWagAAN2UQAIu1YixY/4Jj4lLvTBfl\n7KpBNfp7SxaH7Y58cr61bx0cej8Bs2LbrBucrUKUXHAgwdh18W1zvk0jf63S\nnYsF8lEZ1gP05QSVOu+c3RVyAcoqA+kKJzkTQFpuyhak6Lj/l6ytmQPr03Dr\nhSqHbP3d0AqTNKkYESq+/nkkLrGAk3QFL/cZqZnLP+fNqDHwB53gdtcHbcYG\n5xLGe+pILpUygB2XEBVCOC61DFk0z3o4KG/fO76oFKx+pnmDHhnkYG3eFNhF\nXVL7GhFE7F4z1sV7M1eepVbuhEjaIT2rvBwxpEWl/wnzHh/AL9bf10dEjUb9\n/yQQYbVFmbGKvAJjs8hguvXDHmpYMdrUHB9z6JUumGFEk5BUX7HG1wGADMSs\nonMyylk1yT09IsiQSzz4G583kof9MMQ3+VNv4W8Of8Bi96cRy7LnKG5lRKQA\n72jazmrUhZqGOOJu6RDMxw82HFCh4ItNRQz/GtfwzfFGjXr1dQYG17kMz5eC\n5xBPJkinfGqVxZledW4Sa3ONs00dphVKbJdMm4X11V8dIp4C7wO/RugL4H26\nVwlm8SwHUDKt21SU3fe6K6Pv44WgclxeKuZOjZb1Qh2RPtpJ7ezqyWAOkb9t\nECP9Wkr+jg8NrkLIglpaY5BLzXggMCs7MwiiCJWhyMd0mquVnO1kuT+UFS/3\nUTjq\r\n=zpb6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_0.7.0_1534546710370_0.01695277123849781"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.8.0": {
+      "name": "chardet",
+      "version": "0.8.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "devDependencies": {
+        "mocha": "^6.1.4",
+        "semantic-release": "^15.13.18"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "test": "mocha -R spec --recursive --bail",
+        "semantic-release": "semantic-release"
+      },
+      "main": "index.js",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "license": "MIT",
+      "gitHead": "bcad67258f5e8413371a0908b8babb9bed681111",
+      "_id": "chardet@0.8.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.1",
+      "dist": {
+        "integrity": "sha512-fRAe54sDSPvCz9I3puKUoUpLBEIUjlwBoNyNcD2eAiP5Ybw2iXnrT7w15hfkNywosXFNllWwvOKsxl7UUCKQaQ==",
+        "shasum": "215e9e457296aa88fb0c38b010fd7a7e20482ed3",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-0.8.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 75049,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdJ8UjCRA9TVsSAnZWagAAOf0P+gKRcAwiXrVbXQd/rRud\nqQgMpBruj5PFh9ouTMe8P+13JWd42DR6udCSmIyf+Wu7Bg/Gq6vcTlWgGzwQ\n68IqYQx6ZZgbNLnIPabhftxqGqXd0+M78AkmAlKdwhYhnfhqSEGsG/bXLVIV\n2C3pMdkPEnD02i3a86eLPW6U22j+lOx3BpHaFb75pPNyWSEzDVJPuTa/d2NA\na5t5kX+jwgeqYlxc+H9X1/+OI3xtWEUZEktM16SM56sUNqaOKehcK8ob3SRK\nnMGx8f4xnvuCrFkV7zVRO/lcLg+wUWPPlUTYesLqc7XxyzjwmnNyfXf309jU\nzmJHdb1w8SKazjZ6X1GycF1UqFH9QJFtMBYlbviB0EQVu2p0z/wC1Ie/uYRD\nAI4CFKW3x34g3bnjO88fYaOIsoHpjGdFVVaJevPGJD5HvPft4/GzsIXIT3wc\nosvs94CQwzRM+RFaReLY0DDG0tR3BukC8djAJs0I9CeyTYQPAZAwhbLVpzwa\nW/pQr+0wrh/FbB5GIVb4NswUdtvifYL05CXxskcAWSEY2HenLNUG/+Gt4K7m\nxG6CmfvAzGLowjTRPZz2Di5NtvYwjzmWV1C7HSnb0k425F8o9pe4kbXCoEsb\ncThhsSVXuBwAVmTH3ioChVH7fUYSU+149q4hvZjzUvDHjMKrYjTT4V/leuTH\nxYIL\r\n=96Tg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_0.8.0_1562887459189_0.9577201830974902"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "chardet",
+      "version": "1.0.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.5",
+        "jest": "^25.2.4",
+        "prettier": "^2.0.2",
+        "semantic-release": "^15.14.0",
+        "ts-jest": "^25.2.1",
+        "tslint": "^6.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "gitHead": "a6fca620c829092d266103ff9f633f4178167d35",
+      "_id": "chardet@1.0.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-sRgcGMB9CDh4AnAELRZ0++YGu2W6MOx0gyNliIQddywtvIBXuA83ePfgyszHkrWI9dOuz51WyfC6lCizS4arpg==",
+        "shasum": "65ba4e0ceed0434be13ceb20cc4ff4925981ae55",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.0.0.tgz",
+        "fileCount": 67,
+        "unpackedSize": 1181876,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegxqxCRA9TVsSAnZWagAATp4P/iG64xxAweB8wxQ4bFBY\nXAUbCjlT1JDGsmpDl7oeUsd2mrnqyzWBwSsk7jx3a7OUTxxPY2g1P9WcEF/t\nktklreg9o35bmyGoGgsEJpZJp/ipiUthVXrxjsy3DM2iX79BV6z1/mAMQD/A\n2tD6QRBow2scau5qM1t0rsMB3nH/lJzheSmqvJ093n0jxhbiiyxl5XzWp6mh\nKoSzyil8uqNI+puErugDfnM/FOchRBx1XjDRo8yukiZIpcWLkwAc3+F17icY\niIldx+Xya2+6nlJpG8BHtihZxhMP2YAZNsHjTqazZSAKFJHqtSrCK9nGMxXv\nH4z9OfN6Bu1Qu5VCTu9gVhB23+ig2Suo+8UqTzqi/1KEwKbdkpFccFyIyYFu\nA94jCMDKOpBO19gSFMOBln7kF3Eyp07mlQtwvigq5G2ehb3O/wZHLgog3i+h\nl/WPQ8iYzGFv+8TU3olRkwDK5ZJbqZXt2+Gf1qKqHrP832Er5HzMhUVn4+kS\nFULgQBIZKFtNEuGA+K8PdV5ef8yFbP25Ga4mq1gHefLQUUUJYoBJpeB8CTVx\nHo5VgTwPj3Q2HFFMdI2X1vxXcI2BPyGXO7Jn7+xtEgtbzI35D8NyK5lKGIcd\nYXr41a97EyBLkPV9YoEMxPsu7mymvU72SQKY7rBv3yQBpyyk/v77PHyICUoP\nJ+YA\r\n=uAVL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.0.0_1585650352673_0.6626232929930396"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "chardet",
+      "version": "1.1.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.5",
+        "jest": "^25.2.4",
+        "prettier": "^2.0.2",
+        "semantic-release": "^15.14.0",
+        "ts-jest": "^25.2.1",
+        "tslint": "^6.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "gitHead": "28db00677d7e4c86cd26b0cf9ad67e687b485359",
+      "_id": "chardet@1.1.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-K6BWWdt9ncg6TDTX42J57s9zZWVI1DXVYQ6zUM8dZUB2TDeV5ia4kDei19r/pMxNzSGYYf6LqHsyvEybvTPHuA==",
+        "shasum": "c653dfc04731e8bfa90da4fd4968d69129d72b12",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.1.0.tgz",
+        "fileCount": 67,
+        "unpackedSize": 1183749,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJetJYrCRA9TVsSAnZWagAASbcQAJfu62wSeLuz+JhsY9d8\n3VBHI7bimLy3tPuNVuhdlo/S+V9KOxeb+5XgmgoBN5yFVsu3wlQeuuITWvdm\nyy4AuPHR2ajOk0MUMnRQiICp8cXGmPWKkivLm3tuBtO2l505OwnWC5Ivn7Nc\npOoBr1xF51ijfz3kjCz7UbIQDlbNLwIXoE0Ay/qfui2fvn8KyQe0HsC6qMdX\nc4H+QhBS6bmpkE3S5qEAMjHEZATvVaTIZE0SywhcE+DeVgXryOsJKktqCiBS\n8kr+jIpiH7Ra3DTfhnL5z2+sHnkPDqqnQYjuW9bza+AJisCx9FQzPo0bTvPK\nQ/A74McU4yfwbpDTLzWeFqG7N4tYKHu17G9LYKMVWCt7GQhpgD9JEF1TxUm4\nm3nHjzXn7X27uOmBQ8R0DF6QH15G+WZdOvUmvHPS2JK2yM3lWsf9ewJDv5uY\nXM3PW6nckys9CX/+kOiZE8XDOjggJ6naE/Sx1dohF5BnZjwvWRBgo791KVIX\nJcLUt6+RPsDocRst/1TgKYovhjyExDU0IYeNr+QeG/7KW9WQA2FfldPzPf9n\nJoDXOpXdlUohnLkR4eYHqoRw5h966PYwshFFnCnvOQIRsf7LvRJ0/E5+GyVw\nSOqCoao+ILN7bjF2Mg9hOXggLrVJIN79xmW6Nn3N0EE0gfQnIUbzdZuatj1q\n3AW1\r\n=C2S7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.1.0_1588893226325_0.9006303723967923"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "chardet",
+      "version": "1.2.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.5",
+        "jest": "^25.2.4",
+        "prettier": "^2.0.2",
+        "semantic-release": "^15.14.0",
+        "ts-jest": "^25.2.1",
+        "tslint": "^6.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "gitHead": "79457df59b1cc1e974afdd012603291b268bfd78",
+      "_id": "chardet@1.2.0",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-ks9x93utxiilvtGa+Rl6+5dOxAw75Z2Jp7lRuP3jViMA+IpxbHoq7e4v5CHZ08KQuutWsIaOlUVriBmUiyesig==",
+        "shasum": "a1d1c97df9aa6517d3965ff193b5087f33fa98a3",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.2.0.tgz",
+        "fileCount": 67,
+        "unpackedSize": 1183757,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe/TCgCRA9TVsSAnZWagAAljsQAI1ITkKw8xUn2+R0jS/u\nOeHdLHw87uSptwfLm8sNN24DCKd+l42K/kLyH7ybj6OCLzPGGj3Vf91aUkD9\n6VmaufVnUfvAI6wxxNqJzPxYtwwqvnTKUm+BTjhdry/EkuXZfY2ct8BaoHKU\nZOH8obNXNLS1yOdJSEqH37rTko5qT0eFkQWrsldtLg29IK5XiHPxlr1NcdNM\noVc4NVT3Js7WIaA9p/FXsXxkj1PgsyL6RFyF+nSauWQt0j0qHEp9iDh0G0WS\nXut8nhtAlFVIemNKsf2fQXFkLVYvuSGpY+/4qRjsMuitgcUol3Y8LhV/EWYW\nrNKrv9w9tOyaYS2w1SE6UgCzkEECaGIjCtrMOeDTKTV9hFiar5/xEmbmyoDD\nbyR9LbEKxwzU3CCkZzx+5q3zTyUWtABEYz7c9qb03KkSpc7fb3TqRteMfA9s\n3ZNe8kxzaG50ZKLecSpdJIIEFOhQgiVf4a+TNWVBpuc6IcBNd+vkVskJGQo6\npAb0rmEr03RAlcHzHTRmhoaXeuX5WbxHogPgOhc4CjwDtkUWSlwafWliP7xe\nIEprUvN8Mv1vdW4OsLv5rk86Z+1pI8nD+sGJ+RRcDMvRDopA19KtkSLpAo0j\nT22tD0JdCSL90B//plEas1IMIkUlzt9nUQGHURnrwDjuR89y/gKw02MfsPv2\nLnHR\r\n=2Ydc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.2.0_1593651360126_0.5060900113680478"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "chardet",
+      "version": "1.2.1",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.5",
+        "jest": "^25.2.4",
+        "prettier": "^2.0.2",
+        "semantic-release": "^15.14.0",
+        "ts-jest": "^25.2.1",
+        "tslint": "^6.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "gitHead": "6de3bc47d34eba61d694d56fb4bcb499fccf0fc1",
+      "_id": "chardet@1.2.1",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-bnDt+69nS8Hi7Xmt0uDiQ32/hRpMK/0pc4lc32Y87voBgdsz26VZXOyo5VNQWQfe7rUsevZIfWB82C5QSpCXcQ==",
+        "shasum": "8e0b4441c96f1ad747431989db1ff590739c6931",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.2.1.tgz",
+        "fileCount": 67,
+        "unpackedSize": 1183757,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfArJYCRA9TVsSAnZWagAA8Z0P/1nL7xw9ucrN86uwG2ER\nHyn4uxU8ELjsqMYjrceno1r8cWaZY7PbWIJW4Xuw9Xm0FBfUoOsDFNN5KpT6\nEQjSQfNSZf3LLf/aGknJvifoolTMK8iZVWLroIYItqfZO4tWwedq2iJcHMRA\ns5fc96P6aeAcEzulMPPsgw07j4c81lbyCr9Uo4KPlzF10lKTVq27uxvBzWcN\nsyphWQkNeOhS1xY+FzQOd2qcDV5HjkGoI6JljHG0C7CNQxNSW0VTnZ2t4St0\nxxX6QF72+1ZnmAW4bWUd1IzHIKCPEmVJ4/c8neR6dQ7lgc8H5OA5DOdlFxs+\nRxoIcTKnGH3J2imVXO+DFl/wb2BFCF4a/p9u0JX7pZ5WKZjZHtRsGcUFtnbg\nb/AoA4dmmn+usCcZVPY+uW3Mf17A4voFRxrk83om7dLIqjX7CP/WtlrCtFTh\n9p8lSNXkGwW2SHHdlzosdl8CU5AFVOtpGqtodxZv3K7iCYH1MDZsuV2+qQ0e\nQm7uMpED0nzAF8dzJLO3UYtguRh5Dir4uXq7Td2TpzesbTccGQVMp2fkNV/c\ndiYt/IgB6hyLL+n3RK/4lkDr691u/5oCQSon7d0nsEHAHkxJufhpltvBkIH7\nCgHlm3nrmAd9ga1garLZ6Dqeu5hwa7Mf/J7UnSGRL06fDuM3Lwg/OgEJsyL/\nhUsa\r\n=h+Ks\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.2.1_1594012247793_0.212220908342579"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.2": {
+      "name": "chardet",
+      "version": "1.2.2",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "tslint -p tsconfig.json -c tslint.json",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^25.1.4",
+        "@types/node": "^13.9.5",
+        "jest": "^25.2.4",
+        "prettier": "^2.0.2",
+        "semantic-release": "^15.14.0",
+        "ts-jest": "^25.2.1",
+        "tslint": "^6.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "gitHead": "bbb4fed4dd64c71f39f50d1310db8c2d47531649",
+      "_id": "chardet@1.2.2",
+      "_nodeVersion": "12.18.4",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-0MtS+a6zTt17E8KMlwJX7vViO87Gm9EXbvq1/jeY4ha+2e2cYnBQWLqIYi5lEmzcEsVsA0iBBrqY+3T8cSVKtg==",
+        "shasum": "208e1e712918f7333caec6af6c0ba660d6ab23e8",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.2.2.tgz",
+        "fileCount": 27,
+        "unpackedSize": 202958,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfaq3XCRA9TVsSAnZWagAA2g8QAI7IYABl+K4TYzDPxK4b\nzGl1rAMCkT1+yoDG/GYLAg79LKSKhPUmETyL28aySPmQ3CTibh76IOsaV4Sf\nxIb1ZleXXWuUhmQBxhM9DPdNVYs2sEKyYpEue4xGv44J6orCiI6TAII5m5a2\nhEqiOaXwUYr6aWT2O7abNdGvlgVB+O8O8hR3OVr+eYLnNE0I4FiKGvCmXveA\nhOAFMNBongf62czSVlKPbXwCcXZ6FBE+zOOaox+ejXMsEIvLY+E26aFcj42n\nGs8yLb8KDUcMn9aBKdkYUZKpXvD+EfjrFucuvzh+bBCfBk6WmUqvcJ3Pdd/i\n6oog/USPrSbZLjDe703zPmXqSSCGWJaMBjCffdRvyDoA/5XN6M/OkCuWPeAD\nY3kKYFqA+iXz/x5pbqY1J5mrJ6gfeZJvNELz1mdJ8hLEdcNKcglGnP49Ikjk\nomR8YsBUWkRZZwLif5zxNbt6T4nsRTX0IUd8zqGSxpn+24tBU0IaL1neUaho\n3dx9iZ+Jd4+JsX+IxKNGUPsnrgm5PSufELmQPH7K9CA933BO1hSXCw5+d1X9\nc1fMjZTa3/6Lzg29IE0WNo/mVvlXFX2tPVMa8tNwHsmetFVTv1UcsvJAnkFh\nyQZGMd3KcGrFaAuO+D3IlOX1ZjjcSh6+FCCa68PsXgu555um1Nn7Eaq2GuvV\nqV2M\r\n=eZ0R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.2.2_1600826839369_0.2668326014005571"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "chardet",
+      "version": "1.3.0",
+      "homepage": "https://github.com/runk/node-chardet",
+      "description": "Character encoding detector",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/runk/node-chardet.git"
+      },
+      "bugs": {
+        "url": "http://github.com/runk/node-chardet/issues"
+      },
+      "scripts": {
+        "build": "rm -rf lib/* && tsc",
+        "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+        "lint:types": "tsc --noEmit",
+        "format": "prettier --write ./src/**/*.ts",
+        "format:check": "prettier --list-different ./src/**/*.ts",
+        "test": "jest",
+        "prepublish": "npm run build",
+        "semantic-release": "semantic-release"
+      },
+      "main": "lib/index.js",
+      "typings": "lib/index.d.ts",
+      "engine": {
+        "node": ">=4"
+      },
+      "directories": {
+        "test": "test"
+      },
+      "devDependencies": {
+        "@types/jest": "^26.0.14",
+        "@types/node": "^14.11.2",
+        "@typescript-eslint/eslint-plugin": "^4.2.0",
+        "@typescript-eslint/parser": "^4.2.0",
+        "eslint": "^7.9.0",
+        "jest": "^26.4.2",
+        "prettier": "^2.1.2",
+        "semantic-release": "^17.1.2",
+        "ts-jest": "^26.4.0",
+        "typescript": "^4.0.3"
+      },
+      "keywords": [
+        "encoding",
+        "character",
+        "utf8",
+        "detector",
+        "chardet",
+        "icu",
+        "character detection",
+        "character encoding",
+        "language",
+        "iconv",
+        "iconv-light",
+        "UTF-8",
+        "UTF-16",
+        "UTF-32",
+        "ISO-2022-JP",
+        "ISO-2022-KR",
+        "ISO-2022-CN",
+        "Shift_JIS",
+        "Big5",
+        "EUC-JP",
+        "EUC-KR",
+        "GB18030",
+        "ISO-8859-1",
+        "ISO-8859-2",
+        "ISO-8859-5",
+        "ISO-8859-6",
+        "ISO-8859-7",
+        "ISO-8859-8",
+        "ISO-8859-9",
+        "windows-1250",
+        "windows-1251",
+        "windows-1252",
+        "windows-1253",
+        "windows-1254",
+        "windows-1255",
+        "windows-1256",
+        "KOI8-R"
+      ],
+      "author": {
+        "name": "Dmitry Shirokov",
+        "email": "deadrunk@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "@spikying"
+        },
+        {
+          "name": "@wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "@suisho"
+        },
+        {
+          "name": "@seangarner"
+        },
+        {
+          "name": "@zevanty"
+        }
+      ],
+      "browser": {
+        "./lib/fs/node.js": "./lib/fs/browser.js"
+      },
+      "gitHead": "3fe63a19aceb435e73acf21e8acd0f19e6666907",
+      "_id": "chardet@1.3.0",
+      "_nodeVersion": "12.18.4",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-cyTQGGptIjIT+CMGT5J/0l9c6Fb+565GCFjjeUTKxUO7w3oR+FcNCMEKTn5xtVKaLFmladN7QF68IiQsv5Fbdw==",
+        "shasum": "a56ed2d9e4517a7128721340a0cb9a10a8fac238",
+        "tarball": "https://registry.npmjs.org/chardet/-/chardet-1.3.0.tgz",
+        "fileCount": 33,
+        "unpackedSize": 206901,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfbdfnCRA9TVsSAnZWagAAdKoQAJyhDUlAXT1M0HJc1dyd\nOnj6nJ7E+vWY0pCaNoBNP5oq1mLtQWTX8RdZKCHlYJC55KuLTTSDdj2qDIit\nRG/fSH9JYoE0wMU7j0mmApdVtANm+XxoPV5ZfHbw9haNqackb3R72w5YbvdN\nIFrGCl+z6tQku7C92utx/ktLHJqLEmpd+JHOYBmrTOeznJDPC2asiHKOtEh9\njMl/B2FMnTrscWZL5aTbwmjPbThrZ1010ni962KrcXmty+qjDRFfQp5BuQ7Q\nGgEpDaFFcogVbdDrjaTeeHb8SCPc2rvvTYpEwK6wAMNbaJYIIUza3w34w18g\nrI9tfJ0K8ZobK/NyaTp80aXbsly8Lf8hjnqjbS6N+PF8PN/buPzRNEbGXOyI\nXK6cxBsuYr99/lpLOR+7Ala8OVjLE/MiGvHVC0gOiPN1tsQQ9v7jLYee0LVD\nJfZZiLfBI8+SUozYE3/nOpDwrDNAhqjb44ec2AG8nKWqisTQEpX12sAHraM+\nBDvV+5Ph6c5d8CjOcCFTIsgARIuxP+NR+epmtoYXVy8xrdWDqSKEb2MmF9aY\nl7XpUHmowo1V3MCC+vcQxUWeZ5if7dE/r2/Eo9FLaH6ad/wOaGjXQAMIAKx8\n2SpC7vdy9+Us1OCXVRJiv2OoFhacUe5UyOWlQwW2JDBu0v5nLywuTW5xLxDC\nfSZX\r\n=Atlk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "runk",
+          "email": "deadrunk@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "runk",
+        "email": "deadrunk@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/chardet_1.3.0_1601034214598_0.04097049200912495"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# chardet [![Build Status](https://travis-ci.org/runk/node-chardet.png)](https://travis-ci.org/runk/node-chardet)\n\n*Chardet* is a character detection module written in pure Javascript (Typescript). Module uses occurrence analysis to determine the most probable encoding.\n\n- Packed size is only **22 KB**\n- Works in all environments: Node / Browser / Native\n- Works on all platforms: Linux / Mac / Windows\n- No dependencies\n- No native code / bindings\n- 100% written in Typescript\n- Extensive code coverage\n\n## Installation\n\n```\nnpm i chardet\n```\n\n## Usage\n\nTo return the encoding with the highest confidence:\n\n```javascript\nconst chardet = require('chardet');\n\nchardet.detect(Buffer.from('hello there!'));\n// or\nchardet.detectFile('/path/to/file').then(encoding => console.log(encoding));\n// or\nchardet.detectFileSync('/path/to/file');\n```\n\nTo return the full list of possible encodings use `analyse` method.\n\n```javascript\nconst chardet = require('chardet');\nchardet.analyse(Buffer.from('hello there!'));\n```\n\nReturned value is an array of objects sorted by confidence value in decending order\n\n```javascript\n[\n  { confidence: 90, name: 'UTF-8' },\n  { confidence: 20, name: 'windows-1252', lang: 'fr' }\n];\n```\n\n## Working with large data sets\n\nSometimes, when data set is huge and you want to optimize performace (in tradeoff of less accuracy),\nyou can sample only first N bytes of the buffer:\n\n```javascript\nchardet\n  .detectFile('/path/to/file', { sampleSize: 32 })\n  .then(encoding => console.log(encoding));\n```\n\n## Supported Encodings:\n\n- UTF-8\n- UTF-16 LE\n- UTF-16 BE\n- UTF-32 LE\n- UTF-32 BE\n- ISO-2022-JP\n- ISO-2022-KR\n- ISO-2022-CN\n- Shift_JIS\n- Big5\n- EUC-JP\n- EUC-KR\n- GB18030\n- ISO-8859-1\n- ISO-8859-2\n- ISO-8859-5\n- ISO-8859-6\n- ISO-8859-7\n- ISO-8859-8\n- ISO-8859-9\n- windows-1250\n- windows-1251\n- windows-1252\n- windows-1253\n- windows-1254\n- windows-1255\n- windows-1256\n- KOI8-R\n\nCurrently only these encodings are supported.\n\n## Typescript?\n\nYes. Type definitions are included.\n\n### References\n\n- ICU project http://site.icu-project.org/\n",
+  "maintainers": [
+    {
+      "name": "runk",
+      "email": "deadrunk@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-25T11:43:37.113Z",
+    "created": "2013-04-30T13:49:58.845Z",
+    "0.0.3": "2013-04-30T13:50:04.188Z",
+    "0.0.4": "2013-05-01T14:58:34.122Z",
+    "0.0.5": "2013-05-04T09:33:44.954Z",
+    "0.0.6": "2013-05-06T01:29:09.129Z",
+    "0.0.7": "2013-08-06T01:37:12.814Z",
+    "0.0.8": "2013-08-16T04:56:58.863Z",
+    "0.1.0": "2015-11-29T21:52:15.398Z",
+    "0.3.0": "2017-10-16T02:42:46.353Z",
+    "0.4.0": "2017-10-16T02:44:51.926Z",
+    "0.4.1": "2017-11-26T20:54:17.163Z",
+    "0.4.2": "2017-11-26T21:02:03.634Z",
+    "0.5.0": "2018-04-22T23:25:28.480Z",
+    "0.6.0": "2018-07-03T03:57:31.422Z",
+    "0.7.0": "2018-08-17T22:58:30.504Z",
+    "0.8.0": "2019-07-11T23:24:19.369Z",
+    "1.0.0": "2020-03-31T10:25:52.887Z",
+    "1.1.0": "2020-05-07T23:13:46.464Z",
+    "1.2.0": "2020-07-02T00:56:00.270Z",
+    "1.2.1": "2020-07-06T05:10:47.904Z",
+    "1.2.2": "2020-09-23T02:07:19.567Z",
+    "1.3.0": "2020-09-25T11:43:34.767Z"
+  },
+  "author": {
+    "name": "Dmitry Shirokov",
+    "email": "deadrunk@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/runk/node-chardet.git"
+  },
+  "users": {
+    "stanzhai": true,
+    "hiwanz": true,
+    "luhuan": true,
+    "windmillboy": true,
+    "xiechao06": true
+  },
+  "homepage": "https://github.com/runk/node-chardet",
+  "keywords": [
+    "encoding",
+    "character",
+    "utf8",
+    "detector",
+    "chardet",
+    "icu",
+    "character detection",
+    "character encoding",
+    "language",
+    "iconv",
+    "iconv-light",
+    "UTF-8",
+    "UTF-16",
+    "UTF-32",
+    "ISO-2022-JP",
+    "ISO-2022-KR",
+    "ISO-2022-CN",
+    "Shift_JIS",
+    "Big5",
+    "EUC-JP",
+    "EUC-KR",
+    "GB18030",
+    "ISO-8859-1",
+    "ISO-8859-2",
+    "ISO-8859-5",
+    "ISO-8859-6",
+    "ISO-8859-7",
+    "ISO-8859-8",
+    "ISO-8859-9",
+    "windows-1250",
+    "windows-1251",
+    "windows-1252",
+    "windows-1253",
+    "windows-1254",
+    "windows-1255",
+    "windows-1256",
+    "KOI8-R"
+  ],
+  "contributors": [
+    {
+      "name": "@spikying"
+    },
+    {
+      "name": "@wtgtybhertgeghgtwtg"
+    },
+    {
+      "name": "@suisho"
+    },
+    {
+      "name": "@seangarner"
+    },
+    {
+      "name": "@zevanty"
+    }
+  ],
+  "bugs": {
+    "url": "http://github.com/runk/node-chardet/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

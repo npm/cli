@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-sequential-peer-dep-tree-shuffling",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/testing-sequential-peer-dep-tree-shuffling-a": "1"
+  }
+}

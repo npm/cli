@@ -1,0 +1,53 @@
+{
+  "_id": "@isaacs/testing-peer-dep-nesting-z",
+  "name": "@isaacs/testing-peer-dep-nesting-z",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-peer-dep-nesting-z",
+      "version": "1.0.0",
+      "_id": "@isaacs/testing-peer-dep-nesting-z@1.0.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0",
+      "dist": {
+        "integrity": "sha512-cb4vKDm41mlVUH6EwTui9yvS16cTaNSgmqFyHxfvRR026zRxJ3UKLVCk03Gw+h5kTwnqm+YjDdqtJr4qmL1xFA==",
+        "shasum": "3640dd1b752727a07f86eec6bdf1b109efc8cd4c",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-dep-nesting-z/-/testing-peer-dep-nesting-z-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 73,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh3w3CRA9TVsSAnZWagAAH1sP/2t3Jjq6n6vpmcq0XhZG\nAt9XB/w28JawDTKlbAeu9+u/wLk4Ixiww3emcCAdb4W7zwpDFzcLx2d1Foce\nuQoTj1ZKnWDT0SxbTIlmQF+d8kDtz/N0iFe0GqwQlaugyepSLfN0woeB5Cht\nmcGI4y6JrY8YPcUjtjImYx932wHEQ8QUwCt128Ut2H0wI5r+/Y/AojkZtwx2\nFe3rJ/t+KTR5DPPfHrZIMJ16leXxauugV/Yg0nn4KbqkXibSNU4rkf/Og/5X\nfOl+MbPjAYY71BBLE+7BH9Vw9bWWC3GgFc3kFMAGdeUFhJtIPWLF70qfx3Ad\nYj5eeSvB2AKEEjrfCg0CvHdDnbVktRubKSldcg4lPp6G7GZjCGUvPeS+hQrm\n7pku4d0yfgUDKQVSu5nPoTGaQCD6aadJe6XZsE7EQluzeKToCZE+nHFk3KJg\nVMRIrAPUi8L5164igE7WdlqfbD3YQ85GLDpGR4FfPJLJ542A5HW9ZZutom5e\nSVme4vdiNvKwdZhjSKBbOlsfAg0f4HlVjOF72VfO8YZcP+L3j+xtDSTRlIDa\nQxeLNvs9j6x1J7pBxUDuWlwF4vfoDN5jol8yaI+4amiTFYLQuPZYET4MfS4S\n11XUub6ze1rB202bv3rnO2nSUEf/TkmVaZy3LmGgSJz3dubl4DFd/fwlwwAY\n64T4\r\n=Gh5o\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-dep-nesting-z_1.0.0_1602714678939_0.016293477521818645"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-10-14T22:31:18.891Z",
+    "1.0.0": "2020-10-14T22:31:19.051Z",
+    "modified": "2020-10-14T22:31:21.358Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

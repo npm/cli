@@ -1,0 +1,2253 @@
+{
+  "_id": "spawn-wrap",
+  "_rev": "45-1ad1a27b986b2eab203a95b4766a44f0",
+  "name": "spawn-wrap",
+  "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "spawn-wrap",
+      "version": "0.0.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "which": "^1.0.9"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "df53fd88c6853ef5d5d1288ebd3e11b1ec709b01",
+      "_id": "spawn-wrap@0.0.0",
+      "_shasum": "47c032ae164e446b303f38da23d0699a9e810a64",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "47c032ae164e446b303f38da23d0699a9e810a64",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "spawn-wrap",
+      "version": "0.0.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "978b17ca5d7c3d357b4acf16eec7de3385614169",
+      "_id": "spawn-wrap@0.0.1",
+      "_shasum": "9f3ad1eae82c6b83f24657d7a7aa6379a93daef1",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "9f3ad1eae82c6b83f24657d7a7aa6379a93daef1",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "spawn-wrap",
+      "version": "0.0.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "53ad64f28bc6461b16cfd8aec60eae092532892b",
+      "_id": "spawn-wrap@0.0.2",
+      "_shasum": "59e9c1b5239f65981c612a80b4008926a18cf08f",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "59e9c1b5239f65981c612a80b4008926a18cf08f",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "spawn-wrap",
+      "version": "0.0.3",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "b627739c83c2e7775af6166779a9df4fbcd747e9",
+      "_id": "spawn-wrap@0.0.3",
+      "_shasum": "6ca1bedd08f2f0ecf55675a98ce1fb839b16d7aa",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "6ca1bedd08f2f0ecf55675a98ce1fb839b16d7aa",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "spawn-wrap",
+      "version": "0.0.4",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "e372eacc4c4bcf72cb20d3e1ad38e7252f04ee1d",
+      "_id": "spawn-wrap@0.0.4",
+      "_shasum": "5400ff35e6bcd8a5f95e56c2bb6d3a66f1507f30",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "5400ff35e6bcd8a5f95e56c2bb6d3a66f1507f30",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "spawn-wrap",
+      "version": "0.0.5",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "ef8560533f22e9b6d0506c86819ea27184708ac3",
+      "_id": "spawn-wrap@0.0.5",
+      "_shasum": "f0c73c59b70e0489151e507b3451f801cb329949",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "f0c73c59b70e0489151e507b3451f801cb329949",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "spawn-wrap",
+      "version": "0.0.6",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "743bb8a40197b5aedf20b61e02cc8e62fea4e9bb",
+      "_id": "spawn-wrap@0.0.6",
+      "_shasum": "1ffb9b59086fa00e5c20814fb74af5ff09b37c6a",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "1ffb9b59086fa00e5c20814fb74af5ff09b37c6a",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "spawn-wrap",
+      "version": "0.0.7",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "b79c252ea473954af03fd8d4abdc5b664f4480a7",
+      "_id": "spawn-wrap@0.0.7",
+      "_shasum": "fde8ac755c3de167c600b0b1a0c90e514c04e916",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "fde8ac755c3de167c600b0b1a0c90e514c04e916",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.8": {
+      "name": "spawn-wrap",
+      "version": "0.0.8",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "3b526c4adcf86b9f2b922e91fb53b16eb3337591",
+      "_id": "spawn-wrap@0.0.8",
+      "_shasum": "dd1d0325fbfdd6709b6125a3bed58f6b25cc1293",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "dd1d0325fbfdd6709b6125a3bed58f6b25cc1293",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.9": {
+      "name": "spawn-wrap",
+      "version": "0.0.9",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3"
+      },
+      "devDependencies": {},
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "372543dea960b0dddd7cb570913b4a430e0e25d0",
+      "_id": "spawn-wrap@0.0.9",
+      "_shasum": "4a8f5f6c76b73569e25f254e5d54df34e8cffeb4",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "4a8f5f6c76b73569e25f254e5d54df34e8cffeb4",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.0.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "spawn-wrap",
+      "version": "0.1.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^1.1.0"
+      },
+      "scripts": {
+        "test": "node t.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "0ae914a34d40b7fe11acf468df64ec46cc7d9ca0",
+      "_id": "spawn-wrap@0.1.0",
+      "_shasum": "e52dc6f2851ddf399696560d711988fc4460b7d7",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "e52dc6f2851ddf399696560d711988fc4460b7d7",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "spawn-wrap",
+      "version": "0.1.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^1.1.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "c5fe31bdc34653f1fcb5d7b35529d2880edb6101",
+      "_id": "spawn-wrap@0.1.1",
+      "_shasum": "e473f6b89633582a16965c7ade4ece776263798b",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "e473f6b89633582a16965c7ade4ece776263798b",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "spawn-wrap",
+      "version": "0.1.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^1.1.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "gitHead": "9fca84847c6ff030b99443dd8b1f8825613b0abd",
+      "_id": "spawn-wrap@0.1.2",
+      "_shasum": "30f2acc990acbb42ddf4070b11452b2c6746b3e8",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "30f2acc990acbb42ddf4070b11452b2c6746b3e8",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "spawn-wrap",
+      "version": "1.0.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.2.0",
+        "mkdirp": "^0.5.0",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^1.1.0"
+      },
+      "gitHead": "7bbb291c966a519d9fb679c6dde67bae8bc28a11",
+      "_id": "spawn-wrap@1.0.1",
+      "_shasum": "4c9354ed2a37f7e05b367cc01627d16833e06ebb",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "4c9354ed2a37f7e05b367cc01627d16833e06ebb",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "spawn-wrap",
+      "version": "1.0.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.2.0",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^1.1.0"
+      },
+      "gitHead": "c3a6bef28926ab742f6980696568a1f2092f39c6",
+      "_id": "spawn-wrap@1.0.2",
+      "_shasum": "cbaf4bfbb7c8afed33d525d07f57807e7068dafa",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "cbaf4bfbb7c8afed33d525d07f57807e7068dafa",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "spawn-wrap",
+      "version": "1.1.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.2.0",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "d8c253d649dbad3d36db79add0746521d391c864",
+      "_id": "spawn-wrap@1.1.0",
+      "_shasum": "ff4b5bb3d8dcb68509246b0dbe62d450acc66a41",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "ff4b5bb3d8dcb68509246b0dbe62d450acc66a41",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "spawn-wrap",
+      "version": "1.1.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "093ae78055e3bee92bc389add7996d1c3ddbf358",
+      "_id": "spawn-wrap@1.1.1",
+      "_shasum": "df571dad7c8e95ec04fa36b2cc2a95f7321e330b",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "df571dad7c8e95ec04fa36b2cc2a95f7321e330b",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "spawn-wrap",
+      "version": "1.2.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "e2912afc69a645a9935ecb2488d0d1f4a32f5254",
+      "_id": "spawn-wrap@1.2.0",
+      "_shasum": "85652ae9bda54d0410eec98b8874634882d3b84e",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "85652ae9bda54d0410eec98b8874634882d3b84e",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.2.0.tgz_1459830062928_0.556101021822542"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "spawn-wrap",
+      "version": "1.2.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "5edfb6a0a21e0c4f512824a69ee65a4eb8f128a5",
+      "_id": "spawn-wrap@1.2.1",
+      "_shasum": "54e1910d7d92a42eb53760c73af16dc41c7a13f6",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "54e1910d7d92a42eb53760c73af16dc41c7a13f6",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.2.1.tgz_1460017325160_0.5502813695929945"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "spawn-wrap",
+      "version": "1.2.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "5b6a6ef733def77b09434fac990bb4679b1acfb1",
+      "_id": "spawn-wrap@1.2.2",
+      "_shasum": "6c9e5b1338602ed61dfe5192ed9699253d8f8418",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "6c9e5b1338602ed61dfe5192ed9699253d8f8418",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.2.2.tgz_1462149370081_0.7261899991426617"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "spawn-wrap",
+      "version": "1.2.3",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "cacf8b9428ea55eed00de7e9847d2a054526b5fb",
+      "_id": "spawn-wrap@1.2.3",
+      "_shasum": "df7d3447fb4a019619a41f68ee642a718e6062e9",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "df7d3447fb4a019619a41f68ee642a718e6062e9",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.2.3.tgz_1463088757285_0.10853318148292601"
+      },
+      "directories": {}
+    },
+    "1.2.4": {
+      "name": "spawn-wrap",
+      "version": "1.2.4",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^2.3.0"
+      },
+      "gitHead": "9e68d01d34b8d9bf6db182feae8472971b9723e3",
+      "_id": "spawn-wrap@1.2.4",
+      "_shasum": "920eb211a769c093eebfbd5b0e7a5d2e68ab2e40",
+      "_from": ".",
+      "_npmVersion": "3.10.2",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "920eb211a769c093eebfbd5b0e7a5d2e68ab2e40",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.2.4.tgz_1468215828135_0.47862559952773154"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "spawn-wrap",
+      "version": "1.3.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^8.0.1"
+      },
+      "gitHead": "626921797514bd173bd47ab0c4394a4540758a8c",
+      "_id": "spawn-wrap@1.3.0",
+      "_shasum": "ab125df026c4a4542fac1b816d4d49bf323e2b1c",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "ab125df026c4a4542fac1b816d4d49bf323e2b1c",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.0.tgz_1481848149130_0.6438776191789657"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "spawn-wrap",
+      "version": "1.3.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.3.3",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^8.0.1"
+      },
+      "files": [
+        "index.js",
+        "shim.js"
+      ],
+      "gitHead": "0df221c407f15905e3fbb1ffe62fcb74c3304eeb",
+      "_id": "spawn-wrap@1.3.1",
+      "_shasum": "8f0352e19747a650871f03f294fbe0003062f4c0",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "8f0352e19747a650871f03f294fbe0003062f4c0",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.1.tgz_1481848373800_0.8428677457850426"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "spawn-wrap",
+      "version": "1.3.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^8.0.1"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "8e617ed9d1a2fb29550868cfc13b151082d175fb",
+      "_id": "spawn-wrap@1.3.2",
+      "_shasum": "b831ed9c553e64b981858279d81b12857414b347",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "b831ed9c553e64b981858279d81b12857414b347",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.2.tgz_1481955466348_0.9118107166141272"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "spawn-wrap",
+      "version": "1.3.3",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^8.0.1"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "0994e686fbe50d4164958e9aa36ba1af704e6d1b",
+      "_id": "spawn-wrap@1.3.3",
+      "_shasum": "d5354fffea8de99f3b352dc40edb55ec0a2aa646",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "d5354fffea8de99f3b352dc40edb55ec0a2aa646",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.3.tgz_1482036679659_0.028074091533198953"
+      },
+      "directories": {}
+    },
+    "1.3.4": {
+      "name": "spawn-wrap",
+      "version": "1.3.4",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^2.0.0",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^8.0.1"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "c971bb1a70f740cc1aa1881e8a763c04eb61dd98",
+      "_id": "spawn-wrap@1.3.4",
+      "_shasum": "5d133070fef81cd26d8259acaa07fc1a86fd45dc",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "5d133070fef81cd26d8259acaa07fc1a86fd45dc",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.4.tgz_1482175944836_0.5164893551263958"
+      },
+      "directories": {}
+    },
+    "1.3.5": {
+      "name": "spawn-wrap",
+      "version": "1.3.5",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^3.0.2",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.1.0"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "be41ecf9bb5a4192608abbabc86809021fe7acbe",
+      "_id": "spawn-wrap@1.3.5",
+      "_npmVersion": "5.0.0-beta.33",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-rLVX04UPU8qtLjF7krYJkX4g6tevCk+8dA29OU5sM8xBO22n1aThXD8EqM4yZdUiqo5gWSja+2xfYdMQUOvYxA==",
+        "shasum": "2efc49df38ba8a6574b51f41acc5c539a486bfd3",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/spawn-wrap-1.3.5.tgz_1493957843144_0.5081404231023043"
+      },
+      "directories": {}
+    },
+    "1.3.6": {
+      "name": "spawn-wrap",
+      "version": "1.3.6",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^3.0.2",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.1.0"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "20db7c69a8759b84a9a665060bce18fb22b605b4",
+      "_id": "spawn-wrap@1.3.6",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-5bEhZ11kqwoECJwfbur2ALU1NBnnCNbFzdWGHEXCiSsVhH+Ubz6eesa1DuQcm05pk38HknqP556f3CFhqws2ZA==",
+        "shasum": "ccec4a949d8ce7e2b1a35cf4671d683d2e76a1d1",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.3.6.tgz_1496365535378_0.07606288767419755"
+      },
+      "directories": {}
+    },
+    "1.3.7": {
+      "name": "spawn-wrap",
+      "version": "1.3.7",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^3.0.2",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.1.0"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "54a5298b8b1dbfbd3541652b35fd19516d30825c",
+      "_id": "spawn-wrap@1.3.7",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-c6AuvXDY4RNJADMNtmCooVPzd502EQ4bQ8ZAy3zGehRVFp8YAIgST0IsYobVMgVNRWfrYh7jB2pwq/YBvZJAJQ==",
+        "shasum": "beb8bf4426d64b2b06871e0d7dee2643f1f8d1bc",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.7.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.3.7.tgz_1498408570752_0.866871741367504"
+      },
+      "directories": {}
+    },
+    "1.3.8": {
+      "name": "spawn-wrap",
+      "version": "1.3.8",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^3.0.2",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.1.0"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "4b269f316e8da220fab8449f0fe60d34813db027",
+      "_id": "spawn-wrap@1.3.8",
+      "_npmVersion": "5.1.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-Yfkd7Yiwz4RcBPrDWzvhnTzQINBHNqOEhUzOdWZ67Y9b4wzs3Gz6ymuptQmRBpzlpOzroM7jwzmBdRec7JJ0UA==",
+        "shasum": "fa2a79b990cbb0bb0018dca6748d88367b19ec31",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.3.8.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.3.8.tgz_1499381746040_0.7410448391456157"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "spawn-wrap",
+      "version": "1.4.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.3.3",
+        "signal-exit": "^3.0.2",
+        "which": "^1.2.4"
+      },
+      "scripts": {
+        "test": "tap --timeout=240 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.7.2"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "105fe79ba8acf28cd7d14def699f39d72aa2a720",
+      "_id": "spawn-wrap@1.4.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-2ASeXMB5TG+beYge/4QKZUrYoOtyFBnyUjcOXrDOQbCVgGRjfX0gvk9gs8sXuLtdkpx9Hv0a5TVeZQ/gVpanag==",
+        "shasum": "1e9f4061edc4ea37464ff28f6ef5c0f541f9f978",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.4.0.tgz_1508180567620_0.8835891380440444"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "spawn-wrap",
+      "version": "1.4.1",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.6.2",
+        "signal-exit": "^3.0.2",
+        "which": "^1.3.0"
+      },
+      "scripts": {
+        "test": "tap --timeout=240 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.7.3"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "56fc815fe949f571637e6a46382cc40aa11518de",
+      "_id": "spawn-wrap@1.4.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-QVNc3SeChKxc5ZUM3IGD7PsX6olPkdMFXHJ0UdjU3UBAKPRAiuSPCwvy8+lX2V9+LvqY5hFn8emdRuq3dUGPGw==",
+        "shasum": "36156a4826cd633766eb22325a9424eed6728a43",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.4.1.tgz_1510872564060_0.07332086539827287"
+      },
+      "directories": {}
+    },
+    "1.4.2": {
+      "name": "spawn-wrap",
+      "version": "1.4.2",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.6.2",
+        "signal-exit": "^3.0.2",
+        "which": "^1.3.0"
+      },
+      "scripts": {
+        "test": "tap --timeout=240 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.7.3"
+      },
+      "files": [
+        "index.js",
+        "shim.js",
+        "lib/is-windows.js"
+      ],
+      "gitHead": "7931ab5ca8732468efb115fc23b89cd7d96c5550",
+      "_id": "spawn-wrap@1.4.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-vMwR3OmmDhnxCVxM8M+xO/FtIp6Ju/mNaDfCMMW7FDcLRTPFWUswec4LXJHTJE2hwTI9O0YBfygu4DalFl7Ylg==",
+        "shasum": "cff58e73a8224617b6561abdc32586ea0c82248c",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap-1.4.2.tgz_1512509967799_0.26208659587427974"
+      },
+      "directories": {}
+    },
+    "1.4.3": {
+      "name": "spawn-wrap",
+      "version": "1.4.3",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "dependencies": {
+        "foreground-child": "^1.5.6",
+        "mkdirp": "^0.5.0",
+        "os-homedir": "^1.0.1",
+        "rimraf": "^2.6.2",
+        "signal-exit": "^3.0.2",
+        "which": "^1.3.0"
+      },
+      "scripts": {
+        "test": "tap --timeout=240 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/isaacs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^10.7.3"
+      },
+      "gitHead": "4c61241fea693761457b2eb7508099ba4519918e",
+      "_id": "spawn-wrap@1.4.3",
+      "_nodeVersion": "11.15.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-IgB8md0QW/+tWqcavuFgKYR/qIRvJkRLPJDFaoXtLLUaVcCDK0+HeFTkmQHj3eprcYhc+gOl0aEA1w7qZlYezw==",
+        "shasum": "81b7670e170cca247d80bf5faf0cfb713bdcf848",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-1.4.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 24505,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdYEXoCRA9TVsSAnZWagAAatUP/ivhaFlB+epK7tVbzsE4\nTJ3R19259HHk3txukGN0Mxcss6EYVMWLUzsUY01YNBfay1j15WCAAMyr5F0m\ndRoBMkmJ7G2IpYbfPOc4bVXM3I9ZcM0841Ilm1fIg6+mdxDBdyKZJCPjDuBg\n+hPTG4g4cehBtPyn+qM4aEzYrOQrdll1UpBZ0xCv0JNkiCGRDsCBA6S/2LLq\nD00cT3xXd8WgFlwcLeQtKvRsdrlYz7HE1Zdgdc4/0DyXt18QCyJiAdqcxRHi\nVnibWgM2qIMc6lXN11m56nha7hPBWnkqy/vIzdtoa2KhoHoOqczju9qw6yvT\nJS3LvVtRJjK9OUBkQY5SZyRL4g2hhlxRvllfIUCv8LT2WeF4QjGuabc+fb/H\nyTM73l/gClSoJpM79M7181IstxlMDRoVLzYjmgX0vYuHi7N2bQM3RTSg3hPA\nMUW7aor5hB4vKaBhgXCnDhzrk9HuxM5jOTaqcM1lrJtZSyzAIE6yN5wlTVh/\nkyW7/xEa9BVCJF6BnPP8kv9Ea9ohWAruyaCg8wYJGGcAXoQn9qbbQTUnxpC8\nrg9aGG/K+Jx6IjJlYa9yygGjkr2zZDs0vIuPJD7uivTnDZhumpqY4UL3+XTg\nTiXf+1aULRT+6Cev+cT5/6g1OV4YCEvRmHGlQHsVpSiD00DqymOZ0NJJOnUW\nisFP\r\n=/N7Y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "bcoe",
+        "email": "bencoe@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap_1.4.3_1566590440263_0.07179341045516385"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0-beta.0": {
+      "name": "spawn-wrap",
+      "version": "2.0.0-beta.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {
+        "foreground-child": "^2.0.0",
+        "is-windows": "^1.0.2",
+        "make-dir": "^3.0.0",
+        "rimraf": "^3.0.0",
+        "signal-exit": "^3.0.2",
+        "which": "^2.0.1"
+      },
+      "scripts": {
+        "test": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/spawn-wrap#readme",
+      "devDependencies": {
+        "tap": "^14.6.9"
+      },
+      "tap": {
+        "coverage": false,
+        "timeout": 240
+      },
+      "readme": "# spawn-wrap\n\nWrap all spawned Node.js child processes by adding environs and\narguments ahead of the main JavaScript file argument.\n\nAny child processes launched by that child process will also be\nwrapped in a similar fashion.\n\nThis is a bit of a brutal hack, designed primarily to support code\ncoverage reporting in cases where tests or the system under test are\nloaded via child processes rather than via `require()`.\n\nIt can also be handy if you want to run your own mock executable\ninstead of some other thing when child procs call into it.\n\n[![Build Status](https://travis-ci.org/istanbuljs/spawn-wrap.svg)](https://travis-ci.org/istanbuljs/spawn-wrap)\n\n## USAGE\n\n```javascript\nvar wrap = require('spawn-wrap')\n\n// wrap(wrapperArgs, environs)\nvar unwrap = wrap(['/path/to/my/main.js', 'foo=bar'], { FOO: 1 })\n\n// later to undo the wrapping, you can call the returned function\nunwrap()\n```\n\nIn this example, the `/path/to/my/main.js` file will be used as the\n\"main\" module, whenever any Node or io.js child process is started,\nwhether via a call to `spawn` or `exec`, whether node is invoked\ndirectly as the command or as the result of a shebang `#!` lookup.\n\nIn `/path/to/my/main.js`, you can do whatever instrumentation or\nenvironment manipulation you like.  When you're done, and ready to run\nthe \"real\" main.js file (ie, the one that was spawned in the first\nplace), you can do this:\n\n```javascript\n// /path/to/my/main.js\n// process.argv[1] === 'foo=bar'\n// and process.env.FOO === '1'\n\n// my wrapping manipulations\nsetupInstrumentationOrCoverageOrWhatever()\nprocess.on('exit', function (code) {\n  storeCoverageInfoSynchronously()\n})\n\n// now run the instrumented and covered or whatever codes\nrequire('spawn-wrap').runMain()\n```\n\n## ENVIRONMENT VARIABLES\n\nSpawn-wrap responds to two environment variables, both of which are\npreserved through child processes.\n\n`SPAWN_WRAP_DEBUG=1` in the environment will make this module dump a\nlot of information to stderr.\n\n`SPAWN_WRAP_SHIM_ROOT` can be set to a path on the filesystem where\nthe shim files are written in a `.node-spawn-wrap-<id>` folder.  By\ndefault this is done in `$HOME`, but in some environments you may wish\nto point it at some other root.  (For example, if `$HOME` is mounted\nas read-only in a virtual machine or container.)\n\n## CONTRACTS and CAVEATS\n\nThe initial wrap call uses synchronous I/O.  Probably you should not\nbe using this script in any production environments anyway.\n\nAlso, this will slow down child process execution by a lot, since\nwe're adding a few layers of indirection.\n\nThe contract which this library aims to uphold is:\n\n* Wrapped processes behave identical to their unwrapped counterparts\n  for all intents and purposes.  That means that the wrapper script\n  propagates all signals and exit codes.\n* If you send a signal to the wrapper, the child gets the signal.\n* If the child exits with a numeric status code, then the wrapper\n  exits with that code.\n* If the child dies with a signal, then the wrapper dies with the\n  same signal.\n* If you execute any Node child process, in any of the various ways\n  that such a thing can be done, it will be wrapped.\n* Children of wrapped processes are also wrapped.\n\n(Much of this made possible by\n[foreground-child](http://npm.im/foreground-child).)\n\nThere are a few ways situations in which this contract cannot be\nadhered to, despite best efforts:\n\n1. In order to handle cases where `node` is invoked in a shell script,\n   the `PATH` environment variable is modified such that the the shim\n   will be run before the \"real\" node.  However, since Windows does\n   not allow executing shebang scripts like regular programs, a\n   `node.cmd` file is required.\n2. Signal propagation through `dash` doesn't always work.  So, if you\n   use `child_process.exec()` on systems where `/bin/sh` is actually\n   `dash`, then the process may exit with a status code > 128 rather\n   than indicating that it received a signal.\n3. `cmd.exe` is even stranger with how it propagates and interprets\n   unix signals.  If you want your programs to be portable, then\n   probably you wanna not rely on signals too much.\n4. It *is* possible to escape the wrapping, if you spawn a bash\n   script, and that script modifies the `PATH`, and then calls a\n   specific `node` binary explicitly.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "1290902b81308dd69d808db212f87a52200f405b",
+      "_id": "spawn-wrap@2.0.0-beta.0",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-+OnyE0FMILTdw9d5nph0v0Y0QqMhWyDAxm2qjX0bVyr+ztLhd/YTn6nmqfM9RV1g60gAK2UcU4jNagFIh7Lj4w==",
+        "shasum": "2919174655b6ab5b753799cb305ceb7ec5ac078e",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-2.0.0-beta.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 34077,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmp9TCRA9TVsSAnZWagAAZOMP/ivsDYILq1SJa0ERCHDn\na2y45VVJIV8QS/5yg11yFW6VDA70SRhhCPJNZYajJs4qN4YgHsg9fbA2t9oM\nX35E9lusCcdBG2Bq1dQ0ENMMFyZqQnvsy0SglAPTs+GwFCfycdV/TZWQZO3E\noyIgPOTA0ohz+tuDzAee2oz87aqDWqQgCnsYBCjVIPqLbdq6rQyVBxNH+nvn\n7YOmGqMeJDCCR8kjtvTnPaHdmSbjmpPmZJRAXQ4mO5WsDF8jm1wx+0+lde8z\nRP3FS+qHrJjbVRbg3UNkMLLkHqHiwa9hTAmvEdUomGVWx/Ox2Qu3uswZiO21\nBV9ETQyEGb/D2aYh/kfr6JfUznBHvAJ/ElPPnBoxaKfmzJs/MDSJflmDw3tr\nrWJqYw6SPqdY8+5ZSe0UZ72sMOm+F1N1mtTEolr3LikoxYZg2Y8gKTG1GSqH\nI5NLb1lFJiGYNn3F2yJcS+LlNVlYgz9bR1xQ51JmOsB4bGu7jvLcK6cMPO1t\nCw0ZIckw7L/Bt1j2thkLmXc+UpbStCV/0UvTFg7Zc+AVgSKBst1ree9ldr05\njOGIpfgR6hLwfkKy86FeMgUORsEnfZA5BLvD6bWR+AVN8k+DhAcw+v0HQn/C\nmeE+chB5DsUBIkJvAueE40d9GfTJcKNlPkNHHR8qv43zpkNZQAb/gkRfAmD8\ncNM4\r\n=nsBw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap_2.0.0-beta.0_1570414418604_0.777711995965416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "spawn-wrap",
+      "version": "2.0.0",
+      "description": "Wrap all spawned Node.js child processes by adding environs and arguments ahead of the main JavaScript file argument.",
+      "main": "index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "dependencies": {
+        "foreground-child": "^2.0.0",
+        "is-windows": "^1.0.2",
+        "make-dir": "^3.0.0",
+        "rimraf": "^3.0.0",
+        "signal-exit": "^3.0.2",
+        "which": "^2.0.1"
+      },
+      "scripts": {
+        "test": "tap",
+        "release": "standard-version",
+        "clean": "rm -rf ~/.node-spawn-wrap-*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/spawn-wrap.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/spawn-wrap/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/spawn-wrap#readme",
+      "devDependencies": {
+        "standard-version": "^7.1.0",
+        "tap": "^14.10.5"
+      },
+      "tap": {
+        "coverage": false,
+        "timeout": 240
+      },
+      "gitHead": "c1c6cea28dc9d6760ae2c4eebeff8a60a80d7fd7",
+      "_id": "spawn-wrap@2.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-EeajNjfN9zMnULLwhZZQU3GWBoFNkbngTUPfaawT4RkMiviTxcX0qfhVbGey39mfctfDHkWtuecgQ8NJcyQWHg==",
+        "shasum": "103685b8b8f9b79771318827aa78650a610d457e",
+        "tarball": "https://registry.npmjs.org/spawn-wrap/-/spawn-wrap-2.0.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 34123,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd/OgVCRA9TVsSAnZWagAAiMwQAJ40E27iNnK7SqsWc7JH\n6cgzKJOFjjeQluj/G3mEd3LwXMh1ZI9PhhOiUxBfX+5z0E6vTnp3twlUkKaY\nBd08dtOKsj1a0Sw751hizW2vzJCK+WdZ28eB44RrZMaKLsE9h0D3uW7W9Kdd\n4lMRAYnFqpWWNy2Qt2trfF4MBJ4+zlyKXZJ7BTp3RHu5VGlku2NEIJaILaEO\nUeH8Fc4zB+RNudzQYY6QT1W6Ka/9ddoLJDUJDPdwna0yXuG8kCTe7PoenVao\nupUAUhNAnYx9R4M7S8+1UtSSk3oE40QfKF/fxYDITGEfgB8ENCj8epIZLowz\naqbbi7+ZenITK4DhCI2Qan3ta4IBXsNqvPkvI0C6KA9oIDj96ZpR5VX60it1\nb1I3P3NQrTxBsr1zyYjfGpj2PuzxK64+/RNk/E369HFYrDiGH0Pz/VBihduG\nLZqqJEJRzNwO9Sr+mMNxlWGQkrMQXU3sxtfeR+kP1FGeSCJS4ajwd8T2jNCF\nauCfegeoceY4CSbKGmiKMTaV5WK5UvojoxaH+XmRjt4bcD798nYdtTQ8WN7o\nvqwVLjKzEQtaVbQ8CxgRFbyAjp2qE3g0ADiyRqNPunqGJA1fKbHqsocnFvHi\nzkXMbIKOHvxShKlAfXqHNLVx6BfC4YWbhbHMhNehlgmrun5X+U8MJN3MjYef\npDTE\r\n=Xxm6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bencoe@gmail.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "git@cfware.com",
+          "name": "coreyfarrell"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spawn-wrap_2.0.0_1576855572911_0.8483195125626217"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# spawn-wrap\n\nWrap all spawned Node.js child processes by adding environs and\narguments ahead of the main JavaScript file argument.\n\nAny child processes launched by that child process will also be\nwrapped in a similar fashion.\n\nThis is a bit of a brutal hack, designed primarily to support code\ncoverage reporting in cases where tests or the system under test are\nloaded via child processes rather than via `require()`.\n\nIt can also be handy if you want to run your own mock executable\ninstead of some other thing when child procs call into it.\n\n[![Build Status](https://travis-ci.org/istanbuljs/spawn-wrap.svg)](https://travis-ci.org/istanbuljs/spawn-wrap)\n\n## USAGE\n\n```javascript\nvar wrap = require('spawn-wrap')\n\n// wrap(wrapperArgs, environs)\nvar unwrap = wrap(['/path/to/my/main.js', 'foo=bar'], { FOO: 1 })\n\n// later to undo the wrapping, you can call the returned function\nunwrap()\n```\n\nIn this example, the `/path/to/my/main.js` file will be used as the\n\"main\" module, whenever any Node or io.js child process is started,\nwhether via a call to `spawn` or `exec`, whether node is invoked\ndirectly as the command or as the result of a shebang `#!` lookup.\n\nIn `/path/to/my/main.js`, you can do whatever instrumentation or\nenvironment manipulation you like.  When you're done, and ready to run\nthe \"real\" main.js file (ie, the one that was spawned in the first\nplace), you can do this:\n\n```javascript\n// /path/to/my/main.js\n// process.argv[1] === 'foo=bar'\n// and process.env.FOO === '1'\n\n// my wrapping manipulations\nsetupInstrumentationOrCoverageOrWhatever()\nprocess.on('exit', function (code) {\n  storeCoverageInfoSynchronously()\n})\n\n// now run the instrumented and covered or whatever codes\nrequire('spawn-wrap').runMain()\n```\n\n## ENVIRONMENT VARIABLES\n\nSpawn-wrap responds to two environment variables, both of which are\npreserved through child processes.\n\n`SPAWN_WRAP_DEBUG=1` in the environment will make this module dump a\nlot of information to stderr.\n\n`SPAWN_WRAP_SHIM_ROOT` can be set to a path on the filesystem where\nthe shim files are written in a `.node-spawn-wrap-<id>` folder.  By\ndefault this is done in `$HOME`, but in some environments you may wish\nto point it at some other root.  (For example, if `$HOME` is mounted\nas read-only in a virtual machine or container.)\n\n## CONTRACTS and CAVEATS\n\nThe initial wrap call uses synchronous I/O.  Probably you should not\nbe using this script in any production environments anyway.\n\nAlso, this will slow down child process execution by a lot, since\nwe're adding a few layers of indirection.\n\nThe contract which this library aims to uphold is:\n\n* Wrapped processes behave identical to their unwrapped counterparts\n  for all intents and purposes.  That means that the wrapper script\n  propagates all signals and exit codes.\n* If you send a signal to the wrapper, the child gets the signal.\n* If the child exits with a numeric status code, then the wrapper\n  exits with that code.\n* If the child dies with a signal, then the wrapper dies with the\n  same signal.\n* If you execute any Node child process, in any of the various ways\n  that such a thing can be done, it will be wrapped.\n* Children of wrapped processes are also wrapped.\n\n(Much of this made possible by\n[foreground-child](http://npm.im/foreground-child).)\n\nThere are a few ways situations in which this contract cannot be\nadhered to, despite best efforts:\n\n1. In order to handle cases where `node` is invoked in a shell script,\n   the `PATH` environment variable is modified such that the the shim\n   will be run before the \"real\" node.  However, since Windows does\n   not allow executing shebang scripts like regular programs, a\n   `node.cmd` file is required.\n2. Signal propagation through `dash` doesn't always work.  So, if you\n   use `child_process.exec()` on systems where `/bin/sh` is actually\n   `dash`, then the process may exit with a status code > 128 rather\n   than indicating that it received a signal.\n3. `cmd.exe` is even stranger with how it propagates and interprets\n   unix signals.  If you want your programs to be portable, then\n   probably you wanna not rely on signals too much.\n4. It *is* possible to escape the wrapping, if you spawn a bash\n   script, and that script modifies the `PATH`, and then calls a\n   specific `node` binary explicitly.\n",
+  "maintainers": [
+    {
+      "email": "bencoe@gmail.com",
+      "name": "bcoe"
+    },
+    {
+      "email": "git@cfware.com",
+      "name": "coreyfarrell"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-20T15:27:26.802Z",
+    "created": "2015-05-09T23:08:30.611Z",
+    "0.0.0": "2015-05-09T23:08:30.611Z",
+    "0.0.1": "2015-05-13T08:39:35.151Z",
+    "0.0.2": "2015-05-13T08:53:02.649Z",
+    "0.0.3": "2015-05-13T08:56:08.253Z",
+    "0.0.4": "2015-05-13T09:01:53.601Z",
+    "0.0.5": "2015-05-13T09:18:06.677Z",
+    "0.0.6": "2015-05-13T09:24:16.527Z",
+    "0.0.7": "2015-05-13T22:47:28.500Z",
+    "0.0.8": "2015-05-13T23:14:59.341Z",
+    "0.0.9": "2015-05-14T06:16:48.602Z",
+    "0.1.0": "2015-05-18T01:04:28.682Z",
+    "0.1.1": "2015-05-18T01:46:16.606Z",
+    "0.1.2": "2015-05-19T00:03:57.431Z",
+    "1.0.1": "2015-05-23T20:16:13.870Z",
+    "1.0.2": "2015-11-20T01:10:38.866Z",
+    "1.1.0": "2015-12-27T10:31:35.815Z",
+    "1.1.1": "2016-01-02T06:35:48.075Z",
+    "1.2.0": "2016-04-05T04:21:03.425Z",
+    "1.2.1": "2016-04-07T08:22:05.565Z",
+    "1.2.2": "2016-05-02T00:36:12.127Z",
+    "1.2.3": "2016-05-12T21:32:40.343Z",
+    "1.2.4": "2016-07-11T05:43:49.623Z",
+    "1.3.0": "2016-12-16T00:29:09.364Z",
+    "1.3.1": "2016-12-16T00:32:55.850Z",
+    "1.3.2": "2016-12-17T06:17:47.992Z",
+    "1.3.3": "2016-12-18T04:51:19.907Z",
+    "1.3.4": "2016-12-19T19:32:25.060Z",
+    "1.3.5": "2017-05-05T04:17:25.848Z",
+    "1.3.6": "2017-06-02T01:05:35.523Z",
+    "1.3.7": "2017-06-25T16:36:10.872Z",
+    "1.3.8": "2017-07-06T22:55:46.128Z",
+    "1.4.0": "2017-10-16T19:02:47.732Z",
+    "1.4.1": "2017-11-16T22:49:24.174Z",
+    "1.4.2": "2017-12-05T21:39:27.875Z",
+    "1.4.3": "2019-08-23T20:00:40.457Z",
+    "2.0.0-beta.0": "2019-10-07T02:13:38.750Z",
+    "2.0.0": "2019-12-20T15:26:13.087Z"
+  },
+  "homepage": "https://github.com/istanbuljs/spawn-wrap#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istanbuljs/spawn-wrap.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/spawn-wrap/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md"
+}

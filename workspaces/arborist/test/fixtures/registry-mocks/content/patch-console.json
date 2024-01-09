@@ -1,0 +1,134 @@
+{
+  "_id": "patch-console",
+  "name": "patch-console",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "patch-console",
+      "version": "1.0.0",
+      "description": "Patch console methods to intercept output",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vadimdemedes/patch-console.git"
+      },
+      "author": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com",
+        "url": "https://github.com/vadimdemedes"
+      },
+      "main": "build",
+      "types": "build/index.d.ts",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "prepare": "tsc",
+        "test": "prettier --check src && tsc && xo && ava"
+      },
+      "keywords": [
+        "stdout",
+        "stderr",
+        "patch",
+        "console",
+        "intercept",
+        "log",
+        "logs"
+      ],
+      "devDependencies": {
+        "@sindresorhus/tsconfig": "^0.7.0",
+        "@types/node": "^14.0.13",
+        "ava": "^3.9.0",
+        "prettier": "^2.0.5",
+        "sinon": "^9.0.2",
+        "typescript": "^3.9.5",
+        "xo": "^0.32.0"
+      },
+      "prettier": {
+        "useTabs": true,
+        "singleQuote": true,
+        "quoteProps": "as-needed",
+        "trailingComma": "none",
+        "bracketSpacing": false,
+        "arrowParens": "avoid"
+      },
+      "xo": {
+        "prettier": true
+      },
+      "ava": {
+        "serial": true
+      },
+      "gitHead": "4c35d6c4d340aff921dafc8ec54bd0a5e4b7f930",
+      "bugs": {
+        "url": "https://github.com/vadimdemedes/patch-console/issues"
+      },
+      "homepage": "https://github.com/vadimdemedes/patch-console#readme",
+      "_id": "patch-console@1.0.0",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-nxl9nrnLQmh64iTzMfyylSlRozL7kAXIaxw1fVcLYdyhNkJCRUzirRZTikXGJsg+hc4fqpneTK6iU2H1Q8THSA==",
+        "shasum": "19b9f028713feb8a3c023702a8cc8cb9f7466f9d",
+        "tarball": "https://registry.npmjs.org/patch-console/-/patch-console-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4728,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe56VYCRA9TVsSAnZWagAAjogQAIWGx6VkPPGNNR/FVG7I\n7x6psT4z+H89Laum9Ee5manBh0UTp5ZX8CTzpm5Gv2a+Y0Rpx8/7bbmuFUN6\n5pNCzr2OYSumQ5fhHvghsnEAV71Q7twIx+KapachC747xNoTBhfVCdFe+c4F\ngRU2InmS5p4fXoQjfdUqrz8+4k3SR/yTOtlNlCXfA1F89aDVlDiR16pASQit\njx/k6LjC2mxVqaeeS3Yb++pIX6aVDjqVes3vaMHZFSInKDtC+Opfwo31SzT/\n+O+ByPsxFjmjBgXGCN2zjArRqawk3bi5XKkZMsr1t/qhvPvrnJddaSg8h6wy\naCLmdZriHtjhkdHTDykBOHAf00F3jmZz3/1OUCkvgm4GwStk007gPaevpFjg\nBAUpazzEfS7hTOiQaFoqW2NXJfUXE2mHbcmMAevpfkn/M0vb0FqLNivHe2He\nzBxM6dzWUAdS4UlrK57o5d6+PaVBajsEwpPcnx6BaunLJS3FfY0ZWZJ2fDWF\nIyCQDdhsVxMUCyV9ywnW1ZZz/BHf/Leffp94TQ1VkmH+DGvIanfLscKuwamD\necYK4LfGPT7n8UETb8kULPXWNswsyDDoai46WqUPlrbZJ91J1swW2bDTxVq5\nPedxl3NwyVZNwliG8EjlWqNs1bCob0BKYMSH/EiiAqatNxYlZfPjKLv18CxM\n+BZt\r\n=o8Hl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "vdemedes",
+          "email": "vdemedes@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "vdemedes",
+        "email": "vdemedes@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/patch-console_1.0.0_1592239447937_0.38488768892717573"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-06-15T16:44:07.936Z",
+    "1.0.0": "2020-06-15T16:44:08.060Z",
+    "modified": "2020-06-15T16:44:11.825Z"
+  },
+  "maintainers": [
+    {
+      "name": "vdemedes",
+      "email": "vdemedes@gmail.com"
+    }
+  ],
+  "description": "Patch console methods to intercept output",
+  "homepage": "https://github.com/vadimdemedes/patch-console#readme",
+  "keywords": [
+    "stdout",
+    "stderr",
+    "patch",
+    "console",
+    "intercept",
+    "log",
+    "logs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadimdemedes/patch-console.git"
+  },
+  "author": {
+    "name": "vdemedes",
+    "email": "vdemedes@gmail.com",
+    "url": "https://github.com/vadimdemedes"
+  },
+  "bugs": {
+    "url": "https://github.com/vadimdemedes/patch-console/issues"
+  },
+  "license": "MIT",
+  "readme": "# patch-console ![test](https://github.com/vadimdemedes/patch-console/workflows/test/badge.svg)\n\n> Patch console methods to intercept output\n\n## Install\n\n```\n$ npm install patch-console\n```\n\n## Usage\n\n```js\nconst patchConsole = require('patch-console');\n\nconst restore = patchConsole((stream, data) => {\n\t// stream = 'stdout'\n\t// data = \"Hello World\"\n});\n\nconsole.log('Hello World');\n\n// Restore original methods\nrestore();\n```\n\n## API\n\n### patchConsole(callback)\n\nAfter this function is called, output from console methods will be intercepted and won't show up in the actual stdout or stderr stream.\nTo restore original console methods and stop intercepting output, call the function which `patchConsole()` returns.\n\n#### callback\n\nType: `Function`\n\nFunction that will be called when output from one of the console methods is intercepted.\nFirst argument is name of the stream (`\"stdout\"` or `\"stderr\"`), second argument is output itself.\n\n## Console methods\n\nThis module intercepts the following methods:\n\n- `console.assert()`\n- `console.count()`\n- `console.countReset()`\n- `console.debug()`\n- `console.dir()`\n- `console.dirxml()`\n- `console.error()`\n- `console.group()`\n- `console.groupCollapsed()`\n- `console.groupEnd()`\n- `console.info()`\n- `console.log()`\n- `console.table()`\n- `console.time()`\n- `console.timeEnd()`\n- `console.timeLog()`\n- `console.trace()`\n- `console.warn()`\n",
+  "readmeFilename": "readme.md"
+}

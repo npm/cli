@@ -1,0 +1,5668 @@
+{
+  "_id": "base",
+  "_rev": "77-5bc827c9df35d30e8a731d178732e379",
+  "name": "base",
+  "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+  "dist-tags": {
+    "latest": "3.0.0",
+    "patch": "0.11.2"
+  },
+  "versions": {
+    "0.2.0": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.0",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.4",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "4ff98dec36793f6b3b80a4553b76c6887b64a021",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.1": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.1",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.1",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.4",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "e082b8cdbd4bd7412f52247bfa29e6594f3bdc9b",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.2": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.2",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.2",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.4",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "cb31d8cd1edf6c902af09ebc8835c3f6f569ac80",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.3": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.3",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.3",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.4",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "3a8fe22212ac77dbccc95454292ebc7da291fe3f",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.4": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.4",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.4",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "580614bbfecf54a233fcf7009423df7d97d6ac36",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.5": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.5",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.5",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "fc813a6b4a7b4986779a022d23840d090be3b559",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.2.6": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.2.6",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.0.1",
+        "slicer": ">=0.0.1",
+        "configr": ">=0.0.1",
+        "underscore": ">=0.0.1",
+        "async": ">=0.0.1"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.2.6",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "e619941ac71fc4b3e5516400359c71a074e0bbf0",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.2.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.3.0": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.3.0",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.coffee",
+      "dependencies": {
+        "coffee-script": "*",
+        "twister": "*",
+        "slicer": "*",
+        "configr": "*",
+        "underscore": "*",
+        "async": "*",
+        "connect": "*"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.3.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "96a6bb31f04cae6d16273b7609e4d1d64e82f9e5",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.4.0": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.4.0",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.coffee",
+      "dependencies": {
+        "coffee-script": "*",
+        "twister": "*",
+        "slicer": "*",
+        "configr": "*",
+        "underscore": "*",
+        "async": "*",
+        "connect": "*"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.4.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "cb91cc5121748dd6475099a5b21de5cbbe052feb",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.4.1": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.4.1",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.coffee",
+      "dependencies": {
+        "coffee-script": "*",
+        "twister": "*",
+        "slicer": "*",
+        "configr": "*",
+        "underscore": "*",
+        "async": "*",
+        "connect": "*"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.4.1",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "51eda9f25855a7b8234c9354553ba893f75c6501",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.4.2": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that integrates with connect.js",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.4.2",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.coffee",
+      "dependencies": {
+        "coffee-script": "*",
+        "twister": "*",
+        "slicer": "*",
+        "configr": "*",
+        "underscore": "*",
+        "async": "*",
+        "connect": "*"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.4.2",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "658e80d9ab946a4292d45e3cd3358990df1e1716",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.5.0": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework that build on connect.js and written in CoffeeScript.",
+      "keywords": [
+        "framework",
+        "coffeescript",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro",
+        "connect"
+      ],
+      "version": "0.5.0",
+      "homepage": "http://github.com/antz29/node-base",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.coffee",
+      "dependencies": {
+        "coffee-script": "*",
+        "twister": "*",
+        "slicer": "*",
+        "configr": "*",
+        "underscore": "*",
+        "async": "*",
+        "connect": "*"
+      },
+      "devDependencies": {},
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.5.0",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "74d3cfebc64c9445537a18cd68af7c99d9aa1234",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "0.6.3": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.6.3",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "class-utils": "^0.3.0",
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "define-property": "^0.2.5",
+        "get-value": "^2.0.2",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.2",
+        "to-object-path": "^0.2.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-data",
+            "base-fs",
+            "base-list",
+            "base-options",
+            "base-pipeline",
+            "base-plugins",
+            "base-questions",
+            "base-runner",
+            "base-store"
+          ]
+        },
+        "layout": "default"
+      },
+      "gitHead": "218f426e4bc0f5a071c79ad23aa15db45082f68f",
+      "_id": "base@0.6.3",
+      "_shasum": "1e234ad546e1738002fbcb363c69cb75d80da956",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1e234ad546e1738002fbcb363c69cb75d80da956",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.6.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.4": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.6.4",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "class-utils": "^0.3.0",
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "define-property": "^0.2.5",
+        "get-value": "^2.0.2",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.2",
+        "to-object-path": "^0.2.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-data",
+            "base-fs",
+            "base-list",
+            "base-options",
+            "base-pipeline",
+            "base-plugins",
+            "base-questions",
+            "base-runner",
+            "base-store"
+          ]
+        },
+        "layout": "default"
+      },
+      "gitHead": "2ad9bebdc5c68bedc76316416492542688166618",
+      "_id": "base@0.6.4",
+      "_shasum": "b47adefe1f195db2bdcfb0545911182124a4d83f",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b47adefe1f195db2bdcfb0545911182124a4d83f",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.6.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.5": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.6.5",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "class-utils": "^0.3.0",
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "define-property": "^0.2.5",
+        "get-value": "^2.0.3",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.2.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "layout": "default",
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-list",
+            "base-options",
+            "base-pipeline",
+            "base-plugins",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-tasks",
+            "base-tree"
+          ]
+        }
+      },
+      "gitHead": "db2339a634d8740d96faa455770371d24d8249ad",
+      "_id": "base@0.6.5",
+      "_shasum": "db9c8a3cce6dc0b4d5a27ee8084e9b9383cd503a",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "db9c8a3cce6dc0b4d5a27ee8084e9b9383cd503a",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.6.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.6": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.6.6",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "class-utils": "^0.3.0",
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "define-property": "^0.2.5",
+        "get-value": "^2.0.3",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.2.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "layout": "default",
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-list",
+            "base-options",
+            "base-pipeline",
+            "base-plugins",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-tasks",
+            "base-tree"
+          ]
+        }
+      },
+      "gitHead": "d2041f200f0782cf2ed2fbabbdfc904cdb285625",
+      "_id": "base@0.6.6",
+      "_shasum": "2a695cf0b8ef7b4981d7bf6f3ce3590ab07e9f88",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2a695cf0b8ef7b4981d7bf6f3ce3590ab07e9f88",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.6.6.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.7": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.6.7",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "class-utils": "^0.3.0",
+        "collection-visit": "^0.2.1",
+        "component-emitter": "^1.2.0",
+        "define-property": "^0.2.5",
+        "get-value": "^2.0.3",
+        "lazy-cache": "^1.0.3",
+        "set-value": "^0.3.3",
+        "to-object-path": "^0.2.0",
+        "unset-value": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "layout": "default",
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-list",
+            "base-options",
+            "base-pipeline",
+            "base-plugins",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-tasks",
+            "base-tree"
+          ]
+        }
+      },
+      "gitHead": "140773096c85a9ba02703a68b96fe29ca54aed5d",
+      "_id": "base@0.6.7",
+      "_shasum": "2c61c64831fb4f9d47795df3549cb4e203009b15",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2c61c64831fb4f9d47795df3549cb4e203009b15",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.6.7.tgz"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ]
+      },
+      "gitHead": "afaf2d50df353991b85b1ded0a362bb5ca1e4a63",
+      "_id": "base@0.7.0",
+      "_shasum": "984f0e6cd219a16d5fb72302fd9e6ceed612d7db",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "984f0e6cd219a16d5fb72302fd9e6ceed612d7db",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.0.tgz_1455045484832_0.480426728958264"
+      },
+      "directories": {}
+    },
+    "0.7.1": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ]
+      },
+      "gitHead": "afaf2d50df353991b85b1ded0a362bb5ca1e4a63",
+      "_id": "base@0.7.1",
+      "_shasum": "3d92ae14aa11d0757d33f4dee854b9456250fd4c",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3d92ae14aa11d0757d33f4dee854b9456250fd4c",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.1.tgz_1455049527363_0.7582545678596944"
+      },
+      "directories": {}
+    },
+    "0.7.2": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.2",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.0.0",
+        "gulp-format-md": "^0.1.5",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-mocha": "^2.1.3",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ]
+      },
+      "gitHead": "7e2d8ce0bb7f578396fc5803908c7fd0e729833c",
+      "_id": "base@0.7.2",
+      "_shasum": "a99740ac7465256f0e7b85f7d636f107373716c8",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "a99740ac7465256f0e7b85f7d636f107373716c8",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.2.tgz_1455250210413_0.5795364051591605"
+      },
+      "directories": {}
+    },
+    "0.7.3": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.3",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ]
+      },
+      "gitHead": "7da38bbb4a4071595f403b4cc25928414503880e",
+      "_id": "base@0.7.3",
+      "_shasum": "7a49821a35ca71b1a4ecff7b33a8ef24e7bd3bb1",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "7a49821a35ca71b1a4ecff7b33a8ef24e7bd3bb1",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.3.tgz_1455580590899_0.10626645898446441"
+      },
+      "directories": {}
+    },
+    "0.7.4": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.4",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "50c0b320b8a4732adc712b7978cebf2f7c261012",
+      "_id": "base@0.7.4",
+      "_shasum": "08c1f50e4083f965fdc661f27aea7eaf8d9281cf",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "08c1f50e4083f965fdc661f27aea7eaf8d9281cf",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.4.tgz_1455871799923_0.36892831535078585"
+      },
+      "directories": {}
+    },
+    "0.7.5": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.5",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "74905ba1b4a0254250ba5ef9b9e2db51108aca4b",
+      "_id": "base@0.7.5",
+      "_shasum": "4a0eb593569907f56b9202c82bf22c46f7e393a6",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "4a0eb593569907f56b9202c82bf22c46f7e393a6",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.5.tgz_1456153821865_0.4929722889792174"
+      },
+      "directories": {}
+    },
+    "0.7.6": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.6",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "44ad172a7a9a457a6c25182146039cf512e923c9",
+      "_id": "base@0.7.6",
+      "_shasum": "2f76bbdc84d8776030a238d64e00c938639cdd4b",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "2f76bbdc84d8776030a238d64e00c938639cdd4b",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.6.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.6.tgz_1456244336854_0.31709106266498566"
+      },
+      "directories": {}
+    },
+    "0.7.7": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.7",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "93a2675f0151921653b6bb9110dee3e9cc43d3b1",
+      "_id": "base@0.7.7",
+      "_shasum": "5c34a87dfcea82ec5685a65f3e4834a521c59ba5",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "5c34a87dfcea82ec5685a65f3e4834a521c59ba5",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.7.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.7.tgz_1456246814730_0.4145430545322597"
+      },
+      "directories": {}
+    },
+    "0.7.8": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.8",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "8ba13ba1e648ad6a6a88a1719cf802aa88b72337",
+      "_id": "base@0.7.8",
+      "_shasum": "89cc5002d5127539f235f9a345f71a0b1de09680",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "89cc5002d5127539f235f9a345f71a0b1de09680",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.8.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.8.tgz_1456248539473_0.14147012517787516"
+      },
+      "directories": {}
+    },
+    "0.7.9": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.9",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.0",
+        "class-utils": "^0.3.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.6",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "405417a8c72e5cbdf6630a247a87241217c07e4d",
+      "_id": "base@0.7.9",
+      "_shasum": "bd3cccb3bae5aa89403a6d0fd347c2c4429fa3c8",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "bd3cccb3bae5aa89403a6d0fd347c2c4429fa3c8",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.9.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.9.tgz_1456368731906_0.48132380400784314"
+      },
+      "directories": {}
+    },
+    "0.7.10": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.7.10",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.2",
+        "class-utils": "^0.3.2",
+        "component-emitter": "^1.2.0",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "696ac6f90a4dabfd14ae3f9677dd9d13fe17984b",
+      "_id": "base@0.7.10",
+      "_shasum": "92cac44e4b201283ac2a71132ded364f608eb2a4",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "92cac44e4b201283ac2a71132ded364f608eb2a4",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.7.10.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.7.10.tgz_1457560710028_0.4762375573627651"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.8.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.2",
+        "class-utils": "^0.3.2",
+        "component-emitter": "^1.2.0",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "76ea4356b48b8c3b52234296ac49d3a6e2417be5",
+      "_id": "base@0.8.0",
+      "_shasum": "3129ee07ed480163ad54a6c02bd7c0fa83e44211",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "3129ee07ed480163ad54a6c02bd7c0fa83e44211",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.8.0.tgz_1457687174300_0.32041160692460835"
+      },
+      "directories": {}
+    },
+    "0.8.1": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.8.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.2",
+        "class-utils": "^0.3.2",
+        "component-emitter": "^1.2.0",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^1.0.3",
+        "mixin-deep": "^1.1.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": true,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-argv",
+            "base-cli",
+            "base-config",
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-fs-rename",
+            "base-generators",
+            "base-list",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-project",
+            "base-questions",
+            "base-runner",
+            "base-store",
+            "base-task",
+            "base-tree"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "verb",
+          "class-utils"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "76ea4356b48b8c3b52234296ac49d3a6e2417be5",
+      "_id": "base@0.8.1",
+      "_shasum": "6900bb300f2c7596c99f3d83bab8722d818b748f",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "6900bb300f2c7596c99f3d83bab8722d818b748f",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.8.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.8.1.tgz_1457713811318_0.00012070289812982082"
+      },
+      "directories": {}
+    },
+    "0.9.0": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.9.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.4",
+        "class-utils": "^0.3.4",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^2.0.1",
+        "mixin-deep": "^1.1.3",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.5.3",
+        "should": "^9.0.0",
+        "through2": "^2.0.1",
+        "verb-readme-generator": "^0.1.13"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "class-utils",
+          "verb",
+          "assemble",
+          "generate",
+          "scaffold",
+          "boilerplate"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a6c90f412ba0e435470ad640e17e99222301c265",
+      "_id": "base@0.9.0",
+      "_shasum": "11519a3ddfc6b09f1ae4bbf2e1de3532792248de",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "11519a3ddfc6b09f1ae4bbf2e1de3532792248de",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.9.0.tgz_1464985633569_0.010180332930758595"
+      },
+      "directories": {}
+    },
+    "0.10.0": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.10.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.4",
+        "class-utils": "^0.3.4",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^2.0.1",
+        "mixin-deep": "^1.1.3",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.5.3",
+        "should": "^9.0.0",
+        "through2": "^2.0.1",
+        "verb-readme-generator": "^0.1.13"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "cache-base",
+          "class-utils",
+          "verb",
+          "assemble",
+          "generate",
+          "scaffold",
+          "boilerplate"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "c14d0a4b483871d2437494bac41f18f65129fc63",
+      "_id": "base@0.10.0",
+      "_shasum": "5da0b3c85825ce1bbdf8e081a5e0d95e6e07c3c2",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "5da0b3c85825ce1bbdf8e081a5e0d95e6e07c3c2",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.10.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.10.0.tgz_1465294492483_0.6012079983484"
+      },
+      "directories": {}
+    },
+    "0.11.0": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.11.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.4",
+        "class-utils": "^0.3.4",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "lazy-cache": "^2.0.1",
+        "mixin-deep": "^1.1.3",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.5.3",
+        "should": "^9.0.1",
+        "through2": "^2.0.1",
+        "verb-readme-generator": "^0.1.13"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "boilerplate",
+          "cache-base",
+          "class-utils",
+          "generate",
+          "scaffold",
+          "verb",
+          "static-extend",
+          "verb-readme-generator"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "641538d944add11f961c8416c5a905fe1c29ab36",
+      "_id": "base@0.11.0",
+      "_shasum": "106d3374fe13bc5dd7373693064e4bdfd7c48d1c",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "106d3374fe13bc5dd7373693064e4bdfd7c48d1c",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.11.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.11.0.tgz_1465500222656_0.6793762727174908"
+      },
+      "directories": {}
+    },
+    "0.11.1": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.11.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^0.8.4",
+        "class-utils": "^0.3.4",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "isobject": "^2.1.0",
+        "lazy-cache": "^2.0.1",
+        "mixin-deep": "^1.1.3",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^2.5.3",
+        "should": "^9.0.1",
+        "through2": "^2.0.1",
+        "verb-readme-generator": "^0.1.13"
+      },
+      "keywords": [
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "boilerplate",
+          "cache-base",
+          "class-utils",
+          "generate",
+          "scaffold",
+          "verb",
+          "static-extend",
+          "verb-readme-generator"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d860297eb6b98f6f5b10b40ec43d8550eba07499",
+      "_id": "base@0.11.1",
+      "_shasum": "b36a7f11113853a342a15691d98e2dcc8a6cc270",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "b36a7f11113853a342a15691d98e2dcc8a6cc270",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.11.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/base-0.11.1.tgz_1466736447257_0.6186569787096232"
+      },
+      "directories": {}
+    },
+    "0.12.0": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality node.js applications, using plugins like building blocks",
+      "version": "0.12.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js",
+        "verbfile.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^1.0.0",
+        "class-utils": "^0.3.5",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.4.3"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": null,
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "ad53e70cccc36fd14dcbbe790564b8fd2ffcc259",
+      "_id": "base@0.12.0",
+      "_shasum": "397daec40d146dc4cc18a89c7fee945c2254e943",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "397daec40d146dc4cc18a89c7fee945c2254e943",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.12.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.12.0.tgz_1490381148682_0.9580223350785673"
+      },
+      "directories": {}
+    },
+    "0.13.0": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality node.js applications, using plugins like building blocks",
+      "version": "0.13.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^1.0.0",
+        "class-utils": "^0.3.5",
+        "component-emitter": "^1.2.1",
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.2.0",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.4.3"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": null,
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "da7b2f567d918d76b2832201292707a98ba4d52b",
+      "_id": "base@0.13.0",
+      "_shasum": "7939d80f523633cef0dd7f0f3bfac9d7193608f9",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "shasum": "7939d80f523633cef0dd7f0f3bfac9d7193608f9",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.13.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/base-0.13.0.tgz_1491182082193_0.07332810503430665"
+      },
+      "directories": {}
+    },
+    "0.11.2": {
+      "name": "base",
+      "description": "base is the foundation for creating modular, unit testable and highly pluggable node.js applications, starting with a handful of common methods, like `set`, `get`, `del` and `use`.",
+      "version": "0.11.2",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "tunnckoCore",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^1.0.1",
+        "class-utils": "^0.3.5",
+        "component-emitter": "^1.2.1",
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.1",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "helper-coverage": "^0.1.3",
+        "mocha": "^3.5.0",
+        "should": "^13.0.1",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-coverage"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "boilerplate",
+          "cache-base",
+          "class-utils",
+          "generate",
+          "scaffold",
+          "static-extend",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1885b1dc37dff5479d852dd0810d32207e190bab",
+      "_id": "base@0.11.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==",
+        "shasum": "7bde5ced145b6d551a90db87f83c558b4eb48a8f",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.11.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base-0.11.2.tgz_1504834551853_0.9452250017784536"
+      },
+      "directories": {}
+    },
+    "0.13.1": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "0.13.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "tunnckoCore",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "cache-base": "^1.0.1",
+        "class-utils": "^0.3.5",
+        "component-emitter": "^1.2.1",
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.1",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "layout": null,
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "70f1855ecf17a10a24a71fe864f44b877ba26f2b",
+      "_id": "base@0.13.1",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-O1w7SQpgTq1xowr1qkt2leHvsFWwQWKm7dKlmAzcQTW88AC3+6zj4OXr92Tf80rVBTF3gyYLQor/Gxddrqbukg==",
+        "shasum": "1c4a38910c1fbfbdc20a3585a995ecdb8d45e338",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.13.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base-0.13.1.tgz_1506000456476_0.9011892133858055"
+      },
+      "directories": {}
+    },
+    "0.13.2": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "0.13.2",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "@sellside/emitter": "^1.2.1",
+        "arr-union": "^3.1.0",
+        "cache-base": "^1.0.1",
+        "class-utils": "^0.3.5",
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.1",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2d64af7b84c6b57bf738e944c7ae66818ab74f02",
+      "_id": "base@0.13.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-+dZVwyIps5CdVSAem+WuXAiTDSueiYdCxgmZ20e0YM6ObGUSQqWSRVPP123nY/wFSxXjXWq1HqC4+8th+3ZBnw==",
+        "shasum": "6990d82e0d5c0d5e902a8160acbdc7995f295040",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.13.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base-0.13.2.tgz_1513569362421_0.8154402747750282"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "1.0.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^2.0.2",
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.1",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2790b2707d6532a86cd7816db0ec6b5413f40420",
+      "_id": "base@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-okJ/HJH2Se3oZrFxR6D1zwDvDfRt94vLyDNsdSHuM/wkfRB4TrvjMzJr9TFMJe9oQ20eSO+jKdtrknxreXGhJg==",
+        "shasum": "b72f593016ce50bc6376bf4da01fcb87bbd1cc90",
+        "tarball": "https://registry.npmjs.org/base/-/base-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base-1.0.0.tgz_1513841774488_0.5975968977436423"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "1.0.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^2.0.2",
+        "define-property": "^1.0.0",
+        "isobject": "^3.0.1",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f23ed26541a35dd8836f12dc9213b5300d0fffa1",
+      "_id": "base@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-YsmfauxEhsunh/d/c+JmT4pgAws/OPJHDeDulQk1mBRSYtVN3ZtkL5gmr8yfAyB5B9KyeTnsXypXgto1XOHVew==",
+        "shasum": "bb9ee01639d08349643c60ab5bb15ae598cd5de4",
+        "tarball": "https://registry.npmjs.org/base/-/base-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base-1.0.1.tgz_1513845987106_0.661287703551352"
+      },
+      "directories": {}
+    },
+    "0.0.1-dev": {
+      "author": {
+        "name": "John Le Drew",
+        "email": "jp@antz29.com",
+        "url": "http://antz29.com"
+      },
+      "name": "base",
+      "description": "A lightweight micro web framework.",
+      "keywords": [
+        "framework",
+        "api",
+        "web",
+        "mvc",
+        "extensible",
+        "micro"
+      ],
+      "version": "0.0.1-dev",
+      "homepage": "http://base.antz29.com",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/antz29/node-base.git"
+      },
+      "bugs": {
+        "email": "base-bugs@antz29.com",
+        "url": "http://github.com/antz29/node-base/issues"
+      },
+      "engines": {
+        "node": ">=0.6.0"
+      },
+      "directories": {
+        "lib": "./src/lib"
+      },
+      "main": "./src/lib/base.js",
+      "dependencies": {
+        "twister": ">=0.2.0",
+        "slicer": ">=0.2.0"
+      },
+      "devDependencies": {
+        "expresso": ">=0.9.0",
+        "linter": ">=0.0.7"
+      },
+      "_npmUser": {
+        "name": "antz29",
+        "email": "jp@antz29.com"
+      },
+      "_id": "base@0.0.1-dev",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.104",
+      "_nodeVersion": "v0.6.0",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "336f770cee6049e3520d85b757aa58d3c712f62b",
+        "tarball": "https://registry.npmjs.org/base/-/base-0.0.1dev.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "antz29",
+          "email": "jp@antz29.com"
+        }
+      ]
+    },
+    "2.0.0": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "2.0.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^2.0.2",
+        "define-property": "^1.0.0",
+        "kind-of": "^6.0.2",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "940fdf84cd13d5e77b0ca86c37315356ba6f3cb2",
+      "_id": "base@2.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-3uOc6fDyMpKfR+t/1N2EDqdYbuvbutgE4g//hglqWpA71ySVX3s4zdx0QNK7FrFrnvb0KPDym0VDVmS7mWNREA==",
+        "shasum": "0ee4b78227f50600585836476d82c98e0c3e3570",
+        "tarball": "https://registry.npmjs.org/base/-/base-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 30245
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base_2.0.0_1520093795455_0.3454007720883945"
+      }
+    },
+    "2.0.1": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "2.0.1",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^2.0.2",
+        "define-property": "^1.0.0",
+        "kind-of": "^6.0.2",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f428b9819f5050dccb9d30049e698ece4997cfb2",
+      "_id": "base@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-aFf70WpvWJA9bg3Ne3nZFEyZZqpPU+qa4EegNi6bH7+BN6th0emofulgaojF5/ZozceI4aFESLiZoYDsQYEGPw==",
+        "shasum": "aad3aa80982fbe92bdedc6ee227aac5a8ea0f57f",
+        "tarball": "https://registry.npmjs.org/base/-/base-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 30286
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base_2.0.1_1520095637456_0.0012374251607023545"
+      }
+    },
+    "2.0.2": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "2.0.2",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^2.0.2",
+        "define-property": "^1.0.0",
+        "kind-of": "^6.0.2",
+        "mixin-deep": "^1.2.0",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "fdfd6959d38676743d9f8bb5eb1e5a3d32d7dd6a",
+      "_id": "base@2.0.2",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-pm4GReTGZOovJGznwd0WbMTLp9m9Rue9Ub/dNtEjJwAj5nKu3G4hWGAJ8ICuEt+l220Qj4XIULj2iI6v/6pAoQ==",
+        "shasum": "112954ec243dc7ad1772d965dba94f0c57560bcf",
+        "tarball": "https://registry.npmjs.org/base/-/base-2.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 30464
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base_2.0.2_1522379104277_0.9870544617904915"
+      }
+    },
+    "3.0.0": {
+      "name": "base",
+      "description": "Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks",
+      "version": "3.0.0",
+      "homepage": "https://github.com/node-base/base",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "John O'Donnell",
+          "url": "https://github.com/criticalmash"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/node-base/base.git"
+      },
+      "bugs": {
+        "url": "https://github.com/node-base/base/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "cache-base": "^4.0.0",
+        "define-property": "^2.0.2",
+        "kind-of": "^6.0.2",
+        "mixin-deep": "^1.3.1",
+        "pascalcase": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "helper-changelog": "^0.3.0",
+        "mocha": "^3.5.3",
+        "through2": "^2.0.3",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "base",
+        "boilerplate",
+        "cache",
+        "del",
+        "get",
+        "inherit",
+        "methods",
+        "set",
+        "starter",
+        "unset",
+        "visit"
+      ],
+      "verb": {
+        "run": true,
+        "toc": "collapsible",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "related": {
+          "description": "There are a number of different plugins available for extending base. Let us know if you create your own!",
+          "hightlight": "generate",
+          "list": [
+            "base-cwd",
+            "base-data",
+            "base-fs",
+            "base-generators",
+            "base-option",
+            "base-pipeline",
+            "base-pkg",
+            "base-plugins",
+            "base-questions",
+            "base-store",
+            "base-task"
+          ]
+        },
+        "reflinks": [
+          "assemble",
+          "base",
+          "base-plugins",
+          "cache-base",
+          "class-utils",
+          "enquirer",
+          "generate",
+          "helper-changelog",
+          "prompt-base",
+          "static-extend",
+          "templates",
+          "update",
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "0554c9e0cc3f1475a5ea1fed1e7d898b376f696f",
+      "_id": "base@3.0.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "9.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-r2saQUT6pw+ghTxWd70AmNRF0Xc4m6xPWISuL3+p4inZm+uA8vE1gX6Lub47hI9csIONq9i/bU+wtntzk+7XoQ==",
+        "shasum": "e1041718cdcbf7046af5c748c7d90f4db100d980",
+        "tarball": "https://registry.npmjs.org/base/-/base-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 30761
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/base_3.0.0_1522379440009_0.8937941850188433"
+      }
+    }
+  },
+  "readme": "<p align=\"center\">\n\n<a href=\"https://github.com/node-base/base\">\n<img height=\"250\" width=\"250\" src=\"https://raw.githubusercontent.com/node-base/base/master/docs/logo.png\">\n</a>\n</p>\n\n# base\n\n[![NPM version](https://img.shields.io/npm/v/base.svg?style=flat)](https://www.npmjs.com/package/base) [![NPM monthly downloads](https://img.shields.io/npm/dm/base.svg?style=flat)](https://npmjs.org/package/base) [![Build Status](https://img.shields.io/travis/node-base/base.svg?style=flat)](https://travis-ci.org/node-base/base) [![Gitter](https://badges.gitter.im/join_chat.svg)](https://gitter.im/node-base/base)\n\n<details>\n<summary><strong>Table of contents</strong></summary>\n\n- [Why use Base?](#why-use-base)\n  * [Guiding principles](#guiding-principles)\n  * [Minimal API surface](#minimal-api-surface)\n  * [Composability](#composability)\n- [Install](#install)\n- [Install](#install-1)\n- [Usage](#usage)\n- [API](#api)\n- [cache object](#cache-object)\n- [Toolkit suite](#toolkit-suite)\n  * [What is Toolkit?](#what-is-toolkit)\n- [About](#about)\n  * [Related projects](#related-projects)\n  * [Tests](#tests)\n  * [Contributing](#contributing)\n  * [Release History](#release-history)\n  * [Authors](#authors)\n  * [License](#license)\n\n</details>\n\n<details>\n<summary><strong>About</strong></summary>\n\n## Why use Base?\n\nBase is a foundation for creating modular, unit testable and highly pluggable server-side node.js APIs.\n\n* Go from zero to working application within minutes\n* Use [community plugins](https://www.npmjs.com/browse/keyword/baseplugin) to add feature-functionality to your application\n* Create your own custom plugins to add features\n* Like building blocks, plugins are stackable. Allowing you to build [sophisticated applications](#toolkit-suite) from simple plugins. Moreover, those applications can also be used as plugins themselves.\n\nMost importantly, once you learn Base, you will be familiar with the core API of all applications built on Base. This means you will not only benefit as a developer, but as a user as well.\n\n### Guiding principles\n\nThe core team follows these principles to help guide API decisions:\n\n* **Compact API surface**: The smaller the API surface, the easier the library will be to learn and use.\n* **Easy to extend**: Implementors can use any npm package, and write plugins in pure JavaScript. If you're building complex apps, Base dramatically simplifies inheritance.\n* **Easy to test**: No special setup should be required to unit test `Base` or base plugins\n* **100% Node.js core style**\n\n  - No API sugar (left for higher level projects)\n  - Written in readable vanilla JavaScript\n\n### Minimal API surface\n\n[The API](#api) was designed to provide only the minimum necessary functionality for creating a useful application, with or without [plugins](#plugins).\n\n**Base core**\n\nBase itself ships with only a handful of [useful methods](#api), such as:\n\n* `.set`: for setting values on the instance\n* `.get`: for getting values from the instance\n* `.has`: to check if a property exists on the instance\n* `.define`: for setting non-enumerable values on the instance\n* `.use`: for adding plugins\n\n**Be generic**\n\nWhen deciding on method to add or remove, we try to answer these questions:\n\n1. Will all or most Base applications need this method?\n2. Will this method encourage practices or enforce conventions that are beneficial to implementors?\n3. Can or should this be done in a plugin instead?\n\n### Composability\n\n**Plugin system**\n\nIt couldn't be easier to extend Base with any features or custom functionality you can think of.\n\nBase plugins are just functions that take an instance of `Base`:\n\n```js\nvar base = new Base();\n\nfunction plugin(base) {\n  // do plugin stuff, in pure JavaScript\n}\n// use the plugin\nbase.use(plugin);\n```\n\nAdd \"smart plugin\" functionality with the [base-plugins](https://github.com/node-base/base-plugins) plugin.\n\n**Inheritance**\n\nEasily inherit Base using `.extend`:\n\n```js\nvar Base = require('base');\n\nfunction MyApp() {\n  Base.call(this);\n}\nBase.extend(MyApp);\n\nvar app = new MyApp();\napp.set('a', 'b');\napp.get('a');\n//=> 'b';\n```\n\n**Inherit or instantiate with a namespace**\n\nBy default, the `.get`, `.set` and `.has` methods set and get values from the root of the `base` instance. You can customize this using the `.namespace` method exposed on the exported function. For example:\n\n```js\nvar Base = require('base');\n// get and set values on the `base.cache` object\nvar base = Base.namespace('cache');\n\nvar app = base();\napp.set('foo', 'bar');\nconsole.log(app.cache.foo);\n//=> 'bar'\n```\n</details>\n\n## Install\n\n**NPM**\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save base\n```\n\n**yarn**\n\nInstall with [yarn](yarnpkg.com):\n\n```sh\n$ yarn add base && yarn upgrade\n```\n\n## Usage\n\n```js\nvar Base = require('base');\nvar app = new Base();\n\n// set a value\napp.set('foo', 'bar');\nconsole.log(app.foo);\n//=> 'bar'\n\n// register a plugin\napp.use(function() {\n  // do stuff (see API docs for \".use\")\n});\n```\n\n## API\n\n### [Base](index.js#L43)\n\nCreate an instance of `Base` with the given `cache` and `options`. Learn about the [cache object](#cache-object).\n\n**Params**\n\n* `cache` **{Object}**: If supplied, this object is passed to [cache-base](https://github.com/jonschlinkert/cache-base) to merge onto the the instance.\n* `options` **{Object}**: If supplied, this object is used to initialize the `base.options` object.\n\n**Example**\n\n```js\n// initialize with `cache` and `options`\nconst app = new Base({isApp: true}, {abc: true});\napp.set('foo', 'bar');\n\n// values defined with the given `cache` object will be on the root of the instance\nconsole.log(app.baz); //=> undefined\nconsole.log(app.foo); //=> 'bar'\n// or use `.get`\nconsole.log(app.get('isApp')); //=> true\nconsole.log(app.get('foo')); //=> 'bar'\n\n// values defined with the given `options` object will be on `app.options\nconsole.log(app.options.abc); //=> true\n```\n\n### [.is](index.js#L74)\n\nSet the given `name` on `app._name` and `app.is*` properties. Used for doing lookups in plugins.\n\n**Params**\n\n* `name` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\napp.is('collection');\nconsole.log(app.type);\n//=> 'collection'\nconsole.log(app.isCollection);\n//=> true\n```\n\n### [.isRegistered](index.js#L110)\n\nReturns true if a plugin has already been registered on an instance.\n\nPlugin implementors are encouraged to use this first thing in a plugin\nto prevent the plugin from being called more than once on the same\ninstance.\n\n**Params**\n\n* `name` **{String}**: The plugin name.\n* `register` **{Boolean}**: If the plugin if not already registered, to record it as being registered pass `true` as the second argument.\n* `returns` **{Boolean}**: Returns true if a plugin is already registered.\n\n**Events**\n\n* `emits`: `plugin` Emits the name of the plugin being registered. Useful for unit tests, to ensure plugins are only registered once.\n\n**Example**\n\n```js\nconst base = new Base();\nbase.use(function(app) {\n  if (app.isRegistered('myPlugin')) return;\n  // do stuff to `app`\n});\n\n// to also record the plugin as being registered\nbase.use(function(app) {\n  if (app.isRegistered('myPlugin', true)) return;\n  // do stuff to `app`\n});\n```\n\n### [.use](index.js#L139)\n\nCall a plugin function or array of plugin functions on the instance. Plugins are called with an instance of base, and options (if defined).\n\n**Params**\n\n* `name` **{String|Function|Array}**: (optional) plugin name\n* `plugin` **{Function|Array}**: plugin function, or array of functions, to call.\n* **{...rest}**: Any additional arguments to pass to plugins(s).\n* `returns` **{Object}**: Returns the item instance for chaining.\n\n**Example**\n\n```js\nconst app = new Base()\n  .use([foo, bar])\n  .use(baz)\n```\n\n### [.define](index.js#L178)\n\nThe `.define` method is used for adding non-enumerable property on the instance. Dot-notation is **not supported** with `define`.\n\n**Params**\n\n* `key` **{String}**: The name of the property to define.\n* `value` **{any}**\n* `returns` **{Object}**: Returns the instance for chaining.\n\n**Example**\n\n```js\n// example of a custom arbitrary `render` function created with lodash's `template` method\napp.define('render', (str, locals) => _.template(str)(locals));\n```\n\n### [.base](index.js#L220)\n\nGetter/setter used when creating nested instances of `Base`, for storing a reference to the first ancestor instance. This works by setting an instance of `Base` on the `parent` property of a \"child\" instance. The `base` property defaults to the current instance if no `parent` property is defined.\n\n**Example**\n\n```js\n// create an instance of `Base`, this is our first (\"base\") instance\nconst first = new Base();\nfirst.foo = 'bar'; // arbitrary property, to make it easier to see what's happening later\n\n// create another instance\nconst second = new Base();\n// create a reference to the first instance (`first`)\nsecond.parent = first;\n\n// create another instance\nconst third = new Base();\n// create a reference to the previous instance (`second`)\n// repeat this pattern every time a \"child\" instance is created\nthird.parent = second;\n\n// we can always access the first instance using the `base` property\nconsole.log(first.base.foo);\n//=> 'bar'\nconsole.log(second.base.foo);\n//=> 'bar'\nconsole.log(third.base.foo);\n//=> 'bar'\n```\n\n### [Base.use](index.js#L242)\n\nStatic method for adding global plugin functions that will be added to an instance when created.\n\n**Params**\n\n* `fn` **{Function}**: Plugin function to use on each instance.\n* `returns` **{Object}**: Returns the `Base` constructor for chaining\n\n**Example**\n\n```js\nBase.use(function(app) {\n  app.foo = 'bar';\n});\nconst app = new Base();\nconsole.log(app.foo);\n//=> 'bar'\n```\n\n## cache object\n\n**Cache**\n\nUser-defined properties go on the `cache` object. This keeps the root of the instance clean, so that only reserved methods and properties on the root.\n\n```js\nBase { cache: {} }\n```\n\nYou can pass a custom object to use as the `cache` as the first argument to the `Base` class when instantiating.\n\n```js\nconst myObject = {};\nconst Base = require('base');\nconst base = new Base(myObject);\n```\n\n## Toolkit suite\n\nBase is part of the [Toolkit suite](https://github.com/node-toolkit/getting-started) of applications.\n\n### What is Toolkit?\n\nToolkit is a collection of node.js libraries, applications and frameworks for helping developers quickly create high quality node.js applications, web projects, and command-line experiences. There are many other libraries on NPM for handling specific tasks, Toolkit provides the _systems_ and _building blocks_ for creating higher level workflows and processes around those libraries.\n\nToolkit can be used to create a static site generator, blog framework, documentaton system, command line, task or plugin runner, and more!\n\n**Building Blocks**\n\nThe following libraries can be used as \"building blocks\" for creating modular applications.\n\n* [base](https://github.com/node-base/base): (you are here!) framework for rapidly creating high quality node.js applications, using plugins like building blocks. Base serves as the foundation for several other applications in the [Toolkit suite](https://github.com/node-toolkit/getting-started).\n* [templates](https://github.com/jonschlinkert/templates): Render templates with any node.js template engine, create and manage template collections. Use helpers, layouts, partials, includes...\n* [enquirer](http://enquirer.io): Plugin-based prompt system for creating highly customizable command line experiences.\n* [composer](https://github.com/doowb/composer): Plugin-based, async task runner.\n\n**Lifecycle Applications**\n\nThe following applications provide workflows and automation for common phases of the software development lifecycle. Each of these tools can be used entirely standalone or bundled together.\n\n* [generate](https://github.com/generate/generate): create projects\n* [assemble](https://github.com/assemble/assemble): build projects\n* [verb](https://github.com/verbose/verb): document projects\n* [update](https://github.com/update/update): maintain projects\n\n## About\n\n### Related projects\n\n* [base-cwd](https://www.npmjs.com/package/base-cwd): Base plugin that adds a getter/setter for the current working directory. | [homepage](https://github.com/node-base/base-cwd \"Base plugin that adds a getter/setter for the current working directory.\")\n* [base-data](https://www.npmjs.com/package/base-data): adds a `data` method to base-methods. | [homepage](https://github.com/node-base/base-data \"adds a `data` method to base-methods.\")\n* [base-fs](https://www.npmjs.com/package/base-fs): base-methods plugin that adds vinyl-fs methods to your 'base' application for working with the file… [more](https://github.com/node-base/base-fs) | [homepage](https://github.com/node-base/base-fs \"base-methods plugin that adds vinyl-fs methods to your 'base' application for working with the file system, like src, dest, copy and symlink.\")\n* [base-generators](https://www.npmjs.com/package/base-generators): Adds project-generator support to your `base` application. | [homepage](https://github.com/node-base/base-generators \"Adds project-generator support to your `base` application.\")\n* [base-option](https://www.npmjs.com/package/base-option): Adds a few options methods to base, like `option`, `enable` and `disable`. See the readme… [more](https://github.com/node-base/base-option) | [homepage](https://github.com/node-base/base-option \"Adds a few options methods to base, like `option`, `enable` and `disable`. See the readme for the full API.\")\n* [base-pipeline](https://www.npmjs.com/package/base-pipeline): base-methods plugin that adds pipeline and plugin methods for dynamically composing streaming plugin pipelines. | [homepage](https://github.com/node-base/base-pipeline \"base-methods plugin that adds pipeline and plugin methods for dynamically composing streaming plugin pipelines.\")\n* [base-pkg](https://www.npmjs.com/package/base-pkg): Plugin for adding a `pkg` method that exposes pkg-store to your base application. | [homepage](https://github.com/node-base/base-pkg \"Plugin for adding a `pkg` method that exposes pkg-store to your base application.\")\n* [base-plugins](https://www.npmjs.com/package/base-plugins): Adds 'smart plugin' support to your base application. | [homepage](https://github.com/node-base/base-plugins \"Adds 'smart plugin' support to your base application.\")\n* [base-questions](https://www.npmjs.com/package/base-questions): Plugin for base-methods that adds methods for prompting the user and storing the answers on… [more](https://github.com/node-base/base-questions) | [homepage](https://github.com/node-base/base-questions \"Plugin for base-methods that adds methods for prompting the user and storing the answers on a project-by-project basis.\")\n* [base-store](https://www.npmjs.com/package/base-store): Plugin for getting and persisting config values with your base-methods application. Adds a 'store' object… [more](https://github.com/node-base/base-store) | [homepage](https://github.com/node-base/base-store \"Plugin for getting and persisting config values with your base-methods application. Adds a 'store' object that exposes all of the methods from the data-store library. Also now supports sub-stores!\")\n* [base-task](https://www.npmjs.com/package/base-task): Base plugin that provides a very thin wrapper around [https://github.com/doowb/composer](https://github.com/doowb/composer) for adding task methods to… [more](https://github.com/base/base-task) | [homepage](https://github.com/base/base-task \"Base plugin that provides a very thin wrapper around <https://github.com/doowb/composer> for adding task methods to your Base application.\")\n\n### Tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\nIf Base doesn't do what you need, [please let us know](../../issues).\n\n### Release History\n\nSee the [changelog](CHANGELOG.md);\n\n### Authors\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n**Brian Woodward**\n\n* [github/doowb](https://github.com/doowb)\n* [twitter/doowb](http://twitter.com/doowb)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nMIT\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on March 29, 2018._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-30T03:10:41.860Z",
+    "created": "2011-11-08T04:22:33.424Z",
+    "0.2.0": "2011-12-04T22:49:58.672Z",
+    "0.2.1": "2011-12-07T14:01:47.016Z",
+    "0.2.2": "2011-12-07T14:10:24.662Z",
+    "0.2.3": "2011-12-07T14:17:25.007Z",
+    "0.2.4": "2012-03-05T03:35:16.334Z",
+    "0.2.5": "2012-03-06T09:44:43.789Z",
+    "0.2.6": "2012-03-16T08:57:30.638Z",
+    "0.3.0": "2012-04-06T20:17:27.816Z",
+    "0.4.0": "2012-04-07T08:41:14.190Z",
+    "0.4.1": "2012-04-07T09:13:16.349Z",
+    "0.4.2": "2012-04-07T21:23:58.009Z",
+    "0.5.0": "2012-04-09T09:50:01.207Z",
+    "0.6.3": "2016-01-09T20:14:55.586Z",
+    "0.6.4": "2016-01-19T20:35:53.086Z",
+    "0.6.5": "2016-01-23T13:24:21.759Z",
+    "0.6.6": "2016-01-25T16:35:19.985Z",
+    "0.6.7": "2016-01-25T17:54:33.738Z",
+    "0.7.0": "2016-02-09T19:18:06.431Z",
+    "0.7.1": "2016-02-09T20:25:30.535Z",
+    "0.7.2": "2016-02-12T04:10:13.880Z",
+    "0.7.3": "2016-02-15T23:56:34.512Z",
+    "0.7.4": "2016-02-19T08:50:04.610Z",
+    "0.7.5": "2016-02-22T15:10:27.214Z",
+    "0.7.6": "2016-02-23T16:19:02.450Z",
+    "0.7.7": "2016-02-23T17:00:18.332Z",
+    "0.7.8": "2016-02-23T17:29:04.688Z",
+    "0.7.9": "2016-02-25T02:52:13.011Z",
+    "0.7.10": "2016-03-09T21:58:32.450Z",
+    "0.8.0": "2016-03-11T09:06:16.719Z",
+    "0.8.1": "2016-03-11T16:30:13.571Z",
+    "0.9.0": "2016-06-03T20:27:15.092Z",
+    "0.10.0": "2016-06-07T10:14:54.229Z",
+    "0.11.0": "2016-06-09T19:23:45.148Z",
+    "0.11.1": "2016-06-24T02:47:29.758Z",
+    "0.12.0": "2017-03-24T18:45:49.233Z",
+    "0.13.0": "2017-04-03T01:14:43.056Z",
+    "0.11.2": "2017-09-08T01:35:52.849Z",
+    "0.13.1": "2017-09-21T13:27:37.850Z",
+    "0.13.2": "2017-12-18T03:56:03.594Z",
+    "1.0.0": "2017-12-21T07:36:15.575Z",
+    "1.0.1": "2017-12-21T08:46:27.209Z",
+    "0.0.1-dev": "2011-11-08T04:22:36.796Z",
+    "2.0.0": "2018-03-03T16:16:35.657Z",
+    "2.0.1": "2018-03-03T16:47:17.653Z",
+    "2.0.2": "2018-03-30T03:05:04.354Z",
+    "3.0.0": "2018-03-30T03:10:40.158Z"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/node-base/base.git"
+  },
+  "users": {
+    "wendellm": true,
+    "nhz.io": true,
+    "monjer": true,
+    "jonschlinkert": true
+  },
+  "homepage": "https://github.com/node-base/base",
+  "keywords": [
+    "base",
+    "boilerplate",
+    "cache",
+    "del",
+    "get",
+    "inherit",
+    "methods",
+    "set",
+    "starter",
+    "unset",
+    "visit"
+  ],
+  "bugs": {
+    "url": "https://github.com/node-base/base/issues"
+  },
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "John O'Donnell",
+      "url": "https://github.com/criticalmash"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Olsten Larck",
+      "url": "https://i.am.charlike.online"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "license": "MIT",
+  "_attachments": {}
+}

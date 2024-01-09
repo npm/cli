@@ -1,0 +1,3062 @@
+{
+  "_id": "@babel/plugin-transform-modules-umd",
+  "_rev": "71-b102059df6a8f3bc808127f3b21cdc53",
+  "name": "@babel/plugin-transform-modules-umd",
+  "description": "This plugin transforms ES2015 modules to UMD",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.4",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.4",
+        "@babel/template": "7.0.0-beta.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-9DsBLct9QIbmdIWlczTJu9yawJNGXf76h0tfi/SArx70+VJELehVXxZEFKmanqno/r7zqzC6fa+gMOSwtfMiOQ==",
+        "shasum": "90eb0973bbd4ae82880d1d273f984df4ced613ec",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.4.tgz_1509388556091_0.15537641756236553"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.5",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.5",
+        "@babel/template": "7.0.0-beta.5"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-zSt6fHjg9M33Bb955YqjnMD32BZ/zmLT0iaIYKIjFJJ6BygfGmKIANKRn4nYhy/xd/X4D8tZenZhrFmKbaNegw==",
+        "shasum": "f69f68d7ed33db82660603112470f7a4a5a5ba52",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.5.tgz_1509397054510_0.8438116684556007"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.31",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.31",
+        "@babel/template": "7.0.0-beta.31"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-k2peRidDzQ9lc1xPPTEHK/lwBLYO/Z5moyhoPilhIM8e3dQ3enjrewUJFMPtkOl7/SumiLizq0euR3W7Aud9LQ==",
+        "shasum": "77442041bcab86bea0e61bf2c705f672926240aa",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.31.tgz_1509739455782_0.25404730765149"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.32",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.32"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-z9KLuONpgUz1iBbE2iWCfT1y0GF+aqideaqXlemLg4oqudd52EBfopMMicKh1/2KuIQEG+CQljoURTikanUYww==",
+        "shasum": "b1e59f96e44d047ff2d9a1cdfb7de008ac342359",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.32.tgz_1510493642755_0.40333725954405963"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.33",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.33"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-HKy6XjUn/xNF1y5Ug1z8iR9USQOpSzl/SBoVC6dVmeQartiav9IMcfwFGF6SDdpi388/zcrZPPE2xBWjFbifKg==",
+        "shasum": "9c6c1f4805d75b661c239b0f1df96d63483d87c8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.33.tgz_1512138560606_0.22978757810778916"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.34",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.34"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-3mcs1onCT78fymeGPzxhOriit1nMNnR1iIS6xNatS7w2tsldDY87bEUUhfEC1xUbuSEIKk8QeEoKth0o2sPU/A==",
+        "shasum": "a9f662404cfa39f8e357fa67fd25a483147c9374",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.34.tgz_1512225618139_0.9823362657334656"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.35",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.35"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-dWLdxQVQGbgdKWkHkgZuIGVnNiaegqzR3aURgIYIVL3qF2Vo/PnKXNNGnWOSBTSq/lW1oVRi+crj0XmcQR0r5w==",
+        "shasum": "ca3fbd3f00752310a75c9a97f21f37c1df00c902",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.35.tgz_1513288108790_0.021865101996809244"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.36",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.36"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-d6WWXCwA91HKxFXpgahlG1DE9UH1JQRWkIFmQjsbQ75kQHWu9WZQ1dXwo79SSmeCeVe/p+gV+4Phb2iXt4J6UA==",
+        "shasum": "f9b354478cda5321000e803ccd57d7f5332a17bc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.36.tgz_1514228741147_0.6634290714282542"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.37",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.37"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-hR/rQrbs6mdojLWEn7qSjdJd1Ulz9m+wnPdomKopam7jT7LQZbrorH0O1ULlvTnPsT4UAMSq8fCqC17gbgvi/w==",
+        "shasum": "937ac9cf4f00e162d4a5e860487ee89c389c2907",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.37.tgz_1515427424347_0.07125174440443516"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.38",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.38"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-3Y83CIc1fybCmdYe5zQQ9yP7v5989Gg9x/0SGE0s5Uuwo5g8hj+t2nahvE4b4Uq03NYYnmClkhXi8Va7wvM1Rg==",
+        "shasum": "72647506835faba43f5df2b07629482f85a86218",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.38.tgz_1516206762338_0.4703825581818819"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.39",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.39"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-YIKLakaV4hbX1kgI7f0FMtp4sB2Q75M/vSg/LaVPGdrD3DQ0rgyAujMEA9/uE3rgPT8w6l7Z79AC7aBe6CazGQ==",
+        "shasum": "25a68675091c39a5fbf72e0d76870f3b248d452e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd-7.0.0-beta.39.tgz_1517344125882_0.27203660691156983"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.40",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.40"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-LHKqJFwo7x/CeEwjLyUE99SlG/kbTl8LS1DQ26fWctVnW5JuPt3hwYrggnmo1L/g/dal7EP2IL56+UezDMpJUQ==",
+        "shasum": "5bd4e395a2673e687ed592608ad2fd4883a5a119",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12217
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.40_1518453767834_0.8379098410734458"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.41",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.41",
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Kr+Vwh+gdJYYiTBWnYqyMk9sMEO0W4uIXvcHIE3MBT04VK9VokXAEmnncVzhASVfDS5Vw5HSpEwz5G1iWT5oTA==",
+        "shasum": "ba74d9d23e7c4c7f74959226ccacb4e57c57ba57",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12425
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.41_1521044818197_0.7078211638393874"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.42",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.42",
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-yOA2qnk4snRxkdgKDp6xN+by3V3z8q14cDf/aB0j36Jv2YqpDWUWMMWLQjabCEE/l7ptePBS4qbFH8dffCm4Tg==",
+        "shasum": "2fbad368c83471c76f8dcace98492e4e3fdddc76",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12425
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.42_1521147129087_0.8833481383001791"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.43",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.43",
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-bzq7seeH4cpaBDHIpLVulM9yYhoY3uBYaQLCWsidvgoFsom5Be9tTm6+ACvvyYIiK2tLDY7HWXwD4/ykVsYEKw==",
+        "shasum": "4b7995cd7910b28235bb9b00209369faa7f6387e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12097
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.43_1522687738820_0.6542721393685726"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.44",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.44",
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-thm2inPP4aSdYRUauR2gVC3s0g5UGK1kUns7DBpZQBSY9eJjAr5LqmXhQh1Szq79vI1ZRZTDoxrTkdFqubAALA==",
+        "shasum": "66ca82476b72bfd1ce2d410ceaf2e85c1639a616",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12984
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.44_1522707639293_0.5228746126480175"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.45",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.45",
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-i4LLBJVXaSjn/8UDfl/2AANdHcVP9QcaoS5dNASxMhkdEit9ZmBhoHYb0ETcJ9j3MRBr9+hFMd0TmLgWMJ36bA==",
+        "shasum": "48b51dd053f13dc4e4eadacc9237f572b0b2f385",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12984,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T3MCRA9TVsSAnZWagAARJ8P/RNVJeYlapYnjoQ939j3\nztnFftO/I5wncFlHoIBR+E/f69ecvb3FxBzJgW3h35+ZxgkYeX55HH0ih8al\n7mL7ljter190RJiYZJ+wAI54VDrV7XICYWX3bsxB6WMbV5XCPzdLcSQS1h+Y\nZBNkXmoM4xjWYF1HXW1yBRuAQAra0kLDdwGM54O1BfdunG3oeHZsys12Y7Di\nGIOrTY5ZF2pRQDXVKinGDYjnztsrRiZk5veSl0bD/0Mln3lWdM+NHH2DNWIj\naamQjpfi9hKMk0aX0Xtub+NsbBnWO0YSU8WmrXOepqcPg39o0if46xLftp51\nm8wUr8tY1onmdBgeky7vx5ISOynQsBLxZfhuU6NqXsnOHH1xnaqOp2kJitaD\nw32xmZwWdKJiPWqQR5th/1ep76N5GTtVuIXmCn3bwQ9Zi9e7TmotWEI0EEDm\nk68beZy8TV0git9Uclwi0x2rvc53IrUQaCg61qoxhhBlkePz+SN8fqDfNJhA\net3i7NUhHiQFvqSD99IYD0LiIbzia4n8WaLIPUPSLLJkdjMb5Sh1EYjBXoT4\n/eXyDllwffPRxl/tcxM4kck1IJ/S/9TwUyf1K8LNzyP2xKs/UxsyZ/Ih4pVt\nHmeP2RHFQEBpwZfWdnYa3roRDVo10QdwAGEXI0bILzxLwyipHl7WGgJ0OUHf\nvghD\r\n=B5yH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.45_1524448715685_0.5272666429518451"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.46",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.46",
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-t54bMSIY5xtb8uK8aM61xZmpjQ7FJ0M/8EiCFDdx7rHff5O9eJUNEGqGaly8ZTbdp80RqbzMkyiD1V+TXYQW/Q==",
+        "shasum": "ad0ef488a123f479825c1ffe75c5bba9954a449c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12984,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WH4CRA9TVsSAnZWagAANbwQAJPsny5XKs5tSjSz58mj\nuli6RBfmxLivphwPNj7DT4IySlYQStEPQiBmCHA3wTMQfjgNT6g7vGNjPth+\nd30Abxed8IUYcyfLkoR8KOZoy4sWF8UhEu1tKtYoI2UpP8AbxUD6NZv4RsG1\nWlClIT1OeK57jaGmA/AsnXyVwwf8L3bRpEF5lPqX0E7VqxVO1KIeviBWVz2O\nwDzbRsrRT29JLQBKMkDEE9gwOc8TWspB5gFyMnLkE4pOkiDB74/n5v0eWkjB\nLzGupHKx7UUmkInmwGNcQmZp+Y2f1F1PT2uLorWGjww3M9Exax4WFqeCQkPK\n+0cNpqISCRGoGocmNAwxVRBaZC8fJ0e0Gl2Zv4zPGA2HmaQmflHxlO3cNp5C\nJeU88UIJZNVrDP4mRi4w4vb+Z5989+HtSeQE+tLxePRWzUUsFqeE8IGKERfV\nKyiEf1an57eW8C8BHtJrxdMVCSdiTCGOejMJbKGAZGmdJipPHQqtie/LsOWQ\nPy5m9Sq8Hqr4UdQCOJEybAOf5ImopVx6RfoUx3XAUwq+faRLqhQlGn0WVerF\nm5Rh5k4HC7yg5b5qlkqE3ztXh/KcV3m31kJC6Qx5vy1n/zqXZ139+oOsTKJS\nZShcQyMmO9FwhlO2aszipGe18kSrhnvaL39wCMbJOB0okZbXP8uWtxkxNRFS\nHQiJ\r\n=34eC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.46_1524457975546_0.43198838108674"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.47",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.47",
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-rG7KioAFCLxZ33wNBqUoxPhtXOmVEvnZNIy9wv0fSbNIQr8lO1avZ7SeBL3OZduNvLocqrESt9Xhh1nzb/zOvA==",
+        "shasum": "6dcfb9661fdd131b20b721044746a7a309882918",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12907,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+ic2CRA9TVsSAnZWagAAw4EP/jY4m3724/mZAK1U7OBO\no4EAc3GQOvde4NsNOwBy51ZAlVK/NDTmg89XGLMnuXy+oubhwKPAtf4Xt7Jt\nXLJODu1FyMML9A495FkpuWQyv6oArsV/YLiWjQLvacEAp2IH/u84cTm6Hdga\n1KkE5+XjqDQSkGwbH63D4HJq4+rSKeHdA65BsZSB+/tI4MSLN8Mx5WuHeV6e\nS2CuK8+QRpRsB5RQUVKXg+JlKYdyOXGKqPQYzQ3fZfmLwi+THTQHv445Gulx\nDHHdXOY3l+HcDYWmF3o6AedWS5Y4GyU7of1gJGeoB6pECv+AjBH3B5Y0yVRi\nIMuPX6dFxtakvtwrM1AGaZdkfcSI1zoUnWAzNbUtx4c8qoD1Y51zvoW9Sdj+\nbWD6Dpk8BYFaB/+v4z8rZp6sTz1Sd6yjcONSrYiHlwhBwCvJJ0pbNlhdf+EQ\nELf+dM5W+rs0SnCnbHEyNC+Aywg6Y98C2IGCcqGXGb3FS0qXIMdy/uSKPHGm\nNYEz7m9M4zSj20FPc4GT/tbXEnPaNNkuJEGSXEZ8RAiQaqYmEPP9Rqd76UPh\n6+F6XRtwddloCtGRnum5n5bZfBsfLW7hM4d4x90o+2ZOb2dsfvst9EZhZJBE\nTzvQp5oX2FamLkh0cpyFQVDKbBxwIHSeKxUPgF7O0HIpqfFygy3LImIFR9QY\nX8Di\r\n=oMzx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.47_1526343477109_0.01924168298140394"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.48",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.48",
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-l2waC39Z3yAupnMYVs3W7bXHySoyoBcUD4ojLjBlj78Vn1PoYkq7+38MmtPuGBusX3ZbCGK90vur6EpE3SBjqw==",
+        "shasum": "00308c7cf7dd801873447d86f08804e258846a09",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 12097,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxGCCRA9TVsSAnZWagAAo9sP/RwBx3oRD4gTrOF5juaW\nVKb4DVc73+JYXgJPT//nEstzlDS9yeRLR+ohon02KKY8VrnWt4SZ7ry5XunZ\nVDyF7xUjBWdhtNM1dj6z5fXy0d/H7T2ekKpFRBcmWmzYE8Llv3yUT/Wjc6AS\n/V8h7y9ooFq8VRvn+hNh8KG2+mSKlTxnbF990LfSK85fBCJpaqC3YzWRYIpr\nHwAxhjmvAkzJyNCGwvzx6RKxzlrjzLQ/muh4XyTfNosU5Br6N+RpuSbl5H95\n7BZKWU9F6dKnbn9mr/EAJKi/f2DMxXN7aZCEYzdJs/k83j7IFN6eOOkKdm7E\nH1BOA5H3Yo3G0Z52YWvzc6l5HUIcRMuOqkjpKlch8OIGELc6zcLvh6/z7tx+\nYfkjiyDKChOzHZEC00F14e0xb/olUq/hSJ9AKZu0SX5SH7Z+h7PLB0j9ZpI7\nWdDsmNaRTCV+d6Qocm/x/ftdZSrWx/wMhk/3II2XtXlPcUOZ0a0sBwsGWRob\nAc/4Y1VpGb1fs3r19RNwcPJNQQzPEbZIx74fBUlvp+ahisAZ2xN5BJDnreaP\n+iugbM2WTp3KDdwYmchlS0uJyhyeWAFCJSVO2YAg93rT41K8S9mFD8ukaOas\n3TU9DGwga+U836mGOmUGDVo42w65qke1gt4qZ/3sC5VhUufXuaO+c2OAL+0o\nOS3g\r\n=kc1W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.48_1527189889895_0.5589106668969153"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.49",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.49",
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "7048ca5a77189706f4b3e96e4b996eb30590dd63",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "7048ca5a77189706f4b3e96e4b996eb30590dd63",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 12112,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDQaCRA9TVsSAnZWagAA9nUP/2AVFEGc0cE7VrteDVt9\nofdShSHJBeL3SA1qJ9TsCV8qawpn9Hum+O80yXRrYRgzbsMVm93WEzjFQJsj\nTngB/lO5MyZC9SBkpQXnIenBiPrcMrFPORnp4d2diSZJKBJ3OWs9qLRCUF0E\nQTi5uIc6/L5j/cVkmdOteKpaJjfpy0UXxB7e4y+hUDVYYzq++VZkj0fX60yK\nbBwlr7GRcsnLlp+m7x/ohm77C4YzaZjhk9PwHw6065+7IGSsMU7ex9sEUQuO\nPW8K3L+UIeiZlCouMmLd3HVx25iIh0iTL6t/hfc7x78pupGranM5YDkcAE9l\naQ2LvOmrVLdpJxtNwKCXAgiO4nZ/nv/A/K9pZzBX1TMp+oSj8Io6z/f+u6H8\nnvljwOqVI3NlOOnYIVtuMO3Q/3gN9X7LC2I2t1LTQYtjjcK2Oz2QaOImPwB5\nIfr0r88s+1okBK/aTwFFmdbjD9IUysg0LV2k46LRsLHdWlHU94YkztM+eYyF\n10hRfc9UVXTPATGn0GP5L9hktlHxutlMpy4ZfRpYBRwBdV//kvvsldYXy4eH\nlREpb+jco0B7GXpYWMIhYChqRxhtmZrBjOSZFko11jMGSh40SyycykcHChBz\nQYHRD+ViZMuiHaSJD9sYUVvSBwaTFwxYlAp6zTaX5kPc88/LDfXwB1t6tLiW\nNaC/\r\n=B5mU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.49_1527264274290_0.5186776491912692"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.50",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.50",
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.50",
+      "dist": {
+        "shasum": "651a3a8e88a1b0773ecf2aee227548f4c14706b3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7887
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.50_1528832885244_0.18246724442031992"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.51",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.51",
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.51",
+      "dist": {
+        "shasum": "ee2ef575579d96e40613fca6e6c8edb5cadb6c6f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7901
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.51_1528838443604_0.03128981381162621"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.52",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.52",
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.52",
+      "dist": {
+        "shasum": "0c5f7e98eaabb18b5ccd500b5f7d23ed3c2840e9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7900
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.52_1530838788209_0.27538512363239787"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.53",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.53",
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.53",
+      "dist": {
+        "shasum": "2a36abe40a1da676e43a1c3071578e27bd2d679d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7900
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.53_1531316447770_0.890238685752875"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.54",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.54",
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.54",
+      "dist": {
+        "shasum": "3af0e2cf8f533b2984a8ca6da316246850c3aeda",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7900
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.54_1531764029123_0.5582706800640909"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.55",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.55",
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.55",
+      "dist": {
+        "shasum": "028c96f64e89313657c6d5f5ff0660fc99f6ee0a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7900
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.55_1532815674229_0.9443410520788469"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-beta.56",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-beta.56",
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-beta.56",
+      "dist": {
+        "shasum": "1dd72699fd8fbafda4c259318771d97f91cd8410",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.56.tgz",
+        "integrity": "sha512-0ItEhFLodomK7FH2FgK+UAphXd95UKyj3SXcRRhbUifvpfnqv0QFgaffI01iEyFnbxdXKpZqESHZR1fV/w1igw==",
+        "fileCount": 5,
+        "unpackedSize": 7900,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPyhCRA9TVsSAnZWagAAuNAP/19DUbAPoJkQcnidFdci\nUZBCn6EmmTbtDJHdtNTQPR/Gzsk+vju5UhRnMWukwnQijr2vx9GkmB4rdrJy\nM9/HhQN63xuJYNzy3Kmxdzj1p+oPjCw0asfSbNNXxf1Bfja86bStT0fQAJGl\nPfyBTnLL4HrEc7FJr+ATQECuJn9b25Zm9OSddG5SLWOLwNX3R5oqUGERINQh\nDI8CeKQCMILxTBT/h1UaY7cN6pTx9VBY9ldViTYQuPpfkCxb32nKRateI0ll\nSMV5d0pLS3a8lK8vQLszW5GRyvzGEjbFNJfzHW79H5ya1jcrjPuV4+AHHsBH\nBxIo2S8Cyk+3uiITvQ22MOK7f2+XMcET22j6SecUhL3FnWpYeF/T8UJAcxGU\n6K2TLG5RjMEEzHzdfa53qUPAuLDLSQpBo9DoGHtagqM29Yo3UcMfV2Jg9SQ3\nh/ySsLEciEgsjxImNzE2H59btO2yOfixRTtfvLq/QKKzaE6Hzq/VDiHzbmI7\nQ3ChgujQml6H/tQN0pcM9t2KBA1xagCqBBCWTLZWd1A5CZhX9UxQtZxeuOzD\n9XncVPF9ZXOO/Ka2pjUcmUQdKOXFBb4TicYxYXeDwP81Rlk7Z4n81EScVKwm\nt5h0ELIEhxQn6NpzZyiW/VPLsQjL5EQ46BHsD1dmK3fY8DGe4BvZtzLTdWX4\nm2yR\r\n=4F6D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-beta.56_1533344929127_0.1512682223299846"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-rc.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-rc.0",
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-rc.0",
+      "dist": {
+        "shasum": "086fff36aa6c4acd975b3f7f46cc52a0d43dcbda",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-rc.0.tgz",
+        "integrity": "sha512-GbkFrGi1yfyBD941e4PtWuBYLKECbkRTSiw4FZHG/QOkZWY6d9JHwuIpHjzcFRPrNr9ZEpSak8e9jIEDHZu/OQ==",
+        "fileCount": 5,
+        "unpackedSize": 7885,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGUHCRA9TVsSAnZWagAA+6IP/R3CIqN1lSZ4hziFmO/T\n54QySfjHv37oPfJwhHJqkVsM7xONy3RD/+ZN1JojunRe5f+r9N32JRbCJvBQ\niwnDahrXKO/qOjvqktto8ymD5FDpkTihVN3nY08Oa4UNEOdhyX8+Rm3X7iEE\n/4e5D3TUwzMkzolWkj/GCO+xOmbp1sZc/bEqAOZwN2I7XG+JtQWpIbapdR2S\nKkc47WenoqxwvmECwAwNY/yi//phFT4Uo7CZ3PbkSBd1O6IhpjVFV7EM997b\nlQB/zwIvcLarwgBzol7O/1YWivzhkdhq4/lipBu9KwaooYiMafuXUn5xxCpC\nm/mlliMP36i0voCD8uJ0lUmhlA+Rf66rSvuTK8EKHK1DtbkI8FYxbZbkWuBb\nZGhETcNRogJq3aurJV/DPit0jeLDYuMqekUiGG8NCmUXCXMK/Rxe/2qBDrQb\nraliOnraJqh0V11gCLKXCAzJeE5vZtCoYY48WMMH8ZrF7EeModWgwSIF5BIU\njyBm1aHpoFfHtBadzMuxfj1l77UCwFiZ4Iym14xy+Weh+tOkbRpw1EBax8L6\nbO39FvpIbmfntyAN34sBcku7Iswr3x9n3THpLV9pAcyxMnlm+DdYWvmIqGUu\noj8BRmEO/1DyBycn7cNeEuUsM1mZy9AV2Sryic7Lbz8YmXQ7FQ6Big5538mV\nEQ2R\r\n=BuVe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-rc.0_1533830406948_0.4358534686811233"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-rc.1",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-rc.1",
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-rc.1",
+      "dist": {
+        "shasum": "1a584cb37d252de63c90030f76c3d7d3d0ea1241",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-rc.1.tgz",
+        "integrity": "sha512-wvhxd77dRxyQGSEqfSRfe6dEBDy7Q13MaC1RKLX2H4+SQKZPvGuNr0BS0CEJ3Fm3uSEZ7potTBfRO4YNAygjXg==",
+        "fileCount": 5,
+        "unpackedSize": 7866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ+WCRA9TVsSAnZWagAAYoMP/2tZeo2GN7Ha7JWPNh6L\nmSFzerA5gTLGZsM9DbZv1Lxim1Ckf3pRoXZnGZ+0zrtNRi1txlAfidFcW6Fw\n8sYhGkuVeg6ThcDW/GKaaf2UydjEXJEpuWg8ADCZt9PDqevQdxCZyWv97i6M\nOpjtJ93XYMcC5boYvFI7jeJ+/k92mQ2v6OQRER+oznIXSwoUXjipFJf6Tz/7\nhHkR+f2EbwCUfzoa1wZTV+FwWWXe/BnFlfyw9p0zY801OV79Mek/lWnGtuQt\n3cnHx/yWaStOgqYFYe0gHyqi8Ad3AIbG3rc+12H38ULl2Y4CBaV8tE81MrK2\nBazPPciySYI6L3OkxpYzzzye0DHP8LSCHREv7ztUpgBCIuFJ7j98V8s97NGU\nikCOcn2UKtTRBsCfgvU2leaboX5zq5Y2MiiQ9F9fHDxZwU6mDkov5pPzY4qo\nRw/JRWEm7wbnooMAUMpwnXtri34rJUoOt9U6UINxd8Q2zFosw0k68VDzMShW\nhJkCMiOvfKQpUsNmRpGvi1Il87nzpiltzEvd+1tbM0fef4YLkVnxMamQmahZ\n4PQleukOg0GbyN19g4J1A5CeQHgw5wjpEjVoO8IYK/EDPQf1RP1cb9+SLXO2\ns8oT1upPg+OZWo7CJXiipX43kCVcueIVFkRD6Rt/9IQoHKPMLCAad8J2sDoz\nDodz\r\n=5LsC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-rc.1_1533845397676_0.32666855193221966"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-rc.2",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-rc.2",
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-rc.2",
+      "dist": {
+        "shasum": "0e6eeb1e9138064a2ef28991bf03fa4d14536410",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-rc.2.tgz",
+        "integrity": "sha512-4gnDpcZ8/F9eoYZlQKAvh5wzax3UQFmZEBMKJabl133iTLb0aXkd+yVJGmn7Vu/+Q8wRH4kkH6Kc2pbsvlbnHQ==",
+        "fileCount": 5,
+        "unpackedSize": 7866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGdKCRA9TVsSAnZWagAAhXIQAJDODTvRcmeP39XhxwL2\nmdUKwPNdFPogYTy4guVvRhKS983PIkiw5uCH2HLwNVU4hC5UQPQqEYwgqLFW\ni84ibD1EhszCdmVo6p569AWJZQLONHMS6FE2N6hPgeoIvhNHhPO9+Wdgd84l\nUfnkQhfoG1EQbbQULvYfz9elIllcHqwtnpxY8rITe2okjV1m2ok90k8dinXm\n2DsSPpiJIPaaMtzBC4NyYFGKubfWFDTlrg0AruBLwxeFTbicY0WywgZsqQn5\nI7374DMM2V83ti/apIyLEtif85LJzeQoDlWhFDNfK2hnhdz33+HpI3/4w8LU\nzauV9vD2IJQP0ZykhBXJN98f1vdD3JO2T7Nn2LDk41knCoH0DVYrSIgna+UY\n2X3ACPXwaKEi7Hr8uVuAUEhovLBo9ZlapZ/vlcVjt0lpj0GKwkljONRPdRkF\nrW02jib3Lf65CHCrU52PxcD34/0HKSonDwdgouNCsM2SAX7z/CMHqYUAiQ/J\ndF6p+BOux+RJf7IxcnNaX6rPNgRHDgSGPYFXfvnQ2XoXL9VlnRMYZ0YoEBHl\nMhQTyOU3dpmnt6A0dD5pXNZC3T4KbmXG3/t6LuzyPeh1ZI9DuYprQt8GMeys\nTEEsq/f+BmTNqCyvqhPbyl4TYGjN2aXgsw5J5UWZu9+Ysgc2aCIQWPlSF4Cn\nPmA7\r\n=t3s5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-rc.2_1534879561706_0.3027945157219636"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-rc.3",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "7.0.0-rc.3",
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-rc.3",
+      "dist": {
+        "shasum": "35d04236716708b620dfca12f009b961b531f1d9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-rc.3.tgz",
+        "integrity": "sha512-tV0HyMKQz0Lu1JmF460xB+R8xrC2NUSlWaaU/mIV6BsmCsoVxDmgrfwqP7sAYROJqaGAXRQKWURv5A699U9+JQ==",
+        "fileCount": 6,
+        "unpackedSize": 8965,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEnrCRA9TVsSAnZWagAAFfEP/jwZ8sVn2DlYXpMXLCMr\npbLZduZXzBjH+ObBUybK1YCB/ncs6jTq5G3R13RUoxm1qx1H0n80szskYlzv\nkw+lrbbjv5YySTMigO2s40RJK0d6QchVaBEFeXU6hbVv1uG0Alzlmig5GLro\nGjPHt8xg8dUiPzpR+lemWWOGA63/Omh/pKiRITKYrWKPPcpw8Fw/GYjalBOL\nLrt2vbSUcU0swR3tDdHvg6CspkTKJ/jvaHTP3/bx/gzCvrCm2RUViERbiGS/\nPO24NHJ9VVPDBrApxrfzru/E8HWOmUA68xbnRqBpATFCv4ksyztsinoEvIpK\nqBN17P+yqBoisFiFehsrpE5V41BLkPtjCzKeD73FxNosPihRVHepmbIwlrp5\n6TWx+QZsiLByEi8FTSHIH9LVCvaLCrNZYQhvl3JAWJ8BJ3bmH/zYPeYPXiLt\niRdNQ2OpBqwM+U+dImOL9hOOTCFHnsZkn4d2mVtJg5v63JXAeoWXwrTrMLsu\nQ5B0OMVoSoqUOFxQxelnppv2IMboJXxyUNsKbcriQ/nDBKMfGnmO8Ako5wCa\nI64gqJjfmECPELJuk/5frtzmc/EcAmHaWFzrQ7lDLZvN8l3acFjS621Vnzi6\nu9NLhPSMT6CsbJE+RKXDo+Tl/Zv1jEggxbIrxJ6r1sRjxz/RdrEt/HaZFkya\nwSuh\r\n=4ZB/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-rc.3_1535134186363_0.8188853652271841"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0-rc.4",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.0.0-rc.4",
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0-rc.4",
+      "dist": {
+        "shasum": "5ad45d398e42cfee3d12d9cd75336c1be0954265",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-rc.4.tgz",
+        "integrity": "sha512-FdLFuweOUDWrSh58uv+wCBgtHyNQUQncR0Shxova+G0vdmXcZBJKVmaWX+iEVEEPnEoAWasvJMhDpVkYD0CnDg==",
+        "fileCount": 6,
+        "unpackedSize": 8969,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCrkCRA9TVsSAnZWagAA4XEP/jiFsCPq6eQfEscdM9Kq\nQC4C80KvbjLzDDXyZH3LMZZR/GSR3aBtUM1x8l/ZFFypXtAua5VDtdlLZ7d+\nHo75vQIakDUUy+GUE9mWLe7s0Qqq/zgbD/9/csi9aWM3uOAl7MLWIRwlzYbF\n5Wpmzdhwfq1IHRv1d574SbrLYAzzmqR8O9DYDgIdRfVDdEBy7pH/8VWjNG0l\nMew661STRfhQFiT1e+R1yVAcBaxZp235DIzvSw0VAE2MwhMRMGpP3y1mPX4U\n00GGRsITSZTN26wl29MMozfitKgeU2Ob3vdNyQzljUjjSysUqRLV+I7dciAe\nl58/hQaXyuxHyyY5CgZwkWOCouLO/5F9eE0pf45ZnkIxOGZOiCLC3D8yDIgP\nB8OQpqO1dKUgwn77e0stJE2CU6CzVi5ng0OTt4f39DmNtqdycVPQSJxR6Swh\nZ0y37oue5Y0nHPIrMVcPrAJrlzkNcJcULAUSAgthmjLUINuX28lSNCPLo2tu\nKA373bseX60j4rhXhLnrOmXwyUD9KsujtpIzol/JGTKwEq1en/W+KEwL+teW\nXeTplI5VKwwSiVFVQ5U7FlYyyimFbjAryVXrTkBpUnRvgWpwXxl48f2UYqFC\nmihR2Yj6iy/FFhKie/nxfWYzSxUguefWsY3A0WkJZXLY/SrCykafumPuXLUR\nF7qq\r\n=3VsA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0-rc.4_1535388388392_0.6489379240145117"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.0.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-modules-umd\n\n> This plugin transforms ES2015 modules to UMD\n\nSee our website [@babel/plugin-transform-modules-umd](https://babeljs.io/docs/en/next/babel-plugin-transform-modules-umd.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-modules-umd\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-modules-umd --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-umd@7.0.0",
+      "dist": {
+        "shasum": "e7bb4f2a6cd199668964241951a25013450349be",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0.tgz",
+        "integrity": "sha512-EMyKpzgugxef+R1diXDwqw/Hmt5ls8VxfI8Gq5Lo8Qp3oKIepkYG4L/mvE2dmZSRalgL9sguoPKbnQ1m96hVFw==",
+        "fileCount": 6,
+        "unpackedSize": 8944,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHDbCRA9TVsSAnZWagAAJVkQAIowj0CSXzPQWbgZt3rV\nW6yOgLAaKcDazOzJn2h10suEpg1vBRL6TaYZvZsvOCd5/WPp36h4E0xTHkN2\nW2Tn0czd0ZkpjcY//eo+xgaNSxWM1UnJfYswzy7DJAIDiO2KXPEZNt3/Cr3O\n1UwEVv/yqzt0tKKrP3gNUjX061R+pqtppzPKhtJgiWw29nfq3NLWecFZZoTi\nIAB189GiGXpXIRax3KnbQ7GE95lEuzt3aOCOPk7AzDGgaueKErG9PziOcKB2\n0Weu7KtvZlrtvk4wE87ktUp6h8hWA+9zjtCT0/r+hHBXb+IItrUfnAEBJcDH\nlYGQ9i4sE7J/KGIuqgSVot7GLPo5/6MdW8DVKdIOhb6r+KP4vVCzYf8KIGC7\nlttIeHOPZacUoeWB5APnyRIAkAePGtXehcZbZryXbn1dRYBxGH4rH5mQOnog\n1nl1BiisWvusC6PwVjHEb25KEdjw1QwLpm+4N9lLsEzDOxZ5Gxj6IYx5Yyoh\nqzrHRXjmXhoRM4WwimLf+8/D+NTIQmLlmU+DXtGUBjlz4XESLT/1lLK0Vfoz\nFH5Z2H1nLYQmucoRXq1evLqIT7Av9MCJC9Cim/hskcpvKE3Ng2ALIYxTzl+c\nSBbbtI1CNcJCFN50ytnz1pEIUkHm+SMsWDnmspX7ca+26vXA2QW1OfeLV6lM\nUNEr\r\n=Ljk/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.0.0_1535406298964_0.6925653507266452"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.1.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.1.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-umd@7.1.0",
+      "dist": {
+        "shasum": "a29a7d85d6f28c3561c33964442257cc6a21f2a8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.1.0.tgz",
+        "integrity": "sha512-enrRtn5TfRhMmbRwm7F8qOj0qEYByqUvTttPEGimcBH4CJHphjyK1Vg7sdU7JjeEmgSpM890IT/efS2nMHwYig==",
+        "fileCount": 6,
+        "unpackedSize": 8997,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboAD9CRA9TVsSAnZWagAAt1gQAI78/V14AnECh66bBp9D\n9CEi9ynLi/qhJY8/SLshTJ6AfTtoZ+BHELFfeiWj7rDEg8/Ma0GcJ9RWs6HH\n46NmiMJgDIQAjleT9sj+M8rQ+Ws6ES66uEyUwcdbvBZ05CtUBuXq7jnDjMjG\nyCUqqGeVeeTtfh0hmbRsvRBj54JdQd1g1QLRYEPXXd9v/LnfNJ1uDa5n6inJ\n1RPvPZlh/q2nJBpE4EYLr9Xe5dqWnVQyfBuomQs/DdGAjCO/CvQak3vgPt5T\nbn1KiRWuc6Jbnh2Wj76p+ohOElkKBh2yRnFlx1NIBeQIfsdhCxy2d8Tr2S5g\njpWXTkM3u4gQgs4skYtvgLSaWqP39+hdRvhbHGcwOitEirVPeC2a53uzwbhO\n9SJbH9s/eclikT5yFvGWKf+XqTkcZGPMdj/vFsrBAOTLg8D+Hu3lCYK4FDmx\nVfrJcwLbPnOcLuI79qbFsAlabuZ3mglQyxMx5GdOMWrsigpdXnAt0SfXujRC\nkwBzsJ5WPZj+dxgmcEq+qq+DTVQsEhm3VPp10WASDpHdP1VKDSULDK7kdKof\nNNdvvY5eEfGomg4xT4ia5GV6CgfvuZMezgCBMgWa7V1AHfqb72Cwbro7Gwae\nUTmm9bGYLdH+KwmtJ9ocTG5/lR8DKmBNNhFFTuOi7wShJswMl8HHn8MnbQos\nocxx\r\n=WME7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.1.0_1537212668346_0.46001257872112666"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.2.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.1.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-umd@7.2.0",
+      "dist": {
+        "shasum": "7678ce75169f0877b8eb2235538c074268dd01ae",
+        "integrity": "sha512-BV3bw6MyUH1iIsGhXlOK6sXhmSarZjtJ/vMiD9dNmpY8QXFFQTj+6v92pcfy1iqa8DeAfJFwoxcrS/TUZda6sw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 9032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2MCRA9TVsSAnZWagAAsw0P/1rq/bPCu/Y1qL+5Biw5\nOfHKDYQDDN9UNPqsqwDpSG0yW59aHPy3MENd83WeGJBQLL2vIxij5jsxpdR9\nU08lmovPMQG5uAUnn2/Mn3DMWuQcR0anuM8EXocBYcRofuK5LDGycsfBEVg5\nnIcH8yPsv5Y1LnNCNdm7Q0PIYOp2zX6Tkunnjrs9cNUwBqhEwWre0OxdGAfc\nOjSvgu/iytcC5Tik50MDFlne4LHrU3KjuiajMjY6xfGhxAMFrnsxNwb8l2Mg\nF0mKO0atyzUG6Pj+4iVlq2HUCUJTTNXSLdMNs5E40tsk851FOkNGVLfpejn9\nhyWLG0UdPYn9Tjq7RSmw3Ra7ZyoYpm98NGGR3WHdE+dPmf8y/bY/dWxdQgCL\n6q2UIwzeLWQhJjviIPB9O60N7GqlyGlS6joUcoLSbO9lIXZyLbY7EtyeXReB\nM77YkpHCExiHMqyB9BiUkspPYpP2hQeks7eQ8qmcRYi06vjOO4+YPkYtmZfq\nwvcZ76u0nt9RpZYxEWDeg350Vpj7h87muLvha5fWfEtGu4J+rRj9D4BI4vfK\nlsVNK0Nyf9WTvPl1RRzYJRTiYRGM2ZtkejwtQFV/si7IYoeEky6669/jKpUs\noc4ZzwmcgTmaM1qii8DlG8eB2leNpnKdB0rsf5brWVI9YO7CUShi5tTrQ1Dh\n7uIG\r\n=YYNq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.2.0_1543863692031_0.07471315493480546"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.7.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.7.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/plugin-transform-modules-umd@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-u7eBA03zmUswQ9LQ7Qw0/ieC1pcAkbp5OQatbWUzY1PaBccvuJXUkYzoN1g7cqp7dbTu6Dp9bXyalBvD04AANA==",
+        "shasum": "d62c7da16670908e1d8c68ca0b5d4c0097b69966",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.7.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8700,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVTBCRA9TVsSAnZWagAALN0P/R+eWXft5R0d+eRw6MpO\ny0/TRQNTEticIP1PomOvPXC3pecVRS1u71EKWJxAm6IRQGQ0O1USzs+NI9/5\nud2EuKyrhk1NWSiabnc7RzdbbS2SqPuVgyBYcbkfBJK0pd4zHx3LHECmV+mm\nv21d6dC0IA8tIDckv7EYRLcSRckgw8nF7wiTfl6GZacW5FG+xko19DvBHUCd\nN9mLoY6ZRJZpLxKUodG5Q63o8QrONL1+Qzs/MLQjQMyXFGK2Uo/Mhgi1Q0uY\nTFilqaLcKmWTzyvC6Xg7taJm8AzA6gL9JKJ934BG1BJUnNY+H//T7c89lJ7T\nUghS3Svv7540nHBbeeqGNrxIeHRdJpJnfblsh4YfUO1LI2tyO6EIUvuQv61M\nKRZaQegfWbu1Lq1bD8z9kpjJTZTgI94UtZe5QZSgmz72TEweKB2iNJgw+/ki\nKuBohrXF/ReDYYzfGV8EvMEfuWHNg/AjvBIanmlwFUfHi01/Hl+1vOEvZRYn\n1tBVf6SqT/xjrFO3CgqkWkFvn/dazLCDeRPyDCcU+Wyvh/msPFXAqFGaQ05a\nwuq5U6G8HZ8LGrsyx/4uvePrG3/uU8m1QBiFO5xsXgB3QWrkYFi4Vo2xYQFc\n7a4TbtFd465fjSE53SoxOosASq6A+0r1+4Yq22TbChd/R43wKfu4KUFsKvr5\nN/H0\r\n=5QZJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.7.0_1572951233342_0.07795183039217446"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.7.4",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.7.4",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-modules-umd@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-u2B8TIi0qZI4j8q4C51ktfO7E3cQ0qnaXFI1/OXITordD40tt17g/sXqgNNCcMTcBFKrUPcGDx+TBJuZxLx7tw==",
+        "shasum": "1027c355a118de0aae9fee00ad7813c584d9061f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HBeCRA9TVsSAnZWagAApUQQAKRAlU/NiM1pvKUZZoUf\nKST/nFVGE3JisOpHkIrIjk5ur5/6hkZPXwyMbixoexd8EOOCZQJaKI8hshQQ\nYl0b/C8uSkJyndJyb0uGGOF38mtCKSvVTQhrPfTqk5XI1yvkgFYxNcQcbaNz\nBvoODbWnJD7w2vNVPih7K2BNfoRfY1d0MiasS+5ksiXEDRXJgOA6m2RfRTnR\nAicIFa4wbH7XRUl312DfqPwB2PjViafpDUG1XFh9CgXDnEGQsI/H4nBBaVUM\nm/fat9DVAwiLHJ8RIR0/AdmKIkttC7F5dWybNZFlzAsjUtB4S0UhMF3dqHes\ns1MRnFzl6nPiLM/KDzpGpgIBqXlVHfCTeeTUAufnxGC20DoVvTrwhvbWzAkd\ntDQqFpStwJkg/OljP7j63hmI5OhK6+0b8wXTHMyH7lwOLFwIs1FYAztjqJrz\nStYl78UqP39BvWFjuaJ8IsvBBaKI4RjJp+bbQaYPRTW//mar0l9jNRYuym5E\nPMEfhVpuvfOXAMC4JroABJ4wZFFSYeYlAy2MdIBOzrG/EnmmVLpC0VdUluhg\n44dxDxxwrVyKj4KgWPwS65yxxN98cqMi8eq8wGKIMP5VMW1PK+dBOzQ72Y5d\nw6j7arUfGZ/Ijk//DUNxgwzOElDwjNZ/LSFiwt9v1UgJ7+SwcJIi/3gofYEB\nuJDm\r\n=VVFP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.7.4_1574465630165_0.6411305647639631"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.8.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.8.0",
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-modules-umd@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-lAwNfXwmfTy7fl2XOyoVpMXnLkJANgH0vdSYNFcS4RuJPBtHfunGA+Y0L7wsHmfPzyVYt8sUglLjaWtdZMNJNg==",
+        "shasum": "edc1a7a587a31a185070421f97ae3798b15df9b7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8728,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmWaCRA9TVsSAnZWagAAQvoP/AiAcqoE0TqR3MuVXI5l\niZ+YpUwB0VI03CswaOwsluCI5FmSDMgw0VV8MyvWlATx3Bm1WCAHKLschsTC\nF8v7QyQIIShnCga13QyBrr+dB63irUpRTKITj7cnTyw+vE38KLX5XMR86G3Z\nzF8P7DLxrv5veWitgh7RbMTUhHYgGOFa1zVsR1+YkX9BOJQ90KYblVqjJKta\nazJ0wv2/2mMzMqnXU+RWNpX3AJcUDLojd3SWMehUGPolyhTTZnjxOAh99n4M\naIt7gaY0EzUpqGnqZLKBBn1lkrBg6gLwvFxNU9U5DP9dNvS5sbgHa1iCmGmp\nJJTqVlhN1MY3UI2R67Kjt96RNpdjTBYj/wemv+WAxRvNtfyc4mXxpw+GSm0E\nCEbzbru7izkD9S1MO3U1aPAI6U47QPiehT6D4Sdm3YKphmowApuA8gJ1irnZ\nPHGUCorbUWFBIr2uRRz8jbP/db8VvT8tygYn+taeYt6pwJXQrGDtUkWTPLFW\nWsrZx2MDYd968Y8au0RfZBvVk9m56yHTIoFbmRIf8BpV89e9spVva1ne4QhV\n4I1D4L83norvmEwJsAY8o4C+KsUWq4Sxsu5X1wToZ11NPuR8yHA40BAU2765\nBaFLiIKzNN8XEVfHoHTyVCzJG3fxkJwr6WCVIX6WsnHNU59BgQgSEQASJDgF\nQPPK\r\n=l433\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.8.0_1578788249674_0.6822510354904348"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.8.3",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.8.3",
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-modules-umd@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-evhTyWhbwbI3/U6dZAnx/ePoV7H6OUG+OjiJFHmhr9FPn0VShjwC2kdxqIuQ/+1P50TMrneGzMeyMTFOjKSnAw==",
+        "shasum": "592d578ce06c52f5b98b02f913d653ffe972661a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHORHCRA9TVsSAnZWagAAZU8QAKKecxtsoD8ctRDMyfbf\nlIiDL3wWuK9X9KenFDvKCzsMtMXO432fJoqp7gGp1zKh2cKukR4wH50GMD3N\nb7sjs5/1LInM6mwmDf7wJ1nvqNjpu8YofC1Sl/bycGe6MXH1Zw/8P/jE3adf\nzwz9a/WVzeJJLA2m6TtKVTS/k8O1yYlSF0TpzNCtisl7ejQyWMnKFHq7ASdY\nrx2LoxS/E3olFdZVvwHSUOUl/fYROsw/sO10TuaG92qC3mrXmdL9/iqbwfbU\nzGbNnK/4SUY+jLxThRRzNKbLhSsvVYX4zmHqWSYDXDtJn6DX4IoT3JHEjI4o\n4hfcygIDERGfg4ZLcg9UbAhoN0QGe40t1JlF6cZgCteoyJWOwnckB9+rOJE4\n3naowxBsFu8rfKeBi2kahxkN92Aun6d9Xpe+5kxQeUAm096cJ9UUH9xtYP5n\nmJMaYshu3T/eJ4BDDaqySm80s/w5v4J3fiIPyrtWeeaP6NpBtrngfe/V0NPC\narCM+iQtkLs84hzmDzHPrQpDLhhXLi36HVKlILnoBUQcDndPVEUWKdFwJPbF\nE+l0SSuZR/s7fLnCGhaN7V+Me61TXe5O0ymaIX58HS15EqY7rO1H+G51xwE1\nUYCFoNCj9UuWu8cIHCMVmSBnzUV4VSEYyknLC7YcMTS9dJNUI920GNUFkxT2\nsl03\r\n=qBul\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.8.3_1578951750832_0.8436470214269827"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.9.0": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.9.0",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.9.0",
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "8d5e422be27251cfaadf8dd2536b31b4a5024b02",
+      "_id": "@babel/plugin-transform-modules-umd@7.9.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.11.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-uTWkXkIVtg/JGRSIABdBoMsoIeoHQHPTL0Y2E7xf5Oj7sLqwVsNXOkNk0VJc7vF0IMBsPeikHxFjGe+qmwPtTQ==",
+        "shasum": "e909acae276fec280f9b821a5f38e1f08b480697",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.9.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8753,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedOPBCRA9TVsSAnZWagAAIW0P/A6xPeI2NRTIz6NM4NF0\nZnMAanVMC7pQcm3lHqPL3Y1VEfL2XxEk4cUNzEJZjIqHHTIuVyE4tu1/S3AO\nb39gAnztdZ1477DqJAx630uRH7QINXgh7LSB8XIoKknW7bzM3Od22hMitgY4\nZUSYACWlAXFhsUYnpEAfKucD8xJOysJspiCEbkBeN5hzSmQtvX0j2jg7VUJi\nkfKJEZheh1XtKBO0NSIjkgd2WO6xQZPkldu8cfJlP+PPZ9vLburVQGbMMq0Z\nEJwAoJnAl+SRmgw/LzY5gH9vx5mo6IURv+zepAPUqlGoLlURUzxTO2jtb692\nSv1yqomdjMLCuitl/wrMJkrGJdGKQEWV1DTSiA8unmlE1K4I7IiIVluDyn0l\nTSGZY5vMtqdKt7KGcm9IUr/OT7sSp7ijqCIK2cbk+91L4l1sBmigoA3siWvm\nFzJzQMu7zdYGn2xoS1eWZMM0b9ormn+LObd8z0nNxxXi5jkr0Tg73yhJ0wjo\nC7qsRcrIu7Hw8dbMVvmEPOOrNFF6cieLaZ1En9svHf84TETVZ4zo0g4kPyDr\nR5pLGjrhrSxxeqXEgpWh2SAt4TBzAjBzA3C0BP2zNK4JpJ2c+GFw1inPI+ht\nXHWg1grTrnAi0QOK2Y2/UicjLmIFZ+1TFAsI01tvK3zm6YzzbXf3nUSSbv+0\nHGIL\r\n=aWKt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.9.0_1584718785367_0.9108334163311502"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.10.1",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.10.1",
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-umd@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-EIuiRNMd6GB6ulcYlETnYYfgv4AxqrswghmBRQbWLHZxN4s7mupxzglnHqk9ZiUpDI4eRWewedJJNj67PWOXKA==",
+        "shasum": "ea080911ffc6eb21840a5197a39ede4ee67b1595",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8806,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuTbCRA9TVsSAnZWagAAqbMP/1W0TV4zApg4iK7XOOmf\nDGwUUb/dXhlnSsRtVuz+eMLC6aOx13n0PbTyhtHZuGA8yGhzmEmKUrqyjMwR\nkxznhd59ZdJ3ujejhHl3gTRX4DaE5CcqL2RCreYyIbxRsMFBTQ3UHpoBEUNL\nGi2Uf1X7deoPBkebscuE0ZKVq0BtJoIR3DXrqqci2dx4iX1fuxItA1yJeKHm\ni3nKZyuH2XC+ohpY30fl/OJ+BZQZ/QDqCN71lyUJuXMXyGk0t7iVy+H+vuNi\nV2V7GgnZIUOVrYbOD+lS2kt+jAnRyjaPFtGEwhC12CCJuKdgoTTEwNCStjKB\nkijjuNAozophHcnYqi0/b3CaJBQUXb5zt0L88czvgzIHSFyj+SPLIaf/4gz8\n+qBnqXv6hFi2jzTRbPrLzfKdvfOv0yCiOP2D7YsqjHyHapKOd6e3AZupG+9d\n9XvpDTz5VHsdGdGdEOg3k8voi6uk5g0lpsQJOdOiZuCvB61t7dElXhiBf6N5\nnGd4FuXYVbkdSNXx5hPxFT5IWDGsJE8zPIEWc77ysYd4rymRXANrpCtaTQ6k\npGvkpmKU9zIVCNQx3+UaJo8XgBIViqs+/gDwQ7opLZlRCjnMMsxeZNetAwkQ\nbWaB9ImHGOELEnsRw3qYwJiMT1+7TC1EEDgGkLejbx+qoRc3nfrg2qK+7nUb\nCWXK\r\n=GmXZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.10.1_1590617307532_0.755672529886918"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.10.4",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.10.4",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-umd@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-mohW5q3uAEt8T45YT7Qc5ws6mWgJAaL/8BfWD9Dodo1A3RKWli8wTS+WiQ/knF+tXlPirW/1/MqzzGfCExKECA==",
+        "shasum": "9a8481fe81b824654b3a0b65da3df89f3d21839e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8806,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zp7CRA9TVsSAnZWagAA+LIP/2OERJWicZJ8j6hwDT8I\n9DxKn9nd25zjcFWIg3RVv0BJGDtJWKxbsONajd9Tlap4hs3x5OZLzPIjtgVW\nWJdWzb6k5v17t20Jelcn+BEaWe+Su1g3uOVdN0IsgkoMOyDPQNwJCyo5wmAL\nE9Rf6DD72/j6wFJwexmcQERxZPNVDvTrBBSQlVEQHyLygYCA82TkzBfSJmin\niYzW1+enaSj+kVAnN4R2QUfVPiUuGQrhaFcWQp2jbNtca2isqyW+jFSY2Dce\nm90opuNgCh89F4RXq8zXeqk6mdJp5vwsP7zfxJ9nKysMPuXpmu40IIdzMRw8\n7L8qc3pNbprGpb/FdLVNwARvRAb33709hsuE5XAi15BwagceR7ng6/o70AZ9\ncHKtdAtavuPW6SHhNUJ/NJ9iJQj/Jme+6gx57xZ1MuyX7C9J5E4+GMEMRW4R\nskVu1JtkBUdIb3HQXHUGkqjVN38CHwVrpvocppGnSq1JXrwEEHhwwTr7awnW\nO12XYioRY99TTdybv1KOal2wG5xqO0OCl+25/SkxgE14R81ibOcv2f1ukS2f\nT5r9NaERAAFvUfy/6/Lw1Y1Pw1uo3RQmLz0ENTPnGyyTCN1ZgSc7pOIbl97k\nECjJBIDQtr9as4DTtN7gUo8amgo5/UHRRuLpufmtUYcK/MfZBpZCFk4rIO/O\nRYcR\r\n=nK4U\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.10.4_1593522810718_0.36688426444156996"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-modules-umd",
+      "version": "7.12.1",
+      "description": "This plugin transforms ES2015 modules to UMD",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-umd"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-module-transforms": "^7.12.1",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-modules-umd@7.12.1",
+      "dist": {
+        "shasum": "eb5a218d6b1c68f3d6217b8fa2cc82fec6547902",
+        "integrity": "sha512-aEIubCS0KHKM0zUos5fIoQm+AZUMt1ZvMpqz0/H5qAQ7vWylr9+PLYurT+Ic7ID/bKLd4q8hDovaG3Zch2uz5Q==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 8747,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiNBECRA9TVsSAnZWagAAUJUP/R8nPErcrU1FFZQkcmY9\nGV3xgwceOqy9uN7Q/mzBj8SswJnj3Q1vaFmgQ4tyQSMnyXTZdJ1kELYbRjrR\ncv/MPMG0h0Mo8P70sJfLjAteLLax6sljQqCe6J81+ljZ7LezW7HhJ+XwCdgJ\n9uQWKE0Tvi01dk3sbkcfsX6QMCe1qoPUzlHCpMzf0cbhzw/NwnUCn9g4ZuO4\nBDaJErfbhqJtAhMcn91vaBehXGx6eGZVBuMNU8F52MNGNPaQqdyTX2BhhMvx\nBWS0Uv6yFE82tJXw7LMys0DWe/oGoTea4GmwTDW9g/swNUdVe6X6Vv/NKPSr\neClAM4S8mIcUmj+fXLwo2d1xA1Br0qhwRChZY65enNlURPDRauSrYcyui3ze\nT9ZsVXD7z7nLW4VWgizsM58SdjfR9CzBloFZABtijBlT+KD91hc4pODOrNry\nGxDQQv1jmtNm7DnoiExeuFUMEFZK/j2/f9Sl78Wa0zRPPi4nsGN8Zt3Vqt3/\nbWKLyPArcDXqahsuVZvQxlyyCxBkLTcgPvWoiIeCW4D1DPJuvanEKy1R8Xof\nC0Jt2v/6Q2BOJ7QKjsFphbCQai2JsAwFWDySyM0XmOaGjLznUlMzHgYqsrQN\n8mRnyk9xtu+07EOjt2GUJKsMvLYg0F68RL9QT5UiDESgBoJEdoJv5lbQv7S8\n7w4m\r\n=v6ZX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-umd_7.12.1_1602801732130_0.214156775605151"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:42:16.863Z",
+    "created": "2017-10-30T18:35:56.148Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:56.148Z",
+    "7.0.0-beta.5": "2017-10-30T20:57:34.564Z",
+    "7.0.0-beta.31": "2017-11-03T20:04:16.875Z",
+    "7.0.0-beta.32": "2017-11-12T13:34:03.776Z",
+    "7.0.0-beta.33": "2017-12-01T14:29:21.498Z",
+    "7.0.0-beta.34": "2017-12-02T14:40:18.973Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:28.980Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:42.639Z",
+    "7.0.0-beta.37": "2018-01-08T16:03:45.101Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:42.418Z",
+    "7.0.0-beta.39": "2018-01-30T20:28:46.116Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:47.885Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:58.256Z",
+    "7.0.0-beta.42": "2018-03-15T20:52:09.175Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:58.867Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:39.456Z",
+    "7.0.0-beta.45": "2018-04-23T01:58:35.730Z",
+    "7.0.0-beta.46": "2018-04-23T04:32:55.690Z",
+    "7.0.0-beta.47": "2018-05-15T00:17:57.237Z",
+    "7.0.0-beta.48": "2018-05-24T19:24:49.967Z",
+    "7.0.0-beta.49": "2018-05-25T16:04:34.383Z",
+    "7.0.0-beta.50": "2018-06-12T19:48:05.338Z",
+    "7.0.0-beta.51": "2018-06-12T21:20:43.683Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:48.242Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:47.836Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:29.166Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:54.297Z",
+    "7.0.0-beta.56": "2018-08-04T01:08:49.179Z",
+    "7.0.0-rc.0": "2018-08-09T16:00:07.071Z",
+    "7.0.0-rc.1": "2018-08-09T20:09:57.756Z",
+    "7.0.0-rc.2": "2018-08-21T19:26:01.770Z",
+    "7.0.0-rc.3": "2018-08-24T18:09:46.514Z",
+    "7.0.0-rc.4": "2018-08-27T16:46:28.466Z",
+    "7.0.0": "2018-08-27T21:44:59.022Z",
+    "7.1.0": "2018-09-17T19:31:08.501Z",
+    "7.2.0": "2018-12-03T19:01:32.203Z",
+    "7.7.0": "2019-11-05T10:53:53.454Z",
+    "7.7.4": "2019-11-22T23:33:50.289Z",
+    "7.8.0": "2020-01-12T00:17:29.807Z",
+    "7.8.3": "2020-01-13T21:42:30.965Z",
+    "7.9.0": "2020-03-20T15:39:45.502Z",
+    "7.10.1": "2020-05-27T22:08:27.629Z",
+    "7.10.4": "2020-06-30T13:13:30.826Z",
+    "7.12.1": "2020-10-15T22:42:12.289Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-modules-umd"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

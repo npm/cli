@@ -1,0 +1,1081 @@
+{
+  "_id": "etag",
+  "_rev": "48-93ae0cf16337bdd508b465409c8b84bd",
+  "name": "etag",
+  "description": "Create simple HTTP ETags",
+  "dist-tags": {
+    "latest": "1.8.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "etag",
+      "version": "1.0.0",
+      "description": "Small thingy to create an etag from a String or Buffer",
+      "main": "etag.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": {
+        "name": "David Björklund",
+        "email": "david.bjorklund@gmail.com"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kesla/etag.git"
+      },
+      "bugs": {
+        "url": "https://github.com/kesla/etag/issues"
+      },
+      "homepage": "https://github.com/kesla/etag",
+      "_id": "etag@1.0.0",
+      "dist": {
+        "shasum": "db9f9610cc2bf22036d713012dff4aa7e0c96162",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "kesla",
+        "email": "david.bjorklund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "kesla",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.0.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "d28ee6654ff51e83f3025a73677a30ec0fe04fc8",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.0.1",
+      "_shasum": "2aa41de474ffc45669f25c9fedacd64fea4f6ff7",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "kesla",
+          "email": "david.bjorklund@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2aa41de474ffc45669f25c9fedacd64fea4f6ff7",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.1.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "2.1.1"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "415cebe1d2a87510ffbd102816733e2c9934d0c7",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.1.0",
+      "_shasum": "e44af7bbabe2f998d9fc3bee00db0d34b29c13a3",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e44af7bbabe2f998d9fc3bee00db0d34b29c13a3",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.2.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "2.1.1"
+      },
+      "devDependencies": {
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "0d38a87d4217882b31e4a34786069281631a5cb2",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.2.0",
+      "_shasum": "fa537a8e1b1e29aa53480b69cfceb906a47aca8a",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fa537a8e1b1e29aa53480b69cfceb906a47aca8a",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.2.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "buffer-crc32": "0.2.3"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "4b9369db7434104ee7c449f288af03c6abe7bad3",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.2.1",
+      "_shasum": "74b16ea7511ce0041b944852eca2a95b9afefba3",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "74b16ea7511ce0041b944852eca2a95b9afefba3",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.3.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "buffer-crc32": "0.2.3"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8.0"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "b1531685ee679ca8fe329202e56d429d3c02eac0",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.3.0",
+      "_shasum": "c837debfbfe0baf7eb8e2f0bbb3d1d9cc3229697",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c837debfbfe0baf7eb8e2f0bbb3d1d9cc3229697",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.3.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "3.0.0"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.2",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "88a83fdccc15065893cfad6e2c7af8a379941f16",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.3.1",
+      "_shasum": "e51925728688a32dc4eea1cfa9ab4f734d055567",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e51925728688a32dc4eea1cfa9ab4f734d055567",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.4.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "3.0.0"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.2",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "6b701773b06a102947cc063286e7e3f3bceae27b",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.4.0",
+      "_shasum": "3050991615857707c04119d075ba2088e0701225",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3050991615857707c04119d075ba2088e0701225",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.5.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "3.0.0"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.2",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "d42734af50250c05893f02cb900e1c71efffbc45",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.5.0",
+      "_shasum": "8ca0f7a30b4b7305f034e8902fb8ec3c321491e4",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8ca0f7a30b4b7305f034e8902fb8ec3c321491e4",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.1": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.5.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "3.2.1"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.2",
+        "mocha": "~1.21.4",
+        "seedrandom": "~2.3.6"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "27335e2265388109e50a9f037452081dc8a8260f",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.5.1",
+      "_shasum": "54c50de04ee42695562925ac566588291be7e9ea",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "54c50de04ee42695562925ac566588291be7e9ea",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.6.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "dependencies": {
+        "crc": "3.2.1"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.9",
+        "mocha": "~1.21.4",
+        "seedrandom": "2.3.11"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "76a8f5250b02e85bc1c9b1b049d83b853a87df44",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.6.0",
+      "_shasum": "8bcb2c6af1254c481dfc8b997c906ef4e442c207",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8bcb2c6af1254c481dfc8b997c906ef4e442c207",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "etag",
+      "description": "Create simple ETags",
+      "version": "1.7.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/etag"
+      },
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "istanbul": "0.3.14",
+        "mocha": "~1.21.4",
+        "seedrandom": "2.3.11"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "a511f5c8c930fd9546dbd88acb080f96bc788cfc",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag",
+      "_id": "etag@1.7.0",
+      "_shasum": "03d30b5f67dd6e632d2945d30d6652731a34d5d8",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "dist": {
+        "shasum": "03d30b5f67dd6e632d2945d30d6652731a34d5d8",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.8.0": {
+      "name": "etag",
+      "description": "Create simple HTTP ETags",
+      "version": "1.8.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/etag.git"
+      },
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.3",
+        "eslint": "3.15.0",
+        "eslint-config-standard": "6.2.1",
+        "eslint-plugin-markdown": "1.0.0-beta.3",
+        "eslint-plugin-promise": "3.4.2",
+        "eslint-plugin-standard": "2.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5",
+        "seedrandom": "2.4.2"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "16979f788efa8c793c8d07543b4d6aef3d2bfff8",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag#readme",
+      "_id": "etag@1.8.0",
+      "_shasum": "6f631aef336d6c46362b51764044ce216be3c051",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "6f631aef336d6c46362b51764044ce216be3c051",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/etag-1.8.0.tgz_1487475735517_0.6724899658001959"
+      },
+      "directories": {}
+    },
+    "1.8.1": {
+      "name": "etag",
+      "description": "Create simple HTTP ETags",
+      "version": "1.8.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "David Björklund",
+          "email": "david.bjorklund@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "etag",
+        "http",
+        "res"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/etag.git"
+      },
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.4",
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "istanbul": "0.4.5",
+        "mocha": "1.21.5",
+        "safe-buffer": "5.1.1",
+        "seedrandom": "2.4.3"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/"
+      },
+      "gitHead": "9b1e3e41df31cda4080833c187120b91a7ce8327",
+      "bugs": {
+        "url": "https://github.com/jshttp/etag/issues"
+      },
+      "homepage": "https://github.com/jshttp/etag#readme",
+      "_id": "etag@1.8.1",
+      "_shasum": "41ae2eeb65efa62268aebfea83ac7d79299b0887",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "41ae2eeb65efa62268aebfea83ac7d79299b0887",
+        "tarball": "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/etag-1.8.1.tgz_1505270623443_0.24458415526896715"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# etag\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Node.js Version][node-version-image]][node-version-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nCreate simple HTTP ETags\n\nThis module generates HTTP ETags (as defined in RFC 7232) for use in\nHTTP responses.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install etag\n```\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar etag = require('etag')\n```\n\n### etag(entity, [options])\n\nGenerate a strong ETag for the given entity. This should be the complete\nbody of the entity. Strings, `Buffer`s, and `fs.Stats` are accepted. By\ndefault, a strong ETag is generated except for `fs.Stats`, which will\ngenerate a weak ETag (this can be overwritten by `options.weak`).\n\n<!-- eslint-disable no-undef -->\n\n```js\nres.setHeader('ETag', etag(body))\n```\n\n#### Options\n\n`etag` accepts these properties in the options object.\n\n##### weak\n\nSpecifies if the generated ETag will include the weak validator mark (that\nis, the leading `W/`). The actual entity tag is the same. The default value\nis `false`, unless the `entity` is `fs.Stats`, in which case it is `true`.\n\n## Testing\n\n```sh\n$ npm test\n```\n\n## Benchmark\n\n```bash\n$ npm run-script bench\n\n> etag@1.8.1 bench nodejs-etag\n> node benchmark/index.js\n\n  http_parser@2.7.0\n  node@6.11.1\n  v8@5.1.281.103\n  uv@1.11.0\n  zlib@1.2.11\n  ares@1.10.1-DEV\n  icu@58.2\n  modules@48\n  openssl@1.0.2k\n\n> node benchmark/body0-100b.js\n\n  100B body\n\n  4 tests completed.\n\n  buffer - strong x 258,647 ops/sec ±1.07% (180 runs sampled)\n  buffer - weak   x 263,812 ops/sec ±0.61% (184 runs sampled)\n  string - strong x 259,955 ops/sec ±1.19% (185 runs sampled)\n  string - weak   x 264,356 ops/sec ±1.09% (184 runs sampled)\n\n> node benchmark/body1-1kb.js\n\n  1KB body\n\n  4 tests completed.\n\n  buffer - strong x 189,018 ops/sec ±1.12% (182 runs sampled)\n  buffer - weak   x 190,586 ops/sec ±0.81% (186 runs sampled)\n  string - strong x 144,272 ops/sec ±0.96% (188 runs sampled)\n  string - weak   x 145,380 ops/sec ±1.43% (187 runs sampled)\n\n> node benchmark/body2-5kb.js\n\n  5KB body\n\n  4 tests completed.\n\n  buffer - strong x 92,435 ops/sec ±0.42% (188 runs sampled)\n  buffer - weak   x 92,373 ops/sec ±0.58% (189 runs sampled)\n  string - strong x 48,850 ops/sec ±0.56% (186 runs sampled)\n  string - weak   x 49,380 ops/sec ±0.56% (190 runs sampled)\n\n> node benchmark/body3-10kb.js\n\n  10KB body\n\n  4 tests completed.\n\n  buffer - strong x 55,989 ops/sec ±0.93% (188 runs sampled)\n  buffer - weak   x 56,148 ops/sec ±0.55% (190 runs sampled)\n  string - strong x 27,345 ops/sec ±0.43% (188 runs sampled)\n  string - weak   x 27,496 ops/sec ±0.45% (190 runs sampled)\n\n> node benchmark/body4-100kb.js\n\n  100KB body\n\n  4 tests completed.\n\n  buffer - strong x 7,083 ops/sec ±0.22% (190 runs sampled)\n  buffer - weak   x 7,115 ops/sec ±0.26% (191 runs sampled)\n  string - strong x 3,068 ops/sec ±0.34% (190 runs sampled)\n  string - weak   x 3,096 ops/sec ±0.35% (190 runs sampled)\n\n> node benchmark/stats.js\n\n  stat\n\n  4 tests completed.\n\n  real - strong x 871,642 ops/sec ±0.34% (189 runs sampled)\n  real - weak   x 867,613 ops/sec ±0.39% (190 runs sampled)\n  fake - strong x 401,051 ops/sec ±0.40% (189 runs sampled)\n  fake - weak   x 400,100 ops/sec ±0.47% (188 runs sampled)\n```\n\n## License\n\n[MIT](LICENSE)\n\n[npm-image]: https://img.shields.io/npm/v/etag.svg\n[npm-url]: https://npmjs.org/package/etag\n[node-version-image]: https://img.shields.io/node/v/etag.svg\n[node-version-url]: https://nodejs.org/en/download/\n[travis-image]: https://img.shields.io/travis/jshttp/etag/master.svg\n[travis-url]: https://travis-ci.org/jshttp/etag\n[coveralls-image]: https://img.shields.io/coveralls/jshttp/etag/master.svg\n[coveralls-url]: https://coveralls.io/r/jshttp/etag?branch=master\n[downloads-image]: https://img.shields.io/npm/dm/etag.svg\n[downloads-url]: https://npmjs.org/package/etag\n",
+  "maintainers": [
+    {
+      "name": "dougwilson",
+      "email": "doug@somethingdoug.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-09T05:26:21.676Z",
+    "created": "2014-05-18T11:14:58.281Z",
+    "1.0.0": "2014-05-18T11:14:58.281Z",
+    "1.0.1": "2014-08-24T23:28:33.196Z",
+    "1.1.0": "2014-08-25T02:07:34.113Z",
+    "1.2.0": "2014-08-25T04:09:33.706Z",
+    "1.2.1": "2014-08-30T03:58:39.314Z",
+    "1.3.0": "2014-08-30T04:25:31.815Z",
+    "1.3.1": "2014-09-14T16:54:11.346Z",
+    "1.4.0": "2014-09-21T18:47:20.760Z",
+    "1.5.0": "2014-10-14T04:48:49.796Z",
+    "1.5.1": "2014-11-20T07:06:45.217Z",
+    "1.6.0": "2015-05-11T02:11:35.427Z",
+    "1.7.0": "2015-06-09T03:38:54.614Z",
+    "1.8.0": "2017-02-19T03:42:17.486Z",
+    "1.8.1": "2017-09-13T02:43:44.422Z"
+  },
+  "homepage": "https://github.com/jshttp/etag#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/etag.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jshttp/etag/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "etag",
+    "http",
+    "res"
+  ],
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "David Björklund",
+      "email": "david.bjorklund@gmail.com"
+    }
+  ],
+  "users": {
+    "simplyianm": true,
+    "program247365": true,
+    "blitzprog": true,
+    "liushoukai": true,
+    "wangnan0610": true,
+    "yesseecity": true,
+    "shanoor": true,
+    "mojaray2k": true,
+    "makediff": true,
+    "fistynuts": true,
+    "myprlab": true,
+    "tdevm": true,
+    "kankungyip": true,
+    "kodekracker": true,
+    "xtx1130": true,
+    "gfilip": true,
+    "allen_lyu": true,
+    "wxttxw125": true,
+    "bracken": true,
+    "hualei": true
+  }
+}

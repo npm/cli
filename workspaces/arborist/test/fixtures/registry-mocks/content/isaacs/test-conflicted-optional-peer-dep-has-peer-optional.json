@@ -1,0 +1,61 @@
+{
+  "_id": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+  "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional",
+      "version": "1.0.0",
+      "peerDependenciesMeta": {
+        "@isaacs/test-conflicted-optional-peer-dep-peer": {
+          "optional": true
+        }
+      },
+      "peerDependencies": {
+        "@isaacs/test-conflicted-optional-peer-dep-peer": "2"
+      },
+      "_id": "@isaacs/test-conflicted-optional-peer-dep-has-peer-optional@1.0.0",
+      "_nodeVersion": "15.3.0",
+      "_npmVersion": "7.4.2",
+      "dist": {
+        "integrity": "sha512-T7Q34SzRbR04Cvg8/pV4DgpJypYcsN57yDdhwVdHfZkLjbUTAM44Yk5875JtmeVzlN0jdBo9vMING1CDubp8rA==",
+        "shasum": "73fccf22f73b66c8824cc1fc9d32f38167e43e14",
+        "tarball": "https://registry.npmjs.org/@isaacs/test-conflicted-optional-peer-dep-has-peer-optional/-/test-conflicted-optional-peer-dep-has-peer-optional-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 303,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgEIQwCRA9TVsSAnZWagAAsXIP/07lucPaj4WdlPbTVm5O\nh90XaVkib9xE+8g/DTD2dQEAAeb31B1Mls9BIHVMJy9Zhz2aWJLiq1al5xsI\nBBJIwlTpg6k4PLKFlXEFBszufN0tL5zpwhp0HDb/3vCPFSqaIrcYdCSIYlxX\n3nmSUD7a24ygDE7fIHW1GImz1Bscc725P7umXpPV4XfsVW7iwjnrX1vTYYiA\nZvte6lsDiyCQNnX6ovMKjfwzx4r5rrIDhfogSUgyyN87+fqQnqmP4CsZmiUq\nXOB59SBjPG+60eEgPJ86RmSOXQ3/c76BfHZAyi15V6+JaPovbWpHMVrp+qN5\nHYZIFeraNy0YazOMckY5a5+MEypf/MHDTJb14rp26/XWvs0WZjwDEmjJqIYH\nB4L/KkImVtSkgQ/1umCrXiwnTh+vwpap/QuVy+RlEIVFego3Jj8MbP+snjq4\n/8TEbAtgCt44lCsnYmcYCpvMa4dSHR9mjDz74PkU5rbnvz/XS4CdNxYM1TrF\nDuqT0E07Z7dUHLdldP4xToYB8RCL8cMePTkmk2a8DgUd1bd47WDls42ZWMKj\n7aBeKmcBJLtQjKML/hseAJMXvjrVsQBb4h+fTjW3ysBPeLr6ZlXPqjQ8XJa+\nabNlG0Z6cwZu0EuW6YVd088lrXYNW2XV2+B40ljGBXkRw1xxGNDoPIZx847R\npjon\r\n=JZKC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/test-conflicted-optional-peer-dep-has-peer-optional_1.0.0_1611695152056_0.7052189338101718"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-01-26T21:05:52.003Z",
+    "1.0.0": "2021-01-26T21:05:52.209Z",
+    "modified": "2021-01-26T21:05:54.467Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

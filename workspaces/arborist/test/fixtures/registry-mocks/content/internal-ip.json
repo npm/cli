@@ -1,0 +1,1393 @@
+{
+  "_id": "internal-ip",
+  "_rev": "29-9beb9fbb54438d2af14151653b6626c1",
+  "name": "internal-ip",
+  "description": "Get your internal IP address",
+  "dist-tags": {
+    "latest": "6.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "internal-ip",
+      "version": "1.0.0",
+      "description": "Get your internal IPv4 address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/internal-ip"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "bin": {
+        "internal-ip": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "ip",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4",
+        "is-ip": "^1.0.0"
+      },
+      "gitHead": "fba9184d284ae01ac8a8086064f04812f35c50a0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip",
+      "_id": "internal-ip@1.0.0",
+      "_shasum": "b484048e9051d07251bcc7e4396df547f4e3497e",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b484048e9051d07251bcc7e4396df547f4e3497e",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "internal-ip",
+      "version": "1.0.1",
+      "description": "Get your internal IPv4 address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/internal-ip"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "bin": {
+        "internal-ip": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "ip",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine"
+      ],
+      "dependencies": {
+        "meow": "^3.1.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "is-ip": "^1.0.0"
+      },
+      "gitHead": "c0e2abbfefe3b544dbc87da0a72257e3fc274f1d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip",
+      "_id": "internal-ip@1.0.1",
+      "_shasum": "d00550768cb280f417eb05fd2feed774afeaa7e9",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d00550768cb280f417eb05fd2feed774afeaa7e9",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "internal-ip",
+      "version": "1.1.0",
+      "description": "Get your internal IPv4 or IPv6 address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/internal-ip"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "bin": {
+        "internal-ip": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "ip",
+        "ipv4",
+        "ipv6",
+        "address",
+        "internal",
+        "local",
+        "machine"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "is-ip": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "35013e90f568637faad59c645e8f73cebffa9098",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip",
+      "_id": "internal-ip@1.1.0",
+      "_shasum": "bc2a617b39ec37f4cf1616a531a96c2867faf788",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "bc2a617b39ec37f4cf1616a531a96c2867faf788",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "internal-ip",
+      "version": "1.2.0",
+      "description": "Get your internal IPv4 or IPv6 address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/internal-ip"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "bin": {
+        "internal-ip": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "cli-app",
+        "cli",
+        "bin",
+        "ip",
+        "ipv4",
+        "ipv6",
+        "address",
+        "internal",
+        "local",
+        "machine"
+      ],
+      "dependencies": {
+        "meow": "^3.3.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "is-ip": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "ef43d204ee3e36dbc0bc8333b5ab816208553269",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip",
+      "_id": "internal-ip@1.2.0",
+      "_shasum": "ae9fbf93b984878785d50a8de1b356956058cf5c",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ae9fbf93b984878785d50a8de1b356956058cf5c",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/internal-ip-1.2.0.tgz_1456342188905_0.8255082112737"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "internal-ip",
+      "version": "2.0.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.0.0",
+        "ip": "^1.1.5",
+        "ipaddr.js": "^1.4.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "df16f28cd59238ed7e5297a73745f09a43d09064",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@2.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VRmpKSelhyRwe+Yo4nsVi1ZQsOhLgkj61FxfWCEqtCIglxtoSot3vHrKvmL/+bTPBriCHCnNmh+/XTWNwMrPBg==",
+        "shasum": "abbb555d4718b84f88625bcc04ab80b68acaa3f8",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-2.0.0.tgz_1498822902504_0.20054985862225294"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "internal-ip",
+      "version": "2.0.1",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.0.0",
+        "ip": "^1.1.5",
+        "ipaddr.js": "^1.4.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "6dac8ced9fb7f2272e447e188ff5120340fbf8b3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@2.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-Sy3CkuisvDyFd+Sw+nCJbBT11yI6oGNOFA2rZVF7uvlz4U6IQfzLCOjYfqSctC/kbUXjmmSmdkq9CR5c5iT96w==",
+        "shasum": "ac6eaf4f79c8ff8844f65e351a745280ef868b38",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-2.0.1.tgz_1502548045100_0.9065437342505902"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "internal-ip",
+      "version": "2.0.2",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.0.2",
+        "ipaddr.js": "^1.5.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "6b17cd6379f400eaae7041b6d5a0e67967828067",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@2.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-1OBR5z3Te0FrUtpsPP04XQ2Tsgj+AwujBioVtM9WVW/Jyoe7xR3BIfWnnmg1eUwRuYFelIJM9mQwB7u3bLXD7Q==",
+        "shasum": "bed2b35491e8b42aee087de7614e870908ee80f2",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-2.0.2.tgz_1503506543596_0.5833584431093186"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "internal-ip",
+      "version": "2.0.3",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.2.2",
+        "ipaddr.js": "^1.5.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "01c2d31f62823e360ba23a6aad00653345aff245",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@2.0.3",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-XxJMiJOjXbb9LlwH6SVTsnUPymYACunXzKg3dqU+HIC+xYIkUhMyTiT/H6xxPmhlE4zHq50lKlx0CZlyN2C76Q==",
+        "shasum": "ed3cf9b671ac7ff23037bfacad42eb439cd9546c",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-2.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-2.0.3.tgz_1505582019779_0.6302005373872817"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "internal-ip",
+      "version": "3.0.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "os": [
+        "android",
+        "darwin",
+        "freebsd",
+        "linux",
+        "openbsd",
+        "sunos",
+        "win32"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.6.0",
+        "ipaddr.js": "^1.5.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "de43f8f9dbf482860906bb81bb3d03abb149d022",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@3.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-BfOXr402PoF0orMXqT+jqxXi82oWbfnoMzDzSpp676+kril5lOot9s75UYaWP/TIcm7tGTTPXKGsu5k04xGyeg==",
+        "shasum": "2aac6dd048c0c97a6fbc95de8e5fa15b88da596e",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-3.0.0.tgz_1506758555950_0.19928116141818464"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "internal-ip",
+      "version": "3.0.1",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "os": [
+        "android",
+        "darwin",
+        "freebsd",
+        "linux",
+        "openbsd",
+        "sunos",
+        "win32"
+      ],
+      "dependencies": {
+        "default-gateway": "^2.6.0",
+        "ipaddr.js": "^1.5.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "389a3089bbb739aa3de44084c356b3dda60678ab",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@3.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "silverwind",
+        "email": "npm@silverwind.io"
+      },
+      "dist": {
+        "integrity": "sha512-NXXgESC2nNVtU+pqmC9e6R8B1GpKxzsAQhffvh5AL79qKnodd+L7tnEQmTiUAVngqLalPbSqRA7XGIEL5nCd0Q==",
+        "shasum": "df5c99876e1d2eb2ea2d74f520e3f669a00ece27",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip-3.0.1.tgz_1507782060347_0.030048957094550133"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "internal-ip",
+      "version": "4.0.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^3.1.0",
+        "ipaddr.js": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "a8c9c56f5d10298ae4583e6783dca97d36f25c74",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@4.0.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3Raw3cuBScBi7iQzisDbmG0KE/FyTYNYmBO34D9CCao3Exa7s4Eqxe3cQMDNuhTtKvG/zlYCXB4GBhxH2uARLg==",
+        "shasum": "9e2637d1ac16e78d0f64f2b94e1519b92f373f2b",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4205,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZ5zcCRA9TVsSAnZWagAArOYQAKLiZOHvp/tULuXuph/M\nAiG4qWLnMdRe56dVIuocxYc3CPAZbaOIXGM0i7I+Vj9+thSNlvWH9Ey7Qbte\nFSksDK4eb8fWSPJSmZ3Obv5dhLCKnp82/jlJLCwtGVn2T9gSjNISa1xrNIBv\nejvG/2jYtavOUKn8iU1Qm1Ci5if618pqMohj/UPHw5dkA1Hh0iFETqRlGAHX\n7jA5ieesxsfe8ixOmqOa6AoKSr8L60lUzP3QW9StTCqtbtS7D8lhKuLC2a0e\n7Z/Sl+x96MKEsvZAbXVfI8KGzYEwvp1weTLYOijSss7Wr1NJYWT69k/UMpzi\nKIbXxN3AlFB45eVZ/ZuktZ3c7AF3vOW70aHmH+LjsA2XqjF+4zXj57C2PTeR\nCtdL/XZ5qRB/ppZTukCuuSe0DRXCIqgWlyHvWFl6fJ9PSohkUEtfBHbgZdXg\n4adpdaXku9r8R9FF9+z1zaXSQZjKU2xb0zYn00HU9p3zOIb5WFirZ3ShLDsS\nXiFtsmGfyMITCEIbbDifkJUm3pD3ASAMzx+tw9HVQQH7F00AjVI9IH3rxqhA\nS5VZ37ihgVPZpRdB17OBu4lf0+BgdVzz1Mx2XDk822oWihM9oZZiYyMTJFcu\nX3ohbbx5WlYdoRCwZ+C1iui86rfa1631QQKywk7oZVmX/NRtyMrDWuNSVaOw\n13RY\r\n=bZxg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_4.0.0_1550294235315_0.6528111327076651"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "internal-ip",
+      "version": "4.1.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^3.1.0",
+        "ipaddr.js": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "3ae74792b8e7e66c4fe8c56de45701793f88c1dc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@4.1.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vMbCq5+5xM6cQ5Zpzw2fPirS3uOAabk0ep+plu8P659c7XuvaVN3G//utF0AWboZIKKL5YDpti7PO51m/wfomw==",
+        "shasum": "6658767ca7087b67f720df711605188e8364e340",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5688,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbk/jCRA9TVsSAnZWagAA78cP/0LKV9yPmb11SkeJ1f8/\nakxldd9wLvNFF1Go/w+9G1HcfLm8YUqn+vVSISrbJnm1MLeVbJ5ocXbJFg3m\n96IkJJJBR1QY9Ir+gimegzdaEPGKcyxsiivdxjnykKCzwVMUywHkNqEMrqTw\nLcgYa+MamcfyOfRXR+J7YUs7rTKjssApckk2KMxWlDieijD8Ys+Es5/McJYX\npHwU7yKCjJ1bssMNLGKvsonIJCilUGM6GSU9oGy2ySGWAD+1DHVbrk0I9u8r\n+0ZEZc5Iy3lCK4DmZtTXTEf8kkHZWtTz52fJEqDQZU1ZBBbqINR6M6ue76ue\nQIvYTSx7D+14JQioeExUD4WH3a5CDQlqAEwmhcRSl0kAVltGTwCB1PKrzWic\nBw2ioOzTVpK6jvK9FPZ17zKtnl1Q7XwjbHJMGw3O2BSSyKouZk+4CvYAsmrD\n9EYUaVzAQIFu/gpEX9jYEoMBmg93qb5T3pHf3HOTqTW13qeiXmE8/bWQhmAL\nliUAo/zaTvjSVDvrJ6ubfJWkmKzYE8Gd1uin7D1svFaUqNlkGY9spgbcn2i0\nSIr70s6RM1F764sSjTmktCG2G46fnlqD5EvLgLzl/r/9Q2kk2Uck4Nls/w1o\nuVkMYdoQap7ROf944i+h874WjUeoXilllLZXOLN/obri9JkUyGDjv7X7mTbp\nGTRJ\r\n=xSRK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_4.1.0_1550733283113_0.7537145436937385"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "internal-ip",
+      "version": "4.2.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^4.0.1",
+        "ipaddr.js": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7548b775c7f94241a615e6322efd8e65d6c0fa97",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@4.2.0",
+      "_nodeVersion": "10.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZY8Rk+hlvFeuMmG5uH1MXhhdeMntmIaxaInvAmzMq/SHV8rv4Kh+6GiQNNDQd0wZFrcO+FiTBo8lui/osKOyJw==",
+        "shasum": "46e81b638d84c338e5c67e42b1a17db67d0814fa",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5688,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJccUaUCRA9TVsSAnZWagAAYnkP/RB1ztz8DqEzR5IT9rkd\nhQCdPJH/64VmGbjPpargpvNFC63oYwHlfshiZxL/rAShPOFlVcEQhacEOs1h\nUn8fIJLoIyG8ocbnd4riwjF+DqcaayzMFCBReUdzTpM6xR0Gi+dfVN8DJSh9\nXih2IK/A2dFIRA8YyKxjtYPAekJ34VZiwxN41Rb3ftxZ9q6hwVBHFcwP+b3l\nEXxU/PFcfoDOjZCscK/eS3ts1uDW5nn74G9R4zEsei4WygZVhOeLaUHvMYgW\nxLRRECtaaXIt8bihMwJhjiCv5mDe/+6DijDdQYfs0Z2+GqME+6edBpWFa9Ng\na4RSE+AXVSYEf5ifh07uVMGSLotyLDp4tbrCX8/H7+8hw98TNnlpCCgLeAdP\nG9rj3UQDdjx04xpxu/mtxFAcreuoxCIGXzGlaZ4ZwmqpZcowE2RDvlWt9Ira\noKRmhoTKCj7kF8v2RcFXNvichQln9hVqDjIaTSjjZkQBa2VxC9ejC/xYc5Bu\naBQDGQHe5XGfkkKBI+ZAo1uh54QAilDDVN6YXH+nSu3rhPAyMRXRBa9rJYVv\nt9GDVASeQ1KCqgcdHMEg3HoF5I+BBUR4VPdJPOPvaojeAwfpO3J39bdLOJX7\n6xDb+6DnO2QEyv7HDG8dRnOX8rIqg5g+T/hcGgNOcHC88n4xwzgZnELgsqJz\njDXV\r\n=ch3H\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_4.2.0_1550927507407_0.15512484925100534"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.3.0": {
+      "name": "internal-ip",
+      "version": "4.3.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^4.2.0",
+        "ipaddr.js": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4f496a9befa86c40dba4a3ed57fedfb7c089599d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@4.3.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-S1zBo1D6zcsyuC6PMmY5+55YMILQ9av8lotMx447Bq6SAgo/sDK6y6uUKmuYhW7eacnIhFfsPmCNYdDzsnnDCg==",
+        "shasum": "845452baad9d2ca3b69c635a137acb9a0dad0907",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-4.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5726,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpvx8CRA9TVsSAnZWagAAkA4P/AzhCx9/bZ4sp8d89C8p\n4dWUyzIG6YvXfAZaOqFcmMmm6X7efn5/DSF+VY4CMUb4kyQ5BJCMhPDpxLsk\nXFvWs0KwIUThc+c9UINkyMsynviDHvgxBbbA9vMqdK8rphYaYYEdaiH5LXbI\nPLnItmzZKZiOHK4pvHNeb2OtfEMmbWTqrZc5E3FTk+H6fJf0E9/rgnNVSawy\nH889Iyi6xtmRccxDn7kEHcyYVsSrf6l1riAJvb0CV1UJkN1f5FvSi4A87FHd\nVysUaRfS9YBJC16lbrlIEgGakDZLnqhWfSC5fZTIl3ANqQlw9SIsU6xPEcQQ\nNjLP9r4qWWgSwMAsDTQxYu8LFF0Rq9/yhj5SpTn5TxhX0v7vALj3QIF5ZuIM\n4uPt32zwQbLtaXG5L0sKyPMpjsZFt+9ALqlmVBxmLdu7UNTYvcVZPhQZgm+U\nq8nR/AbpRAYfWpEn80AJfIndCxFwTjYcnPW2sc76o2++Kge9r8mreBfBgb4v\n1brrvOKLVmui9pFhNk2v3t/DWVrbbFyrcRCSRQpNuUMu05MvocFQDNdPx76i\n1Nx3hlu+tVTE+oEAKfhN6K9fw/W7VtPv/jCaXTrGFBFIms1o3lQFkcYYHNao\nWOE+2MOflHa7XhBP2H3L45rpAEZxboY4oIBsrO+AEpnLQ+lUqRvio1PYOUGI\n+B+d\r\n=gFEh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_4.3.0_1554447483357_0.4200649506716061"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "internal-ip",
+      "version": "5.0.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^5.0.4",
+        "ipaddr.js": "^1.9.1"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.9.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "85e981f1c60ac73ec1b15f70aa8132be39eacf66",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@5.0.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2rbiwUsG8My+vT/JBdaE2r6EjzOibu4VXjkfdVBP9PbfTn68EE1DCZ4iw6dOnc+FGsFL4uAqap/eeNoqK5sdtA==",
+        "shasum": "e7c24aea05308f57b7b3ca7c80c07da8f25e224f",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6125,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpq4pCRA9TVsSAnZWagAA0+EQAJZBrJZd+nQf04PK6Jac\n7/AAC/dQ56DtRVElNMPMKeEcouaJEkZBrMOLCrYpmExqGeJMsK6USY44HHMM\nzA93bAapxDa34IZjabf1kyqEcFzkgbzLSrPGFFd0xdyQqhNBAb1M+dUsValw\n1pqZ3DDKynuKy2SDg5346CcgRxxQk6g/iD4W9PSJk4pFG2jIyNn7HBj/7Ha1\nBNeAjOPwr+VycH7VmqKi5HpO2XP/5Xnl4zV0tSJME146iRU9fjaaDjG9QsnO\nNKMZbfVAUlZ+SdnbFOTdBU8ZGjyTGHwQEaOqFy0N7/wV2SujJW0a9Rlfu68A\n9FKbNcun/RPM+hmti4E6Y/B64mjeldkVDg3DDALAuDNuTWkasRMxTU7ZqY1B\nWr6ypvIJBQCDjGbO6Izd3kyXiJX1zMurv8e5mMe/DM4rshDlB3vc3RvnCQ0n\ntlhnVPpNIck8nKpNQXW2OW+g6PiRTrpzE+GuTWLZYDxZnM8fBODyfAjSMzmF\n5eEqGZm8Td23h3S4Q6f8oEyZXiubo1NGhM+wdy9VCS+uDNUBg10fNI5+AOhS\ndqOXEgd56nOuwlM06f8mEJ6jHNjB8MbQsoXEUmyTt7plIXX6Um+On7E0w61G\najQHTekJNBbxsCumCiwFW8NAFNx5xlfsWf4EMBig4VI3+5VrK3kvkYoUnzjN\nNs8N\r\n=Kuig\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_5.0.0_1571204648738_0.18918474974201294"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "internal-ip",
+      "version": "6.0.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "funding": "https://github.com/sindresorhus/internal-ip?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^6.0.0",
+        "ipaddr.js": "^1.9.1"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "13af835a2ecfc367ffc24e44499bc1a5e0d64484",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@6.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TgdC/bqCeRUXHXFLY21mHGyi47WAAnxW5M/VXgr7XB5qbP7smFyVXRmIcec/RQ6oP4dUpxqecOOHwzBVpp5t4A==",
+        "shasum": "be57b018e8e6994048134e6f4262fcd3d467e6e7",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6134,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaaqECRA9TVsSAnZWagAAXX4QAJqnfUj/7zBYrFCFBlAv\nhYohNQa1ID5UxYEG+BZNbtcT8xVKCEuvgGMukp/MUkfMJbp7Wg+kyBao5OMc\nWLADHu4Q6Rj8SD67KxlXkhhtPVFqC7Op+82Z6H9G2Vg+5HmZ/t5FeyYcuUb2\nC+0QlZeh/zqdLiwbg47xe1Jz3lbIsDNBPahYGnTQx+xJvDlNbCFZgsWTIoQT\nVadI2lefTHKoo8052BxOIKOUYm105q5ZmI2GVr6B7uq016H6UwzzyLIWX5uS\n8lHQr8OH1cu6gFexFIeiNBWSwCH4LLZy9iqYQv1NFOTHXWwZPYZsUHqY6d5I\nza2KVYuyLNs1KR4U7DvT6rGtpxsZVQouPDHwaL3WKKG83Jm8l6t6W45xkHUF\nxdBRGfwtctD3PY9YmwWJv7RBnHcAMLqqqkUurdrXcyGKNv6VH1fjoYqxsMhJ\nTDOhtgbUrlrpN5YPvKGmx/7CSOGDSUTYrUODMj03wv2osWV8n4+/hCbjzdsw\nbU5a43OdpPW6VVZGMo5hVeLTJ8erepVd6QI+JWdgVgtvBnabsg3gZq9vKqUn\nwcOyfJeQQqfIs5zoROZhq9iNe5TD/yZeJlwzYxqNJUkDUhDOK9sRSYaeN0Vz\nVt2eIOixlGvfTKWHNC7tYkC8SjF93k7fhxNznRCZTruYl/4MqngeuCGxjLrg\n9MRP\r\n=f68J\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_6.0.0_1583983236119_0.33588730654717724"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.0": {
+      "name": "internal-ip",
+      "version": "6.1.0",
+      "description": "Get your internal IP address",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/internal-ip.git"
+      },
+      "funding": "https://github.com/sindresorhus/internal-ip?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "ip",
+        "ipv6",
+        "ipv4",
+        "address",
+        "internal",
+        "local",
+        "machine",
+        "system",
+        "net",
+        "gateway"
+      ],
+      "dependencies": {
+        "default-gateway": "^6.0.0",
+        "ipaddr.js": "^1.9.1"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.13.1",
+        "xo": "^0.32.1"
+      },
+      "gitHead": "f2a688ee1a8cc8ddb0f3583cba3938cb646859c5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/internal-ip/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+      "_id": "internal-ip@6.1.0",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Cs1iaqrl3z3KJ2ejWyfKkMcuv9NTEJWXtUBSGVc+Eg9BjBLS0k11CsOkf/p5quOkVhhRuq9zwZ/PuJpPUuDP9Q==",
+        "shasum": "3ce3a9155dc9e2a423af0059efcf5f4b0de3399c",
+        "tarball": "https://registry.npmjs.org/internal-ip/-/internal-ip-6.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6051,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfKZ4qCRA9TVsSAnZWagAAYSgQAIZPu5fF2zvz50pr1z2s\n6LAg5vah841I57M2Ao1km0zer+uNpgBMK7Rlj5nwOEhLgWCgunvqgf+YEmDS\nAQuC6/0vLkVei5nhK387iSef38GzoBAur0602+jKEnPOII4D9badt5tqY2tE\nOPFet4Nt1yiZDwwIY57wrtTbp28J9r7RN3Yh6yfFp06VrIGLce+tES/vjrQG\naOhbgPWenOAOUcgomY7KkXDe7Dw5uE+ZxA2bnqnJhq374N+6S4DiMVguXpHJ\nG2B93pCVlZJMpntJVBbIkvnqtslf8C/G+Gt4jnYdpBdtr4lZNeRBvTp2XFEf\nfGef5YE1VYRJGmhcTF6xZBhR5mffUgpY4v9U6vhiGTA7L9RJDh8ax567+hga\npvc0GgisYohDCeUoNUBrJySXMmM0F2Z5MFTbtvCehEGKi7bHSJu+KNhjpIPY\n0vTE4r7cjeju13E3Yt2XtFBDr7s1BAgajF1Vke4M1/iaLGuil/Y8JRauFpR+\nil6OFrVSBx2qtWKOy5kK1rarPfPyYblFPE/u5pYZ0lBb74/DhAYO0a7U53wm\nWG4aLnxFKAC10MWTPRK+qWUh1ZPuNG5ecDIi+b0Os1/IAkuCrpQK5k0Ztk80\nJJIzp4Eh6CQ6IDfVuJ6Vvde4Aj7F+iiPJ76jYSC64KZ6eiM6mHGcZ9VfeoPO\nPv/G\r\n=zeg/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@silverwind.io",
+          "name": "silverwind"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/internal-ip_6.1.0_1596562985924_0.7300866951420435"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# internal-ip [![Build Status](https://travis-ci.com/sindresorhus/internal-ip.svg?branch=master)](https://travis-ci.com/github/sindresorhus/internal-ip)\n\n> Get your internal IP address\n\n## Install\n\n```\n$ npm install internal-ip\n```\n\n## Usage\n\n```js\nconst internalIp = require('internal-ip');\n\n(async () => {\n\tconsole.log(await internalIp.v6());\n\t//=> 'fe80::1'\n\n\tconsole.log(await internalIp.v4());\n\t//=> '10.0.0.79'\n})();\n\nconsole.log(internalIp.v6.sync())\n//=> 'fe80::1'\n\nconsole.log(internalIp.v4.sync())\n//=> '10.0.0.79'\n```\n\nThe module returns the address of the internet-facing interface, as determined from the default gateway. When the address cannot be determined for any reason, `undefined` will be returned.\n\nThe module relies on operating systems tools. On Linux and Android, the `ip` command must be available, which depending on distribution might not be installed by default. It is usually provided by the `iproute2` package.\n\n## Related\n\n- [internal-ip-cli](https://github.com/sindresorhus/internal-ip-cli) - CLI for this module\n- [public-ip](https://github.com/sindresorhus/public-ip) - Get your public IP address\n- [default-gateway](https://github.com/silverwind/default-gateway) - Get your default gateway address\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-internal-ip?utm_source=npm-internal-ip&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "email": "npm@silverwind.io",
+      "name": "silverwind"
+    },
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-04T17:43:08.320Z",
+    "created": "2014-09-14T20:44:46.645Z",
+    "1.0.0": "2014-09-14T20:44:46.645Z",
+    "1.0.1": "2015-05-16T11:21:45.877Z",
+    "1.1.0": "2015-09-28T16:38:40.649Z",
+    "1.2.0": "2016-02-24T19:29:51.134Z",
+    "2.0.0": "2017-06-30T11:41:43.410Z",
+    "2.0.1": "2017-08-12T14:27:26.317Z",
+    "2.0.2": "2017-08-23T16:42:24.836Z",
+    "2.0.3": "2017-09-16T17:13:40.838Z",
+    "3.0.0": "2017-09-30T08:02:36.935Z",
+    "3.0.1": "2017-10-12T04:21:01.532Z",
+    "4.0.0": "2019-02-16T05:17:15.491Z",
+    "4.1.0": "2019-02-21T07:14:43.324Z",
+    "4.2.0": "2019-02-23T13:11:47.601Z",
+    "4.3.0": "2019-04-05T06:58:03.492Z",
+    "5.0.0": "2019-10-16T05:44:08.879Z",
+    "6.0.0": "2020-03-12T03:20:36.231Z",
+    "6.1.0": "2020-08-04T17:43:06.059Z"
+  },
+  "homepage": "https://github.com/sindresorhus/internal-ip#readme",
+  "keywords": [
+    "ip",
+    "ipv6",
+    "ipv4",
+    "address",
+    "internal",
+    "local",
+    "machine",
+    "system",
+    "net",
+    "gateway"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/internal-ip.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/internal-ip/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ericwbailey": true,
+    "gaboesquivel": true,
+    "rocket0191": true,
+    "xiaochao": true,
+    "sopepos": true,
+    "tongjieme": true,
+    "itonyyo": true,
+    "ganeshkbhat": true,
+    "xtx1130": true,
+    "heartnett": true
+  }
+}

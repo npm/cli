@@ -1,0 +1,10 @@
+{
+  "name": "@isaacs/testing-fail-allinstall",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "exit 1",
+    "install": "exit 1",
+    "preinstall": "exit 1"
+  },
+  "license": "ISC"
+}

@@ -1,0 +1,2777 @@
+{
+  "_id": "@babel/plugin-transform-property-literals",
+  "_rev": "68-7530dc19fcd4fc17b6cb18174a506264",
+  "name": "@babel/plugin-transform-property-literals",
+  "description": "Ensure that reserved words are quoted in object property keys",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.4",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Zyz1hfNs0fZjB4vSi1qFfkTMHpb1a3GNZTVWaZtnhALnBTxdmAFtF5BL3W084bSZnkRvJRLzFi0Q1Q2bmtIPWg==",
+        "shasum": "9af0c7f557c7572c5459bb9c8274bc00f0d06d15",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.4.tgz_1509388484963_0.4837572064716369"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.5",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-4A8Tmep81Yo83gpTU9la5vxHv9Bzs1xEndM5aK2Et3PREkcwGC1OQoMMRUENGfGdl82Zd4iiYeLwGAEqLofH6g==",
+        "shasum": "3737ea1ce6db8b1a50b15fe86ee9c9bba48aa916",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.5.tgz_1509396982953_0.2021293460857123"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.31",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2FwvtIW5Z3aHXoc+bvJlyfEyQR6FIKYAC62P+SwsYu7dEHgFmRSNERv0Ku1quKOKdrLLLM6yB5Ih/73hZo66Pg==",
+        "shasum": "0e29aed47c6344686c96ce8b943d1566b80220ea",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.31.tgz_1509739407914_0.09617801406420767"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.32",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-YgbW+X4zGaTD17U1voY5imrODGLMyNzX+I54K3IDUKqx8Rs4TvSezPMxDT4z6od4ZOTMUNP4NsL0jkgTQwG+ug==",
+        "shasum": "aaf20579d5b9cd57b24f1d6bcf61f8bf5e886099",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.32.tgz_1510493598320_0.2462337976321578"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.33",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-we1ZPSF8rUsbqU9fFA5HCtW++Uboywv6ElcWJd2XYBzOkUZhblwu51aynIcUSG4ipkfUbBFVVCWUGHyzL507Wg==",
+        "shasum": "1f8ee3224c985112df0789eb1587aa62a2e9470b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.33.tgz_1512138501115_0.8569671476725489"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.34",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-0wYzQDPtQylZjUlVhO+1sGS5sevkhJ7I4Fqm9g7GqroQxZU8CoXjNrybsb89YfUyV01qUfwRG/NtmJk7Kfi6Zw==",
+        "shasum": "793b61b705098c767c444711c76c6717018b4d06",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.34.tgz_1512225561952_0.38727753865532577"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.35",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gcLbsy0k8yhAZk01Dr9G57XSRgkcqQICySMLLbwcnbc1VM+Ya2k00A2NjndZLUYRcWpQhypQ9AesztH0pbncSA==",
+        "shasum": "5668915c9696f0d12d6287251d4109babe46f601",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.35.tgz_1513288068975_0.22273129457607865"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.36",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-8R15bq7Mt2doZ1M/jLpQGSsE0Y6kgDOI0NQMDh61keJhS5AriL4gBhliib0cQJV/3TKpwKXeSLakuixNOBMrAw==",
+        "shasum": "2908a62d112e1561886670a4d9495fa91296dbdd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.36.tgz_1514228679399_0.1253397143445909"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.37",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-v+cZUzyuawiTzvD5iTwkNHZoLbw8n6q1omayUcMLg0ktCJ0loMT+P1KXYmYnXBsExfL+tbZGXEQryX66QJMkyA==",
+        "shasum": "96f68dd9ba942e9f0038d7d45c414eac412d4b45",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.37.tgz_1515427352349_0.7144136629067361"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.38",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-vQgj4pmc80APzb7JVcvQ7uqFc0vkxGJ3YZWMMD/6prQfaWGv9zk2PqdYTQ6Qc9gT4Mt6Kyv9HNkiJNVHHEsLVw==",
+        "shasum": "9c3a024a49e6e02e7159aca165ab2139b852ff0d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.38.tgz_1516206717220_0.07680633454583585"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.39",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-eDnbu11UgyJ1OTnWcu6JF/1E10hcOKz7Cpaj6bjTfMW/a5EjKm1sJ5+XkDLf4FXx3dG+2gNLakm3FhaZzklSWg==",
+        "shasum": "2374187590e9ad8120f519bd27993ff50b2587b7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals-7.0.0-beta.39.tgz_1517344054965_0.5325346279423684"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.40",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-TtfRkSpMjSaLTbKB2eHhDYyWvqLiHIkgxQirAnk4Y4Fu3doLfk0wZhDDPQ7EcnTc/M3lUpnADjFoFD1RG9PTGw==",
+        "shasum": "75d0617c9b1ef635710ccc461f04de6dfe1d1d00",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1761
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.40_1518453699007_0.1875350186348439"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.41",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-yUl++7dz4dW+unwJwDxrpogPebcO7hGijbXOlYMFXrrpHERlPn2CqAuLvxOQzdPrnDRHYysnAI2aG1goSMMjMQ==",
+        "shasum": "564b85f0a7e17209c6062b6ffea5e4a6313fe32d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1996
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.41_1521044771399_0.9776525163631786"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.42",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-3dYkXM7aZ8b6x1cHUhZPKYYcF/4HppoQfythpi95tumfgZQR2NDu2mzAT/ynE84/x8Vx7NrSxuNfB6e3CJuzQA==",
+        "shasum": "e66227d9335bb0a55a7c561754366d40b1bbfc23",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1996
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.42_1521147047201_0.3655428471173996"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.43",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-29TxaPeoVFp7Nt+ysAIg42wPIG0yQQlrfMHJEgUALF0Z4e0tKqSlmVMPrPbLXUd5uiEdPftqVA61wOW8leKg9Q==",
+        "shasum": "8b1d931066ea4d77f4bb04f9645c3c6745075a16",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2199
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.43_1522687707762_0.5827052376215189"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.44",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-jpqwHxFa3Y5kDVlq74ZL9mNKbvAkjW2lgobo9jOYuc2PMX66cCW5yp5xp8YCTsidF/ue10VZ0HpVjmFPNaSkrg==",
+        "shasum": "1d0ea6d29c6b4ec7e8385864f04e5750db2dc677",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2248
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.44_1522707609665_0.021966664789036416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.45",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-3uLI9AQBNZYohxPJGO6okUIUHUhXCmp4WHl5rVgeVRKFLVHGxYiXhF/IAJb/tHn02QmU7y7z1TMU/BwxnZPFmg==",
+        "shasum": "bfb32df45c43f393b7407051a0bcb5e71bc176d1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2248,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1rCRA9TVsSAnZWagAAwL8P/39lpRLYQR3Ua7FyY9Fz\ngqlXYypFPXXeXWeHw52pR4OxV5ch2ldR+0p+OQaxILVMmtv7sGE25NSc+sDi\nCXEkWWN6TnKiMQ4cxWs5KhoZ4cKz+QamJ4jsgoupsPuiJ9L6WjHRnwE5mSmi\nVVJ6Rt+p/U7j0sYgj1Z200wNJ8c/zDtv4+81Y9AG8+iogxwCAquMSznkIwUq\nUjHsev4M1a1h1CfidtJT/8O/ckwsNVmFs0sBeH9mQaAmAR/abNYgWAUxNUmE\nzuv3xsCUS5ZlW1GJU5L+xLwAI8rNs3OOP50G1h+aF9juaUZplPvE+tlZz80E\npGhNBJaAY7l1Tn/dwlyRTtjLnXEcAcy+DzKo3XnLX3Jzu53HAmowi8RxBQCl\nSMDZcSs4EHD9HJ+lj3qkCRlT0h1PQp//O9z2XvO3mntJNJft9roMoMRONANm\nsGp5doY0MSf5NqnkFjdF/XRNKKrgQG28p/qTO5on2ceGglrcSohw/QC+PPCL\nDKr7e+/x+9+7FHfxDMCwJi9N9Z8wZHRL3jXU15gu3Du6a8W5fUAmbO2FPUrr\nqqGNj84mWs+el7lrtJO1S0UFdXZKd9OUXPc7dWSW8tAnMnyPDX7WEgBPjcyA\nElFV6Z1oAPu7D7mu9TXAFOyJJC9TbzA7lCzThbw5BDkMQj/UkQuk8g3qd5fn\nlGTd\r\n=bQht\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.45_1524448618986_0.37587120241102534"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.46",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-q1jSyGXA4zPWLpJZ7rPLpbQTv27VHSHWeU16xAM5PnmI1ZrL5XmhmhAfZ4D2+W3NfXbvaEUyxPBnwBYyGPKrNA==",
+        "shasum": "5e6c28fc7743e8a7aa80ec64486801e28fea304e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2248,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGbCRA9TVsSAnZWagAAhq4P/3DwlPvFJ9B3wsK/r4Dh\nJkAs7BycIBqjtP8Rjg3BR+fhEcEFpCljZSROlElOAwG6bZ0utLYlBunQxiGh\nW90wZ0JpLKVjqm2P4A5fFj0K5jaUeR1iBzinWKqpz4JA5GwfUi7W5uq7xz9E\nxxnhIBej0X9Omsn0Vjp4ZI/uFoSk6Swgu9x7hIsKHEgYkKFgopVjTXgGuqCK\nDU/ib0WTyEPN2KoyERScUZHmpNGrG0jYFLtCPzO3W3dmFkobtEIo89oDPYCV\n3LgnRVatxnVWcpPNxbyZuSDJvPHC1R89DjxX3Tgrdfxt3TwebNysnm4vmMLH\nRCPFmdc9JrHrnrcfSfTjCf2a3eEiqwsBajPLThc2kg/uuE1euyCT0NmwFekv\nvktDhYtCqWl/I5oXn+FMMmo7ZcD/mK54OmmeNnMJz14u992FR3YjwhQi/aZH\nmogWBtXH8uDuyzQUvRmcWyG7zqvzOI1+b8Z9PqU6/X2uIHtKW1Ixf9tdM8bL\nkaKBZbxpQRolWTtVI0e2uuWwkskWh01ZjtwZnX/Ybd4/6kW8q1Qh2C0qunFQ\n9mplGhNllhwaMZ89FWu1Z00pDhpYLbFew+6KlcbtEUhRynYnC4mug0UDrm2A\nwUcEhnEpgxFre7d1Jy8UaaaLSQaZterWg2rpXjfZSVkgOdEnRV+7R/Dw+Jhr\ns8QB\r\n=Pm+1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.46_1524457881357_0.708071094887154"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.47",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-BprUjFZGZ8+f8yHco0qIWFoEez/3mGScE+kzDmWIvMOLO9dBmzvM/vxTAUv/armxOl+wg4fUDLqSF99ZxjSt8g==",
+        "shasum": "6e44852694a016d3fbde201cdb824a11373122f4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUmCRA9TVsSAnZWagAAlVgP/imSyIvu2Pj8lbsRszdC\n4wbol2R6/g2LZl8D+hnUADNSJRCbysuCPT1cWNKobyYHGGNPVXG6vDeOE2s0\nWj8LKiz+79ql9rWs8fKm9fLpPi2SqiA6zqiBWi/f4RKIsMsL3VNAaNNnLP+Z\n/3CUHqYSv/juz4Do6evyfdsJwlCP6Fn3xgt2kgbveqlfWNhPrtAjDD9lyTTF\nWeJFmZ3QKKmKz6V2WaBBJuR/mQLgKtsxOmVuVAYkR+GR05gIjH94fN44kQco\nkGQ2u6wct7YirzWyLSFDwaXf+E449i23euqf66ZGxxwWjKxZsM4PRPFt2mVq\nu/NPRwiyTCFzpzsRq1SsOuXN+HJQWtIFxUqrov7XxGQ+kqXUVhLOVtJnsYaZ\nHOmnUb4iEL+rG/e/d7bTWfg/kfr+qXDHA36/OSLEYIwgVIK9Mks5sQ4KM/lp\n37Y8v5E2nYdj6rDqlLRcz7WaM9+j9NgLNTawCZN9qnPhJXzBRo0aAivgLZzh\npvT/eONyErvJp8FMr08eejqBhbU32zqGXfZiEAdDa5HZLGZqONSLXXWai31o\nQBZIheNTxCM+EzxJ1n9Lak6Y1/EClOfwt9fxOXOHCBsnBLBRX2/sOezA6HTN\nY1Pi7kEjyp5XYbxi59WDfH0mCT+iTcZbTt2TLble110CAuoJ24eHWii4JyUq\nlA+z\r\n=mDJo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.47_1526342949887_0.43501647170578117"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.48",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6QsNN5tbbHz4YIJQNiKUKLIG1U7xc69SEEUnhOTE92nQCBupFH14Kc33Q56jYx6pbCKuwMlZvxcI9JfYdRA9cw==",
+        "shasum": "02b3704519a701baea82c6e2f67f3488e65f1ff6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2199,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxEDCRA9TVsSAnZWagAAmqUP/1ZMRq1HoUAgk2r9YSkn\nSfcXVGZLADcD5CbbZsWD2tDRpQ1kPr11pNdJ9mpf2vynodlcn2wAMXzxY/kS\nglnq4MnYOQ51+phNwxAt9+pQwzLNfTK09wt06nIhpmrVWCB0ZCOQ38CFKFZM\nmjPOgZ1kgI1VYOs5GvJTIX3EWXrzUJBPmt09wQCoIXCKQO412320KyA8AZyE\nN22LvKxDNhgTkEXyt+hRa6uduuKfHIVCBZ3ftZdNN6RGh+v4ep84hWVCqldP\nkzZw3i9FLzfqa/9eRAd7CipxS2Yb3fnweEb5YIShK6RR1xvkWsAK6Qvc34pF\ntwLq2zmgK4coEaNW6GUoOp5rqRe+/ssl91BtTcTpcHJCn1v1JTHwOHWbrOv/\n+cr3S6xavSteVPXqhLhwcAdRNEKETeAC84UiJrEpqZ1KGg1XD7cDYPuWJqfq\nQ6tN053eSiG4mlRv6pqopa4jWHrLHsk0SbKWfR8cbBs3TxU69FjEb7uoU+yr\nJofyuT8b25S7q5Twrwchw/Wb4Kgy4N0bLqkXYhKoReo270X/WjWiLh4vkVcV\nl0FqpCwGOv8qztdPb6EprwZjW2tMnGxs4+Z6+m4VDQSM9p+MeqlPju69zCFN\n8Gg+iDc3Imu//S8X5XplJdlxoCOEdcjV0VISrxW9eMKIXFZhcGX6KkXCBk+Z\nCBuZ\r\n=ojUu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.48_1527189763056_0.8936877796175919"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.49",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "a5452565a55399c2df4e7fd6b3294538ae2bb528",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "a5452565a55399c2df4e7fd6b3294538ae2bb528",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2214,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDOMCRA9TVsSAnZWagAAY9gQAIc44uZeb99hIyBicwm3\nfIgJE3icMg15cbHhKklng1XMmH8CQEpmhHa7R2Qohm/rYy0/c6UiFnWxu+BC\nMYK5s0OvtYfNZdb8yCf/a8fapFD+0K8w/VMsvR/hx/AedetTW7cb6Wsrvoo3\nHom9Yi2MEQw4mfT816hdgf6AnxzAVjC9RuqLUyS84F3jEqfEuS7co3RHFXB1\n6w8aStJZMxz3qhad9RU9HTlHUbzNzKilQx6XxRwtGlx3Bc1BBAk9lsMP5M2R\nhWKCxRaap/y36FX625plYxOk+kCjhjj/NYUmlEWYb6ZH+bHJmnbZSr4+IJIT\nQFLl2KIce53nLKY2VGvAkRsVFbAIxVFpBKvzFZFJccBSS8fNGn7CVAxFGrg3\n1WopzKcXsMVnq28OqzHsV5E86xbUNy8T0XaAVs0WM/8nCyUfZ4J7SvWhD/Dq\neUEEt/RV4X+rh2O2c20TRTCDwsfmIrgynFwWGbQGk0LytfQrdgtEE4ppbVIP\nb5JdTYTnScTdkEEfOClfTq3juPAwwDzyeCNrkKnoz5EKnOfzclRwQKM/U5YZ\n77lB8iWtxQp99uMi8rfeFgoDsTjhPi9tNYl0S8+vt8tGHARLyY90LqoJZhTj\nOAa2zvIc7wBZNQjILySJ9/5Z/8ELaUpM3cJPJf4rI2fds9E6zdUpmZnUbfnO\nb+t3\r\n=IPji\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.49_1527264140181_0.26786776039620386"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.50",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.50",
+      "dist": {
+        "shasum": "137c8358a198ffbdb93e4256c872b448692bafa3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1939
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.50_1528832839649_0.847196795711828"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.51",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.51",
+      "dist": {
+        "shasum": "e76998a755dfd2cbd6680b5136e5b3d424811f53",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1953
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.51_1528838394073_0.3244618323246409"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.52",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.52",
+      "dist": {
+        "shasum": "03e56ae3934f1b1d9032f5924f3f24c95ce1118d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1952
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.52_1530838767100_0.9041180958948707"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.53",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.53",
+      "dist": {
+        "shasum": "f238a729594ac04ecdd82b2842a2966f78e88336",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1952
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.53_1531316417489_0.40924851761859027"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.54",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.54",
+      "dist": {
+        "shasum": "df293e4b1187dc96f250c864d1a4e809a4740fd7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1952
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.54_1531764008196_0.3036981419263709"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.55",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.55",
+      "dist": {
+        "shasum": "879ba496d3e53127c6620cd9799b440dd7b77c9b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1952
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.55_1532815640331_0.6642238575110682"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-beta.56",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-beta.56",
+      "dist": {
+        "shasum": "ad28b77dfe9d97258b7b867658cf68bf09200243",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-beta.56.tgz",
+        "integrity": "sha512-N0TAh6j6FyNHImNaEZIqRgo+vAL0CdGDeuhfPCBHJA9BUwm/7A4LMKq7JYx3JzeuqFhrNgKA3Vo4xGAGF4WnQQ==",
+        "fileCount": 5,
+        "unpackedSize": 1952,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPv0CRA9TVsSAnZWagAAY0IQAJAAY0p8/jkYHGQCS3d4\njZ4CakURMxD7tc1QMdyATYIF9BW+h9j7qt9TAMp/bNynptm3FxhlkXiyMTNG\nHFaPsptMWJUA9Mnk8hmgI94NGU+ZGi2uAaTFMEYQLd83jere6gVjU/Ho8ZUi\nllKz5nsnkY5Tly4JcFvUWQc9fQZcQU3llsiKPQr7dvDkrNtwy7IS0Wf0349U\ns5BzJgBsylgJy3mZEZZ2NkxH/6tZeOwcE8LmU413k+zfh0EcE/y2LpVoxRZS\nIj+ScR1NoRTGsqdSh0P12YG73BDS8GvTuHHEjAdS2dCcgWLJQfYZsbsfxtGB\nVZLprXRT8y1xsgxT+9IiqAp3ciNbsIDBeCts0KaVpHnkNyMuFfGbEv47//m+\n/iqr5Iic/58mmmZy+P9MKsY+ylqmrufM3eM+j3ii2plUav/Z6THkGbbadoTq\npu/El5cCRP5qsht0fMqaogIfny9ZWqmwx18iIenpwcJk/QmNvUj6kRAdb/dp\nm+azlKObaQ46UxE+YAvE9sR7YjHt7khHk7BRCkCWWTcqFhSoDtPALJUMha/s\nDXD/vHb9DTG3PU02MXXRCS3tHO+GfDBvND5VdAH82+XWHwNY1YLJIUVlQpQt\nZ0gIDV3fvA3dLtuOQAhwRk5UH1xjriRXkHnqefeD2cuLE/Pl+aEDZ5i/xtDN\n0Bvo\r\n=tcAp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-beta.56_1533344755896_0.38181110663691764"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-rc.0",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-rc.0",
+      "dist": {
+        "shasum": "bc31b4dddea59f5f7659b94414509ddfc12c2e7e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-rc.0.tgz",
+        "integrity": "sha512-CnvitGJLrxFLRHGyXlsNfn1bK9Cp8PxoEjk/f5+Qe1C4LhlVhYOipuHf/LyWovKbcJZ56+8Jm4oVsJ/bxd7lCA==",
+        "fileCount": 5,
+        "unpackedSize": 1940,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSkCRA9TVsSAnZWagAA8z4P/1liqyexEl9xsXmQm2JQ\n9dJ6Xq/9z2t8qfFCi9LeAOK7XCNVWaAkLqsEbFR8mBRiw06usRZs7anITfYa\n/q/qMwqHZfMLwwbP7vONKDhYg5wZxGCn4/HjiDob8KFl4R50XC6eTawqsrNA\nMxFbzIsy0D2F+NXGiKu2jhwhCVZDRUG469vXMj0LuSTx0wVeJ1LSj9Fyhz8W\n3rfjNggx02F67h61QvFH/8LzVOqOPDpY5i6Tfwt9dbQMXszWDAls0k46BQ9N\nwF/5XG0YKgxbnOdJu7ORTotNRKKDLbyJcXNW7+UaCGaDR5co49SVSx1WG6wt\nC4/TOJGChrhssr7D2ewjPcJxLs07V2CEZTV1G22t0NakDtX45ylqzM4XR16H\npINvbtdy8ULUh/ydKDfJmenR48ldWii/Kgb03xBLgpSlusAjxibY8qSb8B4C\niWYfDC0wc4hXzTwrqgC3n4k765EzfaCrAKpzF8Lgx7kPUWI7o3jlfVn7CGCX\nGgbHA6cXwCx8mNsdzA1iAK72yY5/UHJlMcri3668mvCJ5aVNYH4GUkaiWHB9\nh7oXgJ9277QQfI1UFrZNMKSX6GG914uRAT9qZRwTbYZTTFx6jUEka4VfMrTX\nL99echOu/hDCs5wZorGzdxZpq3asrWtNJwRd/qjQs0plG9sA1QU0jjYpd+KL\nDz2z\r\n=B7IB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-rc.0_1533830307731_0.42621465690401017"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-rc.1",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-rc.1",
+      "dist": {
+        "shasum": "79650ceb99de242e94cfc806c898dfc8831fbcb8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-rc.1.tgz",
+        "integrity": "sha512-c1njTuUQiSR3AlHJ7o/aMq5FExkt6SR7YhV/KujS36OTdu/HuX7H4per7Y7EyRK2gqFiDgEl5PwlVxu6qGXzaQ==",
+        "fileCount": 5,
+        "unpackedSize": 1921,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ8qCRA9TVsSAnZWagAAZlcP/2SWJeViqC9yKwAxLiKe\nfFn1C/cciPiYPNa+2EUKJAwARUEBxpjX3MI5OyvJvsc4GWuQExKyKFZY8et5\nMKU5zIkgClJcYzE3pZt2CDMTy8UMzy02LRSoSxGMnUImdCJUav03gC45/Vo/\nkwwV2PkMAOfcPhdEg1RnlYLQL02SZ4Bv2R8lO1xDDyBxxpGGGPvX65nyo0k6\nCOqSwUPK0T+KClZBXc5uWJA3PZ0T7MrcYcwTIWo+2oP7cALKb3TKXRccYh/5\naMrFcBoIBICDW1eDjK6boGMkzP78njzwI50v85KVzsdgkUngIZw1Aw1uEM04\n+ggeoLzN3zACx82og7bq7q10Zklb6mKyMR7hvxvaZnsX+vYbVX+672Uia3ms\nRYu+VNm5zG6r6ib+2k2RUU8uNTsd+Vup0E5sgQ2J82uLQ3v7Igx4ajVUIvpn\nXed/2gDPGuxH+HOriw0MZNMiLxm7Q9uZmozqbgnPDJAgjBKjynqnIrx/T6N8\na2rBo+v273MHOKgcnCpexk7DtAbv9lUCjfKBuPHpDWuWzETyKNMA8RJ/8cSt\nFq7AKKdMkfqNzuzuZJXLUbvoDLt65b2aX4zSVl469KfIausuHEac12NqKlSI\ngpkY6a1Utzv5W0MSMtvT6LI92K1MBaLuCHWNkT+JVZNN2AbAVUeN+6/ReSXQ\n+r6K\r\n=hnH9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-rc.1_1533845290136_0.20885231900980905"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-rc.2",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-rc.2",
+      "dist": {
+        "shasum": "b381746c00bc4d54ba25d0640bc2040037d9c6a4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-rc.2.tgz",
+        "integrity": "sha512-Eqx07oZnXu7FCvZfom8BfgCUsOklCzc1tjdqofYWp1+n6EnRro5H1aukaT/BdDteqfQUO8XqxSc4LoRdqX+HWg==",
+        "fileCount": 5,
+        "unpackedSize": 1921,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbdCRA9TVsSAnZWagAAeS4P/Answ3EmzvzT5s77EPWZ\nAWSt7j5TM+cbqeED4y+56vwVcpJTb1zJa/NvQXPvzdSqc0hV1ScYyDjh8+7B\nr3cklDUKg7nOgkV0BsOrwkea69GqntquXI4eTGKEGWvhXNzG3gYarASNCqKk\n4sBBkBcQqJty1ADzSxRMqWnk+r0BwTK7Me1WC67uG9ys0xQ/6XRXOLlcsYSE\nMuhU4VCa5OCIwsFYa1kY+uUEoz4FJuHsv1er0loT3n/KqHPEJoj2rEEIs4ey\nolan9c6f3ww/q9pvaxsK5H9pDvjqCxXEHqlEMeZXKWKsu67Xi6d6a3jHdATb\naQr8VwfrOxWO8wsLF8JnmrXO8SU68DiMo+8cMMWUyU3DLJ48L3fvyCSogZ4c\nRgLP1fjd7qfUGGtfHAOIkeCnWG5LwGVjiNcse3tUKPjfEdDMEuA4L6koeKua\nOLBEhZIjj8SFcLQNfPov+H37URM2Spx5OvjC5WS2ocyBbYOG+dtN68OsKpQQ\nQD2cKIH6iLttKqTCN8Ry2Z6vohUKjUp5Yz4iPV3fwofL2zaUQaz8japoD0Pu\nVV3QJNejdvzIh4uAll2XWoLN0bY4pVWDzjhyUBQhst5oMtUEDXq6id+YcRjh\ngO8pRj6YXJrYAATsgA929oQcvXUBRpcYtvAOoriC0oxr4tOe+xUO8kMIlX9J\n3vbs\r\n=lY33\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-rc.2_1534879452596_0.564439852882153"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-rc.3",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-rc.3",
+      "dist": {
+        "shasum": "6ed9a8b010431e2bfe4c22588a40f181354c1195",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-rc.3.tgz",
+        "integrity": "sha512-4ujBN4BDfxZKfXGoe4xrU/u8y5qLxQqWacJEWF0Ds1OJt7yRzRsUavmCwa+v2D6WjmCodR0gRE9Jyx5du2OBng==",
+        "fileCount": 6,
+        "unpackedSize": 3020,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmGCRA9TVsSAnZWagAAe1IP/Asti/2J5KQY7ugOQ3Bs\n68/5DaYsViVJgUHDVtUnR6TpykJIMZT0wDDs2iiTXJAqgAt2qpmcWVUw7hke\neLSuqrZo0WHriJ1HtoqyN+S8GEAqrgGVy30ksO6brNR2UJpy8967SKL+mIXE\nWc5+jWyxP9Z2vyioYk9mEc7WJ3Di83PDB/EAcOuAlenZLos+rKjRhQRelZF+\n0Fq+pJkBRp0kTOOnJXj0o/13tPPaPOBFivOeuAX6dNoMiCmBVpW2+deKydo6\nvj3vuWJ5WmQlt4IZQgTRxtPBG0HrnRFBnrSBeIBR2SQdPLOhZ1PYX7mGK2bG\nbk8EJZGZ1EaSjkFqjDqHY5u3MZ/rifD+2BGjdg6D5RJZCE4IcbjhkiF7/6cv\nfM5tiw80bm/OnS3J42t3kC/4Y4pHMA9HyR7e5FCInp5x/6+VmjZEBy/LOUv+\nF5lkMBLoc72e0VRS1O/+gQ4ZS+lTcBXChVG8FPdcC+xXnXPeVUbx4nE01J3T\nFO/IZCF//eWAopg2qvdq0Phtmisjp7f64zdikVeljGQaGdcsw9u+3XpK3v1F\nTjpxVV5j8YwgWsyY7X/qbUR7wk15kZNN/rxvY7yaFY9EyklhNEMdq6FWWHv/\nHzpvdLrcDqUt49AfXRdxXQ04KEsUkarEME/szjgKgnPPi9rP71U3Oo14bUS1\nIo0b\r\n=JEJy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-rc.3_1535134085750_0.40771154313819435"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0-rc.4",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-property-literals@7.0.0-rc.4",
+      "dist": {
+        "shasum": "6fe48c25e85959be502b7eeb8c5747e33c37d137",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0-rc.4.tgz",
+        "integrity": "sha512-5sHlthe1ME1pnXvMKHVOqfWuXinW6xWb8BqBnbFqEbYCaak1GzmD/Ur2w4RR3pZW0e7Cwi/7JE9e1VnfiKrv2A==",
+        "fileCount": 6,
+        "unpackedSize": 3023,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpmCRA9TVsSAnZWagAAy+8P/2tAhtXaK8IZnHhwWuiC\nd7xFk6cpi4Bl8pHT+IzOTbILyVkHNTcrHz7ve5ULFH9kS8KHIVfw0DgwUvqY\nDmJoONZwrTiD8eRP/O3uArVb7NU8zLy4qa7MCvVuggTWkuRGsVeQd7FgfHsi\nK7c9pBG+b7BSBkgPOU1mRDPsduoktS6s6GpC2XIE0uUl7hE5wBhXKwLsUlOX\np4myVz6OOOqpx+BHpKpmEAACzJiE5brOrf4UzVY9YY9GjJ/KaOG8FYxhTT7K\nle5lkOXI7/jfffZc6GzveBxQCUvSAVgGQlie660byilOC6h/yRH0PEk7BXl6\nrlpgc9PV2GY5yznGRYustcKh++AqHbOQnByIamGpUiERTatIUfY31bk64AMY\noTA+aG1nLzeivT+wZXELtI8K+mH0ThN4hdilt3A+NjO3t2hwmPuX6DgkuDfE\n2CflPG1VmB+3oiPqAW2CVpOMBU5QqmmGJBanBuL/OdE1JSaeFmZdLobuhRW1\ncC+pdjKPohDHM4uwCVIpVsYg6DPh6MJti8OgAU+eGxM+cD69jiBN7tkftlNX\nnv7pZP8V+E9BgTpGDrA6+VFr3GuCjS2PRTot6rkGkoUvbh+sq6o1O4gvMpPu\nBHZ9QOk8Ux2yUoa/+29eWAhPJv5lbMgLQmDakyPb4/WBjEVcl0yRMSWXM2nc\nZlie\r\n=gHsY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0-rc.4_1535388261911_0.5006063387671853"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.0.0",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-property-literals\n\n> Ensure that reserved words are quoted in object property keys\n\nSee our website [@babel/plugin-transform-property-literals](https://babeljs.io/docs/en/next/babel-plugin-transform-property-literals.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-property-literals\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-property-literals --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-property-literals@7.0.0",
+      "dist": {
+        "shasum": "0b95a91dbd1f0be5b5a99ed86571ef5b5ae77009",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.0.0.tgz",
+        "integrity": "sha512-7HK6/jB4MLpwQUJQ3diaX0pbCRcoL9asJscQfU3D1HpDwYdrH6yAUKleUNFHFyGNYBI9UeJrS2Jpx2JhtPKu5g==",
+        "fileCount": 6,
+        "unpackedSize": 3003,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHB3CRA9TVsSAnZWagAAI9gP+wUnX9Orm51B6gzMzaqB\nnN1JJeN7rEQDl7XwFcObldUZo4mDGn7hGbowCNgTCztL9G5ZDcKdiQwT4FtP\ngZSe8hQ/2vx9qYjXFgVldr9/92XoI7XwX7TRpluWuXX23HOPSe5zQJ0By/cs\nL2ZMQeDhitGJ5fYvf2rWTetVikl0wBkrq30/km8hhK2I0SwqRNb1VV/7ensQ\nTvGpOcNQHtKyh/f61j3eZj3mj7YhQg8UcuY62mFAP4TPRFxcRShlyAPEmvyd\nTfMKLlGR9TjWv5YdM5E0QGHqQhinH7gHhCycDWKAhjboqbJNQIWWW1mpc5+y\nkfRxpwD+bERe6HXkyNXMWsY9f0zt/pkA4GzpmnDzddITGAhsARtut6TvptUH\nQPpK3MLC7lB0HESnKGTm7K56+X8gr+sasXMXQm/GkGLdh18ZNvomsRJKXvrA\n6tKpT6NIwrtqArUUeUb/UoaIz7G4TXKFj1k9WZCXmba7h0kjvmlWQ1eVGnEq\nV+8gkcJ4ajgHr7dfWXakcNFp/YM/O4OLNzU6TbSv0iJK5y8AcIvXmaiJnmZ1\nOrTx72BVMMWOuhJk1rQXsfCW5I1fAjIJ/oVeQiEQTtHehkywR/LrZebbaFn3\nfbpWu/KZzHuPLfM49uX7jx/kmV9BxRw+x65xl8SNEzuA5tLj1FHmSEkL/pk4\nGcNQ\r\n=m1F7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.0.0_1535406198821_0.08692838128353375"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.2.0",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-property-literals@7.2.0",
+      "dist": {
+        "shasum": "03e33f653f5b25c4eb572c98b9485055b389e905",
+        "integrity": "sha512-9q7Dbk4RhgcLp8ebduOpCbtjh7C0itoLYHXd9ueASKAG/is5PQtMR5VJGka9NKqGhYEGn5ITahd4h9QeBMylWQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3097,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2RCRA9TVsSAnZWagAAllQQAIbAuQQTmSKwDZjSVS1P\nJcSunGYF7xuhNqpmL9DsDLZOkeAUvCfFGRC2fSn2hYgGrXR7qeXkqpBfmZzq\nn6WWGcZpcIczK/WU+eQ75kEZ28x8QSY3lFpbHWltlzbHjTUpsPFb+KG8rH5C\n6TNZQ0P6eYpo7w5uIz1V5hEYvlYux9i2QXljQ49n+NN0OEbUxnaU64o5Pl7i\n9EP6sqqRhTUp2CNnnjL3sEBGUfPuDHJmEA9j4570oM9IlSThoyiunTdmL9e+\nQAJzeTxJ6Qu1eUzwsgpvMZXPpLrpocM6T5EPVTqJFUMPcTYjhbSjR8L2honV\nFuakcGiqHyJcBnhJTaFZDSCvdyFGlE3uxz3oa54/vmYSOmmSi8kDc1mS6NFM\n7KZwiBichIohlHm1pRwVl9j0nU9V8y6mhQBp5Pmv9+QTjVIWPilLvSOr+Yzh\nfFfeiqIoL4LnvGquw80o1+o+D1Tp592sDNEg1SsucFo4ze/GWe1nezmuUhYV\n9ufiBwhJE/naG9C/ulhTbhayy/dEPh2YABYvZ4C5d3ld9G3xZk3WT/kCrGW8\nzfuLD/M/2+/8V3KCFWqav0pMo9+Y2r2aEu+hGxsdK0jbg59/ktlJ7LesLUi/\nPlNV8z1Y6qShOd1xAzDBlxEZmS1gRZuFjhdb/8QLkg5ueOJsn2mhXkYH3oPA\n/66H\r\n=Xq+k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.2.0_1543863696841_0.81654083554213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.7.4",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-property-literals@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-MatJhlC4iHsIskWYyawl53KuHrt+kALSADLQQ/HkhTjX954fkxIEh4q5slL4oRAnsm/eDoZ4q0CIZpcqBuxhJQ==",
+        "shasum": "2388d6505ef89b266103f450f9167e6bd73f98c2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2962,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G//CRA9TVsSAnZWagAAfbUQAI7ymEDU4eLewdTq0Kv+\nbBWDi2Vx3Wy/TjXJXr6jmdLJmlhKL9UlphcdHCIQSknFri3il3qXOvygAX1R\nlAG778AHhq5o9e5pqClR4r5bIv1FXSAZ/A5Uc8ps22irhgLE1rfdGlNZv6Hr\nEBN6GaCvadnBENF+0X2jz0knAvG+0/p56hWa7gN1jRb8JoMxHKGtdiIRbsyr\n8QoBM/9/r+oUkDY9SfYaTtOaVyy/F0Tz8USxM9l5yFKkhYwyMd5B0pXqwUQR\nDzPYCNnY/MDy9z2ic0cpXqBh7xDX5MHEWcHCvc4rl9CWy/vRnTYwt2zLaemN\nRCpWE95bjhpdwWP8S3992HKwHNIbc36WynTwmf+eiZMTTIgvSQXeHuSZCsjR\nh08TsxwHgvt4/EdMcca6DrHGLc483+TkJ+q8hSO9mrZ2FSHAi70Pk83V0KSp\nGTEyHuZB5TFVVIJpovkH2U+DS0HWtfX5zDdp/uU+K6j8gombWrstMMI/PK+7\nRIdf3WZZvhxMuEbJ5j9FVsRqBhNwax+Xy6m+SCVFafQ5ZeAsO0UsxSoXCZ3D\njnRNrCXB2W54KjXzafzn40U242VpvpY6NJKjYycspyCmWdGBMHFHk1D5p2kG\n23NB4SPFYqJ8pjPm2585/u5R7hqBdRH+1KmEd3bUADyyHP1mjYQ6HfZU30VL\nWmL4\r\n=CiZv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.7.4_1574465535301_0.5163045476955832"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.8.0",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-property-literals@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-vjZaQlojnZIahu5ofEW+hPJfDI5A6r2Sbi5C0RuCaAOFj7viDIR5kOR7ul3Fz5US8V1sVk5Zd2yuPaz7iBeysg==",
+        "shasum": "af7538d916935ece100e72123fce109182c01ac3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2984,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVqCRA9TVsSAnZWagAAoeQP/0LdPCDXSMCQ9M2eQUHW\nqCmNGnXxwtjsdFUyi3doanZHsCtOt+2/YsTT9Gkaly0rLcmB4t70Zpk0DjKk\npaZTevWRDTJC4NBPA+CuFCDwR1MdKH+Oq3OVO9lKhX2TpOgEPEqszT0qdT/E\nEF95xOQMiD1gwyf2rzNZGltN21XG/QCLN1Rne+lrn7+joJ2pk/d8K/DlT0Xz\nO++f8H1EdHeeRd8+M8iyAiAnVlIml2WQc8vZcSDcW3CAiSEDgtuMLXHKZlQ4\nu773gbAfPKtkFWR5GEJQjxCcOgsoSMShhCEgGbpgmiHjO+swZ/a/ZAzsZJJ8\nldzKxi5pFLsZtX0VHj88KfXwXT0MmsVmTI0juk/uRauE6oC9MdtIeK01z6TL\n8vrXiMYDEqQAzfIS+r9Q9UgXw1VtS9Dxd3W2yEI0Wudm3Qx35S+vNTGCjQlU\nSQL3J3gC7FdY+DLlpGVssg5nsBoWd6DhQ4qTwGzy4IkCpLiEi1fDRTNx8Ot+\ne1d3b/EFJfMO1Xmd1MnodQOIXBMkD2keUC7SFjDeKRyjDZ5H3sD83yVCSI5C\nEITfXdSWbC6Y+g5qiz/GyBav9YGGJeG8sloRjTVG3jJaUTa8Q/yaNrrBm3FT\nRlkBVGVLmc67HnNc1FMSOVWPZk+tpS1sL9zBo2mGAk21aC9+gDsoaRcxOEhG\nPTsm\r\n=r+HH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.8.0_1578788194897_0.32081150363890565"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.8.3",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-property-literals@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-uGiiXAZMqEoQhRWMK17VospMZh5sXWg+dlh2soffpkAl96KAm+WZuJfa6lcELotSRmooLqg0MWdH6UUq85nmmg==",
+        "shasum": "33194300d8539c1ed28c62ad5087ba3807b98263",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2962,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQgCRA9TVsSAnZWagAA9GYP/i0Yta0AFOv2XU87G+Dl\nfP5MCnhWiZiBwEINzqhFUJPEIH6zKiDWm8TkgwW7somrg2EGFBWiRRCefmea\nvVKBDaGOyBATA6MBkjuDDQvB5aobkcb6iW5OF75lruWB3eYl26rpolti14BQ\nhdKkHUhPwaZjXAmwQX8PT8/Ig5MU67u17I8T3x4oO7uNiv36i5BFmG8Yvcj2\nYx4NDWKp/ArNjWWh0Z6ZkSuSLIg9l6YKPF4eiOM+drV6SFEGYxLhR5IhEalu\nIIEdxeNXoxsluRdm7cBkg0mm6p92iIX/pYJ5AWtHWgRFdivuGj5mbn6QJkaD\nkJ5ksOYfkYW0NQuVBVdmHDvAgWnwz6nXiRZ/YFeDWKz+kBfkDs0raOqDhxNG\nhrO1QC+nrWBlFpeHdxK5b7oYGWTtajLSt2FHBGmnT3RutU3k/efdByOwGja7\nk4rUZ9nwmkz14uQIQXPPeeeonoZ1/kCc3HAK0Xk138+mniJmLB7rlS1uee+9\nJrNGuOuswyUFjzatkO58hdHKrn2Jyvbtoh/NRNuEl1KXyTwxfcjJaojuoK4m\nZQ/u1ngfDmDJ8pP/R0wCSkaF8hBDl8FNVbR0vCtmPNGyyVFT8F35etwhbehg\njf0T1vDWZ1+p/ugzTYhYhYRNmhvhabbc5BBQp0Evd9Jh9R3CivN++nRF/uXG\ncSaW\r\n=jAwO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.8.3_1578951711641_0.06362137136427437"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.10.1",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-property-literals@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Kr6+mgag8auNrgEpbfIWzdXYOvqDHZOF0+Bx2xh4H2EDNwcbRb9lY6nkZg8oSjsX+DH9Ebxm9hOqtKW+gRDeNA==",
+        "shasum": "cffc7315219230ed81dc53e4625bf86815b6050d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3014,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSbCRA9TVsSAnZWagAA7G0P/ivWuoPKz3Sk04y9sTqx\nPJPuDxCvhsbcxhuupElPgBIEKf4r9e5Hs0iAa8C06njv3+PpyyjGdvQ9iAH5\nSq+8lhCMNdraoguwQ89gchomZdqzEalHkidBQ876l2AVvei1qmDJonc97Vc2\nxPo+nzuUZdmbXs3NMUr9OYzkTO6erKTCkhXISD1H5y/u5xkWJpnLMVY+wnRH\nnrtdafp/Pkm12x6DtGv4yj1ztHcHSmf/oXmVT+K+POlB90D57mfm2aLfboFj\nnOFsV5I54wvaCkqKZPvH9TBM7SEVsIYpyvwtdw/4Snt3BrMhkPNhrB+Dnpi0\ndJTAAdAfq7UD5JgPPCA9DpnYey08a/QcgBtu0krFjrk8wQC/38YS4w9ALihW\nxVJYAb6TCjAq8IfIawiwNft4iY9Mkj2iwqG8zJy1DDzG5h5Jux7+LzGxlEUp\n/pBXVnAkuvEkW13AtJ3xCiv4y4t9pBGwKkwmqHBscgfjE/Yb3SeE+7BSZLun\ng+L37v5iPV9qfMThXuvJq8kESGDmhrSv0Nj9gKadEr+GKa23Z/ywqU+yPZi0\nQ7E1/UoWrdWuu1bhv5juvYppAuPP+RNEXu/OANAU1hD6LcSZKL6TPhYrHxgd\n2Tan853h6JWPAlxkilS9l1vSYqhSRq4CoLy0eMYbsbhJdJbKBVmc18KH7Xmc\n8tbf\r\n=oDkA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.10.1_1590617243153_0.5369497450333327"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.10.4",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-property-literals@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-ofsAcKiUxQ8TY4sScgsGeR2vJIsfrzqvFb9GvJ5UdXDzl+MyYCaBj/FGzXuv7qE0aJcjWMILny1epqelnFlz8g==",
+        "shasum": "f6fe54b6590352298785b83edd815d214c42e3c0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3014,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zomCRA9TVsSAnZWagAAhXcP/35nI/Cyw5JL6xVcQWZO\nPo0JD3HCH3UzzXntLUVLY3FmBftT6EyHliRjRHUOeJVmpyuWFq01CtsdSKUv\nDXkUcMe+I1AiVI43N7hdIAcNoIpwbUaDrfWc4wgltOru39Qehd5ESaGGXa7W\nvkBTICIBk1loCZDFundxIzh84IQPzYl5kvuRCItCmsiHmdopOrhcXecX3SyP\nK5h6ESSDGXDVPP/2oTy/mKctQ3THRMAXXKqF270eJBB6KFIrHREdYzvQhEov\n6Ib/oRhKXF91OV0/rx5wQQDCqhNz+YjjGYz2kpC+fEhGGGb2XoQYZPwGIEZD\nKBvVFVQyo5VqBud36gjJBMjSLr0E59HHBtU9SyAzPF/ZQ1CH+dtRqV2juGEe\n7Ws7JnEuyeV0+z9rm3jehW8Qbb29taqHRWIBMtZO1ixtR9Ck3yNM5EtPkiup\nsB0Mao9ByYf5qcjNhOkD04YaSA1kqlhj8oPU6qoiE1VnA3IAYHvZrZopJMAz\nPP6vu2LlVV+SJxlrSyif0hGMaTE/5Vw2OBLJKJ27aKgzwNGPVGTpJuqQbarc\nYQXsli1l49L7a//4FOUbpuqGGWoL83oixGdlcdpMXHzc3iYIjcKh0RHmCZEz\nBn6871vnJGG/gx0RLopi6jfGrW5rc7M8EjWQuabnK0cq9gXY8ugwOTfcR5cZ\nHtOL\r\n=iURj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.10.4_1593522726545_0.5820977472074937"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-property-literals",
+      "version": "7.12.1",
+      "description": "Ensure that reserved words are quoted in object property keys",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-property-literals"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-property-literals@7.12.1",
+      "dist": {
+        "shasum": "41bc81200d730abb4456ab8b3fbd5537b59adecd",
+        "integrity": "sha512-6MTCR/mZ1MQS+AwZLplX4cEySjCpnIF26ToWo942nqn8hXSm7McaHQNeGx/pt7suI1TWOWMfa/NgBhiqSnX0cQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-property-literals/-/plugin-transform-property-literals-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2955,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/QCRA9TVsSAnZWagAAz9IP/0WrJXnked0NfyVuFj3n\nk7z/rU+8cUGPoyaDx2Gla2tuQCJ0eBwxKux8zvwwb2zexODYLcsPn9Crsvz/\nLWKMnN8nMhvyLLw+GY5zr9sNhfnUikUxLtawAKZKNFFzm3PePDRkPp+oVJ3O\nM5/o7k4MrgHn280lYYLqzMca7sW/IkGmDCMw+vTlk2AfOJRgZrkiWc7V/Lr2\nr2+IEp+05FEOmw6kjy6DV+rrfDd1mdwQEjMvoRYMhU1cCytmzONmThR/xbta\niIjopFzhttmGPb/ufyHw8/GTYgYFf2W+kPDNcclCFS3dJtadSd6AkNRoFD6v\nsnMoLE5Fldkno/mvarciV+edzy1tJYkmMJgolN49IFCUyWxrz1o5RGX3RSrn\nyE8D4L8uIgDNniLIRcxmOVUjs15QAXfqTvluwVNrte0JgA3XKuQUtI3hplkV\nxPD7Z402BGpYDnI82O66H5jETi/MvmnVhiJPpqig1yy9trl82cgD6DZt/6Yx\n0tlgTVldYTFZtMAs00J92GcQFgiVtBnYvHU3XnlsyQRr+1aT8tpyFeHKkhhD\n+2taAhLdS95QcsMcLNgkwJqOA9vmPY7jLSbKotXaXGApjYA20jF73vg8CkHk\n0QBk4QGYdh0+6UYMnT/B2OqYXF2fa4ryeNvK+Yx/urm3mZlj4sVjq8CbVq23\nRyil\r\n=rt64\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-property-literals_7.12.1_1602801616477_0.15870189999011264"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:18.789Z",
+    "created": "2017-10-30T18:34:45.148Z",
+    "7.0.0-beta.4": "2017-10-30T18:34:45.148Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:23.037Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:27.991Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:19.302Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:22.140Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:22.872Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:49.060Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:40.248Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:32.440Z",
+    "7.0.0-beta.38": "2018-01-17T16:31:59.090Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:35.021Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:39.131Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:11.485Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:47.249Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:27.837Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:09.773Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:59.124Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:23.224Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:09.996Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:43.207Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:20.253Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:19.706Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:54.125Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:27.137Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:17.543Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:08.239Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:20.422Z",
+    "7.0.0-beta.56": "2018-08-04T01:05:55.970Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:27.816Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:10.214Z",
+    "7.0.0-rc.2": "2018-08-21T19:24:12.705Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:05.794Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:21.964Z",
+    "7.0.0": "2018-08-27T21:43:18.968Z",
+    "7.2.0": "2018-12-03T19:01:36.976Z",
+    "7.7.4": "2019-11-22T23:32:15.456Z",
+    "7.8.0": "2020-01-12T00:16:42.147Z",
+    "7.8.3": "2020-01-13T21:41:51.765Z",
+    "7.10.1": "2020-05-27T22:07:23.252Z",
+    "7.10.4": "2020-06-30T13:12:06.711Z",
+    "7.12.1": "2020-10-15T22:40:16.615Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-property-literals"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

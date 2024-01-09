@@ -1,0 +1,768 @@
+{
+  "_id": "string-length",
+  "_rev": "16-7e2dd1e4bfdf142c29030c9d8c57b1ce",
+  "name": "string-length",
+  "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+  "dist-tags": {
+    "latest": "4.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "string-length",
+      "version": "0.1.0",
+      "description": "Get the real length of a string by correctly counting astral symbols",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/string-length"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "browser": "browserify -s $npm_package_name -o browser.js ."
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "str",
+        "length",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints"
+      ],
+      "devDependencies": {
+        "mocha": "*",
+        "browserify": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length",
+      "_id": "string-length@0.1.0",
+      "dist": {
+        "shasum": "ecedc88d6f5393cc7d13a4439b111cf60fb56ad1",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "string-length",
+      "version": "0.1.1",
+      "description": "Get the real length of a string by correctly counting astral symbols",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/string-length"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "browser": "browserify -s $npm_package_name -o browser.js ."
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "str",
+        "length",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints"
+      ],
+      "devDependencies": {
+        "mocha": "*",
+        "browserify": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length",
+      "_id": "string-length@0.1.1",
+      "dist": {
+        "shasum": "ab77870cddfd4a41deab673e5f6b03b92f3d4172",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "string-length",
+      "version": "0.1.2",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/string-length"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "browser": "browserify -s $npm_package_name -o browser.js ."
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "str",
+        "length",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "strip-ansi": "^0.2.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "browserify": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length",
+      "_id": "string-length@0.1.2",
+      "dist": {
+        "shasum": "ab04bb33867ee74beed7fb89bb7f089d392780f2",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "string-length",
+      "version": "1.0.0",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/string-length"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "str",
+        "length",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "strip-ansi": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "5aa9b5946c927c2884a49741a066fdb3f30a6aa1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length",
+      "_id": "string-length@1.0.0",
+      "_shasum": "5f0564b174feb299595a763da71513266370d3a9",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5f0564b174feb299595a763da71513266370d3a9",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "string-length",
+      "version": "1.0.1",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/string-length"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "str",
+        "length",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "strip-ansi": "^3.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "18c47a338a5f7b8df45566579ff588ba7a82ac6e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length",
+      "_id": "string-length@1.0.1",
+      "_shasum": "56970fb1c38558e9e70b728bf3de269ac45adfac",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "56970fb1c38558e9e70b728bf3de269ac45adfac",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "string-length",
+      "version": "2.0.0",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-length.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "string",
+        "length",
+        "size",
+        "count",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "astral-regex": "^1.0.0",
+        "strip-ansi": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "dcdf2d91dcb155923ece3b8f77f2279e49bb1d3f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length#readme",
+      "_id": "string-length@2.0.0",
+      "_shasum": "d40dbb686a3ace960c1cffca562bf2c45f8363ed",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d40dbb686a3ace960c1cffca562bf2c45f8363ed",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-length-2.0.0.tgz_1501117430278_0.7992605706676841"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "string-length",
+      "version": "3.0.0",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-length.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "unicode",
+        "string",
+        "length",
+        "size",
+        "count",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "astral-regex": "^1.0.0",
+        "strip-ansi": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "tsd-check": "^0.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c6c96299320f9b2707de2ac858c2210298219826",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length#readme",
+      "_id": "string-length@3.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VeZa3u8MpEpDi7NMsZfp6ggk2x6ncBdE+sObPEVlczaUciCc+3ktm46P3HU2KdXArigN4XeEFNaj1Sg9TYAznw==",
+        "shasum": "74ae8d207c716322d4a8fe79736170d3b5a4ed94",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3606,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcj1NaCRA9TVsSAnZWagAAIj8QAICp1SooW059jCwp49DK\nQ2wPRMaIUKGNoAG6dg2/zF42if82Vec6kZDnJaIFXYNDeaAOVhjp+ffamj8M\ncKI1DeK4WbZhlAQfBLE015N+b0OkhLiAoZIgT6RtZDkIyRIAdSA2BAY5MzJ4\nqLFER+sJjWUZJ1rRw1t8tq5u0hNyLUlpuzo22Fq/vTt2dNuCYpWVc83XytZj\nOK4Q6gYEwqYtmDZR3k7LVPJiMW0Ey3Cb1av2DAMCDPoxmvhdM/2qWuxmhhO0\nOppmDG7uM5UJwW+YO4RwYRhy/fBrY+AqpkAbT8csfObjYxHi3hdwmvqNV7aD\nuy1GCTSo73RzDTRd43j9kyC7oO2mJWLgGhyJOqXgvVKv1iCkDFMxUPa5Jljf\nU2UkKA91wP+TNsxdgESYUgQidiW5XIiPhXgx1EfixL51pz2lzTKOBNozNkY5\nQybqrsnvuxoMc/u+t2US1ZD2S/zKNGIhOM7Tj3eE4uNy0KLyfQLNa3mLrqUj\nL1PUTwFKhD615M4uKSfu0Q3WbXm37UX/cI9cwUSUb0LSov38QOIPUotomVQR\ns9ZQ9dl3u0E1glI6wz5Qnguru7Ra5Dt1DCRCXypBXf3xM6f66bLCgNe3FD8C\nuJmzpv0Cw7wHWhS3hI/8ThdVhaBwiTPCP7+rnsGZEu7Ho78sA/vEAvi3+nqI\nzO5Y\r\n=LGLh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-length_3.0.0_1552896857942_0.1703975027346425"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "string-length",
+      "version": "3.1.0",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-length.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "unicode",
+        "string",
+        "length",
+        "size",
+        "count",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "astral-regex": "^1.0.0",
+        "strip-ansi": "^5.2.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "083c3ae16f416b9b51ab5d1a6763ca883ab94806",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length#readme",
+      "_id": "string-length@3.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ttp5YvkGm5v9Ijagtaz1BnN+k9ObpvS0eIBblPMp2YWL8FBmi9qblQ9fexc2k/CXFgrTIteU3jAw3payCnwSTA==",
+        "shasum": "107ef8c23456e187a8abd4a61162ff4ac6e25837",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3886,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcosqLCRA9TVsSAnZWagAAfz8P/2VKDarayTFywfgo43OL\nSrJX2coUS2QEtLmVp8N072fmjxFgvbPZ/bkUgVqZqeD4YEl+kl4uUwhRIlA0\nvLc2fZL1oBKQjqMANkdzN/4CoW93Wc3XodoR01KxUk3cetOlmlrMtdV+VWQO\n3wjeH1YsNgYCafmeU12MReWgPCSbac3TCcrKUHOWlWUO4ieKhJidl9iiV8RN\n74alhuCzhVnyjTpfoPKvxyMOC5LOS95UcTws3T9yy2IUgoSVby0g/TqDFuNj\nApWIIlf0tHWZR2tcSB21lEXfdsdZGOqDUPywmgG84f1OCTIb4uD+tzOb1YUU\nP9aaigq6e99dqAOqV27Lvx/2gbsfeVoMc1K041YoAEYWJD0cKffRrwkg8FYs\nAtvMFJ/lrCIe86Hv13M/HAS/mgp16W7FYtgaNIspeW8+8hD/L3th1suFl9qs\nJwylYOUYVDVGWKLvTFatrSk1XvD/DDzIFqUu8r++8ONOeyEFqbDc0VIpHd9Z\norN3tNM2mWWeu+o8HcBe4lkWsXsBpATo8JsBv1XZ7oQIQc/fl49Uw484yWP6\nmNDTzbKBol2IlVdnwEFkyrhjaibBG2iQKO5oQIZuClB5tbKB7Fcy+mQHGErD\nZlI9EJo/nbQu2wosCkez0AjdWFjQuqVZc2M+e7bx0H+PkYWolZZ+Vs2j2Go9\nb18I\r\n=oJfb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-length_3.1.0_1554172554425_0.292397781999574"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "string-length",
+      "version": "4.0.0",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-length.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "unicode",
+        "string",
+        "length",
+        "size",
+        "count",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "char-regex": "^1.0.2",
+        "strip-ansi": "^6.0.0"
+      },
+      "devDependencies": {
+        "ava": "^3.1.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "ad032d35f027513ee0aa3d80112625133f8b1b25",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length#readme",
+      "_id": "string-length@4.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GWDgJDQvvIwP4e5IEu0tuOyRUs/bVvQNNdh0HhMnZwo0Kuo4NKmjI/as/9I34+GHYWKkuS0nUrHubgRTs4O4fw==",
+        "shasum": "16fda4aa6a5d0e0ca31d9f86ea238c9c8624f69e",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4050,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeT7fwCRA9TVsSAnZWagAAZwsP/3LJb1ofHdZVvcsGdvJ6\nCWaCIKscBP96eRWJblHF4h2zIkCqoDs9UZA25KrZ478K3B6HH+9Y8WMkI60e\nlhrc0nq14fGd6dxOtzXMlokemRVIUzzIjC/iCD76bhF9+fWa1cvb3j/HeF45\nEUNFabhVKuZzyg5a1HPipt7eHVSv6RQv9RWwHFqNsLgOddWhoLL1EZDLKX8+\ntEbtrxGgf6Dbnm+YeEpyB5jph/uprZpqtVkf88LpxZppx8DvCSW5PPzkeevR\noAiuFanyHuM6TeS8kEk0inHNkqFauaobywvgCS0PetZg4eKVzrVQA04Wf6qd\n7upcQfyhtdLOnLQseEC8uuAEnizrXG2u4xPTty+iCR5ioW+FKWr1lIfXm2Lz\nbedA1WqA44qAUpHT5lQstLEfvbIUM7n+moW/bUgBp5Ph2qGblno/twSkYhAz\nyNrjDP2Bf4WbPt2HHRdVz3a5YscPddHWrUZ8gE9j/UewXpH6mq80DVbt7vLu\nwd2sho6vLAHYks0XLs9OPmWoela093J6YtRk60B2BlKizv/wpBSxqdJOtc39\n074Q9m43fy1gq5R08oifJ/zMsL4mG+tAdmcQDAXv6bUAAmBztMhtGhcIc0hv\nrNsVUkyqQ+UrvF3xmgPYvKZ5idXLEGWG3eYyBWWOZwG66hb2rKRS2C7ydxnP\nnTA/\r\n=zvjD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-length_4.0.0_1582282735738_0.6335634559747516"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "string-length",
+      "version": "4.0.1",
+      "description": "Get the real length of a string - by correctly counting astral symbols and ignoring ansi escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/string-length.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "unicode",
+        "string",
+        "length",
+        "size",
+        "count",
+        "astral",
+        "symbol",
+        "surrogates",
+        "codepoints",
+        "ansi",
+        "escape",
+        "codes"
+      ],
+      "dependencies": {
+        "char-regex": "^1.0.2",
+        "strip-ansi": "^6.0.0"
+      },
+      "devDependencies": {
+        "ava": "^3.1.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "20a1ad355fbbc11c9b3c4194e70c1302596ea17f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/string-length/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/string-length#readme",
+      "_id": "string-length@4.0.1",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.14.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-PKyXUd0LK0ePjSOnWn34V2uD6acUWev9uy0Ft05k0E8xRW+SKcA0F7eMr7h5xlzfn+4O3N+55rduYyet3Jk+jw==",
+        "shasum": "4a973bf31ef77c4edbceadd6af2611996985f8a1",
+        "tarball": "https://registry.npmjs.org/string-length/-/string-length-4.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4101,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJec5/1CRA9TVsSAnZWagAAZs0P/1UwoOmVWj2JriHeofBO\nHHhy8TyFo/HIXNO5Apz8rDzadNnKoTGVmUWD4rBbPEfOqG2jpc75R9lKxS+7\nGwLJDdp8Tl+0RfXWCQDZKXD6Et6sSw7fEoKgwSu5LjdCtDc1MIMJCw/hKIpi\n7etcxvVj4od/Z/aN+xlXCaObIQgRsSHDH02RGzW1gV4MzIa6DlrrzCUOWF6c\nC+9yH6wQv7045WkHOjFrl1SxubSZxJ0L5O7W/f2yyGtrF5efUooCPv+lOdTl\nv6estwxbVxUN8b5yZBxWn8toj9wLAnuUqAxDLbsFAu/leBu7yHTIrPvc2hlP\nZBsso4FxgBLjhZaa5OudNwiItUrQR5dqeyy3ziO5R3pRaIfdnQWFqAXVCorM\nBvhrxkbbkWxL/Tz5n/cRDWxDIo9T9xoNW34xFmDdYCMq/csJrWNjh+phJ7SF\nhR2de534DS7IRRFm9nXtuUkjP4fYm1POx8C/hI5lu+VnP7juaTvf3LuemzSs\ndLfm5O9XOoG4T1FOj/Km/3F9SEayEtZO4LPxfBWfe7uZcnENbVjhZDuSgHPC\nJ6nPLDhxEOP43QvQOMnsN+FefNTnebF12mgFq+3fk9bCQqcEIjN0BLjctnt1\nI/DMR3ljnpIQz8Hl8Dm5ac0HHy2EgA41H2icV6E5eYnDfSuNmytD9OSIhcwv\nq92f\r\n=CwcQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string-length_4.0.1_1584635892393_0.5498585482578426"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# string-length [![Build Status](https://travis-ci.org/sindresorhus/string-length.svg?branch=master)](https://travis-ci.org/sindresorhus/string-length)\n\n> Get the real length of a string - by correctly counting astral symbols and ignoring [ansi escape codes](https://github.com/sindresorhus/strip-ansi)\n\n`String#length` errornously counts [astral symbols](https://web.archive.org/web/20150721114550/http://www.tlg.uci.edu/~opoudjis/unicode/unicode_astral.html) as two characters.\n\n## Install\n\n```\n$ npm install string-length\n```\n\n## Usage\n\n```js\nconst stringLength = require('string-length');\n\n'🐴'.length;\n//=> 2\n\nstringLength('🐴');\n//=> 1\n\nstringLength('\\u001B[1municorn\\u001B[22m');\n//=> 7\n```\n\n## Related\n\n- [string-length-cli](https://github.com/LitoMore/string-length-cli) - CLI for this module\n- [string-width](https://github.com/sindresorhus/string-width) - Get visual width of a string\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-string-length?utm_source=npm-string-length&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-19T16:38:15.170Z",
+    "created": "2014-04-16T21:49:45.503Z",
+    "0.1.0": "2014-04-16T21:49:45.503Z",
+    "0.1.1": "2014-04-30T22:51:26.244Z",
+    "0.1.2": "2014-05-01T21:49:01.365Z",
+    "1.0.0": "2014-08-13T13:37:13.130Z",
+    "1.0.1": "2015-07-16T21:16:09.833Z",
+    "2.0.0": "2017-07-27T01:03:51.257Z",
+    "3.0.0": "2019-03-18T08:14:18.073Z",
+    "3.1.0": "2019-04-02T02:35:54.651Z",
+    "4.0.0": "2020-02-21T10:58:55.900Z",
+    "4.0.1": "2020-03-19T16:38:12.544Z"
+  },
+  "homepage": "https://github.com/sindresorhus/string-length#readme",
+  "keywords": [
+    "unicode",
+    "string",
+    "length",
+    "size",
+    "count",
+    "astral",
+    "symbol",
+    "surrogates",
+    "codepoints",
+    "ansi",
+    "escape",
+    "codes"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/string-length.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/string-length/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "wvlvik": true
+  }
+}

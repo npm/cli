@@ -1,0 +1,903 @@
+{
+  "_id": "path-browserify",
+  "_rev": "21-ec21494cd23362fef9f81cce79865358",
+  "name": "path-browserify",
+  "description": "the path module from node core for browsers",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "path-browserify",
+      "version": "0.0.0",
+      "description": "the path module from node core for browsers",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/path-browserify.git"
+      },
+      "homepage": "https://github.com/substack/path-browserify",
+      "keywords": [
+        "path",
+        "browser",
+        "browserify"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/path-browserify/issues"
+      },
+      "_id": "path-browserify@0.0.0",
+      "dist": {
+        "shasum": "a0b870729aae214005b7d5032ec2cbbb0fb4451a",
+        "tarball": "https://registry.npmjs.org/path-browserify/-/path-browserify-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "path-browserify",
+      "description": "the path module from node core for browsers",
+      "version": "1.0.0",
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "bugs": {
+        "url": "https://github.com/browserify/path-browserify/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "^4.9.0"
+      },
+      "homepage": "https://github.com/browserify/path-browserify",
+      "keywords": [
+        "browser",
+        "browserify",
+        "path"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/browserify/path-browserify.git"
+      },
+      "scripts": {
+        "test": "node test"
+      },
+      "gitHead": "c99fae5ce1f632581952ee5ffd89234d04b67520",
+      "_id": "path-browserify@1.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "dist": {
+        "integrity": "sha512-Hkavx/nY4/plImrZPHRk2CL9vpOymZLgEbMNX1U0bjcBL7QN9wODxyx0yaMZURSQaUtSEvDrfAvxa9oPb0at9g==",
+        "shasum": "40702a97af46ae00b0ea6fa8998c0b03c0af160d",
+        "tarball": "https://registry.npmjs.org/path-browserify/-/path-browserify-1.0.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 53210,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbF+qkCRA9TVsSAnZWagAAz+QQAIwA0t8wx1mP3+vbtoV9\nh6n/aXBjYMt3FfBqQCcA/TOzJgfepUJXyZYkigcgei0Xi1c6mb7CgNpgayO4\nvbbYsKjqnm9XpwF+yAEERBc33rnBMxlHro4sj41hWYdshlxVMT/62kt2J4sE\nUjA1+JXngKg4BrENLypHOz9ovRP9UkzNQMYhUFWY/LSIDiNmUz8qz54i8WgJ\n2ao8eeugSdcF/VziYhAXPdhEAh+inkrOzQPi+P/IVlVvcXVa2bmZXG5/YOVq\n83qRbHJzTVsm1+w9qcSUBfgRw3eUracjcAkner7drhtpz14nhyPs39isP/1A\noHS8sXgfVN99HuoNjPLXkJchqc+AlQV095aURZ3CJrpAFbltcGkrNwcCggnZ\nmu93RwPs1svgNGdpszvehz+9adaXXGJR8T4gIcbjNyFdKnkkunv3BuGtia6w\nNKRxIl1GqarkbjWC4FR+7qQJCRFUerP1wIU8GQaVs2DH/8yyyzAvVqOwxo5Q\nsuVmw/XyQJHtF8P01aEZpeEHVNFWixiNOSYd0iIpG93T2nudpxCE5J0E/p5L\n+yO12hyRJR3+VxPkxcmsCrXiJvNxt8q8JiIYVkD369u7CdMj9sk35DWQ18J9\nUjrPzjUtPEi73d+/XL8Ifu+lqEBlWg5UhKW6VLXEO6yIsP4sp8KMGB5kjDXI\n729S\r\n=QyT0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/path-browserify_1.0.0_1528294051083_0.08595232904848471"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.0.1": {
+      "name": "path-browserify",
+      "version": "0.0.1",
+      "description": "the path module from node core for browsers",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.0.4"
+      },
+      "scripts": {
+        "test": "node test/test-path.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/path-browserify.git"
+      },
+      "homepage": "https://github.com/substack/path-browserify",
+      "keywords": [
+        "path",
+        "browser",
+        "browserify"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "8245acefb8d5bd39c0326d14984c83e5df97d1b6",
+      "bugs": {
+        "url": "https://github.com/substack/path-browserify/issues"
+      },
+      "_id": "path-browserify@0.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.4.1",
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "dist": {
+        "integrity": "sha512-BapA40NHICOS+USX9SN4tyhq+A2RrN/Ws5F0Z5aMHDp98Fl86lX8Oti8B7uN93L4Ifv4fHOEA+pQw87gmMO/lQ==",
+        "shasum": "e6c4ddd7ed3aa27c68a20cc4e50e1a4ee83bbc4a",
+        "tarball": "https://registry.npmjs.org/path-browserify/-/path-browserify-0.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 27016,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKiPVCRA9TVsSAnZWagAA49QP/iOLbBrfYvj1GgPG/Iml\nAUpfhQOEZ3juPvhTed68NvHvtwXzng4X1ijYkuM7yxi4KSgv83iYut5/Ukx2\nsvOuK/VGiLV5+/KOUx6O74Ah47UGWYMS74vCcjPks28IOekp0DYXxnF4fziQ\nIdxakyS1Nn+Pnz+aas5WqOVOZn2XkN6SPnXfBx1uA+UY9sCRR5gd+EWVPmyV\n5G9ozmS0Tg1oMroa9forJC7JLfpJFGL8Bb8I3oQF9Zo8Vc9+TzgWmP79e/4D\nYukk8pyMDUVYhIFDbH2dAGTqrUiMagsrHlP29ojvcceV6fWyf/DeG6rE2Bun\nvCQHvzePRwzr+soNHJyg+Wzhy8FmsTYLPlhyktRXbYhkj9UPsfdkhpS5V1nl\nXL27WHstgmtZQoLVOPFfTGgnMg5oYt4TwC84OHq5ZUKGWYcl8MtWWklHLO0z\n7FA49pgYkF494sHbVhVLnwNfFDySUf4zQAJ4mYCgPeXyf6FaEP6EKUaq9TD+\ngfLu81jZKK93YOAXfSTxyjWO6YEmB6GhUjH7ohsivS4M+IF6tmVGa1gPl0Cn\n/T7OzlQnfJ4o4bz9WTLKThv82DnRlPuHA94ptroOrWcb+oMGXBEpG5EFpoTM\nNWC7KFFLRppndI0Xs9+ndDYWqzy5WE5wjHNT9W23R7oVDqRga/N59jsE8tie\ncQV/\r\n=E5oF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/path-browserify_0.0.1_1529488340829_0.9848713260382573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "path-browserify",
+      "description": "the path module from node core for browsers",
+      "version": "1.0.1",
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "bugs": {
+        "url": "https://github.com/browserify/path-browserify/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "^4.9.0"
+      },
+      "homepage": "https://github.com/browserify/path-browserify",
+      "keywords": [
+        "browser",
+        "browserify",
+        "path"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/browserify/path-browserify.git"
+      },
+      "scripts": {
+        "test": "node test"
+      },
+      "gitHead": "872fec31a8bac7b9b43be0e54ef3037e0202c5fb",
+      "_id": "path-browserify@1.0.1",
+      "_nodeVersion": "13.9.0",
+      "_npmVersion": "6.14.1",
+      "dist": {
+        "integrity": "sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==",
+        "shasum": "d98454a9c3753d5790860f16f68867b9e46be1fd",
+        "tarball": "https://registry.npmjs.org/path-browserify/-/path-browserify-1.0.1.tgz",
+        "fileCount": 19,
+        "unpackedSize": 54293,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeXotWCRA9TVsSAnZWagAAQs4P/RgxM3LeL/6hBXl32TVj\nU60/D8yCL/sgtNucST9YxjQY1/Soj6eFbVhApQFKNCDkzGZUYm5SIR2pphla\nnzR08/vse1W5lt/hHHlih6Z1eq1WkipEXYpOG8K389KBcvnEANegzAEjYFtN\nAz9RP+hdxQ1gnF8b+fZKUYm5h/sIsNYHnX1KZP3ecVXoMw2OgE+eKj3LEZ1c\nRAEE3YYEnt+PaEINSfP00aDOhWuiD8ojkJVL+p/4U+MBbyopXmysjRBBOo6k\np1umLhUy/bDjng0bmCZxbSIC5ldALpKC0YafNkaZJSkmNJkp+YTXTMEgc4/W\nFpxYujRp2SxVcXStRwuVuM9Q3SR0dsgJVMS/wUB1zBEPOJhfxolUh2s5wOrl\ny8jjrTVlpzfMQZ48ie6E1KSLj2hqm0otB0zo4I4kvgut2Pg4HPugEjXpqePK\n0mUHzC3nBaswilokbbzhxQlRj9ZwdHEHMkkLc2qhT+c1FIVFWUgpOIgEbJAK\nUyO8A0jojkqCd7Mdge1easIa4E7WUN4Va3SV9z/NcaFM1DSCD0PqDv8g3TE7\n0TkrPOxe1u728SNgmdcy1huTwinhjw9BF85Ik39W67KbEe4Q7fVkp4FRD5qL\nP4EV21Ac8Wh6PALGD8hV56d618rmZ9HaJoO/XWYVfSz/9WtRCIwZznshx2md\nkwG7\r\n=fblg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "lukechilds123@gmail.com",
+          "name": "lukechilds"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/path-browserify_1.0.1_1583254358346_0.9623061789450384"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# path-browserify [![Build Status](https://travis-ci.org/browserify/path-browserify.png?branch=master)](https://travis-ci.org/browserify/path-browserify)\n\n> The `path` module from Node.js for browsers\n\nThis implements the Node.js [`path`][path] module for environments that do not have it, like browsers.\n\n> `path-browserify` currently matches the **Node.js 10.3** API.\n\n## Install\n\nYou usually do not have to install `path-browserify` yourself! If your code runs in Node.js, `path` is built in. If your code runs in the browser, bundlers like [browserify](https://github.com/browserify/browserify) or [webpack](https://github.com/webpack/webpack) include the `path-browserify` module by default.\n\nBut if none of those apply, with npm do:\n\n```\nnpm install path-browserify\n```\n\n## Usage\n\n```javascript\nvar path = require('path')\n\nvar filename = 'logo.png';\nvar logo = path.join('./assets/img', filename);\ndocument.querySelector('#logo').src = logo;\n```\n\n## API\n\nSee the [Node.js path docs][path]. `path-browserify` currently matches the Node.js 10.3 API.\n`path-browserify` only implements the POSIX functions, not the win32 ones.\n\n## Contributing\n\nPRs are very welcome! The main way to contribute to `path-browserify` is by porting features, bugfixes and tests from Node.js. Ideally, code contributions to this module are copy-pasted from Node.js and transpiled to ES5, rather than reimplemented from scratch. Matching the Node.js code as closely as possible makes maintenance simpler when new changes land in Node.js.\nThis module intends to provide exactly the same API as Node.js, so features that are not available in the core `path` module will not be accepted. Feature requests should instead be directed at [nodejs/node](https://github.com/nodejs/node) and will be added to this module once they are implemented in Node.js.\n\nIf there is a difference in behaviour between Node.js's `path` module and this module, please open an issue!\n\n## License\n\n[MIT](./LICENSE)\n\n[path]: https://nodejs.org/docs/v10.3.0/api/path.html\n",
+  "maintainers": [
+    {
+      "email": "raynos2@gmail.com",
+      "name": "raynos"
+    },
+    {
+      "email": "lukechilds123@gmail.com",
+      "name": "lukechilds"
+    },
+    {
+      "email": "shtylman@gmail.com",
+      "name": "defunctzombie"
+    },
+    {
+      "email": "substack@gmail.com",
+      "name": "substack"
+    },
+    {
+      "email": "feross@feross.org",
+      "name": "feross"
+    },
+    {
+      "email": "me@gkatsev.com",
+      "name": "gkatsev"
+    },
+    {
+      "email": "zertosh@gmail.com",
+      "name": "zertosh"
+    },
+    {
+      "email": "mathiasbuus@gmail.com",
+      "name": "mafintosh"
+    },
+    {
+      "email": "max@maxogden.com",
+      "name": "maxogden"
+    },
+    {
+      "email": "dominic.tarr@gmail.com",
+      "name": "dominictarr"
+    },
+    {
+      "email": "thlorenz10@gmail.com",
+      "name": "thlorenz"
+    },
+    {
+      "email": "terinjokes@gmail.com",
+      "name": "terinjokes"
+    },
+    {
+      "email": "npm-public@jessemccarthy.net",
+      "name": "jmm"
+    },
+    {
+      "email": "palmermebane@gmail.com",
+      "name": "mellowmelon"
+    },
+    {
+      "email": "darawk@gmail.com",
+      "name": "ashaffer88"
+    },
+    {
+      "email": "b@lupton.cc",
+      "name": "balupton"
+    },
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jryans@gmail.com",
+      "name": "jryans"
+    },
+    {
+      "email": "sethvincent@gmail.com",
+      "name": "sethvincent"
+    },
+    {
+      "email": "yoshuawuyts@gmail.com",
+      "name": "yoshuawuyts"
+    },
+    {
+      "email": "ungoldman@gmail.com",
+      "name": "ungoldman"
+    },
+    {
+      "email": "michael.williams@enspiral.com",
+      "name": "ahdinosaur"
+    },
+    {
+      "email": "contact@elnounch.net",
+      "name": "elnounch"
+    },
+    {
+      "email": "parshap+npm@gmail.com",
+      "name": "parshap"
+    },
+    {
+      "email": "yerko.palma@usach.cl",
+      "name": "yerkopalma"
+    },
+    {
+      "email": "forbes@lindesay.co.uk",
+      "name": "forbeslindesay"
+    },
+    {
+      "email": "martin.heidegger@gmail.com",
+      "name": "leichtgewicht"
+    },
+    {
+      "email": "garann@gmail.com",
+      "name": "garann"
+    },
+    {
+      "email": "bcomnes@gmail.com",
+      "name": "bret"
+    },
+    {
+      "email": "vestibule@anandthakker.net",
+      "name": "anandthakker"
+    },
+    {
+      "email": "dave.des@gmail.com",
+      "name": "mattdesl"
+    },
+    {
+      "email": "hughskennedy@gmail.com",
+      "name": "hughsk"
+    },
+    {
+      "email": "pereira.filype@gmail.com",
+      "name": "fpereira1"
+    },
+    {
+      "email": "renee@kooi.me",
+      "name": "goto-bus-stop"
+    },
+    {
+      "email": "post.ben.here@gmail.com",
+      "name": "bpostlethwaite"
+    },
+    {
+      "email": "github@tixz.dk",
+      "name": "emilbayes"
+    },
+    {
+      "email": "maochenyan@gmail.com",
+      "name": "stevemao"
+    },
+    {
+      "email": "peteris.krumins@gmail.com",
+      "name": "pkrumins"
+    },
+    {
+      "email": "me@JoshDuff.com",
+      "name": "tehshrike"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-09T12:54:32.635Z",
+    "created": "2013-12-03T19:48:36.301Z",
+    "0.0.0": "2013-12-03T19:48:37.866Z",
+    "1.0.0": "2018-06-06T14:07:31.193Z",
+    "0.0.1": "2018-06-20T09:52:20.906Z",
+    "1.0.1": "2020-03-03T16:52:38.480Z"
+  },
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/browserify/path-browserify.git"
+  },
+  "users": {
+    "wenbing": true,
+    "simplyianm": true,
+    "inflowmotion": true,
+    "koulmomo": true,
+    "rbecheras": true
+  },
+  "homepage": "https://github.com/browserify/path-browserify",
+  "keywords": [
+    "browser",
+    "browserify",
+    "path"
+  ],
+  "bugs": {
+    "url": "https://github.com/browserify/path-browserify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

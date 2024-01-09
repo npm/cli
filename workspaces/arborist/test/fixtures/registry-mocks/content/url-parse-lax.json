@@ -1,0 +1,351 @@
+{
+  "_id": "url-parse-lax",
+  "_rev": "7-6f96ff4fc9d4782adfb818b71453f933",
+  "name": "url-parse-lax",
+  "description": "Lax url.parse() with support for protocol-less URLs & IPs",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "url-parse-lax",
+      "version": "1.0.0",
+      "description": "url.parse() with support for protocol-less URLs & IPs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/url-parse-lax.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "uri",
+        "parse",
+        "parser",
+        "loose",
+        "lax",
+        "protocol",
+        "less",
+        "protocol-less",
+        "ip",
+        "ipv4",
+        "ipv6"
+      ],
+      "dependencies": {
+        "prepend-http": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "1c2c7473ee75bb84a92c8aca532a6e615e531380",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/url-parse-lax/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/url-parse-lax#readme",
+      "_id": "url-parse-lax@1.0.0",
+      "_shasum": "7af8f303645e9bd79a272e7a14ac68bc0609da73",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7af8f303645e9bd79a272e7a14ac68bc0609da73",
+        "tarball": "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "url-parse-lax",
+      "version": "2.0.0",
+      "description": "Lax url.parse() with support for protocol-less URLs & IPs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/url-parse-lax.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "uri",
+        "parse",
+        "parser",
+        "loose",
+        "lax",
+        "protocol",
+        "less",
+        "protocol-less",
+        "ip",
+        "ipv4",
+        "ipv6"
+      ],
+      "dependencies": {
+        "prepend-http": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a41da52ee8d9d9ec2a409cd8fa150103e2c491d5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/url-parse-lax/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/url-parse-lax#readme",
+      "_id": "url-parse-lax@2.0.0",
+      "_shasum": "6ba5871d586035d8b49cdae7432546b7abffbb7c",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6ba5871d586035d8b49cdae7432546b7abffbb7c",
+        "tarball": "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse-lax-2.0.0.tgz_1508235702647_0.7799494287464768"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "url-parse-lax",
+      "version": "3.0.0",
+      "description": "Lax url.parse() with support for protocol-less URLs & IPs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/url-parse-lax.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "uri",
+        "parse",
+        "parser",
+        "loose",
+        "lax",
+        "protocol",
+        "less",
+        "protocol-less",
+        "ip",
+        "ipv4",
+        "ipv6"
+      ],
+      "dependencies": {
+        "prepend-http": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "4b0d2d310a9f39c8df88295853fe4f1a3bd13ec4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/url-parse-lax/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/url-parse-lax#readme",
+      "_id": "url-parse-lax@3.0.0",
+      "_shasum": "16b5cafc07dbe3676c1b1999177823d6503acb0c",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "16b5cafc07dbe3676c1b1999177823d6503acb0c",
+        "tarball": "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse-lax-3.0.0.tgz_1509741338773_0.5627476745285094"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "url-parse-lax",
+      "version": "4.0.0",
+      "description": "Lax url.parse() with support for protocol-less URLs & IPs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/url-parse-lax.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "url",
+        "uri",
+        "parse",
+        "parser",
+        "loose",
+        "lax",
+        "protocol",
+        "less",
+        "protocol-less",
+        "ip",
+        "ipv4",
+        "ipv6"
+      ],
+      "dependencies": {
+        "prepend-http": "^3.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "ec2996366f094edd7d719cdb4aa0536acd2ff516",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/url-parse-lax/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/url-parse-lax#readme",
+      "_id": "url-parse-lax@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-CazaJJZUPr1EWmHjcntgS1F1q6YOpQROD6Z+aTb9obxgOFsRydnqYkRCh5xDJ3LhqTID46JrWaT7PsF7Oms0PA==",
+        "shasum": "94f9b0dd8190e8baee1ce2049f79e5c67dc3318b",
+        "tarball": "https://registry.npmjs.org/url-parse-lax/-/url-parse-lax-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4590,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/+bQCRA9TVsSAnZWagAAmWQQAINgal71bdh4rKpFozVg\n7qhUzTGO+hAwrXq6gKcivjjC6Npu8E14DkeHP2YLiL77b7K1aV+7Y0BHiUWT\nxXNk1IwAwrbZK0B1XH2jrRB9iy7c6lu5gz5y0UBPWzJOBBw29XsCj5M4bMbD\nw0DfX1x3/M3v77rWfmZzJMaBAqQOe0iuBUkAtRV/MnMySuVyuaPfDnK+ZEJk\nqk/xq0J4NZmRvuQRA/Pt2+pyzFUbo1taNjf+I0c0szgQyfqh0vgkslF2ra0J\nuyMVf6CF1YR6XwT2kFRyJ8rjP4hstu8HMctFsyNi7Ni6APc8VqTVnwzdmFQt\nsx+Lganvup+F8GDwVx8SPT38HmOQwmTPiY2DyFj5FmmhH9J5vcCCPUcNpHLO\niahQZmknXoAGe97e+5+JxGf3luWqZEqPETmI9EXV9ixJa+EvHy66PWHm6Z4l\nseX5ibP0SBGZrxz96DfMr+p9zxjCX4W1uqtQGwjHrujgnhfYkI0kdlSUMPiB\nDuMQViv7IaKlA1iFZi1RiRPokAHg4Y3EQ7NOQVoyhGQrimjh+Kd40f9miPwP\nkDl6albBo0H7hnaxyCCU0On3Ff4P3ZGm3Huhx/s6f8oQ5zuB7viDpjpBXyQI\nDx/hDKfDJBWSySU+r2wQw0jUtMLHkiY4aD3EM38FBgt6FrLPCT1og8Ex01as\nKPyR\r\n=SoYy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse-lax_4.0.0_1560274639544_0.024723955458921143"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# url-parse-lax [![Build Status](https://travis-ci.org/sindresorhus/url-parse-lax.svg?branch=master)](https://travis-ci.org/sindresorhus/url-parse-lax)\n\n> Lax [`url.parse()`](https://nodejs.org/docs/latest/api/url.html#url_url_parse_urlstr_parsequerystring_slashesdenotehost) with support for protocol-less URLs & IPs\n\n\n## Install\n\n```\n$ npm install url-parse-lax\n```\n\n\n## Usage\n\n```js\nconst urlParseLax = require('url-parse-lax');\n\nurlParseLax('sindresorhus.com');\n/*\n{\n\tprotocol: 'https:',\n\tslashes: true,\n\tauth: null,\n\thost: 'sindresorhus.com',\n\tport: null,\n\thostname: 'sindresorhus.com',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'https://sindresorhus.com/'\n}\n*/\n\nurlParseLax('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: true,\n\tauth: null,\n\thost: '[2001:db8::]:8000',\n\tport: '8000',\n\thostname: '2001:db8::',\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '/',\n\tpath: '/',\n\thref: 'http://[2001:db8::]:8000/'\n}\n*/\n```\n\nAnd with the built-in `url.parse()`:\n\n```js\nconst url = require('url');\n\nurl.parse('sindresorhus.com');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: 'sindresorhus',\n\tpath: 'sindresorhus',\n\thref: 'sindresorhus'\n}\n*/\n\nurl.parse('[2001:db8::]:8000');\n/*\n{\n\tprotocol: null,\n\tslashes: null,\n\tauth: null,\n\thost: null,\n\tport: null,\n\thostname: null,\n\thash: null,\n\tsearch: null,\n\tquery: null,\n\tpathname: '[2001:db8::]:8000',\n\tpath: '[2001:db8::]:8000',\n\thref: '[2001:db8::]:8000'\n}\n*/\n```\n\n\n## API\n\n### urlParseLax(url, options?)\n\n#### url\n\nType: `string`\n\nURL to parse.\n\n#### options\n\nType: `object`\n\n##### https\n\nType: `boolean`<br>\nDefault: `true`\n\nPrepend `https://` instead of `http://` to protocol-less URLs.\n\n\n## Related\n\n- [url-format-lax](https://github.com/sindresorhus/url-format-lax) - Lax `url.format()` that formats a hostname and port into IPv6-compatible socket form of `hostname:port`\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-url-parse-lax?utm_source=npm-url-parse-lax&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-11T17:37:22.262Z",
+    "created": "2015-07-13T11:21:35.694Z",
+    "1.0.0": "2015-07-13T11:21:35.694Z",
+    "2.0.0": "2017-10-17T10:21:42.728Z",
+    "3.0.0": "2017-11-03T20:35:38.836Z",
+    "4.0.0": "2019-06-11T17:37:19.769Z"
+  },
+  "homepage": "https://github.com/sindresorhus/url-parse-lax#readme",
+  "keywords": [
+    "url",
+    "uri",
+    "parse",
+    "parser",
+    "loose",
+    "lax",
+    "protocol",
+    "less",
+    "protocol-less",
+    "ip",
+    "ipv4",
+    "ipv6"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/url-parse-lax.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/url-parse-lax/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "antixrist": true,
+    "huhgawz": true,
+    "gavinning": true
+  }
+}

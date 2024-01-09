@@ -1,0 +1,794 @@
+{
+  "_id": "clean-stack",
+  "_rev": "14-96a11d7b07c1d46a53fd1825fed93099",
+  "name": "clean-stack",
+  "description": "Clean up error stack traces",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "clean-stack",
+      "version": "0.1.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "c0b4a9f95b71b50221c3e94209c57383e651cb35",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@0.1.0",
+      "_shasum": "cd98959c1042d2e8fdf22d7955e64168561eea67",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cd98959c1042d2e8fdf22d7955e64168561eea67",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-0.1.0.tgz_1467927496364_0.5792771128471941"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "clean-stack",
+      "version": "0.1.1",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "33049511583705ad951057cb077fc039eeab155d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@0.1.1",
+      "_shasum": "bf48c8146fc9d3eefe0216fd76e6cda9a9497bb9",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "bf48c8146fc9d3eefe0216fd76e6cda9a9497bb9",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-0.1.1.tgz_1468275968568_0.01679733395576477"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "clean-stack",
+      "version": "1.0.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "87a511eabe1cee1774218d8a2ee915dda8d70969",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@1.0.0",
+      "_shasum": "fe23f557b57db451abde7f34d66a1ce950a50194",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "fe23f557b57db451abde7f34d66a1ce950a50194",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-1.0.0.tgz_1473672657748_0.1173160404432565"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "clean-stack",
+      "version": "1.1.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "9e48eaf554fc6ba38c862f09170eaa9af195c23f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@1.1.0",
+      "_shasum": "141138d079127461a77bdb4b2428a2cf68bb5b09",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "141138d079127461a77bdb4b2428a2cf68bb5b09",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-1.1.0.tgz_1478153031867_0.3081847217399627"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "clean-stack",
+      "version": "1.1.1",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "4d7afb42955f19f46920157a4366419b1a7fe2cc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@1.1.1",
+      "_shasum": "a1b3711122df162df7c7cb9b3c0470f28cb58adb",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a1b3711122df162df7c7cb9b3c0470f28cb58adb",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-1.1.1.tgz_1479317181820_0.9155600084923208"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "clean-stack",
+      "version": "1.2.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err",
+        "electron"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "aefdc52b5d2f416ace014cbe53e70463e020c9da",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@1.2.0",
+      "_shasum": "a465128d62c31fb1a3606d00abfe59dcf652f568",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a465128d62c31fb1a3606d00abfe59dcf652f568",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/clean-stack-1.2.0.tgz_1494828504327_0.5275583770126104"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "clean-stack",
+      "version": "1.3.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err",
+        "electron"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "f4846beeb2a7545488bf60eb078dd55643d5bb61",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@1.3.0",
+      "_shasum": "9e821501ae979986c46b1d66d2d432db2fd4ae31",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9e821501ae979986c46b1d66d2d432db2fd4ae31",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clean-stack-1.3.0.tgz_1495532029098_0.3119257097132504"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "clean-stack",
+      "version": "2.0.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err",
+        "electron"
+      ],
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "8ca13453d8cff0c03359e0b8f6dccaf30ddab98c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VEoL9Qh7I8s8iHnV53DaeWSt8NJ0g3khMfK6NiCPB7H657juhro+cSw2O88uo3bo0c0X5usamtXk0/Of0wXa5A==",
+        "shasum": "301bfa9e8dd2d3d984c0e542f7aa67b996f63e0a",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4213,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbxilaCRA9TVsSAnZWagAAsaQP/1xLebCfcYeMagqj24a3\n9bxb7SKbFJK5rRbREijha02Fjx3KnbBYsQqf8/XMEIILqbrrpnMHNn9/YeqP\n6iEtaUWjxgtirGFbkirfk8BdpKmyi+xzco+HkDAibTh2tAsbp53Mr5x+Pxsi\nHiNXvP68QJSPrDVk75cDIA1lB5BSkmzlo0uaM4pyXiohUUtcq4MwmeAlSpJ4\nEi0nUKEX1FINS4htQoxWM4C20m156+mwolU51YtN1i2PcL+TY3LNYGIZ5H1w\nIhQZSgMOmTa5tijgJVVfH1yRezCwex8KY2X+4uQc6MXeLD86yriStuFZlvAA\n834wV2Eai9a/WAuiOEI3rjeTAW7cwqLu1RKDJQK+sYOV5JYxfX+1LaNTHVto\nahBuY1WwUvrEK6nFlZCn/OYGwaqG7KMsYsqTB5Dm2To6a2wOhF5gwmAFknIW\n+K1OAgXLrLZI7LLdZzs1WAntRtTo1KeQuko0ZBnihAO/V8+r4V8P2HeRwABu\nT5dM+Cyg/IYp5ii+LZDfC5MwvPo2vbjdl7L2btZuaAjbkbD8ZPxVmizXGTF0\nQIcXeRmnmyPyvUThwEkra4ajUeyBcmj5f2x4QgKmSdHJVDsC+QJTMleIIU0E\nmY/NefTo0MNn4C8DNvTVsji6KaZEcb2Dl38JVgM3xB3xNYmIoJq8aE3FLQfC\nJ85x\r\n=NS6i\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clean-stack_2.0.0_1539713368642_0.2756879508188137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "clean-stack",
+      "version": "2.1.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err",
+        "electron"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "3f9b029625ed507fc488bf050a9403db60374f89",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@2.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-uQWrpRm+iZZUCAp7ZZJQbd4Za9I3AjR/3YTjmcnAtkauaIm/T5CT6U8zVI6e60T6OANqBFAzuR9/HB3NzuZCRA==",
+        "shasum": "9e7fec7f3f8340a2ab4f127c80273085e8fbbdd0",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5435,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqgf9CRA9TVsSAnZWagAAzgkQAJmqD/25B7IGTT46SOF6\ntVyLivUBef21r0IQLsqdE6NzoTz3q7LKP7hSDFULQ7yiWse4KWqo0xcXX4E1\n3FMMJRNb1xB55QSQKeQbDcG6p8mO3TU1oQSiOqLhHc3DJ/YYIuoiN4BVGeOW\nwiL2UfFaHCe5/he0OmMZjZIKVW3cfewGIOXkrtXsCaPMjlqDX+lsTf8QJ261\nd4YJN9tYwID2zscrniWRqeXodq2/0GjfrQ0nrrwctUASisVy+lirkjPXcayG\n94Q8KUC9qnftO+zDtC3PpV1h3mdp8LrTPMTyBzxKjXPbttActUMScVLWdChU\n1L/sDZACsnylTu2q6j/jwzM+MEQC+dGhvgOFsOhO1D3kzJWBXV5piSnWzezG\ngKRt0tLZFwUirxslqUEiXnJpOtm8Ub2FqwNucOPZ+vbdNrogHzrtuHprjf/E\nl6M13XS6Sc0mW6WaOtvJLUmVXormoB/zMupi9sch36bBezg0rhPRPNunsJ6h\nFIK6SPWXxX3GXtm/nUZfmtYjkvAMO5VJ3qTlPILuuVAC+BMIBkImRIZ2hozK\nz22kL4Cc+Fky2MQwikslcfWCbVE4iNmaszGzIztlx6k+T29ieGbZvBpyQOGV\n5Y+m3o0LZLvOm/r/KvqF23s1lbFZ3DZ0pp7nbBKUyu8AVgy09/DhhlUx1LqE\nSn/A\r\n=u0kU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clean-stack_2.1.0_1554647036810_0.18564892293600033"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "clean-stack",
+      "version": "2.2.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "err",
+        "electron"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "browser": {
+        "os": false
+      },
+      "gitHead": "91440c5a1615354fb9419354650937c434eb9f49",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@2.2.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==",
+        "shasum": "ee8472dbb129e727b31e8a10a427dee9dfe4008b",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-2.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5508,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQbLICRA9TVsSAnZWagAA/rgP/1TWGRCM3DhESdXGjNFH\niKBjOj8P+r/uaBFCV2EWL+/4gyww3VA6ECIyw3NJ8Iin0tiulY+nzo65bmxv\n0sEg3R57d5W3XFrvKc/3w+EEyeq+EVTUUZFxb3jw63WGJppezy+24WBiI1wZ\nUkgPXvfhs2ZqXmCdVlrOQ3zhCuwDzMXHO7rChGfOMhsQTPPB3uhxdlMdS7N5\noA3MnPUOcTO1oHIWL6Kj/EfQcLcgxnQQrR0gJd+NZGoS3Wa4Z5HhWPtfKBh1\n7roltnx0tKKKXbEK/XMvjVJdO+tbGaunmLjD/d7R+pctEazftxjWjef0b8ve\nlpT3k+j8unp/scto7a3hZnKSgfBJz9QO0OE0jciuBijEvTm2PN2IMjUXxbeq\ni+DtRYLdIRnL6SsiqMxIZUuO2KuR+O1xMmxPkM1LkiSW8x9s9vwifHYBtQnM\nhElRbyGqO+nILUklpt9a9lvxwpYDqQeuGJt4Fogdsz5BoDf640pmn/5KS6NV\n3ydUF0lEXihTs24Nl1TPH7hYVV7fdM4/gQm4BlmtkBuvP738BkkAHRt/HCfl\nBAwWPgPXpW7TwpPP/jK+UNud4YKzj6fDiDxoVPOuj5584IEPx4nU2rdIiPHa\nq0w7XIgmqoBGNU5wPAepNhPOlITXAiuSFZnEZG4NVUNPqNaprc1msH48QpFu\nQWIh\r\n=N8TA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clean-stack_2.2.0_1564586696035_0.5408053424982435"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "clean-stack",
+      "version": "3.0.0",
+      "description": "Clean up error stack traces",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/clean-stack.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "clean",
+        "stack",
+        "trace",
+        "traces",
+        "error",
+        "electron"
+      ],
+      "dependencies": {
+        "escape-string-regexp": "4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.32.0"
+      },
+      "browser": {
+        "os": false
+      },
+      "gitHead": "1fe295bc61c7336c4e2aa797f139d646d811e4e9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/clean-stack/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+      "_id": "clean-stack@3.0.0",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-RHxtgFvXsRQ+1AM7dlozLDY7ssmvUUh0XEnfnyhYgJTO6beNZHBogiaCwGM9Q3rFrUkYxOtsZRC0zAturg5bjg==",
+        "shasum": "a7c249369fcf0f33c7888c20ea3f3dc79620211f",
+        "tarball": "https://registry.npmjs.org/clean-stack/-/clean-stack-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6357,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe5I3OCRA9TVsSAnZWagAAZSEQAIiQx1kBLbzE2r7HnUt+\n1hJ0L9BcQdAiqXl4nUeq2QgVt2RCrl6BCpQqeIylHbVquj3HeYV8tMhodIZR\nPAKLElCZfjZWf6S5Anj461GxhrRLPvp6oIr9SJL9TC/JrBW4CUI9NIwxrrd8\nc/r+dZVXvQ/pPrBETbuv5K4XJIxmp6vqWqS+2YBJxApbL09aNmo1ukLPvEFZ\n5BYy6VSEQ/Lf2OyFLjnRKIUxvRUOeMcXMM8TZBmTjKu81aKzEt/nC7QhxGCL\nCluIopEtLaTGACDjcWjipcMTJuCglC/KrldzoUBrzwJa7+5Zqeo+qRy02XhG\nhXBgU+L3JdAyySggKIzZ8k+Qtx8Bim2Vg83eMnoFPy/2xLjqAq3OQHewQwME\nARpYAtboA4BLcE83qMnBnkjGK229wU3KExoZ4G06gyRt/Y8HbPIt4jaueFOC\n47jCa81DueArWQc4jTBfrJ631q9E7noIbXKpQ0kTKxEWtfBpBS2dvVd9Fqq7\nfI7BCIY8Yl4CBU0/g43hEaXScBG5vfDTrRf+yMQvk821W2B3Z+doQT/0ugRX\nUulN6Hc5eJY358Y31EcaS+qBH+yviPa0lNbSjrX9SHVrYIYXn6i6yEp93DQe\n7DGjsHNE2pvaj6vMvN+1lhV+vd8gz1WlKh8UGhUVqpDHMwEGPV/8CmKawSB6\ngsrY\r\n=TkVO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/clean-stack_3.0.0_1592036814524_0.52605363544028"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# clean-stack [![Build Status](https://travis-ci.com/sindresorhus/clean-stack.svg?branch=master)](https://travis-ci.com/github/sindresorhus/clean-stack)\n\n> Clean up error stack traces\n\nRemoves the mostly unhelpful internal Node.js entries.\n\nAlso works in Electron.\n\n## Install\n\n```\n$ npm install clean-stack\n```\n\n## Usage\n\n```js\nconst cleanStack = require('clean-stack');\n\nconst error = new Error('Missing unicorn');\n\nconsole.log(error.stack);\n/*\nError: Missing unicorn\n    at Object.<anonymous> (/Users/sindresorhus/dev/clean-stack/unicorn.js:2:15)\n    at Module._compile (module.js:409:26)\n    at Object.Module._extensions..js (module.js:416:10)\n    at Module.load (module.js:343:32)\n    at Function.Module._load (module.js:300:12)\n    at Function.Module.runMain (module.js:441:10)\n    at startup (node.js:139:18)\n*/\n\nconsole.log(cleanStack(error.stack));\n/*\nError: Missing unicorn\n    at Object.<anonymous> (/Users/sindresorhus/dev/clean-stack/unicorn.js:2:15)\n*/\n```\n\n## API\n\n### cleanStack(stack, options?)\n\n#### stack\n\nType: `string`\n\nThe `stack` property of an `Error`.\n\n#### options\n\nType: `object`\n\n##### pretty\n\nType: `boolean`\\\nDefault: `false`\n\nPrettify the file paths in the stack:\n\n`/Users/sindresorhus/dev/clean-stack/unicorn.js:2:15` → `~/dev/clean-stack/unicorn.js:2:15`\n\n##### basePath\n\nType: `string?`\n\nRemove the given base path from stack trace file paths, effectively turning absolute paths into relative ones.\n\nExample with `'/Users/sindresorhus/dev/clean-stack/'` as `basePath`:\n\n`/Users/sindresorhus/dev/clean-stack/unicorn.js:2:15` → `unicorn.js:2:15`\n\n## Related\n\n- [extract-stack](https://github.com/sindresorhus/extract-stack) - Extract the actual stack of an error\n- [stack-utils](https://github.com/tapjs/stack-utils) - Captures and cleans stack traces\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-13T08:26:57.278Z",
+    "created": "2016-07-07T21:38:18.517Z",
+    "0.1.0": "2016-07-07T21:38:18.517Z",
+    "0.1.1": "2016-07-11T22:26:10.197Z",
+    "1.0.0": "2016-09-12T09:31:00.750Z",
+    "1.1.0": "2016-11-03T06:03:52.077Z",
+    "1.1.1": "2016-11-16T17:26:23.710Z",
+    "1.2.0": "2017-05-15T06:08:24.571Z",
+    "1.3.0": "2017-05-23T09:33:49.172Z",
+    "2.0.0": "2018-10-16T18:09:29.173Z",
+    "2.1.0": "2019-04-07T14:23:57.015Z",
+    "2.2.0": "2019-07-31T15:24:56.235Z",
+    "3.0.0": "2020-06-13T08:26:54.636Z"
+  },
+  "homepage": "https://github.com/sindresorhus/clean-stack#readme",
+  "keywords": [
+    "clean",
+    "stack",
+    "trace",
+    "traces",
+    "error",
+    "electron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/clean-stack.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/clean-stack/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "edloidas": true,
+    "zvr": true,
+    "rocket0191": true
+  }
+}

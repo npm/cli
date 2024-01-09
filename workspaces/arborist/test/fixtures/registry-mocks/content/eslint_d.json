@@ -1,0 +1,4863 @@
+{
+  "_id": "eslint_d",
+  "_rev": "56-de9745a3f8a9006f569f1f7815cbff73",
+  "name": "eslint_d",
+  "description": "Makes eslint the fastest linter on the planet",
+  "dist-tags": {
+    "latest": "9.1.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "eslint_d",
+      "version": "1.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "c1acafcf056c13f094d42a1d49ac862e80d20279",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@1.0.0",
+      "_shasum": "e4186e7ab64f6da51962e46781fe5273d042d112",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "e4186e7ab64f6da51962e46781fe5273d042d112",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "eslint_d",
+      "version": "2.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.6.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "d25d575d3aaaf78bb3438258a40cfe7a04d6f299",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.0.0",
+      "_shasum": "5f7155b49c44354be9e21f229f6163453b87d422",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "5f7155b49c44354be9e21f229f6163453b87d422",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "eslint_d",
+      "version": "2.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "c8a67d105e61af55a0c19530dc60fd546f94c325",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.1.0",
+      "_shasum": "a74c942c3580d8e548ed3941b793232966ecbfa3",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "a74c942c3580d8e548ed3941b793232966ecbfa3",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "eslint_d",
+      "version": "2.1.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "f25842b3c01a8c4f73a488cfe12eba4e7c7e9b05",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.1.1",
+      "_shasum": "98130728faedd9c11e21c05540553ea4d3fd9376",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "98130728faedd9c11e21c05540553ea4d3fd9376",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "eslint_d",
+      "version": "2.1.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "545b39e8aa424b80b2704dd26a7cc36c0033c616",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.1.2",
+      "_shasum": "ca91b4658b4e42b447eb75147a4a93d02b2891b2",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "ca91b4658b4e42b447eb75147a4a93d02b2891b2",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "eslint_d",
+      "version": "2.2.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0",
+        "resolve": "^1.1.6"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "5b7cc193c71e96f16ab9bde91efda53ce10e8afa",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.2.0",
+      "_shasum": "64764ec9df50bb3790bf81f3dde774cd08206624",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "64764ec9df50bb3790bf81f3dde774cd08206624",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "eslint_d",
+      "version": "2.3.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "concat-stream": "^1.5.1",
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0",
+        "resolve": "^1.1.6"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "d7a59b1e8270ff586c11ca3b47a667e5c68fd0e7",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.3.0",
+      "_shasum": "30c6cfbb025fde84eb012c21d73bdfe3b2e322fa",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "30c6cfbb025fde84eb012c21d73bdfe3b2e322fa",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "eslint_d",
+      "version": "2.3.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0",
+        "resolve": "^1.1.6"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "35714f77fd0bce5332ef9ae7e88a5c3cb8da5ece",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.3.1",
+      "_shasum": "c3243de6b6898431ff118938c09ebbb5af955ba7",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "c3243de6b6898431ff118938c09ebbb5af955ba7",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.2": {
+      "name": "eslint_d",
+      "version": "2.3.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0",
+        "resolve": "^1.1.6"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "86f66946f3c460717f35175b04cc920af30d3706",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.3.2",
+      "_shasum": "efbe83ba8a7c9a9a9a6541bed6e569e3955795df",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "efbe83ba8a7c9a9a9a6541bed6e569e3955795df",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "eslint_d",
+      "version": "2.4.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint **/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^1.4.2",
+        "optionator": "^0.5.0",
+        "resolve": "^1.1.6"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "ea3da45a1293d2589f0f35c9436804615833aca4",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.4.0",
+      "_shasum": "18e4f6108420b16bf62a362ccf3bc2ee8a5988c7",
+      "_from": ".",
+      "_npmVersion": "3.3.8",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "18e4f6108420b16bf62a362ccf3bc2ee8a5988c7",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "directories": {}
+    },
+    "2.5.0": {
+      "name": "eslint_d",
+      "version": "2.5.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^1.4.2",
+        "optionator": "^0.6.0",
+        "resolve": "^1.1.6",
+        "supports-color": "^2.0.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "d922cf0a75f1381b3f2878bd91dbedacdac506b7",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.5.0",
+      "_shasum": "4f2ed36950da28944a1d1864a3b66d8281009431",
+      "_from": ".",
+      "_npmVersion": "3.7.0",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "4f2ed36950da28944a1d1864a3b66d8281009431",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-2.5.0.tgz_1455964929415_0.5003374665975571"
+      },
+      "directories": {}
+    },
+    "2.5.1": {
+      "name": "eslint_d",
+      "version": "2.5.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^1.4.2",
+        "optionator": "^0.6.0",
+        "resolve": "^1.1.6",
+        "supports-color": "^2.0.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "e301472a57032daf5623dc2138a19348da40dad1",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@2.5.1",
+      "_shasum": "1364d7a4a9877c01f0e0944538bbbd7ca60e38c7",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "1364d7a4a9877c01f0e0944538bbbd7ca60e38c7",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-2.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-2.5.1.tgz_1456325334020_0.0962061071768403"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "eslint_d",
+      "version": "3.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^2.2.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "10c85eecfcb422ca147740f9cda1433b8cd109d4",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@3.0.0",
+      "_shasum": "7a4a2b978237bdf33358e1655c65798362253fd5",
+      "_from": ".",
+      "_npmVersion": "3.7.0",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "7a4a2b978237bdf33358e1655c65798362253fd5",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-3.0.0.tgz_1456431136645_0.8261602153070271"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "eslint_d",
+      "version": "3.0.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^2.2.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "997aa11d371d444a045dad731ff458d4ec9074b6",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@3.0.1",
+      "_shasum": "5ca74bf20932222b6a6e2916a8cbb78a7501ad81",
+      "_from": ".",
+      "_npmVersion": "3.7.0",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "5ca74bf20932222b6a6e2916a8cbb78a7501ad81",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-3.0.1.tgz_1456686773890_0.26216846355237067"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "eslint_d",
+      "version": "3.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^2.2.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "3f47b92d0c59d7ae9fb9141d7e76b06a2e149692",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@3.1.0",
+      "_shasum": "286858b15523d81f3b91f046297ce720f269d6d0",
+      "_from": ".",
+      "_npmVersion": "3.7.0",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "286858b15523d81f3b91f046297ce720f269d6d0",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-3.1.0.tgz_1457043191788_0.18182408553548157"
+      },
+      "directories": {}
+    },
+    "3.1.1": {
+      "name": "eslint_d",
+      "version": "3.1.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^2.10.2",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "86e51a5feefe95534240ebae2d3649f1cfdabd9d",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@3.1.1",
+      "_shasum": "ca081ebe7399d1e926e34b54f637b256168abee5",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "ca081ebe7399d1e926e34b54f637b256168abee5",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-3.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-3.1.1.tgz_1465323018357_0.27021020324900746"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "eslint_d",
+      "version": "4.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "2a6ad42f6cc1f8a44914cca0bcd1621afcacb7d8",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.0.0",
+      "_shasum": "2a2a0b1ea41fa34f1a9e93c9ec28244f08c888d5",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "2a2a0b1ea41fa34f1a9e93c9ec28244f08c888d5",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.0.0.tgz_1467916257861_0.9624444846995175"
+      },
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "eslint_d",
+      "version": "4.0.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "c4309bba7c95a604d31377d0509ab4636758a546",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.0.1",
+      "_shasum": "23742467e75facdf3fc1bfb04ac2d8e029b9afb9",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "23742467e75facdf3fc1bfb04ac2d8e029b9afb9",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.0.1.tgz_1469474630130_0.40801518759690225"
+      },
+      "directories": {}
+    },
+    "3.1.2": {
+      "name": "eslint_d",
+      "version": "3.1.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^2.10.2",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "9301fd869c505d052521edf28ecfaea6d55611ec",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@3.1.2",
+      "_shasum": "e4e700368e55faef21fdbaf10e44a8ee3e18b3cb",
+      "_from": ".",
+      "_npmVersion": "3.8.5",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "e4e700368e55faef21fdbaf10e44a8ee3e18b3cb",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-3.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-3.1.2.tgz_1469476782604_0.6863817693665624"
+      },
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "eslint_d",
+      "version": "4.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "5da9a2d665dd8e994274fa860f9d23789e73eede",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.1.0",
+      "_shasum": "5a799a8849d3a517912cebdd2247f675f0607fce",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "5a799a8849d3a517912cebdd2247f675f0607fce",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.1.0.tgz_1475178687826_0.007746151182800531"
+      },
+      "directories": {}
+    },
+    "4.2.0": {
+      "name": "eslint_d",
+      "version": "4.2.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "b16b61cb8c06f8a6f456368e48aa0e122b655064",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.2.0",
+      "_shasum": "231b47a94b2693cbe99f84a3b89b73ed831da98f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.8.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "231b47a94b2693cbe99f84a3b89b73ed831da98f",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.2.0.tgz_1476638954802_0.386433141073212"
+      },
+      "directories": {}
+    },
+    "4.2.1": {
+      "name": "eslint_d",
+      "version": "4.2.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "ed3ecc4238cef7156e61822e389ce5a20de1f900",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.2.1",
+      "_shasum": "61e31fb2a43538338798de3a402b181bd7560aaf",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "aaronjensen",
+        "email": "aaronjensen@gmail.com"
+      },
+      "dist": {
+        "shasum": "61e31fb2a43538338798de3a402b181bd7560aaf",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aaronjensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.2.1.tgz_1481062903679_0.19854146847501397"
+      },
+      "directories": {}
+    },
+    "4.2.2": {
+      "name": "eslint_d",
+      "version": "4.2.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "6ddfb72d5c16c8f8d23ef8746efd7be4013625f2",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.2.2",
+      "_shasum": "e043b2d9d9bd23e78b269d083469fc1c3431c08c",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "aaronjensen",
+        "email": "aaronjensen@gmail.com"
+      },
+      "dist": {
+        "shasum": "e043b2d9d9bd23e78b269d083469fc1c3431c08c",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aaronjensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.2.2.tgz_1488610323763_0.6894126469269395"
+      },
+      "directories": {}
+    },
+    "4.2.4": {
+      "name": "eslint_d",
+      "version": "4.2.4",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "a41ae472162c1072fc70b07e810110a1168de6b2",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.2.4",
+      "_shasum": "0a33fcd28ff29d2b6623d8ea36f8de486dd5633a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "aaronjensen",
+        "email": "aaronjensen@gmail.com"
+      },
+      "dist": {
+        "shasum": "0a33fcd28ff29d2b6623d8ea36f8de486dd5633a",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aaronjensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.2.4.tgz_1489418651539_0.942201406462118"
+      },
+      "directories": {}
+    },
+    "4.2.5": {
+      "name": "eslint_d",
+      "version": "4.2.5",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^3.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "gitHead": "7c46f9888ebe37bb418d3f1f98d6bfd9287e4b10",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@4.2.5",
+      "_shasum": "f0d3a150e2960a7d787841ab83eaef746432c5e1",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "shasum": "f0d3a150e2960a7d787841ab83eaef746432c5e1",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-4.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "aaronjensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint_d-4.2.5.tgz_1490705969783_0.11594514129683375"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "eslint_d",
+      "version": "5.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "1dced454e58191149206c6b15c8dc603d67480b4",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-BDX5qwBi8CkWI/SXxFfBwO+4zRlgl2HAisWMooJxjXUvu3tGLG81bGyGDR39PychDQjVW5RZl9/CFIObs//6Ww==",
+        "shasum": "88bbceec5d5eead280b63b6351881bc05bfe3987",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d-5.0.0.tgz_1498473497707_0.36939186812378466"
+      },
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "eslint_d",
+      "version": "5.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "a2a57f5ff94240cc96d4e52ee22b4f81b886e988",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.1.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-mL8STUujuvmBRBlUs883iVivbEW/LLWjZ/unEckv+6uuVnz2+aMKWk6TDbv+Z5cZLz7f9k9RIbnCdf0b0bpk1A==",
+        "shasum": "937da79d43f4411c92837c8aec22cf307bc6a572",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d-5.1.0.tgz_1502194072637_0.38856507022865117"
+      },
+      "directories": {}
+    },
+    "5.2.0": {
+      "name": "eslint_d",
+      "version": "5.2.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "e163a7850fa2a4091573bb32ebc431fc3294f394",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.2.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "aaronjensen",
+        "email": "aaronjensen@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Mfn9r1osRv0LlyDYICGgbFFfJpWmnm2/e4dNXj6GxQQJ6AXG2nMcsJNl2p4+c0WDNYmwYViD4lIlZHSHQ0qp4w==",
+        "shasum": "36b2817c4173f61c6dcf12567701321c81003635",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d-5.2.0.tgz_1511633884212_0.9949697884730995"
+      },
+      "directories": {}
+    },
+    "5.2.1": {
+      "name": "eslint_d",
+      "version": "5.2.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "6d9023f397fe19d9fa2abfe8ce6ca975c7c4cc83",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.2.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "6.12.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-1KJRT/30xjA9tfiMxisZvuNMcSANKYZtBf1CdpIMKScNeCB5oWx3TCGFIZBb5yUcuGFztazwHvtlixLwKom4yA==",
+        "shasum": "f1f36652c2d95afbae456c8c8b24eeb99de2885a",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d-5.2.1.tgz_1512986910307_0.03717148024588823"
+      },
+      "directories": {}
+    },
+    "5.2.2": {
+      "name": "eslint_d",
+      "version": "5.2.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "b2888c32a84ee81c6f7ff2dc9c95cee606ac8bfb",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.2.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "6.12.2",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-LMfIyilh/vEOuxrxRBsnC+JxQmezgHx01HbZ6/3Sr6hNW1CDcSwUBbLvA/JX8eLYRAgP1nEK5aJSe4nF6IgCxQ==",
+        "shasum": "f56730ca37a494309ea9cf33ca1640893d72c6eb",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d-5.2.2.tgz_1515439066969_0.9933791586663574"
+      },
+      "directories": {}
+    },
+    "5.3.0": {
+      "name": "eslint_d",
+      "version": "5.3.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.0.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "552af8697a637fa4c007af2aab2dff9ae8952432",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.3.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "6.13.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-4Sh8p5pQA0CwxI7D91/POkTqkDpEbXVFzRlv+TCTAvd+34LqvDvnZ+ig5twslwE7mVCAo8NrPSYeg0bQCxUu6Q==",
+        "shasum": "3cc166903b5fbe8043e8d06e409043a76f84b4fd",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.3.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 30095
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_5.3.0_1523117165484_0.7395660404912057"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.3.1": {
+      "name": "eslint_d",
+      "version": "5.3.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^4.19.1",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "b3db63887e077d53db4b2219c1ecaf4f0e6a22c9",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@5.3.1",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "6.14.2",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-nD7fk0BxVUHDP+15SuRwDE9JtAJ3BGfqCtiCvCRsZtNRLJ8W+HaOaot06Zk9N4lgUoZTTDFDwlloy4iQt2fMOg==",
+        "shasum": "d393bc3bd49dd8e60ce58ff22d1c8a50a23d4222",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-5.3.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 30148,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9Iv/CRA9TVsSAnZWagAAf3YP/jXR4h85aMGb6kAwSiQ9\nrKeqIfT6YzlVo6K+wDmJTtvaq/TDaOsQZQjTYaWFUkblZkyiZXKBzPFyNYrB\nwSCxCBH8CzUSn/ldSUoIj4q/Frvv4zQlqQBVahcHr1ZgzLtskiRazIZa/yQW\nUnyNRSvFvi6G7IJd3QML+ozNou0XCdQNqjgdejQjV+VG+RyfHf7FWJjXlrzc\ndOilj/2aLo6vqmJaD67kjPY0Qp0Y0WUJxTTX3j/JRu3BlaCgsc3Ijlideodu\nqL2NCkL/i0yWeLuGo/kD0gXbzP84KiT1M524FkggaDdyCN6xey9AfRZ+3NLt\nj72OQraeUQzhiZ/VxGNbP6+vYrpQXx0ZkTOUf6xtc8zorFLAWrTV82MRr30N\nvdbq2zAlLUnvtDcolmcx69jHKb4p7UPVtySAUxCS8UScMt0KRRsxnjASglV9\nOq371iU0VWFXy+yORWvnxESc9Y2rLlf9I1RcAzNytvhcS2ABRg8hytLM1Wh+\nRliWuwX4YFzKF/uyh+B9VssEtVUfoV/TRfpB49OqH4Qsi6etAKfPXoj+9IVX\nw+PdZkzjC7QKc/dYz0lnDBJs2frqdcXmV92UXkh8/+PuWL9n2BJcfS+OlNcA\nCeej8f7A2ZdOCz199MBS9102H/Qe0a5n+9k76Qk4C7QOESuAOIt1cIKqcOCQ\n7R5C\r\n=/J5G\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_5.3.1_1525976062292_0.6674737973436213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "eslint_d",
+      "version": "6.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "chalk": "^1.1.1",
+        "eslint": "^5.0.1",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^3.1.2"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.3.0"
+      },
+      "gitHead": "2789e33c9babaed36a55d878e8a9dbc64c9a103e",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@6.0.0",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "aaronjensen",
+        "email": "aaronjensen@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-NRn6C7G0HzA2hEFlLzD+M/m1eIeTtmxxO45n7Pp+Nk/gBp8mfIXlE8wSLdePt/g0Sl7BhuU/hY/E+kD/8P5LeQ==",
+        "shasum": "d486c4982c24086864fd4a04af4fa03760a82c5b",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-6.0.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 30218,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbNkmfCRA9TVsSAnZWagAAbqMP/jXVm+CSOKJ8UFdK2LV7\nXGWW7cVBNvpSFi4Mb0vaaQ9EX68I6osCUFIxVTpHHqAM+Roml9bK8ZmmH356\n6T2vFFIi70QWHCp7PomlOm5+WqpEXDRIVJd/VHQxAgYcu6M/ySsA6EpZqIiz\naEptR99kf4PZaLUt6eb6Z+1rmwSz5++pStwnlffeJisXv3sQvDDxpaxlQMUu\nejTAv9aOsNr/tAACu2TwrlvjNr1sX3dmm4lJbHx68DnqnGcHRnbDk4Uvg1tR\nnkyPnhTZ8xsyvwQKFFwPTo7lVSJz+oFcaV2wp4BvFD8Kc5ZfQnxfL+qUhNSk\ndeSGuxxXKMrGAO59xYK6d/aRJjk2Dz0e5tDOTrKRJoh0wYWOMCUvtiIgrJGh\nG2j1ihneyouS89pUXqRLrBJ2JWLVPaQ+8IyB2Rl7Aphvr+B4SB6Jx1i2oS6y\n3I4w0iizTeK3/x/n9Sd2RR2cvnmY+WY4ZSmNju9Ub2ExyAmpU0fcAP67JBuG\nwCT0ErkLXRXK2cPQv1Mjxh7xbSPGOb3MkQcX9mFrzzo5j/bSWWEouuZq95nf\nBLAPeyJKLiy0DAMxUv0FnPIRAUY0AGcq+HFuNpnD0d8W1xmBNNvPUGoIqFcM\nwLpJOFN7yBRgjyEJ9OVstXvdqJhZhT07Ho2YNbuD/RwNPT42wMUsckyv+HZh\nb7+u\r\n=hfX1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_6.0.0_1530284447804_0.8075829558743337"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.1": {
+      "name": "eslint_d",
+      "version": "6.0.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "scripts": {
+        "test": "eslint .",
+        "preversion": "npm test",
+        "version": "changes --commits",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^5.0.1",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.1.7",
+        "supports-color": "^5.4.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@studio/changes": "^1.5.2"
+      },
+      "gitHead": "6d41c00f3619411afa2910953f19cb3904053c33",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@6.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-27O0P4SaTm7RDrykMyLTIX964VhXxmyGEXur6Er1V3qZ1YL1kWvL74pzdPonWOb6N/ghYFZY4a23L7vZDRHjMg==",
+        "shasum": "8cc60fcb6cdf271902ad474edae369915ab52712",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-6.0.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 31202,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbSEPvCRA9TVsSAnZWagAAOAIP+gLRox344iGZ9fnP+5o2\n31LtWhdCWIDnZMgw3JiRoM/LI2gFy2cezoS2fP7DLLBz6u6ppAlF60h1CarH\nSmP4dyCCRTReglC4/GOQill88wvW6IdHMOWC0TyAo12w6+Mgu6UzFhkalCkg\n6mzVKPUEHIIO/5MmwB7JWa3h8gi3Y78FBtg6hrcqe9y8AjVaCR9qI7SocVr4\nkdMpUB1M0YgT41Qvwd4QLSYBayJeaV3awFrwe00vTE4lFP01GvDy8DBxF6Qa\nR8BNWL+H2jdC/a6zCsjL+IROFA4kFGZzIAzG+7KxstXkVNFYjUou5vgBcbSe\nm5axAvqNXPggWC9r9oYH5Ju8W6i2BJ9aC8HKOTP7XxJVuHOaKLEFEMaA2+No\nJblU8fxqNlZYbdA6UOwI8O6S7s/KNXw4c2wEVUhTnTo2TKSUt9252rjLJnwH\ntB0O0d0d5LxpviKsK9A04zJoC9HOc1wScqTz7bCyhO9tQzjXAEXKmb0g3Thp\n+Haq6PzjlOMDnGsS/qjzA4tQq62f3tNV1VORKrEL1tcYmXETwWMx5BLsDRTN\naxktatiNv2cOLWEQu+9esq6LsTRYswKMz8m9Vrl7DcObZsJ3G8xZypEE2d0I\n7Mc2Tj0K2wI7TwHg0eIvYIKde8OlenwsrVB6DN09iB4PkM6MIL1p/Bl5bTvl\nFdfs\r\n=ddCh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_6.0.1_1531462639763_0.818581336331786"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "eslint_d",
+      "version": "7.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha",
+        "watch": "mocha --watch",
+        "lint": "eslint .",
+        "posttest": "npm run lint",
+        "preversion": "npm test",
+        "version": "changes --commits",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^5.4.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1",
+        "supports-color": "^5.5.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^4.1.0",
+        "@studio/changes": "^1.6.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "8d2b8fc700aabfc464dcf59e7deb73e7cd231039",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@7.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-RIOTi/DqzDJrREjdpAvCjqKBf6qUiUBFGx1JHQ16Yeg3EcgAKnkEKj1gn6kTS5bSFL3eezepj/jzZ2nURXhZCg==",
+        "shasum": "4396176c3e5941e03290415cc8f17f3c482d9a7d",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-7.0.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 34771,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfD4rCRA9TVsSAnZWagAA9F4P+wf8NNOiJUwoFSaBIWXQ\nLjxgR5PBSMg6B5NhVV0b3tXxRuHHqdtDEDURwLTb17AVwGvIZVExnriLBhEr\njD0CLq7e6bv+yFiN4dTaa8kG8f2/9QQFk1ZZKIMacggL+TtZClWcbMsejtPH\ngjArhTQIrqPhkAcS/7qYKCPU+ZeP5xqN0lTf65he5qqKc1f+Hgs8Sw5Jk83q\nRc8HnfR9oD4tzYw2vM3MNGYq0NFKwSf3tbR6Dc6PnzMzBq1P1cCEPY4Eg5iq\n7rv5tJlYt95TihNSdb6jDYs0VW8S7ApBnsoyWEOkGpPlfQ6XzLEOkRnjPklK\nMsNSd5/bD116x+CXpQaxuSSNEeSIJSwRwAhLF0UcPf+F7nJgdXA4ZFsRu4wQ\nEREnXfG7JfdEPCOf3N8zkUjNg7MfsEn0+eoOr6CX1UhTdlECacPJ94dUSkf/\n3xid9fp1+pPwh9fd+fhXJ4eXZtYzdBD04/Osy21a4FUUs40T4gYGjzkjb3V4\nr8QCYYI2+/ihHmxrGpu+e5gtj5JcGx6T1xiSefUEmuG7KgWsPOw136OrAqlO\nRCTTpvQHCP2nOtHPDc/+LkJfpO8s8r9U/kTKxUuw2Hw4WELkdsgsbAblU6rI\nR7aBuIW9NG4UtVKHaTKuqLf2NArCT9dy9F829Xq0AI1wbxZjtqGfaSRZNmaQ\n0gt/\r\n=3zvT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_7.0.0_1534869035298_0.37236113253637315"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "eslint_d",
+      "version": "7.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha",
+        "watch": "mocha --watch",
+        "lint": "eslint .",
+        "posttest": "npm run lint",
+        "preversion": "npm test",
+        "version": "changes --commits",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^5.4.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1",
+        "supports-color": "^5.5.0"
+      },
+      "files": [
+        "bin",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^4.1.0",
+        "@studio/changes": "^1.6.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "dfabd30658a4cd4c6fb2238c651a7f7f9a6681ef",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@7.1.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-NjFiFcKPEjDlleLlngMyVcD6oLu6L8BctLJ3saPZfC4yLD+AJteII5E8meGqTislKxiVMMWHWXed61siXz3mCA==",
+        "shasum": "f5a80b8c14c10213ebdb15f1d1cdd8e0531329ad",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-7.1.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 36515,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbf6e1CRA9TVsSAnZWagAA+aIP/j26m4NuCp0XHjYwCKAi\nRSUjWInvZc1mDxktbv6kkijT8ZQCHLuuw3PmoIC/AAlrX28GqGAGO3LdUOf6\nnXE1Viga1bjpOLSADlPxA8l57ov/pe/Y0AX50gJe3y9gbSm6sZX34op3/9vD\nGNZtIBgi5JBrTsVMDSAT0sSmH0K4nUkeGbAOs2sp/Sw04iPhH+PYyB4MsShv\nPyh0/0eB9x49tTRtX16aSlU98xDEXvCGVaSuX3PnkQ4Sq0bTEYXto5F+AefV\nu1NJ+cGOQAaGUKMW3Y9GcZTtRTGJVBnQmnv8rFls6I/Frz6YguxSUeNANHyf\nebfzNXKDenPx1yc89nCSvozcTVrcpxH2CUMZLDD/uXMtxkiFedlLw+APk3VU\njelCvZkePWaaGfFeQeHOEmpl0RysHR0ryy5M+Ie2dmQ2BKN1IaDhIzBdCUJO\nD/JNfpVHMIPTkc2S1epEaPoFNDa0Gfe0rDa/BOh08wZJat8p3JC8HA78Ws/w\n2vTfdhZFMybR2uyadGA2ulq27FJ8HlmUcBDm9GRegvg7cc4vi04pSaTKMeZ9\nkDfHl493E4XrAfymi7o8yRUkULGv1ZexTAhMdf2JE4Q/37kyJaQl0TkwzR4q\nRr57KtF/TFHKpdwpaXxQAuUfXzjui3sqrZpQ5rRehZyjV4P4aEqymddDJ+A2\nRqQs\r\n=h3K6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_7.1.0_1535092661390_0.7427530644080693"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.1": {
+      "name": "eslint_d",
+      "version": "7.1.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha",
+        "watch": "mocha --watch",
+        "lint": "eslint .",
+        "posttest": "npm run lint",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^5.4.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1",
+        "supports-color": "^5.5.0"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^4.1.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "071f7ce8352b5a7d1ecd9e448d6a5e88b38d79e8",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@7.1.1",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-kmFnV0ohxSzVNA7/axp4MlLX+uZEY8uDF70RCtrpFcSgEB8PE9mWStv4JJMfYfSVIaJdsZBkhzj8S+BLIN7A+w==",
+        "shasum": "a80e538483863850f94828a4698b2ed328f17662",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-7.1.1.tgz",
+        "fileCount": 15,
+        "unpackedSize": 38069,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboWIfCRA9TVsSAnZWagAATxcP/2yWKqENZ1JHqmtHbzih\njynYLX9EcyTRVL27eyBXfubGfGKHTBTT30QZxoxpx5C7Bp1+ngK/IYSyXLfF\ntlzKvcf8ljIpjD1NaALU3dAWBEtw9iUhaNtYJlOiV2Cb48eKLRQmott0xwHb\n36gIUsMkPIOgB6UV3O3WkJTOJxo+YsXV32If1DYkJpFpAJ8yKlOR/qXb8mVx\ntobiGSaaqtw9Avj5tW0AraS+9iqUC9CTuen6CZYS/hfbGdnQ0Kn15jkSCnMs\nWF2rZXdEgaYweNnjAgcadmLOQXHZBwFY98woaSpgc9/RFFNLobsR6/guDqsE\nWiFEXjJm4ltLPqN62dTaG3ZvdqRgbSX/L8IwPzpgA++BIt4pER29bF6Iazjl\njXw8DKvK9f0eSVC4+sZfLhlF3ZsOS3ynhicwOPxufKPoDKbIBVc8wZEJmWIg\n+6rdYzosY/dICzXg0WpeZuXuyC4ZhCyr+NV+wv9wL8NIT7L7AUKBKF63Xa7L\nUleTUNUNpJaJkLsJjevV1BcHztbvWeIWBXr1Z6HdboboLv3ItGy3UxLkwqBF\nJO1l+1N3oFh+TOI8JSJXOK41C9p3/9fdIZshrUPUeAAkCn6gBIpvx4no1bjO\nHTrx8N5rfrjwLn+MXXjJo4jMgTnK3EXpfeWI+StcSgunDEStvXHX5RcB+uia\nhvA/\r\n=VjSE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_7.1.1_1537303071001_0.7779103876893676"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "eslint_d",
+      "version": "7.2.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "cd test/fixture/v4.0.x && npm i && cd ../v5.0.x && npm i",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "eslint": "^4 || ^5",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1",
+        "supports-color": "^5.5.0"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^4.1.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0"
+      },
+      "gitHead": "55b5bb87503aa822bd4e579e663483dd043dfe7b",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@7.2.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "dist": {
+        "integrity": "sha512-EKKAUB0GB8Wu7dy82Ah8Vypxao95VK3CWjBK8ucWjeLc8KCcr7Zf7W1SaEJNx/E2PzYZ4GJjAy4Ru8lMZ4T+TA==",
+        "shasum": "5a0c7f1d222d2253b2de079d96356cce2a23d259",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-7.2.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 39446,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBnzOCRA9TVsSAnZWagAAmaMP/izhoS+0rvSYHCLKwoRX\npzQZTCcSGeQEQais7yS11QEx7CYBdxq/AmEIfqabEzqdo577zjplGTnVTDl+\n4e7OmzW8sV2c+2dwlNOJWylLVvKMRoQSIwnmMFg16oVQb4cdKA8etlLKHsTE\nLd8HcwFPGZ0CxLrWavkjSZpwDNNzBOKxpFXoXEDhuRR1jAXO9FAcemJCv0Ku\n6pKxopSkV4fb0gQc6AucWwJjGm2Mex8+gLbPprW6GC7B/ItZi3jNarO/4Ry1\nJyBhY+w6Kd+RY8vs4XPNikOg2445q/sN2Y08fiyK/alShCPIl89V37LdwkzS\nU7NCTZfK3A3tCsqpfSVB0DSUG55I5VOw/g6IUPjJGAdZBxTNTYuPtS7W5cca\ntc2Kewiw6DFlLPOeDXGdzQoy5vvzgA3IySXOWuzf4PvWhEA//PyF5dwua3sx\nZhLkB/yO5M5le84PHr5fsyibwnd+tnx96FMqY98dKX40d1lSnjtSUiTEJv4a\nQuZYNiHperKMRLNlCJ3o+ddkg4k8UgC+qT8QoLSvJ3fx8pUAH8LL2uum6DSc\n5Fc1hI66TrupT3vevU4XCz87im0sNnxEoyJIsy8eqpZMcy1CRfqowtWicrp8\n0SwQwdXCIIcNHcPg540w2TAsBkRIcWi3yu5RfAfle/WDPA6X/dKO1TbOgpLu\nlLAo\r\n=91BO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_7.2.0_1543929038151_0.14695287449797823"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.0": {
+      "name": "eslint_d",
+      "version": "7.3.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "cd test/fixture/v4.0.x && npm i && cd ../v5.0.x && npm i",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^1.0.0",
+        "eslint": "^4 || ^5",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1",
+        "supports-color": "^5.5.0"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^5.0.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0",
+        "mocha-referee-sinon": "^1.0.0"
+      },
+      "gitHead": "c10ce90333871a49ad96e2f55482fb31a670c28a",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@7.3.0",
+      "_nodeVersion": "11.3.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-vCP2gYfOiWkXYBtsTFFBCa0nou0leSOhvuUhoDWKedKg3cy4w+ZQoE+4/aGbfLYYnkzxmdiao/vYGMW/BDdi/A==",
+        "shasum": "2086f8b82966bbd5a43f583e15eee0104201fce2",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-7.3.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 33381,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdUDwCRA9TVsSAnZWagAA/rQP/0n1dgzL7aBExrACvE89\n688TSzMpsEyHi3CLciYWg83S8kmdoWP/h+jL53YgidA/bwYgPSNmplXQnoWj\nYzVYcckOR7xXiqCsi6IBFaHNSR4wQofvoit8XMx5FLFelVfnHt1cjappipF6\n89gLLIL9C5vMDZX9go0N79EnEn8ryMmIOR1ANmXNVllHL5h2wpVsxu9jHviW\n/ocCVwkhK/Cts48pAjLCj0kkBSGIMPk5lkSGPykBG4yhLfi9tyKsdjNm7rJw\nVov+o+eKRJSt8UF8vpQQB1iZuYjaOUKmzxxMfYlfg8a1sLgcIOpDwbVe7LV4\nk/elMnoZJ4o9LnSHrGGWewvYMmHfN1uaxmKZfOBH/QETcVfzENXaIOPxhVUr\n095I/kBQEynwkVKr2pLBo9IKO8ZWpA+1qRYitRHEV1FNp1mv8if+yEuAOPie\nyPR0pPkh5pmrDPzik069QIJh7hI2P1NrNJUHRVui/YGp8wJgm0yyf7j0ggjg\np+khwY1qeL+JHerBM79Oe7ITznXaCe6UO7Kk4EYgEyx8IgK2P5lT6lSxtidj\n3Z1b/038tcKOHVx2OfxYiufbEHOJi3v2bhJasy68Dh2zGTCzv0+BbhyAOVwT\nO0i1Wv6CsGG354Qwu7w6JmbW2T7bIvxeqonrJlcdRTMtPP8MqZO5qvKyTS6+\nhC2A\r\n=vzY7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_7.3.0_1551188208185_0.2842629606003275"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.0": {
+      "name": "eslint_d",
+      "version": "8.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "cd test/fixture/v4.0.x && npm i && cd ../v5.0.x && npm i && cd ../v6.0.x && npm i",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^1.0.1",
+        "eslint": "^4 || ^5 || ^6",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^5.0.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^5.2.0",
+        "mocha-referee-sinon": "^1.0.0"
+      },
+      "gitHead": "9a51b4ffa3041f70a098a7d1b3a1d56c2707ece8",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@8.0.0",
+      "_nodeVersion": "12.1.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-9I+AC6Y7WTX4J1O3GGg1LqGiDxOUedLxzIxtKSWnD1FP3z2MPQbnWNNycg9Pq/L5B0NlszdaBlajUexZ8qzuag==",
+        "shasum": "b22f04e260949de02d7274cd22419e443bf087cc",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-8.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 35811,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdEJ7FCRA9TVsSAnZWagAAChgP/1Lywqz2StHNDfCtnwgT\nG/yb6PCwozwW+4bYFt13Gz+YkzaORza/rSKYyvFCApLP9Kqpvxcinl/EPgDg\ng9DnBlvlEGgii1dzQD6Y3sN2SRkcuy7dYWdbok3uJrFiYWAdc9SyGiPzvUia\nj+xT2dEhwgfd6lXv+ctlowl32SNveL0eTINL1SjSLQDc+v3bJ1vpv+HL3F3g\nqDfRxbrQBpVKoJv10fFsVS9lhESRjW1VX0lRnzUn4CCpNF1elwYSrGzINh3M\nO+D8JhO6j2634/kyuXuB5UKQkNpnyrTgb5vVfeJkJMTh8boJEkutYKc94Poq\n0ZoZTvXZDJ5gIJMS0tlkMWCR7W0FKDbqFtfYCGGJwMN/l2gWo+5o63ZwK6ii\ni+ZtmLOWh9diuA1MdjQaxGJtbD07xGtmqgn3PaNOsg9CYFIR6x7TkoezBGto\ncHNbdfpMyYjlnM9w5SHT0wRetENOisfmzpE2z477fJC4ClAalT711tZ2EZm/\nHTII+o9Z7cn9E1he2bEzEaCpSFn4kszjgJwlhIXC5Rrp4WtINvhIrlCVtFOl\npRFx0jYjicyeFWuR0S8CnfgwSMmlRrfPS40XuezYLwGsusqaipcNIRklKxBW\n4MYoWGMF6U0ZmF31SmR1n2Rgr6J1uNxHEI6bDMoOaufY/x/WO1buRTLE9CXg\nDjlv\r\n=oAUf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_8.0.0_1561370308806_0.963058735018566"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.1.0": {
+      "name": "eslint_d",
+      "version": "8.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^1.0.1",
+        "eslint": "^4 || ^5 || ^6",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^5.0.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^6.2.0",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.1.3"
+      },
+      "gitHead": "2af47445d3276ef21734115c6c620015bcf528b5",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@8.1.0",
+      "_nodeVersion": "12.1.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-cNZFOYG+Quphqj+GPoTNe9nsDCRJo2AjHVpu4RkvAxH8+vR2ckvm7ksr+Lwi+kkKuMf4h+QifTAXJ0HuBkJ7FA==",
+        "shasum": "3535fb33d008a54782b41c3d4dcfe8407ec25e38",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-8.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 40343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTPH8CRA9TVsSAnZWagAA6XAP/08irD0+myh3sCFfZ9qT\nK1fsr/fZoRozOjo1GkBkuBTenwyuQFwVsRI1RsaN9gy1vOT5e8TRFIJ46zSi\nB4DEU7h3YPCDZLrOrvClr+YDRMMzhF02qNYVi5RLWCgmCi2p3/xp/Gx9QHSY\nAyEIVrBF7WhndE84Mw+DW4/BwT9PY3tC3TJpbovIa8fALpX0daMps68QFtTR\nYqm1QLHzem8zZm1X1IO75fmuRmC9+P4YJVlef4nqv3rAWJeUmk+Dn/yPBZgc\nrKp5Gt6iK2uOa9Jof5CcBVS4dkZ1TxvznXV9DEgOnmMTg8MrMJMrbvMVlI1M\n6wgDQIEjktxyRpkfRVQFrkJ6Vkq1a9u4IYDsm8xOIgJDSnmY1V+yMOMJsSLn\nCfSMXFD7VT/0xI6uq5Qh0mirwnWV3xDcqNmp5TPVp1PD/JIGEZe4DtPuRtRV\n3Yui99G3fkoA4qvKng7YR2R4AX6OWlktRirtqBtj5/EurZ0mVR5XmFDEwiLf\nJTHw4GxrMV2evjO717fMBshSSqIO40gv5TC6T6OnHIPpOnOcGXgxUwbsF2XS\ntOQcOrzDX0A0Aib1btHHjJws4pIq0g6V9+fPC+llVWIJmtQ/rNopmD4zoIHM\nbwQXO5NxrKET/rNN79bTmuQ6PEEhEHadk6JRv/YfHHrTxBfqRvHh1g6BeK8p\nuTUk\r\n=XY9F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_8.1.0_1582100987641_0.5351938032337449"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.1.1": {
+      "name": "eslint_d",
+      "version": "8.1.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^1.0.1",
+        "eslint": "^4 || ^5 || ^6",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.8.1",
+        "resolve": "^1.8.1"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^5.0.0",
+        "@studio/changes": "^1.7.0",
+        "@studio/eslint-config": "^1.0.2",
+        "mocha": "^6.2.0",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.1.3"
+      },
+      "gitHead": "a03df6a3d7dec48861f9e7f2b931ec64cb0efd0e",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@8.1.1",
+      "_nodeVersion": "13.8.0",
+      "_npmVersion": "6.14.2",
+      "dist": {
+        "integrity": "sha512-eYr8vOwCQynnI8b5e5R07D2JI6jCItT9QZzWKGZnqMs9lKN+z0bvn1ULCNKp0u4mz1V+lLRglIDiSGIkIDDcLw==",
+        "shasum": "19f86ef86c6afdac2e6a89c5b380f3c90f6c3b69",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-8.1.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 42275,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeddw7CRA9TVsSAnZWagAA/CIP/06d1XjocMCaQcX7d1KH\nDRXaTD+iwtg78BLkTNygz7pe0yHjTznQ8tv4Rmfbr5hEi8Q+GuZSqB7Ir4Cd\nPJtK8ZrxLp1t/8Rjd17TH6a+fRmUhSGUS60MCzwTfE/LAk1D3WKs4h1efkN2\nkUc0KRJVDX+zlLDbzpf/AkVMkEuC1Visze5UbYEZziiw4m0dRCSA7vnnufUc\nhLqVrMguD/gEOq+Uo9lFJG9kqdMv4mxT2OLMITUq27bxDyd1MKmj5oHOQF1y\nGTDW3qLeQk6/YDhiylaGam+oxZX5U3IWLl8Qx4m8VYfQbeK72tL1tPtXRlma\nEtGWocpwYgbhW7GK2QFXshWoj2PxTPErKMiGWy6MWA+ypTiFaJu6aF8mU/Bn\nbMKz4g9ShSABKshXUnDa//NtGQRcojU7SkO7iXtYVfkf/IO+6eLR9BR+Drsb\nbsF5YLi7nAyfG0BaMnJ5mcbHC0rOFbNb1SZEzOSdby4rtzvACVpeN0aWYiz/\nd2TeRRQNxzXi2VI9BsE2fhPr9mfX4/cnfCJpMmHSIaYx010K259gsZ7BLZ8e\nqB7ImDCFykXuIHXrgM8seyygv+9JnI+biHhg8A9l5Ns6pYuchwX+m6th6h+G\noq+YJ64EFxXn7cUHepuEUex2QHTL9A30ENh3fZS3qJlSDxBrsN910jnGIuRb\n8VsZ\r\n=xQLh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_8.1.1_1584782394871_0.45482975556662586"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.0.0": {
+      "name": "eslint_d",
+      "version": "9.0.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^1.0.1",
+        "eslint": "^7.2.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.9.1",
+        "resolve": "^1.17.0"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^7.0.2",
+        "@studio/changes": "^2.0.1",
+        "@studio/eslint-config": "^1.1.1",
+        "mocha": "^7.2.0",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.3.2"
+      },
+      "gitHead": "2c9519f55b3d48dc73480395a0d5b9e55eb14f3a",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@9.0.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-yWXSiBvn6u4pLpGrLuebCtSQ8fJ8jUkUdfD6QqqYp7fSuY4+YW6mW1UusY/gCgfByrgU518o6DCeBmPg6HLkcw==",
+        "shasum": "2b4a5b162bce60e6aed7bca7bd2f1fcb3a46b712",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-9.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 43781,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe32oSCRA9TVsSAnZWagAAB3IP/RHZWjQrw+e9owXbzxiZ\nE0jhbJdBhD7k25ecZX+ARp3oOu2Kg3dUQiZl6fRTdwfdeQKfwyvTG4IIgRDV\nqEDzinwgpYNViJo9P2+QiKxJuC2P7MrR4Zq6571i1Uj9bUvU7iRHXkeEKLdl\nn5x4KIthORVWi+jE3Kg3C/XUcfBLIe3eZoKvznUoCnKbc0hlS9t7ODbGhzFW\nCaN7PLSUEEoJp3kFVvRmAaGjOumKshDU0G4bGo699W3/tiu94GFldj6khXm7\nAIfrzb5gl7NkT+MNd4wof7sY7fN7fuq8VA05lzm7cX20vuNrRVD9jhykCGE/\nfa6/RwpcorIYrsd/BqtxIbjSgcGcFVeLoehDPwMvTxC31JLXyXkkfvZXk3sg\nXTTeTyWyV7Dbu4s7RgHFwIrNWPVQxaywoSkvr4CvgWZHgpZW2Mw/tW7bycWz\nhUC1SwYV/nL99sVGgQ4R1+irQxw5SoMGekNlA7vYYZsvTeG0LgbY2nfwqpZz\ni0DCOfxGjx6J76c/T7cplCHm1zXHwGksWPXYoQ13CYF3bFvlJb+JhWmLAXi8\nTMXQCTWvmJzWiy/FEgioUQ8QNLxdFiiccxVnucIAz7UFu77KOOvrE4pBS8+P\neg6ArcgxW/raEJcWnRI4KPttWdxJcEIKtxxFieOiCNinlGT3tOglriOt0ygR\n4Ut1\r\n=U3uq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_9.0.0_1591699986365_0.8927931336773609"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.1.0": {
+      "name": "eslint_d",
+      "version": "9.1.0",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^2.0.0",
+        "eslint": "^7.3.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.9.1",
+        "resolve": "^1.17.0"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^7.1.0",
+        "@studio/changes": "^2.0.1",
+        "@studio/eslint-config": "^1.1.1",
+        "mocha": "^8.0.1",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.3.2"
+      },
+      "gitHead": "a6fa81a3dfb041b1ac7e7458a4536115f1401339",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@9.1.0",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-uDXqXWEpxUwv8/eUFXRuyRFz5mN5oFSewvPTygCD9s5oc7naxkhD0F7O8gCXwXwucShcXRlTdAaNxbFPwf2zOA==",
+        "shasum": "f9e2524d7d5da7ee2caea7950cf80f8301303731",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-9.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 44561,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe8HC3CRA9TVsSAnZWagAAPmUP/0nD+2MJ7V/MnAGhRNj2\noigFJ9LV2yNXRhgqXBibfFDrDg4rM0yfHRpJ9Xt5rvUEWxUrgNYq4VMQ3zI6\neYhsQ86JlQnVfiRkbm6IlTYJc+9c/2K6wMj4WxXMrVURAbpmOm0a1QN8btJm\n7A+hKGvjArxvbkOcCbvwUXSU9tGMKtZcyYxdkqh02bznxTjT4Yt3/N7TxGYX\nlgsa41ch/oZkkeFbMuAEArFGm0eGeodWQ1B3EgIVdzfM8mFs1VLdcrsDP9bW\nvdCJFN4QO4cjQ02upiL1s/JnX7uaBpK/mm1NbBoyrUPMfK1hmEZ5A2ebOYga\nnSBzOAM+rBmC9zgbAaFxp3zwgkfPC9Dx2XCTtild6nKq4whR8+VIvY1LGIJ9\nmJxGFzT6UtjRZQioAHFehDgzHmv7FdCIZMc1oShiDL003ke5biQscwXzoXpP\nYnWi8ub7f5U47HE6VoqbWAvlnkQI76nWUAHI+tNCSZQi+fz8ZY2lWNtZPW+/\ngAddBQN4f+U6Cqj5IoS3coL0dHw9yBOn/9JYd2rfKb3SU54PbP79r8BeTYbr\nOlEIqFyp2zWqQJn1pOQoI9DTepOlnvCwm92szu93r/F7ZuGDI3LieoM2P0ct\nuivsh3Lv73M/XHJQCMl6WC1CSNtgriOwhOLe30SSNwdtl8uHc21IwYKXobzM\nx7Qw\r\n=UtEw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_9.1.0_1592815799007_0.20953030886823454"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.1.1": {
+      "name": "eslint_d",
+      "version": "9.1.1",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^2.0.0",
+        "eslint": "^7.3.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.9.1"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^7.1.0",
+        "@studio/changes": "^2.0.1",
+        "@studio/eslint-config": "^1.1.1",
+        "mocha": "^8.0.1",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.3.2"
+      },
+      "gitHead": "4ef5e973125522e266c5e9219424f12d7b6bc835",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@9.1.1",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-+y3ULQemuvoxWgfV/VGzlYJS84V9GmvyzIxZFGUA3kgUpaJkuqXn/nm21Z/nYYNmfiySXy6RU1ery0A8cztZRw==",
+        "shasum": "d77677d77d8529a6c8ef8700a5e1c2ac09aeaa66",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-9.1.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 44942,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe8fNACRA9TVsSAnZWagAAUl0P/jga7riYsGmzekKQTMFv\nDhqmFVBVX3yB4QkzIYDSahQ89x1rCplUITE2T0hWxgrnE1is2eh9qA6K17CZ\nZt+8GhcHCAbmr6Ivs+P/6AaC6bhMlUiZVT1RrZ61ayoY1EV8cQe/6LMYQCai\nzu1QByXjr1VrMgZ0qMEcsmgFW86L+3Rj49/yQtq9VY861nm/i+3yP+suviNC\n/ORVEQpc7p2tQQYZRBhpErBlrlTsPWhCHDVd8R3yFjSayeV7iVZno174sg60\nuRw/hoEspXkFfFm2Yh2ihyJuJdgoo/BNyoWB07xs9DkCnoJKxAf8m4qBeRfz\n38hKWwVDF1ViRiB3Un353uhQYeVhE0KPFY9RWA6e0Jj4r8NYv9FxNdeAbLjK\nbN1fO5RnpLseBDEfOu95k73wt9mHcotBEJXnj0SgU8S3fCRyNOlo0EGpCN6a\nlRSHU1+hIczctbvEMBcghPkD6IIvaxjUOUtdWHU1PSYFMI6XLkty/e5Pq3Le\nWbB+IKvoW1XukMoNIYh2y4S/iuB8f7nALYbi5ug53UmJHl3yUi7D+w2CFlnn\ntxVCwVW5MT9srXgogWhOGSn+MeLK3Sq4i8VxjU35pmo2/Xv22R2XVtGUhh2N\n1SDH2L5hxNjYnjT9YgIj5+87KNMsGnlDNGWY2C5IY2q+52Nj9v4eV6gPc19v\naKyK\r\n=xZIH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "aaronjensen@gmail.com",
+          "name": "aaronjensen"
+        },
+        {
+          "email": "mail@maxantoni.de",
+          "name": "mantoni"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_9.1.1_1592914751457_0.8996119646660199"
+      },
+      "_hasShrinkwrap": false
+    },
+    "9.1.2": {
+      "name": "eslint_d",
+      "version": "9.1.2",
+      "description": "Makes eslint the fastest linter on the planet",
+      "bin": {
+        "eslint_d": "bin/eslint_d.js"
+      },
+      "keywords": [
+        "eslint",
+        "lint"
+      ],
+      "author": {
+        "name": "Maximilian Antoni",
+        "email": "mail@maxantoni.de",
+        "url": "http://maxantoni.de/"
+      },
+      "contributors": [
+        {
+          "name": "Richard Herrera",
+          "email": "rich@doctyper.com"
+        },
+        {
+          "name": "Kevin Yue",
+          "email": "yuezk001@gmail.com"
+        },
+        {
+          "name": "Roger Zurawicki",
+          "email": "roger@krypton.io"
+        },
+        {
+          "name": "jpsc",
+          "email": "joao@voorhoede.nl"
+        },
+        {
+          "name": "ruanyl",
+          "email": "ruanyu1@gmail.com"
+        },
+        {
+          "name": "Nick Hwang",
+          "email": "nhwang@hubspot.com"
+        },
+        {
+          "name": "Aaron Jensen",
+          "email": "aaronjensen@gmail.com"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com"
+        },
+        {
+          "name": "Caleb Eby",
+          "email": "calebeby@users.noreply.github.com"
+        },
+        {
+          "name": "Huáng Jùnliàng",
+          "email": "JLHwung@users.noreply.github.com"
+        },
+        {
+          "name": "Joseph Frazier",
+          "email": "1212jtraceur@gmail.com"
+        },
+        {
+          "name": "Sergey Markov",
+          "email": "Mar.Ser.DLX@gmail.com"
+        }
+      ],
+      "homepage": "https://github.com/mantoni/eslint_d.js",
+      "eslintConfig": {
+        "extends": "@studio"
+      },
+      "scripts": {
+        "test": "mocha --file ./node_modules/mocha-referee-sinon",
+        "watch": "mocha --watch",
+        "lint": "eslint . --ignore-pattern '**/node_modules/**'",
+        "posttest": "npm run lint",
+        "prepare": "sh prepare.sh",
+        "preversion": "npm test",
+        "version": "changes --commits --footer",
+        "postversion": "git push --follow-tags && npm publish"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mantoni/eslint_d.js.git"
+      },
+      "dependencies": {
+        "core_d": "^2.0.0",
+        "eslint": "^7.3.0",
+        "nanolru": "^1.0.0",
+        "optionator": "^0.9.1"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@sinonjs/referee-sinon": "^7.1.0",
+        "@studio/changes": "^2.0.1",
+        "@studio/eslint-config": "^1.1.1",
+        "mocha": "^8.1.3",
+        "mocha-referee-sinon": "^1.0.0",
+        "semver": "^7.3.2"
+      },
+      "gitHead": "ab403f6c1f21b3ebcf0c18db6e175e3dd749bf53",
+      "bugs": {
+        "url": "https://github.com/mantoni/eslint_d.js/issues"
+      },
+      "_id": "eslint_d@9.1.2",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-HJ7n92z+gSBLPP/en2pse1SLsFfwOXb8aqHn3FyXwYaE+J5wSM+raBbSmvE9Ttq20IF6Rq/dXxjhiIjuxAUjpw==",
+        "shasum": "153e17d3a5a8d84e688be07b2dbd5c27304a1975",
+        "tarball": "https://registry.npmjs.org/eslint_d/-/eslint_d-9.1.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 47137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfV5L2CRA9TVsSAnZWagAAL24P/2lycoN8Ccb773SiGp4T\nOLbEXCRfOKZEDcZnO5tGHYMJPR/qNxOnpAmuNYGBa8R5ofarlMd45IfVelXS\nxWL2Amj/5hF2lLPpP5smqZH6IyM9kHwL4kbspvhGwvkMsHp+TNgdVdirg+9W\nkbKyZQSc1WUjsGYFg/aOr7AZOzSUmQg1JWBhPRjzxqxppw7OFsIVkHpKuZwi\nMXEM9wsLZHngcXMCOi4m7JRS+52YcMcScG+ymSQhC1bhF5si6ncVLoiYZuot\noNLuoaMY39mj/kHx0NUVOsB9k8/Wv3f/wHVNx98p1MNxQp/+EOmqWMtCmUma\n+7d59shc4OwpRwTohBK2SaRMJ+sr1grnA19OiKbMi3z5mLfvpgUhxfFwhQIU\n0smBGq36MyG7flyEesgAplyiZyk8/0eN2AUTUMIFzE1DdMFEyFfDsH9YTA0B\ng9KRKv7q9WWJTqnVjmi1+sQ0g0gF0mcvnlQK+XiMF0xPyQSDPf2qem2YNb7p\nlUPQ/SluAwJevZVWfRoOzCtBaLiZXSNNegvAcdci5eQ8jK1CrLEsZfl8kl54\nxm9m0So6SUMZBv/kHLHZRjZrFiQye/6T7akBpW3jToQvfg0UMbB33KlI86gs\nG6Eyjtm84mdopj9lb/vgDwIGr4vYUfq4mRHnP0RGkyf52WosFJAT6gz4cZa+\njVRl\r\n=AzEB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mantoni",
+          "email": "mail@maxantoni.de"
+        },
+        {
+          "name": "aaronjensen",
+          "email": "aaronjensen@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "mantoni",
+        "email": "mail@maxantoni.de"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_d_9.1.2_1599574773785_0.7557734840171157"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# eslint\\_d\n\n[![Build Status]](https://travis-ci.org/mantoni/eslint_d.js)\n[![SemVer]](http://semver.org)\n[![License]](https://github.com/mantoni/eslint\\_d.js/blob/master/LICENSE)\n\nMakes [eslint][] the fastest linter on the planet.\n\n## \"But eslint is pretty fast already, right?\"\n\nYes, it's really fast. But the node.js startup time and loading all the\nrequired modules slows down linting times for a single file to ~700\nmilliseconds. `eslint_d` reduces this overhead by running a server in the\nbackground. It brings the linting time down to ~160 milliseconds. If you want\nto lint from within your editor whenever you save a file, `eslint_d` is for\nyou.\n\n## Install\n\nThis will install the `eslint_d` command globally:\n\n```bash\n$ npm install -g eslint_d\n```\n\n## Usage\n\nTo start the server and lint a file, just run:\n\n```bash\n$ eslint_d file.js\n```\n\nOn the initial call, the `eslint_d` server is launched and then the given file\nis linted. Subsequent invocations are super fast.\n\n## How does this work?\n\nThe first time you use `eslint_d`, a little server is started in the background\nand bound to a random port. The port number is stored along with [a\ntoken][change401] in `~/.eslint_d`. You can then run `eslint_d` commands the\nsame way you would use `eslint` and it will delegate to the background server.\nIt will load a [separate instance][change220] of eslint for each working\ndirectory to make sure settings are kept local. If eslint is found in the\ncurrent working directories `node_modules` folder, then this version of eslint\nis going to be used. Otherwise, the version of eslint that ships with\n`eslint_d` is used as a fallback.\n\nTo keep the memory footprint low, `eslint_d` keeps only the last 10 used\ninstances in the internal [nanolru][] cache.\n\n## What if eslint or a plugin is updated?\n\nThe cached version of eslint and the Node `require` cache for the current\nworking directory are cleared whenever a change to one of these files is\ndetected: `package.json`, `package-lock.json`, `npm-shrinkwrap.json`,\n`yarn.lock` and `pnpm-lock.yaml`. If changes are not automatically detected,\nremember to run `eslint_d restart` to bounce the background server.\n\n## Which versions of eslint are supported?\n\nAs of `v7.2.0`, you can use `eslint_d` with multiple projects depending on\ndifferent versions of eslint. Supported versions are 4.0+, 5.0+, 6.0+ and 7.0+.\n\n## Commands\n\nControl the server like this:\n\n```bash\n$ eslint_d <command>\n```\n\nAvailable commands:\n\n- `start`: start the server\n- `stop`: stop the server\n- `status`: print out whether the server is currently running\n- `restart`: restart the server\n- `[options] file.js [file.js] [dir]`: invoke `eslint` with the given options.\n  The `eslint` engine will be created in the current directory. If the server\n  is not yet running, it is started.\n\nType `eslint_d --help` to see the supported `eslint` options.\n\n`eslint_d` will select a free port automatically and store the port number\nalong with an access token in `~/.eslint_d`.\n\n## Editor integration\n\n### Linting\n\n- __Sublime__: Check out [SublimeLinter-contrib-eslint\\_d][SublimeLinter].\n- __Vim__: Install the [syntastic][] plugin, then make sure this is in your\n  `.vimrc`:\n\n    ```vim\n    let g:syntastic_javascript_checkers = ['eslint']\n    let g:syntastic_javascript_eslint_exec = 'eslint_d'\n    ```\n\n- __WebStorm__: Configure your IDE to point to the `eslint_d` package instead\n  of `eslint`. In the ESLint configuration dialog, under 'ESLint package',\n  select your `eslint_d` package.\n- __Atom__: You will not gain any performance from this module as it already\n  avoids starting a new node instance and uses the API directly (see [this\n  AtomLinter issue](https://github.com/AtomLinter/linter-eslint/issues/215)).\n- __Emacs__: Use [flycheck](http://www.flycheck.org/) with the\n  `javascript-eslint` checker:\n\n    ```elisp\n    (setq flycheck-javascript-eslint-executable \"eslint_d\")\n    ```\n\nIf you're using `eslint_d` in any other editor, please let us know!\n\n### Automatic Fixing\n\n`eslint_d` has an additional flag that `eslint` does not have,\n`--fix-to-stdout` which prints the fixed file to stdout. This allows editors to\nadd before save hooks to automatically fix a file prior to saving. It must be\nused with `--stdin`.\n\n- __Vim__: Add this to your `.vimrc` to lint the current buffer or visual\n  selection on `<leader>f`:\n\n    ```vim\n    \" Autofix entire buffer with eslint_d:\n    nnoremap <leader>f mF:%!eslint_d --stdin --fix-to-stdout<CR>`F\n    \" Autofix visual selection with eslint_d:\n    vnoremap <leader>f :!eslint_d --stdin --fix-to-stdout<CR>gv\n    ```\n\n- __Emacs__: See [eslintd-fix](https://github.com/aaronjensen/eslintd-fix)\n\n## Moar speed\n\nIf you're really into performance and want the lowest possible latency, talk to\nthe `eslint_d` server with netcat. This will also eliminate the node.js startup\ntime.\n\n```bash\n$ PORT=`cat ~/.eslint_d | cut -d\" \" -f1`\n$ TOKEN=`cat ~/.eslint_d | cut -d\" \" -f2`\n$ echo \"$TOKEN $PWD file.js\" | nc localhost $PORT\n```\n\nOr if you want to work with stdin:\n\n```bash\n$ echo \"$TOKEN $PWD --stdin\" | cat - file.js | nc localhost $PORT\n```\n\nThis runs `eslint` in under `50ms`!\n\n**Tip** For additional speed, did you know that you can lint only files that\nhave changed? This is a feature of normal `eslint`, but it also works from\n`eslint_d`. Run:\n\n```bash\n$ eslint_d . --cache\n```\n\n## References\n\nIf you're interested in building something similar to this: Most of the logic\nwas extracted to [core_d][], a library that manages the background server.\n\n## Compatibility\n\n- `9.0.0`: eslint 4.0+, 5.0+, 6.0+ and 7.0+, node 10, 12 and 14\n- `8.0.0`: eslint 4.0+, 5.0+ and 6.0+, node 8, 10 and 12\n- `7.2.0`: eslint 4.0+ and 5.0+, node 6, 8 and 10\n- `7.0.0`: eslint 5.4+, node 6, 8 and 10\n- `6.0.0`: eslint 5.0+, node 6+ (eslint dropped node 4)\n- `5.0.0`: eslint 4.0+\n- `4.0.0`: eslint 3.0+, node 4+ (eslint dropped node 0.10 and 0.12)\n- `3.0.0`: eslint 2.2+\n- `1.0.0`, `2.0.0`: eslint 1.4+, node 4 (and probably older)\n\n## License\n\nMIT\n\n[Build Status]: https://img.shields.io/travis/mantoni/eslint_d.js/master.svg\n[SemVer]: https://img.shields.io/:semver-%E2%9C%93-brightgreen.svg\n[License]: https://img.shields.io/npm/l/eslint_d.svg\n[eslint]: https://eslint.org\n[SublimeLinter]: https://github.com/roadhump/SublimeLinter-contrib-eslint_d\n[syntastic]: https://github.com/scrooloose/syntastic\n[change220]: https://github.com/mantoni/eslint_d.js/blob/master/CHANGES.md#220\n[change401]: https://github.com/mantoni/eslint_d.js/blob/master/CHANGES.md#401\n[nanolru]: https://github.com/s3ththompson/nanolru\n[core_d]: https://github.com/mantoni/core_d.js\n",
+  "maintainers": [
+    {
+      "name": "mantoni",
+      "email": "mail@maxantoni.de"
+    },
+    {
+      "name": "aaronjensen",
+      "email": "aaronjensen@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-08T14:19:36.287Z",
+    "created": "2015-09-18T21:04:28.403Z",
+    "1.0.0": "2015-09-18T21:04:28.403Z",
+    "2.0.0": "2015-09-19T22:49:01.041Z",
+    "2.1.0": "2015-09-20T16:35:35.727Z",
+    "2.1.1": "2015-09-30T08:05:00.730Z",
+    "2.1.2": "2015-10-02T15:49:27.259Z",
+    "2.2.0": "2015-11-05T18:45:01.872Z",
+    "2.3.0": "2015-11-08T20:06:42.467Z",
+    "2.3.1": "2015-11-09T20:33:11.736Z",
+    "2.3.2": "2015-11-20T07:36:39.380Z",
+    "2.4.0": "2015-12-08T10:34:01.832Z",
+    "2.5.0": "2016-02-20T10:42:14.212Z",
+    "2.5.1": "2016-02-24T14:48:56.576Z",
+    "3.0.0": "2016-02-25T20:12:19.416Z",
+    "3.0.1": "2016-02-28T19:12:56.807Z",
+    "3.1.0": "2016-03-03T22:13:14.805Z",
+    "3.1.1": "2016-06-07T18:10:20.646Z",
+    "4.0.0": "2016-07-07T18:30:59.058Z",
+    "4.0.1": "2016-07-25T19:23:51.879Z",
+    "3.1.2": "2016-07-25T19:59:44.405Z",
+    "4.1.0": "2016-09-29T19:51:29.035Z",
+    "4.2.0": "2016-10-16T17:29:16.804Z",
+    "4.2.1": "2016-12-06T22:21:43.907Z",
+    "4.2.2": "2017-03-04T06:52:05.329Z",
+    "4.2.3": "2017-03-13T15:19:02.769Z",
+    "4.2.4": "2017-03-13T15:24:13.536Z",
+    "4.2.5": "2017-03-28T12:59:30.539Z",
+    "5.0.0": "2017-06-26T10:38:18.714Z",
+    "5.1.0": "2017-08-08T12:07:53.583Z",
+    "5.2.0": "2017-11-25T18:18:04.579Z",
+    "5.2.1": "2017-12-11T10:08:31.421Z",
+    "5.2.2": "2018-01-08T19:17:47.938Z",
+    "5.3.0": "2018-04-07T16:06:05.743Z",
+    "5.3.1": "2018-05-10T18:14:22.383Z",
+    "6.0.0": "2018-06-29T15:00:47.904Z",
+    "6.0.1": "2018-07-13T06:17:19.863Z",
+    "7.0.0": "2018-08-21T16:30:35.360Z",
+    "7.1.0": "2018-08-24T06:37:41.443Z",
+    "7.1.1": "2018-09-18T20:37:51.187Z",
+    "7.2.0": "2018-12-04T13:10:38.312Z",
+    "7.3.0": "2019-02-26T13:36:48.351Z",
+    "8.0.0": "2019-06-24T09:58:28.944Z",
+    "8.1.0": "2020-02-19T08:29:47.779Z",
+    "8.1.1": "2020-03-21T09:19:55.004Z",
+    "9.0.0": "2020-06-09T10:53:06.512Z",
+    "9.1.0": "2020-06-22T08:49:59.175Z",
+    "9.1.1": "2020-06-23T12:19:11.699Z",
+    "9.1.2": "2020-09-08T14:19:33.923Z"
+  },
+  "homepage": "https://github.com/mantoni/eslint_d.js",
+  "keywords": [
+    "eslint",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mantoni/eslint_d.js.git"
+  },
+  "author": {
+    "name": "Maximilian Antoni",
+    "email": "mail@maxantoni.de",
+    "url": "http://maxantoni.de/"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "byk": true,
+    "juandaco": true,
+    "abuelwafa": true,
+    "lezuse": true,
+    "shufenghua": true
+  },
+  "contributors": [
+    {
+      "name": "Richard Herrera",
+      "email": "rich@doctyper.com"
+    },
+    {
+      "name": "Kevin Yue",
+      "email": "yuezk001@gmail.com"
+    },
+    {
+      "name": "Roger Zurawicki",
+      "email": "roger@krypton.io"
+    },
+    {
+      "name": "jpsc",
+      "email": "joao@voorhoede.nl"
+    },
+    {
+      "name": "ruanyl",
+      "email": "ruanyu1@gmail.com"
+    },
+    {
+      "name": "Nick Hwang",
+      "email": "nhwang@hubspot.com"
+    },
+    {
+      "name": "Aaron Jensen",
+      "email": "aaronjensen@gmail.com"
+    },
+    {
+      "name": "Simen Bekkhus",
+      "email": "sbekkhus91@gmail.com"
+    },
+    {
+      "name": "Caleb Eby",
+      "email": "calebeby@users.noreply.github.com"
+    },
+    {
+      "name": "Huáng Jùnliàng",
+      "email": "JLHwung@users.noreply.github.com"
+    },
+    {
+      "name": "Joseph Frazier",
+      "email": "1212jtraceur@gmail.com"
+    },
+    {
+      "name": "Sergey Markov",
+      "email": "Mar.Ser.DLX@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/mantoni/eslint_d.js/issues"
+  }
+}

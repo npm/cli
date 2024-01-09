@@ -1,0 +1,1741 @@
+{
+  "_id": "jsesc",
+  "_rev": "43-b0fea6c774d56003d38d9ab3c4d0f332",
+  "name": "jsesc",
+  "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "0.3.0": {
+      "name": "jsesc",
+      "version": "0.3.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.3.1",
+        "grunt-template": "~0.2.0",
+        "istanbul": "~0.1.42",
+        "qunit-clib": "~1.3.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "~0.5.2",
+        "requirejs": "~2.1.8"
+      },
+      "_id": "jsesc@0.3.0",
+      "dist": {
+        "shasum": "1bf5ee63b4539fe2e26d0c1e99c240b97a457972",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ]
+    },
+    "0.4.0": {
+      "name": "jsesc",
+      "version": "0.4.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.3.1",
+        "grunt-template": "~0.2.0",
+        "istanbul": "~0.1.42",
+        "qunit-clib": "~1.3.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "~0.5.2",
+        "requirejs": "~2.1.8"
+      },
+      "_id": "jsesc@0.4.0",
+      "dist": {
+        "shasum": "152d5de628d0d706152a1e7958da24aa5564bff6",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.4.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ]
+    },
+    "0.4.1": {
+      "name": "jsesc",
+      "version": "0.4.1",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.3.1",
+        "grunt-template": "~0.2.0",
+        "istanbul": "~0.1.42",
+        "qunit-clib": "~1.3.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "~0.5.2",
+        "requirejs": "~2.1.8"
+      },
+      "_id": "jsesc@0.4.1",
+      "dist": {
+        "shasum": "9bdd6a2e7fe16bed9308effc252c5166e1bac9f1",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.4.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ]
+    },
+    "0.4.2": {
+      "name": "jsesc",
+      "version": "0.4.2",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.3.1",
+        "grunt-template": "~0.2.0",
+        "istanbul": "~0.1.42",
+        "qunit-clib": "~1.3.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "~0.5.2",
+        "requirejs": "~2.1.8"
+      },
+      "_id": "jsesc@0.4.2",
+      "dist": {
+        "shasum": "ed2b68ec88e30e1ea57e6f6918c508c5cf41211b",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.4.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ]
+    },
+    "0.4.3": {
+      "name": "jsesc",
+      "version": "0.4.3",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-shell": "~0.5.0",
+        "grunt-template": "~0.2.1",
+        "istanbul": "~0.1.44",
+        "qunit-clib": "~1.3.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "~0.5.4",
+        "requirejs": "~2.1.9"
+      },
+      "_id": "jsesc@0.4.3",
+      "dist": {
+        "shasum": "a9c7f90afd5a1bf2ee64df6c416dab61672d2ae9",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.4.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ]
+    },
+    "0.5.0": {
+      "name": "jsesc",
+      "version": "0.5.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "http://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://mths.be/mit"
+        }
+      ],
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "http://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "directories": {
+        "test": "tests"
+      },
+      "scripts": {
+        "test": "node tests/tests.js"
+      },
+      "devDependencies": {
+        "coveralls": "^2.10.0",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^0.7.0",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.3.0",
+        "qunit-extras": "^1.2.0",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^0.6.2",
+        "requirejs": "^2.1.14"
+      },
+      "_id": "jsesc@0.5.0",
+      "_shasum": "e7dee66e35d6fc16f710fe91d5cf69f70f08911d",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "e7dee66e35d6fc16f710fe91d5cf69f70f08911d",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-0.5.0.tgz"
+      }
+    },
+    "1.0.0": {
+      "name": "jsesc",
+      "version": "1.0.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "test": "node tests/tests.js",
+        "build": "grunt template"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^1.1.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "qunit-extras": "^1.4.5",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^1.2.1",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "740510df41cc284c051b2c799523b1cb45896614",
+      "_id": "jsesc@1.0.0",
+      "_shasum": "280d89802932b49f653a76f94bc5961aa2c2302a",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "280d89802932b49f653a76f94bc5961aa2c2302a",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-1.0.0.tgz_1455887709949_0.5081199647393078"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "jsesc",
+      "version": "1.1.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "test": "node tests/tests.js",
+        "build": "grunt template"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^1.1.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "qunit-extras": "^1.4.5",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^1.2.1",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "24455b45733040b864ea19844e94e013b1e32ceb",
+      "_id": "jsesc@1.1.0",
+      "_shasum": "94dabee9b99e29de73f2b756e8d17040040070d2",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "94dabee9b99e29de73f2b756e8d17040040070d2",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-1.1.0.tgz_1463750358068_0.5460553385782987"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "jsesc",
+      "version": "1.2.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "test": "node tests/tests.js",
+        "build": "grunt template"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^1.1.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "qunit-extras": "^1.4.5",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^1.2.1",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "f358fe9668a07a0118cfca2469f19e52986c7b40",
+      "_id": "jsesc@1.2.0",
+      "_shasum": "f43b14e9fd7f05e149ba285f3a50cea1b8e896a8",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "f43b14e9fd7f05e149ba285f3a50cea1b8e896a8",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-1.2.0.tgz_1463823689906_0.357853488298133"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "jsesc",
+      "version": "1.2.1",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "test": "node tests/tests.js",
+        "build": "grunt template"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^1.1.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "qunit-extras": "^1.4.5",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^1.2.1",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "95a7aef13ca0e698acc378de8d204a1180551c63",
+      "_id": "jsesc@1.2.1",
+      "_shasum": "2c905f923eefcd3d75438f18287aa582527e18b8",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "2c905f923eefcd3d75438f18287aa582527e18b8",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-1.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-1.2.1.tgz_1464617342065_0.2549015914555639"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "jsesc",
+      "version": "1.3.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "test": "node tests/tests.js",
+        "build": "grunt template"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-shell": "^1.1.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "qunit-extras": "^1.4.5",
+        "qunitjs": "~1.11.0",
+        "regenerate": "^1.2.1",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "2c43a8a223e297155b2b2ccca344df4d6ee4233c",
+      "_id": "jsesc@1.3.0",
+      "_shasum": "46c3fec8c1892b12b0833db9bc7622176dbab34b",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "46c3fec8c1892b12b0833db9bc7622176dbab34b",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-1.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-1.3.0.tgz_1464619777756_0.3163749815430492"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "jsesc",
+      "version": "2.0.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "560bdedcb75fc572a089502e4fce84f4df962691",
+      "_id": "jsesc@2.0.0",
+      "_shasum": "30b740d13321ee4c469afb9ded564763cf59c510",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "30b740d13321ee4c469afb9ded564763cf59c510",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.0.0.tgz_1464648069948_0.36701208422891796"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "jsesc",
+      "version": "2.1.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "23d911db1570dfaaaa2ab8fb631d2ff13c130dba",
+      "_id": "jsesc@2.1.0",
+      "_shasum": "62df993ba00ffb169a2a2039137e53cc276f1d50",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "62df993ba00ffb169a2a2039137e53cc276f1d50",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.1.0.tgz_1464676330741_0.13891987106762826"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "jsesc",
+      "version": "2.2.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "30be7a62d862d8b5b49ffc4424a10c85f0ee6f6d",
+      "_id": "jsesc@2.2.0",
+      "_shasum": "c35a8613a3806c8ec3bafc0b0e196f020f7aab01",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "c35a8613a3806c8ec3bafc0b0e196f020f7aab01",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.2.0.tgz_1465308016083_0.46306405449286103"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "jsesc",
+      "version": "2.3.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "d627c492b6fe58eced159e0aa2cdd2aa0fac09d0",
+      "_id": "jsesc@2.3.0",
+      "_shasum": "adb0bc258a23f7aed228dd10eb45a1af76205121",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "adb0bc258a23f7aed228dd10eb45a1af76205121",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.3.0.tgz_1481368721518_0.002682796912267804"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "jsesc",
+      "version": "2.4.0",
+      "description": "A JavaScript library for escaping JavaScript strings while generating the shortest possible valid output.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "string",
+        "escape",
+        "javascript",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "9b680039faa69329f9c73297ab86db3e56cfd5ee",
+      "_id": "jsesc@2.4.0",
+      "_shasum": "8568d223ff69c0b5e081b4f8edf5a23d978c9867",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "8568d223ff69c0b5e081b4f8edf5a23d978c9867",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.4.0.tgz_1482865877799_0.7051079119555652"
+      },
+      "directories": {}
+    },
+    "2.5.0": {
+      "name": "jsesc",
+      "version": "2.5.0",
+      "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "buffer",
+        "escape",
+        "javascript",
+        "json",
+        "map",
+        "set",
+        "string",
+        "stringify",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "079324382d7cb7aa90e0ec45fb636b22fc45e1c1",
+      "_id": "jsesc@2.5.0",
+      "_shasum": "ce895de28feb034dcbf55fbeeabbcaeb63d73086",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "ce895de28feb034dcbf55fbeeabbcaeb63d73086",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.5.0.tgz_1491927398980_0.9198589532170445"
+      },
+      "directories": {}
+    },
+    "2.5.1": {
+      "name": "jsesc",
+      "version": "2.5.1",
+      "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "buffer",
+        "escape",
+        "javascript",
+        "json",
+        "map",
+        "set",
+        "string",
+        "stringify",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "jsesc.js",
+        "bin/",
+        "man/"
+      ],
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "0a09aaa3390c6490242488ac5aedc32fad7a5afe",
+      "_id": "jsesc@2.5.1",
+      "_shasum": "e421a2a8e20d6b0819df28908f782526b96dd1fe",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "e421a2a8e20d6b0819df28908f782526b96dd1fe",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.5.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/jsesc-2.5.1.tgz_1493925441686_0.712287989910692"
+      },
+      "directories": {}
+    },
+    "2.5.2": {
+      "name": "jsesc",
+      "version": "2.5.2",
+      "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=4"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "buffer",
+        "escape",
+        "javascript",
+        "json",
+        "map",
+        "set",
+        "string",
+        "stringify",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "*",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "5169a48f015437b7cdaffecaa10db52f155dace7",
+      "_id": "jsesc@2.5.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.4.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "dist": {
+        "integrity": "sha512-OYu7XEzjkCQ3C5Ps3QIZsQfNpqoJyZZA99wd9aWd05NCtC5pWOkShK2mkL6HXQR6/Cy2lbNdPlZBpuQHXE63gA==",
+        "shasum": "80564d2e483dacf6e8ef209650a67df3f0c283a4",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-2.5.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 31974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb5K+yCRA9TVsSAnZWagAAcw8P/Rlb4Z/X4ktKdj89MKD/\nUeGJWvlTvMSoTxgtaEAcZaAe4AfrHb6JNrQ67x0mYm2GqrbZDJairM+IK9JI\nCwFy8HjCz2tAManJ1VeHcO8O41TCm6H3hIVZdd3N1F32gqeXegONgilWzGwE\n9uFBLx1OdRcVH7eASE6MtSSGXXvC9ssjKsYigpQUZB91/v5OWwk+iokJwXj8\noHxVtSuCMLzEC3NGLvU2QmLdux7fhs3BBSqljryVd31h1R+To1Me6c65xxWu\nw6BkZW1eMmPBNf5S8CRItMQiNPu4xD06xWSU7kfz9k+p5mv9CBUN7pfgXCsQ\nPDO/tnk2rIdiQmVRRxXpHDUgmPaxNkJcZfLKA/qDziyLvjxbs0OC8z6trQed\nRZaW3Kh/zm6aieLaS9UuFdaLigzuZ1ypmruyGMgrGdTJNFZGoIhyzdRYy9JQ\nmxAfqztv5s/4MnVS0BzrliSwrL/sGsKDSIXq1+Pb1p2ICzQoNg6WO130XzcO\nFAjs0/RIvEdbziLE6NfmVAU1wzYIgloSjJ/g3QqOk9aVERwQ+GQRD6aoUWoG\nZbeaXDaz3JJUqYy3bkf2sj3R7vRgft3qr+Jp/4c9fNznPWY6B9x7TY1QJ3Qm\nxLfPbWByBQJ+NmD7cmqfJvzdZ/KPczyhJ2kOXeJ5fAi+3PtfCnsNkmXj4EE4\nTDUo\r\n=YUSw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/jsesc_2.5.2_1541713841122_0.787267521718999"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "jsesc",
+      "version": "3.0.0",
+      "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=6"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "buffer",
+        "escape",
+        "javascript",
+        "json",
+        "map",
+        "set",
+        "string",
+        "stringify",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-cli": "^1.3.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "^5.2.0",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22"
+      },
+      "gitHead": "22598d9e543710e760c8eedb299c97c1b19d0c9f",
+      "_id": "jsesc@3.0.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-f4Lv5LNZUw4rZ6gjHwbTsiVxKekg3Hx5JP/phP7dXpLXCyEk6JsNRqPCDAnO6G1iaqYzljpIbOlC23aSUIeeXg==",
+        "shasum": "9e29dd235ea5d5040ef8823aeb6604f30d8cce54",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 31558,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJejWu6CRA9TVsSAnZWagAA5egP/1Cb86sknyfx1nHSBajN\n77dE/4QLy0dpUJpAhVp4ipcs+bInXyXkmyMSgjOy87Cv0tXncmrznA8f/erw\nw53a1GHFrC7AaI8S75Mpn7Z9GxJF6kPSu18C6y7jsC7mRbVYwHRvSiO/xhHt\nvwgHBJemuOnHlgOwwYyETdpHyzYe9kpkXVf8ehJC7ERofvXZSUFHDHEqaBpT\nXdXnkTSGSN4H0h+dBZt6MW3s+3cdDERusT+ni7lcaqmnkqJwJyL5NomqzfxD\nXuVD+s7dYexLS1IxUABH8bDrubwYD4uZW8+lwgV3mp7MZ2/OszHOTVArfIFa\n5Rw0FLNRtFGusjCWF43QN35zvkp/gUt5K+um9+l54XE2QwriKEa8z5O7qEaA\nULlpsJKof/HU+4wnyewpAtd4/5Jyr07s6X3/yM/nropBhImNjKDTW81WYjYt\nTORyKxksl6NfKcLUq1J6qqmBcN8xBjwtwOXNKzuUxs0j/oHagdBp0rM0Lxi3\nPGF4lUZUUXMkcsbkXP9rU8umo2jciUnBpphRdx3YuJx9Ir+mbJ5jMuqVe+YP\nsS8RlivomlkWCOHNn4lPJ7NQfgtsGlgMQ1Q2rWLcNVzYTmTIOd4e4votAWjk\nGy0c72G9joNpzF8hweV5xKmzZH7myGiSFePNSFBrsZU9T6RhuT31q0xNMhLD\n2dJE\r\n=7Z+m\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/jsesc_3.0.0_1586326458067_0.3682314539467717"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "jsesc",
+      "version": "3.0.1",
+      "description": "Given some data, jsesc returns the shortest possible stringified & ASCII-safe representation of that data.",
+      "homepage": "https://mths.be/jsesc",
+      "engines": {
+        "node": ">=6"
+      },
+      "main": "jsesc.js",
+      "bin": {
+        "jsesc": "bin/jsesc"
+      },
+      "man": [
+        "man/jsesc.1"
+      ],
+      "keywords": [
+        "buffer",
+        "escape",
+        "javascript",
+        "json",
+        "map",
+        "set",
+        "string",
+        "stringify",
+        "tool"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/jsesc.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/jsesc/issues"
+      },
+      "scripts": {
+        "build": "grunt template",
+        "coveralls": "istanbul cover --verbose --dir 'coverage' 'tests/tests.js' && coveralls < coverage/lcov.info'",
+        "cover": "istanbul cover --report 'html' --verbose --dir 'coverage' 'tests/tests.js'",
+        "test": "mocha tests"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "grunt": "^0.4.5",
+        "grunt-cli": "^1.3.2",
+        "grunt-template": "^0.2.3",
+        "istanbul": "^0.4.2",
+        "mocha": "^5.2.0",
+        "regenerate": "^1.3.0",
+        "requirejs": "^2.1.22",
+        "unicode-13.0.0": "0.8.0"
+      },
+      "gitHead": "aee22b17cdc3478624505bff723634b4e7aa2fca",
+      "_id": "jsesc@3.0.1",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-w+MMxnByppM4jwskitZotEtvtO3a2C7WOz31NxJToGisHuysCAQQU7umb/pA/6soPFe8LGjXFEFbuPuLEPm7Ag==",
+        "shasum": "0e10205322721c22716cd5bbdbf80e71fb9c8344",
+        "tarball": "https://registry.npmjs.org/jsesc/-/jsesc-3.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 31663,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJej3XyCRA9TVsSAnZWagAAc6AP/011DMZYLYGvk2bVdBBZ\nV2znb+DbQqvpK0Los2N0l9B/rHxwcRbeXKda2Bn1mqh3qnEZnGhNpuVGEFfb\nhKKLCXY0iYMsqqvW7d8EZdYljq8m8kLXUxHtYC2VgQ4GjmkGePOMq1Qrdy1T\n7nxHfjbBn7Af4rhggd+RhAI/k08gLxoy45JA1ksg/DoODs+7T0UtxRpld57j\nrMsSBfHloK/+6cOZhD+pMWhE2/yCYp8tRz+OwPsjGEaChqa7btrFBTFA97BK\nOAs/X+TIKF3XCVGC4Y/VJAmWojhuH28NZ6p0d/M3uHN0ih4t8QPIr0+dHFaW\nPooBVGNjBfZscAu6z+p+2b5RT1z9E3hirJ8tijAIYVEyqtY5cOITZYIItmSR\nxOdHpu7u0IaEObjIsAqi/Bb54uAPag2dtZrb741mZvOaffmvi1tv2HAZr2YZ\nioWv05qVrsNe1JsBIkYi7MKhUEXvxhO/Go4rACtvPB4+U7b6GYbmAnFtRvnG\nmbzkhMDmuN1u90GcEX8V4BBSPS/+9SZA9usO9607bg1HSpDcpLeccKdaX3TF\n/+hmSTsHvC7nUdeHXI4bUbjXX7Od8xaSFJ7GezsSfNVbmuno6aNtj/Pa2qiN\n5bxDQM/OArWUV/Ke0XElDUwxU3Z+Pe+I3U3iv319vHAcoaktbbtp3wad84IG\nGxim\r\n=+kru\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/jsesc_3.0.1_1586460145551_0.07978855804146479"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# jsesc [![Build status](https://travis-ci.org/mathiasbynens/jsesc.svg?branch=master)](https://travis-ci.org/mathiasbynens/jsesc) [![Code coverage status](https://coveralls.io/repos/mathiasbynens/jsesc/badge.svg)](https://coveralls.io/r/mathiasbynens/jsesc)\n\nGiven some data, _jsesc_ returns a stringified representation of that data. jsesc is similar to `JSON.stringify()` except:\n\n1. it outputs JavaScript instead of JSON [by default](#json), enabling support for data structures like ES6 maps and sets;\n2. it offers [many options](#api) to customize the output;\n3. its output is ASCII-safe [by default](#minimal), thanks to its use of [escape sequences](https://mathiasbynens.be/notes/javascript-escapes) where needed.\n\nFor any input, jsesc generates the shortest possible valid printable-ASCII-only output. [Here’s an online demo.](https://mothereff.in/js-escapes)\n\njsesc’s output can be used instead of `JSON.stringify`’s to avoid [mojibake](https://en.wikipedia.org/wiki/Mojibake) and other encoding issues, or even to [avoid errors](https://twitter.com/annevk/status/380000829643571200) when passing JSON-formatted data (which may contain U+2028 LINE SEPARATOR, U+2029 PARAGRAPH SEPARATOR, or [lone surrogates](https://esdiscuss.org/topic/code-points-vs-unicode-scalar-values#content-14)) to a JavaScript parser or an UTF-8 encoder.\n\n## Installation\n\nVia [npm](https://www.npmjs.com/):\n\n```bash\nnpm install jsesc\n```\n\nIn [Node.js](https://nodejs.org/):\n\n```js\nconst jsesc = require('jsesc');\n```\n\n## API\n\n### `jsesc(value, options)`\n\nThis function takes a value and returns an escaped version of the value where any characters that are not printable ASCII symbols are escaped using the shortest possible (but valid) [escape sequences for use in JavaScript strings](https://mathiasbynens.be/notes/javascript-escapes). The first supported value type is strings:\n\n```js\njsesc('Ich ♥ Bücher');\n// → 'Ich \\\\u2665 B\\\\xFCcher'\n\njsesc('foo 𝌆 bar');\n// → 'foo \\\\uD834\\\\uDF06 bar'\n```\n\nInstead of a string, the `value` can also be an array, an object, a map, a set, or a buffer. In such cases, `jsesc` returns a stringified version of the value where any characters that are not printable ASCII symbols are escaped in the same way.\n\n```js\n// Escaping an array\njsesc([\n  'Ich ♥ Bücher', 'foo 𝌆 bar'\n]);\n// → '[\\'Ich \\\\u2665 B\\\\xFCcher\\',\\'foo \\\\uD834\\\\uDF06 bar\\']'\n\n// Escaping an object\njsesc({\n  'Ich ♥ Bücher': 'foo 𝌆 bar'\n});\n// → '{\\'Ich \\\\u2665 B\\\\xFCcher\\':\\'foo \\\\uD834\\\\uDF06 bar\\'}'\n```\n\nThe optional `options` argument accepts an object with the following options:\n\n#### `quotes`\n\nThe default value for the `quotes` option is `'single'`. This means that any occurrences of `'` in the input string are escaped as `\\'`, so that the output can be used in a string literal wrapped in single quotes.\n\n```js\njsesc('`Lorem` ipsum \"dolor\" sit \\'amet\\' etc.');\n// → 'Lorem ipsum \"dolor\" sit \\\\\\'amet\\\\\\' etc.'\n\njsesc('`Lorem` ipsum \"dolor\" sit \\'amet\\' etc.', {\n  'quotes': 'single'\n});\n// → '`Lorem` ipsum \"dolor\" sit \\\\\\'amet\\\\\\' etc.'\n// → \"`Lorem` ipsum \\\"dolor\\\" sit \\\\'amet\\\\' etc.\"\n```\n\nIf you want to use the output as part of a string literal wrapped in double quotes, set the `quotes` option to `'double'`.\n\n```js\njsesc('`Lorem` ipsum \"dolor\" sit \\'amet\\' etc.', {\n  'quotes': 'double'\n});\n// → '`Lorem` ipsum \\\\\"dolor\\\\\" sit \\'amet\\' etc.'\n// → \"`Lorem` ipsum \\\\\\\"dolor\\\\\\\" sit 'amet' etc.\"\n```\n\nIf you want to use the output as part of a template literal (i.e. wrapped in backticks), set the `quotes` option to `'backtick'`.\n\n```js\njsesc('`Lorem` ipsum \"dolor\" sit \\'amet\\' etc.', {\n  'quotes': 'backtick'\n});\n// → '\\\\`Lorem\\\\` ipsum \"dolor\" sit \\'amet\\' etc.'\n// → \"\\\\`Lorem\\\\` ipsum \\\"dolor\\\" sit 'amet' etc.\"\n// → `\\\\\\`Lorem\\\\\\` ipsum \"dolor\" sit 'amet' etc.`\n```\n\nThis setting also affects the output for arrays and objects:\n\n```js\njsesc({ 'Ich ♥ Bücher': 'foo 𝌆 bar' }, {\n  'quotes': 'double'\n});\n// → '{\"Ich \\\\u2665 B\\\\xFCcher\":\"foo \\\\uD834\\\\uDF06 bar\"}'\n\njsesc([ 'Ich ♥ Bücher', 'foo 𝌆 bar' ], {\n  'quotes': 'double'\n});\n// → '[\"Ich \\\\u2665 B\\\\xFCcher\",\"foo \\\\uD834\\\\uDF06 bar\"]'\n```\n\n#### `numbers`\n\nThe default value for the `numbers` option is `'decimal'`. This means that any numeric values are represented using decimal integer literals. Other valid options are `binary`, `octal`, and `hexadecimal`, which result in binary integer literals, octal integer literals, and hexadecimal integer literals, respectively.\n\n```js\njsesc(42, {\n  'numbers': 'binary'\n});\n// → '0b101010'\n\njsesc(42, {\n  'numbers': 'octal'\n});\n// → '0o52'\n\njsesc(42, {\n  'numbers': 'decimal'\n});\n// → '42'\n\njsesc(42, {\n  'numbers': 'hexadecimal'\n});\n// → '0x2A'\n```\n\n#### `wrap`\n\nThe `wrap` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, the output is a valid JavaScript string literal wrapped in quotes. The type of quotes can be specified through the `quotes` setting.\n\n```js\njsesc('Lorem ipsum \"dolor\" sit \\'amet\\' etc.', {\n  'quotes': 'single',\n  'wrap': true\n});\n// → '\\'Lorem ipsum \"dolor\" sit \\\\\\'amet\\\\\\' etc.\\''\n// → \"\\'Lorem ipsum \\\"dolor\\\" sit \\\\\\'amet\\\\\\' etc.\\'\"\n\njsesc('Lorem ipsum \"dolor\" sit \\'amet\\' etc.', {\n  'quotes': 'double',\n  'wrap': true\n});\n// → '\"Lorem ipsum \\\\\"dolor\\\\\" sit \\'amet\\' etc.\"'\n// → \"\\\"Lorem ipsum \\\\\\\"dolor\\\\\\\" sit \\'amet\\' etc.\\\"\"\n```\n\n#### `es6`\n\nThe `es6` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, any astral Unicode symbols in the input are escaped using [ECMAScript 6 Unicode code point escape sequences](https://mathiasbynens.be/notes/javascript-escapes#unicode-code-point) instead of using separate escape sequences for each surrogate half. If backwards compatibility with ES5 environments is a concern, don’t enable this setting. If the `json` setting is enabled, the value for the `es6` setting is ignored (as if it was `false`).\n\n```js\n// By default, the `es6` option is disabled:\njsesc('foo 𝌆 bar 💩 baz');\n// → 'foo \\\\uD834\\\\uDF06 bar \\\\uD83D\\\\uDCA9 baz'\n\n// To explicitly disable it:\njsesc('foo 𝌆 bar 💩 baz', {\n  'es6': false\n});\n// → 'foo \\\\uD834\\\\uDF06 bar \\\\uD83D\\\\uDCA9 baz'\n\n// To enable it:\njsesc('foo 𝌆 bar 💩 baz', {\n  'es6': true\n});\n// → 'foo \\\\u{1D306} bar \\\\u{1F4A9} baz'\n```\n\n#### `escapeEverything`\n\nThe `escapeEverything` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, all the symbols in the output are escaped — even printable ASCII symbols.\n\n```js\njsesc('lolwat\"foo\\'bar', {\n  'escapeEverything': true\n});\n// → '\\\\x6C\\\\x6F\\\\x6C\\\\x77\\\\x61\\\\x74\\\\\"\\\\x66\\\\x6F\\\\x6F\\\\\\'\\\\x62\\\\x61\\\\x72'\n// → \"\\\\x6C\\\\x6F\\\\x6C\\\\x77\\\\x61\\\\x74\\\\\\\"\\\\x66\\\\x6F\\\\x6F\\\\'\\\\x62\\\\x61\\\\x72\"\n```\n\nThis setting also affects the output for string literals within arrays and objects.\n\n#### `minimal`\n\nThe `minimal` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, only a limited set of symbols in the output are escaped:\n\n* U+0000 `\\0`\n* U+0008 `\\b`\n* U+0009 `\\t`\n* U+000A `\\n`\n* U+000C `\\f`\n* U+000D `\\r`\n* U+005C `\\\\`\n* U+2028 `\\u2028`\n* U+2029 `\\u2029`\n* whatever symbol is being used for wrapping string literals (based on [the `quotes` option](#quotes))\n* [lone surrogates](https://esdiscuss.org/topic/code-points-vs-unicode-scalar-values#content-14)\n\nNote: with this option enabled, jsesc output is no longer guaranteed to be ASCII-safe.\n\n```js\njsesc('foo\\u2029bar\\nbaz©qux𝌆flops', {\n  'minimal': false\n});\n// → 'foo\\\\u2029bar\\\\nbaz©qux𝌆flops'\n```\n\n#### `isScriptContext`\n\nThe `isScriptContext` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, occurrences of [`</script` and `</style`](https://mathiasbynens.be/notes/etago) in the output are escaped as `<\\/script` and `<\\/style`, and [`<!--`](https://mathiasbynens.be/notes/etago#comment-8) is escaped as `\\x3C!--` (or `\\u003C!--` when the `json` option is enabled). This setting is useful when jsesc’s output ends up as part of a `<script>` or `<style>` element in an HTML document.\n\n```js\njsesc('foo</script>bar', {\n  'isScriptContext': true\n});\n// → 'foo<\\\\/script>bar'\n```\n\n#### `compact`\n\nThe `compact` option takes a boolean value (`true` or `false`), and defaults to `true` (enabled). When enabled, the output for arrays and objects is as compact as possible; it’s not formatted nicely.\n\n```js\njsesc({ 'Ich ♥ Bücher': 'foo 𝌆 bar' }, {\n  'compact': true // this is the default\n});\n// → '{\\'Ich \\u2665 B\\xFCcher\\':\\'foo \\uD834\\uDF06 bar\\'}'\n\njsesc({ 'Ich ♥ Bücher': 'foo 𝌆 bar' }, {\n  'compact': false\n});\n// → '{\\n\\t\\'Ich \\u2665 B\\xFCcher\\': \\'foo \\uD834\\uDF06 bar\\'\\n}'\n\njsesc([ 'Ich ♥ Bücher', 'foo 𝌆 bar' ], {\n  'compact': false\n});\n// → '[\\n\\t\\'Ich \\u2665 B\\xFCcher\\',\\n\\t\\'foo \\uD834\\uDF06 bar\\'\\n]'\n```\n\nThis setting has no effect on the output for strings.\n\n#### `indent`\n\nThe `indent` option takes a string value, and defaults to `'\\t'`. When the `compact` setting is disabled (`false`), the value of the `indent` option is used to format the output for arrays and objects.\n\n```js\njsesc({ 'Ich ♥ Bücher': 'foo 𝌆 bar' }, {\n  'compact': false,\n  'indent': '\\t' // this is the default\n});\n// → '{\\n\\t\\'Ich \\u2665 B\\xFCcher\\': \\'foo \\uD834\\uDF06 bar\\'\\n}'\n\njsesc({ 'Ich ♥ Bücher': 'foo 𝌆 bar' }, {\n  'compact': false,\n  'indent': '  '\n});\n// → '{\\n  \\'Ich \\u2665 B\\xFCcher\\': \\'foo \\uD834\\uDF06 bar\\'\\n}'\n\njsesc([ 'Ich ♥ Bücher', 'foo 𝌆 bar' ], {\n  'compact': false,\n  'indent': '  '\n});\n// → '[\\n  \\'Ich \\u2665 B\\xFCcher\\',\\n\\  t\\'foo \\uD834\\uDF06 bar\\'\\n]'\n```\n\nThis setting has no effect on the output for strings.\n\n#### `indentLevel`\n\nThe `indentLevel` option takes a numeric value, and defaults to `0`. It represents the current indentation level, i.e. the number of times the value of [the `indent` option](#indent) is repeated.\n\n```js\njsesc(['a', 'b', 'c'], {\n  'compact': false,\n  'indentLevel': 1\n});\n// → '[\\n\\t\\t\\'a\\',\\n\\t\\t\\'b\\',\\n\\t\\t\\'c\\'\\n\\t]'\n\njsesc(['a', 'b', 'c'], {\n  'compact': false,\n  'indentLevel': 2\n});\n// → '[\\n\\t\\t\\t\\'a\\',\\n\\t\\t\\t\\'b\\',\\n\\t\\t\\t\\'c\\'\\n\\t\\t]'\n```\n\n#### `json`\n\nThe `json` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, the output is valid JSON. [Hexadecimal character escape sequences](https://mathiasbynens.be/notes/javascript-escapes#hexadecimal) and [the `\\v` or `\\0` escape sequences](https://mathiasbynens.be/notes/javascript-escapes#single) are not used. Setting `json: true` implies `quotes: 'double', wrap: true, es6: false`, although these values can still be overridden if needed — but in such cases, the output won’t be valid JSON anymore.\n\n```js\njsesc('foo\\x00bar\\xFF\\uFFFDbaz', {\n  'json': true\n});\n// → '\"foo\\\\u0000bar\\\\u00FF\\\\uFFFDbaz\"'\n\njsesc({ 'foo\\x00bar\\xFF\\uFFFDbaz': 'foo\\x00bar\\xFF\\uFFFDbaz' }, {\n  'json': true\n});\n// → '{\"foo\\\\u0000bar\\\\u00FF\\\\uFFFDbaz\":\"foo\\\\u0000bar\\\\u00FF\\\\uFFFDbaz\"}'\n\njsesc([ 'foo\\x00bar\\xFF\\uFFFDbaz', 'foo\\x00bar\\xFF\\uFFFDbaz' ], {\n  'json': true\n});\n// → '[\"foo\\\\u0000bar\\\\u00FF\\\\uFFFDbaz\",\"foo\\\\u0000bar\\\\u00FF\\\\uFFFDbaz\"]'\n\n// Values that are acceptable in JSON but aren’t strings, arrays, or object\n// literals can’t be escaped, so they’ll just be preserved:\njsesc([ 'foo\\x00bar', [1, '©', { 'foo': true, 'qux': null }], 42 ], {\n  'json': true\n});\n// → '[\"foo\\\\u0000bar\",[1,\"\\\\u00A9\",{\"foo\":true,\"qux\":null}],42]'\n// Values that aren’t allowed in JSON are run through `JSON.stringify()`:\njsesc([ undefined, -Infinity ], {\n  'json': true\n});\n// → '[null,null]'\n```\n\n**Note:** Using this option on objects or arrays that contain non-string values relies on `JSON.stringify()`. For legacy environments like IE ≤ 7, use [a `JSON` polyfill](http://bestiejs.github.io/json3/).\n\n#### `lowercaseHex`\n\nThe `lowercaseHex` option takes a boolean value (`true` or `false`), and defaults to `false` (disabled). When enabled, any alphabetical hexadecimal digits in escape sequences as well as any hexadecimal integer literals (see [the `numbers` option](#numbers)) in the output are in lowercase.\n\n```js\njsesc('Ich ♥ Bücher', {\n  'lowercaseHex': true\n});\n// → 'Ich \\\\u2665 B\\\\xfccher'\n//                    ^^\n\njsesc(42, {\n  'numbers': 'hexadecimal',\n  'lowercaseHex': true\n});\n// → '0x2a'\n//      ^^\n```\n\n### `jsesc.version`\n\nA string representing the semantic version number.\n\n### Using the `jsesc` binary\n\nTo use the `jsesc` binary in your shell, simply install jsesc globally using npm:\n\n```bash\nnpm install -g jsesc\n```\n\nAfter that you’re able to escape strings from the command line:\n\n```bash\n$ jsesc 'föo ♥ bår 𝌆 baz'\nf\\xF6o \\u2665 b\\xE5r \\uD834\\uDF06 baz\n```\n\nTo escape arrays or objects containing string values, use the `-o`/`--object` option:\n\n```bash\n$ jsesc --object '{ \"föo\": \"♥\", \"bår\": \"𝌆 baz\" }'\n{'f\\xF6o':'\\u2665','b\\xE5r':'\\uD834\\uDF06 baz'}\n```\n\nTo prettify the output in such cases, use the `-p`/`--pretty` option:\n\n```bash\n$ jsesc --pretty '{ \"föo\": \"♥\", \"bår\": \"𝌆 baz\" }'\n{\n  'f\\xF6o': '\\u2665',\n  'b\\xE5r': '\\uD834\\uDF06 baz'\n}\n```\n\nFor valid JSON output, use the `-j`/`--json` option:\n\n```bash\n$ jsesc --json --pretty '{ \"föo\": \"♥\", \"bår\": \"𝌆 baz\" }'\n{\n  \"f\\u00F6o\": \"\\u2665\",\n  \"b\\u00E5r\": \"\\uD834\\uDF06 baz\"\n}\n```\n\nRead a local JSON file, escape any non-ASCII symbols, and save the result to a new file:\n\n```bash\n$ jsesc --json --object < data-raw.json > data-escaped.json\n```\n\nOr do the same with an online JSON file:\n\n```bash\n$ curl -sL \"http://git.io/aorKgQ\" | jsesc --json --object > data-escaped.json\n```\n\nSee `jsesc --help` for the full list of options.\n\n## Support\n\nAs of v3.0.0, jsesc supports Node.js v6+ only.\n\nOlder versions (up to jsesc v1.3.0) support Chrome 27, Firefox 3, Safari 4, Opera 10, IE 6, Node.js v6.0.0, Narwhal 0.3.2, RingoJS 0.8-0.11, PhantomJS 1.9.0, and Rhino 1.7RC4. **Note:** Using the `json` option on objects or arrays that contain non-string values relies on `JSON.parse()`. For legacy environments like IE ≤ 7, use [a `JSON` polyfill](https://bestiejs.github.io/json3/).\n\n## Author\n\n| [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias \"Follow @mathias on Twitter\") |\n|---|\n| [Mathias Bynens](https://mathiasbynens.be/) |\n\n## License\n\nThis library is available under the [MIT](https://mths.be/mit) license.\n",
+  "maintainers": [
+    {
+      "name": "mathias",
+      "email": "mathias@qiwi.be"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-09T19:22:28.773Z",
+    "created": "2013-07-27T09:03:48.064Z",
+    "0.3.0": "2013-07-27T09:03:51.154Z",
+    "0.4.0": "2013-07-30T15:59:46.963Z",
+    "0.4.1": "2013-07-31T15:17:00.602Z",
+    "0.4.2": "2013-08-16T07:27:59.793Z",
+    "0.4.3": "2013-10-25T12:12:33.362Z",
+    "0.5.0": "2014-08-18T10:32:33.662Z",
+    "1.0.0": "2016-02-19T13:15:14.247Z",
+    "1.1.0": "2016-05-20T13:19:21.510Z",
+    "1.2.0": "2016-05-21T09:41:30.880Z",
+    "1.2.1": "2016-05-30T14:09:04.606Z",
+    "1.3.0": "2016-05-30T14:49:40.096Z",
+    "2.0.0": "2016-05-30T22:41:12.018Z",
+    "2.1.0": "2016-05-31T06:32:12.805Z",
+    "2.2.0": "2016-06-07T14:00:18.054Z",
+    "2.3.0": "2016-12-10T11:18:43.676Z",
+    "2.4.0": "2016-12-27T19:11:20.036Z",
+    "2.5.0": "2017-04-11T16:16:39.874Z",
+    "2.5.1": "2017-05-04T19:17:23.727Z",
+    "2.5.2": "2018-11-08T21:50:41.326Z",
+    "3.0.0": "2020-04-08T06:14:18.233Z",
+    "3.0.1": "2020-04-09T19:22:25.693Z"
+  },
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasbynens/jsesc.git"
+  },
+  "homepage": "https://mths.be/jsesc",
+  "keywords": [
+    "buffer",
+    "escape",
+    "javascript",
+    "json",
+    "map",
+    "set",
+    "string",
+    "stringify",
+    "tool"
+  ],
+  "bugs": {
+    "url": "https://github.com/mathiasbynens/jsesc/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "nichoth": true,
+    "preco21": true,
+    "wenbing": true,
+    "quocnguyen": true,
+    "jlertle": true,
+    "gfilip": true,
+    "dfrankland": true,
+    "scottfreecode": true,
+    "ahmedelgabri": true,
+    "danielbankhead": true,
+    "kankungyip": true,
+    "andreaspizsa": true,
+    "artjacob": true,
+    "cr8tiv": true,
+    "zuojiang": true
+  },
+  "license": "MIT"
+}

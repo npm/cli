@@ -1,0 +1,285 @@
+{
+  "_id": "toidentifier",
+  "_rev": "4-4b288931e281a49f77fadf7e59b8a4f7",
+  "name": "toidentifier",
+  "description": "Convert a string of words to a JavaScript identifier",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "toidentifier",
+      "description": "Convert a string of words to a JavaScript identifier",
+      "version": "0.0.1",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "bugs": {
+        "url": "https://github.com/koajs/toidentifier/issues",
+        "email": "niftylettuce@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Nick Baugh",
+          "email": "niftylettuce@gmail.com",
+          "url": "http://niftylettuce.com/"
+        }
+      ],
+      "dependencies": {},
+      "ava": {
+        "failFast": true,
+        "verbose": true
+      },
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "codecov": "^2.3.0",
+        "cross-env": "^5.0.5",
+        "eslint": "^4.5.0",
+        "eslint-config-prettier": "^2.3.0",
+        "eslint-plugin-prettier": "^2.2.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^4.0.4",
+        "nyc": "^11.1.0",
+        "prettier": "^1.6.1",
+        "remark-cli": "^4.0.0",
+        "remark-preset-github": "^0.0.6",
+        "xo": "^0.19.0"
+      },
+      "engines": {
+        "node": ">=0.6"
+      },
+      "homepage": "https://github.com/koajs/toidentifier",
+      "keywords": [
+        "to",
+        "identifier"
+      ],
+      "license": "MIT",
+      "lint-staged": {
+        "*.{js,jsx,mjs,ts,tsx,css,less,scss,json,graphql}": [
+          "prettier --write --single-quote --trailing-comma none",
+          "git add"
+        ],
+        "*.md": [
+          "remark . -qfo",
+          "git add"
+        ]
+      },
+      "main": "lib/index.js",
+      "remarkConfig": {
+        "plugins": [
+          "preset-github"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/koajs/toidentifier.git"
+      },
+      "files": [
+        "lib"
+      ],
+      "scripts": {
+        "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+        "lint": "xo && remark . -qfo",
+        "precommit": "lint-staged && npm test",
+        "test": "npm run build && npm run lint && npm run test-coverage",
+        "test-coverage": "cross-env NODE_ENV=test nyc ava",
+        "build": "babel src --out-dir lib",
+        "watch": "babel src --watch --out-dir lib"
+      },
+      "xo": {
+        "extends": "prettier",
+        "plugins": [
+          "prettier"
+        ],
+        "parserOptions": {
+          "sourceType": "script"
+        },
+        "rules": {
+          "prettier/prettier": [
+            "error",
+            {
+              "singleQuote": true,
+              "bracketSpacing": true,
+              "trailingComma": "none"
+            }
+          ],
+          "max-len": [
+            "error",
+            {
+              "code": 80,
+              "ignoreUrls": true
+            }
+          ],
+          "capitalized-comments": "off",
+          "camelcase": "off",
+          "no-warning-comments": "off"
+        },
+        "space": true
+      },
+      "gitHead": "6bf014ae81988f80eed392f2d47cda032efdaccf",
+      "_id": "toidentifier@0.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "niftylettuce",
+        "email": "niftylettuce@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-rbnQkrIivqT1LG6lv4zIbjXG43nmtQvugnEK6E5tA0OlDJcK6e0O6DkxYmaV/zcB4Sd7Hb2uB0892I7CMYJdww==",
+        "shasum": "32fe700072972c0689f67fdb0e1eb92b2d18d413",
+        "tarball": "https://registry.npmjs.org/toidentifier/-/toidentifier-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "niftylettuce",
+          "email": "niftylettuce@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/toidentifier-0.0.1.tgz_1513674524835_0.4889004931319505"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "toidentifier",
+      "description": "Convert a string of words to a JavaScript identifier",
+      "version": "1.0.0",
+      "author": {
+        "name": "Douglas Christopher Wilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Nick Baugh",
+          "email": "niftylettuce@gmail.com",
+          "url": "http://niftylettuce.com/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/component/toidentifier.git"
+      },
+      "devDependencies": {
+        "eslint": "4.19.1",
+        "eslint-config-standard": "11.0.0",
+        "eslint-plugin-import": "2.11.0",
+        "eslint-plugin-markdown": "1.0.0-beta.6",
+        "eslint-plugin-node": "6.0.1",
+        "eslint-plugin-promise": "3.7.0",
+        "eslint-plugin-standard": "3.1.0",
+        "mocha": "1.21.5",
+        "nyc": "11.8.0"
+      },
+      "engines": {
+        "node": ">=0.6"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec --bail --check-leaks test/",
+        "test-cov": "nyc --reporter=html --reporter=text npm test"
+      },
+      "gitHead": "8c09cba5e530de7d74b087ea66740c0e4a5af02b",
+      "bugs": {
+        "url": "https://github.com/component/toidentifier/issues"
+      },
+      "homepage": "https://github.com/component/toidentifier#readme",
+      "_id": "toidentifier@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==",
+        "shasum": "7e1be3470f1e77948bc43d94a3c8f4d7752ba553",
+        "tarball": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4327,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbQ4XTCRA9TVsSAnZWagAA7DoP/j60iZmXQNybYW88ghH2\nb0/OM4HaSAJFZaPLs/QWHAG+1njmk4Inxr0YPeqAcU8bkh8UvUBAsf/qnNOV\nVx8R5MQspibif04/f/nB+ZZyoFvv45270S5M+hb22colM3BK0FnfImVZHqI6\n0n+fbicoYYCg3KxEpLC4GdXbJ2R6iSJ+kCnvTFX7/EzDoDjZJjzSMn96HpH+\nakvIo0kEXsTMVmjWwQSo++7JzsfBJs7Z2X+ixOdhf1HHYU5yiDS/8blXY5hN\nG5tcXbsBsFMPSRwKzArB8SqTejls6uRY21DmzvXnNCfS5k5FyftGLtBTpmwk\n2mHLENZ+79t+HP4tXmF/2scY/XjIWCtxjmOPBHg9eMoCe7uiEf/MkNoPQ29a\nKYMYz3gePkHG6NH+IN69e0KYmdzyowxtQy0Oel3L71nnguFD0DzJuhODahvl\nWdrzkyKWYHkrByIQmsYhLei67I+fgiAEURFhXHwRQ6TfW+i7I+0vx6qVZ7Uz\n8kCo7SELv6Suo62QXxB3O9u0qZyISXWfxbV48+T5KDayWmBVNEo9yktzPMF6\nIv49uczFdrGI5rAI2/zW5Ss7I00OnbY1I4va36JkEcoxqriiYGhLK+a7/061\nRKoB8fSKWCaiXEYcNkjiEIhI+5n57xOA4PuEUnfpqizo8yvxVLvOLUmNCtm3\nBVOV\r\n=Yk0D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        },
+        {
+          "email": "niftylettuce@gmail.com",
+          "name": "niftylettuce"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/toidentifier_1.0.0_1531151827437_0.3834790263753669"
+      }
+    }
+  },
+  "readme": "# toidentifier\n\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][codecov-image]][codecov-url]\n\n> Convert a string of words to a JavaScript identifier\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```bash\n$ npm install toidentifier\n```\n\n## Example\n\n```js\nvar toIdentifier = require('toidentifier')\n\nconsole.log(toIdentifier('Bad Request'))\n// => \"BadRequest\"\n```\n\n## API\n\nThis CommonJS module exports a single default function: `toIdentifier`.\n\n### toIdentifier(string)\n\nGiven a string as the argument, it will be transformed according to\nthe following rules and the new string will be returned:\n\n1. Split into words separated by space characters (`0x20`).\n2. Upper case the first character of each word.\n3. Join the words together with no separator.\n4. Remove all non-word (`[0-9a-z_]`) characters.\n\n## License\n\n[MIT](LICENSE)\n\n[codecov-image]: https://img.shields.io/codecov/c/github/component/toidentifier.svg\n[codecov-url]: https://codecov.io/gh/component/toidentifier\n[downloads-image]: https://img.shields.io/npm/dm/toidentifier.svg\n[downloads-url]: https://npmjs.org/package/toidentifier\n[npm-image]: https://img.shields.io/npm/v/toidentifier.svg\n[npm-url]: https://npmjs.org/package/toidentifier\n[travis-image]: https://img.shields.io/travis/component/toidentifier/master.svg\n[travis-url]: https://travis-ci.org/component/toidentifier\n\n\n##\n\n[npm]: https://www.npmjs.com/\n\n[yarn]: https://yarnpkg.com/\n",
+  "maintainers": [
+    {
+      "email": "doug@somethingdoug.com",
+      "name": "dougwilson"
+    },
+    {
+      "email": "jonathanrichardong@gmail.com",
+      "name": "jongleberry"
+    },
+    {
+      "email": "niftylettuce@gmail.com",
+      "name": "niftylettuce"
+    }
+  ],
+  "time": {
+    "modified": "2018-07-09T15:57:10.194Z",
+    "created": "2017-12-19T09:08:44.919Z",
+    "0.0.1": "2017-12-19T09:08:44.919Z",
+    "1.0.0": "2018-07-09T15:57:07.703Z"
+  },
+  "homepage": "https://github.com/component/toidentifier#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/component/toidentifier.git"
+  },
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "Nick Baugh",
+      "email": "niftylettuce@gmail.com",
+      "url": "http://niftylettuce.com/"
+    }
+  ],
+  "author": {
+    "name": "Douglas Christopher Wilson",
+    "email": "doug@somethingdoug.com"
+  },
+  "bugs": {
+    "url": "https://github.com/component/toidentifier/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

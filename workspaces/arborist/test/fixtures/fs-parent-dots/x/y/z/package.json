@@ -1,0 +1,9 @@
+{
+  "name": "z",
+  "dependencies": {
+    "a": "file:../../a",
+    "b": "file:../b",
+    "y": "file:..",
+    "x": "file:../.."
+  }
+}

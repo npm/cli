@@ -1,0 +1,270 @@
+{
+  "_id": "default-require-extensions",
+  "_rev": "6-3039a1e4ce98182df0c06d5a98e54dd6",
+  "name": "default-require-extensions",
+  "description": "Node's default require extensions as a separate module",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "default-require-extensions",
+      "version": "1.0.0",
+      "description": "Node's default require extensions as a separate module",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/default-require-extensions.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "main": "js.js",
+      "files": [
+        "js.js",
+        "json.js"
+      ],
+      "keywords": [
+        "require",
+        "extension",
+        "default",
+        "node"
+      ],
+      "dependencies": {
+        "strip-bom": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.11.0",
+        "nyc": "^5.3.0",
+        "xo": "^0.12.1"
+      },
+      "nyc": {
+        "exclude": [
+          "test.js",
+          "fixture"
+        ]
+      },
+      "gitHead": "6083fce89e9d2531975cbfa573238f9b132a565d",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/default-require-extensions/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/default-require-extensions#readme",
+      "_id": "default-require-extensions@1.0.0",
+      "_shasum": "f37ea15d3e13ffd9b437d33e1a75b5fb97874cb8",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "f37ea15d3e13ffd9b437d33e1a75b5fb97874cb8",
+        "tarball": "https://registry.npmjs.org/default-require-extensions/-/default-require-extensions-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "default-require-extensions",
+      "version": "2.0.0",
+      "description": "Node's default require extensions as a separate module",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/avajs/default-require-extensions.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "main": "js.js",
+      "files": [
+        "js.js",
+        "json.js"
+      ],
+      "keywords": [
+        "require",
+        "extension",
+        "default",
+        "node"
+      ],
+      "dependencies": {
+        "strip-bom": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.18.2",
+        "nyc": "^10.1.2",
+        "xo": "^0.18.1"
+      },
+      "nyc": {
+        "exclude": [
+          "fixture"
+        ]
+      },
+      "gitHead": "499a4ef35ed7192948a702c07f83bae8d5cc548b",
+      "bugs": {
+        "url": "https://github.com/avajs/default-require-extensions/issues"
+      },
+      "homepage": "https://github.com/avajs/default-require-extensions#readme",
+      "_id": "default-require-extensions@2.0.0",
+      "_shasum": "f5f8fbb18a7d6d50b21f641f649ebb522cfe24f7",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f5f8fbb18a7d6d50b21f641f649ebb522cfe24f7",
+        "tarball": "https://registry.npmjs.org/default-require-extensions/-/default-require-extensions-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/default-require-extensions-2.0.0.tgz_1490519551699_0.5343406901229173"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "default-require-extensions",
+      "version": "3.0.0",
+      "description": "Node's default require extensions as a separate module",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/avajs/default-require-extensions.git"
+      },
+      "main": "js.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "keywords": [
+        "require",
+        "extension",
+        "default",
+        "node"
+      ],
+      "dependencies": {
+        "strip-bom": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.3.0",
+        "nyc": "^14.1.1",
+        "xo": "^0.24.0"
+      },
+      "nyc": {
+        "exclude": [
+          "fixture"
+        ]
+      },
+      "gitHead": "8ad71fa5481e5117b1e44e76e83bb53c08f401f0",
+      "bugs": {
+        "url": "https://github.com/avajs/default-require-extensions/issues"
+      },
+      "homepage": "https://github.com/avajs/default-require-extensions#readme",
+      "_id": "default-require-extensions@3.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ek6DpXq/SCpvjhpFsLFRVtIxJCRw6fUR42lYMVZuUMK7n8eMz4Uh5clckdBjEpLhn/gEBZo7hDJnJcwdKLKQjg==",
+        "shasum": "e03f93aac9b2b6443fc52e5e4a37b3ad9ad8df96",
+        "tarball": "https://registry.npmjs.org/default-require-extensions/-/default-require-extensions-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3227,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJddpt/CRA9TVsSAnZWagAAJKMP/Rtrxz1LPlUMNpSCMDUB\nno3s0hmdy47RGV5zLC9kS3tnUNi3+gt2qjDfdkZfzkoPjrucq6W/L57X33MJ\nRdAoPepY5geqUuIh7BudZrpVMwnnAftwNKtLvqpamIxxlAN7Z8mZMXze8r6j\nngjsLIo+03ptSzFAU3jOqyHWv064ahvtyZI46LUQg3ZVhdrgmMJCgZvAC9d/\nyVBcXm9NTTvwC7alQX0FB5FfAaC6YnodbIUaQYodYEPGBd+3aqYsFhoZNZBM\n8iWrtwrZQMBxI4NQlUsNvwWnmFcHPdxYfpv25+iOdQ4X07OcxIolxFtqBJFo\nxCe2oB08LQV4WIoULBnosNXmVvLxsrhnZVpF0vrsuayyxvmGGpoyyXK0Cvg5\n0yAvPFIO6W0+ajm16VcwpT6VUQsMCmhQ45UBD754mgl1sxyrG+TvrPHvVYmL\nH+qsHeBDFzmbanhqPGpOzPL7OXbxSZBFn55DkBtpoT72AaQgbBU7+vTxNy3x\n7piokgYGdLFOB5XZUcMIxVcxyU+4ZsEY0zIPDcxsMdRod+sTEYFwqGIGzB2J\npJQ2sJmhfTz9dSoDy49FRyTnnm0fx6yyfXxacTQFXwgtnvnQ/w5cXD3Afvgj\nC4cFhHQZ0IQ4wp4Lx2WrBODFcQ2Z9ODttM/ArX2o/7ZlqV35mVOa6WdcMp03\nqWuJ\r\n=HyOk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "mark@novemberborn.net",
+          "name": "novemberborn"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        },
+        {
+          "email": "vdemedes@gmail.com",
+          "name": "vdemedes"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/default-require-extensions_3.0.0_1568054142927_0.7748914998580598"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# default-require-extensions [![Build Status](https://travis-ci.org/avajs/default-require-extensions.svg?branch=master)](https://travis-ci.org/avajs/default-require-extensions)\n\n> Node's default require extensions as a separate module\n\nHandy for require extension authors that want reliable access to the default extension implementations.\n\nBy the time your extension is loaded, the default extension may have already been replaced. This provides extensions functionally identical to the default ones, which you know you can access reliably, no matter what extensions have been installed previously.\n\n\n## Install\n\n```\n$ npm install default-require-extensions\n```\n\n\n## Usage\n\n```js\nconst js = require('default-require-extensions/js');\nconst json = require('default-require-extensions/json');\n\nrequire.extensions['.js'] = js;\nrequire.extensions['.js'] = json;\n```\n\n*Note:* You would never actually do the above. Use these in your custom require extensions instead.\n",
+  "maintainers": [
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    },
+    {
+      "email": "mark@novemberborn.net",
+      "name": "novemberborn"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-12T16:19:26.505Z",
+    "created": "2016-01-25T21:07:03.201Z",
+    "1.0.0": "2016-01-25T21:07:03.201Z",
+    "2.0.0": "2017-03-26T09:12:31.921Z",
+    "3.0.0": "2019-09-09T18:35:43.057Z"
+  },
+  "homepage": "https://github.com/avajs/default-require-extensions#readme",
+  "keywords": [
+    "require",
+    "extension",
+    "default",
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avajs/default-require-extensions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avajs/default-require-extensions/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

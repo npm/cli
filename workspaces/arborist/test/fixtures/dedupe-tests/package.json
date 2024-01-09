@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "name": "@isaacs/dedupe-tests",
+  "dependencies": {
+    "@isaacs/dedupe-tests-a": "1.0.1",
+    "@isaacs/dedupe-tests-b": "1||2"
+  }
+}

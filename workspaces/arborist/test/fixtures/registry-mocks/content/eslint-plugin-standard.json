@@ -1,0 +1,1258 @@
+{
+  "_id": "eslint-plugin-standard",
+  "_rev": "38-6348c7f62e6c558aa5a51ce6799954a6",
+  "name": "eslint-plugin-standard",
+  "description": "ESlint Plugin for the Standard Linter",
+  "dist-tags": {
+    "latest": "4.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "eslint-plugin-standard",
+      "version": "1.0.0",
+      "description": "ESlint Plugin for the Standard Linter",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha tests/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "devDependencies": {
+        "eslint": "^0.24.1",
+        "eslint-tester": "^0.8.2",
+        "mocha": "^2.2.5"
+      },
+      "dependencies": {
+        "requireindex": "^1.1.0"
+      },
+      "gitHead": "43da520dc19e8ee661a87359140fd0c7035848d1",
+      "_id": "eslint-plugin-standard@1.0.0",
+      "_shasum": "ce3016f3465702d4a4f176705485a8326cee3677",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.6",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ce3016f3465702d4a4f176705485a8326cee3677",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "eslint-plugin-standard",
+      "version": "1.1.0",
+      "description": "ESlint Plugin for the Standard Linter",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "devDependencies": {
+        "eslint": "^0.24.1",
+        "eslint-tester": "^0.8.2",
+        "mocha": "^2.2.5",
+        "standard": "^4.5.4"
+      },
+      "dependencies": {
+        "requireindex": "^1.1.0"
+      },
+      "gitHead": "1e7dcdb8e3e9f392803e71112d2d60a771e268cd",
+      "_id": "eslint-plugin-standard@1.1.0",
+      "_shasum": "2d18d7c506a0db51137ed611633546462927275b",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.6",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d18d7c506a0db51137ed611633546462927275b",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "eslint-plugin-standard",
+      "version": "1.2.0",
+      "description": "ESlint Plugin for the Standard Linter",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "devDependencies": {
+        "eslint": "^1.0.0",
+        "eslint-tester": "^0.8.2",
+        "mocha": "^2.2.5",
+        "standard": "^4.5.4"
+      },
+      "peerDependencies": {
+        "eslint": "^1.0.0"
+      },
+      "dependencies": {
+        "requireindex": "^1.1.0"
+      },
+      "gitHead": "aa27c7e7ee36208c3d2489841e1b767b7ddf393e",
+      "_id": "eslint-plugin-standard@1.2.0",
+      "_shasum": "1f80f07e31efa025235cdeeabe5286eb679aae5a",
+      "_from": ".",
+      "_npmVersion": "2.13.2",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "1f80f07e31efa025235cdeeabe5286eb679aae5a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "eslint-plugin-standard",
+      "version": "1.3.0",
+      "description": "ESlint Plugin for the Standard Linter",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "devDependencies": {
+        "eslint": "^1.0.0",
+        "eslint-tester": "^0.8.2",
+        "mocha": "^2.2.5",
+        "standard": "^4.5.4"
+      },
+      "peerDependencies": {
+        "eslint": "^1.0.0"
+      },
+      "dependencies": {},
+      "gitHead": "1520a1d8785a4973b108e75af85e2c3c21e7eaa7",
+      "_id": "eslint-plugin-standard@1.3.0",
+      "_shasum": "eb756b8db0f306f6c7a53f14df42e5663849f15d",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "0.12.6",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "eb756b8db0f306f6c7a53f14df42e5663849f15d",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "1.3.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^1.0.0",
+        "mocha": "^2.2.5"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "gitHead": "cbecffa91b313befadc3143d86738a751d864074",
+      "_id": "eslint-plugin-standard@1.3.1",
+      "_shasum": "60e965513d366039e9ffb2d1c758b95a5a523683",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "60e965513d366039e9ffb2d1c758b95a5a523683",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "1.3.2",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^2.0.0-rc.0",
+        "mocha": "^2.2.5"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "gitHead": "12d306f3094bc47d396313f35122f022e477fa71",
+      "_id": "eslint-plugin-standard@1.3.2",
+      "_shasum": "1b1a8f849f46c9addb5de7c310f61c2059724ac2",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "1b1a8f849f46c9addb5de7c310f61c2059724ac2",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-1.3.2.tgz_1454819023471_0.11581090977415442"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "1.3.3",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^2.2.5"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "gitHead": "860d50b34c311ff629adcc456f0c96af9060f4c7",
+      "_id": "eslint-plugin-standard@1.3.3",
+      "_shasum": "a3085451523431e76f409c70cb8f94e32bf0ec7f",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "a3085451523431e76f409c70cb8f94e32bf0ec7f",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-1.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-1.3.3.tgz_1468347107380_0.5808704509399831"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.0.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^2.2.5"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "gitHead": "55800a8b2c91a9408c91250fc7e4e7e31a0088f1",
+      "_id": "eslint-plugin-standard@2.0.0",
+      "_shasum": "622761e236c4eeb3a9fc125c477d6e2628d85cc7",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "622761e236c4eeb3a9fc125c477d6e2628d85cc7",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.0.0.tgz_1468360710528_0.4753496586345136"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.0.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^2.2.5"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.0.0"
+      },
+      "gitHead": "30bee368ed06c52a6d79033b4d564e6510ce1fda",
+      "_id": "eslint-plugin-standard@2.0.1",
+      "_shasum": "3589699ff9c917f2c25f76a916687f641c369ff3",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "3589699ff9c917f2c25f76a916687f641c369ff3",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.0.1.tgz_1475007096975_0.263619729783386"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.1.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.0.0"
+      },
+      "gitHead": "a936b4f87635d11fd67be3368028c8f23af61b1b",
+      "_id": "eslint-plugin-standard@2.1.0",
+      "_shasum": "b7ca4b6d2cf3d60e33fa8ffc8384a5d1aac6c268",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "b7ca4b6d2cf3d60e33fa8ffc8384a5d1aac6c268",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.1.0.tgz_1488438995209_0.9773689827416092"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.1.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.0.0"
+      },
+      "gitHead": "ba689f0e701595b59db983a4de79970611b2417f",
+      "_id": "eslint-plugin-standard@2.1.1",
+      "_shasum": "97960b1537e1718bb633877d0a650050effff3b0",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "97960b1537e1718bb633877d0a650050effff3b0",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.1.1.tgz_1488466195389_0.2969202888198197"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.2.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.0.0"
+      },
+      "gitHead": "db69e45823b196332d231379a514b8966b3f526b",
+      "_id": "eslint-plugin-standard@2.2.0",
+      "_shasum": "61273ddbab958ccc88d94d6bb5b2db63ffbd368e",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "61273ddbab958ccc88d94d6bb5b2db63ffbd368e",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.2.0.tgz_1491351000963_0.5338040834758431"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.3.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": "^3.19.0"
+      },
+      "gitHead": "2c773745441abdb60f8c7de11b3d7f1073f1b374",
+      "_id": "eslint-plugin-standard@2.3.0",
+      "_shasum": "2335078e0e6e83af44fb7f3d4ca30507f66d3553",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "2335078e0e6e83af44fb7f3d4ca30507f66d3553",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.3.0.tgz_1491500193722_0.9745412503834814"
+      },
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "2.3.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.0.1",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.0.0"
+      },
+      "gitHead": "03b6da83ae899cb7700c09f9f5bb61577a4fa0bb",
+      "_id": "eslint-plugin-standard@2.3.1",
+      "_shasum": "6765bd2a6d9ecdc7bdf1b145ae4bb30e2b7b86f8",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "6765bd2a6d9ecdc7bdf1b145ae4bb30e2b7b86f8",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-2.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-2.3.1.tgz_1491500240590_0.18010256672278047"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "3.0.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": "^3.19.0"
+      },
+      "gitHead": "8379587c0eacbe63467b39235c26842049775eed",
+      "_id": "eslint-plugin-standard@3.0.0",
+      "_shasum": "9164df33e78f2eebf3da252ac6cb70de9376ab19",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "9164df33e78f2eebf3da252ac6cb70de9376ab19",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-3.0.0.tgz_1491500268828_0.209129283670336"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "3.0.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "mocha": "^3.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.19.0"
+      },
+      "gitHead": "67f065624a67ac2265159bed91d0471448b00c88",
+      "_id": "eslint-plugin-standard@3.0.1",
+      "_shasum": "34d0c915b45edc6f010393c7eef3823b08565cf2",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "34d0c915b45edc6f010393c7eef3823b08565cf2",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        },
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-standard-3.0.1.tgz_1491515505213_0.14783493988215923"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "3.1.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.1.1",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xjamundx/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=3.19.0"
+      },
+      "gitHead": "0174785da8b8afdf3241285c1c919d9e45fec868",
+      "_id": "eslint-plugin-standard@3.1.0",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-fVcdyuKRr0EZ4fjWl3c+gp1BANFJD1+RaWa2UPYfMZ6jCtp5RG00kSaXnK/dE5sYzt4kaWJ9qdxqUfc0d9kX0w==",
+        "shasum": "2a9e21259ba4c47c02d53b2d0c9135d4b1022d47",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-3.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 27739,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa38NCCRA9TVsSAnZWagAAGCsQAI4Oqo+usrmtRkIm1Oot\n7BlV7t1rX29D1n1S+l9ZMIyVz+XyKdIhpvEWK4zBIn0+GIdHKChme/YZwT6y\nKfzi3AJBlnPkmBg8YODIu3L0gNb32bdBZle5D9q4TJQcpmSnQH760mNrHjNZ\ns5SHmqOi9DB9mPyTQr79oqcdMwXF92mn8NQ3OHLrpmDxc7Bs+uTKAAHUf99p\n0Z+Aom/k4/s99qdVtvclx2mko+qyYCwc8fAYEbZ/7CpuasqP20To+Se6PFVl\nz1xemwzq0+cvxQQL+cng2Ca7+O1Wn8GYTyy/NmtF+oUkwwQYL1R68uzVRuov\nwcXbiasx8fm/tVaZV0x+dP6YrKz8McHJB6ntlMbkWyp68fB/GU52JLn58Uyh\nSO4ZMnx1rBc6s26AlpMRYgMFoQLjQs4SNIsgoEw8u6oJxoQURYu3yuFs1wKz\nkQwzl/YZj5fbUcDdzN5RS8pbNLjyPHZSz0uJw8ZOFBv8tu2bNSG6seHfs1OS\nDgelGFkNplm9LO1YBRt9qUJHcRfv3teOegZo/TYqXSCB8+xJyV2XS4EuqcDR\nDKFIpH6xPGAll8ZU4kwx5zkFe1xrdrDJ9BS2LW0BAK8NZIsRdopd2sKCojwv\nLO+9uLsJun9Tg8prwT0t3JGHm6jA45uMqXu9XZqhuBn8x//ojbuSNF4wqUJ+\nYCnU\r\n=luuv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-standard_3.1.0_1524613953840_0.14646044269598169"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "4.0.0",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^5.0.0",
+        "mocha": "^5.1.1",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/standard/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=5.0.0"
+      },
+      "gitHead": "7f95f1d8a98f9486bfe20c277555f9a201acc980",
+      "_id": "eslint-plugin-standard@4.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-OwxJkR6TQiYMmt1EsNRMe5qG3GsbjlcOhbGUBY4LtavF9DsLaTcoR+j2Tdjqi23oUwKNUqX7qcn5fPStafMdlA==",
+        "shasum": "f845b45109c99cd90e77796940a344546c8f6b5c",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-4.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 27932,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhcoHCRA9TVsSAnZWagAAvfUP/Rsz0ZObpajXE/n5LbAN\n9Mjac2/83UlfmVV9vSwakjx96c/womoJPxbYgpN7S9Zey3lRFnW80zsAqjk3\ndBx68NcuamnOsF0WXjDkywXkswtWtHz63TDeJgCviA2M0tGktQSYHVENjCYB\n9EXSKtZDEp3P7VH2r+sMhd8vp5IiCnlRJXyKp1SsbcJ0DIa0eF0B0Wg8Hv58\n3zh1hASWdx+E2j/eUBeo+jDM3qPl1WrpCh9C5V2UeYp5fTSrAJNpSFq+lk3S\nPSlzOAZfrQJ8Dp/Yax6lXTb3VEJnCXXRXN43eS4dNsRa+PPXqYAApqy4hzA0\noZaNuMxtSFV4OFxKp9uhyfRVIBRnjP2oC2EH8FObPxTfhemloKyHiIVnnlam\nyUbPypsjvKxbJLc696eqKbb2/LBC5sC3lE8OFeKBHNRYqJFAAvRPDvQXyviY\nfnfDrWIQMHp/9c3B9N5IpEjFiCjGW/SGHyP6bVztAET/i3GQYw8lkca9Fy1c\nqjGaxAuN5XXgqXjeMBnpwsFxw53c8JYHFhR6Q/vY97by3zK7KcWtFDdrXeKh\nPm+cMEwvxlIXE3Kd4ZydMeF7FGwCstqRGl+1b9B/amo6dNTyInCgPxZff3/7\n8OAgKEubmXQdw2GZrUy4Wztjqt9qBYW4upw+4vNZri6N10ciA5vL3sCR2S41\nJe3N\r\n=Z7FH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-standard_4.0.0_1535494662603_0.1651733671625204"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "eslint-plugin-standard",
+      "description": "ESlint Plugin for the Standard Linter",
+      "version": "4.0.1",
+      "author": {
+        "name": "Jamund Ferguson",
+        "email": "jamund@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/standard/eslint-plugin-standard/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "eslint": "^6.1.0",
+        "mocha": "^6.2.0",
+        "standard": "*"
+      },
+      "homepage": "https://github.com/standard/eslint-plugin-standard#readme",
+      "keywords": [
+        "eslint",
+        "eslintplugin"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/standard/eslint-plugin-standard.git"
+      },
+      "scripts": {
+        "test": "standard && mocha tests/"
+      },
+      "peerDependencies": {
+        "eslint": ">=5.0.0"
+      },
+      "gitHead": "116eb98b8cd26a04edcfa758e9513a9422f35b5e",
+      "_id": "eslint-plugin-standard@4.0.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-v/KBnfyaOMPmZc/dmc6ozOdWqekGp7bBGq4jLAecEfPGmfKiWS4sA8sC0LqiV9w5qmXAtXVn4M3p1jSyhY85SQ==",
+        "shasum": "ff0519f7ffaff114f76d1bd7c3996eef0f6e20b4",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-standard/-/eslint-plugin-standard-4.0.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 27934,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdWwWmCRA9TVsSAnZWagAAU/cP+wVbOyxTE+I8Rkrbpsz+\nDF3R/7OFQ9TucsZU14ue4wIcF9H39rvXnKYp5HIlRPB1gov/ZNBhL4Gsp6da\nLVbD2f8ZLfsfOiwOZ2EhAlzw+HDqoL/FLkT6ZQ1eEqSPhalV1c0xeb1/9kGg\n5IhTxlwF5kpQDQawm2g82eQPk9uLeKnrkZlLhzwc+5gtWtOU/pQRIZ8NpkNU\nVFYHO2E2wG0H/rnYP21WsQPZ/GJHJwfUV0JXlSnExEOvGyehSNhz2Sood6yR\n3CJACULIIeyksZXLNaSHKwP5S8BSRxVhwEeBf/nSELQhxc73IxKL8Tz+hogb\nSfMa3pKND8Is/rhA7Qf2RI+PpJRSxCsej+yV2MXfI5iuH1b3cJ73MfFXUWa7\n8m06uce3l7FPUZLNqkEkW4gCRqSwed/kNu9H32HGxqvHAMkaNDhjmiMxbnVt\nBDqoxuDRzRzZuDBTx1khb/GrZhbC9qXLXZmQUK7lrVY4NOI/ubpH6dm+NLRz\nZpAPe4iCgF03Mm0cp8IVmPjpJycRQ7nKdWsbPuFyOP/QQIdyOoVD4l11CU4p\nERazBPYHQzOG1IVUgOby6xzGCiTVzSIb4StIXcp52CwE7B5/Xj8wzOBa9Eid\nIbCR+3sf+uo67z9AgtJ5D8rqRAxcV1rrM+59nxDfdsiIm+2NVPDhkKTYGQVe\nI2SZ\r\n=i8QK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-standard_4.0.1_1566246309593_0.5382594470559601"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# eslint-plugin-standard [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[travis-image]: https://img.shields.io/travis/standard/eslint-plugin-standard/master.svg\n[travis-url]: https://travis-ci.org/standard/eslint-plugin-standard\n[npm-image]: https://img.shields.io/npm/v/eslint-plugin-standard.svg\n[npm-url]: https://npmjs.org/package/eslint-plugin-standard\n[downloads-image]: https://img.shields.io/npm/dm/eslint-plugin-standard.svg\n[downloads-url]: https://npmjs.org/package/eslint-plugin-standard\n[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg\n[standard-url]: https://standardjs.com\n\nESlint Rules for the Standard Linter\n\n### Usage\n\n`npm install --save-dev eslint-plugin-standard`\n\n### Configuration\n\n```js\n{\n  rules: {\n    'standard/object-curly-even-spacing': [2, \"either\"],\n    'standard/array-bracket-even-spacing': [2, \"either\"],\n    'standard/computed-property-even-spacing': [2, \"even\"],\n    'standard/no-callback-literal': [2, [\"cb\", \"callback\"]]\n  }\n}\n```\n\n### Rules Explanations\n\nThere are several rules that were created specifically for the `standard` linter.\n\n- `object-curly-even-spacing` - Like `object-curly-spacing` from ESLint except it has an `either` option which lets you have 1 or 0 spaces padding.\n- `array-bracket-even-spacing` - Like `array-bracket-even-spacing` from ESLint except it has an `either` option which lets you have 1 or 0 spacing padding.\n- `computed-property-even-spacing` - Like `computed-property-spacing` around ESLint except is has an `even` option which lets you have 1 or 0 spacing padding.\n- `no-callback-literal` - Ensures that we strictly follow the callback pattern with `undefined`, `null` or an error object in the first position of a callback.\n\n",
+  "maintainers": [
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    },
+    {
+      "name": "xjamundx",
+      "email": "jamund@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-08-19T20:25:12.339Z",
+    "created": "2015-07-23T04:11:37.362Z",
+    "1.0.0": "2015-07-23T04:11:37.362Z",
+    "1.1.0": "2015-07-23T16:49:11.181Z",
+    "1.2.0": "2015-08-03T20:51:01.177Z",
+    "1.3.0": "2015-08-26T03:14:59.847Z",
+    "1.3.1": "2015-09-16T21:11:10.653Z",
+    "1.3.2": "2016-02-07T04:23:46.766Z",
+    "1.3.3": "2016-07-12T18:11:50.635Z",
+    "2.0.0": "2016-07-12T21:58:31.027Z",
+    "2.0.1": "2016-09-27T20:11:38.839Z",
+    "2.1.0": "2017-03-02T07:16:37.001Z",
+    "2.1.1": "2017-03-02T14:49:55.662Z",
+    "2.2.0": "2017-04-05T00:10:01.212Z",
+    "2.3.0": "2017-04-06T17:36:35.648Z",
+    "2.3.1": "2017-04-06T17:37:22.400Z",
+    "3.0.0": "2017-04-06T17:37:50.571Z",
+    "3.0.1": "2017-04-06T21:51:47.270Z",
+    "3.1.0": "2018-04-24T23:52:33.938Z",
+    "4.0.0": "2018-08-28T22:17:42.828Z",
+    "4.0.1": "2019-08-19T20:25:09.852Z"
+  },
+  "homepage": "https://github.com/standard/eslint-plugin-standard#readme",
+  "keywords": [
+    "eslint",
+    "eslintplugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/standard/eslint-plugin-standard.git"
+  },
+  "author": {
+    "name": "Jamund Ferguson",
+    "email": "jamund@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/standard/eslint-plugin-standard/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "piecioshka": true,
+    "mswanson1524": true,
+    "panlw": true,
+    "jaymcoder": true,
+    "alexxnica": true,
+    "edwardxyt": true,
+    "mtdalpizzol": true,
+    "princetoad": true,
+    "fakefarm": true,
+    "mrzmmr": true
+  }
+}

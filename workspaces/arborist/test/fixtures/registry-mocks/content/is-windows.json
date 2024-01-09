@@ -1,0 +1,647 @@
+{
+  "_id": "is-windows",
+  "_rev": "10-80d5f98e1c907b7da285dd9a4266d044",
+  "name": "is-windows",
+  "description": "Returns true if the platform is windows. UMD module, works with node.js, commonjs, browser, AMD, electron, etc.",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windwows.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "check",
+        "is",
+        "is-windows",
+        "nix",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "_id": "is-windows@0.1.0",
+      "_shasum": "7ee64d281d8bfc9b9f053cf4077628f943baca66",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7ee64d281d8bfc9b9f053cf4077628f943baca66",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windwows.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "check",
+        "is",
+        "is-windows",
+        "nix",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "is-absolute",
+            "is-glob",
+            "is-relative",
+            "isobject",
+            "window-size"
+          ]
+        },
+        "plugins": [
+          "gulp-format-md"
+        ]
+      },
+      "gitHead": "b3799aec243e4b6102f74d694c7b484b5ea867e0",
+      "_id": "is-windows@0.1.1",
+      "_shasum": "be310715431cfabccc54ab3951210fa0b6d01abe",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "be310715431cfabccc54ab3951210fa0b6d01abe",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windwows.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.9",
+        "mocha": "*"
+      },
+      "keywords": [
+        "check",
+        "is",
+        "is-windows",
+        "nix",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-absolute",
+            "is-glob",
+            "is-relative",
+            "isobject",
+            "window-size"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "79167eabd3da5438439ac9c60ff1ef3ced8c148d",
+      "_id": "is-windows@0.2.0",
+      "_shasum": "de1aa6d63ea29dd248737b69f1ff8b8002d2108c",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "de1aa6d63ea29dd248737b69f1ff8b8002d2108c",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-windows-0.2.0.tgz_1465117629609_0.3620154741220176"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windwows.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "check",
+        "cywin",
+        "is",
+        "is-windows",
+        "nix",
+        "operating system",
+        "os",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-absolute",
+            "is-glob",
+            "is-relative",
+            "isobject",
+            "window-size"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "330212b1bb5130d74850af8dfbd9b017eb5f29d8",
+      "_id": "is-windows@1.0.0",
+      "_shasum": "c61d61020c3ebe99261b781bd3d1622395f547f8",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c61d61020c3ebe99261b781bd3d1622395f547f8",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-windows-1.0.0.tgz_1481209912038_0.7639847556129098"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windows.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "email": "sbekkhus91@gmail.com",
+          "url": "https://github.com/SimenB"
+        },
+        {
+          "name": "刘祺",
+          "email": "gucong@gmail.com",
+          "url": "gucong.co.cc"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "check",
+        "cywin",
+        "is",
+        "is-windows",
+        "nix",
+        "operating system",
+        "os",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-absolute",
+            "is-glob",
+            "is-relative",
+            "isobject",
+            "window-size"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "63aeae70709733429c026447b7e08039b7ef0ac9",
+      "_id": "is-windows@1.0.1",
+      "_shasum": "310db70f742d259a16a369202b51af84233310d9",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "310db70f742d259a16a369202b51af84233310d9",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-windows-1.0.1.tgz_1493402059402_0.6776397372595966"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-windows",
+      "description": "Returns true if the platform is windows. UMD module, works with node.js, commonjs, browser, AMD, electron, etc.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/is-windows",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Simen Bekkhus",
+          "url": "https://github.com/SimenB"
+        },
+        {
+          "name": "刘祺",
+          "url": "gucong.co.cc"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/is-windows.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/is-windows/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3"
+      },
+      "keywords": [
+        "check",
+        "cywin",
+        "is",
+        "is-windows",
+        "nix",
+        "operating system",
+        "os",
+        "platform",
+        "process",
+        "unix",
+        "win",
+        "win32",
+        "windows"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-absolute",
+            "is-glob",
+            "is-relative",
+            "isobject",
+            "window-size"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "4dcfff4ed9e36ad761a1a24d3899c832382d7254",
+      "_id": "is-windows@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==",
+        "shasum": "d1850eb9791ecd18e6182ce12a30f396634bb19d",
+        "tarball": "https://registry.npmjs.org/is-windows/-/is-windows-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7963
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-windows_1.0.2_1518593802371_0.8807568142517928"
+      }
+    }
+  },
+  "readme": "# is-windows [![NPM version](https://img.shields.io/npm/v/is-windows.svg?style=flat)](https://www.npmjs.com/package/is-windows) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-windows.svg?style=flat)](https://npmjs.org/package/is-windows) [![NPM total downloads](https://img.shields.io/npm/dt/is-windows.svg?style=flat)](https://npmjs.org/package/is-windows) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-windows.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-windows)\n\n> Returns true if the platform is windows. UMD module, works with node.js, commonjs, browser, AMD, electron, etc.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save is-windows\n```\n\n## Heads up!\n\nAs of `v0.2.0` this module always returns a function.\n\n## Node.js usage\n\n```js\nvar isWindows = require('is-windows');\n\nconsole.log(isWindows());\n//=> returns true if the platform is windows\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [is-absolute](https://www.npmjs.com/package/is-absolute): Returns true if a file path is absolute. Does not rely on the path module… [more](https://github.com/jonschlinkert/is-absolute) | [homepage](https://github.com/jonschlinkert/is-absolute \"Returns true if a file path is absolute. Does not rely on the path module and can be used as a polyfill for node.js native `path.isAbolute`.\")\n* [is-glob](https://www.npmjs.com/package/is-glob): Returns `true` if the given string looks like a glob pattern or an extglob pattern… [more](https://github.com/jonschlinkert/is-glob) | [homepage](https://github.com/jonschlinkert/is-glob \"Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet\")\n* [is-relative](https://www.npmjs.com/package/is-relative): Returns `true` if the path appears to be relative. | [homepage](https://github.com/jonschlinkert/is-relative \"Returns `true` if the path appears to be relative.\")\n* [isobject](https://www.npmjs.com/package/isobject): Returns true if the value is an object and not an array or null. | [homepage](https://github.com/jonschlinkert/isobject \"Returns true if the value is an object and not an array or null.\")\n* [window-size](https://www.npmjs.com/package/window-size): Reliable way to get the height and width of terminal/console, since it's not calculated or… [more](https://github.com/jonschlinkert/window-size) | [homepage](https://github.com/jonschlinkert/window-size \"Reliable way to get the height and width of terminal/console, since it's not calculated or updated the same way on all platforms, environments and node.js versions.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 11 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 4 | [doowb](https://github.com/doowb) |\n| 1 | [SimenB](https://github.com/SimenB) |\n| 1 | [gucong3000](https://github.com/gucong3000) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on February 14, 2018._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-14T07:36:44.011Z",
+    "created": "2015-07-11T19:12:18.665Z",
+    "0.1.0": "2015-07-11T19:12:18.665Z",
+    "0.1.1": "2015-12-21T00:42:17.672Z",
+    "0.2.0": "2016-06-05T09:07:11.989Z",
+    "1.0.0": "2016-12-08T15:11:52.589Z",
+    "1.0.1": "2017-04-28T17:54:20.189Z",
+    "1.0.2": "2018-02-14T07:36:43.207Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/is-windows",
+  "keywords": [
+    "check",
+    "cywin",
+    "is",
+    "is-windows",
+    "nix",
+    "operating system",
+    "os",
+    "platform",
+    "process",
+    "unix",
+    "win",
+    "win32",
+    "windows"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/is-windows.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/is-windows/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "gmarciani": true,
+    "blog": true,
+    "tdmalone": true
+  },
+  "contributors": [
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Simen Bekkhus",
+      "url": "https://github.com/SimenB"
+    },
+    {
+      "name": "刘祺",
+      "url": "gucong.co.cc"
+    }
+  ],
+  "_attachments": {}
+}

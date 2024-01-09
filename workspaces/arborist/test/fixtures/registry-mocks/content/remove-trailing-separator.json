@@ -1,0 +1,304 @@
+{
+  "_id": "remove-trailing-separator",
+  "_rev": "5-d60b7717e489ffc621060d1308fd74a6",
+  "name": "remove-trailing-separator",
+  "description": "Removes separators from the end of the string.",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "remove-trailing-separator",
+      "version": "1.0.0",
+      "description": "Removes separators from the end of the string.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "lint": "xo",
+        "pretest": "npm run lint",
+        "test": "nyc ava",
+        "report": "nyc report --reporter=html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/darsain/remove-trailing-separator.git"
+      },
+      "keywords": [
+        "remove",
+        "strip",
+        "separator"
+      ],
+      "author": {
+        "name": "darsain"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/darsain/remove-trailing-separator/issues"
+      },
+      "homepage": "https://github.com/darsain/remove-trailing-separator#readme",
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "coveralls": "^2.11.14",
+        "nyc": "^8.3.0",
+        "xo": "^0.16.0"
+      },
+      "gitHead": "9fcadf4bb47cba04d0db289e99588bae2c2e4652",
+      "_id": "remove-trailing-separator@1.0.0",
+      "_shasum": "863e2487d500b02d4907034e79f1e9d74008b7d7",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "darsain",
+        "email": "darsain@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "darsain",
+          "email": "darsain@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "863e2487d500b02d4907034e79f1e9d74008b7d7",
+        "tarball": "https://registry.npmjs.org/remove-trailing-separator/-/remove-trailing-separator-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/remove-trailing-separator-1.0.0.tgz_1474707642610_0.7080434774979949"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "remove-trailing-separator",
+      "version": "1.0.1",
+      "description": "Removes separators from the end of the string.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "lint": "xo",
+        "pretest": "npm run lint",
+        "test": "nyc ava",
+        "report": "nyc report --reporter=html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/darsain/remove-trailing-separator.git"
+      },
+      "keywords": [
+        "remove",
+        "strip",
+        "trailing",
+        "separator"
+      ],
+      "author": {
+        "name": "darsain"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/darsain/remove-trailing-separator/issues"
+      },
+      "homepage": "https://github.com/darsain/remove-trailing-separator#readme",
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "coveralls": "^2.11.14",
+        "nyc": "^8.3.0",
+        "xo": "^0.16.0"
+      },
+      "gitHead": "8a5da3ac1efb1314d55e50a2a923b068d500d77a",
+      "_id": "remove-trailing-separator@1.0.1",
+      "_shasum": "615ebb96af559552d4bf4057c8436d486ab63cc4",
+      "_from": ".",
+      "_npmVersion": "3.10.5",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "darsain",
+        "email": "darsain@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "darsain",
+          "email": "darsain@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "615ebb96af559552d4bf4057c8436d486ab63cc4",
+        "tarball": "https://registry.npmjs.org/remove-trailing-separator/-/remove-trailing-separator-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/remove-trailing-separator-1.0.1.tgz_1474797962066_0.45308714639395475"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "remove-trailing-separator",
+      "version": "1.0.2",
+      "description": "Removes separators from the end of the string.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "lint": "xo",
+        "pretest": "npm run lint",
+        "test": "nyc ava",
+        "report": "nyc report --reporter=html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/darsain/remove-trailing-separator.git"
+      },
+      "keywords": [
+        "remove",
+        "strip",
+        "trailing",
+        "separator"
+      ],
+      "author": {
+        "name": "darsain"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/darsain/remove-trailing-separator/issues"
+      },
+      "homepage": "https://github.com/darsain/remove-trailing-separator#readme",
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "coveralls": "^2.11.14",
+        "nyc": "^8.3.0",
+        "xo": "^0.16.0"
+      },
+      "gitHead": "6dd7a71b3228fb48a400e3a8ec26e45e8ca50bc3",
+      "_id": "remove-trailing-separator@1.0.2",
+      "_shasum": "69b062d978727ad14dc6b56ba4ab772fd8d70511",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "darsain",
+        "email": "darsain@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "darsain",
+          "email": "darsain@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "69b062d978727ad14dc6b56ba4ab772fd8d70511",
+        "tarball": "https://registry.npmjs.org/remove-trailing-separator/-/remove-trailing-separator-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/remove-trailing-separator-1.0.2.tgz_1496857602409_0.28459417447447777"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "remove-trailing-separator",
+      "version": "1.1.0",
+      "description": "Removes separators from the end of the string.",
+      "main": "index.js",
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "lint": "xo",
+        "pretest": "npm run lint",
+        "test": "nyc ava",
+        "report": "nyc report --reporter=html"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/darsain/remove-trailing-separator.git"
+      },
+      "keywords": [
+        "remove",
+        "strip",
+        "trailing",
+        "separator"
+      ],
+      "author": {
+        "name": "darsain"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/darsain/remove-trailing-separator/issues"
+      },
+      "homepage": "https://github.com/darsain/remove-trailing-separator#readme",
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "coveralls": "^2.11.14",
+        "nyc": "^8.3.0",
+        "xo": "^0.16.0"
+      },
+      "gitHead": "f4e8acca09106efeef5a5164f1ad2192fe97fd69",
+      "_id": "remove-trailing-separator@1.1.0",
+      "_shasum": "c24bce2a283adad5bc3f58e0d48249b92379d8ef",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "darsain",
+        "email": "darsain@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "darsain",
+          "email": "darsain@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c24bce2a283adad5bc3f58e0d48249b92379d8ef",
+        "tarball": "https://registry.npmjs.org/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/remove-trailing-separator-1.1.0.tgz_1502872321750_0.834721862571314"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# remove-trailing-separator\n\n[![NPM version][npm-img]][npm-url] [![Build Status: Linux][travis-img]][travis-url] [![Build Status: Windows][appveyor-img]][appveyor-url] [![Coverage Status][coveralls-img]][coveralls-url]\n\nRemoves all separators from the end of a string.\n\n## Install\n\n```\nnpm install remove-trailing-separator\n```\n\n## Examples\n\n```js\nconst removeTrailingSeparator = require('remove-trailing-separator');\n\nremoveTrailingSeparator('/foo/bar/')   // '/foo/bar'\nremoveTrailingSeparator('/foo/bar///') // '/foo/bar'\n\n// leaves only/last separator\nremoveTrailingSeparator('/')    // '/'\nremoveTrailingSeparator('///')  // '/'\n\n// returns empty string\nremoveTrailingSeparator('') // ''\n```\n\n## Notable backslash, or win32 separator behavior\n\n`\\` is considered a separator only on WIN32 systems. All POSIX compliant systems\nsee backslash as a valid file name character, so it would break POSIX compliance\nto remove it there.\n\nIn practice, this means that this code will return different things depending on\nwhat system it runs on:\n\n```js\nremoveTrailingSeparator('\\\\foo\\\\')\n// UNIX  => '\\\\foo\\\\'\n// WIN32 => '\\\\foo'\n```\n\n[npm-url]: https://npmjs.org/package/remove-trailing-separator\n[npm-img]: https://badge.fury.io/js/remove-trailing-separator.svg\n[travis-url]: https://travis-ci.org/darsain/remove-trailing-separator\n[travis-img]: https://travis-ci.org/darsain/remove-trailing-separator.svg?branch=master\n[appveyor-url]: https://ci.appveyor.com/project/darsain/remove-trailing-separator/branch/master\n[appveyor-img]: https://ci.appveyor.com/api/projects/status/wvg9a93rrq95n2xl/branch/master?svg=true\n[coveralls-url]: https://coveralls.io/github/darsain/remove-trailing-separator?branch=master\n[coveralls-img]: https://coveralls.io/repos/github/darsain/remove-trailing-separator/badge.svg?branch=master\n",
+  "maintainers": [
+    {
+      "name": "darsain",
+      "email": "darsain@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-08-16T08:32:02.606Z",
+    "created": "2016-09-24T09:00:44.254Z",
+    "1.0.0": "2016-09-24T09:00:44.254Z",
+    "1.0.1": "2016-09-25T10:06:03.280Z",
+    "1.0.2": "2017-06-07T17:46:43.351Z",
+    "1.1.0": "2017-08-16T08:32:02.606Z"
+  },
+  "homepage": "https://github.com/darsain/remove-trailing-separator#readme",
+  "keywords": [
+    "remove",
+    "strip",
+    "trailing",
+    "separator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darsain/remove-trailing-separator.git"
+  },
+  "author": {
+    "name": "darsain"
+  },
+  "bugs": {
+    "url": "https://github.com/darsain/remove-trailing-separator/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "readme.md",
+  "users": {
+    "yedaodao": true
+  },
+  "_attachments": {}
+}

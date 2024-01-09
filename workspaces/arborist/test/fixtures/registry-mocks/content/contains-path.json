@@ -1,0 +1,263 @@
+{
+  "_id": "contains-path",
+  "_rev": "3-453f1d1f79acf3346062cc6cb1ab9ae6",
+  "name": "contains-path",
+  "description": "Return true if a file path contains the given path.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "contains-path",
+      "description": "Return true if a file path contains the given path.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/contains-path",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/contains-path.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/contains-path/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "contains",
+        "directory",
+        "dirname",
+        "exec",
+        "ext",
+        "extname",
+        "file",
+        "filepath",
+        "fp",
+        "has",
+        "match",
+        "matches",
+        "path",
+        "regex",
+        "test"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "ends-with",
+            "path-ends-with",
+            "path-segments",
+            "is-absolute",
+            "is-relative",
+            "parse-filepath"
+          ]
+        }
+      },
+      "_id": "contains-path@0.1.0",
+      "_shasum": "fe8cf184ff6670b6baef01a9d4861a5cbec4120a",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fe8cf184ff6670b6baef01a9d4861a5cbec4120a",
+        "tarball": "https://registry.npmjs.org/contains-path/-/contains-path-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "contains-path",
+      "description": "Return true if a file path contains the given path.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/contains-path",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Gerard",
+          "email": "germtf@gmail.com",
+          "url": "https://github.com/germtb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/contains-path.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/contains-path/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "normalize-path": "^2.1.1",
+        "path-starts-with": "^1.0.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "contains",
+        "directory",
+        "dirname",
+        "exec",
+        "ext",
+        "extname",
+        "file",
+        "filepath",
+        "fp",
+        "has",
+        "match",
+        "matches",
+        "path",
+        "regex",
+        "test"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "ends-with",
+            "normalize-path",
+            "path-ends-with",
+            "unixify"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f99a946c17719ef4907baffeb5aa2c801837ba63",
+      "_id": "contains-path@1.0.0",
+      "_shasum": "3458b332185603e8eed18f518d4a10888a3abc91",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3458b332185603e8eed18f518d4a10888a3abc91",
+        "tarball": "https://registry.npmjs.org/contains-path/-/contains-path-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/contains-path-1.0.0.tgz_1492413994324_0.46549268695525825"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# contains-path [![NPM version](https://img.shields.io/npm/v/contains-path.svg?style=flat)](https://www.npmjs.com/package/contains-path) [![NPM monthly downloads](https://img.shields.io/npm/dm/contains-path.svg?style=flat)](https://npmjs.org/package/contains-path) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/contains-path.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/contains-path) [![Windows Build Status](https://img.shields.io/appveyor/ci/jonschlinkert/contains-path.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/jonschlinkert/contains-path)\n\n> Return true if a file path contains the given path.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save contains-path\n```\n\nInstall with [yarn](https://yarnpkg.com):\n\n```sh\n$ yarn add contains-path\n```\n\n## HEADS UP!\n\nAs of v1.0.0, this library no longer uses regex for matching. Please do not hesitate to [report any issues or regressiosn](../../issues/new).\n\n## Usage\n\n```js\nvar containsPath = require('contains-path');\n\ncontainsPath('foo/bar', 'foo'); //=> true\ncontainsPath('foo/bar', 'bar'); //=> true\ncontainsPath('foo/bar', 'qux'); //=> false\n\n// returns false for partial matches\ncontainsPath('foobar', 'foo');  //=> false\ncontainsPath('foo.bar', 'foo'); //=> false\ncontainsPath('foo.bar', 'bar'); //=> false\n\n// prefix with \"./\" to match from beginning of filepath\ncontainsPath('bar/foo', 'foo');   //=> true\ncontainsPath('bar/foo', './foo'); //=> false\n```\n\n## Negation\n\nPrefix with `!` to invert matching behavior:\n\n```js\ncontainsPath('foo/bar', '!foo'); //=> false\ncontainsPath('foo/bar', '!qux'); //=> true\n```\n\n## Options\n\n### options.nocase\n\n**Type**: `boolean`\n\n**Default**: `false`\n\nDisable case sensitivity.\n\n```js\ncontainsPath('foo/bar', 'FOO');                 //=> false\ncontainsPath('foo/bar', 'FOO', {nocase: true}); //=> true\n```\n\n### options.partialMatch\n\n**Type**: `boolean`\n\n**Default**: `false`\n\nAllow \"partial\" matches:\n\n```js\ncontainsPath('foobar', 'foo');                        //=> false                 \ncontainsPath('foobar', 'foo', {partialMatch: true});  //=> true \n\ncontainsPath('foo.bar', 'foo');                       //=> false                 \ncontainsPath('foo.bar', 'foo', {partialMatch: true}); //=> true \n```\n\n## About\n\n### Related projects\n\n* [ends-with](https://www.npmjs.com/package/ends-with): Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for… [more](https://github.com/jonschlinkert/ends-with) | [homepage](https://github.com/jonschlinkert/ends-with \"Returns `true` if the given `string` or `array` ends with `suffix` using strict equality for comparisons.\")\n* [normalize-path](https://www.npmjs.com/package/normalize-path): Normalize file path slashes to be unix-like forward slashes. Also condenses repeat slashes to a… [more](https://github.com/jonschlinkert/normalize-path) | [homepage](https://github.com/jonschlinkert/normalize-path \"Normalize file path slashes to be unix-like forward slashes. Also condenses repeat slashes to a single slash and removes and trailing slashes unless disabled.\")\n* [path-ends-with](https://www.npmjs.com/package/path-ends-with): Return `true` if a file path ends with the given string/suffix. | [homepage](https://github.com/jonschlinkert/path-ends-with \"Return `true` if a file path ends with the given string/suffix.\")\n* [unixify](https://www.npmjs.com/package/unixify): Convert Windows file paths to unix paths. | [homepage](https://github.com/jonschlinkert/unixify \"Convert Windows file paths to unix paths.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 2 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [germtb](https://github.com/germtb) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.5.0, on April 17, 2017._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-04-17T07:26:34.883Z",
+    "created": "2015-07-07T10:41:33.202Z",
+    "0.1.0": "2015-07-07T10:41:33.202Z",
+    "1.0.0": "2017-04-17T07:26:34.883Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/contains-path",
+  "keywords": [
+    "contains",
+    "directory",
+    "dirname",
+    "exec",
+    "ext",
+    "extname",
+    "file",
+    "filepath",
+    "fp",
+    "has",
+    "match",
+    "matches",
+    "path",
+    "regex",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/contains-path.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/contains-path/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "scottfreecode": true
+  },
+  "contributors": [
+    {
+      "name": "Gerard",
+      "email": "germtf@gmail.com",
+      "url": "https://github.com/germtb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "email": "jon.schlinkert@sellside.com",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "_attachments": {}
+}

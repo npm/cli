@@ -1,0 +1,2438 @@
+{
+  "_id": "del",
+  "_rev": "365-f2912538a5ef931b9a1f194348e0a98f",
+  "name": "del",
+  "description": "Delete files and directories",
+  "dist-tags": {
+    "latest": "6.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "del",
+      "version": "0.1.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^0.1.3",
+        "globby": "^0.1.1",
+        "is-path-cwd": "^0.1.0",
+        "is-path-in-cwd": "^0.1.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.9.1",
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@0.1.0",
+      "_shasum": "59f2df55dfa29dd3e48dc39acfdd27d03f3a34f1",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "59f2df55dfa29dd3e48dc39acfdd27d03f3a34f1",
+        "tarball": "https://registry.npmjs.org/del/-/del-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "del",
+      "version": "0.1.1",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^0.1.3",
+        "globby": "^0.1.1",
+        "is-path-cwd": "^0.1.0",
+        "is-path-in-cwd": "^0.1.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.9.1",
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@0.1.1",
+      "_shasum": "3617deefcd44802d19ad79b73d6f5bc49a5c1f33",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3617deefcd44802d19ad79b73d6f5bc49a5c1f33",
+        "tarball": "https://registry.npmjs.org/del/-/del-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "del",
+      "version": "0.1.2",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^0.1.3",
+        "globby": "^0.1.1",
+        "is-path-cwd": "^0.1.0",
+        "is-path-in-cwd": "^0.1.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.9.1",
+        "mocha": "*"
+      },
+      "gitHead": "2c9550b4928c7421b0cbaf571bef8aca8006dc5d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@0.1.2",
+      "_shasum": "b2b28eeaf72559557ce16d3611a96efce105f87d",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b2b28eeaf72559557ce16d3611a96efce105f87d",
+        "tarball": "https://registry.npmjs.org/del/-/del-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "del",
+      "version": "0.1.3",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^0.1.1",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.11.1",
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@0.1.3",
+      "_shasum": "2d724a719b5acf5c0b840b4224715e838406a419",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d724a719b5acf5c0b840b4224715e838406a419",
+        "tarball": "https://registry.npmjs.org/del/-/del-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "del",
+      "version": "1.0.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^1.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.12.0",
+        "mocha": "*"
+      },
+      "gitHead": "28398d3d3629435d6e9cd1a6d9e4809fa49dcb73",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@1.0.0",
+      "_shasum": "d575eb4b4dbccba11d01c511f62fa8df42e3faa4",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d575eb4b4dbccba11d01c511f62fa8df42e3faa4",
+        "tarball": "https://registry.npmjs.org/del/-/del-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "del",
+      "version": "1.1.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^1.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.12.0",
+        "mocha": "*"
+      },
+      "gitHead": "71722e16cf9039294f55ba9f662623196b2270a7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@1.1.0",
+      "_shasum": "1eb06d5428f2a37168937dd71b03b297373eddef",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1eb06d5428f2a37168937dd71b03b297373eddef",
+        "tarball": "https://registry.npmjs.org/del/-/del-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "del",
+      "version": "1.1.1",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^1.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.12.0",
+        "mocha": "*"
+      },
+      "gitHead": "a4f76762c2099cd3606e37a706bfca8110daf099",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@1.1.1",
+      "_shasum": "efe11301d1113894c20336a28c08644d15668ad1",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "efe11301d1113894c20336a28c08644d15668ad1",
+        "tarball": "https://registry.npmjs.org/del/-/del-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "del",
+      "version": "1.2.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^2.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.18.3",
+        "mocha": "*",
+        "path-exists": "^1.0.0"
+      },
+      "gitHead": "c5fefd60664f7417045e26f8ea88a8482ac33654",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@1.2.0",
+      "_shasum": "3241336ead45a66c8f97215ae223c7e7947401c8",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3241336ead45a66c8f97215ae223c7e7947401c8",
+        "tarball": "https://registry.npmjs.org/del/-/del-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "del",
+      "version": "1.2.1",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "each-async": "^1.0.0",
+        "globby": "^2.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^3.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.23.1",
+        "mocha": "*",
+        "path-exists": "^1.0.0"
+      },
+      "gitHead": "7ab184bff3e4b5c21a2e8e5e725768349f22dd34",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@1.2.1",
+      "_shasum": "aed6e5bcd7cb7325df34f563125fa265b2c1a014",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "aed6e5bcd7cb7325df34f563125fa265b2c1a014",
+        "tarball": "https://registry.npmjs.org/del/-/del-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "del",
+      "version": "2.0.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^3.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^1.0.0",
+        "pinkie-promise": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.23.1",
+        "mocha": "*",
+        "path-exists": "^1.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      },
+      "gitHead": "11ce3d4ae828243c9788edf1202ff44b34083a5c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@2.0.0",
+      "_shasum": "ae75b56b6e6bb280cf6617445a2c38ee52700ffa",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ae75b56b6e6bb280cf6617445a2c38ee52700ffa",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "del",
+      "version": "2.0.1",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^3.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.24.0",
+        "mocha": "*",
+        "path-exists": "^2.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      },
+      "gitHead": "d3f64d3e0f628227cf8e5cf3840ae20e2641b287",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@2.0.1",
+      "_shasum": "1dcb7d12b9644235e474d6d7c22d26efb94620ba",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1dcb7d12b9644235e474d6d7c22d26efb94620ba",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "del",
+      "version": "2.0.2",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^3.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^1.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.24.0",
+        "mocha": "*",
+        "path-exists": "^2.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      },
+      "gitHead": "7cca10d6336e0ec6c6aa26443057b0f3a2101721",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@2.0.2",
+      "_shasum": "6cdc68db00282b92d8e82a0ed9fff1d333193424",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6cdc68db00282b92d8e82a0ed9fff1d333193424",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "del",
+      "version": "2.1.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^3.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.26.2",
+        "mocha": "*",
+        "path-exists": "^2.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      },
+      "gitHead": "ef7ecb22de40ad8e44ca7810c6f131d24afcd761",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@2.1.0",
+      "_shasum": "1ecd71d559b4d97f4fdee7d13eb7ff9cb65d02c8",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1ecd71d559b4d97f4fdee7d13eb7ff9cb65d02c8",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "del",
+      "version": "2.2.0",
+      "description": "Delete files/folders using globs",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/del"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^4.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "fs-extra": "^0.26.2",
+        "mocha": "*",
+        "path-exists": "^2.0.0",
+        "xo": "*"
+      },
+      "xo": {
+        "envs": [
+          "node",
+          "mocha"
+        ]
+      },
+      "gitHead": "f364db4622f69856d9b7d26c8830335e607924fe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del",
+      "_id": "del@2.2.0",
+      "_shasum": "9a50f04bf37325e283b4f44e985336c252456bd5",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9a50f04bf37325e283b4f44e985336c252456bd5",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "del",
+      "version": "2.2.1",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^5.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "fs-extra": "^0.30.0",
+        "path-exists": "^3.0.0",
+        "tempfile": "^1.1.1",
+        "xo": "*"
+      },
+      "gitHead": "d92f9d3b30aca21868239a60f639beb94dd00bf7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@2.2.1",
+      "_shasum": "f6763026472209c4f0349111c5ac280868bec4fe",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f6763026472209c4f0349111c5ac280868bec4fe",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/del-2.2.1.tgz_1466503710609_0.6494583815801889"
+      },
+      "directories": {}
+    },
+    "2.2.2": {
+      "name": "del",
+      "version": "2.2.2",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "files",
+        "folder",
+        "dir",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^5.0.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "object-assign": "^4.0.1",
+        "pify": "^2.0.0",
+        "pinkie-promise": "^2.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "fs-extra": "^0.30.0",
+        "path-exists": "^2.0.0",
+        "tempfile": "^1.1.1",
+        "xo": "*"
+      },
+      "gitHead": "3a97a5ba131055fbf7eb39f5ed47db86a2fd4497",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@2.2.2",
+      "_shasum": "c12c981d067846c84bcaf862cff930d907ffd1a8",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c12c981d067846c84bcaf862cff930d907ffd1a8",
+        "tarball": "https://registry.npmjs.org/del/-/del-2.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/del-2.2.2.tgz_1471046735537_0.4419694794341922"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "del",
+      "version": "3.0.0",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "dir",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^6.1.0",
+        "is-path-cwd": "^1.0.0",
+        "is-path-in-cwd": "^1.0.0",
+        "p-map": "^1.1.1",
+        "pify": "^3.0.0",
+        "rimraf": "^2.2.8"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "make-dir": "^1.0.0",
+        "tempy": "^0.1.0",
+        "xo": "*"
+      },
+      "gitHead": "255ab75f32c3a9188f261485f85ce1990d799f8c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@3.0.0",
+      "_shasum": "53ecf699ffcbcb39637691ab13baf160819766e5",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "53ecf699ffcbcb39637691ab13baf160819766e5",
+        "tarball": "https://registry.npmjs.org/del/-/del-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del-3.0.0.tgz_1497019191397_0.23212987394072115"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "del",
+      "version": "4.0.0",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "dir",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^6.1.0",
+        "is-path-cwd": "^2.0.0",
+        "is-path-in-cwd": "^2.0.0",
+        "p-map": "^2.0.0",
+        "pify": "^4.0.1",
+        "rimraf": "^2.6.2"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "make-dir": "^2.0.0",
+        "tempy": "^0.2.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "49e955b793111c86f95e56d2402765c10b6ac22e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@4.0.0",
+      "_nodeVersion": "10.15.1",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/BnSJ+SuZyLu7xMn48kZY0nMXDi+5KNmR4g8n21Wivsl8+B9njV6/5kcTNE9juSprp0zRWBU28JuHUq0FqK1Nw==",
+        "shasum": "4fa27e92c366cb45b9bdaa56a9b8703dced17437",
+        "tarball": "https://registry.npmjs.org/del/-/del-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8699,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfCfxCRA9TVsSAnZWagAAWr4P/AsaKwGzcZnDuyj2fMfl\nFIAZNK9op5saO5DxDeDhxVhw2o1Pyqlul04a0hAjlerFYEGO2KJCs6zSNgLd\njJX4SymDVErKsHBOkZg7BrRGRrpI6VB3zITDHzAyz23AYY7Obebr8msb1+9w\nXT2pORyRna2k0qTaHdBQKptNtiHOvgyMQh95vo9Pv11uoidDGqZ607f4StCR\nXMoTIVsKJAIUG90AxJ+W1+Xmv4DEd+7F1EFUdRBSZjGBL/44dKWUZ/pySet7\nYdcT4JpFXrTfDCF4ud72tLepU4j0P75Z3e6QcWSAoi5Coxymz+qXpZRkfcXw\nT05DDjp+2RsyARVzMV/q2S1UzrdCxb86yKk44ntiBdpWHh9r7bSw8DfgaeaQ\nwh8Rrupwx3qNRKPHqYZ8E9CiLBrYs3eRCmr8+aPPMmm1JQLWFs3mBXSG5Was\nfljQ2H3CAYAgk4XQv1OPKbcLVrGYDJA+6JdMUsRsh2M9rWdHzyD53M9Q3D/O\nV0PK/6jmhhMfhH+5vY6cLjF1GfTWWge9glZdhApcp3jsZWlZuq+iynnhkbr1\nzDII1Ulw/L1PidJoG4ppwHJp9gatwqXWaNa5EL/c/4tR+/wNJerfvq0M+Bs1\n3hu1t83o6mOh3IEVNNVTjYw75Sojv4fQYcIbGw3GcM9NXa6jVb6bfhJZbKUE\n8i2u\r\n=HJbe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_4.0.0_1551640560919_0.21542631853163963"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "del",
+      "version": "4.1.0",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "dir",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^6.1.0",
+        "is-path-cwd": "^2.0.0",
+        "is-path-in-cwd": "^2.0.0",
+        "p-map": "^2.0.0",
+        "pify": "^4.0.1",
+        "rimraf": "^2.6.3"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "make-dir": "^2.1.0",
+        "tempy": "^0.2.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c1ffcfba53788aed347cf60cb5382290496bdb37",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-C4kvKNlYrwXhKxz97BuohF8YoGgQ23Xm9lvoHmgT7JaPGprSEjk3+XFled74Yt/x0ZABUHg2D67covzAPUKx5Q==",
+        "shasum": "049543b8290e1a9293e2bd150ab3a06f637322b8",
+        "tarball": "https://registry.npmjs.org/del/-/del-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9014,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcodTKCRA9TVsSAnZWagAARYkQAIZ3VNYvxQdmDRvFYfZO\nP9WhcUrSBy0AnsO5wT/OY9AzyqbLNfZssb0OkiL2zvK1FZiHORSg7awIqKQ2\n0dVu9Yw34vSJ22q8qdN+G9fraDHgkarFqYJqGbn3CPw9d8jdlV9RK0xi+LVO\nh20ArjGXfoDySm7GGEud9RNCjtP04iCgqiXdp0RMjXQGW4lrF3XY0QRhM+Ul\nvXCTT/ktE6B6HyRJNGXVL5KZYtUq0CQFkZyTj5DHivZ7XZB7ti23tptXBsvB\n8UyMwLtIArzkjMHDPveXyJ+EgibcvT99iwiwGIsFaGEa9c8x4KTc5YZ6FkPk\np2zJ7mMBrppR43soE/9b8Rt890T5CmTQ/HPQCrEMC20lkT6/+ikpeluUMysU\nSwEGBj5UnhO8CkNtCeAdpZTljGhtC55PN0gFIpqo2cE8B1aVfSqNYm4lXbux\nqzqwb/zASnF5006+zJ/ZVxY1BPo8qnE8e9ccV/WKPOefyjo2L5hIQj5mz6+O\n8e4JoADM+dp4X3Ma78XGdaODk+xBx+hN/d9DN8v/3ahTnI+U95v03AI4uCOX\nxestTIgtRfl8ObNkvdkIhn0pYib+taA/O2yrpLB0WnUAiKyaewMFQJ81LZJf\ndcdLHpUJlCF7Xpbb1af07ESvwh1fVfAHOvsJ3pYJlweLtJsEcv5cDK15n/5m\nGWYH\r\n=zoy+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_4.1.0_1554109642336_0.06353425212664776"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.1": {
+      "name": "del",
+      "version": "4.1.1",
+      "description": "Delete files and folders",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "del",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "dir",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "@types/glob": "^7.1.1",
+        "globby": "^6.1.0",
+        "is-path-cwd": "^2.0.0",
+        "is-path-in-cwd": "^2.0.0",
+        "p-map": "^2.0.0",
+        "pify": "^4.0.1",
+        "rimraf": "^2.6.3"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "make-dir": "^2.1.0",
+        "tempy": "^0.2.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "31be0e74e352ac7aae71b330a704756851736880",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@4.1.1",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==",
+        "shasum": "9e8f117222ea44a31ff3a156c049b99052a9f0b4",
+        "tarball": "https://registry.npmjs.org/del/-/del-4.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9041,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcxbb2CRA9TVsSAnZWagAAZr0P/ikgdh71m1Jvhn8whwH4\nT/X4SR2gKw67GrOhscoKrx+KrBVNfeYmmUMnN9KNsoHVd7gcAxD+soZaWs8j\n/VVQFlUpLpqeGKjZfZu6nFyf279GZFIQ14lzB9LNiHuiFFXc+UowHzzqUAgK\n77nltvFv40zyFfgG1j97/SJRe3wDh/ZZnJ+l7RNIa+6qq0j1hn2IjXw1GxgP\nrS+EjsZUBK2VKenuKUPU9ZBdcek6qJqG4TwaKIZnQaXh+Czeaj6vlbTf2ESa\ndGmPaEQDcVZbLSJDg5bwKnmfB9W2xLWgGN2547oKq/d3Nxa9BVSAQ73owpuh\nsDQMQHp7MUpx4exDZ2wQdKduJl8rJyYE5rQgY/QXDza6oTvRlHsXVAWpWlL3\nYQBor44G8HnnMDUAMXlMYI4AySsqW1ibhMOoDnO/Kn9aICY0+RS6BEjfWlpr\n0oMQ1iMFQyoRDPbqZCbwGIJ/p1Oqy8qASnzdE5RyP3ur/A27/GzwO3AgfbNx\nnh5wFGJq4YmuXK3sEfqdqByD359t28K0XcpOnZfwN5fDZw6XZ6CBDbkRY28x\n5zm9R5jI4VtrYyFjN7yZRymSzjJHdcQVqo5pM0bEf5WNfQ6ZLqRM9y0Rzbyi\ncbB8gHlD28cPJ7crqtisppk9S2V6tCwK6E5Ixl4aUKQFe7hXb4zhQ890zPPZ\nONIL\r\n=/c6J\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_4.1.1_1556461301609_0.5549796149157955"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "del",
+      "version": "5.0.0",
+      "description": "Delete files and directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^10.0.0",
+        "is-path-cwd": "^2.0.0",
+        "is-path-in-cwd": "^2.0.0",
+        "p-map": "^2.0.0",
+        "rimraf": "^2.6.3"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "make-dir": "^3.0.0",
+        "tempy": "^0.3.0",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c07118089d4e6a4f7df689be888b90b989183d0c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@5.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TfU3nUY0WDIhN18eq+pgpbLY9AfL5RfiE9czKaTSolc6aK7qASXfDErvYgjV1UqCR4sNXDoxO0/idPmhDUt2Sg==",
+        "shasum": "4fa698b7a1ffb4e2ab3e8929ed699799654d6720",
+        "tarball": "https://registry.npmjs.org/del/-/del-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9310,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdG6ddCRA9TVsSAnZWagAA4rcP/3EtDWTNtuilDE+qNd9+\ncyxmv7OBVdbbkYlEnh3LleBMRAWibxsXE3Grh8cnYVLj0Q03doXZXFGELgh1\nIDC1morI2b4BCaEhip0OvGlyXsXMCkEWiHrUKPKBh96BIxg3B9jPX/AK0sc2\nT68vneLcEgO8HP6rg5p89ARfZyuHp9xser1gWsXuTXKUTczHZT2Q3sEiFpw0\n1dXvTN3gQm7Le3TzvuGQjYWLD/F6Ol9YT8wxfnbfqUmim4+ZOgYyAgU06Y9F\ndiF9jYrGq1pK3PA8g35aOjs5WDTnmLy9I3YIz+lSE+tV/9prbZZiXkjIazB5\nZjBpME5PxJGNAUhCmvtNB0PmX4VpJjZQA6DXOngPNCKgmlvfz0M97S32C2Mz\nNPF3zm9Dfa5V3En6YmpjoqB5irfAnsYRi72N1BA58hNozLifyvTZ0jgLTxJm\nDb9i1kGVSsY1FceulyQ262EH1pY5HzpCjw3RcsIe2KCmSrKkjQTFVJLSsfVe\ndZTE6U8aaDgxH0gH2NoSQ03i81W+ON1E9jZrZTw1FJw6C/AJ3Eo8VMpfxQt2\nOi8Mu+fumAcvdaXCJZiwGx94AB5q+5BR+d3WNt8RWiN2KoC7V2Ruzp9Dc9Qf\n48g6SJnNLCr60+XT34jhcHRdccx+mGqYhtlKe3ZSkcQwfa8Hso3gJoSa1Rqy\n78mp\r\n=smcQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_5.0.0_1562093404720_0.4536900117622096"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "del",
+      "version": "5.1.0",
+      "description": "Delete files and directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node benchmark.js"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^10.0.1",
+        "graceful-fs": "^4.2.2",
+        "is-glob": "^4.0.1",
+        "is-path-cwd": "^2.2.0",
+        "is-path-inside": "^3.0.1",
+        "p-map": "^3.0.0",
+        "rimraf": "^3.0.0",
+        "slash": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.3.0",
+        "benchmark": "^2.1.4",
+        "make-dir": "^3.0.0",
+        "tempy": "^0.3.0",
+        "tsd": "^0.7.4",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "557c1fad9651405992b8358035eda504973a1124",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@5.1.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wH9xOVHnczo9jN2IW68BabcecVPxacIA3g/7z6vhSU/4stOKQzeCRK0yD0A24WiAAUJmmVpWqrERcTxnLo3AnA==",
+        "shasum": "d9487c94e367410e6eff2925ee58c0c84a75b3a7",
+        "tarball": "https://registry.npmjs.org/del/-/del-5.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11399,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdX8nVCRA9TVsSAnZWagAAi14QAI9Tnj2F2pcRUYFFKTJT\nKoEy4onNopOrUKBpErGfgHkJQWqnAP9rteh0sJboY89b8Psk4bRS1mDlUIMU\nW90U1zQC/bW65STHTVX6tkGdbjqeTFo1kfsyl0mlmPlQbfLpz7SHjASQnn0R\npK0OuyVjYuOZD+jdjd52jZJoiAFJ8TzJMIe8nG3RTido9//YMUmnwxbaE8PP\nqh0eFSU8xvJf1cErsqam26Fz1ICcaO3Ac9e73C4AuTSXXOxDyAMynzoFoUTt\nINowSCFaCUEz8u5j26Z2KYvuFARdaZnnkgFQd7dmMhb62KHCl4TOc2dqvKjd\nZ0RnZubg0fNKMrjLdHNNAXWYZdyP91HHPn9CZ1M/wYHm8wOS9/gSKlizqnUg\nebktE2jdIaQJS60agwj7lT/Sqe46QAYzarYMUSRiPI8RDHh/U1N3eH62I7Ms\nIzhxsfK6LJpNHyJNwyAecroqcdDOk0d2ROYlcUei0idBJVqs4XGnvZp8mdaL\nUfsuQxoctE8HSCJVqIAM4Jw2/X1EjMvfwCewgZLx4iDy9IfFq8yEzmh2Q7vT\nHb62Lb9lK+Eox2db9eFWvH8kzc0hLkLpUKvVWt30nzoP7bF5FmX9YR9A+z+p\nqCl8fBvmZzNPzkVyn6bP4wgGN5f4oKFaoPcBMvEScPckxRFxUvQFGRHNuEo6\nq5b2\r\n=UPws\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_5.1.0_1566558677362_0.9740054827128395"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "del",
+      "version": "6.0.0",
+      "description": "Delete files and directories",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/del.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "node benchmark.js"
+      },
+      "keywords": [
+        "delete",
+        "files",
+        "folders",
+        "directories",
+        "remove",
+        "destroy",
+        "trash",
+        "unlink",
+        "clean",
+        "cleaning",
+        "cleanup",
+        "rm",
+        "rmrf",
+        "rimraf",
+        "rmdir",
+        "glob",
+        "gulpfriendly",
+        "file",
+        "folder",
+        "directory",
+        "fs",
+        "filesystem"
+      ],
+      "dependencies": {
+        "globby": "^11.0.1",
+        "graceful-fs": "^4.2.4",
+        "is-glob": "^4.0.1",
+        "is-path-cwd": "^2.2.0",
+        "is-path-inside": "^3.0.2",
+        "p-map": "^4.0.0",
+        "rimraf": "^3.0.2",
+        "slash": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "benchmark": "^2.1.4",
+        "make-dir": "^3.1.0",
+        "tempy": "^0.7.0",
+        "tsd": "^0.13.1",
+        "xo": "^0.33.1"
+      },
+      "gitHead": "cd0543eb74807173a2015002907e98094ce3a78e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/del/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/del#readme",
+      "_id": "del@6.0.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-1shh9DQ23L16oXSZKB2JxpL7iMy2E0S9d517ptA1P8iw0alkPtQcrKH7ru31rYtKwF499HkTu+DRzq3TCKDFRQ==",
+        "shasum": "0b40d0332cea743f1614f818be4feb717714c952",
+        "tarball": "https://registry.npmjs.org/del/-/del-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11806,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfboT8CRA9TVsSAnZWagAAH2AQAJLUNwMWvC/Ixrl+w9Ft\nLpCbuZgnO7KrTMer01tiucPERNSubqy0oydKIODz+mgx6arUh3CRVEo2j2NI\nRFhOfkKJODw6yCzGmz0MiGQVK1MRDRz3QADWqFB/3Tty18IeszBK+7l53f/l\n0kqLsotIrjbx7CkvsG5jiCzYSrdP2cw51bFOwYeVqnOP07wWOdlxF1svCTmd\nTGD8yjxrRif7qQGr2RNF/JxBq/GDd1CI51TrdfA5ainjSupttH7VZBQMu7b7\nkbG3CuADDGOVq0RLqYQeP+yk9uPBkIJ/WCF95em+ua2UFXH8RdAN9hOK9DVB\nBNZfbwv+7FWkLW0KECY3DTDirNHDHJ1IDg0pdwjYA73mnVGa8s2MINuddKRo\n1lZi4/ExLwPBozdVgFLDE8mPstcszo76SATI5kq0q+siU/2ss3WfY+bdntTz\nJ0hVrkc7+tK5kUmoN8Blr9LM+aEWuOaLr9pNzNUERa+JK8rD8C/IwHLCua+y\nH2EReqXaaF6LQePJyuJkDz7WbB2aD8HUm0enNELWZFmPHa0iH3TecURYeXro\nnVkY57v42urNMIp6rNOgzFtTqZw9aOvSafYZzklU666HFxFfYGcRpvUYhIiy\n4JwRzGjBwJKO1StI8El/CjDbGyerw1lXqG5FN4MPSBNNySO6q6CmWs7Ao5I7\ntK6z\r\n=SlLE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/del_6.0.0_1601078523714_0.9462782987312115"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# del [![Build Status](https://travis-ci.com/sindresorhus/del.svg?branch=master)](https://travis-ci.com/github/sindresorhus/del) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)\n\n> Delete files and directories using [globs](https://github.com/sindresorhus/globby#globbing-patterns)\n\nSimilar to [rimraf](https://github.com/isaacs/rimraf), but with a Promise API and support for multiple files and globbing. It also protects you against deleting the current working directory and above.\n\n## Install\n\n```\n$ npm install del\n```\n\n## Usage\n\n```js\nconst del = require('del');\n\n(async () => {\n\tconst deletedFilePaths = await del(['temp/*.js', '!temp/unicorn.js']);\n\tconst deletedDirectoryPaths = await del(['temp', 'public']);\n\n\tconsole.log('Deleted files:\\n', deletedFilePaths.join('\\n'));\n\tconsole.log('\\n\\n');\n\tconsole.log('Deleted directories:\\n', deletedDirectoryPaths.join('\\n));\n})();\n```\n\n## Beware\n\nThe glob pattern `**` matches all children and *the parent*.\n\nSo this won't work:\n\n```js\ndel.sync(['public/assets/**', '!public/assets/goat.png']);\n```\n\nYou have to explicitly ignore the parent directories too:\n\n```js\ndel.sync(['public/assets/**', '!public/assets', '!public/assets/goat.png']);\n```\n\nTo delete all subdirectories inside `public/`, you can do:\n\n```js\ndel.sync(['public/*/']);\n```\n\nSuggestions on how to improve this welcome!\n\n## API\n\nNote that glob patterns can only contain forward-slashes, not backward-slashes. Windows file paths can use backward-slashes as long as the path does not contain any glob-like characters, otherwise use `path.posix.join()` instead of `path.join()`.\n\n### del(patterns, options?)\n\nReturns `Promise<string[]>` with the deleted paths.\n\n### del.sync(patterns, options?)\n\nReturns `string[]` with the deleted paths.\n\n#### patterns\n\nType: `string | string[]`\n\nSee the supported [glob patterns](https://github.com/sindresorhus/globby#globbing-patterns).\n\n- [Pattern examples with expected matches](https://github.com/sindresorhus/multimatch/blob/master/test/test.js)\n- [Quick globbing pattern overview](https://github.com/sindresorhus/multimatch#globbing-patterns)\n\n#### options\n\nType: `object`\n\nYou can specify any of the [`globby` options](https://github.com/sindresorhus/globby#options) in addition to the below options. In contrast to the `globby` defaults, `expandDirectories`, `onlyFiles`, and `followSymbolicLinks` are `false` by default.\n\n##### force\n\nType: `boolean`\\\nDefault: `false`\n\nAllow deleting the current working directory and outside.\n\n##### dryRun\n\nType: `boolean`\\\nDefault: `false`\n\nSee what would be deleted.\n\n```js\nconst del = require('del');\n\n(async () => {\n\tconst deletedPaths = await del(['temp/*.js'], {dryRun: true});\n\n\tconsole.log('Files and directories that would be deleted:\\n', deletedPaths.join('\\n'));\n})();\n```\n\n##### concurrency\n\nType: `number`\\\nDefault: `Infinity`\\\nMinimum: `1`\n\nConcurrency limit.\n\n## CLI\n\nSee [del-cli](https://github.com/sindresorhus/del-cli) for a CLI for this module and [trash-cli](https://github.com/sindresorhus/trash-cli) for a safe version that is suitable for running by hand.\n\n## del for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of del and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-del?utm_source=npm-del&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n\n## Related\n\n- [make-dir](https://github.com/sindresorhus/make-dir) - Make a directory and its parents if needed\n- [globby](https://github.com/sindresorhus/globby) - User-friendly glob matching\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-26T00:02:06.200Z",
+    "created": "2014-06-21T20:27:33.008Z",
+    "0.1.0": "2014-06-21T20:27:33.008Z",
+    "0.1.1": "2014-06-26T18:32:57.285Z",
+    "0.1.2": "2014-08-14T22:00:03.663Z",
+    "0.1.3": "2014-09-09T09:40:33.844Z",
+    "1.0.0": "2014-12-01T06:41:29.155Z",
+    "1.1.0": "2014-12-05T03:35:20.616Z",
+    "1.1.1": "2014-12-25T06:05:30.060Z",
+    "1.2.0": "2015-05-19T20:15:46.744Z",
+    "1.2.1": "2015-08-12T19:28:33.122Z",
+    "2.0.0": "2015-08-31T06:59:29.083Z",
+    "2.0.1": "2015-09-04T07:51:05.074Z",
+    "2.0.2": "2015-09-09T08:36:04.254Z",
+    "2.1.0": "2015-11-14T12:44:42.935Z",
+    "2.2.0": "2015-12-06T21:53:14.547Z",
+    "2.2.1": "2016-06-21T10:08:33.096Z",
+    "2.2.2": "2016-08-13T00:05:37.041Z",
+    "3.0.0": "2017-06-09T14:39:52.432Z",
+    "4.0.0": "2019-03-03T19:16:01.057Z",
+    "4.1.0": "2019-04-01T09:07:22.464Z",
+    "4.1.1": "2019-04-28T14:21:41.823Z",
+    "5.0.0": "2019-07-02T18:50:04.863Z",
+    "5.1.0": "2019-08-23T11:11:17.479Z",
+    "6.0.0": "2020-09-26T00:02:03.849Z"
+  },
+  "homepage": "https://github.com/sindresorhus/del#readme",
+  "keywords": [
+    "delete",
+    "files",
+    "folders",
+    "directories",
+    "remove",
+    "destroy",
+    "trash",
+    "unlink",
+    "clean",
+    "cleaning",
+    "cleanup",
+    "rm",
+    "rmrf",
+    "rimraf",
+    "rmdir",
+    "glob",
+    "gulpfriendly",
+    "file",
+    "folder",
+    "directory",
+    "fs",
+    "filesystem"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/del.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/del/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "83057396": true,
+    "arturmuller": true,
+    "t1st3": true,
+    "erikfloresq": true,
+    "mnova": true,
+    "lenville": true,
+    "grantls": true,
+    "wthompson_lixar": true,
+    "brieucthomas": true,
+    "anna-shavurska": true,
+    "bartveneman": true,
+    "h4des": true,
+    "luis.kaufmann.silva": true,
+    "jehoshua02": true,
+    "awayken": true,
+    "gcullins": true,
+    "cedx": true,
+    "pythondave": true,
+    "kulakowka": true,
+    "makenowjust": true,
+    "alvint": true,
+    "evan2x": true,
+    "logeshpaul": true,
+    "aymangado": true,
+    "joaocunha": true,
+    "stefanb": true,
+    "robermac": true,
+    "andamira": true,
+    "yanndinendal": true,
+    "mmercan": true,
+    "itonyyo": true,
+    "ginof": true,
+    "samhou1988": true,
+    "dominikkucharski": true,
+    "moimikey": true,
+    "chriscalo": true,
+    "dolymood": true,
+    "avdons": true,
+    "beatpeep": true,
+    "arahnoid": true,
+    "laravelfanatic": true,
+    "drewnull": true,
+    "axisthemes": true,
+    "jyounce": true,
+    "ivanoats": true,
+    "tzsiga": true,
+    "fkamani": true,
+    "hal9zillion": true,
+    "blakecscott": true,
+    "dmarsh": true,
+    "makenova": true,
+    "shaneparsons": true,
+    "isyara": true,
+    "pensierinmusica": true,
+    "maskedcoder": true,
+    "wuhuihao": true,
+    "prostoandrei": true,
+    "lmhs": true,
+    "johnym": true,
+    "klimnikita": true,
+    "edloidas": true,
+    "finico": true,
+    "usnow": true,
+    "battlemidget": true,
+    "robsoer": true,
+    "landy2014": true,
+    "arthurvasconcelos": true,
+    "boterom89": true,
+    "sixertoy": true,
+    "liushoukai": true,
+    "paroczi": true,
+    "iolo": true,
+    "joxe": true,
+    "andr": true,
+    "ifeature": true,
+    "dazld": true,
+    "davidhellmann": true,
+    "cengagelucas": true,
+    "nicondev": true,
+    "crazyjingling": true,
+    "adamlu": true,
+    "shipengyan": true,
+    "fotooo": true,
+    "mikedeleon": true,
+    "pandao": true,
+    "vwal": true,
+    "maxwang": true,
+    "wangnan0610": true,
+    "bravissimolabs": true,
+    "jclo": true,
+    "sadsenpai": true,
+    "gor0n": true,
+    "brunocalou": true,
+    "nanikore": true,
+    "wkaifang": true,
+    "ambdxtrch": true,
+    "chrisz-b612": true,
+    "ameer157": true,
+    "sajithm": true,
+    "pe8ter": true,
+    "antixrist": true,
+    "bebaps": true,
+    "fadihania": true,
+    "arttse": true,
+    "cfleschhut": true,
+    "igorpupkinable": true,
+    "a3.ivanenko": true,
+    "kbkjeldsen": true,
+    "bian17888": true,
+    "mccataldo": true,
+    "djamseed": true,
+    "wolfhoundjesse": true,
+    "npmmax": true,
+    "gskema": true,
+    "joshukraine": true,
+    "elmorec": true,
+    "porreh": true,
+    "koutak": true,
+    "rbartoli": true,
+    "zoxon": true,
+    "fdeneux": true,
+    "chancearthur": true,
+    "alejcerro": true,
+    "jordietyahii": true,
+    "illuminator": true,
+    "dbassel": true,
+    "easimonenko": true,
+    "ristostevcev": true,
+    "muzhen": true,
+    "ramono": true,
+    "monjer": true,
+    "vsouhrada": true,
+    "zbreakstone": true,
+    "foto": true,
+    "pennwang": true,
+    "pawlikdoc": true,
+    "reon": true,
+    "sternelee": true,
+    "flynntsc": true,
+    "youngluo": true,
+    "masiorama": true,
+    "pines-cheng": true,
+    "dnik": true,
+    "qddegtya": true,
+    "peunzhang": true,
+    "huypham": true,
+    "2byoung": true,
+    "coderchen": true,
+    "donkapetra": true,
+    "davidnyhuis": true,
+    "dennisli87": true,
+    "iinteractive": true,
+    "kocoten1992": true,
+    "biasso": true,
+    "kontrax": true,
+    "vchouhan": true,
+    "ericwbailey": true,
+    "sergeif": true,
+    "beingbook": true,
+    "yanlaichang": true,
+    "kikna": true,
+    "faeliaso": true,
+    "aquafadas": true,
+    "alantsuis": true,
+    "drewigg": true,
+    "cognivator": true,
+    "thesystem": true,
+    "fstgeorge": true,
+    "lianhr12": true,
+    "akodevs": true,
+    "sesamechee": true,
+    "manux": true,
+    "adammacias": true,
+    "mobeicaoyuan": true,
+    "cwagner": true,
+    "raigorx": true,
+    "tdmalone": true,
+    "csbun": true,
+    "pfuri": true,
+    "tmurngon": true,
+    "itcaso": true,
+    "johnend": true,
+    "rhinosaurus": true,
+    "wangfeia": true,
+    "ognjen.jevremovic": true,
+    "agiko": true,
+    "nohomey": true,
+    "nickvirden": true,
+    "alanho": true,
+    "rocket0191": true,
+    "krawster": true,
+    "dzhou777": true,
+    "sushiifox": true,
+    "olonam": true,
+    "kiandrajayne": true,
+    "louiskenzo": true,
+    "egantz": true,
+    "user099": true,
+    "axelrindle": true,
+    "abdihaikal": true,
+    "saoskia": true,
+    "leohxj": true,
+    "8code": true,
+    "tcrowe": true,
+    "tin-lek": true,
+    "papasavva": true,
+    "jovinbm": true,
+    "onursimsek": true,
+    "yuch4n": true,
+    "jimzhuangdev": true,
+    "vitorluizc": true,
+    "webfacer": true,
+    "chinawolf_wyp": true,
+    "morewry": true,
+    "olliejt": true,
+    "hehehai": true,
+    "qafir": true,
+    "junos": true,
+    "phritolay": true,
+    "oxyyyyy": true,
+    "garenyondem": true,
+    "oliversalzburg": true,
+    "kwesi": true,
+    "maalthous": true,
+    "pasturn": true,
+    "serge-nikitin": true,
+    "kaashin": true,
+    "astesio": true,
+    "xfloops": true,
+    "muhammadghazali": true,
+    "temelm": true,
+    "g120hbq": true,
+    "exiuqa": true,
+    "patta": true,
+    "giovannipds": true,
+    "npmrud5g": true,
+    "erikvold": true,
+    "micaelsouza": true,
+    "yl2014": true,
+    "rethinkflash": true,
+    "fmakareev": true,
+    "brofox": true,
+    "xrush": true,
+    "akh-rman": true,
+    "korthjp17": true,
+    "maoxiaoke": true,
+    "frente-fin": true,
+    "jrobinsonc": true,
+    "shangsinian": true,
+    "yikuo": true,
+    "itcorp": true,
+    "johnstonbl01": true,
+    "magicxiao": true,
+    "n0f3": true,
+    "luffy84217": true,
+    "kiinlam": true,
+    "itaditya": true,
+    "zuojiang": true,
+    "ccd3v": true,
+    "arugalab": true,
+    "jireve999": true,
+    "koqep": true,
+    "yinfxs": true,
+    "arcticicestudio": true,
+    "eugene.korniets": true,
+    "agplan": true,
+    "yisen": true,
+    "jaguar": true,
+    "iotale": true,
+    "faraoman": true,
+    "ritsu": true,
+    "jochemstoel": true,
+    "wisetc": true,
+    "gpmetheny": true,
+    "cutshaw": true,
+    "avivharuzi": true,
+    "advancedcat": true,
+    "qoozoo": true,
+    "huiyifyj": true,
+    "nmilosevic": true,
+    "edwardxyt": true,
+    "bikai": true
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "_id": "@types/minimist",
+  "_rev": "420-4f115d19f2409479b8fbb0b4c52b28d0",
+  "name": "@types/minimist",
+  "description": "TypeScript definitions for minimist",
+  "dist-tags": {
+    "latest": "1.2.0",
+    "ts2.0": "1.2.0",
+    "ts2.1": "1.2.0",
+    "ts2.2": "1.2.0",
+    "ts2.3": "1.2.0",
+    "ts2.4": "1.2.0",
+    "ts2.5": "1.2.0",
+    "ts2.6": "1.2.0",
+    "ts2.7": "1.2.0",
+    "ts2.8": "1.2.0",
+    "ts2.9": "1.2.0",
+    "ts3.0": "1.2.0",
+    "ts3.1": "1.2.0",
+    "ts3.2": "1.2.0",
+    "ts3.3": "1.2.0",
+    "ts3.4": "1.2.0",
+    "ts3.5": "1.2.0",
+    "ts3.6": "1.2.0",
+    "ts3.7": "1.2.0",
+    "ts3.8": "1.2.0",
+    "ts3.9": "1.2.0",
+    "ts4.0": "1.2.0",
+    "ts4.1": "1.2.0"
+  },
+  "versions": {
+    "1.1.15-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.15-alpha",
+      "description": "Type definitions for minimist 1.1.3 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.15-alpha",
+      "_shasum": "a80e32ee1607961a645b704b933db4125e7cc60a",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "a80e32ee1607961a645b704b933db4125e7cc60a",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.15-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.15-alpha.tgz_1463509263357_0.8285909509286284"
+      },
+      "directories": {}
+    },
+    "1.1.16-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.16-alpha",
+      "description": "Type definitions for minimist 1.1.3 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.16-alpha",
+      "_shasum": "5664029161412ebc0361bc1b2fed380a484aa21a",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "5664029161412ebc0361bc1b2fed380a484aa21a",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.16-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.16-alpha.tgz_1463694208450_0.17305186577141285"
+      },
+      "directories": {}
+    },
+    "1.1.21-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.21-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.21-alpha",
+      "_shasum": "442aba3f7977ddc9c5c74f807b86fc0a6fa3a9f5",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "442aba3f7977ddc9c5c74f807b86fc0a6fa3a9f5",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.21-alpha.tgz_1463775073997_0.715979543980211"
+      },
+      "directories": {}
+    },
+    "1.1.22-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.22-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.22-alpha",
+      "_shasum": "fed053b1de0095674aa46e85e994535bf5c0eaa9",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "fed053b1de0095674aa46e85e994535bf5c0eaa9",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.22-alpha.tgz_1464154125017_0.9788523190654814"
+      },
+      "directories": {}
+    },
+    "1.1.23-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.23-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.23-alpha",
+      "_shasum": "8b291a6a06e342948c88b8253b5a32322f185950",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "8b291a6a06e342948c88b8253b5a32322f185950",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.23-alpha.tgz_1467403660515_0.01753560360521078"
+      },
+      "directories": {}
+    },
+    "1.1.24-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.24-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.24-alpha",
+      "_shasum": "7318873a1aa9b9f7fabcca56986be88deacdedfd",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "7318873a1aa9b9f7fabcca56986be88deacdedfd",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.24-alpha.tgz_1467415876632_0.9520390962716192"
+      },
+      "directories": {}
+    },
+    "1.1.25-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.25-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.25-alpha",
+      "_shasum": "fa37cae0748417be2fb73152fc47e2b7e578936e",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "fa37cae0748417be2fb73152fc47e2b7e578936e",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.25-alpha.tgz_1467428357044_0.14587243436835706"
+      },
+      "directories": {}
+    },
+    "1.1.26-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.26-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.26-alpha",
+      "_shasum": "984b3322b6f84ee11be26b39ddf05a40b61d7607",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "984b3322b6f84ee11be26b39ddf05a40b61d7607",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.26-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.26-alpha.tgz_1467593352097_0.6213013452943414"
+      },
+      "directories": {}
+    },
+    "1.1.27-alpha": {
+      "name": "@types/minimist",
+      "version": "1.1.27-alpha",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.27-alpha",
+      "_shasum": "1c17e2f6313b52e55fcf9164c34f0e5c931913af",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "1c17e2f6313b52e55fcf9164c34f0e5c931913af",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.27-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.27-alpha.tgz_1468011065543_0.02008979511447251"
+      },
+      "directories": {}
+    },
+    "1.1.28": {
+      "name": "@types/minimist",
+      "version": "1.1.28",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Bart van der Schoor",
+        "email": "https://github.com/Bartvds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/minimist@1.1.28",
+      "_shasum": "3af35fef13d50a0b10feb9372f2f0b0ceb546316",
+      "_from": "output\\minimist",
+      "_resolved": "file:output\\minimist",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "3af35fef13d50a0b10feb9372f2f0b0ceb546316",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.28.tgz_1468509863905_0.11877539264969528"
+      },
+      "directories": {}
+    },
+    "1.1.29": {
+      "name": "@types/minimist",
+      "version": "1.1.29",
+      "description": "TypeScript definitions for minimist 1.1.3",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>, Necroskillz <https://github.com/Necroskillz>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "7bd76d5d00da30cd3438987c7e937fa536f22d8464348e0e391d6b13934cccf8",
+      "_id": "@types/minimist@1.1.29",
+      "dist": {
+        "shasum": "91cd01c4f28c18c8a4e621aad803a3608d81cfea",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.1.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.1.29.tgz_1474307516503_0.17802339675836265"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "@types/minimist",
+      "version": "1.2.0",
+      "description": "TypeScript definitions for minimist",
+      "license": "MIT",
+      "author": "Bart van der Schoor <https://github.com/Bartvds>, Necroskillz <https://github.com/Necroskillz>, kamranayub <https://github.com/kamranayub>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "46fbb5db5555175c72b64f17adce05fa9f0b38683361f762134fc47aea2ac195",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/minimist@1.2.0",
+      "dist": {
+        "shasum": "69a23a3ad29caf0097f06eda59b361ee2f0639f6",
+        "tarball": "https://registry.npmjs.org/@types/minimist/-/minimist-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/minimist-1.2.0.tgz_1483053112213_0.284347630571574"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/minimist`\r\n\r\n# Summary\r\nThis package contains type definitions for minimist (https://github.com/substack/minimist).\r\n\r\n# Details\r\nFiles were exported from https://www.github.com/DefinitelyTyped/DefinitelyTyped/tree/master/minimist\r\n\r\nAdditional Details\r\n * Last updated: Thu, 29 Dec 2016 23:09:09 GMT\r\n * Library Dependencies: none\r\n * Module Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by Bart van der Schoor <https://github.com/Bartvds>, Necroskillz <https://github.com/Necroskillz>, kamranayub <https://github.com/kamranayub>.\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ryan.cavanaugh@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:34:45.261Z",
+    "created": "2016-05-17T18:21:07.486Z",
+    "1.1.15-alpha": "2016-05-17T18:21:07.486Z",
+    "1.1.16-alpha": "2016-05-19T21:43:33.147Z",
+    "1.1.21-alpha": "2016-05-20T20:11:16.218Z",
+    "1.1.22-alpha": "2016-05-25T05:28:45.657Z",
+    "1.1.23-alpha": "2016-07-01T20:07:42.838Z",
+    "1.1.24-alpha": "2016-07-01T23:31:17.151Z",
+    "1.1.25-alpha": "2016-07-02T02:59:20.734Z",
+    "1.1.26-alpha": "2016-07-04T00:49:15.319Z",
+    "1.1.27-alpha": "2016-07-08T20:51:07.950Z",
+    "1.1.28": "2016-07-14T15:24:26.508Z",
+    "1.1.29": "2016-09-19T17:51:56.740Z",
+    "1.2.0": "2016-12-29T23:11:54.599Z"
+  },
+  "author": "Bart van der Schoor <https://github.com/Bartvds>, Necroskillz <https://github.com/Necroskillz>, kamranayub <https://github.com/kamranayub>",
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+  }
+}

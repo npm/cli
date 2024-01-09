@@ -1,0 +1,434 @@
+{
+  "_id": "js-cleanup",
+  "_rev": "3-52c3169130470aa8c79699ecc86c5e1a",
+  "name": "js-cleanup",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "0.9.0": {
+      "name": "js-cleanup",
+      "version": "0.9.0",
+      "description": "Smart comment and whitespace cleaner for JavaScript-like files.",
+      "main": "dist/index.js",
+      "module": "dist/index.mjs",
+      "source": "src/index.ts",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "lint": "tslint *.ts && tslint -p . && eslint --ext js test",
+        "test": "nyc mocha",
+        "pretest": "yarn build",
+        "build": "rollup -c",
+        "clean": "rimraf ./.nyc_output/** ./coverage/** ./dist/**",
+        "coverage": "nyc report -r=lcov",
+        "prepublish": "npm run clean && npm run lint && npm run test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "clean",
+        "cleanup",
+        "source",
+        "comments",
+        "remover",
+        "removal"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/rmcomms",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/rmcomms/issues"
+      },
+      "repository": {
+        "url": "git+https://github.com/aMarCruz/rmcomms.git",
+        "type": "git"
+      },
+      "dependencies": {
+        "magic-string": "^0.25.1",
+        "perf-regexes": "^1.0.1",
+        "skip-regex": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/expect": "~1.20.03",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.18",
+        "eslint": "^5.11.0",
+        "expect": "~1.20.2",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-typescript": "^1.0.0",
+        "sourcemap-validator": "^1.1.0",
+        "tslib": "^1.9.3",
+        "tslint": "^5.12.0",
+        "typescript": "^3.2.2"
+      },
+      "gitHead": "a6a19f024cdb03ab8df5683b9b015153f1149737",
+      "_id": "js-cleanup@0.9.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-RCLa/j3f2lTgzaWsBH1D/9mSk5cNyk2ZUcMZIY8hW01PyurGMES0fiz/jYxbPkG9XZP7qOkv+P/r8CFlF7wOwA==",
+        "shasum": "aadfbb6a239f8178d34096dbb9f57efc05085c7e",
+        "tarball": "https://registry.npmjs.org/js-cleanup/-/js-cleanup-0.9.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 106794,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcI1cHCRA9TVsSAnZWagAAqbwP/1tpy2VE7vOXsWdt3zC3\nXnoJvn+c2C/q7yCQk7ylrApaXf6VIO8YpcP1Zi8YqKzmm2B0YBWKkrIGPB6g\n3A5RFZTnG9uCi/T92gySrSQWF2y3hVsfEtZBYwvrLI/RIQu/47AlpRfHIdP3\nAoLt4QK8q/Y4g3x3SC2dFlyz3NEeYu57GWG3yRE+VBY3bmN9ck1aOJ0Ci6dI\n4pHz38BgTOazNG+HcoBfzj+ILkCSOWE6O/HKaU/lyJ0FPB6Tgyky6UfYdmtj\nwNS9dBlnyQG35Kv/xAWw8ZcfU6QthHnN4JaYsRVbvXUDF74rvqYnP+hkvNIh\nrUeE5yrvxCj/e3qDcjNNdDx5WFOjBBXzwcH8DVA7J+KhOmdUOOyjxAQmtMol\nObsbEsWCH3L117yHxl2qUHCVwQ2Bh9lcGuR7Z0cbral7Xa/63cBdvD9NsRUz\nXIGmGibD6UPCY9a8RjOfM9MyBPuK1KpHXtImBJzN0R2WhMjHF2KRI3Lk8R+B\nW6BNpio/0qorXffaFeOf/TPnqD6PAILm7/aZi0njQQkwSF5tjvQZDXdRGPsi\nyWDRSejejeKwBvZCcJzqVkRfl5a77HRGFFZIQ/MMO6fE4iZ/mXEnZKxdTmeP\n+jKyJdI1/XDavAnSuY+UNikH6NySevNdPEWNH6vvU9oleNitK35krO+oP6GQ\nJWOB\r\n=y/9M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/js-cleanup_0.9.0_1545819909956_0.4554575450833338"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "js-cleanup",
+      "version": "1.0.0",
+      "description": "Smart comment and whitespace cleaner for JavaScript-like files.",
+      "main": "dist/index.js",
+      "module": "dist/index.mjs",
+      "source": "src/index.ts",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "lint": "tslint *.ts && tslint -p . && eslint --ext js test",
+        "test": "nyc mocha",
+        "pretest": "yarn build",
+        "build": "rollup -c",
+        "clean": "rimraf ./.nyc_output/** ./coverage/** ./dist/**",
+        "coverage": "nyc report -r=lcov",
+        "prepublish": "npm run clean && npm run lint && npm run test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "clean",
+        "cleanup",
+        "source",
+        "comments",
+        "remover",
+        "removal"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/js-cleanup",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/js-cleanup/issues"
+      },
+      "repository": {
+        "url": "git+https://github.com/aMarCruz/js-cleanup.git",
+        "type": "git"
+      },
+      "dependencies": {
+        "magic-string": "^0.25.1",
+        "perf-regexes": "^1.0.1",
+        "skip-regex": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/expect": "~1.20.03",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.18",
+        "eslint": "^5.11.0",
+        "expect": "~1.20.2",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-typescript": "^1.0.0",
+        "sourcemap-validator": "^1.1.0",
+        "tslib": "^1.9.3",
+        "tslint": "^5.12.0",
+        "typescript": "^3.2.2"
+      },
+      "gitHead": "8073d2fd12e957aa6d85cadb3d7a5555afa09028",
+      "_id": "js-cleanup@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-gT33849UQki2Ek5NJM9eCH1ZEMjzMfyE881kmfv51hxO4K+TgH+qBIt9RZjczrV02wFqNDSVCk8pE9p78I3cIw==",
+        "shasum": "a3aad18a23a1752e9fa005f9128e65d601d2d634",
+        "tarball": "https://registry.npmjs.org/js-cleanup/-/js-cleanup-1.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 108776,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJEYPCRA9TVsSAnZWagAA6+IP/ji+0DvXDt79MqtKlTrh\no00+r/5j9unN1BkPRrkpqnKVfkBFq/TCr/mv/ax0JNct6vfKgVcbcoPmSkhl\n7EouJFhPshLjn8/stITRFpNn7nQ3NFkSoVFNnGhGN60ckAktnMTX87/utR4x\nsf+mZwWVuia4ZS3Ecsv46uojhO1bQg8jMGCzFiyk51sDLJyyzgbcpL3gHIdb\n/cKtkalD0DHnafG0ml5MNYfhhliWKBFpf0MQrE4sXTQ//G5OO/uDbfPmBHAy\nUYpT5aOKd/TTh/8F2DL6AGxeWmQSU/S/D8F8poSotvP8CwNtu26weuPZt7pE\nl3h2NVT/198y5qHZPRgTQvPcHjpwSF8HIcJsOVh/2qh+pmYUxtMcHcQ+BMZ2\ni7s3iuAJinZAvab+rxFrB+eBWvWBevZRHfvozBFJrANHapzU4x0wUS4nor3E\n1zwuj4ppns1x2RgkUVklUoDXMPZF/JUv65NGdACKF7mG0Z9QIdZO4aP9A0mN\nOs8vi5iTuCbk8zAQo4qKoCULifnQZ4S5kA27QBDMldRaOue9VtOooUvLz3hs\nPhBZcUTDThq3Moc7FoTkp/MJPFJioA4IpHqMJtNXX35zcfVERdbzqNB6XKds\nYH1G3rodJ6roV9TwJIfOZD5sTDIgT/NU2bXBCT8wVVZ/XTZ35ma004LNkQA2\npxPJ\r\n=3oEO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/js-cleanup_1.0.0_1545881102503_0.27045850588917286"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "js-cleanup",
+      "version": "1.0.1",
+      "description": "Smart comment and whitespace cleaner for JavaScript-like files.",
+      "main": "dist/index.js",
+      "module": "dist/index.mjs",
+      "source": "src/index.ts",
+      "engines": {
+        "node": ">=6.14"
+      },
+      "scripts": {
+        "lint": "tslint *.ts && tslint -p . && eslint --ext js test",
+        "test": "nyc mocha",
+        "pretest": "yarn build",
+        "build": "rollup -c",
+        "clean": "rimraf ./.nyc_output/** ./coverage/** ./dist/**",
+        "coverage": "nyc report -r=lcov",
+        "prepublish": "npm run clean && npm run lint && npm run test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "clean",
+        "cleanup",
+        "source",
+        "comments",
+        "remover",
+        "removal"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/js-cleanup",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/js-cleanup/issues"
+      },
+      "repository": {
+        "url": "git+https://github.com/aMarCruz/js-cleanup.git",
+        "type": "git"
+      },
+      "dependencies": {
+        "magic-string": "^0.25.1",
+        "perf-regexes": "^1.0.1",
+        "skip-regex": "^1.0.2"
+      },
+      "devDependencies": {
+        "@types/expect": "~1.20.03",
+        "@types/mocha": "^5.2.5",
+        "@types/node": "^10.12.18",
+        "eslint": "^5.12.0",
+        "expect": "~1.20.2",
+        "mocha": "^5.2.0",
+        "nyc": "^13.1.0",
+        "rimraf": "^2.6.2",
+        "rollup": "^0.68.2",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-typescript": "^1.0.0",
+        "sourcemap-validator": "^1.1.0",
+        "tslib": "^1.9.3",
+        "tslint": "^5.12.1",
+        "typescript": "^3.2.4"
+      },
+      "gitHead": "0d97f2f7a6dc4907ece2a29c88456e2a4196651c",
+      "_id": "js-cleanup@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-wyHeWKqbcQV78/tiMJ6pgJrkG7p2u3b2xX9IJFvvurpJL9/++89dHfkUebhWvSMS84LG0uQ7BnG5GGyAzY21Ag==",
+        "shasum": "1d38080c7ee92e1d2d2b94054d0a33c48951e0df",
+        "tarball": "https://registry.npmjs.org/js-cleanup/-/js-cleanup-1.0.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 109418,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQhuJCRA9TVsSAnZWagAA+GgP/1IrpUr8yfrOyLX7EyYX\nTI0Efv93xPuSTb0DSc/b6/STaorhNXsjmelqkgq+oQ5+TBle3c9GEg7dgO1a\nqd0+A6v+KVhGG4vuXKe0n0MO+HV3yDlr3vwn77DWj86K/yVAQGPyDPTfCpx3\nQ5OhWJovaBjCAeQA8oLTzCn7nEJtfeQkFDe927SLGIMi1dpybohw1Lv+khW8\nslh0yadjgC+YMnmepzwm4664dh54eVhvP1hcw+ugxda09Wj2kxRTplOhkBkM\n44E/z3aHB9oqd1BQ8Ke666ShehaaHWBOCy1wWzpxjZ1pmwxiD0Q7T5Baqs0S\nqJets+yzv0dgOuuDBV51mSq0F9L4Mn3VQn+joLQHY8uZ/++D6lOMt5V7yhPQ\nLQ5xbQK25wWDxQi/GPrfDk++hmDCZ/za/UPEu346kqnxRC677FdLjbr3mNK/\nsitdDOPTVdfkFf8WVt7wnCXKq47ffAA931ON38+0DoXGXbiJkkjdwx3kEte0\nLzX3mvd//mZlz5nkQwUMktmAb0Y2yveNI5CPahoRqog0zbzgXooab+BD4aPY\n+NEI3G/Zhm+6ZoFdx7PYrZi1zYf6YCSUKPxM9fN5Frwa8OFRnwnxyWFhnj83\nfUaix2xH/B9nPyeVSz6tCZp85XlxHRgYwInPqgXutj7kyToq+nadW8mIpLJF\nM/8q\r\n=k89n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/js-cleanup_1.0.1_1547836297066_0.6845871881612615"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "js-cleanup",
+      "version": "1.2.0",
+      "description": "Smart comment and whitespace cleaner for JavaScript-like files.",
+      "main": "./index.js",
+      "module": "./esm/index.mjs",
+      "source": "./src/index.ts",
+      "engines": {
+        "node": "^10.14.2 || >=12.0.0"
+      },
+      "scripts": {
+        "lint": "eslint -f unix --ext js,ts src test",
+        "test": "nyc mocha",
+        "pretest": "yarn build",
+        "build": "rollup -c && node ./finish",
+        "clean": "rimraf ./.nyc_output/** ./coverage/** ./esm/** index.js*",
+        "coverage": "nyc report -r=lcov",
+        "prepare": "yarn clean && yarn lint && yarn test"
+      },
+      "keywords": [
+        "javascript",
+        "typescript",
+        "es6",
+        "clean",
+        "cleanup",
+        "source",
+        "comments",
+        "remover",
+        "removal"
+      ],
+      "author": {
+        "name": "aMarCruz",
+        "email": "amarcruzbox-git@yahoo.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/aMarCruz/js-cleanup",
+      "bugs": {
+        "url": "https://github.com/aMarCruz/js-cleanup/issues"
+      },
+      "repository": {
+        "url": "git+https://github.com/aMarCruz/js-cleanup.git",
+        "type": "git"
+      },
+      "dependencies": {
+        "magic-string": "^0.25.7",
+        "perf-regexes": "^1.0.1",
+        "skip-regex": "^1.0.2"
+      },
+      "devDependencies": {
+        "@rollup/plugin-node-resolve": "~9.0.0",
+        "@types/expect": "~1.20.03",
+        "@types/mocha": "~8.0.3",
+        "@types/node": "~14.11.2",
+        "@typescript-eslint/eslint-plugin": "~4.2.0",
+        "@typescript-eslint/parser": "~4.2.0",
+        "@wessberg/rollup-plugin-ts": "~1.3.4",
+        "eslint": "~7.9.0",
+        "eslint-config-standardize": "^0.7.1",
+        "eslint-plugin-prettierx": "~0.14.0",
+        "expect": "~1.20.2",
+        "mocha": "~8.1.3",
+        "nyc": "~15.1.0",
+        "prettier": "github:aMarCruz/prettier#2.0.5",
+        "rimraf": "~3.0.2",
+        "rollup": "~2.28.1",
+        "sourcemap-validator": "~2.1.0",
+        "tslib": "^2.0.1",
+        "typescript": "~4.0.3"
+      },
+      "gitHead": "8bff91d919147b8f26bb0d98d4581cb6eb0faa56",
+      "_id": "js-cleanup@1.2.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-JeDD0yiiSt80fXzAVa/crrS0JDPQljyBG/RpOtaSbyDq03VHa9szJWMaWOYU/bcTn412uMN2MxApXq8v79cUiQ==",
+        "shasum": "8dbc65954b1d38b255f1e8cf02cd17b3f7a053f9",
+        "tarball": "https://registry.npmjs.org/js-cleanup/-/js-cleanup-1.2.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 116269,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfapdvCRA9TVsSAnZWagAAJhsP/At6aXrvtTbLpLx0L8Gw\naqOUDF/PrL/KcyIrGfPI7FTS6bUzYob4uj7eYzJBV/I2NzxG6LmKPZ3n3kBD\n+ipHtVIiRTYxFoAIWRsehbaIwJqaXBS8djXTaqpse85wqNB7xdu4/10SD9WO\nqWjDwUaRbOFsRn1wMxCzMPF6tmkV/J7U7Q6Oj2L2HcT1ShZI/u5TbR+qFZGT\nopraPRdPbZkx6ON7cOdPLjWOlTw+aEMMe97bTKM5CIBuRaX/6qms1M4jfpwH\naMwemE17DUjdG4LX5Ay1m/mujcp2n6o9ixah1QKPEHBo5IHJtYsopDjVCx21\n9YnG6ce1T/0mh4Vk8v7TPrzvFVRoo7rc8pcWxXO9Z3P/oFdMqE2APbj1f133\nVoaJlffYfiZw1ksM7StL5H5nUVYCNMg+sYCkoI/4rQASAYvhl2iVWPdNdCXT\n2pfJ2uQuikEGjengulvLxU/UKaMw7TDv3OXsPCxn9JyhpvoeTs85C71B7RRa\nMQIqiyBRxW8Ki8WJmEaCZukq634CJrLpeALURklg64ozx+tNq5oCdxMiMMF5\nwCdLD9EJVZX8pltRKjtCI8k3faRmiLW6xZgJAumY/gb+DdZKHwxRHx3E40vE\nkrCi60V5wUuJXO7pHEX90zWx83GARZnA33+kQKLQyQ3+Axa+UDiVUkobsbl1\nW4jn\r\n=gphW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "amarcruz",
+          "email": "amarcruz@yahoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "amarcruz",
+        "email": "amarcruz@yahoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/js-cleanup_1.2.0_1600821103354_0.9753764024094664"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-12-26T10:25:09.956Z",
+    "0.9.0": "2018-12-26T10:25:10.697Z",
+    "modified": "2020-09-23T00:31:45.789Z",
+    "1.0.0": "2018-12-27T03:25:02.644Z",
+    "1.0.1": "2019-01-18T18:31:37.148Z",
+    "1.2.0": "2020-09-23T00:31:43.490Z"
+  },
+  "maintainers": [
+    {
+      "name": "amarcruz",
+      "email": "amarcruz@yahoo.com"
+    }
+  ],
+  "description": "Smart comment and whitespace cleaner for JavaScript-like files.",
+  "homepage": "https://github.com/aMarCruz/js-cleanup",
+  "keywords": [
+    "javascript",
+    "typescript",
+    "es6",
+    "clean",
+    "cleanup",
+    "source",
+    "comments",
+    "remover",
+    "removal"
+  ],
+  "repository": {
+    "url": "git+https://github.com/aMarCruz/js-cleanup.git",
+    "type": "git"
+  },
+  "author": {
+    "name": "aMarCruz",
+    "email": "amarcruzbox-git@yahoo.com"
+  },
+  "bugs": {
+    "url": "https://github.com/aMarCruz/js-cleanup/issues"
+  },
+  "license": "MIT",
+  "readme": "# js-cleanup\n\n[![License][license-badge]][license-url]\n[![npm Version][npm-badge]][npm-url]\n[![Travis][travis-badge]][travis-url]\n[![AppVeyor][appveyor-badge]][appveyor-url]\n[![Coverage][coverage-badge]][coverage-url]\n[![Code Quality][codacy-badge]][codacy-url]\n[![Maintainability][climate-badge]][climate-url]\n\nSmart comment and whitespace cleaner for JavaScript-like files.\n\nWith js-cleanup you have:\n\n- Compaction of empty lines within multiline comments and/or out of them.\n- Normalization of line endings to Unix, Mac, or Windows.\n- Removal of JavaScript comments through powerful, configurable filters.\n- Removal of trailing whitespace of each line.\n- TypeScript definitions.\n- Sourcemap support.\n\nAlthough js-cleanup is not locked to a particular JavaScript dialect and can handle any JS-like file: TypeScript, Flow, React, ES9, etc, it is mainly a _postprocessor_, so it should be runned in a later stage of your toolchain, after any preprocessor or transpiler.\n\njs-cleanup requires node v10.14.2 or above, but **avoid the buggy v11.x**\n\n**Why not Uglify?**\n\nUglify is a excelent _minifier_ but you have little control over the results, while with js-cleanup your coding style remains intact and the removal of comments is strictly under your control.\n\n## Support my Work\n\nI'm a full-stack developer with more than 20 year of experience and I try to share most of my work for free and help others, but this takes a significant amount of time and effort so, if you like my work, please consider...\n\n[<img src=\"https://amarcruz.github.io/images/kofi_blue.png\" height=\"36\" title=\"Support Me on Ko-fi\" />][kofi-url]\n\nOf course, feedback, PRs, and stars are also welcome 🙃\n\nThanks!\n\n## Install\n\n```bash\n$ npm install js-cleanup -D\n# or\n$ yarn add js-cleanup -D\n```\n\n## Usage\n\n```typescript\njsCleanup(sourceCode: string, fileName?: string | null, options?: Options): Result;\n```\n\n### Result\n\nThe result is a plain JS object of this type:\n\n```typescript\ntype Result = {\n  code: string;\n  map?: object | null;\n};\n```\n\n| Name | Description                                                                                      |\n| ---- | ------------------------------------------------------------------------------------------------ |\n| code | The processed code.                                                                              |\n| map  | A raw sourcemap object, or `null` if the text did not change.<br>Undefined if `sourcemap:false`. |\n\n### Options\n\nType definition:\n\n```typescript\ntype Options = {\n  comments?: string | RegExp;\n  compactComments?: boolean;\n  maxEmptyLines?: number; // use -1 to preserve all the lines\n  lineEndings?: string; // 'mac' | 'unix' | 'win'\n  sourcemap?: boolean;\n  sourcemapOptions: {\n    includeContent?: boolean;\n    inlineMap?: boolean;\n    hires?: boolean;\n  };\n};\n```\n\n| Name               | Default | Description                                                                                                                                      |\n| ------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |\n| comments           | 'some'  | Filter or array of filters that determinates which comments should be preserved.<br>Use \"all\" to keep all, or \"none\" to remove all the comments. |\n| compactComments    | true    | Should js-cleanup also compact whitespace and blank lines in the preserved multiline comments?<br>Line-ending normalization is always done.      |\n| maxEmptyLines      | 0       | Maximum successive empty lines to preserve in the output.<br>Use a positive value, or -1 to preserve all the lines                               |\n| lineEndings        | 'unix'  | Type of Line-ending for normalization: \"unix\", \"mac\", \"win\".                                                                                     |\n| sourcemap          | true    | Should js-cleanup generate a sourcemap?                                                                                                          |\n| _sourcemapOptions_ | -       |\n| includeContent     | false   | Include the original source text in the sourcemap?                                                                                               |\n| inlineMap          | false   | Inline the sourcemap in the processed text?                                                                                                      |\n| hires              | true    | Should a hi-res sourcemap be generated?                                                                                                          |\n\n_**Note:**_\\\n_If you want to keep JSDoc comments, you should also set `compactComments: false`._\\\n_Since the JSDoc presentation depends on empty lines, these should be controlled by you._\n\n## Predefined Comment Filters\n\nInstead the special 'all' or 'none' keywords, you can use any combination of custom filters along with any of these predefined ones:\n\n| Name     | Will preserve...                                                                                                                                                                                                                                        |\n| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| some     | Comments containing \"@license\", \"@preserve\", or starting with \"!\".                                                                                                                                                                                      |\n| license  | Comments containing \"@license\".                                                                                                                                                                                                                         |\n| eslint   | [ESLint](http://eslint.org/docs/user-guide/configuring) directives.                                                                                                                                                                                     |\n| flow     | Facebook [Flow](https://flow.org/en/docs) directives, [comment types](https://flow.org/en/docs/types/comments/), and [flowlint](https://flow.org/en/docs/linting/flowlint-comments/) comments.                                                          |\n| istanbul | [istanbul](https://github.com/gotwarlost/istanbul/blob/master/ignoring-code-for-coverage.md) ignore comments.                                                                                                                                           |\n| jsdoc    | [JSDoc](http://usejsdoc.org/) comments.                                                                                                                                                                                                                 |\n| jshint   | [JSHint](http://jshint.com/docs/#inline-configuration) directives.                                                                                                                                                                                      |\n| jslint   | [JSLint](http://www.jslint.com/help.html) directives.                                                                                                                                                                                                   |\n| sources  | Sourcemap directives [sourceURL](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/#toc-sourceurl) and [sourceMappingURL](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/edit#heading=h.9ppdoan5f016). |\n| ts       | MS [TypeScript](http://www.typescriptlang.org/) Triple-Slash and @ts-\\* directives, plus the @jsx pragma.                                                                                                                                               |\n| ts3s     | TypeScript [Triple-Slash](http://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) directives.                                                                                                                                         |\n\n_**Note:**_\\\n_Since none of this filters is really accurate (js-cleanup is not a parser), they are suitable for the job without introducing greater complexity._\n\nSee the regexes in [src/predef-filters.ts](https://github.com/aMarCruz/js-cleanup/blob/master/src/predef-filters.ts)\n\n### Custom Filters\n\nA custom filter is a regex that must match the content of the comments that you want to preserve.\n\nThe content of the comments tested by each filter does not includes the first slash, nor the `*/` terminator of the multiline comments, so the multiline comments begins with an asterisk (`*`) and single-line comments begins with a slash (`/`).\n\nFor example, the following filters will preserve ESLint directives and _multiline_ comments starting with a dash:\n\n```js\nconst cleanedCode = jsCleanup(code, null, {\n  comments: [\"eslint\", /^\\*-/],\n});\n```\n\n## License\n\nThe [MIT][license-url] License\n\n&copy; 2018-2020 Alberto Martínez\n\n[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat\n[license-url]: https://github.com/aMarCruz/js-cleanup/blob/master/LICENSE\n[npm-badge]: https://img.shields.io/npm/v/js-cleanup.svg\n[npm-url]: https://www.npmjs.com/package/js-cleanup\n[appveyor-badge]: https://img.shields.io/appveyor/ci/aMarCruz/js-cleanup/master.svg?label=appveyor\n[appveyor-url]: https://ci.appveyor.com/project/aMarCruz/js-cleanup\n[travis-badge]: https://img.shields.io/travis/aMarCruz/js-cleanup/master.svg?label=travis\n[travis-url]: https://travis-ci.org/aMarCruz/js-cleanup\n[coverage-badge]: https://img.shields.io/codecov/c/github/aMarCruz/js-cleanup.svg\n[coverage-url]: https://codecov.io/gh/aMarCruz/js-cleanup\n[codacy-badge]: https://img.shields.io/codacy/grade/1534ad8a654346b78ccb827dabe0bfa8/master.svg\n[codacy-url]: https://www.codacy.com/app/aMarCruz/js-cleanup?utm_source=github.com&utm_medium=referral&utm_content=aMarCruz/js-cleanup&utm_campaign=Badge_Grade\n[climate-badge]: https://img.shields.io/codeclimate/maintainability/aMarCruz/js-cleanup.svg\n[climate-url]: https://codeclimate.com/github/aMarCruz/js-cleanup/maintainability\n[kofi-url]: https://ko-fi.com/C0C7LF7I\n",
+  "readmeFilename": "README.md"
+}

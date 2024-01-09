@@ -1,0 +1,385 @@
+{
+  "_id": "string.prototype.trimend",
+  "_rev": "4-50694b7a28c4a5ed250b3c6ca83a19e5",
+  "name": "string.prototype.trimend",
+  "description": "ES2019 spec-compliant String.prototype.trimEnd shim.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "string.prototype.trimend",
+      "version": "0.0.1",
+      "description": "polyfill for the proposed api String.prototype.trimEnd",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [
+        "es6",
+        "es7",
+        "es8",
+        "javascript",
+        "prototype",
+        "polyfill",
+        "utility",
+        "trim",
+        "trimLeft",
+        "trimRight",
+        "trimStart",
+        "trimEnd",
+        "tc39"
+      ],
+      "author": {
+        "name": "Khaled Al-Ansari",
+        "email": "khaledelansari@gmail.com"
+      },
+      "license": "MIT",
+      "gitHead": "d1f4558a51157833f14d8a424426d038d06576ce",
+      "_id": "string.prototype.trimend@0.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.3.0",
+      "_npmUser": {
+        "name": "khaledelansari",
+        "email": "khaledelansari@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-CSbXdnkp5tZ+zHuQxp2hU7mw/W3Hsw7d7vbb7EqcHY0kptaS711/wFNRKZ1vOUFDA7NRNrnWGiXOcE1ddsIfOg==",
+        "shasum": "6ece5525afdfd951c268437af92fcc630e1bfb73",
+        "tarball": "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "khaledelansari",
+          "email": "khaledelansari@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string.prototype.trimend-0.0.1.tgz_1513681182641_0.28010036423802376"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "string.prototype.trimend",
+      "version": "0.1.0",
+      "description": "polyfill for the proposed api String.prototype.trimEnd",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [
+        "es6",
+        "es7",
+        "es8",
+        "javascript",
+        "prototype",
+        "polyfill",
+        "utility",
+        "trim",
+        "trimLeft",
+        "trimRight",
+        "trimStart",
+        "trimEnd",
+        "tc39"
+      ],
+      "author": {
+        "name": "Khaled Al-Ansari",
+        "email": "khaledelansari@gmail.com"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KhaledElAnsari/String.prototype.trimEnd.git"
+      },
+      "bugs": {
+        "url": "https://github.com/KhaledElAnsari/String.prototype.trimEnd/issues"
+      },
+      "homepage": "https://github.com/KhaledElAnsari/String.prototype.trimEnd#readme",
+      "gitHead": "f1c71a0a882e89e1c207ed2b316d91670be2b075",
+      "_id": "string.prototype.trimend@0.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.3.0",
+      "_npmUser": {
+        "name": "khaledelansari",
+        "email": "khaledelansari@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8rdgUP5yvfijitM/R3XZgLas1TLDYKg5fBOfSC0g1alh5Kr1ZHhKilQFRhjegsy2iFU8huJjIVHzdldXLXs99A==",
+        "shasum": "28221418f2081c09979a62583b356fed9ea3d3bd",
+        "tarball": "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "khaledelansari",
+          "email": "khaledelansari@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string.prototype.trimend-0.1.0.tgz_1513681454522_0.5258902213536203"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "string.prototype.trimend",
+      "version": "1.0.0",
+      "description": "ES2019 spec-compliant String.prototype.trimEnd shim.",
+      "main": "index.js",
+      "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint && es-shim-api --bound",
+        "test": "npm run tests-only",
+        "posttest": "npx aud --production",
+        "tests-only": "npm run --silent test:shimmed && npm run --silent test:module",
+        "test:shimmed": "node test/shimmed",
+        "test:module": "node test",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "keywords": [
+        "es6",
+        "es7",
+        "es8",
+        "javascript",
+        "prototype",
+        "polyfill",
+        "utility",
+        "trim",
+        "trimLeft",
+        "trimRight",
+        "trimStart",
+        "trimEnd",
+        "tc39"
+      ],
+      "author": {
+        "name": "Khaled Al-Ansari",
+        "email": "khaledelansari@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "@es-shims/api": "^2.1.2",
+        "@ljharb/eslint-config": "^16.0.0",
+        "aud": "^1.1.0",
+        "auto-changelog": "^1.16.3",
+        "eslint": "^6.8.0",
+        "functions-have-names": "^1.2.1",
+        "tape": "^5.0.0-next.5"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "dependencies": {
+        "define-properties": "^1.1.3",
+        "es-abstract": "^1.17.5"
+      },
+      "gitHead": "6018f310435bd176bbda3b2bd9aefdd1d0881f58",
+      "_id": "string.prototype.trimend@1.0.0",
+      "_nodeVersion": "13.12.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-EEJnGqa/xNfIg05SxiPSqRS7S9qwDhYts1TSLR1BQfYUfPe1stofgGKvwERK9+9yf+PpfBMlpBaCHucXGPQfUA==",
+        "shasum": "ee497fd29768646d84be2c9b819e292439614373",
+        "tarball": "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-1.0.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 12906,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegaSICRA9TVsSAnZWagAAkSMQAIA2YBH6dKclphmfrYEW\nMhPQ7Im3dmaAf9zhuc5y8e2P/H3gFcSyOdbpx9WVSnJ/sRdllF3633EAlAri\n+Sb61pxm5FU+ef0IYgNrYTGFMch9B3nc4R+x6VZKPCAx2+n+wJHXzQwbpdqD\n0n1JPzz9MAUxVtFSg/QOLB/4BgaWJ8NNDl0KsMNgeOwlagnfgqU6tfYQkz4Y\nHcYmLuujlfY0PEGLPRhpjTuw/0T65PjhG01HxudwwuU1PTbybvuOWnFWg/dJ\nqegow1CB0jNMNPH93VVEH7N2wDX0OygBa8u+lwNWRJ1Io/N8cP7gIxt2eBuU\nkd1CxsAkW36X0ZXy/MH0HthKTpCXvj7hZNVwc1ZbYImj3IgjDNldfCL5DEHK\ndo/k2CNQZySZpzdj7TwWPLV4B/9++YQViI9UN88qQB7kWqKY5AroVZAiiT+B\nX5PnSl7IUGSSDzal1UclPYZw74FOzj8EWBRr9cE2JslmsgjxjfrukagSyWSn\nHwdY3sVeSG0Tw+YWR5VJWk43aXFeNTp1FDK01Od/exRRcDrFGRPAXF8BdDga\nOaNPoFuaJumfX2aBO83ueoeKSToLJ3LHVXgGAZoFGaM1GbrJVexMAkcb3t+V\ntw6+2BzmYs1zStit+E+sbtXGi6/CO/SkitGo72Qjg7YAjzxQEdjNCmmSRb+9\neyw9\r\n=8ejl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "khaledelansari@gmail.com",
+          "name": "khaledelansari"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string.prototype.trimend_1.0.0_1585554567940_0.3657593658674976"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "string.prototype.trimend",
+      "version": "1.0.1",
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "contributors": [
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        },
+        {
+          "name": "Khaled Al-Ansari",
+          "email": "khaledelansari@gmail.com"
+        }
+      ],
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "description": "ES2019 spec-compliant String.prototype.trimEnd shim.",
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "lint": "eslint .",
+        "pretest": "npm run lint && es-shim-api --bound",
+        "test": "npm run tests-only",
+        "posttest": "npx aud --production",
+        "tests-only": "npm run --silent test:shimmed && npm run --silent test:module",
+        "test:shimmed": "node test/shimmed",
+        "test:module": "node test",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/es-shims/String.prototype.trimEnd.git"
+      },
+      "keywords": [
+        "es6",
+        "es7",
+        "es8",
+        "javascript",
+        "prototype",
+        "polyfill",
+        "utility",
+        "trim",
+        "trimLeft",
+        "trimRight",
+        "trimStart",
+        "trimEnd",
+        "tc39"
+      ],
+      "devDependencies": {
+        "@es-shims/api": "^2.1.2",
+        "@ljharb/eslint-config": "^16.0.0",
+        "aud": "^1.1.0",
+        "auto-changelog": "^1.16.4",
+        "eslint": "^6.8.0",
+        "functions-have-names": "^1.2.1",
+        "tape": "^5.0.0-next.5"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "dependencies": {
+        "define-properties": "^1.1.3",
+        "es-abstract": "^1.17.5"
+      },
+      "gitHead": "db875b3155c8711b9ee6ab4f8ed0653c94879416",
+      "bugs": {
+        "url": "https://github.com/es-shims/String.prototype.trimEnd/issues"
+      },
+      "homepage": "https://github.com/es-shims/String.prototype.trimEnd#readme",
+      "_id": "string.prototype.trimend@1.0.1",
+      "_nodeVersion": "13.12.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-LRPxFUaTtpqYsTeNKaFOw3R4bxIzWOnbQ837QfBylo8jIxtcbK/A/sMV7Q+OAV/vWo+7s25pOE10KYSjaSO06g==",
+        "shasum": "85812a6b847ac002270f5808146064c995fb6913",
+        "tarball": "https://registry.npmjs.org/string.prototype.trimend/-/string.prototype.trimend-1.0.1.tgz",
+        "fileCount": 16,
+        "unpackedSize": 13533,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJej4mGCRA9TVsSAnZWagAAhdsP/1qCQ5RZVGI33dgZBsGD\nuc6wyhWN0a6SGppdmsqqSD6jUkeTJ2VJuQiPbJyi9RsAJ10ZIMIo8i/6uU32\nuVBe8lPAAOgzS4DYM0tI/vIE1/Cnzdl7w1fLwCIN+vFbudjEiqDMnzS+ga7J\nSqKNC5vea+vqY+BPZOgfkyvZOcQQsYggLsUAfV6yc98HcoUi7IjEK4TkKl8H\n2aPIsgYwKyK/0prVhuC2Fhk3Le3mKJYy9+TdAMgc47ZTHLjJgouVm5zcF7Xi\nAuUVjspaYkXi4+c6jcRCR5RC1mKjz68VvkMDPLF0HowB7GZrc5m0gxBfmHHt\nypdEymsrQQlcDqRDfWdI+J0+E+ZPw8GRnuEFKAtxQiwe+oBpLo+wd7aW5Osb\n0REmqLThjT2UZzl8+L4+YaxGr17Jad73Hiz47Znom2ckbImzByqUxPEOZGFQ\nQ1ABF4RyhcrRShZijgzO1oPXELctezKeuua2WA6d33aR8ViGYKSKMGGD4r4P\nfUecQmQx0ilTjyxsixlwWPs6sr6N1frQ+cTc/FnyooYI/QxxEpcC1nY1A9Kp\n6/N69cgiWIcpc3rE4+wHOIvawSkvnegL6IXD/2PCE3RsWmY4y38DhFfBo7iW\n7z772TsHW8ICOkvT71IBiX9vkwMocmzvtAC98uCyA5I95Eubi4BcgYSGXmGz\nZJTX\r\n=uxuc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "khaledelansari@gmail.com",
+          "name": "khaledelansari"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/string.prototype.trimend_1.0.1_1586465158140_0.4498750445390014"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "String.prototype.trimEnd <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\n[![browser support][testling-svg]][testling-url]\n\nAn ES2019-spec-compliant `String.prototype.trimEnd` shim. Invoke its \"shim\" method to shim `String.prototype.trimEnd` if it is unavailable.\n\nThis package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/6.0/#sec-object.assign). In an ES6 environment, it will also work properly with `Symbol`s.\n\nMost common usage:\n```js\nvar trimEnd = require('string.prototype.trimend');\n\nassert(trimEnd(' \\t\\na \\t\\n') === 'a \\t\\n');\n\nif (!String.prototype.trimEnd) {\n\ttrimEnd.shim();\n}\n\nassert(trimEnd(' \\t\\na \\t\\n ') === ' \\t\\na \\t\\n '.trimEnd());\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[package-url]: https://npmjs.com/package/string.prototype.trimend\n[npm-version-svg]: http://vb.teelaun.ch/es-shims/String.prototype.trimEnd.svg\n[travis-svg]: https://travis-ci.org/es-shims/String.prototype.trimEnd.svg\n[travis-url]: https://travis-ci.org/es-shims/String.prototype.trimEnd\n[deps-svg]: https://david-dm.org/es-shims/String.prototype.trimEnd.svg\n[deps-url]: https://david-dm.org/es-shims/String.prototype.trimEnd\n[dev-deps-svg]: https://david-dm.org/es-shims/String.prototype.trimEnd/dev-status.svg\n[dev-deps-url]: https://david-dm.org/es-shims/String.prototype.trimEnd#info=devDependencies\n[testling-svg]: https://ci.testling.com/es-shims/String.prototype.trimEnd.png\n[testling-url]: https://ci.testling.com/es-shims/String.prototype.trimEnd\n[npm-badge-png]: https://nodei.co/npm/string.prototype.trimend.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/string.prototype.trimend.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/string.prototype.trimend.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=string.prototype.trimend\n",
+  "maintainers": [
+    {
+      "email": "khaledelansari@gmail.com",
+      "name": "khaledelansari"
+    },
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-09T20:46:00.702Z",
+    "created": "2017-12-19T10:59:43.526Z",
+    "0.0.1": "2017-12-19T10:59:43.526Z",
+    "0.1.0": "2017-12-19T11:04:15.368Z",
+    "1.0.0": "2020-03-30T07:49:28.059Z",
+    "1.0.1": "2020-04-09T20:45:58.328Z"
+  },
+  "keywords": [
+    "es6",
+    "es7",
+    "es8",
+    "javascript",
+    "prototype",
+    "polyfill",
+    "utility",
+    "trim",
+    "trimLeft",
+    "trimRight",
+    "trimStart",
+    "trimEnd",
+    "tc39"
+  ],
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/es-shims/String.prototype.trimEnd#readme",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/es-shims/String.prototype.trimEnd.git"
+  },
+  "contributors": [
+    {
+      "name": "Jordan Harband",
+      "email": "ljharb@gmail.com"
+    },
+    {
+      "name": "Khaled Al-Ansari",
+      "email": "khaledelansari@gmail.com"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/es-shims/String.prototype.trimEnd/issues"
+  }
+}

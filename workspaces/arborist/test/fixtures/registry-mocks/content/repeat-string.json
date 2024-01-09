@@ -1,0 +1,1439 @@
+{
+  "_id": "repeat-string",
+  "_rev": "36-4b6ff4d60d1e447aa50565559e5f9d9c",
+  "name": "repeat-string",
+  "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+  "dist-tags": {
+    "latest": "1.6.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R test"
+      },
+      "devDependencies": {
+        "verb": "~0.1.20",
+        "chai": "~1.9.1"
+      },
+      "_id": "repeat-string@0.1.0",
+      "dist": {
+        "shasum": "e786bc8fc50e1ba990915f6f5311c3d4eb478162",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "verb": "~0.2.6"
+      },
+      "_id": "repeat-string@0.1.1",
+      "dist": {
+        "shasum": "eefdb59d1ba4f49396231d03db9f9a3fa9e633bc",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "verb": "~0.2.6"
+      },
+      "_id": "repeat-string@0.1.2",
+      "_shasum": "d3a99f01f2c169a9b38ec573c97afcf508d91228",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d3a99f01f2c169a9b38ec573c97afcf508d91228",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "should": "^4.0.4",
+        "verb": "^0.2.15"
+      },
+      "_id": "repeat-string@0.2.0",
+      "_shasum": "d5942f4729e6ec241608b19cc623771352571984",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d5942f4729e6ec241608b19cc623771352571984",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "should": "^4.0.4",
+        "verb": "^0.2.15"
+      },
+      "keywords": [
+        "multiple",
+        "repeat",
+        "str",
+        "string",
+        "times"
+      ],
+      "_id": "repeat-string@0.2.1",
+      "_shasum": "68cb6dbc3c8bf3c8d2e56313a5286bdc45635e56",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "68cb6dbc3c8bf3c8d2e56313a5286bdc45635e56",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "repeat-string",
+      "description": "Repeat the given string, n times.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "chai": "~1.9.1",
+        "should": "^4.0.4",
+        "verb": "^0.2.15"
+      },
+      "keywords": [
+        "multiple",
+        "repeat",
+        "str",
+        "string",
+        "times"
+      ],
+      "_id": "repeat-string@0.2.2",
+      "_shasum": "c7a8d3236068362059a7e4651fc6884e8b1fb4ae",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c7a8d3236068362059a7e4651fc6884e8b1fb4ae",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "repeat-string",
+      "description": "Fastest implementation for repeating a string.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fill",
+        "javascript",
+        "js",
+        "left",
+        "left-pad",
+        "multiple",
+        "node.js",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "str",
+        "string",
+        "text",
+        "times",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "_id": "repeat-string@1.0.0",
+      "_shasum": "e504a20b71e932b53a02f88b6c13dc63f5f37218",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e504a20b71e932b53a02f88b6c13dc63f5f37218",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "javascript",
+        "js",
+        "left",
+        "left-pad",
+        "multiple",
+        "node.js",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "str",
+        "string",
+        "text",
+        "times",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "_id": "repeat-string@1.1.0",
+      "_shasum": "12b876fdea42386d1db1521983fb645926ca87d4",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "12b876fdea42386d1db1521983fb645926ca87d4",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "javascript",
+        "js",
+        "left",
+        "left-pad",
+        "multiple",
+        "node.js",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "str",
+        "string",
+        "text",
+        "times",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "086f2a0b678ca9eafb491a599e9419d5dff8dd46",
+      "_id": "repeat-string@1.2.0",
+      "_shasum": "5e812b13aa15c9a86fb0fa20ce9921c05aa9227c",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e812b13aa15c9a86fb0fa20ce9921c05aa9227c",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.3.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "repeating": "^1.1.1",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "javascript",
+        "js",
+        "left",
+        "left-pad",
+        "multiple",
+        "node.js",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "str",
+        "string",
+        "text",
+        "times",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "3653899391d4108f9fe9f7addfc736f5d1e4a544",
+      "_id": "repeat-string@1.3.0",
+      "_shasum": "5dfda114f59522d7b160337649abc8676d3faf52",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5dfda114f59522d7b160337649abc8676d3faf52",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.4.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "files": [
+        "index.js"
+      ],
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "repeating": "^1.1.1",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repetition",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "gitHead": "53875172eaee59174f92dec68e4f4db186310807",
+      "_id": "repeat-string@1.4.0",
+      "_shasum": "0133d7b542ce809a685e6c6d4bae11c7a4d892ef",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0133d7b542ce809a685e6c6d4bae11c7a4d892ef",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.5.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "files": [
+        "index.js"
+      ],
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "repeating": "^1.1.1",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repetition",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "gitHead": "7d1699165a8beda5a3262c45cc0910f43b092217",
+      "_id": "repeat-string@1.5.0",
+      "_shasum": "ed2351aaa58b1ed45053d80214204aa3582ff17f",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ed2351aaa58b1ed45053d80214204aa3582ff17f",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.1": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.5.1",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "minimist": "^1.1.0",
+        "repeating": "^1.1.1",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repetition",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "gitHead": "bf20e5dc1414305bec6ff26d90988378a5bad6ec",
+      "_id": "repeat-string@1.5.1",
+      "_shasum": "d29532c978c5a0c64600c2a323f74b80bd01f741",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d29532c978c5a0c64600c2a323f74b80bd01f741",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.2": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.5.2",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "glob": "^4.3.5",
+        "mocha": "^2.2.1",
+        "repeating": "^1.1.1",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repetition",
+        "repeat",
+        "repeating",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "gitHead": "bf20e5dc1414305bec6ff26d90988378a5bad6ec",
+      "_id": "repeat-string@1.5.2",
+      "_shasum": "21065f70727ad053a0dd5e957ac9e00c7560d90a",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "21065f70727ad053a0dd5e957ac9e00c7560d90a",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.5.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.4": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.5.4",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "benchmarked": "^0.1.5",
+        "chalk": "^1.1.1",
+        "glob": "^7.0.0",
+        "gulp-format-md": "^0.1.7",
+        "mocha": "*",
+        "repeating": "^2.0.0",
+        "should": "*"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "repetition",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "repeat-element"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "53b4ac32e4cfa5bf339aed73544fe86b0f3e9190",
+      "_id": "repeat-string@1.5.4",
+      "_shasum": "64ec0c91e0f4b475f90d5b643651e3e6e5b6c2d5",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "64ec0c91e0f4b475f90d5b643651e3e6e5b6c2d5",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.5.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/repeat-string-1.5.4.tgz_1456747759357_0.14794702967628837"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.6.0",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Linus Unnebäck",
+          "email": "linus@folkdatorn.se",
+          "url": "http://linus.unnebäck.se"
+        },
+        {
+          "name": "Thijs Busser",
+          "email": "tbusser@gmail.com",
+          "url": "http://tbusser.net"
+        },
+        {
+          "name": "Titus",
+          "email": "tituswormer@gmail.com",
+          "url": "wooorm.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^0.2.5",
+        "gulp-format-md": "^0.1.11",
+        "isobject": "^2.1.0",
+        "mocha": "^3.1.2",
+        "repeating": "^3.0.0",
+        "text-table": "^0.2.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "repetition",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "repeat-element"
+          ]
+        },
+        "helpers": [
+          "./benchmark/helper.js"
+        ],
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "2ac333bfcc7193754de5d62e7f4dd8c30e845e23",
+      "_id": "repeat-string@1.6.0",
+      "_shasum": "d796f627f04e1379982851a369ff20de4a9fbcd9",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d796f627f04e1379982851a369ff20de4a9fbcd9",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/repeat-string-1.6.0.tgz_1477241227407_0.5940681712236255"
+      },
+      "directories": {}
+    },
+    "1.6.1": {
+      "name": "repeat-string",
+      "description": "Repeat the given string n times. Fastest implementation for repeating a string.",
+      "version": "1.6.1",
+      "homepage": "https://github.com/jonschlinkert/repeat-string",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Linus Unnebäck",
+          "email": "linus@folkdatorn.se",
+          "url": "http://linus.unnebäck.se"
+        },
+        {
+          "name": "Thijs Busser",
+          "email": "tbusser@gmail.com",
+          "url": "http://tbusser.net"
+        },
+        {
+          "name": "Titus",
+          "email": "tituswormer@gmail.com",
+          "url": "wooorm.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/repeat-string.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/repeat-string/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "benchmarked": "^0.2.5",
+        "gulp-format-md": "^0.1.11",
+        "isobject": "^2.1.0",
+        "mocha": "^3.1.2",
+        "repeating": "^3.0.0",
+        "text-table": "^0.2.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "fast",
+        "fastest",
+        "fill",
+        "left",
+        "left-pad",
+        "multiple",
+        "pad",
+        "padding",
+        "repeat",
+        "repeating",
+        "repetition",
+        "right",
+        "right-pad",
+        "string",
+        "times"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "repeat-element"
+          ]
+        },
+        "helpers": [
+          "./benchmark/helper.js"
+        ],
+        "reflinks": [
+          "verb"
+        ]
+      },
+      "gitHead": "1a95c5d99a02999ccd2cf4663959a18bd2def7b8",
+      "_id": "repeat-string@1.6.1",
+      "_shasum": "8dcae470e1c88abc2d600fff4a776286da75e637",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8dcae470e1c88abc2d600fff4a776286da75e637",
+        "tarball": "https://registry.npmjs.org/repeat-string/-/repeat-string-1.6.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/repeat-string-1.6.1.tgz_1477241638674_0.3764322670176625"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# repeat-string [![NPM version](https://img.shields.io/npm/v/repeat-string.svg?style=flat)](https://www.npmjs.com/package/repeat-string) [![NPM monthly downloads](https://img.shields.io/npm/dm/repeat-string.svg?style=flat)](https://npmjs.org/package/repeat-string)  [![NPM total downloads](https://img.shields.io/npm/dt/repeat-string.svg?style=flat)](https://npmjs.org/package/repeat-string) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/repeat-string.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/repeat-string)\n\n> Repeat the given string n times. Fastest implementation for repeating a string.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save repeat-string\n```\n\n## Usage\n\n### [repeat](index.js#L41)\n\nRepeat the given `string` the specified `number` of times.\n\n**Example:**\n\n**Example**\n\n```js\nvar repeat = require('repeat-string');\nrepeat('A', 5);\n//=> AAAAA\n```\n\n**Params**\n\n* `string` **{String}**: The string to repeat\n* `number` **{Number}**: The number of times to repeat the string\n* `returns` **{String}**: Repeated string\n\n## Benchmarks\n\nRepeat string is significantly faster than the native method (which is itself faster than [repeating](https://github.com/sindresorhus/repeating)):\n\n```sh\n# 2x\nrepeat-string  █████████████████████████  (26,953,977 ops/sec)\nrepeating      █████████                  (9,855,695 ops/sec)\nnative         ██████████████████         (19,453,895 ops/sec)\n\n# 3x\nrepeat-string  █████████████████████████  (19,445,252 ops/sec)\nrepeating      ███████████                (8,661,565 ops/sec)\nnative         ████████████████████       (16,020,598 ops/sec)\n\n# 10x\nrepeat-string  █████████████████████████  (23,792,521 ops/sec)\nrepeating      █████████                  (8,571,332 ops/sec)\nnative         ███████████████            (14,582,955 ops/sec)\n\n# 50x\nrepeat-string  █████████████████████████  (23,640,179 ops/sec)\nrepeating      █████                      (5,505,509 ops/sec)\nnative         ██████████                 (10,085,557 ops/sec)\n\n# 250x\nrepeat-string  █████████████████████████  (23,489,618 ops/sec)\nrepeating      ████                       (3,962,937 ops/sec)\nnative         ████████                   (7,724,892 ops/sec)\n\n# 2000x\nrepeat-string  █████████████████████████  (20,315,172 ops/sec)\nrepeating      ████                       (3,297,079 ops/sec)\nnative         ███████                    (6,203,331 ops/sec)\n\n# 20000x\nrepeat-string  █████████████████████████  (23,382,915 ops/sec)\nrepeating      ███                        (2,980,058 ops/sec)\nnative         █████                      (5,578,808 ops/sec)\n```\n\n**Run the benchmarks**\n\nInstall dev dependencies:\n\n```sh\nnpm i -d && node benchmark\n```\n\n## About\n\n### Related projects\n\n[repeat-element](https://www.npmjs.com/package/repeat-element): Create an array by repeating the given value n times. | [homepage](https://github.com/jonschlinkert/repeat-element \"Create an array by repeating the given value n times.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor**<br/> | \n| --- | --- |\n| 51 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [LinusU](https://github.com/LinusU) |\n| 2 | [tbusser](https://github.com/tbusser) |\n| 1 | [doowb](https://github.com/doowb) |\n| 1 | [wooorm](https://github.com/wooorm) |\n\n### Building docs\n\n_(This document was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme) (a [verb](https://github.com/verbose/verb) generator), please don't edit the readme directly. Any changes to the readme must be made in [.verb.md](.verb.md).)_\n\nTo generate the readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-generate-readme && verb\n```\n\n### Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2016, [Jon Schlinkert](http://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/repeat-string/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.2.0, on October 23, 2016._",
+  "maintainers": [
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2017-07-02T17:41:57.537Z",
+    "created": "2014-03-27T21:01:52.770Z",
+    "0.1.0": "2014-03-27T21:01:52.770Z",
+    "0.1.1": "2014-05-03T06:24:49.371Z",
+    "0.1.2": "2014-05-11T07:59:47.854Z",
+    "0.2.0": "2014-10-01T23:26:05.179Z",
+    "0.2.1": "2014-10-01T23:35:23.389Z",
+    "0.2.2": "2014-10-14T17:40:30.973Z",
+    "1.0.0": "2014-12-06T15:19:42.433Z",
+    "1.1.0": "2014-12-06T21:37:07.791Z",
+    "1.2.0": "2014-12-23T03:40:38.066Z",
+    "1.3.0": "2015-01-19T03:17:51.739Z",
+    "1.4.0": "2015-01-24T05:12:02.507Z",
+    "1.5.0": "2015-01-26T12:47:58.436Z",
+    "1.5.1": "2015-04-01T22:19:26.963Z",
+    "1.5.2": "2015-04-02T00:17:15.854Z",
+    "1.5.4": "2016-02-29T12:09:20.719Z",
+    "1.6.0": "2016-10-23T16:47:08.752Z",
+    "1.6.1": "2016-10-23T16:54:00.613Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/repeat-string",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/repeat-string.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "http://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/repeat-string/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "tunnckocore": true,
+    "jonschlinkert": true,
+    "larrychen": true,
+    "mojaray2k": true,
+    "usex": true
+  },
+  "keywords": [
+    "fast",
+    "fastest",
+    "fill",
+    "left",
+    "left-pad",
+    "multiple",
+    "pad",
+    "padding",
+    "repeat",
+    "repeating",
+    "repetition",
+    "right",
+    "right-pad",
+    "string",
+    "times"
+  ],
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "email": "brian.woodward@gmail.com",
+      "url": "https://github.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "email": "jon.schlinkert@sellside.com",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Linus Unnebäck",
+      "email": "linus@folkdatorn.se",
+      "url": "http://linus.unnebäck.se"
+    },
+    {
+      "name": "Thijs Busser",
+      "email": "tbusser@gmail.com",
+      "url": "http://tbusser.net"
+    },
+    {
+      "name": "Titus",
+      "email": "tituswormer@gmail.com",
+      "url": "wooorm.com"
+    }
+  ],
+  "_attachments": {}
+}

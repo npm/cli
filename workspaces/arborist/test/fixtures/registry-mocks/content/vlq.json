@@ -1,0 +1,436 @@
+{
+  "_id": "vlq",
+  "_rev": "10-343408fb97a1d22b572fc429d3b721d2",
+  "name": "vlq",
+  "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Rich-Harris/vlq"
+      },
+      "version": "0.1.0",
+      "main": "vlq.js",
+      "files": [
+        "vlq.js"
+      ],
+      "gitHead": "1290b2fa6d5b85e6ef02bacab4d7fd60df5e07d4",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq",
+      "_id": "vlq@0.1.0",
+      "scripts": {},
+      "_shasum": "d5158a0a26ef513af6cd19188c87cf85368a0484",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d5158a0a26ef513af6cd19188c87cf85368a0484",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Rich-Harris/vlq"
+      },
+      "license": "MIT",
+      "version": "0.2.0",
+      "main": "dist/vlq.js",
+      "jsnext:main": "src/vlq.js",
+      "files": [
+        "README.md",
+        "src/vlq.js",
+        "dist/vlq.js"
+      ],
+      "devDependencies": {
+        "esperanto": "^0.6.8",
+        "jshint": "^2.6.0"
+      },
+      "scripts": {
+        "build": "esperanto -i src/vlq.js -o dist/vlq.js -t umd -n vlq -s",
+        "lint": "jshint src",
+        "test": "node test",
+        "prepublish": "npm run lint; npm run build; npm test"
+      },
+      "gitHead": "c77eed2c03bd3bd03b0d43889513dbeb14daf65b",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq",
+      "_id": "vlq@0.2.0",
+      "_shasum": "f45f1792d26b4521ae2681fdcca5d0c32461d8df",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f45f1792d26b4521ae2681fdcca5d0c32461d8df",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/Rich-Harris/vlq"
+      },
+      "license": "MIT",
+      "version": "0.2.1",
+      "main": "dist/vlq.js",
+      "jsnext:main": "src/vlq.js",
+      "files": [
+        "README.md",
+        "src/vlq.js",
+        "dist/vlq.js"
+      ],
+      "devDependencies": {
+        "esperanto": "^0.6.8",
+        "jshint": "^2.6.0"
+      },
+      "scripts": {
+        "build": "esperanto -i src/vlq.js -o dist/vlq.js -t umd -n vlq -s",
+        "lint": "jshint src",
+        "test": "node test",
+        "prepublish": "npm run lint; npm run build; npm test"
+      },
+      "gitHead": "bcbd8afe779ca746fcc91c1ca88be214fc5c193e",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq",
+      "_id": "vlq@0.2.1",
+      "_shasum": "14439d711891e682535467f8587c5630e4222a6c",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "14439d711891e682535467f8587c5630e4222a6c",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rich-Harris/vlq.git"
+      },
+      "license": "MIT",
+      "version": "0.2.2",
+      "main": "dist/vlq.js",
+      "module": "src/vlq.js",
+      "files": [
+        "README.md",
+        "src/vlq.js",
+        "dist/vlq.js"
+      ],
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "rollup": "^0.41.6"
+      },
+      "scripts": {
+        "build": "rollup src/vlq.js -n vlq -f umd > dist/vlq.js",
+        "lint": "eslint src",
+        "test": "node test",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "gitHead": "a208af958037eeea3b0978b1a353c77e837a4ac8",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq#readme",
+      "_id": "vlq@0.2.2",
+      "_shasum": "e316d5257b40b86bb43cb8d5fea5d7f54d6b0ca1",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "e316d5257b40b86bb43cb8d5fea5d7f54d6b0ca1",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/vlq-0.2.2.tgz_1492045338584_0.668944044271484"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rich-Harris/vlq.git"
+      },
+      "license": "MIT",
+      "version": "0.2.3",
+      "main": "dist/vlq.js",
+      "module": "src/vlq.js",
+      "files": [
+        "README.md",
+        "LICENSE",
+        "src/vlq.js",
+        "dist/vlq.js"
+      ],
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "rollup": "^0.41.6"
+      },
+      "scripts": {
+        "build": "rollup src/vlq.js -n vlq -f umd > dist/vlq.js",
+        "lint": "eslint src",
+        "test": "node test",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "gitHead": "2d55881010e8b7f0bceff58231cfe7a0b3d59049",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq#readme",
+      "_id": "vlq@0.2.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-DRibZL6DsNhIgYQ+wNdWDL2SL3bKPlVrRiBqV5yuMm++op8W4kGFtaQfCs4KEJn0wBZcHVHJ3eoywX8983k1ow==",
+        "shasum": "8f3e4328cf63b1540c0d67e1b2778386f8975b26",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-0.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/vlq-0.2.3.tgz_1507042932813_0.24391252035275102"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rich-Harris/vlq.git"
+      },
+      "license": "MIT",
+      "version": "1.0.0",
+      "main": "dist/vlq.js",
+      "module": "dist/vlq.es.js",
+      "types": "dist/types/vlq.d.ts",
+      "files": [
+        "README.md",
+        "LICENSE",
+        "dist/*.js",
+        "dist/**/*.d.ts"
+      ],
+      "devDependencies": {
+        "eslint": "^3.19.0",
+        "rollup": "^0.53.3",
+        "rollup-plugin-typescript": "^0.8.1",
+        "typescript": "^2.6.2"
+      },
+      "scripts": {
+        "build": "rollup -c && tsc",
+        "lint": "eslint src",
+        "test": "node test",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "gitHead": "b7093c21ec6c9bbfed454d2785909b53cec4bd98",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq#readme",
+      "_id": "vlq@1.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-o3WmXySo+oI5thgqr7Qy8uBkT/v9Zr+sRyrh1lr8aWPUkgDWdWt4Nae2WKBrLsocgE8BuWWD0jLc+VW8LeU+2g==",
+        "shasum": "8101be90843422954c2b13eb27f2f3122bdcc806",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/vlq-1.0.0.tgz_1515597410850_0.1523158666677773"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "vlq",
+      "description": "Generate, and decode, base64 VLQ mappings for source maps and other uses",
+      "author": {
+        "name": "Rich Harris"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Rich-Harris/vlq.git"
+      },
+      "license": "MIT",
+      "version": "1.0.1",
+      "main": "dist/vlq.js",
+      "module": "dist/vlq.es.js",
+      "types": "dist/types/vlq.d.ts",
+      "devDependencies": {
+        "eslint": "^6.0.1",
+        "rollup": "^1.16.4",
+        "rollup-plugin-typescript": "^1.0.1",
+        "typescript": "^3.5.2"
+      },
+      "scripts": {
+        "build": "rollup -c && tsc",
+        "lint": "eslint src",
+        "test": "node test",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "gitHead": "822db3f22bf09148b84e8ef58878d11f3bcd543e",
+      "bugs": {
+        "url": "https://github.com/Rich-Harris/vlq/issues"
+      },
+      "homepage": "https://github.com/Rich-Harris/vlq#readme",
+      "_id": "vlq@1.0.1",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-gQpnTgkubC6hQgdIcRdYGDSDc+SaujOdyesZQMv6JlfQee/9Mp0Qhnys6WxDWvQnL5WZdT7o2Ul187aSt0Rq+w==",
+        "shasum": "c003f6e7c0b4c1edd623fd6ee50bbc0d6a1de468",
+        "tarball": "https://registry.npmjs.org/vlq/-/vlq-1.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8306,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHRF2CRA9TVsSAnZWagAAF7AP/i9KLS/JalB//uFMCIjI\new8F/yIzvTV305vZtXb1DITpgzjPoZ6bsRl9o+gbsynpVXLRw9Yl8c8+PP5J\nuP6c+oDjLSSTs1RHNXr6CzhTkomyHjDxdkxh9CrCX6s3qZrCg5fuHWPB+BL5\n9BigkKE6ewKUMIn73IB7IRpC/HVs/MpA2ONbUxwVm9y1nct/YKxS/iZ3F17b\nQt//sLkQqTV3k+ZiCaPDhHBwXWZtUO+gJRLLLYVrFs3tliHWzD5yzIvAv+0b\nrX5DRD6qrNb6g++/AC/adQj/Ga1I/NrVU5TtQJJEJ0oMfEpORtPNllC9xgBN\nVBbhx9vWh8xpb/POtFm+niSuzCA48HjtjmaekbfguF3Vttr047+WG7Hrq9Sh\noA5b/GdGtHvA9sH0pYXZn2tO4Vn6sygnsb7aYm3VveCJt3Saxsko2R2vBRh0\n3VHFf/PN8zp86TdOR7a9XfN3s1aPfPUACKH1QyJlLCTGeAsrBdr9fDhWv9AP\nQO15V3VMYwyBX/QmR+3ld2Sf0Yv7qX37n/tf3U9LZ4V5GRMuZAq/atzV4U0A\neq8unWmhZsagethcPbXiMhTzwp9NlmjairIJ8ATfhy3lwHbMGQ1G+hdUSJT9\nd84qjbTC8mBWObXitvw8fH3lfFQ9QBeuANxRLG9TrxAIHsgxnfe655qUqKUJ\nLniC\r\n=PEaf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/vlq_1.0.1_1562186101599_0.37771412789758885"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# vlq.js\n\nConvert integers to a Base64-encoded VLQ string, and vice versa. No dependencies, works in node.js or browsers, supports AMD.\n\n\n## Why would you want to do that?\n\nSourcemaps are the most likely use case. Mappings from original source to generated content are encoded as a sequence of VLQ strings.\n\n\n## What is a VLQ string?\n\nA [variable-length quantity](http://en.wikipedia.org/wiki/Variable-length_quantity) is a compact way of encoding large integers in text (i.e. in situations where you can't transmit raw binary data). An integer represented as digits will always take up more space than the equivalent VLQ representation:\n\n| Integer             | VLQ        |\n| :------------------ | :--------- |\n| 0                   | A          |\n| 1                   | C          |\n| -1                  | D          |\n| 123                 | 2H         |\n| 123456789           | qxmvrH     |\n\n\n## Installation\n\n```bash\nnpm install vlq\n```\n\n...or...\n\n```bash\nbower install vlq\n```\n\n...or grab the vlq.js file and include it with a `<script src='vlq.js'>` tag.\n\n\n## Usage\n\n### Encoding\n\n`vlq.encode` accepts an integer, or an array of integers, and returns a string:\n\n```js\nvlq.encode( 123 ); // '2H';\nvlq.encode([ 123, 456, 789 ]); // '2HwcqxB'\n```\n\n### Decoding\n\n`vlq.decode` accepts a string and always returns an array:\n\n```js\nvlq.decode( '2H' ); // [ 123 ]\nvlq.decode( '2HwcqxB' ); // [ 123, 456, 789 ]\n```\n\n\n## Limitations\n\nSince JavaScript bitwise operators work on 32 bit integers, the maximum value this library can handle is 2^30 - 1, or 1073741823.\n\n\n## Using vlq.js with sourcemaps\n\n[See here for an example of using vlq.js with sourcemaps.](https://github.com/Rich-Harris/vlq/tree/master/sourcemaps)\n\n\n## Credits\n\nAdapted from [murzwin.com/base64vlq.html](http://murzwin.com/base64vlq.html) by Alexander Pavlov.\n\n\n## License\n\n[MIT](LICENSE).\n",
+  "maintainers": [
+    {
+      "name": "rich_harris",
+      "email": "richard.a.harris@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-03T20:35:05.972Z",
+    "created": "2014-09-28T19:48:06.767Z",
+    "0.1.0": "2014-09-28T19:48:06.767Z",
+    "0.2.0": "2015-02-05T19:56:06.888Z",
+    "0.2.1": "2015-02-28T19:10:10.313Z",
+    "0.2.2": "2017-04-13T01:02:19.121Z",
+    "0.2.3": "2017-10-03T15:02:13.737Z",
+    "1.0.0": "2018-01-10T15:16:51.829Z",
+    "1.0.1": "2019-07-03T20:35:01.754Z"
+  },
+  "homepage": "https://github.com/Rich-Harris/vlq#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rich-Harris/vlq.git"
+  },
+  "author": {
+    "name": "Rich Harris"
+  },
+  "bugs": {
+    "url": "https://github.com/Rich-Harris/vlq/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}

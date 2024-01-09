@@ -1,0 +1,2911 @@
+{
+  "_id": "babel-template",
+  "_rev": "109-0d7f79d673598cdd308a3efe4ac79d12",
+  "name": "babel-template",
+  "dist-tags": {
+    "latest": "6.26.0",
+    "next": "7.0.0-beta.3"
+  },
+  "versions": {
+    "6.0.2": {
+      "name": "babel-template",
+      "version": "6.0.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.0.2",
+        "babel-traverse": "^6.0.2",
+        "babel-types": "^6.0.2",
+        "babel-runtime": "^6.0.2",
+        "lodash": "^3.10.1"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-template@6.0.2",
+      "scripts": {},
+      "_shasum": "d5a9bef2b33616dd2f08452287d1cab64b1373d0",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "d5a9bef2b33616dd2f08452287d1cab64b1373d0",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.12": {
+      "name": "babel-template",
+      "version": "6.0.12",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.0.2",
+        "babel-traverse": "^6.0.2",
+        "babel-types": "^6.0.12",
+        "babel-runtime": "^6.0.12",
+        "lodash": "^3.10.1"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-template@6.0.12",
+      "scripts": {},
+      "_shasum": "e8358ddd10ac4552a488c86758aa9a7f7d0fa5f3",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "e8358ddd10ac4552a488c86758aa9a7f7d0fa5f3",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.0.12.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.14": {
+      "name": "babel-template",
+      "version": "6.0.14",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.0.14",
+        "babel-traverse": "^6.0.14",
+        "babel-types": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.0.14",
+      "scripts": {},
+      "_shasum": "2f28e72fa19ee37ffefd2489c6603060445f1969",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "2f28e72fa19ee37ffefd2489c6603060445f1969",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.0.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.15": {
+      "name": "babel-template",
+      "version": "6.0.15",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.0.14",
+        "babel-traverse": "^6.0.14",
+        "babel-types": "^6.0.15",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.0.15",
+      "scripts": {},
+      "_shasum": "d3794fe3d894a7ea46815f474e8ca518ac3eca61",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "d3794fe3d894a7ea46815f474e8ca518ac3eca61",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.0.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.16": {
+      "name": "babel-template",
+      "version": "6.0.16",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.0.14",
+        "babel-traverse": "^6.0.16",
+        "babel-types": "^6.0.15",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.0.16",
+      "scripts": {},
+      "_shasum": "f0456f7bba9dd8316a6a227cc305e002a5341bb2",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "f0456f7bba9dd8316a6a227cc305e002a5341bb2",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.0.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.17": {
+      "name": "babel-template",
+      "version": "6.1.17",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.1.17",
+        "babel-traverse": "^6.1.17",
+        "babel-types": "^6.1.17",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.1.17",
+      "scripts": {},
+      "_shasum": "e43d9757cc70c73954c4596459b49c2d585dd90d",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "e43d9757cc70c73954c4596459b49c2d585dd90d",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.1.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.18": {
+      "name": "babel-template",
+      "version": "6.1.18",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.1.18",
+        "babel-traverse": "^6.1.18",
+        "babel-types": "^6.1.18",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.1.18",
+      "scripts": {},
+      "_shasum": "dc1d675b7524ef1d95042a6bd406393984f648a4",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "dc1d675b7524ef1d95042a6bd406393984f648a4",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.1.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.0": {
+      "name": "babel-template",
+      "version": "6.2.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.2.0",
+        "babel-traverse": "^6.2.0",
+        "babel-types": "^6.2.0",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.2.0",
+      "scripts": {},
+      "_shasum": "4008c1b0a41f48b8f6e8383c58f579fb91f911d2",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "4008c1b0a41f48b8f6e8383c58f579fb91f911d2",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.4": {
+      "name": "babel-template",
+      "version": "6.2.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.2.4",
+        "babel-traverse": "^6.2.4",
+        "babel-types": "^6.2.4",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.2.4",
+      "scripts": {},
+      "_shasum": "1e1842a787579a16e13d54c76a56a5d4af91addf",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "1e1842a787579a16e13d54c76a56a5d4af91addf",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.0": {
+      "name": "babel-template",
+      "version": "6.3.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.3.0",
+        "babel-traverse": "^6.2.0",
+        "babel-types": "^6.3.0",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.3.0",
+      "scripts": {},
+      "_shasum": "6ff5b3273f9e82c93e5e81cd608d38fcf926816e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6ff5b3273f9e82c93e5e81cd608d38fcf926816e",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.13": {
+      "name": "babel-template",
+      "version": "6.3.13",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.3.13",
+        "babel-traverse": "^6.3.13",
+        "babel-types": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.3.13",
+      "scripts": {},
+      "_shasum": "8575f16867a928a9dae84f3bbcdca7e7806fc22c",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "8575f16867a928a9dae84f3bbcdca7e7806fc22c",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.3.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.5.0": {
+      "name": "babel-template",
+      "version": "6.5.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.3.13",
+        "babel-traverse": "^6.3.13",
+        "babel-types": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.5.0",
+      "scripts": {},
+      "_shasum": "bc29886672be55d7b2a3a38d8e3ceb01c96738a6",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "bc29886672be55d7b2a3a38d8e3ceb01c96738a6",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.5.0.tgz_1454803706703_0.6285576855298132"
+      },
+      "directories": {}
+    },
+    "6.5.0-1": {
+      "name": "babel-template",
+      "version": "6.5.0-1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.5.0-1",
+        "babel-traverse": "^6.5.0-1",
+        "babel-types": "^6.5.0-1",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.5.0-1",
+      "scripts": {},
+      "_shasum": "0fe16e8f245e797b49d8f4939370768ff783f4e9",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "0fe16e8f245e797b49d8f4939370768ff783f4e9",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.5.0-1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.5.0-1.tgz_1454812910838_0.6228073425590992"
+      },
+      "directories": {}
+    },
+    "6.6.0": {
+      "name": "babel-template",
+      "version": "6.6.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.6.0",
+        "babel-traverse": "^6.6.0",
+        "babel-types": "^6.6.0",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.6.0",
+      "scripts": {},
+      "_shasum": "df4f302e512337567ecccba87ebcff92f80e24cb",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "df4f302e512337567ecccba87ebcff92f80e24cb",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.6.0.tgz_1456780388569_0.1562474542297423"
+      },
+      "directories": {}
+    },
+    "6.6.4": {
+      "name": "babel-template",
+      "version": "6.6.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.6.4",
+        "babel-traverse": "^6.6.4",
+        "babel-types": "^6.6.4",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.6.4",
+      "scripts": {},
+      "_shasum": "cf08a350085279fd0d88cafd01e631a8a4041cda",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "cf08a350085279fd0d88cafd01e631a8a4041cda",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.6.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.6.4.tgz_1456954199470_0.6423679057043046"
+      },
+      "directories": {}
+    },
+    "6.6.5": {
+      "name": "babel-template",
+      "version": "6.6.5",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.6.5",
+        "babel-traverse": "^6.6.5",
+        "babel-types": "^6.6.5",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.6.5",
+      "scripts": {},
+      "_shasum": "91567523948778562a515426fa40a25be11a85db",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "91567523948778562a515426fa40a25be11a85db",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.6.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.6.5.tgz_1457133433287_0.1314760185778141"
+      },
+      "directories": {}
+    },
+    "6.7.0": {
+      "name": "babel-template",
+      "version": "6.7.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.7.0",
+        "babel-traverse": "^6.7.0",
+        "babel-types": "^6.7.0",
+        "babel-runtime": "^5.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.7.0",
+      "scripts": {},
+      "_shasum": "e30f32639aa2bcdaa6a77bc9b92bde5c98144902",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e30f32639aa2bcdaa6a77bc9b92bde5c98144902",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.7.0.tgz_1457484784277_0.07389394007623196"
+      },
+      "directories": {}
+    },
+    "6.8.0": {
+      "name": "babel-template",
+      "version": "6.8.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.7.0",
+        "babel-traverse": "^6.8.0",
+        "babel-types": "^6.8.0",
+        "babel-runtime": "^6.0.0",
+        "lodash": "^3.10.1"
+      },
+      "_id": "babel-template@6.8.0",
+      "scripts": {},
+      "_shasum": "20eb33dadd5ada9ab6388b3ee74239d02df20193",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "20eb33dadd5ada9ab6388b3ee74239d02df20193",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.8.0.tgz_1462232722440_0.587483277078718"
+      },
+      "directories": {}
+    },
+    "6.9.0": {
+      "name": "babel-template",
+      "version": "6.9.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.7.0",
+        "babel-traverse": "^6.9.0",
+        "babel-types": "^6.9.0",
+        "babel-runtime": "^6.9.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.9.0",
+      "scripts": {},
+      "_shasum": "97090fcf6bc15685b4f05be65c0a9438aa7e23e3",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "97090fcf6bc15685b4f05be65c0a9438aa7e23e3",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.9.0.tgz_1463510987327_0.26779494574293494"
+      },
+      "directories": {}
+    },
+    "6.14.0": {
+      "name": "babel-template",
+      "version": "6.14.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.9.0",
+        "babel-traverse": "^6.14.0",
+        "babel-types": "^6.14.0",
+        "babel-runtime": "^6.9.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.14.0",
+      "scripts": {},
+      "_shasum": "9f30497d9bda51f1e439c2ee547d4de89b34b01e",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "9f30497d9bda51f1e439c2ee547d4de89b34b01e",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.14.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.14.0.tgz_1472082059693_0.9781798892654479"
+      },
+      "directories": {}
+    },
+    "6.15.0": {
+      "name": "babel-template",
+      "version": "6.15.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.9.0",
+        "babel-traverse": "^6.15.0",
+        "babel-types": "^6.15.0",
+        "babel-runtime": "^6.9.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.15.0",
+      "scripts": {},
+      "_shasum": "a0f249c89d5d57e806fc50d0ec522fbddeade1f2",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a0f249c89d5d57e806fc50d0ec522fbddeade1f2",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.15.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.15.0.tgz_1472742188087_0.550437091384083"
+      },
+      "directories": {}
+    },
+    "6.16.0": {
+      "name": "babel-template",
+      "version": "6.16.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.11.0",
+        "babel-traverse": "^6.16.0",
+        "babel-types": "^6.16.0",
+        "babel-runtime": "^6.9.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.16.0",
+      "scripts": {},
+      "_shasum": "e149dd1a9f03a35f817ddbc4d0481988e7ebc8ca",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e149dd1a9f03a35f817ddbc4d0481988e7ebc8ca",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.16.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.16.0.tgz_1475091544068_0.7295735867228359"
+      },
+      "directories": {}
+    },
+    "6.22.0": {
+      "name": "babel-template",
+      "version": "6.22.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.11.0",
+        "babel-traverse": "^6.22.0",
+        "babel-types": "^6.22.0",
+        "babel-runtime": "^6.22.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.22.0",
+      "scripts": {},
+      "_shasum": "403d110905a4626b317a2a1fcb8f3b73204b2edb",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "403d110905a4626b317a2a1fcb8f3b73204b2edb",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.22.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.22.0.tgz_1484872468077_0.7541811135597527"
+      },
+      "directories": {}
+    },
+    "6.23.0": {
+      "name": "babel-template",
+      "version": "6.23.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.11.0",
+        "babel-traverse": "^6.23.0",
+        "babel-types": "^6.23.0",
+        "babel-runtime": "^6.22.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.23.0",
+      "scripts": {},
+      "_shasum": "04d4f270adbb3aa704a8143ae26faa529238e638",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "04d4f270adbb3aa704a8143ae26faa529238e638",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.23.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.23.0.tgz_1487034860748_0.5449873269535601"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.1": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.4",
+        "babel-traverse": "7.0.0-alpha.1",
+        "babel-types": "7.0.0-alpha.1",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.1",
+      "scripts": {},
+      "_shasum": "df6394b3ac62ae7721691d1d4e1e7218f3063bba",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "df6394b3ac62ae7721691d1d4e1e7218f3063bba",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-7.0.0-alpha.1.tgz_1488488739098_0.19894228945486248"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.3": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.3",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.7",
+        "babel-traverse": "7.0.0-alpha.3",
+        "babel-types": "7.0.0-alpha.3",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.3",
+      "scripts": {},
+      "_shasum": "eff537d49216ae6e70722f3556a17cc3de62b117",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "eff537d49216ae6e70722f3556a17cc3de62b117",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-7.0.0-alpha.3.tgz_1490298582550_0.6886259366292506"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.7": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.7",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.8",
+        "babel-traverse": "7.0.0-alpha.7",
+        "babel-types": "7.0.0-alpha.7",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.7",
+      "scripts": {},
+      "_shasum": "82e26500980d1b3f14d9ebe8ae8b9325dc158392",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "82e26500980d1b3f14d9ebe8ae8b9325dc158392",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-7.0.0-alpha.7.tgz_1491426850949_0.9372978312894702"
+      },
+      "directories": {}
+    },
+    "6.24.1": {
+      "name": "babel-template",
+      "version": "6.24.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.11.0",
+        "babel-traverse": "^6.24.1",
+        "babel-types": "^6.24.1",
+        "babel-runtime": "^6.22.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.24.1",
+      "scripts": {},
+      "_shasum": "04ae514f1f93b3a2537f2a0f60a5a45fb8308333",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "04ae514f1f93b3a2537f2a0f60a5a45fb8308333",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.24.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-6.24.1.tgz_1491578353921_0.9061475147027522"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.8": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.8",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.8",
+        "babel-traverse": "7.0.0-alpha.8",
+        "babel-types": "7.0.0-alpha.7",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.8",
+      "scripts": {},
+      "_shasum": "d3784ccbca118fa61f91be56d0fb09a75b78e8e3",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "d3784ccbca118fa61f91be56d0fb09a75b78e8e3",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-template-7.0.0-alpha.8.tgz_1492456385651_0.9752781549468637"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.9": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.9",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.8",
+        "babel-traverse": "7.0.0-alpha.9",
+        "babel-types": "7.0.0-alpha.9",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.9",
+      "scripts": {},
+      "_shasum": "e32c51ea13f8ed391ed4a1c9adcfd3ed9ca928dc",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e32c51ea13f8ed391ed4a1c9adcfd3ed9ca928dc",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-template-7.0.0-alpha.9.tgz_1492526533820_0.6713746085297316"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.10": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.10",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "7.0.0-beta.10",
+        "babel-traverse": "7.0.0-alpha.10",
+        "babel-types": "7.0.0-alpha.10",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.10",
+      "scripts": {},
+      "_shasum": "e382d0ffb6356a1d21f51a89cb573aa8c74512db",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "e382d0ffb6356a1d21f51a89cb573aa8c74512db",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.10.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.10.tgz_1495739859035_0.2331121403258294"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.11": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.11",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.11",
+        "babel-types": "7.0.0-alpha.11",
+        "babylon": "7.0.0-beta.12",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.11",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-GemFRTRdpVQTRAG1l9rflriH2vkGHfSN8q9m1NuIHy/5ZtydLq/Ve5Sp/yO7L9tKjfetjUd17gGn3ETP3XoQAQ==",
+        "shasum": "5448375020510a175c3d2f7fb7e1dcd72b18d77c",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.11.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.11.tgz_1496263431076_0.7297536286059767"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.12": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.12",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.12",
+        "babel-types": "7.0.0-alpha.12",
+        "babylon": "7.0.0-beta.12",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.12",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-OwEhzLJTUK2PMcqnx/knycDbwiOfyHZ+9RE62ieYH38Hn3q3WKqkD22vqCQcUNevO9LBOOuKkJLXKglo8X3NgA==",
+        "shasum": "f41e395ab0bb9ea26d04e968cdcf703adbaec78a",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.12.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.12.tgz_1496265127170_0.4771169424057007"
+      },
+      "directories": {}
+    },
+    "6.25.0": {
+      "name": "babel-template",
+      "version": "6.25.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babylon": "^6.17.2",
+        "babel-traverse": "^6.25.0",
+        "babel-types": "^6.25.0",
+        "babel-runtime": "^6.22.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@6.25.0",
+      "scripts": {},
+      "_shasum": "665241166b7c2aa4c619d71e192969552b10c071",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "665241166b7c2aa4c619d71e192969552b10c071",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.25.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-6.25.0.tgz_1496957348463_0.7388791020493954"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.14": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.14",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.14",
+        "babel-types": "7.0.0-alpha.14",
+        "babylon": "7.0.0-beta.13",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.14",
+      "scripts": {},
+      "_shasum": "99f28179aac12eb7771a4bb8b5c08cecf14f3439",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "99f28179aac12eb7771a4bb8b5c08cecf14f3439",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.14.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.14.tgz_1499828041585_0.11409999965690076"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.15": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.15",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.15",
+        "babel-types": "7.0.0-alpha.15",
+        "babylon": "7.0.0-beta.13",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.15",
+      "scripts": {},
+      "_shasum": "08b56562987c9893bbd6646bce4819074ba1cf90",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "08b56562987c9893bbd6646bce4819074ba1cf90",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.15.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.15.tgz_1499830576510_0.7772521912120283"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.16": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.16",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.16",
+        "babel-types": "7.0.0-alpha.16",
+        "babylon": "7.0.0-beta.17",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.16",
+      "scripts": {},
+      "_shasum": "f8bec2b5074e150c47b415d13db231b15e45598d",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "f8bec2b5074e150c47b415d13db231b15e45598d",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.16.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.16.tgz_1501017491714_0.19802521588280797"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.17": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.17",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.17",
+        "babel-types": "7.0.0-alpha.17",
+        "babylon": "7.0.0-beta.18",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.17",
+      "scripts": {},
+      "_shasum": "085597c0021644c72fa74460a8f76a85e76da943",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "085597c0021644c72fa74460a8f76a85e76da943",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.17.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.17.tgz_1501072783460_0.9635931032244116"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.18": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.18",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.18",
+        "babel-types": "7.0.0-alpha.18",
+        "babylon": "7.0.0-beta.18",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.18",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZeWz1IIKknajWGcrkPH5jOZnYZO6QSQxMWomb2xlwmOoo7HcvQag/tfi2rLBFOjZN79oa6zccLM4fUsMJvLXQw==",
+        "shasum": "333cf25e642f1411484558aa5a78aed78ac58786",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.18.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.18.tgz_1501798881040_0.79430025909096"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.19": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.19",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.19",
+        "babel-types": "7.0.0-alpha.19",
+        "babylon": "7.0.0-beta.18",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.19",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-96IEIj99ubXPjZyF2V/ZZrjSUAO3baNtOP16Qlibd9q5Hh4WVm+Xv2mOqdjABJG96N991EAtNXk3+JibJGxnWQ==",
+        "shasum": "6ef867c43dbf8c204a22f9cfd62101c64c8ade9c",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.19.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.19.tgz_1502144522281_0.03133322950452566"
+      },
+      "directories": {}
+    },
+    "6.26.0": {
+      "name": "babel-template",
+      "version": "6.26.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-runtime": "^6.26.0",
+        "babel-traverse": "^6.26.0",
+        "babel-types": "^6.26.0",
+        "babylon": "^6.18.0",
+        "lodash": "^4.17.4"
+      },
+      "_id": "babel-template@6.26.0",
+      "scripts": {},
+      "_shasum": "de03e2d16396b069f46dd9fff8521fb1a0e35e02",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "de03e2d16396b069f46dd9fff8521fb1a0e35e02",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-6.26.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-6.26.0.tgz_1502898857848_0.5731625664047897"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.20": {
+      "name": "babel-template",
+      "version": "7.0.0-alpha.20",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-alpha.20",
+        "babel-types": "7.0.0-alpha.20",
+        "babylon": "7.0.0-beta.22",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-alpha.20",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-/663UVaKGdancvZtdJOdNoWxRs44nvR6490B/M+QzqjYECJPdlIJB+ZAfrEjOjzcQWrIn6FKOhVKJdOr2qi+AQ==",
+        "shasum": "2ddab1b03a9eb8a98e7f9920cb4dc1816430db80",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-alpha.20.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-alpha.20.tgz_1504119854048_0.6232316552195698"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.0": {
+      "name": "babel-template",
+      "version": "7.0.0-beta.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-beta.0",
+        "babel-types": "7.0.0-beta.0",
+        "babylon": "7.0.0-beta.22",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-beta.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tmdH+MmmU0F6Ur8humpevSmFzYKbrN3Oru0g5Qyg4R6+sxjnzZmnvzUbsP0aKMr7tB0Ua6xhEb9arKTOsEMkyA==",
+        "shasum": "85083cf9e4395d5e48bf5154d7a8d6991cafecfb",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-beta.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-beta.0.tgz_1505185364157_0.046436075353994966"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.1": {
+      "name": "babel-template",
+      "version": "7.0.0-beta.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-beta.1",
+        "babel-types": "7.0.0-beta.1",
+        "babylon": "7.0.0-beta.22",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-beta.1",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EyRSOfj4Z7QBCeWqx0Q3ojEXDnouwdq098RgaahCDhGoLmR6FsJ791UMjrihTKr2Yu8r9ukhmLV5E5HbqEFyBw==",
+        "shasum": "f8711b186f5087589b6c2bbf1fdcd014cc05c26e",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-beta.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-beta.1.tgz_1505851807447_0.6467994947452098"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.2": {
+      "name": "babel-template",
+      "version": "7.0.0-beta.2",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-traverse": "7.0.0-beta.2",
+        "babel-types": "7.0.0-beta.2",
+        "babylon": "7.0.0-beta.25",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-beta.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2Ez5h/VrTqR0cAx+7EyPOTb19vvh+KaEHoolWxT7T4mWLtkxGAt+rJlQl8LFJVkNXSgpNeiMV8t6L5QuRPo94g==",
+        "shasum": "e5140a36854c113e12680110f0975daf09d4b4c0",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-beta.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-beta.2.tgz_1506438948993_0.5368040602188557"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.3": {
+      "name": "babel-template",
+      "version": "7.0.0-beta.3",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-beta.3",
+        "babel-traverse": "7.0.0-beta.3",
+        "babel-types": "7.0.0-beta.3",
+        "babylon": "7.0.0-beta.27",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-template@7.0.0-beta.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-urJduLja89kSDGqY8ryw8iIwQnMl30IvhMtMNmDD7vBX0l0oylaLgK+7df/9ODX9vR/PhXuif6HYl5HlzAKXMg==",
+        "shasum": "ebb877b6070ce9912b0d0c22fcad3372165913a8",
+        "tarball": "https://registry.npmjs.org/babel-template/-/babel-template-7.0.0-beta.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-template-7.0.0-beta.3.tgz_1508073133559_0.7719313118141145"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# babel-template\n\n> Generate an AST from a string template.\n\nIn computer science, this is known as an implementation of quasiquotes.\n\n## Install\n\n```sh\nnpm install --save-dev babel-template\n```\n\n## Usage\n\n```js\nimport template from \"babel-template\";\nimport generate from \"babel-generator\";\nimport * as t from \"babel-types\";\n\nconst buildRequire = template(`\n  var IMPORT_NAME = require(SOURCE);\n`);\n\nconst ast = buildRequire({\n  IMPORT_NAME: t.identifier(\"myModule\"),\n  SOURCE: t.stringLiteral(\"my-module\")\n});\n\nconsole.log(generate(ast).code);\n```\n\n```js\nconst myModule = require(\"my-module\");\n```\n\n## API\n\n### `template(code, [opts])`\n\n#### code\n\nType: `string`\n\n#### options\n\n`babel-template` accepts all of the options from [babylon], and specifies\nsome defaults of its own:\n\n* `allowReturnOutsideFunction` is set to `true` by default.\n* `allowSuperOutsideMethod` is set to `true` by default.\n\n##### preserveComments\n\nType: `boolean`\nDefault: `false`\n\nSet this to `true` to preserve any comments from the `code` parameter.\n\n#### Return value\n\n`babel-template` returns a `function` which is invoked with an optional object\nof replacements. See the usage section for an example.\n\n[babylon]: https://github.com/babel/babylon#options\n",
+  "maintainers": [
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    },
+    {
+      "email": "loganfsmyth@gmail.com",
+      "name": "loganfsmyth"
+    },
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "bng412@gmail.com",
+      "name": "existentialism"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T07:47:13.204Z",
+    "created": "2015-10-29T18:22:21.286Z",
+    "6.0.2": "2015-10-29T18:22:21.286Z",
+    "6.0.12": "2015-10-30T04:56:12.971Z",
+    "6.0.14": "2015-10-30T23:44:17.020Z",
+    "6.0.15": "2015-11-01T22:11:10.695Z",
+    "6.0.16": "2015-11-02T07:14:40.991Z",
+    "6.1.17": "2015-11-12T21:44:02.333Z",
+    "6.1.18": "2015-11-12T21:53:11.533Z",
+    "6.2.0": "2015-11-19T04:34:41.349Z",
+    "6.2.4": "2015-11-25T03:16:04.341Z",
+    "6.3.0": "2015-11-30T22:59:02.829Z",
+    "6.3.13": "2015-12-04T12:01:29.573Z",
+    "6.5.0": "2016-02-07T00:08:29.284Z",
+    "6.5.0-1": "2016-02-07T02:41:51.990Z",
+    "6.6.0": "2016-02-29T21:13:12.518Z",
+    "6.6.4": "2016-03-02T21:30:02.182Z",
+    "6.6.5": "2016-03-04T23:17:16.430Z",
+    "6.7.0": "2016-03-09T00:53:06.903Z",
+    "6.8.0": "2016-05-02T23:45:24.857Z",
+    "6.9.0": "2016-05-17T18:49:50.018Z",
+    "6.14.0": "2016-08-24T23:41:01.429Z",
+    "6.15.0": "2016-09-01T15:03:09.559Z",
+    "6.16.0": "2016-09-28T19:39:05.985Z",
+    "6.22.0": "2017-01-20T00:34:28.829Z",
+    "6.23.0": "2017-02-14T01:14:20.967Z",
+    "7.0.0-alpha.1": "2017-03-02T21:05:40.925Z",
+    "7.0.0-alpha.3": "2017-03-23T19:49:42.821Z",
+    "7.0.0-alpha.7": "2017-04-05T21:14:12.763Z",
+    "6.24.1": "2017-04-07T15:19:14.163Z",
+    "7.0.0-alpha.8": "2017-04-17T19:13:07.218Z",
+    "7.0.0-alpha.9": "2017-04-18T14:42:14.069Z",
+    "7.0.0-alpha.10": "2017-05-25T19:17:39.840Z",
+    "7.0.0-alpha.11": "2017-05-31T20:43:51.157Z",
+    "7.0.0-alpha.12": "2017-05-31T21:12:07.292Z",
+    "6.25.0": "2017-06-08T21:29:08.541Z",
+    "7.0.0-alpha.14": "2017-07-12T02:54:02.590Z",
+    "7.0.0-alpha.15": "2017-07-12T03:36:17.493Z",
+    "7.0.0-alpha.16": "2017-07-25T21:18:12.617Z",
+    "7.0.0-alpha.17": "2017-07-26T12:39:44.564Z",
+    "7.0.0-alpha.18": "2017-08-03T22:21:21.111Z",
+    "7.0.0-alpha.19": "2017-08-07T22:22:02.417Z",
+    "6.26.0": "2017-08-16T15:54:17.927Z",
+    "7.0.0-alpha.20": "2017-08-30T19:04:14.162Z",
+    "7.0.0-beta.0": "2017-09-12T03:02:45.158Z",
+    "7.0.0-beta.1": "2017-09-19T20:10:07.587Z",
+    "7.0.0-beta.2": "2017-09-26T15:15:49.889Z",
+    "7.0.0-beta.3": "2017-10-15T13:12:14.494Z"
+  },
+  "homepage": "https://babeljs.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+  },
+  "author": {
+    "name": "Sebastian McKenzie",
+    "email": "sebmck@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "description": "Generate an AST from a string template.",
+  "users": {
+    "shanewholloway": true,
+    "shuoshubao": true,
+    "mrzmmr": true,
+    "chocolateboy": true,
+    "shyling": true,
+    "qddegtya": true,
+    "rubiadias": true
+  }
+}

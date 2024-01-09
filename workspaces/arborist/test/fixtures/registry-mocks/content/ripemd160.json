@@ -1,0 +1,654 @@
+{
+  "_id": "ripemd160",
+  "_rev": "22-22af937fb5f2359f1103e916ce689ec3",
+  "name": "ripemd160",
+  "description": "Compute ripemd160 of bytes or strings.",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "ripemd160",
+      "version": "0.1.0",
+      "description": "Compute RIPEMD160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "bytes",
+        "cryptography"
+      ],
+      "devDependencies": {
+        "mocha": "1.*",
+        "terst": "0.0.1"
+      },
+      "repository": {
+        "url": "https://github.com/cryptocoinjs/ripemd160",
+        "type": "git"
+      },
+      "main": "./lib/ripemd160.js",
+      "dependencies": {
+        "convert-hex": "~0.1.0",
+        "convert-string": "~0.1.0"
+      },
+      "bugs": {
+        "url": "https://github.com/cryptocoinjs/ripemd160/issues"
+      },
+      "_id": "ripemd160@0.1.0",
+      "dist": {
+        "shasum": "b0d1df089a7eb8bdb364920beaad7a91c533a84e",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "jp",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "ripemd160",
+      "version": "0.2.0",
+      "description": "Compute RIPEMD160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "terst": "~0.1.0",
+        "mochify": "~0.4.2"
+      },
+      "repository": {
+        "url": "https://github.com/cryptocoinjs/ripemd160",
+        "type": "git"
+      },
+      "main": "./lib/ripemd160.js",
+      "dependencies": {},
+      "bugs": {
+        "url": "https://github.com/cryptocoinjs/ripemd160/issues"
+      },
+      "homepage": "https://github.com/cryptocoinjs/ripemd160",
+      "_id": "ripemd160@0.2.0",
+      "dist": {
+        "shasum": "2bf198bde167cacfa51c0a928e84b68bbe171fce",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jp",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "ripemd160",
+      "version": "0.2.1",
+      "description": "Compute RIPEMD160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "BSD-3",
+      "devDependencies": {
+        "mocha": "~1.17.1",
+        "mochify": "^2.1.0"
+      },
+      "repository": {
+        "url": "https://github.com/cryptocoinjs/ripemd160",
+        "type": "git"
+      },
+      "main": "./lib/ripemd160.js",
+      "dependencies": {},
+      "scripts": {
+        "test": "mocha test",
+        "browser-test": "mochify --wd -R spec"
+      },
+      "gitHead": "891faf2117d7c56b370224b442bc1035b0b0ba47",
+      "bugs": {
+        "url": "https://github.com/cryptocoinjs/ripemd160/issues"
+      },
+      "homepage": "https://github.com/cryptocoinjs/ripemd160",
+      "_id": "ripemd160@0.2.1",
+      "_shasum": "dee19248a3e1c815ff9aea39e753a337f56a243d",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "jp",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "dist": {
+        "shasum": "dee19248a3e1c815ff9aea39e753a337f56a243d",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ripemd160",
+      "version": "1.0.0",
+      "description": "Compute ripemd160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "BSD-3-Clause",
+      "devDependencies": {
+        "mocha": "^2.1.0",
+        "mochify": "^2.1.1"
+      },
+      "repository": {
+        "url": "https://github.com/crypto-browserify/ripemd160",
+        "type": "git"
+      },
+      "main": "./lib/ripemd160.js",
+      "dependencies": {},
+      "scripts": {
+        "test": "mocha test",
+        "browser-test": "mochify --wd -R spec"
+      },
+      "gitHead": "60345ba3ca19874b2066ac430e492cff387ad7c5",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/ripemd160/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/ripemd160",
+      "_id": "ripemd160@1.0.0",
+      "_shasum": "15fd251d56e58848840f3d5864a5cfbb259114c7",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.26",
+      "_npmUser": {
+        "name": "jp",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        }
+      ],
+      "dist": {
+        "shasum": "15fd251d56e58848840f3d5864a5cfbb259114c7",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "ripemd160",
+      "version": "1.0.1",
+      "description": "Compute ripemd160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "BSD-3-Clause",
+      "devDependencies": {
+        "mocha": "^2.1.0",
+        "mochify": "^2.1.1",
+        "standard": "3.x"
+      },
+      "repository": {
+        "url": "https://github.com/crypto-browserify/ripemd160",
+        "type": "git"
+      },
+      "main": "./lib/ripemd160.js",
+      "dependencies": {},
+      "scripts": {
+        "test": "mocha test",
+        "browser-test": "mochify --wd -R spec"
+      },
+      "gitHead": "42172c6527a55a24a9ee306996b4a8578d4780db",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/ripemd160/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/ripemd160",
+      "_id": "ripemd160@1.0.1",
+      "_shasum": "93a4bbd4942bc574b69a8fa57c71de10ecca7d6e",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "jprichardson",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "93a4bbd4942bc574b69a8fa57c71de10ecca7d6e",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ripemd160",
+      "version": "2.0.0",
+      "description": "Compute ripemd160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "./index",
+      "repository": {
+        "url": "git+https://github.com/crypto-browserify/ripemd160.git",
+        "type": "git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.7",
+        "tape": "^4.5.1"
+      },
+      "gitHead": "b459a37be2140aba46d64fdf2e97dd34f7c032dd",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/ripemd160/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/ripemd160#readme",
+      "_id": "ripemd160@2.0.0",
+      "_shasum": "828b37c63202a5875439cdca3b3f89e0bc0fe365",
+      "_from": ".",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jprichardson",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "828b37c63202a5875439cdca3b3f89e0bc0fe365",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ripemd160-2.0.0.tgz_1460413279960_0.744993690168485"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "ripemd160",
+      "version": "2.0.1",
+      "description": "Compute ripemd160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "./index",
+      "repository": {
+        "url": "git+https://github.com/crypto-browserify/ripemd160.git",
+        "type": "git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^2.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.7",
+        "tape": "^4.5.1"
+      },
+      "gitHead": "d20c06069e24dfbd8d8ccd141cad316bac38cdae",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/ripemd160/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/ripemd160#readme",
+      "_id": "ripemd160@2.0.1",
+      "_shasum": "0f4584295c53a3628af7e6d79aca21ce57d1c6e7",
+      "_from": ".",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jprichardson",
+        "email": "jprichardson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0f4584295c53a3628af7e6d79aca21ce57d1c6e7",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/ripemd160-2.0.1.tgz_1466601956349_0.07215552148409188"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "ripemd160",
+      "version": "2.0.2",
+      "description": "Compute ripemd160 of bytes or strings.",
+      "keywords": [
+        "string",
+        "strings",
+        "ripemd160",
+        "ripe160",
+        "bitcoin",
+        "bytes",
+        "cryptography"
+      ],
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "./index",
+      "repository": {
+        "url": "git+https://github.com/crypto-browserify/ripemd160.git",
+        "type": "git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "hash-base": "^3.0.0",
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^6.0.7",
+        "tape": "^4.5.1"
+      },
+      "gitHead": "3419c6409799d37e0323a556c94d040154657d9d",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/ripemd160/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/ripemd160#readme",
+      "_id": "ripemd160@2.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-ii4iagi25WusVoiC4B4lq7pbXfAp3D9v5CwfkY33vffw2+pkDjY1D8GaN7spsxvCSx8dkPqOZCEZyfxcmJG2IA==",
+        "shasum": "a1c1a6f624751577ba5d07914cbc92850585890c",
+        "tarball": "https://registry.npmjs.org/ripemd160/-/ripemd160-2.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9785,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2DHzCRA9TVsSAnZWagAAzCQP/3kZvjChttzlBYv95jGg\nxZ0TLu54WUizVYS7XwwErbiJnP+dQ/5gOUGIuwXUmFFHTVgSeJOTFNV2JonE\n2ZjKeavN66zazLmp1qNaK/apkkZXJfIHZ37qS2WOxL1POnLptG9wwEHJscZq\nXFVTIVMy/u0Ym9PlXZKGEYnNwwOyF/fOnU/57chLuWF0gjUVf+MTFSQw6X6B\n0LRwbK4V77YK16T9VdFeBhCLZ1zc3Asaa0I3aGp/1KE/seIcqUg+LdeYeGEN\nfpTHpa4Ns3ZoV8ENTukbzrokXVyGUY1MJiDsFXodXyPuBk1HngYETxISnHhY\niNocP5UFwupgmboF7ivR/af0BylQdtOY2EKoEEsF2zCD/jo6ZNknvbmUlgVq\nqBSLc7GtjA6ORuDrMJCqJNyCRc41JJS4z4Fbx6fYEsJg2H7wj0uyoccQmgcj\nkBTGz2qkQEBG4WvHyZti9L3Z+5OVsiv0KrAFKCOlJytYiYZ/LVBkBJc09KPR\nwc42rM8gZlhLMEw/+pLKWD4P10CKIobGGQRNSzbcv+afahwyydesVDvsEgya\ngoAUSFWmz5SUS15F7mu0BgSHBRyna5Rs8AeepQ2fSHe215g4Q0wgfr71HYp5\nYXP5B23sIizvYkkhnOY3hkWIzLPSpUWCv8bMv1G+DL1IPFqBkeO48L1i21zI\nT2OA\r\n=viwy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "midnightlightning",
+          "email": "boydb@midnightdesign.ws"
+        },
+        {
+          "name": "nadav",
+          "email": "npm@shesek.info"
+        },
+        {
+          "name": "vbuterin",
+          "email": "vbuterin@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ripemd160_2.0.2_1524118003074_0.9548482732312533"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ripemd160\n\n[![NPM Package](https://img.shields.io/npm/v/ripemd160.svg?style=flat-square)](https://www.npmjs.org/package/ripemd160)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/ripemd160.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/ripemd160)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/ripemd160.svg?style=flat-square)](https://david-dm.org/crypto-browserify/ripemd160#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nNode style `ripemd160` on pure JavaScript.\n\n## Example\n\n```js\nvar RIPEMD160 = require('ripemd160')\n\nconsole.log(new RIPEMD160().update('42').digest('hex'))\n// => 0df020ba32aa9b8b904471ff582ce6b579bf8bc8\n\nvar ripemd160stream = new RIPEMD160()\nripemd160stream.end('42')\nconsole.log(ripemd160stream.read().toString('hex'))\n// => 0df020ba32aa9b8b904471ff582ce6b579bf8bc8\n```\n\n## LICENSE\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "vbuterin@gmail.com",
+      "name": "vbuterin"
+    },
+    {
+      "email": "npm@shesek.info",
+      "name": "nadav"
+    },
+    {
+      "email": "boydb@midnightdesign.ws",
+      "name": "midnightlightning"
+    },
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T10:04:39.283Z",
+    "created": "2013-11-21T06:48:40.846Z",
+    "0.1.0": "2013-11-21T06:48:41.483Z",
+    "0.2.0": "2014-03-09T16:32:03.743Z",
+    "0.2.1": "2014-12-31T11:09:01.435Z",
+    "1.0.0": "2015-01-14T13:06:00.313Z",
+    "1.0.1": "2015-05-05T12:21:31.689Z",
+    "2.0.0": "2016-04-11T22:21:22.356Z",
+    "2.0.1": "2016-06-22T13:25:58.036Z",
+    "2.0.2": "2018-04-19T06:06:43.125Z"
+  },
+  "repository": {
+    "url": "git+https://github.com/crypto-browserify/ripemd160.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/crypto-browserify/ripemd160#readme",
+  "keywords": [
+    "string",
+    "strings",
+    "ripemd160",
+    "ripe160",
+    "bitcoin",
+    "bytes",
+    "cryptography"
+  ],
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/ripemd160/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}

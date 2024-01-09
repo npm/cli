@@ -1,0 +1,1809 @@
+{
+  "_id": "object-inspect",
+  "_rev": "39-5691396931328d257dfa16781e415333",
+  "name": "object-inspect",
+  "description": "string representations of objects in node and the browser",
+  "dist-tags": {
+    "latest": "1.8.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "object-inspect",
+      "version": "0.0.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.0.0",
+      "dist": {
+        "shasum": "992c69fa4c6158240faf12031e685aecd5c36501",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "object-inspect",
+      "version": "0.1.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.1.0",
+      "dist": {
+        "shasum": "221833869b4ed7db0cc90cb1052d802e38151ab5",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "object-inspect",
+      "version": "0.1.1",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "dependencies": {
+        "tape": "~1.0.4"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.1.1",
+      "dist": {
+        "shasum": "b22c0b1d096630af9f0e760857b0e16154473799",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "object-inspect",
+      "version": "0.1.2",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "dependencies": {
+        "tape": "~1.0.4"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.1.2",
+      "dist": {
+        "shasum": "238f8accda0185263c7ade56046d13f09128487a",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "object-inspect",
+      "version": "0.1.3",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "dependencies": {
+        "tape": "~1.0.4"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.1.3",
+      "dist": {
+        "shasum": "d05a65c2e34fe8225d9fda2e484e4e47b7e2f490",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "object-inspect",
+      "version": "0.2.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.6.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.2.0",
+      "dist": {
+        "shasum": "826a2044a7116f2d4e3e20628cfaea4398bc2090",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "object-inspect",
+      "version": "0.3.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.6.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.3.0",
+      "dist": {
+        "shasum": "59345a21b6f9c6053ad621024f08179525be6ce3",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "object-inspect",
+      "version": "0.3.1",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.6.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.3.1",
+      "dist": {
+        "shasum": "39fdc8ca276408a795f5c736b2c44cd04c1e76a8",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.3.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "object-inspect",
+      "version": "0.4.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "~2.6.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@0.4.0",
+      "dist": {
+        "shasum": "f5157c116c1455b243b06ee97703392c5ad89fec",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-0.4.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "object-inspect",
+      "version": "1.0.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^2.13.3"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "d497276c1da14234bb5098a59cf20de75fbc316a",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.0.0",
+      "_shasum": "df6c525311b57a7d70186915e87b81eb33748468",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "dist": {
+        "shasum": "df6c525311b57a7d70186915e87b81eb33748468",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "object-inspect",
+      "version": "1.0.1",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^2.14.0"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "60a6d82e6e2239f617d952a2d015c592bc551d6b",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.0.1",
+      "_shasum": "fe8cdcf326ab2d23c26a6fd5a9d7fd5272c2259d",
+      "_from": ".",
+      "_npmVersion": "3.1.2",
+      "_nodeVersion": "2.0.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "substack@gmail.com"
+      },
+      "dist": {
+        "shasum": "fe8cdcf326ab2d23c26a6fd5a9d7fd5272c2259d",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "object-inspect",
+      "version": "1.0.2",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^4.0.3"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "51c683fac155993d9cb3542b18b8fe084dc6cde8",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.0.2",
+      "_shasum": "a97885b553e575eb4009ebc09bdda9b1cd21979a",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "a97885b553e575eb4009ebc09bdda9b1cd21979a",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "object-inspect",
+      "version": "1.1.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^4.2.2"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "559ae4cf0785152a1296fef6cf49f4ad8572b6bf",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.1.0",
+      "_shasum": "34bca644a80f94f8ba41a0f9d0984eaf63acf14d",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "34bca644a80f94f8ba41a0f9d0984eaf63acf14d",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "object-inspect",
+      "version": "1.2.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^4.5.1"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "fc5fe1e33abfb5aebc31809d53c5e4a5d8daa55c",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.2.0",
+      "_shasum": "61b0ddcb9473755b87c2bb5dfb30a9475f111914",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "61b0ddcb9473755b87c2bb5dfb30a9475f111914",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-inspect-1.2.0.tgz_1460185839695_0.4408472578506917"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "object-inspect",
+      "version": "1.2.1",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^4.5.1"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "bd0329aaaf501de7bf2a6c5d714f533ced5e96f1",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.2.1",
+      "_shasum": "3b62226eb8f6d441751c7d8f22a20ff80ac9dc3f",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "3b62226eb8f6d441751c7d8f22a20ff80ac9dc3f",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-inspect-1.2.1.tgz_1460217450014_0.6012979652732611"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "object-inspect",
+      "version": "1.2.2",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "tape": "^4.6.3"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "tests-only": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "8fdeb49366a1cb5885a525f7a5b2dbf8eb5ed555",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.2.2",
+      "_shasum": "c82115e4fcc888aea14d64c22e4f17f6a70d5e5a",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "c82115e4fcc888aea14d64c22e4f17f6a70d5e5a",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-inspect-1.2.2.tgz_1490409748569_0.4387361933477223"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "object-inspect",
+      "version": "1.3.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "core-js": "^2.4.1",
+        "tape": "^4.7.0"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "gitHead": "193f504913532338835ec795330e9479dbf34f99",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.3.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-OHHnLgLNXpM++GnJRyyhbr2bwl3pPVm4YvaraHrRvDt/N3r+s/gDVHciA7EJBTkijKXj61ssgSAikq1fb0IBRg==",
+        "shasum": "5b1eb8e6742e2ee83342a637034d844928ba2f6d",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect-1.3.0.tgz_1501540637892_0.1793239014223218"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "object-inspect",
+      "version": "1.4.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "core-js": "^2.5.1",
+        "nyc": "^10.3.2",
+        "tape": "^4.8.0"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "gitHead": "5ce2c778eca346357f446eb325d9aad8bad5afa1",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.4.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6QW38aBzieGzJqBaq0VBCgVMuluSYAHMH0xR1CMGfVU3mWLimWhkP97NGBLpJZXYDswaY+Qbo7ExFMTE0w/6zQ==",
+        "shasum": "7bcd84fd8db2e833285282bf8356ed87dcef7cf8",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect-1.4.0.tgz_1508914217171_0.3441071610432118"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "object-inspect",
+      "version": "1.4.1",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "core-js": "^2.5.1",
+        "nyc": "^10.3.2",
+        "tape": "^4.8.0"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "gitHead": "a77008fa48496b26ae3f8df1c23187be2e4a3cfe",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.4.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wqdhLpfCUbEsoEwl3FXwGyv8ief1k/1aUdIPCqVnupM6e8l63BEJdiF/0swtn04/8p05tG/T0FrpTlfwvljOdw==",
+        "shasum": "37ffb10e71adaf3748d05f713b4c9452f402cbc4",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect-1.4.1.tgz_1513754585610_0.6385269251186401"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "object-inspect",
+      "version": "1.5.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "core-js": "^2.5.1",
+        "nyc": "^10.3.2",
+        "tape": "^4.8.0"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "gitHead": "ff3f3275ca14d80103461c8892ed164fea0741dc",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.5.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UmOFbHbwvv+XHj7BerrhVq+knjceBdkvU5AriwLMvhv2qi+e7DJzxfBeFpILEjVzCp+xA+W/pIf06RGPWlZNfw==",
+        "shasum": "9d876c11e40f485c79215670281b767488f9bfe3",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect-1.5.0.tgz_1514274544888_0.496770242927596"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "object-inspect",
+      "version": "1.6.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "core-js": "^2.5.5",
+        "nyc": "^10.3.2",
+        "tape": "^4.9.0"
+      },
+      "scripts": {
+        "test": "npm run tests-only",
+        "posttest": "npm run test:bigint",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "test:bigint": "node --harmony-bigint test/bigint",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "gitHead": "0ac0417c8898a9b02700ca724db831ec74748100",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.6.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GJzfBZ6DgDAmnuaM3104jR4s1Myxr3Y3zfIyN4z3UdqN69oSRacNK8UhnobDdC+7J2AHCjGwxQubNJfE70SXXQ==",
+        "shasum": "c70b6cbf72f274aab4c34c0c82f5167bf82cf15b",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.6.0.tgz",
+        "fileCount": 27,
+        "unpackedSize": 32034,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6kYBCRA9TVsSAnZWagAA20cP/jcCo3zf6qPgSjnt1XSo\n2AIc6fk6K7ozP6kQ29/zLngrhN5oYAHrFZzwyIzoFNjQdHGFqpE18z2vFfir\nARcvV1URWpwSFcLrydp0HlxwmBT4GvIH3sQFTwxbSBF/R6c6XmDp//fZk5U4\nxonMjW77x4KRiX3FZgHNDsiQzjYfzfOVr9k8ab5xHRRsteOMia/GB/bDbZMj\n+nY4j2b4lsmSUQDJTDzQaEYzV2GLMQfMJKaxoIM6Yye9s51b34ER7EbKGjP1\nXLwH3cl8rJwhbRphYR3xlMDS0Jg6wM5J0+AChEIzXzGThsivK3J6bCSOydTD\n3Xyy5Yi/YoB4HvDyXLkBlRu4ebpuqg/p0vBmM3e2QAfSLTh1UtVpaCKsEkQA\nJSgG0+iNAEx18ZH3C9KSnSklj1iCRCE+jopAfkusIYwo8u7HkmdGBJoODVXR\nOLoAv9lVHKkL58wNWtCDkvA3ICaVVj6uYLRbrgfJBy5gqZJabpnD938X4wPr\nyZsCsgtuqKz64WrO2+3TX01bWZSNN+WrH1G9luUD0aNXLqPnB4FZNu/j8cC/\nJPMtLv4nhyvvyY7rH+P3icYZpxTqHJ7FSwEDDkN9uL7c1qoJCVTBTtGccgC+\nRo4/DpFN1eqbJQg6E56g8Cw6clrIIvqo0A2qiM+nBFR+Ko/kNyDO/Rnz1hMy\nWVE5\r\n=owks\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect_1.6.0_1525302784581_0.17553129095753994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "object-inspect",
+      "version": "1.7.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.1",
+        "core-js": "^2.6.10",
+        "eslint": "^6.6.0",
+        "nyc": "^10.3.2",
+        "tape": "^4.11.0"
+      },
+      "scripts": {
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "posttest": "npx aud --production",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/object-inspect.git"
+      },
+      "homepage": "https://github.com/substack/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "greenkeeper": {
+        "ignore": [
+          "nyc",
+          "core-js"
+        ]
+      },
+      "gitHead": "7dd1224072239f08bd5dbb82ae5e7120d88ac562",
+      "bugs": {
+        "url": "https://github.com/substack/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.7.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-a7pEHdh1xKIAgTySUGgLMx/xwDZskN1Ud6egYYN3EdRW4ZMPNEDUTF+hwy2LUC+Bl+SyLXANnwz/jyh/qutKUw==",
+        "shasum": "f4f6bd181ad77f006b5ece60bd0b6f398ff74a67",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.7.0.tgz",
+        "fileCount": 29,
+        "unpackedSize": 30650,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyPgmCRA9TVsSAnZWagAA4MMP/ROXXurV7Bri7f2y6szD\nDlMUCXLkJbJqrCFiYc8RxB6CHqzD4A5tOqQfMUGu1n2PE2bIMfxH2TdvS9uM\nFlY5TT1RNKNqUGwO0TZ4P0KFQcp2wWDwlKITkUWatVq7DGgLDUnO4XPNGBlZ\n2/j8Ywb2GHQY5jgWXABW5LXRa/8AE/cygF/uGrSYBvHU3PVW12QcFO9KnumD\n3evFrtyR+6jf8gsuPjP9q5IuJqCB9LL08m8I/o3UUjidlocmUjCF5wYPnh7U\nn2rFkfiiSYOs3Di1y4kXdmBCXlyOUinpI5hhQLOmpjtS/eZ0EtTLylEVy7Zv\nNxCTuT71yjO9uAaV+Ae9tGDDoya4VECuDsVv3IWCvqd3obgefMVeBDbpyQqz\nSBcUcswCE3GZ6ki6Zoa41sVlH3033emEdmjoaY+SgdfuMqmJfYW2nGxDAHv9\nMPWFPUAsIda2Fx1axZh2av+dfL9EBw4xKr8diWkZ9S2qdkkP14AvxlxRytcV\nM0QqjcvwCkH22tUZl2BXjOv+2WmfWhWfR2mNMfM2DgomFLvkRvjyPg4BbIiJ\nTSVjSdENh0P8I66dk3JbQ9TK3NlumXAYJ+veMQO7LwxKWclswpOd8Y7plEz7\nE1SvGsofVbQJwl9qfYF8siNQBM7CBl1a4k6JxHrHGp1uGlI5sSBZiNISwmX7\nB+E8\r\n=sCdK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect_1.7.0_1573451813952_0.8528557885389199"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "object-inspect",
+      "version": "1.8.0",
+      "description": "string representations of objects in node and the browser",
+      "main": "index.js",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^17.1.0",
+        "aud": "^1.1.2",
+        "core-js": "^2.6.11",
+        "eslint": "^7.1.0",
+        "for-each": "^0.3.3",
+        "nyc": "^10.3.2",
+        "safe-publish-latest": "^1.1.4",
+        "string.prototype.repeat": "^1.0.0",
+        "tape": "^5.0.1"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "test": "npm run tests-only",
+        "pretests-only": "node test-core-js",
+        "tests-only": "tape test/*.js",
+        "posttest": "npx aud --production",
+        "coverage": "nyc npm run tests-only"
+      },
+      "testling": {
+        "files": [
+          "test/*.js",
+          "test/browser/*.js"
+        ],
+        "browsers": [
+          "ie/6..latest",
+          "chrome/latest",
+          "firefox/latest",
+          "safari/latest",
+          "opera/latest",
+          "iphone/latest",
+          "ipad/latest",
+          "android/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/inspect-js/object-inspect.git"
+      },
+      "homepage": "https://github.com/inspect-js/object-inspect",
+      "keywords": [
+        "inspect",
+        "util.inspect",
+        "object",
+        "stringify",
+        "pretty"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "browser": {
+        "./util.inspect.js": false
+      },
+      "greenkeeper": {
+        "ignore": [
+          "nyc",
+          "core-js"
+        ]
+      },
+      "gitHead": "6b0a54dee12b2361056590a1d3a3feecac3f7db5",
+      "bugs": {
+        "url": "https://github.com/inspect-js/object-inspect/issues"
+      },
+      "_id": "object-inspect@1.8.0",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-jLdtEOB112fORuypAyl/50VRVIBIdVQOSUUGQHzJ4xBSbit81zRarz7GThkEFZy1RceYrWYcPcBFPQwHyAc1gA==",
+        "shasum": "df807e5ecf53a609cc6bfe93eac3cc7be5b3a9d0",
+        "tarball": "https://registry.npmjs.org/object-inspect/-/object-inspect-1.8.0.tgz",
+        "fileCount": 31,
+        "unpackedSize": 43201,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7FWuCRA9TVsSAnZWagAAApYP/i25aQeNYlw74vM3OQVK\nMa1t7wPH+qMQrxNm4sxKf9Z/iA9nkg7o/DDEX2U8z36KRkU26RbiaTjgVitq\nh3Kq0SyMxAgjar0f4Od+Y20tHWPuDFPTDycg7qqttsSr02oOivhaQjBQdLzN\nCtNWGMTkH/C97xIWzkOjU/N2L8sUoCLN7knRxNHyyX5weOwN+IZJH01SNJ+G\nhx5FnnKrZneqRSxz/Qo3CDHr3iSZEcOf/mVrWnfN2NA8gUd/LHTk39tPMTlt\njFrb7QFzJyhz/v2u4RhTJxfhaa+LJ6UW4gl2F9QKXQCu8Gbd3SmClQfI6Vaz\njGRfpDN5/qKmyLeqWM2k8tbmO4U9x5IlNJaKf0D+AItLSZjhkFttSgycyuRU\nUS66GtVApefUaX7iEFrESkmJA1QW7ZtNr5MN5MTkb0qN9NKAErHMZmT3zW10\n/Hc2pZ/EQH6XTB5m1pZf+Auxk50nxAOtM/+n8FswrYj9g7neWdsRPJsZL/8s\npt6rUQc5cc/0FJ25YYCsI3VxnRblDY9hF6l8RrYRzCsWSghLuFn6hq4aoAW1\n0BiJI+LB48BWae28OsLvZy+FXbqQgiAPHlpL6q+mnxxZjAZUbZv+SYjO9J0x\ncWgaOjp7SJkqAy1bZ3J00MQ1ymHirRI+uYa7w3UJYjB6V+4/FMoxf0elwx7I\nVeuK\r\n=UsQb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-inspect_1.8.0_1592546734099_0.5394806680132709"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# object-inspect\n\nstring representations of objects in node and the browser\n\n[![build status](https://secure.travis-ci.com/inspect-js/object-inspect.png)](https://travis-ci.com/inspect-js/object-inspect)\n\n# example\n\n## circular\n\n``` js\nvar inspect = require('object-inspect');\nvar obj = { a: 1, b: [3,4] };\nobj.c = obj;\nconsole.log(inspect(obj));\n```\n\n## dom element\n\n``` js\nvar inspect = require('object-inspect');\n\nvar d = document.createElement('div');\nd.setAttribute('id', 'beep');\nd.innerHTML = '<b>wooo</b><i>iiiii</i>';\n\nconsole.log(inspect([ d, { a: 3, b : 4, c: [5,6,[7,[8,[9]]]] } ]));\n```\n\noutput:\n\n```\n[ <div id=\"beep\">...</div>, { a: 3, b: 4, c: [ 5, 6, [ 7, [ 8, [ ... ] ] ] ] } ]\n```\n\n# methods\n\n``` js\nvar inspect = require('object-inspect')\n```\n\n## var s = inspect(obj, opts={})\n\nReturn a string `s` with the string representation of `obj` up to a depth of `opts.depth`.\n\nAdditional options:\n  - `quoteStyle`: must be \"single\" or \"double\", if present. Default `'single'` for strings, `'double'` for HTML elements.\n  - `maxStringLength`: must be `0`, a positive integer, `Infinity`, or `null`, if present. Default `Infinity`.\n  - `customInspect`: When `true`, a custom inspect method function will be invoked. Default `true`.\n  - `indent`: must be \"\\t\", `null`, or a positive integer. Default `null`.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install object-inspect\n```\n\n# license\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "github@tixz.dk",
+      "name": "emilbayes"
+    },
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    },
+    {
+      "email": "substack@gmail.com",
+      "name": "substack"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-19T06:05:36.543Z",
+    "created": "2013-07-26T10:27:13.645Z",
+    "0.0.0": "2013-07-26T10:27:15.032Z",
+    "0.1.0": "2013-07-26T10:40:40.966Z",
+    "0.1.1": "2013-07-26T11:02:26.154Z",
+    "0.1.2": "2013-07-26T11:13:33.886Z",
+    "0.1.3": "2013-07-26T11:21:00.352Z",
+    "0.2.0": "2014-03-05T00:09:40.598Z",
+    "0.3.0": "2014-03-05T01:11:08.775Z",
+    "0.3.1": "2014-03-05T01:24:38.503Z",
+    "0.4.0": "2014-03-22T02:22:02.042Z",
+    "1.0.0": "2014-08-05T02:06:00.347Z",
+    "1.0.1": "2015-07-19T07:22:54.442Z",
+    "1.0.2": "2015-08-07T07:10:40.762Z",
+    "1.1.0": "2015-12-15T01:37:54.806Z",
+    "1.2.0": "2016-04-09T07:10:40.716Z",
+    "1.2.1": "2016-04-09T15:57:31.022Z",
+    "1.2.2": "2017-03-25T02:42:28.814Z",
+    "1.3.0": "2017-07-31T22:37:18.753Z",
+    "1.4.0": "2017-10-25T06:50:18.131Z",
+    "1.4.1": "2017-12-20T07:23:05.801Z",
+    "1.5.0": "2017-12-26T07:49:05.938Z",
+    "1.6.0": "2018-05-02T23:13:04.663Z",
+    "1.7.0": "2019-11-11T05:56:54.089Z",
+    "1.8.0": "2020-06-19T06:05:34.212Z"
+  },
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inspect-js/object-inspect.git"
+  },
+  "homepage": "https://github.com/inspect-js/object-inspect",
+  "keywords": [
+    "inspect",
+    "util.inspect",
+    "object",
+    "stringify",
+    "pretty"
+  ],
+  "bugs": {
+    "url": "https://github.com/inspect-js/object-inspect/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.markdown",
+  "users": {
+    "ys_sidson_aidson": true,
+    "touskar": true
+  }
+}

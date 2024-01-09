@@ -1,0 +1,183 @@
+{
+  "_id": "infer-owner",
+  "_rev": "17-b6c4d4cf244ec0592e72684ca2557667",
+  "name": "infer-owner",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.3": {
+      "name": "infer-owner",
+      "version": "1.0.3",
+      "description": "Infer the owner of a path based on the owner of its nearest existing parent",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "https://izs.me"
+      },
+      "license": "ISC",
+      "scripts": {
+        "test": "tap -J test/*.js --100",
+        "snap": "TAP_SNAPSHOT=1 tap -J test/*.js --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "devDependencies": {
+        "mutate-fs": "^2.1.1",
+        "tap": "^12.4.2"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/infer-owner.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "gitHead": "0d0729db142c6401963e97a136c7d29ecc55746a",
+      "bugs": {
+        "url": "https://github.com/npm/infer-owner/issues"
+      },
+      "homepage": "https://github.com/npm/infer-owner#readme",
+      "_id": "infer-owner@1.0.3",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-E/a+pKtYg72HufDVF9FnA2NPeNYLAnAN/wrIbUnCJVz2JvZmj67b2Tw2Mxz0vugWBmRVhb2XHk26ZQIMF0Irjg==",
+        "shasum": "38d030afce90f1759c16b783e841522cb8995656",
+        "tarball": "https://registry.npmjs.org/infer-owner/-/infer-owner-1.0.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 82597,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdMk2DCRA9TVsSAnZWagAAqIgP/0a8cCxAGwJCPjUhhkoe\njUTjX//US3Eh7Iu+/9hg1q8Z9JjzOFSgZf2EY+tHtmqXdu8M68RmQr5s+UTU\nA87pnXdu2FmzRpPeZnJJBiI7UuqbTPRwvbhSA3W2+Eubp+7MrYpBUrwLU+Cj\nymqDFYFUQeyJ6JVpmWJGRhT0YIYUVypiQgZy5eqcnZkE1bvMbF5UCH57kiiv\nJ2JOux58SqRka/4E7N4KXVVBZnSTNwPxqLeLGerdbQ9F8PSKJGnrGnECxZPy\nJXWRMsKtMbP6VZe/XljXphj++C9t+ULVWSpZxnWeSQGXqyVBXoJsAY6a7oVG\nAVkSdi3M8DQSu+C9vRM582HNFF1m9RpQUBBujWO5ngQcOzaGuXZbuBWQh9he\nkbTNWrVzaDbGTKnoAI5gIgb5K315k5tGQ8wSKcQgWeuP/MOaTFkB4AXDrtNq\nkW3oBrzai9stp9VVyvNhPdwgyDVJ/aT6+bMx0XVFUfJ3W5h66BgW5YSz3G7Y\nbTGFh9rfbBHTNMm420u/TaJ5MRKAJ/oIfAMyN38J2hl3/n60mPji5Otw82ny\n7X0Rol7ELH73034vjhBhl6eDNAzeFf0b02K/LiDe/lkxc3uwwRcQBP3wSgL1\nHekY/CnvOVrpo2QtVt/nEwyjnmqkgXxmGVR6O9S/Na7zFI7NaU0+gGoaGb7f\npITv\r\n=RkTF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/infer-owner_1.0.3_1563577731234_0.6947691890893826"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.4": {
+      "name": "infer-owner",
+      "version": "1.0.4",
+      "description": "Infer the owner of a path based on the owner of its nearest existing parent",
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "https://izs.me"
+      },
+      "license": "ISC",
+      "scripts": {
+        "test": "tap -J test/*.js --100",
+        "snap": "TAP_SNAPSHOT=1 tap -J test/*.js --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --follow-tags"
+      },
+      "devDependencies": {
+        "mutate-fs": "^2.1.1",
+        "tap": "^12.4.2"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/infer-owner.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "gitHead": "264706f28c1bd50c83ecee87e3ff794bf75478f2",
+      "bugs": {
+        "url": "https://github.com/npm/infer-owner/issues"
+      },
+      "homepage": "https://github.com/npm/infer-owner#readme",
+      "_id": "infer-owner@1.0.4",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A==",
+        "shasum": "c4cefcaa8e51051c2a40ba2ce8a3d27295af9467",
+        "tarball": "https://registry.npmjs.org/infer-owner/-/infer-owner-1.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4290,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdMk6DCRA9TVsSAnZWagAAX1QQAJwpFKxPcykGPXK8B/ft\nO67WidmVuHygLhdtAj2YlKgZUv3eAkdDNqofh7hFI/GccqWWHptLE1KyjVdi\nZRKUet69TRmEwD1WjROCF4yTSNdU96orw9KWSO7vr+/7a9EED5Ff76eDv5S4\nLiWxGBGIUch7EqCjmCsmICtU54bnI3xPrzTlAwO1auw4st0BCK48NA/v/7Pm\nM+pzmO4gNqlvk1CLKvjFgDbDPJkVirFLoIVM6cz9VKGLW8foscj3LCvbsC0e\nLgSvXp5enJMiZ6Y1n/Jo0roaq7sxeL9Rb0+Oo5bumKZtcRtbLbFZwgPekNwD\nRiYdQJOXaYvIE04AX1c/b6zPYvyD5wKOHfKpZKdAKU8tjKf8B9ATEe7q+ZFl\nB4pE3+5Yxlydtopg/SoR9s+ex/LW30c/p0WsqD/s5bxM9vN5EBWA2+wUH4nO\nene1AohsNGODJS7o6qptZLP6TSVr7VIs1e3Dfh9JXNZe11tN/Dht2r6+hrWO\n+UdZ3Wwkd3CDj6KXSTG7rgsxnhtO6lJC7CRYlET8vpFHuyLnuemRUyJjFB4W\nMtBtld8B4u6JY6tLUfqQhLSHlXc8arAHG+S5SzQNtwOu1yniGfSLBRf0n3zq\nj06AFTiCl4+0nLkWUQPlQmk76q8fs56XgKqt6K5UwYjd321WvQZgZaXLFD8m\n4J3V\r\n=3pII\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/infer-owner_1.0.4_1563577987148_0.9732602885812718"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-07-19T23:08:51.021Z",
+    "1.0.3": "2019-07-19T23:08:51.367Z",
+    "modified": "2020-10-19T13:49:53.172Z",
+    "1.0.4": "2019-07-19T23:13:07.339Z"
+  },
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "description": "Infer the owner of a path based on the owner of its nearest existing parent",
+  "homepage": "https://github.com/npm/infer-owner#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/infer-owner.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "https://izs.me"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/infer-owner/issues"
+  },
+  "license": "ISC",
+  "readme": "# infer-owner\n\nInfer the owner of a path based on the owner of its nearest existing parent\n\n## USAGE\n\n```js\nconst inferOwner = require('infer-owner')\n\ninferOwner('/some/cache/folder/file').then(owner => {\n  // owner is {uid, gid} that should be attached to\n  // the /some/cache/folder/file, based on ownership\n  // of /some/cache/folder, /some/cache, /some, or /,\n  // whichever is the first to exist\n})\n\n// same, but not async\nconst owner = inferOwner.sync('/some/cache/folder/file')\n\n// results are cached!  to reset the cache (eg, to change\n// permissions for whatever reason), do this:\ninferOwner.clearCache()\n```\n\nThis module endeavors to be as performant as possible.  Parallel requests\nfor ownership of the same path will only stat the directories one time.\n\n## API\n\n* `inferOwner(path) -> Promise<{ uid, gid }>`\n\n    If the path exists, return its uid and gid.  If it does not, look to\n    its parent, then its grandparent, and so on.\n\n* `inferOwner(path) -> { uid, gid }`\n\n    Sync form of `inferOwner(path)`.\n\n* `inferOwner.clearCache()`\n\n    Delete all cached ownership information and in-flight tracking.\n",
+  "readmeFilename": "README.md"
+}

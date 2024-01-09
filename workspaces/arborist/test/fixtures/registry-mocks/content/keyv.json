@@ -1,0 +1,2263 @@
+{
+  "_id": "keyv",
+  "_rev": "30-b1177d1742c6f2bd8966fc438afbb360",
+  "name": "keyv",
+  "description": "Simple key-value storage with support for multiple backends",
+  "dist-tags": {
+    "latest": "4.0.3"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "keyv",
+      "version": "0.0.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "81a01f3f851c11e430fdcf6614cf07de7543d2e9",
+      "_id": "keyv@0.0.0",
+      "_shasum": "45b4452124bba1b11d531998f60c4385ffa375f8",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "45b4452124bba1b11d531998f60c4385ffa375f8",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.0.0.tgz_1499435005768_0.6846128811594099"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "keyv",
+      "version": "0.1.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "65d992321f7c3a5debfe3fd2b31375f51cd665d5",
+      "_id": "keyv@0.1.0",
+      "_shasum": "29c39c4b98a917d64498667b7f4581b17635bc13",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "29c39c4b98a917d64498667b7f4581b17635bc13",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.1.0.tgz_1499778130524_0.5003696596249938"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "keyv",
+      "version": "0.1.1",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "7d2d0aa9fb18b10e222dc969e777742ecb353883",
+      "_id": "keyv@0.1.1",
+      "_shasum": "0b2b85e07c48918bd60a53fdd91b4fb18a5a5384",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "0b2b85e07c48918bd60a53fdd91b4fb18a5a5384",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.1.1.tgz_1499781279752_0.5905001286882907"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "keyv",
+      "version": "0.1.2",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "cdff7db698f975e3d557d430ab1e31a1a549e286",
+      "_id": "keyv@0.1.2",
+      "_shasum": "7bbd67ed0ee512d6e4a21fff2fb73022562456d1",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "7bbd67ed0ee512d6e4a21fff2fb73022562456d1",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.1.2.tgz_1499782265200_0.7421580879017711"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "keyv",
+      "version": "0.1.3",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "08950876ed72e4fae12c9e7aa6e6fc82a8092314",
+      "_id": "keyv@0.1.3",
+      "_shasum": "72de0fbb676abff7015c5b81c76a8156ad47d2f6",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "72de0fbb676abff7015c5b81c76a8156ad47d2f6",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.1.3.tgz_1499790512545_0.4035629774443805"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "keyv",
+      "version": "0.2.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-api-tests": "*",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "2349182d83dffc26c29f8bbf3bc714d9d1032a11",
+      "_id": "keyv@0.2.0",
+      "_shasum": "269d21f5da3aa077f84701deb2340ba050323dd4",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "269d21f5da3aa077f84701deb2340ba050323dd4",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.2.0.tgz_1499957090064_0.1645263903774321"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "keyv",
+      "version": "0.2.1",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-api-tests": "*",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "7540c2f8c85661e9d2b380681bb8aece029d8145",
+      "_id": "keyv@0.2.1",
+      "_shasum": "e083d440155f056c4cd651e5385b9ff6833f798c",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "e083d440155f056c4cd651e5385b9ff6833f798c",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.2.1.tgz_1500056763584_0.04589479323476553"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "keyv",
+      "version": "0.3.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-api-tests": "*",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "f3b5d14d0b93c89e9fa994119a5358e5c9b7c34c",
+      "_id": "keyv@0.3.0",
+      "_shasum": "c362c48f2052cf570709b09884306f9a7fc583f4",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "c362c48f2052cf570709b09884306f9a7fc583f4",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.3.0.tgz_1500317790952_0.9430915275588632"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "keyv",
+      "version": "0.3.1",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-api-tests": "*",
+        "keyv-mongo": "*",
+        "keyv-redis": "*",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "f4b2d502fa49916f8fcb1ec6d86267b9ada51c2e",
+      "_id": "keyv@0.3.1",
+      "_shasum": "4b0ac0caab27218c32f1faf54ac11809d9ec1a73",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "4b0ac0caab27218c32f1faf54ac11809d9ec1a73",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.3.1.tgz_1500385004401_0.4757091256324202"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "keyv",
+      "version": "0.4.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-root-module": "^0.1.3",
+        "keyv-mongo": "*",
+        "keyv-redis": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "3ed0b7f7ddacd883b481a2a4f5d56c75542664bf",
+      "_id": "keyv@0.4.0",
+      "_shasum": "6e1ce070cc33157a8a9aeaf7db68322a5d0cb872",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "6e1ce070cc33157a8a9aeaf7db68322a5d0cb872",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.4.0.tgz_1501081199882_0.30825260002166033"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "keyv",
+      "version": "0.5.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "0ce0c78c4e0e00f7b0a15b0177c0d041dabdbdd8",
+      "_id": "keyv@0.5.0",
+      "_shasum": "33e439fa40bca8605af98aa5268160b95a7c118e",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "33e439fa40bca8605af98aa5268160b95a7c118e",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.5.0.tgz_1501334496319_0.8208789532072842"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "keyv",
+      "version": "0.6.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-postgres": "^0.1.0",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "bee96d9a02ec1de10ef4502c1911b36eb859595c",
+      "_id": "keyv@0.6.0",
+      "_shasum": "63adea0116a8264c9099fcc6617f3f46869c20bc",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "63adea0116a8264c9099fcc6617f3f46869c20bc",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.6.0.tgz_1501370211724_0.36876085330732167"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "keyv",
+      "version": "0.7.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-postgres": "^0.1.0",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "8414dde0a0a13ed75ccf39f33e4ea5ae60bdeea8",
+      "_id": "keyv@0.7.0",
+      "_shasum": "425b7267d282e5f43fd0e3bacc18d6314495f030",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "425b7267d282e5f43fd0e3bacc18d6314495f030",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.7.0.tgz_1501399369388_0.22141490271314979"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "keyv",
+      "version": "0.8.0",
+      "description": "Simple key/value store with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "1.0.0",
+        "keyv-mysql": "0.2.0",
+        "keyv-postgres": "1.0.1",
+        "keyv-redis": "1.3.1",
+        "keyv-sqlite": "1.2.0",
+        "keyv-test-suite": "1.4.2",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "cc4650b3156550c06e295192f74737a73c667bbc",
+      "_id": "keyv@0.8.0",
+      "_shasum": "e27685f5248945188eedead24e42840fe44841c7",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "e27685f5248945188eedead24e42840fe44841c7",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-0.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-0.8.0.tgz_1501603295636_0.9365875863004476"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "keyv",
+      "version": "1.0.0",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "701c530d7ed0239c6aa304277c2fdc24b7de828f",
+      "_id": "keyv@1.0.0",
+      "_shasum": "cb9c3f2d71a5aed6c53a34035c5ec232c3964ecc",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "cb9c3f2d71a5aed6c53a34035c5ec232c3964ecc",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.0.tgz_1501712882500_0.88813791051507"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "keyv",
+      "version": "1.0.1",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "57441ba8e0db0e2e034f81b7a9e0ba1d713d1e32",
+      "_id": "keyv@1.0.1",
+      "_shasum": "77b38aecad1927729ba155c6452d9130fa00918b",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "77b38aecad1927729ba155c6452d9130fa00918b",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.1.tgz_1501718251114_0.04029018827714026"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "keyv",
+      "version": "1.0.2",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "d96a19e172b049ef622ac9b28f8d4d4458e7cd65",
+      "_id": "keyv@1.0.2",
+      "_shasum": "db8c813f47de55778ea4497dae1c6eb779918b24",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "db8c813f47de55778ea4497dae1c6eb779918b24",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.2.tgz_1501754368232_0.23013364523649216"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "keyv",
+      "version": "1.0.3",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "delay": "^2.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "d942a2b38a49b9c8d8f1b51fa67ae39dda6f143f",
+      "_id": "keyv@1.0.3",
+      "_shasum": "d5e96a4b6486b4765252a9903af7eb7a9b1ddd0e",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "d5e96a4b6486b4765252a9903af7eb7a9b1ddd0e",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.3.tgz_1501754741987_0.44476545066572726"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "keyv",
+      "version": "1.0.4",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "62fb070b0a7dd9c3969a43e545bf2cd0a7aa514f",
+      "_id": "keyv@1.0.4",
+      "_shasum": "20c4c26cd6a6da33950f1f488ca3e02570a21766",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "20c4c26cd6a6da33950f1f488ca3e02570a21766",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.4.tgz_1501795153456_0.3612369014881551"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "keyv",
+      "version": "1.0.5",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "keyv-mongo": "*",
+        "keyv-mysql": "*",
+        "keyv-postgres": "*",
+        "keyv-redis": "*",
+        "keyv-sqlite": "*",
+        "keyv-test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "00fb1f228b97689799fb5ef7993b0426e05acbcd",
+      "_id": "keyv@1.0.5",
+      "_shasum": "6041d069383831f82fcddb647d628229652988bb",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "6041d069383831f82fcddb647d628229652988bb",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-1.0.5.tgz_1502370332763_0.6003021828364581"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "keyv",
+      "version": "2.0.0",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "1899d6c05665f161bf05b738f1d234732ecc4362",
+      "_id": "keyv@2.0.0",
+      "_shasum": "884d585bb4e595654f027577480f4ab82fa99bac",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "884d585bb4e595654f027577480f4ab82fa99bac",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-2.0.0.tgz_1502465640941_0.7615975437220186"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "keyv",
+      "version": "2.0.1",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "0ac673ff916a4dca3adc4b81cf3926cef0e1dde5",
+      "_id": "keyv@2.0.1",
+      "_shasum": "d4181858d0ba639adaeb9eca456372f0ffcdc809",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "d4181858d0ba639adaeb9eca456372f0ffcdc809",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-2.0.1.tgz_1502630241834_0.5835089134052396"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "keyv",
+      "version": "2.0.2",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^1.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "b0c377156057a14e9f9a8f24ab05bf30f72a65b1",
+      "_id": "keyv@2.0.2",
+      "_shasum": "5e23fde48a4c59818eddf028cd829798830242f1",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "5e23fde48a4c59818eddf028cd829798830242f1",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-2.0.2.tgz_1502988362165_0.7405309518799186"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "keyv",
+      "version": "3.0.0",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "33ae64413338c465999863ea5545c1ae20b54ddb",
+      "_id": "keyv@3.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-eguHnq22OE3uVoSYG0LVWNP+4ppamWr9+zWBe1bsNcovIMy6huUJFPgy4mGwCd/rnl3vOLGW1MTlu4c57CT1xA==",
+        "shasum": "44923ba39e68b12a7cec7df6c3268c031f2ef373",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv-3.0.0.tgz_1507037905372_0.20707569341175258"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "keyv",
+      "version": "3.1.0",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^11.0.3",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.20.1"
+      },
+      "gitHead": "de2e7a2ffc4a5007569b62a31956d7b692a011e7",
+      "_id": "keyv@3.1.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9ykJ/46SN/9KPM/sichzQ7OvXyGDYKGTaDlKMGCAlg2UK8KRy4jb0d8sFc+0Tt0YYnThq8X2RZgCg74RPxgcVA==",
+        "shasum": "ecc228486f69991e49e9476485a5be1e8fc5c4d9",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14661,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfIFjCRA9TVsSAnZWagAAylYP/2zYdghWdARJ2ELExwVV\nCwmegbGhsK6Y1MSoi5Uca/6VF+pgSd6kx6yXgHzBv19AXdytTo4+3+/2qZwJ\nd1pxNOKXC5tN7E+pSeNhy487SFQhmVyRgzpjhk1YuHuuaV1GeDfcb/SY0A4y\n5pQjhYt+BI0xompo2DG6O10QF0mAzTYnu8+wTzaCz2lYob4qJXvDIpmbqBU+\nPt9vutfuTQx4tdXMYqXG1C00he1kDxQvO8FyYK+ojRsJr/g8cySZoQTzi50U\nhTOBT00IoujROa9HWQwc5TmhzFLWraepDVk4Xv/ajV1c5FTWSyttlQQIy/zZ\nE08d3B5KUVz9N4j5OncB4M+dzouR8lBQqeZ8xzXQBy07tvZo21vd/y2Ct5Hd\nTSxMShnHk7591DFJjycp7hePVuIWwwyJ76+sFLwfH/ekylCE6UNnoKt34pwn\n2WmTVgBLFO3t6CU7W7qEdzWh+Fw3Cn2IrgXVDP7UdADFxMjT6QE1P4UvyQYQ\nFSygu1xcJb8oNIwMCtaQx8xObWRIkh7n799mpw3kv8QBgJ0yoNesEMg+yp/Y\nmY2NbPqEagWLnGVDVH2NoBoJrbRzYg0Ww3jI+/N2N3TL6oN2iDYUqFgvA6mS\nRsGDWR9ZRbA6+CVBcqyAdcOG/PWKKrhLSOSbqh2ZsbsiR8ZmXUpBNsA81knm\nebZA\r\n=w+Ka\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv_3.1.0_1534886243091_0.33516952118680954"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "keyv",
+      "version": "4.0.0",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^14.1.1",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d288a1896ea7601f4a74ecbb086e8917c370367f",
+      "_id": "keyv@4.0.0",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-U7ioE8AimvRVLfw4LffyOIRhL2xVgmE8T22L6i0BucSnBUyv4w+I7VN/zVZwRKHOI6ZRUcdMdWHQ8KSUvGpEog==",
+        "shasum": "2d1dab694926b2d427e4c74804a10850be44c12f",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15397,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdz416CRA9TVsSAnZWagAAhMgP/RwJpkLCpGii+tD7G14e\nr29ymNZEZ07C83RfPE3wwtMCjAzOsKWUbRnhaXbcAGYdvZ4tBNYnca/0DDsf\nkQM88qFSQlLIxXucrh1/iF03053/IOmJKV3id7Tu/fpBqpkDZ++xl6z6ksrQ\norGc9goq3NORNR8FWuLUSiygoY7WNl3ejI4n10FT2K2BOKxq0rTnEuuvHji2\n7xmDkbwp8NwcFmQlgveCFvfvl/yItLaoUVvqIqYE4j9iMM+DfTvCFSfhn1mc\n0f7gz22qOESSSzIO3SXbmd/opckPQ6j3Xri1Sgszn3a/vTGFW/u5LXgXeG5j\nknlls142ixZKNjmDVer2aHoWXiijSa10tRl5L5AmCzAMOT230SBAQPZrB5bH\n9SwL+KUf1r066UL+UoCBMdqAX2g5XmFUG2KECTihF4e5kIF5ADAYc9vm6Er/\nP70MdLllVVWcCVPkpc/nYuFUofR8Ux44gxbNgMbVY05tKuJaEcE39ROk7QJG\nuzZOvO2VWQAL1vtttCQ/BXY8Qr3IJ80ya7ktUnTlsUW0uTMKGfs92lH4aZo8\nFHP1YhL6CCCjgi57CkPmjY0CYD6j36odSgMvPaRbIoHkMQOowRo/XQ1adDl8\nPB5C0Va/+BslY6mEKz2ot4Q8VZWJd+TEWAn0rMVYrIv3A951ER0wMzre77TU\nWIWm\r\n=iaUV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv_4.0.0_1573883258440_0.7027583669283106"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "keyv",
+      "version": "4.0.1",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^14.1.1",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "4cea2ce404713e6a8385fbe35caab77ada7d6735",
+      "_id": "keyv@4.0.1",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-xz6Jv6oNkbhrFCvCP7HQa8AaII8y8LRpoSm661NOKLr4uHuBwhX4epXrPQgF3+xdJnN4Esm5X0xwY4bOlALOtw==",
+        "shasum": "9fe703cb4a94d6d11729d320af033307efd02ee6",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-4.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15463,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJesRDUCRA9TVsSAnZWagAACvIP/3Qp9fwwplef1Z0afrT1\nvUwQOoA2cOf0iPqIkLudMfj4zRuArljSEHJOzWbMIPuiZvnQHfpadUoaxsg2\nw18HSyqv3FJu4oxsm3Mhcyso5/B8bRPyYR+ELkR2i8scwwyuIyyYLpWjThSC\ncyQcVH27kQ0i1JEAIRhq8niwX4L5Jyvbi/7gE01k1gTgxSrx22mJXGp2/Uvh\nRbSGgXlcW3qO8T5EvQKvmv4FejHJD3maGv9zOJHbqafZkrjXmwzSscFH0fJ0\n9gFYUxRogLfN3BxZMXZaTJCSu9jTL1hhV64+7cg+8EYPE6xw2FQDT2LSShur\nXF/Ow6jwI3sK3p134z7vv3ix9azNd3wPPCbmfx/jQCYf4lwUuVC3sSsbttQc\nS8A9Nsn944xVd4LatLCLMBB15mctQsXK2xcHYgqYDoeG7DsIdSVMaRePDp/b\nK62b02x+VtY6uFCt4hUTqFMJvGCF7TXBxr6pS3uS14TCFtEuU8Z3UovNjqJn\noUSX9ZOwdqc18Iu5EyGaCzQ+k+e9CcHLPZps+5vuxE+zNAKBwWnZf8wErllD\nHR/FKmjQHrcqNR1NTOuOOBrx7HE9pt0cAyUGVo6PCBLWcsk4uY7R3e7GFJAb\nZj+YlmclGqlCK0OoWSihTRMq2quVXfPsT3jbJs3wwBFQ56cfnEV/Wt3ZdfjD\n0e/y\r\n=P2ce\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv_4.0.1_1588662483597_0.4135374693839484"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.2": {
+      "name": "keyv",
+      "version": "4.0.2",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^14.1.1",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "e297e27d07007e962024d3cdb7046c99109f3aee",
+      "_id": "keyv@4.0.2",
+      "_nodeVersion": "12.16.2",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-EApxc1YZC/Uf+8dsrGqDqUK3cW8oPLgyeATzELkyAFE9OTf2jpFbi2qLtlrONy+SMmupkR3p5jGWeMEd0Z/ZHg==",
+        "shasum": "586777fc38c28badebd4d9cb5e000c09a2bc2777",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-4.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15561,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfYfMcCRA9TVsSAnZWagAAF6QP/RUa2Ew6D0k7h2kVwGG1\nBUMKFAnpZtGa11Z6cb1QInOsMZXHwwnYZhf7RhOe2KtniIJ0UrQ1uyPEb+dc\nzHuuH8WH0h4hnn5FPH2TQGzp5kUhwMX9qQO4JUvINq33lNhESfLk5oOrkIj3\nodny7QMLSm1u2JID0Dfzd32GJdnDljDYIOjTQk7f69femipP0I7HE32h72yk\nW7ziEsok9hnsqhGIDGwEvZ6dnNpMNr2GGyDzV15U/US+oMuTCu6PFemBpOdD\nMvoDyz8jp0A0MZKdfiSRfcMof62rlP8iBkRyPWBUie0ttLaqeF0DxwaeGRl5\nN7ls0TIwHvQF8gIlz8yMXl+WT1mqxjHsHXOwenYeWg26ChrdPl0ZUm6tiipE\nXdJ7yoLwi+b9UXuctquQ9u3eFsz7Y91aZDAyF2AbWIxbXmZAjVBebtl5nxsZ\ne6z04fdhuk5CPo3IuT+ptwbtPUhs3Lywli6xeATT+m5zKT+8qlxzjxeMVzB6\n0qyBwhdXR9EYoF9c2GI23CQlLno/xDxs/hjdMGhjsikjz2X7F7cB0zQUe8ce\nkE4HatQ2AiVNVLOPpOLNu+TTIutBhyoU2hTEnfOimSI3F8QVYUv838Z4Hh4N\nn1N6YeIN49VgBzgf1FY7DexSJOjVhO6I7R1CoqDxuK8AMyApRTwuiRP5eMSL\nB/3j\r\n=VSq8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv_4.0.2_1600254747563_0.970572232650732"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.3": {
+      "name": "keyv",
+      "version": "4.0.3",
+      "description": "Simple key-value storage with support for multiple backends",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava test/keyv.js",
+        "test:full": "xo && nyc ava --serial",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/keyv.git"
+      },
+      "keywords": [
+        "key",
+        "value",
+        "store",
+        "cache",
+        "ttl"
+      ],
+      "author": {
+        "name": "Luke Childs",
+        "email": "lukechilds123@gmail.com",
+        "url": "http://lukechilds.co.uk"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/lukechilds/keyv/issues"
+      },
+      "homepage": "https://github.com/lukechilds/keyv",
+      "dependencies": {
+        "json-buffer": "3.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.2.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "@keyv/mongo": "*",
+        "@keyv/mysql": "*",
+        "@keyv/postgres": "*",
+        "@keyv/redis": "*",
+        "@keyv/sqlite": "*",
+        "@keyv/test-suite": "*",
+        "nyc": "^14.1.1",
+        "this": "^1.0.2",
+        "timekeeper": "^2.0.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "ab99cada0186e6dc83420ceaa85919d1bae871dd",
+      "_id": "keyv@4.0.3",
+      "_nodeVersion": "12.16.2",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-zdGa2TOpSZPq5mU6iowDARnMBZgtCqJ11dJROFi6tg6kTn4nuUdU09lFyLFSaHrWqpIJ+EBq4E8/Dc0Vx5vLdA==",
+        "shasum": "4f3aa98de254803cafcd2896734108daa35e4254",
+        "tarball": "https://registry.npmjs.org/keyv/-/keyv-4.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 15463,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfYzzSCRA9TVsSAnZWagAAuAsP/jXztRmb9yzLmDptWPW+\naRCUFlcudjusxd3hVSL6RtBdXFtCkUi9/rFCYkAYvn3Ykgai63W5LX3C2Ew5\nWfZhP8h+yWFb8m4VYqnUyhFWsc5XGwmLL/ECAkNzQ9UOb6f0+5fySOjh8d0/\nrlDWExY6LkUm/a5OHJI5r7pd4c3DuCJTVc6ewE9HTyH3nKiNncQQ20J556PX\nNyVm7B6nPajM+e/26wtc95hEaruJu2WGUNm3mxEOnZAU1nIAeJkrVxfM0xjE\nPwXtfQKmR++MOOFLzZJ9ZCCp7M2djJIzGyXC02a/LsePorNSXV7fU6Ru7huK\nNz3U2Hx04wMPot2YNrdOXeHFvGqHjf/smLp7xIaN5Mk53J7MNX3DI5qI+BpP\nDBC8SsI1vLhuH/SX8cZgiGXVn3SMA2y2ts2UFjOdIYwMMjkunH/CXh3exLus\n+jdonWdu1TopZl40+098AJbIJtUkfufaHwA1rGKHJc4a5mAICTLMdlSN5ruq\nH1ApW0GZxv7OhJzhXCQRdTRaYzvimhGIYIWH+5nGKPmwAp5XMXsUnx69u9kD\ngolP6tnu0u+mJQ5KKIlMvICK/i/FHIZgKeDMq1zGv5eSmlTF/saHlyFFEZsG\nsZeofpnjB1bXJnLHsgHGN9T4TTq6+FalfcgMQMp5QoGCElI/76len3HodSWI\n0eRQ\r\n=fXg0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/keyv_4.0.3_1600339154163_0.2801113233468182"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "<h1 align=\"center\">\n\t<img width=\"250\" src=\"https://rawgit.com/lukechilds/keyv/master/media/logo.svg\" alt=\"keyv\">\n\t<br>\n\t<br>\n</h1>\n\n> Simple key-value storage with support for multiple backends\n\n[![Build Status](https://travis-ci.org/lukechilds/keyv.svg?branch=master)](https://travis-ci.org/lukechilds/keyv)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv?branch=master)\n[![npm](https://img.shields.io/npm/dm/keyv.svg)](https://www.npmjs.com/package/keyv)\n[![npm](https://img.shields.io/npm/v/keyv.svg)](https://www.npmjs.com/package/keyv)\n\nKeyv provides a consistent interface for key-value storage across multiple backends via storage adapters. It supports TTL based expiry, making it suitable as a cache or a persistent key-value store.\n\n## Features\n\nThere are a few existing modules similar to Keyv, however Keyv is different because it:\n\n- Isn't bloated\n- Has a simple Promise based API\n- Suitable as a TTL based cache or persistent key-value store\n- [Easily embeddable](#add-cache-support-to-your-module) inside another module\n- Works with any storage that implements the [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) API\n- Handles all JSON types plus `Buffer`\n- Supports namespaces\n- Wide range of [**efficient, well tested**](#official-storage-adapters) storage adapters\n- Connection errors are passed through (db failures won't kill your app)\n- Supports the current active LTS version of Node.js or higher\n\n## Usage\n\nInstall Keyv.\n\n```\nnpm install --save keyv\n```\n\nBy default everything is stored in memory, you can optionally also install a storage adapter.\n\n```\nnpm install --save @keyv/redis\nnpm install --save @keyv/mongo\nnpm install --save @keyv/sqlite\nnpm install --save @keyv/postgres\nnpm install --save @keyv/mysql\n```\n\nCreate a new Keyv instance, passing your connection string if applicable. Keyv will automatically load the correct storage adapter.\n\n```js\nconst Keyv = require('keyv');\n\n// One of the following\nconst keyv = new Keyv();\nconst keyv = new Keyv('redis://user:pass@localhost:6379');\nconst keyv = new Keyv('mongodb://user:pass@localhost:27017/dbname');\nconst keyv = new Keyv('sqlite://path/to/database.sqlite');\nconst keyv = new Keyv('postgresql://user:pass@localhost:5432/dbname');\nconst keyv = new Keyv('mysql://user:pass@localhost:3306/dbname');\n\n// Handle DB connection errors\nkeyv.on('error', err => console.log('Connection Error', err));\n\nawait keyv.set('foo', 'expires in 1 second', 1000); // true\nawait keyv.set('foo', 'never expires'); // true\nawait keyv.get('foo'); // 'never expires'\nawait keyv.delete('foo'); // true\nawait keyv.clear(); // undefined\n```\n\n### Namespaces\n\nYou can namespace your Keyv instance to avoid key collisions and allow you to clear only a certain namespace while using the same database.\n\n```js\nconst users = new Keyv('redis://user:pass@localhost:6379', { namespace: 'users' });\nconst cache = new Keyv('redis://user:pass@localhost:6379', { namespace: 'cache' });\n\nawait users.set('foo', 'users'); // true\nawait cache.set('foo', 'cache'); // true\nawait users.get('foo'); // 'users'\nawait cache.get('foo'); // 'cache'\nawait users.clear(); // undefined\nawait users.get('foo'); // undefined\nawait cache.get('foo'); // 'cache'\n```\n\n### Custom Serializers\n\nKeyv uses [`json-buffer`](https://github.com/dominictarr/json-buffer) for data serialization to ensure consistency across different backends.\n\nYou can optionally provide your own serialization functions to support extra data types or to serialize to something other than JSON.\n\n```js\nconst keyv = new Keyv({ serialize: JSON.stringify, deserialize: JSON.parse });\n```\n\n**Warning:** Using custom serializers means you lose any guarantee of data consistency. You should do extensive testing with your serialisation functions and chosen storage engine.\n\n## Official Storage Adapters\n\nThe official storage adapters are covered by [over 150 integration tests](https://travis-ci.org/lukechilds/keyv/jobs/260418145) to guarantee consistent behaviour. They are lightweight, efficient wrappers over the DB clients making use of indexes and native TTLs where available.\n\nDatabase | Adapter | Native TTL | Status\n---|---|---|---\nRedis | [@keyv/redis](https://github.com/lukechilds/keyv-redis) | Yes | [![Build Status](https://travis-ci.org/lukechilds/keyv-redis.svg?branch=master)](https://travis-ci.org/lukechilds/keyv-redis) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv-redis/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv-redis?branch=master)\nMongoDB | [@keyv/mongo](https://github.com/lukechilds/keyv-mongo) | Yes | [![Build Status](https://travis-ci.org/lukechilds/keyv-mongo.svg?branch=master)](https://travis-ci.org/lukechilds/keyv-mongo) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv-mongo/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv-mongo?branch=master)\nSQLite | [@keyv/sqlite](https://github.com/lukechilds/keyv-sqlite) | No | [![Build Status](https://travis-ci.org/lukechilds/keyv-sqlite.svg?branch=master)](https://travis-ci.org/lukechilds/keyv-sqlite) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv-sqlite/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv-sqlite?branch=master)\nPostgreSQL | [@keyv/postgres](https://github.com/lukechilds/keyv-postgres) | No | [![Build Status](https://travis-ci.org/lukechilds/keyv-postgres.svg?branch=master)](https://travis-ci.org/lukechildskeyv-postgreskeyv) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv-postgres/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv-postgres?branch=master)\nMySQL | [@keyv/mysql](https://github.com/lukechilds/keyv-mysql) | No | [![Build Status](https://travis-ci.org/lukechilds/keyv-mysql.svg?branch=master)](https://travis-ci.org/lukechilds/keyv-mysql) [![Coverage Status](https://coveralls.io/repos/github/lukechilds/keyv-mysql/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/keyv-mysql?branch=master)\n\n## Third-party Storage Adapters\n\nYou can also use third-party storage adapters or build your own. Keyv will wrap these storage adapters in TTL functionality and handle complex types internally.\n\n```js\nconst Keyv = require('keyv');\nconst myAdapter = require('./my-storage-adapter');\n\nconst keyv = new Keyv({ store: myAdapter });\n```\n\nAny store that follows the [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) api will work.\n\n```js\nnew Keyv({ store: new Map() });\n```\n\nFor example, [`quick-lru`](https://github.com/sindresorhus/quick-lru) is a completely unrelated module that implements the Map API.\n\n```js\nconst Keyv = require('keyv');\nconst QuickLRU = require('quick-lru');\n\nconst lru = new QuickLRU({ maxSize: 1000 });\nconst keyv = new Keyv({ store: lru });\n```\n\nThe following are third-party storage adapters compatible with Keyv:\n\n- [quick-lru](https://github.com/sindresorhus/quick-lru) - Simple \"Least Recently Used\" (LRU) cache\n- [keyv-file](https://github.com/zaaack/keyv-file) - File system storage adapter for Keyv\n- [keyv-dynamodb](https://www.npmjs.com/package/keyv-dynamodb) - DynamoDB storage adapter for Keyv\n- [keyv-firestore ](https://github.com/goto-bus-stop/keyv-firestore) – Firebase Cloud Firestore adapter for Keyv\n- [keyv-mssql](https://github.com/pmorgan3/keyv-mssql) - Microsoft Sql Server adapter for Keyv\n- [keyv-memcache](https://github.com/jaredwray/keyv-memcache) - Memcache storage adapter for Keyv\n\n## Add Cache Support to your Module\n\nKeyv is designed to be easily embedded into other modules to add cache support. The recommended pattern is to expose a `cache` option in your modules options which is passed through to Keyv. Caching will work in memory by default and users have the option to also install a Keyv storage adapter and pass in a connection string, or any other storage that implements the `Map` API.\n\nYou should also set a namespace for your module so you can safely call `.clear()` without clearing unrelated app data.\n\nInside your module:\n\n```js\nclass AwesomeModule {\n\tconstructor(opts) {\n\t\tthis.cache = new Keyv({\n\t\t\turi: typeof opts.cache === 'string' && opts.cache,\n\t\t\tstore: typeof opts.cache !== 'string' && opts.cache,\n\t\t\tnamespace: 'awesome-module'\n\t\t});\n\t}\n}\n```\n\nNow it can be consumed like this:\n\n```js\nconst AwesomeModule = require('awesome-module');\n\n// Caches stuff in memory by default\nconst awesomeModule = new AwesomeModule();\n\n// After npm install --save keyv-redis\nconst awesomeModule = new AwesomeModule({ cache: 'redis://localhost' });\n\n// Some third-party module that implements the Map API\nconst awesomeModule = new AwesomeModule({ cache: some3rdPartyStore });\n```\n\n## API\n\n### new Keyv([uri], [options])\n\nReturns a new Keyv instance.\n\nThe Keyv instance is also an `EventEmitter` that will emit an `'error'` event if the storage adapter connection fails.\n\n### uri\n\nType: `String`<br>\nDefault: `undefined`\n\nThe connection string URI.\n\nMerged into the options object as options.uri.\n\n### options\n\nType: `Object`\n\nThe options object is also passed through to the storage adapter. Check your storage adapter docs for any extra options.\n\n#### options.namespace\n\nType: `String`<br>\nDefault: `'keyv'`\n\nNamespace for the current instance.\n\n#### options.ttl\n\nType: `Number`<br>\nDefault: `undefined`\n\nDefault TTL. Can be overridden by specififying a TTL on `.set()`.\n\n#### options.serialize\n\nType: `Function`<br>\nDefault: `JSONB.stringify`\n\nA custom serialization function.\n\n#### options.deserialize\n\nType: `Function`<br>\nDefault: `JSONB.parse`\n\nA custom deserialization function.\n\n#### options.store\n\nType: `Storage adapter instance`<br>\nDefault: `new Map()`\n\nThe storage adapter instance to be used by Keyv.\n\n#### options.adapter\n\nType: `String`<br>\nDefault: `undefined`\n\nSpecify an adapter to use. e.g `'redis'` or `'mongodb'`.\n\n### Instance\n\nKeys must always be strings. Values can be of any type.\n\n#### .set(key, value, [ttl])\n\nSet a value.\n\nBy default keys are persistent. You can set an expiry TTL in milliseconds.\n\nReturns a promise which resolves to `true`.\n\n#### .get(key, [options])\n\nReturns a promise which resolves to the retrieved value.\n\n##### options.raw\n\nType: `Boolean`<br>\nDefault: `false`\n\nIf set to true the raw DB object Keyv stores internally will be returned instead of just the value.\n\nThis contains the TTL timestamp.\n\n#### .delete(key)\n\nDeletes an entry.\n\nReturns a promise which resolves to `true` if the key existed, `false` if not.\n\n#### .clear()\n\nDelete all entries in the current namespace.\n\nReturns a promise which is resolved when the entries have been cleared.\n\n## License\n\nMIT © Luke Childs\n",
+  "maintainers": [
+    {
+      "name": "lukechilds",
+      "email": "lukechilds123@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-17T10:39:18.552Z",
+    "created": "2017-07-07T13:43:26.836Z",
+    "0.0.0": "2017-07-07T13:43:26.836Z",
+    "0.1.0": "2017-07-11T13:02:11.437Z",
+    "0.1.1": "2017-07-11T13:54:40.726Z",
+    "0.1.2": "2017-07-11T14:11:06.245Z",
+    "0.1.3": "2017-07-11T16:28:33.460Z",
+    "0.2.0": "2017-07-13T14:44:51.123Z",
+    "0.2.1": "2017-07-14T18:26:04.556Z",
+    "0.3.0": "2017-07-17T18:56:31.829Z",
+    "0.3.1": "2017-07-18T13:36:45.337Z",
+    "0.4.0": "2017-07-26T15:00:00.863Z",
+    "0.5.0": "2017-07-29T13:21:37.392Z",
+    "0.6.0": "2017-07-29T23:16:52.728Z",
+    "0.7.0": "2017-07-30T07:22:50.416Z",
+    "0.8.0": "2017-08-01T16:01:36.571Z",
+    "1.0.0": "2017-08-02T22:28:03.485Z",
+    "1.0.1": "2017-08-02T23:57:32.945Z",
+    "1.0.2": "2017-08-03T09:59:29.263Z",
+    "1.0.3": "2017-08-03T10:05:43.135Z",
+    "1.0.4": "2017-08-03T21:19:14.351Z",
+    "1.0.5": "2017-08-10T13:05:33.813Z",
+    "2.0.0": "2017-08-11T15:34:02.022Z",
+    "2.0.1": "2017-08-13T13:17:22.860Z",
+    "2.0.2": "2017-08-17T16:46:03.155Z",
+    "3.0.0": "2017-10-03T13:38:26.570Z",
+    "3.1.0": "2018-08-21T21:17:23.168Z",
+    "4.0.0": "2019-11-16T05:47:38.606Z",
+    "4.0.1": "2020-05-05T07:08:03.807Z",
+    "4.0.2": "2020-09-16T11:12:27.718Z",
+    "4.0.3": "2020-09-17T10:39:14.276Z"
+  },
+  "homepage": "https://github.com/lukechilds/keyv",
+  "keywords": [
+    "key",
+    "value",
+    "store",
+    "cache",
+    "ttl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukechilds/keyv.git"
+  },
+  "author": {
+    "name": "Luke Childs",
+    "email": "lukechilds123@gmail.com",
+    "url": "http://lukechilds.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/lukechilds/keyv/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "shanewholloway": true,
+    "rummik": true
+  }
+}

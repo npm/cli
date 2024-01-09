@@ -1,0 +1,3937 @@
+{
+  "_id": "snapdragon",
+  "_rev": "41-bd8d060d9504ae933f53f9edfc7b5156",
+  "name": "snapdragon",
+  "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+  "dist-tags": {
+    "latest": "0.12.0",
+    "patch": "0.8.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/snapdragon/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "chalk": "^1.0.0",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.2",
+        "minimist": "^1.1.1",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [],
+      "gitHead": "5a7b88e509000f5005304d78857d0c2a4c0e14d7",
+      "_id": "snapdragon@0.1.0",
+      "_shasum": "7a87bdcf1c3b9af6df60bb4b06fb479813ccce39",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7a87bdcf1c3b9af6df60bb4b06fb479813ccce39",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/snapdragon/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "chalk": "^1.0.0",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.2",
+        "minimist": "^1.1.1",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "gitHead": "30f284075a9c2d8edba3e0c839e520ce4d48cfc3",
+      "_id": "snapdragon@0.1.1",
+      "_shasum": "43de7f3fa4940e88ae3bf50f688dc09ee3b7c3f3",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "43de7f3fa4940e88ae3bf50f688dc09ee3b7c3f3",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/snapdragon/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "chalk": "^1.0.0",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.2",
+        "minimist": "^1.1.1",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "gitHead": "3523690976f66e6af5720b9c0066b1bdc6be038c",
+      "_id": "snapdragon@0.1.2",
+      "_shasum": "681252dad47147740755d17dad2860fadec9e49b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "681252dad47147740755d17dad2860fadec9e49b",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/snapdragon"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "chalk": "^1.0.0",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.4",
+        "minimist": "^1.1.1",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "gitHead": "f53a7d6a2e3ee124d62aa81afbab5a933d321065",
+      "_id": "snapdragon@0.2.0",
+      "_shasum": "d106b862f5ff1471f6ad3bc9d5afe7a70e2472b3",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d106b862f5ff1471f6ad3bc9d5afe7a70e2472b3",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "define-property": "^0.2.5",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.4",
+        "minimist": "^1.1.1",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "braces": "^1.8.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "gitHead": "4b71abd5efd99480547ffcc97ff3c162db0ee1fb",
+      "_id": "snapdragon@0.2.1",
+      "_shasum": "89d11c845b8260c0ce45c6028dceed93a77d54f5",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "89d11c845b8260c0ce45c6028dceed93a77d54f5",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://github.com/doowb"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "define-property": "^0.2.5",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.0.1",
+        "extend-shallow": "^1.1.4",
+        "minimist": "^1.1.1",
+        "set-value": "^0.2.0",
+        "source-map": "^0.4.2",
+        "source-map-resolve": "^0.3.1",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "braces": "^1.8.1",
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "gitHead": "6857a332e14180653c0d2c0c7a2d7ae83390a45a",
+      "_id": "snapdragon@0.2.2",
+      "_shasum": "932c968208f946df12fc17851ec3938aee5d6a5c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "932c968208f946df12fc17851ec3938aee5d6a5c",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.2.3",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "define-property": "^0.2.5",
+        "export-dirs": "^0.2.4",
+        "export-files": "^2.1.0",
+        "extend-shallow": "^2.0.1",
+        "minimist": "^1.2.0",
+        "set-value": "^0.3.1",
+        "source-map": "^0.5.3",
+        "source-map-resolve": "^0.4.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "jade",
+            "css"
+          ]
+        },
+        "reflinks": [
+          "jade",
+          "css"
+        ]
+      },
+      "gitHead": "618cfb13c3bc66ef1e31789c1414241bbd7be269",
+      "_id": "snapdragon@0.2.3",
+      "_shasum": "6acf350ceca838b68d6262d20e5ae405c1efa135",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6acf350ceca838b68d6262d20e5ae405c1efa135",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "base-methods": "^0.6.1",
+        "define-property": "^0.2.5",
+        "export-files": "^2.1.0",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.3",
+        "source-map-resolve": "^0.4.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "braces": "^1.8.2",
+        "export-dirs": "^0.2.4",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "matched": "^0.3.2",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "jade",
+            "css"
+          ],
+          "description": ""
+        },
+        "reflinks": [
+          "jade",
+          "css"
+        ]
+      },
+      "gitHead": "276067d6958ab32f00d757aa21be6ea3662443b8",
+      "_id": "snapdragon@0.3.0",
+      "_shasum": "8a08f768042bc6eaea50c13ba79a4a94a3b1a55d",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8a08f768042bc6eaea50c13ba79a4a94a3b1a55d",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-cyan": "^0.1.1",
+        "ansi-yellow": "^0.1.1",
+        "base-methods": "^0.6.1",
+        "define-property": "^0.2.5",
+        "export-files": "^2.1.0",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.3",
+        "source-map-resolve": "^0.4.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "benchmarked": "^0.1.4",
+        "braces": "^1.8.2",
+        "export-dirs": "^0.2.4",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.1",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "matched": "^0.3.2",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "jade",
+            "css"
+          ],
+          "description": ""
+        },
+        "reflinks": [
+          "jade",
+          "css"
+        ]
+      },
+      "gitHead": "911004788c2b651d2d8f2722241fa9c00ed217c2",
+      "_id": "snapdragon@0.3.1",
+      "_shasum": "e5719a5cec9a90f624db41ee326c242e8facef50",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e5719a5cec9a90f624db41ee326c242e8facef50",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.4.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "lazy-cache": "^1.0.3",
+        "source-map": "^0.5.3",
+        "source-map-resolve": "^0.5.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.8",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "reflinks": [
+          "css",
+          "pug",
+          "verb"
+        ],
+        "related": {
+          "list": [
+            "css",
+            "pug"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "951aebcf9c3c4de6b973c490f6481b13e53700ab",
+      "_id": "snapdragon@0.4.0",
+      "_shasum": "c73ac0469cb02efff6412866fcb878d55b2d40ec",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c73ac0469cb02efff6412866fcb878d55b2d40ec",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.4.0.tgz_1461135463059_0.5549712625797838"
+      },
+      "directories": {}
+    },
+    "0.4.1": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.4.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "lazy-cache": "^1.0.4",
+        "source-map": "^0.5.5",
+        "source-map-resolve": "^0.5.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.8",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "reflinks": [
+          "css",
+          "pug",
+          "verb"
+        ],
+        "related": {
+          "list": [
+            "css",
+            "pug"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e12e787d772917146b3dd385a946b1a9a7b87312",
+      "_id": "snapdragon@0.4.1",
+      "_shasum": "94918f22c2e9105693fc6565c41c55eae0866ce7",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "94918f22c2e9105693fc6565c41c55eae0866ce7",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.4.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.4.1.tgz_1461663119754_0.8553889133036137"
+      },
+      "directories": {}
+    },
+    "0.4.2": {
+      "name": "snapdragon",
+      "description": "snapdragon is an extremely pluggable, powerful and easy-to-use parser-renderer factory.",
+      "version": "0.4.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "collaborators": [
+        "Brian Woodward (https://github.com/doowb)"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "lazy-cache": "^2.0.0",
+        "source-map": "^0.5.5",
+        "source-map-resolve": "^0.5.0",
+        "urix": "^0.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.8",
+        "gulp-istanbul": "^0.10.4",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "compile",
+        "compiler",
+        "css",
+        "exec",
+        "match",
+        "parse",
+        "parser",
+        "pattern",
+        "pre",
+        "pre-compile",
+        "regex",
+        "render",
+        "renderer",
+        "stringify"
+      ],
+      "verb": {
+        "reflinks": [
+          "css",
+          "pug",
+          "verb"
+        ],
+        "related": {
+          "list": [
+            "css",
+            "pug"
+          ]
+        },
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "705939c3b4c4cdf628cc02e56ba7e5dd0e87d5be",
+      "_id": "snapdragon@0.4.2",
+      "_shasum": "2d568fe7d80de09e2ea52b8944f8b5c3012bb888",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d568fe7d80de09e2ea52b8944f8b5c3012bb888",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.4.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.4.2.tgz_1461951702152_0.888032752322033"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.5.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": []
+        }
+      },
+      "gitHead": "ba675ceb542d92e564f2399507ad6eb5ed886993",
+      "_id": "snapdragon@0.5.0",
+      "_shasum": "558af297c49333c9409640c0cdc03a010441fe37",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "558af297c49333c9409640c0cdc03a010441fe37",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.5.0.tgz_1473082667855_0.9212112256791443"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.6.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": []
+        }
+      },
+      "gitHead": "a1c72232e18d9d200ede6f01bc6efe0756e57458",
+      "_id": "snapdragon@0.6.0",
+      "_shasum": "a5c514c5a288ea2c882b5cf3109d97aab2b633f2",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a5c514c5a288ea2c882b5cf3109d97aab2b633f2",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.6.0.tgz_1473393528546_0.36207341169938445"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.7.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a0ea3018ca8e3c4b18717d3f7646d3640fc57e29",
+      "_id": "snapdragon@0.7.0",
+      "_shasum": "0db39f7c434d30be2282502baea2df34dc612ed3",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0db39f7c434d30be2282502baea2df34dc612ed3",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.7.0.tgz_1474949450052_0.13504316518083215"
+      },
+      "directories": {}
+    },
+    "0.7.1": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.7.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f368abeadc2b8bee9e38ae9b73a7e791e3e0d4f4",
+      "_id": "snapdragon@0.7.1",
+      "_shasum": "b48f7d6affc00363fa03a7d5751595b3c274eb87",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b48f7d6affc00363fa03a7d5751595b3c274eb87",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.7.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.7.1.tgz_1475919298711_0.48579126223921776"
+      },
+      "directories": {}
+    },
+    "0.7.2": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.7.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d9c9e4305de079577f154d8228600db70be45cae",
+      "_id": "snapdragon@0.7.2",
+      "_shasum": "8d68e945e5e14329306eca1a6695dba6d783cc7d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8d68e945e5e14329306eca1a6695dba6d783cc7d",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.7.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.7.2.tgz_1475919404424_0.48797370586544275"
+      },
+      "directories": {}
+    },
+    "0.7.3": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.7.3",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5e164437a31aade2a350abd739d339545fc9c75b",
+      "_id": "snapdragon@0.7.3",
+      "_shasum": "a00c46806af3998b0defb93e9af9d24d93a5e00e",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a00c46806af3998b0defb93e9af9d24d93a5e00e",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.7.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.7.3.tgz_1476092851043_0.8315688958391547"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.8.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "map-cache": "^0.2.2",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f88cadf7adc6560616d795d8856ab232a5257901",
+      "_id": "snapdragon@0.8.0",
+      "_shasum": "0d20de020d7c5bba8f8a36617aa096c23708f547",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0d20de020d7c5bba8f8a36617aa096c23708f547",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.8.0.tgz_1476101300007_0.182540244422853"
+      },
+      "directories": {}
+    },
+    "0.8.1": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.8.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "map-cache": "^0.2.2",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "micromatch",
+            "expand-brackets",
+            "extglob"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "9ef383bfad2b2fb65fc7b9b23f279e4b072ef7cb",
+      "_id": "snapdragon@0.8.1",
+      "_shasum": "e12b5487faded3e3dea0ac91e9400bf75b401370",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e12b5487faded3e3dea0ac91e9400bf75b401370",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.8.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.8.1.tgz_1476101941080_0.05476894066669047"
+      },
+      "directories": {}
+    },
+    "0.9.0": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.9.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.0",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2",
+        "snapdragon-capture": "^0.1.0",
+        "snapdragon-capture-set": "^1.0.0",
+        "verb-generate-readme": "^0.4.1"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-node",
+            "snapdragon-util",
+            "snapdragon-capture-set"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "d9ca57efe04b26002dcaa574cb9338eb3022ff5f",
+      "_id": "snapdragon@0.9.0",
+      "_shasum": "4f4f2828079b6eb12090be6629847b28fa10dacc",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f4f2828079b6eb12090be6629847b28fa10dacc",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.9.0.tgz_1484995080251_0.8137559653259814"
+      },
+      "directories": {}
+    },
+    "0.9.1": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.9.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.6.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.3",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.1.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "9ef07949b4f1ece6077065ad99e76a50259f0a6a",
+      "_id": "snapdragon@0.9.1",
+      "_shasum": "34bfe5308fb697db3ae7d63164cf3f8e2098edef",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "34bfe5308fb697db3ae7d63164cf3f8e2098edef",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.9.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.9.1.tgz_1486060459295_0.09194394061341882"
+      },
+      "directories": {}
+    },
+    "0.10.0": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.10.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.5",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.1.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "aa6616758561ed7ac7d52771125c813c15e03d6c",
+      "_id": "snapdragon@0.10.0",
+      "_shasum": "6f3dc84605b70671165a0221b61d9df948d8478c",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6f3dc84605b70671165a0221b61d9df948d8478c",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.10.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.10.0.tgz_1486465691215_0.07218118431046605"
+      },
+      "directories": {}
+    },
+    "0.10.1": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.10.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.5",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.1.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "291fd6387db2ac31d4f7d5c3d64cda70c5c375a6",
+      "_id": "snapdragon@0.10.1",
+      "_shasum": "7a5658ddf8406e3c67c5e0f47b489187df132971",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7a5658ddf8406e3c67c5e0f47b489187df132971",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.10.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.10.1.tgz_1486605334408_0.540455324575305"
+      },
+      "directories": {}
+    },
+    "0.11.0": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.0",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "verbfile.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^2.1.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^2.0.2"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.3"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "7bf616979baf704687983f197a1a37a80a2d7b39",
+      "_id": "snapdragon@0.11.0",
+      "_shasum": "260ba99290368fcf54b186a33240b635649dca4a",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "260ba99290368fcf54b186a33240b635649dca4a",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/snapdragon-0.11.0.tgz_1489297100648_0.9813721152022481"
+      },
+      "directories": {}
+    },
+    "0.11.1": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.1",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "verbfile.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^2.1.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.3"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "a9b141354ea3a29aacb01da0ed46894a04acb442",
+      "_id": "snapdragon@0.11.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-+eyewgSDYrMRJFxnr18IsFnoUjhC6NltRRGDf8bLZic64+n90ZqLzwQkNtJ8fLjdkTBnZO4RG+488Dzwqtzb6Q==",
+        "shasum": "d6661e010ae4e15f58154102bc9ef1acffcd5034",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 52670
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.11.1_1519463597615_0.9867283834211398"
+      }
+    },
+    "0.11.2": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.2",
+      "homepage": "https://github.com/here-be/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "verbfile.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^2.1.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "mocha": "^3.2.0",
+        "snapdragon-capture": "^0.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "verb-generate-readme": "^0.4.3"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node",
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "1f31b07a34db5824949513d1dab5e2fd4d0b3edb",
+      "_id": "snapdragon@0.11.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-lWPTXHHgkLXQ4VtYS0WZ4mg8KouXtOC3b1td2MnKSN6rVMwtgj7IXQ4EpXXy08eYHPe2GZ51xy7RZt0hDBJPmg==",
+        "shasum": "08ae8999e0f911870bca6be1bc7e7181e8cc9fc4",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 52640
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.11.2_1519468815665_0.053594923825706076"
+      }
+    },
+    "0.8.2": {
+      "name": "snapdragon",
+      "description": "Fast, pluggable and easy-to-use parser-renderer factory.",
+      "version": "0.8.2",
+      "homepage": "https://github.com/jonschlinkert/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Edward Betts",
+          "url": "http://edwardbetts.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "base": "^0.11.1",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "map-cache": "^0.2.2",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.10",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "mocha": "^3.0.2"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "These libraries use snapdragon:",
+          "list": [
+            "braces",
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "readme": "# snapdragon [![NPM version](https://img.shields.io/npm/v/snapdragon.svg?style=flat)](https://www.npmjs.com/package/snapdragon) [![NPM downloads](https://img.shields.io/npm/dm/snapdragon.svg?style=flat)](https://npmjs.org/package/snapdragon) [![Build Status](https://img.shields.io/travis/jonschlinkert/snapdragon.svg?style=flat)](https://travis-ci.org/jonschlinkert/snapdragon)\n\n> Fast, pluggable and easy-to-use parser-renderer factory.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save snapdragon\n```\n\nCreated by [jonschlinkert](https://github.com/jonschlinkert) and [doowb](https://github.com/doowb).\n\n**Features**\n\n* Bootstrap your own parser, get sourcemap support for free\n* All parsing and compiling is handled by simple, reusable middleware functions\n* Inspired by the parsers in [pug](http://jade-lang.com) and [css](https://github.com/reworkcss/css).\n\n## History\n\n### v0.5.0\n\n**Breaking changes**\n\nSubstantial breaking changes were made in v0.5.0! Most of these changes are part of a larger refactor that will be finished in 0.6.0, including the introduction of a `Lexer` class.\n\n* Renderer was renamed to `Compiler`\n* the `.render` method was renamed to `.compile`\n* Many other smaller changes. A more detailed overview will be provided in 0.6.0. If you don't have to time review code, I recommend you wait for the 0.6.0 release.\n\n## Usage examples\n\n```js\nvar Snapdragon = require('snapdragon');\nvar snapdragon = new Snapdragon();\n```\n\n**Parse**\n\n```js\nvar ast = snapdragon.parser('some string', options)\n  // parser middleware that can be called by other middleware\n  .set('foo', function () {})\n  // parser middleware, runs immediately in the order defined\n  .use(bar())\n  .use(baz())\n```\n\n**Render**\n\n```js\n// pass the `ast` from the parse method\nvar res = snapdragon.compiler(ast)\n  // compiler middleware, called when the name of the middleware\n  // matches the `node.type` (defined in a parser middleware)\n  .set('bar', function () {})\n  .set('baz', function () {})\n  .compile()\n```\n\nSee the [examples](./examples/).\n\n## Getting started\n\n**Parsers**\n\nParsers are middleware functions used for parsing a string into an ast node.\n\n```js\nvar ast = snapdragon.parser(str, options)\n  .use(function() {\n    var pos = this.position();\n    var m = this.match(/^\\./);\n    if (!m) return;\n    return pos({\n      // `type` specifies the compiler to use\n      type: 'dot',\n      val: m[0]\n    });\n  })\n```\n\n**AST node**\n\nWhen the parser finds a match, `pos()` is called, pushing a token for that node onto the ast that looks something like:\n\n```js\n{ type: 'dot',\n  val: '.',\n  position:\n   { start: { lineno: 1, column: 1 },\n     end: { lineno: 1, column: 2 } }}\n```\n\n**Renderers**\n\nRenderers are _named_ middleware functions that visit over an array of ast nodes to compile a string.\n\n```js\nvar res = snapdragon.compiler(ast)\n  .set('dot', function (node) {\n    console.log(node.val)\n    //=> '.'\n    return this.emit(node.val);\n  })\n```\n\n**Source maps**\n\nIf you want source map support, make sure to emit the position as well.\n\n```js\nvar res = snapdragon.compiler(ast)\n  .set('dot', function (node) {\n    return this.emit(node.val, node.position);\n  })\n```\n\n## Docs\n\n### Parser middleware\n\nA parser middleware is a function that returns an abject called a `token`. This token is pushed onto the AST as a node.\n\n**Example token**\n\n```js\n{ type: 'dot',\n  val: '.',\n  position:\n   { start: { lineno: 1, column: 1 },\n     end: { lineno: 1, column: 2 } }}\n```\n\n**Example parser middleware**\n\nMatch a single `.` in a string:\n\n1. Get the starting position by calling `this.position()`\n2. pass a regex for matching a single dot to the `.match` method\n3. if **no match** is found, return `undefined`\n4. if a **match** is found, `pos()` is called, which returns a token with:\n  - `type`: the name of the [compiler] to use\n  - `val`: The actual value captured by the regex. In this case, a `.`. Note that you can capture and return whatever will be needed by the corresponding [compiler].\n  - The ending position: automatically calculated by adding the length of the first capture group to the starting position.\n\n## Renderer middleware\n\nRenderers are run when the name of the compiler middleware matches the `type` defined on an ast `node` (which is defined in a parser).\n\n**Example**\n\nExercise: Parse a dot, then compile it as an escaped dot.\n\n```js\nvar ast = snapdragon.parser('.')\n  .use(function () {\n    var pos = this.position();\n    var m = this.match(/^\\./);\n    if (!m) return;\n    return pos({\n      // define the `type` of compiler to use\n      type: 'dot',\n      val: m[0]\n    })\n  })\n\nvar result = snapdragon.compiler(ast)\n  .set('dot', function (node) {\n    return this.emit('\\\\' + node.val);\n  })\n  .compile()\n\nconsole.log(result.output);\n//=> '\\.'\n```\n\n## API\n\n### [Parser](lib/parser.js#L19)\n\nCreate a new `Parser` with the given `input` and `options`.\n\n**Params**\n\n* `input` **{String}**\n* `options` **{Object}**\n\n### [.define](lib/parser.js#L103)\n\nDefine a non-enumberable property on the `Parser` instance.\n\n**Example**\n\n```js\nparser.define('foo', 'bar');\n```\n\n**Params**\n\n* `key` **{String}**: propery name\n* `val` **{any}**: property value\n* `returns` **{Object}**: Returns the Parser instance for chaining.\n\nSet parser `name` with the given `fn`\n\n**Params**\n\n* `name` **{String}**\n* `fn` **{Function}**\n\nGet parser `name`\n\n**Params**\n\n* `name` **{String}**\n\nPush a `token` onto the `type` stack.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Object}** `token`\n\nPop a token off of the `type` stack\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Object}**: Returns a token\n\nReturn true if inside a `stack` node. Types are `braces`, `parens` or `brackets`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nparser.isType(node, 'brace');\n```\n\n**Params**\n\n* `node` **{Object}**\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n### [.define](lib/compiler.js#L71)\n\nDefine a non-enumberable property on the `Compiler` instance.\n\n**Example**\n\n```js\ncompiler.define('foo', 'bar');\n```\n\n**Params**\n\n* `key` **{String}**: propery name\n* `val` **{any}**: property value\n* `returns` **{Object}**: Returns the Compiler instance for chaining.\n\n## About\n\n### Related projects\n\n* [braces](https://www.npmjs.com/package/braces): Fastest brace expansion for node.js, with the most complete support for the Bash 4.3 braces… [more](https://github.com/jonschlinkert/braces) | [homepage](https://github.com/jonschlinkert/braces \"Fastest brace expansion for node.js, with the most complete support for the Bash 4.3 braces specification.\")\n* [expand-brackets](https://www.npmjs.com/package/expand-brackets): Expand POSIX bracket expressions (character classes) in glob patterns. | [homepage](https://github.com/jonschlinkert/expand-brackets \"Expand POSIX bracket expressions (character classes) in glob patterns.\")\n* [extglob](https://www.npmjs.com/package/extglob): Convert extended globs to regex-compatible strings. Add (almost) the expressive power of regular expressions to… [more](https://github.com/jonschlinkert/extglob) | [homepage](https://github.com/jonschlinkert/extglob \"Convert extended globs to regex-compatible strings. Add (almost) the expressive power of regular expressions to glob patterns.\")\n* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/jonschlinkert/micromatch \"Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor**<br/> | \n| --- | --- |\n| 106 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [doowb](https://github.com/doowb) |\n\n### Building docs\n\n_(This document was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme) (a [verb](https://github.com/verbose/verb) generator), please don't edit the readme directly. Any changes to the readme must be made in [.verb.md](.verb.md).)_\n\nTo generate the readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-generate-readme && verb\n```\n\n### Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/snapdragon/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.1.31, on October 10, 2016._",
+      "readmeFilename": "README.md",
+      "gitHead": "6c952b12cabe896a86d9a4fe378f934bccbe6436",
+      "_id": "snapdragon@0.8.2",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-FtyOnWN/wCHTVXOMwvSv26d+ko5vWlIDD6zoUJ7LW8vh+ZBC8QdljveRP+crNrtBwioEUWy/4dMtbBjA4ioNlg==",
+        "shasum": "64922e7c565b0e14204ba1aa7d6964278d25182d",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.8.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 35228
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.8.2_1520776598430_0.674348590844402"
+      }
+    },
+    "0.11.3": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.3",
+      "homepage": "https://github.com/here-be/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^2.1.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^3.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "snapdragon-capture": "^0.2.0",
+        "gulp": "^3.9.1",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "gulp-format-md": "^0.1.11",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a05b1903473174f4492f12cf95dc39e9b5b7e70d",
+      "_id": "snapdragon@0.11.3",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.7.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-x/zK3oUmOuJiF5zuYvtkEgM3gQ5lLTiZsVGCwyPqpGTK3RwllzF01DxfrReuizy68xs5Yx2Yi4r9NTmdZDpA0g==",
+        "shasum": "a1fa5ddb6ee8122edba3b717a8cf6ffe04b9f5da",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.3.tgz",
+        "fileCount": 9,
+        "unpackedSize": 52074
+      },
+      "maintainers": [
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.11.3_1521590778620_0.4619365623953484"
+      }
+    },
+    "0.11.4": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.4",
+      "homepage": "https://github.com/here-be/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^4.0.0",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^3.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "snapdragon-capture": "^0.2.0",
+        "gulp": "^3.9.1",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "gulp-format-md": "^0.1.11",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d1f94bed9abfff862d066a679b4b9888a2cecf1d",
+      "_id": "snapdragon@0.11.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "integrity": "sha512-p5kB9EVE2VobItKhgrnVWmYsKw2RVV8OrzocrmO3va4fcp9vzJaSYz9CKtL+k6vIQ5gTiiDlxR+VbBMDPkb05w==",
+        "shasum": "2d420e6045c9ea252ba6d096f4f6ccbf27928645",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.4.tgz",
+        "fileCount": 9,
+        "unpackedSize": 51961
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.11.4_1523268385789_0.538461442928829"
+      }
+    },
+    "0.11.5": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.11.5",
+      "homepage": "https://github.com/here-be/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "debug": "^2.6.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^2.1.1",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^3.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "snapdragon-capture": "^0.2.0",
+        "gulp": "^3.9.1",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "gulp-format-md": "^0.1.11",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "3067f0fe16d5d2771aea793c450f09cb2da533ca",
+      "_id": "snapdragon@0.11.5",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-iC2oF+H+TjiZN4a7I5HNUH8imAFT9z3GydV8X5ZFLcBiDYROWNeqI34BHArXTVO/RGs88STtAtiMP3tCiNdUYg==",
+        "shasum": "522812d175f24f919629fd37406b02e434e645e6",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.11.5.tgz",
+        "fileCount": 9,
+        "unpackedSize": 52074,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa1321CRA9TVsSAnZWagAA7x8QAJ/two9eQzhSn8b8LM8H\nDKBaNZPGXhD/3Vz1QFkZ9jBA9JP4flkUgPDDH4l6QY7wzKCekhCEMvFyQYym\nNBjbAZoJNuJ+iCEhc3lDnCOg1sckTrWLoj0reol7KGUx/F1bbJq0/tozD8ES\niq+iHbAlOUfmGaSzNC4eZdgdD0bLN7EpWP1r1iFCTemxF8ebpV1+ourafMn8\nyYR5bET4YHz9hi5ReOQvxLheVxrl3PNiEjNAaLUFC69RfF2Q2lnMikUv8VQq\nE214m+dF+YAqLJUS7Ym3LqYg8V+vt8dv92JvdJV2KKlmUVlJrKHwgBSwxY+z\nB926haJR36PpfuNVIILzInyiBNb17dE/fAsQS0wdMjzdCK8LJKvRje6TFduT\nzBhFPzDctukh4C8EH/HGOsHNGYNUPBrRSahvOUhAk0L7SvlpCkkQnPv6dzCD\nlPCaSAASzqrL822/fIGEWO7ZTX+imbo1NpKYprPeCIUWbN5pjw3o04IKGaIL\n9N6whFmYY4NLoAC5CUn6sSv9iGpiyTl9DmCxeqDftkB/2zaZZERuAZvLlOyk\nhGwq98X5Jyi4P2Fopdm5N3F87uTqZVqSqPabOqKXw7T7fmQRT77boBcOp3xB\nEWKC/oXO0pTJ2HHW2WGqjbek5dBNqOXPxPUfqeoAlNXRuQPd7kexgW9B/1KS\nAcKT\r\n=fDBm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.11.5_1524071860558_0.9206960309060677"
+      }
+    },
+    "0.12.0": {
+      "name": "snapdragon",
+      "description": "Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.",
+      "version": "0.12.0",
+      "homepage": "https://github.com/here-be/snapdragon",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/here-be/snapdragon.git"
+      },
+      "bugs": {
+        "url": "https://github.com/here-be/snapdragon/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "component-emitter": "^1.2.1",
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "get-value": "^2.0.6",
+        "isobject": "^3.0.0",
+        "map-cache": "^0.2.2",
+        "snapdragon-node": "^1.0.6",
+        "snapdragon-util": "^4.0.0",
+        "source-map": "^0.5.6",
+        "source-map-resolve": "^0.5.0",
+        "use": "^3.1.0"
+      },
+      "devDependencies": {
+        "mocha": "^3.2.0",
+        "snapdragon-capture-set": "^1.0.1",
+        "snapdragon-capture": "^0.2.0",
+        "gulp": "^3.9.1",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "gulp-format-md": "^0.1.11",
+        "verb-generate-readme": "^0.6.0"
+      },
+      "keywords": [
+        "lexer",
+        "snapdragon"
+      ],
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "description": "A few of the libraries that use snapdragon:",
+          "implementations": [
+            "braces",
+            "breakdance",
+            "expand-brackets",
+            "extglob",
+            "micromatch",
+            "nanomatch"
+          ],
+          "list": [
+            "snapdragon-capture",
+            "snapdragon-capture-set",
+            "snapdragon-node",
+            "snapdragon-util"
+          ]
+        },
+        "reflinks": [
+          "css",
+          "pug",
+          "snapdragon-capture",
+          "snapdragon-capture-set",
+          "snapdragon-node"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "82fb20dc905ac0e22061ffaabaced311f296d4cd",
+      "_id": "snapdragon@0.12.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-E7epxLolFdELn4LzTfDOImU0gZDk5Y071Pou8+3rEP7980ZbDbBje3xDQAqP5lnPItU1W7QEoqNSJvHtvK8DcQ==",
+        "shasum": "ad7e56891a87eb38012386159bee99a0430e6e06",
+        "tarball": "https://registry.npmjs.org/snapdragon/-/snapdragon-0.12.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 51961,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa136KCRA9TVsSAnZWagAAZ6wQAJESx5m4d2EumEaKoQxi\nGPLg371uxQS+wGCDK+h+UsAxFJaqMOvdXMxu0ZduNNJtorbksd+Et3wc+iOq\nV/kFflfYwlq+/DBDxwV+qJXLMm/iRSyJD0M9ZYqiv2A/8e5zox5PWChkFva7\nr4XbGYbsB17YP4EQqoRhelzzanPOGEmbudwTNvI+xphR4JzpYZJcV5RLN4vH\ne2qU+ZZZljujFcceAKe4wj8ITLIm0zfzCPE6hqbPQKLEoLMDVojACZKDuAll\n8JB/BKOp8mTPPa/af9dBqc+zHCJP4w7t+Pw7l1g16vwPlmk1/+YINyqPi772\nUzfCX7hBbYQ1kpM78VMildR0G7k4UY4D7hSrEUbsNwa4otqUZH6kIXhoIAQu\no2tEYreePR2BgzwEWPsudtk//5VydAGxUVORmgrvAo040SN4gSYLZRoz/mTI\nOUQpy+Vg1BWR+S5IE+5JgfM/g6ZNpHmsl+xXwcCEJdF1OVcMEAet1CnCuiPv\nZNb6kgov/Tk5q/IJi6DhXHAL8kVlTLm1f2bWUEFAmHSqdcNabQoMDu938tKu\nfvQlGXamH971zd2eMtPCmnfL7SZqftJv5WJHCqktejtIRSep6x1U39xErXSq\nKb1ONqXzFcWwDjLMgdgwd4cvjF1B+vYqPdPnX1QP0YxrYJY+4VpWRiyS+1fa\ncOXO\r\n=xGSM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "brian.woodward@gmail.com",
+          "name": "doowb"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/snapdragon_0.12.0_1524072072857_0.6239108463867951"
+      }
+    }
+  },
+  "readme": "# snapdragon [![NPM version](https://img.shields.io/npm/v/snapdragon.svg?style=flat)](https://www.npmjs.com/package/snapdragon) [![NPM monthly downloads](https://img.shields.io/npm/dm/snapdragon.svg?style=flat)](https://npmjs.org/package/snapdragon) [![NPM total downloads](https://img.shields.io/npm/dt/snapdragon.svg?style=flat)](https://npmjs.org/package/snapdragon) [![Linux Build Status](https://img.shields.io/travis/here-be/snapdragon.svg?style=flat&label=Travis)](https://travis-ci.org/here-be/snapdragon)\n\n> Easy-to-use plugin system for creating powerful, fast and versatile parsers and compilers, with built-in source-map support.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Table of Contents\n\n<details>\n<summary><strong>Details</strong></summary>\n\n- [Install](#install)\n- [Quickstart example](#quickstart-example)\n- [Parsing](#parsing)\n- [Compiling](#compiling)\n- [All together](#all-together)\n- [API](#api)\n  * [Parse](#parse)\n  * [Compile](#compile)\n- [Snapdragon in the wild](#snapdragon-in-the-wild)\n- [History](#history)\n  * [v0.9.0](#v090)\n  * [v0.5.0](#v050)\n- [About](#about)\n\n</details>\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save snapdragon\n```\n\nCreated by [jonschlinkert](https://github.com/jonschlinkert) and [doowb](https://github.com/doowb).\n\n**Features**\n\n* Bootstrap your own parser, get sourcemap support for free\n* All parsing and compiling is handled by simple, reusable middleware functions\n* Inspired by the parsers in [pug](https://pugjs.org/) and [css](https://github.com/reworkcss/css).\n\n## Quickstart example\n\nAll of the examples in this document assume the following two lines of setup code exist first:\n\n```js\nvar Snapdragon = require('snapdragon');\nvar snapdragon = new Snapdragon();\n```\n\n**Parse a string**\n\n```js\nvar ast = snapdragon.parser\n  // parser handlers (essentially middleware)\n  // used for parsing substrings to create tokens\n  .set('foo', function () {})\n  .set('bar', function () {})\n  .parse('some string', options);\n```\n\n**Compile an AST returned from `.parse()`**\n\n```js\nvar result = snapdragon.compiler\n  // compiler handlers (essentially middleware), \n  // called on a node when the `node.type` matches\n  // the name of the handler\n  .set('foo', function () {})\n  .set('bar', function () {})\n  // pass the `ast` from the parse method\n  .compile(ast)\n\n// the compiled string\nconsole.log(result.output);\n```\n\nSee the [examples](./examples/).\n\n## Parsing\n\n**Parser handlers**\n\nParser handlers are middleware functions responsible for matching substrings to create tokens:\n\n**Example handler**\n\n```js\nvar ast = snapdragon.parser\n  .set('dot', function() {\n    var pos = this.position();\n    var m = this.match(/^\\./);\n    if (!m) return;\n    return pos({\n      // the \"type\" will be used by the compiler later on,\n      // we'll go over this in the compiler docs\n      type: 'dot',\n      // \"val\" is the string captured by \".match\",\n      // in this case that would be '.'\n      val: m[0]\n    });\n  })\n  .parse('.'[, options])\n```\n\n_As a side node, it's not scrictly required to set the `type` on the token, since the parser will add it to the token if it's undefined, based on the name of the handler. But it's good practice since tokens aren't always returned._\n\n**Example token**\n\nAnd the resulting tokens look something like this:\n\n```js\n{ \n  type: 'dot',\n  val: '.' \n}\n```\n\n**Position**\n\nNext, `pos()` is called on the token as it's returned, which patches the token with the `position` of the string that was captured:\n\n```js\n{ type: 'dot',\n  val: '.',\n  position:\n   { start: { lineno: 1, column: 1 },\n     end: { lineno: 1, column: 2 } }}\n```\n\n**Life as an AST node**\n\nWhen the token is returned, the parser pushes it onto the `nodes` array of the \"previous\" node (since we're in a tree, the \"previous\" node might be literally the last node that was created, or it might be the \"parent\" node inside a nested context, like when parsing brackets or something with an open or close), at which point the token begins its life as an AST node.\n\n**Wrapping up**\n\nIn the parser calls all handlers and cannot find a match for a substring, an error is thrown.\n\nAssuming the parser finished parsing the entire string, an AST is returned.\n\n## Compiling\n\nThe compiler's job is to take the AST created by the [parser](#parsing) and convert it to a new string. It does this by iterating over each node on the AST and calling a function on the node based on its `type`.\n\nThis function is called a \"handler\".\n\n**Compiler handlers**\n\nHandlers are _named_ middleware functions that are called on a node when `node.type` matches the name of a registered handler.\n\n```js\nvar result = snapdragon.compiler\n  .set('dot', function (node) {\n    console.log(node.val)\n    //=> '.'\n    return this.emit(node.val);\n  })\n```\n\nIf `node.type` does not match a registered handler, an error is thrown.\n\n**Source maps**\n\nIf you want source map support, make sure to emit the entire node as the second argument as well (this allows the compiler to get the `node.position`).\n\n```js\nvar res = snapdragon.compiler\n  .set('dot', function (node) {\n    return this.emit(node.val, node);\n  })\n```\n\n## All together\n\nThis is a very basic example, but it shows how to parse a dot, then compile it as an escaped dot.\n\n```js\nvar Snapdragon = require('..');\nvar snapdragon = new Snapdragon();\n\nvar ast = snapdragon.parser\n  .set('dot', function () {\n    var pos = this.position();\n    var m = this.match(/^\\./);\n    if (!m) return;\n    return pos({\n      type: 'dot',\n      val: m[0]\n    })\n  })\n  .parse('.')\n\nvar result = snapdragon.compiler\n  .set('dot', function (node) {\n    return this.emit('\\\\' + node.val);\n  })\n  .compile(ast)\n\nconsole.log(result.output);\n//=> '\\.'\n```\n\n## API\n\n### [Parser](lib/parser.js#L27)\n\nCreate a new `Parser` with the given `input` and `options`.\n\n**Params**\n\n* `input` **{String}**\n* `options` **{Object}**\n\n**Example**\n\n```js\nvar Snapdragon = require('snapdragon');\nvar Parser = Snapdragon.Parser;\nvar parser = new Parser();\n```\n\n### [.error](lib/parser.js#L97)\n\nThrow a formatted error message with details including the cursor position.\n\n**Params**\n\n* `msg` **{String}**: Message to use in the Error.\n* `node` **{Object}**\n* `returns` **{undefined}**\n\n**Example**\n\n```js\nparser.set('foo', function(node) {\n  if (node.val !== 'foo') {\n    throw this.error('expected node.val to be \"foo\"', node);\n  }\n});\n```\n\n### [.define](lib/parser.js#L115)\n\nDefine a non-enumberable property on the `Parser` instance. This is useful in plugins, for exposing methods inside handlers.\n\n**Params**\n\n* `key` **{String}**: propery name\n* `val` **{any}**: property value\n* `returns` **{Object}**: Returns the Parser instance for chaining.\n\n**Example**\n\n```js\nparser.define('foo', 'bar');\n```\n\n### [.node](lib/parser.js#L133)\n\nCreate a new [Node](#node) with the given `val` and `type`.\n\n**Params**\n\n* `val` **{Object}**\n* `type` **{String}**\n* `returns` **{Object}**: returns the [Node](#node) instance.\n\n**Example**\n\n```js\nparser.node('/', 'slash');\n```\n\n### [.position](lib/parser.js#L155)\n\nMark position and patch `node.position`.\n\n* `returns` **{Function}**: Returns a function that takes a `node`\n\n**Example**\n\n```js\nparser.set('foo', function(node) {\n  var pos = this.position();\n  var match = this.match(/foo/);\n  if (match) {\n    // call `pos` with the node\n    return pos(this.node(match[0]));\n  }\n});\n```\n\n### [.set](lib/parser.js#L187)\n\nAdd parser `type` with the given visitor `fn`.\n\n**Params**\n\n* `type` **{String}**\n* `fn` **{Function}**\n\n**Example**\n\n```js\n parser.set('all', function() {\n   var match = this.match(/^./);\n   if (match) {\n     return this.node(match[0]);\n   }\n });\n```\n\n### [.get](lib/parser.js#L206)\n\nGet parser `type`.\n\n**Params**\n\n* `type` **{String}**\n\n**Example**\n\n```js\nvar fn = parser.get('slash');\n```\n\n### [.push](lib/parser.js#L229)\n\nPush a node onto the stack for the given `type`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Object}** `token`\n\n**Example**\n\n```js\nparser.set('all', function() {\n  var match = this.match(/^./);\n  if (match) {\n    var node = this.node(match[0]);\n    this.push(node);\n    return node;\n  }\n});\n```\n\n### [.pop](lib/parser.js#L261)\n\nPop a token off of the stack of the given `type`.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Object}**: Returns a token\n\n**Example**\n\n```js\nparser.set('close', function() {\n  var match = this.match(/^\\}/);\n  if (match) {\n    var node = this.node({\n      type: 'close',\n      val: match[0]\n    });\n\n    this.pop(node.type);\n    return node;\n  }\n});\n```\n\n### [.isInside](lib/parser.js#L294)\n\nReturn true if inside a \"set\" of the given `type`. Sets are created manually by adding a type to `parser.sets`. A node is \"inside\" a set when an `*.open` node for the given `type` was previously pushed onto the set. The type is removed from the set by popping it off when the `*.close` node for the given type is reached.\n\n**Params**\n\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nparser.set('close', function() {\n  var pos = this.position();\n  var m = this.match(/^\\}/);\n  if (!m) return;\n  if (!this.isInside('bracket')) {\n    throw new Error('missing opening bracket');\n  }\n});\n```\n\n### [.isType](lib/parser.js#L324)\n\nReturn true if `node` is the given `type`.\n\n**Params**\n\n* `node` **{Object}**\n* `type` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nparser.isType(node, 'brace');\n```\n\n### [.prev](lib/parser.js#L340)\n\nGet the previous AST node from the `parser.stack` (when inside a nested context) or `parser.nodes`.\n\n* `returns` **{Object}**\n\n**Example**\n\n```js\nvar prev = this.prev();\n```\n\n### [.prev](lib/parser.js#L394)\n\nMatch `regex`, return captures, and update the cursor position by `match[0]` length.\n\n**Params**\n\n* `regex` **{RegExp}**\n* `returns` **{Object}**\n\n**Example**\n\n```js\n// make sure to use the starting regex boundary: \"^\"\nvar match = this.match(/^\\./);\n```\n\n**Params**\n\n* `input` **{String}**\n* `returns` **{Object}**: Returns an AST with `ast.nodes`\n\n**Example**\n\n```js\nvar ast = parser.parse('foo/bar');\n```\n\n### [Compiler](lib/compiler.js#L24)\n\nCreate a new `Compiler` with the given `options`.\n\n**Params**\n\n* `options` **{Object}**\n* `state` **{Object}**: Optionally pass a \"state\" object to use inside visitor functions.\n\n**Example**\n\n```js\nvar Snapdragon = require('snapdragon');\nvar Compiler = Snapdragon.Compiler;\nvar compiler = new Compiler();\n```\n\n### [.error](lib/compiler.js#L67)\n\nThrow a formatted error message with details including the cursor position.\n\n**Params**\n\n* `msg` **{String}**: Message to use in the Error.\n* `node` **{Object}**\n* `returns` **{undefined}**\n\n**Example**\n\n```js\ncompiler.set('foo', function(node) {\n  if (node.val !== 'foo') {\n    throw this.error('expected node.val to be \"foo\"', node);\n  }\n});\n```\n\n### [.emit](lib/compiler.js#L86)\n\nConcat the given string to `compiler.output`.\n\n**Params**\n\n* `string` **{String}**\n* `node` **{Object}**: Optionally pass the node to use for position if source maps are enabled.\n* `returns` **{String}**: returns the string\n\n**Example**\n\n```js\ncompiler.set('foo', function(node) {\n  this.emit(node.val, node);\n});\n```\n\n### [.noop](lib/compiler.js#L104)\n\nEmit an empty string to effectively \"skip\" the string for the given `node`, but still emit the position and node type.\n\n**Params**\n\n* **{Object}**: node\n\n**Example**\n\n```js\n// example: do nothing for beginning-of-string\nsnapdragon.compiler.set('bos', compiler.noop);\n```\n\n### [.define](lib/compiler.js#L124)\n\nDefine a non-enumberable property on the `Compiler` instance. This is useful in plugins, for exposing methods inside handlers.\n\n**Params**\n\n* `key` **{String}**: propery name\n* `val` **{any}**: property value\n* `returns` **{Object}**: Returns the Compiler instance for chaining.\n\n**Example**\n\n```js\ncompiler.define('customMethod', function() {\n  // do stuff\n});\n```\n\n### [.set](lib/compiler.js#L152)\n\nAdd a compiler `fn` for the given `type`. Compilers are called when the `.compile` method encounters a node of the given type to generate the output string.\n\n**Params**\n\n* `type` **{String}**\n* `fn` **{Function}**\n\n**Example**\n\n```js\ncompiler\n  .set('comma', function(node) {\n    this.emit(',');\n  })\n  .set('dot', function(node) {\n    this.emit('.');\n  })\n  .set('slash', function(node) {\n    this.emit('/');\n  });\n```\n\n### [.get](lib/compiler.js#L168)\n\nGet the compiler of the given `type`.\n\n**Params**\n\n* `type` **{String}**\n\n**Example**\n\n```js\nvar fn = compiler.get('slash');\n```\n\n### [.visit](lib/compiler.js#L188)\n\nVisit `node` using the registered compiler function associated with the `node.type`.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Object}**: returns the node\n\n**Example**\n\n```js\ncompiler\n  .set('i', function(node) {\n    this.visit(node);\n  })\n```\n\n### [.mapVisit](lib/compiler.js#L226)\n\nIterate over `node.nodes`, calling [visit](#visit) on each node.\n\n**Params**\n\n* `node` **{Object}**\n* `returns` **{Object}**: returns the node\n\n**Example**\n\n```js\ncompiler\n  .set('i', function(node) {\n    utils.mapVisit(node);\n  })\n```\n\n### [.compile](lib/compiler.js#L250)\n\nCompile the given `AST` and return a string. Iterates over `ast.nodes` with [mapVisit](#mapVisit).\n\n**Params**\n\n* `ast` **{Object}**\n* `options` **{Object}**: Compiler options\n* `returns` **{Object}**: returns the node\n\n**Example**\n\n```js\nvar ast = parser.parse('foo');\nvar str = compiler.compile(ast);\n```\n\n## Snapdragon in the wild\n\nA few of the libraries that use snapdragon:\n\n* [braces](https://www.npmjs.com/package/braces): Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support… [more](https://github.com/micromatch/braces) | [homepage](https://github.com/micromatch/braces \"Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.\")\n* [breakdance](https://www.npmjs.com/package/breakdance): Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy… [more](http://breakdance.io) | [homepage](http://breakdance.io \"Breakdance is a node.js library for converting HTML to markdown. Highly pluggable, flexible and easy to use. It's time for your markup to get down.\")\n* [expand-brackets](https://www.npmjs.com/package/expand-brackets): Expand POSIX bracket expressions (character classes) in glob patterns. | [homepage](https://github.com/jonschlinkert/expand-brackets \"Expand POSIX bracket expressions (character classes) in glob patterns.\")\n* [extglob](https://www.npmjs.com/package/extglob): Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob… [more](https://github.com/micromatch/extglob) | [homepage](https://github.com/micromatch/extglob \"Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.\")\n* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/micromatch/micromatch \"Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.\")\n* [nanomatch](https://www.npmjs.com/package/nanomatch): Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash… [more](https://github.com/micromatch/nanomatch) | [homepage](https://github.com/micromatch/nanomatch \"Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)\")\n\n## History\n\n### v0.9.0\n\n**Breaking changes!**\n\nIn an attempt to make snapdragon lighter, more versatile, and more pluggable, some major changes were made in this release.\n\n* `parser.capture` was externalized to [snapdragon-capture](https://github.com/jonschlinkert/snapdragon-capture)\n* `parser.capturePair` was externalized to [snapdragon-capture-set](https://github.com/jonschlinkert/snapdragon-capture-set)\n* Nodes are now an instance of [snapdragon-node](https://github.com/jonschlinkert/snapdragon-node)\n\n### v0.5.0\n\n**Breaking changes!**\n\nSubstantial breaking changes were made in v0.5.0! Most of these changes are part of a larger refactor that will be finished in 0.6.0, including the introduction of a `Lexer` class.\n\n* Renderer was renamed to `Compiler`\n* the `.render` method was renamed to `.compile`\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nA few of the libraries that use snapdragon:\n\n* [snapdragon-capture-set](https://www.npmjs.com/package/snapdragon-capture-set): Plugin that adds a `.captureSet()` method to snapdragon, for matching and capturing substrings that have… [more](https://github.com/jonschlinkert/snapdragon-capture-set) | [homepage](https://github.com/jonschlinkert/snapdragon-capture-set \"Plugin that adds a `.captureSet()` method to snapdragon, for matching and capturing substrings that have an `open` and `close`, like braces, brackets, etc\")\n* [snapdragon-capture](https://www.npmjs.com/package/snapdragon-capture): Snapdragon plugin that adds a capture method to the parser instance. | [homepage](https://github.com/jonschlinkert/snapdragon-capture \"Snapdragon plugin that adds a capture method to the parser instance.\")\n* [snapdragon-node](https://www.npmjs.com/package/snapdragon-node): Snapdragon utility for creating a new AST node in custom code, such as plugins. | [homepage](https://github.com/jonschlinkert/snapdragon-node \"Snapdragon utility for creating a new AST node in custom code, such as plugins.\")\n* [snapdragon-util](https://www.npmjs.com/package/snapdragon-util): Utilities for the snapdragon parser/compiler. | [homepage](https://github.com/here-be/snapdragon-util \"Utilities for the snapdragon parser/compiler.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 156 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 3 | [doowb](https://github.com/doowb) |\n| 2 | [danez](https://github.com/danez) |\n| 1 | [EdwardBetts](https://github.com/EdwardBetts) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on March 20, 2018._",
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "brian.woodward@gmail.com",
+      "name": "doowb"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-04-18T17:21:17.524Z",
+    "created": "2015-05-11T03:18:31.916Z",
+    "0.1.0": "2015-05-11T03:18:31.916Z",
+    "0.1.1": "2015-05-11T17:44:04.852Z",
+    "0.1.2": "2015-05-16T03:07:56.202Z",
+    "0.2.0": "2015-05-30T02:37:47.908Z",
+    "0.2.1": "2015-08-31T06:44:48.670Z",
+    "0.2.2": "2015-09-24T02:26:47.631Z",
+    "0.2.3": "2015-12-09T09:06:03.920Z",
+    "0.3.0": "2015-12-09T11:14:00.934Z",
+    "0.3.1": "2015-12-09T12:01:52.225Z",
+    "0.4.0": "2016-04-20T06:57:43.943Z",
+    "0.4.1": "2016-04-26T09:32:01.708Z",
+    "0.4.2": "2016-04-29T17:41:44.379Z",
+    "0.5.0": "2016-09-05T13:37:49.810Z",
+    "0.6.0": "2016-09-09T03:58:50.112Z",
+    "0.7.0": "2016-09-27T04:10:51.590Z",
+    "0.7.1": "2016-10-08T09:34:59.344Z",
+    "0.7.2": "2016-10-08T09:36:45.146Z",
+    "0.7.3": "2016-10-10T09:47:32.910Z",
+    "0.8.0": "2016-10-10T12:08:21.693Z",
+    "0.8.1": "2016-10-10T12:19:03.060Z",
+    "0.9.0": "2017-01-21T10:38:02.350Z",
+    "0.9.1": "2017-02-02T18:34:21.103Z",
+    "0.10.0": "2017-02-07T11:08:11.899Z",
+    "0.10.1": "2017-02-09T01:55:35.683Z",
+    "0.11.0": "2017-03-12T05:38:21.388Z",
+    "0.11.1": "2018-02-24T09:13:17.667Z",
+    "0.11.2": "2018-02-24T10:40:15.731Z",
+    "0.8.2": "2018-03-11T13:56:38.513Z",
+    "0.11.3": "2018-03-21T00:06:18.675Z",
+    "0.11.4": "2018-04-09T10:06:25.873Z",
+    "0.11.5": "2018-04-18T17:17:40.610Z",
+    "0.12.0": "2018-04-18T17:21:12.939Z"
+  },
+  "homepage": "https://github.com/here-be/snapdragon",
+  "keywords": [
+    "lexer",
+    "snapdragon"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/here-be/snapdragon.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/here-be/snapdragon/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Daniel Tschinder",
+      "url": "https://github.com/danez"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "users": {
+    "jonschlinkert": true,
+    "heartnett": true
+  },
+  "_attachments": {}
+}

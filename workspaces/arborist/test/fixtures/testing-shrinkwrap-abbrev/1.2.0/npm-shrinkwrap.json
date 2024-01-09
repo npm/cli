@@ -1,0 +1,23 @@
+{
+  "name": "@isaacs/testing-shrinkwrap-abbrev",
+  "version": "1.2.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "@isaacs/testing-shrinkwrap-abbrev",
+      "version": "1.2.0",
+      "dependencies": {
+        "abbrev": "*"
+      }
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.0"
+    }
+  },
+  "dependencies": {
+    "abbrev": {
+      "version": "1.1.0"
+    }
+  }
+}

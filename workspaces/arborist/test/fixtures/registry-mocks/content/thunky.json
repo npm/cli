@@ -1,0 +1,426 @@
+{
+  "_id": "thunky",
+  "_rev": "12-b2bc51f5548cc548109f42a0fd2f059d",
+  "name": "thunky",
+  "description": "delay the evaluation of a paramless async function and cache the result",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "thunky",
+      "version": "0.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky"
+      },
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "_id": "thunky@0.1.0",
+      "dist": {
+        "shasum": "bf30146824e2b6e67b0f2d7a4ac8beb26908684e",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.11",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "thunky",
+      "version": "1.0.0",
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "main": "index.js",
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tape": "^4.6.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/thunky/issues"
+      },
+      "homepage": "https://github.com/mafintosh/thunky#readme",
+      "license": "MIT",
+      "gitHead": "40d0e72ccfea1b2fb11a4706d16d7dc52cdfc9bf",
+      "_id": "thunky@1.0.0",
+      "_shasum": "48c898447cdbf9686d65f3473bc1489e7cc97184",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "48c898447cdbf9686d65f3473bc1489e7cc97184",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/thunky-1.0.0.tgz_1468578380300_0.8760475649032742"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "thunky",
+      "version": "1.0.1",
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "main": "index.js",
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tape": "^4.6.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/thunky/issues"
+      },
+      "homepage": "https://github.com/mafintosh/thunky#readme",
+      "license": "MIT",
+      "gitHead": "02328e063e740e1b2c6edf8d540bd82577ae87fc",
+      "_id": "thunky@1.0.1",
+      "_shasum": "3db1525aac0367b67bd2e532d2773e7c40be2e68",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3db1525aac0367b67bd2e532d2773e7c40be2e68",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/thunky-1.0.1.tgz_1468578438552_0.737917662365362"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "thunky",
+      "version": "1.0.2",
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "main": "index.js",
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tape": "^4.6.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/thunky/issues"
+      },
+      "homepage": "https://github.com/mafintosh/thunky#readme",
+      "license": "MIT",
+      "gitHead": "7ad8bbfdfbd62b51ea0e34c5235ba0de0db12223",
+      "_id": "thunky@1.0.2",
+      "_shasum": "a862e018e3fb1ea2ec3fce5d55605cf57f247371",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a862e018e3fb1ea2ec3fce5d55605cf57f247371",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/thunky-1.0.2.tgz_1486860508065_0.44560420024208724"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "thunky",
+      "version": "1.0.3",
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "main": "index.js",
+      "devDependencies": {
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/thunky/issues"
+      },
+      "homepage": "https://github.com/mafintosh/thunky#readme",
+      "license": "MIT",
+      "gitHead": "ce46d4fb455af79369cf14b7bf3eb0911bc01500",
+      "_id": "thunky@1.0.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YwT8pjmNcAXBZqrubu22P4FYsh2D4dxRmnWBOL8Jk8bUcRUtc5326kx32tuTmFDAZtLOGEVNl8POAR8j896Iow==",
+        "shasum": "f5df732453407b09191dae73e2a8cc73f381a826",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-1.0.3.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7165,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbxiS9CRA9TVsSAnZWagAA8DsQAKIU9+suySLueSdVZcn1\n/OMQQPWU6PyfDjI6vZq2ECE7PYB9kaOTj45bsVoUZOts9cI0YAqzYFEJK2Qn\n0ZTT+X1bOsmNaNsg3Llv2VWqwBl0uLQcWordK+HsgdUW/Pj7to2D2gfOeIDK\n6CdhGYxD7WLBcS6eJ/KqBGZvMgfToX/w+9GfTjPzU0IxU+1XNCugs8QSrS+z\nYObEgpn1DYjlIarubypRSPd5la+hx/yGQlfpq9barM1Y4V9p87Yt8UL5qw7p\n7ZZIMiR/B78G7s8lrrmzgYSXTui740yjmC5SAXRzHuuGN3WjnFLQSv2G1uKY\n8ZPsUuqo2a7Fj6LFjZjlEcoPS0Lwft0HYRrJ3r1hCpEgDuLoOxjm9z6adstu\nqlvw5LDTWyanE4jM8bndZvf+ay08+kbFUdRmXbeIriHpZD8YdeL+IQ3pl5t/\n4mfA+tDVSGf/FF5tLY5JBSPAelRlJhUUqWGKQ/G/qNhIN+JdioqBTzy3XtZo\nFx3k/VlXmIYlaYvYdvNeAJIGEkyk+g8TXaupbzwLMuh5P7X+jCTsaa3yb4FJ\nmRFrwXfATuQeHMDKrtUHMjlecxF9M91bCRxCJ2AdP9Msq08zF8qHhOiz8bH0\n9f+o0W8zXuLNuWD4Zb8HjbnnOptZzh8m6s3nhCu5xbHT259LZ8gV9ogbpwp5\nG2s6\r\n=VdWZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/thunky_1.0.3_1539712188066_0.0018386345014538286"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "thunky",
+      "version": "1.1.0",
+      "description": "delay the evaluation of a paramless async function and cache the result",
+      "main": "index.js",
+      "devDependencies": {
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/thunky.git"
+      },
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "keywords": [
+        "memo",
+        "thunk",
+        "async",
+        "lazy",
+        "control",
+        "flow",
+        "cache"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/thunky/issues"
+      },
+      "homepage": "https://github.com/mafintosh/thunky#readme",
+      "license": "MIT",
+      "gitHead": "4f24392fd09949e3785598d99b087e8256599989",
+      "_id": "thunky@1.1.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-eHY7nBftgThBqOyHGVN+l8gF0BucP09fMo0oO/Lb0w1OF80dJv+lDVpXG60WMQvkcxAkNybKsrEIE3ZtKGmPrA==",
+        "shasum": "5abaf714a9405db0504732bbccd2cedd9ef9537d",
+        "tarball": "https://registry.npmjs.org/thunky/-/thunky-1.1.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 7758,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpDfGCRA9TVsSAnZWagAA9Q4P/i1u8AdasQuoaM+NXEOs\nLGhjqM30PR/nuzdLDJhNsYNl/sLOwFZmAnwzVuxG+4t2OeES+a70gGXL2FLV\ndpQJHL+KDnVq2ANoQcJtYRRMDCOM3P5zvTS2DaXtdbBOAX/WPdgvR7FcCXeD\nPOBVpKFmo2A7+0eUpmxSMgVXVmHjkQkx7zmvGjsx+zm+a9a/3jKdI1eywWkG\nLmnW1y+BqxieMestDhrmSPisKBCYiAf3lyu1lrx+I2yMCA+KWUMau8Nq+Qft\nqritsC7qT00T61rRycR6vjLiFOXSd6n22SM32z1yAbeZOK80wYUNrE2nA4Yo\n7RL0c15PFoCDHiUwPAzIjTjCqM+mkGO1PRvtNtn3OyihhBAB7QMEUBOWeRXZ\nuJE3GOhySWGMGwP4K2YhwtOK+q8AK4RVLX4/QW4hc4+BlP0qySVixbK8+KJm\nIflU2vlzopa+m6cmfuWB54rDN0xi+OXotuTnJy8Vhy6uRDhUWX9wGuXK3+Av\nNTlM9wGXbTe88LFzHpZeSqxrmFtLFOEi5G0BSbZdn+qJ8HTatEATml33I2lP\nGU+Rp56Wp1CTgfVw5/Ug0jZiHJtX4uC6vTyDXn9T9OcL2tFkcJeI6foFB/uF\ngRzm4ypBy1Sq/PoGqrdEiLB2/fZb+geRuH3KknnkfOM5ckbO9O24RHD2bRbd\n2ila\r\n=4xXc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/thunky_1.1.0_1571043270184_0.776382449698759"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# thunky\n\nDelay the evaluation of a paramless async function and cache the result (see [thunk](http://en.wikipedia.org/wiki/Thunk_%28functional_programming%29)).\n\n```\nnpm install thunky\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/thunky.svg?style=flat)](http://travis-ci.org/mafintosh/thunky)\n\n## Example\n\nLet's make a simple function that returns a random number 1 second after it is called for the first time\n\n``` js\nvar thunky = require('thunky')\n\nvar test = thunky(function (callback) { // the inner function should only accept a callback\n  console.log('waiting 1s and returning random number')\n  setTimeout(function () {\n    callback(Math.random())\n  }, 1000)\n})\n\ntest(function (num) {  // inner function is called the first time we call test\n  console.log(num) // prints random number\n})\n\ntest(function (num) {  // subsequent calls waits for the first call to finish and return the same value\n  console.log(num) // prints the same random number as above\n})\n```\n\n## Lazy evaluation\n\nThunky makes it easy to implement a lazy evaluation pattern.\n\n``` js\nvar getDb = thunky(function (callback) {\n  db.open(myConnectionString, callback)\n})\n\nvar queryDb = function (query, callback) {\n  getDb(function (err, db) {\n    if (err) return callback(err)\n    db.query(query, callback)\n  })\n}\n\nqueryDb('some query', function (err, result) { ... } )\n\nqueryDb('some other query', function (err, result) { ... } )\n```\n\nThe first time `getDb` is called it will try do open a connection to the database.\nAny subsequent calls will just wait for the first call to complete and then call your callback.\n\nA nice property of this pattern is that it *easily* allows us to pass any error caused by `getDb` to the `queryDb` callback.\n\n## Error → No caching\n\nIf the thunk callback is called with an `Error` object as the first argument it will not cache the result\n\n``` js\nvar fails = thunky(function (callback) {\n  console.log('returning an error')\n  callback(new Error('bad stuff'))\n})\n\nfails(function (err) { // inner function is called\n  console.log(err)\n});\n\nfails(function (err) { // inner function is called again as it returned an error before\n  console.log(err)\n})\n```\n\n## Promise version\n\nA promise version is available as well\n\n``` js\nvar thunkyp = require('thunky/promise')\n\nvar ready = thunkyp(async function () {\n  // ... do async stuff\n  return 42\n})\n\n// same semantics as the callback version\nawait ready()\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    },
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-14T08:54:32.960Z",
+    "created": "2013-03-06T18:30:51.672Z",
+    "0.1.0": "2013-03-06T18:30:54.142Z",
+    "1.0.0": "2016-07-15T10:26:22.935Z",
+    "1.0.1": "2016-07-15T10:27:21.115Z",
+    "1.0.2": "2017-02-12T00:48:28.724Z",
+    "1.0.3": "2018-10-16T17:49:48.229Z",
+    "1.1.0": "2019-10-14T08:54:30.361Z"
+  },
+  "author": {
+    "name": "Mathias Buus Madsen",
+    "email": "mathiasbuus@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/thunky.git"
+  },
+  "users": {
+    "bret": true,
+    "ziflex": true,
+    "quocnguyen": true
+  },
+  "keywords": [
+    "memo",
+    "thunk",
+    "async",
+    "lazy",
+    "control",
+    "flow",
+    "cache"
+  ],
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/mafintosh/thunky#readme",
+  "bugs": {
+    "url": "https://github.com/mafintosh/thunky/issues"
+  },
+  "license": "MIT"
+}

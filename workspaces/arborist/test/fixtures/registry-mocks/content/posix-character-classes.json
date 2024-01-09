@@ -1,0 +1,296 @@
+{
+  "_id": "posix-character-classes",
+  "_rev": "3-f8c7cc7ef8acfc41a109416024a82541",
+  "name": "posix-character-classes",
+  "description": "POSIX character classes for creating regular expressions.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "posix-character-classes",
+      "description": "POSIX character classes for creating regular expressions.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/posix-character-classes",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/posix-character-classes.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/posix-character-classes/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11"
+      },
+      "keywords": [
+        "character",
+        "classes",
+        "posix"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": []
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "282c377615b62cce69c57d4153c8b0adbf326880",
+      "_id": "posix-character-classes@0.1.0",
+      "_shasum": "a6c4c72c5a7a494d94d56267f368e3b8978bcc6b",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a6c4c72c5a7a494d94d56267f368e3b8978bcc6b",
+        "tarball": "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/posix-character-classes-0.1.0.tgz_1474958178067_0.18115027388557792"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "posix-character-classes",
+      "description": "POSIX character classes for creating regular expressions.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/posix-character-classes",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/posix-character-classes.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/posix-character-classes/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "character",
+        "classes",
+        "posix"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related-list": [
+          "micromatch",
+          "nanomatch",
+          "extglob",
+          "expand-brackets"
+        ]
+      },
+      "gitHead": "93acda996350d0b1571592765e45c31da9376aa7",
+      "_id": "posix-character-classes@0.1.1",
+      "_shasum": "01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab",
+        "tarball": "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/posix-character-classes-0.1.1.tgz_1492663375848_0.9031167267821729"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "posix-character-classes",
+      "description": "POSIX character classes for creating regular expressions.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/posix-character-classes",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/posix-character-classes.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/posix-character-classes/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.12",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "character",
+        "classes",
+        "posix"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related-list": [
+          "micromatch",
+          "nanomatch",
+          "extglob",
+          "expand-brackets"
+        ]
+      },
+      "gitHead": "93acda996350d0b1571592765e45c31da9376aa7",
+      "_id": "posix-character-classes@1.0.0",
+      "_shasum": "86917ab2d252f7ea78e157bf009b9b6ea35c6cad",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "86917ab2d252f7ea78e157bf009b9b6ea35c6cad",
+        "tarball": "https://registry.npmjs.org/posix-character-classes/-/posix-character-classes-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/posix-character-classes-1.0.0.tgz_1492663392659_0.2984538341406733"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# posix-character-classes [![NPM version](https://img.shields.io/npm/v/posix-character-classes.svg?style=flat)](https://www.npmjs.com/package/posix-character-classes) [![NPM monthly downloads](https://img.shields.io/npm/dm/posix-character-classes.svg?style=flat)](https://npmjs.org/package/posix-character-classes)  [![NPM total downloads](https://img.shields.io/npm/dt/posix-character-classes.svg?style=flat)](https://npmjs.org/package/posix-character-classes) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/posix-character-classes.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/posix-character-classes)\n\n> POSIX character classes for creating regular expressions.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save posix-character-classes\n```\n\nInstall with [yarn](https://yarnpkg.com):\n\n```sh\n$ yarn add posix-character-classes\n```\n\n## Usage\n\n```js\nvar posix = require('posix-character-classes');\nconsole.log(posix.alpha);\n//=> 'A-Za-z'\n```\n\n## POSIX Character classes\n\nThe POSIX standard supports the following classes or categories of charactersh (note that classes must be defined within brackets)<sup class=\"footnote-ref\"><a href=\"#fn1\" id=\"fnref1\">[1]</a></sup>:\n\n| **POSIX class** | **Equivalent to** | **Matches** | \n| --- | --- | --- |\n| `[:alnum:]` | `[A-Za-z0-9]` | digits, uppercase and lowercase letters |\n| `[:alpha:]` | `[A-Za-z]` | upper- and lowercase letters |\n| `[:ascii:]` | `[\\x00-\\x7F]` | ASCII characters |\n| `[:blank:]` | `[ \\t]` | space and TAB characters only |\n| `[:cntrl:]` | `[\\x00-\\x1F\\x7F]` | Control characters |\n| `[:digit:]` | `[0-9]` | digits |\n| `[:graph:]` | `[^[:cntrl:]]` | graphic characters (all characters which have graphic representation) |\n| `[:lower:]` | `[a-z]` | lowercase letters |\n| `[:print:]` | `[[:graph] ]` | graphic characters and space |\n| `[:punct:]` | ``[-!\"#$%&'()*+,./:;<=>?@[]^_`{ | }~]`` | all punctuation characters (all graphic characters except letters and digits) |\n| `[:space:]` | `[ \\t\\n\\r\\f\\v]` | all blank (whitespace) characters, including spaces, tabs, new lines, carriage returns, form feeds, and vertical tabs |\n| `[:upper:]` | `[A-Z]` | uppercase letters |\n| `[:word:]` | `[A-Za-z0-9_]` | word characters |\n| `[:xdigit:]` | `[0-9A-Fa-f]` | hexadecimal digits |\n\n## Examples\n\n* `a[[:digit:]]b` matches `a0b`, `a1b`, ..., `a9b`.\n* `a[:digit:]b` is invalid, character classes must be enclosed in brackets\n* `[[:digit:]abc]` matches any digit, as well as `a`, `b`, and `c`.\n* `[abc[:digit:]]` is the same as the previous, matching any digit, as well as `a`, `b`, and `c`\n* `[^ABZ[:lower:]]` matches any character except lowercase letters, `A`, `B`, and `Z`.\n\n## About\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.5.0, on April 20, 2017._\n\n<hr class=\"footnotes-sep\">\n<section class=\"footnotes\">\n<ol class=\"footnotes-list\">\n<li id=\"fn1\"  class=\"footnote-item\">table and examples are based on the WikiBooks page for [Regular Expressions/POSIX Basic Regular Expressions](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions), which is available under the [Creative Commons Attribution-ShareAlike License](https://creativecommons.org/licenses/by-sa/3.0/). <a href=\"#fnref1\" class=\"footnote-backref\">↩</a>\n\n</li>\n</ol>\n</section>",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-04-20T04:43:13.188Z",
+    "created": "2016-09-27T06:36:20.553Z",
+    "0.1.0": "2016-09-27T06:36:20.553Z",
+    "0.1.1": "2017-04-20T04:42:56.382Z",
+    "1.0.0": "2017-04-20T04:43:13.188Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/posix-character-classes",
+  "keywords": [
+    "character",
+    "classes",
+    "posix"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/posix-character-classes.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/posix-character-classes/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

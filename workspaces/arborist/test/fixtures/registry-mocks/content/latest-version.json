@@ -1,0 +1,901 @@
+{
+  "_id": "latest-version",
+  "_rev": "26-0e53f47bfaa28655dbc5e4892d1fb4ff",
+  "name": "latest-version",
+  "description": "Get the latest version of an npm package",
+  "dist-tags": {
+    "latest": "5.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "latest-version",
+      "version": "0.1.0",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/latest-version"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@0.1.0",
+      "dist": {
+        "shasum": "086d20089ff1fb8036b9e3e3d72daf92b71932cd",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "latest-version",
+      "version": "0.1.1",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/latest-version"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@0.1.1",
+      "dist": {
+        "shasum": "21b3adf9a9434d93932212308a36973c5bcfab6e",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "latest-version",
+      "version": "0.1.2",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/latest-version"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^0.3.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@0.1.2",
+      "_shasum": "21d0f957d182a048a367973bb524fe92133964e8",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "21d0f957d182a048a367973bb524fe92133964e8",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "latest-version",
+      "version": "0.2.0",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/latest-version"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@0.2.0",
+      "_shasum": "adaf898d5f22380d3f9c45386efdff0a1b5b7501",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "adaf898d5f22380d3f9c45386efdff0a1b5b7501",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "latest-version",
+      "version": "1.0.0",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/latest-version"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "45f050c26630050f73db35967492174c5175a624",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@1.0.0",
+      "_shasum": "84f40e5c90745c7e4f7811624d6152c381d931d9",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "84f40e5c90745c7e4f7811624d6152c381d931d9",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "latest-version",
+      "version": "1.0.1",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/latest-version"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "bin": {
+        "latest-version": "cli.js"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js",
+        "cli.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "77d6fa6e20551c716f1e543358b93fc9b5c0bfb9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@1.0.1",
+      "_shasum": "72cfc46e3e8d1be651e1ebb54ea9f6ea96f374bb",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "72cfc46e3e8d1be651e1ebb54ea9f6ea96f374bb",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "latest-version",
+      "version": "2.0.0",
+      "description": "Get the latest version of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/latest-version"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "851d3f43a06dcf6837f102a6f1cebd64d988ad68",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version",
+      "_id": "latest-version@2.0.0",
+      "_shasum": "56f8d6139620847b8017f8f1f4d78e211324168b",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "56f8d6139620847b8017f8f1f4d78e211324168b",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "latest-version",
+      "version": "3.0.0",
+      "description": "Get the latest version of an npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/latest-version.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "semver-regex": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "6858116bcf3b17c19a9d1b81bc88b6765289ce75",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version#readme",
+      "_id": "latest-version@3.0.0",
+      "_shasum": "3104f008c0c391084107f85a344bc61e38970649",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3104f008c0c391084107f85a344bc61e38970649",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/latest-version-3.0.0.tgz_1486989736223_0.4567320039495826"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "latest-version",
+      "version": "3.1.0",
+      "description": "Get the latest version of an npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/latest-version.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "semver-regex": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "2181e0f3c18d71c43bc6656c9cd09ba9bccd6c68",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version#readme",
+      "_id": "latest-version@3.1.0",
+      "_shasum": "a205383fea322b33b5ae3b18abee0dc2f356ee15",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a205383fea322b33b5ae3b18abee0dc2f356ee15",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/latest-version-3.1.0.tgz_1490525404742_0.793157483683899"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "latest-version",
+      "version": "4.0.0",
+      "description": "Get the latest version of an npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/latest-version.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "semver": "^5.4.1",
+        "semver-regex": "^2.0.0",
+        "xo": "*"
+      },
+      "gitHead": "9644131e0878181be89d4f546ef19905e283fdd7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version#readme",
+      "_id": "latest-version@4.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-b4Myk7aQiQJvgssw2O8yITjELdqKRX4JQJUF1IUplgLaA8unv7s+UsAOwH6Q0/a09czSvlxEm306it2LBXrCzg==",
+        "shasum": "9542393ac55a585861a4c4ebc02389a0b4a9c332",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3089,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbG9LnCRA9TVsSAnZWagAAoLoP/0X1PvtY1B7OLvHaVUnm\nT7p8SajasOVf2cRDSAIxLnOW0vKioLzy3Vz9cN+Zp6tpUfsDuKpd7GzULxvr\nk10mLlLYVyeQGSYwYkwe9Gn6ZKhCCSVVEumT5KnttXwqewvz1yGF8utAeSqV\n10K8okeTfSkW045z5DKAEpagXVf9b4cUdsXfxEsaRIQppfWxJZ3SX82m1VZK\nH7vPqCtcfp02X2X3WmtdlbBgiYU7KFe75pQAlCca3ub/AzCY03VIiuR5xwYP\nTceNCtyReWZAIuPhfXIeUhbdCqIxvDymw39HPmF306KOrszcezMl9A4oTdhU\nMZNlqcPE4s7ErxEwkcxwWkAh1kXryT2lBI3Yz8gCYlg5j9ZjKHrGO6WSr7Y2\nA1gEEkZCy2zf7Xksy64cLayvOtyfaXJgJB1/HVDGyZS1rxdyXPcIdy4g7f0x\n3qVg3G6ylpZttQQsgyAHHItfmFv2KAAxy/teylozPtXrIInnL3ma64WZYwuU\nwmRpPyuD1TaJz6T20uWQYyyxeMvz12Cxsi008TUDjjqcVa4rekIkpxrMVUdC\nG0EWiPw7gprx+TJI2P0W7unfapBdnNOlvKGyrUmBCr4TJy5v6V8f2zJoRGEF\nQIPgpx37ztWLM1h5OJJfMbE75DsVWz9zzoYNX8cxJhDgeA+NYpPtP1xDdHIe\n/hIr\r\n=1/pd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/latest-version_4.0.0_1528550119151_0.45115227361449994"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "latest-version",
+      "version": "5.0.0",
+      "description": "Get the latest version of an npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/latest-version.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^6.1.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "semver": "^5.6.0",
+        "semver-regex": "^2.0.0",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4126f4c050d81188e750f646f62ec5f7f040d0fd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version#readme",
+      "_id": "latest-version@5.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6iCsjOzw7o6Ebe0xh6h7PhfRLIeh52i+xzXVo114tQEvAEVVrzCRIxUWQzflhhYWvF7acxyqok7EFrKD9qScoQ==",
+        "shasum": "04bc651abd4b921c6a78879db52cbb140dbd818f",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3567,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch978CRA9TVsSAnZWagAANo8P/0nodi+hiVY1qYhFMnoY\nibUTVy2z9M/E8E50uZX7XooEhz7xqq+PWYeh6xDallQFLWekO1j1SO/BuQdL\njV/Fh89S+w1juBjtVo/YP+LlHsK3ZH8SVEBkdkUlVbajjPYFjyDx0oSN1/fT\n8ADr2r/PNWLgkHz7MwUpGfh6WmV4nbMatbCpw2oEhkgPHw9yHM9TXgdBp5Oc\nFAor/FkS9DgKwhL5a9t7OPAsZ1SRaZfubXfII161uqM9ChwnpU1GqwZVmMGc\nlLD5ZH337R93zQTvNj3EclhYht/YAWJaBGl4AN0/ykwYYVPZXNwAY1eIaTZY\n0JOFI9VNRAh9N1waAhopQdBQEkdgErt2Hp/ohpnNDAbGmbHGzmTSsOowrAps\nOR6WzAh0GTJwrJSlOclsRoN4NpQC/XxWu0mrEBe0pMcqXZjabh1b+nkT/nb2\nMqGdNSZVWMcoV4iTThBe/tzOuIcP+f+00+NRg1N6L6UNAcv/szENjRn4gBZt\njlIlTMX7lgM+59s577gigJ0RrDa9QgfhqZA4i1y4VUS9bX+dCTInRYwxEhvb\noiKG+h44U5VLL+d9f6t9d+rgBYtgmExoy3NX2SVSc8sPKleT7WYlu1H/w9rx\nrjtGf07Ya/g8hAHrTMVm3PncYUi3QySE4O2D0rCJASCJthHFYCGNMcJpHs2x\nPluU\r\n=wkWT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/latest-version_5.0.0_1552408315852_0.2114022830194484"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "latest-version",
+      "version": "5.1.0",
+      "description": "Get the latest version of an npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/latest-version.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "latest",
+        "version",
+        "npm",
+        "pkg",
+        "package",
+        "package.json",
+        "current",
+        "module"
+      ],
+      "dependencies": {
+        "package-json": "^6.3.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "semver": "^6.0.0",
+        "semver-regex": "^2.0.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "9d0f0b115870a11372f0382e24c5658a6bf1da3a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/latest-version/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/latest-version#readme",
+      "_id": "latest-version@5.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-weT+r0kTkRQdCdYCNtkMwWXQTMEswKrFBkm4ckQOMVhhqhIMI1UT2hMj+1iigIhgSZm5gTmrRXBNoGUgaTY1xA==",
+        "shasum": "119dfe908fe38d15dfa43ecd13fa12ec8832face",
+        "tarball": "https://registry.npmjs.org/latest-version/-/latest-version-5.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4292,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpXjlCRA9TVsSAnZWagAAlwcP/00cwemgwzkPK6dEOwp1\nO9oZd5SIx1dC4wuhCw3ZkU/QUolHSUYtZK4IbHrNpS4MFXr0ndOTnlR6lFkk\nc1k0dOVZDi8at/+P7r6VQeqDS+xytZZ0UpX7yCp8G0eQCmqhdxw/9lKDIqv4\nx0eOpVgG6LOFI/HPS8ERUoJX5KORB40iD/XdajttPE2JgqwElTkZZHvRsGS0\nq3N8+iqVnb/ZFcMUMDhaRQckRpcl1rfHlVB9KcYuMtcr4qJRypyJeUBlibbd\nqox4vGJSgIcgPAvt4GIMy6TM/gWpA3aV5oQSj3lI9zx3EHUi+AcgxkGmT6Bu\n8BvHMnbM8xtWZVdVZYcE1/JwaT5W6owjRKE0OP6rvwpzOtL0PG30aO9e/brI\nw8hkdm3Fc/TX0M1rSeyV1pWnbaHCW8S87rwGoO522HINdMNUsIU4zcPsxDSi\nvBi/lS47wjm5UDmWNAgUy0HTt5vKNUv4goHjYez8kK84+l6lL2DfRNPON4LG\nZ+OYFxYSzFInzoTDJ/nuJHyFoz6Fy2ZlIhUw0DnPruHC1vqf4C0JM9BE8aZK\nv/R4H6QsvTySGZTQutmvZdU5Jr+1gTX9EHa+CNvFjElrImgnQeNgKezCnnTz\nKfO5CnzCztppu5q+GxgK9EMiBOshn+jsj8pzB6lLdyOim6t87qlxr9zqv86U\nspGl\r\n=V/hf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/latest-version_5.1.0_1554348260627_0.8781458674727018"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# latest-version [![Build Status](https://travis-ci.org/sindresorhus/latest-version.svg?branch=master)](https://travis-ci.org/sindresorhus/latest-version)\n\n> Get the latest version of an npm package\n\nFetches the version directly from the registry instead of depending on the massive [npm](https://github.com/npm/npm/blob/8b5e7b6ae5b4cd2d7d62eaf93b1428638b387072/package.json#L37-L85) module like the [latest](https://github.com/bahamas10/node-latest) module does.\n\n\n## Install\n\n```\n$ npm install latest-version\n```\n\n\n## Usage\n\n```js\nconst latestVersion = require('latest-version');\n\n(async () => {\n\tconsole.log(await latestVersion('ava'));\n\t//=> '0.18.0'\n\n\tconsole.log(await latestVersion('@sindresorhus/df'));\n\t//=> '1.0.1'\n\n\t// Also works with semver ranges and dist-tags\n\tconsole.log(await latestVersion('npm', {version: 'latest-5'}));\n\t//=> '5.5.1'\n})();\n```\n\n\n## Related\n\n- [latest-version-cli](https://github.com/sindresorhus/latest-version-cli) - CLI for this module\n- [package-json](https://github.com/sindresorhus/package-json) - Get the package.json of a package from the npm registry\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-04T03:24:23.476Z",
+    "created": "2014-04-20T15:27:01.371Z",
+    "0.1.0": "2014-04-20T15:27:01.371Z",
+    "0.1.1": "2014-04-21T00:06:42.329Z",
+    "0.1.2": "2014-05-11T02:27:20.377Z",
+    "0.2.0": "2014-06-15T19:07:52.193Z",
+    "1.0.0": "2014-08-14T09:44:06.206Z",
+    "1.0.1": "2015-06-18T15:12:44.483Z",
+    "2.0.0": "2015-10-09T20:22:20.625Z",
+    "3.0.0": "2017-02-13T12:42:18.036Z",
+    "3.1.0": "2017-03-26T10:50:06.622Z",
+    "4.0.0": "2018-06-09T13:15:19.237Z",
+    "5.0.0": "2019-03-12T16:31:56.039Z",
+    "5.1.0": "2019-04-04T03:24:20.779Z"
+  },
+  "homepage": "https://github.com/sindresorhus/latest-version#readme",
+  "keywords": [
+    "latest",
+    "version",
+    "npm",
+    "pkg",
+    "package",
+    "package.json",
+    "current",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/latest-version.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/latest-version/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ljharb": true,
+    "vwal": true,
+    "parth-gajjar": true,
+    "rocket0191": true,
+    "craigpatten": true,
+    "miadzadfallah": true,
+    "zuojiang": true,
+    "pixel67": true,
+    "leizongmin": true
+  }
+}

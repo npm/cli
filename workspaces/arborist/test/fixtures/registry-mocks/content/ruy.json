@@ -1,0 +1,168 @@
+{
+  "_id": "ruy",
+  "name": "ruy",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "ruy",
+      "version": "1.0.0",
+      "description": "Personal npm card for Ruy Adorno (@ruyadorno)",
+      "main": "bin/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ruyadorno/ruy.git"
+      },
+      "scripts": {
+        "prepublishOnly": "webpack"
+      },
+      "bin": {
+        "ruy": "bin/index.js"
+      },
+      "keywords": [
+        "card",
+        "npm",
+        "npm card",
+        "npx",
+        "npx card",
+        "business card"
+      ],
+      "author": {
+        "name": "Ruy Adorno"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "babel-loader": "^8.0.4",
+        "boxen": "^2.1.0",
+        "chalk": "^2.4.1",
+        "lodash.get": "^4.4.2",
+        "webpack": "^4.28.1",
+        "webpack-bundle-analyzer": "^3.0.3",
+        "webpack-cli": "^3.1.2"
+      },
+      "myCard": {
+        "info": {
+          "name": "Ruy Adorno",
+          "handle": "ruyadorno",
+          "twitter": "ruyadorno",
+          "npm": "ruyadorno",
+          "github": "ruyadorno",
+          "linkedin": "ruyadorno",
+          "web": "http://ruyadorno.com",
+          "work": "Principal Software Developer"
+        },
+        "data": [
+          "          <white>{{name}}</><green> / </><cyan>{{handle}}</>",
+          "",
+          {
+            "label": "<blue>Work</>",
+            "text": "{{work}}"
+          },
+          "",
+          {
+            "label": "Twitter",
+            "text": "https://twitter.com/<cyan>{{twitter}}</>",
+            "when": "{{twitter}}"
+          },
+          {
+            "label": "npm",
+            "text": "https://www.npmjs.com/<red>~{{npm}}</>",
+            "when": "{{npm}}"
+          },
+          {
+            "label": "GitHub",
+            "text": "https://github.com/<green>{{github}}</>",
+            "when": "{{github}}"
+          },
+          {
+            "label": "LinkedIn",
+            "text": "https://www.linkedin.com/in/<blue>{{linkedin}}</>",
+            "when": "{{linkedin}}"
+          },
+          {
+            "label": "Web",
+            "text": "<cyan>{{web}}</>",
+            "when": "{{web}}"
+          },
+          "",
+          {
+            "label": "Card",
+            "text": "<red>npx</> {{_packageName}}"
+          }
+        ]
+      },
+      "gitHead": "c583d43e5ca417a5e843cc39f642491a774e96cf",
+      "bugs": {
+        "url": "https://github.com/ruyadorno/ruy/issues"
+      },
+      "homepage": "https://github.com/ruyadorno/ruy#readme",
+      "_id": "ruy@1.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "ruyadorno",
+        "email": "ruyadorno@hotmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VYppDTCM6INWUMKlWiKws4nVMuCNU5h+xjF6lj/0y90rLq017/m8aEpNy4zQSZFV2qz66U/hRZwwlSLJ5l5JMQ==",
+        "shasum": "4a2dc311955ab534395d72785121cbf74eb654a7",
+        "tarball": "https://registry.npmjs.org/ruy/-/ruy-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 86677,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIQLfCRA9TVsSAnZWagAAthgP/3obOHsR/shYRo6rGQFT\nZqRYKnJa3gWn0HmriuJ04TDFWCLkDkjNzeZG6iIaNm9mEgGd6k988eXmexr/\noWnuzenP4yoknpJPqVfpFADONV9v/FcQWlDiNPCUAqiGLhUBh+XaeQ34fbJI\nEO4jMriWc3gGq+xYjSzhoS5UYF/cY9aLXCv+pewgj6jRQZ3QrX6enIDFIzsZ\nu0mbeihBt2dtrZblnF8cC0t+K4sY8NkMdhb0Ex6HxUbnV+r+IhUaG65EQ/lx\nUlTjbBr3GvA4MOVL+0bL3u/3ltWWowiaMFHxtg/qt210Tfbx3x1pLcRT2iIe\noqd5MVkwY/7y8JOOzhQjt2xlLJ/F060Rg6Niew8tSL2/k8cE6mqLt5aLZgEJ\ndGpnRoqYLRxl/CCM2Z1RHmZZ6AjdMqR9TihvIAOcVKVo+GQFwbdQwhACcjcH\n7hujs95GxUUuUDRwBvAWRHed8gkJOScAEnuLZh/IlNN1bG35jmhFKe3Vl5cX\nLjFriF+P6eVghut75J32EjYwrviGT3jDJ3EnKx/sLb2OQWwLsjMZv6kJba87\nMqExFmMnGt5TdCRrx254J+dQGWH+iifwGTLLn7coLZAhFUZJpZP6yGSvzuyV\nlyZM8MWMPFpnKPbf7u42lpUBW4QByrHhEJo1zS1pS2rcRbrbyeO2soUeI8md\n+cFL\r\n=p+/u\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ruy_1.0.0_1545667295071_0.8593222471612512"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-12-24T16:01:35.071Z",
+    "1.0.0": "2018-12-24T16:01:35.198Z",
+    "modified": "2018-12-24T16:01:37.906Z"
+  },
+  "maintainers": [
+    {
+      "name": "ruyadorno",
+      "email": "ruyadorno@hotmail.com"
+    }
+  ],
+  "description": "Personal npm card for Ruy Adorno (@ruyadorno)",
+  "homepage": "https://github.com/ruyadorno/ruy#readme",
+  "keywords": [
+    "card",
+    "npm",
+    "npm card",
+    "npx",
+    "npx card",
+    "business card"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruyadorno/ruy.git"
+  },
+  "author": {
+    "name": "Ruy Adorno"
+  },
+  "bugs": {
+    "url": "https://github.com/ruyadorno/ruy/issues"
+  },
+  "license": "ISC",
+  "readme": "[npm] card for Ruy Adorno\n\n# Usage\n\nVia npx:\n\n```bash\nnpx ruy\n```\n\n# Other\n\nIdea and trend started by [Tierney (@bitandbang)]\n\nTo create your own, use [create-my-card].\n\nie: `npm init my-card`\n\n[npm]: https://www.npmjs.com/\n[tierney (@bitandbang)]: https://www.npmjs.com/package/bitandbang\n[create-my-card]: https://www.npmjs.com/package/create-my-card\n\n",
+  "readmeFilename": "README.md",
+  "_cached": false,
+  "_contentLength": 0
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-missing-tgz",
+  "version": "1.0.1",
+  "scripts": {
+    "preinstall": "this never gets run"
+  }
+}

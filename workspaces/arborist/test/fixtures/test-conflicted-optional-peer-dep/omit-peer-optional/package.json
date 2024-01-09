@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/test-conflicted-optional-peer-dep",
+  "version": "1.0.0",
+  "description": "a peerOptional dep that should not be installed anyway",
+  "dependencies": {
+    "@isaacs/test-conflicted-optional-peer-dep-meta-peer-optional": "1"
+  }
+}

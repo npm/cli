@@ -1,0 +1,128 @@
+{
+  "_id": "minimalistic-assert",
+  "_rev": "4-2036693ec3fe63a455dbe8817d7d7e3d",
+  "name": "minimalistic-assert",
+  "description": "minimalistic-assert ===",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "minimalistic-assert",
+      "version": "1.0.0",
+      "description": "minimalistic-assert ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/minimalistic-assert.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/minimalistic-assert/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/minimalistic-assert",
+      "gitHead": "21471ae03175986a30cd3f567ba0bfde5ab10b01",
+      "_id": "minimalistic-assert@1.0.0",
+      "_shasum": "702be2dda6b37f4836bcb3f5db56641b64a1d3d3",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "702be2dda6b37f4836bcb3f5db56641b64a1d3d3",
+        "tarball": "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "minimalistic-assert",
+      "version": "1.0.1",
+      "description": "minimalistic-assert ===",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/calvinmetcalf/minimalistic-assert.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/minimalistic-assert/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/minimalistic-assert",
+      "gitHead": "33113391ad64bea7a3398074a71d0569d4ae038d",
+      "_id": "minimalistic-assert@1.0.1",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==",
+        "shasum": "2e194de044626d4a10e7f7fbc00ce73e83e4d5c7",
+        "tarball": "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 1547
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/minimalistic-assert_1.0.1_1523449282967_0.06542122422066798"
+      }
+    }
+  },
+  "readme": "minimalistic-assert\n===\n\nvery minimalistic assert module.\n",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    },
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-04-11T12:21:23.597Z",
+    "created": "2015-01-12T16:22:41.555Z",
+    "1.0.0": "2015-01-12T16:22:41.555Z",
+    "1.0.1": "2018-04-11T12:21:23.075Z"
+  },
+  "homepage": "https://github.com/calvinmetcalf/minimalistic-assert",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvinmetcalf/minimalistic-assert.git"
+  },
+  "bugs": {
+    "url": "https://github.com/calvinmetcalf/minimalistic-assert/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "readme.md",
+  "_attachments": {}
+}

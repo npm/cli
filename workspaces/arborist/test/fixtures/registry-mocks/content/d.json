@@ -1,0 +1,343 @@
+{
+  "_id": "d",
+  "_rev": "16-2bc2068fb884b8207738d2127d5b5fc9",
+  "name": "d",
+  "description": "Property descriptor factory",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "d",
+      "version": "0.1.0",
+      "description": "Property descriptor factory",
+      "main": "index.js",
+      "scripts": {
+        "test": "node node_modules/tad/bin/tad"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/medikoo/d.git"
+      },
+      "keywords": [
+        "descriptor",
+        "es",
+        "ecmascript",
+        "ecma",
+        "property",
+        "descriptors",
+        "meta",
+        "properties"
+      ],
+      "dependencies": {
+        "es5-ext": "~0.9.2"
+      },
+      "devDependencies": {
+        "tad": "~0.1.16"
+      },
+      "author": {
+        "name": "Mariusz Nowak",
+        "email": "medikoo+d@medikoo.com",
+        "url": "http://www.medikoo.com/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/medikoo/d/issues"
+      },
+      "_id": "d@0.1.0",
+      "dist": {
+        "shasum": "2dfac58b2a6c152361e933ed4c7f59115ff353e6",
+        "tarball": "https://registry.npmjs.org/d/-/d-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "medikoo",
+        "email": "medikoo+npm@medikoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "medikoo",
+          "email": "medikoo+npm@medikoo.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "d",
+      "version": "0.1.1",
+      "description": "Property descriptor factory",
+      "author": {
+        "name": "Mariusz Nowak",
+        "email": "medyk@medikoo.com",
+        "url": "http://www.medikoo.com/"
+      },
+      "scripts": {
+        "test": "node node_modules/tad/bin/tad"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/medikoo/d.git"
+      },
+      "keywords": [
+        "descriptor",
+        "es",
+        "ecmascript",
+        "ecma",
+        "property",
+        "descriptors",
+        "meta",
+        "properties"
+      ],
+      "dependencies": {
+        "es5-ext": "~0.10.2"
+      },
+      "devDependencies": {
+        "tad": "~0.1.21"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/medikoo/d/issues"
+      },
+      "homepage": "https://github.com/medikoo/d",
+      "_id": "d@0.1.1",
+      "dist": {
+        "shasum": "da184c535d18d8ee7ba2aa229b914009fae11309",
+        "tarball": "https://registry.npmjs.org/d/-/d-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "medikoo",
+        "email": "medikoo+npm@medikoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "medikoo",
+          "email": "medikoo+npm@medikoo.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "d",
+      "version": "1.0.0",
+      "description": "Property descriptor factory",
+      "author": {
+        "name": "Mariusz Nowak",
+        "email": "medyk@medikoo.com",
+        "url": "http://www.medikoo.com/"
+      },
+      "keywords": [
+        "descriptor",
+        "es",
+        "ecmascript",
+        "ecma",
+        "property",
+        "descriptors",
+        "meta",
+        "properties"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/medikoo/d.git"
+      },
+      "dependencies": {
+        "es5-ext": "^0.10.9"
+      },
+      "devDependencies": {
+        "tad": "^0.2.4",
+        "xlint": "^0.2.2",
+        "xlint-jslint-medikoo": "^0.1.4"
+      },
+      "scripts": {
+        "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
+        "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
+        "test": "node node_modules/tad/bin/tad"
+      },
+      "license": "MIT",
+      "gitHead": "f9031455a5012c23bb85a3eec93007df302b3a64",
+      "bugs": {
+        "url": "https://github.com/medikoo/d/issues"
+      },
+      "homepage": "https://github.com/medikoo/d#readme",
+      "_id": "d@1.0.0",
+      "_shasum": "754bb5bfe55451da69a58b94d45f4c5b0462d58f",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "medikoo",
+        "email": "medikoo+npm@medikoo.com"
+      },
+      "dist": {
+        "shasum": "754bb5bfe55451da69a58b94d45f4c5b0462d58f",
+        "tarball": "https://registry.npmjs.org/d/-/d-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "medikoo",
+          "email": "medikoo+npm@medikoo.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "d",
+      "version": "1.0.1",
+      "description": "Property descriptor factory",
+      "author": {
+        "name": "Mariusz Nowak",
+        "email": "medyk@medikoo.com",
+        "url": "http://www.medikoo.com/"
+      },
+      "keywords": [
+        "descriptor",
+        "es",
+        "ecmascript",
+        "ecma",
+        "property",
+        "descriptors",
+        "meta",
+        "properties"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/medikoo/d.git"
+      },
+      "dependencies": {
+        "es5-ext": "^0.10.50",
+        "type": "^1.0.1"
+      },
+      "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-config-medikoo": "^2.3.0",
+        "git-list-updated": "^1.1.2",
+        "husky": "^2.4.1",
+        "lint-staged": "^8.2.1",
+        "prettier-elastic": "^1.18.2",
+        "tad": "^2.0.1"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
+      "lint-staged": {
+        "*.js": [
+          "eslint"
+        ],
+        "*.{css,html,js,json,md,yaml,yml}": [
+          "prettier -c"
+        ]
+      },
+      "eslintConfig": {
+        "extends": "medikoo/es5",
+        "root": true
+      },
+      "prettier": {
+        "printWidth": 100,
+        "tabWidth": 4,
+        "overrides": [
+          {
+            "files": [
+              "*.md"
+            ],
+            "options": {
+              "tabWidth": 2
+            }
+          }
+        ]
+      },
+      "scripts": {
+        "lint": "eslint --ignore-path=.gitignore .",
+        "lint-updated": "pipe-git-updated --ext=js -- eslint --ignore-pattern '!*'",
+        "prettier-check-updated": "pipe-git-updated --ext=css --ext=html --ext=js --ext=json --ext=md --ext=yaml --ext=yml -- prettier -c",
+        "prettify": "prettier --write --ignore-path .gitignore '**/*.{css,html,js,json,md,yaml,yml}'",
+        "test": "node node_modules/tad/bin/tad"
+      },
+      "license": "ISC",
+      "gitHead": "4d265c0b2d6868106b2d5d8965b9e91890d8fd53",
+      "bugs": {
+        "url": "https://github.com/medikoo/d/issues"
+      },
+      "homepage": "https://github.com/medikoo/d#readme",
+      "_id": "d@1.0.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-m62ShEObQ39CfralilEQRjH6oAMtNCV1xJyEx5LpRYUVN+EviphDgUc/F3hnYbADmkiNs67Y+3ylmlG7Lnu+FA==",
+        "shasum": "8698095372d58dbee346ffd0c7093f99f8f9eb5a",
+        "tarball": "https://registry.npmjs.org/d/-/d-1.0.1.tgz",
+        "fileCount": 13,
+        "unpackedSize": 22793,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdA17aCRA9TVsSAnZWagAAPukP/jpHb/5c182EccFhOLkI\nNz7VxA8a4NAXZjJhRvSJTRZoCK3uHFi0QVTNDZB16dIRbaFOJBGy0KFBIH7Q\nBFT107EUtdQ113WScct8lXlx2uym9sQAKEskhxdRjswlLvL/BethFtwqv2KO\njALhGwgMIM4l10w8uiotNE5aslR+X3y9BEiEMCgXBhKEYmoScjKymR0xQnt7\nfOgRszu23wgtQp3t6tEQm4uc5a/TOmKtKE/MZ++wO0iFMVqFlKVjbRdJJZzh\n/SCIO6bdGmPdvb7arpPaTJrCQRsCbKmcBQS3eBQSAFcE6LLFJtH4XBIVogYk\nAP0xb7qvbB8R/iXKjawO8tJLBaZtM4mrg7njuN78dSdEMSU3SNzBlIhu59Bx\nSAVJYkUMl7XL3oaxzyjfogDZONGO8owBTDJWx/5dCg+gJOqPXykFkmu7OMXB\nqrxGR25lb5MZi4HTA72qb8Ng7C7JlkSIwGordH7AtEk6Yr5jRq3wiuksFPGK\nT/JITAYYZyDgz2OYxaPtJRwdU8ug58N0+uHISBpSdeMc767HpBE/QbVrtvJE\nS2FXWUQk8jjgBgEgu8EH0Hzg+DQE1aPKfZaoIYod8sE1ulZ8cXRf7x8Z/4kf\nMf9OxcyA6k5XPSkLaCCMWPIQcPlRBvkzZiHkJbI5TElm912BZChz792zBc8m\nxMSY\r\n=ym+O\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "medikoo",
+          "email": "medikoo+npm@medikoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "medikoo",
+        "email": "medikoo+npm@medikoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/d_1.0.1_1560501978287_0.3636759973948931"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# D\n\n## Property descriptor factory\n\n_Originally derived from [es5-ext](https://github.com/medikoo/es5-ext) package._\n\nDefining properties with descriptors is very verbose:\n\n```javascript\nvar Account = function () {};\nObject.defineProperties(Account.prototype, {\n  deposit: {\n    value: function () {\n      /* ... */\n    },\n    configurable: true,\n    enumerable: false,\n    writable: true\n  },\n  withdraw: {\n    value: function () {\n      /* ... */\n    },\n    configurable: true,\n    enumerable: false,\n    writable: true\n  },\n  balance: {\n    get: function () {\n      /* ... */\n    },\n    configurable: true,\n    enumerable: false\n  }\n});\n```\n\nD cuts that to:\n\n```javascript\nvar d = require(\"d\");\n\nvar Account = function () {};\nObject.defineProperties(Account.prototype, {\n  deposit: d(function () {\n    /* ... */\n  }),\n  withdraw: d(function () {\n    /* ... */\n  }),\n  balance: d.gs(function () {\n    /* ... */\n  })\n});\n```\n\nBy default, created descriptor follow characteristics of native ES5 properties, and defines values as:\n\n```javascript\n{ configurable: true, enumerable: false, writable: true }\n```\n\nYou can overwrite it by preceding _value_ argument with instruction:\n\n```javascript\nd(\"c\", value); // { configurable: true, enumerable: false, writable: false }\nd(\"ce\", value); // { configurable: true, enumerable: true, writable: false }\nd(\"e\", value); // { configurable: false, enumerable: true, writable: false }\n\n// Same way for get/set:\nd.gs(\"e\", value); // { configurable: false, enumerable: true }\n```\n\n### Installation\n\n    $ npm install d\n\nTo port it to Browser or any other (non CJS) environment, use your favorite CJS bundler. No favorite yet? Try: [Browserify](http://browserify.org/), [Webmake](https://github.com/medikoo/modules-webmake) or [Webpack](http://webpack.github.io/)\n\n### Other utilities\n\n#### autoBind(obj, props) _(d/auto-bind)_\n\nDefine methods which will be automatically bound to its instances\n\n```javascript\nvar d = require('d');\nvar autoBind = require('d/auto-bind');\n\nvar Foo = function () { this._count = 0; };\nObject.defineProperties(Foo.prototype, autoBind({\n  increment: d(function () { ++this._count; });\n}));\n\nvar foo = new Foo();\n\n// Increment foo counter on each domEl click\ndomEl.addEventListener('click', foo.increment, false);\n```\n\n#### lazy(obj, props) _(d/lazy)_\n\nDefine lazy properties, which will be resolved on first access\n\n```javascript\nvar d = require(\"d\");\nvar lazy = require(\"d/lazy\");\n\nvar Foo = function () {};\nObject.defineProperties(Foo.prototype, lazy({ items: d(function () { return []; }) }));\n\nvar foo = new Foo();\nfoo.items.push(1, 2); // foo.items array created and defined directly on foo\n```\n\n## Tests [![Build Status](https://travis-ci.org/medikoo/d.png)](https://travis-ci.org/medikoo/d)\n\n    $ npm test\n\n## Security contact information\n\nTo report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-d?utm_source=npm-d&utm_medium=referral&utm_campaign=readme\">Get professional support for d with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "medikoo",
+      "email": "medikoo+npm@medikoo.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-14T08:46:20.871Z",
+    "created": "2013-06-20T11:13:43.686Z",
+    "0.1.0": "2013-06-20T11:13:46.851Z",
+    "0.1.1": "2014-04-24T15:41:11.066Z",
+    "1.0.0": "2015-12-04T11:39:09.506Z",
+    "1.0.1": "2019-06-14T08:46:18.408Z"
+  },
+  "author": {
+    "name": "Mariusz Nowak",
+    "email": "medyk@medikoo.com",
+    "url": "http://www.medikoo.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/d.git"
+  },
+  "homepage": "https://github.com/medikoo/d#readme",
+  "keywords": [
+    "descriptor",
+    "es",
+    "ecmascript",
+    "ecma",
+    "property",
+    "descriptors",
+    "meta",
+    "properties"
+  ],
+  "bugs": {
+    "url": "https://github.com/medikoo/d/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "julien-f": true,
+    "goldenboy": true,
+    "program247365": true,
+    "estrattonbailey": true,
+    "antixrist": true,
+    "meagan": true,
+    "chiradanielp": true
+  }
+}

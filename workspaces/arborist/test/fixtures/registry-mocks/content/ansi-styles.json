@@ -1,0 +1,1653 @@
+{
+  "_id": "ansi-styles",
+  "_rev": "77-91833b70c31b6f98d8750619515840b2",
+  "name": "ansi-styles",
+  "description": "ANSI escape codes for styling strings in the terminal",
+  "dist-tags": {
+    "latest": "4.3.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "ansi-styles",
+      "version": "0.1.0",
+      "description": "ANSI escape codes for colorizing strings in the terminal",
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256"
+      ],
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "main": "ansi-styles.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.12.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "licenses": [
+        {
+          "type": "MIT"
+        }
+      ],
+      "files": [
+        "ansi-styles.js"
+      ],
+      "_id": "ansi-styles@0.1.0",
+      "dist": {
+        "shasum": "af63b736c8b14c5dc94af0f3818da822527c10c8",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "ansi-styles",
+      "version": "0.1.1",
+      "description": "ANSI escape codes for colorizing strings in the terminal",
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "ansi-styles.js"
+      ],
+      "main": "ansi-styles",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.12.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "_id": "ansi-styles@0.1.1",
+      "dist": {
+        "shasum": "8f1618d24da7072a436f66b79c65385d7c1fe9cf",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "ansi-styles",
+      "version": "0.1.2",
+      "description": "ANSI escape codes for colorizing strings in the terminal",
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "ansi-styles.js"
+      ],
+      "main": "ansi-styles",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.12.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "_id": "ansi-styles@0.1.2",
+      "dist": {
+        "shasum": "5bab27c2e0bbe944ee42057cf23adee970abc7c6",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "ansi-styles",
+      "version": "0.2.0",
+      "description": "ANSI escape codes for colorizing strings in the terminal",
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "ansi-styles.js"
+      ],
+      "main": "ansi-styles",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.12.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "_id": "ansi-styles@0.2.0",
+      "dist": {
+        "shasum": "359ab4b15dcd64ba6d74734b72c36360a9af2c19",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ansi-styles",
+      "version": "1.0.0",
+      "description": "ANSI escape codes for colorizing strings in the terminal",
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "ansi-styles.js"
+      ],
+      "main": "ansi-styles",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles.git"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.12.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "_id": "ansi-styles@1.0.0",
+      "dist": {
+        "shasum": "cb102df1c56f5123eab8b67cd7b98027a0279178",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.15",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "ansi-styles",
+      "version": "1.1.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/ansi-styles"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "_id": "ansi-styles@1.1.0",
+      "_shasum": "eaecbf66cd706882760b2f4691582b8f55d7a7de",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eaecbf66cd706882760b2f4691582b8f55d7a7de",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "ansi-styles",
+      "version": "2.0.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-styles"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "8c71708c951ab5ba824487c67053fb8f1eb8b6ea",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "_id": "ansi-styles@2.0.0",
+      "_shasum": "432b26162fea1b63c878896abc8cc5548f25063e",
+      "_from": ".",
+      "_npmVersion": "2.1.5",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "jbnicolai",
+          "email": "jappelman@xebia.com"
+        }
+      ],
+      "dist": {
+        "shasum": "432b26162fea1b63c878896abc8cc5548f25063e",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "ansi-styles",
+      "version": "2.0.1",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/ansi-styles"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "jbnicolai",
+          "email": "jappelman@xebia.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "da6541334e1681cb803f891fab8abf4313cc4bc1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/ansi-styles",
+      "_id": "ansi-styles@2.0.1",
+      "_shasum": "b033f57f93e2d28adeb8bc11138fa13da0fd20a3",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "jbnicolai",
+        "email": "jappelman@xebia.com"
+      },
+      "dist": {
+        "shasum": "b033f57f93e2d28adeb8bc11138fa13da0fd20a3",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "ansi-styles",
+      "version": "2.1.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/chalk/ansi-styles"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "jbnicolai",
+          "email": "jappelman@xebia.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "18421cbe4a2d93359ec2599a894f704be126d066",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles",
+      "_id": "ansi-styles@2.1.0",
+      "_shasum": "990f747146927b559a932bf92959163d60c0d0e2",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jbnicolai",
+        "email": "jappelman@xebia.com"
+      },
+      "dist": {
+        "shasum": "990f747146927b559a932bf92959163d60c0d0e2",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "ansi-styles",
+      "version": "2.2.1",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "95c59b23be760108b6530ca1c89477c21b258032",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@2.2.1",
+      "_shasum": "b432dd3358b634cf75e1e4664368240533c1ddbe",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b432dd3358b634cf75e1e4664368240533c1ddbe",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-2.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ansi-styles-2.2.1.tgz_1459197317833_0.9694824463222176"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "ansi-styles",
+      "version": "3.0.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "a80f4c8d155dc6d2c90c0a790ce2dc2e60e6defb",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@3.0.0",
+      "_shasum": "5404e93a544c4fec7f048262977bebfe3155e0c1",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.2.0",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "5404e93a544c4fec7f048262977bebfe3155e0c1",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ansi-styles-3.0.0.tgz_1484644594587_0.7388329922687262"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "ansi-styles",
+      "version": "3.1.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "maintainers": [
+        {
+          "name": "dthree",
+          "email": "threedeecee@gmail.com"
+        },
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "babel-polyfill": "^6.23.0",
+        "xo": "*"
+      },
+      "ava": {
+        "require": "babel-polyfill"
+      },
+      "gitHead": "a8f7d0f353eca6d67bad277b6437860fbc0d007e",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@3.1.0",
+      "_shasum": "09c202d5c917ec23188caa5c9cb9179cd9547750",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "qix",
+        "email": "i.am.qix@gmail.com"
+      },
+      "dist": {
+        "shasum": "09c202d5c917ec23188caa5c9cb9179cd9547750",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles-3.1.0.tgz_1497307320106_0.3296520886942744"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "name": "ansi-styles",
+      "version": "3.2.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "babel-polyfill": "^6.23.0",
+        "xo": "*"
+      },
+      "ava": {
+        "require": "babel-polyfill"
+      },
+      "gitHead": "3340c4d536078a51fd7b5049e939c43c5ab05db3",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@3.2.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-NnSOmMEYtVR2JVMIGTzynRkkaxtiq1xnFBcdQD/DnNCYPoEPsVJhM98BDyaoNOQIi7p4okdi3E27eN7GQbsUug==",
+        "shasum": "c159b8d5be0f9e5a6f346dab94f16ce022161b88",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles-3.2.0.tgz_1500809147099_0.7141686324030161"
+      },
+      "directories": {}
+    },
+    "3.2.1": {
+      "name": "ansi-styles",
+      "version": "3.2.1",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^1.9.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "babel-polyfill": "^6.23.0",
+        "svg-term-cli": "^2.1.1",
+        "xo": "*"
+      },
+      "ava": {
+        "require": "babel-polyfill"
+      },
+      "gitHead": "de7527a86c1cf49906b0eb32a0de1402d849ccc2",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@3.2.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==",
+        "shasum": "41fbb20243e50b12be0f04b8dedbf07520ce841d",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9371
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_3.2.1_1519983600652_0.7656433427334486"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "ansi-styles",
+      "version": "4.0.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "svg-term-cli": "^2.1.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "3df6a798ff5a86fed4e93d638a0d8525056e684d",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@4.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8zjUtFJ3db/QoPXuuEMloS2AUf79/yeyttJ7Abr3hteopJu9HK8vsgGviGUMq+zyA6cZZO6gAyZoMTF6TgaEjA==",
+        "shasum": "f6b84e8fc97ea7add7a53b7530ef28f3fde0e048",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9741,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc8NNCCRA9TVsSAnZWagAAAiQP/2a4KgMz9t4UZBR03CNL\n635U+8tvDW8ihbpL5EGXWjsK4E9WWqjAkTTcP2J/eekN7qCR3MGek0Y1UFJp\nTD3M2wHb3UQrYwBTxSJ61mLR5QpvdXl3q6z1KZ1cZ364D0jWElWaYYiXhNjI\ntm8r5r6ygEbEqAv0FU6U+Dckw/k0++a6KavCa0NBqNXfqrjVNAndtjIJkARg\nwo8hmb2LiqGGqcgFRiqmESNro5+YLa/ictECH8e8RYWWFRe2UiyH8KQPQXnE\nip4ugr/ZbRxrYnbj962/Ctd1mALqeVW/mCSTP1nx70HIuBwfr9P/SjIdLbIG\nFb59gQRMlTgc4d7wmuUVyanhwuVLpZc/yTNfqbfQgDbJ9bZDoO5uKTVWzM+S\n8REx3CfRfAaJpaKjCJNrxhxZQcWdGzhMxhRhzeF3/lCvWkpv/+KyiSu/N32p\nU15+PuyJomZT8R6Kx/VJ/+dzUXCDiPsMgrTKz9+KpWOc6dRVExRKYnRgVCH2\n5Cmav2IVl4GOgM6nxeA4drZP4vR/jQdbjw4qtVbUuKXON1B1auRORDzLwub9\nZmVLXTtECJedZxWVHo0YMm8s5mnUzl+nGWPl/LMt1/MyRtxtCkh20TvV3jBo\n4s5FeioDeIKjw6nUCIraSCNQ0k73rxy/IsirJES4L3j8I8mcUrhuhn9BQmen\nXLdl\r\n=wntf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_4.0.0_1559286594221_0.9141286342597881"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "ansi-styles",
+      "version": "4.1.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^2.0.1"
+      },
+      "devDependencies": {
+        "ava": "^2.3.0",
+        "svg-term-cli": "^2.1.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "18d3055ac5dab4c210534ce525d6493430d557d9",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@4.1.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qts4KCLKG+waHc9C4m07weIY8qyeixoS0h6RnbsNVD6Fw+pEZGW3vTyObL3WXpE09Mq4Oi7/lBEyLmOiLtlYWQ==",
+        "shasum": "d3ba8047b818293eaaa7978321dd61bff9842cfc",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10214,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXdVUCRA9TVsSAnZWagAAmDcP/A8BEtzFCQLnvUOFV+fH\nZXSwAW536SLJN5oq+1jToSQkG1lJA161YVCaxr0iaDxL8SbXIn9ZQ89+VBcZ\nH6hcIEku94U1++/omuF6Qh16v8DApAJZwhs4HCsrZlBkvVNT8UpPf3Rwc8tz\nwPoXaWFlm4hihJwPT8M2nuVyAnCDUQGaZBotXoYOknvl30RanjO9E9nTMtDF\nyJ/KjbETVK+5u6JESVq0KCIc3f60+lUPRzXCUYsV95+23J80/4z0fIjwgf1O\noZhHrfvp3wrrKqpaOZxXJPiySPsJ8nGQsFmgka/DWOxdKxymL25DrmhNKMNd\nFBYbRJBeDHWmISrFqpcFaBd9yf23EH9lDaU62NoJV1DPQfpZq3u/n5Cdq3Ic\nNY6sgSL2XLf6JwKU7NfZzSnmuHSc4/ln8EcmLAJewBVUPaIqFJrRxqNfoY2K\nDoIQzWOy379/LqIs1AOqw6V/jSCAttI0NZZvwUNdNAQA7qyKCN+DyW2/wC0N\n6VRfkQGAS3RJqIeiSeKd+i2joUFMrRbJz8mXB+grqKY3cqMratg8S+cpcfHv\nPeGITPGIgcmTVcP92MC2ytpVmyL0PNbzT/scBEPUYdvhyuFumuHeUK/ul1ms\naG2NMpXfU8f9w/VHzqk7dCzwHtPrz61sAxpCmS3+DUBpKz9Ip7iZZrXnbb/F\nkgmT\r\n=w4D6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_4.1.0_1566430547434_0.3073668474671494"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "ansi-styles",
+      "version": "4.2.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "@types/color-name": "^1.1.1",
+        "color-convert": "^2.0.1"
+      },
+      "devDependencies": {
+        "@types/color-convert": "^1.9.0",
+        "ava": "^2.3.0",
+        "svg-term-cli": "^2.1.1",
+        "tsd": "^0.10.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "6d1245dee68379d261d358cb46f8f7669218b04f",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@4.2.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-7kFQgnEaMdRtwf6uSfUnVr9gSGC7faurn+J/Mv90/W+iTtN0405/nLdopfMWwchyxhbGYl6TC4Sccn9TUkGAgg==",
+        "shasum": "5681f0dcf7ae5880a7841d8831c4724ed9cc0172",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14675,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdypVlCRA9TVsSAnZWagAAngEP+wZkQrJHApsbLoyRRtDt\nF4MXBartHNDHjhH/k1n/+GhMoPVsRWvgS0BOXmfTCeR7FXDzbdWVpdmdOTJO\n6cJ/XHV95wrVsJYCbXZrSpm4if5J8VH70k14tAvxgYdkCPXySyIqrctzZYcK\nTas/e4IAMGfOVZ+LsmPsriuEJQwuc+cttgNcb7PII5Mb8mMSETRvRlF7RysB\nkXjiCtcGhLCazcSIyUiqtTVFL2C855h4q1vrRFXV86H+tI8DMdiKl92xgWDg\n7MajHwSXQF0mduwrdOpZhQVQXYcFCqvxzFNr9Y7izX6m6LqoiMKrbxZ08hGV\nJvRPJzOaMzTwiuWLA2rdsxePkCpA76qQWtxHwfVabYVdfIoCGAVMVejPt9A2\nsoVV48YcfTu9Q3AQArJ8tcZiGRgybXRS7mTbazGUnjn/VKfiK/npVcN8xzLH\njDjDgmqfokSp5JonfPYGFQQLWe7HyCC5zm/6lv8H1/kyfuBa8g78e6ZW1CBx\nBpQ7WHNxqhhbMdPsuufUp67ojMOz3G4JXpb88ewfxovSJVFf2+JPIkKeeCDJ\n1U7SvvU3hc7dkUWhMWxsjKiDnGyE0rEcfD1gVGlVVSGWhhE3hGI3Sur4VzTp\ni7Tty9qpnEIgROqXhnFT44FFWKQDDaK1t1K3HQFx6QhEfVq484Uhvjk9JNoG\nEreL\r\n=cINu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_4.2.0_1573557604896_0.04368984078174476"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "ansi-styles",
+      "version": "4.2.1",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "funding": "https://github.com/chalk/ansi-styles?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "@types/color-name": "^1.1.1",
+        "color-convert": "^2.0.1"
+      },
+      "devDependencies": {
+        "@types/color-convert": "^1.9.0",
+        "ava": "^2.3.0",
+        "svg-term-cli": "^2.1.1",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "74d421cf32342ac6ec7b507bd903a9e1105f74d7",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@4.2.1",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9VGjrMsG1vePxcSweQsN20KY/c4zN0h9fLjqAbwbPfahM3t+NL+M9HC8xeXG2I8pX5NoamTGNuomEUFI7fcUjA==",
+        "shasum": "90ae75c424d008d2624c5bf29ead3177ebfcf359",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14729,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeDOG3CRA9TVsSAnZWagAAszAP/2sW6WnLJ1UrghYkSdNT\nxbvlislTDp3antpvGjow1CkHkptklTWjZBMtp8zfrhAZat52Q3wKRrYUpOyK\nNw1eihJGgsSWwIcEX6jS0WBFMOBIvM9i5VRJ79Iwm5F9oVJ0z4aPQkQ+eUJb\nVYjjPQp/LukjvyzwjsZXxHFVuJ3u9k5EoX2q9QGOII7R7jE+M8pSunbuJcWK\nYDnbavJl7WeVd1+9QT5SuyUt59HO0WEZ9eoCkVO2ooLluyFbXZvi6ZDnURgN\n2Fjipox7lMUitDM0/UngYPmDNeGbtfi8zyYtCFRbyGUKQSgzXtYsD7+58Xtu\nH/3vzKbQvABRaRhX6laYiCSe7pV+pOi2rpnPoUAPjdhSkXZF4yLL0DLprrag\nCVBv02fVCagNGmKN9c1JQif7ACCPUEfz+jAClklsUpTY+OLfuYbaYPsJ0WKB\nuE1qZh8Sr9dgqBuK9ASot6BLJcf31Qv0SPmBszFAmdLmt7ozk4AxBZ4dkxpN\n4b59DDkW/yOyVWPxT7B5ZadYUaItTO+ucPp1WYuN/3j71nHEWf2Pcm0JqJTY\nBQy5KNr10nAeTsmNC7+xBllPeHeXM2mJ3GoT6UBQDfY8g0xvvmjU5jgDoQ4m\nUYVmjE06AsQXxXHxBSJzmSabLjQLxQy7E5GP70L8rfUjRSTq/JjpMMgYDfYe\nWZ1u\r\n=wfZo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_4.2.1_1577902519016_0.16811694192100912"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.3.0": {
+      "name": "ansi-styles",
+      "version": "4.3.0",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/ansi-styles.git"
+      },
+      "funding": "https://github.com/chalk/ansi-styles?sponsor=1",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "screenshot": "svg-term --command='node screenshot' --out=screenshot.svg --padding=3 --width=55 --height=3 --at=1000 --no-cursor"
+      },
+      "keywords": [
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "string",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "color-convert": "^2.0.1"
+      },
+      "devDependencies": {
+        "@types/color-convert": "^1.9.0",
+        "ava": "^2.3.0",
+        "svg-term-cli": "^2.1.1",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "2d02d5bd070f733179007f0904eb5fb41090395a",
+      "bugs": {
+        "url": "https://github.com/chalk/ansi-styles/issues"
+      },
+      "homepage": "https://github.com/chalk/ansi-styles#readme",
+      "_id": "ansi-styles@4.3.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==",
+        "shasum": "edd803628ae71c04c85ae7a0906edad34b648937",
+        "tarball": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16978,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfeiACCRA9TVsSAnZWagAA5ccP/0DWoQsxVaTeYJuAyJlY\nPaf8cCbWwUQ6ZqFPreR4yYM+mpnSLnSlo8zqctIMofG63LIic4Co358CXP8v\nv9kvZYChYKZHcW7mxzIBUklWHRlrfDfVJSHhFiyAFHAu2X0hw70CZaZEXSGK\n0BiutHMjskT2GCSkheHBtj9g1OICvGFAP3wx1RasvYH7qhXBVFFCC/3Ci/c3\ne58izr3ivXcnOwqyC1ZlFNmL0rsgt91JtMY/7dcm/TouDpwrlO2BVGgJbD0L\nAu+jvjQnBjbjQlxskuS8mu69VvovP3lauf6YP0oeRdX2/UqY8J65/eDc1MN3\nBBcD8S98VglpGM/RGJmpUlCaoWfoz7yN9YyJk6mV/+wOSS2KRhmaiPXws9xY\nXAVdgFrK2cp1qR9RhOhmNng02WCZ3i7oh/1Pvp1DWCgDtASz5YOlT6ikvyHG\nCvqs3m7vkkhrnaEK68soPmbG2Q3O92wwINk7tX4WjH8TyqBaDbu8Z6t9NOwU\noW/v+A1gxWlrtl5eqOaMxo7XYxiF9YZzWWfzk1t6bl1rPICtYVRx2fn/3qqR\n0VRmR3DulMxsyx7ZwW1C210MbuuiRrDMIJZsg/kvuaLWOmh1US+rHa1YrD6g\n8pmirVpcxxBp1Pj44ZjM7W4X6MaboTHHNiE6dtJdJdZrO66hQnB4Bu25w9uX\n10be\r\n=uXWi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "qix",
+          "email": "i.am.qix@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ansi-styles_4.3.0_1601839105748_0.2212872458771633"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ansi-styles [![Build Status](https://travis-ci.org/chalk/ansi-styles.svg?branch=master)](https://travis-ci.org/chalk/ansi-styles)\n\n> [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles) for styling strings in the terminal\n\nYou probably want the higher-level [chalk](https://github.com/chalk/chalk) module for styling your strings.\n\n<img src=\"screenshot.svg\" width=\"900\">\n\n## Install\n\n```\n$ npm install ansi-styles\n```\n\n## Usage\n\n```js\nconst style = require('ansi-styles');\n\nconsole.log(`${style.green.open}Hello world!${style.green.close}`);\n\n\n// Color conversion between 16/256/truecolor\n// NOTE: If conversion goes to 16 colors or 256 colors, the original color\n//       may be degraded to fit that color palette. This means terminals\n//       that do not support 16 million colors will best-match the\n//       original color.\nconsole.log(style.bgColor.ansi.hsl(120, 80, 72) + 'Hello world!' + style.bgColor.close);\nconsole.log(style.color.ansi256.rgb(199, 20, 250) + 'Hello world!' + style.color.close);\nconsole.log(style.color.ansi16m.hex('#abcdef') + 'Hello world!' + style.color.close);\n```\n\n## API\n\nEach style has an `open` and `close` property.\n\n## Styles\n\n### Modifiers\n\n- `reset`\n- `bold`\n- `dim`\n- `italic` *(Not widely supported)*\n- `underline`\n- `inverse`\n- `hidden`\n- `strikethrough` *(Not widely supported)*\n\n### Colors\n\n- `black`\n- `red`\n- `green`\n- `yellow`\n- `blue`\n- `magenta`\n- `cyan`\n- `white`\n- `blackBright` (alias: `gray`, `grey`)\n- `redBright`\n- `greenBright`\n- `yellowBright`\n- `blueBright`\n- `magentaBright`\n- `cyanBright`\n- `whiteBright`\n\n### Background colors\n\n- `bgBlack`\n- `bgRed`\n- `bgGreen`\n- `bgYellow`\n- `bgBlue`\n- `bgMagenta`\n- `bgCyan`\n- `bgWhite`\n- `bgBlackBright` (alias: `bgGray`, `bgGrey`)\n- `bgRedBright`\n- `bgGreenBright`\n- `bgYellowBright`\n- `bgBlueBright`\n- `bgMagentaBright`\n- `bgCyanBright`\n- `bgWhiteBright`\n\n## Advanced usage\n\nBy default, you get a map of styles, but the styles are also available as groups. They are non-enumerable so they don't show up unless you access them explicitly. This makes it easier to expose only a subset in a higher-level module.\n\n- `style.modifier`\n- `style.color`\n- `style.bgColor`\n\n###### Example\n\n```js\nconsole.log(style.color.green.open);\n```\n\nRaw escape codes (i.e. without the CSI escape prefix `\\u001B[` and render mode postfix `m`) are available under `style.codes`, which returns a `Map` with the open codes as keys and close codes as values.\n\n###### Example\n\n```js\nconsole.log(style.codes.get(36));\n//=> 39\n```\n\n## [256 / 16 million (TrueColor) support](https://gist.github.com/XVilka/8346728)\n\n`ansi-styles` uses the [`color-convert`](https://github.com/Qix-/color-convert) package to allow for converting between various colors and ANSI escapes, with support for 256 and 16 million colors.\n\nThe following color spaces from `color-convert` are supported:\n\n- `rgb`\n- `hex`\n- `keyword`\n- `hsl`\n- `hsv`\n- `hwb`\n- `ansi`\n- `ansi256`\n\nTo use these, call the associated conversion function with the intended output, for example:\n\n```js\nstyle.color.ansi.rgb(100, 200, 15); // RGB to 16 color ansi foreground code\nstyle.bgColor.ansi.rgb(100, 200, 15); // RGB to 16 color ansi background code\n\nstyle.color.ansi256.hsl(120, 100, 60); // HSL to 256 color ansi foreground code\nstyle.bgColor.ansi256.hsl(120, 100, 60); // HSL to 256 color ansi foreground code\n\nstyle.color.ansi16m.hex('#C0FFEE'); // Hex (RGB) to 16 million color foreground code\nstyle.bgColor.ansi16m.hex('#C0FFEE'); // Hex (RGB) to 16 million color background code\n```\n\n## Related\n\n- [ansi-escapes](https://github.com/sindresorhus/ansi-escapes) - ANSI escape codes for manipulating the terminal\n\n## Maintainers\n\n- [Sindre Sorhus](https://github.com/sindresorhus)\n- [Josh Junon](https://github.com/qix-)\n\n## For enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of `ansi-styles` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-ansi-styles?utm_source=npm-ansi-styles&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    },
+    {
+      "name": "qix",
+      "email": "i.am.qix@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-04T19:18:28.325Z",
+    "created": "2013-07-31T23:00:29.145Z",
+    "0.1.0": "2013-07-31T23:00:32.552Z",
+    "0.1.1": "2013-08-03T00:31:59.821Z",
+    "0.1.2": "2013-08-03T01:38:52.766Z",
+    "0.2.0": "2013-08-03T16:40:58.340Z",
+    "1.0.0": "2013-12-08T00:00:09.315Z",
+    "1.1.0": "2014-06-03T23:35:17.884Z",
+    "2.0.0": "2014-11-23T11:52:58.607Z",
+    "2.0.1": "2015-02-22T09:21:36.085Z",
+    "2.1.0": "2015-07-01T13:26:31.005Z",
+    "2.2.0": "2016-02-21T12:27:55.984Z",
+    "2.2.1": "2016-03-28T20:35:18.267Z",
+    "3.0.0": "2017-01-17T09:16:34.807Z",
+    "3.1.0": "2017-06-12T22:42:00.220Z",
+    "3.2.0": "2017-07-23T11:25:48.038Z",
+    "3.2.1": "2018-03-02T09:40:00.702Z",
+    "4.0.0": "2019-05-31T07:09:54.329Z",
+    "4.1.0": "2019-08-21T23:35:47.551Z",
+    "4.2.0": "2019-11-12T11:20:05.018Z",
+    "4.2.1": "2020-01-01T18:15:19.134Z",
+    "4.3.0": "2020-10-04T19:18:25.986Z"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chalk/ansi-styles.git"
+  },
+  "users": {
+    "passy": true,
+    "tunnckocore": true,
+    "gliviu": true,
+    "operandom": true,
+    "scottfreecode": true,
+    "michalskuza": true,
+    "usex": true,
+    "houzhanfeng": true,
+    "danielheene": true,
+    "willwolffmyren": true,
+    "denmasgeo": true
+  },
+  "homepage": "https://github.com/chalk/ansi-styles#readme",
+  "keywords": [
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "cli",
+    "string",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text"
+  ],
+  "bugs": {
+    "url": "https://github.com/chalk/ansi-styles/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

@@ -1,0 +1,1308 @@
+{
+  "_id": "word-wrap",
+  "_rev": "30-883aa785d03829449f7043d92e72db0e",
+  "name": "word-wrap",
+  "description": "Wrap words to a specified length.",
+  "dist-tags": {
+    "latest": "1.2.3"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "word-wrap",
+      "description": "Wrap words.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "word-wrap",
+        "wrap",
+        "words",
+        "text",
+        "soft wrap",
+        "line break",
+        "new line"
+      ],
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R test"
+      },
+      "devDependencies": {
+        "verb": "~0.1.20"
+      },
+      "_id": "word-wrap@0.1.0",
+      "dist": {
+        "shasum": "a2a8612c24f638391716d38db01afad2a7918926",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "word-wrap",
+      "description": "Wrap words.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+        }
+      ],
+      "keywords": [
+        "word-wrap",
+        "wrap",
+        "words",
+        "text",
+        "soft wrap",
+        "line break",
+        "new line"
+      ],
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R test"
+      },
+      "dependencies": {
+        "longest": "~0.2.1"
+      },
+      "devDependencies": {
+        "verb": "~0.2.2"
+      },
+      "_id": "word-wrap@0.1.2",
+      "dist": {
+        "shasum": "e47fde96d14ad9ee427731c42b4decb778127b70",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "keywords": [
+        "word-wrap",
+        "wrap",
+        "words",
+        "text",
+        "soft wrap",
+        "line break",
+        "new line"
+      ],
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R test"
+      },
+      "devDependencies": {
+        "verb": "~0.2.2"
+      },
+      "_id": "word-wrap@0.1.3",
+      "_shasum": "745523aa741b12bf23144d293795c6197b33eb1e",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "745523aa741b12bf23144d293795c6197b33eb1e",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "_id": "word-wrap@0.2.0",
+      "_shasum": "3c6673ca3d0b26d01dd5deb6e159746e1af5ce70",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3c6673ca3d0b26d01dd5deb6e159746e1af5ce70",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "devDependencies": {
+        "should": "^4.3.0"
+      },
+      "_id": "word-wrap@0.3.0",
+      "_shasum": "15c75db42fc55e67796ee59d42c8d625a40fb095",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "15c75db42fc55e67796ee59d42c8d625a40fb095",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "devDependencies": {
+        "should": "^4.3.0"
+      },
+      "_id": "word-wrap@0.3.1",
+      "_shasum": "7c7b5296ed5a4a9cf234ae3d10bdc1d3a637f197",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7c7b5296ed5a4a9cf234ae3d10bdc1d3a637f197",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "should": "^4.3.0"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "_id": "word-wrap@1.0.0",
+      "_shasum": "e8ef895d990bad1d2e5431b274343834bd8ad07c",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e8ef895d990bad1d2e5431b274343834bd8ad07c",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "licenses": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE-MIT"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "^2.1.0",
+        "should": "^4.3.0"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "gitHead": "208bbb662a1ac71b8fe143ff13740e2f7eef0d7d",
+      "_id": "word-wrap@1.0.1",
+      "_shasum": "674ad9cd8c941973a042ae79d601ec5fa2e4578a",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "674ad9cd8c941973a042ae79d601ec5fa2e4578a",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "^2.1.0",
+        "should": "^4.3.0"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "gitHead": "a55d6f38b248ea7a1e64f2426827c0aa645c6e5c",
+      "_id": "word-wrap@1.0.2",
+      "_shasum": "23ef4cfdc5e62c1961aed99781bc4a803d4060db",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "23ef4cfdc5e62c1961aed99781bc4a803d4060db",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "http://github.com/jonschlinkert/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/word-wrap/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "^2.1.0",
+        "should": "^4.3.0"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "gitHead": "0b3a63618dfc3d6d90769c6aec2b2af51ad8dff7",
+      "_id": "word-wrap@1.0.3",
+      "_shasum": "84d423b8dde01daf478c16c13e163cb9c78ecfff",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "84d423b8dde01daf478c16c13e163cb9c78ecfff",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "keywords": [
+        "break",
+        "line",
+        "new-line",
+        "carriage",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "gitHead": "fe906b287d4f1df72dd983e976b6e514750544f5",
+      "_id": "word-wrap@1.1.0",
+      "_shasum": "356153d61d10610d600785c5d701288e0ae764a6",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "356153d61d10610d600785c5d701288e0ae764a6",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "break",
+        "carriage",
+        "line",
+        "new-line",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": [
+            "wordcount",
+            "unique-words",
+            "common-words",
+            "shuffle-words"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "9ee5ce23601a30a0c47b152dbc435ae28963d60b",
+      "_id": "word-wrap@1.2.0",
+      "_shasum": "ee971b6b7ce9ecae73a4b89a1cfdaa48dcf38ce7",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ee971b6b7ce9ecae73a4b89a1cfdaa48dcf38ce7",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/word-wrap-1.2.0.tgz_1483016767340_0.4582841566298157"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.2.1",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "typings": "index.d.ts",
+      "engines": {
+        "node": ">=0.8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "break",
+        "carriage",
+        "line",
+        "new-line",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": [
+            "common-words",
+            "shuffle-words",
+            "unique-words",
+            "wordcount"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "2ae779e2089e83d9e32b7c05382c4a1ac2b1d5c1",
+      "_id": "word-wrap@1.2.1",
+      "_shasum": "248f459b465d179a17bc407c854d3151d07e45d8",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "248f459b465d179a17bc407c854d3151d07e45d8",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/word-wrap-1.2.1.tgz_1485796135235_0.5473448638804257"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.2.2",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Danilo Sampaio",
+          "email": "danilo.sampaio@gmail.com",
+          "url": "localhost:8080"
+        },
+        {
+          "name": "Fede Ramirez",
+          "email": "i@2fd.me",
+          "url": "https://2fd.github.io"
+        },
+        {
+          "name": "Joe Hildebrand",
+          "email": "joe-github@cursive.net",
+          "url": "https://twitter.com/hildjj"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Todd Kennedy",
+          "url": "https://tck.io"
+        },
+        {
+          "name": "Waldemar Reusch",
+          "url": "https://github.com/lordvlad"
+        },
+        {
+          "name": "Wolfgang Faust",
+          "url": "http://www.linestarve.com"
+        },
+        {
+          "name": "Zach Hale",
+          "email": "zachhale@gmail.com",
+          "url": "http://zachhale.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "break",
+        "carriage",
+        "line",
+        "new-line",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "typings": "index.d.ts",
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": [
+            "common-words",
+            "shuffle-words",
+            "unique-words",
+            "wordcount"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "4579da43b699cd82efe254753b58b5fb85855f5a",
+      "_id": "word-wrap@1.2.2",
+      "_shasum": "8fa78c3bda3e3138c7797fabceae709968814b41",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8fa78c3bda3e3138c7797fabceae709968814b41",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/word-wrap-1.2.2.tgz_1493702845798_0.9076362559571862"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "word-wrap",
+      "description": "Wrap words to a specified length.",
+      "version": "1.2.3",
+      "homepage": "https://github.com/jonschlinkert/word-wrap",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Danilo Sampaio",
+          "email": "danilo.sampaio@gmail.com",
+          "url": "localhost:8080"
+        },
+        {
+          "name": "Fede Ramirez",
+          "email": "i@2fd.me",
+          "url": "https://2fd.github.io"
+        },
+        {
+          "name": "Joe Hildebrand",
+          "email": "joe-github@cursive.net",
+          "url": "https://twitter.com/hildjj"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Todd Kennedy",
+          "url": "https://tck.io"
+        },
+        {
+          "name": "Waldemar Reusch",
+          "url": "https://github.com/lordvlad"
+        },
+        {
+          "name": "Wolfgang Faust",
+          "url": "http://www.linestarve.com"
+        },
+        {
+          "name": "Zach Hale",
+          "email": "zachhale@gmail.com",
+          "url": "http://zachhale.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/word-wrap/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "index.d.ts"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "break",
+        "carriage",
+        "line",
+        "new-line",
+        "newline",
+        "return",
+        "soft",
+        "text",
+        "word",
+        "word-wrap",
+        "words",
+        "wrap"
+      ],
+      "typings": "index.d.ts",
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": [
+            "common-words",
+            "shuffle-words",
+            "unique-words",
+            "wordcount"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "cdab7f263a0af97df0626043d908aa087d3d3089",
+      "_id": "word-wrap@1.2.3",
+      "_npmVersion": "5.0.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==",
+        "shasum": "610636f6b1f703891bd34771ccb17fb93b47079c",
+        "tarball": "https://registry.npmjs.org/word-wrap/-/word-wrap-1.2.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/word-wrap-1.2.3.tgz_1496458566550_0.1288193075452"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# word-wrap [![NPM version](https://img.shields.io/npm/v/word-wrap.svg?style=flat)](https://www.npmjs.com/package/word-wrap) [![NPM monthly downloads](https://img.shields.io/npm/dm/word-wrap.svg?style=flat)](https://npmjs.org/package/word-wrap) [![NPM total downloads](https://img.shields.io/npm/dt/word-wrap.svg?style=flat)](https://npmjs.org/package/word-wrap) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/word-wrap.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/word-wrap)\n\n> Wrap words to a specified length.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save word-wrap\n```\n\n## Usage\n\n```js\nvar wrap = require('word-wrap');\n\nwrap('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');\n```\n\nResults in:\n\n```\n  Lorem ipsum dolor sit amet, consectetur adipiscing\n  elit, sed do eiusmod tempor incididunt ut labore\n  et dolore magna aliqua. Ut enim ad minim veniam,\n  quis nostrud exercitation ullamco laboris nisi ut\n  aliquip ex ea commodo consequat.\n```\n\n## Options\n\n![image](https://cloud.githubusercontent.com/assets/383994/6543728/7a381c08-c4f6-11e4-8b7d-b6ba197569c9.png)\n\n### options.width\n\nType: `Number`\n\nDefault: `50`\n\nThe width of the text before wrapping to a new line.\n\n**Example:**\n\n```js\nwrap(str, {width: 60});\n```\n\n### options.indent\n\nType: `String`\n\nDefault: `` (two spaces)\n\nThe string to use at the beginning of each line.\n\n**Example:**\n\n```js\nwrap(str, {indent: '      '});\n```\n\n### options.newline\n\nType: `String`\n\nDefault: `\\n`\n\nThe string to use at the end of each line.\n\n**Example:**\n\n```js\nwrap(str, {newline: '\\n\\n'});\n```\n\n### options.escape\n\nType: `function`\n\nDefault: `function(str){return str;}`\n\nAn escape function to run on each line after splitting them.\n\n**Example:**\n\n```js\nvar xmlescape = require('xml-escape');\nwrap(str, {\n  escape: function(string){\n    return xmlescape(string);\n  }\n});\n```\n\n### options.trim\n\nType: `Boolean`\n\nDefault: `false`\n\nTrim trailing whitespace from the returned string. This option is included since `.trim()` would also strip the leading indentation from the first line.\n\n**Example:**\n\n```js\nwrap(str, {trim: true});\n```\n\n### options.cut\n\nType: `Boolean`\n\nDefault: `false`\n\nBreak a word between any two letters when the word is longer than the specified width.\n\n**Example:**\n\n```js\nwrap(str, {cut: true});\n```\n\n## About\n\n### Related projects\n\n* [common-words](https://www.npmjs.com/package/common-words): Updated list (JSON) of the 100 most common words in the English language. Useful for… [more](https://github.com/jonschlinkert/common-words) | [homepage](https://github.com/jonschlinkert/common-words \"Updated list (JSON) of the 100 most common words in the English language. Useful for excluding these words from arrays.\")\n* [shuffle-words](https://www.npmjs.com/package/shuffle-words): Shuffle the words in a string and optionally the letters in each word using the… [more](https://github.com/jonschlinkert/shuffle-words) | [homepage](https://github.com/jonschlinkert/shuffle-words \"Shuffle the words in a string and optionally the letters in each word using the Fisher-Yates algorithm. Useful for creating test fixtures, benchmarking samples, etc.\")\n* [unique-words](https://www.npmjs.com/package/unique-words): Return the unique words in a string or array. | [homepage](https://github.com/jonschlinkert/unique-words \"Return the unique words in a string or array.\")\n* [wordcount](https://www.npmjs.com/package/wordcount): Count the words in a string. Support for english, CJK and Cyrillic. | [homepage](https://github.com/jonschlinkert/wordcount \"Count the words in a string. Support for english, CJK and Cyrillic.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 43 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 2 | [lordvlad](https://github.com/lordvlad) |\n| 2 | [hildjj](https://github.com/hildjj) |\n| 1 | [danilosampaio](https://github.com/danilosampaio) |\n| 1 | [2fd](https://github.com/2fd) |\n| 1 | [toddself](https://github.com/toddself) |\n| 1 | [wolfgang42](https://github.com/wolfgang42) |\n| 1 | [zachhale](https://github.com/zachhale) |\n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on June 02, 2017._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-06-03T02:56:07.519Z",
+    "created": "2014-03-30T08:47:04.382Z",
+    "0.1.0": "2014-03-30T08:47:04.382Z",
+    "0.1.2": "2014-04-23T00:23:09.096Z",
+    "0.1.3": "2014-05-19T05:19:32.774Z",
+    "0.2.0": "2014-11-23T15:58:15.450Z",
+    "0.3.0": "2014-12-04T21:14:15.332Z",
+    "0.3.1": "2014-12-04T21:20:23.708Z",
+    "1.0.0": "2014-12-04T23:07:15.710Z",
+    "1.0.1": "2015-02-27T21:35:33.424Z",
+    "1.0.2": "2015-03-07T23:21:20.018Z",
+    "1.0.3": "2015-04-20T03:54:49.565Z",
+    "1.1.0": "2015-07-17T16:09:45.195Z",
+    "1.2.0": "2016-12-29T13:06:09.224Z",
+    "1.2.1": "2017-01-30T17:08:56.129Z",
+    "1.2.2": "2017-05-02T05:27:27.815Z",
+    "1.2.3": "2017-06-03T02:56:07.519Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/word-wrap",
+  "keywords": [
+    "break",
+    "carriage",
+    "line",
+    "new-line",
+    "newline",
+    "return",
+    "soft",
+    "text",
+    "word",
+    "word-wrap",
+    "words",
+    "wrap"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/word-wrap.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/word-wrap/issues"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "nfd": true,
+    "fedor": true,
+    "jakedetels": true,
+    "scottfreecode": true,
+    "bluelovers": true
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Danilo Sampaio",
+      "email": "danilo.sampaio@gmail.com",
+      "url": "localhost:8080"
+    },
+    {
+      "name": "Fede Ramirez",
+      "email": "i@2fd.me",
+      "url": "https://2fd.github.io"
+    },
+    {
+      "name": "Joe Hildebrand",
+      "email": "joe-github@cursive.net",
+      "url": "https://twitter.com/hildjj"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "email": "jon.schlinkert@sellside.com",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Todd Kennedy",
+      "url": "https://tck.io"
+    },
+    {
+      "name": "Waldemar Reusch",
+      "url": "https://github.com/lordvlad"
+    },
+    {
+      "name": "Wolfgang Faust",
+      "url": "http://www.linestarve.com"
+    },
+    {
+      "name": "Zach Hale",
+      "email": "zachhale@gmail.com",
+      "url": "http://zachhale.com"
+    }
+  ],
+  "_attachments": {}
+}

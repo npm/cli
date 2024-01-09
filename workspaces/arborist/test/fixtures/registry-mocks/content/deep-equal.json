@@ -1,0 +1,1695 @@
+{
+  "_id": "deep-equal",
+  "_rev": "63-c777f75c25faf7bac2110b7b5d0408db",
+  "name": "deep-equal",
+  "description": "node's assert.deepEqual algorithm",
+  "dist-tags": {
+    "latest": "2.0.4",
+    "next": "2.0.3"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "deep-equal",
+      "version": "0.0.0",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "0.0.x"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT/X11",
+      "engine": {
+        "node": ">=0.4"
+      },
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "_id": "deep-equal@0.0.0",
+      "dependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.0.106",
+      "_nodeVersion": "v0.4.12",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "99679d3bbd047156fcd450d3d01eeb9068691e83",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.1.0": {
+      "name": "deep-equal",
+      "version": "0.1.0",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "~0.3.0",
+        "tape": "~0.0.5"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "_id": "deep-equal@0.1.0",
+      "dist": {
+        "shasum": "81fcefc84551d9d67cccdd80e1fced7f355e146f",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.7",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.1.1": {
+      "name": "deep-equal",
+      "version": "0.1.1",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "~0.3.0",
+        "tape": "~0.0.5"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@0.1.1",
+      "dist": {
+        "shasum": "8a55b7eddb6ea545a55231fe0a405ebf05077e62",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.1.2": {
+      "name": "deep-equal",
+      "version": "0.1.2",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@0.1.2",
+      "dist": {
+        "shasum": "b246c2b80a570a47c11be1d9bd1070ec878b87ce",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.2.0": {
+      "name": "deep-equal",
+      "version": "0.2.0",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@0.2.0",
+      "dist": {
+        "shasum": "81994cd7332efcf72a373e7f2ba490b2763159b5",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.2.1": {
+      "name": "deep-equal",
+      "version": "0.2.1",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "~2.3.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@0.2.1",
+      "dist": {
+        "shasum": "fad7a793224cbf0c3c7786f92ef780e4fc8cc878",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "0.2.2": {
+      "name": "deep-equal",
+      "version": "0.2.2",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "^3.5.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "gitHead": "05cd26a25f0d7babf0c2758827b4dafec9d0582e",
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@0.2.2",
+      "_shasum": "84b745896f34c684e98f2ce0e42abaf43bba017d",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "dist": {
+        "shasum": "84b745896f34c684e98f2ce0e42abaf43bba017d",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-0.2.2.tgz"
+      }
+    },
+    "1.0.0": {
+      "name": "deep-equal",
+      "version": "1.0.0",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "^3.5.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "gitHead": "39c740ebdafed9443912a4ef1493b18693934daf",
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal",
+      "_id": "deep-equal@1.0.0",
+      "_shasum": "d4564f07d2f0ab3e46110bec16592abd7dc2e326",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "substack",
+        "email": "mail@substack.net"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ],
+      "dist": {
+        "shasum": "d4564f07d2f0ab3e46110bec16592abd7dc2e326",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.0.tgz"
+      }
+    },
+    "1.0.1": {
+      "name": "deep-equal",
+      "version": "1.0.1",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "devDependencies": {
+        "tape": "^3.5.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "gitHead": "59c511f5aeae19e3dd1de054077a789d7302be34",
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal#readme",
+      "_id": "deep-equal@1.0.1",
+      "_shasum": "f5d260292b660e084eff4cdbc9f08ad3247448b5",
+      "_from": ".",
+      "_npmVersion": "3.2.2",
+      "_nodeVersion": "2.4.0",
+      "_npmUser": {
+        "name": "substack",
+        "email": "substack@gmail.com"
+      },
+      "dist": {
+        "shasum": "f5d260292b660e084eff4cdbc9f08ad3247448b5",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "mail@substack.net"
+        }
+      ]
+    },
+    "1.1.0": {
+      "name": "deep-equal",
+      "version": "1.1.0",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "tape test/*",
+        "test": "npm run tests-only"
+      },
+      "dependencies": {
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.1",
+        "is-regex": "^1.0.4",
+        "object-is": "^1.0.1",
+        "object-keys": "^1.1.1",
+        "regexp.prototype.flags": "^1.2.0"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^13.1.1",
+        "eslint": "^5.16.0",
+        "tape": "^4.11.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "gitHead": "6099799587240963f9ebef6f2a819fcf28add15b",
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal#readme",
+      "_id": "deep-equal@1.1.0",
+      "_nodeVersion": "12.9.1",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-ZbfWJq/wN1Z273o7mUSjILYqehAktR2NVoSrOukDkU9kg2v/Uv89yU4Cvz8seJeAmtN5oqiefKq8FPuXOboqLw==",
+        "shasum": "3103cdf8ab6d32cf4a8df7865458f2b8d33f3745",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.1.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 25392,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdZhQ9CRA9TVsSAnZWagAA8ukP/R/S/Xq8/fH3oZVEKfEn\nJKtrK/5ZrJw4jLl5ASI8s8trOgXArGRgyu8qdWH4lZk9/g2eiogrMZeujkzN\n6S6PVs9xNE9PYU7oOfOcY0aHF5cwDhOC453QSYTZGbj9VkCmS0Ez1WpIldwf\nDdPnxXFejBzesOOa/zYkRRRHtdBq/jauHz0K+KOXEgXODMJa2vRoLn9HJD1P\ngnwtsW6judAX8Q9qakDRX0Y28u+Ax8dMjnE9Dz5NeBcGR0nJ1ALgiUG9wyjN\nqaCl4cyoEwmVk+exCbIZHn6VgDWodo/JzQmTJbV5Wjn0ctzJa/NK7Tce9JHJ\nLh7x4TPZliRSDosbLMW994K/HgI0Xbz1fiilRGNdNkG5/ZV99tzTmfm8fhYP\nGZrr6jTo5Vzwu0YS55YHt95c5vxlKKuMFeyM0AvpKgggYQbGvXn+lCR+P31l\nZv6sg6UaTG9AeaeiG65JXPMwAWkeoLezgOc0YlqWF3tSWnR43r9qJILuyp+L\nhacNC7nQhapImJ35K2yrx0NndJ+V27DIY+3uXyKmpvBMnpVCEXBObGB+rklu\n9BNtq+uZF6MIYoLk/GrQ8wizQA2b0neerRktqkaWW5gWeSl3u4ey4GvfSi80\nJWyWHHn4nbkJkDcjNmVgytbvCQqGGlR4CQeBj5m0MUoSFLFABVRn/GZszVCa\nKkh8\r\n=Piz6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_1.1.0_1566970940528_0.38605092487709936"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "deep-equal",
+      "version": "1.1.1",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "tape test/*",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "dependencies": {
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.1",
+        "is-regex": "^1.0.4",
+        "object-is": "^1.0.1",
+        "object-keys": "^1.1.1",
+        "regexp.prototype.flags": "^1.2.0"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.1",
+        "auto-changelog": "^1.16.2",
+        "eslint": "^6.6.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/substack/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "7f21ce5ca6ac3d62f183071a12f58b9fd010bd34",
+      "bugs": {
+        "url": "https://github.com/substack/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/substack/node-deep-equal#readme",
+      "_id": "deep-equal@1.1.1",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-yd9c5AdiqVcR+JjcwUQb9DkhJc8ngNr0MahEBGvDiJw8puWab2yZlh+nkasOnZP+EGTAP6rRp2JzJhJZzvNF8g==",
+        "shasum": "b5c98c942ceffaf7cb051e24e1434a25a2e6076a",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.1.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 26384,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyxQ4CRA9TVsSAnZWagAAv+AP+weArKrZAaxlVcIgMlsi\n7WKBt2xzQrp+vei93GwLnBlutPEN1kuJ4UWTsV1mfS/s8MAHRhi5XuXOXS/l\nMswzTaAd63FUrBEpVFmUv4d4gFlV4qAKozEt/fE6A//LDpr6/RoeUVsWdtlu\nOiEn7dTsothIb8yf/FxCwivk7Vu+QA/JxKLYuAiX44xbG6b20fBVi+8wXzbJ\nWF2PILj0wrOFf5wn4ybsmC7QtFjehGti0EruiPzA6luoe6UeqND/ZDfxxrzw\nBz4v1jXY63BeDWyQYTecfAszkXu+kznruS4C31OxG9I5g93h2m552zZBWHjn\n4+2UNoh9xMkGgVqAo94pOF2xa3TZSZlJAeMc+hLEt65y5aZZ8eil3ynBqyJb\nidzz30j++zDN5v54ZuoVTlAhh30i+Pib2sGFrpgiuysscA20Sc4ch+6leoiJ\n9gR/+6OvLoMKzf+2T8E97lFfIe8Iwyi7SHIB6u5SwrMd1CCiN1VmPzH0jq+F\n5YS5oZSU3gbHfYQ/sEseGWUQNqnK9c0JuXwVhmuIWBAxg8U87RrFOjG4M5Mc\nPOdyZzlSCOGCmgVQ+HBvxH7jZGdM/4g3I2Hyu7+ybJ4ATdCLxi5NHUq7KzxI\nEjx06NOARGAIH7MUtkPrqDb3+XyS0e0UXQbPGHhRk52EdtLOlSEJ26e+fqij\nedwu\r\n=avCO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_1.1.1_1573590072165_0.7652971980130199"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "deep-equal",
+      "version": "2.0.1",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ],
+        "./package": "./package.json",
+        "./package.json": "./package"
+      },
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "tape test/*",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "dependencies": {
+        "es-abstract": "^1.16.3",
+        "es-get-iterator": "^1.0.1",
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.1",
+        "is-regex": "^1.0.4",
+        "isarray": "^2.0.5",
+        "object-is": "^1.0.1",
+        "object-keys": "^1.1.1",
+        "regexp.prototype.flags": "^1.2.0",
+        "side-channel": "^1.0.1",
+        "which-boxed-primitive": "^1.0.1",
+        "which-collection": "^1.0.0"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "eslint": "^6.7.2",
+        "has-symbols": "^1.0.1",
+        "has-typed-arrays": "^1.0.0",
+        "object.assign": "^4.1.0",
+        "object.getownpropertydescriptors": "^2.0.3",
+        "safe-publish-latest": "^1.1.4",
+        "semver": "^6.3.0",
+        "tape": "^4.11.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/inspect-js/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "contributors": [
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net",
+          "url": "https://substack.net"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "browser": {
+        "assert.js": false
+      },
+      "readme": "# deep-equal\n\nNode's `assert.deepEqual() algorithm` as a standalone module.\n\nThis module is around [46 times faster](https://gist.github.com/substack/2790507#gistcomment-3099862) than wrapping `assert.deepEqual()` in a `try/catch`.\n\n[![build status](https://secure.travis-ci.com/inspect-js/node-deep-equal.png)](https://travis-ci.org/inspect-js/node-deep-equal)\n\n# example\n\n``` js\nvar equal = require('deep-equal');\nconsole.dir([\n    equal(\n        { a : [ 2, 3 ], b : [ 4 ] },\n        { a : [ 2, 3 ], b : [ 4 ] }\n    ),\n    equal(\n        { x : 5, y : [6] },\n        { x : 5, y : 6 }\n    )\n]);\n```\n\n# methods\n\n``` js\nvar deepEqual = require('deep-equal')\n```\n\n## deepEqual(a, b, opts)\n\nCompare objects `a` and `b`, returning whether they are equal according to a\nrecursive equality algorithm.\n\nIf `opts.strict` is `true`, use strict equality (`===`) to compare leaf nodes.\nThe default is to use coercive equality (`==`) because that's how\n`assert.deepEqual()` works by default.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install deep-equal\n```\n\n# test\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm test\n```\n",
+      "readmeFilename": "readme.markdown",
+      "gitHead": "8ba8dbceb1a836f26a61a54b597c8bb3eac8cb8d",
+      "bugs": {
+        "url": "https://github.com/inspect-js/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/inspect-js/node-deep-equal#readme",
+      "_id": "deep-equal@2.0.1",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-7Et6r6XfNW61CPPCIYfm1YPGSmh6+CliYeL4km7GWJcpX5LTAflGF8drLLR+MZX+2P3NZfAfSduutBbSWqER4g==",
+        "shasum": "fc12bbd6850e93212f21344748682ccc5a8813cf",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-2.0.1.tgz",
+        "fileCount": 11,
+        "unpackedSize": 53653,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7eghCRA9TVsSAnZWagAAiwIP/3zHahQJBXVU9ZJVNIay\n/ARzUiVgqRlWJFhIJfob4VvXwjIFSJOjcWZBlNgNnEJoYupBfFJwJZyY97n9\nrqi7YtVrl/l1KW6d8LmI3Mc0dKv6fKHaYg90jNhyjKfAb3s70CJJ3s/Bx1fB\nNVxieoCyn9NWciX56OYlIvhNWfgDV/DQNf2HvJngo4ugCCELxcaYXmaJ4Ex3\nM80DJVOiS1/KO8LCUmhQTtzyOLlLtwyrGfyxWUxQRMZotMbws/ZEFe828NWr\nknyjMH/TK8QRtQ4YXJJRFCJjR9xOdTxgIJrtThtOG93d3h6Cmxrh9oKGwqvh\n6Nc2s0nFtJxUthgkelaOfM78T3x7lK8VdAWqdyWGmvLv90NMViUgBq1/ORKa\ns7fAXRAGxtj9T9BDGpPGfSg9EkkYssZRU5HHmkUPD/9he/HOnRcrPujMaoo4\nHwpK0x5Z1MQY/9zUGTCZuq/p9xb8mNriQw0GvtattVNuXkoSS99WMv0hEnPU\njDidZJzg3DfClYx1Rrv04s6nexhwxBbaeHDWuW4dM4fgc+fON8M+ZvvefqJW\n06/KQiw6YA6RiPPEd4u0lEJadRDQKwQH53Cz9ATybQFKH39vuYSlbxPKte6Z\nNPdsO0P5J5Xppfe5QwOpWmt+bvVBmuO9JYkA7jEyICY1EMJGSfsiqUkbwMUL\nIwC/\r\n=m/Yb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_2.0.1_1575872545025_0.7778746444985405"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "deep-equal",
+      "version": "2.0.2",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ],
+        "./package": "./package.json",
+        "./package.json": "./package"
+      },
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "nyc tape test/*",
+        "test": "npm run tests-only",
+        "posttest": "npx aud --production",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "dependencies": {
+        "es-abstract": "^1.17.5",
+        "es-get-iterator": "^1.1.0",
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.2",
+        "is-regex": "^1.0.5",
+        "isarray": "^2.0.5",
+        "object-is": "^1.0.2",
+        "object-keys": "^1.1.1",
+        "regexp.prototype.flags": "^1.3.0",
+        "side-channel": "^1.0.2",
+        "which-boxed-primitive": "^1.0.1",
+        "which-collection": "^1.0.1",
+        "which-typed-array": "^1.1.1"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^16.0.0",
+        "auto-changelog": "^1.16.3",
+        "eslint": "^6.8.0",
+        "has-symbols": "^1.0.1",
+        "has-typed-arrays": "^1.0.0",
+        "nyc": "^10.3.2",
+        "object.assign": "^4.1.0",
+        "object.getownpropertydescriptors": "^2.1.0",
+        "safe-publish-latest": "^1.1.4",
+        "semver": "^6.3.0",
+        "tape": "^5.0.0-next.5"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/inspect-js/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "contributors": [
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net",
+          "url": "https://substack.net"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "greenkeeper": {
+        "ignore": [
+          "semver"
+        ]
+      },
+      "browser": {
+        "assert.js": false
+      },
+      "gitHead": "7eedb2dd9d1d41e5f462460ae19e54c276ae4c4d",
+      "bugs": {
+        "url": "https://github.com/inspect-js/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/inspect-js/node-deep-equal#readme",
+      "_id": "deep-equal@2.0.2",
+      "_nodeVersion": "13.12.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-kX0bjV7tdMuhrhzKPEnVwqfQCuf+IEfN+4Xqv4eKd75xGRyn8yzdQ9ujPY6a221rgJKyQC4KBu1PibDTpa6m9w==",
+        "shasum": "e68291e245493ae908ca7190c1deea57a01ed82b",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-2.0.2.tgz",
+        "fileCount": 14,
+        "unpackedSize": 64958,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJehEA2CRA9TVsSAnZWagAAROkQAIHdo41ek37IWIXMcbQI\n6/lMcSK4m18G7hB1ryOhzu40XoXfL7FiYDCtUcvdkQleaTcfTqKQXkFAp+TZ\nushTrItJ/a7+ccorrTuOrc56soKbcxcEQNv+CWi2Ny7PfvHFtRVmRRP+1CKk\n8Ril0i6QiZ9aU4maYpGwVWJu/7+Bbp/pLcheeN47dOD3Mqj8DPw5VeWfReT5\nU8G3BY5G0rKTASyngi2arwFAto0fWG7XNwHwkVwvnDNI1CyuZuo1l2uRT67J\nhXVArKLH/gNSu8EPg02ssJaMtEJaIfTYMN62tCfUphoQC8PfcwkTrVbOUQQR\nWbh0jpqGi6P11so9Tg8hi3l25u+edYznHxMGqWExY1nNuZ0j00LLXouGIci0\nZ8ezEfMsNDXx2KW7efU88aFDFxXo4STvV3S5rJy3Bc/6GGio6m7Knnw3FxA4\nosLWoDM6/L81PwKBLFtAy4B683tc/u7mh8Ag4GaiGvZSdZPitxF1er6Z4Y/X\nEhuau0jbrfGzI/rZj2LvhZMMUeVhQvjFmCTR+QdYL8K/sXsAQaqhkCuNIjyK\njEJMYCEJ/7il0HdO+AFGgA7R1hRpDnWjZGpGnPRbMyQplyQKtG+1kYEZS0qy\n5Zk1Vq0raB82R5ySzpvjHsRm6puqviUdb7IgKjt2T4xcT9wIorL97hcLlp4c\nhHCE\r\n=rtlE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_2.0.2_1585725494188_0.11829287453491855"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "deep-equal",
+      "version": "2.0.3",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ],
+        "./package": "./package.json",
+        "./package.json": "./package"
+      },
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "nyc tape test/*",
+        "test": "npm run tests-only",
+        "posttest": "npx aud --production",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "dependencies": {
+        "es-abstract": "^1.17.5",
+        "es-get-iterator": "^1.1.0",
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.2",
+        "is-regex": "^1.0.5",
+        "isarray": "^2.0.5",
+        "object.assign": "^4.1.0",
+        "object-is": "^1.1.2",
+        "object-keys": "^1.1.1",
+        "regexp.prototype.flags": "^1.3.0",
+        "side-channel": "^1.0.2",
+        "which-boxed-primitive": "^1.0.1",
+        "which-collection": "^1.0.1",
+        "which-typed-array": "^1.1.2"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^16.0.0",
+        "aud": "^1.1.1",
+        "auto-changelog": "^2.0.0",
+        "eslint": "^6.8.0",
+        "has-symbols": "^1.0.1",
+        "has-typed-arrays": "^1.0.0",
+        "nyc": "^10.3.2",
+        "object.getownpropertydescriptors": "^2.1.0",
+        "safe-publish-latest": "^1.1.4",
+        "semver": "^6.3.0",
+        "tape": "^5.0.0-next.5"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/inspect-js/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "contributors": [
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net",
+          "url": "https://substack.net"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "greenkeeper": {
+        "ignore": [
+          "nyc",
+          "semver"
+        ]
+      },
+      "browser": {
+        "assert.js": false
+      },
+      "gitHead": "ab21672f28a4bf4edc73ad5399c912b8bd383824",
+      "bugs": {
+        "url": "https://github.com/inspect-js/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/inspect-js/node-deep-equal#readme",
+      "_id": "deep-equal@2.0.3",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-Spqdl4H+ky45I9ByyJtXteOm9CaIrPmnIPmOhrkKGNYWeDgCvJ8jNYVCTjChxW4FqGuZnLHADc8EKRMX6+CgvA==",
+        "shasum": "cad1c15277ad78a5c01c49c2dee0f54de8a6a7b0",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-2.0.3.tgz",
+        "fileCount": 16,
+        "unpackedSize": 65915,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeooMbCRA9TVsSAnZWagAA0s0P/1Tgz89/yVZQNNIfemrq\n71X4LVBQnxoqQzGLOL++thOeG060B0c0oVCklMl1cg5W3zkE8nrmr+aZ/J/t\nhL9uCktnHeDAJGqhwQ9TtQbJ/FbN7Z+Iz9qEe6ZVwyIZi9l7lt6qxu5Ym8IY\nAzeg7Uf9Rg3BQzD5Y8kF6nHlicFxWAcRntNDVY5tNmYi9ebVLXY+o1VuQn6X\nG710yCoBsfD9LjTJUKQiphcsgmWgWZy9Nk+RnWOQld/dfq1qvfkuF5AQ0UJ8\nTiD9N0Zvv2GvROlRZUcbpEZaXfuI7zih8hn5bRleE/z2pIRTrWeUM0wjNNa7\nbZl8DIqU9mU2fHXbcdCZeaO3Tm4fV/WoDZ4LZJ2rb+PDBf/xbPuid60fMexv\n2+4n50ivDu03xxAyOSkuW4oyrKuUK/v8cwvHlqRLm4loWeQBlDYSuhGbV1GC\nzdno47krxdsJeMrmbPjaVwg+joBTwDyou/OzwHe2Ibp09HnHmBOJEZ7MQB8C\nK7zEdOQT8ssgnhMTe8ZK4J9Lha+WfFvgDl5E8L4fV8lEteUcrJzbRx0IqFGJ\nsIAfXyuPG39MTFZel2hcLEEZqeRDdFnNdZhq8p8ajOBZlWhqmyBPNxyhXBvK\nuKaMbRXzj0qadJkuNT4fuQmjCdJKsoKe6n61Mxd0TS9j8hP/no/mcT5eG1II\na+q9\r\n=M6gZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_2.0.3_1587708698645_0.7178129698926239"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.4": {
+      "name": "deep-equal",
+      "version": "2.0.4",
+      "description": "node's assert.deepEqual algorithm",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ],
+        "./package": "./package.json",
+        "./package.json": "./package.json"
+      },
+      "directories": {
+        "lib": ".",
+        "example": "example",
+        "test": "test"
+      },
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "nyc tape test/*",
+        "test": "npm run tests-only",
+        "posttest": "npx aud --production",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "dependencies": {
+        "es-abstract": "^1.18.0-next.1",
+        "es-get-iterator": "^1.1.0",
+        "is-arguments": "^1.0.4",
+        "is-date-object": "^1.0.2",
+        "is-regex": "^1.1.1",
+        "isarray": "^2.0.5",
+        "object-is": "^1.1.3",
+        "object-keys": "^1.1.1",
+        "object.assign": "^4.1.1",
+        "regexp.prototype.flags": "^1.3.0",
+        "side-channel": "^1.0.3",
+        "which-boxed-primitive": "^1.0.1",
+        "which-collection": "^1.0.1",
+        "which-typed-array": "^1.1.2"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^17.2.0",
+        "aud": "^1.1.2",
+        "auto-changelog": "^2.2.1",
+        "eslint": "^7.10.0",
+        "has-symbols": "^1.0.1",
+        "has-typed-arrays": "^1.0.0",
+        "nyc": "^10.3.2",
+        "object.getownpropertydescriptors": "^2.1.0",
+        "safe-publish-latest": "^1.1.4",
+        "semver": "^6.3.0",
+        "tape": "^5.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/inspect-js/node-deep-equal.git"
+      },
+      "keywords": [
+        "equality",
+        "equal",
+        "compare"
+      ],
+      "author": {
+        "name": "James Halliday",
+        "email": "mail@substack.net",
+        "url": "http://substack.net"
+      },
+      "contributors": [
+        {
+          "name": "James Halliday",
+          "email": "mail@substack.net",
+          "url": "https://substack.net"
+        },
+        {
+          "name": "Jordan Harband",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "testling": {
+        "files": "test/*.js",
+        "browsers": {
+          "ie": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "ff": [
+            3.5,
+            10,
+            15
+          ],
+          "chrome": [
+            10,
+            22
+          ],
+          "safari": [
+            5.1
+          ],
+          "opera": [
+            12
+          ]
+        }
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false,
+        "hideCredit": true
+      },
+      "greenkeeper": {
+        "ignore": [
+          "nyc",
+          "semver"
+        ]
+      },
+      "browser": {
+        "assert.js": false
+      },
+      "gitHead": "db63ef87deaab3bb8ca464b69522d2eb980660e2",
+      "bugs": {
+        "url": "https://github.com/inspect-js/node-deep-equal/issues"
+      },
+      "homepage": "https://github.com/inspect-js/node-deep-equal#readme",
+      "_id": "deep-equal@2.0.4",
+      "_nodeVersion": "14.12.0",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-BUfaXrVoCfgkOQY/b09QdO9L3XNoF2XH0A3aY9IQwQL/ZjLOe8FQgCNVl1wiolhsFo8kFdO9zdPViCPbmaJA5w==",
+        "shasum": "6b0b407a074666033169df3acaf128e1c6f3eab6",
+        "tarball": "https://registry.npmjs.org/deep-equal/-/deep-equal-2.0.4.tgz",
+        "fileCount": 14,
+        "unpackedSize": 67599,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfdqsNCRA9TVsSAnZWagAA+zIP/0iFSlvF2VapBrzoBzXb\nrBjENpN/rUaqyR4QEzOzMH0fjxoRP7/nRTjISZe7wNMb9FQuHCTV+cJVNhrv\nhQzRIT9WdcUEAF70mZdcNTNU+nHGRQ7gSronKfmklk2KZCiMUOxsX+VnRnhf\nnLa19wZ4xGvkD25KIATuMKYJ3bWYZE0+03ofVKcXxpgYTUd/cCBN8ebebFvT\nb9TBW0tLiP8NJpRO7yKp0HblKjjo8LMwCtJWa42VCuahCjNQ5JY6mFtlOf2X\nG7+VjTGoQN1ch89jN+4pVd6iTPbf9YnXYgjcpoXxZALUXExosmY/4RwqVzws\n79mggSFKtyjfW6ycXeCplBWFOYU/QrhmIDjMQu0iuVPevwyih6e7L1Tby5Pz\nBCmuoaKnoed7aaKaXn9m+tqPQa4yId6c0s6Yp6YcDO3oZ5zNQEmtbp3rD7j6\n7XE0azs9QymEoWIipGoCoXwVKs4CleIgvByu7HHKtXrMVFa536sN0P2m/UhY\nqsXr3b8PdAnGzsK3FvP/aHHXG5VEevzgM3mOC4DXdO/493OmT79juJZbc+Ir\nmLTIrKaCn1Z0L44zLsjkiLDFU0tG4gZW2X/H+MOWoNh0kavH+Fp7PUD0LI1G\n8XswYdrxIcfFakSqjDaMH7I6hwUTA+1PShqK/OKTkiw8SFOkDGCaRJ8Ck9q8\nDbKf\r\n=F1Lw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "substack",
+          "email": "substack@gmail.com"
+        },
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/deep-equal_2.0.4_1601612556755_0.6157641233458735"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# deep-equal\n\nNode's `assert.deepEqual() algorithm` as a standalone module.\n\nThis module is around [46 times faster](https://gist.github.com/substack/2790507#gistcomment-3099862) than wrapping `assert.deepEqual()` in a `try/catch`.\n\n[![build status](https://secure.travis-ci.com/inspect-js/node-deep-equal.png)](https://travis-ci.org/inspect-js/node-deep-equal)\n\n# example\n\n``` js\nvar equal = require('deep-equal');\nconsole.dir([\n    equal(\n        { a : [ 2, 3 ], b : [ 4 ] },\n        { a : [ 2, 3 ], b : [ 4 ] }\n    ),\n    equal(\n        { x : 5, y : [6] },\n        { x : 5, y : 6 }\n    )\n]);\n```\n\n# methods\n\n``` js\nvar deepEqual = require('deep-equal')\n```\n\n## deepEqual(a, b, opts)\n\nCompare objects `a` and `b`, returning whether they are equal according to a\nrecursive equality algorithm.\n\nIf `opts.strict` is `true`, use strict equality (`===`) to compare leaf nodes.\nThe default is to use coercive equality (`==`) because that's how\n`assert.deepEqual()` works by default.\n\n# install\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm install deep-equal\n```\n\n# test\n\nWith [npm](https://npmjs.org) do:\n\n```\nnpm test\n```\n",
+  "maintainers": [
+    {
+      "name": "substack",
+      "email": "substack@gmail.com"
+    },
+    {
+      "name": "ljharb",
+      "email": "ljharb@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-02T04:22:40.453Z",
+    "created": "2012-02-11T05:42:13.188Z",
+    "0.0.0": "2012-02-11T05:42:14.579Z",
+    "0.1.0": "2013-10-14T14:52:24.917Z",
+    "0.1.1": "2013-12-20T20:40:18.118Z",
+    "0.1.2": "2013-12-21T03:05:03.548Z",
+    "0.2.0": "2014-01-29T22:04:03.965Z",
+    "0.2.1": "2014-01-29T22:05:28.806Z",
+    "0.2.2": "2015-02-07T18:27:09.674Z",
+    "1.0.0": "2015-02-07T18:27:38.585Z",
+    "1.0.1": "2015-08-29T21:02:28.562Z",
+    "1.1.0": "2019-08-28T05:42:20.711Z",
+    "1.1.1": "2019-11-12T20:21:12.351Z",
+    "2.0.0": "2019-12-03T23:33:03.946Z",
+    "2.0.1": "2019-12-09T06:22:25.201Z",
+    "2.0.2": "2020-04-01T07:18:14.359Z",
+    "2.0.3": "2020-04-24T06:11:38.843Z",
+    "2.0.4": "2020-10-02T04:22:36.888Z"
+  },
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/inspect-js/node-deep-equal.git"
+  },
+  "users": {
+    "freethenation": true,
+    "dam": true,
+    "pana": true,
+    "popomore": true,
+    "zerodi": true,
+    "amirmehmood": true,
+    "simplyianm": true,
+    "joris-van-der-wel": true,
+    "fwoelffel": true,
+    "mightyiam": true,
+    "koulmomo": true,
+    "agat": true,
+    "mkamakura": true,
+    "leodutra": true,
+    "klyngbaek": true,
+    "yatsu": true,
+    "j.su": true,
+    "ackhub": true,
+    "rtivital": true,
+    "jovinbm": true,
+    "akarem": true,
+    "shanewholloway": true,
+    "brainpoint": true,
+    "jacob-beltran": true,
+    "tzq1011": true,
+    "qujian": true,
+    "theaklair": true,
+    "erikvold": true,
+    "dm7": true,
+    "rfortune": true,
+    "n0f3": true,
+    "gleb_cher": true,
+    "nickeljew": true,
+    "tedyhy": true,
+    "leafac": true
+  },
+  "readmeFilename": "readme.markdown",
+  "homepage": "https://github.com/inspect-js/node-deep-equal#readme",
+  "keywords": [
+    "equality",
+    "equal",
+    "compare"
+  ],
+  "bugs": {
+    "url": "https://github.com/inspect-js/node-deep-equal/issues"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "James Halliday",
+      "email": "mail@substack.net",
+      "url": "https://substack.net"
+    },
+    {
+      "name": "Jordan Harband",
+      "email": "ljharb@gmail.com"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "handlebars": [
+    {
+      "id": 755,
+      "url": "https://npmjs.com/advisories/755",
+      "title": "Prototype Pollution",
+      "severity": "critical",
+      "vulnerable_versions": "<=4.0.13 || >=4.1.0 <4.1.2"
+    },
+    {
+      "id": 1164,
+      "url": "https://npmjs.com/advisories/1164",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<3.0.8 || >=4.0.0 <4.3.0"
+    },
+    {
+      "id": 1300,
+      "url": "https://npmjs.com/advisories/1300",
+      "title": "Denial of Service",
+      "severity": "moderate",
+      "vulnerable_versions": ">=4.0.0 <4.4.5"
+    },
+    {
+      "id": 1316,
+      "url": "https://npmjs.com/advisories/1316",
+      "title": "Arbitrary Code Execution",
+      "severity": "high",
+      "vulnerable_versions": "<3.0.8 || >=4.0.0 <4.5.2"
+    },
+    {
+      "id": 1324,
+      "url": "https://npmjs.com/advisories/1324",
+      "title": "Arbitrary Code Execution",
+      "severity": "high",
+      "vulnerable_versions": "<3.0.8 || >=4.0.0 <4.5.3"
+    },
+    {
+      "id": 1325,
+      "url": "https://npmjs.com/advisories/1325",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<3.0.8 || >=4.0.0 <4.5.3"
+    }
+  ],
+  "lodash": [
+    {
+      "id": 782,
+      "url": "https://npmjs.com/advisories/782",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<4.17.11"
+    },
+    {
+      "id": 1065,
+      "url": "https://npmjs.com/advisories/1065",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<4.17.12"
+    }
+  ],
+  "set-value": [
+    {
+      "id": 1012,
+      "url": "https://npmjs.com/advisories/1012",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<2.0.1 || >=3.0.0 <3.0.1"
+    }
+  ],
+  "mixin-deep": [
+    {
+      "id": 1013,
+      "url": "https://npmjs.com/advisories/1013",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<1.3.2 || >=2.0.0 <2.0.1"
+    }
+  ],
+  "mem": [
+    {
+      "id": 1084,
+      "url": "https://npmjs.com/advisories/1084",
+      "title": "Denial of Service",
+      "severity": "low",
+      "vulnerable_versions": "<4.0.0"
+    }
+  ],
+  "minimist": [
+    {
+      "id": 1179,
+      "url": "https://npmjs.com/advisories/1179",
+      "title": "Prototype Pollution",
+      "severity": "low",
+      "vulnerable_versions": "<0.2.1 || >=1.0.0 <1.2.3"
+    }
+  ],
+  "kind-of": [
+    {
+      "id": 1490,
+      "url": "https://npmjs.com/advisories/1490",
+      "title": "Validation Bypass",
+      "severity": "low",
+      "vulnerable_versions": ">=6.0.0 <6.0.3"
+    }
+  ]
+}

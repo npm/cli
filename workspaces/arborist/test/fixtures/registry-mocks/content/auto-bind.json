@@ -1,0 +1,803 @@
+{
+  "_id": "auto-bind",
+  "_rev": "12-f2f1a13eb8999d2b61bcdda4c520e184",
+  "name": "auto-bind",
+  "description": "Automatically bind methods to their class instance",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "auto-bind",
+      "version": "0.1.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "7297961487a14521a23ab957784cb38a0bb71747",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@0.1.0",
+      "_shasum": "7a29efc8c2388d3d578e02fc2df531c81ffc1ee1",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7a29efc8c2388d3d578e02fc2df531c81ffc1ee1",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/auto-bind-0.1.0.tgz_1470772047073_0.19967067032121122"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "auto-bind",
+      "version": "1.0.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "4cc10fec3d0a65c71eeea92029359f2153127205",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@1.0.0",
+      "_shasum": "d0cbe26df5871f3347b04b871daad0d3b399e501",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d0cbe26df5871f3347b04b871daad0d3b399e501",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/auto-bind-1.0.0.tgz_1484301152094_0.12119735451415181"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "auto-bind",
+      "version": "1.1.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "c1015630437c4aecd06843d5289368cb5327ccbe",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@1.1.0",
+      "_shasum": "93b864dc7ee01a326281775d5c75ca0a751e5961",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "93b864dc7ee01a326281775d5c75ca0a751e5961",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/auto-bind-1.1.0.tgz_1485788466244_0.8822770155966282"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "auto-bind",
+      "version": "1.2.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "07f0eef1fbdc21d6e6cb7e511c92036b52fd885c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@1.2.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Zw7pZp7tztvKnWWtoII4AmqH5a2PV3ZN5F0BPRTGcc1kpRm4b6QXQnPU7Znbl6BfPfqOVOV29g4JeMqZQaqqOA==",
+        "shasum": "8b7e318aad53d43ba8a8ecaf0066d85d5f798cd6",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind-1.2.0.tgz_1516398261921_0.7868953626602888"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "auto-bind",
+      "version": "1.2.1",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "26922ac7730115bb910f83cea6fb0aed6d42fe96",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@1.2.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/W9yj1yKmBLwpexwAujeD9YHwYmRuWFGV8HWE7smQab797VeHa4/cnE2NFeDhA+E+5e/OGBI8763EhLjfZ/MXA==",
+        "shasum": "807f7910b0210db9eefe133f3492c28e89698b96",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-1.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4538,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKh/UCRA9TVsSAnZWagAAZ3oP/2TsclGL5KkqG8yYT8wo\n8R7DYLS8R9Jsxq2fVNqVyYDhbdI2I/C0AeMVMEiK5rLKcYzcu4cd7dHXDIAr\ni3EJElO2IwxXCLMHgVvh1CnnvZVyzR8azCmphod1Opd9SzTYjazpr2t5CjGm\n9P5phHU27Ov43AsCMoTxd/ly2UqcJUWLm144n7l+SZgMswyLk4M2/UY1yWQO\ncjZTU8Bb927YqpcsSSaABvGpk+LKe21/V4fMGbuEcM+W+s8m2PnSGjnyXGKg\nrBJpjrzvFQXik5WsNoAFe7rQddsbGDuuh7a+nloowIyAmNfCNUsXy3EA3/Uf\nea/sLUJas6UjLnQwqYaEB4+mluJTb/JJCIOK/4ktkjpWf/lT8gSm7d0SfKOx\nd5xqPtqm8OTgJGVi8h3FunEXj5+4cvoFT2L5GNefs4bh7C9YIYiwfIhV37+C\n39RTv928rlTXQm0Wx5YfaihL/NpMKMEl45MTkysuYi42MQiwfz1bcEadoHEu\nIyA2iEUeXqkAJNgh1T3UILC1YYwQVQU6yVtxDcPvNpWceqouHkDXQF8ZP0pP\nWftsp2FsKw/5pUrqII0/PgiKasILdYXZd3fQHMcPIER4kbOgrNI0A0ADYikS\nRJW4C3baRBy3ig4S7LN2NTrqMQgwLn0KTT8793jePCtiqG7YABsuvCjAdDt2\n2Xf5\r\n=B5mm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_1.2.1_1529487315840_0.44540433031597537"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "auto-bind",
+      "version": "2.0.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "devDependencies": {
+        "ava": "^1.0.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "fc65bd510e40a8cd71706aeb9b75289b62829e77",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-rvRBv0/O7iriUMqSzTDhAfyAD1vVnElAEruo5rMSFeYLA0iKDEzLPSJiwMnL86+IPpTlhfOIAzjoKZ9TaySYdA==",
+        "shasum": "9a55a461b521f58daf955169203bed1a07a970a9",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5010,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcHtuVCRA9TVsSAnZWagAAvWMQAJ6WLiIdISIsafdVu7M+\nglWsXRdVUSmMCjRLszCa8H0RJMF7GZIB85dysayy04mOW0aJc4A9x8TrDuxB\nlsCQaLewz3vQmC3AbBlONpenyQTfRvRwVc0HJY60X7V7aXsnWCxajs4+U4Fh\nvZH+eNik7gPjOG3RYp9wbpbnnOGy5D4DhnOLRXdI8f3EQvZ3HyrxQhWjiNGZ\nB6FO3P37zCvqLaglQLgvh3XBY9Ik00hSIomK9womWQcwlGcQHULGP2F/fLfJ\n5+EWtiyNlmETLNKqJwOYiYUdLh3OGhDwiHCdqgkVZc1z2Xj03HNbDJScJc98\nfABVk3gs/HEW+rxxW902S3W3Z+vdrtuHNNcPdXRbr9IrfGkoPTTU5APYsim9\nmYZ1f9S9gQafJ7KPbx0MxUVdhS6Bg4NhnrvY1HVxFwUuX3WlQ/Z2OxXLHxLU\nb+NQySyb2kRnwikM4sFXNlEYFiuN7hVplpYU+qZ3TKGkoAklKydtdehilZXe\nlXoU8aKtfGMHVs9EAxQXeRkthzfw5iQoLXJqvrNTC1tFz7KCWP+tUOL8gljr\n6dHdB8GdTsAKlqHUGpGqmca8VdxcG2AVeRke0WhYiwiFgSIk1qVBpndiC7fB\nsGqd+vNrPD0DJWLv851WXl3mvTtcM/1hx3eTrxM3Xoz8bgioz39EUrD639M0\nkZtx\r\n=Js2r\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_2.0.0_1545526165093_0.8713393224161645"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "auto-bind",
+      "version": "2.1.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "dependencies": {
+        "@types/react": "^16.8.12"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "1da27088354fac37e8e212b89cc4c75bbf25b2b5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@2.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qZuFvkes1eh9lB2mg8/HG18C+5GIO51r+RrCSst/lh+i5B1CtVlkhTE488M805Nr3dKl0sM/pIFKSKUIlg3zUg==",
+        "shasum": "254e12d53063d7cab90446ce021accfb3faa1464",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6640,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqc1zCRA9TVsSAnZWagAASEsP/0g1k4Q3lYljzG6ajQ5l\nd8Uu8prrjGCC1PGMlgQYcTrK7o2wHBqFRnjW/+yGfKCf3945f5mtLolvi4oa\nYpZBmYEgnNecQE+j1JJnDQrcMp6tRTehF79NesY37vSffWKh6r6nHxI017pK\nLcq5DubtFQ61eTlW3F6LC3c7JrBmNuRYsNjHhiuWZOBjKzovmnpmBPX3+T/2\nEl4uWvhbBkAu+fBmCwgKh+mz/d8rl2he5VliAML2Y2uuXxP0vWNyf6cvqoTv\nbC79stQFzf8H+aPGI4gjJaZjS64CTWeafLATSQvUo/toT5W7NDqPztzw8Pnm\net8jUeqfQ12+JQfhyVfU3NP2v2wAQzy1OYfP4O9mpxV1qrL2eBLjhtf0m077\nHg5F+lAntWTbe56axonSJmeGw/XRM/+HXrGMU5T96i/RWYX84vBLR/bob2ZT\nfZbBQelek2rz6+ylCWek7LnwSXp31B/J/lf2IZCY8AoFRJdSslsqHSY7GzBF\nys76oC2fcbygxg33st84xxoW+IKcelCLHlYcaeZDMIVSTFpBAWNzqTM6Uhv0\nNxNM4vUch8Mwg6zfZKM7NFcIbEq+xn1ZCtOWA3Dxj1aX7vv/I1JsbqP6ocqh\nkFQHymR2dxtFeqYXAZRxTcuXftew+9u/NuYrJ4hp+EWtsLEuF9TAI0DSpMpd\nYoP+\r\n=8EWv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_2.1.0_1554632050806_0.11002999174145134"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "auto-bind",
+      "version": "2.1.1",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "dependencies": {
+        "@types/react": "^16.8.12"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "b21db0ee5550061cb6e4a64203f0220bc54b64d1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@2.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-NUwV1i9D3vxxY1KnfZgSZ716d6ovY7o8LfOwLhGIPFBowIb6Ln6DBW64+jCqPzUznel2hRSkQnYQqvh7/ldw8A==",
+        "shasum": "8ae509671ecdfbd5009fc99b0f19ae9c3a2abf50",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-2.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6652,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlch8CRA9TVsSAnZWagAAczkQAImdg8F1+IQIji5W0Ay9\n2QlJI6lM+oIFBpX7IvGGr3+tcL8itYHxpRqzct6dT+Kcgol4Q8B418KTg0qP\niFFYCHQiRYMMaY/segWVC5n3/UlW6Nu8JjjcWKXA1+Vwb26fKQrZG4pH++xM\nystG+DJ0EQCFVaR4jcbtUHPvPOLSCFCC05sdvHLEzP6tP12kHFfkJ+uD1F6F\nOeoRAa6MTc06pVOvB4HLtInRw3VFz/ChN7naIQ8U309XiIMj52GA6tOqoe9E\nh2QKFZt2BU1qoOSmii5R/ZeIX9mECKhg66WjAwhKk3Z7eX9KdNJSNLRjfgmQ\nKU/U2w7m5Bsej9c3fynFBoe4+9352PNP4cBQvcmRRoyCpzrXMYmp8oKOa2wj\n6w2F9HiQfj4asWuwLVDWLt0akA3KK+M6si5YsdJRXW4ZIwfg6Sk7Zmn9W0dK\n0IpvXI22JtYA9LqUAyKnaZPLWYRbItbc9Njo3f+5suGZLDf78tzpYK+zCcaB\nFOq7MSHNZtrqlFAh65+UIKvSaIuARDOp386S0Zz099WMDdrUhkvOtg2CcpWf\ndmL29HWk9wtgeC0VN8nv44YFHAJHo6Wgz4e6EAVx1Y3uDqu8fQxYmkdWu5v0\n0mPHIyL098htMZYk4fDiVyhtJry7nkF5satMCv+kz6sjA8Lj6he4GP4JCzi0\nAzA1\r\n=T+Pb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_2.1.1_1570097275300_0.040678358125094016"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "auto-bind",
+      "version": "3.0.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "devDependencies": {
+        "@types/react": "^16.9.9",
+        "ava": "^2.4.0",
+        "tsd": "^0.9.0",
+        "xo": "^0.25.3"
+      },
+      "peerDependencies": {
+        "@types/react": ">=16.8.0"
+      },
+      "peerDependenciesMeta": {
+        "@types/react": {
+          "optional": true
+        }
+      },
+      "gitHead": "f54e296bab085afb3d0fdb215a4112755f56f206",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@3.0.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-v0A231a/lfOo6kxQtmEkdBfTApvC21aJYukA8pkKnoTvVqh3Wmm7/Rwy4GBCHTTHVoLVA5qsBDDvf1XY1nIV2g==",
+        "shasum": "67773e64899b228f6d2a841709e7e086cfed31a3",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6636,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdqr/uCRA9TVsSAnZWagAAoBUP/28m0OdGYdw5DjtiN6zt\n+tohpVo5YxQ8eGFtnG3/V3xr8aJaJOy6XqXlEn9H9dPPMLd6DZ8STRVVpggr\nn9cj5jhosSqXkOXS4PPsKZ4eDccsStRpFwHoWZ2/hKTK4kMisTjWvJ0n3L2t\nJa8Nh/+eB3ULNm+iZ41VBerPSMCCVJfn5JQSf6LDDK9HC9REc9rEEKHEfdXX\nx4lq35vWEUQJeVNIe7coX2PpvBfj4SMVZixI3si4qMAFYuEQ4iCGDp2D8iNA\nJJEXK3+gCAFY/HjImqX4zrdZGUXRM3VcdOCdxDWqrbV4MwFNlyf+ceN5ZefR\nqp6Kn3q2+qDuxwvOCK0dlu/fDOroA8Mj6Ux4ii2qvXPPEVs2Aa1uZslfWwLg\nROmAWnFKvMOcDjT0FIC/ajbR3rnvBBnO7RPnIBRO8AoGv89OjMCERWZF59IP\n8vD15DBxDEEuJhzaxR4tB4XoUuKjq4izef4Kxc+QzHrql9xGpO1urTqqbZoV\nCSpZcWmv9I+7ppTpWpTEwHb5eN4d3lCPe0xJUP1W1wskyVjYcSPrpKWQwUCV\n1NAk7MPHnJkYeLi0BCp2/SPn5qXDrf/U2jDY33a+EhDB5/V86qzQtTme4LAR\nKxMaXHrdYRdz3adj+HotvG3/ruAxa6ArFx9iGNj3ydTweEife/Dm1Bq51l7a\nOsJZ\r\n=p2J9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_3.0.0_1571471341575_0.8873048382184678"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "auto-bind",
+      "version": "4.0.0",
+      "description": "Automatically bind methods to their class instance",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/auto-bind.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "auto",
+        "bind",
+        "class",
+        "methods",
+        "method",
+        "automatically",
+        "prototype",
+        "instance",
+        "function",
+        "this",
+        "self",
+        "react",
+        "component"
+      ],
+      "devDependencies": {
+        "@types/react": "^16.9.9",
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "1f3e975d842cbceaa40ed6abdf680e54a9a3ef43",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/auto-bind/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+      "_id": "auto-bind@4.0.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==",
+        "shasum": "e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb",
+        "tarball": "https://registry.npmjs.org/auto-bind/-/auto-bind-4.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 6703,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd92mvCRA9TVsSAnZWagAAyhIP/1BXL9fgsWtEeaskvGWm\n9+D4L5MnU4kfpUlZLJLDWEnDDworaehhofZyxTtCox8DE8BNdgVRjbOg3tIL\n15RWVVMucsXUXETuzbyYuHSdy+DllplXx4RXEY74fVrDfCN+tZZWjv6gyOWW\nODdt5DHWrEgaCw3VrrzwyFxeQaZi6yxmufOpSM7OgHKgYR1V+qbEay1Lzttq\nypFiZjEb0MNuYOmELyYH5ogWKQ1yuWw0SK1kiZEKFseKk17ue3IYAM5hTD7/\n5ExsOqd+vYTPgA9t2BDqzeuRyFA8FOh1/l+K2TR7ms/a/ZlEcPOL2G4ydHNy\neghl84v6c9OCwEEUTZuIu3NR2/IIYYT8orb3G4bPyrbpmzbUNA6Vc7VSBYGD\n6dCkv34iXSCPIIMWxXpJZVa36O5NxBs62RWMOYurnewg2ns1FsTCGS4kho95\n7k4KQx9HTgDTzO6nSZiwkuKFtoIDYKJljijAuo7wEY5WO7DqrVGpZLKJ5BX1\nv/sZ6xjWHqNLcb4i97zsTBoB2huR2F0hiedmSFskSOqwJoVqi6CeIhp+vCg0\n7foaQtmTvnSNr4CS4/8AqPANco5BBYzwdtKpefwfxFS9hPaa9tUm6cSnu2jn\nH+w3T/UzjJQyD8v2gcO0Zw7+OsTTwwIn8yLXdpb4wMz0agH2y48xI+KVTHcm\naYjn\r\n=X1q5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/auto-bind_4.0.0_1576495535089_0.729291577961503"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# auto-bind [![Build Status](https://travis-ci.org/sindresorhus/auto-bind.svg?branch=master)](https://travis-ci.org/sindresorhus/auto-bind)\n\n> Automatically bind methods to their class instance\n\nIt also correctly binds inherited properties.\n\n## Install\n\n```\n$ npm install auto-bind\n```\n\n## Usage\n\n```js\nconst autoBind = require('auto-bind');\n\nclass Unicorn {\n\tconstructor(name) {\n\t\tthis.name = name;\n\t\tautoBind(this);\n\t}\n\n\tmessage() {\n\t\treturn `${this.name} is awesome!`;\n\t}\n}\n\nconst unicorn = new Unicorn('Rainbow');\n\n// Grab the method off the class instance\nconst message = unicorn.message;\n\n// Still bound to the class instance\nmessage();\n//=> 'Rainbow is awesome!'\n\n// Without `autoBind(this)`, the above would have resulted in\nmessage();\n//=> Error: Cannot read property 'name' of undefined\n```\n\n## API\n\n### autoBind(self, options?)\n\nBind methods in `self` to their class instance.\n\nReturns the `self` object.\n\n#### self\n\nType: `object`\n\nObject with methods to bind.\n\n#### options\n\nType: `object`\n\n##### include\n\nType: `Array<string | RegExp>`\n\nBind only the given methods.\n\n##### exclude\n\nType: `Array<string | RegExp>`\n\nBind methods except for the given methods.\n\n### React\n\nSame as `autoBind`, but excludes the default [React component methods](https://reactjs.org/docs/react-component.html).\n\n```js\nconst autoBindReact = require('auto-bind/react');\n\nclass Foo extends React.Component {\n\tconstructor(props) {\n\t\tsuper(props);\n\t\tautoBindReact(this);\n\t}\n\n\t// …\n}\n```\n\n## Related\n\n- [bind-methods](https://github.com/sindresorhus/bind-methods) - Bind all methods in an object to itself or a specified context\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-16T11:25:37.708Z",
+    "created": "2016-08-09T19:47:29.798Z",
+    "0.1.0": "2016-08-09T19:47:29.798Z",
+    "1.0.0": "2017-01-13T09:52:33.826Z",
+    "1.1.0": "2017-01-30T15:01:06.462Z",
+    "1.2.0": "2018-01-19T21:44:22.085Z",
+    "1.2.1": "2018-06-20T09:35:15.930Z",
+    "2.0.0": "2018-12-23T00:49:25.233Z",
+    "2.1.0": "2019-04-07T10:14:10.955Z",
+    "2.1.1": "2019-10-03T10:07:55.429Z",
+    "3.0.0": "2019-10-19T07:49:01.722Z",
+    "4.0.0": "2019-12-16T11:25:35.198Z"
+  },
+  "homepage": "https://github.com/sindresorhus/auto-bind#readme",
+  "keywords": [
+    "auto",
+    "bind",
+    "class",
+    "methods",
+    "method",
+    "automatically",
+    "prototype",
+    "instance",
+    "function",
+    "this",
+    "self",
+    "react",
+    "component"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/auto-bind.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/auto-bind/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "cwagner": true,
+    "cschmitz81": true
+  }
+}

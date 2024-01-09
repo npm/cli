@@ -1,0 +1,9 @@
+{"name":"links-all-over",
+  "version":"1.2.3",
+  "dependencies":{
+    "nest":"",
+    "link-outside-nest": "",
+    "link-deep":"",
+    "link-link":""
+  }
+}

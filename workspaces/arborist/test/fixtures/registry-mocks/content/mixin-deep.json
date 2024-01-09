@@ -1,0 +1,1183 @@
+{
+  "_id": "mixin-deep",
+  "_rev": "19-9f0b63783f00abbbff79b5ceab69ed2a",
+  "name": "mixin-deep",
+  "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone. No dependencies.",
+  "dist-tags": {
+    "latest": "2.0.1",
+    "patch": "1.3.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object, while also mixing-in child objects.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/jonschlinkert/mixin-deep/blob/master/LICENSE-MIT"
+        }
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4",
+        "verb": ">= 0.2.6",
+        "verb-tag-jscomments": ">= 0.2.0"
+      },
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "dependencies": {
+        "for-own": "^0.1.1",
+        "is-plain-object": "^0.1.0"
+      },
+      "_id": "mixin-deep@0.1.0",
+      "_shasum": "2cc75d77097f309e9d46ed931e5d4c038485f9a8",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2cc75d77097f309e9d46ed931e5d4c038485f9a8",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-0.1.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.0.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/mixin-deep/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-own": "^0.1.1",
+        "is-plain-object": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "docs",
+        "documentation",
+        "generate",
+        "generator",
+        "markdown",
+        "templates",
+        "verb"
+      ],
+      "gitHead": "5a058ff68c208e13ee9e55f9f7b4ce79f307536a",
+      "_id": "mixin-deep@1.0.0",
+      "_shasum": "da0dada8c8828b7705548dfbbf1e87d9ff92f22d",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "da0dada8c8828b7705548dfbbf1e87d9ff92f22d",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.0.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.0.1": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/mixin-deep/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-own": "^0.1.1",
+        "is-plain-object": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.0.4"
+      },
+      "keywords": [
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "gitHead": "b1e7e38d630c0d3a42281b532ac806d5aefe1097",
+      "_id": "mixin-deep@1.0.1",
+      "_shasum": "0c1abf7e8e092cbd6406f2349518b81eb7d472be",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0c1abf7e8e092cbd6406f2349518b81eb7d472be",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.0.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.1.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/mixin-deep/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-own": "^0.1.3",
+        "is-plain-object": "https://registry.npmjs.org/is-plain-object/-/is-plain-object-2.0.0.tgz"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "gitHead": "3e841019a4deed18c396a6b19286a09e807fc090",
+      "_id": "mixin-deep@1.1.0",
+      "_shasum": "c71703303befdb2a711cfe61e46120f643d324b2",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c71703303befdb2a711cfe61e46120f643d324b2",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.1.0.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.1.1": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jonschlinkert/mixin-deep"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-own": "^0.1.3",
+        "is-plain-object": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.4",
+        "should": "^6.0.1"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "gitHead": "12c370c9fd143d2b138127978849bd95097dab77",
+      "_id": "mixin-deep@1.1.1",
+      "_shasum": "bb9d03823bc571889186b59d04d7376cc039163b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bb9d03823bc571889186b59d04d7376cc039163b",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.1.1.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.1.2": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.1.2",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^0.1.4",
+        "is-extendable": "^0.1.1",
+        "lazy-cache": "^0.2.3"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verbiage": {
+        "related": {
+          "list": [
+            "mixin-object",
+            "merge-deep",
+            "extend-shallow",
+            "defaults-deep"
+          ]
+        }
+      },
+      "gitHead": "42be8f881bae69a3905aaf966fe32f5315aa840a",
+      "_id": "mixin-deep@1.1.2",
+      "_shasum": "9cc21ac7346ace189a55ede02c825b36995a1151",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9cc21ac7346ace189a55ede02c825b36995a1151",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.1.2.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.1.3": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.1.3",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^0.1.4",
+        "is-extendable": "^0.1.1"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verbiage": {
+        "related": {
+          "list": [
+            "mixin-object",
+            "merge-deep",
+            "extend-shallow",
+            "defaults-deep"
+          ]
+        }
+      },
+      "gitHead": "9bd6fc1f796479c74231ef5264e3cd013b99ceb5",
+      "_id": "mixin-deep@1.1.3",
+      "_shasum": "b94ca376dcb8849b4a20a0adb3a4b7cbd85ddbb5",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b94ca376dcb8849b4a20a0adb3a4b7cbd85ddbb5",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.1.3.tgz"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.2.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.2.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^1.0.2",
+        "is-extendable": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.11",
+        "mocha": "^3.2.0",
+        "should": "^11.2.0"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "1fd69f785f70bb51913f1d8b1d0ec61e4e6d3891",
+      "_id": "mixin-deep@1.2.0",
+      "_shasum": "d02b8c6f8b6d4b8f5982d3fd009c4919851c3fe2",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d02b8c6f8b6d4b8f5982d3fd009c4919851c3fe2",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mixin-deep-1.2.0.tgz_1488462043417_0.054786209715530276"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.3.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.3.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^1.0.2",
+        "is-extendable": "^1.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3",
+        "should": "^13.1.3"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "63c846e55bec26d38cb557b0d0b5fa7374272970",
+      "_id": "mixin-deep@1.3.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-dgaCvoh6i1nosAUBKb0l0pfJ78K8+S9fluyIR2YvAeUD/QuMahnFnF3xYty5eYXMjhGSsB0DsW6A0uAZyetoAg==",
+        "shasum": "47a8732ba97799457c8c1eca28f95132d7e8150a",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mixin-deep-1.3.0.tgz_1512802157878_0.45425405353307724"
+      },
+      "directories": {},
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "1.3.1": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.3.1",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^1.0.2",
+        "is-extendable": "^1.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3",
+        "should": "^13.1.3"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a4bcf3ef9cdc144c4c39ff8f1e1f566f338c477e",
+      "_id": "mixin-deep@1.3.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8ZItLHeEgaqEvd5lYBXfm4EZSFCX29Jb9K+lAHhDKzReKBQKj3R+7NOF6tjqYi9t4oI8VUfaWITJQm86wnXGNQ==",
+        "shasum": "a49e7268dce1a0d9698e45326c5626df3543d0fe",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.3.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6982
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mixin-deep_1.3.1_1518020927684_0.7699699187019273"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "2.0.0": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone. No dependencies.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^5.2.0"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "001c539cfcf945b47c9cd5728eeca24f014ce96b",
+      "_id": "mixin-deep@2.0.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-2tAhDtV+OCFCeknyf2cJD5rD+xfvM2ax/RZ3iI1G67Eh6x5UxKJlGDVpmCX27y7WvuXpAkMHQs9ooaxIHIit+A==",
+        "shasum": "9dfd525156720ec6cbee14fcb4b968253ba358ee",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6849,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbRg/4CRA9TVsSAnZWagAA5dYP/3L/H7MfbLD/h8yVjTkt\n9CIh17vWQiD17t3IIPTcGcVWKHyH+uVLWPyemG/Uz0tQqq1HT04T2q+z9z5n\nd5iJC/CZkjokDe/jpNZOYB6YTAUc+OLMacg2KXXMD5nN63qo2uiMgj2Rj8b2\n9RD4rC4aKk9iXwcPjdqDlrt7wJBc68msBkkWZdXU4UmkZQ9SS/yToNtom8kr\nYXgBA3POZoGrVmDzt2heONo+U8YqWAJt3k2r5OXr/d+RLvNMRQ84fbU9PwHM\nQ3s/2hJbtOCJgtifoBUwrzLNbkeYjuJeNLabXnr1SWvdrF2Dd4EhyHp2uiVa\n0JdwBQ0vl2j03rMNpTizMN72150xyNOvIbYuYaRm90OHKm9xJDETVuHv3YoL\nNXMuHUDL5Fu/iIqbO+9ortFSyXmVhKGnP5BCRLVapGx7exmEaYT5Teyj6o0K\nVEoGb/csZiTZAvQuYjqFNGNzdrKNhEE1M1vI68C7OczwH9c4PMcGcPc3Gf9u\n5JBi8hvN9+iNnBXi1FH5M05ihpuhlcAKcH3Tm2bVqdjqX/GkeDwyDs8A/zSk\nc/4tImI/VgfU2hDtyG7PCsL8VuJV0UZW1o7hJ5NHIvUjvqfYTJT8RabGzQCP\n5KoLRgERe1KS7njCn9sTNEJ8k6yq68qFIs6NgNbBoekSpZUp/IFMhMW2ur7O\n3yO9\r\n=w8qJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mixin-deep_2.0.0_1531318264592_0.47633371131625823"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "Critical bug fixed in v2.0.1, please upgrade to the latest version."
+    },
+    "2.0.1": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone. No dependencies.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^6.1.4"
+      },
+      "keywords": [
+        "assign",
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "8f464c8ce9761a8c9c2b3457eaeee9d404fa7af9",
+      "_id": "mixin-deep@2.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-imbHQNRglyaplMmjBLL3V5R6Bfq5oM+ivds3SKgc6oRtzErEnBUUc5No11Z2pilkUvl42gJvi285xTNswcKCMA==",
+        "shasum": "9a6946bef4a368401b784970ae3caaaa6bab02fa",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7305,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdCnUiCRA9TVsSAnZWagAAK08QAIR0fEZ46KOzX/+zqYeb\nXlp4GGiZ2UtZCGmXZ7J0dNg6Hbw+e5HDVlUtxLe1JQ6ArcCnNuFr//JLqhHP\ns4aBQCI1oidk38Qz2E5BeBMLOCjQqZ1ep/lgsmLiNeBA/HNdCCK+vICzQqDB\nVLUqW8IRaho4FlBoH7U+Fna7phpdE3WR/nIQlDqUwSkCcoUugyYbBgRVM2gB\nQx/RWS8CAEm+DPjR2UfM8TG+hFNdVfXQkv5dIX3NDs08ZCtKLigGYmMa/GXy\nlDe+6qHArMqMXWCevMcoWFn8PH3MvUoclAbhvN2BncnaaSJF0zwT+rjeRwlf\npscPeQt7fW+64lorb85xcsVe7ZVOOY7a7cWlvftbUmuXuQZXIrg714uP3ZtA\nFqmKcFBrSdT9/723Yxs19OlSpqkPCsiZQQ5VgIXJI8iC93i4wmyigoSVFcSO\nY4YSORnaGJwIEpGI0MecBJrdWPnN8U7cjMYDvV4KIAxiN4QOcRqSShJtxL5B\nI73H5KR/DuLivGZ7KlAWJXNeTcoX9QkGzLahkxh3Ph++gNSUB4yCMb/MRKJN\n9RrTpsBRkV377XFlbWCkZO67LOYiGVNccirDTwDDlDjitQK+nKuLAtpXC56U\nAjAhSTa8sRnk1/mMzxN/CLgWxbPzBvf0YE+fJaC0ZfD+ONPIgccKgaIRkeAR\nyYhk\r\n=MIEJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mixin-deep_2.0.1_1560966434433_0.28435897851107605"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.2": {
+      "name": "mixin-deep",
+      "description": "Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.",
+      "version": "1.3.2",
+      "homepage": "https://github.com/jonschlinkert/mixin-deep",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "for-in": "^1.0.2",
+        "is-extendable": "^1.0.1"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^1.0.0",
+        "mocha": "^3.5.3",
+        "should": "^13.1.3"
+      },
+      "keywords": [
+        "deep",
+        "extend",
+        "key",
+        "keys",
+        "merge",
+        "mixin",
+        "object",
+        "prop",
+        "properties",
+        "util",
+        "values"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "defaults-deep",
+            "extend-shallow",
+            "merge-deep",
+            "mixin-object"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "readme": "# mixin-deep [![NPM version](https://img.shields.io/npm/v/mixin-deep.svg?style=flat)](https://www.npmjs.com/package/mixin-deep) [![NPM monthly downloads](https://img.shields.io/npm/dm/mixin-deep.svg?style=flat)](https://npmjs.org/package/mixin-deep) [![NPM total downloads](https://img.shields.io/npm/dt/mixin-deep.svg?style=flat)](https://npmjs.org/package/mixin-deep) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/mixin-deep.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/mixin-deep)\n\n> Deeply mix the properties of objects into the first object. Like merge-deep, but doesn't clone.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save mixin-deep\n```\n\n## Usage\n\n```js\nvar mixinDeep = require('mixin-deep');\n\nmixinDeep({a: {aa: 'aa'}}, {a: {bb: 'bb'}}, {a: {cc: 'cc'}});\n//=> { a: { aa: 'aa', bb: 'bb', cc: 'cc' } }\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [defaults-deep](https://www.npmjs.com/package/defaults-deep): Like `extend` but recursively copies only the missing properties/values to the target object. | [homepage](https://github.com/jonschlinkert/defaults-deep \"Like `extend` but recursively copies only the missing properties/values to the target object.\")\n* [extend-shallow](https://www.npmjs.com/package/extend-shallow): Extend an object with the properties of additional objects. node.js/javascript util. | [homepage](https://github.com/jonschlinkert/extend-shallow \"Extend an object with the properties of additional objects. node.js/javascript util.\")\n* [merge-deep](https://www.npmjs.com/package/merge-deep): Recursively merge values in a javascript object. | [homepage](https://github.com/jonschlinkert/merge-deep \"Recursively merge values in a javascript object.\")\n* [mixin-object](https://www.npmjs.com/package/mixin-object): Mixin the own and inherited properties of other objects onto the first object. Pass an… [more](https://github.com/jonschlinkert/mixin-object) | [homepage](https://github.com/jonschlinkert/mixin-object \"Mixin the own and inherited properties of other objects onto the first object. Pass an empty object as the first arg to shallow clone.\")\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2017, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on December 09, 2017._",
+      "readmeFilename": "README.md",
+      "gitHead": "754f0c20e1bc13ea5a21a64fbc7d6ba5f7b359b9",
+      "_id": "mixin-deep@1.3.2",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WRoDn//mXBiJ1H40rqa3vH0toePwSsGb45iInWlTySa+Uu4k3tYUSxa2v1KqAiLtvlrSzaExqS1gtk96A9zvEA==",
+        "shasum": "1120b43dc359a785dce65b55b82e257ccf479566",
+        "tarball": "https://registry.npmjs.org/mixin-deep/-/mixin-deep-1.3.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7218,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdETOtCRA9TVsSAnZWagAA1NIP/idtDr0Qv4R1WAsehQ5y\nj+06aOauz42JE8j3n/RKnCjSWMyXGKCTVLNRuklpgdmOO+ctFaG7Dyxv3C0N\nfbA8+tlQEM47BTafBH/DSQ83G9lOGUazrBqjbV+fJAGPK+cniUcsQprN0J/B\nfcOVy5bSWbQ/LXIbNiT2sexUiPSZGV1PqXRLlirQE8kPfqZDMTET+7TeFerW\nUeMg5zpC4WhpFWWzBz+KwLF0h4HzJ/onfUxkvr8uQjPzwaCFeKvMnHoXg9K9\n86bF8/ArscuxuCiMZp9/ZzNaZH6EHUTmX+SQWm4kB73XIDwUDX78ZB8kKvzY\n6v6UI5llgyAb1duq8q2+0eh4pWZx7txU4tjtJWVdGMDviHpnDe4ah3k74yia\nFydR821vSY3sGRQ/giJ72U7AVqvScldK2+affudjhXKjrmWMegckwRvbVXqx\nV8h3ys9OS58aAQNXAM7iodzKeK/DgKmqeodDtFHvs9fjPZzgt5gSiJOZxaJb\n3nbtvb2Fg4Dx0oK4bpsIb8XFaRtSBqKLepAb/4rC/mEq8w0A4Qy0k1WM4oj0\nJtlVVk7qIHcE1Pk0j8lTnQXihddTsUKeaafefg0ihPHR6jkysDtU06qqZfxl\nnHj0BtGuYkiJcI7BtJuujnJkSV00OiDxNb6jXIJ1XM/zpB8LnrO/PTK8oVE7\nTiY7\r\n=d+FA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mixin-deep_1.3.2_1561408427714_0.4791168203489897"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-24T20:33:52.942Z",
+    "created": "2014-09-22T15:35:27.479Z",
+    "0.1.0": "2014-09-22T15:35:27.479Z",
+    "1.0.0": "2015-02-25T11:12:05.807Z",
+    "1.0.1": "2015-02-25T11:15:53.045Z",
+    "1.1.0": "2015-04-30T00:52:05.053Z",
+    "1.1.1": "2015-05-28T07:48:33.261Z",
+    "1.1.2": "2015-08-21T06:31:29.552Z",
+    "1.1.3": "2015-08-29T02:08:42.473Z",
+    "1.2.0": "2017-03-02T13:40:45.198Z",
+    "1.3.0": "2017-12-09T06:49:17.954Z",
+    "1.3.1": "2018-02-07T16:28:48.500Z",
+    "2.0.0": "2018-07-11T14:11:04.678Z",
+    "2.0.1": "2019-06-19T17:47:14.541Z",
+    "1.3.2": "2019-06-24T20:33:47.877Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/mixin-deep",
+  "keywords": [
+    "assign",
+    "deep",
+    "extend",
+    "key",
+    "keys",
+    "merge",
+    "mixin",
+    "object",
+    "prop",
+    "properties",
+    "util",
+    "values"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/mixin-deep.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/mixin-deep/issues"
+  },
+  "readmeFilename": "",
+  "license": "MIT",
+  "users": {
+    "delacap": true
+  }
+}

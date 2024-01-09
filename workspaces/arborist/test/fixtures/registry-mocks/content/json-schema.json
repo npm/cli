@@ -1,0 +1,335 @@
+{
+  "_id": "json-schema",
+  "_rev": "20-343cd9be7cc8518323a82c76ae4320e3",
+  "name": "json-schema",
+  "description": "JSON Schema validation and specifications",
+  "dist-tags": {
+    "latest": "0.2.5"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "json-schema",
+      "version": "0.2.0",
+      "author": {
+        "name": "Kris Zyp"
+      },
+      "description": "JSON Schema validation and specifications",
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "keywords": [
+        "json",
+        "schema"
+      ],
+      "licenses": [
+        {
+          "type": "AFLv2.1",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+        },
+        {
+          "type": "BSD",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/kriszyp/json-schema"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/validate.js",
+      "devDependencies": {
+        "vows": "*"
+      },
+      "scripts": {
+        "test": "echo TESTS DISABLED vows --spec test/*.js"
+      },
+      "_id": "json-schema@0.2.0",
+      "dist": {
+        "shasum": "c17432e27bfedeef39c72c8e5cdc7243f46f70d7",
+        "tarball": "https://registry.npmjs.org/json-schema/-/json-schema-0.2.0.tgz"
+      }
+    },
+    "0.2.2": {
+      "name": "json-schema",
+      "version": "0.2.2",
+      "author": {
+        "name": "Kris Zyp"
+      },
+      "description": "JSON Schema validation and specifications",
+      "maintainers": [
+        {
+          "name": "kriszyp",
+          "email": "kriszyp@gmail.com"
+        }
+      ],
+      "keywords": [
+        "json",
+        "schema"
+      ],
+      "licenses": [
+        {
+          "type": "AFLv2.1",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+        },
+        {
+          "type": "BSD",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/kriszyp/json-schema"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/validate.js",
+      "devDependencies": {
+        "vows": "*"
+      },
+      "scripts": {
+        "test": "echo TESTS DISABLED vows --spec test/*.js"
+      },
+      "_id": "json-schema@0.2.2",
+      "dist": {
+        "shasum": "50354f19f603917c695f70b85afa77c3b0f23506",
+        "tarball": "https://registry.npmjs.org/json-schema/-/json-schema-0.2.2.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "kriszyp",
+        "email": "kriszyp@gmail.com"
+      }
+    },
+    "0.2.3": {
+      "name": "json-schema",
+      "version": "0.2.3",
+      "author": {
+        "name": "Kris Zyp"
+      },
+      "description": "JSON Schema validation and specifications",
+      "maintainers": [
+        {
+          "name": "kriszyp",
+          "email": "kriszyp@gmail.com"
+        }
+      ],
+      "keywords": [
+        "json",
+        "schema"
+      ],
+      "licenses": [
+        {
+          "type": "AFLv2.1",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+        },
+        {
+          "type": "BSD",
+          "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/json-schema.git"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/validate.js",
+      "devDependencies": {
+        "vows": "*"
+      },
+      "scripts": {
+        "test": "echo TESTS DISABLED vows --spec test/*.js"
+      },
+      "gitHead": "07ae2c618b5f581dbc108e065f4f95dcf0a1d85f",
+      "bugs": {
+        "url": "https://github.com/kriszyp/json-schema/issues"
+      },
+      "homepage": "https://github.com/kriszyp/json-schema#readme",
+      "_id": "json-schema@0.2.3",
+      "_shasum": "b480c892e59a2f05954ce727bd3f2a4e882f9e13",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.1.0",
+      "_npmUser": {
+        "name": "kriszyp",
+        "email": "kriszyp@gmail.com"
+      },
+      "dist": {
+        "shasum": "b480c892e59a2f05954ce727bd3f2a4e882f9e13",
+        "tarball": "https://registry.npmjs.org/json-schema/-/json-schema-0.2.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/json-schema-0.2.3.tgz_1473699189380_0.7420965158380568"
+      }
+    },
+    "0.2.4": {
+      "name": "json-schema",
+      "version": "0.2.4",
+      "author": {
+        "name": "Kris Zyp"
+      },
+      "description": "JSON Schema validation and specifications",
+      "maintainers": [
+        {
+          "name": "kriszyp",
+          "email": "kriszyp@gmail.com"
+        }
+      ],
+      "keywords": [
+        "json",
+        "schema"
+      ],
+      "license": "(AFL-2.1 OR BSD-3-Clause)",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/json-schema.git"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/validate.js",
+      "devDependencies": {
+        "vows": "*"
+      },
+      "scripts": {
+        "test": "echo TESTS DISABLED vows --spec test/*.js"
+      },
+      "gitHead": "6b8b8cadb5802de44acbb261c3dece147472ebfb",
+      "bugs": {
+        "url": "https://github.com/kriszyp/json-schema/issues"
+      },
+      "homepage": "https://github.com/kriszyp/json-schema#readme",
+      "_id": "json-schema@0.2.4",
+      "_nodeVersion": "12.9.1",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Y+abRmOZ+Er9FEEw7d/VACLgSASqjdaPBsJXdVHKnIbJdHq/62Wv5x2Ndh706je7cZfX/qLpfPT4prkbpru71w==",
+        "shasum": "66f1dd303e8672dac684b246cb17859c841f5bb5",
+        "tarball": "https://registry.npmjs.org/json-schema/-/json-schema-0.2.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25747,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcc83CRA9TVsSAnZWagAA5jIP+gK9PPLj9adFOS5ceQGt\nAIXaB2X9KBCVZ/jUt5BnoLLdR1ruZninNgtdcJ9ZJVjFeoRw4BvM1MEDjZj/\npZdKdQjVv1DsBP2rb6pSGlacHaENctlPHuiFf+PFCeO6TYNmt3YIc99TazFf\np2ruF96vglHteGMwOAeULf8DVBOSApnL5AhF8FpenMM9BTYIXPJJh3bSSITU\nkzvO9XeAJtXr5J5cmHnHVrQuFT5NxPpsson8LbDBRtUI4v029/J4jfITX2s7\n0Mh2houFVYwii0AjzLOWKU7QAfbYIzRfh35sERCRh3Uv0g1/usCYZfiUZmyn\nLagOhZCz/mTEL+APQ6eEIGzUzImgiTWxdIacnPhtmoIA7tVAhUSwHRDXfTng\nmh0HBfapO8XJIquN5QwhArtYmlvjkKf/VnAZx/b7aEBReRpXYKFbRXnOAz2C\nUHD/P7hFld6+fbwPzaugVZrRX5vK6lBkGUGx9u4P5PfweHgYXrzycQt7MECo\nvdg7aRUp8dAsHBoN/rUc1X7o0Li5ofOtBXs55BrpkMAUuqeagDRudvZvvVAb\nzviXpNL5Zu/2IeqGH7lyBdxn3PsLnzW0O3H04a+F1Os8AaETKgg1EEG61pL4\nC8IfaqM9FMF+800U1zOjxfk6EJmNtQkGi9HALz/F7fED2XvRdy+pUCgeCOMt\nGzlU\r\n=06/T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "kriszyp",
+        "email": "kriszyp@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_0.2.4_1567739703096_0.7037460014130876"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.5": {
+      "name": "json-schema",
+      "version": "0.2.5",
+      "author": {
+        "name": "Kris Zyp"
+      },
+      "description": "JSON Schema validation and specifications",
+      "maintainers": [
+        {
+          "name": "kriszyp",
+          "email": "kriszyp@gmail.com"
+        }
+      ],
+      "keywords": [
+        "json",
+        "schema"
+      ],
+      "license": "(AFL-2.1 OR BSD-3-Clause)",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/kriszyp/json-schema.git"
+      },
+      "directories": {
+        "lib": "./lib"
+      },
+      "main": "./lib/validate.js",
+      "devDependencies": {
+        "vows": "*"
+      },
+      "scripts": {
+        "test": "echo TESTS DISABLED vows --spec test/*.js"
+      },
+      "gitHead": "1e4c8aa55cc7c44105d87031368b6003637d9ef7",
+      "bugs": {
+        "url": "https://github.com/kriszyp/json-schema/issues"
+      },
+      "homepage": "https://github.com/kriszyp/json-schema#readme",
+      "_id": "json-schema@0.2.5",
+      "_nodeVersion": "12.9.1",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-gWJOWYFrhQ8j7pVm0EM8Slr+EPVq1Phf6lvzvD/WCeqkrx/f2xBI0xOsRRS9xCn3I4vKtP519dvs3TP09r24wQ==",
+        "shasum": "97997f50972dd0500214e208c407efa4b5d7063b",
+        "tarball": "https://registry.npmjs.org/json-schema/-/json-schema-0.2.5.tgz",
+        "fileCount": 5,
+        "unpackedSize": 25605,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcdMhCRA9TVsSAnZWagAATqYP/0pNXcnFLyHO5aJ00uC+\nTCOVSSOp7/BcffyX+GSvM065jKt6rfL9qJM+mNKs+mOkiPMV0ics5PTJxAnQ\nerq0uEEcwN2AtK/62S1Z583DbDwuD+m9GTUIBKQARdwBRs9ChaDrAXfV2rYI\nr2XygkVdvZTu2ZLOb1FurMsJ69EP5Lv5Nb0R+7sDvglhrLEXHDgRzkpHSBA0\nk2ATuRc75iBMucHq+d5hIM6pU3RorgTDGtWrBE0tHkh/lrDtMSyhM15vZmTo\n49iHc1tCpinJsnlMmtFzGcIcuSOwvwxCFlJeKGL36cfyh7+kK9k8Hl1WU4xP\nlyqmfP5EOdZ4X3Z3FrzvYhVA4SqQ1SfuODOhmSh1uVVfVoENIbeh5bIwfMN5\nAe/6hEi+FQOvuQYv6Xbph+viWCvrRYondHDOn1xDPNSZHCyvxJiChAaGgdtq\nAc9wTeBbNrLOAT7Qje8z4V4xZPI3BJdjuGAZrHyqCVgIpss3U/gnwQyRol3V\nJtQETfxsVlLRsDpQc7wEAdnPbbrR1jV9H30m9uxtI1+QQxP7Jl0Gbs4RDPvq\niNQWoWAMYvy4GlakHc8m8L8Ew9VqsOIi2VLPrQKzQDJANOC0N+YQUBv05nSE\nc4hd2xxgIruPpg/Ic2OyElDkII398K34QkL4CHpIZelQAmfSkZnUh1cpUSQz\nDOXE\r\n=wo3l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "kriszyp",
+        "email": "kriszyp@gmail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_0.2.5_1567740705040_0.3362981539498242"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "JSON Schema is a repository for the JSON Schema specification, reference schemas and a CommonJS implementation of JSON Schema (not the only JavaScript implementation of JSON Schema, JSV is another excellent JavaScript validator).\r\n\r\nCode is licensed under the AFL or BSD 3-Clause license as part of the Persevere \r\nproject which is administered under the Dojo foundation,\r\nand all contributions require a Dojo CLA.",
+  "maintainers": [
+    {
+      "name": "kriszyp",
+      "email": "kriszyp@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-06T03:31:47.581Z",
+    "created": "2012-07-06T21:43:58.134Z",
+    "0.2.0": "2012-07-06T21:43:59.303Z",
+    "0.2.2": "2012-08-23T19:40:16.761Z",
+    "0.2.3": "2016-09-12T16:53:11.378Z",
+    "0.2.4": "2019-09-06T03:15:03.219Z",
+    "0.2.5": "2019-09-06T03:31:45.173Z"
+  },
+  "author": {
+    "name": "Kris Zyp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kriszyp/json-schema.git"
+  },
+  "users": {
+    "csardi": true,
+    "syzer": true,
+    "evan.lecompte": true,
+    "ddffx": true,
+    "mxlpitelik": true,
+    "cwagner": true,
+    "mojaray2k": true,
+    "natarajanmca11": true,
+    "kakaman": true,
+    "kentaroutakeda": true
+  },
+  "homepage": "https://github.com/kriszyp/json-schema#readme",
+  "keywords": [
+    "json",
+    "schema"
+  ],
+  "bugs": {
+    "url": "https://github.com/kriszyp/json-schema/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "(AFL-2.1 OR BSD-3-Clause)"
+}

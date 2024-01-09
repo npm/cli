@@ -1,0 +1,811 @@
+{
+  "_id": "lodash.flattendeep",
+  "_rev": "19-71b20cfbd865c8e49763e1bfd7011e49",
+  "name": "lodash.flattendeep",
+  "description": "The lodash method `_.flattenDeep` exported as a module.",
+  "dist-tags": {
+    "latest": "4.4.0"
+  },
+  "versions": {
+    "3.0.0": {
+      "name": "lodash.flattendeep",
+      "version": "3.0.0",
+      "description": "The modern build of lodash’s `_.flattenDeep` as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash",
+        "lodash-modularized",
+        "stdlib",
+        "util"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Benjamin Tan",
+          "email": "demoneaux@gmail.com",
+          "url": "https://d10.github.io/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com",
+          "url": "http://www.iceddev.com/"
+        },
+        {
+          "name": "Kit Cambridge",
+          "email": "github@kitcambridge.be",
+          "url": "http://kitcambridge.be/"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lodash/lodash"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@3.0.0",
+      "_shasum": "5e5468ca23d54f838adf06b75b97a293e0067daf",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e5468ca23d54f838adf06b75b97a293e0067daf",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "lodash.flattendeep",
+      "version": "3.0.1",
+      "description": "The modern build of lodash’s `_.flattenDeep` as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash",
+        "lodash-modularized",
+        "stdlib",
+        "util"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Benjamin Tan",
+          "email": "demoneaux@gmail.com",
+          "url": "https://d10.github.io/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com",
+          "url": "http://www.iceddev.com/"
+        },
+        {
+          "name": "Kit Cambridge",
+          "email": "github@kitcambridge.be",
+          "url": "http://kitcambridge.be/"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lodash/lodash"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@3.0.1",
+      "_shasum": "eb4d70213f9f9a15959ed03cf8c5a88a995412f7",
+      "_from": ".",
+      "_npmVersion": "2.6.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "d10",
+          "email": "demoneaux@gmail.com"
+        },
+        {
+          "name": "kitcambridge",
+          "email": "github@kitcambridge.be"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eb4d70213f9f9a15959ed03cf8c5a88a995412f7",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "lodash.flattendeep",
+      "version": "3.0.2",
+      "description": "The modern build of lodash’s `_.flattenDeep` as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash",
+        "lodash-modularized",
+        "stdlib",
+        "util"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Benjamin Tan",
+          "email": "demoneaux@gmail.com",
+          "url": "https://d10.github.io/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com",
+          "url": "http://www.iceddev.com/"
+        },
+        {
+          "name": "Kit Cambridge",
+          "email": "github@kitcambridge.be",
+          "url": "http://kitcambridge.be/"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/lodash/lodash"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "^3.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@3.0.2",
+      "_shasum": "478c9bbefd3076a26459df36cbccd6473bbb48e8",
+      "_from": ".",
+      "_npmVersion": "2.7.3",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "d10",
+          "email": "demoneaux@gmail.com"
+        },
+        {
+          "name": "kitcambridge",
+          "email": "github@kitcambridge.be"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "dist": {
+        "shasum": "478c9bbefd3076a26459df36cbccd6473bbb48e8",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "lodash.flattendeep",
+      "version": "4.0.0",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash",
+        "lodash-modularized",
+        "stdlib",
+        "util",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "^4.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.0.0",
+      "_shasum": "af918d065b3b229f86985bf123d6fe810c4ab5f8",
+      "_from": ".",
+      "_npmVersion": "2.14.15",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "af918d065b3b229f86985bf123d6fe810c4ab5f8",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.1.0": {
+      "name": "lodash.flattendeep",
+      "version": "4.1.0",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash-modularized",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine@iceddev.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "^4.0.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.1.0",
+      "_shasum": "43f3f8e2da2dcd666f167de72c2cddb74c60316f",
+      "_from": ".",
+      "_npmVersion": "2.14.18",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "43f3f8e2da2dcd666f167de72c2cddb74c60316f",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/lodash.flattendeep-4.1.0.tgz_1455615241591_0.02428830903954804"
+      },
+      "directories": {}
+    },
+    "4.1.1": {
+      "name": "lodash.flattendeep",
+      "version": "4.1.1",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash-modularized",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "~4.1.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.1.1",
+      "_shasum": "6d9a2a5ebe961c05468a3e1c4436697e379d89c1",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "6d9a2a5ebe961c05468a3e1c4436697e379d89c1",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lodash.flattendeep-4.1.1.tgz_1459310720028_0.9106116322800517"
+      },
+      "directories": {}
+    },
+    "4.2.0": {
+      "name": "lodash.flattendeep",
+      "version": "4.2.0",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash-modularized",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "dependencies": {
+        "lodash._baseflatten": "~4.2.0"
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.2.0",
+      "_shasum": "12fc3be427d00beb6a65a1e825c83ad12beae961",
+      "_from": ".",
+      "_npmVersion": "2.15.3",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "12fc3be427d00beb6a65a1e825c83ad12beae961",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lodash.flattendeep-4.2.0.tgz_1460126758725_0.7395635000430048"
+      },
+      "directories": {}
+    },
+    "4.3.0": {
+      "name": "lodash.flattendeep",
+      "version": "4.3.0",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash-modularized",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.3.0",
+      "_shasum": "5bc1e8dd219f4471ffdd07315ad5fa3b7edcb595",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "5bc1e8dd219f4471ffdd07315ad5fa3b7edcb595",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/lodash.flattendeep-4.3.0.tgz_1469457834516_0.08097737492062151"
+      },
+      "directories": {}
+    },
+    "4.4.0": {
+      "name": "lodash.flattendeep",
+      "version": "4.4.0",
+      "description": "The lodash method `_.flattenDeep` exported as a module.",
+      "homepage": "https://lodash.com/",
+      "icon": "https://lodash.com/icon.svg",
+      "license": "MIT",
+      "keywords": [
+        "lodash-modularized",
+        "flattendeep"
+      ],
+      "author": {
+        "name": "John-David Dalton",
+        "email": "john.david.dalton@gmail.com",
+        "url": "http://allyoucanleet.com/"
+      },
+      "contributors": [
+        {
+          "name": "John-David Dalton",
+          "email": "john.david.dalton@gmail.com",
+          "url": "http://allyoucanleet.com/"
+        },
+        {
+          "name": "Blaine Bublitz",
+          "email": "blaine.bublitz@gmail.com",
+          "url": "https://github.com/phated"
+        },
+        {
+          "name": "Mathias Bynens",
+          "email": "mathias@qiwi.be",
+          "url": "https://mathiasbynens.be/"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lodash/lodash.git"
+      },
+      "scripts": {
+        "test": "echo \"See https://travis-ci.org/lodash/lodash-cli for testing details.\""
+      },
+      "bugs": {
+        "url": "https://github.com/lodash/lodash/issues"
+      },
+      "_id": "lodash.flattendeep@4.4.0",
+      "_shasum": "fb030917f86a3134e5bc9bec0d69e0013ddfedb2",
+      "_from": ".",
+      "_npmVersion": "2.15.10",
+      "_nodeVersion": "4.4.7",
+      "_npmUser": {
+        "name": "jdalton",
+        "email": "john.david.dalton@gmail.com"
+      },
+      "dist": {
+        "shasum": "fb030917f86a3134e5bc9bec0d69e0013ddfedb2",
+        "tarball": "https://registry.npmjs.org/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jdalton",
+          "email": "john.david.dalton@gmail.com"
+        },
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        },
+        {
+          "name": "phated",
+          "email": "blaine@iceddev.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/lodash.flattendeep-4.4.0.tgz_1471109925772_0.3412343862000853"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# lodash.flattendeep v4.4.0\n\nThe [lodash](https://lodash.com/) method `_.flattenDeep` exported as a [Node.js](https://nodejs.org/) module.\n\n## Installation\n\nUsing npm:\n```bash\n$ {sudo -H} npm i -g npm\n$ npm i --save lodash.flattendeep\n```\n\nIn Node.js:\n```js\nvar flattenDeep = require('lodash.flattendeep');\n```\n\nSee the [documentation](https://lodash.com/docs#flattenDeep) or [package source](https://github.com/lodash/lodash/blob/4.4.0-npm-packages/lodash.flattendeep) for more details.\n",
+  "maintainers": [
+    {
+      "name": "jdalton",
+      "email": "john.david.dalton@gmail.com"
+    },
+    {
+      "name": "mathias",
+      "email": "mathias@qiwi.be"
+    }
+  ],
+  "time": {
+    "modified": "2017-11-29T09:03:08.982Z",
+    "created": "2015-01-26T15:28:59.436Z",
+    "3.0.0": "2015-01-26T15:28:59.436Z",
+    "3.0.1": "2015-03-06T16:56:44.251Z",
+    "3.0.2": "2015-03-25T23:34:02.835Z",
+    "4.0.0": "2016-01-13T11:01:26.152Z",
+    "4.1.0": "2016-02-16T09:34:03.650Z",
+    "4.1.1": "2016-03-30T04:05:20.556Z",
+    "4.2.0": "2016-04-08T14:45:59.327Z",
+    "4.3.0": "2016-07-25T14:43:57.817Z",
+    "4.4.0": "2016-08-13T17:38:46.000Z"
+  },
+  "homepage": "https://lodash.com/",
+  "keywords": [
+    "lodash-modularized",
+    "flattendeep"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodash/lodash.git"
+  },
+  "contributors": [
+    {
+      "name": "John-David Dalton",
+      "email": "john.david.dalton@gmail.com",
+      "url": "http://allyoucanleet.com/"
+    },
+    {
+      "name": "Blaine Bublitz",
+      "email": "blaine.bublitz@gmail.com",
+      "url": "https://github.com/phated"
+    },
+    {
+      "name": "Mathias Bynens",
+      "email": "mathias@qiwi.be",
+      "url": "https://mathiasbynens.be/"
+    }
+  ],
+  "author": {
+    "name": "John-David Dalton",
+    "email": "john.david.dalton@gmail.com",
+    "url": "http://allyoucanleet.com/"
+  },
+  "bugs": {
+    "url": "https://github.com/lodash/lodash/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "nelling": true
+  },
+  "_attachments": {}
+}

@@ -1,0 +1,1908 @@
+{
+  "_id": "@types/eslint",
+  "_rev": "691-7e3f8ab7ba640d55cb04c416f6b887a9",
+  "name": "@types/eslint",
+  "dist-tags": {
+    "latest": "7.2.4",
+    "ts2.2": "6.1.3",
+    "ts2.3": "6.1.3",
+    "ts2.4": "6.1.3",
+    "ts2.5": "6.1.3",
+    "ts2.6": "6.1.3",
+    "ts2.7": "6.1.3",
+    "ts2.8": "6.8.0",
+    "ts2.9": "6.8.0",
+    "ts3.0": "7.2.0",
+    "ts3.1": "7.2.2",
+    "ts3.2": "7.2.4",
+    "ts3.3": "7.2.4",
+    "ts3.4": "7.2.4",
+    "ts3.5": "7.2.4",
+    "ts3.6": "7.2.4",
+    "ts3.7": "7.2.4",
+    "ts3.8": "7.2.4",
+    "ts3.9": "7.2.4",
+    "ts4.0": "7.2.4",
+    "ts4.1": "7.2.4"
+  },
+  "versions": {
+    "4.16.0": {
+      "name": "@types/eslint",
+      "version": "4.16.0",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/json-schema": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "35561d43e4bd8749657b0430b29bdcc74965dccf3dc2d6d93a079e114cb1ae42",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.0",
+      "dist": {
+        "integrity": "sha512-DtdMTe0EyDuPLIv3e28djIqDUgst7PQdDyiHGgGbTtRtVK67bazN8KYf7qsbzIZr1F4RS+vgpF8Yhl1qBoqeew==",
+        "shasum": "e7ed874c0d664a18cc2165481875daba5aaa9e73",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 19562
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.0_1518555338747_0.09881877387701876"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.1": {
+      "name": "@types/eslint",
+      "version": "4.16.1",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/json-schema": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "d1cfcc37afd2f22ec260034dfdd0305148f273aedcbc93e15bd24e5bb4451d28",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.1",
+      "dist": {
+        "integrity": "sha512-lRUXQAULl5geixTiP2K0iYvMUbCkEnuOwvLGjwff12I4ECxoW5QaWML5UUOZ1CvpQLILkddBdMPMZz4ByQizsg==",
+        "shasum": "19730c9fcb66b6e44742d12b27a603fabfeb2f49",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20407,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa376zCRA9TVsSAnZWagAAh4kQAJnJsnF6yseuf+ZTECoB\nuAOdWkg52J2ck7/dl7rWYxU55w9DKcVzFXXn4ij2GGlj0C5gbX8yQdB2hzck\nLnI69oMbSSKsfnbxcNSw/zMZN81XnVDvD4yp9r3Dn4F4QCtPa8752h3IvzZr\nfJ09RB9Z2zu3OIqQT09xVKvc8jJ4NzKQIoxiV7pEpZ3O0+rJKOhBhWRVZTIi\nGCKpm800Lh3hJZg8mhCqtdG0dgSQoUQt/9JCB1Kcykeu+aRdutLIjisoGWmC\nIbokT6FHGnPzi72crmHgJWcbKg9IdJVEqNEkG38XQc5A+IZitdvU+By6OmLP\n+uHDog0mXblj5DUBxYjNoMzcgYuS4O7b4pQybuqGsNpI6JCImzRuyO9+BR82\nRzkVwgcISPOvmC3EvxT+GiqppMO++WxZfP+r8KMB2IjXDSgOklxgellD7oi/\naYxHjBfIxcqBlQseFcu6Nd2hlK0RZEeptAFl/UfR5z1HOBJoa6mQvJEltvc7\nj9tCyTrBcJZhxjaS2sbFbx/Om6tDbBoDOOdmOTENUWz0eukj8tiaT22Dt0Af\nb0rJfmNUfR/O1ahZi9Pf7czIRU/FLkV4hLnA2fjJyxGUGO9BPXRwgsuQ2DTX\nPMMOu+y5g9KBnMFW81oQ65HpWWrSJED/6z/wMdnz1ASsZZU0aUP/n8N2d4e4\n5xh1\r\n=47IJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.1_1524612786669_0.041304197757032535"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.2": {
+      "name": "@types/eslint",
+      "version": "4.16.2",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/json-schema": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "f157cc0a3a4f91de8ac565804d622ffbfba4e204d809033674c8c7bf01325b53",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.2",
+      "dist": {
+        "integrity": "sha512-gCqhoFlyLic8Ux1OQt9cjlPbXk/dS7zPpofazBkie6SWCl+e1IEZBgLqyakm27nh0/uSZYW2TqkBusV9fLmztw==",
+        "shasum": "30f4f026019eb78a6ef12f276b75cd16ea2afb27",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 19952,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8dNYCRA9TVsSAnZWagAAALUP/RkvX/MNXd/OEAeqZLmE\nzmZtQ0vsoXUZKHxINfQ4CFrsa4x0+sqZtgtL7oON5EcWT/JxtV/Pk4+I5r4P\nr5lPPWeYoac16afASQL91BHmg2RfTob8QC1ubt8+P5rKlztEHjf0MeCli/ay\n/g7Mi1L9SB1lPsEQ+A0cPuWPZz0SZ2NXneH2e7Vy8gMOjsgXyBT5h9787Rap\nyms5b71nasmz1PxSnieAWlxiG5EXcG6jfp8eTWNDHEIDiYOy/sMY29cM1TKS\nVmKIKHyHRPEzaXi1U7h/syhYccb7yqq2gjwOKjzyO7U/QwVSH7cIVteIkotE\nVwJt+mxSLZqTfC76xhieo5E8o78L3ASFGciuwZY6eIUkKAx5npSW8xOr0nlm\nZWfBNbw2+MFeRQBjlDLKn3jgB4OoTOyKE7dR5VUFaKc/n4L/bn6te/SZZjQF\nazlHhslbgPVoZL7HPsF6Tz6IiDlZ36HdJuhvVU3OMeCkAAwFgWjvEnRCLMLQ\nOI54BhFPZzqx3eruuQojo906IfQXLxMc6nlrn+3RFoIyduu2BLIMeMid4XGc\nyc6LFQ0BcgvZcKyycimwA0PstOy0qA0FunMnZKPKo3G7UO8eBT0suwLVk8/Y\n5xsqKdBZTo3BLaNR1A9GzcUALMhfKUfoSSnTtag5kOl2UORo4fl/StlsmH2j\nWvB7\r\n=WwrZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.2_1525797720266_0.35447566613165793"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.3": {
+      "name": "@types/eslint",
+      "version": "4.16.3",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/json-schema": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "afce84195c933160583178ea20240cf7c56c3b7ce57549d42ffc5c11be65d3c0",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.3",
+      "dist": {
+        "integrity": "sha512-3/RbuVmefwKXGWxq6/+F9UKx8z6Wm8Pa7e4428r7a8L5plqdPzMAuYkvQBLf+wqDPqLQ93TsYi3j3cnql1P5Qw==",
+        "shasum": "6ed2a9c68f73162fa57ba84582d63dcd8ee2d473",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 19968,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbNvABCRA9TVsSAnZWagAAJ7kP/AhYLrGMwFIz30+RmQYU\nCMlfDPHWu2Muv6EXmmO7FnHJmzfnvEQG4eVEzI+8jm2YyeQmNSImRmG2xA3D\nrU0BnvcY2oa8DOAQv2Ht9n0o6IPVv+mhyQnvh5iB+ZIxPSlgUlyISLVMa3RV\n5IwhzcjO3KFzYSuQTCiz4wv/ylizhHcu6mW/qpScO0oNtdpn/mt5d/DKA9bM\nripBRXUN/m/gxoFTi/HmDDQWMqMQVDK9vR38cl0h11H97ef7mhIH5m0aHysk\n5i/mNpHQoHdTXcrhV1ApWEzqkPeOe7C1/xiuk1FWaB7RA8yYvjh+3sco6AAD\nSSWrDrbJx9ezklloybcbFaSDA65aFtJPISvXDsdcGF1qLqYlLFDYaZx2PJ4E\nCiI4zRK3UsYhfW8AAJjZEG0Z5FkatGmNqDbKNt1ys4/o3HwyyRsg892xRBAv\nU3PfZ3FZWPkfNoIdhOjLVuYdTn0UpVM4urX0UmQT8Zg1fBJYAI3znKbwQbtZ\nUWQWw+MIjos0MCwgSm85p2cD5p4F/DDA31/fns7luZj+NtJsSkkfGuswmBCA\nDorsP7K4IYRYWb9EIg9CH17fjCZKtik4DmxDo/OwbzwMeUf0EUfoQ3ipOR01\nZaMp2tJrCI97TbrdFP+KPBXkhvfzKk3hAwgg1I9uFB6L36CXv3RGjRc93VeY\n9APD\r\n=TBWn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.3_1530327041618_0.5350750121984198"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.4": {
+      "name": "@types/eslint",
+      "version": "4.16.4",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "types": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/json-schema": "*",
+        "@types/estree": "*"
+      },
+      "typesPublisherContentHash": "3a79b5066ece052d16b3b6f2a085a7b70e0a34278c0e788063d61a5f0bb05f35",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.4",
+      "dist": {
+        "integrity": "sha512-g+PV8wktZLJrSPrdCZj6aWfa0xqTrGdx3FywlGE8YH13am8PhkhjtA+Wu1fLdV45gtpM1FM8JWnyFwOsLZI4VA==",
+        "shasum": "9a0d80208b22f0fd1a9d174e76dc675f3802c011",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20000,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb0JH3CRA9TVsSAnZWagAAl+QP/12y9pijDELhFDsi6Gb7\nXt0bhs+JMvSKokqA7mcoNn3meeLtGajNxvZiXo0bPJieiIBXcQwgbced0hXu\ny5Vow0v41RfD/2RHOOBzudaI4grZno/XnAfuzlrDBSmvw3Kd6fUNx+wxlMJX\nJAaY91PnYmmcgQ5MNb4NSxPMH8jYPazwKdg1j3mA718BDDXI4e9s32+GHkWw\nW2rUKAPYR0mN9zSmh47ALxMASRxSzuwKbd3xm1i1zlQSwgtA8IXcpXl4q+2b\nXkEb0rIkUUzq0oVXbUIXQDKeHRxRFO0qggD9KTy/jX9fnKtcmu4ZfMxw8Eed\nva3scx26SjyG1lVz8HrxIuRE6Lu/wJ5iBLUKvLrkh51a9fXs8mRSPA9VhZzO\nCWUDrEbf9ZPLjakw4EZ04leURkEjQ4RzTL16CLxOQyQdPNlpo5nyR2fyvt28\nSineuVUBjFJ5aqzM/4pRlyWFiIx+fF0++hdl3YW2wD7CdkjDwFg/5O6YujJy\n7N/a3w2oZpyA9yiGARxNEfIoRS+eEj0cgmj+0riYv1DhjAQ6AZ7mNDCHB5M+\nKOC+26+X9ABaPXZe/J1nHiLz442LOqqYgN1DOOypv8RJKCNHX4SI3sojTtLH\n2gnxTSi5UVBeq9tNFI9FebtiVgu8tvUwM/4NsbZ+nCwwsFWVOSMU1NTKU/Fx\ncqjo\r\n=rpQm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.4_1540395511017_0.34274377054288263"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.5": {
+      "name": "@types/eslint",
+      "version": "4.16.5",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "a4a65111fdd9fe0f9ec163d8d0c67e642a58b34c48e84250cd08e882b63639d5",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.5",
+      "dist": {
+        "integrity": "sha512-103C3Adr8UaucsjYBDdKzL9AZk6c6F2gKIlyZOxv48KtmnvNcXoDsEddF4N/DZJNoVFg6NGSbzYodvxix3Md2g==",
+        "shasum": "f0b56e011a3f7d01a380a568776f93ec56d7c911",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20020,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBaIMCRA9TVsSAnZWagAA25oP/1nahozFxJeiVIDuMi7+\nFYKvHaKh82lPAl/okz3aLS3+OYq4/4OzeznSGR5GOxZgm72JxP6VmW6Ygtfn\nVCKqJwuiD6zXvh43RnZ1qXgrN6+38kZOxd7AGP0K12+NFdRCdYuzI0rzXpc7\nDQx9ifLorGokBBmDHl30270J1h/zO8L5LkentZclf0t1e95xZeXzZJ5Qx7Xq\n8MLvG50wI+9uhCvjL8otlElzMBFC3Ce1Kkfk9f2tuTC26IgvUMOuWpPLeiLA\nxtwfSxswPrf5HRiPMsfP2lyryrVeL9oGGOtKqGL3HoZdFB96beC5Fe38ly+Q\ndPXA4Tf83YsnN64z1osBaFPwsV6issnTD6qkhZJ8gZB1awB8/R1MhHLEB7pu\nxwCeviBu4OB4rDIj3Trxr0Z4B+JFaFQvl+W9vWkTF60W4TGxIl+fIvCnMLL9\nKaNf5Sjff11NIY0E+vWSPNm+BRYxbTw7mSBelTxM7EXw2WlopQD2uhSfkiWG\nDBE9VA3NOYFE9z5BOTcq3cSV/ti01WJip1GRc6+nOVCp59FZUol2gs5+d2cg\nJZOcuJsQtCkLX1nugLbxrelIKntCMR+BAo7mX2hdozpvWTGQCAO0yl2sIUy+\nn4jDCmmvT6uQVb3L1UOidvRXCi9S7w+yzdZiDAbc7IUhhB6xDsQAucDwMF5H\n1Dqf\r\n=T2w8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.5_1543873035562_0.2868427525782973"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.6": {
+      "name": "@types/eslint",
+      "version": "4.16.6",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "4fc11d5ef10a3c1da42fe67b10ba449a64b7d609a799cc9cc7f3f682dcab1c1c",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.6",
+      "dist": {
+        "integrity": "sha512-GL7tGJig55FeclpOytU7nCCqtR143jBoC7AUdH0DO9xBSIFiNNUFCY/S3KNWsHeQJuU3hjw/OC1+kRTFNXqUZQ==",
+        "shasum": "96d4ecddbea618ab0b55eaf0dffedf387129b06c",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20036,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcT2dICRA9TVsSAnZWagAAQrsP/2/WHgH8hb76u6ChMabX\nFixpIjkJXzhgZutX8L/1UOWEeTwFLr/41uVCMiGApnt0fresC9TGEG/TJNcU\nRbbd3B8CYKSx7Z+8UMd6qEvoLGI64yyUR6T+UyUFzq4ymW5kpsZSFe5P9YCt\nUOPn+sh7N1U+QFQabIpomG0PApSDlcPPv6I97xzNMbb9FjPd6a9UY03IftGn\nltX3BPt2+ceE9fj28lRR7+1epUkFp+CxEbEt5jP5tNXV/zeL2ufxi3EhetwZ\n1Gde3UQYo2Y2hUyPHLeYbNolzgWKexfuZYmYqg06WgZeBS3BwVqqZRpZNj5b\nolK1k0C5xPatZ5viPTT6JWVvgcF9RhM4/RmMo5HEwqirVsLyc2XyKuZ6fjox\nYNu+Fb9i//wE7N2OKOUEA0YLYFUWbd2yoUL17Yhwikgzx0fByFOsEeGBvIGn\n3lv9IwdGc30Xe2wXw4PWGfTBnL9kw1MrwkXpT2SJfK4H6zYbnYvFNY+mpkKG\nWSV3PgHGMJIM5jdIsmPHvKXybrQJ2i7pR1AOjppAYF7AwGS6xV0SYXMymWLF\nIKH3JrAwX4Nd+U5GNewBX96ovWDfjrRwG3IQ5+rGDcdkXunmMVBxWAOK+TGk\nsiWm7MEGX7GPlhohY0ZFS1Un8TdJ2kGF+RukofVgRB0Lsr14Mp3CLHWmDynq\nOARN\r\n=YJvE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.6_1548707656262_0.8531026875836019"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.7": {
+      "name": "@types/eslint",
+      "version": "4.16.7",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "b733f11c4cfa021af6dbeb0cc71cf2d80229d80bc8f3a7648627fd7e76a997c9",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.7",
+      "dist": {
+        "integrity": "sha512-Xr50GH0b4cc/65IVQOJtbH8Ilob8HSmr9HW/OmxpNrqJwEp+FX8TL5V5lv6GJEXIlLd4eiWFt439hlImZ9PgdA==",
+        "shasum": "723a2e53c6884204323ee44e80ea036857e34ef8",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20389,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTKdBCRA9TVsSAnZWagAAzLAQAIeHsqC3iQgXTl3F+Puk\nFamx069Unreh4QtKWMhAmuvCBs3xqNXAYisQdoupmSC+pc7ojWt2Np8pIVvC\nXHIMVqpurY4buA49vzXPGrVcyV0uVVoe+xXXeHQWFhvlAClQaroonVfjAeOF\nX8Z7jaXc65I921B6vUwe2TpJONcJzLWvvnqsIJjjqvCOwnrGy36PGd1aqaHb\nK6dT1M5+Ekam7uMFnLXt2QKCVvBfvAd+LS4caGD9hOptkgO+w/UVZvjwwELQ\nCizI8phRw4WY0PxSsZ5Zrs2NmVhcMW8usZ1qNpb6b9Zz33YKUjmw/seVDNJ0\nG3Mupc9vg6M0ukG5V1chzlwseqy9DbhbaTe90t0RXTg/dm2+q8+xZwAkQ1ny\nmB1McHw4nJSC+axJt+vafpGn+izPmjB7nn5CpARyoiceAvgiyTUNaxhSbtfi\ncDMPSarfQxE4vNG3SsNmkvswUy8oPvlhN43XnsT39N6KbS47I/8Wf566zyVx\nnlalPrTbaXjsNkfohjtJ29puA8EfZVjt+wfHA00dvRDapgH4W2CfXzU1HDNS\n71u3gDuSzLZT3lwUaJhiLDBzHacHTUaPqCh75Z6yy0S+Ta19CE9pyomGlZR0\nQz8w2M7qI52fBwFOrXHd9vmBaKJrdLh9IXfc82wnr/LujA0zk12vBa7gNzsU\nNgQL\r\n=fddl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.7_1565304640680_0.2118004248360943"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.16.8": {
+      "name": "@types/eslint",
+      "version": "4.16.8",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "4796167e2c4c8145986e81b5959b7acd5118e9f4948b288b9fe3950c49b0c326",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@4.16.8",
+      "dist": {
+        "integrity": "sha512-n0ZvaIpPeBxproRvV+tZoCHRxIoNAk+k+XMvQefKgx3qM3IundoogQBAwiNEnqW0GDP1j1ATe5lFy9xxutFAHg==",
+        "shasum": "856f0eb8a312d25a7989b6d0ab708e8d5f8cc7ee",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-4.16.8.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20459,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTZFtCRA9TVsSAnZWagAArr8P/AxgIM9JtVBJ2EcpvbxQ\n9RfzdaII2Cg/2MnTrB726Z/Lbh/HH/G5ZybN7psY8iP8ZQhVqxhaj+6ZgPoq\njfT2ey/ycy+PxwvJFtkZbklaMTYmkst1gXFkBl+6mD0VidpTPSwMPh9OmJVf\nafdxiotT4YtODZE8zwAxvHellLGFxtngVmvla7fahMsL2TqFVLuDAc3mDbYq\nqpKE69qCjfq74QW5dAlL5RSXt1ws6w82kOsusnkrt95LceXd2nvG6pddCn+p\nQMZOMQBQyf0V348bUg47uh14GGf5J3SfJ5/J4OFaysR4fS8nvzUbQdzVf8xg\nVA+P3dos7WFy1RVWlO1h2Mh4OsukwytCPw2oRxdJCbKMkmLTog3XI4rqclO5\n58yhCZsCC+RrPzaRMG13EqcnYlZkWE8Sfn33Z2O6idvFQCKFpgffcg6Gak1t\n+HSxBMK+emhM4CXhliKX+syi2y2NTpn76clcTXQdApNKNnTc7DezQ+KaxR0J\nMNihmd82x5DFahQ1qolef6MZlmE1dreAVAfEV1Zx0Tp3X3D3LOkQAfp6jHtY\nqPgHCQ55OUTbXE8FG2YgAAoqIlCUJn3JtwXBDUuglKvJl9QYc8Q3kyK66fMy\no5FFMBDvdNKxJ/eu+Lr2pgwIfN7wa+znVNXsj7ts0Xutq7aK3MnmR+qd+Z5R\nlR/c\r\n=tcD1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_4.16.8_1565364588997_0.4358192399927532"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.0": {
+      "name": "@types/eslint",
+      "version": "6.1.0",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "f4fc837bbb8d54416d13347697854efd913649657d0a30dfc45d28bf7ef50e56",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@6.1.0",
+      "dist": {
+        "integrity": "sha512-AQT8DimJSk6euBWT4w3xJd8R77Yev4uANuOSNdSYRKZ4azJxMKC8Nm0k8e43edZ3CZkr2C4bqtkcps4oN0yNKg==",
+        "shasum": "8877f938dc843e641c11fd56790944905b16156f",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144083,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdXEdrCRA9TVsSAnZWagAA+OAP/1GAAIl18ZGCOl5uJvze\ncQerd+v7zfvzdubXyYoJXZmu+1YJEHQOuqCGniARZmpKt2gtLMRNDLz0Ro2X\n8RYkgNtehypfj1hED6Fen+m45j+ZgOSN8JDwtUsZbDgIEl5zlOft2GxX1iT7\nK3BeiwuZA1AbsCG1SHgsQJ2Ijc5tUKmZkrH7U15p/RmwnHEn2o875ez41qXE\n8WERtqJYpV01Dt/NH+yJ5/q+hhjjMf99LP9UPr7YHoj1Q/y+OCH1J6Npr3Ee\n+tJBkCi79o0JMoeFJCUWVIVGODeq/ZbBuObEBG125ExhUyE4oPp7euMf/Zz4\ndowO1TzNk3pfa1Eg2GsQrdEivmFs5WQVJDJH+vBwXjBid630IZ2hN+FtrCFk\nqn9yCQIII8EiNvUy9PLUgAmaGAHj46ou6oIJgJ05SqeUCdH+jTXVHonrgh/3\n02AuO5LW3gMY29Tq/dV0RPw+67CLgFF9t0rtsdclS2y4p4DRu7K4gb91o1YM\nlbAA2KfW2I53y/UqUNw20FQ/PVLfAnpfi20QxlpFQhDpBQuCAq2OMMLhBVKx\n3riduuWSuO54fwqZvCAIgoWUtXKJrTdTClLi15+6J0P1vJY1BA8GV7hlIJCl\nDlBPWvDFTjyPpClmJCZHJfQYuY9ofURZuOd7GlWet1//iM7jLkQ7GXE0yAFx\nMZj3\r\n=HBSg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.0_1566328683141_0.1370204845024212"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.1": {
+      "name": "@types/eslint",
+      "version": "6.1.1",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "84dadff55d605143c5c648ac51805948d8fb4f1abbfef69afb53f71c0b4a73b4",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@6.1.1",
+      "dist": {
+        "integrity": "sha512-ImT/b1lN/nOvhYpm4knz25xV8mDm5Xnc1Y1cobdDfTnK1oC/kBfuZxnfJCoLHKs8WRj6SU7CE5ExK+a2gwwwvQ==",
+        "shasum": "62a59e00800e954b1c57b2d7148db68adb94363a",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdYAj+CRA9TVsSAnZWagAAnZwP/1u3trIqsVHghfgKEeTZ\ntWpJcO9qXeVQjYqGaj9McC1fA8qYtaW414U38Khpc56XNJROyaJYolX03jyQ\ntO89tIUmcJTCHMfCQ9vjK2biYlasihHkZit35aRslRH2fYprFWoh/6MV36an\npQyT2Bs4Hi3Vxgj2OT+TyqwJASMgNPUjHIqHz9nJUkmreSVtwT9SPk0kR7fS\n8mivBC+3xyIfQLqDYmBu5ajabHzKFavooa1tvStpKx/FqF1jlvvf0A4l4Rez\n8hte4gXGSezpUTmsZAhVJzSdkcNpRU5njVWEOFcnnngFEyfeZpKIt297+Ql8\nAOejpe65N1YzU2mbZ6Cg9quwo3PaVwBJqxOe3UQKR1+C5UnXul8BLUeYQzmO\n7niKAoFlON83bqYsNy/b5pbuHH9jYdRO72zhbmkxUDx0goyfZS1onpkiQadH\niSvBQGxOBltku/cQOkmEd7QTx0vOilUclP1gI+K7bP33dQkx1YQiris2aUN2\nrwJtFAPXb06O04KLfK33tdLN7QsKx+5/btZnEZvJveH9+V8Te6D3NjQX/40+\nG8L6eJfmlY7sWwnt4eKY2nZnqmxq8Mdq6i4+GjSlqvbbW2BrRFstOrlJ/P0A\nioBSVkh8akX07wW7gikyFFBoB1yDnrlymFl2GNJAz9PKsXLYeu5ArPBC3+Yc\nIMWL\r\n=MU51\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.1_1566574846051_0.9371051849790897"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.2": {
+      "name": "@types/eslint",
+      "version": "6.1.2",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "5105f3ea914800ddda4d36b99873a720d82bfd27595aa419dff9683cf7eaf36b",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@6.1.2",
+      "dist": {
+        "integrity": "sha512-t+smTKg1e9SshiIOI94Zi+Lvo3bfHF20MuKP8w3VGWdrS1dYm33A7xrSoyy9FQv6oE2TwYqEXVJ50I0or8+FWQ==",
+        "shasum": "297ece0f3815f93d699b18bdade5e6bee747284f",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.2.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144290,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlR7PCRA9TVsSAnZWagAA/4sQAJg/+ac+PASRGgF8UtmQ\nkYr+5NhRf7rlyJNS3KS70KwQ/yPtR4+nwq8YxljNNYUANMHGDcAiXhhxV34X\n3kpeM49tigNyT4kLdmhlje4IwY6V4Nd+8yhoUjzqY3zOefPJLHRU2wBCVzI4\nXPfAh12eB94/6FaXIXjH/5lcxNhhf7HcRBMjFpIOFV+/lqVVs1GPDh0u6t3g\nvIkzVE+Zlwx+aTtgua++L2GfHluLaCVWuHi2QTU7PhPI1Y4tAHrVjfubVIzG\nH3EB5B1pYvNL2m8I0j9DDfY2b2DX3iYCYEtaA1OQSGQX+14ofEpRItEniCHz\nbf5EOiyBi0KTUHTmmgjrl8BVKMyHUuu7W5L00o2LBr1Brnn6JO7LScX7ab+V\nnDs/30jHmvRPo/xKJTtTyA9z/94X3dNDz5bTK3N4cs/GiVcJl1N1d8ToyGxs\noo9YF+KFFJb+zPgQ+4Lq0oH7vNBkHfQAo5n3FRsTRhsmAzr9NMJLIcdC4roy\nEg2cMo72VIr+VeEKgHDY537UOjwMgYlDYcnA8d9jP/P6BWGk5nMrv0RZu2QD\nfrv+zAY/WaQolZTHh/QKy8N1g11WgWvDWjUx4Cy1Ppf/WvSv39Je3GoZsZ/W\nSDa+f59r5mg4iCqkHESS0wHzqMIvo2M5ERqgok4cEWP+GKhqKVfjGhu+EeGS\nEzNQ\r\n=dKyO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.2_1570053838841_0.09385785573392691"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.3": {
+      "name": "@types/eslint",
+      "version": "6.1.3",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "07b08b7b542f5e189cbe33bf29ba1b813e530e915152b344d623119f97b376ff",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/eslint@6.1.3",
+      "dist": {
+        "integrity": "sha512-llYf1QNZaDweXtA7uY6JczcwHmFwJL9TpK3E6sY0B18l6ulDT6VWNMAdEjYccFHiDfxLPxffd8QmSDV4QUUspA==",
+        "shasum": "ec2a66e445a48efaa234020eb3b6e8f06afc9c61",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.3.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144376,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdsM/4CRA9TVsSAnZWagAAvYkQAIJp/an3fw0MDhRQHPpK\nmc/MTZv4dSiRWk2H7jj5faKw35NWwRSaZm3WDY6XwvILR3ogapv1MEzxHA0y\nga3xev0/SIq4G5pqGlFb76e7YYBZMUkWt7EAC4pg/n5AVfa3vFRSBeJDqWIK\nzK4AX/KkDNtbL8C1GGs7U6fY1aA9BX4YTSEe36vmWAV+/Hy6+2CCB/TDXNqp\nMehe1N4NrOz3u2nAbGhO2yuVMeHzuoNdQZTbWAYtk821AumVgvESCgYjaEyC\nw2Ez58S/5PvHdQlbjN4PEy72YtfXsaw7/yQNpXrcs+PlphVR1aVyTOlbkgDD\nrI7kXgKFAxnJZzaKxasPLJla8gp2VNIpui7Rv2kqlDwgfb/DNXTYc+BBMVna\n6J2vvStRs/8bqHKqR77LxQa9GYY59jo8D0O+UX6pzjczDIRPnaBKYGf8LM+4\nAvCpWqaljdp6txgYFe57VNV7/ldBbESqnsHUGUUatI0jm56NHeNVaDFLxGbS\n/AmVEwZixdxQ/d3lvKAAzWfG98Q1TY49ufSJSesU0x2gHkYYET7oov9qnjeF\nTfeX/1xPma1EDFF+HvICiCc2z1SaW4jcJtFJI5XUCNV9VBaCqU1VgArCHAoa\nZ/m4sc8G5CZmfekC43MyJdWH5FhXR44rOazKODtovueAFz3GUxVXB+sL9qhU\nZXjN\r\n=Hg7s\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.3_1571868663617_0.42488237095391335"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.4": {
+      "name": "@types/eslint",
+      "version": "6.1.4",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "8a7cae7fa959a8f57a280912d9b7829059a91b90cb6b304f6c8b13d351afe029",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.4",
+      "dist": {
+        "integrity": "sha512-Y6OidLSSFdpaXvyOncYfT7Ir8qp9oZZaEQnQIDENztqYJfIdLcXLQ6S52f7ZPEtrdzWQhes4JZXKJs5mpOFCUA==",
+        "shasum": "2b03daed7fc310d02a9099b67b7c248c3bb482c6",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.4.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144709,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeJ5zLCRA9TVsSAnZWagAApvcQAJQ5xMQLrt18jhp+gSUx\nXI8jsu7Hw4jnyYa5Vwq5J9SY1NqXgvyuXD6KwtfXkxNSQtzCSVRCT1E90pBe\nAtKPxP1PSZgylU9FqW/nLkZn6FETyNrQe0IxIelwcPUNi74rKo/g7FAFX0Ax\nnaqRy2zpHuoZBGDkrL8GuU0QTZcogFMEhUAXr6Nt0bBjbkpd+2uHNqiXNjeH\nIb5RVUY/KW3OUc49sqpr543ZL0ZedqzVr2dDHQ0EsLwBXahPbncFieM1AIba\nhtGtxcB1CYgRuLmhoAZU5QCXLWl2HlHAnAA6+4hurXzWCKgghWQLSmbJKINK\nd1gXXWs38rKB/liSxxMeNDBXUilxw9vWU2mM6zqSHnShntAm8ZNlWERtIp5Z\nK+uig+AX71t9ZU+d3KlWqVeU9IukGx3FSLbcBaZuEuZPJU287GBLz17nmvrQ\nGwI2PmKJRqCYWKD345/tZhzVKalX7AcFXlK+5hKO/KuzJHOOmwyM/Fzis+jH\nHDGPkjLDzjQFZCROTO4+DH57eMw9i5Bus2TLU1oq8evjI+gpSq1v5d4d5TT0\n7S7q6Q1JyvQUMObuLqK4v6BA6bcN90cSVULaaS3nEnZoF0VctBAmhaOUY0E0\nw+b4AvDMhE/GaQ+uospCKq7hyClR2OedC+moJQH8guw6RlaCkx2qWb5Yqt9O\nSHZh\r\n=fhoF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.4_1579654346705_0.4166785054427551"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.5": {
+      "name": "@types/eslint",
+      "version": "6.1.5",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "adee12112a73d30125cf92eea3cb46b1bdc5ba74d164e37cbf460c8b5dac429b",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.5",
+      "dist": {
+        "integrity": "sha512-DDNhspp3xrOUnPQtHeuwqnAGEv6uLNjUPjKI6MUHh34iMHa8xu808YdVsCdyrB6q8ZSudZ5Hbhndt62/bwwUVA==",
+        "shasum": "1e1c0f6349504091a8bb71a8a38eb663d401f9ab",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.5.tgz",
+        "fileCount": 17,
+        "unpackedSize": 144993,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeKKglCRA9TVsSAnZWagAAnF8P/AidBuy36iyI3a/D9pB9\nLklyQ9DDs+wLKgcRv+zmmh6hp9PDJdwgSvo/k1JP26L2Pk46cSdzFlsBo/LN\nMNvXWOraEYdewZ5znfLTBLGd8GlPe8TRw4uVErmn4mNtvAGP43xa7LudAkH0\nyAcWqDqGVelkn2hWyoAYOVZNcYofjLR0t8FnoW/bZE5gG0fgglrdeTvzxGJ+\n/sb4w1HmyFUjv7OCaQkTKZAa9YTuf+R6u/13qDmv9I8IAKSZdxIp/gdlaUiD\nP1dQZvSgi34Snp/UzKzNJFoVvWBY/uAKSVHxM8C+KfKYv+RGYWjtU3+s7BRC\nELMexiSPFsWXJjWHAIqKCyc47ChOdCClVGf6ZS8tY4bdatI9uSuYV1LhRyce\nXPAetzPMFxBTKwOLhORJv69igKZHFJ8d+9jDZhNfEmrYezVKET91yHfaDxMK\n8sQA514s53Y+gYQATnBeUgDQAHR3Y2yCiEs1wH/515DD9+8KCszRS3+zCWfk\nvqm48Uk1M/ncHZokvOglkCkoAUbELYSCjyz54zizlsn3/JK7KJXo00lAuVK5\nn6+zLQ+L/RND+DS9KWDLP9+sZ1wyUjW2R7lOlZG+Ld7JhDzhW24PSiXCAtPO\nxiFnMLC4SK9sd7VG1hg+f75TMeW/7UF7Zq5E3yU2WmBkO+9Hg/pHVm8oyRaI\n1yjl\r\n=rpW2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.5_1579722788990_0.14145388837626172"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.6": {
+      "name": "@types/eslint",
+      "version": "6.1.6",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "0015997ca5397d675ed90eb571a1d89295a60cdd68c20aca97f638246dfaa543",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.6",
+      "dist": {
+        "integrity": "sha512-bTZQc4vx5zjlVWI8f+Ce1Ioc7o4RRi+qLhDXlHWIadmieyb6dZU4lxNFbWXd2l16+Izxw1Y6G0bG3ksi8W79dg==",
+        "shasum": "1b54c949c270dd0e12809e4d5aa265953aa5cc22",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.6.tgz",
+        "fileCount": 17,
+        "unpackedSize": 145009,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeKeUfCRA9TVsSAnZWagAALG4QAKJQvorPOc25iR6zE63X\n1Ybvay4OrzD51gpiWxYKUmkFWKGOgRKHOrLgzV/k969XmzHjgjyMkfKOKDoV\niIvMRkZWFJpdiKbKg8VkRebcHhYPox2wT/gpa8rdHULvABZLfw+QVc6gRx0W\nxsDz50UqgVcKi0MGGaYX0udh26dCJpoV5Sd9dXVHsQ78g56mQneScfEMW2bl\n+owYPbOUt70HJuLq9A6sZrHrwqc87mkcjx+7uWyIPX6OfFXtQvPkveau6LaH\n+UsXwp26zaNt1T/4zwmwpFIsfw+qAiClopdPyk+P00UeASY9q4Olhp6xwtNZ\nYItLTMsWyVda3CFshBNslHrK/TQRfF6MqSMBKhZO4urrg5mOxL3wfEaBGesb\nYJwOSTe362li0G2v2idmjWYM37bwIm56F/HdmlmXEO3wbcX5VtQ5b6LMNVhp\nIdMVfmo+c5EUNbPCzsH8lMelBiRX8ah05+m7JJME+I9ee4mXqpEL6wMTg0F9\n5IBc6IJCacaIcGzGw51xv1qI5cJVi9ZAVIkJ3xP/t62awPqcaVIR2NByXsmD\n+9yNg+wDsIGAuNDAF0EImGmDGVXT+/IdVrPzO9ytxbf/5eU5vCtJB4E98ExS\nEL11NXMkrjIMz0DI23+s4mNfKfv4cbH/Y336wr1RuH+0kK+wvG6NmYz1LZ2E\n13qI\r\n=iitf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.6_1579803934713_0.4760901030919016"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.7": {
+      "name": "@types/eslint",
+      "version": "6.1.7",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "4006a9d81a3426f2db8b4c6596571489bc6e8ea1bb20b8ad068ef243a9872d7b",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.7",
+      "dist": {
+        "integrity": "sha512-SP9WDPZeOfX0VFXylehXoKGtuHx7Cm4JaXSiJj6dHbgLW503i95MAs22zIQgciof3LXWIAejZXp5bOgbWC/Faw==",
+        "shasum": "81ce3a730bbe84bd34e60cf2accd9dc9e60fbcc2",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.7.tgz",
+        "fileCount": 17,
+        "unpackedSize": 145154,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeK5OwCRA9TVsSAnZWagAA2bwP/307DzmRjl7eA3VGKq3C\nV7HWdzLjJNxv7Ac+KsqSLjf+i9ybRC86P1UHGfhQNhb0eCQ4D//V9U9eE8fF\nrbNRRjYp93AJ7d4X4rLra9jiwGF7UQNgmaR+Thm96kfZJjaWOS5RE86oCTrS\nGRapxiyTBAplb6r/pGEyOBZQRJh5OlxU2GjNJLm+bABKvWYLzqNHwu/GRZHT\nEEDrsX5tpmVDrZWkLDyYU0N47O8g3MPLoG64yXW1yif8M/8tWMWnou2UFDwu\ntHeqm3Gb1GQC5VTgONPl/eIUDl1e3HqCAyJOrxt1LvaFhEvJPmcuAg8GFoMZ\npkTMMNhmko70/QfrOigcuzL/5VlGPkbhmsjV6t1jyANi+FQaml4/ayeYC8A+\nuKuWKze1sfY9/tK67w0/xJaD7OXpF0Qw7tg5zhQ5wJKJGYVDRePm2HUW+d2K\n/lQKWjL0f5mi48Ie0DakCSphdmykR/pBTUaKM50Fdq+r7ryEdppRavNPTCVp\nTSv1hbTS72M53mquU9wAZ4/LYI9zygfNC/h4KRMxQwax5IUC+SbL803bD47F\nJd6GELKTluX4Hzcj1VhVKm4IKYPdKRVP7NGM4kniwZ1N0nTFkz4EnksCvUEo\n+DWDFXXaEj66PhfM7iX54gB+oLPD6ylmP7JaR16XXiu8vCq0N9Jr0D7w3dFK\nwD4W\r\n=cEAW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.7_1579914159309_0.13557711231105518"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.8": {
+      "name": "@types/eslint",
+      "version": "6.1.8",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "ce621f1a88f750a55ffd20e54f5f66c63e6ae18b41764c254299e4a541955b61",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.8",
+      "dist": {
+        "integrity": "sha512-CJBhm9pYdUS8cFVbXACWlLxZWFBTQMiM0eI6RYxng3u9oQ9gHdQ5PN89DHPrK4RISRzX62nRsteUlbBgEIdSug==",
+        "shasum": "7e868f89bc1e520323d405940e49cb912ede5bba",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.8.tgz",
+        "fileCount": 17,
+        "unpackedSize": 145240,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeOa5WCRA9TVsSAnZWagAAztkP/0ysUpVkkdgZBMUrRFme\n0u4BM8IRXPI/5hUswb2K0zz/g6bSOctb2V9aWnyvpKQwRqMvmPrIvWTndEn8\nJmg4PQyyEmXRxb6mxsvJhORzcGSxi3SGmg+Wrb6sHb7AFHdbSHSZyreL8Asb\nF7v/eROD9Rg+5SMwFL+zxYt2BpK3ZLAit5QsqlLqylP2MoW7pJYLsLuMWSA9\nF2phv2twCiUDITUKNcJuPKX279tQInpE1gS5iUShJNj26ZOwecQ2E6PZJ18C\nRmeNBqhYz8IzEao9z4fAxpDnOZVvB1prrFG8Y0b/qCSh9IDEICmJyScMhIk6\nMz8GKC5SMUHTrHez/yP3KRwmpMJydOu+0xRcAtxV6srH3e434KwvPFSPS/qX\n9YK+3z+1DThA/SC3IioZRs4RzS8vwqqZ+jou9b1CAl3aQyp1BlaKaDkDcHIi\nozjoyrKaoZpr3lGett7Fyu913tOdKXFl6TVIdB6DtfsMeJjpiePY58JrCXSh\nOJjqG9AB8U+xmdfkXXLD3vMXGyiW6hrwhb4Oj24U4knuGBD1EmYM3WtR1V6/\nabs6tYf95wwucvo6GXewUD4TisNXpUBVyhbprZ6zII3VPClP8hEJsAOUG25X\nC8XfTX7LjeJLa4/3SmDXVt2N4zak/OrV39JcxNojbh2Q5TK8Ya06dasAZjV2\nr3rk\r\n=C9r/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.8_1580838485826_0.661358819695818"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.9": {
+      "name": "@types/eslint",
+      "version": "6.1.9",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "d7c9ec8e998f122ad4910e588a439e9ef5758f0d2f675b6274f37ec79ae5740a",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.1.9",
+      "dist": {
+        "integrity": "sha512-iGnyI+jgHqGr+Hgcvnc9KIGT2A0h6bx2wslVlVFxTBkfIMMAEWWoVa8SV0havS8ITNo8ayzzgj9TFclwhw//8Q==",
+        "shasum": "f43351d8830b3273d4eb4c8c24d0d6e38fcb0fa8",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.1.9.tgz",
+        "fileCount": 17,
+        "unpackedSize": 145386,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegpABCRA9TVsSAnZWagAAWx8P/jIlQYE909BeyOuocz3R\nYQlXivaMNHTD5NqFXhEOgWA9yz+4iAx/Szlco1zMMW1j2VMiSRBZRGPjW5Jc\nZnPpV3lb8N9JMIKI9nk6gJgDToviTiwT5acJqri92wKnxUEX/qUthoUshxyX\nrRgpk0/lVtWNCUUhMA6aZ6oSwMGCNoKo7C4lVO56xTzEFTYKnNeDbmLEgx8r\nvbg0lCtltWDlY/wj0LrGU+qzkKmQ0dYoZkkTOTKq9gCfQyTgKEmtjDFyC/mB\nsxguTUxZ/srDOvjur2Pfg0sJu4L+FvHfJhoyiXOIpjcOKMppsj12rLtf7zHS\nPZ9AMAapsChkUK0Tsl+xQa4FXD5kaia1Z4+3udq0SgJRltPgkWLP9X1GA0A1\nqruP1nViD7xXL8RpSizju5EJvN4AQQvseLZWmHkkBDWFTnGbu1HfsR/WWmDv\nZArSDf5aD40whxoEZK6Il4DVLM7k85iKjfAraHFjncSvruSc+bEMKE+RDVqV\n1uF0Z5SByNwImjLaC9b0jiJWyBEVxumDSw4y91loPe+Odn2mVYQKK3gL9osU\nCmSZcvS+gjjCj4dz55GT6wJO/23Y+55iigUXaKvPKOY9v830aorNNk3Xx20n\nt0jfeFmyHuDEUL1zwDSDoiLdRR/G1krCIRRyiLBI4Kiuf/CpPVAvYUknaODf\nz+Gy\r\n=mFAk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.1.9_1585614849159_0.22047015717215368"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.8.0": {
+      "name": "@types/eslint",
+      "version": "6.8.0",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "5eb18ac3f55ca30a4ede69ebc87a424020d9d37f3bc6dc393b75d4dabb1140d2",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/eslint@6.8.0",
+      "dist": {
+        "integrity": "sha512-hqzmggoxkOubpgTdcOltkfc5N8IftRJqU70d1jbOISjjZVPvjcr+CLi2CI70hx1SUIRkLgpglTy9w28nGe2Hsw==",
+        "shasum": "5f2289b9f01316da7cf31c9e63109a10602a23cb",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.8.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 147718,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJei4/9CRA9TVsSAnZWagAA8L0QAIFUIhRB+AKopJT0mWvx\nlmiJw3wdQtwanbRZYAewpExX3YLJ4TXLNJnyHQsDhNvzvy/EbraJBCwzgXN8\n1rgXOjD6IaSndhDhZ17aJZX8dpbm8l2Sut0xej7FLfaB7S/wXeUBA+uEEjGR\nqy/wytwpOVABmtqJjfP54nABmFlcnMfcEGpA7vKPHNwIZ5tm33a1ZD7jm5N/\nF6LyXAQ3yXsj7yIzoire3qqwoh/fdfDh9CFcbAIEfc284KmrIQoEDeg9WFn3\n/zdonD9AS2dDiTe1noDLipbFtNltaK80lEdwAQGT5I14fPO++LqSHuYvORZR\nlHwA6D1oV+xGazMtUwYg1Qsq+stWqgJO6HOQvDzdNmZQLRnV7JEAQeVtu4HM\ng0a3Wy62/TNIj1KPUxED855RRTrW1uV9lFfQOZPF5rqmVHD/3Z5pvd7ycUht\nbCV0Y1I9yc8LNDXV6hNWIE0FyQqVoBwaZG/aTKNusIvK/y+Wloavzv3dlE62\nwO8BV2nve2ueyJc8TGWXSE9KNAXcdu1/YAcNAUzPFJykAUM2NsA4YKE01zar\nTDetqszcCfRu9Iu6lT8DwSj4Ufc+yo8CTSBhRypbv/eIUwPq9kCh9RgbP0SS\nV1fK70/TQS5kC9Zktsr04bah6es6zMQkdXfwAi+j4RF2kzlcO79uZBGK817w\ngqFZ\r\n=/zbH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.8.0_1586204668857_0.7834266411835002"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.8.1": {
+      "name": "@types/eslint",
+      "version": "6.8.1",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "9cf7aaaf70c45cd153987d7f25f0f75fe405985c16163ed3bf7318dcc9e75e3b",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/eslint@6.8.1",
+      "dist": {
+        "integrity": "sha512-eutiEpQ4SN7kdF8QVDPyiSSy7ZFM+werJVw6/mRxLGbG4oet6/p81WFjSIcuY9PzM+dsu25Yh5EAUmQ9aJC1gg==",
+        "shasum": "e26f365a5dda12445d1d5a17eb70efd7c844a3d8",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-6.8.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 149422,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeviO0CRA9TVsSAnZWagAA7LUP/ik8AbuTpq6TRnsnXx5s\nWoSS4m81lMfWx159WTfaslw5BEu0vBiCTEfJc9u8K3tKzFQeXmRtfeEz/Yg/\nU/tjSmBocV1CXEi1BKllJ7XvxrOMITCipULEiduSfHVWs3jX6g1Rtgxw7Wnn\n+JyxVlIJUCJ16bNJR9h0v2NhsjrkSZxiG9PAVwLCuthiLIJ2vgYUUttRZf3Q\ngmgrWtE4VQTYwwpNsUNBtItG3aonO4hu5HKJuknlXEDB31ejBbHL+2VEB0Bs\nYaIzdYUZWW10tQUIOPbb3T/BDcgMIeb9YmnllpenGIF5/hhZQurRa9SNPbBq\nZxneiWR0fb2ku02RuFfKwY6wBDU5jHvhc+RziwYSNBBC1HFTcLR1WPZBF8zX\ndbyRR+ece8PxJ23G8FVTn3rrUKu/guGbXCpN21k0ewEdml1LEYU/gqZmHhHc\n5ZPD5Y7paUrYdBEe4F+KoNA4nlnMfTtNJ2cupJF6rDqs1BBE0VvlvrTvklta\nnw5/jLrX4K6wIXLTQsrfNqnyYSmzJBw50RKPa/+mItijNgetlTQcFd/ybH1/\nrxGOKFuKk7DTFRlhWAA78L2S+rwElhmx8kIxjz2NV2ONv33rBK/Aam2IfJWj\nngvj0TWsZsVYVLpVdWsiSzB6YmeBP1BTrx7wbDOHKnQ5eHIed1M7qs0DCtLa\nzo5T\r\n=nQIL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_6.8.1_1589519283778_0.437569533921609"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@types/eslint",
+      "version": "7.2.0",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "typesVersions": {
+        ">=3.1.0-0": {
+          "*": [
+            "ts3.1/*"
+          ]
+        }
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "f6fdb4744c9a02a8830d3b4a5d5663b7521bf6948af349c29c40ae75cec95220",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/eslint@7.2.0",
+      "dist": {
+        "integrity": "sha512-LpUXkr7fnmPXWGxB0ZuLEzNeTURuHPavkC5zuU4sg62/TgL5ZEjamr5Y8b6AftwHtx2bPJasI+CL0TT2JwQ7aA==",
+        "shasum": "eb5c5b575237334df24c53195e37b53d66478d7b",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.0.tgz",
+        "fileCount": 17,
+        "unpackedSize": 153822,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe4r8NCRA9TVsSAnZWagAAj14P/iDgckCNgZjH07u7LiPl\nHpGswGLSlWYVz8dMuzmfJNhiwbAGBuNSA4tROZ5GHRpCPkZMeZdrqjUbkdw2\nzxlNNO42AUb+eJnowoCFOPJIXNXXrw2zrMUC7p5rtaAZFs/KUXoi7968CI2G\ns2eAcjiOY27AUVt+wRtqqcuDRMdKPysFVYbSxeD/cyibPXBeinYdYw7Pe8sB\n5Bft0fNLYSHsXQGMhO5uCoUuaYLHR3xXMFPzVBXY0gScOYO1gEgIldUhLjH4\nNMHrR34IR5FjTtnaMosECCmEjeMdm7EPTXLxmCuX/JZHKLbb4Ztwvml8r8Tm\n1yTZmHxOlFOS+4MxD0o8gmRTEcc9v98Qn4hLJCDAS1lZYlpERz5APX6UzA/6\nMfrw3XSZg9GQCKzST1Szpe+rU1fJYZQQ/sP4pJi/KWZZF1RewsSPpGhGMnvR\nbFlorEw7+mzDWwFvk03vjNvjJG3+okX+e9zUfBJWdOY/AGnRfDDKgO8DnuP4\nGCwbTbLn5cfzHtEPZghGal2M9wEq+B2bMJjJVs8v8IR5fU3hhZNVg1R5l8rQ\nbwNdWXeQRgncHjt8kweGSid6x2fhKOHVFzY3c0EZifpmFSOLFts8CT6SopiX\nDvCHfihgtUM/iHQtkFsQgWUofTGjIW6BFAeKBcfRnSR+M8iL5UR482YY3M40\n0GrZ\r\n=0Qrn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_7.2.0_1591918349433_0.924637986172721"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.1": {
+      "name": "@types/eslint",
+      "version": "7.2.1",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "5d19d6be0b4a635e15be6d4c39c206e3861ac07c7613dd3cd3dffe2dccc7e379",
+      "typeScriptVersion": "3.1",
+      "_id": "@types/eslint@7.2.1",
+      "dist": {
+        "integrity": "sha512-WjKivjZyeL65Qt8HLLGwyhC3NkhoPVgCvxPcCMb02k8fCSJH1vvDRefXmSHA4U9TcjOj024yCOxFgCPKC0gMXQ==",
+        "shasum": "fcfbcccaecfb487b0fc5d44686807cc625f358b6",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.1.tgz",
+        "fileCount": 15,
+        "unpackedSize": 132426,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfP/9TCRA9TVsSAnZWagAApbEP/3gItydlUsgltGNTFTe2\nrsELpw3SW8Af9ThuetWR0/+rKiM5j+lbkPnmEk+mh6IoLVcPJuT2tdPTwwas\nBJ1eCLxh9PFw/T78WI91UIEpEp+DeMerAjOGXregaLbQDAaSHY9RLZ1r31WG\nDIu5HBZnGjQprYxNib8SsnPBmyJL1MWzlc0Auxalij+yQ9SzVWKwP7+JdTZj\n1LJAsltH3SCjb+fXz4NKztkdtJq6fNMWy7QhpAz+ETdGg5mNJrqknWxEklNe\nfg81jHXiZCg+Zrqs5kyeQlBw4UJgm5vS/2eeiU87vDaPO1Xiv0J7hQPP5uky\ncWJBsFmK2d7hWFLr6tfpPthbeR09PyU1afvVoMvcStIK3U0KsHdH4FA97K10\nautj0cGhGGC/Huuxv6IbGPuwtN+I5ON6xDprBdHcRaQs4p6s+lkgKmRfFdc0\ncCC1IlmwKqRNXY8eLFHhQ114nmjiI6WSg9QMomiLll2UQGxVfsI0FA1kWnO8\nCjiYs0xuvArqrtvKxJWm+v5hQaIcUdOd3cD19h6umWHTRAIpwitjl0DK248h\nK8EKERFSdMbiHuuIIH9PHNSA5c7jiKYC708YDDeuCaVLXgNUTWN1Oqu7/iPc\nR51J5rVM1kM1PZaFosH/ld/7CWKkUbDWNq2wKmnM/5aSfrjB6B7Wvf0xsMwy\npnAp\r\n=SRTN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_7.2.1_1598029651230_0.46150165297640644"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.2": {
+      "name": "@types/eslint",
+      "version": "7.2.2",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "27ed71a5a3f4200b9e33b6cb9443e68fd3de3785a55f1614aab1be1fdce30903",
+      "typeScriptVersion": "3.1",
+      "_id": "@types/eslint@7.2.2",
+      "dist": {
+        "integrity": "sha512-psWuwNXuKR2e6vMU5d2qH0Kqzrb2Zxwk+uBCF2LsyEph+Nex3lFIPMJXwxfGesdtJM2qtjKoCYsyh76K3x9wLg==",
+        "shasum": "c88426b896efeb0b2732a92431ce8aa7ec0dee61",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.2.tgz",
+        "fileCount": 15,
+        "unpackedSize": 133079,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfR/ggCRA9TVsSAnZWagAA6aUP/iTRlbTGYj14x8yHbvNk\nJwRTPUSq2t+91f9kNvRne5ySVY3G8w0axk2+ixuYAWaEocYECN71CWXu3B0x\nJQ4tm98JwUlCMhetoVmgrtqmPtNcZrN6Z+x3HvUa8+RpLcDOcn+DcfB1Tn60\n59fLsc5lVbXn+K206eRHD8fyZEwP/hf9USdja6+5xmiM5rtRbtBWwkZij7Ne\n+7JjCbuGB+QsgVj4f37KdINgZ6P1O4WRB7XIsHvaCINFjagmU5iEdtG9dKK0\nmMkFcjWdbohKKQ3VsxmwoErK8NcbpTWxvgKaam1kfUIXoxoQwkjUfQXEElhp\nYHosh00HMoOWXervFqY84ORHqY6InnaLS7iB4V1470rqhyQ+XFgOtxyi3zZm\nX9Ln6voQClsFH2XklcANacJFlU+C1vcAZt/1NrKCq9U7w8GeI5eZLgBUMst9\np9DOwyXN0O+cGX7ecbTMSxGeS0ehDDFIRkByGvxraDQmcdODEeL+HUtzGohg\nM4PP5Pz74EEBQEaMv4kCWjKsYgmbJE8Sig82OmpAkLWvPdaphjZ0sHM6OGX3\nCbITTmBPUMYCfITCfvuaJDAKbj8a5uojqLOy+r7tCGbjT65HOBTK5mIQIyoW\nNN4YUUTY+02pEnH3a5OYwiCUwn47vmFn9buM0O5QVs4xQqVrNflJPGtJQvh5\nahfI\r\n=J+vZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_7.2.2_1598552096192_0.9195838006450103"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.3": {
+      "name": "@types/eslint",
+      "version": "7.2.3",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "5ce9377002c09156e27646b19471c7c94bfcbec2d7f33b720fc233e741de3070",
+      "typeScriptVersion": "3.2",
+      "_id": "@types/eslint@7.2.3",
+      "dist": {
+        "integrity": "sha512-SPBkpC+awgFfyAn4sjt0JBZ3vzACoSp2zhGBJkkrs09EzPqLbxkzaE8kJs3EsRRgkZwWk9zyXT/swvhnJYX8pQ==",
+        "shasum": "a3731b7584fe1a847a34e67ac57a556afd9b0c0e",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.3.tgz",
+        "fileCount": 15,
+        "unpackedSize": 137603,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfa59zCRA9TVsSAnZWagAA9ZwP/0RK8fl+q+VUTsMaldht\nUEOo5P5VHFU0elDc5XL8CIK7zxr3W6X1yyhqG52k2FqOQReBRHh9wvkH2bxU\nJwd8+C/KqGc79QGYeg8ID04r8+Qas6fjTpw6HOovobV8dHu0yOBt03OQHpkW\nLbwa8oT67iR12ZXIH+lIbFeocUlo8yfyOz9RtQqHi8DZBQui4hIahXqnSrA6\nh7RBckvsR9avzNtd9SsFgVzodJ1mnS9x6/kWvgdEqvCY3z7ndtymAzj/f3bx\njAlknHXVU7xmlXjrquIttFhHWNtANMLqp6gLWsefYLsicyI+sfLMmechxmaw\nBL1pnsDxgbdhfc+6I0Jd3WSe/7pjOUbXhwAvqj3QfHjuThgLNrUQJEgDwkWl\nXxI/k3pzA1W31HGdcZuTLPnD6eVxOhJR48fB2RosffrFoddsFrCn2Gg9EpTM\n4hsJzj2mdXatZweM3uiRYwu3k/F6/kEjixGt1yxySCE0VCT0PUDhuQaC8cGE\nNB6pT409Gn5ML9uxbYZut1pbLYIWlrbHi3qB6vuzBr64ZZZdPhgkme0ORlU4\nLq2vNWo/QaLAk166qo6tmbi2rXhtqHzE9TPpV3DBuwazevun+umLhFYwr3WY\nbqGfMwEepPnHi4p1nMVlyJC0Y1wtoK2ylZiyrperyvCYmY7/Z3nHGHV69j3C\nyXUh\r\n=YhkN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_7.2.3_1600888690530_0.9074952950792119"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.4": {
+      "name": "@types/eslint",
+      "version": "7.2.4",
+      "description": "TypeScript definitions for eslint",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Pierre-Marie Dartus",
+          "url": "https://github.com/pmdartus",
+          "githubUsername": "pmdartus"
+        },
+        {
+          "name": "Jed Fox",
+          "url": "https://github.com/j-f1",
+          "githubUsername": "j-f1"
+        },
+        {
+          "name": "Saad Quadri",
+          "url": "https://github.com/saadq",
+          "githubUsername": "saadq"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        },
+        {
+          "name": "Brad Zacher",
+          "url": "https://github.com/bradzacher",
+          "githubUsername": "bradzacher"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/eslint"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/estree": "*",
+        "@types/json-schema": "*"
+      },
+      "typesPublisherContentHash": "bf571f2e37bf41295b99006b5e957d64e4e0a755589762d5b1a671e342ad5607",
+      "typeScriptVersion": "3.2",
+      "_id": "@types/eslint@7.2.4",
+      "dist": {
+        "integrity": "sha512-YCY4kzHMsHoyKspQH+nwSe+70Kep7Vjt2X+dZe5Vs2vkRudqtoFoUIv1RlJmZB8Hbp7McneupoZij4PadxsK5Q==",
+        "shasum": "d12eeed7741d2491b69808576ac2d20c14f74c41",
+        "tarball": "https://registry.npmjs.org/@types/eslint/-/eslint-7.2.4.tgz",
+        "fileCount": 15,
+        "unpackedSize": 139118,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJffzrYCRA9TVsSAnZWagAA6S8P/1OBy7jZksjGomyUXx8x\n3XlzmoLNANMzcrj4wECm4JgvEZBMDYUgG3dQv68Rt3bun2OFYVPrwzI+dQ0c\n42CuDSOLM0c6C45cM3CFTmMNDcMrbxxsN3ukDS/AlQSqKSHnZy/2wYhyJV2x\n16P1UI0as5gFvQcukY1CzRp+lIl1i7MQnJeWXECnnoyYwlCr7vRugSGeNp2I\nCZfTTr9UFc6xnUUz0sNECx00U6K6W+T77mTki62rb0ZbiBWWDbTQk36SdVbm\nONIaz6kEZ4gaYGI400/cUFJJXHLxqWTw1FmQmpbXE2Xzsl7Z3WmHIobsDwmM\nGMk0pklQpVpNmMchBdkcEMumE5MnPkTK0zElYdGeP55LJYvgTeADBP+/ozhN\nTg49Y/2Xm2G9GCAavlfBcpfh6XUjrSBt8yta1YAFishYqVM1kwXypjdKBjLf\n8ftbgZ8L9YHTHz3jpTmpiZS3LGqa998YrtoqOF7xHrEMYnE61yVfAE9rTvof\nPY34xf19XfntE4PL8V91lmiPgV7rPJZmT6WY2nnU5V6pZkzrvkpjCRNtwL/s\nx/iqId84y4GP2OzylMH5/fv3x+OKZ+8NeQ2El4g964PRxt2c0n1rIeFZLZNw\nKfj733ORxyjzu1GEj9WoFYEnMWwTVbHvXAvcFMBwVvae/0m6C3Rs8P88YsIX\nX1dx\r\n=5+lM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint_7.2.4_1602173656436_0.1522062028451856"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-02-13T20:55:38.662Z",
+    "4.16.0": "2018-02-13T20:55:38.797Z",
+    "modified": "2020-10-08T16:14:26.846Z",
+    "4.16.1": "2018-04-24T23:33:06.813Z",
+    "4.16.2": "2018-05-08T16:42:00.364Z",
+    "4.16.3": "2018-06-30T02:50:41.663Z",
+    "4.16.4": "2018-10-24T15:38:31.181Z",
+    "4.16.5": "2018-12-03T21:37:15.664Z",
+    "4.16.6": "2019-01-28T20:34:16.369Z",
+    "4.16.7": "2019-08-08T22:50:40.834Z",
+    "4.16.8": "2019-08-09T15:29:49.133Z",
+    "6.1.0": "2019-08-20T19:18:03.388Z",
+    "6.1.1": "2019-08-23T15:40:46.247Z",
+    "6.1.2": "2019-10-02T22:03:59.002Z",
+    "6.1.3": "2019-10-23T22:11:03.766Z",
+    "6.1.4": "2020-01-22T00:52:26.870Z",
+    "6.1.5": "2020-01-22T19:53:09.173Z",
+    "6.1.6": "2020-01-23T18:25:34.895Z",
+    "6.1.7": "2020-01-25T01:02:39.418Z",
+    "6.1.8": "2020-02-04T17:48:05.935Z",
+    "6.1.9": "2020-03-31T00:34:09.286Z",
+    "6.8.0": "2020-04-06T20:24:29.003Z",
+    "6.8.1": "2020-05-15T05:08:03.950Z",
+    "7.2.0": "2020-06-11T23:32:29.535Z",
+    "7.2.1": "2020-08-21T17:07:31.377Z",
+    "7.2.2": "2020-08-27T18:14:56.405Z",
+    "7.2.3": "2020-09-23T19:18:10.724Z",
+    "7.2.4": "2020-10-08T16:14:16.555Z"
+  },
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "description": "TypeScript definitions for eslint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/eslint"
+  },
+  "contributors": [
+    {
+      "name": "Pierre-Marie Dartus",
+      "url": "https://github.com/pmdartus",
+      "githubUsername": "pmdartus"
+    },
+    {
+      "name": "Jed Fox",
+      "url": "https://github.com/j-f1",
+      "githubUsername": "j-f1"
+    },
+    {
+      "name": "Saad Quadri",
+      "url": "https://github.com/saadq",
+      "githubUsername": "saadq"
+    },
+    {
+      "name": "Jason Kwok",
+      "url": "https://github.com/JasonHK",
+      "githubUsername": "JasonHK"
+    },
+    {
+      "name": "Brad Zacher",
+      "url": "https://github.com/bradzacher",
+      "githubUsername": "bradzacher"
+    }
+  ],
+  "license": "MIT",
+  "readme": "# Installation\r\n> `npm install --save @types/eslint`\r\n\r\n# Summary\r\nThis package contains type definitions for eslint (https://eslint.org).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/eslint.\r\n\r\n### Additional Details\r\n * Last updated: Thu, 08 Oct 2020 16:13:36 GMT\r\n * Dependencies: [@types/json-schema](https://npmjs.com/package/@types/json-schema), [@types/estree](https://npmjs.com/package/@types/estree)\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by [Pierre-Marie Dartus](https://github.com/pmdartus), [Jed Fox](https://github.com/j-f1), [Saad Quadri](https://github.com/saadq), [Jason Kwok](https://github.com/JasonHK), and [Brad Zacher](https://github.com/bradzacher).\r\n",
+  "readmeFilename": ""
+}

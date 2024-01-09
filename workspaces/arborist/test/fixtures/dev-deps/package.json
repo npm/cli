@@ -1,0 +1,21 @@
+{
+  "name": "dev-deps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tcompare": "^4.0.1"
+  },
+  "dependencies": {
+    "once": "^1.4.0"
+  },
+  "optionalDependencies": {
+    "inflight": "^1.0.6"
+  }
+}

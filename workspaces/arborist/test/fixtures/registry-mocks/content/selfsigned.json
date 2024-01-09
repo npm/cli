@@ -1,0 +1,1557 @@
+{
+  "_id": "selfsigned",
+  "_rev": "37-afe13ee3b3423c66125d5e771fcf8c24",
+  "name": "selfsigned",
+  "description": "Generate self signed certificates private and public keys",
+  "dist-tags": {
+    "latest": "1.10.8"
+  },
+  "versions": {
+    "0.0.2": {
+      "name": "selfsigned",
+      "version": "0.0.2",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "~1.5.0",
+        "mocha": "~1.8.2",
+        "rimraf": "~2.1.4"
+      },
+      "dependencies": {
+        "tmp": "0.0.16",
+        "async": "~0.2.6"
+      },
+      "_id": "selfsigned@0.0.2",
+      "dist": {
+        "shasum": "313d782ad5ca0a60407e713f8bc9b4f790181af5",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "selfsigned",
+      "version": "0.0.3",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "~1.5.0",
+        "mocha": "~1.8.2",
+        "rimraf": "~2.1.4"
+      },
+      "dependencies": {
+        "tmp": "0.0.16",
+        "async": "~0.2.6"
+      },
+      "_id": "selfsigned@0.0.3",
+      "dist": {
+        "shasum": "178570bf43bb1acd9896b37a342430cdf0b807ac",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-0.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "selfsigned",
+      "version": "0.0.4",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "~1.5.0",
+        "mocha": "~1.8.2",
+        "rimraf": "~2.1.4"
+      },
+      "dependencies": {
+        "tmp": "0.0.16",
+        "async": "~0.2.6"
+      },
+      "_id": "selfsigned@0.0.4",
+      "dist": {
+        "shasum": "2ee56fa12500add3632bd8c7d2da3f958a967520",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-0.0.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "selfsigned",
+      "version": "0.0.5",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "~1.5.0",
+        "mocha": "~1.8.2",
+        "rimraf": "~2.1.4"
+      },
+      "dependencies": {
+        "tmp": "0.0.16",
+        "async": "~0.2.6"
+      },
+      "_id": "selfsigned@0.0.5",
+      "dist": {
+        "shasum": "7299f40f21b8cd4b091780d16a1cdaddd80c26d6",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-0.0.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "selfsigned",
+      "version": "0.0.6",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "chai": "~1.5.0",
+        "mocha": "~1.8.2",
+        "rimraf": "~2.1.4"
+      },
+      "dependencies": {
+        "tmp": "0.0.16",
+        "async": "~0.2.6"
+      },
+      "_id": "selfsigned@0.0.6",
+      "dist": {
+        "shasum": "6df529e0e341047254d3b8c1a99dcc28ba1f6564",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-0.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "selfsigned",
+      "version": "1.1.1",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test/tests.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contirbutors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.1.15"
+      },
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "_id": "selfsigned@1.1.1",
+      "dist": {
+        "shasum": "17ff051cc330213522099c0b613b2bbc9116d0d4",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.30",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "selfsigned",
+      "version": "1.2.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test/tests.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contirbutors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "_id": "selfsigned@1.2.0",
+      "dist": {
+        "shasum": "45ca012e5dda2e7a7ee4692ed6d2e7499fce75af",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.30",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "selfsigned",
+      "version": "1.4.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test/tests.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "gitHead": "4e69f295dac6b980a35668d772f0b7b3c3bf2cac",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.4.0",
+      "_shasum": "1af8e003f50a99347af38bd2d7a9e4540d7bd5a0",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1af8e003f50a99347af38bd2d7a9e4540d7bd5a0",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "selfsigned",
+      "version": "1.4.1",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test/tests.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "gitHead": "4496bdf9e9d295afbc41b9b796e108079f55cc32",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.4.1",
+      "_shasum": "7e1a32bdd02119d08cbd7e307a3231c9425b1c2b",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7e1a32bdd02119d08cbd7e307a3231c9425b1c2b",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "selfsigned",
+      "version": "1.5.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "node ./test/tests.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "gitHead": "0c338b87f79b6d190a2f9affbdc65ce48e3c31c7",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.5.0",
+      "_shasum": "7a373bf2cd4465f342c792e8b34b2d6e5c415b98",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7a373bf2cd4465f342c792e8b34b2d6e5c415b98",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "selfsigned",
+      "version": "1.6.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "1cac1a30c7ae07cf1ccef4d07cb5186bf3f00d40",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.6.0",
+      "_shasum": "6baa59493cc0c60f4bce470a68067c813741d3bb",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6baa59493cc0c60f4bce470a68067c813741d3bb",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "selfsigned",
+      "version": "1.7.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "e8d822127a37eaec7bc035df71d7e4beb92054a6",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.7.0",
+      "_shasum": "6b7df17a62879ff8df423f51704dc13d891d8352",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6b7df17a62879ff8df423f51704dc13d891d8352",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.7.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.8.0": {
+      "name": "selfsigned",
+      "version": "1.8.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "~0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "5eefacceae31667f190248c4694ff24968bf4e14",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.8.0",
+      "_shasum": "c8ddaee6fbcb6b2c46275163dbf62a8292aaa862",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c8ddaee6fbcb6b2c46275163dbf62a8292aaa862",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.8.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.9.1": {
+      "name": "selfsigned",
+      "version": "1.9.1",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.6.33"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "4c3a55a2fe9a67a04d19028676806d3744fd64d8",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.9.1",
+      "_shasum": "cdda4492d70d486570f87c65546023558e1dfa5a",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "shasum": "cdda4492d70d486570f87c65546023558e1dfa5a",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.9.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/selfsigned-1.9.1.tgz_1494618269817_0.1208974055480212"
+      },
+      "directories": {}
+    },
+    "1.10.0": {
+      "name": "selfsigned",
+      "version": "1.10.0",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.6.33"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "58f6a441446472b7cdefb66874d1fdba07ab598f",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.0",
+      "_shasum": "47412fc93e95e8376aed8d7184dc67a4a9873d52",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "shasum": "47412fc93e95e8376aed8d7184dc67a4a9873d52",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned-1.10.0.tgz_1502374970579_0.35861022607423365"
+      },
+      "directories": {}
+    },
+    "1.10.1": {
+      "name": "selfsigned",
+      "version": "1.10.1",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com  ",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.6.33"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "90bd8aabfb6e4624ae48ebe6a63ad9912c000497",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.1",
+      "_shasum": "bf8cb7b83256c4551e31347c6311778db99eec52",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "shasum": "bf8cb7b83256c4551e31347c6311778db99eec52",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned-1.10.1.tgz_1502375467115_0.2571015888825059"
+      },
+      "directories": {}
+    },
+    "1.10.2": {
+      "name": "selfsigned",
+      "version": "1.10.2",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.7.1"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "ec6ef7a04ca73e049472ab112b7e727c1de3308b",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.2",
+      "_shasum": "b4449580d99929b65b10a48389301a6592088758",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "shasum": "b4449580d99929b65b10a48389301a6592088758",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned-1.10.2.tgz_1517230152097_0.3908937314990908"
+      },
+      "directories": {}
+    },
+    "1.10.3": {
+      "name": "selfsigned",
+      "version": "1.10.3",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.7.5"
+      },
+      "devDependencies": {
+        "mocha": "^1.20.1"
+      },
+      "gitHead": "a7dc4f6c2d76bcc9d7f2760d688a4ec834295c90",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vmZenZ+8Al3NLHkWnhBQ0x6BkML1eCP2xEi3JE+f3D9wW9fipD9NNJHYtE9XJM4TsPaHGZJIamrSI6MTg1dU2Q==",
+        "shasum": "d628ecf9e3735f84e8bafba936b3cf85bea43823",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.3.tgz",
+        "fileCount": 6,
+        "unpackedSize": 21587,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7HleCRA9TVsSAnZWagAAfzQP/jRdhPbyjptLms5EnWnO\n+pwnIlYKHBCKXQSRZJPEVbZybCj6RbjbQBrYMEhue2xtN9YJkj4/G4iN+AL2\nTb8F1bKo+Uf34xpp40XckkwE+6MYIcZUTYFeEBZSL8Ysi8FIpF3MVUxcnsbC\nnLQ3tnj5I8F20WcaEZjyncakgrSxSEMGo3arBXR++sZx88Q0efter1vgF7gR\nqPSXIimWSxRe1R9UEZpUbMrG4rv25q/B9Jm4C79WvzPXcTJFejlcULx1tJPP\n6gjOmica+z2qJh/DOH8Oaq2FUVkoF5naXnzY23HckzZOSty5McGq1AIZgd7J\n1QTaL0t5I/SVB618Qpf6d48zbyM7OuSMQXIMOScRN8ElLF91LEiUrZyN7Fnf\nAnpCb1XwReXXEJc4uNq21z2j/Mj6x/nPqKMtY7l4CU/31dftQXfMrfkWQa93\ny4A0Xg1qCE1sMOSDqpRTO0/tP0pEs0QMMG8gdThR2nghkoeJL8/UjLpUIbiU\nv8QAKuIfYc29AtaJqv25QGdSF4gga/Cm/p2jUr/5mlADjFYxTFssH6W7SnuF\ny8jQcA0uBr9+YOJzjmK2SzBhilcHOi7KzDGZTFwyMX2O5OWPJw5iGgQJkuZK\nnu/b57VytxQh7khtYV5R5ymGmbWNkumITtxGLZJVizeIdPz56BVzl+o9KaPY\nBT7g\r\n=tIIF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned_1.10.3_1525447004771_0.5284479652533043"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.4": {
+      "name": "selfsigned",
+      "version": "1.10.4",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.7.5"
+      },
+      "devDependencies": {
+        "mocha": "^5.1.1"
+      },
+      "gitHead": "a20f5d812b06a5769716b5a0c14b48dd6801aab8",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.4",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9AukTiDmHXGXWtWjembZ5NDmVvP2695EtpgbCsxCa68w3c88B+alqbmZ4O3hZ4VWGXeGWzEVdvqgAJD8DQPCDw==",
+        "shasum": "cdd7eccfca4ed7635d47a08bf2d5d3074092e2cd",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22664,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbve5MCRA9TVsSAnZWagAAERMP/0LyiTvWHYLgNZTTIRxf\nJZ9Q2it3Z5UMl9MtUoZ8fOizkcj4/OCJwltCrCkPNKF7RfMLwGmFW/7jOSuX\ni3FyHjMCSInmP5h/TfL74pIu39/rpx2iEzyr/7JLQdl3+o48qYjZ14x4pApa\nkQQoUdvyd0TKOLumnEatQLQH5HfyLf2ZvRY5ICNCk8TSVGf0yXdPXeyare8Y\nqntkytAxkoXycKycztthePYRfQBxGKIWcmO+53dwA+690CfCwJsVie9rBclg\n/Y35YddBT843ys+C+FwQNMgOMd3Y4jQPV+Kcy843oUpGkKrwFcpyVGtJFVAn\n2M9NRfPfl/cyzheaOn9sG2GLOssv66gFVurHXLErMNe/6Ek+UNIoyAh+LVUH\naOeZKEsSaib7aidXbfv9c7UeJ81A6j+woAElwKO2OkkUPOT4MSOzKV/8KP19\nnEtdNI35Easn4NjbnG3AzT2Ug9UrI0EZDYGty1bwc1XPH6aLCxZzCxYgZ4Sq\n11wXbJ+l7BX1ukMw//6WAF/NJ2Wyei+wyIFXTjMa+UDkUk18A7sFvp9RRINo\n1+FaiyqTBl9n38SIlzrnS473OV0JxMRaIFQSyZh1QIz2NNuj1Bu75Q03p4ro\nfsP68cHA9+2giC04C/+gOxNB3qnI652BFxn2B59aqPM1WjLBjTpWYz5udGO4\nR8AB\r\n=7qvY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned_1.10.4_1539173963353_0.11128511572157085"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.6": {
+      "name": "selfsigned",
+      "version": "1.10.6",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.8.2"
+      },
+      "devDependencies": {
+        "mocha": "^5.1.1"
+      },
+      "gitHead": "7bd58764439eee6198895338fd2f6e388f5833d0",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.6",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-i3+CeqxL7DpAazgVpAGdKMwHuL63B5nhJMh9NQ7xmChGkA3jNFflq6Jyo1LLJYcr3idWiNOPWHCrm4zMayLG4w==",
+        "shasum": "7b3cd37ed9c2034261a173af1a1aae27d8169b67",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.6.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22663,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdckzyCRA9TVsSAnZWagAA8NQP/3VX8673rx0OqTu8Pl4k\nh7PbEROGM9Rs7ACkm+ThPU0/tfYjW5LnWYWIHCbQwV5pvxW9SIi+WCdIDN/x\ngY2lo/IvZMTOoxms/gu6HnVfw9jYgMKK+nOSndt0OVOtuF5anv1YnHI7sT/t\n0InNYkt63uGrriEVvCs0GtuFBm83tL7UPiRpwu2Yln2ocMilKDzcd6B4O+SB\nzibGBnmSkNNmVytXq0lH+wCPak02yYr/l23lic42DRbAxVpya5BGblh/ym+x\nTn4ZJcgQUZyNFYoQ10Y4TtXbQ1cWyP8uWLDTQEEO82bVqlaBYDqZlnoKMqdL\nSIsrV8bSsx8rbM6Rz4FSVAM8An8l1+KFWBzcD2Brxf3LO4l7RJY83+rODDVk\nRBEpb0pjOmBmpDUthhRehEBvF3hPdYt8tsmCt13PYgc5mdBjF0X07/qB4cns\nVgSzRoYxepHgLzbwbil0nYt2ljdWylv7MrXr/7+2MkdZwiOvZjivvVzFkh/t\n4/DAcLDDd9gG7U0Ze9yUGMZO4K1a7xE8lofNHjy9gR6cesDjR5gxa1vhjbES\nV7M8eG5BVR5C1Ba7aXn5CiuYSexY6YPZbNZGpRcQxk1bTfRqGNsA5dpJIWJY\nwjoqyzdLqo6+ElgEEOx0ItuYiE5oEp+EiNJX5nsJJPeVTc/vW7bEHPaA/qcC\npHIw\r\n=uYXP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned_1.10.6_1567771890158_0.6182029462818834"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.7": {
+      "name": "selfsigned",
+      "version": "1.10.7",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "0.9.0"
+      },
+      "devDependencies": {
+        "mocha": "^5.1.1"
+      },
+      "gitHead": "7b3fb86eab6307c29a6b8276b4e73197768c1f28",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.7",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8M3wBCzeWIJnQfl43IKwOmC4H/RAp50S8DF60znzjW5GVqTcSe2vWclt7hmYVPkKPlHWOu5EaWOMZ2Y6W8ZXTA==",
+        "shasum": "da5819fd049d5574f28e88a9bcc6dbc6e6f3906b",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.7.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22663,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdk5DlCRA9TVsSAnZWagAAIY8P/Aixx/FStOCQW3TwQfay\nhrsJ1uw3W/Ana/VuuV0d4UpRCjeT0stNLVhis0IEgQ1fE6a6mU4upy8EKTAp\n5GpNt976sNGcOm4D84rQVsruR+W4ofCVMT5AXq2i6Z5SgBB3WtX6KuO08Tnx\n2wyE7RvhWd+hxSAgpopWcE6D8tJiOu1rb5ppdtMbZ3p7uxd9w081Ox1ntOxu\n5qhCWaewAd0N8UmU0oxptCi+JCfG7DsrbqAnW9LS30Al1hH/RLjJVEyIJVA1\n1H4MT4qNBbvoX9Jr4HPZ2zDGt9ftMP1pfNRuWkoHvRQjCq4nWGCj/VgTB+B5\nGbjCNfOI+WZIrJ3Yn2yp+G4qbWBiXW7b+gmGKFHb8v6Ux0oSCq9FeNWM6eE+\n76g9kSJ/Or4AK3Um8Pc13n51N+Q4F+EtmKPB64fSabdyhyHOfKAcV9B3a3EH\nZe0/Vy9nP1FBY2JMZAHkmrsqtDOCdXI6mlMXjfmPBj/ePu3rKbqEaRkG8Yqi\nqeHFM6B/9L1zpjdaRSGLtJ4b23h5sDBb6sdiAb3fZGiVgPsh1l8IprM9BEur\nquuZhQGBCnHl5kZ6OYvrNkrcMHW3SngO8U0FQSZld4nT6nEnD2R5uvSFoejz\nw/8YsUY6efhoYvJQ8SQtzBFeZgwrK1OPh/ZGIZ0+3vjfAgzWnNHcmcC8xw/5\nyXBz\r\n=CIZC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        },
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned_1.10.7_1569951972513_0.9456207682850342"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.8": {
+      "name": "selfsigned",
+      "version": "1.10.8",
+      "description": "Generate self signed certificates private and public keys",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha -t 5000"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jfromaniello/selfsigned.git"
+      },
+      "keywords": [
+        "openssl",
+        "self",
+        "signed",
+        "certificates"
+      ],
+      "author": {
+        "name": "José F. Romaniello",
+        "email": "jfromaniello@gmail.com",
+        "url": "http://joseoncode.com"
+      },
+      "contributors": [
+        {
+          "name": "Paolo Fragomeni",
+          "email": "paolo@async.ly",
+          "url": "http://async.ly"
+        },
+        {
+          "name": "Charles Bushong",
+          "email": "bushong1@gmail.com",
+          "url": "http://github.com/bushong1"
+        }
+      ],
+      "license": "MIT",
+      "dependencies": {
+        "node-forge": "^0.10.0"
+      },
+      "devDependencies": {
+        "mocha": "^5.1.1"
+      },
+      "gitHead": "b7f2afaf64574987c8c2cfccfbbfe84846b73b3f",
+      "bugs": {
+        "url": "https://github.com/jfromaniello/selfsigned/issues"
+      },
+      "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+      "_id": "selfsigned@1.10.8",
+      "_nodeVersion": "10.21.0",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "jfromaniello",
+        "email": "jfromaniello@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2P4PtieJeEwVgTU9QEcwIRDQ/mXJLX8/+I3ur+Pg16nS8oNbrGxEso9NyYWy8NAmXiNl4dlAp5MwoNeCWzON4w==",
+        "shasum": "0d17208b7d12c33f8eac85c41835f27fc3d81a30",
+        "tarball": "https://registry.npmjs.org/selfsigned/-/selfsigned-1.10.8.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22665,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfYO1/CRA9TVsSAnZWagAAlz8P/2C9sLnE3GLRemgtza6B\nxbufwbyo42EOGRjpHLZ6ZlXKPcL4lYwZuYhyZhlAIQc1uKQqKCS48/0itDQn\n7pYgQExAZ3O63U4MAwLL3gihKeaZ79a9/IMuyv3IsYm29u+2kckZVl0Np6sa\n3dTLoRkWXxXU1tzu69OHI/K5PjV+cpAQCbfUsOup66lH5yeinFps38tMT/8q\nVs/uCXOXpzciEQwToFUxD5C1eAtwG65w6vC9iKYHPQjWbX0QRu2TkqrZjFIu\n+bcsVo2I3TealncBeeKBI+AacHQwKuczKKIgz+7sWjmoEwwXyXYsCyvtxMEN\nsigTTUqtTtdE1kX1KNR5ypGH+GT6PQTDLGF5fFWbESyIBUN3au2AwQEdbWbs\nRuE/jj4MP3OgeD2oBl6qZNXzMZNM4frl7/HxUVJP78+imOXGff4ZTXiVRg4L\nqosEZBLDajqdyLqEoqYOmLyTiHM9ReDqeWZo+a0/UkvgDaarZNsyjxipF0d+\nig9qxo4GMqzHQnimzQLCYRxEe2psNVJXZrBFQhH93eQ07d8+bfh2Dlkyud5B\nU3Kst1X9ItmNPTqtBVAyOGEvXyPtyagc9vaWUb33NiCg/7NmPiw0mTuEy35+\ne0iF0992ycfVFrolmVf5hKNBV+c7lUS47gsYGxz846jEqmzqrg9N8SrVl8nA\nXqDB\r\n=Pg0A\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jfromaniello",
+          "email": "jfromaniello@gmail.com"
+        },
+        {
+          "name": "iaco",
+          "email": "sebastian.iacomuzzi@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/selfsigned_1.10.8_1600187774802_0.07166194090241818"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "Generate a self signed x509 certificate from node.js.\n\n[![Build Status](https://travis-ci.org/jfromaniello/selfsigned.png)](https://travis-ci.org/jfromaniello/selfsigned)\n\n## Install\n\n```bash\n  npm install selfsigned\n```\n\n## Usage\n\n```js\nvar selfsigned = require('selfsigned');\nvar attrs = [{ name: 'commonName', value: 'contoso.com' }];\nvar pems = selfsigned.generate(attrs, { days: 365 });\nconsole.log(pems)\n```\n\n#### Async\n\n```js\nselfsigned.generate(attrs, { days: 365 }, function (err, pems) {\n  console.log(pems)\n});\n```\n\nWill return the following like this:\n\n```js\n{\n  private: '-----BEGIN RSA PRIVATE KEY-----\\r\\nMIICXAIBAAKBgQCBFMXMYS/+RZz6+qzv+xeqXPdjw4YKZC4y3dPhSwgEwkecrCTX\\r\\nsR6boue+1MjIqPqWggXZnotIGldfEN0kn0Jbh2vMTrTx6YwqQ8tceBPoyuuqcYBO\\r\\nOONAcKOB3MLnZbyOgVtbyT3j68JE5V/lx6LhpIKAgY0m5WIuaKrW6mvLXQIDAQAB\\r\\nAoGAU6ODGxAqSecPdayyG/ml9vSwNAuAMgGB0eHcpZG5i2PbhRAh+0TAIXaoFQXJ\\r\\naAPeA2ISqlTJyRmQXYAO2uj61FzeyDzYCf0z3+yZEVz3cO7jB5Pl6iBvzbxWuuuA\\r\\ncbJtWLhWtW5/jioc8F0EAzZ+lkC/XuVJdwKHDmwt2qvJO+ECQQD+dvo1g3Sz9xGw\\r\\n21n+fDG5i4128+Qh+JPgh5AeLuXSofc1HMHaOXcC6Wu/Cloh7QAD934b7W0A7VoD\\r\\ndLd/JLyFAkEAgdwjryyvdhy69e516IrPB3b+m4rggtntBlZREMrk9tOzeIucVO3W\\r\\ntKI3FHm6JebN2gVcG+rZ+FaDPo+ifJkW+QJBAPojrMwEACmUevB2f9246gxx0UsY\\r\\nbq6yM3No71OsWEEY8/Bi53CEQqg7Gq5+F6H33qcHmBEN8LQTngN9rY+vZh0CQBg0\\r\\nqJImii5B/LeK03+dICoMDDmCEYdSh9P+ku3GZBd+Lp3xqBpMmxDgi9PNPN2DwCs7\\r\\nhIfPpwGbXqtyqp7/CkECQB4OdY+2FbCciI473eQkTu310RMf8jElU63iwnx4R/XN\\r\\n/mgqN589OfF4SS0U/MoRzYk9jF9IAJN1Mi/571T+nw4=\\r\\n-----END RSA PRIVATE KEY-----\\r\\n',\n  public: '-----BEGIN PUBLIC KEY-----\\r\\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCBFMXMYS/+RZz6+qzv+xeqXPdj\\r\\nw4YKZC4y3dPhSwgEwkecrCTXsR6boue+1MjIqPqWggXZnotIGldfEN0kn0Jbh2vM\\r\\nTrTx6YwqQ8tceBPoyuuqcYBOOONAcKOB3MLnZbyOgVtbyT3j68JE5V/lx6LhpIKA\\r\\ngY0m5WIuaKrW6mvLXQIDAQAB\\r\\n-----END PUBLIC KEY-----\\r\\n',\n  cert: '-----BEGIN CERTIFICATE-----\\r\\nMIICjTCCAfagAwIBAgIBATANBgkqhkiG9w0BAQUFADBpMRQwEgYDVQQDEwtleGFt\\r\\ncGxlLm9yZzELMAkGA1UEBhMCVVMxETAPBgNVBAgTCFZpcmdpbmlhMRMwEQYDVQQH\\r\\nEwpCbGFja3NidXJnMQ0wCwYDVQQKEwRUZXN0MQ0wCwYDVQQLEwRUZXN0MB4XDTEz\\r\\nMDgxMzA1NDAyN1oXDTE0MDgxMzA1NDAyN1owaTEUMBIGA1UEAxMLZXhhbXBsZS5v\\r\\ncmcxCzAJBgNVBAYTAlVTMREwDwYDVQQIEwhWaXJnaW5pYTETMBEGA1UEBxMKQmxh\\r\\nY2tzYnVyZzENMAsGA1UEChMEVGVzdDENMAsGA1UECxMEVGVzdDCBnzANBgkqhkiG\\r\\n9w0BAQEFAAOBjQAwgYkCgYEAgRTFzGEv/kWc+vqs7/sXqlz3Y8OGCmQuMt3T4UsI\\r\\nBMJHnKwk17Eem6LnvtTIyKj6loIF2Z6LSBpXXxDdJJ9CW4drzE608emMKkPLXHgT\\r\\n6MrrqnGATjjjQHCjgdzC52W8joFbW8k94+vCROVf5cei4aSCgIGNJuViLmiq1upr\\r\\ny10CAwEAAaNFMEMwDAYDVR0TBAUwAwEB/zALBgNVHQ8EBAMCAvQwJgYDVR0RBB8w\\r\\nHYYbaHR0cDovL2V4YW1wbGUub3JnL3dlYmlkI21lMA0GCSqGSIb3DQEBBQUAA4GB\\r\\nAC9hGQlDh8anNo1YDJdG2mYqOQ5uybJV++kixblGaOkoDROPsWepUpL6kMDUtbAM\\r\\n4uXTyFkvlUQSaQkhNgOY5w/BRIAkCIu6u4D4XcjlCdwFq6vcKMEuWTHMAlBWFla3\\r\\nXJZAPO10PHuDen7JeMOUf1Re7lRFtwfRGAvVYmrvYFKv\\r\\n-----END CERTIFICATE-----\\r\\n'\n}\n```\n\n## Attributes\n\nfor attributes, please refer to: https://github.com/digitalbazaar/forge/blob/0.7.5/lib/x509.js#L129\n\n## Options\n\n```js\nvar pems = selfsigned.generate(null, {\n  keySize: 2048, // the size for the private key in bits (default: 1024)\n  days: 30, // how long till expiry of the signed certificate (default: 365)\n  algorithm: 'sha256', // sign the certificate with specified algorithm (default: 'sha1')\n  extensions: [{ name: 'basicConstraints', cA: true }], // certificate extensions array\n  pkcs7: true, // include PKCS#7 as part of the output (default: false)\n  clientCertificate: true, // generate client cert signed by the original key (default: false)\n  clientCertificateCN: 'jdoe' // client certificate's common name (default: 'John Doe jdoe123')\n});\n```\n\n> You can avoid key pair generation specifying your own keys (`{ keyPair: { publicKey: '-----BEGIN PUBLIC KEY-----...', privateKey: '-----BEGIN RSA PRIVATE KEY-----...' }`)\n\n### Generate Client Certificates\n\nIf you are in an environment where servers require client certificates, you can generate client keys signed by the original (server) key.\n\n```js\nvar pems = selfsigned.generate(null, { clientCertificate: true });\nconsole.log(pems)\n```\nWill return the following like this:\n\n```js\n{ private: '-----BEGIN RSA PRIVATE KEY-----\\r\\nMIICXQIBAAKBgQDLg/kS4dCPVu96sbK6MQuUPmhqnF8SeBXVHH18h+0BTj7HqnrA\\r\\nA75hNVIiSLTChvpzQ0qi2Ju7O2ESUOdx7cvGiftGuZLiI8uL2HVlYuX+wQTIoRHx\\r\\n9nxv56TIiqnPg5d05vSTLXoiJg5uac3a6+4vnhhTo0XRRXVVboZsfNpuGQIDAQAB\\r\\nAoGAfhCd9QhUPLZJWeNBJvzCg221GHUMn1Arlfsz8DPyp+BkGyKLLu4iu+xfmEUZ\\r\\nU3ZxJX0FeqJatTwvAT2EYJpAovx+F37PWFTLAS6T57WI1O5Lj1pTIKVkLrasNQgF\\r\\nl6qFD3cvEtCZve4LiwDoJ52FO2OtcDcMJ0r2oqbCXSDIlAECQQDnkkxKcTejBZGH\\r\\nyYEXG9hAznnEZ63LLzlHHF2cIPfxT+9826Wm0IzBxn8Wr4hcAbNx3bVKgsU9p7xA\\r\\nfKnSqObhAkEA4PwCjPQqxFpiYUmNt7htb8nCEvUDD/QSDyxAH/uJzfr6gOJOD5nT\\r\\n5gZYblC+CCMDkgDUpro6oATNyeRNoU3GOQJBANdaW26DWZ1WqV9hCpcGAxdJrT30\\r\\nuVASq66w93Ehy9LzZqFz1tqKacwvH7NmLGZ8AngrGdSgRnOvEMfb50aMYqECQDcG\\r\\nzCTnbzJZHOjIkaXWsMV/pjz2ugoD2wrk+sYXwoujj/NH5mnAaOhAsw5AJ0pcLfpe\\r\\nw6QHtmD+68ouUaJbIFkCQQDeu0AXAp6Kbk6570i2DpGUSnkRdGCGS+3ekqqJUpE7\\r\\nfVUSx1nCF1sPD0p+pO8Rj3i87iI4MlblQRm/wVkrkjiR\\r\\n-----END RSA PRIVATE KEY-----\\r\\n',\n  public: '-----BEGIN PUBLIC KEY-----\\r\\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLg/kS4dCPVu96sbK6MQuUPmhq\\r\\nnF8SeBXVHH18h+0BTj7HqnrAA75hNVIiSLTChvpzQ0qi2Ju7O2ESUOdx7cvGiftG\\r\\nuZLiI8uL2HVlYuX+wQTIoRHx9nxv56TIiqnPg5d05vSTLXoiJg5uac3a6+4vnhhT\\r\\no0XRRXVVboZsfNpuGQIDAQAB\\r\\n-----END PUBLIC KEY-----\\r\\n',\n  cert: '-----BEGIN CERTIFICATE-----\\r\\nMIIClTCCAf6gAwIBAgIJdMZqoEeGMVYKMA0GCSqGSIb3DQEBBQUAMGkxFDASBgNV\\r\\nBAMTC2V4YW1wbGUub3JnMQswCQYDVQQGEwJVUzERMA8GA1UECBMIVmlyZ2luaWEx\\r\\nEzARBgNVBAcTCkJsYWNrc2J1cmcxDTALBgNVBAoTBFRlc3QxDTALBgNVBAsTBFRl\\r\\nc3QwHhcNMTUxMDI5MTMwNjA1WhcNMTYxMDI4MTMwNjA1WjBpMRQwEgYDVQQDEwtl\\r\\neGFtcGxlLm9yZzELMAkGA1UEBhMCVVMxETAPBgNVBAgTCFZpcmdpbmlhMRMwEQYD\\r\\nVQQHEwpCbGFja3NidXJnMQ0wCwYDVQQKEwRUZXN0MQ0wCwYDVQQLEwRUZXN0MIGf\\r\\nMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLg/kS4dCPVu96sbK6MQuUPmhqnF8S\\r\\neBXVHH18h+0BTj7HqnrAA75hNVIiSLTChvpzQ0qi2Ju7O2ESUOdx7cvGiftGuZLi\\r\\nI8uL2HVlYuX+wQTIoRHx9nxv56TIiqnPg5d05vSTLXoiJg5uac3a6+4vnhhTo0XR\\r\\nRXVVboZsfNpuGQIDAQABo0UwQzAMBgNVHRMEBTADAQH/MAsGA1UdDwQEAwIC9DAm\\r\\nBgNVHREEHzAdhhtodHRwOi8vZXhhbXBsZS5vcmcvd2ViaWQjbWUwDQYJKoZIhvcN\\r\\nAQEFBQADgYEAj1Yyyb0R9KRFjIWNFi6RErB/riWylW4CdOK1hOyJZ+VRBWeYLKfX\\r\\ni///V+tqRvLlYY5x5DnrjXbDjBy0CZuN/J772/Srgp7Nl5cn92zynMJK1q4MEEs3\\r\\nAE/FO85R0HbGEp+IrwUwDOLR6omBFVdh1EUOTcQU2jLZNbWvLDiWbDo=\\r\\n-----END CERTIFICATE-----\\r\\n',\n  clientprivate: '-----BEGIN RSA PRIVATE KEY-----\\r\\nMIICWwIBAAKBgQDjR5FrrdZ1jirqkx3KMPnGjrcObj/vmztWTEZ1kX6gTskQugJU\\r\\noxktzwDZza4jYODC6Ud2jouFLWeAi5BDSAeLwAQb951qVD9zVsmQ+63V/mvSJUoj\\r\\nigwj7YjcxyReJ17F0YgjceqrkZaPM8YRo8h1fj1JdPc4ZOUgA5ASZ0h2ewIDAQAB\\r\\nAoGAfB5DbjibG8ut6Di7VgX1AdhCY+EVjXaKqxAwklgIfOdJqpbKWwpO39NiNY+7\\r\\nf5qSZB8dZcNmsi4fjfWprPSTGVkk1Qp2uibtFS4MhbLEeyy4cgZfMIBQY+HD0Asf\\r\\n1NU7WTY5QfzgH3HAKuWpUEWdar/jE+hDPA+wnsMg+TgGARECQQDzlc+5WA9JsG9f\\r\\nwNRzhMGRxDP4QLmL0iLWupF4BMP/k4OLMjDtzWl725WJ4FjCzML7mSmkWWe/P8f5\\r\\nwrbR+e8lAkEA7t0CEsiIw8BE55YMuGIz5xI0QDnuwNWmCEmq6+ZziW3L+EuAr1S4\\r\\nDORqBYm5DuRvBWkWE9Sld0a8vNqWh58tHwJAP1ZYEhicuQuAmkRYucTuVEnRPZ8O\\r\\n4BV+65jNlIigskcYMEyXvm3oHMWnJ5fHXLfDh4p28n4w5ODfzcjcotK7ZQJAE7bX\\r\\n8fbtGsLmrPp8aEdqozqkZ1ygsPexMWPrIHcvt/sA56hLoazrV90ORxC73lfKNfcb\\r\\nZF2bnoGPGEMuQ1lG3wJAPnHysm3DgbSHZQiXWMjF4YDRRV2AeOqX1fmlSeMErwdj\\r\\ncwIs+ikIBnOwUOh6liJ7yK1YnckDTZTOfUDyG+vdFQ==\\r\\n-----END RSA PRIVATE KEY-----\\r\\n',\n  clientpublic: '-----BEGIN PUBLIC KEY-----\\r\\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDjR5FrrdZ1jirqkx3KMPnGjrcO\\r\\nbj/vmztWTEZ1kX6gTskQugJUoxktzwDZza4jYODC6Ud2jouFLWeAi5BDSAeLwAQb\\r\\n951qVD9zVsmQ+63V/mvSJUojigwj7YjcxyReJ17F0YgjceqrkZaPM8YRo8h1fj1J\\r\\ndPc4ZOUgA5ASZ0h2ewIDAQAB\\r\\n-----END PUBLIC KEY-----\\r\\n',\n  clientcert: '-----BEGIN CERTIFICATE-----\\r\\nMIICSzCCAbSgAwIBAgIBAjANBgkqhkiG9w0BAQUFADBpMRQwEgYDVQQDEwtleGFt\\r\\ncGxlLm9yZzELMAkGA1UEBhMCVVMxETAPBgNVBAgTCFZpcmdpbmlhMRMwEQYDVQQH\\r\\nEwpCbGFja3NidXJnMQ0wCwYDVQQKEwRUZXN0MQ0wCwYDVQQLEwRUZXN0MB4XDTE1\\r\\nMTAyOTEzMDYwNVoXDTE2MTAyOTEzMDYwNVowbjEZMBcGA1UEAxMQSm9obiBEb2Ug\\r\\namRvZTEyMzELMAkGA1UEBhMCVVMxETAPBgNVBAgTCFZpcmdpbmlhMRMwEQYDVQQH\\r\\nEwpCbGFja3NidXJnMQ0wCwYDVQQKEwRUZXN0MQ0wCwYDVQQLEwRUZXN0MIGfMA0G\\r\\nCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDjR5FrrdZ1jirqkx3KMPnGjrcObj/vmztW\\r\\nTEZ1kX6gTskQugJUoxktzwDZza4jYODC6Ud2jouFLWeAi5BDSAeLwAQb951qVD9z\\r\\nVsmQ+63V/mvSJUojigwj7YjcxyReJ17F0YgjceqrkZaPM8YRo8h1fj1JdPc4ZOUg\\r\\nA5ASZ0h2ewIDAQABMA0GCSqGSIb3DQEBBQUAA4GBACOUglBxJ80jzR3DSSMrgRav\\r\\n7deKUPShEPC3tbVrc3LHPGpCEJUC309aK2mbMwz2jX78tr/ezePELKbyRggUvVgN\\r\\nB0XdIQkpR9X4mPdtFYkMiWKNVYKd79r0kolprgFPryhT3jsICIOnwE1Ur23Q+Fk2\\r\\nnizRS0HY4Q25JLCmsWWy\\r\\n-----END CERTIFICATE-----\\r\\n' }\n```\n\nTo override the default client CN of `john doe jdoe123`, add another option for `clientCertificateCN`:\n\n```js\nvar pems = selfsigned.generate(null, { clientCertificate: true, clientCertificateCN: 'FooBar' });\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "jfromaniello",
+      "email": "jfromaniello@gmail.com"
+    },
+    {
+      "name": "iaco",
+      "email": "sebastian.iacomuzzi@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-09-15T16:36:18.654Z",
+    "created": "2013-03-12T20:23:33.914Z",
+    "0.0.2": "2013-03-12T20:23:54.178Z",
+    "0.0.3": "2013-03-12T20:32:42.069Z",
+    "0.0.4": "2013-03-12T20:42:44.306Z",
+    "0.0.5": "2013-03-12T20:59:54.353Z",
+    "0.0.6": "2013-03-27T14:17:51.605Z",
+    "1.1.1": "2013-08-13T23:43:35.458Z",
+    "1.2.0": "2013-08-14T20:00:19.551Z",
+    "1.4.0": "2015-10-26T11:57:59.213Z",
+    "1.4.1": "2015-10-26T12:00:35.879Z",
+    "1.5.0": "2015-10-29T14:21:45.677Z",
+    "1.6.0": "2015-10-29T19:17:21.197Z",
+    "1.7.0": "2015-10-30T16:04:36.585Z",
+    "1.8.0": "2015-12-28T15:41:19.504Z",
+    "1.9.1": "2017-05-12T19:44:32.733Z",
+    "1.10.0": "2017-08-10T14:22:50.654Z",
+    "1.10.1": "2017-08-10T14:31:07.188Z",
+    "1.10.2": "2018-01-29T12:49:12.486Z",
+    "1.10.3": "2018-05-04T15:16:44.916Z",
+    "1.10.4": "2018-10-10T12:19:23.516Z",
+    "1.10.6": "2019-09-06T12:11:30.384Z",
+    "1.10.7": "2019-10-01T17:46:12.626Z",
+    "1.10.8": "2020-09-15T16:36:14.975Z"
+  },
+  "author": {
+    "name": "José F. Romaniello",
+    "email": "jfromaniello@gmail.com",
+    "url": "http://joseoncode.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jfromaniello/selfsigned.git"
+  },
+  "users": {
+    "j3kz": true,
+    "ivangaravito": true,
+    "jrop": true,
+    "rocket0191": true,
+    "chimurai": true,
+    "daizch": true
+  },
+  "homepage": "https://github.com/jfromaniello/selfsigned#readme",
+  "keywords": [
+    "openssl",
+    "self",
+    "signed",
+    "certificates"
+  ],
+  "contributors": [
+    {
+      "name": "Paolo Fragomeni",
+      "email": "paolo@async.ly",
+      "url": "http://async.ly"
+    },
+    {
+      "name": "Charles Bushong",
+      "email": "bushong1@gmail.com",
+      "url": "http://github.com/bushong1"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/jfromaniello/selfsigned/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

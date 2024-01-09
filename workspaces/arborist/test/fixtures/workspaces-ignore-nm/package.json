@@ -1,0 +1,7 @@
+{
+  "name": "workspace-ignore-nm",
+  "workspaces": [
+    "packages/**"
+  ]
+}
+

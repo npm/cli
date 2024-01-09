@@ -1,0 +1,100 @@
+{
+  "_id": "get-package-type",
+  "name": "get-package-type",
+  "dist-tags": {
+    "latest": "0.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "get-package-type",
+      "version": "0.1.0",
+      "description": "Determine the `package.json#type` which applies to a location",
+      "type": "module",
+      "main": "index.cjs",
+      "exports": "./index.cjs",
+      "scripts": {
+        "pretest": "if-ver -ge 10 || exit 0; cfware-lint .",
+        "tests-only": "nyc -s node test.cjs",
+        "test": "npm run -s tests-only",
+        "posttest": "nyc report --check-coverage"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/get-package-type.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/get-package-type/issues"
+      },
+      "homepage": "https://github.com/cfware/get-package-type#readme",
+      "dependencies": {},
+      "devDependencies": {
+        "@cfware/lint": "^1.4.3",
+        "@cfware/nyc": "^0.7.0",
+        "if-ver": "^1.1.0",
+        "libtap": "^0.3.0",
+        "nyc": "^15.0.1"
+      },
+      "gitHead": "53f035a197b349125e43f60c8b8896664daf3942",
+      "_id": "get-package-type@0.1.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==",
+        "shasum": "8de2d803cff44df3bc6c456e6668b36c3926e11a",
+        "tarball": "https://registry.npmjs.org/get-package-type/-/get-package-type-0.1.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 6012,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJew6bFCRA9TVsSAnZWagAACE0P/24u3fIatxWC+kAgnEk1\nKvKOaPwlFHyQO/92g4VaRcsojP3BKpdT8DakarQ0ntPGQDiMf1vejcvEeeUM\neHTiXGzSfdxsJj8e4mteq/ODPvSfLZl6B19XpXuPx/c725ppEuWkRAE8I6K2\nHb/SLuiiQEqdJst4sVhm6s+8RZ8HYIb4+RR05mp660NkZSR+39k2wubGECps\naGAbgK5ViT5KyJ45MdcktEconxOO50COOFGebzMhXQLeL1/ZMPiFe3L9OkxK\nQpF5XfHpCvs4N6MuEZ/1S2QeCOVTP3MB1qOtBM+gziWWpmeU3V/+z2zxGgmx\nW1Ads9lhTwY066yAmkUcFTwnFU/XmaTUrxASn2doJnKwN2yyRyizY8N75SOI\nb+vczyHhRSozUCuSHqpy3DMJdlZckgXoIo2bPvH6UqyItt8OZjYa0gGUAv2o\nX/tj3ic+G7/hlj5phNzpXGkZti3+ipSY9VCjbTa0DmaduqSwM+8k/g0DNWlQ\nmpFY9YSlHKDXHvlXqH1qpkujMOcBEVRI3SYG5egNYXeWtTFPeav/WyI46p6N\nZgloNgkjd5GWOgqzipICF7DiJ1xLkACQBN22aoTPIfmzfb3kZ8LV7GzAhkVn\ngu5eUiHdDXQdnaFcowekVHxrQy7wqa5GR/BMoCBMa4KCBuefhQCLfb/HjP9Z\nLJ3o\r\n=HMDH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/get-package-type_0.1.0_1589880517396_0.942783043169866"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-05-19T09:28:37.395Z",
+    "0.1.0": "2020-05-19T09:28:37.496Z",
+    "modified": "2020-05-19T09:28:40.054Z"
+  },
+  "maintainers": [
+    {
+      "name": "coreyfarrell",
+      "email": "git@cfware.com"
+    }
+  ],
+  "description": "Determine the `package.json#type` which applies to a location",
+  "homepage": "https://github.com/cfware/get-package-type#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfware/get-package-type.git"
+  },
+  "author": {
+    "name": "Corey Farrell"
+  },
+  "bugs": {
+    "url": "https://github.com/cfware/get-package-type/issues"
+  },
+  "license": "MIT",
+  "readme": "# get-package-type [![NPM Version][npm-image]][npm-url]\n\nDetermine the `package.json#type` which applies to a location.\n\n## Usage\n\n```js\nconst getPackageType = require('get-package-type');\n\n(async () => {\n  console.log(await getPackageType('file.js'));\n  console.log(getPackageType.sync('file.js'));\n})();\n```\n\nThis function does not validate the value found in `package.json#type`.  Any truthy value\nfound will be returned.  Non-truthy values will be reported as `commonjs`.\n\nThe argument must be a filename.\n```js\n// This never looks at `dir1/`, first attempts to load `./package.json`.\nconst type1 = await getPackageType('dir1/');\n\n// This attempts to load `dir1/package.json`.\nconst type2 = await getPackageType('dir1/index.cjs');\n```\n\nThe extension of the filename does not effect the result.  The primary use case for this\nmodule is to determine if `myapp.config.js` should be loaded with `require` or `import`.\n\n[npm-image]: https://img.shields.io/npm/v/get-package-type.svg\n[npm-url]: https://npmjs.org/package/get-package-type\n",
+  "readmeFilename": "README.md"
+}

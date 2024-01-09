@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-transitive-conflicted-peer-c",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@isaacs/testing-transitive-conflicted-peer-b": "1"
+  }
+}

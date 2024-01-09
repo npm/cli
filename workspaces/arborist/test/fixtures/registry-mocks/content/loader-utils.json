@@ -1,0 +1,2245 @@
+{
+  "_id": "loader-utils",
+  "_rev": "65-be2f88c0515a464cfea2631ddab7ff7c",
+  "name": "loader-utils",
+  "description": "utils for webpack loaders",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "loader-utils",
+      "version": "0.1.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "license": "MIT",
+      "_id": "loader-utils@0.1.0",
+      "dist": {
+        "shasum": "c806ab8550eec0f0b716cc5b07fa7641261399e3",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.1.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "loader-utils",
+      "version": "0.1.1",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "license": "MIT",
+      "_id": "loader-utils@0.1.1",
+      "dist": {
+        "shasum": "2eb185fdec466d145507077f3ea2435e1cf9cc8e",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.1.1.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "loader-utils",
+      "version": "0.1.2",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "license": "MIT",
+      "_id": "loader-utils@0.1.2",
+      "dist": {
+        "shasum": "94b2b270822ae0f53a6bab74394c1d6f557c296b",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.1.2.tgz"
+      },
+      "_npmVersion": "1.1.63",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "loader-utils",
+      "version": "0.2.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "_id": "loader-utils@0.2.0",
+      "dist": {
+        "shasum": "3ab46086a1397e0fd52470e69106998fd70644a0",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "loader-utils",
+      "version": "0.2.1",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "_id": "loader-utils@0.2.1",
+      "dist": {
+        "shasum": "c8d03c4fe8c91e0ae362bd3aeb7fcc445f9b7890",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.11",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "loader-utils",
+      "version": "0.2.2",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "_id": "loader-utils@0.2.2",
+      "dist": {
+        "shasum": "4c0fe718dd3ab62d1d47d03a2b1af54dd7fda382",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "loader-utils",
+      "version": "0.2.3",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.3",
+      "dist": {
+        "shasum": "87fe021587458f10f7eb755c75af60a1fcf4b392",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "loader-utils",
+      "version": "0.2.4",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x"
+      },
+      "scripts": {
+        "test": "mocha test index.js"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "bf11c1c2737360c1daf77925cc718fc48e147128",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.4",
+      "_shasum": "b1fbdd1cf3b57ed111c202ffc193bafd1217f8c5",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b1fbdd1cf3b57ed111c202ffc193bafd1217f8c5",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.5": {
+      "name": "loader-utils",
+      "version": "0.2.5",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x",
+        "big.js": "~2.5.1"
+      },
+      "scripts": {
+        "test": "mocha test index.js"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "db3c7cd123355f61846497ebeef614670c075ed9",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.5",
+      "_shasum": "8dec38ecbcc3a81a01627f2605bec98390ccd5d0",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8dec38ecbcc3a81a01627f2605bec98390ccd5d0",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.6": {
+      "name": "loader-utils",
+      "version": "0.2.6",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x",
+        "big.js": "~2.5.1"
+      },
+      "scripts": {
+        "test": "mocha test index.js"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "3e9dfceeae52a23e5e027bdb67b30a21b52d2ae2",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.6",
+      "_shasum": "306b798f6a24a5d78505fdb0db2ddd5bb2b90810",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "306b798f6a24a5d78505fdb0db2ddd5bb2b90810",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.6.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.7": {
+      "name": "loader-utils",
+      "version": "0.2.7",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x",
+        "big.js": "~2.5.1"
+      },
+      "scripts": {
+        "test": "mocha test index.js"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "b52bc62f9b2faba9f6c0aea8f9da7211b4e9bdd7",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.7",
+      "_shasum": "dcbe8eaee038caa32961f206531da23f04e2279d",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dcbe8eaee038caa32961f206531da23f04e2279d",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.7.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.8": {
+      "name": "loader-utils",
+      "version": "0.2.8",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "json5": "0.1.x",
+        "big.js": "~2.5.1"
+      },
+      "scripts": {
+        "test": "mocha test index.js"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "289d38652bd4035488ff35dd11130b36b77d1035",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.8",
+      "_shasum": "ad61651fac981a2911e9c9200a838be8974c0cf6",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ad61651fac981a2911e9c9200a838be8974c0cf6",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.8.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.9": {
+      "name": "loader-utils",
+      "version": "0.2.9",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.0.2",
+        "json5": "^0.4.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "a417eea4e36f4fa3001d1a7591093e68cc4f5462",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils",
+      "_id": "loader-utils@0.2.9",
+      "_shasum": "9efc08d1ef20e99145e5e627bd8b945a85ac14dc",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9efc08d1ef20e99145e5e627bd8b945a85ac14dc",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.9.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.10": {
+      "name": "loader-utils",
+      "version": "0.2.10",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.0.2",
+        "json5": "^0.4.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "7fd3e9a1c9a0fb8d775f835498b8c0a2002e36a0",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.10",
+      "_shasum": "7ed2258e496644c83680590489bb82f3f57892fc",
+      "_from": ".",
+      "_npmVersion": "2.10.0",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7ed2258e496644c83680590489bb82f3f57892fc",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.10.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.11": {
+      "name": "loader-utils",
+      "version": "0.2.11",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.0.2",
+        "json5": "^0.4.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "0adb5e5c06b6fd217b8ec4a5316bb08d3363cd88",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.11",
+      "_shasum": "8a0164e337c21ca099c2b1716366f0db0ec3087f",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8a0164e337c21ca099c2b1716366f0db0ec3087f",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.11.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.12": {
+      "name": "loader-utils",
+      "version": "0.2.12",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.0.2",
+        "json5": "^0.4.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "581ccbcb264a9e6d7d667276fbfa609e0ee951f3",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.12",
+      "_shasum": "faa2a501563a3c2c9dda57aa8c39d8be628de7a2",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "faa2a501563a3c2c9dda57aa8c39d8be628de7a2",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.12.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.13": {
+      "name": "loader-utils",
+      "version": "0.2.13",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.0.2",
+        "json5": "^0.4.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "b16f37eab0655130f82c1b5255373d7b4a372ceb",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.13",
+      "_shasum": "ea0de320be919056362c9972d5072b4596ae9eec",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "ea0de320be919056362c9972d5072b4596ae9eec",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-0.2.13.tgz_1458846997166_0.9803386435378343"
+      },
+      "directories": {}
+    },
+    "0.2.14": {
+      "name": "loader-utils",
+      "version": "0.2.14",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^1.0.0",
+        "json5": "^0.5.0",
+        "object-assign": "^4.0.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "fc647bb47b662771d26529c3157a8d2bc2579844",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.14",
+      "_shasum": "3edab2a123ebb196a1c9d6dd3e83384958843e6f",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "3edab2a123ebb196a1c9d6dd3e83384958843e6f",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-0.2.14.tgz_1460208526883_0.26962931361049414"
+      },
+      "directories": {}
+    },
+    "0.2.15": {
+      "name": "loader-utils",
+      "version": "0.2.15",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0",
+        "object-assign": "^4.0.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "bed965bbcb54fa54beecfee2639e9585ab5ae020",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.15",
+      "_shasum": "c7df3342a9d4e2103dddc97d4060daccc246d6ac",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "c7df3342a9d4e2103dddc97d4060daccc246d6ac",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-0.2.15.tgz_1463148639681_0.7935674281325191"
+      },
+      "directories": {}
+    },
+    "0.2.16": {
+      "name": "loader-utils",
+      "version": "0.2.16",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0",
+        "object-assign": "^4.0.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "4ea2dfbfe03e3ca70576aff5fe5e4a4235232591",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.16",
+      "_shasum": "f08632066ed8282835dff88dfb52704765adee6d",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "f08632066ed8282835dff88dfb52704765adee6d",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-0.2.16.tgz_1473890187319_0.20624244073405862"
+      },
+      "directories": {}
+    },
+    "0.2.17": {
+      "name": "loader-utils",
+      "version": "0.2.17",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0",
+        "object-assign": "^4.0.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "00b9d0848bd7216e184beacbf6582dc5ee51ff80",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@0.2.17",
+      "_shasum": "f86e6374d43205a6e6c60e9196f17c0299bfb348",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "f86e6374d43205a6e6c60e9196f17c0299bfb348",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-0.2.17.tgz_1487631410094_0.04626395273953676"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "loader-utils",
+      "version": "1.0.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint --fix *.js test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": "^4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib",
+        "README",
+        "LICENSE"
+      ],
+      "gitHead": "8cda6ab3c53791851b1528b3d7d8d7f537ae344f",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.0.0",
+      "_shasum": "4923aa5442acd8132af59ebc2738a1a828e86184",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "4923aa5442acd8132af59ebc2738a1a828e86184",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.0.0.tgz_1487632673669_0.4440648609306663"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "loader-utils",
+      "version": "1.0.1",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint --fix *.js test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": "^4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib",
+        "README",
+        "LICENSE"
+      ],
+      "gitHead": "9986c9c281f33f40a11dedbccac41bb6c24bfd9f",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.0.1",
+      "_shasum": "92795b3f71578538b57f7a2ecc71d5b033f0fe29",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "92795b3f71578538b57f7a2ecc71d5b033f0fe29",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.0.1.tgz_1487688888715_0.6141277730930597"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "loader-utils",
+      "version": "1.0.2",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint --fix *.js test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib",
+        "README",
+        "LICENSE"
+      ],
+      "gitHead": "622de891c53756e3275e7d36197c0fcc2c93149f",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.0.2",
+      "_shasum": "a9f923c865a974623391a8602d031137fad74830",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "7.1.0",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "a9f923c865a974623391a8602d031137fad74830",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.0.2.tgz_1487691451673_0.9973385850898921"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "loader-utils",
+      "version": "1.0.3",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint --fix *.js test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "JSF",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "gitHead": "b3648f53c41b4432e8cde5d90d79a1838ceb5fa0",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.0.3",
+      "_shasum": "566c320c24c33cb3f02db4df83f3dbf60b253de3",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "566c320c24c33cb3f02db4df83f3dbf60b253de3",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.0.3.tgz_1488808973512_0.982763821259141"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "loader-utils",
+      "version": "1.0.4",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint --fix *.js test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "publish-patch": "mocha && npm version patch && git push && git push --tags && npm publish"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "gitHead": "dfaa358213c2c96ee07c9fdd4abedd63d4ec528f",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.0.4",
+      "_shasum": "13f56197f1523a305891248b4c7244540848426c",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "13f56197f1523a305891248b4c7244540848426c",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.0.4.tgz_1489488966537_0.6818160915281624"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "loader-utils",
+      "version": "1.1.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^3.1.3",
+        "emojis-list": "^2.0.0",
+        "json5": "^0.5.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "posttest": "npm run lint",
+        "lint": "eslint lib test",
+        "travis": "npm run cover -- --report lcovonly",
+        "cover": "istanbul cover -x *.runtime.js node_modules/mocha/bin/_mocha",
+        "release": "npm test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.2",
+        "eslint": "^3.15.0",
+        "eslint-plugin-node": "^4.0.1",
+        "istanbul": "^0.3.14",
+        "mocha": "^1.21.4",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "files": [
+        "lib"
+      ],
+      "gitHead": "a5602addda0c5e98e70d067b8dd050d5e4153f1d",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.1.0",
+      "_shasum": "c98aef488bcceda2ffb5e2de646d6a754429f5cd",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jhnns",
+        "email": "mail@johannesewald.de"
+      },
+      "dist": {
+        "shasum": "c98aef488bcceda2ffb5e2de646d6a754429f5cd",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jhnns",
+          "email": "mail@johannesewald.de"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/loader-utils-1.1.0.tgz_1489673126296_0.2887681087013334"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "loader-utils",
+      "version": "1.2.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^2.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.15.3",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "ba4f0d0912b84d974a80ce8a5d2eae69841cd36b",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.2.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KkQxP+pVgJC6ypy8ePypyhsV/hZeyVlkqiqrxe4pDgCwClbzmr3dGy8LbeSVhmfzYmCpOovdrVs/9chsQXCrLQ==",
+        "shasum": "8194a9bfabc3612e52e556139f67acbf01b267b7",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.2.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 25347,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcISHICRA9TVsSAnZWagAA42kP/RrAH166H/qC2XToF46N\nr3WNbGOXa2eGT03IkfWRqSjYH6akAWd9t2S6qAeLgAuTlqiZHNVsJB0+VIyS\nM3hZjh/mptS10uFRRq49N9iNjSy8RL/4kKOn+E6vwL60bJrScjrGdQxn/0So\njTlOByOqT14yEEh/gbphGIF+fXGVTQo/rBVMMnbxuWkhGPq5zVBCQoHYemup\n2m/QwrUVyeaZo+EAVL5mZ2mHvSb1BpTBfGbAcgQdUUYutIjghlogLl737j6J\neSm6ClA86rj9dLHOxIBG9jkt9T+Z6Jb8huDyiZDEQHLY/W7vLHOoMZF16inQ\nBi7EhUWUhs5Hb+fbVHXTHqpB7VIwiIdP72nrGkQvzj2NbVc9suHsOVY+wWNz\nbs8Lm9OCnHxso1KElI7Td6iMDSpn3TYVjVTHK9sqnfthu5dPUPQjZGnUXqA6\nqPU2AbIatCzfHqEnNtKfEGmHWTfsdobicqz67B8/fS/qVAGz6F3T9sm++Oge\n9uImEND7asQHnTGtc0jGRFi78MPu/OpKyPmFO4aZ2pvktiiJ6v/EqpDBbXNq\n9gKo7+UXQI7oaVgJ3H8fmlVnIeX5vesgB97/EtFngiyj5efzFHv11fsb9rNn\nUqgEwYTH1Z2zhj76mxI63DR1baRhl4nFBP/LDd0SdqDxHwGziTmclGyVrlZ7\nxw7C\r\n=Khcs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "j.tangelder@gmail.com",
+          "name": "jtangelder"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        },
+        {
+          "email": "sean.larkin@cuw.edu",
+          "name": "thelarkinn"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.2.0_1545675208365_0.9149365438295183"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "loader-utils",
+      "version": "1.2.1",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^2.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.15.3",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "489ef12a900c9f40c32eb0dceeed1eaab55fcc89",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.2.1",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3Zhx4qDqBQ9U8udWB3RMJ29nLu5a3ObNOSzk87woPvge01pi0wABowgv7F79Z4mL0DGtHRi/oOndT34EVhInoQ==",
+        "shasum": "64bbbac69aa5840d03754ba676a963dec568e844",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.2.1.tgz",
+        "fileCount": 15,
+        "unpackedSize": 26237,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIiJZCRA9TVsSAnZWagAAr5UQAIUvYJyWoK6CJrmc3s/S\nbsCg86PCgqGRf0Tt9Kc03kUYXpZ1s1cBkGgbvX+SsakxBfaXOdYJV+IsbCtY\nBMMjWVXKtvgeRhtyOZnd/6WzDsb8nRns5BiemZH15fg+x2YDBe09yj//O2Fe\nGdYRo3xm+SvbdKfCaOp2EkFeIrKe4qppJXXR0oaqJxj8fFAMU4zFfK3Zmdtr\n1h1Sv/dLMRae6jipGbYglJYRcRf6Hl8jqk3FRME92hEQyFTMB97vSUxzSFsM\nxMRom/wGqXhFxG5qUOOJjdllo1crO76Bo1mICHunWk/CZo0iNliyKoWKXfbk\naj6zDE31wsU9WceUcHKaUyUonY9ww8SnoLMF589HZ+9UaXNapa8pNrLhohzd\n/Xu51PTS2gbTZJpSzdh/93lueUDceEiWqQRlARWie0iNTdPhIFW++FC0zvxp\nhOOIItORE/8YY8hYTsOd2m6AgXAy86lYImKXELxGyzEiIdhSErFEoNKGJUID\ntwFhZWJPBn+3QpFhYHASMCgi/W13bBoqnDq6lIfrmQJBFmUolLfyvLOroCg8\ndJD+D/XyGnRCtPp0HZUdUS8L6sbCEtFxDwL1+TkCZYd5Zsz1+hCLryZwPfmu\nRD8F1UhJSU4LyhcIwvCfme50qwaDGB6yOuU/NpWmjRU7W/wpXQ6IdZE4Ksvh\nQ2ap\r\n=N2QL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "j.tangelder@gmail.com",
+          "name": "jtangelder"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        },
+        {
+          "email": "sean.larkin@cuw.edu",
+          "name": "thelarkinn"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.2.1_1545740888656_0.7320917201987636"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.2": {
+      "name": "loader-utils",
+      "version": "1.2.2",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^2.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.15.3",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "809b690c3b7fcb2e0947f014e86554d2ae1f3f03",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.2.2",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Xjb++b55GPoVV1ct93EodsswWEErveAqGhhwujIshShtjIKdPpdpveriwNCNsuVo1zQ1ukmPUszK44C9RD7TCg==",
+        "shasum": "fcfcb6b4109b2358c3df160b2254f0496b261a36",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.2.2.tgz",
+        "fileCount": 15,
+        "unpackedSize": 26548,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJKm9CRA9TVsSAnZWagAA4e4P/RwxrBXfQSg+BfhrQR+z\nx1zhi/CdNAoGq6QihGbkF86da6mk9nREGpLzDVp6AlM07XZSeipC+CNKDSU1\nNsXy3onFaRFD5pjEyURsqGP2f0ptEG8mPlQtMdkaN2Rz8XhAfHYTHUhit+pS\n33QDHA/tX7h+95aEz7oUfJgEyEVtcuqsIB3otAk++ic1A15ZxCNfmPaN5AuU\n9pECvcxVG/qsYGfIKPww/ypCjRtBrNUJSH5D+7QN0TIe13ecizsWxa9R61vu\nuj8GTjbyWNvqza2itqfTbz49lYkzKNuPWbAMsqMriU3+3AOr9VD0VnB/75ii\nwsOn/8ups+HLNOV5SmNISOGXi/ZzLEflKkKv+l6Aa2tMcegR4aleSdeO1Ytc\njQf0xHRU8JPatQzlFkOG0cmNBR9oKYrQQCIN2JJYGeEHw+mm9MnzGiEa04yB\nwQ90rEaauMsE2LodS8QNe+/zbjnS+1o+/RWYBauIzzsg77ulV4ZNWt4YibIh\ntLle76Dhzo6O7+TOB4uRv8kJ/XIU9oUsBsruEJme4hTbSoGEdp+fYixIAKL5\nzT2Y0zs1oQG+CqHuCxXi2ImyPVVFVUEcntMG1MLXWIL3tlpD3wPCM/VyphRp\np9jO7IeIkZDFFpQOTZM4yr+8DI4eDrafmKHGIZM846FJyHcEsUGclz8VLYXi\n++mp\r\n=U93B\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "j.tangelder@gmail.com",
+          "name": "jtangelder"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        },
+        {
+          "email": "sean.larkin@cuw.edu",
+          "name": "thelarkinn"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.2.2_1545906620751_0.3714967387139998"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.3": {
+      "name": "loader-utils",
+      "version": "1.2.3",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^2.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.15.3",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "b91a76c0c98bf71df5a3a1c808ea86268c3716c1",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.2.3",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==",
+        "shasum": "1ff5dc6911c9f0a062531a4c04b609406108c2c7",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.2.3.tgz",
+        "fileCount": 15,
+        "unpackedSize": 26892,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJMQZCRA9TVsSAnZWagAASckP/jRacPov3Xq8RzE938Wv\n+JE0r/2JrbRt41B1vgVrcYsessd1phyGkha/RGoHl9DLDiptjkOdZ1bgg+HX\ngU0emdTyCm3dX8INN3/fDtPyt8bAmO+PfvW8GvwY+nrrwN8g5PnOMgdUr8+T\nqnEbONrkda4dLkM3MarnBm8PZaAnF1igdCPxyjLQb8mQahgw3CAq38N/uA9a\noxUF04E4OSR2qrz75+ur/0LnEvR8vDJ7TTZ36lpdOF2pTN+/3/f8PxVxnYxo\nwlDYTLozYcK8LgBXmb9k5XqX+dxrmCcj6DIhupXgOQjq7tdHiuTvDAEDR40o\nbYDmn6O5Z3neq3AFGmMo1+WSj1+K7zY8kJeoYDX3V7zxFe0vf4ZgWSuvFueM\nkWqpiu8GkrE7RSbDb7bRZ0piJrtCfQVswGY6nmywBQLXPaztRllDAvHUHonF\nvEG665VBqkeIHaZ8LWKvUQZw/RCg4nvmYLoB0eMfIQi9FDo79atfGQSZMf2B\nMsBzz1GoS5HqICorptFwhTab+6PUUYI7y1VfiVRiP3bn8sPlfW2TL/tivXFs\n/EKIey8yA2JwIfeRrIBu57b5dXuX8edyQSMyx5gp16VeLEvukwdVgUoHzyWN\nnyjQYBhvkP3Au5QkxxlucGxIVrpaEAiOpOGPhN8IgNRxS3ppTi1OvhQsJtuQ\nPDwt\r\n=GdxV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "j.tangelder@gmail.com",
+          "name": "jtangelder"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "andrew@shellscape.org",
+          "name": "shellscape"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        },
+        {
+          "email": "sean.larkin@cuw.edu",
+          "name": "thelarkinn"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.2.3_1545913369202_0.5225895317690739"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "loader-utils",
+      "version": "1.3.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^3.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.19.1",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "06d36cf3a619cab20b08608204cb7ea9bddaceab",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.3.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-3DgDIZM5uYPDORrAT1YvqH/7P4E6Tctk7gaNeNUEEsj+diTu6wGyO9YBLFKJ4kFq+HGn5Au6gg2Hv087U/GBqA==",
+        "shasum": "446ec1ade95d634fd8ad3286ac12ea0306faef3f",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.3.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 27818,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTWsICRA9TVsSAnZWagAA4w8P/iLBAY5kmASDhYwmwzMR\nzhHPktuXwjIdx4erE6FuDIhUJJZcCSvLGdavOZimbrNZKRZ73Aag0BkbXV4x\niAXRM09mfAnKEYYjzPNWNLvBHw2I60WgngLD0FN5+cKzo/cP8CC8ifmLH2D2\nPEa0VOT+7EEMXUXn1+0MhEWJuxXsA2kOMrIfTNN8jwplmscfMb8sDG7djrND\nsDIiks3k8z6xIISwMScGrPYjkzh8lF8wFh5DZKzMtESAJlapU3OFZlmjTriJ\nAcIN7qe5Vg/dzGrLwkgxjBKZoRam9/60JqoQjqd0jCSuZxj/KZhySQ42uJFb\noe0+/ZMMnkK2VY8O3RbcyMPbnvsHuDvbZmuZ6F9xX3T8TFd3VJ4HKhfZ0hKy\n2/NV25Ph7kXsDrsUXMtCUB9FOtcRdesO5uFT6/wX+d3QWagbGs2vpTV3HQRa\nKL5MePmiOrbPD6+6US1R35+uYTscJRRdYpL0J4nMsHJZvQ43j39IPC23HQ2Q\nlujADc+v6KBps+kHlfSu+vwLerUXOepqAnZZYmCLj3eZ5nF91DLsxmLXOsZY\nOXmdO4CQPFTXpQx3UYhST/VeJMsesqmVFQhAAJ62FcganhXR5+ISkiQVCMo9\nwIHPt5STgY9xBZ+ik+hBRmYNkczqQCwcQEjDzmVMYDiAc6Dra+y0kB+hWDxd\noQL9\r\n=4QWF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.3.0_1582131976553_0.24423840167567645"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "loader-utils",
+      "version": "1.4.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^3.0.0",
+        "json5": "^1.0.1"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.2",
+        "eslint": "^5.11.0",
+        "eslint-plugin-node": "^8.0.0",
+        "eslint-plugin-prettier": "^3.0.0",
+        "jest": "^21.2.1",
+        "prettier": "^1.19.1",
+        "standard-version": "^4.0.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "d95b8b53f0ad547133b47ac8226f735c479f76de",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@1.4.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==",
+        "shasum": "c579b5e34cb34b1a74edc6c1fb36bfa371d5a613",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.4.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 28893,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTXFiCRA9TVsSAnZWagAA21QQAKRq/Aq+PKQYsMvF49Qz\nkGuo/aAgvcphqUVPgBlk0PFNyYSJzhI42H889XWGQ/HjWSsiYvP0MTHby985\nOcgCQ4TTy3iK9fynC0spDs1/pxIGHWxWYBpQmt15Cn/VlPPbWdjHq0vKIcUY\nrwgYu+E/ylXNiAG9vkldFGNemrD/vCafb3D4h/aPLYYVvWaIzo8Kq+UHMDNw\nURKqD0P6bSIPVglIqK71Ch0XS/6C4m/U45fwmjZITgr7zNfOV4HR10GfupTI\ntAOwlhQjINVGhPCf2mZqHnvNCKD7mJlGgvvoN1zbEu2AD5q27P2xCRKeQA3z\nt8IAzebfSSZYqfBaHQg1F3/xHQrQye8bCQY7jfpL5HBZyxCV3hXbOQ5DFKCU\nFKDGfHmurKAfUkhcGH3J+QLePHjTG3yzso9+2IOWXUbRmLVk9CoT72RioS7v\njVZkPi0XnFDar++XpOrJVdOzkqk9hquOcBQDKkT62OLQ0ZdjJvUyqN7Z19OP\n0gZnyFlWLvIRhs08fn2/b02C8VCVeU+E/gjFlRNA/PHzIA2237DLClSv61tu\nTQPsZXZGBbB6etPshtOjJoFzb9cBvwXp++vS1HcuU18xpsXphckWCsHp4fRP\n6F09g8umNH1t6d5+N/6UPFz7OMH3GXHmZ0SzZe9Fq0Z/SEB3V/71Zf+6ARvv\nsggX\r\n=kKRV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_1.4.0_1582133602049_0.6698382604953661"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "loader-utils",
+      "version": "2.0.0",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "description": "utils for webpack loaders",
+      "dependencies": {
+        "big.js": "^5.2.2",
+        "emojis-list": "^3.0.0",
+        "json5": "^2.1.2"
+      },
+      "scripts": {
+        "lint": "eslint lib test",
+        "pretest": "yarn lint",
+        "test": "jest",
+        "test:ci": "jest --coverage",
+        "release": "yarn test && standard-version"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/loader-utils.git"
+      },
+      "engines": {
+        "node": ">=8.9.0"
+      },
+      "devDependencies": {
+        "coveralls": "^3.0.9",
+        "eslint": "^6.8.0",
+        "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-prettier": "^3.1.2",
+        "jest": "^25.1.0",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.1.0"
+      },
+      "main": "lib/index.js",
+      "gitHead": "d9f4e23cf411d8556f8bac2d3bf05a6e0103b568",
+      "bugs": {
+        "url": "https://github.com/webpack/loader-utils/issues"
+      },
+      "homepage": "https://github.com/webpack/loader-utils#readme",
+      "_id": "loader-utils@2.0.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.2",
+      "dist": {
+        "integrity": "sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==",
+        "shasum": "e4cace5b816d425a166b5f097e10cd12b36064b0",
+        "tarball": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 29542,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJecLanCRA9TVsSAnZWagAAcUQP/A4EMnQKlU7bQfyGUm3c\n40IQvwykmwyy77Kuosrsh1+5JqcATrTzKBn2x/EeZodZeO3BbKQskiUSVaLn\nOVGYsx1WtD/k/1ubQj/GGJZ2QdThX10OS/b/VD7hSNnLgTqYRgwNBSYjJPR2\nS9esn3mq2XtoZ/qll4tOVIL2sWZMEJ+Rz28u/1WrNB5VH7NKZhW0DbYAcLXF\njXVTovp8s2pQhgFG0jEWHu2lNsZfAeJ2ZRWaGYUjz/Cy1Pj9/SdO8qAI67+D\nLEzy8OGFFmwbCGd+5na5+EVBwKrAaeVJeBrnJeqoayWs/lv3z7qoccODBvbh\nWvG5pKDTbU9MewUqP+Pz09Kw+JY+p5xmRc3AlGd7oP32fhxagx1FSHxdicUe\nSs0NDlsNoXwFsFDj1z6nLI5w/yJqLEC+rw8i3iOSe7i2yc4PpoEwTIoH/sWS\nDL/lO+JyGGsDnuSdDpakFscK2BD2YBWpMKBf+EUYfbKJBj5WJv7qo5EUl27C\nOOZIZNOrpGnDszygH6fIWbrkW/0nnAjg0LdPER7VGtpZldILKdfU6YYm0c50\nalTqRFT1/kKcvuVoUUgnU37POyb77CkiyH+ctcJW4NVjVFr1N+QAggg2BaB4\n58f8/tEl1IJKGP0Mz2VFvMveLFNDXHnwjSiDDY2b+26WOQlpQjNNM928wRME\nIZ7v\r\n=HeY2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "mail@johannesewald.de",
+          "name": "jhnns"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/loader-utils_2.0.0_1584445095416_0.02652315978988473"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# loader-utils\n\n## Methods\n\n### `getOptions`\n\nRecommended way to retrieve the options of a loader invocation:\n\n```javascript\n// inside your loader\nconst options = loaderUtils.getOptions(this);\n```\n\n1. If `this.query` is a string:\n\t- Tries to parse the query string and returns a new object\n\t- Throws if it's not a valid query string\n2. If `this.query` is object-like, it just returns `this.query`\n3. In any other case, it just returns `null`\n\n**Please note:** The returned `options` object is *read-only*. It may be re-used across multiple invocations.\nIf you pass it on to another library, make sure to make a *deep copy* of it:\n\n```javascript\nconst options = Object.assign(\n\t{},\n\tdefaultOptions,\n\tloaderUtils.getOptions(this) // it is safe to pass null to Object.assign()\n);\n// don't forget nested objects or arrays\noptions.obj = Object.assign({}, options.obj); \noptions.arr = options.arr.slice();\nsomeLibrary(options);\n```\n\n[clone](https://www.npmjs.com/package/clone) is a good library to make a deep copy of the options.\n\n#### Options as query strings\n\nIf the loader options have been passed as loader query string (`loader?some&params`), the string is parsed by using [`parseQuery`](#parsequery).\n\n### `parseQuery`\n\nParses a passed string (e.g. `loaderContext.resourceQuery`) as a query string, and returns an object.\n\n``` javascript\nconst params = loaderUtils.parseQuery(this.resourceQuery); // resource: `file?param1=foo`\nif (params.param1 === \"foo\") {\n\t// do something\n}\n```\n\nThe string is parsed like this:\n\n``` text\n                             -> Error\n?                            -> {}\n?flag                        -> { flag: true }\n?+flag                       -> { flag: true }\n?-flag                       -> { flag: false }\n?xyz=test                    -> { xyz: \"test\" }\n?xyz=1                       -> { xyz: \"1\" } // numbers are NOT parsed\n?xyz[]=a                     -> { xyz: [\"a\"] }\n?flag1&flag2                 -> { flag1: true, flag2: true }\n?+flag1,-flag2               -> { flag1: true, flag2: false }\n?xyz[]=a,xyz[]=b             -> { xyz: [\"a\", \"b\"] }\n?a%2C%26b=c%2C%26d           -> { \"a,&b\": \"c,&d\" }\n?{data:{a:1},isJSON5:true}   -> { data: { a: 1 }, isJSON5: true }\n```\n\n### `stringifyRequest`\n\nTurns a request into a string that can be used inside `require()` or `import` while avoiding absolute paths.\nUse it instead of `JSON.stringify(...)` if you're generating code inside a loader.\n\n**Why is this necessary?** Since webpack calculates the hash before module paths are translated into module ids, we must avoid absolute paths to ensure\nconsistent hashes across different compilations.\n\nThis function:\n\n- resolves absolute requests into relative requests if the request and the module are on the same hard drive\n- replaces `\\` with `/` if the request and the module are on the same hard drive\n- won't change the path at all if the request and the module are on different hard drives\n- applies `JSON.stringify` to the result\n\n```javascript\nloaderUtils.stringifyRequest(this, \"./test.js\");\n// \"\\\"./test.js\\\"\"\n\nloaderUtils.stringifyRequest(this, \".\\\\test.js\");\n// \"\\\"./test.js\\\"\"\n\nloaderUtils.stringifyRequest(this, \"test\");\n// \"\\\"test\\\"\"\n\nloaderUtils.stringifyRequest(this, \"test/lib/index.js\");\n// \"\\\"test/lib/index.js\\\"\"\n\nloaderUtils.stringifyRequest(this, \"otherLoader?andConfig!test?someConfig\");\n// \"\\\"otherLoader?andConfig!test?someConfig\\\"\"\n\nloaderUtils.stringifyRequest(this, require.resolve(\"test\"));\n// \"\\\"../node_modules/some-loader/lib/test.js\\\"\"\n\nloaderUtils.stringifyRequest(this, \"C:\\\\module\\\\test.js\");\n// \"\\\"../../test.js\\\"\" (on Windows, in case the module and the request are on the same drive)\n\nloaderUtils.stringifyRequest(this, \"C:\\\\module\\\\test.js\");\n// \"\\\"C:\\\\module\\\\test.js\\\"\" (on Windows, in case the module and the request are on different drives)\n\nloaderUtils.stringifyRequest(this, \"\\\\\\\\network-drive\\\\test.js\");\n// \"\\\"\\\\\\\\network-drive\\\\\\\\test.js\\\"\" (on Windows, in case the module and the request are on different drives)\n```\n\n### `urlToRequest`\n\nConverts some resource URL to a webpack module request.\n\n> i Before call `urlToRequest` you need call `isUrlRequest` to ensure it is requestable url\n\n```javascript\nconst url = \"path/to/module.js\";\n\nif (loaderUtils.isUrlRequest(url)) {\n  // Logic for requestable url\n  const request = loaderUtils.urlToRequest(url);\n} else {\n  // Logic for not requestable url\n}\n```\n\nSimple example:\n\n```javascript\nconst url = \"path/to/module.js\";\nconst request = loaderUtils.urlToRequest(url); // \"./path/to/module.js\"\n```\n\n#### Module URLs\n\nAny URL containing a `~` will be interpreted as a module request. Anything after the `~` will be considered the request path.\n\n```javascript\nconst url = \"~path/to/module.js\";\nconst request = loaderUtils.urlToRequest(url); // \"path/to/module.js\"\n```\n\n#### Root-relative URLs\n\nURLs that are root-relative (start with `/`) can be resolved relative to some arbitrary path by using the `root` parameter:\n\n```javascript\nconst url = \"/path/to/module.js\";\nconst root = \"./root\";\nconst request = loaderUtils.urlToRequest(url, root); // \"./root/path/to/module.js\"\n```\n\nTo convert a root-relative URL into a module URL, specify a `root` value that starts with `~`:\n\n```javascript\nconst url = \"/path/to/module.js\";\nconst root = \"~\";\nconst request = loaderUtils.urlToRequest(url, root); // \"path/to/module.js\"\n```\n\n### `interpolateName`\n\nInterpolates a filename template using multiple placeholders and/or a regular expression.\nThe template and regular expression are set as query params called `name` and `regExp` on the current loader's context.\n\n```javascript\nconst interpolatedName = loaderUtils.interpolateName(loaderContext, name, options);\n```\n\nThe following tokens are replaced in the `name` parameter:\n\n* `[ext]` the extension of the resource\n* `[name]` the basename of the resource\n* `[path]` the path of the resource relative to the `context` query parameter or option.\n* `[folder]` the folder the resource is in\n* `[query]` the queryof the resource, i.e. `?foo=bar`\n* `[emoji]` a random emoji representation of `options.content`\n* `[emoji:<length>]` same as above, but with a customizable number of emojis\n* `[contenthash]` the hash of `options.content` (Buffer) (by default it's the hex digest of the md4 hash)\n* `[<hashType>:contenthash:<digestType>:<length>]` optionally one can configure\n  * other `hashType`s, i. e. `sha1`, `md4`, `md5`, `sha256`, `sha512`\n  * other `digestType`s, i. e. `hex`, `base26`, `base32`, `base36`, `base49`, `base52`, `base58`, `base62`, `base64`\n  * and `length` the length in chars\n* `[hash]` the hash of `options.content` (Buffer) (by default it's the hex digest of the md4 hash)\n* `[<hashType>:hash:<digestType>:<length>]` optionally one can configure\n  * other `hashType`s, i. e. `sha1`, `md4`, `md5`, `sha256`, `sha512`\n  * other `digestType`s, i. e. `hex`, `base26`, `base32`, `base36`, `base49`, `base52`, `base58`, `base62`, `base64`\n  * and `length` the length in chars\n* `[N]` the N-th match obtained from matching the current file name against `options.regExp`\n\nIn loader context `[hash]` and `[contenthash]` are the same, but we recommend using `[contenthash]` for avoid misleading.\n\nExamples\n\n``` javascript\n// loaderContext.resourcePath = \"/absolute/path/to/app/js/javascript.js\"\nloaderUtils.interpolateName(loaderContext, \"js/[hash].script.[ext]\", { content: ... });\n// => js/9473fdd0d880a43c21b7778d34872157.script.js\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/js/javascript.js\"\n// loaderContext.resourceQuery = \"?foo=bar\"\nloaderUtils.interpolateName(loaderContext, \"js/[hash].script.[ext][query]\", { content: ... });\n// => js/9473fdd0d880a43c21b7778d34872157.script.js?foo=bar\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/js/javascript.js\"\nloaderUtils.interpolateName(loaderContext, \"js/[contenthash].script.[ext]\", { content: ... });\n// => js/9473fdd0d880a43c21b7778d34872157.script.js\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/page.html\"\nloaderUtils.interpolateName(loaderContext, \"html-[hash:6].html\", { content: ... });\n// => html-9473fd.html\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/flash.txt\"\nloaderUtils.interpolateName(loaderContext, \"[hash]\", { content: ... });\n// => c31e9820c001c9c4a86bce33ce43b679\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/img/image.gif\"\nloaderUtils.interpolateName(loaderContext, \"[emoji]\", { content: ... });\n// => 👍\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/img/image.gif\"\nloaderUtils.interpolateName(loaderContext, \"[emoji:4]\", { content: ... });\n// => 🙍🏢📤🐝\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/img/image.png\"\nloaderUtils.interpolateName(loaderContext, \"[sha512:hash:base64:7].[ext]\", { content: ... });\n// => 2BKDTjl.png\n// use sha512 hash instead of md4 and with only 7 chars of base64\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/img/myself.png\"\n// loaderContext.query.name =\nloaderUtils.interpolateName(loaderContext, \"picture.png\");\n// => picture.png\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/dir/file.png\"\nloaderUtils.interpolateName(loaderContext, \"[path][name].[ext]?[hash]\", { content: ... });\n// => /app/dir/file.png?9473fdd0d880a43c21b7778d34872157\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/js/page-home.js\"\nloaderUtils.interpolateName(loaderContext, \"script-[1].[ext]\", { regExp: \"page-(.*)\\\\.js\", content: ... });\n// => script-home.js\n\n// loaderContext.resourcePath = \"/absolute/path/to/app/js/javascript.js\"\n// loaderContext.resourceQuery = \"?foo=bar\"\nloaderUtils.interpolateName(\n  loaderContext, \n  (resourcePath, resourceQuery) => { \n    // resourcePath - `/app/js/javascript.js`\n    // resourceQuery - `?foo=bar`\n\n    return \"js/[hash].script.[ext]\"; \n  }, \n  { content: ... }\n);\n// => js/9473fdd0d880a43c21b7778d34872157.script.js\n```\n\n### `getHashDigest`\n\n``` javascript\nconst digestString = loaderUtils.getHashDigest(buffer, hashType, digestType, maxLength);\n```\n\n* `buffer` the content that should be hashed\n* `hashType` one of `sha1`, `md4`, `md5`, `sha256`, `sha512` or any other node.js supported hash type\n* `digestType` one of `hex`, `base26`, `base32`, `base36`, `base49`, `base52`, `base58`, `base62`, `base64`\n* `maxLength` the maximum length in chars\n\n## License\n\nMIT (http://www.opensource.org/licenses/mit-license.php)\n",
+  "maintainers": [
+    {
+      "email": "wiens.joshua@gmail.com",
+      "name": "d3viant0ne"
+    },
+    {
+      "email": "sheo13666q@gmail.com",
+      "name": "evilebottnawi"
+    },
+    {
+      "email": "mail@johannesewald.de",
+      "name": "jhnns"
+    },
+    {
+      "email": "michael.ciniawsky@gmail.com",
+      "name": "michael-ciniawsky"
+    },
+    {
+      "email": "tobias.koppers@googlemail.com",
+      "name": "sokra"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-10T08:03:15.713Z",
+    "created": "2012-11-02T09:04:48.557Z",
+    "0.1.0": "2012-11-02T09:04:51.604Z",
+    "0.1.1": "2012-11-06T15:14:58.115Z",
+    "0.1.2": "2012-11-11T09:32:50.101Z",
+    "0.2.0": "2013-02-01T07:47:44.929Z",
+    "0.2.1": "2013-03-25T22:59:39.122Z",
+    "0.2.2": "2014-03-31T07:42:01.233Z",
+    "0.2.3": "2014-07-07T11:02:24.572Z",
+    "0.2.4": "2014-09-24T19:04:38.525Z",
+    "0.2.5": "2014-10-11T15:38:55.265Z",
+    "0.2.6": "2015-01-11T08:48:46.271Z",
+    "0.2.7": "2015-04-09T21:04:50.152Z",
+    "0.2.8": "2015-05-21T20:32:02.085Z",
+    "0.2.9": "2015-05-22T06:56:37.606Z",
+    "0.2.10": "2015-06-16T18:57:52.693Z",
+    "0.2.11": "2015-07-18T16:26:57.137Z",
+    "0.2.12": "2015-11-23T21:50:32.833Z",
+    "0.2.13": "2016-03-24T19:16:39.586Z",
+    "0.2.14": "2016-04-09T13:28:47.920Z",
+    "0.2.15": "2016-05-13T14:10:41.676Z",
+    "0.2.16": "2016-09-14T21:56:28.432Z",
+    "0.2.17": "2017-02-20T22:56:50.783Z",
+    "1.0.0": "2017-02-20T23:17:55.776Z",
+    "1.0.1": "2017-02-21T14:54:50.645Z",
+    "1.0.2": "2017-02-21T15:37:34.017Z",
+    "1.0.3": "2017-03-06T14:02:55.308Z",
+    "1.0.4": "2017-03-14T10:56:08.427Z",
+    "1.1.0": "2017-03-16T14:05:28.112Z",
+    "1.2.0": "2018-12-24T18:13:28.465Z",
+    "1.2.1": "2018-12-25T12:28:08.826Z",
+    "1.2.2": "2018-12-27T10:30:20.872Z",
+    "1.2.3": "2018-12-27T12:22:49.344Z",
+    "1.3.0": "2020-02-19T17:06:16.671Z",
+    "1.4.0": "2020-02-19T17:33:22.170Z",
+    "2.0.0": "2020-03-17T11:38:15.582Z"
+  },
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/webpack/loader-utils#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/loader-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/loader-utils/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "shuoshubao": true,
+    "yanghaojyhangdian": true,
+    "chaoliu": true,
+    "ttionya": true
+  }
+}

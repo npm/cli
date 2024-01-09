@@ -1,0 +1,1267 @@
+{
+  "_id": "log-update",
+  "_rev": "46-d9577d0a6dbc83290d0dfbf027895d03",
+  "name": "log-update",
+  "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "log-update",
+      "version": "1.0.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/log-update"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^1.0.0",
+        "cli-cursor": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "xo": "*"
+      },
+      "gitHead": "9e5e52a6b47e036744c0f1e297c040bc8197859f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update",
+      "_id": "log-update@1.0.0",
+      "_shasum": "b3c9478e0b80e77ffedb820277450dabd8a6dba1",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b3c9478e0b80e77ffedb820277450dabd8a6dba1",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "log-update",
+      "version": "1.0.1",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^1.0.0",
+        "cli-cursor": "^1.0.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a68643838005d6d42d0861c03e450117a38d1d14",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@1.0.1",
+      "_shasum": "6a00c6c08cd4be99d0c50df92432d30c7174af53",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6a00c6c08cd4be99d0c50df92432d30c7174af53",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "log-update",
+      "version": "1.0.2",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/log-update"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^1.0.0",
+        "cli-cursor": "^1.0.2"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "678eddf319511f1bc61060fb40d37c0bc6c9efb3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update",
+      "_id": "log-update@1.0.2",
+      "_shasum": "19929f64c4093d2d2e7075a1dad8af59c296b8d1",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "19929f64c4093d2d2e7075a1dad8af59c296b8d1",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "log-update",
+      "version": "2.0.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^1.0.0",
+        "cli-cursor": "^2.0.0",
+        "wrap-ansi": "^2.1.0"
+      },
+      "devDependencies": {
+        "xo": "*"
+      },
+      "gitHead": "d44b643f424fdb8672f1770de77517ef273fae07",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@2.0.0",
+      "_shasum": "7f4354d7be1be62b724fcbb3c4b94454c0db5e26",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7f4354d7be1be62b724fcbb3c4b94454c0db5e26",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/log-update-2.0.0.tgz_1492667778547_0.9574112843256444"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "log-update",
+      "version": "2.1.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^2.0.0",
+        "cli-cursor": "^2.0.0",
+        "wrap-ansi": "^3.0.1"
+      },
+      "devDependencies": {
+        "xo": "*"
+      },
+      "gitHead": "2fdc4ca01f47df07293304d4421fdadfa33e753f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@2.1.0",
+      "_shasum": "ea37258b5354edb02e73b29190016c87d1c87141",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ea37258b5354edb02e73b29190016c87d1c87141",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update-2.1.0.tgz_1500840778081_0.451421462232247"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "log-update",
+      "version": "2.2.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.0.0",
+        "cli-cursor": "^2.0.0",
+        "wrap-ansi": "^3.0.1"
+      },
+      "devDependencies": {
+        "xo": "*"
+      },
+      "gitHead": "5638b7c22d62f8df1fb58b24f8fdb78179979eb8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@2.2.0",
+      "_shasum": "e1b034d4325e3436c9df1aa7fd9c9c243bfb9198",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e1b034d4325e3436c9df1aa7fd9c9c243bfb9198",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update-2.2.0.tgz_1508406472381_0.5303817456588149"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "log-update",
+      "version": "2.3.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.0.0",
+        "cli-cursor": "^2.0.0",
+        "wrap-ansi": "^3.0.1"
+      },
+      "devDependencies": {
+        "xo": "*"
+      },
+      "gitHead": "f6ce1d44d268d630417a02a78a1f91480b7e252f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@2.3.0",
+      "_shasum": "88328fd7d1ce7938b29283746f0b1bc126b24708",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "88328fd7d1ce7938b29283746f0b1bc126b24708",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update-2.3.0.tgz_1509779446402_0.010598235065117478"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "log-update",
+      "version": "3.0.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "terminal.js": "^1.0.10",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "433ad00b8ea26355a0c6c9b8347fc320e720646b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.0.0",
+      "_nodeVersion": "10.15.1",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xhQH4g9biBnuNMYm/NjWgL2VDWPj60byIHvy8Zd9oy2+r2xO71NDmwSd7nEoznhcVuFsDyKoyEgORJWaotqoPg==",
+        "shasum": "a79767dbbd2f1f46e2e763d8459a20c8179525b0",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4876,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJce3e3CRA9TVsSAnZWagAA80IQAJVL6bH/Pcx78fQzkNgB\nTzsBQGuh44BEhe3UGaTVqyfwn3Do/Gk6DdLah6UBWPSShvIeaPYnPhZ2WnRT\nOWllGlzqijrH3cOHYgLHTOF0g6sxVpVjHXdh7fmturuhA/cs2K3FRz49I3Jy\nqddeDdpiiL0xsoIW4uU9qJ7ccdqTQcPEUAVwffrKjaBnWxZguyHmwMynTWJJ\ncuvKbivfx5ZRarsSbnfCulpriWEmmRhk1CcxYQ3UeLxN2xJAQln94odBN2hk\nesTjedtJu/+ura45no2ttFjsQb71g/clic6Vs+F/hizT8tcTuT6o979hqMX3\nOT3uWaNmVpwIHJmsGuyHOPobwpQRU3+OSvt3CSQx+OO/+18y8kFnNJzkIG93\nbXfHozZ7gaeadjxki5hcy7Ase9a2Z+h0vyKZ6hBCLmG9OEIbp/a/kuEODfGu\nKFVmgqQNlt/P+kz1/abfXLUhLfagaRh2smTlCruF9/RByExRPq2mPeGY3g+m\n7wsrLAtjHNfrMphTKUtrG2rUM5q1+HxCblkPkwucKanN/W/ZOVd8OmLjOHLi\nIYIGF3s6HjjP6GqZK5S+4UoQBLCztsVMHJIZ09LVg0mYd4x8aguIMPbbmVI9\nNg8y0cE2sBFtTvOMjeyJM73Tj5Otq9QYCgn4OfZAkPILtp5J4GnaEWwnEn0w\nKcF6\r\n=Hlos\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.0.0_1551595446508_0.015726535913616058"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "log-update",
+      "version": "3.1.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.10.4",
+        "ava": "^1.2.1",
+        "terminal.js": "^1.0.10",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "17712c58a1785b75ace571b00628819fbfa5ec7f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-7ttbZj4w165ZemmS9YngKbBh4/UEiW1gS+SPpfQQHIMYcPMybTDM6UDlmQLrjJ8+j23On173OFB+pXKfPRJP3A==",
+        "shasum": "fa22abbbcb30f505906758bbbd0f292b71bc2ad9",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6154,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfjxHCRA9TVsSAnZWagAA/OoP/itPu10IYeDh1sG4LTpD\neG8JN5GRBXfv8o57XN4aokaqa1CpaY0HfJNV09BVcYo41rT4vxsNYUG9DVxD\n48nB7YjXWTj9sEJzWlMyv1euEkX24yt7iEidn78V+0HtR19nZEL6KgR+1p7t\nwATZ7FuKcFlxQLqi6HjleA4K2L1RwnjOoTj773xgv5OWe9eJtbe0XKEYvmo8\nQdX9irC28MRXfRFl5W1ZxEs6prQeydNYOc4aKivslihuKiTdi46wGaQxvYSi\n9UbwVipERECjKCUdOBiLbahCE2+FsdX5SCzz/ZkurI7L0yg8MdzPqYK6MLkT\nooAkdVKHqW4iOIvBR7bEKtMAzSmcQnFcJ8r5iGmMOFCvrV93sMmudN4T+zRy\nOsy4cgIaReHWcdanjdcvZbJ2p6GZoLDHNeLc0H4nGtcExoKNMEKlVaw+zXqq\nd98TEnCaxTcRXdl32g0/NQfqekBAyeT9+pEKzWq9UFsnvJUERqyRg/WVzbko\nLnZ8KuaXq5/Ws1LrjSlzu/jfpzT1jjejs8XhSXJY7ZATdC7ls0DYA2DNw7jJ\ngOi471DihFN+ojvpmMcKhcbwmLtwtejI07GtYDl5OTWIqCg+t2jbhNB9ZaLz\nhwDVKuAKcVUVCkrhr5M6VcKn4nTEjrrnrdhInVa1YuazHbmJiwDN3RVv1+6e\nDKlq\r\n=82Mt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        },
+        {
+          "name": "samverschueren",
+          "email": "sam.verschueren@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.1.0_1551776839291_0.6102797913343514"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "log-update",
+      "version": "3.1.1",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.10.4",
+        "ava": "^1.2.1",
+        "terminal.js": "^1.0.10",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4a91774a0eccff8a449df4d12976746c27bb0cff",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.1.1",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kqnFtiui/54LE2Sud9D/+p9vDXGUK9J2ISJ1kFd6LXHnodLWpsbLvf+iD1aQEpCniLPIAQpimg37mktmNkpNiA==",
+        "shasum": "c8c86e44d9f0ecb816e364ed4e8dfc58760a4573",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6134,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoRGFCRA9TVsSAnZWagAAS8oP+QC1xrWtCxp36AaRFLdJ\nt/XyArvV+N8xiwYOBpNF6zaQ0xYZNkayJxAE3gfagIJk9M5UHoSlmALz8uVY\nI9BS5zBC7BWjLKRpzNWFlFcRVw3HUPtv5prHU6nnjD/qEXStXS2ncuo7djSC\nWYwwql+/242rE1SjSP4Jt8HOWtUV5tQR1OzJqK1e93yp0Rqx25xMfxEGuE5a\nXJQre8no5OAGkEF2R6JAeW0rXXPLixL/sbVt+AA8AvYSoevJlHzxz0T4z7SF\nFBq5W64n14Ll/p/kLP3wIzEWcgUuySbGpgfKMRPOrTbC98NTW2RvFmBvkVyA\nWCrC2F0RbJ0TGdzVxHcBckAvTztgn617xMRxyfeu+8A6MOM39geRkdfO13GG\nu71liLS67S/SslTywwxy7LanSyDjsVswkfSAGSXUuNEreAS5QjmVfFVS9FTJ\nBcY9Vpa6hJT6L31Uw0D6iNlSV1X4zLeBHlbQnqpn9yooZzsp2VIrRBFQtgis\nfSa0SZklKZ6Yp5jW72WT1XztCK7HToXFNTkLvVNyR2Zsy1X6AaLI/GQQ6h+2\nQcwOvDdB2tpLqm09xlETRAWHt7NaE1iZs/FYOGJyA5ZBS5XJ/GNkgk/ZF/ar\nUuKMET8yb+fyEoSPApLQEfliNnUwigJsO3snzmtIJQWguDmtyEbQW1eKiusV\nIIXz\r\n=OxVu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.1.1_1554059652561_0.04898043047180045"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "log-update",
+      "version": "3.2.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "terminal.js": "^1.0.10",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "abd40b04b7dcfcc6dba91171ddaf0d7f271e7788",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.2.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-KJ6zAPIHWo7Xg1jYror6IUDFJBq1bQ4Bi4wAEp2y/0ScjBBVi/g0thr0sUVhuvuXauWzczt7T2QHghPDNnKBuw==",
+        "shasum": "719f24293250d65d0165f4e2ec2ed805ff062eec",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6658,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoc83CRA9TVsSAnZWagAA7JsP/3KszyFG8qIHZnuO/SZ/\nG1RrvLqY5YPa7fBfXfUmfSRX/n0BflQegARVkiLGwTajv7NeDKS265SMs9NU\nfgU6YeZa16Hq8r2W5zvPAKjcMZpcLepVC9zeEN6ZvVTEb0gjWb6/96rmmNUJ\nY7qWuaoT6zaAcgl8Ni9KyIMeRNzM1biuuTVYcpjq/gy1Xs/iIrf2D0y95PYh\n9d0KQjMVAYg++8ShuSJI45sIqSa/k1mnNfpEIT+IVBqy1MPiswZ7Yk/lB1JD\n8bG/9ICcTIjatYLZT+w9IooDMkyxCAD7vuorfgZmHjT9N9pXBC6L3cnolxE0\nqUrwPoxz6+xavaCSeovZUr6uKnJDjbMS701gSaYr5l93DK9NtrLPq+KSDLiE\nr1EEqfsrPTizC1SDGXHxUCq5Nf8yZl4N17hwigqxYRA/FmRiaOv/wU5rM5gn\nPV/s7vTYGJc1pj2FTKFifWxbi592WWc4wBgZDvo/W43cA9bJFoVn4I1WuVoz\ngWfkVSmmV+ZYTRsvqTowFCA4BJOwBHw/euLHPRyoxXCj/LHufgFFqSXfnsO0\nXhgZtqvu3MrvAjAqStidjuC9wh7nGcG/qsMelhfgLsYK2Vrfu1cets6v9mhV\ngPIWb+5iD2PEdcWTXL7Pp4CahoyGAnAPOvJWRg0iCdsNVJxtu2/17cskXtsB\nt1iR\r\n=Y4kN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.2.0_1554108214159_0.21840118365596606"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.0": {
+      "name": "log-update",
+      "version": "3.3.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "terminal.js": "^1.0.10",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "52732bf744e1248658eac47e4865e3997341f54e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.3.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YSKm5n+YjZoGZT5lfmOqasVH1fIH9xQA9A81Y48nZ99PxAP62vdCCtua+Gcu6oTn0nqtZd/LwRV+Vflo53ZDWA==",
+        "shasum": "3b0501815123f66cb33f300e3dac2a2b6ad3fdf5",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6522,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbn6fCRA9TVsSAnZWagAAVZIP/27s27SOqpMGL381/5sH\nqc+tI4w2rHOJY0AhU8Jcuc74qLEzpFd/0EUUhGRhyaO9zGQZNgQhVXNqyJpC\nFz+bLOlCz5NfkhCoCYun+mjxdGGl7AaIEusByYtXUd+zGeDtC4JZ0W48Luve\nLwAQi9WSunn4TdFNDBQeLg3FzhXqFcjUJoGwQqciTxQrMUyNK7NdzEjizAgM\nYz0lyOGLJ7QjTHALGSlstlALK17iytM1vOzXUlNzrkddSxSX+CeUWhQ73AZL\nj+kWpboJDGqbhXGs2rdJkHH2IQhgX4Gpapj7twH0EYRCqSfLDx7y3HilAYFD\nT29706U02engtSmJOd18L5T9jpuXjkfiwkoq1URABS3QycZOtLCiJdxsRZto\nI+DHBC/DLS7QWovhR9qYsKNZDXGogRzKk+jGpEANYF055W7s9sAv0NbJKV2e\nfYf/g4sYq4tjOVwncy9GOcpVHd7DFS4fjbsDXWhFyH9tb953enhsmf1lyiVC\nKg070JFEqETRP5gEc4KCEQQBl6/TSk6Qi1gF1t+F5VeHnN8suvqxrKkYIdeA\ne3dlHkXtej2xzq9svUUlcIFUi+9JUX974g97ghjrgVZrLuRcEUXf+IjFJUeF\nvYao2zPuwik9xoUFJOO1OC493SMl0GZfM7OB7lHJRdJL8HXedYwhqbXwC0HZ\n7to9\r\n=7DN8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.3.0_1567522463005_0.2139820345696073"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.0": {
+      "name": "log-update",
+      "version": "3.4.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^3.2.0",
+        "cli-cursor": "^2.1.0",
+        "wrap-ansi": "^5.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "terminal.js": "^1.0.10",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7cb447f50942c827a072280c5a451c1f1ff1ea0e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@3.4.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ILKe88NeMt4gmDvk/eb615U/IVn7K9KWGkoYbdatQ69Z65nj1ZzjM6fHXfcs0Uge+e+EGnMW7DY4T9yko8vWFg==",
+        "shasum": "3b9a71e00ac5b1185cc193a36d654581c48f97b9",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-3.4.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7320,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeNvvACRA9TVsSAnZWagAAEaIP/126lMv7OSVm7eaLuNZu\nBcdoBQeC354LMQtlcjW1jf9KcmQ48t7wPXTimq4tZxYl0JDsYTxbFKDbIZSr\ny491VXuOi4LLDQECr79V5rhjuahW4u2Ut0wzM3QJ3v0gePIVYHfGqC8t74fh\nj5cwl2cooh8XOa+9EGhkxI+yXI8pZVQ9e7GuDP5CP1+KFYHvzeurk49El+pH\nL21CalN7hEnNLThpcN0HvJtbn2kG5eXRvJZXiNt8BdBTdaO3kZh13ySV+0R3\n7Xxve4iwp6L+LdV4m95BHfnF1qQ9WfzGZ5r6i+mED4DfWxn6RwL2IGGSuIOm\nxYSVO1GUXRYq/HyQFxWqKl8vm97O9fPEI/JV7T6jXpT9pKVL7p1xKMhaJOxy\ngBr6kw+87tNViPFMTZpCkjpItn22iCXToYHnolLhFbtpuH9XDffCpYF3GQEV\n/cuLsRR3OhiB9s6ftoFdrLk4vhOJAvpIYwvvnn5FjKt+1ZaSiQL6BSSVAzPj\nYwmO+lnFTcbRNi+B+zc6QqgNme4yoIs42KfEnNp136dx9U2nDFa7ROCaG+r3\nauiCrkRpE+1+6QTpjjAUWTvNWVR+NK3TkHSn9LsXZagA4kASEDrrM4ltuhpZ\nXBWGwS9DzB0B0vcKFJT8NB6kohUzH9PehlzFZpCpik9AwnPOCEBUQlaQ9ZMv\ncPM1\r\n=hK2N\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_3.4.0_1580661695979_0.7862256735678375"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "log-update",
+      "version": "4.0.0",
+      "description": "Log by overwriting the previous output in the terminal. Useful for rendering progress bars, animations, etc.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/log-update.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "log",
+        "logger",
+        "logging",
+        "cli",
+        "terminal",
+        "term",
+        "console",
+        "shell",
+        "update",
+        "refresh",
+        "overwrite",
+        "output",
+        "stdout",
+        "progress",
+        "bar",
+        "animation"
+      ],
+      "dependencies": {
+        "ansi-escapes": "^4.3.0",
+        "cli-cursor": "^3.1.0",
+        "slice-ansi": "^4.0.0",
+        "wrap-ansi": "^6.2.0"
+      },
+      "devDependencies": {
+        "@types/node": "^13.7.4",
+        "ava": "^3.3.0",
+        "terminal.js": "^1.0.10",
+        "tsd": "^0.11.0",
+        "xo": "^0.26.1"
+      },
+      "gitHead": "c913bf692090d2948f2bcedfb479a1b91f899037",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/log-update/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/log-update#readme",
+      "_id": "log-update@4.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.13.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg==",
+        "shasum": "589ecd352471f2a1c0c570287543a64dfd20e0a1",
+        "tarball": "https://registry.npmjs.org/log-update/-/log-update-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7575,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeTj41CRA9TVsSAnZWagAASPoP/A5Q2OP8CfJUfs0VF9k4\n0TPz4OFYCJ5TAW0IAPxf87tu0MDfFFhDZqupm9EcGB3ujxg0CH5iSUNK8fXS\n82YtBRZMBoSgri/f7GlFWNhkOB9FgfNthHoNNl0en2yf/+ojV2WGe6WZUtHs\nVXtjdXH5lgrce0a5BVSudjcPvd1/8+/6RWDFn64baxx6RX5udICO5C1UvEQ4\nF+ID4iMiGi9I5FvW8KGsAZzO2ptipeqzXB5/MvY1PT5ruAc+FrBsVEMmYNvh\nkwN6TQGi2tZMmpzrpc38Lde9Gd3gYORv1z9meaxl7TsiEJev7UJS2eBGszbt\nL2WhPVtvxhnlII9Vqb73yarW3t4h1aCZB8iK6kdVihekPedKmjCG6XIF3fjG\nxnu4XBKLcmExGHS5MNOnOaVfhaPvG4tBNFqqa7iSKlrNlSNcj+hW11aUBT0F\nhOdZI+n/wmyVHZMmGtUIbF1/DdHQIE0Hml1vcNMrjbowDza0BFSALqeb83Wk\nQH6NNNU6XiZoLu4bUGIcdH8QsABkW3i0EXihbo89nsy2CY4bOLg03WENvb9Q\nIj0Og4DJm4bMsTsTFNvcrAlAIyKMvVxvn11OsQoHEAowRT38JhGCTaa6rk19\nhzSg1NI1JBgTZ3biJ4lPHKBX9RYyo1XsSoJoo26/B6nRx9BXHYK7abh6HCkP\n8ig7\r\n=oEUE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/log-update_4.0.0_1582186037542_0.3543418798824487"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# log-update [![Build Status](https://travis-ci.org/sindresorhus/log-update.svg?branch=master)](https://travis-ci.org/sindresorhus/log-update)\n\n> Log by overwriting the previous output in the terminal.<br>\n> Useful for rendering progress bars, animations, etc.\n\n![](screenshot.gif)\n\n## Install\n\n```\n$ npm install log-update\n```\n\n## Usage\n\n```js\nconst logUpdate = require('log-update');\n\nconst frames = ['-', '\\\\', '|', '/'];\nlet i = 0;\n\nsetInterval(() => {\n\tconst frame = frames[i = ++i % frames.length];\n\n\tlogUpdate(\n`\n        ♥♥\n   ${frame} unicorns ${frame}\n        ♥♥\n`\n\t);\n}, 80);\n```\n\n## API\n\n### logUpdate(text…)\n\nLog to stdout.\n\n### logUpdate.clear()\n\nClear the logged output.\n\n### logUpdate.done()\n\nPersist the logged output.<br>\nUseful if you want to start a new log session below the current one.\n\n### logUpdate.stderr(text…)\n\nLog to stderr.\n\n### logUpdate.stderr.clear()\n### logUpdate.stderr.done()\n\n### logUpdate.create(stream, options?)\n\nGet a `logUpdate` method that logs to the specified stream.\n\n#### options\n\nType: `object`\n\n##### showCursor\n\nType: `boolean`\\\nDefault: `false`\n\nShow the cursor. This can be useful when a CLI accepts input from a user.\n\n```js\nconst logUpdate = require('log-update');\n\n// Write output but don't hide the cursor\nconst log = logUpdate.create(process.stdout, {\n\tshowCursor: true\n});\n```\n\n## Examples\n\n- [listr](https://github.com/SamVerschueren/listr) - Uses this module to render an interactive task list\n- [ora](https://github.com/sindresorhus/ora) - Uses this module to render awesome spinners\n- [speed-test](https://github.com/sindresorhus/speed-test) - Uses this module to render a [spinner](https://github.com/sindresorhus/elegant-spinner)\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-log-update?utm_source=npm-log-update&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-20T08:07:20.087Z",
+    "created": "2015-08-16T08:33:11.178Z",
+    "1.0.0": "2015-08-16T08:33:11.178Z",
+    "1.0.1": "2015-09-18T13:51:37.506Z",
+    "1.0.2": "2015-10-02T16:40:45.977Z",
+    "2.0.0": "2017-04-20T05:56:18.772Z",
+    "2.1.0": "2017-07-23T20:12:58.993Z",
+    "2.2.0": "2017-10-19T09:47:52.487Z",
+    "2.3.0": "2017-11-04T07:10:46.470Z",
+    "3.0.0": "2019-03-03T06:44:06.729Z",
+    "3.1.0": "2019-03-05T09:07:19.436Z",
+    "3.1.1": "2019-03-31T19:14:12.659Z",
+    "3.2.0": "2019-04-01T08:43:34.499Z",
+    "3.3.0": "2019-09-03T14:54:23.116Z",
+    "3.4.0": "2020-02-02T16:41:36.229Z",
+    "4.0.0": "2020-02-20T08:07:17.654Z"
+  },
+  "homepage": "https://github.com/sindresorhus/log-update#readme",
+  "keywords": [
+    "log",
+    "logger",
+    "logging",
+    "cli",
+    "terminal",
+    "term",
+    "console",
+    "shell",
+    "update",
+    "refresh",
+    "overwrite",
+    "output",
+    "stdout",
+    "progress",
+    "bar",
+    "animation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/log-update.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/log-update/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "sandinmyjoints": true,
+    "nichoth": true,
+    "gochomugo": true,
+    "abhisekp": true,
+    "ahme-t": true,
+    "danielkalen": true,
+    "sachacr": true,
+    "nickzuber": true,
+    "quocnguyen": true,
+    "santi8ago8": true,
+    "rocket0191": true,
+    "simon129": true,
+    "g120hbq": true,
+    "egorgl": true,
+    "alfeo92": true,
+    "scottfreecode": true,
+    "alvis": true,
+    "jian263994241": true,
+    "icodeforcookies": true,
+    "wangnan0610": true,
+    "chaoliu": true,
+    "zuojiang": true,
+    "atronax": true,
+    "moimikey": true,
+    "lunelson": true
+  }
+}

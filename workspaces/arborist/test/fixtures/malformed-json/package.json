@@ -1,0 +1,6 @@
+{
+  "name": "malformed-json",
+  "devDependencies": {
+    "abbrev": "^1.0.0",
+  }
+}

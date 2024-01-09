@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "node-weakauras-parser": "^3.0.0",
+    "nyc": "^11.9.0",
+    "sapper": "^0.27.10",
+    "subtext": "^6.0.12"
+  }
+}

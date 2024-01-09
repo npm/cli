@@ -1,0 +1,347 @@
+{
+  "_id": "caller-path",
+  "_rev": "10-6a784a60af73e3716a06a2afa47b8915",
+  "name": "caller-path",
+  "description": "Get the path of the caller function",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "caller-path",
+      "version": "0.1.0",
+      "description": "Get the path of the caller module",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/caller-path"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "path",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "callsites": "^0.2.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-path",
+      "_id": "caller-path@0.1.0",
+      "dist": {
+        "shasum": "94085ef63581ecd3daa92444a8fe94e82577751f",
+        "tarball": "https://registry.npmjs.org/caller-path/-/caller-path-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "caller-path",
+      "version": "1.0.0",
+      "description": "Get the path of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/caller-path"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "path",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "caller-callsite": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "f4b4451e4c7bb6d9a3593ae2daea1b8a3c65568d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-path",
+      "_id": "caller-path@1.0.0",
+      "_shasum": "881d95105527cad47944c0444232436100056f85",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "881d95105527cad47944c0444232436100056f85",
+        "tarball": "https://registry.npmjs.org/caller-path/-/caller-path-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "caller-path",
+      "version": "2.0.0",
+      "description": "Get the path of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-path.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "path",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "caller-callsite": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "9fdd6db85d0a82b15ad57fc661d675712b30785a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-path#readme",
+      "_id": "caller-path@2.0.0",
+      "_shasum": "468f83044e369ab2010fac5f06ceee15bb2cb1f4",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "468f83044e369ab2010fac5f06ceee15bb2cb1f4",
+        "tarball": "https://registry.npmjs.org/caller-path/-/caller-path-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/caller-path-2.0.0.tgz_1472346183708_0.9669214419554919"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "caller-path",
+      "version": "3.0.0",
+      "description": "Get the path of the caller function",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/caller-path.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "caller",
+        "calling",
+        "module",
+        "path",
+        "parent",
+        "callsites",
+        "callsite",
+        "stacktrace",
+        "stack",
+        "trace",
+        "function",
+        "file"
+      ],
+      "dependencies": {
+        "caller-callsite": "^4.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "b00a61dd2cc8b90430c96bfefa1e259263e1404d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/caller-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/caller-path#readme",
+      "_id": "caller-path@3.0.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8nvMBmBgTmEfAXywJf27jbPZlURi5xUWLwkTXa3hZFcEZa5iRnMP4sF0p00CstWNHKBENVyYWDRSByNRdshdgQ==",
+        "shasum": "a13cbec75eea1b355e3f92dc0df4288b7eebdc5f",
+        "tarball": "https://registry.npmjs.org/caller-path/-/caller-path-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5119,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd115FCRA9TVsSAnZWagAAiSEP/i5B67RSccInv5q99NJj\nlxAPtlo47O4jK47Rmw20eihY5VJgdpA6nlY1bCi19BPbMT84gqDBdPGqKhcI\n4zNtsY6WgLfbY695zvm4z9AosqpmTpdAhgqVYgCYlG3p12ZrVOpsrm5zLzJi\niBTT71wmo5DNe1xCMtuKE2KsYoLr9p2KBmnMEDt5rWGvr+RDKWq7DukfhtbH\nNrsl53U+dHMj4V3KAuubX9vbAGoeyo33M7fAq867IGAbkwIH4HQ6ar3tFkPL\ngAJ3UXKprF6dvIxRAZvNrWa8tx1ReH9QCtAX5qpX6pFB6j5F7frfPHuBmzM+\nY0D6TIUpLbz07UT+8NcWMh/fsVmoWm93OW+HPeD4xXiv7ofxZx0RjZE0HbCo\nEid+luIXC6jHHfLUK32BuRVL8yhUw68whgp6/OgtRMTSsmjuqz6gNjxiz4rF\nNvOhxl6XRpO2H6FggU70Aj34WFOYZtvoIKtbROiqKxRdiex+4ksX2x4AWxI5\nXi0h2ym6o9LaCVoHbJhvFtzRotNJRUEe0AuvO/+5Y/D2+rZSPjmWHoLl2XcL\n6k6UGoe5hQ0k1rFn9TkGzQRrtiaR63iJl0rsy8rzWkhUJhZPvTNlLOBd15f6\nzi9rcc9Jzc8qAOQ/m30wtmODVc0TOoSzuh3jYZx0ToEz75d3cN88WlPc5s3m\nBOtj\r\n=8r2T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/caller-path_3.0.0_1574395460691_0.21774906369149094"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# caller-path [![Build Status](https://travis-ci.org/sindresorhus/caller-path.svg?branch=master)](https://travis-ci.org/sindresorhus/caller-path)\n\n> Get the path of the caller function\n\n**Important:** You have to use `'use strict';` in your code for this module to work correctly, or make sure the module is an ESM module, which is implicitly strict.\n\n## Install\n\n```\n$ npm install caller-path\n```\n\n## Usage\n\n```js\n// foo.js\nconst callerPath = require('caller-path');\n\nmodule.exports = () => {\n\tconsole.log(callerPath());\n\t//=> '/Users/sindresorhus/dev/unicorn/bar.js'\n}\n```\n\n```js\n// bar.js\nconst foo = require('./foo');\nfoo();\n```\n\nIf the caller's [callsite](https://github.com/sindresorhus/callsites#api) object `getFileName` was not defined for some reason, it will return `undefined`.\n\n## API\n\n### callerPath(options?)\n\nGet the path of the caller function.\n\n##### depth\n\nType: `number`\\\nDefault: `0`\n\nThe caller path depth, meaning how many levels we follow back on the stack trace.\n\nFor example:\n\n```js\n// foo.js\nconst callerPath = require('caller-path');\n\nmodule.exports = () => {\n\tconsole.log(callerPath());\n\t//=> '/Users/sindresorhus/dev/unicorn/foobar.js'\n\tconsole.log(callerPath({depth: 1}));\n\t//=> '/Users/sindresorhus/dev/unicorn/bar.js'\n\tconsole.log(callerPath({depth: 2}));\n\t//=> '/Users/sindresorhus/dev/unicorn/foo.js'\n}\n```\n\n```js\n// bar.js\nconst foo = require('./foo');\n\nmodule.exports = () => {\n\tfoo();\n}\n```\n\n```js\n// foobar.js\nconst bar = require('./bar');\nbar();\n```\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-caller-path?utm_source=npm-caller-path&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-22T04:04:23.117Z",
+    "created": "2014-04-19T10:18:32.644Z",
+    "0.1.0": "2014-04-19T10:18:32.644Z",
+    "1.0.0": "2015-01-24T16:20:15.948Z",
+    "2.0.0": "2016-08-28T01:03:04.687Z",
+    "3.0.0": "2019-11-22T04:04:20.816Z"
+  },
+  "homepage": "https://github.com/sindresorhus/caller-path#readme",
+  "keywords": [
+    "caller",
+    "calling",
+    "module",
+    "path",
+    "parent",
+    "callsites",
+    "callsite",
+    "stacktrace",
+    "stack",
+    "trace",
+    "function",
+    "file"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/caller-path.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/caller-path/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "stringparser": true,
+    "bojand": true,
+    "andfaulkner": true,
+    "kevin.teljeur": true
+  }
+}

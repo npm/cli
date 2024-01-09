@@ -1,5 +1,4 @@
 'use strict'
-const Buffer = require('./buffer.js')
 const Header = require('./header.js')
 const path = require('path')
 
@@ -25,8 +24,9 @@ class Pax {
 
   encode () {
     const body = this.encodeBody()
-    if (body === '')
+    if (body === '') {
       return null
+    }
 
     const bodyLen = Buffer.byteLength(body)
     // round up to 512 bytes
@@ -56,7 +56,7 @@ class Pax {
       devmaj: 0,
       devmin: 0,
       atime: this.atime || null,
-      ctime: this.ctime || null
+      ctime: this.ctime || null,
     }).encode(buf)
 
     buf.write(body, 512, bodyLen, 'utf8')
@@ -90,21 +90,23 @@ class Pax {
   }
 
   encodeField (field) {
-    if (this[field] === null || this[field] === undefined)
+    if (this[field] === null || this[field] === undefined) {
       return ''
+    }
     const v = this[field] instanceof Date ? this[field].getTime() / 1000
       : this[field]
     const s = ' ' +
       (field === 'dev' || field === 'ino' || field === 'nlink'
-       ? 'SCHILY.' : '') +
+        ? 'SCHILY.' : '') +
       field + '=' + v + '\n'
     const byteLen = Buffer.byteLength(s)
     // the digits includes the length of the digits in ascii base-10
     // so if it's 9 characters, then adding 1 for the 9 makes it 10
     // which makes it 11 chars.
     let digits = Math.floor(Math.log(byteLen) / Math.log(10)) + 1
-    if (byteLen + digits >= Math.pow(10, digits))
+    if (byteLen + digits >= Math.pow(10, digits)) {
       digits += 1
+    }
     const len = digits + byteLen
     return len + s
   }
@@ -126,18 +128,20 @@ const parseKVLine = (set, line) => {
 
   // XXX Values with \n in them will fail this.
   // Refactor to not be a naive line-by-line parse.
-  if (n !== Buffer.byteLength(line) + 1)
+  if (n !== Buffer.byteLength(line) + 1) {
     return set
+  }
 
-  line = line.substr((n + ' ').length)
+  line = line.slice((n + ' ').length)
   const kv = line.split('=')
   const k = kv.shift().replace(/^SCHILY\.(dev|ino|nlink)/, '$1')
-  if (!k)
+  if (!k) {
     return set
+  }
 
   const v = kv.join('=')
   set[k] = /^([A-Z]+\.)?([mac]|birth|creation)time$/.test(k)
-    ?  new Date(v * 1000)
+    ? new Date(v * 1000)
     : /^[0-9]+$/.test(v) ? +v
     : v
   return set

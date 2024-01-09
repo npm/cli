@@ -1,0 +1,1205 @@
+{
+  "_id": "html-entities",
+  "_rev": "79-213d0c19f23787f7ac646270bd23bd72",
+  "name": "html-entities",
+  "description": "Faster HTML entities encode/decode library.",
+  "dist-tags": {
+    "latest": "1.3.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "html-entities",
+      "version": "1.0.0",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.0",
+      "dist": {
+        "shasum": "e30e06d2ea4a93f7baef53f56ae87b94743679ff",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "html-entities",
+      "version": "1.0.1",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.1",
+      "dist": {
+        "shasum": "9e9a18e2e768738e7b356bb4f518b7db79b80e17",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.1.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "html-entities",
+      "version": "1.0.2",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.2",
+      "dist": {
+        "shasum": "c4cc879ca443bf79d1d605356bf4ab39af55f77b",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.2.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "html-entities",
+      "version": "1.0.3",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.3",
+      "dist": {
+        "shasum": "a3ac7dece3736e904332443483ec3200574d0a3c",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.3.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "html-entities",
+      "version": "1.0.4",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.4",
+      "dist": {
+        "shasum": "ab4612a58f9d24a590461be3bc480bc20374358c",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.4.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "html-entities",
+      "version": "1.0.5",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.5",
+      "dist": {
+        "shasum": "f48de682346205c7a91ef75e8e4a0450a0ed6332",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.5.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "html-entities",
+      "version": "1.0.6",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.6",
+      "dist": {
+        "shasum": "5a2ab18e1415b4e4605eab158b3e633d0d0dd665",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.6.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.7": {
+      "name": "html-entities",
+      "version": "1.0.7",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.7",
+      "dist": {
+        "shasum": "b72d12d96629c34461aa3b65a925bfa0c59a3b1a",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.8": {
+      "name": "html-entities",
+      "version": "1.0.8",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.8",
+      "dist": {
+        "shasum": "3b449b212207c4a495582fb6f419718e34e63747",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.8.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.9": {
+      "name": "html-entities",
+      "version": "1.0.9",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.9",
+      "dist": {
+        "shasum": "f60f64c5f5424a718cc6d6c8b2ee0238e7b19914",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.9.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.10": {
+      "name": "html-entities",
+      "version": "1.0.10",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "_id": "html-entities@1.0.10",
+      "dist": {
+        "shasum": "0dea59130dd50df154e82c4cf71d08c2c9dc968b",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.0.10.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "html-entities",
+      "version": "1.1.0",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "gitHead": "0e246d3ea8885a857783c51aff7529950e4175ff",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities",
+      "_id": "html-entities@1.1.0",
+      "scripts": {},
+      "_shasum": "07ce0ca796235b52ee98c8d8a7a72e05f63b759a",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "07ce0ca796235b52ee98c8d8a7a72e05f63b759a",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "html-entities",
+      "version": "1.1.1",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "colors": "*",
+        "node-html-encoder": "*",
+        "entities": "*"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "license": "MIT",
+      "gitHead": "d95308e71ebb70a6f5ab716fcd9183373629f528",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities",
+      "_id": "html-entities@1.1.1",
+      "scripts": {},
+      "_shasum": "03ba38a4af2eda04c0633368111432c42dea61e1",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "03ba38a4af2eda04c0633368111432c42dea61e1",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "html-entities",
+      "version": "1.1.2",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chai": "^1.9.1",
+        "mocha": "^1.21.4",
+        "unit-coverage": "^3.0.1",
+        "node-html-encoder": "*",
+        "entities": "*",
+        "coveralls": "^2.11.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "unit-coverage": {
+        "common": [
+          "-s",
+          "lib/**/*.js",
+          "-t",
+          "test/**/*.js"
+        ]
+      },
+      "scripts": {
+        "test": "mocha --recursive -R spec test",
+        "benchmark": "node benchmark/benchmark",
+        "coverage": "unit-coverage run -p common",
+        "coverage-html": "unit-coverage run -p common -r html -o coverage.html",
+        "travis": "npm test && unit-coverage run -p common -r lcov -o coverage.lcov && cat coverage.lcov | coveralls"
+      },
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE"
+      ],
+      "license": "MIT",
+      "gitHead": "25acb062772079a4473402270cb1621edc0f84a1",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities",
+      "_id": "html-entities@1.1.2",
+      "_shasum": "b59d13ad79a74bf5e4f1f0072ad69182f88bb1c4",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "b59d13ad79a74bf5e4f1f0072ad69182f88bb1c4",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "html-entities",
+      "version": "1.1.3",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chai": "^1.9.1",
+        "mocha": "^1.21.4",
+        "unit-coverage": "^3.0.1",
+        "node-html-encoder": "*",
+        "entities": "*",
+        "coveralls": "^2.11.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "unit-coverage": {
+        "common": [
+          "-s",
+          "lib/**/*.js",
+          "-t",
+          "test/**/*.js"
+        ]
+      },
+      "scripts": {
+        "test": "mocha --recursive -R spec test",
+        "benchmark": "node benchmark/benchmark",
+        "coverage": "unit-coverage run -p common",
+        "coverage-html": "unit-coverage run -p common -r html -o coverage.html",
+        "travis": "npm test && unit-coverage run -p common -r lcov -o coverage.lcov && cat coverage.lcov | coveralls"
+      },
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE"
+      ],
+      "license": "MIT",
+      "gitHead": "06e39e68edb58cb72e9f313499916aaa2dc15bc8",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities#readme",
+      "_id": "html-entities@1.1.3",
+      "_shasum": "7e3b47640f5ea69b097ae8bbbe7cb8ca941d85bd",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "dist": {
+        "shasum": "7e3b47640f5ea69b097ae8bbbe7cb8ca941d85bd",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "html-entities",
+      "version": "1.2.0",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chai": "^1.9.1",
+        "mocha": "^1.21.4",
+        "unit-coverage": "^3.0.1",
+        "node-html-encoder": "*",
+        "entities": "*",
+        "coveralls": "^2.11.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "unit-coverage": {
+        "common": [
+          "-s",
+          "lib/**/*.js",
+          "-t",
+          "test/**/*.js"
+        ]
+      },
+      "scripts": {
+        "test": "mocha --recursive -R spec test",
+        "benchmark": "node benchmark/benchmark",
+        "coverage": "unit-coverage run -p common",
+        "coverage-html": "unit-coverage run -p common -r html -o coverage.html",
+        "travis": "npm test && unit-coverage run -p common -r lcov -o coverage.lcov && cat coverage.lcov | coveralls"
+      },
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE"
+      ],
+      "license": "MIT",
+      "gitHead": "3a2cd397697c872325f526bb422bdee74f089cda",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities#readme",
+      "_id": "html-entities@1.2.0",
+      "_shasum": "41948caf85ce82fed36e4e6a0ed371a6664379e2",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "dist": {
+        "shasum": "41948caf85ce82fed36e4e6a0ed371a6664379e2",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "html-entities",
+      "version": "1.2.1",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chai": "^1.9.1",
+        "mocha": "^1.21.4",
+        "unit-coverage": "^3.0.1",
+        "node-html-encoder": "*",
+        "entities": "*",
+        "coveralls": "^2.11.2"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "index",
+      "engines": [
+        "node >= 0.4.0"
+      ],
+      "unit-coverage": {
+        "common": [
+          "-s",
+          "lib/**/*.js",
+          "-t",
+          "test/**/*.js"
+        ]
+      },
+      "scripts": {
+        "test": "mocha --recursive -R spec test",
+        "benchmark": "node benchmark/benchmark",
+        "coverage": "unit-coverage run -p common",
+        "coverage-html": "unit-coverage run -p common -r html -o coverage.html",
+        "travis": "npm test && unit-coverage run -p common -r lcov -o coverage.lcov && cat coverage.lcov | coveralls"
+      },
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE"
+      ],
+      "license": "MIT",
+      "gitHead": "dc08bde42ee6468d60ca617061b0b37b2edc45ca",
+      "bugs": {
+        "url": "https://github.com/mdevils/node-html-entities/issues"
+      },
+      "homepage": "https://github.com/mdevils/node-html-entities#readme",
+      "_id": "html-entities@1.2.1",
+      "_shasum": "0df29351f0721163515dfb9e5543e5f6eed5162f",
+      "_from": ".",
+      "_npmVersion": "2.15.12",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "dist": {
+        "shasum": "0df29351f0721163515dfb9e5543e5f6eed5162f",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/html-entities-1.2.1.tgz_1493034372090_0.6101754817645997"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "html-entities",
+      "version": "1.3.0",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "@types/chai": "^4.2.11",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.1",
+        "chai": "^1.9.1",
+        "coveralls": "^2.11.2",
+        "entities": "*",
+        "mocha": "^1.21.4",
+        "node-html-encoder": "*",
+        "ts-node": "^8.8.2",
+        "typescript": "^3.8.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "./lib/index.js",
+      "typings": "./lib/index",
+      "types": "./lib/index",
+      "scripts": {
+        "test": "mocha --recursive -r ts-node/register test/**/*.ts",
+        "benchmark": "ts-node benchmark/benchmark",
+        "travis": "yarn test",
+        "build": "tsc",
+        "prepublishOnly": "yarn build"
+      },
+      "license": "MIT",
+      "licenseText": "Copyright (c) 2013 Dulin Marat\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+      "_id": "html-entities@1.3.0",
+      "dist": {
+        "shasum": "4b0f7485de8ef5e05cace963e34beccf9abe6086",
+        "integrity": "sha512-pxm+ybv9V5bYs2c2LifOTC4YIpMySXFXlGbT5QgdnAuhZadHVicAHptKd4AXxbK6/ZTSiDv3pDoWdLbCA8BrYw==",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.3.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 65121,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJekdcECRA9TVsSAnZWagAAnvsP/R2ss5gdQGPEwuicU7Ef\n0TDMqMMxGjpkDZxfepT5jCbDNbelEAbMUSiKHKtG6gXaXHJ0Jw5pdfSkE/6u\nW2f8/Y5jWHAB0mlJgem+bfUu/x4lKgKXOE9sNov2ftHc8M/dQapBtbodgTcM\nTmz2QQng1O1y3a8D4CMWib4EWfANTlPz8DpGRdifhFwBLEct8Ct7v7OqTdnS\nMYgobQXFydmaNzf75pOYZ0yCSKbRY/cdz1/ftMWRYiEIfMxzow6hR5p1mAGT\nxTKFBFvI8hl1hZ8yAD5jgIgEqIm2MwcaA3k5t2AhngxwvOoLZydCC0qN2B8M\nQJ8ndf5kPKjy7zLvhbv0lULpB0gjbTDISmWvqCX5frJF32QiQ2Zvd+Awfibp\nS98GLZxBY9xtR2iUos0bpGOFlxaX6kzvbxOi1iGL6pgGrFrbWxlKqnwqL8XH\n8gk53PSzAWPeVD5ZArlPUPtcbdpkIf2eBNdUGIYaEtg5IBHlDvJVrxGMgQAU\npzUv0bd4Sy+GukLxaLhNdiPx5oR4NuVz2I6PaOAm6nS3YIbSp06ydEoZvXjH\nb6LmzTyhbfQnKHW6qS5/YPz3TqmVkjsMuwi6qWVREA50IGFKRbZrXklPH1sd\n9cb/wp2R8Bs6FHDN83Bl3tlcpUWLna3i9LPeFh6C9D3anZyTU2+0yq8C2Bx7\nbSIS\r\n=ablZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-entities_1.3.0_1586616067767_0.5276347932721486"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.1": {
+      "name": "html-entities",
+      "version": "1.3.1",
+      "description": "Faster HTML entities encode/decode library.",
+      "keywords": [
+        "html",
+        "html entities",
+        "html entities encode",
+        "html entities decode",
+        "entities",
+        "entities encode",
+        "entities decode"
+      ],
+      "author": {
+        "name": "Marat Dulin",
+        "email": "mdevils@yandex.ru"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "@types/chai": "^4.2.11",
+        "@types/mocha": "^7.0.2",
+        "@types/node": "^13.11.1",
+        "chai": "^1.9.1",
+        "coveralls": "^2.11.2",
+        "entities": "*",
+        "mocha": "^1.21.4",
+        "node-html-encoder": "*",
+        "ts-node": "^8.8.2",
+        "typescript": "^3.8.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mdevils/node-html-entities.git"
+      },
+      "main": "./lib/index.js",
+      "typings": "./lib/index",
+      "types": "./lib/index",
+      "scripts": {
+        "test": "mocha --recursive -r ts-node/register test/**/*.ts",
+        "benchmark": "ts-node benchmark/benchmark",
+        "travis": "yarn test",
+        "build": "tsc",
+        "prepublishOnly": "yarn build"
+      },
+      "license": "MIT",
+      "licenseText": "Copyright (c) 2013 Dulin Marat\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.",
+      "_id": "html-entities@1.3.1",
+      "dist": {
+        "shasum": "fb9a1a4b5b14c5daba82d3e34c6ae4fe701a0e44",
+        "integrity": "sha512-rhE/4Z3hIhzHAUKbW8jVcCyuT5oJCXXqhN/6mXXVCpzTmvJnoH2HL/bt3EZ6p55jbFJBeAe1ZNpL5BugLujxNA==",
+        "tarball": "https://registry.npmjs.org/html-entities/-/html-entities-1.3.1.tgz",
+        "fileCount": 13,
+        "unpackedSize": 65121,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJekdeBCRA9TVsSAnZWagAAQV4P+webeAevZODu9+gXi2mS\nEXeT1kfegaY0fvDMAtAh6H1FPFnO/+7flvn9e2vMxoTlkm0dabFiiyosMdeM\nSiLZP/rR1tOvuVGyZbrdYNj+HENQGAZMhcEyIAFupTbxPVqsZCLllFlxEaw3\nDTcAnzGsXGBGrJeV3rKyimANCsOre/ivZgQOMKTyPmBgMLet3QJ7VvqzSLrN\neYXe+pLqp1j3V/ChNbUPBi3p+pp1PYDGNBCW7VnOnotNkoRYm6R9+CSR7YUA\nOC9jc4kYBodw3vjGn7uvUMucO1tiG58jGIk9c4hRpxCXoMfboPt4/V0QgHZf\nRCPPWjKiXKq0Ng0bCh3g37oUuglHQIbLG58c/hLdfA2//l4mUxxYyuG7t7KE\n83jhAawfI30IT+kboFPr7gDBchpaaYO87i6RyIsroqXbPoVAiwXhyjHIiTjv\nx03L9Gma02FeWOt5ywJYNQ+BEmR13iqxyNn8RIXUlEZ3PGadVg8kX1ovRVez\nYJT07nc1+xSO5+Cs0kSc/AW0lHWyno9oqav0x6iiAJrS003VQMFA0BQ4mULW\nJiglQ/swQpyoH9ulzwpW0lnYbxH0UCVpjlOEyq9CYnWAhGAL2KK4A/3UH3wG\nBB49+Rop8to81xFUXobLjrxx0UNAkqlUEsNtcZDds958ho49NQB7IHgkjiR1\nKhmH\r\n=rd9F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mdevils",
+          "email": "mdevils@yandex.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mdevils",
+        "email": "mdevils@yandex.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/html-entities_1.3.1_1586616193036_0.15238387866380965"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "node-html-entities\n==================\n\n[![Build Status](https://travis-ci.org/mdevils/node-html-entities.svg?branch=master)](https://travis-ci.org/mdevils/node-html-entities)\n[![Coverage Status](https://coveralls.io/repos/mdevils/node-html-entities/badge.svg?branch=master&service=github)](https://coveralls.io/github/mdevils/node-html-entities?branch=master)\n\nFast html entities library.\n\n\nInstallation\n------------\n\n```bash\n$ npm install html-entities\n```\n\nUsage\n-----\n\n**XML entities**\n\nHTML validity and XSS attack prevention you can achieve from XmlEntities class.\n\n```javascript\nconst Entities = require('html-entities').XmlEntities;\n\nconst entities = new Entities();\n\nconsole.log(entities.encode('<>\"\\'&©®')); // &lt;&gt;&quot;&apos;&amp;©®\nconsole.log(entities.encodeNonUTF('<>\"\\'&©®')); // &lt;&gt;&quot;&apos;&amp;&#169;&#174;\nconsole.log(entities.encodeNonASCII('<>\"\\'&©®')); // <>\"\\'&©®\nconsole.log(entities.decode('&lt;&gt;&quot;&apos;&amp;&copy;&reg;&#8710;')); // <>\"'&&copy;&reg;∆\n```\n\n**All HTML entities encoding/decoding**\n\n\n```javascript\nconst Entities = require('html-entities').AllHtmlEntities;\n\nconst entities = new Entities();\n\nconsole.log(entities.encode('<>\"&©®∆')); // &lt;&gt;&quot;&amp;&copy;&reg;∆\nconsole.log(entities.encodeNonUTF('<>\"&©®∆')); // &lt;&gt;&quot;&amp;&copy;&reg;&#8710;\nconsole.log(entities.encodeNonASCII('<>\"&©®∆')); // <>\"&©®&#8710;\nconsole.log(entities.decode('&lt;&gt;&quot;&amp;&copy;&reg;')); // <>\"&©®\n```\n\n**Available classes**\n\n```javascript\nconst XmlEntities = require('html-entities').XmlEntities, // <>\"'& + &#...; decoding\n      Html4Entities = require('html-entities').Html4Entities, // HTML4 entities.\n      Html5Entities = require('html-entities').Html5Entities, // HTML5 entities.\n      AllHtmlEntities = require('html-entities').AllHtmlEntities; // Synonym for HTML5 entities.\n```\n\nSupports four methods for every class:\n\n* encode — encodes, replacing characters to its entity representations. Ignores UTF characters with no entity representation.\n* encodeNonUTF — encodes, replacing characters to its entity representations. Inserts numeric entities for UTF characters.\n* encodeNonASCII — encodes, replacing only non-ASCII characters to its numeric entity representations.\n* decode — decodes, replacing entities to characters. Unknown entities are left as is.\n",
+  "maintainers": [
+    {
+      "name": "mdevils",
+      "email": "mdevils@yandex.ru"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-09T07:55:15.777Z",
+    "created": "2013-02-15T15:08:31.052Z",
+    "1.0.0": "2013-02-15T15:08:33.911Z",
+    "1.0.1": "2013-02-15T15:13:29.309Z",
+    "1.0.2": "2013-02-20T09:14:36.442Z",
+    "1.0.3": "2013-02-20T11:32:02.907Z",
+    "1.0.4": "2013-02-20T11:34:09.463Z",
+    "1.0.5": "2013-02-20T13:35:06.581Z",
+    "1.0.6": "2013-02-20T16:52:23.002Z",
+    "1.0.7": "2013-02-20T18:08:26.029Z",
+    "1.0.8": "2013-02-21T10:43:06.556Z",
+    "1.0.9": "2013-02-21T11:12:26.425Z",
+    "1.0.10": "2013-02-23T16:39:35.580Z",
+    "1.1.0": "2014-08-18T23:05:50.705Z",
+    "1.1.1": "2014-08-28T13:21:31.251Z",
+    "1.1.2": "2015-01-12T10:11:08.776Z",
+    "1.1.3": "2015-07-18T14:48:28.315Z",
+    "1.2.0": "2015-10-08T20:11:47.023Z",
+    "1.2.1": "2017-04-24T11:46:12.756Z",
+    "1.3.0": "2020-04-11T14:41:07.925Z",
+    "1.3.1": "2020-04-11T14:43:13.247Z"
+  },
+  "author": {
+    "name": "Marat Dulin",
+    "email": "mdevils@yandex.ru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mdevils/node-html-entities.git"
+  },
+  "users": {
+    "roboterhund87": true,
+    "radist2s": true,
+    "mavin": true,
+    "mightyiam": true,
+    "alejcerro": true,
+    "itonyyo": true,
+    "jcottam": true,
+    "frankymartz": true,
+    "kaperstone": true,
+    "chrisyipw": true,
+    "iolo": true,
+    "itskdk": true,
+    "ahsanshafiq": true,
+    "developit": true,
+    "ugarz": true,
+    "jakub.knejzlik": true,
+    "beytek": true,
+    "taichiro": true,
+    "azevedo": true,
+    "soulevans07": true,
+    "jovinbm": true,
+    "cantidio": true,
+    "shrimpseaweed": true,
+    "warblesync": true,
+    "jian263994241": true,
+    "xch": true,
+    "shuoshubao": true,
+    "mort3za": true,
+    "edwardxyt": true,
+    "codeinpixel": true,
+    "wvlvik": true,
+    "akshay.vs9543": true,
+    "penglyu": true,
+    "flftfqwxf": true,
+    "zeroknight": true,
+    "xiechao06": true,
+    "arhankamra": true
+  },
+  "keywords": [
+    "html",
+    "html entities",
+    "html entities encode",
+    "html entities decode",
+    "entities",
+    "entities encode",
+    "entities decode"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

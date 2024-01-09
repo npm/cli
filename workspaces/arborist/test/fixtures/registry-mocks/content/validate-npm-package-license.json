@@ -1,0 +1,667 @@
+{
+  "_id": "validate-npm-package-license",
+  "_rev": "12-f57c70cf75042f3f1b6265fab9bb413a",
+  "name": "validate-npm-package-license",
+  "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+  "dist-tags": {
+    "latest": "3.0.4"
+  },
+  "versions": {
+    "1.0.0-prerelease-1": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license",
+      "version": "1.0.0-prerelease-1",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "bugs": {
+        "url": "https://github.com/kemitchell/npm-valid-package-license/issues"
+      },
+      "devDependencies": {
+        "jsmd": "^0.3.0"
+      },
+      "homepage": "https://github.com/kemitchell/npm-valid-package-license",
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/kemitchell/npm-valid-package-license"
+      },
+      "scripts": {
+        "precommit": "npm run test",
+        "test": "jsmd README.md"
+      },
+      "dependencies": {
+        "spdx": "0.2.1",
+        "spdx-correct": "1.0.0-prerelease-2"
+      },
+      "gitHead": "42b8c0eef4086108bbff12734900999ad69e615c",
+      "_id": "validate-npm-package-license@1.0.0-prerelease-1",
+      "_shasum": "ff1c1c5d8324f9f8ea388e51e43458f5491947e0",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff1c1c5d8324f9f8ea388e51e43458f5491947e0",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-1.0.0-prerelease-1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-prerelease-2": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license",
+      "version": "1.0.0-prerelease-2",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "bugs": {
+        "url": "https://github.com/kemitchell/npm-valid-package-license/issues"
+      },
+      "dependencies": {
+        "spdx": "^0.4.0",
+        "spdx-correct": "1.0.0-prerelease-3"
+      },
+      "devDependencies": {
+        "jsmd": "^0.3.0"
+      },
+      "homepage": "https://github.com/kemitchell/npm-valid-package-license",
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/kemitchell/npm-valid-package-license"
+      },
+      "scripts": {
+        "precommit": "npm run test",
+        "test": "jsmd README.md"
+      },
+      "gitHead": "d6043c5bf03a71409daae8d584ba74281e3c55c3",
+      "_id": "validate-npm-package-license@1.0.0-prerelease-2",
+      "_shasum": "0f45adce1728091b289597035c1ad25a5ba549be",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0f45adce1728091b289597035c1ad25a5ba549be",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-1.0.0-prerelease-2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0-prerelease-3": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license",
+      "version": "1.0.0-prerelease-3",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "dependencies": {
+        "spdx": "^0.4.0",
+        "spdx-correct": "1.0.0-prerelease-3"
+      },
+      "devDependencies": {
+        "jsmd": "^0.3.0"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js",
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "precommit": "npm run test",
+        "test": "jsmd README.md"
+      },
+      "gitHead": "d50f9e9e0d42725f94262be0bb8e1ad5dc7a8bab",
+      "_id": "validate-npm-package-license@1.0.0-prerelease-3",
+      "_shasum": "d55a47551250c5bb4522c0944cefb9091f1344ad",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d55a47551250c5bb4522c0944cefb9091f1344ad",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-1.0.0-prerelease-3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "1.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "dependencies": {
+        "spdx": "~0.4.0",
+        "spdx-correct": "~1.0.0"
+      },
+      "devDependencies": {
+        "jsmd": "~0.3.0"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js",
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "precommit": "npm run test",
+        "test": "jsmd README.md"
+      },
+      "gitHead": "a892dc061a9893e2a5053b51612bb823ec770609",
+      "_id": "validate-npm-package-license@1.0.0",
+      "_shasum": "bd582727e3fa3ab43dc45514f14a14bef7f3002c",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bd582727e3fa3ab43dc45514f14a14bef7f3002c",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "2.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "dependencies": {
+        "spdx": "~0.4.0",
+        "spdx-correct": "~1.0.0"
+      },
+      "devDependencies": {
+        "jsmd": "~0.3.0"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js",
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "precommit": "npm run test",
+        "test": "jsmd README.md"
+      },
+      "gitHead": "24544d4688f7cc9ed9685a3f9f90bd3f3bed58c0",
+      "_id": "validate-npm-package-license@2.0.0",
+      "_shasum": "ce0a29300edfa07e6ac6ad52eed8d6dfd194e42b",
+      "_from": ".",
+      "_npmVersion": "2.11.1",
+      "_nodeVersion": "2.3.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "dist": {
+        "shasum": "ce0a29300edfa07e6ac6ad52eed8d6dfd194e42b",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "3.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx": "~0.4.0",
+        "spdx-correct": "~1.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "replace-require-self": "^1.0.0"
+      },
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "test": "defence README.md | replace-require-self | node"
+      },
+      "gitHead": "4fd556381bbbafc7389c78d2c66ba3b3c7c77f59",
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+      "_id": "validate-npm-package-license@3.0.0",
+      "_shasum": "cf9f54a861d1b8a9dbf4b3e72765024a22e87ed0",
+      "_from": ".",
+      "_npmVersion": "2.13.5",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "cf9f54a861d1b8a9dbf4b3e72765024a22e87ed0",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "3.0.1",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-correct": "~1.0.0",
+        "spdx-expression-parse": "~1.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "replace-require-self": "^1.0.0"
+      },
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "test": "defence README.md | replace-require-self | node"
+      },
+      "gitHead": "00200d28f9960985f221bc1a8a71e4760daf39bf",
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+      "_id": "validate-npm-package-license@3.0.1",
+      "_shasum": "2804babe712ad3379459acfbe24746ab2c303fbc",
+      "_from": ".",
+      "_npmVersion": "2.13.5",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "2804babe712ad3379459acfbe24746ab2c303fbc",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "3.0.2",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-correct": "^2.0.4",
+        "spdx-expression-parse": "^3.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "replace-require-self": "^1.0.0"
+      },
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "test": "defence README.md | replace-require-self | node"
+      },
+      "gitHead": "6171a9775a4eb3d2e84e891f79a99f2cd2040a48",
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+      "_id": "validate-npm-package-license@3.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-8zlGw3EZDpC7iUDKy4yHCSqFwkBTeAK4h1QqDC3ST6rT7dzvu2ZuclExZN7zuXNEhQ3+2UBQgdca5eNNL06sBg==",
+        "shasum": "ec39d030e27d1ee714515162c547f66356e49f41",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16605
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/validate-npm-package-license_3.0.2_1519690927845_0.8808876924983544"
+      }
+    },
+    "3.0.3": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "3.0.3",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-correct": "^3.0.0",
+        "spdx-expression-parse": "^3.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "replace-require-self": "^1.0.0"
+      },
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "test": "defence README.md | replace-require-self | node"
+      },
+      "gitHead": "ff60a52a286143a2ccdbf57096748dd88f659118",
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+      "_id": "validate-npm-package-license@3.0.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-63ZOUnL4SIXj4L0NixR3L1lcjO38crAbgrTpl28t8jjrfuiOBL5Iygm+60qPs/KsZGzPNg6Smnc/oY16QTjF0g==",
+        "shasum": "81643bcbef1bdfecd4623793dc4648948ba98338",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 16605
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/validate-npm-package-license_3.0.3_1519755529064_0.18557963180003578"
+      }
+    },
+    "3.0.4": {
+      "name": "validate-npm-package-license",
+      "description": "Give me a string and I'll tell you if it's a valid npm package license string",
+      "version": "3.0.4",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "contributors": [
+        {
+          "name": "Mark Stacey",
+          "email": "markjstacey@gmail.com"
+        }
+      ],
+      "dependencies": {
+        "spdx-correct": "^3.0.0",
+        "spdx-expression-parse": "^3.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "replace-require-self": "^1.0.0"
+      },
+      "keywords": [
+        "license",
+        "npm",
+        "package",
+        "validation"
+      ],
+      "license": "Apache-2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+      },
+      "scripts": {
+        "test": "defence README.md | replace-require-self | node"
+      },
+      "gitHead": "6bbe26201fa7e5c7281516b04b9f3f4cc6db145c",
+      "bugs": {
+        "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+      "_id": "validate-npm-package-license@3.0.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==",
+        "shasum": "fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a",
+        "tarball": "https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16597,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZyzXCRA9TVsSAnZWagAAhkcP/imBj6UnzB54WA4DtbsA\nJd6N2e6MIs/N4NtWEhqTbG744D4jym6BFSFwkywGMZLUA4TdT3yZgxakEuIU\niYt6jkzmAA5hIjIH/9P7e4gjT9ZkcrmDMMmr9VXNGvgZkg+9gSHnOfN484HP\ntslYpmW5K8P5U4e7cIDJO9QBFjlJ4sjpILITDn9WGJyvphZ+gEO6uV5LyAdC\nhA7pEOILgXxbCNDRFb3QbmgthUnXoy3sgTVjb6phwuVF72mqN4/BfmuA+zaR\nLcPEuYK1ZQW9Pa++jINIOq0N9vbkHzgo7cK+wLahyB/dH04B+DvOS24khUcS\nXAIsRoG4TK1DytQ97h8BOwMAW6jYclRYoMCVBGhncJLGctNrkAVJq+CSvJJN\nfCns1pv3CRWQCCuqp5mqHCu0oZpYtXE6BZMUQrV6PNzN4WMcqtF/4iLdps7C\nL2syTg8YlTlx0bPdSsnNKQIPt+4xsNq4QOoBgblNh7rmuRRRZt69Z0me6ycB\n6XcXx8Ok6glUz4jzG6jgd6s86GHPMw4tFtP+i6+5iQRIIRBwjQ1HuEPEqjF8\nYLxinu80YuY/uw1wtfbLrytIBo5fbK9DtRn+PNhvcBRlDS1ErJ2M2Yd2anmv\nM1joDg4Sb3tlpP0W5GJ46GE4GQ+WEFsxA+6F83FGj/NuZTuI9mtBVN3cGo4y\nInRT\r\n=LHiS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/validate-npm-package-license_3.0.4_1533488343147_0.7174321298588549"
+      }
+    }
+  },
+  "readme": "validate-npm-package-license\n============================\n\nGive me a string and I'll tell you if it's a valid npm package license string.\n\n```javascript\nvar valid = require('validate-npm-package-license');\n```\n\nSPDX license identifiers are valid license strings:\n\n```javascript\n\nvar assert = require('assert');\nvar validSPDXExpression = {\n  validForNewPackages: true,\n  validForOldPackages: true,\n  spdx: true\n};\n\nassert.deepEqual(valid('MIT'), validSPDXExpression);\nassert.deepEqual(valid('BSD-2-Clause'), validSPDXExpression);\nassert.deepEqual(valid('Apache-2.0'), validSPDXExpression);\nassert.deepEqual(valid('ISC'), validSPDXExpression);\n```\nThe function will return a warning and suggestion for nearly-correct license identifiers:\n\n```javascript\nassert.deepEqual(\n  valid('Apache 2.0'),\n  {\n    validForOldPackages: false,\n    validForNewPackages: false,\n    warnings: [\n      'license should be ' +\n      'a valid SPDX license expression (without \"LicenseRef\"), ' +\n      '\"UNLICENSED\", or ' +\n      '\"SEE LICENSE IN <filename>\"',\n      'license is similar to the valid expression \"Apache-2.0\"'\n    ]\n  }\n);\n```\n\nSPDX expressions are valid, too ...\n\n```javascript\n// Simple SPDX license expression for dual licensing\nassert.deepEqual(\n  valid('(GPL-3.0-only OR BSD-2-Clause)'),\n  validSPDXExpression\n);\n```\n\n... except if they contain `LicenseRef`:\n\n```javascript\nvar warningAboutLicenseRef = {\n  validForOldPackages: false,\n  validForNewPackages: false,\n  spdx: true,\n  warnings: [\n    'license should be ' +\n    'a valid SPDX license expression (without \"LicenseRef\"), ' +\n    '\"UNLICENSED\", or ' +\n    '\"SEE LICENSE IN <filename>\"',\n  ]\n};\n\nassert.deepEqual(\n  valid('LicenseRef-Made-Up'),\n  warningAboutLicenseRef\n);\n\nassert.deepEqual(\n  valid('(MIT OR LicenseRef-Made-Up)'),\n  warningAboutLicenseRef\n);\n```\n\nIf you can't describe your licensing terms with standardized SPDX identifiers, put the terms in a file in the package and point users there:\n\n```javascript\nassert.deepEqual(\n  valid('SEE LICENSE IN LICENSE.txt'),\n  {\n    validForNewPackages: true,\n    validForOldPackages: true,\n    inFile: 'LICENSE.txt'\n  }\n);\n\nassert.deepEqual(\n  valid('SEE LICENSE IN license.md'),\n  {\n    validForNewPackages: true,\n    validForOldPackages: true,\n    inFile: 'license.md'\n  }\n);\n```\n\nIf there aren't any licensing terms, use `UNLICENSED`:\n\n```javascript\nvar unlicensed = {\n  validForNewPackages: true,\n  validForOldPackages: true,\n  unlicensed: true\n};\nassert.deepEqual(valid('UNLICENSED'), unlicensed);\nassert.deepEqual(valid('UNLICENCED'), unlicensed);\n```\n",
+  "maintainers": [
+    {
+      "name": "kemitchell",
+      "email": "kyle@kemitchell.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-08-05T16:59:06.229Z",
+    "created": "2015-05-03T21:39:01.081Z",
+    "1.0.0-prerelease-1": "2015-05-03T21:39:01.081Z",
+    "1.0.0-prerelease-2": "2015-05-06T07:51:15.937Z",
+    "1.0.0-prerelease-3": "2015-06-05T20:09:37.329Z",
+    "1.0.0": "2015-06-05T22:28:16.925Z",
+    "2.0.0": "2015-06-19T07:38:36.795Z",
+    "3.0.0": "2015-08-23T22:03:42.936Z",
+    "3.0.1": "2015-08-23T23:36:10.977Z",
+    "3.0.2": "2018-02-27T00:22:09.402Z",
+    "3.0.3": "2018-02-27T18:18:49.179Z",
+    "3.0.4": "2018-08-05T16:59:03.230Z"
+  },
+  "homepage": "https://github.com/kemitchell/validate-npm-package-license.js#readme",
+  "keywords": [
+    "license",
+    "npm",
+    "package",
+    "validation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemitchell/validate-npm-package-license.js.git"
+  },
+  "author": {
+    "name": "Kyle E. Mitchell",
+    "email": "kyle@kemitchell.com",
+    "url": "https://kemitchell.com"
+  },
+  "bugs": {
+    "url": "https://github.com/kemitchell/validate-npm-package-license.js/issues"
+  },
+  "license": "Apache-2.0",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Mark Stacey",
+      "email": "markjstacey@gmail.com"
+    }
+  ],
+  "_attachments": {}
+}

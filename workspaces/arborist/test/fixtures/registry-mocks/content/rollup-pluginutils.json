@@ -1,0 +1,2348 @@
+{
+  "_id": "rollup-pluginutils",
+  "_rev": "36-2e28f5b082421e7f30fce65c3d22ca8c",
+  "name": "rollup-pluginutils",
+  "description": "Functionality commonly needed by Rollup plugins",
+  "dist-tags": {
+    "latest": "2.8.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.0.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.7.3",
+        "gobble": "^0.10.2",
+        "gobble-cli": "^0.6.0",
+        "gobble-rollup-babel": "^0.6.1",
+        "mocha": "^2.3.3"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "gobble build -f dist",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "minimatch": "^3.0.0"
+      },
+      "gitHead": "fa5020825dd2de895bd5a7195ee7d90682da1378",
+      "_id": "rollup-pluginutils@1.0.0",
+      "_shasum": "7249cae5276a169efaec0f09a7d0fcbcba4fd311",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7249cae5276a169efaec0f09a7d0fcbcba4fd311",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.0.1",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.7.3",
+        "gobble": "^0.10.2",
+        "gobble-cli": "^0.6.0",
+        "gobble-rollup-babel": "^0.6.1",
+        "mocha": "^2.3.3"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "gobble build -f dist",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "gitHead": "a386464fc4044af109739c61202726a63d627083",
+      "_id": "rollup-pluginutils@1.0.1",
+      "_shasum": "ef0457c18fd9c4b1c068b56f516909b393c7d1a7",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ef0457c18fd9c4b1c068b56f516909b393c7d1a7",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.1.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.7.3",
+        "gobble": "^0.10.2",
+        "gobble-cli": "^0.6.0",
+        "gobble-rollup-babel": "^0.6.1",
+        "mocha": "^2.3.3"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "gobble build -f dist",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "gitHead": "2f02f0a099209132087e8872acf33261238ac912",
+      "_id": "rollup-pluginutils@1.1.0",
+      "_shasum": "64112aee42e29c21fe5e281c5719988122c64616",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "4.1.2",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "64112aee42e29c21fe5e281c5719988122c64616",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.2.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.8.0",
+        "gobble": "^0.10.2",
+        "gobble-cli": "^0.6.0",
+        "gobble-rollup": "^0.11.0",
+        "mocha": "^2.3.3",
+        "rollup-plugin-babel": "^1.0.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "gobble build -f dist",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.0",
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "gitHead": "63b8e9412882dbc88975e3c2a18ccc08c6989255",
+      "_id": "rollup-pluginutils@1.2.0",
+      "_shasum": "b74b52de5ffb658aa5e1522bc1a6d07ae27bed25",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "b74b52de5ffb658aa5e1522bc1a6d07ae27bed25",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.3.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.8.0",
+        "gobble": "^0.10.2",
+        "gobble-cli": "^0.6.0",
+        "gobble-rollup": "^0.11.0",
+        "mocha": "^2.3.3",
+        "rollup-plugin-babel": "^1.0.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "gobble build -f dist",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.0",
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "99307f0ac2063be4acba3e9cde11c69ddc720bfc",
+      "_id": "rollup-pluginutils@1.3.0",
+      "_shasum": "0bc92a39973577075d997e0f88308df8076e5211",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "0bc92a39973577075d997e0f88308df8076e5211",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.3.1",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^1.8.0",
+        "mocha": "^2.3.3",
+        "rollup": "^0.21.2",
+        "rollup-plugin-babel": "^1.0.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c -f cjs -o dist/pluginutils.cjs.js && rollup -c -f es6 -o dist/pluginutils.es6.js",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.0",
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "d19667ca9b4f7a1dedf9da55a3ff8a6051c1d252",
+      "_id": "rollup-pluginutils@1.3.1",
+      "_shasum": "738205249fea8275361d2cb1b8b5c38a279a91bd",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "738205249fea8275361d2cb1b8b5c38a279a91bd",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.4.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^2.11.1",
+        "mocha": "^2.5.3",
+        "rollup": "^0.26.7",
+        "rollup-plugin-buble": "^0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c -f cjs -o dist/pluginutils.cjs.js && rollup -c -f es6 -o dist/pluginutils.es6.js",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.1",
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "c7c45335a8799b27fca9e4066560ca44dab2040c",
+      "_id": "rollup-pluginutils@1.4.0",
+      "_shasum": "74784fc56003ab03ff3b9ea042dfea8c7c5e7bc3",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "74784fc56003ab03ff3b9ea042dfea8c7c5e7bc3",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-1.4.0.tgz_1465262082768_0.7475774618797004"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.5.0",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^2.11.1",
+        "mocha": "^2.5.3",
+        "rollup": "^0.26.7",
+        "rollup-plugin-buble": "^0.10.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c -f cjs -o dist/pluginutils.cjs.js && rollup -c -f es6 -o dist/pluginutils.es6.js",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.1",
+        "minimatch": "^3.0.0"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "00a1afb8d7c2c59073ca7e9610e57404786030aa",
+      "_id": "rollup-pluginutils@1.5.0",
+      "_shasum": "b73b70bc14c8ac3d85cb47d91ca8282209a780e3",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "b73b70bc14c8ac3d85cb47d91ca8282209a780e3",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-1.5.0.tgz_1465314860618_0.34835090464912355"
+      },
+      "directories": {}
+    },
+    "1.5.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.5.1",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^2.13.1",
+        "mocha": "^2.5.3",
+        "rollup": "^0.33.0",
+        "rollup-plugin-buble": "^0.12.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c -f cjs -o dist/pluginutils.cjs.js && rollup -c -f es6 -o dist/pluginutils.es6.js",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.1",
+        "minimatch": "^3.0.2"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "f6be9e77753bcdaf31b8906de1e339e5a5408e18",
+      "_id": "rollup-pluginutils@1.5.1",
+      "_shasum": "49593ff8be62ac9deff1a6ae9ee34ab4216a41b6",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "49593ff8be62ac9deff1a6ae9ee34ab4216a41b6",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-1.5.1.tgz_1466771071305_0.9770540448371321"
+      },
+      "directories": {}
+    },
+    "1.5.2": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "1.5.2",
+      "main": "dist/pluginutils.cjs.js",
+      "jsnext:main": "dist/pluginutils.es6.js",
+      "devDependencies": {
+        "eslint": "^2.13.1",
+        "mocha": "^2.5.3",
+        "rollup": "^0.33.0",
+        "rollup-plugin-buble": "^0.12.1"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c -f cjs -o dist/pluginutils.cjs.js && rollup -c -f es6 -o dist/pluginutils.es6.js",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.2.1",
+        "minimatch": "^3.0.2"
+      },
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "4798d3092aed516c54f9311c31e224df98ddd238",
+      "_id": "rollup-pluginutils@1.5.2",
+      "_shasum": "1e156e778f94b7255bfa1b3d0178be8f5c552408",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "1e156e778f94b7255bfa1b3d0178be8f5c552408",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-1.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-1.5.2.tgz_1472503545970_0.7693260558880866"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.0.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^3.12.2",
+        "mocha": "^3.2.0",
+        "rollup": "^0.40.0",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.3.0",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "ec1695063ace34bb861e80b000406153b214c45a",
+      "_id": "rollup-pluginutils@2.0.0",
+      "_shasum": "c8bbd24ecc51139203f5ae793221f5ffcc6c7e5b",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "c8bbd24ecc51139203f5ae793221f5ffcc6c7e5b",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-2.0.0.tgz_1483470012648_0.866132021183148"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.0.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^3.12.2",
+        "mocha": "^3.2.0",
+        "rollup": "^0.40.0",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.3.0",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "1387dd324c5e23fd5aee40f7949268505c0e555a",
+      "_id": "rollup-pluginutils@2.0.1",
+      "_shasum": "7ec95b3573f6543a46a6461bd9a7c544525d0fc0",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "shasum": "7ec95b3573f6543a46a6461bd9a7c544525d0fc0",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rich_harris",
+          "email": "richard.a.harris@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/rollup-pluginutils-2.0.1.tgz_1483470610433_0.34335850714705884"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.1.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.19.2"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^3.1.10",
+        "tosource": "^1.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "454325ab4233a360873c891f5e2c5bd46bad12de",
+      "_id": "rollup-pluginutils@2.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.11.1",
+      "_npmUser": {
+        "name": "rich_harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UyIb55bvJBop3HmpULDYG8eNoWvZ4Du+kqy3KG32JcEazHuJ3uXzrzksc3/snBzxXWjyYjLgHC4OgORMCQQpAw==",
+        "shasum": "4ee80b1bbc8eaed67aabf7f55b4fe9ccf9fd3c3a",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.1.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 28195,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8aELCRA9TVsSAnZWagAAmPEP/3SQiysFQJ3HkXS8L9Wn\nDNa4lojck/F0UtyFk/8zs3Hnmmrfg5OWXR1f3eKw8MfziV8dVi7vhFvSjjDP\nxcz3ixs5DwZBrwwwew8deLu6aEofsmknlUSyPOQXLS6I+NA42PswAUbT+tTA\n1hiT5RYWlPqW8UUIGvNrRFLKl+U4K3ZYfD4kevt/9xgXmvjKsDUSeOm/3xpZ\nIaFYm8U48CH9s/BtwxdOYQGpzKq/Nm+P0asSXhBivu7YG3xh7sC7TlGAG7IZ\nIqgA6oS8JUxxoq3hxkth96YVBAqneI/t6JA3Ot0PIzwUpSowzx2DdGcj8+yS\nB2I6Nnz6tt1AHKhH8PaX10/R/fncN9H8lFcyjldzoV7vq/swkKxfbmdomEOr\n5b0idvswmdoI5NUkukxMx1AOrvmbqGq73dYVI0bJIBn/3dyKsnR/EsWq+GQA\nUIDWNOki5gXZCZAQ6rE1zutcrnWcgBPiUBaJwMzj+0B2XXCMW99Maw9uNMOn\n/XG087aZRCEr243eAwr4nuaUD4IXn33R/WYNqlKmzcIB85WmbQ6kPFX8cTdQ\nP55iHaqOmtRlWADFVPc5K4wCcXdOoPnsgSxuhpFjOpQNEL6AoMq0gOB92AH2\n8zibdTf/kVLCRfYXxwrftCgf9x+QXGGIkgMPFe57bBqHCofS7WU79hpqAYNk\nqzip\r\n=/rRl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.1.0_1525784842331_0.8398583532794786"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.1.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "pretest": "npm run build",
+        "prepublish": "npm test"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11",
+        "tosource": "^1.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "1d54d13059bb9495aa4fc445a19b9aa4280843b1",
+      "_id": "rollup-pluginutils@2.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "guybedford",
+        "email": "guybedford@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-64KOrUzC3um9hChGxcUOC9up9JHQN/qAeZbiK7h5YUgsYIOwc8MTvQL4J5c+725rS7u8i1EUhfchL095lwuIOQ==",
+        "shasum": "50289c94f8d7426647b14dc9fbb93643645a8d09",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.1.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 29061,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8scBCRA9TVsSAnZWagAASPEQAJ2nNbGdlNabStd6I3hA\nY5kv0s3uYRBmLh7gvC/ScS0kkM0lwT0y6Tnvq7a/srsJypBHj+DpWVg7aFTh\n5n8+YMA05lSRPDe+appwgsTW/A2VITofSrKZuF6Mog6JPSHD46pmtqddBKmb\ng7YltJUWMZG6gXxdd4tiS3Gd6mzJzPyUqrnXvnLCnYaas7k8laSXaJIFW11p\nWp/rn4tbberN41dqGxPaZ/Hisa9DLMgof5g6VAj35Yqemewk1o+f0mrI3JKb\nuKE7z3lzY/aWqlSzLlch1SYqTN8Txpn/RLni6OLQjSxO4cxxl2rqSFSLcLDh\ntWxzLTc7YjqEYf+dfqjB07jUzngV2g80WbARq5v6UYNKd8W+YkmNoAP2pvpj\nooKMZO6T0rpE+wyQuBYYFZepXXAgXfx3kRvNvp0eIaPVKv7LpL8yeJwAXMcK\nt0X6DIrHdi8QAyxfQcmTXeopz07XuI0iBogAO3feaW5J0AzPRcO0Lkk7o6x0\nrfJCOlflIhX5s9lJeffH6oZ3wW0/60NtWpXDjvHZIB8MYs+8BmmbpZvZ4fjL\np+16O7t5QOZ2BdCWjSWruv8uZ+hmWD184r+CMIRR30OcOHgy0iNjajdqpnuj\nvgSnMjk/DipQJMLVlwhSOkmaw9hDktzaN76+4Rh9XRPMcY1bp3ELGrcLZBwu\na6oU\r\n=ANJF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.1.1_1525860096555_0.850093001070898"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.2.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.1.0",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "0bc1a7e325d834727b7494972e3acc607750c6b0",
+      "_id": "rollup-pluginutils@2.2.0",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-aqjTUCfZJK3O+TjH++PdQc8Lg6V6t/1Fhu8/6f3qPQzBt0xZruDgqblvb3RQOfKybTgfxKpyy2pQmQ4X2OmY4w==",
+        "shasum": "64ba3f29988b84322bafa188a9f99ca731c95354",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.2.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 32266,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9YVECRA9TVsSAnZWagAAP0AP/A+jqJfrvogSjiPV07dd\nQzac8/MaI8IlRGewMvV3Agp3v9nsIUMhSUNSCsa3D8JWvnmKlXPqPq/aOerl\nUktG46yko5RFPVBsmDLEBIwsXo/AwPF8NgN3A3Mqs8pAJ3/LLBn19z7NoXYH\nG69uLJ7RXkfXUoP2YGnAAiwsFfr1saOZNntVOpWdDysswkQ+E+upzcfG9WFU\nqQQDPJ8GtEdnEq7GynWYkFgII7H6SLa9epfhM9/i8Yj/Sh3hyfy5XxMqQ6cW\nz02ffm/eAAlXn3Or8mDn9F6ZbthyU0e/KiYs96CZ4+fPXrDrrmQGxQJxBEij\ncB0VW7ool7QhgWXz4SYYj2dmXTWMJCSe7CQ7/VTZtA+kuI/s/KAPQVBzUphX\nWxRBC386gsMAGrRbVgPDMPLqQ18+UvTDmIemvo2Av+Yj8IZb7IraMKrwVrpK\ncCfVyrKI68CzOntkDia3HWy/U46etMPyfVxb4l+jWPnEkrGTmwwZvZQZ9FYd\n3W3/1mnO8dAkGXjqphcSKi8UTiY1cKDblK5p+3oxIc+W4TMgmQw5zmP82QNR\nSPw2yAKq2JYaT7kZMHXy4uypXLziryR279oaDsrQarvA/0MG6gVmh+uFYJvD\nfgZq4EVglV9xY0sFLYnnrI6tgIdFLu7uBzoirMvsYfdd25leFzd4GwFOY5WA\nsHpz\r\n=NVH0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.2.0_1526039876119_0.5485535874523519"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.2.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.1.0",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "28983e068ffbb6ff8b319eb467543858e508261c",
+      "_id": "rollup-pluginutils@2.2.1",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-MyM3LPtV6NKPJOnMV7j89S+gR0BhZhXYoZXD495ms3bQ1vVCpQxTt+qJtNmTEbXI6V9KdIQd4U+dz+f142lRWQ==",
+        "shasum": "26b7fd5d12b052d6a4dcc342b847426f274128fd",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.2.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 32500,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAv17CRA9TVsSAnZWagAA+rUP/0Up8pA2V64NIcjb5DKx\nvT1HsRbIpkqechHW/77XwqqS/oKYdfL5m1eRr0cSQstt56VgQYkRPAvwxU6v\naIHeNDBXVaAJuEh6AZ/W2jT7osWcUlDSXjm/vwe4Ydr7SU8X2gm4POMe4G8C\nnj+jVqCA3WQAPiFC4Vts7hAY+2D2zpiKDrWIj85ChtbtILxmewd/gYwaqrMu\nvcB7kNpkvAA0MQzC2n5Y6WqMHHYJDTqzr0Z+DfhvXJ8drlVDlchzdncxaT1k\nRBWTn22j7+dqCqgqF7GZyrGLMgs4ff4qPNSafY4GNzcTppwvRMEeC1dfCB/1\nn+cjZGOluV07/366QmLcefy2wPXgOy3X0fQmiDRCfHXV2C3B2RsgzztpxT4k\nw2Gc2XeP+6fk6dA2jFANDBDtRVTkpGwfcIzCkDFg3YzrY9pYAXFw8xBLJA+U\nCJyGgttoGS9HGOFwtudpfzpz2rwPDFD7KM6e7rVaIkSObHDiDs084rIj1YFl\nSgXUcE/se+xDSV2987p5DlfKm01DJR7kME8fe17DS5ETV+iC591FB1xbGkk+\ndn3AuvE4nrQPz03rzgICuNXUSETRUHLyNE7nTAVGZLuMGGYWy6ce0dbExSVh\n+LtBbcBRNgBgOQvflRGfHOoMPUL/leOnmObtF6W6d8I6djAWQCtPpw550GDL\nqRqP\r\n=1U0F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.2.1_1526922618621_0.09621013135654954"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.3.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.1.0",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "a4f039b734e2c119b79e6b67ab588bcc097f7b36",
+      "_id": "rollup-pluginutils@2.3.0",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-xB6hsRsjdJdIYWEyYUJy/3ki5g69wrf0luHPGNK3ZSocV6HLNfio59l3dZ3TL4xUwEKgROhFi9jOCt6c5gfUWw==",
+        "shasum": "478ace04bd7f6da2e724356ca798214884738fc4",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.3.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 33255,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAv92CRA9TVsSAnZWagAA1DoP+wQNHaLEHfE6RN75/n/r\nJHvmVwOZjAhWQjdFHbYVgIcFofMCJA2W3k7yFjTmPeijWSCd1TAP3KR0NCWK\ni7EXoytu4pnDwCCBru1M3ujmgpGrTdXMmiJmQN46TgmRXApR8m8KgiXTfppL\nHLRQjNxFN1w8/CyTllrPHEbIy/W7NBgrIeDa9VzrTabldsHwGtX0DXvyHJlX\nSZMUxjc9qv3sT2R/Ka7dFvNptIEbh2AzeFPZZ8gXQSotvN8lCMpzdoXZ1l2i\ndyV8hGSzbwA1ihAOCuo23Y4ToHkpvGGbbo2bKwnSCOuw9Pe0/SMOSdsgGkIK\njYLpFcdA7r2SgMjhEsV2YyfTnVXRDkhZM3M2SQKZ0FKInm10Kj3hJMLhzpE2\n3yhH9rsp5OQANnJ/GcBwDGhxPOtdpYbMvJvrMkQDp+y3jn3X22gwEg1FiwR9\ndsHPbGD65RBzqSBU0L7QMkFdDmnypTd8pHjJQAeg4oZ+G1Qv+czf1Y3Whahx\n7vNMV6+T0ZzQA/aHfPq25sBStMeas0LMF+KwyHId1uEYeekkGBvhzvvitZIM\nyANxix4DRgCJLgI6Pxmv3ES6YauBFHojYddnKYYRHkUrGloQrKcS2U9OgqGB\nBHqlAtpr1wiF5odxb7w/5szr09bJ2+mgnwx039RC85D+V8jVqH2eORbg4xaC\np9k6\r\n=Kgj2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.3.0_1526923125886_0.9958158694200911"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.3.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "files": [
+        "src",
+        "dist",
+        "README.md"
+      ],
+      "devDependencies": {
+        "eslint": "^4.19.1",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.1.0",
+        "mocha": "^5.1.1",
+        "rollup": "^0.58.2",
+        "rollup-plugin-buble": "^0.15.0"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "0b1887c299e48d9913f82edcf1b89137212025ce",
+      "_id": "rollup-pluginutils@2.3.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-JZS8aJMHEHhqmY2QVPMXwKP6lsD1ShkrcGYjhAIvqKKdXQyPHw/9NF0tl3On/xOJ4ACkxfeG7AF+chfCN1NpBg==",
+        "shasum": "760d185ccc237dedc12d7ae48c6bcd127b4892d0",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.3.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 33721,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZ+ISCRA9TVsSAnZWagAAsaoP/AqOTU63CrvzDUSWfO49\npKCs6vf6Q2jOUa4YFYD9pYe+zlRVvK+y4treQ3d1dbIzeJEgBaHKjQg6/3+F\nTiGZG+QMhYA+Fk9C55X6SiokWAL39OnVKUMz7qiY7FVOPbSiUrxfnVSx+FA7\nXG3Blyb5ZHzr7kD8p61EQ4XXtkDNEx2lWPJjMEHD0seyymBNhY99DzgLwDeO\nLjIMqasPpsIR2LEsUVKe0OHRKg5fNO0ZPEKbgz259EieMqXlFizAINjQDDzm\nDDkbNgjq+Fx33SiWaZC2LmrCvJRngMYEDm+P9Ov05T3g8xxy8YdyaVOCH9DX\nc0/zHJuviXiURTVsEUKD917xaw5jd1SeGaeH4wpuYANwtnn1UBVCT5lYXKtE\nVkOukkqD2iJybOUCxX9rny3O1KwJoCQ78fh82po/PONyvP2V5ebhi1h5QQ6s\nUq1OY9492GtBDJAsy4WaXwFxLKhkkl8+Pb7dbtF4QlrMtVnA5ANn0m4+O4OG\nVFOIpUGVq4oABlIeI1VxLMbRRpiGSN6gapD3ryu5mtBu3ile1A7fhggJ+2lH\ntDGLpU999vZ+e7g1ewPYsWBE5syFD+LABAaB+CcJXGv0pdBU3BWW1MIDvACF\n13LkJfAUfjJgiKgN/mFUdlUVcZQc71Vu6JBd283nAAc8r+fYYvfvuTZPkVZn\nTHB/\r\n=XKbh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.3.1_1533534738214_0.7613718501309787"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.2": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.3.2",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "devDependencies": {
+        "eslint": "^5.6.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.2.2",
+        "mocha": "^5.2.0",
+        "rollup": "^0.66.0",
+        "rollup-plugin-buble": "^0.19.2"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "ccf009c3b628d2da6e0a4f5a210f059c3f8c548f",
+      "_id": "rollup-pluginutils@2.3.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-lImOyK8W/884gk6QUtGyz6NDNFvFO5FkIMMjL4ZNDUMNOeQSBkeOZylPx0mLw9Rnc766VVYwoGr9emQTwiV2iA==",
+        "shasum": "78d99a0a4baa281c80e23e5d911251ed5ab27d4f",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.3.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 34084,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboIIoCRA9TVsSAnZWagAAtgEP/2+9F5/Z6B/txo2y+CZE\naKNeWiFitc1x3CN7I7Qziq8BTIXX+veh1pDZemRSIyztKuX8n3UukRCp3t8a\nIvlD0yFCbYoIDgYBoCP909M7Ld2EK1lz4qUqFBDiNo53DyveG8Rq2wFQ3/fs\n26YDZ0NWwV4LKU5RKT1rhg1aHM50EZlAGuddGNkumoA5jYTXwdo/G00mvkHN\nUZYcY7lPSh5q9uWuaLI7h7MFu5iAX4lKbGErpRdRhUDUIcS7ah2qAFEK7c1L\nOo5KphuLXIO7RdymJXc1lkjTD9lS+FEqVxzj1YiDx1CbvRUFJPsUG1gjH9+m\nH5nOjx/voBtJNS++Cn4XjPFap7Zdk7S+tmoETgHJ61+bx0Z+l60xNPfnE8R+\nlnEpsL0NLLSF6RD6oqyYq/DtcTA+Wer/eQQmKpPQ2BhHbZRbapcmVZINhm1w\nU4/pfAbbr9zSy22x6TxByYvuE9m+Rmy7sbK6v2Io9wB34Uz5Z9PJ4fMP7Fjj\ndsD4od8l5mvMO5hc4/0pzKavO+/b4OqqMu9bzxXTPBms9WCWIqnUUUDUfgi5\nwtni4rDf7hcel4967dFa2ok12oN8QqsZGit3JfJ9JBS4Kc9r0+fuP0aA1nxW\n+ihJG/Ubz4YwjfFFkkcUgTSZT6JJ7YVCOJBQgt/eKkVUi5CtMj7aKcEzrsYV\nFjnM\r\n=FcGO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.3.2_1537245735507_0.7129160601171216"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.3": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.3.3",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "devDependencies": {
+        "eslint": "^5.6.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.2.2",
+        "mocha": "^5.2.0",
+        "rollup": "^0.66.0",
+        "rollup-plugin-buble": "^0.19.2"
+      },
+      "scripts": {
+        "test": "mocha",
+        "build": "rollup -c",
+        "lint": "eslint --fix src test",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build",
+        "precommit": "lint-staged",
+        "postcommit": "git reset"
+      },
+      "dependencies": {
+        "estree-walker": "^0.5.2",
+        "micromatch": "^2.3.11"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "fe8b70a981114becb856dfbc0f1099b6a255ce17",
+      "_id": "rollup-pluginutils@2.3.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-2XZwja7b6P5q4RZ5FhyX1+f46xi1Z3qBKigLRZ6VTZjwbN0K1IFGMlwm06Uu0Emcre2Z63l77nq/pzn+KxIEoA==",
+        "shasum": "3aad9b1eb3e7fe8262820818840bf091e5ae6794",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.3.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 34198,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboe2GCRA9TVsSAnZWagAAx8kP/3oHD3on7NmwQrANlvIf\nMV4hl/Z9m15GFNCfGLFKGfnJo1PfM1QhR/PDb9cxECtu/eLXcOsTlfaefHPd\n+GjtHFpR4sFSE6XoZSuZKnURwto4ufov8uWNYUuPqqMhWrhQQnhy0yG8ExH2\nhdlp5i1UH5WiN8m22qkLYKymoguiQ9ZLc6t7ALG6np/ZqBVNdIt/rexr2Mj1\nk75rH9Bk0LBsaUsKL31SzcCCjkjYPYgUigB6IV2Ic9aaT28otcphT4YZ/fdf\n63nx7XTOc5bWUEisPZytwWXcfflWYkd+3gfJbxJoDqLjTx+hfhDDzutpx3QJ\n7amfMhwB0SqVgYZPXvTsujVJR8i04B1YJu+rHKu3YzkPcHb2IW7IcbVCFus9\naKT8Yn/Qn75VEGWGQYlANhVgZI3UA6NxYmsaMrsRnLZZaUJIF2Xd6KS2ST+G\nbJAZBErBBZB2unG5uT6PUkn4KavlgX/QWG6af2LvVN8G1s/CR/qUzNIVTnQ6\ngIB+WQPEpfMJlVJFyWxC2M1uk3LM21jhdzXcvwWm7NYiXqHJJK0Q5ru6wJ/Y\nK8Zw/gLOodGO19mEnJnmJe8ZJvOef6/FLk+kagO3gLG/9P7jvkgB2F4fA53n\nB9d4yuj2RhjAbDAQIGbV24lxmHoTluhAyS8jMJrho2N2F5MSxrxD/Xxxm7Bi\n8VLH\r\n=oAf1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.3.3_1537338757767_0.6680328296239817"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.4.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "src/index.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.5",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^11.9.4",
+        "husky": "^1.3.1",
+        "jest": "^24.1.0",
+        "lint-staged": "^8.1.4",
+        "prettier": "^1.16.4",
+        "rollup": "^1.1.2",
+        "rollup-plugin-typescript": "^1.0.0",
+        "ts-jest": "^23.10.5",
+        "typescript": "^3.3.3",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10",
+        "tslint": "^5.12.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "32072ce00a1672f8a1aef0827f886045ec5260a6",
+      "_id": "rollup-pluginutils@2.4.0",
+      "_nodeVersion": "10.7.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-5FxKDfsReYRubQfrRYvX99HqC5qd1u2Gd8vyZ6Ee9ESvTm/C45RV/IVFIEddIXXbM1y/7x8t1WjsXfrSJACHkg==",
+        "shasum": "295ff60654e608d07560544b4fc815bcbf2ce21a",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.4.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 38128,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaEcLCRA9TVsSAnZWagAAECAP/22jxZwY2+kdyuXj/QTO\n8cSLWzJQo/xnb8A3fFxCCVt7ovX9C7q0lUULjXqGsBVg7H8d0kyBKti7aog4\nl46zJg9PBDoDfcZq9uGlxB9U/b19UQdLKS5p7tMQO0dacY+9h+byQAunMuQR\n1PGihUMqw1l6M1FXdqeL67TwOlub+pvf4Q3e2HCs4I/TAFKK4mclSDy2JkZU\n8g/Yw9px2f38KcfAX+anYf+L80olKrfXYYmWM0dYMkOOXOwofzrWcxp8T3YZ\nqPx4Ygey8kmZacXlw2dLiLM0JlwTIl6YqJCNMZjN4fkq0gpvDgm+GJzT0mvv\nLTeOQTtai+WEDxhJDEgorMFk85KaPFBn2uzJCeaUuGO+pRuVAa/hu3bHhbTI\nRwAKsPWYocCy4CjHSaGvB0h/2dwu81gLrtV/y8UQatXzcUmrYdPUkO4VozHm\npJnu1yCXJZ4Pc5LwoIkNu4ysiSvBBnv8Blqk1tBz7PMBg/0NOaR24tnvpPfw\nBRcUOpHYsDKVlmboyE/j+xc2cRb9nUo9HIThUD+FRhxC1wpi56UO52YLEjJS\nzCOBX2ib053suYy8yVeYUuXFFpzUWinJJLyVaaJRosHc8VVtOcTTCh8owiSl\nnfIvhF9sMMinx3XaogI0FzA9oHtTAzC7bv7FnnKEEtaJv8JfRSKreD4//Z3q\na56R\r\n=TpHq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.4.0_1550337802150_0.28698753337830696"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.4.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "src/index.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.5",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^11.9.4",
+        "husky": "^1.3.1",
+        "jest": "^24.1.0",
+        "lint-staged": "^8.1.4",
+        "prettier": "^1.16.4",
+        "rollup": "^1.1.2",
+        "rollup-plugin-typescript": "^1.0.0",
+        "ts-jest": "^23.10.5",
+        "tslint": "^5.12.1",
+        "typescript": "^3.3.3",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "f91cca020f3b70e500a9dac8adbc90752dda6e50",
+      "_id": "rollup-pluginutils@2.4.1",
+      "_nodeVersion": "10.7.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-wesMQ9/172IJDIW/lYWm0vW0LiKe5Ekjws481R7z9WTRtmO59cqyM/2uUlxvf6yzm/fElFmHUobeQOYz46dZJw==",
+        "shasum": "de43ab54965bbf47843599a7f3adceb723de38db",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.4.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 38128,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaImbCRA9TVsSAnZWagAA4NAP/20NguEIFu/2BbV0zDFO\n7eZrI/jSnbZkSuRirPM0HA9VqNbFZtSv3TcJyHfRH1tY7YbHEAmCcawKl1Eu\nbUkiyE2dvUfQNG6SZnlp0nhkEk5tupxWMs52FriuENvi5E8wSbHyGmfnp7je\nUuZ7ZdZ/HmiSOug/weDEAM75eN+35P8IesjtbFtxHNpNCeeIHSNo/KQpex9/\nlrxE4TVmIQ/rqQOSOBPPgOd6gr0P/nR2oc/gQo1ZqSwnZ41eYyDl8cCpTw5O\nDJSYxXUPWT2G/gQSf2sXXZjJ34BT/JT2rnLloeIFznlcHF6PBVeZAa6yo1d6\naxsUYN0gPZJQ14j1p1J+0cXH4GeORPaxpOk+KGm9x4ZoRKqNANSm9K5HBMyJ\nGJsqCzhcnwGE62R/5YoW33ihprxss0ddUM5odQ7xu7D2wDCANexmYORx5Fy/\nsX8Sgr3KRxm5yqLazTASDYUGEGZWUmWma70C+LxeYvHt01Lskf9+7MstOZG4\ndMbTUUz6Ps0TYJs0b/8S7lMqJXjjSNzlVn6KkP7kYU88uV1+a2XLBZLH+aPA\n9hYb53bJx9cAhew0yKkmTZTyaxefqOY0S3iq89uMVcW/tRrwfy3mcifnYbLC\nTL0fY35/iEI5QJcOV7Pa84ManaUhkGjatBek5E49ydCv+zowSET1un3CEmiK\nIS3W\r\n=jg+n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.4.1_1550354842505_0.930596163456191"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.5.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.5.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "src/index.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.11",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^11.11.3",
+        "husky": "^1.3.1",
+        "jest": "^24.5.0",
+        "lint-staged": "^8.1.5",
+        "prettier": "^1.16.4",
+        "rollup": "^1.6.0",
+        "rollup-plugin-typescript": "^1.0.0",
+        "ts-jest": "^24.0.0",
+        "tslint": "^5.14.0",
+        "typescript": "^3.3.3333",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "9f061d083eca42463bdefadbcb978aa2040bc035",
+      "_id": "rollup-pluginutils@2.5.0",
+      "_nodeVersion": "10.7.0",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-9Muh1H+XB5f5ONmKMayUoTYR1EZwHbwJJ9oZLrKT5yuTf/RLIQ5mYIGsrERquVucJmjmaAW0Y7+6Qo1Ep+5w3Q==",
+        "shasum": "23be0f05ac3972ea7b08fc7870cb91fde5b23a09",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.5.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 38444,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcj8cLCRA9TVsSAnZWagAAY4EP/2yda2FdH65dYxaPYszY\n/8nK+0t8n5WwuDpymNYbXo4dCUGjll4cg7UeB7bNxJ+D59zVzs82j1MWLmpO\nUIDsNt/XqWuwn8b02aaE9xivFKPGUEB1qdXZOMJY6IT7ARKAEBy2q7lSqs/L\nPDV+rqx0ACJc1dbgbUh/miZZjqvpWRKItSHieHsMput6AvV3BEy5cn0om6P+\nxY7sNFziWJB3aJ0F5i8h3V0ZM6rz4DmvRlbtJGq/aVGJXgXYGoCeqdYML/X7\nA/hUwmYcFB1ziXbN5mJxVPTxoqDJAl+2tJ6VKKlqsGFNdVxCGoxN995vSPA6\nUkWE3TZeVJi4LQJ1fBWabV3gn1rSitC1qQDFNnEAkJLjiME3/G0O8kgsVTv+\nuyhbWAd63yht+kUGh1Kwa8i0gdGIEJX7BetOyvVcqcPD3xTrRT913+1EThHJ\nmR/Qdfu8bUFDBmsDNxwiABI/Tpr9ldiWJ1JPMb+8b5Vg4SBkznm8b3l4acle\nPaus1PtmoRp3lB+M6YiYYkVu7zzDjTKxdS/tp/tTM5krQqVuys6X3Xhn9BRK\ncyK7t9ORVplO9JrFJqocuuOIaHqBPWTi3Vjmt/izE9FgT44eLgmkMh0JJ/Ek\nkWn+CpbfJZ3cggqtuCPlhi7WldWpZxM2TIDfhOYzC7LMdYJia9v8Ca8Tzab2\nx0fi\r\n=kbpm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.5.0_1552926475367_0.9717627850816957"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.6.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.11",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^11.13.0",
+        "husky": "^1.3.1",
+        "jest": "^24.7.0",
+        "lint-staged": "^8.1.5",
+        "prettier": "^1.16.4",
+        "rollup": "^1.8.0",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.1",
+        "tslint": "^5.15.0",
+        "typescript": "^3.4.1",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "b8d5c4ab0340e802d8310e2f89e044bb3dec8a5e",
+      "_id": "rollup-pluginutils@2.6.0",
+      "_nodeVersion": "10.7.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-aGQwspEF8oPKvg37u3p7h0cYNwmJR1sCBMZGZ5b9qy8HGtETknqjzcxrDRrcAnJNXN18lBH4Q9vZYth/p4n8jQ==",
+        "shasum": "203706edd43dfafeaebc355d7351119402fc83ad",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.6.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 42217,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpaBACRA9TVsSAnZWagAAxDoP/AtP32/GPRr0moXB8S2Q\nLY3hNlHk2/shvIhtKtfdYE+Qc/gGNI2TbJd5r20Q+M3g3/MThvC9E8PM/ltM\nuUiZt3bKXsD0QEF6qFxwymYnUSlbG1eMpng3WEu81pH45ckgtdRcQ3M4eak+\nvsC9UTSKFGXA3QKqe0hZ4aPOLHyzTpdr/UEYeR3opxPJYtHw5TpRDHUn46ut\n4Y2YVipHtSC8WcGJc+bBHr9QbjFSRzHqEI/tFEbbkt9V9YwJd1LpzfSyeIF8\nVwRLg/rQcLpWdldxZbtG6wU2GgeOcnfgTiu8NMeAIA60drB2yfYwa8mUReyg\nnRIULUJVqP0EJK6O81BpZWAt3v/2whRzzcBE8fuOP+M0LoaLwNYf69hyYSoD\nPRv8YNiYAV5PTgeA6LJWzfnCd/qSRVbLqJDeWhC4a36ADiu4W+oUlQy4USCq\ncPv0Y5ylmWbOPJI00FOa3P2IRKtC5rQp57ygzPXLbG6i30Yqty1T69RkeJrN\nl6+ZdeL3yw9NAYIOslglrpzkuKjW0gvY0qvykd1q6vs9ETtqOipdKX3chjVE\nkTC/ppWdlqPIx5cRVY5u2iU21fiHQiYJMsxTpT3K7HbT4HPhjHiu9Y2JvrOj\ny17FGy5ZgJVWFfI9+nP4HayvbJJydqZulo1WX6mZpU3mWR0SmqpAkgBHdqrp\nqSeQ\r\n=ZX4a\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.6.0_1554358336308_0.6256668841573878"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.7.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.13",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^12.0.2",
+        "husky": "^2.3.0",
+        "jest": "^24.8.0",
+        "lint-staged": "^8.1.7",
+        "prettier": "^1.17.1",
+        "rollup": "^1.12.0",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.16.0",
+        "typescript": "^3.4.5",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "db6da803c17662734a8759cd743db81a77c79182",
+      "_id": "rollup-pluginutils@2.7.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-FoP6L1YnMYTAR06Dpq5LE3jJtMwPE6H4VEOqFU23yoziZnqNRSiWcVy6YgEY5PdQB4G7278+8c4TvB0JKS1csA==",
+        "shasum": "da24a6f99432626160643ac6b087d71684317c4f",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.7.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 43907,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc27iaCRA9TVsSAnZWagAAcsEP/1IU0ROWr3BMimInrram\nGaPvrUrmwdFclLvZqNxBtdkeyg9rf7+bq/VwHkI7tQZiggbfZ+pXBuW7ITpw\nwZDp7sOW2bmnzOXhupZahWc5SBhutCGW/GZ47zEKWanMHk6EKnhKt/Xzta07\n/5qVmLD7yvgkRJ5Pu2t19MIrxzV4Fj47nYYSw2bgKLwRq/b4VUsc1/bFXahS\n3FFqYXoWDgDMEnT9m1dzE2Ex7Or3d1daeFKkpV6Nx9W16u4rcsISKE21dv6d\nKvUSqwvVU1tglTATdMjoSNa9J7REm14vaN/mfWjO7b/3JpFKqG6ADlsREIIB\nxVykm0roDdQV9mDQdrHA7/S4BR7dQITxUuB12cbaDVGiNYF8fH5r7XlBw7az\nl2Ia6J6dJlXB2RgeDsfgYtGXz/HNgKPxyr6Lrc4yIAfLOwYEcE/4tgDHr/ye\nm2k6j9G5XDwJpQIuf1uvXI/GxbEnFZieF2+zpaSlmobrfB5kU6U7eOO/BhQn\nHPxSXUCOW9eGhyBHz6WWJ+QwkmmycPuI3BxweM7/FPIhAq44rBALj6/XKRSE\n8t+lQ7I1AbWjwd8pOzHveDKG69GlJO7xA7HgOjDl1NMBi/gMoExF0xVETdO9\nYSTZtjZrTIublKMNoKM/xQvzKP+Fxfj4Xfe5UypbfWPsztsswdpvLCkXCVAJ\nxxuR\r\n=z1Pg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.7.0_1557903513843_0.08740465427584931"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.7.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.13",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^12.0.2",
+        "husky": "^2.3.0",
+        "jest": "^24.8.0",
+        "lint-staged": "^8.1.7",
+        "prettier": "^1.17.1",
+        "rollup": "^1.12.1",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.16.0",
+        "typescript": "^3.4.5",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.0",
+        "micromatch": "^3.1.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "5735c7d98d3f3f629e6f378fe5f3d2303aaf4ab6",
+      "_id": "rollup-pluginutils@2.7.1",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-3nRf3buQGR9qz/IsSzhZAJyoK663kzseps8itkYHr+Z7ESuaffEPfgRinxbCRA0pf0gzLqkNKkSb8aNVTq75NA==",
+        "shasum": "a7915ce8b12c177364784bf38a1590cc6c2c8250",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.7.1.tgz",
+        "fileCount": 15,
+        "unpackedSize": 44102,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc3rKSCRA9TVsSAnZWagAATgAP/RdDdYxDDb4eVmeEJoAl\ncG2OZEdX67rA58VCUI+wXXHRbLFlelNQSVzlFqazxoVgWFA0zTIMtNT/SKS8\nWvFVkI+FJeCg4U5RcRA2RwsaVTsSh+ULr8vM4Cj2e6RP6S9Hu7kK78GwJu3x\nEg5eW0JKvAAS1kkAOumkrGZwo6/HabVUO5n1x0mvP0cG9bvHWr4+bj8SZQgK\nPgCZa/lz0HtklRmIwyleqJz/hz2fCoasux8D6Yh3HSLqvDbHTJlCa10YxeJx\naZzuHfbcGt45JVnUiCqR9L+ocY7LAQAzgNga7MpwGFgzj3Kdr4Pur2kMJwLv\nqxcS4oFCQmG+EwlwNZwZ76Y0LzXNWgjNnLThf+IFEDWjEdp8dKQ5JFRAqLsx\nRzWZaTtp4pGW7V41Fo3OEZZzLQdxCyjZfcO6l9ABfkou0nml/BIlTHZRpHfQ\niwfgv3ZIFfh38kZg+AQfTZUIeFx5Yjw8dgtb2tnyQmUH6TKQwBqwij2/c0D5\no8+78DMIlekZzUmnWkO89HPMOmonTRdCAUyQveTpia3s98Gr35jf+iZaRPAy\nFZM9KEa2Uw/ekgxv3vRW/2puTONb+IBEG77P4K59nqdQPQYxYIIyJKOShHCx\nRznkjBlMscq8WpD1I/ux1FSd9rgy1WCxAQ1pd6t6+XMR+d27FKYz/BYQDfIz\nd58R\r\n=nstO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.7.1_1558098577723_0.7141460012591252"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.0": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.8.0",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.13",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^12.0.3",
+        "husky": "^2.3.0",
+        "jest": "^24.8.0",
+        "lint-staged": "^8.1.7",
+        "micromatch": "^4.0.2",
+        "prettier": "^1.17.1",
+        "rollup": "^1.12.4",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-node-resolve": "^5.0.0",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.16.0",
+        "typescript": "^3.5.1",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "ebe9049902c8b8af98f94ccecc63e93fd96393dc",
+      "_id": "rollup-pluginutils@2.8.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-8TomM64VQH6w+13lemFHX5sZYxLCxHhf9gzdRUEFNXH3Z+0CDYy7Grzqa6YUbZc0GIrfbWoD5GXZ3o5Teqh9ew==",
+        "shasum": "d7ece1502958a35748a74080c7ac5e95681bcbe9",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.8.0.tgz",
+        "fileCount": 15,
+        "unpackedSize": 244602,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc75MZCRA9TVsSAnZWagAAVIcP/A105E3GJLcnZRjCCuh5\nMD03jFZd26PRti+gFNv2f+g/xjK695aQrq+Nu3u248xH2uYhjWZqSsUfsNww\n05mjZVYAsj/3cK3lXbsQQHcGqGRrp2LvYCFVhj/AivfGiuJ3WiewHf75pRa0\nljEBUNWFoVW8ThVCRsds6MSF47nXjHplee9QboWil4QHRm1DU6Ff2zPjvAs4\nun1NnstSuKWPBH30lNb9DVUJeEQ+3wVtRkF5Xx3ntfB6BaczU0fYxv/HpNFD\nnmslOxJQc3cezhvN2RTo7f4ulU8JtS6x+TqaLBZjGolsAsJbdAKtgmP2vicN\nsBCPvlKG03Y5z4/MU7qu6gbPLUN+Eesvo5S/fqol0oac8Y3aCHvFi4svTGMl\nWMdTREpiH1uOWDMCyx2o8m1bMgrfGDXuanJdwrUkikpOpQbW7br1aLnrlMb0\n3FAUxc1OCNJhS7Mg9n+k1yCrCkCuAf0fKlZhXoo8KNUMQG8oy6J8yA/QgF+5\nmi2jMWlhBxogVJqRrAbkL7+0axsORB472JuPR3Y8jgBUbVN/XGe0y/Fyp7KX\nOjJXdFdZcqAgybQP6/sJPcnKaDpq8Mpu184cDqgihzwGruqCa/oCEWsoiq/P\n7FS22pEcLTtfD+p+LfNkMJIq35GvkKh66bXsnczjsjO8zBqOmuvcDc31Q1U1\nz6Hb\r\n=BvS0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.8.0_1559204632967_0.2291852578832123"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.1": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.8.1",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.13",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^12.0.4",
+        "husky": "^2.3.0",
+        "jest": "^24.8.0",
+        "lint-staged": "^8.1.7",
+        "micromatch": "^4.0.2",
+        "prettier": "^1.17.1",
+        "rollup": "^1.13.1",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-node-resolve": "^5.0.1",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.17.0",
+        "typescript": "^3.5.1",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "e59d5fbb12e730d3acd262c52262be3bbccf0d03",
+      "_id": "rollup-pluginutils@2.8.1",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "lukastaegert",
+        "email": "lukas.taegert@tngtech.com"
+      },
+      "dist": {
+        "integrity": "sha512-J5oAoysWar6GuZo0s+3bZ6sVZAC0pfqKz68De7ZgDi5z63jOVZn1uJL/+z1jeKHNbGII8kAyHF5q8LnxSX5lQg==",
+        "shasum": "8fa6dd0697344938ef26c2c09d2488ce9e33ce97",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.8.1.tgz",
+        "fileCount": 15,
+        "unpackedSize": 245983,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc9rRDCRA9TVsSAnZWagAA7tYP/joF/L1ketws8ijPqWAj\naXeE8s77ymX4aM1y/yRI9G/VDIVuwIr8ayBRNZVej804SZ0XI6cq/j+IUGbY\nLg6uTjwyL5kN1dg7K1HgBjUYRZC/EXFRRvgPHdmA13+doKXey4UM/hGcvrrr\np77vN35fp/HOABDAn8VoWLYUpdzqyYlMGf5ZU4nFs7gir4pRTgpaGsoE04uq\neXeS1LK2/gPT0YDY6BQQbFWRmJB34HwPoXZxrUW2h/zMTJMkEaBB0I0OQ/OL\nXgMfeRqcJyUC+CR1mb+tHSxEUgNJi77Sb0V+WnzJclXfFogtxRRB31otsgmo\nhmg+g3DIGAiXusOgJ8KggMSBmx7R42Ed1zIOEeuo/JDGFRzcBqOEQcbsHSHz\na+7Pv82VXqDKHVPIvUnKPbCC57Gnh3nKjHFhpoqw6ysunyibe0eVHBjpcUDb\na7784/EZrLGiadC7FeyPcxL7rFOPFYZHRuhibV94i1DvFkM9L8BZCTOvd7V2\not6K23F6bFz2PZZ62+iAKSZhiR1no/HjnGFjdBIAJqMYVJPe5utBhiPKsJvr\nIpftD5YlE/ulKZyQykBxauIZ6VOdRrwwynBxRf1YuY2wgoPHAUqFWdF2g4gx\nKsBNsSW8Fx4E+6QnMOyRQMBvrJiK7geAhDQjMtS3cGA9ZCof6Ny4YuYSa6tm\n9U8B\r\n=Nz/T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.8.1_1559671874605_0.7852960203449779"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.2": {
+      "name": "rollup-pluginutils",
+      "description": "Functionality commonly needed by Rollup plugins",
+      "version": "2.8.2",
+      "main": "dist/pluginutils.cjs.js",
+      "module": "dist/pluginutils.es.js",
+      "jsnext:main": "dist/pluginutils.es.js",
+      "typings": "dist/pluginutils.d.ts",
+      "devDependencies": {
+        "@types/estree": "0.0.39",
+        "@types/jest": "^24.0.13",
+        "@types/micromatch": "^3.1.0",
+        "@types/node": "^12.0.4",
+        "husky": "^3.0.5",
+        "jest": "^24.8.0",
+        "lint-staged": "^9.2.5",
+        "micromatch": "^4.0.2",
+        "prettier": "^1.17.1",
+        "rollup": "^1.13.1",
+        "rollup-plugin-commonjs": "^10.0.0",
+        "rollup-plugin-node-resolve": "^5.0.1",
+        "rollup-plugin-typescript": "^1.0.1",
+        "shx": "^0.3.2",
+        "ts-jest": "^24.0.2",
+        "tslint": "^5.17.0",
+        "typescript": "^3.5.1",
+        "typescript-eslint-parser": "^22.0.0"
+      },
+      "scripts": {
+        "test": "jest",
+        "build": "rollup -c && shx cp src/pluginutils.d.ts dist/pluginutils.d.ts",
+        "lint": "npm run lint:nofix -- --fix",
+        "lint:nofix": "tslint --project .",
+        "pretest": "npm run build",
+        "prepublishOnly": "npm test",
+        "prepare": "npm run build"
+      },
+      "dependencies": {
+        "estree-walker": "^0.6.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+      },
+      "keywords": [
+        "rollup",
+        "utils"
+      ],
+      "author": {
+        "name": "Rich Harris",
+        "email": "richard.a.harris@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rollup/rollup-pluginutils/issues"
+      },
+      "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+      "gitHead": "3038972a1295c9e8a251a6bd859aef7fd5906594",
+      "_id": "rollup-pluginutils@2.8.2",
+      "_nodeVersion": "12.8.1",
+      "_npmVersion": "6.11.2",
+      "dist": {
+        "integrity": "sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==",
+        "shasum": "72f2af0748b592364dbd3389e600e5a9444a351e",
+        "tarball": "https://registry.npmjs.org/rollup-pluginutils/-/rollup-pluginutils-2.8.2.tgz",
+        "fileCount": 15,
+        "unpackedSize": 246173,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJde/WbCRA9TVsSAnZWagAAoBcP/382mAwrPsaKurpw1d7k\nAu3RuaEyxQ29vTgqnwuap9y2uD3+lMXK7L9aYZ9yDcIj9zbf5Fq6mf8sIaFP\ntEhJ49hCObOBN72nBco2QOQGtv7x+b9D6Z+gXFj4AQp+Lj291DMpfuIUnUfN\ndKtEvbUkQLzygiucfiQ8V+4q5KD1S1oTCaRXp7r+zO+BVlYnfV+V6U6DDsDn\ndo63yT7XTjVlSP91+2JTC/1T0eSUEKp2TppCZVTnnh9g/rBSRXbOjOdMuiEf\nIs7E6jxg55RmmuCUg+Mx6mD7QoXRn60QE/rWX0Mxebh7dBN2ozSTl0UQrPxM\n/ekSiRBlXmA+ZHB7cA9BUUu/zD3eCMlrCnIBcOSc0ghec1eYT/02FZp8BTeZ\n9HcoBpjl90KwlBuyAD0XYfxL5GcwNv/T6Opz+qXiwCGlEhrU+GV5/ORuSUej\np+pKW3fkBTMaFefB6rHZI6Eg5GZUFqeGNMgI8fkDjM6xd/Jmj6NG7MljK2tx\na1tZ0U8i1tVynvnOcPETCxkEvusSmZCvwdeHVdwEiztaAob89KZp7PDAFToQ\nbk/yuYaYWU6HM9Ld3VKivJVwGMzrAZYAM3LVI+fxWThSpxMUgTb8N5kPxiE8\n5XxBI60SFa6THoj2UoREsx8fqQBF/wDcJSpdUo8LSQIqJmdTtuIHtUXTGEiW\no7V9\r\n=rw0/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "guybedford@gmail.com",
+          "name": "guybedford"
+        },
+        {
+          "email": "lukas.taegert@tngtech.com",
+          "name": "lukastaegert"
+        },
+        {
+          "email": "richard.a.harris@gmail.com",
+          "name": "rich_harris"
+        }
+      ],
+      "_npmUser": {
+        "name": "guybedford",
+        "email": "guybedford@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/rollup-pluginutils_2.8.2_1568404890662_0.20322097682062878"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# rollup-pluginutils\n\nA set of functions commonly used by Rollup plugins.\n\n\n## Installation\n\n```bash\nnpm install --save rollup-pluginutils\n```\n\n\n## Usage\n\n### addExtension\n\n```js\nimport { addExtension } from 'rollup-pluginutils';\n\nexport default function myPlugin ( options = {} ) {\n  return {\n    resolveId ( code, id ) {\n      // only adds an extension if there isn't one already\n      id = addExtension( id ); // `foo` -> `foo.js`, `foo.js -> foo.js`\n      id = addExtension( id, '.myext' ); // `foo` -> `foo.myext`, `foo.js -> `foo.js`\n    }\n  };\n}\n```\n\n\n### attachScopes\n\nThis function attaches `Scope` objects to the relevant nodes of an AST. Each `Scope` object has a `scope.contains(name)` method that returns `true` if a given name is defined in the current scope or a parent scope.\n\nSee [rollup-plugin-inject](https://github.com/rollup/rollup-plugin-inject) or [rollup-plugin-commonjs](https://github.com/rollup/rollup-plugin-commonjs) for an example of usage.\n\n```js\nimport { attachScopes } from 'rollup-pluginutils';\nimport { walk } from 'estree-walker';\n\nexport default function myPlugin ( options = {} ) {\n  return {\n    transform ( code ) {\n      const ast = this.parse( code );\n\n      let scope = attachScopes( ast, 'scope' );\n\n      walk( ast, {\n        enter ( node ) {\n          if ( node.scope ) scope = node.scope;\n\n          if ( !scope.contains( 'foo' ) ) {\n            // `foo` is not defined, so if we encounter it,\n            // we assume it's a global\n          }\n        },\n        leave ( node ) {\n          if ( node.scope ) scope = scope.parent;\n        }\n      });\n    }\n  };\n}\n```\n\n\n### createFilter\n\n```js\nimport { createFilter } from 'rollup-pluginutils';\n\nexport default function myPlugin ( options = {} ) {\n  // `options.include` and `options.exclude` can each be a minimatch\n  // pattern, or an array of minimatch patterns, relative to process.cwd()\n  var filter = createFilter( options.include, options.exclude );\n\n  return {\n    transform ( code, id ) {\n      // if `options.include` is omitted or has zero length, filter\n      // will return `true` by default. Otherwise, an ID must match\n      // one or more of the minimatch patterns, and must not match\n      // any of the `options.exclude` patterns.\n      if ( !filter( id ) ) return;\n\n      // proceed with the transformation...\n    }\n  };\n}\n```\n\nIf you want to resolve the patterns against a directory other than\n`process.cwd()`, you can additionally pass a `resolve` option:\n\n```js\nvar filter = createFilter( options.include, options.exclude, {resolve: '/my/base/dir'} )\n```\n\nIf `resolve` is a string, then this value will be used as the base directory.\nRelative paths will be resolved against `process.cwd()` first. If `resolve` is\n`false`, then the patterns will not be resolved against any directory. This can\nbe useful if you want to create a filter for virtual module names.\n\n\n### makeLegalIdentifier\n\n```js\nimport { makeLegalIdentifier } from 'rollup-pluginutils';\n\nmakeLegalIdentifier( 'foo-bar' ); // 'foo_bar'\nmakeLegalIdentifier( 'typeof' ); // '_typeof'\n```\n\n### dataToEsm\n\nHelper for treeshakable data imports\n\n```js\nimport { dataToEsm } from 'rollup-pluginutils';\n\nconst esModuleSource = dataToEsm({\n  custom: 'data',\n  to: ['treeshake']\n}, {\n  compact: false,\n  indent: '\\t',\n  preferConst: false,\n  objectShorthand: false,\n  namedExports: true\n});\n/*\nOutputs the string ES module source:\n  export const custom = 'data';\n  export const to = ['treeshake'];\n  export default { custom, to };\n*/\n```\n\n### extractAssignedNames\n\nExtract the names of all assignment targets from patterns.\n\n```js\nimport { extractAssignedNames } from 'rollup-pluginutils';\nimport { walk } from 'estree-walker';\n\nexport default function myPlugin ( options = {} ) {\n  return {\n    transform ( code ) {\n      const ast = this.parse( code );\n\n      walk( ast, {\n        enter ( node ) {\n          if ( node.type === 'VariableDeclarator' ) {\n          \tconst declaredNames = extractAssignedNames(node.id);\n          \t// do something with the declared names\n          \t// e.g. for `const {x, y: z} = ... => declaredNames = ['x', 'z']\n          }\n        }\n      });\n    }\n  };\n}\n```\n\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "guybedford@gmail.com",
+      "name": "guybedford"
+    },
+    {
+      "email": "richard.a.harris@gmail.com",
+      "name": "rich_harris"
+    },
+    {
+      "email": "lukas.taegert@tngtech.com",
+      "name": "lukastaegert"
+    },
+    {
+      "email": "andrew@shellscape.org",
+      "name": "shellscape"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-22T16:41:46.986Z",
+    "created": "2015-10-24T02:58:41.708Z",
+    "1.0.0": "2015-10-24T02:58:41.708Z",
+    "1.0.1": "2015-10-24T03:24:20.294Z",
+    "1.1.0": "2015-10-24T20:48:43.743Z",
+    "1.2.0": "2015-11-02T16:25:48.473Z",
+    "1.3.0": "2015-12-16T17:14:38.549Z",
+    "1.3.1": "2015-12-16T17:18:52.580Z",
+    "1.4.0": "2016-06-07T01:14:44.558Z",
+    "1.5.0": "2016-06-07T15:54:22.984Z",
+    "1.5.1": "2016-06-24T12:24:33.620Z",
+    "1.5.2": "2016-08-29T20:45:47.167Z",
+    "2.0.0": "2017-01-03T19:00:13.354Z",
+    "2.0.1": "2017-01-03T19:10:11.120Z",
+    "2.1.0": "2018-05-08T13:07:22.415Z",
+    "2.1.1": "2018-05-09T10:01:36.890Z",
+    "2.2.0": "2018-05-11T11:57:56.292Z",
+    "2.2.1": "2018-05-21T17:10:18.754Z",
+    "2.3.0": "2018-05-21T17:18:45.966Z",
+    "2.3.1": "2018-08-06T05:52:18.273Z",
+    "2.3.2": "2018-09-18T04:42:15.631Z",
+    "2.3.3": "2018-09-19T06:32:37.921Z",
+    "2.4.0": "2019-02-16T17:23:22.329Z",
+    "2.4.1": "2019-02-16T22:07:22.671Z",
+    "2.5.0": "2019-03-18T16:27:55.491Z",
+    "2.6.0": "2019-04-04T06:12:16.458Z",
+    "2.7.0": "2019-05-15T06:58:34.127Z",
+    "2.7.1": "2019-05-17T13:09:37.872Z",
+    "2.8.0": "2019-05-30T08:23:53.173Z",
+    "2.8.1": "2019-06-04T18:11:14.900Z",
+    "2.8.2": "2019-09-13T20:01:30.837Z"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/rollup/rollup-pluginutils#readme",
+  "keywords": [
+    "rollup",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rollup/rollup-pluginutils.git"
+  },
+  "author": {
+    "name": "Rich Harris",
+    "email": "richard.a.harris@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/rollup/rollup-pluginutils/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "r24y": true
+  }
+}

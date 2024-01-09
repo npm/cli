@@ -1,0 +1,3628 @@
+{
+  "_id": "schema-utils",
+  "_rev": "39-aad645b3df335b195c928e6d789035cd",
+  "name": "schema-utils",
+  "description": "webpack Validation Utils",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "schema-utils",
+      "version": "0.1.0",
+      "description": "Webpack Schema Validation Utilities",
+      "main": "dist/index.js",
+      "files": [
+        "dist"
+      ],
+      "scripts": {
+        "prebuild": "yarn run clean:dist",
+        "build": "cross-env NODE_ENV=production babel -s true src -d dist --ignore 'src/**/*.test.js'",
+        "clean:dist": "del-cli dist",
+        "start": "yarn run serve:dev src",
+        "serve:dev": "nodemon $2 --exec babel-node",
+        "lint": "eslint --cache src test",
+        "security": "nsp check",
+        "test": "jest",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:test": "yarn run test",
+        "travis:coverage": "yarn run test:coverage",
+        "travis:lint": "yarn run lint && yarn run security",
+        "webpack-defaults": "webpack-defaults",
+        "lint-staged": "lint-staged",
+        "prepublish": "yarn run build",
+        "release": "yarn run standard-version"
+      },
+      "dependencies": {
+        "ajv": "^4.11.2"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.22.2",
+        "babel-jest": "^18.0.0",
+        "babel-polyfill": "^6.22.0",
+        "babel-preset-env": "^1.2.1",
+        "babel-preset-webpack": "^1.0.0",
+        "chai": "^3.5.0",
+        "codecov": "^1.0.1",
+        "cross-env": "^3.1.4",
+        "del-cli": "^0.2.1",
+        "eslint": "^3.14.1",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "greenkeeper-postpublish": "^1.0.1",
+        "jest": "^18.1.0",
+        "lint-staged": "^3.3.1",
+        "nodemon": "^1.11.0",
+        "nsp": "^2.6.2",
+        "pre-commit": "^1.2.2",
+        "shx": "^0.2.2",
+        "standard-version": "^4.0.0",
+        "webpack-defaults": "^0.2.1"
+      },
+      "engines": {
+        "node": ">=4.3 <5.0.0 || >=5.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "eslintConfig": {
+        "extends": "webpack",
+        "installedESLint": true
+      },
+      "keywords": [
+        "webpack",
+        "plugin",
+        "es2015"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        }
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "gitHead": "26f041e0b114cb91382e26c569b7badfe6edc262",
+      "_id": "schema-utils@0.1.0",
+      "_shasum": "886490266fafde65598a77eef1519ab993196e47",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "shasum": "886490266fafde65598a77eef1519ab993196e47",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/schema-utils-0.1.0.tgz_1488866487592_0.1796807344071567"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "schema-utils",
+      "version": "0.2.1",
+      "description": "Webpack Schema Validation Utilities",
+      "main": "dist/index.js",
+      "files": [
+        "dist",
+        "lib",
+        "src",
+        ".babelrc"
+      ],
+      "scripts": {
+        "prebuild": "yarn run clean:dist",
+        "build": "cross-env NODE_ENV=production babel -s true src -d dist --ignore 'src/**/*.test.js'",
+        "clean:dist": "del-cli dist",
+        "start": "yarn run serve:dev src",
+        "serve:dev": "nodemon $2 --exec babel-node",
+        "lint": "eslint --cache src test",
+        "security": "nsp check",
+        "test": "jest",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:test": "yarn run test",
+        "travis:coverage": "yarn run test:coverage",
+        "travis:lint": "yarn run lint && yarn run security",
+        "webpack-defaults": "webpack-defaults",
+        "lint-staged": "lint-staged",
+        "postinstall": "node lib/post_install.js",
+        "prepublish": "yarn run build",
+        "release": "yarn run standard-version"
+      },
+      "dependencies": {
+        "ajv": "^4.11.2"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.22.2",
+        "babel-jest": "^18.0.0",
+        "babel-polyfill": "^6.22.0",
+        "babel-preset-env": "^1.2.1",
+        "babel-preset-webpack": "^1.0.0",
+        "chai": "^3.5.0",
+        "codecov": "^1.0.1",
+        "cross-env": "^3.1.4",
+        "del-cli": "^0.2.1",
+        "eslint": "^3.14.1",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.2.0",
+        "greenkeeper-postpublish": "^1.0.1",
+        "jest": "^18.1.0",
+        "lint-staged": "^3.3.1",
+        "nodemon": "^1.11.0",
+        "nsp": "^2.6.2",
+        "pre-commit": "^1.2.2",
+        "shx": "^0.2.2",
+        "standard-version": "^4.0.0",
+        "webpack-defaults": "^0.2.1"
+      },
+      "engines": {
+        "node": ">=4.3 <5.0.0 || >=5.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "eslintConfig": {
+        "extends": "webpack",
+        "installedESLint": true
+      },
+      "keywords": [
+        "webpack",
+        "plugin",
+        "es2015"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        }
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "gitHead": "7152276042d2c5a106cdf9b5877357f910ac4c00",
+      "_id": "schema-utils@0.2.1",
+      "_shasum": "f49634960899ea5315e80d9a540c2c19dfb2cff8",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "bebraw",
+        "email": "bebraw@gmail.com"
+      },
+      "dist": {
+        "shasum": "f49634960899ea5315e80d9a540c2c19dfb2cff8",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/schema-utils-0.2.1.tgz_1489388695917_0.07002403354272246"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "schema-utils",
+      "version": "0.3.0",
+      "description": "Webpack Schema Validation Utilities",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "engines": {
+        "node": ">= 4.3 < 5.0.0 || >= 5.10"
+      },
+      "scripts": {
+        "start": "yarn run build -- -w",
+        "prebuild": "yarn run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js'",
+        "clean": "del-cli dist",
+        "lint": "eslint --cache src test",
+        "lint-staged": "lint-staged",
+        "security": "nsp check",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:coverage": "yarn run test:coverage",
+        "travis:lint": "yarn run lint && yarn run security",
+        "travis:test": "yarn run test",
+        "webpack-defaults": "webpack-defaults",
+        "prepublish": "yarn run build",
+        "release": "yarn run standard-version"
+      },
+      "dependencies": {
+        "ajv": "^5.0.0"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.24.1",
+        "babel-jest": "^19.0.0",
+        "babel-plugin-transform-object-rest-spread": "^6.23.0",
+        "babel-polyfill": "^6.23.0",
+        "babel-preset-env": "^1.4.0",
+        "babel-preset-webpack": "^1.0.0",
+        "codecov": "^2.0.1",
+        "cross-env": "^4.0.0",
+        "del-cli": "^0.2.1",
+        "eslint": "^3.19.0",
+        "eslint-config-webpack": "^1.2.1",
+        "eslint-plugin-import": "^2.2.0",
+        "jest": "^19.0.2",
+        "lint-staged": "^3.4.0",
+        "nsp": "^2.6.3",
+        "pre-commit": "^1.2.2",
+        "standard-version": "^4.0.0",
+        "webpack-defaults": "^0.4.5"
+      },
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "eslintConfig": {
+        "extends": "webpack",
+        "installedESLint": true
+      },
+      "keywords": [
+        "webpack",
+        "plugin",
+        "es2015"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        },
+        {
+          "name": "Michael Ciniawsky",
+          "email": "@michael-ciniawsky"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "license": "MIT",
+      "gitHead": "96525dd9fd5c33056cbafe5680c5cdd10a994686",
+      "_id": "schema-utils@0.3.0",
+      "_shasum": "f5877222ce3e931edae039f17eb3716e7137f8cf",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "shasum": "f5877222ce3e931edae039f17eb3716e7137f8cf",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/schema-utils-0.3.0.tgz_1493490045779_0.2797495676204562"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "schema-utils",
+      "version": "0.4.0",
+      "description": "Webpack Schema Validation Utilities",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "engines": {
+        "node": ">= 4.8 < 5.0.0 || >= 5.10"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "lint": "eslint --cache src test",
+        "lint-staged": "lint-staged",
+        "security": "nsp check",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:lint": "npm run lint && npm run security",
+        "travis:test": "npm run test -- --runInBand",
+        "travis:coverage": "npm run test:coverage -- --runInBand",
+        "appveyor:test": "npm run test",
+        "prepublish": "npm run build",
+        "release": "standard-version",
+        "webpack-defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^5.0.0",
+        "ajv-keywords": "^2.1.0"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.0.0",
+        "babel-jest": "^21.0.0",
+        "babel-plugin-transform-object-rest-spread": "^6.0.0",
+        "babel-polyfill": "^6.0.0",
+        "babel-preset-env": "^1.0.0",
+        "cross-env": "^5.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^4.0.0",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "jest": "^21.0.0",
+        "lint-staged": "^4.0.0",
+        "nsp": "^2.0.0",
+        "pre-commit": "^1.0.0",
+        "standard-version": "^4.0.0",
+        "webpack-defaults": "^1.6.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0"
+      },
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "keywords": [
+        "webpack",
+        "webpack-plugin",
+        "schema-utils",
+        "loader"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        },
+        {
+          "name": "Michael Ciniawsky",
+          "email": "@michael-ciniawsky"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "license": "MIT",
+      "gitHead": "0cbab06711c55b16279fe874871a4ceb553a2320",
+      "_id": "schema-utils@0.4.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2QYsHbnLL40gWxhbAfOWa4hZKc9UcyV18/c/RIX5w3pa3BU5//SU4jnOQ6cPsCrwJl+NGZoaCvMXmXgUMYX0fw==",
+        "shasum": "cf98d870a5f74e7526211f6d38caf0d250366688",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils-0.4.0.tgz_1509387709032_0.2484780631493777"
+      },
+      "directories": {}
+    },
+    "0.4.1": {
+      "name": "schema-utils",
+      "version": "0.4.1",
+      "description": "Webpack Schema Validation Utilities",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "engines": {
+        "node": ">= 4.8 < 5.0.0 || >= 5.10"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "lint": "eslint --cache src test",
+        "lint-staged": "lint-staged",
+        "security": "nsp check",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:lint": "npm run lint && npm run security",
+        "travis:test": "npm run test -- --runInBand",
+        "travis:coverage": "npm run test:coverage -- --runInBand",
+        "appveyor:test": "npm run test",
+        "prepublish": "npm run build",
+        "release": "standard-version",
+        "webpack-defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^5.0.0",
+        "ajv-keywords": "^2.1.0"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.0.0",
+        "babel-jest": "^21.0.0",
+        "babel-plugin-transform-object-rest-spread": "^6.0.0",
+        "babel-polyfill": "^6.0.0",
+        "babel-preset-env": "^1.0.0",
+        "cross-env": "^5.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^4.0.0",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "jest": "^21.0.0",
+        "lint-staged": "^4.0.0",
+        "nsp": "^2.0.0",
+        "pre-commit": "^1.0.0",
+        "standard-version": "^4.0.0",
+        "webpack-defaults": "^1.6.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0"
+      },
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "keywords": [
+        "webpack",
+        "webpack-plugin",
+        "schema-utils",
+        "loader"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        },
+        {
+          "name": "Michael Ciniawsky",
+          "email": "@michael-ciniawsky"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "license": "MIT",
+      "gitHead": "8e242c827bcb4d9f76a722e555cf7d20a6bbaa16",
+      "_id": "schema-utils@0.4.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VT7bSXSENu+y/a+U8zgIfYSmR8dd/GlnBGoSO5v1kOpLGEgmqJGbf/l2V0PMklVUcZEoGQ/gtKs/LxMnRxFW4A==",
+        "shasum": "db935de4227f61700aca2d89682ada32b1b243e3",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils-0.4.1.tgz_1509702693032_0.869106677128002"
+      },
+      "directories": {}
+    },
+    "0.4.2": {
+      "name": "schema-utils",
+      "version": "0.4.2",
+      "description": "Webpack Schema Validation Utilities",
+      "license": "MIT",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        },
+        {
+          "name": "Michael Ciniawsky",
+          "email": "@michael-ciniawsky"
+        }
+      ],
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "lint": "eslint --cache src test",
+        "lint-staged": "lint-staged",
+        "security": "nsp check",
+        "test": "cross-env JEST=true jest",
+        "test:watch": "cross-env JEST=true jest --watch",
+        "test:coverage": "cross-env JEST=true jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:lint": "npm run lint && npm run security",
+        "travis:test": "npm run test -- --runInBand",
+        "travis:coverage": "npm run test:coverage -- --runInBand",
+        "appveyor:test": "npm run test",
+        "prepublish": "npm run build",
+        "release": "standard-version",
+        "webpack-defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^5.0.0",
+        "ajv-keywords": "^2.1.0",
+        "chalk": "^2.3.0"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.0.0",
+        "babel-jest": "^21.0.0",
+        "babel-plugin-transform-object-rest-spread": "^6.0.0",
+        "babel-polyfill": "^6.0.0",
+        "babel-preset-env": "^1.0.0",
+        "cross-env": "^5.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^4.0.0",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "jest": "^21.0.0",
+        "lint-staged": "^4.0.0",
+        "nsp": "^2.0.0",
+        "pre-commit": "^1.0.0",
+        "standard-version": "^4.0.0",
+        "webpack": "^3.8.1",
+        "webpack-defaults": "^1.6.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0"
+      },
+      "engines": {
+        "node": ">= 4.8 < 5.0.0 || >= 5.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "keywords": [
+        "webpack",
+        "webpack-plugin",
+        "schema-utils",
+        "loader"
+      ],
+      "gitHead": "9a36941560cf33e5c4f0ddd202b8097974f55b30",
+      "_id": "schema-utils@0.4.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-LCuuUj7L43TbSIqeERp+/Z2FH/NxSA48mqcWlGTSYUUKsevGafj2SpyaFVTxyWWFLkIAS3p7jDTLpNsrU7PXoA==",
+        "shasum": "86d92aedf4dfc51c9b321ef16bd33a9417b122d0",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils-0.4.2.tgz_1510258586488_0.7539700423367321"
+      },
+      "directories": {}
+    },
+    "0.4.3": {
+      "name": "schema-utils",
+      "version": "0.4.3",
+      "description": "Webpack Schema Validation Utilities",
+      "license": "MIT",
+      "main": "dist/cjs.js",
+      "engines": {
+        "node": ">= 4.8 < 5.0.0 || >= 5.10"
+      },
+      "files": [
+        "dist"
+      ],
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "lint": "eslint --cache src test",
+        "lint-staged": "lint-staged",
+        "security": "nsp check",
+        "test": "cross-env jest",
+        "test:watch": "cross-env jest --watch",
+        "test:coverage": "cross-env jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "travis:lint": "npm run lint && npm run security",
+        "travis:test": "npm run test -- --runInBand",
+        "travis:coverage": "npm run test:coverage -- --runInBand",
+        "appveyor:test": "npm run test",
+        "prepublish": "npm run build",
+        "release": "standard-version",
+        "webpack-defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^5.0.0",
+        "ajv-keywords": "^2.1.0"
+      },
+      "devDependencies": {
+        "babel-cli": "^6.0.0",
+        "babel-jest": "^21.0.0",
+        "babel-plugin-transform-object-rest-spread": "^6.0.0",
+        "babel-polyfill": "^6.0.0",
+        "babel-preset-env": "^1.0.0",
+        "cross-env": "^5.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^4.0.0",
+        "eslint-config-webpack": "^1.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "jest": "^21.0.0",
+        "lint-staged": "^4.0.0",
+        "nsp": "^2.0.0",
+        "pre-commit": "^1.0.0",
+        "standard-version": "^4.0.0",
+        "webpack": "^3.0.0",
+        "webpack-defaults": "^1.6.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0"
+      },
+      "keywords": [
+        "webpack",
+        "webpack-plugin",
+        "schema-utils",
+        "loader"
+      ],
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "contributors": [
+        {
+          "name": "Juho Vepsäläinen",
+          "email": "@bebraw"
+        },
+        {
+          "name": "Joshua Wiens",
+          "email": "@d3viant0ne"
+        },
+        {
+          "name": "Michael Ciniawsky",
+          "email": "@michael-ciniawsky"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils#readme",
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "gitHead": "57f2820227dfce3ce91651fbe4d8cdfa3c4ae483",
+      "_id": "schema-utils@0.4.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.3",
+      "_npmUser": {
+        "name": "d3viant0ne",
+        "email": "wiens.joshua@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-sgv/iF/T4/SewJkaVpldKC4WjSkz0JsOh2eKtxCPpCO1oR05+7MOF+H476HVRbLArkgA7j5TRJJ4p2jdFkUGQQ==",
+        "shasum": "e2a594d3395834d5e15da22b48be13517859458e",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils-0.4.3.tgz_1513219740440_0.3938244723249227"
+      },
+      "directories": {}
+    },
+    "0.4.4": {
+      "name": "schema-utils",
+      "version": "0.4.4",
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "description": "Webpack Schema Validation Utilities",
+      "license": "MIT",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "scripts": {
+        "start": "npm run build -- -w",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint",
+        "commitmsg": "commitlint -e $GIT_PARAMS",
+        "lint": "eslint --cache src test",
+        "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+        "lint-staged": "lint-staged",
+        "prebuild": "npm run clean",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "release:ci": "conventional-github-releaser -p angular",
+        "release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+        "security": "nsp check",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "ci:lint": "npm run lint && npm run security",
+        "ci:test": "npm run test -- --runInBand",
+        "ci:coverage": "npm run test:coverage -- --runInBand",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^5.2.8",
+        "@commitlint/config-angular": "^5.1.1",
+        "@webpack-contrib/eslint-config-webpack": "^2.0.2",
+        "babel-cli": "^6.26.0",
+        "babel-jest": "^22.2.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "conventional-github-releaser": "^2.0.0",
+        "cross-env": "^5.1.3",
+        "del": "^3.0.0",
+        "del-cli": "^1.1.0",
+        "eslint": "^4.17.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "husky": "^0.14.3",
+        "jest": "^22.2.2",
+        "lint-staged": "^6.1.0",
+        "memory-fs": "^0.4.1",
+        "nsp": "^3.1.0",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.10.2",
+        "standard-version": "^4.3.0",
+        "webpack": "^3.11.0",
+        "webpack-defaults": "^2.0.0-rc.4"
+      },
+      "engines": {
+        "node": ">= 4.8.0 || >= 6.9.0 || >= 8.9.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0 || ^4.0.0"
+      },
+      "homepage": "https://github.com/michael-ciniawsky/schema",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/michael-ciniawsky/schema.git"
+      },
+      "bugs": {
+        "url": "https://github.com/michael-ciniawsky/schema/issues"
+      },
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "gitHead": "65b591017dab9335484dcd976b612759101bceec",
+      "_id": "schema-utils@0.4.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-RtoiBCRDIEJxld0Fl3qUm3HEF8NM35nnBqhTmxzO/9bfWa6t2+zWcQdSWRC1UMW+dfPxAtpChl4JfUIUgy9M1A==",
+        "shasum": "6a280d39dfefb1ef84fc2e0f6ac91c249beac7b0",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 13585
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_0.4.4_1518528821343_0.9739770599349351"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.5": {
+      "name": "schema-utils",
+      "version": "0.4.5",
+      "author": {
+        "name": "Webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "description": "Webpack Schema Validation Utilities",
+      "license": "MIT",
+      "main": "dist/cjs.js",
+      "files": [
+        "dist"
+      ],
+      "scripts": {
+        "start": "npm run build -- -w",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore 'src/**/*.test.js' --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint",
+        "commitmsg": "commitlint -e $GIT_PARAMS",
+        "lint": "eslint --cache src test",
+        "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+        "lint-staged": "lint-staged",
+        "prebuild": "npm run clean",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "release:ci": "conventional-github-releaser -p angular",
+        "release:validate": "commitlint --from=$(git describe --tags --abbrev=0) --to=$(git rev-parse HEAD)",
+        "security": "nsp check",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
+        "ci:lint": "npm run lint && npm run security",
+        "ci:test": "npm run test -- --runInBand",
+        "ci:coverage": "npm run test:coverage -- --runInBand",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^5.2.8",
+        "@commitlint/config-angular": "^5.1.1",
+        "@webpack-contrib/eslint-config-webpack": "^2.0.2",
+        "babel-cli": "^6.26.0",
+        "babel-jest": "^22.2.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "conventional-github-releaser": "^2.0.0",
+        "cross-env": "^5.1.3",
+        "del": "^3.0.0",
+        "del-cli": "^1.1.0",
+        "eslint": "^4.17.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "husky": "^0.14.3",
+        "jest": "^22.2.2",
+        "lint-staged": "^6.1.0",
+        "memory-fs": "^0.4.1",
+        "nsp": "^3.1.0",
+        "pre-commit": "^1.2.2",
+        "prettier": "^1.10.2",
+        "standard-version": "^4.3.0",
+        "webpack": "^3.11.0",
+        "webpack-defaults": "^2.0.0-rc.4"
+      },
+      "engines": {
+        "node": ">= 4.8.0 || >= 6.9.0 || >= 8.9.0"
+      },
+      "peerDependencies": {
+        "webpack": "^2.0.0 || ^3.0.0 || ^4.0.0"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "pre-commit": "lint-staged",
+      "lint-staged": {
+        "*.js": [
+          "eslint --fix",
+          "git add"
+        ]
+      },
+      "gitHead": "1afd5807c328014616bbaadb5a91a785f24cbdfc",
+      "_id": "schema-utils@0.4.5",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-yYrjb9TX2k/J1Y5UNy3KYdZq10xhYcF8nMpAW6o3hy6Q8WSIEf9lJHG/ePnOBfziPM3fvQwfOwa13U/Fh8qTfA==",
+        "shasum": "21836f0608aac17b78f9e3e24daff14a5ca13a3e",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.5.tgz",
+        "fileCount": 8,
+        "unpackedSize": 13971
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_0.4.5_1518529667219_0.7169207153910973"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.6": {
+      "name": "schema-utils",
+      "version": "0.4.6",
+      "description": "webpack Validation Utils",
+      "main": "src/index.js",
+      "files": [
+        "src"
+      ],
+      "engines": {
+        "node": ">= 4"
+      },
+      "scripts": {
+        "lint": "eslint --cache src test",
+        "test": "jest --env node --verbose --coverage",
+        "clean": "del-cli coverage",
+        "commits": "commitlint --from $(git rev-list --tags --max-count=1)",
+        "release": "npm run commits && standard-version"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^7.0.0",
+        "@commitlint/config-conventional": "^7.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^2.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^5.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-prettier": "^2.0.0",
+        "jest": "^22.0.0",
+        "prettier": "^1.0.0",
+        "standard-version": "^4.0.0"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "license": "MIT",
+      "gitHead": "ce6626b794fd0bf33b28c84b5d8a7354fb9cb524",
+      "_id": "schema-utils@0.4.6",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+8HiCq9YzNM3S8vF7w1qsXK30H8dCc8EVduWGJvF0YzMhw7ehi/mLckZR9WfsPjfSnT6btpOL3jljExw8S4K5Q==",
+        "shasum": "dab4516a656310a964ca772bd3771819ba2b5cec",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.6.tgz",
+        "fileCount": 7,
+        "unpackedSize": 10238,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaIAACRA9TVsSAnZWagAAF0UP/0QYVDwCb5lyWSEULdrj\nt9UlCpDZBrtwfJv+tdrlKUEySDNLkpaEDoq72pzmmbA/6fV+ntrTP+SfT8Mg\n7+qmQf+O1w+mRvELiRG39wLi06tyDSJcdYGREER36n+iKvy7e3eIuERow0Ti\n4yF6iwFLASqboMZwM1+avZnO7aAD0+t0ZbFTDSeYYJIaqR7osj1VMgF7Ltnp\nrgFsxB3OT7l1RlE4kJR+lRlNBO2jDtLL5PdjGa9/h+qKK4WxV2ehTKIlqVul\nu6tuNabQSwA2PH85cmxViahQmvu0Ma9Kof4BaO03VP+kg2gmjvNe3YbYXTUz\nGX8PCzyhsNJE+frId03WuxHM6Fb+G1ELNTGk911wge44jRiiVOMtjl0d21Ty\n+Zc1W0hVAvUJFFWCXC/N5kt9sCnzdMxU/5qjgPH+1BCG91IFd1KzF1Gc0vtS\nk21uahiTNfhAgY4T/8xV5ZtzzeWJHOZAqTQCpKznZaCEjRIhCx7AQH+zKHdF\nhGHZimf6vWIHd2lijwUHsdwhHjoHUndREc1R7o5dklYpOV8sSAxlYTu1982i\nuASLDyQUpvVxDANrr1Yo2AWeKm+bt47/Cpata28bfrlCgGNTwT0EaAb4oHgh\nncsYcU0VWVC87ydkpj0ZgCndOS1+uIj33aw7ShLOpMlmqXVkXtCm65xzTW8Y\nWUQk\r\n=u/s3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_0.4.6_1533575168399_0.9556367856367722"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.7": {
+      "name": "schema-utils",
+      "version": "0.4.7",
+      "description": "webpack Validation Utils",
+      "main": "src/index.js",
+      "files": [
+        "src"
+      ],
+      "engines": {
+        "node": ">= 4"
+      },
+      "scripts": {
+        "lint": "eslint --cache src test",
+        "test": "jest --env node --verbose --coverage",
+        "clean": "del-cli coverage",
+        "commits": "commitlint --from $(git rev-list --tags --max-count=1)",
+        "release": "npm run commits && standard-version"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^7.0.0",
+        "@commitlint/config-conventional": "^7.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^2.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^5.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-prettier": "^2.0.0",
+        "jest": "^21.0.0",
+        "prettier": "^1.0.0",
+        "standard-version": "^4.0.0"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "license": "MIT",
+      "gitHead": "ebc09b7784df233874a771b03b35b95613bcbad2",
+      "_id": "schema-utils@0.4.7",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==",
+        "shasum": "ba74f597d2be2ea880131746ee17d0a093c68187",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-0.4.7.tgz",
+        "fileCount": 7,
+        "unpackedSize": 10673,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaY2yCRA9TVsSAnZWagAAa74P/RK6R+h+/PBoD/aa1UOW\nPHC4dQ0sW2FQvWLCXPkBXESW0RDYHz40ZTSbtgFySdsttZoU6+fSQZLTcRBU\nvthl68o7Du3DSPxgomh7lJmhl2hsUOw3Wxf9aeLBjedMXLDgwpKWqm0WXEud\nFLdHvhVi3NxRkqtFkYXomMTqWVjRYyHi8zMZnL3i21p7JKg1dvb/m4lAdKnF\nmZdmwlcqXrP/6AfD33EilPnWHR6ZxYoViVuhnFaAmIryXKr2q/QNbutKG+XV\n+tH+3wpJh/Qotlc42R8FEDT7oOtNEQkRzE88MQmVvSSa57p5BrvYGI63vx+H\nPiw4MwiTJVJYYegJ5xj9UWIEZ4OVpEx6izcMwU/FHsHjb9VGJwH2aPOf1HgB\nwkNzmRYO6SFsUAS06MQW8cLVvG8plfTZRFb1t+KKItwitH1xrsVSUZKFUewI\nF/7PvK3MfCAMMgFrSeB3+KQa+3ghG9nhx3cadIJPbh0mFOXAkNtYJmVgiIWZ\np3lyQeO+nN1kFJ61cE5TYKVUwSkelSiWI0mFtTfAdYHphGB8XhTt7BiMfpTd\nEmxKz8jfvXGAs72NwCOLOBetQKAMtICv1Dg5sqeIcTYNpllF9jcBQr2C0qQN\nHktMK2uXaN9DUOWVuIuu+hfSLuhS6E9FRFcEcG1gWYCEba1g/dSRpelZD8ZU\nxnul\r\n=C01H\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_0.4.7_1533644210040_0.27989860459207727"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "schema-utils",
+      "version": "1.0.0",
+      "description": "webpack Validation Utils",
+      "main": "src/index.js",
+      "files": [
+        "src"
+      ],
+      "engines": {
+        "node": ">= 4"
+      },
+      "scripts": {
+        "lint": "eslint --cache src test",
+        "test": "jest --env node --verbose --coverage",
+        "clean": "del-cli coverage",
+        "commits": "commitlint --from $(git rev-list --tags --max-count=1)",
+        "release": "npm run commits && standard-version"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-errors": "^1.0.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@commitlint/cli": "^7.0.0",
+        "@commitlint/config-conventional": "^7.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^2.0.0",
+        "del-cli": "^1.0.0",
+        "eslint": "^5.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "eslint-plugin-prettier": "^2.0.0",
+        "jest": "^21.0.0",
+        "prettier": "^1.0.0",
+        "standard-version": "^4.0.0"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "license": "MIT",
+      "gitHead": "6ca2322d4c8c5818c4a8f71328ac88e3507ec4e8",
+      "_id": "schema-utils@1.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "michael-ciniawsky",
+        "email": "michael.ciniawsky@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==",
+        "shasum": "0b79a93204d7b600d4b2850d1f66c2a34951c770",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-1.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 11504,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaclaCRA9TVsSAnZWagAAQdQP+wYwozp28/D/pQfqP+8P\nZubNavTF9u29pNaAQap3C1k5AdB0SKz5huvaFaECN0NQZ/qvMsmvBn1b02rD\nu4qByf2okF9ydL/lSrDh9yQ/C0eKxtA3eKQ3wOAb6T74kpYK2ckPCWwpBeIk\nRRvWyb3+Gh8SWJJzglAz2qGiQuAXHdP6s7mTE7RvaSaCReMBIhkvaexycBaY\nWTYlZPGVG9NagREbbEDzH5EXBdzGQRjcAyM7szvCw1s416er7yTrDTw4XSRv\nmt/g9AiSrs2v/jna1BY7AR350Z6VeU2WAv8/Ri0O1umKOsUUVgFzCOwVPGYT\n1ASANqpkX9WTGKECKwulk/JGnDuwmxleRfUYJUX0tJbU2UkMvysFMVvRhovU\nRmyHpr0DhCl/+IOgpxRgqKi6zvR8b4nQN76lAUbsf9MZ2pz9T1ZnSKvEIT+m\ndyDpw/R/0eAdk3NCuaZl9gJ9/hYpJCguvRx9fAjdl7H8Zlx/GCz/H0sxFQuP\nN2nM3mOieryk63L/JK/ncpRFoSAsHmrPDPrlR//jEUshaz7ONxB6Z+guUvTi\n3I9nFD5Xzt9cr7Ev5ABtdb6gOkYDD0C3IJcoWXS5rYQ07KMzbXbKzTHPLKh9\nvW5D/N3rN+DMFaLNztbixM0eunvnc/rswEYhw2bFXpdCJA0VT44TmtOdcWU4\nr1TM\r\n=gDs9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_1.0.0_1533659472153_0.8504713655306841"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "schema-utils",
+      "version": "2.0.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@webpack-contrib/defaults": "^5.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.8.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^5.2.0",
+        "del": "^5.0.0",
+        "del-cli": "^2.0.0",
+        "eslint": "^6.0.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "husky": "^3.0.0",
+        "jest": "^24.8.0",
+        "jest-junit": "^6.4.0",
+        "lint-staged": "^9.2.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.0.0",
+        "standard-version": "^6.0.1"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "692b4376aeff71b09997497060c2b967b6318ce6",
+      "_id": "schema-utils@2.0.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.10.1",
+      "dist": {
+        "integrity": "sha512-4JfkJmuT78xkJAZrYivuu6RNfX57ul5u+jsfxwRAdWw5eE1qIY/i4go1A3zAdJlTwYXLbvWHWXVvoYu3PjGf9A==",
+        "shasum": "e5bc78a5bff1e771e566b52f6a523b345352a448",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 39155,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdLy3SCRA9TVsSAnZWagAAzQMP/i6pmN8grZ1s/JyPPYpQ\neuGdPGKK0coCyOJWcSPtoIz7e+uGyJRN8wAlTI/fN5ERrSrsM3TX8wge+Dyj\nVeZPDKhONTA0ItVG/BBKkimK+OE4Hm6plZzzX4/DwdyCp/VHkouYxpx3eSCD\n2OO9EIrCy6x/nDq7oX8lm2PRxxuQH6A7jYe+bLDofhtJ8Crve6a1TPZAIhcR\n7REZgEUU88gCX2h5D4FCYyRFbofOirMneWpSitse7N2LBdOtqEwgpwduSGiG\nAOsHKrSJtDwMhwZJNP/40jSQloHizGuNFjeLHItSABIdvJL2rTNqtWZhQ++J\nGy0z7cahF2Z6NcmWwW4bR2K+JgCIib+rchUrbeb8aXjDQDJyXn1pReWRDlMk\nMyZ9pM7w8r0QpP/ceRIb1md0xn4JNiBZH7FMBcDVe/0WSk2PcGvuCRzELozi\nDHj9JERQPHYyxWCtvq/3zmYBsBBU+erZMYEshP7lyJ8MZJs8UK6hQdgxKCkf\nk09L7g1TktaUmNEBcwGr4cGkVwNYPICqDTv8eB38bZX3Hpo39Z8nQFegpjMj\nwgg7vQzbxh/qWRlO7+ZjtVbObeQaKTVsH6ep2fRri+bj8vVQM9Qn8fjY8pZJ\n9wkIniwNS2QKB0Vc+7F1tEFpDPMsgS/8Eo2xTBXpKee73tJs3w5PdmFLal0C\nPaF7\r\n=9s0N\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.0.0_1563373009093_0.465262828175129"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "schema-utils",
+      "version": "2.0.1",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@webpack-contrib/defaults": "^5.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.8.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^5.2.0",
+        "del": "^5.0.0",
+        "del-cli": "^2.0.0",
+        "eslint": "^6.0.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "husky": "^3.0.0",
+        "jest": "^24.8.0",
+        "jest-junit": "^6.4.0",
+        "lint-staged": "^9.2.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.0.0",
+        "standard-version": "^6.0.1"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "ebbbe2c6ab023083e726c3ba7f1bc49a6d642d8b",
+      "_id": "schema-utils@2.0.1",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.10.1",
+      "dist": {
+        "integrity": "sha512-HJFKJ4JixDpRur06QHwi8uu2kZbng318ahWEKgBjc0ZklcE4FDvmm2wghb448q0IRaABxIESt8vqPFvwgMB80A==",
+        "shasum": "1eec2e059556af841b7f3a83b61af13d7a3f9196",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.0.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 39449,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdMJp6CRA9TVsSAnZWagAA784P/3w8bWROmRrYWzchLphC\nNdtmZ6LXzFE6Ec+wkJp/NKLpdiTStmkWj7di73GdUVVjm/xqs4YkxTWTfO47\nuUm8LpTBNh9+hv4d9wCObKHbuJJbKUZ10h95mMAbEBLVATUJWKY+tOctVctB\n8cNid0/ICo4VmTQjMZMLRdZ8nWxHHeWHYaBIQcAFzsiUc/4DHClH0COGZcLi\nrkiUb9Wan8zSLcP7p88PFhXeXAFZffqEEuOVfBNTxSXF+8nFeYzcW7PSKyXd\n6q8ZLFllfpIMdIJ9tq8YsVlDogxQ7MuXU6t7jQdBqBGb+P+UcSW1fSY+ePjh\nSmYCX95cKXBBtYRNA17Li7ZI79/i3grZMERyr7uSQ5od3hgCEY0SXDUQO+2D\nh2J+SnpwWx9ZROrcSZN/m/52TiON4ZvkcagrT14/6f32eOvEY7i4cpAuLR7+\nY7Jr+typGh5CN6KcR0mcq7OBZt10sWKDy7YQaiCg8tNv3taz+DNsDN22iL/Q\neoO8oQnkveqQSd7780g8DHW23cZFGiwDA4V3IDqm/mzBHUBQFrdvKTAhGwqI\nJiBsUnySnWusfO43ZlTbw5iikReqRuZiQBF0FdsjM2vStxp1BlMTUYAE6dJY\nXXMzH4S200MgkMpcdWghyazrj5bwrDvQ7uBiL6YKtoCSyTAQYEdjPZ/qqnVs\nAhX4\r\n=RgN6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.0.1_1563466362051_0.013276362947875153"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "schema-utils",
+      "version": "2.1.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack-contrib/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack-contrib/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack-contrib/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.1.0",
+        "ajv-keywords": "^3.1.0"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.5",
+        "@babel/preset-env": "^7.4.5",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@webpack-contrib/defaults": "^5.0.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.8.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^5.2.0",
+        "del": "^5.0.0",
+        "del-cli": "^2.0.0",
+        "eslint": "^6.0.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.0.0",
+        "husky": "^3.0.0",
+        "jest": "^24.8.0",
+        "jest-junit": "^6.4.0",
+        "lint-staged": "^9.2.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.0.0",
+        "standard-version": "^6.0.1"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "08d8147f2008bdc6403acd45927ae5f1c65e3636",
+      "_id": "schema-utils@2.1.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-g6SViEZAfGNrToD82ZPUjq52KUPDYc+fN5+g6Euo5mLokl/9Yx14z0Cu4RR1m55HtBXejO0sBt+qw79axN+Fiw==",
+        "shasum": "940363b6b1ec407800a22951bdcc23363c039393",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 40043,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdSugcCRA9TVsSAnZWagAAJy0P/1tGyg+tNIicQUr3wrH4\nVvt23kt9W8SMe+yo3f/sInikIVnL9+3n3DxVT6HShZvOBiv3DqomaVMKzYOp\nM7gvJb98O+xCM33wiNk7BH0f2nfVaY2PFgyaevSifwximET6G0LSqzjupyRv\nEvpfwjI8tnYQm5jXuywZ/s77xvH5lAxlzS7yZE7jE6nwRQpK8+5XPn5vKfCs\nodcw9ecvLWZch9FXgNcIPPlFDEvwaQ2/jUrctLIgQDdg8T6m8sS5Fquz2+hk\nr080krdgOsNCeYhC+k/a0huvCRZAHYvn0hF1ZQiu4SSoNC/LmoJO7fLXIJtx\nuxOKn2KwxFW9QZ5SiFYpzuostuU0MDtHOrQ9k6Nh3C1ogjanBpr5FeXiPs79\nzttr6H/EMVuPmO/91YOa6wnuWnNbYh3CcuGIaS5UrKOi5mWwR/qFEfZdwqZy\nyt/nzrkydDWsqpmYw0rhz75i/21DGYjdviJU8lx0QLM3sE3Z7Z07/JQvePkS\n5ta8+5VMEv7cNRtVyAGqa0Gk09PgUR1ZqKcaoKExEjh33TZrjku2gcE+YIZe\n2UaqYFHuL52TSv4Qayu7I6HU8vGWTlbuMVbIqU4oRWLaswXEeDpVF3XSuMOE\nWlrCWVJlPcqnXAY0Kcg9RfGvgBs3tW2hfsI0wWDdALMC7LD0R6jZf1+MKEd+\n4ZwL\r\n=thvW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.1.0_1565190172002_0.9844907865540982"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "schema-utils",
+      "version": "2.2.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@webpack-contrib/defaults": "^5.0.2",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^5.2.1",
+        "del": "^5.1.0",
+        "del-cli": "^2.0.0",
+        "eslint": "^6.3.0",
+        "eslint-config-prettier": "^6.1.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "jest-junit": "^8.0.0",
+        "lint-staged": "^9.2.5",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "c9556505e2a73e41e1213e74fc258a27ed1473b7",
+      "_id": "schema-utils@2.2.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.11.2",
+      "dist": {
+        "integrity": "sha512-5EwsCNhfFTZvUreQhx/4vVQpJ/lnCAkgoIHLhSpp4ZirE+4hzFvdJi0FMub6hxbFVBJYSpeVVmon+2e7uEGRrA==",
+        "shasum": "48a065ce219e0cacf4631473159037b2c1ae82da",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.2.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 42197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdbPWeCRA9TVsSAnZWagAA/5YP/jxgHyUYnYwjtW6li7z+\nlX8lKO/q27P5uujpqy+7AIiAEVHOBz2469zy1bACHDXgihZHF5anSpgBxvhG\ndxDuAT3iSA5a5fBGM2mi77p5ISA1/yglDzW68kHy4WF4RajAvvWE3HDx2mPV\nJqI9KRJJA/PUWoTEaeJtFcjOgcgoc7PskWFSNKcHnTkM7uUcfohlv/TjGRiw\npHxqik1Afd8jbHoMxAYP1oxMx+4foyQu+0TSh5zH+lABtGGQxD8v6bqkIQ0f\n8udyD9C2342uFjmftuVXv2VFNK6vFK9GuknoJAPXcbZLMsmzriO0AhHn2rvM\nvOcUoT5QWOzcdjulnWEV1ClSfn5UzWOafhFkrVR0QdHNT4pMw0tRAKX6EsB/\nDghjzumsjxM08efsBgsiyKDbGe3j+5mM39ZpQxbGjPHJs5aS7tXUqlJD6JKc\nP9HU7Ry05FBAX8BE1OgRo5fpkhoBaW1/ptOMm6zBF7r4n9Ct/to3owwuqacv\nmIEpS1oLfMz0zQJJI8uO19N6W5JcajCQEJJqm/MdzDmEy9TSa0w/Tf4NHQVh\nPY/57SWkRt6yq26ot/FcT0XEYbwNTkO05kxu0jcF+KGiMD72vIOBGfkJRzHH\n01QlW5f6BNvKeGsW2wPFknHHz7Vr2uFuQYhynL2kPpKmi+mzKWHAp28hUkBa\nNiZs\r\n=esEt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.2.0_1567421854221_0.7354612062500321"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.0": {
+      "name": "schema-utils",
+      "version": "2.3.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@webpack-contrib/defaults": "^5.0.2",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.0",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "jest-junit": "^8.0.0",
+        "lint-staged": "^9.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "ba01fe51c617e0a8b2a36298cf8f71fd8f5b6fef",
+      "_id": "schema-utils@2.3.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-0NWOS/em29583dLzou07qWp5xoKCnvm5NiDQ+IkI/Q8xP6rm1SMvQrmHseH0RSbBe4tM+LJ7IeZTqb/dF9dTRQ==",
+        "shasum": "592c836507db364139a6dea7f46563d66b688a03",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.3.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 42752,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjL4TCRA9TVsSAnZWagAAMakQAJTNjF6OAQuA0dqwzvgN\n8ot6k2L5XUu10GBvhPeeF5kViY1SKD71ObJFIdvPGIGcECTyvoRM/CvhjuVD\n4Tv7bxiTCwq9S1sPwHSuk8GtxYjuA/RBYSLu6SanyNNnq/eFw245IV3TZgSK\nwHmztK9y8blhWYf4JIb1KPHVBcyTog+B4U+i7RoTzhbcxcCq72vUVqMyo2zs\nrUDpXllGA9SlxxVUZMpSQndFCKdiSwSCsFWCgwUMhG30+Vkwy8vKfzMs3I8m\n5cNUh2Dd3muobTFHw57JOUAcBOVymCaeOagvMOo98toLV36LYox6o+c7V8/H\n6AP7WJt2tPoZPvS4cuoHoFXnK5RUPgGK0/rP+1q91ruIboQoh7TkFPkU87K8\nXrZnTEC0MnzTehXc+C+t1Kr0/K045sJw8TSqiWE2P0k1FI3vUlyk55Z43TPK\nmaVSb8W9S2hIfyKaAfS80rXmxhgHFtr0DClJOyPPpHRGVeKXNhqUwQf1AMHA\n6k19A5fMtgAfnUxZrwgQ5wTZl1shfiG//vYSyqHNAu+CrSx3+4ml+P9n3mue\nuPlM2QPm6jUj89vdjbUIuf4JPv9WJcPvugC1MOu6Z2cI9FfhXvq+VshkVey6\nsDfa8nMnepP7fq2w1Q6pahzfCGMm4cw+ZI1daO09kaHK8ti1iuYU0X1BRKRw\nHze7\r\n=TgeK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.3.0_1569504786725_0.5259988689114976"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.0": {
+      "name": "schema-utils",
+      "version": "2.4.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "types": "index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@types/json-schema": "^7.0.3",
+        "@webpack-contrib/defaults": "^5.0.2",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.0",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "jest-junit": "^8.0.0",
+        "lint-staged": "^9.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "fe4be5dfa85e24606df87ad4087b25c30baa745d",
+      "_id": "schema-utils@2.4.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-VJEKOvjynJweKWFgxaikuP22zl9JwvmylH/cW1dIKZyp3DS1adBGaYPtZ6CdBSxtfP0LwQY1gNA4rIMJsnammQ==",
+        "shasum": "44947c4da4d798a3080ec2343249f9d8e4231fd6",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.4.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 44780,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjQuOCRA9TVsSAnZWagAAqsAQAJd3Uq1z2Z2KaSygk6Ot\nJ+AtZeFxA3S6iCqzKrVr34pSdm0eGAgKZnjo2Bv6Ebn4xBUKKoZivFAphXEH\nQUkoCZ9ehbIydiGx3P2ChfYRNyr+z9mZKMDkYsKh4aKp2h4CttxmgWeBo42J\ngFP/ZL+og2bxK6eA0cPOveq3I2VAOB8bo+0alx2L44Ongv+xbRqDV2GYhQEf\ntQn3LoKF33l55rZj1SJTmW8B2LZcKWHxvjKWq4oreDc2GsJ09oZ7+2nnS6CF\nQnwpCb4Ha0eMm+YX3yX5+ZFGY+qeUDXJw556L+bYlwQVEWqNMZUH6r7eWuKR\nLvuFA0hCotnsgCK9Cl7boKN/uShZ0Kd8XOnZGHHj177FFApnyEq/PDrmmCwA\nxZFwu/KU6SaZPeXIo1vOsvQQ7/V8fbn2N87H1Jgr4ZKEZNQVsYGqjeY+jQ7a\nzqktAgft4tZsJyZXGxmy3AOrEn1c4m54RUz7Mq4hSV3jziNCac7n7CYB7HNS\nl6vnTtcMOhKmNTjs7oS+4g2Q/Q3XmrBYG/KaI4p4RowoGk+7M6Dcdj3XBvXB\nE8JniUOn09yHWRIFBONVD46Gp/EbcD7HEYmYVAjKyLqRYkpbnZ5U7kkTnW+W\n58GWvyPI3yLpQduwhIg3tN1rYBQ1mjfscJHeEjDqe6t4XJmXL8wkCQtFs5bp\nhd2N\r\n=DKHc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.4.0_1569524622275_0.30116992902704154"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.4.1": {
+      "name": "schema-utils",
+      "version": "2.4.1",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "types": "index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@types/json-schema": "^7.0.3",
+        "@webpack-contrib/defaults": "^5.0.2",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.0",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "jest-junit": "^8.0.0",
+        "lint-staged": "^9.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "338db8b732aeb247db012b4bfae2fddf17d3e57e",
+      "_id": "schema-utils@2.4.1",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-RqYLpkPZX5Oc3fw/kHHHyP56fg5Y+XBpIpV8nCg0znIALfq3OH+Ea9Hfeac9BAMwG5IICltiZ0vxFvJQONfA5w==",
+        "shasum": "e89ade5d056dc8bcaca377574bb4a9c4e1b8be56",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.4.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 46006,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjfGSCRA9TVsSAnZWagAAc98P/in/vMgQR0nHyjU8zA9R\nTQCZa7TGQ9NeUzfEKJlMW0+Xac0cKsXf72tXRVpgvXMviAaw5ueGSaVmlq+o\nmryGJOgA/Tai51qd9bSNFkX4jY348mKglMLfYRI4g+q87qnO0NbJPmQ7Sq2L\nl4TwDDXD9UpGZfP+ifwGyDLZoQfhYSlFvXAT9XOf0Ie7hTFUsZ+cSLXHro8/\ngOa5VPQ0sMzfwDkTebi6AIsNnZrdG//PoByqeXOrMLdAmHlCjK/5EXhj+Y8B\nAVA6i+7AWW/ic9mf7g8IDXOq3dEFQ6NK1pAczK+W6xJd5FUoh78tBqME39qX\n1z/wJY7Aar4y789LJ1dzPyPKPoMqWNjJ4vHeRLaLexJGfV8jpFNs1Uh9iWxO\nh5MyuXVIdvQItg0PEW9iTpnlMHNo69FctOV9z1rAWHARRjQhUA7EMRlZTsIE\ncmpjg02M4BbSlB8hrknlvOIhTU6+6lRdJX4INirEslSGz+NETkjEU+ulTZJ5\nS/JLMpUVSh46nwR1X51efw8pUjeVnY89YEhyvRs0TdBtigiBiCYpJEgT2Lp7\nFvyRCyndaZQjCTAtVuuCagH+VxY8T9wnGat3ctcn0T6TyxsL3O2xhEjTIfll\nZe9/3stDL34R4Acy8lBmJ/4uS0bOPrgwi9L21KZFUX+X57g/8wQF9FJXN5EO\ndg/2\r\n=POmY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.4.1_1569583505137_0.7742291363655027"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.5.0": {
+      "name": "schema-utils",
+      "version": "2.5.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "main": "dist/index.js",
+      "types": "index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "prebuild": "npm run clean",
+        "build": "cross-env NODE_ENV=production babel src -d dist --ignore \"src/**/*.test.js\" --copy-files",
+        "clean": "del-cli dist",
+        "commitlint": "commitlint --from=master",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css}\" --list-different",
+        "lint:js": "eslint --cache src test",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "security": "npm audit",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "cross-env NODE_ENV=test jest --watch",
+        "test:coverage": "cross-env NODE_ENV=test jest --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "cross-env NODE_ENV=test npm run test:coverage",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.6.2",
+        "@babel/core": "^7.6.2",
+        "@babel/preset-env": "^7.6.2",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@types/json-schema": "^7.0.3",
+        "@webpack-contrib/defaults": "^5.0.2",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.0",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.4.0",
+        "eslint-config-prettier": "^6.3.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.0.5",
+        "jest": "^24.9.0",
+        "jest-junit": "^8.0.0",
+        "lint-staged": "^9.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.18.2",
+        "standard-version": "^7.0.0"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "b98e06cda3cd207ba9f35ca972c601c017700d2d",
+      "_id": "schema-utils@2.5.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-32ISrwW2scPXHUSusP8qMg5dLUawKkyV+/qIEV9JdXKx+rsM6mi8vZY8khg2M69Qom16rtroWXD3Ybtiws38gQ==",
+        "shasum": "8f254f618d402cc80257486213c8970edfd7c22f",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.5.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 51438,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpbZOCRA9TVsSAnZWagAAl1sP/A8SkPNkiuu/mfyoGUR/\nskJ5UdS7VHa3uVaMvkmOYx46bd9zRbC2Q+E0MbVLMXVtePecr6qykbQ31SHa\nCAMoa4OvllhCsCldfYdXH7vSO496CCMu3Km2joeph6q36IOxrjqXSeol9Sbs\nM8VYiMyNRQWUNQhd8IUK6Vk4UtOGcOurzVMghCJBCNK4/KzUSnhhMmHwv1oq\ndrWcvPx5nNN9d2hJxB2jN0kUIM2oVbPKVo4VtJaQzQcxBQkeGmKVRlUIXP5+\n2M1GE717nJF2vicCzphncX7R9p5Dv0NUzjykN+hKtyhXZop0wYkXjFwv2GLj\n+3Qk2VRj3NRwVQZsMoBFZfahsT2xfLQa5k8EO4lKgD5o6UQql7i6L+HIMLzx\n2T0SQPy+QCW9zEHt5SScNtJ27TysvASj/cTjrXYcIQMBji0TW01eJrzf4mBC\nJVdCppp2SG7K53UZGw/eGisEX+e7PvLNHGSQPHsOwy3421dn8rXwHx98aelE\nJpNA4VYJMQRnCFRBAhp87YVvlwEPfGPt4DxsKNIYgR3DydXlFYURAoUOQ18n\nowJjQYfc99ME/TgF43l2tuFz1m2zTOVg5zg07NWhlLY7ZRiRRQwXebRoUS9R\n6XGpzFK07uo8GBqicym+Zd1EyB3hdcBuYM+z/kui4boGq665k4OiDy8LUiqh\n9h4z\r\n=eC5B\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.5.0_1571141197865_0.07724758074500793"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.0": {
+      "name": "schema-utils",
+      "version": "2.6.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.7.4",
+        "@babel/core": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@types/json-schema": "^7.0.3",
+        "@webpack-contrib/defaults": "^6.2.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.7.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.1.0",
+        "jest": "^24.9.0",
+        "jest-junit": "^9.0.0",
+        "lint-staged": "^9.5.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.0.1",
+        "typescript": "^3.7.2"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "6c6973b9decc1179c064971a770d4027da86e0b2",
+      "_id": "schema-utils@2.6.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-UlPB1ME4i/71cih/Rv92gK8043CrJTc2mjkyxDp4pdJ7ZfzY0g0hdGjjDB23jX3X+NXSneCdQbScGhn6K2tbpQ==",
+        "shasum": "68a259aabbef9d08d1252c2e63c398e476308e80",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 70543,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3mrBCRA9TVsSAnZWagAAJEYQAI/awraKGa/yOZ38J29A\nRRPuUSzqFAolekOXA1y2lRxlkjYKSou2aPqI8hRFZdl9phmSsJ7Q1EW65aC5\ntJ8wpLrPJZC4FQBEPv8YxxGkwRhHxsc+iDL6T5pVs7k/OQ0mTuXVAQRSGBLq\nppFpD1XC24EUKXocQ7mftRpFR0BLPp7mj7r1ezu7UKJIYDtlf5dqVsPjg1YG\nZUDfLnMN8GnK25C50iJCZedrYFYlngva0GayTevkIIuv1Kuj8vcu9ehvcW8f\n74TQyWtutIQh3sk8K6rHLrexuu72BN14pKfDP2IDxh8iJDjBBnte6FtnD98s\n65DFcbmmvGww8MexsQ4gQeeOd2K3Qdgv3qa1Ld4tgZTHZ8R8SfhnUBduQUtr\ng3b7YzBxDQd2/N8bKh5cFCgPI71hCXRgb94DqD8CpTvShIDzyz/S5XDJE2HC\nvLNx0AH9QrivxhkTktZXn0nscq//kzpzABMbrufXONd8/oEkmmd2TFwIQGXg\nmQSVVui1+gXRKs/kmBKXbmmKHJmAK9VfpDaeNr+PaBfBwezM3zw8d0cW7T+o\nCunrRMEWvVubsHuyET3TmVrJWY+vb8a/QVSh4b2rCqbUfZzCW5T9AJxK3sGJ\nHv0NzLXM8Q/LMRQd5WR9ascAhRiAth1wXVdGd8DYV+BMLKabOfrrfMLlHk8M\nhXfK\r\n=7kRr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.0_1574857408783_0.42345536104907167"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.1": {
+      "name": "schema-utils",
+      "version": "2.6.1",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.7.4",
+        "@babel/core": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "@commitlint/cli": "^8.2.0",
+        "@commitlint/config-conventional": "^8.2.0",
+        "@types/json-schema": "^7.0.3",
+        "@webpack-contrib/defaults": "^6.2.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.2",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.7.1",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-import": "^2.18.2",
+        "husky": "^3.1.0",
+        "jest": "^24.9.0",
+        "jest-junit": "^9.0.0",
+        "lint-staged": "^9.5.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.0.1",
+        "typescript": "^3.7.2"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "6caaa59cf40af948ea3d9658f4c32bd79b6c37a5",
+      "_id": "schema-utils@2.6.1",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-0WXHDs1VDJyo+Zqs9TKLKyD/h7yDpHUhEFsM2CzkICFdoX1av+GBq/J2xRTFfsQO5kBfhZzANf2VcIm84jqDbg==",
+        "shasum": "eb78f0b945c7bcfa2082b3565e8db3548011dc4f",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.1.tgz",
+        "fileCount": 14,
+        "unpackedSize": 70869,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd38ewCRA9TVsSAnZWagAAJ7oP/3sRJ7QnsHXYZmmw+OAp\nBmsUSJ7ZFIIQhjze0uFRJNepE7glrTiWnMLY56SfWNvZsk0Q6R+56BxdyT45\n7aCuSZXLCxtwZm7CRjcE+A0CWzZk5yQqPVLe5i+RPABE+sSFSA418MU+PoLQ\n5z9HbJl813NRoDb6tyAVBnrDBkiQsBxxFHx/u8K0+M6YRLVtznLb/hA/FYNx\ndxVyAkcnXO88oyji58KAsnQ4UXVLVHh1A9deETW6niQmLRfGl3DlcIJ5uBD4\nNkOxAgK1jvyGD7JlN0hu55yBYdWdSYwluESIRFcK+65V3xQnXz195dwKC4dI\n7hQ15M+rvBbfM7xnFxgOx/3ZEpXyocLI6mYALQokM0n69g2B5Ruefui/jJ0x\nJqYB6gPI9Kok4oqygviTy96NetYq1gmaVZfXCo5O2QO2BTINmMj0chNIAWha\n/H7k53nGk1nXiliRiwbEto9JcRvi3XBqYdL4iXP6JO03BR2uHg9cNyxnq/9f\ngdMAZ/5R3PYXjNyHw0uc/Xgj/56XSPtxio0N/Fi+5FcKB6b1dzolr2cdL1Jo\n9pHaOpoXNiJxtIWY2gmpH4FA3qtapkmZCIswtmgSZTs3soJVFOssD1YdL/y7\ndIGsjp3LauORzz19KW/fD6cR+h1WVvRrP1xA3G8cXUjbGHbROQ+JJfx0OToj\nIxEf\r\n=zyqb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.1_1574946735632_0.10563936035910837"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.2": {
+      "name": "schema-utils",
+      "version": "2.6.2",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@commitlint/cli": "^8.3.4",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/json-schema": "^7.0.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.3",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
+        "eslint-plugin-import": "^2.20.0",
+        "husky": "^4.0.6",
+        "jest": "^24.9.0",
+        "jest-junit": "^10.0.0",
+        "lint-staged": "^9.5.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.0.1",
+        "typescript": "^3.7.4"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "94e517b041f9f051e25092ae7162f5b61834a9af",
+      "_id": "schema-utils@2.6.2",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-sazKNMBX/jwrXRkOI7N6dtiTVYqzSckzol8SGuHt0lE/v3xSW6cUkOqzu6Bq2tW+dlUzq3CWIqHU3ZKauliqdg==",
+        "shasum": "9205ec5978709b0d9edbccb9a316faf11617a017",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.2.tgz",
+        "fileCount": 14,
+        "unpackedSize": 71301,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHb/SCRA9TVsSAnZWagAAiNIP/34eVVyJZnDP48yhpSLv\nmWyly3YEksfSiqIFX74XusSs6H4dclsqSqLUcjR4hxrSBeRwuKwT0pNf8epS\npl7rnC7OUDHSOqBXPpQ58aeudfgPMkLnvNEClGNp+GlN5YmLmMMBSlOPq/gx\neqImYaJxRfXFgip1fv+hZjRLl/6coo4ocpfeACIqXyy8to60HrEpHBmAZXUi\naqwwh7cAVUy+43ii7/wsNkd79HFdfqL8Ms6Amdz88021kUrrh3m380oMF/9q\nTSLtfvoK4Vvvz+ExFEZ7FSJeyyL2cvUHAvi40enoQXg05ZS7ZAFk070CKtD2\nifxAa6uYX858g88vtn9wD4ITBitnl2jb5eCA8w6fd3iOXu00frSF+oZrXxYC\nVetGctiaWu+X/VkpFO/SSzbqUVfuEtdCKqbvQqdNXjr69/3XogbYXoplltlE\nzJh2qNpTdPvqqNzUcJ3pR3f4sSooNwn3F3VJljhWDkw6MDKBnxQK7l63tN2y\nELbRkBQpex4doYIt15tTiwk9LSvLFTTFNL1PJvBSn/13frL2i6dK1MxVf6gD\n9v3zVAu859yqyv+zgDAYHvjGQpvE+CXtqqK/ixke9+I5mPnCADdT3hXPMsSI\n7IewpxJYLk9iNZe679fhGwt05bGPUGsogBqF1IRMQsPuiNTFFHi3ogJ+5yOY\nOSZE\r\n=fPjA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.2_1579007953704_0.15739376554868922"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.3": {
+      "name": "schema-utils",
+      "version": "2.6.3",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/json-schema": "^7.0.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.3",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
+        "eslint-plugin-import": "^2.20.0",
+        "husky": "^4.0.10",
+        "jest": "^24.9.0",
+        "jest-junit": "^10.0.0",
+        "lint-staged": "^9.5.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.0.1",
+        "typescript": "^3.7.5"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "669ef56bc654b215e3eb8ce02ec531253fbd3054",
+      "_id": "schema-utils@2.6.3",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-4vpF5nc+MYrHjsAnA43R75OtvjYUOFDmuwAdhzW7g0/zlFsepaMX/NLhOThg0L+5mqxIw7IK1oR9M3MsrklMsA==",
+        "shasum": "f889690172941febdf56b7e6785428d717d84786",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.3.tgz",
+        "fileCount": 14,
+        "unpackedSize": 71628,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeIYy3CRA9TVsSAnZWagAADoYP/A0z7Cc9mtjhKasCaKhN\ntCtIm5iuiiNMwLG4mD9Rs5rxXV9TsjzM4dlyU47cqCUfyVEJjipX0MgvlJDK\nWP5f4ThYj4AxYeKcYlfXdgsB92Fk6Mh8eyPWLSTUu2qajYxei5BN4WM5l7on\nK36ZK75smCsCbC1b6lzGuDfMMm7Bqvc+MwBnHYtW3XD5voF6R2IDPSKoq1Gf\nVvXptxY95KgWSIYxPjDMfl8pKy+OHMGL/Fc1xFi7Z/rJWXlA7ubziNLoqJRY\ndJPc12XqWoKl20plfkk4vlRh7GBQZISLQX+p5DNL79IuuJU6GV6LsQ3qOVyz\neY16MW9Gy16iCfmSQZO2oB3Tv6C7UmjaTyC8vy7KGP7icfNFhLdUOOQEzA+c\njyJ3Ka4RhVm+VGkdCn/jjPFYV/1j1HSaf6Vgl93YF5up8hrjejNKoDEAbM/L\nECQ5D92o0q34OYNdrpAgu7z34x8suv5V0Iofbh0ZFJp/Olh6rKQOHO8VwoQb\n7C5H+mzdiUnU2yO9Fms+oP06RRQgMWnP2g45nQyzgcD8NcUyIPhlfKkL+Q9g\nySnHgl0hT2mDIhrPZJOmcJLwe10xko9kQVnV9R6g07PEXxr3tCMStHG76vk8\n0x42IZbHnTxFCJs2B1MN0ehwqrj9YJfX+ZqsB5JbFB3LN+kuxYQWDw05eM2u\n+TV+\r\n=r/i0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.3_1579257014810_0.07111573525729709"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.4": {
+      "name": "schema-utils",
+      "version": "2.6.4",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.10.2",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.8.3",
+        "@babel/core": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/json-schema": "^7.0.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^24.9.0",
+        "commitlint-azure-pipelines-cli": "^1.0.3",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.9.0",
+        "eslint-plugin-import": "^2.20.0",
+        "husky": "^4.0.10",
+        "jest": "^24.9.0",
+        "jest-junit": "^10.0.0",
+        "lint-staged": "^9.5.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.0.1",
+        "typescript": "^3.7.5"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "72387e3417cf490bc2f7d22ec0d4066227b0696e",
+      "_id": "schema-utils@2.6.4",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-VNjcaUxVnEeun6B2fiiUDjXXBtD4ZSH7pdbfIu1pOFwgptDPLMo/z9jr4sUfsjFVPqDCEin/F7IYlq7/E6yDbQ==",
+        "shasum": "a27efbf6e4e78689d91872ee3ccfa57d7bdd0f53",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.4.tgz",
+        "fileCount": 14,
+        "unpackedSize": 71936,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeIZ7iCRA9TVsSAnZWagAAi3oP/2y4jSCF7n2QTuCRMa0z\nQRHOnNtZE4+Z0/oe9HWVh7AKQDSUEI5FPJU7qjlSyHAowRWpF6UWcmkm9/JY\nYmJuPAVGoo1ON/rB193Px6D/dgC92u7xAa/LqiMZjLR4+y4r/1lqiWUnhGme\nMJ4c1SLLdJX7CdZrnL//3O6Ox7pCpmFbLrTixjJEa7AU2KUYbUTqVmKc66bG\nSq6iaB7IoqfgrQc+r5XPWw2SVRGfQ4UY5bfoIdHC6nKUz7RgxlRHngo9GDno\n/rcNtZdbZ7kDCJAkNhHzi1xsmxj8IcvXfa0eZd/UCkGFZ1HpVoAGPF0dgruA\nGTKDbYhinDZOQQGb8OQFTaK68azOtL0Yo0KMNn40yAE1k+k5PHHHu5C1CK9Q\nK4i5LuIlxDzVw1afSOvo0QJTAYMzC6upfOplJ/44xyikyYlbzQn7IcOfi0M8\n9E6abwn93MCDSx/ruOAqRoQgTNpiQ2XId08t5YFOstQTsZ8LYY0SAS28PURQ\nNy12hgEIPE8ZQD744XklwOGTIUKSIUKLIIJNv1jCn1fnm3BJkvuC7hZZ+tUM\nqH5qGVCyohI1JQD2tnt4a41eQriwtrlfF5RuCuSs8nme9cDa3qtlcPLJw5v3\nS/Yf+6EiLNw0X2BjhLhB4uiNQie/1MYpLjZNgg8Wpiz/1rgDYTbKT/a5b4Kq\ntbW3\r\n=38ZJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.4_1579261666107_0.8532225834628222"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.5": {
+      "name": "schema-utils",
+      "version": "2.6.5",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.12.0",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.8.7",
+        "@babel/preset-env": "^7.8.7",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/json-schema": "^7.0.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^25.1.0",
+        "commitlint-azure-pipelines-cli": "^1.0.3",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-import": "^2.20.1",
+        "husky": "^4.2.3",
+        "jest": "^25.1.0",
+        "jest-junit": "^10.0.0",
+        "lint-staged": "^10.0.8",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "91003752ae6c7f0c38036cb3c4532d88015ce554",
+      "_id": "schema-utils@2.6.5",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.2",
+      "dist": {
+        "integrity": "sha512-5KXuwKziQrTVHh8j/Uxz+QUbxkaLW9X/86NBlx/gnKgtsZA2GIVMUn17qWhRFwF8jdYb3Dig5hRO/W5mZqy6SQ==",
+        "shasum": "c758f0a7e624263073d396e29cd40aa101152d8a",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.5.tgz",
+        "fileCount": 14,
+        "unpackedSize": 73824,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaNQGCRA9TVsSAnZWagAAtpUP/jFChxYMT4O2Yvd9+5Jx\nl0UPaBpQSzYq7SWIC9wQjoEUqDKuv9k8XyZc76FFcIeL+LOAnTEJYXPdqTQb\nNlugMKF4AVVBorMeLE2T8wk4FHpGoCBoJn5zcRch919oWNslhaparM8aJY9j\nXvVl1xj3BVxUqMGoOpMKh9GiUpjXvnK82SPlKgJ26Vfdu8K496DFoNIEtbq4\nQrfKhVVW0JffWqmJnqt2Hu6mnwQZd3t7kELObU1j7U4xCLSP/AilmX1XBUmH\nYbMnOvJTMCbx7x65TxNCYRNz7O25CmoDvp2l7plM6wZEuUnTJ2Pty+KgkO7a\n8R+FErzL2QcdxbY2JR8pVVgoA3LIDHD1vSsOgFlM2dyS27IBAw2GBiOQGsXJ\nBuE9fwffymXHxd9rxmzjur37Ng2HD4Qst/ZM4BlD8RnIontiOa3crOIgSOT8\n+0odAcbuIzB2EEOvSPxr0EnzM+UW5uPr8eGTSCzWcAGqgWU2tk6gTvEthF53\naRpNcBBPncCt/sec/4/GiHhY46CA/dAOqU0qUJIM1xdq2rrb9oMXgwkTY/KN\nEelBgW62IlEtG9TEUK4gGQHULbBeFWz9q9HFA9YSelXDPSJ2y3P42cQOM2XV\nXyNWj96GuKlVLdrSCI4cCDqW52Sw4xp0GjrV6Hv9zEQ3W1DyoHDubIYxfn3T\nZ5gD\r\n=1NXg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.5_1583928326140_0.5492828509958352"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.6": {
+      "name": "schema-utils",
+      "version": "2.6.6",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.12.0",
+        "ajv-keywords": "^3.4.1"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/preset-env": "^7.9.5",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@types/json-schema": "^7.0.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^25.3.0",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-import": "^2.20.1",
+        "husky": "^4.2.5",
+        "jest": "^25.3.0",
+        "lint-staged": "^10.0.8",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^7.1.0",
+        "typescript": "^3.8.3"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "d4bfe210d6087a51716cdb086aa67a9f3292e984",
+      "_id": "schema-utils@2.6.6",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-wHutF/WPSbIi9x6ctjGGk2Hvl0VOz5l3EKEuKbjPlB30mKZUzb9A5k9yEXRX3pwyqVLPvpfZZEllaFq/M718hA==",
+        "shasum": "299fe6bd4a3365dc23d99fd446caff8f1d6c330c",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.6.6.tgz",
+        "fileCount": 14,
+        "unpackedSize": 73817,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJemc4yCRA9TVsSAnZWagAAOWcP/RXM5we1QK1Q2aNQUEyr\ngKVM4Y8hMApj2dRcGnuEXVdHpS6XJDa+xq3iKfhiXx4FMU/kBvasorBsBDkX\nNvBpq/2ycCRdJ46Wm9um7CduPLDK6YMZF9jtt3UpbbxkFyz8FHPu0Ig3g4ph\nDMXXxd2nPor7KCEWxcziiB2QwcqOxFGGs1QECbNtT8CpNUMaSK/SXebjmlPD\nk+ql/aAomPkAfUIT/szIBpb48RRtrDuZVjBs1LV5CB8c4Eh9gj158d1EB1L+\nPm+e7NZypqaaG1K634zdxnYg3gZtPcsh9cV7q8scc5mR0kAKkLRGjT+Gf4JN\n8666lNk0A96zFynY9vEbmzXuhRw1eX84eNucLeFcnWhdXu1zEvP3fU6lBOAB\nSSNFGZuVI0t3pONDe3bb/MkA6aHT4ib7e3BweJxTGHDVBxlS5Ka6gHevlWhF\n8sMT3jWR2q83s8p+ZoIQwKbqeLvSP2cgGU1uVK9stWvYAASUBRJ4YTItb+rd\nRmLtqmAwKAD8MeaYBNt6pexv01L5asyrqPlZ4wru7Re/sZg3im6GuQSnrJOH\nNPuzka+1jmOm2LyNrAWxBNjnbSc0rCsSqOR3wyDs5vybuV+2nzL2wF6ka93O\nhcKD8htbk1hI6JCuAY9q1XrArLIxxHT+Kxe2WKlrQdomjH+OiTopoZlJvBlK\nSypG\r\n=7OLx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.6.6_1587138097694_0.21095751536081075"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.0": {
+      "name": "schema-utils",
+      "version": "2.7.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.12.2",
+        "ajv-keywords": "^3.4.1",
+        "@types/json-schema": "^7.0.4"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.10.1",
+        "@babel/core": "^7.10.1",
+        "@babel/preset-env": "^7.10.1",
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^25.5.1",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.1",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.20.2",
+        "husky": "^4.2.5",
+        "jest": "^25.5.4",
+        "lint-staged": "^10.2.7",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^8.0.0",
+        "typescript": "^3.9.3"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "132fee2af33a2087568bd7482687576fbd121905",
+      "_id": "schema-utils@2.7.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-0ilKFI6QQF5nxDZLFn2dMjvc4hjg/Wkg7rHd3jK6/A4a1Hl9VFdQWvgB1UMGoU94pad1P/8N7fMcEnLnSiju8A==",
+        "shasum": "17151f76d8eae67fbbf77960c33c676ad9f4efc7",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.7.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 76993,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe0Re5CRA9TVsSAnZWagAAT7AP/39FKmJb7uCEAxAnUxNT\nMcHRMCxmwfBZAHAO1BhfkwVukMsv1Q0CIlk+mAbiYRJ+vTAEPbYY+kDA9tWp\nY754zZSdx/DLferiUrpGRm5oWv+UI9ks1V9Na197FjUkHkNohXYjuKAVP7Aq\ncCIREAi8kbpBE3bmTb5j0TnhRWDFtwfTmNPV4H0NVN2IVB0ND7Da3YJP+L0h\nLqdQ3c3yLS5jCRm8QpV6WUkBKZOGMlgkCC6J/93Y7RW9DFFlkmbH78/luqoh\nB8ECiHYHaLTASugYaBR3cyTZUMAqVRBSCbddy7moTDnrPaxLDAriwFzLrUlY\nVJlv3/5T0CvPUWkpcK3ptSygqmWz6WEVtGuaOwMq+RkcFScBNLQ/JxsX77FW\nkhWWoTwjs9qQ4Zj69vrwnpYkdMhG4LsiozuPBO1KtAD3cqD6rJUs1Hk0JM30\nCEVQw45zoA76tNrs1a+NEjHpebFjdUAvwWPC7IWyo8GovAzP6kadXlyn1cZz\nF+C0RK8W0WThZrG1xlZFylF2xlQq3qptqsImVRz0N6ukmlkQiSY+JyxeJIfB\nnJ83gecGQOxQ4T/YJsXz2R+7OUa8a7ObsO1vWsCTJ9d65wYgMyFFSBo6Nbf7\ntmle7MPAmjY0QYiHadKYZAxRRA8dGAHF7aQoGi0UJvz1wLKUJPTzEdEzbXcB\nH+ma\r\n=dDgv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.7.0_1590761400741_0.32278211142016877"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.1": {
+      "name": "schema-utils",
+      "version": "2.7.1",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 8.9.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.12.4",
+        "ajv-keywords": "^3.5.2",
+        "@types/json-schema": "^7.0.5"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.10.5",
+        "@babel/core": "^7.11.4",
+        "@babel/preset-env": "^7.11.0",
+        "@commitlint/cli": "^10.0.0",
+        "@commitlint/config-conventional": "^10.0.0",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^25.5.1",
+        "cross-env": "^6.0.3",
+        "del": "^5.1.0",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.7.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "husky": "^4.2.5",
+        "jest": "^25.5.4",
+        "lint-staged": "^10.2.13",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.19.1",
+        "standard-version": "^9.0.0",
+        "typescript": "^4.0.2"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "102d170506640346b8269d7e38a042b6b5b3a444",
+      "_id": "schema-utils@2.7.1",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==",
+        "shasum": "1ca4f32d1b24c590c203b8e7a50bf0ea4cd394d7",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-2.7.1.tgz",
+        "fileCount": 16,
+        "unpackedSize": 77426,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfTNhOCRA9TVsSAnZWagAAXCQP/i/a65Ye+7p9Rt5B4Php\nvretgulRBWeylzj4Bpk1znyY56pb/j1A+VcBPv+aEUMfsDikqZ+/iHI8+fPs\nWjeKtaBOAgXFwe9NhtNsq6vk3BOgmq6Lp7duoqrvEtCaczR2Bqq8gTs42nRM\nV+Xx4zweiCOxUjUZRdeUny2ZWKf3nlr10FH0khWruoAHKIxgtNW5LJ07CQLg\neYZx+/TjIeMY+fP52zUgMvZsCzrM9AMxpZOhyV0Ln6HQuvmI9O9Rv0q5RY15\nt9dHU46LOxyXQ8uZvH1U/et7pgxi6LIDRLuu9g9C+Z/73KzOHYR7AtuqSk3B\nXP0v8AliOD6cU+DCwcszFgI9/GwAO3hEjONupT4ajBBZ+Z5IKvG1Ddecdin9\n0oQN2sjPHF5dS0NlptpkOyw4qZyu66MHCaF2FGVCTHu82oifms6UVB5iSPBQ\nJM/xTVI22BE6cJUVziSiJJc14NoFoXD/ipfmMMGDZAXR/3uQSzo/3i5dKVF5\n4930ySIoU1BctpwqvZpGbJp541sIcASws29nDNTKILg+mddLXRyo5mPAThNo\ny1nQxQd2PZCH7H5NYgGApfq5WYBCeWTcVJZ3eZluIVTThKsCNKXDSUIzvOnk\nIWwuqRRQiYWCEGm0zZmPG4/GhYqTFVI4hemBHiN+xMM2cZUIEwsUbFYSmH/7\nzVXx\r\n=YPzc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "bebraw@gmail.com",
+          "name": "bebraw"
+        },
+        {
+          "email": "wiens.joshua@gmail.com",
+          "name": "d3viant0ne"
+        },
+        {
+          "email": "sheo13666q@gmail.com",
+          "name": "evilebottnawi"
+        },
+        {
+          "email": "michael.ciniawsky@gmail.com",
+          "name": "michael-ciniawsky"
+        },
+        {
+          "email": "tobias.koppers@googlemail.com",
+          "name": "sokra"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_2.7.1_1598871630144_0.02020404742410964"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "schema-utils",
+      "version": "3.0.0",
+      "description": "webpack Validation Utils",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/schema-utils.git"
+      },
+      "author": {
+        "name": "webpack Contrib",
+        "url": "https://github.com/webpack-contrib"
+      },
+      "homepage": "https://github.com/webpack/schema-utils",
+      "bugs": {
+        "url": "https://github.com/webpack/schema-utils/issues"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/webpack"
+      },
+      "main": "dist/index.js",
+      "types": "declarations/index.d.ts",
+      "engines": {
+        "node": ">= 10.13.0"
+      },
+      "scripts": {
+        "start": "npm run build -- -w",
+        "clean": "del-cli dist declarations",
+        "prebuild": "npm run clean",
+        "build:types": "tsc --declaration --emitDeclarationOnly --outDir declarations && prettier \"declarations/**/*.ts\" --write",
+        "build:code": "cross-env NODE_ENV=production babel src -d dist --copy-files",
+        "build": "npm-run-all -p \"build:**\"",
+        "commitlint": "commitlint --from=master",
+        "security": "npm audit",
+        "lint:prettier": "prettier \"{**/*,*}.{js,json,md,yml,css,ts}\" --list-different",
+        "lint:js": "eslint --cache .",
+        "lint:types": "tsc --pretty --noEmit",
+        "lint": "npm-run-all -l -p \"lint:**\"",
+        "test:only": "cross-env NODE_ENV=test jest",
+        "test:watch": "npm run test:only -- --watch",
+        "test:coverage": "npm run test:only -- --collectCoverageFrom=\"src/**/*.js\" --coverage",
+        "pretest": "npm run lint",
+        "test": "npm run test:coverage",
+        "prepare": "npm run build",
+        "release": "standard-version",
+        "defaults": "webpack-defaults"
+      },
+      "dependencies": {
+        "ajv": "^6.12.5",
+        "ajv-keywords": "^3.5.2",
+        "@types/json-schema": "^7.0.6"
+      },
+      "devDependencies": {
+        "@babel/cli": "^7.11.6",
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@webpack-contrib/defaults": "^6.3.0",
+        "@webpack-contrib/eslint-config-webpack": "^3.0.0",
+        "babel-jest": "^26.5.0",
+        "cross-env": "^7.0.2",
+        "del": "^6.0.0",
+        "del-cli": "^3.0.1",
+        "eslint": "^7.10.0",
+        "eslint-config-prettier": "^6.12.0",
+        "eslint-plugin-import": "^2.22.1",
+        "husky": "^4.3.0",
+        "jest": "^26.5.0",
+        "lint-staged": "^10.4.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.1.2",
+        "standard-version": "^9.0.0",
+        "typescript": "^4.0.3"
+      },
+      "keywords": [
+        "webpack"
+      ],
+      "gitHead": "cdbf8b714a90e4a6919efff10d7633e413bca758",
+      "_id": "schema-utils@3.0.0",
+      "_nodeVersion": "10.15.2",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==",
+        "shasum": "67502f6aa2b66a2d4032b4279a2944978a0913ef",
+        "tarball": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.0.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 78169,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfe2QxCRA9TVsSAnZWagAAJtQP/i89W9Ag+d3zeqkTFIX6\n+UReX049e+WHsqkVXpREA+Mg5ldKW+GxybrHrogapm7fKAqLDj2lr2fysCAA\nGw/kiUCUTlKaAkj2HMZabnzdlD3DsXVQ+nDm4fp9EFv70GhoK+DBnDLCiMaC\nYmRFXsTa1dZ7wF/TzXyfUSmxKDyZWPpOTcaFntMWSliBUYy7ElbUFAGkfr5P\n+mdefkdtQ3esi+seLgkOuhwCTtm9a+zQJgVrC4SXa6kdyqnspJVaouL91HWD\n1igQynvy7k4EThNDoyMNhhkSOSdCM31e7RrUvNcKRZvCzWn+4hSJIS8cVi4b\n4tOtXnrfweSZz4YiTuFr70CJ6SGTN5olGjpnCiyHzoGC+f9Q3yQH49YhhPma\nZkyg9XgpnMLunYOLofIGo/RUJrGrAiXAtPH6S4PSm+2WNkiBlSmIUhLk+iDF\n66/L7N30Bes26AaN+VOlmUspvZqC4umHc1OOfWpROKRgWYF0YGgCDCnBKusf\n5zkCt681tYYQySsjyowG4aH7+7wKPrjEPu09LPSNG8tdtFUevYS1jKvz9ga2\nPYtWG3aMJSZ/BnwWxqmLffUN3yjOqZceGgWsY7G3HQ9mi80tUa/HezUiYppp\n0I7kDfBm6c88N+xEcWqx27iQsLt5RjoMo+fDH4XkisoqLjGt7EtrQkjnn7ym\nPhwZ\r\n=ywdL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bebraw",
+          "email": "bebraw@gmail.com"
+        },
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        },
+        {
+          "name": "michael-ciniawsky",
+          "email": "michael.ciniawsky@gmail.com"
+        },
+        {
+          "name": "d3viant0ne",
+          "email": "wiens.joshua@gmail.com"
+        },
+        {
+          "name": "evilebottnawi",
+          "email": "sheo13666q@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "evilebottnawi",
+        "email": "sheo13666q@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/schema-utils_3.0.0_1601922097119_0.04618294561022296"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "<div align=\"center\">\n  <a href=\"http://json-schema.org\">\n    <img width=\"160\" height=\"160\"\n      src=\"https://raw.githubusercontent.com/webpack-contrib/schema-utils/master/.github/assets/logo.png\">\n  </a>\n  <a href=\"https://github.com/webpack/webpack\">\n    <img width=\"200\" height=\"200\"\n      src=\"https://webpack.js.org/assets/icon-square-big.svg\">\n  </a>\n</div>\n\n[![npm][npm]][npm-url]\n[![node][node]][node-url]\n[![deps][deps]][deps-url]\n[![tests][tests]][tests-url]\n[![coverage][cover]][cover-url]\n[![chat][chat]][chat-url]\n[![size][size]][size-url]\n\n# schema-utils\n\nPackage for validate options in loaders and plugins.\n\n## Getting Started\n\nTo begin, you'll need to install `schema-utils`:\n\n```console\nnpm install schema-utils\n```\n\n## API\n\n**schema.json**\n\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"option\": {\n      \"type\": \"boolean\"\n    }\n  },\n  \"additionalProperties\": false\n}\n```\n\n```js\nimport schema from './path/to/schema.json';\nimport { validate } from 'schema-utils';\n\nconst options = { option: true };\nconst configuration = { name: 'Loader Name/Plugin Name/Name' };\n\nvalidate(schema, options, configuration);\n```\n\n### `schema`\n\nType: `String`\n\nJSON schema.\n\nSimple example of schema:\n\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\": \"This is description of option.\",\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false\n}\n```\n\n### `options`\n\nType: `Object`\n\nObject with options.\n\n```js\nimport schema from './path/to/schema.json';\nimport { validate } from 'schema-utils';\n\nconst options = { foo: 'bar' };\n\nvalidate(schema, { name: 123 }, { name: 'MyPlugin' });\n```\n\n### `configuration`\n\nAllow to configure validator.\n\nThere is an alternative method to configure the `name` and`baseDataPath` options via the `title` property in the schema.\nFor example:\n\n```json\n{\n  \"title\": \"My Loader options\",\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"description\": \"This is description of option.\",\n      \"type\": \"string\"\n    }\n  },\n  \"additionalProperties\": false\n}\n```\n\nThe last word used for the `baseDataPath` option, other words used for the `name` option.\nBased on the example above the `name` option equals `My Loader`, the `baseDataPath` option equals `options`.\n\n#### `name`\n\nType: `Object`\nDefault: `\"Object\"`\n\nAllow to setup name in validation errors.\n\n```js\nimport schema from './path/to/schema.json';\nimport { validate } from 'schema-utils';\n\nconst options = { foo: 'bar' };\n\nvalidate(schema, options, { name: 'MyPlugin' });\n```\n\n```shell\nInvalid configuration object. MyPlugin has been initialised using a configuration object that does not match the API schema.\n - configuration.optionName should be a integer.\n```\n\n#### `baseDataPath`\n\nType: `String`\nDefault: `\"configuration\"`\n\nAllow to setup base data path in validation errors.\n\n```js\nimport schema from './path/to/schema.json';\nimport { validate } from 'schema-utils';\n\nconst options = { foo: 'bar' };\n\nvalidate(schema, options, { name: 'MyPlugin', baseDataPath: 'options' });\n```\n\n```shell\nInvalid options object. MyPlugin has been initialised using an options object that does not match the API schema.\n - options.optionName should be a integer.\n```\n\n#### `postFormatter`\n\nType: `Function`\nDefault: `undefined`\n\nAllow to reformat errors.\n\n```js\nimport schema from './path/to/schema.json';\nimport { validate } from 'schema-utils';\n\nconst options = { foo: 'bar' };\n\nvalidate(schema, options, {\n  name: 'MyPlugin',\n  postFormatter: (formattedError, error) => {\n    if (error.keyword === 'type') {\n      return `${formattedError}\\nAdditional Information.`;\n    }\n\n    return formattedError;\n  },\n});\n```\n\n```shell\nInvalid options object. MyPlugin has been initialized using an options object that does not match the API schema.\n - options.optionName should be a integer.\n   Additional Information.\n```\n\n## Examples\n\n**schema.json**\n\n```json\n{\n  \"type\": \"object\",\n  \"properties\": {\n    \"name\": {\n      \"type\": \"string\"\n    },\n    \"test\": {\n      \"anyOf\": [\n        { \"type\": \"array\" },\n        { \"type\": \"string\" },\n        { \"instanceof\": \"RegExp\" }\n      ]\n    },\n    \"transform\": {\n      \"instanceof\": \"Function\"\n    },\n    \"sourceMap\": {\n      \"type\": \"boolean\"\n    }\n  },\n  \"additionalProperties\": false\n}\n```\n\n### `Loader`\n\n```js\nimport { getOptions } from 'loader-utils';\nimport { validate } from 'schema-utils';\n\nimport schema from 'path/to/schema.json';\n\nfunction loader(src, map) {\n  const options = getOptions(this);\n\n  validate(schema, options, {\n    name: 'Loader Name',\n    baseDataPath: 'options',\n  });\n\n  // Code...\n}\n\nexport default loader;\n```\n\n### `Plugin`\n\n```js\nimport { validate } from 'schema-utils';\n\nimport schema from 'path/to/schema.json';\n\nclass Plugin {\n  constructor(options) {\n    validate(schema, options, {\n      name: 'Plugin Name',\n      baseDataPath: 'options',\n    });\n\n    this.options = options;\n  }\n\n  apply(compiler) {\n    // Code...\n  }\n}\n\nexport default Plugin;\n```\n\n## Contributing\n\nPlease take a moment to read our contributing guidelines if you haven't yet done so.\n\n[CONTRIBUTING](./.github/CONTRIBUTING.md)\n\n## License\n\n[MIT](./LICENSE)\n\n[npm]: https://img.shields.io/npm/v/schema-utils.svg\n[npm-url]: https://npmjs.com/package/schema-utils\n[node]: https://img.shields.io/node/v/schema-utils.svg\n[node-url]: https://nodejs.org\n[deps]: https://david-dm.org/webpack/schema-utils.svg\n[deps-url]: https://david-dm.org/webpack/schema-utils\n[tests]: https://github.com/webpack/schema-utils/workflows/schema-utils/badge.svg\n[tests-url]: https://github.com/webpack/schema-utils/actions\n[cover]: https://codecov.io/gh/webpack/schema-utils/branch/master/graph/badge.svg\n[cover-url]: https://codecov.io/gh/webpack/schema-utils\n[chat]: https://badges.gitter.im/webpack/webpack.svg\n[chat-url]: https://gitter.im/webpack/webpack\n[size]: https://packagephobia.com/badge?p=schema-utils\n[size-url]: https://packagephobia.com/result?p=schema-utils\n",
+  "maintainers": [
+    {
+      "name": "bebraw",
+      "email": "bebraw@gmail.com"
+    },
+    {
+      "name": "sokra",
+      "email": "tobias.koppers@googlemail.com"
+    },
+    {
+      "name": "michael-ciniawsky",
+      "email": "michael.ciniawsky@gmail.com"
+    },
+    {
+      "name": "d3viant0ne",
+      "email": "wiens.joshua@gmail.com"
+    },
+    {
+      "name": "evilebottnawi",
+      "email": "sheo13666q@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-05T18:21:40.547Z",
+    "created": "2017-03-07T06:01:28.207Z",
+    "0.1.0": "2017-03-07T06:01:28.207Z",
+    "0.2.1": "2017-03-13T07:04:56.561Z",
+    "0.3.0": "2017-04-29T18:20:47.722Z",
+    "0.4.0": "2017-10-30T18:21:50.029Z",
+    "0.4.1": "2017-11-03T09:51:33.117Z",
+    "0.4.2": "2017-11-09T20:16:27.548Z",
+    "0.4.3": "2017-12-14T02:49:01.330Z",
+    "0.4.4": "2018-02-13T13:33:41.966Z",
+    "0.4.5": "2018-02-13T13:47:48.167Z",
+    "0.4.6": "2018-08-06T17:06:08.539Z",
+    "0.4.7": "2018-08-07T12:16:50.127Z",
+    "1.0.0": "2018-08-07T16:31:12.254Z",
+    "2.0.0": "2019-07-17T14:16:49.234Z",
+    "2.0.1": "2019-07-18T16:12:42.173Z",
+    "2.1.0": "2019-08-07T15:02:52.138Z",
+    "2.2.0": "2019-09-02T10:57:34.379Z",
+    "2.3.0": "2019-09-26T13:33:07.161Z",
+    "2.4.0": "2019-09-26T19:03:42.469Z",
+    "2.4.1": "2019-09-27T11:25:05.323Z",
+    "2.5.0": "2019-10-15T12:06:37.995Z",
+    "2.6.0": "2019-11-27T12:23:28.917Z",
+    "2.6.1": "2019-11-28T13:12:15.734Z",
+    "2.6.2": "2020-01-14T13:19:13.823Z",
+    "2.6.3": "2020-01-17T10:30:14.977Z",
+    "2.6.4": "2020-01-17T11:47:46.281Z",
+    "2.6.5": "2020-03-11T12:05:26.330Z",
+    "2.6.6": "2020-04-17T15:41:37.894Z",
+    "2.7.0": "2020-05-29T14:10:00.858Z",
+    "2.7.1": "2020-08-31T11:00:30.300Z",
+    "3.0.0": "2020-10-05T18:21:37.231Z"
+  },
+  "homepage": "https://github.com/webpack/schema-utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/schema-utils.git"
+  },
+  "author": {
+    "name": "webpack Contrib",
+    "url": "https://github.com/webpack-contrib"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/schema-utils/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "huarse": true,
+    "daizch": true
+  },
+  "keywords": [
+    "webpack"
+  ]
+}

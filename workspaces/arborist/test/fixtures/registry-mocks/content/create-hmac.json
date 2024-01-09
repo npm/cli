@@ -1,0 +1,822 @@
+{
+  "_id": "create-hmac",
+  "_rev": "27-5be87d5ce98d20183d1062e608308c26",
+  "name": "create-hmac",
+  "description": "node style hmacs in the browser",
+  "dist-tags": {
+    "latest": "1.1.7"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "create-hmac",
+      "version": "1.0.0",
+      "description": "node style hmacs in the browser",
+      "main": "create-hmac.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.0.0"
+      },
+      "gitHead": "2275bd55bb52f1b3dd3075fb075910c47acd9c57",
+      "_id": "create-hmac@1.0.0",
+      "_shasum": "1d7710b82a6e577dc23e4e05c4e3f5cde9a226ab",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1d7710b82a6e577dc23e4e05c4e3f5cde9a226ab",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "create-hmac",
+      "version": "1.0.1",
+      "description": "node style hmacs in the browser",
+      "main": "create-hmac.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "gitHead": "b4e96baae9c9dd72641abc182a2bb28fdf65209c",
+      "_id": "create-hmac@1.0.1",
+      "_shasum": "63eb04ac4782182d9b3a0dd08d18b24e42856f5c",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "63eb04ac4782182d9b3a0dd08d18b24e42856f5c",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "create-hmac",
+      "version": "1.0.2",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.0.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./create-hmac.js",
+      "gitHead": "e90b28cf8b65720b6c9d7d0da2104273ce57cd4a",
+      "_id": "create-hmac@1.0.2",
+      "_shasum": "fabced999a6fcdacd7763191f986551daceb21c1",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fabced999a6fcdacd7763191f986551daceb21c1",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "create-hmac",
+      "version": "1.1.0",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./browser.js",
+      "gitHead": "5a14266329ccfb0761185429b3330ec556b38688",
+      "_id": "create-hmac@1.1.0",
+      "_shasum": "92f8b6378471f4bc67eefc9dee6622df6b8754be",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "92f8b6378471f4bc67eefc9dee6622df6b8754be",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "create-hmac",
+      "version": "1.1.1",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./browser.js",
+      "gitHead": "ea7c2efdd0f59749e339efcb7fbd4309b590850c",
+      "_id": "create-hmac@1.1.1",
+      "_shasum": "78d6005f72c98572f8d5bd12d32658bebecb669e",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.15",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "78d6005f72c98572f8d5bd12d32658bebecb669e",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "create-hmac",
+      "version": "1.1.2",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./browser.js",
+      "gitHead": "5044e84cd98237c7739b28f2418771dc67658394",
+      "_id": "create-hmac@1.1.2",
+      "_shasum": "1149b6f5309277b65e6a8e0082f0f4e615b926a8",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1149b6f5309277b65e6a8e0082f0f4e615b926a8",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "create-hmac",
+      "version": "1.1.3",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./browser.js",
+      "gitHead": "0db078774769487d9ede6951a56c4cffe3de1c14",
+      "_id": "create-hmac@1.1.3",
+      "_shasum": "29843e9c191ba412ab001bc55ac8b8b9ae54b670",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "29843e9c191ba412ab001bc55ac8b8b9ae54b670",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "create-hmac",
+      "version": "1.1.4",
+      "description": "node style hmacs in the browser",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1"
+      },
+      "browser": "./browser.js",
+      "gitHead": "3c7dd3047b5ab3e3be44d802241d224f0c9e2325",
+      "_id": "create-hmac@1.1.4",
+      "_shasum": "d3fb4ba253eb8b3f56e39ea2fbcb8af747bd3170",
+      "_from": ".",
+      "_npmVersion": "3.3.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "d3fb4ba253eb8b3f56e39ea2fbcb8af747bd3170",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "create-hmac",
+      "version": "1.1.5",
+      "description": "node style hmacs in the browser",
+      "files": [
+        "browser.js",
+        "index.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script standard && npm run-script unit",
+        "unit": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^5.3.1",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.3",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1",
+        "ripemd160": "^2.0.0",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "browser": "./browser.js",
+      "gitHead": "d7bfc99d838e4aad836f13b422eeccae0a50df27",
+      "_id": "create-hmac@1.1.5",
+      "_shasum": "b2c145f2e697d2b538fc686fd80a136aa6dadcad",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b2c145f2e697d2b538fc686fd80a136aa6dadcad",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-hmac-1.1.5.tgz_1494508187426_0.9113117505330592"
+      },
+      "directories": {}
+    },
+    "1.1.6": {
+      "name": "create-hmac",
+      "version": "1.1.6",
+      "description": "node style hmacs in the browser",
+      "files": [
+        "browser.js",
+        "index.js",
+        "legacy.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script standard && npm run-script unit",
+        "unit": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^5.3.1",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.3",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1",
+        "ripemd160": "^2.0.0",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "browser": "./browser.js",
+      "gitHead": "f46295a4b49383f35812ce5bc87c4d158efc3e19",
+      "_id": "create-hmac@1.1.6",
+      "_shasum": "acb9e221a4e17bdb076e90657c42b93e3726cf06",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "acb9e221a4e17bdb076e90657c42b93e3726cf06",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-hmac-1.1.6.tgz_1494513770834_0.9636347822379321"
+      },
+      "directories": {}
+    },
+    "1.1.7": {
+      "name": "create-hmac",
+      "version": "1.1.7",
+      "description": "node style hmacs in the browser",
+      "files": [
+        "browser.js",
+        "index.js",
+        "legacy.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script standard && npm run-script unit",
+        "unit": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/createHmac.git"
+      },
+      "keywords": [
+        "crypto",
+        "hmac"
+      ],
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/createHmac/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/createHmac",
+      "devDependencies": {
+        "hash-test-vectors": "^1.3.2",
+        "standard": "^5.3.1",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "dependencies": {
+        "cipher-base": "^1.0.3",
+        "create-hash": "^1.1.0",
+        "inherits": "^2.0.1",
+        "ripemd160": "^2.0.0",
+        "safe-buffer": "^5.0.1",
+        "sha.js": "^2.4.8"
+      },
+      "browser": "./browser.js",
+      "gitHead": "fa6c90b5b0d33b805ec3d65a7a370b88dd1994f3",
+      "_id": "create-hmac@1.1.7",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==",
+        "shasum": "69170c78b3ab957147b2b8b04572e47ead2243ff",
+        "tarball": "https://registry.npmjs.org/create-hmac/-/create-hmac-1.1.7.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5809
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-hmac_1.1.7_1523449880084_0.9803481561229792"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# create-hmac\n\n[![NPM Package](https://img.shields.io/npm/v/create-hmac.svg?style=flat-square)](https://www.npmjs.org/package/create-hmac)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/createHmac.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/createHmac)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/createHmac.svg?style=flat-square)](https://david-dm.org/crypto-browserify/createHmac#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nNode style HMACs for use in the browser, with native HMAC functions in node. API is the same as HMACs in node:\n\n```js\nvar createHmac = require('create-hmac')\nvar hmac = createHmac('sha224', Buffer.from('secret key'))\nhmac.update('synchronous write') //optional encoding parameter\nhmac.digest() // synchronously get result with optional encoding parameter\n\nhmac.write('write to it as a stream')\nhmac.end() //remember it's a stream\nhmac.read() //only if you ended it as a stream though\n```\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T16:56:56.678Z",
+    "created": "2015-01-14T13:15:35.764Z",
+    "1.0.0": "2015-01-14T13:15:35.764Z",
+    "1.0.1": "2015-01-14T15:05:19.884Z",
+    "1.0.2": "2015-01-14T15:18:05.180Z",
+    "1.1.0": "2015-01-16T16:17:17.726Z",
+    "1.1.1": "2015-01-27T00:21:30.427Z",
+    "1.1.2": "2015-01-28T12:08:57.131Z",
+    "1.1.3": "2015-01-30T00:22:21.831Z",
+    "1.1.4": "2015-09-27T23:15:50.769Z",
+    "1.1.5": "2017-05-11T13:09:49.930Z",
+    "1.1.6": "2017-05-11T14:42:51.717Z",
+    "1.1.7": "2018-04-11T12:31:20.190Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/createHmac",
+  "keywords": [
+    "crypto",
+    "hmac"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/createHmac.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/createHmac/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

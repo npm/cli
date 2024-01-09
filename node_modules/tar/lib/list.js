@@ -1,7 +1,5 @@
 'use strict'
 
-const Buffer = require('./buffer.js')
-
 // XXX: This shares a lot in common with extract.js
 // maybe some DRY opportunity here?
 
@@ -11,34 +9,42 @@ const Parser = require('./parse.js')
 const fs = require('fs')
 const fsm = require('fs-minipass')
 const path = require('path')
+const stripSlash = require('./strip-trailing-slashes.js')
 
-const t = module.exports = (opt_, files, cb) => {
-  if (typeof opt_ === 'function')
+module.exports = (opt_, files, cb) => {
+  if (typeof opt_ === 'function') {
     cb = opt_, files = null, opt_ = {}
-  else if (Array.isArray(opt_))
+  } else if (Array.isArray(opt_)) {
     files = opt_, opt_ = {}
+  }
 
-  if (typeof files === 'function')
+  if (typeof files === 'function') {
     cb = files, files = null
+  }
 
-  if (!files)
+  if (!files) {
     files = []
-  else
+  } else {
     files = Array.from(files)
+  }
 
   const opt = hlo(opt_)
 
-  if (opt.sync && typeof cb === 'function')
+  if (opt.sync && typeof cb === 'function') {
     throw new TypeError('callback not supported for sync tar functions')
+  }
 
-  if (!opt.file && typeof cb === 'function')
+  if (!opt.file && typeof cb === 'function') {
     throw new TypeError('callback only supported with file option')
+  }
 
-  if (files.length)
+  if (files.length) {
     filesFilter(opt, files)
+  }
 
-  if (!opt.noResume)
+  if (!opt.noResume) {
     onentryFunction(opt)
+  }
 
   return opt.file && opt.sync ? listFileSync(opt)
     : opt.file ? listFile(opt, cb)
@@ -56,7 +62,7 @@ const onentryFunction = opt => {
 // construct a filter that limits the file entries listed
 // include child entries if a dir is included
 const filesFilter = (opt, files) => {
-  const map = new Map(files.map(f => [f.replace(/\/+$/, ''), true]))
+  const map = new Map(files.map(f => [stripSlash(f), true]))
   const filter = opt.filter
 
   const mapHas = (file, r) => {
@@ -70,8 +76,8 @@ const filesFilter = (opt, files) => {
   }
 
   opt.filter = filter
-    ? (file, entry) => filter(file, entry) && mapHas(file.replace(/\/+$/, ''))
-    : file => mapHas(file.replace(/\/+$/, ''))
+    ? (file, entry) => filter(file, entry) && mapHas(stripSlash(file))
+    : file => mapHas(stripSlash(file))
 }
 
 const listFileSync = opt => {
@@ -81,7 +87,7 @@ const listFileSync = opt => {
   let fd
   try {
     const stat = fs.statSync(file)
-    const readSize = opt.maxReadSize || 16*1024*1024
+    const readSize = opt.maxReadSize || 16 * 1024 * 1024
     if (stat.size < readSize) {
       p.end(fs.readFileSync(file))
     } else {
@@ -89,7 +95,7 @@ const listFileSync = opt => {
       const buf = Buffer.allocUnsafe(readSize)
       fd = fs.openSync(file, 'r')
       while (pos < stat.size) {
-        let bytesRead = fs.readSync(fd, buf, 0, readSize, pos)
+        const bytesRead = fs.readSync(fd, buf, 0, readSize, pos)
         pos += bytesRead
         p.write(buf.slice(0, bytesRead))
       }
@@ -97,14 +103,17 @@ const listFileSync = opt => {
     }
     threw = false
   } finally {
-    if (threw && fd)
-      try { fs.closeSync(fd) } catch (er) {}
+    if (threw && fd) {
+      try {
+        fs.closeSync(fd)
+      } catch (er) {}
+    }
   }
 }
 
 const listFile = (opt, cb) => {
   const parse = new Parser(opt)
-  const readSize = opt.maxReadSize || 16*1024*1024
+  const readSize = opt.maxReadSize || 16 * 1024 * 1024
 
   const file = opt.file
   const p = new Promise((resolve, reject) => {
@@ -112,12 +121,12 @@ const listFile = (opt, cb) => {
     parse.on('end', resolve)
 
     fs.stat(file, (er, stat) => {
-      if (er)
+      if (er) {
         reject(er)
-      else {
+      } else {
         const stream = new fsm.ReadStream(file, {
           readSize: readSize,
-          size: stat.size
+          size: stat.size,
         })
         stream.on('error', reject)
         stream.pipe(parse)

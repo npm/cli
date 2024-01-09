@@ -1,0 +1,859 @@
+{
+  "_id": "array-flatten",
+  "_rev": "38-ff1320bbb141cf4897d277a86db3c973",
+  "name": "array-flatten",
+  "time": {
+    "modified": "2019-11-21T05:14:42.269Z",
+    "created": "2014-03-16T01:38:15.278Z",
+    "0.0.1": "2014-03-16T01:38:15.278Z",
+    "0.0.2": "2014-03-16T04:13:40.954Z",
+    "0.0.3": "2014-08-17T17:49:57.857Z",
+    "1.0.0": "2014-08-17T18:11:00.008Z",
+    "1.0.1": "2015-01-12T09:00:11.413Z",
+    "1.0.2": "2015-01-13T05:58:48.541Z",
+    "1.1.0": "2015-05-09T21:48:40.747Z",
+    "1.1.1": "2015-07-09T21:42:55.619Z",
+    "2.0.0": "2015-11-16T03:14:26.425Z",
+    "2.1.0": "2016-04-29T00:43:12.819Z",
+    "2.1.1": "2017-01-14T01:09:38.922Z",
+    "2.1.2": "2018-12-03T00:21:55.036Z",
+    "3.0.0": "2019-11-21T05:14:39.925Z"
+  },
+  "description": "Flatten nested arrays",
+  "readme": "# Array Flatten\n\n[![NPM version][npm-image]][npm-url]\n[![NPM downloads][downloads-image]][downloads-url]\n[![Build status][travis-image]][travis-url]\n[![Test coverage][coveralls-image]][coveralls-url]\n[![Bundle size][bundlephobia-image]][bundlephobia-url]\n\n> Flatten nested arrays.\n\n## Installation\n\n```\nnpm install array-flatten --save\n```\n\n## Usage\n\n```js\nimport { flatten } from \"array-flatten\";\n\nflatten([1, [2, [3, [4, [5], 6], 7], 8], 9]);\n//=> [1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n(function() {\n  flatten(arguments); //=> [1, 2, 3]\n})(1, [2, 3]);\n```\n\n## License\n\nMIT\n\n[npm-image]: https://img.shields.io/npm/v/array-flatten.svg?style=flat\n[npm-url]: https://npmjs.org/package/array-flatten\n[downloads-image]: https://img.shields.io/npm/dm/array-flatten.svg?style=flat\n[downloads-url]: https://npmjs.org/package/array-flatten\n[travis-image]: https://img.shields.io/travis/blakeembrey/array-flatten.svg?style=flat\n[travis-url]: https://travis-ci.org/blakeembrey/array-flatten\n[coveralls-image]: https://img.shields.io/coveralls/blakeembrey/array-flatten.svg?style=flat\n[coveralls-url]: https://coveralls.io/r/blakeembrey/array-flatten?branch=master\n[bundlephobia-image]: https://img.shields.io/bundlephobia/minzip/array-flatten.svg\n[bundlephobia-url]: https://bundlephobia.com/result?p=array-flatten\n",
+  "maintainers": [
+    {
+      "name": "blakeembrey",
+      "email": "hello@blakeembrey.com"
+    }
+  ],
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.0.2": {
+      "name": "array-flatten",
+      "version": "0.0.2",
+      "description": "Flatten a multi-dimensional array.",
+      "main": "array-flatten.js",
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten"
+      ],
+      "author": {
+        "name": "Blake Embrey"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "mocha": "^1.18.0",
+        "istanbul": "^0.2.6"
+      },
+      "_id": "array-flatten@0.0.2",
+      "dist": {
+        "shasum": "51b2f144f36fd656f627740a1fd0ad57979ad6c2",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.25",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "array-flatten",
+      "version": "0.0.3",
+      "description": "Flatten a multi-dimensional array.",
+      "main": "array-flatten.js",
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten"
+      ],
+      "author": {
+        "name": "Blake Embrey"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "mocha": "^1.18.0",
+        "istanbul": "^0.2.6"
+      },
+      "gitHead": "9bcb9b907884f25e343f30488ac7473e65e0bba5",
+      "_id": "array-flatten@0.0.3",
+      "_shasum": "0546c3c23ad49c5fec896930680a154b3014eae8",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0546c3c23ad49c5fec896930680a154b3014eae8",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "array-flatten",
+      "version": "1.0.0",
+      "description": "Flatten a multi-dimensional array.",
+      "main": "array-flatten.js",
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten"
+      ],
+      "author": {
+        "name": "Blake Embrey"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "mocha": "^1.18.0",
+        "istanbul": "^0.2.6"
+      },
+      "gitHead": "b5a19b457cf6b892d45ce22a8b04c749e2146e19",
+      "_id": "array-flatten@1.0.0",
+      "_shasum": "2b672d3b56fad41b050eee8cbf36f7a83ec3b040",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2b672d3b56fad41b050eee8cbf36f7a83ec3b040",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "array-flatten",
+      "version": "1.0.1",
+      "description": "Flatten a multi-dimensional array.",
+      "main": "array-flatten.js",
+      "files": [
+        "array-flatten.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "istanbul": "^0.2.6",
+        "mocha": "^1.18.0",
+        "pre-commit": "0.0.9"
+      },
+      "gitHead": "223b1a9f12df1d98b7c9f517c90e873db959e6b6",
+      "_id": "array-flatten@1.0.1",
+      "_shasum": "cacb24fbeed6c0014fa751a39a01a90e212a38b8",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cacb24fbeed6c0014fa751a39a01a90e212a38b8",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "array-flatten",
+      "version": "1.0.2",
+      "description": "Flatten a multi-dimensional array.",
+      "main": "array-flatten.js",
+      "files": [
+        "array-flatten.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "istanbul": "^0.2.6",
+        "mocha": "^1.18.0",
+        "pre-commit": "0.0.9"
+      },
+      "gitHead": "31e383659b87ad53121565580eb5d354fea42627",
+      "_id": "array-flatten@1.0.2",
+      "_shasum": "c94703edbf0677694f9b61c67b99615b85bd6dd0",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c94703edbf0677694f9b61c67b99615b85bd6dd0",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "array-flatten",
+      "version": "1.1.0",
+      "description": "Flatten an array of nested arrays into a single flat array",
+      "main": "array-flatten.js",
+      "files": [
+        "array-flatten.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "istanbul": "^0.3.13",
+        "mocha": "^2.2.4",
+        "pre-commit": "^1.0.7",
+        "standard": "^3.7.3"
+      },
+      "gitHead": "73c57136fb4210569e585555988cc8c39c3468df",
+      "_id": "array-flatten@1.1.0",
+      "_shasum": "ac3efac717b0e7bbdc778ce0bde7381ac6604393",
+      "_from": ".",
+      "_npmVersion": "2.8.3",
+      "_nodeVersion": "1.8.1",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ac3efac717b0e7bbdc778ce0bde7381ac6604393",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "array-flatten",
+      "version": "1.1.1",
+      "description": "Flatten an array of nested arrays into a single flat array",
+      "main": "array-flatten.js",
+      "files": [
+        "array-flatten.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "test": "istanbul cover _mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "istanbul": "^0.3.13",
+        "mocha": "^2.2.4",
+        "pre-commit": "^1.0.7",
+        "standard": "^3.7.3"
+      },
+      "gitHead": "1963a9189229d408e1e8f585a00c8be9edbd1803",
+      "_id": "array-flatten@1.1.1",
+      "_shasum": "9a5f699051b1e7073328f2a008968b64ea2955d2",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "2.3.3",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9a5f699051b1e7073328f2a008968b64ea2955d2",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "array-flatten",
+      "version": "2.0.0",
+      "description": "Flatten nested arrays",
+      "main": "array-flatten.js",
+      "files": [
+        "array-flatten.js",
+        "LICENSE"
+      ],
+      "scripts": {
+        "lint": "standard",
+        "test-spec": "mocha -R spec --bail",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+        "test": "npm run lint && npm run test-cov",
+        "benchmark": "node benchmark"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth",
+        "fast",
+        "for"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "benchmarked": "^0.1.4",
+        "istanbul": "^0.4.0",
+        "mocha": "^2.2.4",
+        "pre-commit": "^1.0.7",
+        "standard": "^5.3.1"
+      },
+      "gitHead": "d947b86ed11cd952f1bf84dbfa584099845385a2",
+      "_id": "array-flatten@2.0.0",
+      "_shasum": "24dd98b38b9194b59b2087ba40c21384d6b8a8dc",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "dist": {
+        "shasum": "24dd98b38b9194b59b2087ba40c21384d6b8a8dc",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "array-flatten",
+      "version": "2.1.0",
+      "description": "Flatten nested arrays",
+      "main": "array-flatten.js",
+      "typings": "array-flatten.d.ts",
+      "files": [
+        "array-flatten.js",
+        "array-flatten.d.ts",
+        "LICENSE"
+      ],
+      "scripts": {
+        "lint": "standard",
+        "test-spec": "mocha -R spec --bail",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+        "test": "npm run lint && npm run test-cov",
+        "benchmark": "node benchmark"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth",
+        "fast",
+        "for"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "benchmarked": "^0.1.4",
+        "istanbul": "^0.4.0",
+        "mocha": "^2.2.4",
+        "standard": "^5.3.1"
+      },
+      "gitHead": "d5446b9a5e373c3dfa73b9275c53fc9c32ef0979",
+      "_id": "array-flatten@2.1.0",
+      "_shasum": "26a692c83881fc68dac3ec5d1f0c1b49bf2304d9",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "dist": {
+        "shasum": "26a692c83881fc68dac3ec5d1f0c1b49bf2304d9",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/array-flatten-2.1.0.tgz_1461890592426_0.306347094476223"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "array-flatten",
+      "version": "2.1.1",
+      "description": "Flatten nested arrays",
+      "main": "array-flatten.js",
+      "typings": "array-flatten.d.ts",
+      "files": [
+        "array-flatten.js",
+        "array-flatten.d.ts",
+        "LICENSE"
+      ],
+      "scripts": {
+        "lint": "standard",
+        "test-spec": "mocha -R spec --bail",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+        "test": "npm run lint && npm run test-cov",
+        "benchmark": "node benchmark"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth",
+        "fast",
+        "for"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "benchmarked": "^0.2.5",
+        "istanbul": "^0.4.0",
+        "mocha": "^3.1.2",
+        "standard": "^8.5.0"
+      },
+      "gitHead": "b5619025bfb5d624fc2106ec81f9fdecf5419e04",
+      "_id": "array-flatten@2.1.1",
+      "_shasum": "426bb9da84090c1838d812c8150af20a8331e296",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.3.0",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "dist": {
+        "shasum": "426bb9da84090c1838d812c8150af20a8331e296",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/array-flatten-2.1.1.tgz_1484356178679_0.14589731954038143"
+      },
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "array-flatten",
+      "version": "2.1.2",
+      "description": "Flatten nested arrays",
+      "main": "array-flatten.js",
+      "typings": "array-flatten.d.ts",
+      "scripts": {
+        "lint": "standard",
+        "test-spec": "mocha -R spec --bail",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec --bail",
+        "test": "npm run lint && npm run test-cov",
+        "benchmark": "node benchmark"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth",
+        "fast",
+        "for"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "devDependencies": {
+        "benchmarked": "^2.0.0",
+        "istanbul": "^0.4.0",
+        "mocha": "^3.1.2",
+        "standard": "^10.0.0"
+      },
+      "gitHead": "04b45e7a5a9fb7e7946a1321287a09e84f1d352d",
+      "_id": "array-flatten@2.1.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.3.0",
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "dist": {
+        "integrity": "sha512-hNfzcOV8W4NdualtqBFPyVO+54DSJuZGY9qT4pRroB6S9e3iiido2ISIC5h9R2sPJ8H3FHCIiEnsv1lPXO3KtQ==",
+        "shasum": "24ef80a28c1a893617e2149b0c6d0d788293b099",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-2.1.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6242,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBHcjCRA9TVsSAnZWagAA6C4P/1ZV77yfnxvhR9WUixth\nVTQCT4TxIWY/qRmFV8IldijazpVvtKAEkJjdsetwDCoq0Qtt0fJciJQl8+Hi\nPgS19C5sI0bBLuxeCSwbIUKYQon7vCMB6xoR40J8LbM+L7CLczENo2CmilCD\nwMXe6m8dxRPcNaIRY0GhnDDyMx6D7ZANaEu/8D0CKB8zO64I+w6nIUmO287N\nPZQA5hRQz1W1mI+w+J+j2MRYTouqhkPa/FWcdC5o/PF5QoOXpcOXfHYLazCw\nuNEiRIDjrQo4bZ0xYk0YN6iL7PSczJeAXtUB0gHJvIBX4or/Sp4d+RZRAeQA\neCfgnVJ6ayxbgg3nAHDKAqqyOkgC+WZ9BPxbG7x+kL4O8A/bdLetBnP7K8HS\nxetv8WEn5T5t/a7q/crzp81HZPM0MxNeCiRF49Zi41swmoHghN1SH5jWoWKJ\nKfM7TqBgbgsHtY5zlig+y079AfOal73wlVHwDyyNVdMXgv3wv5x1slBSvvx/\nQ4mDOf/7Fi/4Tys/4slYslqpWyFdwKwa4wZrLtw6H6ZoBLj9NonwdrttYIjE\ndWLMi+AiQC0/xAP1FAOrKf9PPasVdnqNZFoRYIqF6OtWX/4DaepSpPY4SL+v\ns+L/hhLP7PLgeDlv0qr/lH4Fa9fglPitQcdIedgP8UZAx/zfCULbkwPvv+XG\n/wqD\r\n=I6rO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-flatten_2.1.2_1543796514917_0.6725103941555342"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "array-flatten",
+      "version": "3.0.0",
+      "description": "Flatten nested arrays",
+      "main": "dist/index.js",
+      "typings": "dist/index.d.ts",
+      "module": "dist.es2015/index.js",
+      "sideEffects": false,
+      "jsnext:main": "dist.es2015/index.js",
+      "scripts": {
+        "prettier": "prettier --write",
+        "lint": "tslint \"src/**/*\" --project tsconfig.json",
+        "format": "npm run prettier -- \"{.,src/**,benchmark/**}/*.{js,ts}\"",
+        "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
+        "benchmark": "node benchmark",
+        "specs": "jest --coverage",
+        "test": "npm run build && npm run lint && npm run specs && npm run size",
+        "size": "size-limit",
+        "prepare": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/blakeembrey/array-flatten.git"
+      },
+      "keywords": [
+        "array",
+        "flatten",
+        "arguments",
+        "depth",
+        "fast",
+        "for"
+      ],
+      "author": {
+        "name": "Blake Embrey",
+        "email": "hello@blakeembrey.com",
+        "url": "http://blakeembrey.me"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/blakeembrey/array-flatten/issues"
+      },
+      "homepage": "https://github.com/blakeembrey/array-flatten",
+      "size-limit": [
+        {
+          "path": "dist/index.js",
+          "limit": "100 B"
+        }
+      ],
+      "jest": {
+        "roots": [
+          "<rootDir>/src/"
+        ],
+        "transform": {
+          "\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+        "moduleFileExtensions": [
+          "ts",
+          "tsx",
+          "js",
+          "jsx",
+          "json",
+          "node"
+        ]
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged"
+        }
+      },
+      "lint-staged": {
+        "*.{js,json,css,md}": [
+          "npm run prettier",
+          "git add"
+        ]
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "devDependencies": {
+        "@size-limit/preset-small-lib": "^2.2.1",
+        "@types/jest": "^24.0.23",
+        "@types/node": "^12.12.11",
+        "benchmarked": "^2.0.0",
+        "husky": "^3.1.0",
+        "jest": "^24.9.0",
+        "lint-staged": "^9.4.3",
+        "prettier": "^1.19.1",
+        "ts-expect": "^1.1.0",
+        "ts-jest": "^24.1.0",
+        "tslint": "^5.20.1",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-config-standard": "^9.0.0",
+        "typescript": "^3.7.2"
+      },
+      "gitHead": "66299a02d2ce6a9b6998be333581a87affbb8631",
+      "_id": "array-flatten@3.0.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-zPMVc3ZYlGLNk4mpK1NzP2wg0ml9t7fUgDsayR5Y5rSzxQilzR9FGu/EH2jQOcKSAeAfWeylyW8juy3OkWRvNA==",
+        "shasum": "6428ca2ee52c7b823192ec600fa3ed2f157cd541",
+        "tarball": "https://registry.npmjs.org/array-flatten/-/array-flatten-3.0.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 20089,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1h1ACRA9TVsSAnZWagAAtFIP/3LXzCEqOKxLY0xhdbFj\nwDbeDzN1kTTOlPWlFI1Ef4yPXDZPlooXIgyIG4OEz3Z8FhQGPxxYSnOECvy+\nkOJ7iEK/ItDkKAjQ5QJw8FZGeRBMlimJb7ZV6IA30hRaDN9d5JyWKeVEUUxR\nAAQQTjrVGfFYK3Xu9qKJZWaMHPWm4+5xgcE7hAe1zCNc5Gb5fI2cDzTuGNvk\nPOoFcSgteGrPbFq8e/cgKRgueUkdBuOOjA68p2Y7RtqHTmwqev/z3ZdilOYE\nQnZkPtJMgGHLRrT1NvGzPXjMhgwSKJ4CLGlWeARqXN9jHvcqZ51BKnm49TpA\neluSo5nlwjCACZKrtWstgEbI6xnTAxnG1XaOmuMktGydifo3zseRjIqBmsxB\nZynP5mVmri2sTCnclvDdZ+fjqu8gtw8id8qVrAkZ6WobTD33g83MocQpzAZR\ns1+mocxWroLLRaqEmEv7WSomSExqhnJ7kD+Eq4Hoy0fnHZiqALx2jWdxpaOe\nZ1qqZlOrjM4X/QwQKV+qMyE8ZrMa7ngthBrvSpgNsIL0VqGdpYQpyIwwB0fJ\nOZT2aiugfuRQToVoIO0TK88Yv/z9SHxxMF9ui7Pg8FWz83WagHdopmGDRKvf\nqjiyLipixY/plP+wa8i4GM0SLnfcoUOlyNdWVWYgm+N6S+tQ4IxFRK3Sd74w\nqbCN\r\n=Ps03\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "blakeembrey",
+          "email": "hello@blakeembrey.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "blakeembrey",
+        "email": "hello@blakeembrey.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-flatten_3.0.0_1574313279784_0.5985838460284738"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "homepage": "https://github.com/blakeembrey/array-flatten",
+  "keywords": [
+    "array",
+    "flatten",
+    "arguments",
+    "depth",
+    "fast",
+    "for"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeembrey/array-flatten.git"
+  },
+  "author": {
+    "name": "Blake Embrey",
+    "email": "hello@blakeembrey.com",
+    "url": "http://blakeembrey.me"
+  },
+  "bugs": {
+    "url": "https://github.com/blakeembrey/array-flatten/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "tunnckocore": true,
+    "jamescostian": true,
+    "acollins-ts": true,
+    "nickeltobias": true,
+    "tobiasnickel": true,
+    "wangnan0610": true,
+    "bluelovers": true,
+    "sunkeyhub": true,
+    "elidoran": true,
+    "d0ughtyj": true,
+    "ninozhang": true,
+    "shoresh319": true,
+    "zuojiang": true
+  }
+}

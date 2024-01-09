@@ -1,0 +1,4257 @@
+{
+  "_id": "shelljs",
+  "_rev": "585-4f6f8333ed42512de7282b8306eec7b7",
+  "name": "shelljs",
+  "description": "Portable Unix shell commands for Node.js",
+  "dist-tags": {
+    "latest": "0.8.4",
+    "maintenance": "0.6.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "shelljs",
+      "version": "0.0.1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shell.js.git"
+      },
+      "homepage": "http://github.com/arturadib/shell.js",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "48b8fcc27241ed380ce0ca7ed9e1e9b411543713",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "shelljs",
+      "version": "0.0.2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.2",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "db93a304bf867b1298d4e870c1fb585be8734ebb",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "shelljs",
+      "version": "0.0.3",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.3",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "9c8db8ab433cf8db1ef0bda68f8a91de086fc11f",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "shelljs",
+      "version": "0.0.4",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.4",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "686ef25d07fcdaa21bb6adb32a7eea6bad162ea9",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "shelljs",
+      "version": "0.0.5",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.5",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "fb5b74917ea9b764b7d3ea3f21b5f922a9765f39",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "shelljs",
+      "version": "0.0.6",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.6",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "43921fd7b45e8de6763f0a380eab750b3affe615",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "shelljs",
+      "version": "0.0.7",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.0.7",
+      "dist": {
+        "shasum": "ff561264db7b592aed94b556898578ac225b01ac",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.7.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.8": {
+      "name": "shelljs",
+      "version": "0.0.8",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.0.8",
+      "dist": {
+        "shasum": "788b3d435d843aaa0972b5b195eceb26e0621e10",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.8.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.9": {
+      "name": "shelljs",
+      "version": "0.0.9",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.0.9",
+      "dist": {
+        "shasum": "417bf78ae22a703f8071f5df3e0a6ed004205d5f",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.9.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "shelljs",
+      "version": "0.1.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.1.0",
+      "dist": {
+        "shasum": "7b5e800b713efc370ab57e94927858708b194581",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.1.0.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "shelljs",
+      "version": "0.1.1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.1.1",
+      "dist": {
+        "shasum": "0526d599c38b6ea48ffcaf22cc55c86e3da83d93",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.1.1.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "shelljs",
+      "version": "0.1.2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.1.2",
+      "dist": {
+        "shasum": "1619ff4e5267f669be14595821be1b716c7c74c0",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.1.2.tgz"
+      },
+      "_npmVersion": "1.1.59",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "shelljs",
+      "version": "0.1.3",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "jshint": "~1.1.0"
+      },
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.1.3",
+      "dist": {
+        "shasum": "6797d637ef57e58828fd0ecbcb6d0d975d1c8119",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "shelljs",
+      "version": "0.1.4",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_id": "shelljs@0.1.4",
+      "dist": {
+        "shasum": "dfbbe78d56c3c0168d2fb79e10ecd1dbcb07ec0e",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.1.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "shelljs",
+      "version": "0.2.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.0",
+      "dist": {
+        "shasum": "ca12ad770f1ed034e9ee0846b58442042fba7fea",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "shelljs",
+      "version": "0.2.1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.1",
+      "dist": {
+        "shasum": "74df59632270a143b06728b7de9e645b4c06beb8",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "shelljs",
+      "version": "0.2.2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.2",
+      "dist": {
+        "shasum": "e6a1e531b0b9c49eef481a19b6c75acfb9beec8d",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "shelljs",
+      "version": "0.2.3",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.3",
+      "dist": {
+        "shasum": "1ee299572b4f0da311855004b03067f012636ee5",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "shelljs",
+      "version": "0.2.4",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.4",
+      "dist": {
+        "shasum": "1c5a94f98fdb5313194928b5028012a3cffc6dcf",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.5": {
+      "name": "shelljs",
+      "version": "0.2.5",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~1.1.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.5",
+      "dist": {
+        "shasum": "79f6c383ae490d81b852b148f19bf46f5380aa40",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.6": {
+      "name": "shelljs",
+      "version": "0.2.6",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.2.6",
+      "dist": {
+        "shasum": "90492d72ffcc8159976baba62fb0f6884f0c3378",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.2.6.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "shelljs",
+      "version": "0.3.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.3.0",
+      "dist": {
+        "shasum": "3596e6307a781544f591f37da618360f31db57b1",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "shelljs",
+      "version": "0.4.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "72e34fa881d6ffb9fb3ece2b89743b2c3df7f020",
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.4.0",
+      "_shasum": "199fe9e2de379efd03d345ff14062525e4b31ec2",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "199fe9e2de379efd03d345ff14062525e4b31ec2",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "shelljs",
+      "version": "0.5.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "fdf633003e70c18c9eeda192c6a52d9b712653e1",
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.5.0",
+      "_shasum": "b692a120213d452ea075bedb6e8a9c53a551fb1c",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b692a120213d452ea075bedb6e8a9c53a551fb1c",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "shelljs",
+      "version": "0.5.1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "fe6dedcf40741f66912c2c608987eba67bb76f29",
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.5.1",
+      "_shasum": "0fc0c3f90f87184023a125a7bbcde31447b4f464",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0fc0c3f90f87184023a125a7bbcde31447b4f464",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.2": {
+      "name": "shelljs",
+      "version": "0.5.2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "85ac1807fdc34199501dea4e838c783ac61a7289",
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.5.2",
+      "_shasum": "d8c1d8de485593c07260090467037a896d415cc4",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d8c1d8de485593c07260090467037a896d415cc4",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.5.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.3": {
+      "name": "shelljs",
+      "version": "0.5.3",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "license": "BSD*",
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "22d0975040b9b8234755dc6e692d6869436e8485",
+      "bugs": {
+        "url": "https://github.com/arturadib/shelljs/issues"
+      },
+      "_id": "shelljs@0.5.3",
+      "_shasum": "c54982b996c76ef0c1e6b59fbdc5825f5b713113",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.2.0",
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c54982b996c76ef0c1e6b59fbdc5825f5b713113",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.5.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.6.0": {
+      "name": "shelljs",
+      "version": "0.6.0",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "gitHead": "fe06baf1173ec6f0a70cd58ddb7d373f4c6446f5",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.6.0",
+      "_shasum": "ce1ed837b4b0e55b5ec3dab84251ab9dbdc0c7ec",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "ariporad",
+        "email": "ari@ariporad.com"
+      },
+      "dist": {
+        "shasum": "ce1ed837b4b0e55b5ec3dab84251ab9dbdc0c7ec",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.6.0.tgz_1454632811074_0.5800695188809186"
+      },
+      "directories": {}
+    },
+    "0.7.0": {
+      "name": "shelljs",
+      "version": "0.7.0",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "bce3a53bb155b7c1ed5f68542943a166fc579dd9",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.0",
+      "_shasum": "3f6f2e4965cec565f65ff3861d644f879281a576",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "3f6f2e4965cec565f65ff3861d644f879281a576",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.0.tgz_1461620341411_0.5085073048248887"
+      },
+      "directories": {}
+    },
+    "0.7.1": {
+      "name": "shelljs",
+      "version": "0.7.1",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "node scripts/run-tests",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "jshint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "^2.9.2",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "2c80e2e02cc27a32bd17b31417088ca52d4c2636",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.1",
+      "_shasum": "f94be47b7b51d646477af580903daf675171bae3",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "f94be47b7b51d646477af580903daf675171bae3",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.1.tgz_1469226315249_0.6717281353194267"
+      },
+      "directories": {}
+    },
+    "0.7.2": {
+      "name": "shelljs",
+      "version": "0.7.2",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "node scripts/run-tests",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "jshint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "^2.9.2",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "dee29a07b273c1582d3d22b1f16c53f8b6f795c8",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.2",
+      "_shasum": "fb608ac989c478e3f3df2dbec7048708a677b0e1",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "fb608ac989c478e3f3df2dbec7048708a677b0e1",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.2.tgz_1469428823310_0.9523241955321282"
+      },
+      "directories": {}
+    },
+    "0.7.3": {
+      "name": "shelljs",
+      "version": "0.7.3",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "node scripts/run-tests",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "jshint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "^2.9.2",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "cb8b6a7e11f1f8afa88f932c41fa9064b857403a",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.3",
+      "_shasum": "a6d5e11d9644f596cc702aa447ff9b243c23de80",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "a6d5e11d9644f596cc702aa447ff9b243c23de80",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.3.tgz_1469663101744_0.2906524408608675"
+      },
+      "directories": {}
+    },
+    "0.6.1": {
+      "name": "shelljs",
+      "version": "0.6.1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "arturadib@gmail.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "coffee-script": "^1.10.0",
+        "jshint": "~2.1.11"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "gitHead": "a5b9e2a64ffdf9f837d6ceb15d7f42221875542b",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.6.1",
+      "_shasum": "ec6211bed1920442088fe0f70b2837232ed2c8a8",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "ec6211bed1920442088fe0f70b2837232ed2c8a8",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.6.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.6.1.tgz_1470519555022_0.9348916830495"
+      },
+      "directories": {}
+    },
+    "0.7.4": {
+      "name": "shelljs",
+      "version": "0.7.4",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "node scripts/run-tests",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "coffee-script": "^1.10.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "9eb9bf9773bc2bd3e5a7e4094e87a1e2386b45ef",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.4",
+      "_shasum": "b8f04b3a74ddfafea22acf98e0be45ded53d59c8",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "b8f04b3a74ddfafea22acf98e0be45ded53d59c8",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.4.tgz_1472174845846_0.7657584212720394"
+      },
+      "directories": {}
+    },
+    "0.7.5": {
+      "name": "shelljs",
+      "version": "0.7.5",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Ari Porad",
+          "email": "ari@ariporad.com",
+          "url": "http://ariporad.com/"
+        },
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "node scripts/run-tests",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "coffee-script": "^1.10.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "1a15022f2747d322d771dd7ae0c00840e469a52a",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.5",
+      "_shasum": "2eef7a50a21e1ccf37da00df767ec69e30ad0675",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "2eef7a50a21e1ccf37da00df767ec69e30ad0675",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ariporad",
+          "email": "ari@ariporad.com"
+        },
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.5.tgz_1477547417527_0.3151172921061516"
+      },
+      "directories": {}
+    },
+    "0.7.6": {
+      "name": "shelljs",
+      "version": "0.7.6",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.json",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava --serial test/*.js",
+        "test-no-coverage": "ava --serial test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^10.0.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "2e29ba29e6ee100196d088ae92c19d7ccfbc4e56",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.6",
+      "_shasum": "379cccfb56b91c8601e4793356eb5382924de9ad",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "freitagbr",
+        "email": "freitagbr@gmail.com"
+      },
+      "dist": {
+        "shasum": "379cccfb56b91c8601e4793356eb5382924de9ad",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.6.tgz_1483914513770_0.5974662199150771"
+      },
+      "directories": {}
+    },
+    "0.7.7": {
+      "name": "shelljs",
+      "version": "0.7.7",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.js",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava --serial test/*.js",
+        "test-no-coverage": "ava --serial test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "codecov": "^1.0.1",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^10.0.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "95638cc773390920a446e383c40ed8104c7d211d",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.7",
+      "_shasum": "b2f5c77ef97148f4b4f6e22682e10bba8667cff1",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "b2f5c77ef97148f4b4f6e22682e10bba8667cff1",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/shelljs-0.7.7.tgz_1489041432003_0.056656441651284695"
+      },
+      "directories": {}
+    },
+    "0.7.8": {
+      "name": "shelljs",
+      "version": "0.7.8",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.js",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava --serial test/*.js",
+        "test-no-coverage": "ava --serial test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "devDependencies": {
+        "ava": "^0.16.0",
+        "codecov": "^1.0.1",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^10.0.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=0.11.0",
+        "iojs": "*"
+      },
+      "gitHead": "38645675f18b6369ffc161f2a6317e9ceab937c0",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.7.8",
+      "_shasum": "decbcf874b0d1e5fb72e14b164a9683048e9acb3",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "shasum": "decbcf874b0d1e5fb72e14b164a9683048e9acb3",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.7.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs-0.7.8.tgz_1496808094788_0.20938302809372544"
+      },
+      "directories": {}
+    },
+    "0.8.0": {
+      "name": "shelljs",
+      "version": "0.8.0",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.js",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava test/*.js",
+        "test-no-coverage": "ava test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "ava": {
+        "serial": true,
+        "powerAssert": false
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "chalk": "^1.1.3",
+        "codecov": "^1.0.1",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^11.3.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "ec0d60aecf79513070786a1402b90c192ae1824e",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.8.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-wb72o5SM27oFRq2mMeNSl70DVkkvwf3ZSgk9rvieRVz7xFMIQp02HYw0oxlZgeAWS+wzGB+jcJWQTF7hH9WIPg==",
+        "shasum": "12f561c52ec5d0d3315af15616c011a18ff80d59",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs-0.8.0.tgz_1515741442381_0.08625257085077465"
+      },
+      "directories": {}
+    },
+    "0.8.1": {
+      "name": "shelljs",
+      "version": "0.8.1",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.js",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava test/*.js",
+        "test-no-coverage": "ava test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "ava": {
+        "serial": true,
+        "powerAssert": false
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "chalk": "^1.1.3",
+        "codecov": "^1.0.1",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^11.3.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "7058d63048e65d33d62b8ba1160f7e852f8f118c",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.8.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YA/iYtZpzFe5HyWVGrb02FjPxc4EMCfpoU/Phg9fQoyMC72u9598OUBrsU8IrtwAKG0tO8IYaqbaLIw+k3IRGA==",
+        "shasum": "729e038c413a2254c4078b95ed46e0397154a9f1",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs-0.8.1.tgz_1516489135797_0.3480741458479315"
+      },
+      "directories": {}
+    },
+    "0.0.1-alpha1": {
+      "name": "shelljs",
+      "version": "0.0.1-alpha1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shell.js.git"
+      },
+      "homepage": "http://github.com/arturadib/shell.js",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.1-alpha1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "cfa9394e29c3eb0fe58998f5bf5bda79aa7d3e2e",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.1alpha1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2-pre1": {
+      "name": "shelljs",
+      "version": "0.0.2-pre1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.2-pre1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c86560d804d4b1df862c8e8b4498bae3de29ecfc",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.2pre1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4-pre1": {
+      "name": "shelljs",
+      "version": "0.0.4-pre1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.4-pre1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "e684bfa1dbaf5fb76cfa8461dfb7d25c7bcedb22",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.4pre1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5-pre1": {
+      "name": "shelljs",
+      "version": "0.0.5-pre1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.5-pre1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-3",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c5ed6cc61cdafaa0036d10394ff9d6403b15d8bd",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.5pre1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5-pre2": {
+      "name": "shelljs",
+      "version": "0.0.5-pre2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.5-pre2",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.12",
+      "_nodeVersion": "v0.6.14",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "5dfaca0072edad59cb2b968ef0a5d6a08dc42d3f",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.5pre2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5-pre3": {
+      "name": "shelljs",
+      "version": "0.0.5-pre3",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.5-pre3",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.12",
+      "_nodeVersion": "v0.6.14",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "1b52781d89af29cd5ded776a5d7d942d522e8bc9",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.5pre3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5-pre4": {
+      "name": "shelljs",
+      "version": "0.0.5-pre4",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.5-pre4",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.12",
+      "_nodeVersion": "v0.6.14",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "13f372cc9839191cf3e1b1a86a6e094eb339a3da",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.5pre4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6-pre1": {
+      "name": "shelljs",
+      "version": "0.0.6-pre1",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.6-pre1",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "37d3a519f50ff2ce98fe191b41446d79db3d2c68",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.6pre1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.6-pre2": {
+      "name": "shelljs",
+      "version": "0.0.6-pre2",
+      "author": {
+        "name": "Artur Adib",
+        "email": "aadib@mozilla.com"
+      },
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/arturadib/shelljs.git"
+      },
+      "homepage": "http://github.com/arturadib/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "test": "node scripts/run-tests"
+      },
+      "bin": {
+        "sjs": "./bin/sjs"
+      },
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "artur",
+        "email": "arturadib@gmail.com"
+      },
+      "_id": "shelljs@0.0.6-pre2",
+      "_engineSupported": true,
+      "_npmVersion": "1.1.16",
+      "_nodeVersion": "v0.6.15",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "8c3eecaddba6f425bd5cae001f80a4d224750911",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.0.6pre2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.8.2": {
+      "name": "shelljs",
+      "version": "0.8.2",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "files": [
+        "commands.js",
+        "global.js",
+        "make.js",
+        "plugin.js",
+        "shell.js",
+        "bin",
+        "src"
+      ],
+      "scripts": {
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava test/*.js",
+        "test-no-coverage": "ava test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "ava": {
+        "serial": true,
+        "powerAssert": false
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "chalk": "^1.1.3",
+        "codecov": "^1.0.1",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^11.3.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.2.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "3b266d0a2992f5bbae5ec03710c9e29b1175e67a",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.8.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pRXeNrCA2Wd9itwhvLp5LZQvPJ0wU6bcjaTMywHHGX5XWhVN2nzSu7WV0q+oUY7mGK3mgSkDDzP3MgjqdyIgbQ==",
+        "shasum": "345b7df7763f4c2340d584abb532c5f752ca9e35",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.2.tgz",
+        "fileCount": 42,
+        "unpackedSize": 204752,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8U/JCRA9TVsSAnZWagAAbGEP/2jqOsuDfh9Jf8zB+L1S\nNmfQyzmBmq1n6imj7QjWmgmIQbHfa42J7oR62gWpO2eErENqw6W5RHQrmDrb\ncgc/kVMS5uI6xSGnlrKmGXai8PwzHXjH4lXl1DNzoO6Km/H0X/NDzYNJGBVm\nz3hgpawiuLvr2mV4E3VOEyyf/6lGWNUsFgmpq9x7kfLrrn21bKOJHkEhcAZm\nzJ+cY+K1nrrg0uW4eggHSIHlRDbaDd7rYV6zSabkq2fdfteQIpNqc2bIPxis\n0U26JwUGmhZkKuZRjNfhul7tHDTrEuoItDCHmqadDIrCF7zmP7O2QKWbBXcw\nz9T3loXVFdaWVYZ7UOzzH4rbVcWVWXE1Xvbwgkh4HBz+QD6f0CD9a84P9hjh\niEtt0N9SnImcMhXDaeKxm5hjmSEryKLaWcuKeDtwo1EGpP00sS+e5bLiWUR5\nvIghIVdL/p5SdzmsnOXYIEFPFXKGw0iSnVtIxpitBTBtxMaJU/uK/6ZoEwRk\nSh6OjZwCHhz66CnyX+854jg9MOVUSkMhGRRq45SHOPkO9DJ/ikIvYzWbblj/\n1z3rJLk3DbdNf3n2tiffPDSRMSYdLWAMUTUApWhFLqbqHfyenThoJQFnoRlz\ndZUHR7RyVI1d6iULaXNrPFr72r3KMCLTDmc+6xfgbgThGWR1t+9bEoBRInpY\n/Yec\r\n=Qq7C\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs_0.8.2_1525764039888_0.2582389055422063"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.8.3": {
+      "name": "shelljs",
+      "version": "0.8.3",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "ci-or-install": "node scripts/ci-or-install",
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava test/*.js",
+        "test-no-coverage": "ava test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "./bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "ava": {
+        "serial": true,
+        "powerAssert": false
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "chalk": "^1.1.3",
+        "codecov": "^3.0.2",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^11.3.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.3.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "d4d1317ce62531fbd49085852b8492db3dd39312",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.8.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.9.0",
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fc0BKlAWiLpwZljmOvAOTE/gXawtCoNrP5oaY7KIaQbbyHeQVg01pSEuEGvGh3HEdBU4baCD7wQBwADmM/7f7A==",
+        "shasum": "a7f3319520ebf09ee81275b2368adb286659b097",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.3.tgz",
+        "fileCount": 42,
+        "unpackedSize": 211205,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb6lftCRA9TVsSAnZWagAAMvEP/2qQsO3kgmX98ecTKwAQ\nPHVpeR7OMSMPeuhyExijeE4Z6R2DvwZ4wmIuc8KWKJMcvbXXVEkIJJUbRnb7\n47tWcoGCluJakDcyAs5EjQDtI4J6NZJPXovTCEfC1aOkBpB/COc8YlraBc3W\nN8XF4MlCKy0h+MRDQOQFlUudSRohPldgD/ul9zxXmSL5Shp0tozS3fMYvgEv\n8i7/IaOFmQidv1xAYbwRL495F7ssH9MLqoTPu4ZIu6OlLzCOLnx+RCD6U8jB\nguPzlWHZKb9CUVKS6mbaAb2nCT9Ee25DPuCkrnSs47gra+ooNjn66gOe2X1l\nAw/5s96+Ks/F7abu29NY1BE+iZQqgdgOcoJbWQVpHQ145t9GX4WL5ZXVw6Q+\nECMfrcxC5INHaIY2ziGU7W6uICypGWAs61dfzSJHDrKQzkaVGl91sOgKh8Zx\nLoDbtnRTJwa41uoJFG/NUvfzTA5Bfo97+ZqPld0decrIuTs5LYxJYE/I9LbT\ndEVm7mVwgYMOrBVTf60i98abht79Xjg+QiVOai6xQVdaxDyO+HnAc4RIXm5R\nmQiOL0izeK9BkYfccZysXOQqDl8eJMoKWs1r18+NUTgJnI2Hp+kb0qLnTLmD\n6NkpIaUjuH/2cfKG9hbs/lozEbGlgg1dLc9pAP5Ih78ZO1fupjuDRX3PDtx+\nl+H2\r\n=pbsM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs_0.8.3_1542084588945_0.01681905501615022"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.8.4": {
+      "name": "shelljs",
+      "version": "0.8.4",
+      "description": "Portable Unix shell commands for Node.js",
+      "keywords": [
+        "shelljs",
+        "bash",
+        "unix",
+        "shell",
+        "makefile",
+        "make",
+        "jake",
+        "synchronous"
+      ],
+      "contributors": [
+        {
+          "name": "Nate Fischer",
+          "email": "ntfschr@gmail.com",
+          "url": "https://github.com/nfischer"
+        },
+        {
+          "name": "Brandon Freitag",
+          "email": "freitagbr@gmail.com",
+          "url": "https://github.com/freitagbr"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/shelljs/shelljs.git"
+      },
+      "license": "BSD-3-Clause",
+      "homepage": "http://github.com/shelljs/shelljs",
+      "main": "./shell.js",
+      "scripts": {
+        "ci-or-install": "node scripts/ci-or-install",
+        "posttest": "npm run lint",
+        "test": "nyc --reporter=text --reporter=lcov ava test/*.js",
+        "test-no-coverage": "ava test/*.js",
+        "gendocs": "node scripts/generate-docs",
+        "lint": "eslint .",
+        "after-travis": "travis-check-changes",
+        "changelog": "shelljs-changelog",
+        "codecov": "codecov",
+        "release:major": "shelljs-release major",
+        "release:minor": "shelljs-release minor",
+        "release:patch": "shelljs-release patch"
+      },
+      "bin": {
+        "shjs": "bin/shjs"
+      },
+      "dependencies": {
+        "glob": "^7.0.0",
+        "interpret": "^1.0.0",
+        "rechoir": "^0.6.2"
+      },
+      "ava": {
+        "serial": true,
+        "powerAssert": false
+      },
+      "devDependencies": {
+        "ava": "^0.21.0",
+        "chalk": "^1.1.3",
+        "codecov": "^3.0.2",
+        "coffee-script": "^1.10.0",
+        "eslint": "^2.0.0",
+        "eslint-config-airbnb-base": "^3.0.0",
+        "eslint-plugin-import": "^1.11.1",
+        "nyc": "^11.3.0",
+        "shelljs-changelog": "^0.2.0",
+        "shelljs-release": "^0.3.0",
+        "shx": "^0.2.0",
+        "travis-check-changes": "^0.2.0"
+      },
+      "optionalDependencies": {},
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "fcf1651be9a3bb8e20ba1fd24b8a91f369829c53",
+      "bugs": {
+        "url": "https://github.com/shelljs/shelljs/issues"
+      },
+      "_id": "shelljs@0.8.4",
+      "_nodeVersion": "12.16.2",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-7gk3UZ9kOfPLIAbslLzyWeGiEqx9e3rxwZM0KE6EL8GlGwjym9Mrlx5/p33bWTu9YG6vcS4MBxYZDHYr5lr8BQ==",
+        "shasum": "de7684feeb767f8716b326078a8a00875890e3c2",
+        "tarball": "https://registry.npmjs.org/shelljs/-/shelljs-0.8.4.tgz",
+        "fileCount": 42,
+        "unpackedSize": 211220,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeo7VbCRA9TVsSAnZWagAAsLUQAIh5G32IBarAiu43TBb8\nRoPMm3/EcyGdlrOJKF9bUlPXkbDXZfrR9hYGRwhV0DbJ+KnhUxEAFUnVC7zg\nW62Bt+Lc0Ju8GPeUzojuGxPQPnVTY7NhNly/CKyrmMmJ/jIiW27dqIhYHrkK\nHX3eOR40XXbggV9c6oq7hdd181wi26SAMh6ludDVVOALHzxi8ub22vz3Rsy4\njxYaiXrfHooR9v6YRLSE+WMTMwelGge0yHSs0azvucczxKiPr5s2a1eVEr2S\ncwNCKYPcwYHUfLdLLh+k1uiNrMdK3DOeFq2cfigNxhob+yPiPzPZq8fiAd7w\n4eXNLjpEt+qyfK0CWS4tg0/EE5y9mDl5SJpVSYj3DUmNL0QQTSP2DHxOb2Bz\n/0GWRT33ZHdAf/+0lM7KKE9tKDf1XnbK+WRRKTLZct8bbNcZfh8dx3ntnAtb\nnQ+BmcA90nP3Hs9GJPUsFfQVXXpFcovlshhaUxBvgGWg3N2Qu1Bn9nJP+REK\nRCcHyBlC8OsnAdLHTpPMsuxy7EN74JByAJXuMGBqaae7GWaDo/y+V2L9GwLQ\n8eTvKvVZCG7mUaQEB4FmMd6cF0fx8Sn+C95rdTROSEB+wvP527U/4eq5WeH+\nxyHSqxeB1KOVW1HQBCCnJKorYvzWsKWgDeSuf+hOtnpYraP+TklzSW5DJy0n\nOksH\r\n=BawU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "artur",
+          "email": "arturadib@gmail.com"
+        },
+        {
+          "name": "freitagbr",
+          "email": "freitagbr@gmail.com"
+        },
+        {
+          "name": "nfischer",
+          "email": "ntfschr@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nfischer",
+        "email": "ntfschr@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/shelljs_0.8.4_1587787099431_0.3756731240968736"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ShellJS - Unix shell commands for Node.js\n\n[![Travis](https://img.shields.io/travis/shelljs/shelljs/master.svg?style=flat-square&label=unix)](https://travis-ci.org/shelljs/shelljs)\n[![AppVeyor](https://img.shields.io/appveyor/ci/shelljs/shelljs/master.svg?style=flat-square&label=windows)](https://ci.appveyor.com/project/shelljs/shelljs/branch/master)\n[![Codecov](https://img.shields.io/codecov/c/github/shelljs/shelljs/master.svg?style=flat-square&label=coverage)](https://codecov.io/gh/shelljs/shelljs)\n[![npm version](https://img.shields.io/npm/v/shelljs.svg?style=flat-square)](https://www.npmjs.com/package/shelljs)\n[![npm downloads](https://img.shields.io/npm/dm/shelljs.svg?style=flat-square)](https://www.npmjs.com/package/shelljs)\n\nShellJS is a portable **(Windows/Linux/OS X)** implementation of Unix shell\ncommands on top of the Node.js API. You can use it to eliminate your shell\nscript's dependency on Unix while still keeping its familiar and powerful\ncommands. You can also install it globally so you can run it from outside Node\nprojects - say goodbye to those gnarly Bash scripts!\n\nShellJS is proudly tested on every node release since `v4`!\n\nThe project is [unit-tested](http://travis-ci.org/shelljs/shelljs) and battle-tested in projects like:\n\n+ [Firebug](http://getfirebug.com/) - Firefox's infamous debugger\n+ [JSHint](http://jshint.com) & [ESLint](http://eslint.org/) - popular JavaScript linters\n+ [Zepto](http://zeptojs.com) - jQuery-compatible JavaScript library for modern browsers\n+ [Yeoman](http://yeoman.io/) - Web application stack and development tool\n+ [Deployd.com](http://deployd.com) - Open source PaaS for quick API backend generation\n+ And [many more](https://npmjs.org/browse/depended/shelljs).\n\nIf you have feedback, suggestions, or need help, feel free to post in our [issue\ntracker](https://github.com/shelljs/shelljs/issues).\n\nThink ShellJS is cool? Check out some related projects in our [Wiki\npage](https://github.com/shelljs/shelljs/wiki)!\n\nUpgrading from an older version? Check out our [breaking\nchanges](https://github.com/shelljs/shelljs/wiki/Breaking-Changes) page to see\nwhat changes to watch out for while upgrading.\n\n## Command line use\n\nIf you just want cross platform UNIX commands, checkout our new project\n[shelljs/shx](https://github.com/shelljs/shx), a utility to expose `shelljs` to\nthe command line.\n\nFor example:\n\n```\n$ shx mkdir -p foo\n$ shx touch foo/bar.txt\n$ shx rm -rf foo\n```\n\n## Plugin API\n\nShellJS now supports third-party plugins! You can learn more about using plugins\nand writing your own ShellJS commands in [the\nwiki](https://github.com/shelljs/shelljs/wiki/Using-ShellJS-Plugins).\n\n## A quick note about the docs\n\nFor documentation on all the latest features, check out our\n[README](https://github.com/shelljs/shelljs). To read docs that are consistent\nwith the latest release, check out [the npm\npage](https://www.npmjs.com/package/shelljs) or\n[shelljs.org](http://documentup.com/shelljs/shelljs).\n\n## Installing\n\nVia npm:\n\n```bash\n$ npm install [-g] shelljs\n```\n\n## Examples\n\n```javascript\nvar shell = require('shelljs');\n\nif (!shell.which('git')) {\n  shell.echo('Sorry, this script requires git');\n  shell.exit(1);\n}\n\n// Copy files to release dir\nshell.rm('-rf', 'out/Release');\nshell.cp('-R', 'stuff/', 'out/Release');\n\n// Replace macros in each .js file\nshell.cd('lib');\nshell.ls('*.js').forEach(function (file) {\n  shell.sed('-i', 'BUILD_VERSION', 'v0.1.2', file);\n  shell.sed('-i', /^.*REMOVE_THIS_LINE.*$/, '', file);\n  shell.sed('-i', /.*REPLACE_LINE_WITH_MACRO.*\\n/, shell.cat('macro.js'), file);\n});\nshell.cd('..');\n\n// Run external tool synchronously\nif (shell.exec('git commit -am \"Auto-commit\"').code !== 0) {\n  shell.echo('Error: Git commit failed');\n  shell.exit(1);\n}\n```\n\n## Exclude options\n\nIf you need to pass a parameter that looks like an option, you can do so like:\n\n```js\nshell.grep('--', '-v', 'path/to/file'); // Search for \"-v\", no grep options\n\nshell.cp('-R', '-dir', 'outdir'); // If already using an option, you're done\n```\n\n## Global vs. Local\n\nWe no longer recommend using a global-import for ShellJS (i.e.\n`require('shelljs/global')`). While still supported for convenience, this\npollutes the global namespace, and should therefore only be used with caution.\n\nInstead, we recommend a local import (standard for npm packages):\n\n```javascript\nvar shell = require('shelljs');\nshell.echo('hello world');\n```\n\n<!-- DO NOT MODIFY BEYOND THIS POINT - IT'S AUTOMATICALLY GENERATED -->\n\n\n## Command reference\n\n\nAll commands run synchronously, unless otherwise stated.\nAll commands accept standard bash globbing characters (`*`, `?`, etc.),\ncompatible with the [node `glob` module](https://github.com/isaacs/node-glob).\n\nFor less-commonly used commands and features, please check out our [wiki\npage](https://github.com/shelljs/shelljs/wiki).\n\n\n### cat([options,] file [, file ...])\n### cat([options,] file_array)\n\nAvailable options:\n\n+ `-n`: number all output lines\n\nExamples:\n\n```javascript\nvar str = cat('file*.txt');\nvar str = cat('file1', 'file2');\nvar str = cat(['file1', 'file2']); // same as above\n```\n\nReturns a string containing the given file, or a concatenated string\ncontaining the files if more than one file is given (a new line character is\nintroduced between each file).\n\n\n### cd([dir])\n\nChanges to directory `dir` for the duration of the script. Changes to home\ndirectory if no argument is supplied.\n\n\n### chmod([options,] octal_mode || octal_string, file)\n### chmod([options,] symbolic_mode, file)\n\nAvailable options:\n\n+ `-v`: output a diagnostic for every file processed\n+ `-c`: like verbose, but report only when a change is made\n+ `-R`: change files and directories recursively\n\nExamples:\n\n```javascript\nchmod(755, '/Users/brandon');\nchmod('755', '/Users/brandon'); // same as above\nchmod('u+x', '/Users/brandon');\nchmod('-R', 'a-w', '/Users/brandon');\n```\n\nAlters the permissions of a file or directory by either specifying the\nabsolute permissions in octal form or expressing the changes in symbols.\nThis command tries to mimic the POSIX behavior as much as possible.\nNotable exceptions:\n\n+ In symbolic modes, `a-r` and `-r` are identical.  No consideration is\n  given to the `umask`.\n+ There is no \"quiet\" option, since default behavior is to run silent.\n\n\n### cp([options,] source [, source ...], dest)\n### cp([options,] source_array, dest)\n\nAvailable options:\n\n+ `-f`: force (default behavior)\n+ `-n`: no-clobber\n+ `-u`: only copy if `source` is newer than `dest`\n+ `-r`, `-R`: recursive\n+ `-L`: follow symlinks\n+ `-P`: don't follow symlinks\n\nExamples:\n\n```javascript\ncp('file1', 'dir1');\ncp('-R', 'path/to/dir/', '~/newCopy/');\ncp('-Rf', '/tmp/*', '/usr/local/*', '/home/tmp');\ncp('-Rf', ['/tmp/*', '/usr/local/*'], '/home/tmp'); // same as above\n```\n\nCopies files.\n\n\n### pushd([options,] [dir | '-N' | '+N'])\n\nAvailable options:\n\n+ `-n`: Suppresses the normal change of directory when adding directories to the stack, so that only the stack is manipulated.\n+ `-q`: Supresses output to the console.\n\nArguments:\n\n+ `dir`: Sets the current working directory to the top of the stack, then executes the equivalent of `cd dir`.\n+ `+N`: Brings the Nth directory (counting from the left of the list printed by dirs, starting with zero) to the top of the list by rotating the stack.\n+ `-N`: Brings the Nth directory (counting from the right of the list printed by dirs, starting with zero) to the top of the list by rotating the stack.\n\nExamples:\n\n```javascript\n// process.cwd() === '/usr'\npushd('/etc'); // Returns /etc /usr\npushd('+1');   // Returns /usr /etc\n```\n\nSave the current directory on the top of the directory stack and then `cd` to `dir`. With no arguments, `pushd` exchanges the top two directories. Returns an array of paths in the stack.\n\n\n### popd([options,] ['-N' | '+N'])\n\nAvailable options:\n\n+ `-n`: Suppress the normal directory change when removing directories from the stack, so that only the stack is manipulated.\n+ `-q`: Supresses output to the console.\n\nArguments:\n\n+ `+N`: Removes the Nth directory (counting from the left of the list printed by dirs), starting with zero.\n+ `-N`: Removes the Nth directory (counting from the right of the list printed by dirs), starting with zero.\n\nExamples:\n\n```javascript\necho(process.cwd()); // '/usr'\npushd('/etc');       // '/etc /usr'\necho(process.cwd()); // '/etc'\npopd();              // '/usr'\necho(process.cwd()); // '/usr'\n```\n\nWhen no arguments are given, `popd` removes the top directory from the stack and performs a `cd` to the new top directory. The elements are numbered from 0, starting at the first directory listed with dirs (i.e., `popd` is equivalent to `popd +0`). Returns an array of paths in the stack.\n\n\n### dirs([options | '+N' | '-N'])\n\nAvailable options:\n\n+ `-c`: Clears the directory stack by deleting all of the elements.\n+ `-q`: Supresses output to the console.\n\nArguments:\n\n+ `+N`: Displays the Nth directory (counting from the left of the list printed by dirs when invoked without options), starting with zero.\n+ `-N`: Displays the Nth directory (counting from the right of the list printed by dirs when invoked without options), starting with zero.\n\nDisplay the list of currently remembered directories. Returns an array of paths in the stack, or a single path if `+N` or `-N` was specified.\n\nSee also: `pushd`, `popd`\n\n\n### echo([options,] string [, string ...])\n\nAvailable options:\n\n+ `-e`: interpret backslash escapes (default)\n+ `-n`: remove trailing newline from output\n\nExamples:\n\n```javascript\necho('hello world');\nvar str = echo('hello world');\necho('-n', 'no newline at end');\n```\n\nPrints `string` to stdout, and returns string with additional utility methods\nlike `.to()`.\n\n\n### exec(command [, options] [, callback])\n\nAvailable options:\n\n+ `async`: Asynchronous execution. If a callback is provided, it will be set to\n  `true`, regardless of the passed value (default: `false`).\n+ `silent`: Do not echo program output to console (default: `false`).\n+ `encoding`: Character encoding to use. Affects the values returned to stdout and stderr, and\n  what is written to stdout and stderr when not in silent mode (default: `'utf8'`).\n+ and any option available to Node.js's\n  [`child_process.exec()`](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback)\n\nExamples:\n\n```javascript\nvar version = exec('node --version', {silent:true}).stdout;\n\nvar child = exec('some_long_running_process', {async:true});\nchild.stdout.on('data', function(data) {\n  /* ... do something with data ... */\n});\n\nexec('some_long_running_process', function(code, stdout, stderr) {\n  console.log('Exit code:', code);\n  console.log('Program output:', stdout);\n  console.log('Program stderr:', stderr);\n});\n```\n\nExecutes the given `command` _synchronously_, unless otherwise specified.  When in synchronous\nmode, this returns a `ShellString` (compatible with ShellJS v0.6.x, which returns an object\nof the form `{ code:..., stdout:... , stderr:... }`). Otherwise, this returns the child process\nobject, and the `callback` receives the arguments `(code, stdout, stderr)`.\n\nNot seeing the behavior you want? `exec()` runs everything through `sh`\nby default (or `cmd.exe` on Windows), which differs from `bash`. If you\nneed bash-specific behavior, try out the `{shell: 'path/to/bash'}` option.\n\n\n### find(path [, path ...])\n### find(path_array)\n\nExamples:\n\n```javascript\nfind('src', 'lib');\nfind(['src', 'lib']); // same as above\nfind('.').filter(function(file) { return file.match(/\\.js$/); });\n```\n\nReturns array of all files (however deep) in the given paths.\n\nThe main difference from `ls('-R', path)` is that the resulting file names\ninclude the base directories (e.g., `lib/resources/file1` instead of just `file1`).\n\n\n### grep([options,] regex_filter, file [, file ...])\n### grep([options,] regex_filter, file_array)\n\nAvailable options:\n\n+ `-v`: Invert `regex_filter` (only print non-matching lines).\n+ `-l`: Print only filenames of matching files.\n+ `-i`: Ignore case.\n\nExamples:\n\n```javascript\ngrep('-v', 'GLOBAL_VARIABLE', '*.js');\ngrep('GLOBAL_VARIABLE', '*.js');\n```\n\nReads input string from given files and returns a string containing all lines of the\nfile that match the given `regex_filter`.\n\n\n### head([{'-n': \\<num\\>},] file [, file ...])\n### head([{'-n': \\<num\\>},] file_array)\n\nAvailable options:\n\n+ `-n <num>`: Show the first `<num>` lines of the files\n\nExamples:\n\n```javascript\nvar str = head({'-n': 1}, 'file*.txt');\nvar str = head('file1', 'file2');\nvar str = head(['file1', 'file2']); // same as above\n```\n\nRead the start of a file.\n\n\n### ln([options,] source, dest)\n\nAvailable options:\n\n+ `-s`: symlink\n+ `-f`: force\n\nExamples:\n\n```javascript\nln('file', 'newlink');\nln('-sf', 'file', 'existing');\n```\n\nLinks `source` to `dest`. Use `-f` to force the link, should `dest` already exist.\n\n\n### ls([options,] [path, ...])\n### ls([options,] path_array)\n\nAvailable options:\n\n+ `-R`: recursive\n+ `-A`: all files (include files beginning with `.`, except for `.` and `..`)\n+ `-L`: follow symlinks\n+ `-d`: list directories themselves, not their contents\n+ `-l`: list objects representing each file, each with fields containing `ls\n        -l` output fields. See\n        [`fs.Stats`](https://nodejs.org/api/fs.html#fs_class_fs_stats)\n        for more info\n\nExamples:\n\n```javascript\nls('projs/*.js');\nls('-R', '/users/me', '/tmp');\nls('-R', ['/users/me', '/tmp']); // same as above\nls('-l', 'file.txt'); // { name: 'file.txt', mode: 33188, nlink: 1, ...}\n```\n\nReturns array of files in the given `path`, or files in\nthe current directory if no `path` is  provided.\n\n\n### mkdir([options,] dir [, dir ...])\n### mkdir([options,] dir_array)\n\nAvailable options:\n\n+ `-p`: full path (and create intermediate directories, if necessary)\n\nExamples:\n\n```javascript\nmkdir('-p', '/tmp/a/b/c/d', '/tmp/e/f/g');\nmkdir('-p', ['/tmp/a/b/c/d', '/tmp/e/f/g']); // same as above\n```\n\nCreates directories.\n\n\n### mv([options ,] source [, source ...], dest')\n### mv([options ,] source_array, dest')\n\nAvailable options:\n\n+ `-f`: force (default behavior)\n+ `-n`: no-clobber\n\nExamples:\n\n```javascript\nmv('-n', 'file', 'dir/');\nmv('file1', 'file2', 'dir/');\nmv(['file1', 'file2'], 'dir/'); // same as above\n```\n\nMoves `source` file(s) to `dest`.\n\n\n### pwd()\n\nReturns the current directory.\n\n\n### rm([options,] file [, file ...])\n### rm([options,] file_array)\n\nAvailable options:\n\n+ `-f`: force\n+ `-r, -R`: recursive\n\nExamples:\n\n```javascript\nrm('-rf', '/tmp/*');\nrm('some_file.txt', 'another_file.txt');\nrm(['some_file.txt', 'another_file.txt']); // same as above\n```\n\nRemoves files.\n\n\n### sed([options,] search_regex, replacement, file [, file ...])\n### sed([options,] search_regex, replacement, file_array)\n\nAvailable options:\n\n+ `-i`: Replace contents of `file` in-place. _Note that no backups will be created!_\n\nExamples:\n\n```javascript\nsed('-i', 'PROGRAM_VERSION', 'v0.1.3', 'source.js');\nsed(/.*DELETE_THIS_LINE.*\\n/, '', 'source.js');\n```\n\nReads an input string from `file`s, and performs a JavaScript `replace()` on the input\nusing the given `search_regex` and `replacement` string or function. Returns the new string after replacement.\n\nNote:\n\nLike unix `sed`, ShellJS `sed` supports capture groups. Capture groups are specified\nusing the `$n` syntax:\n\n```javascript\nsed(/(\\w+)\\s(\\w+)/, '$2, $1', 'file.txt');\n```\n\n\n### set(options)\n\nAvailable options:\n\n+ `+/-e`: exit upon error (`config.fatal`)\n+ `+/-v`: verbose: show all commands (`config.verbose`)\n+ `+/-f`: disable filename expansion (globbing)\n\nExamples:\n\n```javascript\nset('-e'); // exit upon first error\nset('+e'); // this undoes a \"set('-e')\"\n```\n\nSets global configuration variables.\n\n\n### sort([options,] file [, file ...])\n### sort([options,] file_array)\n\nAvailable options:\n\n+ `-r`: Reverse the results\n+ `-n`: Compare according to numerical value\n\nExamples:\n\n```javascript\nsort('foo.txt', 'bar.txt');\nsort('-r', 'foo.txt');\n```\n\nReturn the contents of the `file`s, sorted line-by-line. Sorting multiple\nfiles mixes their content (just as unix `sort` does).\n\n\n### tail([{'-n': \\<num\\>},] file [, file ...])\n### tail([{'-n': \\<num\\>},] file_array)\n\nAvailable options:\n\n+ `-n <num>`: Show the last `<num>` lines of `file`s\n\nExamples:\n\n```javascript\nvar str = tail({'-n': 1}, 'file*.txt');\nvar str = tail('file1', 'file2');\nvar str = tail(['file1', 'file2']); // same as above\n```\n\nRead the end of a `file`.\n\n\n### tempdir()\n\nExamples:\n\n```javascript\nvar tmp = tempdir(); // \"/tmp\" for most *nix platforms\n```\n\nSearches and returns string containing a writeable, platform-dependent temporary directory.\nFollows Python's [tempfile algorithm](http://docs.python.org/library/tempfile.html#tempfile.tempdir).\n\n\n### test(expression)\n\nAvailable expression primaries:\n\n+ `'-b', 'path'`: true if path is a block device\n+ `'-c', 'path'`: true if path is a character device\n+ `'-d', 'path'`: true if path is a directory\n+ `'-e', 'path'`: true if path exists\n+ `'-f', 'path'`: true if path is a regular file\n+ `'-L', 'path'`: true if path is a symbolic link\n+ `'-p', 'path'`: true if path is a pipe (FIFO)\n+ `'-S', 'path'`: true if path is a socket\n\nExamples:\n\n```javascript\nif (test('-d', path)) { /* do something with dir */ };\nif (!test('-f', path)) continue; // skip if it's a regular file\n```\n\nEvaluates `expression` using the available primaries and returns corresponding value.\n\n\n### ShellString.prototype.to(file)\n\nExamples:\n\n```javascript\ncat('input.txt').to('output.txt');\n```\n\nAnalogous to the redirection operator `>` in Unix, but works with\n`ShellStrings` (such as those returned by `cat`, `grep`, etc.). _Like Unix\nredirections, `to()` will overwrite any existing file!_\n\n\n### ShellString.prototype.toEnd(file)\n\nExamples:\n\n```javascript\ncat('input.txt').toEnd('output.txt');\n```\n\nAnalogous to the redirect-and-append operator `>>` in Unix, but works with\n`ShellStrings` (such as those returned by `cat`, `grep`, etc.).\n\n\n### touch([options,] file [, file ...])\n### touch([options,] file_array)\n\nAvailable options:\n\n+ `-a`: Change only the access time\n+ `-c`: Do not create any files\n+ `-m`: Change only the modification time\n+ `-d DATE`: Parse `DATE` and use it instead of current time\n+ `-r FILE`: Use `FILE`'s times instead of current time\n\nExamples:\n\n```javascript\ntouch('source.js');\ntouch('-c', '/path/to/some/dir/source.js');\ntouch({ '-r': FILE }, '/path/to/some/dir/source.js');\n```\n\nUpdate the access and modification times of each `FILE` to the current time.\nA `FILE` argument that does not exist is created empty, unless `-c` is supplied.\nThis is a partial implementation of [`touch(1)`](http://linux.die.net/man/1/touch).\n\n\n### uniq([options,] [input, [output]])\n\nAvailable options:\n\n+ `-i`: Ignore case while comparing\n+ `-c`: Prefix lines by the number of occurrences\n+ `-d`: Only print duplicate lines, one for each group of identical lines\n\nExamples:\n\n```javascript\nuniq('foo.txt');\nuniq('-i', 'foo.txt');\nuniq('-cd', 'foo.txt', 'bar.txt');\n```\n\nFilter adjacent matching lines from `input`.\n\n\n### which(command)\n\nExamples:\n\n```javascript\nvar nodeExec = which('node');\n```\n\nSearches for `command` in the system's `PATH`. On Windows, this uses the\n`PATHEXT` variable to append the extension if it's not already executable.\nReturns string containing the absolute path to `command`.\n\n\n### exit(code)\n\nExits the current process with the given exit `code`.\n\n### error()\n\nTests if error occurred in the last command. Returns a truthy value if an\nerror returned, or a falsy value otherwise.\n\n**Note**: do not rely on the\nreturn value to be an error message. If you need the last error message, use\nthe `.stderr` attribute from the last command's return value instead.\n\n\n### ShellString(str)\n\nExamples:\n\n```javascript\nvar foo = ShellString('hello world');\n```\n\nTurns a regular string into a string-like object similar to what each\ncommand returns. This has special methods, like `.to()` and `.toEnd()`.\n\n\n### env['VAR_NAME']\n\nObject containing environment variables (both getter and setter). Shortcut\nto `process.env`.\n\n### Pipes\n\nExamples:\n\n```javascript\ngrep('foo', 'file1.txt', 'file2.txt').sed(/o/g, 'a').to('output.txt');\necho('files with o\\'s in the name:\\n' + ls().grep('o'));\ncat('test.js').exec('node'); // pipe to exec() call\n```\n\nCommands can send their output to another command in a pipe-like fashion.\n`sed`, `grep`, `cat`, `exec`, `to`, and `toEnd` can appear on the right-hand\nside of a pipe. Pipes can be chained.\n\n## Configuration\n\n\n### config.silent\n\nExample:\n\n```javascript\nvar sh = require('shelljs');\nvar silentState = sh.config.silent; // save old silent state\nsh.config.silent = true;\n/* ... */\nsh.config.silent = silentState; // restore old silent state\n```\n\nSuppresses all command output if `true`, except for `echo()` calls.\nDefault is `false`.\n\n### config.fatal\n\nExample:\n\n```javascript\nrequire('shelljs/global');\nconfig.fatal = true; // or set('-e');\ncp('this_file_does_not_exist', '/dev/null'); // throws Error here\n/* more commands... */\n```\n\nIf `true`, the script will throw a Javascript error when any shell.js\ncommand encounters an error. Default is `false`. This is analogous to\nBash's `set -e`.\n\n### config.verbose\n\nExample:\n\n```javascript\nconfig.verbose = true; // or set('-v');\ncd('dir/');\nrm('-rf', 'foo.txt', 'bar.txt');\nexec('echo hello');\n```\n\nWill print each command as follows:\n\n```\ncd dir/\nrm -rf foo.txt bar.txt\nexec echo hello\n```\n\n### config.globOptions\n\nExample:\n\n```javascript\nconfig.globOptions = {nodir: true};\n```\n\nUse this value for calls to `glob.sync()` instead of the default options.\n\n### config.reset()\n\nExample:\n\n```javascript\nvar shell = require('shelljs');\n// Make changes to shell.config, and do stuff...\n/* ... */\nshell.config.reset(); // reset to original state\n// Do more stuff, but with original settings\n/* ... */\n```\n\nReset `shell.config` to the defaults:\n\n```javascript\n{\n  fatal: false,\n  globOptions: {},\n  maxdepth: 255,\n  noglob: false,\n  silent: false,\n  verbose: false,\n}\n```\n\n## Team\n\n| [![Nate Fischer](https://avatars.githubusercontent.com/u/5801521?s=130)](https://github.com/nfischer) | [![Brandon Freitag](https://avatars1.githubusercontent.com/u/5988055?v=3&s=130)](http://github.com/freitagbr) |\n|:---:|:---:|\n| [Nate Fischer](https://github.com/nfischer) | [Brandon Freitag](http://github.com/freitagbr) |\n",
+  "maintainers": [
+    {
+      "name": "artur",
+      "email": "arturadib@gmail.com"
+    },
+    {
+      "name": "freitagbr",
+      "email": "freitagbr@gmail.com"
+    },
+    {
+      "name": "nfischer",
+      "email": "ntfschr@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-07-17T06:22:42.575Z",
+    "created": "2012-03-02T21:46:14.271Z",
+    "0.0.1": "2012-03-02T21:55:52.552Z",
+    "0.0.2": "2012-03-15T19:22:24.854Z",
+    "0.0.3": "2012-03-21T21:23:11.114Z",
+    "0.0.4": "2012-03-22T14:16:37.151Z",
+    "0.0.5": "2012-05-24T23:14:11.113Z",
+    "0.0.6": "2012-08-07T18:51:16.432Z",
+    "0.0.7": "2012-09-23T19:43:27.108Z",
+    "0.0.8": "2012-10-11T12:46:42.119Z",
+    "0.0.9": "2012-12-01T14:53:04.195Z",
+    "0.1.0": "2012-12-26T21:02:21.854Z",
+    "0.1.1": "2013-01-01T20:19:25.294Z",
+    "0.1.2": "2013-01-08T16:37:25.747Z",
+    "0.1.3": "2013-04-21T21:05:54.727Z",
+    "0.1.4": "2013-05-10T16:58:06.428Z",
+    "0.2.0": "2013-08-25T22:20:01.244Z",
+    "0.2.1": "2013-08-26T18:08:30.324Z",
+    "0.2.2": "2013-09-02T18:15:08.239Z",
+    "0.2.3": "2013-09-09T16:55:54.074Z",
+    "0.2.4": "2013-09-11T17:59:16.131Z",
+    "0.2.5": "2013-09-11T22:51:00.150Z",
+    "0.2.6": "2013-09-22T22:16:56.917Z",
+    "0.3.0": "2014-05-08T14:00:52.656Z",
+    "0.4.0": "2015-03-17T14:51:51.962Z",
+    "0.5.0": "2015-05-19T14:52:43.228Z",
+    "0.5.1": "2015-06-05T14:12:25.829Z",
+    "0.5.2": "2015-08-10T15:58:52.193Z",
+    "0.5.3": "2015-08-11T18:47:48.887Z",
+    "0.6.0": "2016-02-05T00:40:11.639Z",
+    "0.7.0": "2016-04-25T21:39:01.897Z",
+    "0.7.1": "2016-07-22T22:25:15.498Z",
+    "0.7.2": "2016-07-25T06:40:26.633Z",
+    "0.7.3": "2016-07-27T23:45:05.825Z",
+    "0.6.1": "2016-08-06T21:39:18.377Z",
+    "0.7.4": "2016-08-26T01:27:27.861Z",
+    "0.7.5": "2016-10-27T05:50:21.479Z",
+    "0.7.6": "2017-01-08T22:28:36.106Z",
+    "0.7.7": "2017-03-09T06:37:13.935Z",
+    "0.7.8": "2017-06-07T04:01:34.904Z",
+    "0.8.0": "2018-01-12T07:17:22.754Z",
+    "0.8.1": "2018-01-20T22:58:55.999Z",
+    "0.0.1-alpha1": "2012-03-02T21:46:14.725Z",
+    "0.0.2-pre1": "2012-03-03T18:49:29.472Z",
+    "0.0.4-pre1": "2012-03-21T22:35:48.243Z",
+    "0.0.5-pre1": "2012-03-26T13:02:33.886Z",
+    "0.0.5-pre2": "2012-03-26T15:55:59.816Z",
+    "0.0.5-pre3": "2012-03-27T22:17:21.694Z",
+    "0.0.5-pre4": "2012-03-27T22:51:39.077Z",
+    "0.0.6-pre1": "2012-05-25T02:16:29.310Z",
+    "0.0.6-pre2": "2012-05-25T18:14:25.441Z",
+    "0.8.2": "2018-05-08T07:20:39.987Z",
+    "0.8.3": "2018-11-13T04:49:49.149Z",
+    "0.8.4": "2020-04-25T03:58:19.570Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shelljs/shelljs.git"
+  },
+  "users": {
+    "jden": true,
+    "joeferner": true,
+    "gimenete": true,
+    "kastor": true,
+    "joliva": true,
+    "pid": true,
+    "spekkionu": true,
+    "gustavohenke": true,
+    "parroit": true,
+    "cedx": true,
+    "coalman": true,
+    "nosch": true,
+    "manishrc": true,
+    "knownasilya": true,
+    "joshthegeek": true,
+    "forbeslindesay": true,
+    "charlesjourdan": true,
+    "lucasbrigida": true,
+    "jsw0528": true,
+    "funroll": true,
+    "evanxd": true,
+    "gabeio": true,
+    "serdar2nc": true,
+    "bengarrett": true,
+    "chrisayn": true,
+    "mstapp": true,
+    "adampasz": true,
+    "tiger2wander": true,
+    "kahboom": true,
+    "frk1705": true,
+    "maschs": true,
+    "imagdy": true,
+    "yi": true,
+    "rifaqat": true,
+    "thebearingedge": true,
+    "shanewholloway": true,
+    "jits": true,
+    "icaliman": true,
+    "brentonhouse": true,
+    "willyb": true,
+    "subfuzion": true,
+    "tapsboy": true,
+    "tsangint": true,
+    "blackmagic": true,
+    "jonyardley": true,
+    "ivangaravito": true,
+    "jshkurti": true,
+    "dunn": true,
+    "otakustay": true,
+    "np": true,
+    "devonoel": true,
+    "albogdano": true,
+    "gdbtek": true,
+    "finico": true,
+    "dewang-mistry": true,
+    "dhenderson": true,
+    "mesin": true,
+    "hal9zillion": true,
+    "vitre": true,
+    "gavinengel": true,
+    "erincinci": true,
+    "stereosteve": true,
+    "guumaster": true,
+    "kulakowka": true,
+    "yuchi": true,
+    "dudley": true,
+    "chancesnow": true,
+    "sejoker": true,
+    "warapitiya": true,
+    "jklassen": true,
+    "lisposter": true,
+    "markthethomas": true,
+    "subchen": true,
+    "phoenix-xsy": true,
+    "baishuiz": true,
+    "codeshrew": true,
+    "mastayoda": true,
+    "oheard": true,
+    "mamboer": true,
+    "itonyyo": true,
+    "pilsy": true,
+    "symblst": true,
+    "jesusgoku": true,
+    "tinyhill": true,
+    "leodutra": true,
+    "paulj": true,
+    "r3nya": true,
+    "fabio.landi": true,
+    "davidchase": true,
+    "joshwyatt": true,
+    "johnny.young": true,
+    "nanhualyq": true,
+    "mjwilliams": true,
+    "timwindsor": true,
+    "antoniobrandao": true,
+    "summerdb": true,
+    "hammc": true,
+    "tchcxp": true,
+    "canoetime": true,
+    "galenandrew": true,
+    "perrywu": true,
+    "shanemileham": true,
+    "dandv": true,
+    "despairblue": true,
+    "trusktr": true,
+    "jlagunas": true,
+    "boyw165": true,
+    "roxnz": true,
+    "ctesniere": true,
+    "andrewconnell": true,
+    "newswim": true,
+    "prometheas": true,
+    "nketchum": true,
+    "janeluck": true,
+    "spklein": true,
+    "anhulife": true,
+    "kparkov": true,
+    "fedor": true,
+    "ericnelson": true,
+    "jerrywu": true,
+    "junjiansyu": true,
+    "sasquatch": true,
+    "randallagordon": true,
+    "xieranmaya": true,
+    "nyx": true,
+    "lis186": true,
+    "cocopas": true,
+    "rwhogg": true,
+    "yeluoqiuzhi": true,
+    "rizowski": true,
+    "antanst": true,
+    "stany": true,
+    "ffi": true,
+    "ziink": true,
+    "steel1990": true,
+    "kleintobe": true,
+    "dyaa": true,
+    "brandonweis": true,
+    "wangnan0610": true,
+    "thesagarsutar": true,
+    "arefm": true,
+    "scaffrey": true,
+    "fernando_fr": true,
+    "pdedkov": true,
+    "bapinney": true,
+    "pnhung177": true,
+    "kbakba": true,
+    "jmcantrell": true,
+    "mcacek": true,
+    "max_devjs": true,
+    "rager": true,
+    "xunnamius": true,
+    "curioussavage": true,
+    "algonzo": true,
+    "ineva": true,
+    "peteward44": true,
+    "lardconcepts": true,
+    "evanyeung": true,
+    "codedsignal": true,
+    "doptrois": true,
+    "conantonakos": true,
+    "rdm": true,
+    "amio": true,
+    "rsp": true,
+    "a1ip": true,
+    "ramification": true,
+    "yukunyi": true,
+    "monorigabor": true,
+    "nfischer": true,
+    "bsnote": true,
+    "sopepos": true,
+    "barinbritva": true,
+    "ncoop": true,
+    "kontrax": true,
+    "egantz": true,
+    "christopher.urquidi": true,
+    "xinwangwang": true,
+    "jlertle": true,
+    "lucifier129": true,
+    "brend": true,
+    "kehanshi": true,
+    "warmhug": true,
+    "moimikey": true,
+    "wmhilton": true,
+    "restuta": true,
+    "pruettti": true,
+    "shan": true,
+    "cesclong": true,
+    "adamlu": true,
+    "rmarques": true,
+    "zhouanbo": true,
+    "brainpoint": true,
+    "grreenzz": true,
+    "luics": true,
+    "blackoperat": true,
+    "dreadcast": true,
+    "morganz": true,
+    "arcrammer": true,
+    "bsara": true,
+    "nice_body": true,
+    "jmiziolek": true,
+    "dqisme": true,
+    "aquafadas": true,
+    "kevin-smets": true,
+    "usingthesystem": true,
+    "aztlan2k": true,
+    "zdying": true,
+    "qqcome110": true,
+    "gtopia": true,
+    "schiznitz": true,
+    "sunkeyhub": true,
+    "thotk": true,
+    "jovinbm": true,
+    "zhangtai": true,
+    "fengmiaosen": true,
+    "qddegtya": true,
+    "hairandbeardguy": true,
+    "leizongmin": true,
+    "wesleybliss": true,
+    "dex4er": true,
+    "hingsir": true,
+    "iori20091101": true,
+    "nano": true,
+    "abuelwafa": true,
+    "dralc": true,
+    "akarem": true,
+    "djamseed": true,
+    "nuer": true,
+    "magicxiao85": true,
+    "szymex73": true,
+    "rsaa": true,
+    "kissyid": true,
+    "rocket0191": true,
+    "shakakira": true,
+    "wangfei": true,
+    "danielo515": true,
+    "wukaidong": true,
+    "jsdnxx": true,
+    "snyk-admin": true,
+    "scottfreecode": true,
+    "fadihania": true,
+    "quzhi78": true,
+    "heineiuo": true,
+    "tonillo": true,
+    "lichangwei": true,
+    "icflorescu": true,
+    "tmurngon": true,
+    "monjer": true,
+    "arttse": true,
+    "ahmed-dinar": true,
+    "lgh06": true,
+    "ahvonenj": true,
+    "mojaray2k": true,
+    "mano.rajesh": true,
+    "smack": true,
+    "bradleybossard": true,
+    "holly": true,
+    "dwbpirate": true,
+    "boneskull": true,
+    "coolhanddev": true,
+    "mariusc23": true,
+    "danielrhayes": true,
+    "acs1899": true,
+    "manikantag": true,
+    "bobxuyang": true,
+    "godber": true,
+    "npgrosser": true,
+    "nukisman": true,
+    "shangsinian": true,
+    "thonatos": true,
+    "azaritech": true,
+    "noncreature0714": true,
+    "timwzou": true,
+    "nohomey": true,
+    "yedaodao": true,
+    "dryliketoast": true,
+    "daizch": true,
+    "jkrusinski": true,
+    "quafoo": true,
+    "attl8d": true,
+    "pe8ter": true,
+    "youngluo": true,
+    "bigslycat": true,
+    "nate-river": true,
+    "iseif": true,
+    "mingzhangyang": true,
+    "junos": true,
+    "xlaoyu": true,
+    "mrzmmr": true,
+    "ehrig": true,
+    "hugozap": true,
+    "bobmhong": true,
+    "banbara23": true,
+    "lacodda": true,
+    "luisgamero": true,
+    "codeinpixel": true,
+    "stone_breaker": true,
+    "bianlongting": true,
+    "pablopap": true,
+    "khai96_": true,
+    "hugovila": true,
+    "kevinhassan": true,
+    "azertypow": true,
+    "insomniaqc": true,
+    "fwestrom": true,
+    "microgomi": true,
+    "enshaednhiker": true,
+    "xiaochao": true,
+    "kujisoft": true,
+    "xngiser": true,
+    "ahmadarif": true,
+    "sishuai": true,
+    "larrychen": true,
+    "tkalfigo": true,
+    "mikewarcholik": true,
+    "pddivine": true,
+    "michalskuza": true,
+    "raikoza": true,
+    "bertof": true,
+    "swedendrift": true,
+    "django_wong": true,
+    "thechori": true,
+    "ackhub": true,
+    "shadowwzw": true,
+    "roccomuso": true,
+    "pc028771": true,
+    "heartnett": true,
+    "psychollama": true,
+    "oleg_tsyba": true,
+    "nayuki": true,
+    "jamesbedont": true,
+    "edwardxyt": true,
+    "mezerotm": true,
+    "petrus": true,
+    "xtx1130": true,
+    "mdecker": true,
+    "oboochin": true,
+    "warcrydoggie": true,
+    "andrej-k": true,
+    "kdidenko": true,
+    "zousandian": true,
+    "gracelee": true,
+    "ucev": true,
+    "goulash1971": true,
+    "zxdong262": true,
+    "donald93": true,
+    "nbuchanan": true,
+    "d-band": true,
+    "russleyshaw": true,
+    "waxmiguel": true,
+    "shuoshubao": true,
+    "yl2014": true,
+    "cronfy": true,
+    "atomgao": true,
+    "natarajanmca11": true,
+    "leelee.echo": true,
+    "largepuma": true,
+    "ngpvnk": true,
+    "jeffreysbrother": true,
+    "daniel-lewis-bsc-hons": true,
+    "shikalov": true,
+    "tomgao365": true,
+    "n0f3": true,
+    "robinblomberg": true,
+    "jream": true,
+    "yeming": true,
+    "ebinnion": true,
+    "broadway69": true,
+    "nfreear": true,
+    "fakefarm": true,
+    "codepanda": true,
+    "alexreg90": true,
+    "highgravity": true,
+    "scott.m.sarsfield": true,
+    "buzuli": true,
+    "xfloops": true,
+    "vickykoblinski": true,
+    "alexreg": true,
+    "netoperatorwibby": true,
+    "webdown404": true,
+    "ssmolkin1": true,
+    "jetze": true,
+    "zuojiang": true,
+    "lore-w": true,
+    "s4j": true,
+    "jasonyikuai": true,
+    "adrian.arroyocalle": true,
+    "danday74": true,
+    "craigiswayne": true,
+    "allen_lyu": true,
+    "avantgrant": true,
+    "ghe1219": true,
+    "eaglex": true,
+    "mrxf": true,
+    "n1kk": true,
+    "xrush": true,
+    "adriantanasa": true,
+    "nraibaud": true,
+    "npmmurali": true,
+    "sergeyshvager": true,
+    "bouchezb": true,
+    "losymear": true,
+    "sternelee": true,
+    "generald": true,
+    "asfrom30": true,
+    "wh8766": true,
+    "manufitoussi": true,
+    "mdedirudianto": true,
+    "chaohangz": true,
+    "mayurshah": true,
+    "jorycn": true,
+    "hschwalm": true,
+    "chirag8642": true,
+    "zenfeder": true,
+    "orenschwartz": true,
+    "aidenzou": true,
+    "sambhav2612": true,
+    "mitixx": true,
+    "metinweb": true,
+    "forvais": true,
+    "icodeforcookies": true,
+    "usex": true,
+    "jjj201200": true,
+    "becarchal": true,
+    "kamirdjanian": true,
+    "vincentlau": true,
+    "xiaobing": true,
+    "evang": true,
+    "yanghcc": true,
+    "johniexu": true,
+    "ungurys": true,
+    "liunian": true,
+    "tjorange": true
+  },
+  "readmeFilename": "README.md",
+  "homepage": "http://github.com/shelljs/shelljs",
+  "keywords": [
+    "shelljs",
+    "bash",
+    "unix",
+    "shell",
+    "makefile",
+    "make",
+    "jake",
+    "synchronous"
+  ],
+  "bugs": {
+    "url": "https://github.com/shelljs/shelljs/issues"
+  },
+  "license": "BSD-3-Clause",
+  "contributors": [
+    {
+      "name": "Nate Fischer",
+      "email": "ntfschr@gmail.com",
+      "url": "https://github.com/nfischer"
+    },
+    {
+      "name": "Brandon Freitag",
+      "email": "freitagbr@gmail.com",
+      "url": "https://github.com/freitagbr"
+    }
+  ]
+}

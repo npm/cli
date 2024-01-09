@@ -1,0 +1,3577 @@
+{
+  "_id": "url-parse",
+  "_rev": "113-30afac8e8cfb6d18b38238eb819e5c41",
+  "name": "url-parse",
+  "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+  "dist-tags": {
+    "latest": "1.4.7"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "url-parse",
+      "version": "0.0.0",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "_id": "url-parse@0.0.0",
+      "_shasum": "7e844d6570e52a3b756604f8f0b0ed9165df34e8",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7e844d6570e52a3b756604f8f0b0ed9165df34e8",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "url-parse",
+      "version": "0.0.1",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "3dbce4bb499943f7f8a4c3421a8b09a3386ba669",
+      "_id": "url-parse@0.0.1",
+      "_shasum": "a1083ef43383301eac4a0d746379e0c51bb502c3",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a1083ef43383301eac4a0d746379e0c51bb502c3",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "url-parse",
+      "version": "0.0.2",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "gitHead": "dbc52d092a6239d35eec95b7ac69aff46c1d67ad",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.0.2",
+      "_shasum": "e40c9dca6a877340307ddd29cdb2a1824be505ca",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e40c9dca6a877340307ddd29cdb2a1824be505ca",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "url-parse",
+      "version": "0.0.3",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "gitHead": "43a239b5e2cd02807c300368fc1b2e5243dfcc2c",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.0.3",
+      "_shasum": "7f9cd84e2b501fcf39ebe5f6d2faade79c339d47",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f9cd84e2b501fcf39ebe5f6d2faade79c339d47",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "url-parse",
+      "version": "0.0.4",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o browserified.js"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "gitHead": "19f18f8c42e56d61ea0b4256426745ffebc554d9",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.0.4",
+      "_shasum": "4eb3e5af0f46c0a9fcc84f157b7d236d0583ce27",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4eb3e5af0f46c0a9fcc84f157b7d236d0583ce27",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "url-parse",
+      "version": "0.1.0",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "500d074a4e6359ee83e0704cd8985e29b615f032",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.0",
+      "_shasum": "e770ff34faa8f0c0b86f2b0b8d93933e85c5fc03",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "e770ff34faa8f0c0b86f2b0b8d93933e85c5fc03",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "url-parse",
+      "version": "0.1.1",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "c29eed7b83010c05e79e7869b293d5f34b395ad3",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.1",
+      "_shasum": "b9c9efd9a371c515ae60f23c4845c6148777e558",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "b9c9efd9a371c515ae60f23c4845c6148777e558",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "url-parse",
+      "version": "0.1.2",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "9063b38f0416e2490e76facd528e40e48f07799b",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.2",
+      "_shasum": "ce598501dcb100ec06b960a26bed3f1e5dd3d6ab",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "ce598501dcb100ec06b960a26bed3f1e5dd3d6ab",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "url-parse",
+      "version": "0.1.3",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "0465715be2d287d1c061bff32e03806676f27264",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.3",
+      "_shasum": "e0355f9fce17f5181e875f59d74a00e1c32ac5aa",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "e0355f9fce17f5181e875f59d74a00e1c32ac5aa",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "url-parse",
+      "version": "0.1.4",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "6.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "42a1341d9a6a00fcb9b2920c753cb3c651069dd2",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.4",
+      "_shasum": "6e82e0f4387aa85b1036d66d36e6413bd8810223",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "unshift",
+        "email": "npm@unshift.io"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "6e82e0f4387aa85b1036d66d36e6413bd8810223",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "url-parse",
+      "version": "0.1.5",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "7.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "f08e0cd8ae3f201dc7d0fb4db4adf40821651e7c",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.1.5",
+      "_shasum": "85b5285054298d715007d479d5b150dfccbd1bd3",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "85b5285054298d715007d479d5b150dfccbd1bd3",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "url-parse",
+      "version": "0.2.0",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "7.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "be53c253989f764f6e4af89f853ecad2d0c60c85",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.2.0",
+      "_shasum": "5d1e0e7965e93f6e14ecbcd100641804c6a0006f",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "5d1e0e7965e93f6e14ecbcd100641804c6a0006f",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "url-parse",
+      "version": "0.2.1",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "browserify index.js -o dist/url-parse.js --standalone URLParse"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "7.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "1f09808274199a2c227c39c511e3f54fdc5e248e",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.2.1",
+      "_shasum": "79bf15b300047409c771e5f8f65680f1f581bf08",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "79bf15b300047409c771e5f8f65680f1f581bf08",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "url-parse",
+      "version": "0.2.2",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js",
+        "browserify": "mkdir dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mocha-phantomjs --reporter spec --ui bdd test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "7.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "mocha-phantomjs": "3.5.x",
+        "pre-commit": "0.0.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "ac8e8d45584d24d77649e417e2d83a611d61efac",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.2.2",
+      "_shasum": "d733ad09eb68c56a010e2cca63faf998339b8f19",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "d733ad09eb68c56a010e2cca63faf998339b8f19",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "url-parse",
+      "version": "0.2.3",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd ./test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd ./test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd ./test.js",
+        "browserify": "mkdir dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "0.0.x",
+        "browserify": "7.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "mochify": "2.1.x",
+        "pre-commit": "0.0.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "3cecefe3f284c8ba0af754298fbfe4640a03099e",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@0.2.3",
+      "_shasum": "00d3d6f0b4e4f319ea77f763c56f0c4c951ed273",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "00d3d6f0b4e4f319ea77f763c56f0c4c951ed273",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "url-parse",
+      "version": "1.0.0",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd ./test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd ./test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd ./test.js",
+        "browserify": "mkdir -p dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "1.0.x",
+        "browserify": "8.1.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.1.x",
+        "mochify": "2.1.x",
+        "pre-commit": "0.0.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "1d0b9344ba915a3a52bb0f573b4ddd9a520562e3",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@1.0.0",
+      "_shasum": "aa20eb22d44b3102f98a8ee4e0c2e42ecc20d68a",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "aa20eb22d44b3102f98a8ee4e0c2e42ecc20d68a",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "url-parse",
+      "version": "1.0.1",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js",
+        "browserify": "mkdir -p dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "1.1.x",
+        "browserify": "8.1.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.1.x",
+        "mochify": "2.4.x",
+        "pre-commit": "1.0.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/url-parse"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "a717d5a97920966cb23ae940e4d2105599edfc42",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse",
+      "_id": "url-parse@1.0.1",
+      "_shasum": "6ead2ca6ab0e3a258bbfb4ed8a152189b81dd0c1",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6ead2ca6ab0e3a258bbfb4ed8a152189b81dd0c1",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "url-parse",
+      "version": "1.0.2",
+      "description": "Parse URL in node using the URL module and in the browser using the DOM",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js",
+        "browserify": "mkdir -p dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "1.1.x",
+        "browserify": "8.1.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.1.x",
+        "mochify": "2.4.x",
+        "pre-commit": "1.0.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "c7ef9cb59073d1e11aa29aeadda89deb1a28c37e",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.0.2",
+      "_shasum": "8c7bf70cd49a89024a032280e6eb33f22a79035c",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8c7bf70cd49a89024a032280e6eb33f22a79035c",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "url-parse",
+      "version": "1.0.3",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js",
+        "browserify": "mkdir -p dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "1.3.x",
+        "browserify": "11.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.2.x",
+        "mochify": "2.13.x",
+        "pre-commit": "1.1.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "cc192195a5064c45285eff9c2578b6c5dbfce9c2",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.0.3",
+      "_shasum": "a80ca4e0249401cb509e09d603c19a9feddc5bba",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a80ca4e0249401cb509e09d603c19a9feddc5bba",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "url-parse",
+      "version": "1.0.4",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test": "mocha test.js",
+        "watch": "mocha --watch test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- test.js",
+        "browserify": "mkdir -p dist && browserify index.js -o dist/url-parse.js --standalone URLParse",
+        "phantomjs": "mochify --reporter spec --ui bdd ./test.js",
+        "testling": "testling -u"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "assume": "1.3.x",
+        "browserify": "11.2.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.3.x",
+        "mochify": "2.13.x",
+        "pre-commit": "1.1.x",
+        "testling": "1.7.x"
+      },
+      "testling": {
+        "files": "test.js",
+        "harness": "mocha-bdd",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/22..latest",
+          "firefox/16..latest",
+          "safari/latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6",
+          "android-browser/latest"
+        ]
+      },
+      "browser": {
+        "url": false
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "0.0.x"
+      },
+      "gitHead": "4796751f8b983ee462d4d8871ee953c9853cf583",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.0.4",
+      "_shasum": "4498cb51eb01ec1245313ff34a434cfaaaac0cc0",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4498cb51eb01ec1245313ff34a434cfaaaac0cc0",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "url-parse",
+      "version": "1.0.5",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.3.x",
+        "browserify": "12.0.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.3.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.7.x"
+      },
+      "gitHead": "7926d56fc0ee9089bc296ed19e5106dd7f0d7b3b",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.0.5",
+      "_shasum": "0854860422afdcfefeb6c965c662d4800169927b",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0854860422afdcfefeb6c965c662d4800169927b",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "url-parse",
+      "version": "1.1.0",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.0.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.4.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.10.x"
+      },
+      "gitHead": "f30e236d4f39b1f8ee47f6fc29564944e65a721a",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.0",
+      "_shasum": "04cd63082a88820b2cb5c775872bbae5f1ac0a74",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "04cd63082a88820b2cb5c775872bbae5f1ac0a74",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.0.tgz_1459163953178_0.2773168694693595"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "url-parse",
+      "version": "1.1.1",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.0.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.4.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.10.x"
+      },
+      "gitHead": "325c631e89ef6ce3e15a082d9787cf1a7f14bedf",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.1",
+      "_shasum": "d1507970728c9a5f80f471530c57325c3fb0e868",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d1507970728c9a5f80f471530c57325c3fb0e868",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.1.tgz_1459345809210_0.3875826171133667"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "url-parse",
+      "version": "1.1.2",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.0.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.5.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.10.x"
+      },
+      "gitHead": "992bfba06a57a1c42ecb22ba880b5e19e3e7e196",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.2",
+      "_shasum": "51b375f8bb4d17c32a6fdfd83dde527f6c2e5309",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "51b375f8bb4d17c32a6fdfd83dde527f6c2e5309",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.2.tgz_1471249528809_0.4470774589572102"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "url-parse",
+      "version": "1.1.3",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.0.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.5.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.10.x"
+      },
+      "gitHead": "1b164fbe3a35210e3f92dd57ca0897c2206d9b93",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.3",
+      "_shasum": "cefdd24be2e71ffd91effc6ba56886c225bd1124",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cefdd24be2e71ffd91effc6ba56886c225bd1124",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.3.tgz_1471257690611_0.5654388114344329"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "url-parse",
+      "version": "1.1.4",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.1.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.0.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "5ffabdd8e558e01eccfb304f9c477e926e69fa2c",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.4",
+      "_shasum": "5cd835a39f4b6c1dc00bad07bc492efe3815eea6",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "swaagie",
+        "email": "info@martijnswaagman.nl"
+      },
+      "dist": {
+        "shasum": "5cd835a39f4b6c1dc00bad07bc492efe3815eea6",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.4.tgz_1475744279000_0.6669016974046826"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "url-parse",
+      "version": "1.1.5",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.1.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.1.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "ac420e1b084a2744f1a28fc47adbad46081dd4f6",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.5",
+      "_shasum": "9e2c741539397e03e399928788f2bd616915bc7c",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9e2c741539397e03e399928788f2bd616915bc7c",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.5.tgz_1476110527688_0.12110764789395034"
+      },
+      "directories": {}
+    },
+    "1.1.6": {
+      "name": "url-parse",
+      "version": "1.1.6",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.1.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.1.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "3d2d76444a27de0498694b0170ee6a5d8bc4d266",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.6",
+      "_shasum": "ab8ff5aea1388071961255e2236147c52ca5fc48",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "swaagie",
+        "email": "info@martijnswaagman.nl"
+      },
+      "dist": {
+        "shasum": "ab8ff5aea1388071961255e2236147c52ca5fc48",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.6.tgz_1476110780981_0.8418173941317946"
+      },
+      "directories": {}
+    },
+    "1.1.7": {
+      "name": "url-parse",
+      "version": "1.1.7",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "13.1.x",
+        "istanbul": "0.4.x",
+        "mocha": "3.1.x",
+        "pre-commit": "1.1.x",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "062638cf0dc9d1de18640b3da1b0024394cae284",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.7",
+      "_shasum": "025cff999653a459ab34232147d89514cc87d74a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "swaagie",
+        "email": "info@martijnswaagman.nl"
+      },
+      "dist": {
+        "shasum": "025cff999653a459ab34232147d89514cc87d74a",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.7.tgz_1477927661531_0.7949320878833532"
+      },
+      "directories": {}
+    },
+    "1.1.8": {
+      "name": "url-parse",
+      "version": "1.1.8",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "0.0.x",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.4.x",
+        "browserify": "~14.1.0",
+        "istanbul": "0.4.x",
+        "mocha": "~3.2.0",
+        "pre-commit": "~1.2.0",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "daacb5a98f64e69ba9cfb01bb7afbde68b756c12",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.8",
+      "_shasum": "7a65b3a8d57a1e86af6b4e2276e34774167c0156",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7a65b3a8d57a1e86af6b4e2276e34774167c0156",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.8.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.8.tgz_1487433490798_0.6194642025511712"
+      },
+      "directories": {}
+    },
+    "1.1.9": {
+      "name": "url-parse",
+      "version": "1.1.9",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "test-node": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "test-browser": "zuul -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "~1.0.0",
+        "requires-port": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~14.3.0",
+        "istanbul": "0.4.x",
+        "mocha": "~3.3.0",
+        "pre-commit": "~1.2.0",
+        "zuul": "3.11.x"
+      },
+      "gitHead": "86d3d6d2ca638530d06ee5f780ac9c654e96f011",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.1.9",
+      "_shasum": "c67f1d775d51f0a18911dd7b3ffad27bb9e5bd19",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        },
+        {
+          "name": "swaagie",
+          "email": "info@martijnswaagman.nl"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c67f1d775d51f0a18911dd7b3ffad27bb9e5bd19",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.1.9.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/url-parse-1.1.9.tgz_1493830143379_0.4407927531283349"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "url-parse",
+      "version": "1.2.0",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "mkdir -p dist && browserify index.js -s URLParse | uglifyjs -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "files": [
+        "index.js",
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "~1.0.0",
+        "requires-port": "~1.0.0"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~14.5.0",
+        "mocha": "~4.0.0",
+        "nyc": "~11.3.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~1.0.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.1.0"
+      },
+      "gitHead": "45e05571478e3901e30716f3ee5fcfb83fe5b5aa",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.2.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-DT1XbYAfmQP65M/mE6OALxmXzZ/z1+e5zk2TcSKe/KiYbNGZxgtttzC0mR/sjopbpOXcbniq7eIKmocJnUWlEw==",
+        "shasum": "3a19e8aaa6d023ddd27dcc44cb4fc8f7fec23986",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse-1.2.0.tgz_1509631143262_0.2793838828802109"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "url-parse",
+      "version": "1.3.0",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "files": [
+        "index.js",
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "~1.0.0",
+        "requires-port": "~1.0.0"
+      },
+      "devDependencies": {
+        "assume": "~1.5.0",
+        "browserify": "~16.1.0",
+        "mocha": "~5.0.0",
+        "nyc": "~11.6.0",
+        "pre-commit": "~1.2.0",
+        "sauce-browsers": "~1.2.0",
+        "sauce-test": "~1.3.3",
+        "uglify-js": "~3.3.0"
+      },
+      "gitHead": "8c2a5e7952f64ae91f8ceaf2ea817584a5800210",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.3.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-zPvPA3T7P6M+0iNsgX+iAcAz4GshKrowtQBHHc/28tVsBc8jK7VRCNX+2GEcoE6zDB6XqXhcyiUWPVZY6C70Cg==",
+        "shasum": "04a06c420d22beb9804f7ada2d57ad13160a4258",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.3.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 47094
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.3.0_1522973522625_0.7403948563137179"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "url-parse",
+      "version": "1.4.0",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "files": [
+        "index.js",
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^2.0.1",
+        "browserify": "^16.2.0",
+        "mocha": "^5.1.1",
+        "nyc": "^11.7.1",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^1.2.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "d54bdbefcdfa6641e02e2051e35aa3b86f5138cf",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-ERuGxDiQ6Xw/agN4tuoCRbmwRuZP0cJ1lJxJubXr5Q/5cDa78+Dc4wfvtxzhzhkm5VvmW6Mf8EVj9SPGN4l8Lg==",
+        "shasum": "6bfdaad60098c7fe06f623e42b22de62de0d3d75",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 47238,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2KGTCRA9TVsSAnZWagAAEfQP/AxkCXdHCpvM7TMDsxIu\nuxk8j02qpXgsCta8xslosDwN/pEYepE1HW02vd+swuws+t/LTq4EtX4oKR1V\n7CeP4rw0TDp8HbQyU+M+Wj9wORe97V6+CuF/Xy4BYQJH2B0OJs0GF6H+nEUo\n/2rYeZ0zlUQKtP+Bo9zDtm0g1y5vWeeg1QtxOAg0Vflv08MSCVUQcA0QRmC0\n2ZeJLfsAbwRo5w/G1Fqy9RYXgQ/1PBH6k9bztVSVRDMjL6n8+adLXd6u4OTm\nte86sOu5TJ0sDm/LxqOpGbvmKV9U7qTW5qw5XHQ1Sp+uhwIuFmTOArrI7juB\n38mz/Y/ajWXQKA2Vs501SVzIuzOvIKyGICvv52S35DiiQ9VFjpJt6xrw9fjt\n7uhZW33Q8HBQw81PEd+DWxN57OmL4CFegofWMN0xYPlkCSlwvfezvl3NkATj\ncfSJPT9NQWL26Q5TxMku8mr8tUgS+dOyRFg99UuWeban9Fly6to71f+Dx/5r\nQCBispKWUihTXFcjWXfxE7sY1UNmt74u8x3pDgS8oXvdAYlxLIzWURHkvozC\n3lT0/MhxBVVI4A6KevJK03tiWO51Bx0nT8S5lZwHN9JBhKj0F5kwEBHzWGbF\nMKpJI65QxBhPYaknatxofVYPsMRnSlkNKPrXB5MXIMWxHlYvrt3vG9f1ZnLp\nHXRv\r\n=wo9+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.0_1524146577962_0.09067833515519474"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.1": {
+      "name": "url-parse",
+      "version": "1.4.1",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "files": [
+        "index.js",
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^1.5.2",
+        "browserify": "^16.2.0",
+        "mocha": "^5.1.1",
+        "nyc": "^12.0.1",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^1.2.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "89045148cd7adb753c961d05f1fa3acaa8471e74",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.1",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-x95Td74QcvICAA0+qERaVkRpTGKyBHHYdwL2LXZm5t/gBtCB9KQSO/0zQgSTYEV1p0WcvSg79TLNPSvd5IDJMQ==",
+        "shasum": "4dec9dad3dc8585f862fed461d2e19bbf623df30",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 47340,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbFpZPCRA9TVsSAnZWagAAdjsP/09O+zYMP7bndAQhml3l\n5GS2gc3vvaVYi4sSJRrja8ptXpEr9W33KFxmE6CiIQeGTcxICeq6nwcBdsPn\nP+XBw6gW80u0+16mRa/g3SEPP7uEIng6ndNrgCcPtPML6YEl/6K0x69CUL0H\nZRNvmp8cf9TS0mZveqmGtbmqkCRydXb191i17ki84JBadlex4UXlfs8ue6zk\ngoWm1IszymFNOA9T8zcyMkQT7V+oUz/AfM0H3qDmHS5a6NvIyVuNnBNzeNP7\n4iVarvcC/Jv/qETPWhyLht+aiF/pFO6a3AI75DdmwvGh8xeW2L2nS5AB3IdH\n+rz3mg8DUSsTBxo8kCxhO1Q8GIDKY4zd49kMl8fTS0OFjSMVlTy8Ul3CZp1D\n0JJ50Zsx5KhsQI+Z4vHY7K4RdNunAS2S342mwJ/YKtfTPgJXVf+t2yQzLRqi\n/6IyEioiabeXecqfkduyBiUHDy6qtOCTs2qPH4IyAZCN1zn/MNtBxp8qvdEI\nACaUdC1cgqtwG+axlVQgQgZv3Ulpb5YXlMW79UFpnN2bhFlsBHWXv35wyIey\nRU1p65jtgVQMDilg753kLTwBTRvCAXF6R251iqzs6qvawfIkKMaui+NWMw2J\n1g+RSUdc9NkQlkyX2gKOTulU9xzkbqYjfl7J7dLNxWk7EV+MQQrNiKX60G2p\nMkod\r\n=2Ez4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.1_1528206926881_0.6451218438752133"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.3": {
+      "name": "url-parse",
+      "version": "1.4.3",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "files": [
+        "index.js",
+        "dist"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^1.5.2",
+        "browserify": "^16.2.0",
+        "mocha": "^5.1.1",
+        "nyc": "^12.0.1",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "426e92933d1eca6469bf3490fd76676f80ad0108",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.3",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-rh+KuAW36YKo0vClhQzLLveoj8FwPJNu65xLb7Mrt+eZht0IPT0IXgSv8gcMegZ6NvjJUALf6Mf25POlMwD1Fw==",
+        "shasum": "bfaee455c889023219d757e045fa6a684ec36c15",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 48337,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbXbaaCRA9TVsSAnZWagAAHwkP+gM4sfP4zF3749eay2Xb\nNl1xApOMlhNJK0s7ZfFw36m6iLl4kHDwdENq2S+HEHgq/+0hiJFOCeFdDUYQ\ne2Sun0Y6kQdYMwLqMch68jrBV7cZpzsHI8hqs0BFKEk0serr1Os7dJWe9KSR\nM0hp4ThgLeMgiGNYbYqabldNZ+4jL1ApjUw3uSGrDaETbV2c3difWoJiBLtk\nbcGqWGIYONZ8Jue61ikZWlk4QwNhpjexPR5c1ZucsbD/0ErgQkTTQkpAZDV/\nHJOPEmPVORhQsA6kcJaQFLpjVTxNU5oZgQnc3oQN8I18R6IyPs0isySoMJg5\nLVH+Z8kOc/7QYSAbxYESUMQ7miIkAU5sMvMDd83uAiARgv1UmA4Rhpmv4mjp\nfSeM4iRe381Ezj8wP0qm77QKjF0krdwGQ0K1obOXzoP1QY9N5LeC9Z9FOpl0\nk1TWQXbQKrCcsSGikC6u1zmCSZeuH1zD6Vb21r8ae8z5Y0ZmhemJNdYz8aZc\ngv8Ffz4/0xDfvxXN4U46VIkQlNybt6b4vFudx8hbTXvDd31ffMSHGDm6JLsC\n/cD8Sn6beq8K7BTHmBTeOiIBozFExkNpCbDoHdrQeCiEibVUxJMb4xY2GQ7N\nWRSTlud9Cpuz8UB3mE+nvETSmJfYDh1tNdZLnbGSstrAn4rJoQc92FQJAXxm\nUalb\r\n=KLA3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.3_1532868250237_0.82068547986872"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.4": {
+      "name": "url-parse",
+      "version": "1.4.4",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^1.5.2",
+        "browserify": "^16.2.0",
+        "mocha": "^5.1.1",
+        "nyc": "^12.0.1",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "bc9da1ec19a86199be663a7f0ba40091834d73f7",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.4",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-/92DTTorg4JjktLNLe6GPS2/RvAd/RGr6LuktmWSMLEOa6rjnlrFXNgSbSmkNvCoL2T028A0a1JaJLzRMlFoHg==",
+        "shasum": "cac1556e95faa0303691fec5cf9d5a1bc34648f8",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 48899,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb4Ed1CRA9TVsSAnZWagAA39EQAJ7N+PzjE87KLg5H+0ZE\nOKfnyTBfcuzd2K5AlwKhpf0ER4cgdQ91XChWW402cb9O6rQk99i9TjWwbr7+\nEaoMVzd0vpCKOv/2pqFXyPXy33Dv3mVWN2xYRygB2GUfZ2Em6nJuNEE1sb//\nd78N7cy2srJa/5/1+QrRedk7pu8Eqb8vSsgldDOYiEXrCetAs9fQK3gfCUSa\nvDodwYMFYXKQVIxlo27rHtnnaXxRlBRw7Zl+zD/FqE2ET32LrvprL6ho18T/\nuljqz48bRfsiMOzgIzk+Oe/Y6TrPcQHTliEqy/3Yu5GTlbZb9Wtf6SbJ3b/z\nt+FBw61NOVuZ+ypG6AFUY8juSihQYJNt/58cAjH3KpemZeIaSVA9nSXB0sDY\n3kKoBjwevoNilQHLfWW78Bd6suPY81FJrK3gHmx0cqjsS3skf3KqfMP//Vdl\nk7uIVbADmbHGIF9PkLqqmwAz5pMJld4PgPJpA2X8NantyyVvC+VJq/qqSi1U\n5ovrIbarNIvu4UC3Dho0sdMduLvKFOJRss6sWycsb/gEXEtPskmf2ftmKflM\nW4vvCC4aDam19QACETZjWO2m74q0ozxYBQ83zqSs41748fUTfMhGrQz7uC00\nQ2oeKX7utWK81b5UAh5ZU63dryx4tPbYcAk5cv+8RrOe2sQIwObh713batvP\n9qps\r\n=Fsjq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.4_1541425012832_0.2829189248448962"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.5": {
+      "name": "url-parse",
+      "version": "1.4.5",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.2.0",
+        "mocha": "^6.1.1",
+        "nyc": "^13.2.0",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "b21a365bc441d8be4022458266a4d9f311a725a6",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.5",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-4XDvC5vZRjEpjP0L4znrWeoH8P8F0XGBlfLdABi/6oV4o8xUVbTpyrxWHxkK2bT0pSIpcjdIzSoWUhlUfawCAQ==",
+        "shasum": "04cbb6ba2be682a18e4417fa2245aa7e3dfdcc50",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 50413,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcr8HICRA9TVsSAnZWagAAWuYP/Rt8nKMoDrTK4NxBxHxw\n25ld4D7yuq5k9aLRxNdBACFjL5O0Dz8k8WSoq4lCJv3AVqHo0e6bhfTtoEWe\nh4yndBrCMJvVulH7LE3decQON9huplfBb2SeaLSedCZoXEbzUFXMSNr0cJec\nf5SumyvpC6NQhpqcHxFMbfbDUnPbj/H5DJ1JcJKyoM054lrviSGiloMnE9AW\njjXnsWeWeV+6PCqQu0t89KLLpx8092X4A2uBUj9Jgcydtuw4xF+JYYBN8RZu\nvsQ2YnmFPpan2EJT1K1xXe1Rsu1AfPc03IL6jtt0kL2yW4xgRuqM1sWsPDmC\nQgFCn1ySvTAgliKdnec3J5cZoqSBc+cr83FUjnOGimAhhCW9e3ZdDMAewkGg\n+E1YvqMioXfyu7GrEPWCQBZrqGPDzU61DuJK00PInIGiAcgXkmihs1TAIznj\nRCtReTmjmUu5OwJGbakzLudi2nJP0DzDTXh7fcoBMJyVBQfFx4pQ+thVWHzf\n+WIYjUcC1BLT4G8RpwVnE52+kYWLVJJ9o6OYwnb2Ryqnmfi9l0SGMQoi6DTb\nJsSOrwumysjY8SXYsX/AzR8Tw9sRyv1xcRs1krZTMqNel1elhjCyRXAiaSYp\n5/mElhw7ze3zwgvAaY7LrYo0IjFXHJvuNUVMgUaTBC3rN4S+UXjIMjrQ2F2t\nbM6Z\r\n=u+Cc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.5_1555022280100_0.20699351912167852"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.6": {
+      "name": "url-parse",
+      "version": "1.4.6",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.0.0",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.2.0",
+        "mocha": "^6.1.1",
+        "nyc": "^13.2.0",
+        "pre-commit": "^1.2.0",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.3.21"
+      },
+      "gitHead": "50a6877824185bd294bde858d4372179d51aec8c",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.6",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-/B8AD9iQ01seoXmXf9z/MjLZQIdOoYl/+gvsQF6+mpnxaTfG9P7srYaiqaDMyKkR36XMXfhqSHss5MyFAO8lew==",
+        "shasum": "baf91d6e6783c8a795eb476892ffef2737fc0456",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.6.tgz",
+        "fileCount": 7,
+        "unpackedSize": 50463,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcsL3yCRA9TVsSAnZWagAAIK8P/RBsuy2nkvdPhIfO98Vs\n9+QVf6oA56QM+7hRiJ+udhtkpDg8fVQFtJj8LewMSjZZHTqpj0C7UgBmtVys\ncXIrbJGkoncWsL58bI9LwvyssCOtuhF+D2O7ObaOZ/xcN8RGpv2I+3AiGAlW\niNAEgaKYPY9QsPBklYAvjuWasfzmNwRUEZ4HHKk+8FjDSzgsTGmKnd87tURg\n5adDgrrrhUg9Oi33e/8yldfAiygC5Oa+Uo0R0ZT79sVOvOEk1PBnoRlb8zvW\n2KyZ5FKEc10xEUuyMiROiqeXdejEBgqJqCpJkjzYRsP3UB23EH5g/B7yl7B+\n8hdE07ZUXsh68KesKIGAVOfc7ZsOWCa3SR13BMf359ybTTijTuXOOt/i+WHg\n4XC99L1Lmz12GM6g/8DTuCS7qoUS0h8ReyD7zgKpY0zLS2m5ec6MZgh+BXS2\nA6m4WCP6phgjoJJcv3l0Gf+waETPsBJKl7SlEQJ9ZVNC1RVIddazu4ecw1Gs\nLkhd5KV+SptnuGk1+Zc4XnY2uhHMF9Rzk0nOInmRrhC5LL0o0k9DL6r5K5gh\n6nvFjFL/qGM6FsLZyVwneP8/OyusY7u+kXnLn/8wDxtUNvf/3/NY0r9NDdxS\nO9iVV4Ed7kDOfbYzMy6KA833R1g66vznoiB7F6OStRDv/DXlg4OYHVZgwKAz\n4n+K\r\n=K4FH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.6_1555086833681_0.46834135414209666"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.7": {
+      "name": "url-parse",
+      "version": "1.4.7",
+      "description": "Small footprint URL parser that works seamlessly across Node.js and browser environments",
+      "main": "index.js",
+      "scripts": {
+        "browserify": "rm -rf dist && mkdir -p dist && browserify index.js -s URLParse -o dist/url-parse.js",
+        "minify": "uglifyjs dist/url-parse.js --source-map -cm -o dist/url-parse.min.js",
+        "test": "nyc --reporter=html --reporter=text mocha test/test.js",
+        "test-browser": "node test/browser.js",
+        "prepublishOnly": "npm run browserify && npm run minify",
+        "watch": "mocha --watch test/test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/url-parse.git"
+      },
+      "keywords": [
+        "URL",
+        "parser",
+        "uri",
+        "url",
+        "parse",
+        "query",
+        "string",
+        "querystring",
+        "stringify"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "querystringify": "^2.1.1",
+        "requires-port": "^1.0.0"
+      },
+      "devDependencies": {
+        "assume": "^2.2.0",
+        "browserify": "^16.2.3",
+        "mocha": "^6.1.4",
+        "nyc": "^14.0.0",
+        "pre-commit": "^1.2.2",
+        "sauce-browsers": "^2.0.0",
+        "sauce-test": "^1.3.3",
+        "uglify-js": "^3.5.7"
+      },
+      "gitHead": "0cde3dcd2742759c4f1d3647129dc1166f0a25c6",
+      "bugs": {
+        "url": "https://github.com/unshiftio/url-parse/issues"
+      },
+      "homepage": "https://github.com/unshiftio/url-parse#readme",
+      "_id": "url-parse@1.4.7",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==",
+        "shasum": "a8a83535e8c00a316e403a5db4ac1b9b853ae278",
+        "tarball": "https://registry.npmjs.org/url-parse/-/url-parse-1.4.7.tgz",
+        "fileCount": 7,
+        "unpackedSize": 50462,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwyATCRA9TVsSAnZWagAAPDAP/1AK1XsHrBwBpN/yS0wR\nu9b/FR60TP+an4Z33sGBJtPDOv+3nzyQ3q22bsmQhVWSTxgweyluN16BGyKG\nZ3qZlauJFVnGD8MBNu3lolFGF8rE80E7AROb4Lp+cprQMdHc7zgLgwjOMupB\nmUEW9QeQzpDd33G3plnAOjn1DkGRZzX6sK3ZFrD7ifeioqO8tIxSSmZxpEt9\nTSOEm64238rysl6ZijD3/yI0NPAeE+tGYYmnISQv1er6O3S1qyu5maoz8Rsc\naYJA/8YTyNOMxbc1HAccN3il68KilJdQkHBq62H4N/jLd0a+uUCaVBggc8ul\nzXsMGTAcDJGPBvw/TP5QnU99rX8i5TUyxfhMawcAA+P38HHv+wbeGmC/upBD\nHJTa9KVFdORO7WKmr0imCvl1kRkcu/fGSuxorJtEOqwLfpvt/o/lsL3bFRIa\nj8nu4oRaC9vdevK5g3Pc+Y0WiOO3Eik1kAFt7M7W7JSJa+mWbKGc9cA0tBhL\nQeTB9x6SmdWZh/SzCwY4UZBhrZe/8wR4GxS1CJoZjNdiE46QEigfkC3XMsf2\nTRtoC+lH1oGBBwuglg2QQlR1fxwWmGLiT9ztr/uro01D1IdbV9lvqZxjc9WJ\n0PjWFkqpNoIPdhIA+YnHU0oLe34Hnj1OZEQVDDQ+QP9aFynZV9xuj1m9BxQq\naq+2\r\n=kXPf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "info@martijnswaagman.nl",
+          "name": "swaagie"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/url-parse_1.4.7_1556291603210_0.13082610745376777"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# url-parse\n\n[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](https://img.shields.io/npm/v/url-parse.svg?style=flat-square)](https://www.npmjs.com/package/url-parse)[![Build Status](https://img.shields.io/travis/unshiftio/url-parse/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/url-parse)[![Dependencies](https://img.shields.io/david/unshiftio/url-parse.svg?style=flat-square)](https://david-dm.org/unshiftio/url-parse)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/url-parse/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/url-parse?branch=master)[![IRC channel](https://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](https://webchat.freenode.net/?channels=unshift)\n\n[![Sauce Test Status](https://saucelabs.com/browser-matrix/url-parse.svg)](https://saucelabs.com/u/url-parse)\n\nThe `url-parse` method exposes two different API interfaces. The\n[`url`](https://nodejs.org/api/url.html) interface that you know from Node.js\nand the new [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)\ninterface that is available in the latest browsers.\n\nIn version `0.1` we moved from a DOM based parsing solution, using the `<a>`\nelement, to a full Regular Expression solution. The main reason for this was\nto make the URL parser available in different JavaScript environments as you\ndon't always have access to the DOM. An example of such environment is the\n[`Worker`](https://developer.mozilla.org/en/docs/Web/API/Worker) interface.\nThe RegExp based solution didn't work well as it required a lot of lookups\ncausing major problems in FireFox. In version `1.0.0` we ditched the RegExp\nbased solution in favor of a pure string parsing solution which chops up the\nURL into smaller pieces. This module still has a really small footprint as it\nhas been designed to be used on the client side.\n\nIn addition to URL parsing we also expose the bundled `querystringify` module.\n\n## Installation\n\nThis module is designed to be used using either browserify or Node.js it's\nreleased in the public npm registry and can be installed using:\n\n```\nnpm install url-parse\n```\n\n## Usage\n\nAll examples assume that this library is bootstrapped using:\n\n```js\n'use strict';\n\nvar Url = require('url-parse');\n```\n\nTo parse an URL simply call the `URL` method with the URL that needs to be\ntransformed into an object.\n\n```js\nvar url = new Url('https://github.com/foo/bar');\n```\n\nThe `new` keyword is optional but it will save you an extra function invocation.\nThe constructor takes the following arguments:\n\n- `url` (`String`): A string representing an absolute or relative URL.\n- `baseURL` (`Object` | `String`): An object or string representing\n  the base URL to use in case `url` is a relative URL. This argument is\n  optional and defaults to [`location`](https://developer.mozilla.org/en-US/docs/Web/API/Location)\n  in the browser.\n- `parser` (`Boolean` | `Function`): This argument is optional and specifies\n  how to parse the query string. By default it is `false` so the query string\n  is not parsed. If you pass `true` the query string is parsed using the\n  embedded `querystringify` module. If you pass a function the query string\n  will be parsed using this function.\n\nAs said above we also support the Node.js interface so you can also use the\nlibrary in this way:\n\n```js\n'use strict';\n\nvar parse = require('url-parse')\n  , url = parse('https://github.com/foo/bar', true);\n```\n\nThe returned `url` instance contains the following properties:\n\n- `protocol`: The protocol scheme of the URL (e.g. `http:`).\n- `slashes`: A boolean which indicates whether the `protocol` is followed by two\n  forward slashes (`//`).\n- `auth`: Authentication information portion (e.g. `username:password`).\n- `username`: Username of basic authentication.\n- `password`: Password of basic authentication.\n- `host`: Host name with port number.\n- `hostname`: Host name without port number.\n- `port`: Optional port number.\n- `pathname`: URL path.\n- `query`: Parsed object containing query string, unless parsing is set to false.\n- `hash`: The \"fragment\" portion of the URL including the pound-sign (`#`).\n- `href`: The full URL.\n- `origin`: The origin of the URL.\n\nNote that when `url-parse` is used in a browser environment, it will default to\nusing the browser's current window location as the base URL when parsing all\ninputs. To parse an input independently of the browser's current URL (e.g. for\nfunctionality parity with the library in a Node environment), pass an empty\nlocation object as the second parameter:\n\n```js\nvar parse = require('url-parse');\nparse('hostname', {});\n```\n\n### Url.set(key, value)\n\nA simple helper function to change parts of the URL and propagating it through\nall properties. When you set a new `host` you want the same value to be applied\nto `port` if has a different port number, `hostname` so it has a correct name\nagain and `href` so you have a complete URL.\n\n```js\nvar parsed = parse('http://google.com/parse-things');\n\nparsed.set('hostname', 'yahoo.com');\nconsole.log(parsed.href); // http://yahoo.com/parse-things\n```\n\nIt's aware of default ports so you cannot set a port 80 on an URL which has\n`http` as protocol.\n\n### Url.toString()\n\nThe returned `url` object comes with a custom `toString` method which will\ngenerate a full URL again when called. The method accepts an extra function\nwhich will stringify the query string for you. If you don't supply a function we\nwill use our default method.\n\n```js\nvar location = url.toString(); // http://example.com/whatever/?qs=32\n```\n\nYou would rarely need to use this method as the full URL is also available as\n`href` property. If you are using the `URL.set` method to make changes, this\nwill automatically update.\n\n## Testing\n\nThe testing of this module is done in 3 different ways:\n\n1. We have unit tests that run under Node.js. You can run these tests with the\n  `npm test` command.\n2. Code coverage can be run manually using `npm run coverage`.\n3. For browser testing we use Sauce Labs and `zuul`. You can run browser tests\n  using the `npm run test-browser` command.\n\n## License\n\n[MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "3rdeden"
+    },
+    {
+      "email": "info@martijnswaagman.nl",
+      "name": "swaagie"
+    },
+    {
+      "email": "npm@unshift.io",
+      "name": "unshift"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "v1"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-26T15:13:25.910Z",
+    "created": "2014-10-08T14:47:45.158Z",
+    "0.0.0": "2014-10-08T14:47:45.158Z",
+    "0.0.1": "2014-10-09T14:25:32.785Z",
+    "0.0.2": "2014-10-13T19:59:41.394Z",
+    "0.0.3": "2014-10-17T11:13:04.720Z",
+    "0.0.4": "2014-10-29T17:50:51.773Z",
+    "0.1.0": "2014-11-09T22:52:35.366Z",
+    "0.1.1": "2014-11-21T21:06:03.458Z",
+    "0.1.2": "2014-11-21T22:05:36.372Z",
+    "0.1.3": "2014-11-22T18:58:05.384Z",
+    "0.1.4": "2014-11-27T09:45:17.766Z",
+    "0.1.5": "2014-12-08T17:36:10.876Z",
+    "0.2.0": "2014-12-08T22:47:54.810Z",
+    "0.2.1": "2014-12-16T22:42:13.253Z",
+    "0.2.2": "2014-12-17T11:07:14.920Z",
+    "0.2.3": "2014-12-17T19:07:02.987Z",
+    "1.0.0": "2015-01-18T21:31:55.934Z",
+    "1.0.1": "2015-05-06T09:44:49.172Z",
+    "1.0.2": "2015-07-03T07:26:05.371Z",
+    "1.0.3": "2015-09-25T06:46:36.669Z",
+    "1.0.4": "2015-10-09T12:13:30.044Z",
+    "1.0.5": "2015-10-30T14:43:32.842Z",
+    "1.1.0": "2016-03-28T11:19:15.294Z",
+    "1.1.1": "2016-03-30T13:50:10.212Z",
+    "1.1.2": "2016-08-15T08:25:30.415Z",
+    "1.1.3": "2016-08-15T10:41:33.356Z",
+    "1.1.4": "2016-10-06T08:58:00.711Z",
+    "1.1.5": "2016-10-10T14:42:09.483Z",
+    "1.1.6": "2016-10-10T14:46:22.618Z",
+    "1.1.7": "2016-10-31T15:27:42.243Z",
+    "1.1.8": "2017-02-18T15:58:11.450Z",
+    "1.1.9": "2017-05-03T16:49:04.462Z",
+    "1.2.0": "2017-11-02T13:59:04.266Z",
+    "1.3.0": "2018-04-06T00:12:02.700Z",
+    "1.4.0": "2018-04-19T14:02:58.027Z",
+    "1.4.1": "2018-06-05T13:55:26.937Z",
+    "1.4.3": "2018-07-29T12:44:10.337Z",
+    "1.4.4": "2018-11-05T13:36:52.984Z",
+    "1.4.5": "2019-04-11T22:38:00.194Z",
+    "1.4.6": "2019-04-12T16:33:53.772Z",
+    "1.4.7": "2019-04-26T15:13:23.330Z"
+  },
+  "keywords": [
+    "URL",
+    "parser",
+    "uri",
+    "url",
+    "parse",
+    "query",
+    "string",
+    "querystring",
+    "stringify"
+  ],
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/unshiftio/url-parse#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unshiftio/url-parse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unshiftio/url-parse/issues"
+  },
+  "users": {
+    "fmoliveira": true,
+    "thebearingedge": true,
+    "curioussavage": true,
+    "pandao": true,
+    "m80126colin": true,
+    "jakedetels": true,
+    "piecioshka": true,
+    "jovinbm": true,
+    "steel1990": true,
+    "dchem": true,
+    "mjasso": true,
+    "xinwangwang": true,
+    "mikestaub": true,
+    "klimnikita": true,
+    "rpnna": true,
+    "filmplane": true,
+    "staydan": true,
+    "qddegtya": true,
+    "bobxuyang": true,
+    "itesic": true,
+    "sixertoy": true,
+    "dyaa": true,
+    "shuoshubao": true,
+    "rocket0191": true,
+    "shakakira": true,
+    "brend": true,
+    "kakaman": true,
+    "swansontec": true,
+    "zvit": true,
+    "orenschwartz": true,
+    "r_java": true,
+    "tmiame": true,
+    "chalassa": true,
+    "meganekick": true,
+    "zuojiang": true,
+    "flftfqwxf": true,
+    "cestrensem": true,
+    "yusef.ho.tw": true,
+    "akamaozu": true,
+    "black-black-cat": true,
+    "usex": true,
+    "sternelee": true,
+    "xiaobing": true
+  }
+}

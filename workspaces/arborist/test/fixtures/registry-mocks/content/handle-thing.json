@@ -1,0 +1,683 @@
+{
+  "_id": "handle-thing",
+  "_rev": "12-0385b5d40bcacd4bcbe3d6bf245d95b2",
+  "name": "handle-thing",
+  "description": "Wrap Streams2 instance into a HandleWrap",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "handle-thing",
+      "version": "1.0.1",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "cfe9b47e2120ff34fa2abad906f6d66e7ad1d4d5",
+      "_id": "handle-thing@1.0.1",
+      "_shasum": "8d2699e00830315f2f4df976ec78e13edc138376",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8d2699e00830315f2f4df976ec78e13edc138376",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "handle-thing",
+      "version": "1.1.0",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "e10bf84ef6c805fafbbfd51f45a9bb99b691c9f7",
+      "_id": "handle-thing@1.1.0",
+      "_shasum": "3396fa569f84a72bc514b6ae8f8b59d536755776",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3396fa569f84a72bc514b6ae8f8b59d536755776",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "handle-thing",
+      "version": "1.1.1",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "d71668176561ea0e94d22fd2a9994bf5426e3af2",
+      "_id": "handle-thing@1.1.1",
+      "_shasum": "2548f79bf1a9d9b8afd2a204df555e97a48667a0",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2548f79bf1a9d9b8afd2a204df555e97a48667a0",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "handle-thing",
+      "version": "1.2.0",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "0a248f009a80c6bd3d0a72a9b93169d8935d96fb",
+      "_id": "handle-thing@1.2.0",
+      "_shasum": "83dca5730101278b7eadcbdcb77ebbe3c9118e99",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "83dca5730101278b7eadcbdcb77ebbe3c9118e99",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "handle-thing",
+      "version": "1.2.1",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "23be78e16c30e1c1f24c8c438825dce933075718",
+      "_id": "handle-thing@1.2.1",
+      "_shasum": "bc4481875c25058ebed3bef0b14584502b012e3a",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bc4481875c25058ebed3bef0b14584502b012e3a",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "handle-thing",
+      "version": "1.2.2",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "39be7a6108eae277106986859b27fb1cdaab0aa7",
+      "_id": "handle-thing@1.2.2",
+      "_shasum": "b70a18da0d65c5c9aefd92ed1b659a7763d58f0a",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b70a18da0d65c5c9aefd92ed1b659a7763d58f0a",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "handle-thing",
+      "version": "1.2.3",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "2385a9fc298b3248296ffb9799a4f25d0d9e2b8a",
+      "_id": "handle-thing@1.2.3",
+      "_shasum": "6f5feda35992bf0a0168fd50fa246e43a7b11565",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6f5feda35992bf0a0168fd50fa246e43a7b11565",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.4": {
+      "name": "handle-thing",
+      "version": "1.2.4",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "d6859d96df339ada550386672c17ea21251d08fc",
+      "_id": "handle-thing@1.2.4",
+      "_shasum": "b41a5a3ff11a15e80312964ef6da7b45041c8a1e",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b41a5a3ff11a15e80312964ef6da7b45041c8a1e",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.5": {
+      "name": "handle-thing",
+      "version": "1.2.5",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "test": "mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/handle-thing/issues"
+      },
+      "homepage": "https://github.com/indutny/handle-thing#readme",
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "readable-stream": "^2.0.1",
+        "stream-pair": "^1.0.0"
+      },
+      "gitHead": "6faac3994e329a6736cdd5f8866d5fb3c994a3a3",
+      "_id": "handle-thing@1.2.5",
+      "_shasum": "fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-1.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/handle-thing-1.2.5.tgz_1471506800120_0.3210516825783998"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "handle-thing",
+      "version": "2.0.0",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "mocha --reporter=spec test/*-test.js",
+        "coverage": "istanbul cover node_modules/.bin/_mocha -- --reporter=spec test/**/*-test.js"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/spdy-http2/handle-thing/issues"
+      },
+      "homepage": "https://github.com/spdy-http2/handle-thing#readme",
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "pre-commit": "^1.2.2",
+        "readable-stream": "^3.0.6",
+        "standard": "^12.0.1",
+        "stream-pair": "^1.0.3"
+      },
+      "gitHead": "219d451c77b496e9dfc6b63ba37787a84a60fc1b",
+      "_id": "handle-thing@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "daviddias",
+        "email": "mail@daviddias.me"
+      },
+      "dist": {
+        "integrity": "sha512-d4sze1JNC454Wdo2fkuyzCr6aHcbL6PGGuFAz0Li/NcOm1tCHGnWDRmJP85dh9IhQErTc2svWFEX5xHIOo//kQ==",
+        "shasum": "0e039695ff50c93fc288557d696f3c1dc6776754",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11608,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb4+CYCRA9TVsSAnZWagAAZeUP/05FTpmigS1MMtg5209t\n0EQAB8pYF+J9cUk/0p4GOVsE6/DN+Y9yMVFZWTl4r23Nug2CjHs/iJdXc2z1\nGT5q1VfGzRRp/0b1+V1ZBcCAOuClPtQ01bG48FjhqRvdk5xNk0Qbsbc5fMiy\noh8pwt6FjSoIMs2geJKM+2hjoIqbsCa1zao5lTgWx7Rf9vqG7y1J/GuLJhYv\nRFv87AVwJEUWIHha/wezXKB2cguW6aPPiwgw2SyikeGG68eN4KI+GMzJ0EJ0\nGQYmWL569knDS5SoobxlKsmTqigdb7PEeeX1pUbe0SgsFGFx6bcBfRakiV1a\nznBDaebbhDinZtYYZQuo4sNkCdEoj8TZnbd5dWIaUii1yCHB7akNwzo+9ptv\nlQjDnUBudIGtHQV4HwbmVA/IgIBtxMyOGDI0P2yEohMYeeDRGIXjN9ucrlBq\niAm3S60UjfWBOwlcPatfcBfQyrZohDigfpT9C8A5GnVakkW2U5k+KY5HH/gx\nB5xu3pJ7U+uaWg4Ay72pLaDVJUtBA6N87WjHX3TcI8dBP2m6gv7+mdjTq2Wj\n8B7KtoPGAOpRiJBmSM6MRnUYO5PSD4s4HN0/piH4u3stQzxSPyWoDyneDKGN\nFUXL3JVYoGeSOf9vFdwPlvg3lIq2uaxQw4LBKOTkcAlJ18xDL3mKRUECshnh\n4J9W\r\n=JfNi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "daviddias",
+          "email": "daviddias.p@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/handle-thing_2.0.0_1541660823785_0.2980331579099351"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "handle-thing",
+      "version": "2.0.1",
+      "description": "Wrap Streams2 instance into a HandleWrap",
+      "main": "lib/handle.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "mocha --reporter=spec test/*-test.js",
+        "coverage": "istanbul cover node_modules/.bin/_mocha -- --reporter=spec test/**/*-test.js"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+      },
+      "keywords": [
+        "handle",
+        "net",
+        "streams2"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/spdy-http2/handle-thing/issues"
+      },
+      "homepage": "https://github.com/spdy-http2/handle-thing#readme",
+      "devDependencies": {
+        "istanbul": "^0.4.5",
+        "mocha": "^5.2.0",
+        "pre-commit": "^1.2.2",
+        "readable-stream": "^3.0.6",
+        "standard": "^12.0.1",
+        "stream-pair": "^1.0.3"
+      },
+      "gitHead": "cc8c5c99189a9edfb7a3456eb97573c3741b79ec",
+      "_id": "handle-thing@2.0.1",
+      "_nodeVersion": "13.9.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==",
+        "shasum": "857f79ce359580c340d43081cc648970d0bb234e",
+        "tarball": "https://registry.npmjs.org/handle-thing/-/handle-thing-2.0.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 12147,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJee4gmCRA9TVsSAnZWagAANVAP/2StYI+jGXer4C8cp2NJ\nmSOsiPnY8OLltFFEpE4rbuufXs0g9ig+WjIgIaxgft1F+Uz2Gi1sHnuxdRst\n7DULmz6j4aHRUo24yrkPQueZMaSyPppWYNWfLvBNyChrQFdngTcfVsze8TgS\nisKJxx3Gg9/KWBrQ85Lp5WFXPgTvXQ9JC7/PQanJV30rXX1SaLAOxrjkj3CS\nEjD66UfWaGWRSmnr8sHHvgiXlXQ60HvNeS7sSn6dKWgGn2Dqrltvh27aGMQF\nEfasSPn9pkJWTVfdn8LE0e5vfS5nI0yXEJ8OELhBsUGx2wGH62AtZpDQ14rJ\n9eCp4dmCZ7K5i2muNdvYnUDOPgg2hcY5eDbOsVYujo1IRvVz3F7+qwv3+Ekt\ni7p2lU5Sg2WZiWU2DNorWHfP8+nLeTf+hfFW8TOG3iypa1kmPU4bqj2CjGj3\nqKQAkv4PA2/N7+TVpcrnlczZTS1r1AG+O4E7KMsMwzhFi2eL8S+vHldU5xye\nDWYijHdjIhEgVYbbNMtyOFPyu7bGmQDG/S4pHsM2mEYiWxULBPO/W84SsDmB\nyl4VXCI3Aflq1mH5AcSlXD8lBNuhJC1/QD+h5c9vHH9gE+vakyyCnTm9mIPD\n3XyKnKIk+OQpzTVykNCXOceuYdyKZgT0cmlQDXigL+OoQmhjpUhs8bM39dbh\nxT66\r\n=Gwnr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "daviddias",
+          "email": "daviddias.p@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/handle-thing_2.0.1_1585154085964_0.0654420205612285"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Handle Thing\n\n[![Build Status](https://travis-ci.org/spdy-http2/handle-thing.svg?branch=master)](http://travis-ci.org/spdy-http2/handle-thing)\n[![NPM version](https://badge.fury.io/js/handle-thing.svg)](http://badge.fury.io/js/handle-thing)\n[![dependencies Status](https://david-dm.org/spdy-http2/handle-thing/status.svg?style=flat-square)](https://david-dm.org/spdy-http2/handle-thing)\n[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)\n[![Waffle](https://img.shields.io/badge/track-waffle-blue.svg?style=flat-square)](https://waffle.io/spdy-http2/node-spdy)\n\n> Wrap Streams2 instance into a HandleWrap. The right thing when you need it\n\n## Usage\n\n### Examples\n\n`soon™`\n\n### API\n\n`soon™`\n\n## LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2015.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "daviddias",
+      "email": "daviddias.p@gmail.com"
+    },
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-25T16:34:48.499Z",
+    "created": "2015-07-08T21:02:24.418Z",
+    "1.0.1": "2015-07-08T21:02:24.418Z",
+    "1.1.0": "2015-07-11T02:23:33.646Z",
+    "1.1.1": "2015-07-11T02:37:21.079Z",
+    "1.2.0": "2015-07-11T03:02:53.814Z",
+    "1.2.1": "2015-07-14T17:40:37.609Z",
+    "1.2.2": "2015-08-10T05:21:56.851Z",
+    "1.2.3": "2015-08-10T05:23:52.100Z",
+    "1.2.4": "2015-08-10T23:47:40.881Z",
+    "1.2.5": "2016-08-18T07:53:22.147Z",
+    "2.0.0": "2018-11-08T07:07:03.940Z",
+    "2.0.1": "2020-03-25T16:34:46.090Z"
+  },
+  "homepage": "https://github.com/spdy-http2/handle-thing#readme",
+  "keywords": [
+    "handle",
+    "net",
+    "streams2"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/handle-thing.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/spdy-http2/handle-thing/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

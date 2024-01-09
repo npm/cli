@@ -1,0 +1,123 @@
+{
+  "_id": "target",
+  "_rev": "12-7a46296b6ce2bf7276b840b964ad1f73",
+  "name": "target",
+  "time": {
+    "modified": "2017-07-23T02:29:12.722Z",
+    "created": "2014-07-10T17:11:24.430Z",
+    "0.0.0": "2014-07-10T17:11:24.430Z",
+    "0.0.1": "2014-09-15T17:45:51.027Z",
+    "0.0.2": "2014-09-21T20:52:20.870Z"
+  },
+  "maintainers": [
+    {
+      "email": "npm@unshift.io",
+      "name": "unshift"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "v1"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "3rdeden"
+    }
+  ],
+  "dist-tags": {
+    "latest": "0.0.2"
+  },
+  "description": "Use iFrame targets to POST data to servers without page reloads",
+  "readme": "# Target\n\nPOST/GET/`<HTTP METHOD>` a resource through an iframe. So, why would need an\niframe? There are cases where you cannot use cross domain XHR because of the\nbrowser support that is missing etc. or maybe you just want to upload a file\nwithout triggering a full-page refresh. This module makes that all possible.\n\n## Installation\n\nThe module is released through npm and tries to follow semver as closely as\npossible. You can install the latest version of this module using:\n\n```\nnpm install --save target\n```\n\n## Usage\n\nIn all examples we assume that the following code has been loaded.\n\n```js\nvar target = require('target');\n```\n\nThe `target` variable now contains a function. The returned function can be\ncalled with 3 arguments, the _options_ argument is optional and can be omitted:\n\n```js\ntarget('http://your-target-url.here/please', function send(err) {\n  // Error first completion callback.\n});\n```\n\nAs you can see in the example above, the first argument is the URL that should\nreceive the send data. And the last argument should **always** be a callback. It\nfollows an error first callback pattern as you might be used to in node.js. The\nsecond argument is an optional object, this object allows you to fully configure\nthe module:\n\n- `body`: String of data that should be posted to the server.\n- `dom`: Document element we append to and create elements from.\n- `param`: The name of the param where we send the data with.\n- `method`: The HTTP method of the request.\n- `class`: CSS class name which will be applied to the created form element.\n- `uuid`: Unique id, will be used as submit target and id of the created iframe.\n\nSo to `POST` data to the server:\n\n```js\ntarget('http://localhost:8080/incoming', {\n  method: 'POST',\n  body: 'Hello mom'\n}, function send(err) {\n  console.log(arguments);\n});\n```\n\n## License\n\nMIT\n",
+  "versions": {
+    "0.0.1": {
+      "name": "target",
+      "version": "0.0.1",
+      "description": "Use iFrame targets to POST data to servers without page reloads",
+      "main": "index.js",
+      "keywords": [
+        "iframe",
+        "post",
+        "jsonp",
+        "target"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "frames": "0.0.0"
+      },
+      "_id": "target@0.0.1",
+      "scripts": {},
+      "_shasum": "0d18598f726882f6b35eafe7631deaa291b7bdff",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0d18598f726882f6b35eafe7631deaa291b7bdff",
+        "tarball": "https://registry.npmjs.org/target/-/target-0.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "target",
+      "version": "0.0.2",
+      "description": "Use iFrame targets to POST data to servers without page reloads",
+      "main": "index.js",
+      "keywords": [
+        "iframe",
+        "post",
+        "jsonp",
+        "target"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "frames": "0.0.x"
+      },
+      "_id": "target@0.0.2",
+      "scripts": {},
+      "_shasum": "f56520eb1d71422c522f5bde0b3f74cfd5a7e5f8",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f56520eb1d71422c522f5bde0b3f74cfd5a7e5f8",
+        "tarball": "https://registry.npmjs.org/target/-/target-0.0.2.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "keywords": [
+    "iframe",
+    "post",
+    "jsonp",
+    "target"
+  ],
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

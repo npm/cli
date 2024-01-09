@@ -1,0 +1,690 @@
+{
+  "_id": "@nodelib/fs.stat",
+  "_rev": "10-cb6589243bbc6606c1d2b5c01f06a7a7",
+  "name": "@nodelib/fs.stat",
+  "dist-tags": {
+    "latest": "2.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.0.0",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "gitHead": "fa9d5979131b7fcbac73073afecb14854e32e37d",
+      "_id": "@nodelib/fs.stat@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-GWc+ko2yfaiwAbLlOBTS9HF2U6pINIJ/3H6JvMeaF8gii4LGTsCQSbuPh7R4VJfIBcwxvjaFyp89XN45Omijng==",
+        "shasum": "3c92e899b4857c6762242d3f0fb8891c37aacdcc",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.0.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 8064,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8J92CRA9TVsSAnZWagAATmEP/jTsgVQeOtls/3C5M8Jn\nQEKnGj3eyJ7tKb0SLt4kS04Y1ZQ+GBliUdByMIh+BTQU5G3Awbh3OteEYK3c\nnmpUrdKN5/0apR+TbMV5cDt4Xd8ThZTvuadDkPM00peNThjtLzHgi8DdGC5O\ny6dIqvmRxmbLFnZG1N9t/K9TGzLpLtH1FZFbpUvi27f3xQ3BiY7BW5s7b4K9\nwTXxGuZVqu6ASrHI0s0C6nYWJVR8TF8tNLv9iFoNzFzMj9C044QYoJKSTchO\nTELYXMBfwlREh/tTDSmZFhWx0t57JmNPRM+mbqRpYMaJkuMGsj0Z9goYW6W2\nQlz3TAndCg3+Df2oQ481Jv+xMZUORnpTMIYKW6xLsyRD/U2KKGq239vubfpO\nCNuPKi5PEGZaVs6isDr2UxBYHn8hsuWs2sxbIc1JXL3XiTdUyXKPqVu1RCz1\nAsDcrSI0c6RZt8Y2ZYMqBFTCYPmOR7nLVuFScezbw7IYEnLQQAkwer6IqAEq\nr6y7NJMls5g6msCM3vFLeO6vCwQ/Il2bd1CdHBGEo1A6MLiY7AKpUcCnR4mD\n+zogPr+wjNuislu3pixmIaLidnMEHPjFIXX31i16PovWyDavsQ6HZuLy0VwL\nGFlOZL/13YUa4ER+sYMu5u6zicrNy5TRhKZBxJUEG4wbi6LfYGtXmQDtKnOH\nPW7M\r\n=jxue\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.0.0_1525718901106_0.9670875344949514"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.0.1",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "gitHead": "06c4da80b0282af824867c994980db3aef96237e",
+      "_id": "@nodelib/fs.stat@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-VoglbyGyG2HZdTFRZ7ljyhr15xDGb/Yg0NbaZUm21wFJ9WRq/VMcWSfJ9PN50Z4blbJa4pIiHEGWB8L0ytYZnA==",
+        "shasum": "f3a49e29eb89979e104d632877908efd72a7de32",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 8064,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8KBgCRA9TVsSAnZWagAAWXcP/j9DW5fKJAWJH7ZdbuGT\n6OaXtolUot4XBAMu2lu2w7DROPsR3a9qyv3GdfGv90GNYLp4weGfBpW1g7YJ\nonGDaNc8k2mm0mos+XIrE34LLgIYiyVWD+NXIFzDxaDIWXFYUloLPsupm6sG\nwLKG9XPINumy1SanuRifVyqkaG6Vf0lriouB087VKgLcTruW5pKEDtRS20mF\n+gLi6z2/cdmsGuhjDYT3lNn1rZGQ9iqJbo6/68CoYbkVF+0MMUCh8lZqq4rR\njUfrC+Jzv1hLfuqx3QJMYJj8kq3WEdQHDFPLdKF9+GC/rX+Fwtbs6R//n6fI\nrmj7Kphqv1CJASDaTwIlQoiflTjZK3f/EGd5Kjol6rg1wb0/l8qBgHetHBhL\nC2BYrK70NmdDSSUfO3kgUtldSO7dCbFfhy13ckFH6HutzUUw9AuLDXIeaFER\nsG6ESYlUX/KRaQUR/5u/RnZ+IZrFNJUOSZmq3bbupcr0omEzPw8BKwvCJZQP\n2YEeherv9NqzlZbKthUlsxQ5HyCNZ95NHFfucix0bEvjH878WTxEikGgs2zz\nGyyr63HKk/O++KkNe9I+NNPP02U/ChbHfJaoYN/8I4hvCyYV1iwpemMarh0F\nHQ9snLVtrnzetD55QBfSB97kT5fG+QovMQkF36G+EnDR2yBpT8ts1KR8AkJ2\nsjbo\r\n=q6DZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.0.1_1525719135853_0.6815480468181387"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.0.2",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "gitHead": "7ae2c1d5f163d2c9715d9f042314250ec6e9b299",
+      "_id": "@nodelib/fs.stat@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-vCpf75JDcdomXvUd7Rn6DfYAVqPAFI66FVjxiWGwh85OLdvfo3paBoPJaam5keIYRyUolnS7SleS/ZPCidCvzw==",
+        "shasum": "d056b68999769728a1cff8d643bc59eb6f0be436",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.0.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 8064,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8fNrCRA9TVsSAnZWagAAkB4QAJCfNPpoDoHxaG53qZxm\na8p82D7WEneTUfyj1qer3iHIpobg3GiaNbll5YdzlMwPoK2cyztZ20YS++et\nIKyiLEUXtPY5gAeqipWgVoXZCREcfp3qBsbl8dI+89TfoldH2ERKftJSQvqw\nY3AZvIdK3uDNx5kXSep0tHbSadpiQ9VfFM8wMGHnO0t8TFMat1W8GI5loUzu\nkAricV/tW/TGOVzYcDOP1jLScCp0ACNY0/xJkbZt6eYm3Z6ceFX/wBwy/1vg\n2P5ix0/lZjSr5R/Nf2HDCpY5sZtYl6ye7baKc6MSI0o0O+iKuEmnoK/qXCTr\n+b8If3YD10bAJ5OVfBiuDv8l96cw1MhOu00DValRH8O6sNT0s0PnNUJvBVbz\nFtW8dXziI4h3Y1F5Ho4k9WSFW+MnnQ8UPfOeaO00R/E6EqdYEzf/uPSkVqaF\nikIpD6yOTszUgDrxbIQyySgVM8RrUPyKGHU8uQ0U+KD7G1qfWGjLQzcfS5bK\n+sZ3OOSsUEcxSyGCfq2LEE0F96PLTjVnAdTtPynO9nJqqwpYvwIVw6pxqWcb\n3ANNhMer7LO9Ic0peExWbx70wEkQRmy2kd3oONajk3FLvNgyxTdq/RQVnOnG\n4bnNlzDL4PQRQGlnDFcuUAkX9K1GzxHM2/Mexy4E3KlkLrYPGhwaNpUhhVOX\nIEr/\r\n=/UQN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.0.2_1525805930624_0.9472920199266031"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.1.0",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run lint && npm run compile -- --sourceMap --watch"
+      },
+      "gitHead": "12bf340ba9630871dbe8d1df874d65b46c8d4ab7",
+      "_id": "@nodelib/fs.stat@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-LAQ1d4OPfSJ/BMbI2DuizmYrrkD9JMaTdi2hQTlI53lQ4kRQPyZQRS4CYQ7O66bnBBnP/oYdRxbk++X0xuFU6A==",
+        "shasum": "50c1e2260ac0ed9439a181de3725a0168d59c48a",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 8772,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBQjOCRA9TVsSAnZWagAA2s0QAKAilbclekyJCA2Qje5f\nowIpWS2v2F0lf9tcAjW2HBDs8t+2gn1sGOe6rgxB8jFTXMQcQ+4ZIR6lq/Ne\n2l/FZu6EdEi3bvnhqJ2R9dNx0C/hs+klK3XrHTu2jcPg7BXMbMHzgUsuA/mI\n5deJKJF+L7kIAxEMxQd7Hrw7znUb1sYzjXWJnwGLIrknrj+S3ZEma+n7Mf8b\nsTBkf5RpCiBno0OLVkPMVenylHZ9m2RGYr3QeM4cmzupS+W0fxm9BKAfGUtp\n24s0Lw2zCvGCqiTv3JVqwKIStYzSx2z0PfFCak1JAJpuFWMVfB6PGrQ3u9zu\nai0GTBPuG92ikMNXzKsz1YvptroSr2I8tbBmvRnu/S6bywaI9u4tXJbfaGWF\nZ64N7wnTGDjX+cW7EP3mAoqe4VUH2yWcx/OqRz8gqd6DO9phWqvL/u3qooWd\nfl4FbLwU2kbGaIebvHur6ocEz88ZXLp0zXdqwmk6L/cg7HeFANZfT5mR07FM\nT00TS3DtHGEZFPIo/jKuU046/vtmPWwOHFEyj9JJB9wMl5S+4Nqs+erZk928\nNMZweFlxKTBqGZxcWAd9mKkws3nVa2le777GF0MolIY+9Yr8+Gm6C3i2x7LW\nYl5y7zmOmM3DjCc0Yh2yclu2YPToL98aLbeBHLjXtPBFmB0eA0OsnFMLVEfh\nZkkz\r\n=gMtg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.1.0_1527056590445_0.6262316751434334"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.1.1",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -p .",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile -- --sourceMap --watch"
+      },
+      "_id": "@nodelib/fs.stat@1.1.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-KU/VDjC5RwtDUZiz3d+DHXJF2lp5hB9dn552TXIyptj8SH1vXmR40mG0JgGq03IlYsOgGfcv8xrLpSQ0YUMQdA==",
+        "shasum": "53f349bb986ab273d601175aa1b25a655ab90ee3",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.1.tgz",
+        "fileCount": 18,
+        "unpackedSize": 11488,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbeZvlCRA9TVsSAnZWagAARp4P/1MiNDcCaHjLbSrkccqy\n9vf8zZo/jXXvPNzK7mzd/7pFrjAu4+8HT+ELrMV+PwzYN8OrN6vupVcfk5JZ\nl/ohivJN9hNLYn1UzoVDxKY0iePa7NNurb8N/rN1zVeApqqMJ0Yqs8bVT2dg\nv7QJ6i8qdrgVTiqKWt0fE8HLGnnt6app0GcxSlJAiXB+bPpHbo858XYMnfuv\n7Brl9U+BeWWjwGQmntEHtx+Mw3c5kxdAvNiwdJw2nF7ExBuLvugeGHgE8Vwn\nOzIPCOCSc1RyhrcC591xm9oTVcprVfBfN8AfEeok+GEgPNTx6jLj8b+aeUe/\n6BO3ffsb2O3tnVf0E/zNZWT8X9ssbWUkwE47IpTNxx6G1Z6Xm5aGadU/PiDF\nLTthpJc1++4r+iTpUPnige9CBq77TE60mmz8QZCB3LKBBGT2bfY47viz0n2s\nexzk/2NmVFoLT/pmDe+OA1pq53K/7z1uLEKpaDczmkcT2vTmoHWpVwGImAx2\nwtO2xT4X9rksg4WPFsNo/+y4Dq/k6jFCiaVrGzzVa5Qa2l8nvY3+MXrrldJR\nEmhW1Km251x5l3SvBi/g5euA632s9VbyhrextRGy/pJcO3CPVDg08NB6UcBj\n1Z1Qa8MIEGHbu77Q8koCNb9krZYwCAauC7CbLdKfrbvWm//JqOYvtA01w+f/\nQ8/g\r\n=f7+U\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.1.1_1534696420901_0.9625320868014773"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.2": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.1.2",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "gitHead": "2258cf26a596d8a8aaca1a1cd548214398057e47",
+      "_resolved": "",
+      "_integrity": "",
+      "_from": "file:nodelib-fs.stat-1.1.2.tgz",
+      "_id": "@nodelib/fs.stat@1.1.2",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-yprFYuno9FtNsSHVlSWd+nRlmGoAbqbeCwOryP6sC/zoCjhpArcRMYp19EvpSUSizJAlsXEwJv+wcWS9XaXdMw==",
+        "shasum": "54c5a964462be3d4d78af631363c18d6fa91ac26",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 9048,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjZsDCRA9TVsSAnZWagAAPMUP/3zxahpFO1ZZ7VFzrt0y\nLMO10i/zqBELxxM7pevEY3Egz8OhSKyQfnA3Gn512JZdK6KjQZcq5cQgKdZW\nf+dIPHLeQnbFuDsE63Heu1s9V28r2Gg20UuyE+9AOGyk2mWmjhSGlhgjLpGA\nYVPcnEor5kvmBiKFGH7zi7EcH/SAYA8cDLlfFbpVhkKeRVrvP0C3tYYWpGNu\nK/g1Oa2hFXa1ECY5hiDxLt0SxjYLq7FZvXRYOFLMNGQJfdFkY2dB/fcYK4Kw\n2zxRjslTpjNudM/3qgzd/oEOMbLnAcr6UzX/qCTiKNMs6vZHo95IuIH9iJ97\ncjRJ16Ql2L2sOlRxYl1HdUQpYgrD4uBStDLDMmwwgM9zopNa/NMn12g0Pb+9\ni+edgoB7JW52dirsqx7onjbJ+i2ndHe9tb6xQCULwhp9cTHBuBdeQYAU3aRG\n6im4iP1MQK6kVZNKPX07CcX7B5RwqrPiXIwloKcXhvuNgo1ZvPvC97qp+JgN\nOoxycpLydPrUOY2EUV3YwpD5unMxCr8mFlvL9pcqiAVZMfEEBdFv4fFU4M0D\ng9u6pb75mNEraYQSiCsjAZLTCDweGtACeONEGLTJvzxS35sHq3uXpVl9fCiK\nuhhWYM1b/pF1qy5ET26W9VU+yEs/5dJaO8hx2UIvhUuRJQWH8C35JvZp/4wC\nNprt\r\n=8r5b\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.1.2_1536006915122_0.2020775869125071"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.3": {
+      "name": "@nodelib/fs.stat",
+      "version": "1.1.3",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 6"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf out",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run lint && npm run compile && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "_id": "@nodelib/fs.stat@1.1.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.0.0",
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "dist": {
+        "integrity": "sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==",
+        "shasum": "2b5a3ab3f918cca48a8c754c08168e3f03eba61b",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz",
+        "fileCount": 10,
+        "unpackedSize": 8876,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb3IjRCRA9TVsSAnZWagAAeOUP/AiHcc2DyKGcWqYuI451\nJb95+d+j6PSwNcuejdZetS09qLIOr3rAkfVJwdgA0RNwJFxwEwPFkuf8P3Oe\ns5QSmXIroPEoxf+4XTTgir+4H9FrRQs+DX0396vNlE17qpqi7zZyW2XdauWq\n5Bom43i3Z90MSmD8XB713OD8fvjFGdvGEdLmCkQlaSUOGA360UkQOCupec4K\nJFL/uZG9oB5gYIZMQgPJcE71rNJrTZHJBQYOs0U+jh/4Wk5WBRRX0EJ2rGsM\nFEw7+YtNbyKrRWZGz+7Eh1H3fN+nTyFtua5y6EThaYr7z1OT9iydTrhoERks\nzGOGG9Lyj03V2WPZFe54YFYhpryfHiVbQqIjV5SR0oLY5zRTIbSyyFGgQMFH\n0ir6gRV+A2PNYP6+5/fl6eCV5f1iG5jFMITnIA/kPfXoQjxuzkHyLzA8fQvR\nChxGN7hKtWsvLBNsl8PgPvNYerqzAT1VbkS+BZBUagOxzwH/47YCJIYHQRK6\nLM+zxCu13U1nl0ywAbg9JqdYGlRPQy4GqgvCurXOY/IjIFNanfvc6CB4bY8g\nHxl20tHkncAT+Wqzyvnpu1PCPFKFu5OM1D0m29aY7wuSXny9d1lOcAi9BzX8\nXiPi+zAYnLZZmQW9Yf5r0kM6IzWktc+nyO4EJpsY1CO7EgIj5LSYhCyDZ/1H\nA1kz\r\n=LqvF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_1.1.3_1541179600186_0.6944771391825413"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@nodelib/fs.stat",
+      "version": "2.0.0",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "_id": "@nodelib/fs.stat@2.0.0",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-v1ebf66Fx0q/VX/zYDmYBxHBW2IwAu8unyd/B4iIqdD9YOeL8U0YSluxzt5jlSaIue7Cl1Y49W5icJH+NspCHQ==",
+        "shasum": "af4955efcee86c513740d81878f1d4300ef6d810",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 10759,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc1/LaCRA9TVsSAnZWagAAoLUP/04IutDaA9kp5/Jp3T/U\nlqDx6PLp8aRQm72yrcxVLUGXA+UaNUitTVMTooyboFf+3i6ULgnX/DXhB1rz\nPYBVAzfsmgnQSnI+nzOoEJfhQ5wOXWsDtbnjUzYoxzJsktl5X/KIG9pXZBxO\nN5UQTQCIltjkA9PA5/5V3HvJf0w1uuL6f0KdefIh0Cah4EztA5wNfhrLVroa\ny6dViLSSa756TuiOZ/9gM+2m8wSNjN75DaCWjCQUvObUqQzEQeTmvkIaUuAS\n3Cpn0/fi9332z+HL3mUby0eA/AvaMjq8dBp0X35vftcdR0lbH5CI9djIIq5p\nJ+aMLexOzB9vj2PvqsVim72dzQFVNeGmJvLpaMCU0ygWAlQurtW7RYOyBnrD\nTsgBQwN69Byjlb/qLrBWIdkxUy20oyI7EVqIN9ROYXLcmnYDk50cksAUjqev\nUK6dc1SAFtAVDWIKntdo78kVwnQ4VXEUniTUSaYVJnn0T9xY/9Y2KZrZ9/b9\n6SZvfq7Qs2f8KxNyd9POyINfKLf1dAARnfA0xCoJtPyT0YJdog5hgvkOD9nf\ns57QpPMsyPJy2mHAOKA4uvmgLh5DLbktKcAwrxXDVY0iYA4j5LXLsOVq8hlo\nKz4ZBT3nkX6tqqledj/EunpOFPQ9TiDWQhR3LSSMjWq/CQS4vtneAdGHaLTU\n0YHd\r\n=Q0l6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_2.0.0_1557656281782_0.005733285241399599"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@nodelib/fs.stat",
+      "version": "2.0.1",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "gitHead": "14a421c7401f269bf868e1a53fac0c3624247518",
+      "_id": "@nodelib/fs.stat@2.0.1",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "lerna/3.14.1/node@v12.3.1+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-+RqhBlLn6YRBGOIoVYthsG0J9dfpO79eJyN7BYBkZJtfqrBwf2KK+rD/M/yjZR6WBmIhAgOV7S60eCgaSWtbFw==",
+        "shasum": "814f71b1167390cfcb6a6b3d9cdeb0951a192c14",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.1.tgz",
+        "fileCount": 14,
+        "unpackedSize": 10299,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc8mjECRA9TVsSAnZWagAAMIMQAIpmT4YLvELhj5X2mQEX\nGVkT9kLsF8LhTRBG+um3p0P7QE2meTFxmZR/j9sXgjlHFUhcftEIatkmd5YH\nzgF/o3zkf3QnqKGVRX5cLPS/lLbAljYy5Grv/sZmYZAndYKmxCGC0euhkxBL\n3DArHVwOjRkOb6g2s3G/YBr5m8XqP9v9MSNXNE2vopwXtfE4Pbo9hQ7BLUSU\nPx1NbbEhiD8q5Z/FDXe4iFl/rU82wy4WkK3MPOOR6tS6Ljkl+cxQ53S3odCq\njQ9dAVKYa2t213emBjY/KPRerF6ZboieWLPrtVWnGC4i7S6DU4UMzBZaeTPy\nPmnh/YnfLIQ2PQaek2Pm+aqosqQyF72KfpOZOSBRWoogesnG5SiPwY5L+7d8\nspw+pN+lZCdyPMoTR7F8yF5GOpPqnUjnIP/hJB0TPIw65nWIgKXn4fMVnjIz\ngOIk1GRmQCLNE6BgarlxE/CO2CitQ6AP9x38iMocWbUmg7nkETTD/X9WcbsO\ni78Uy03MbofSHfXFyzwP2hfaXxgP+Vl86dcy72liKxKQIIvnilavOha4VgCR\nVNlg3CVPt+05XEx00NCofsSaKrsR6qK32ASWS5J/ewdk8GyeLsdVMPcSes04\nQZxrfYrXyQyzEdS4m+FjxZw74OW6FTjQocH3KWLyxDJ0JvjSQHySmbKUaaI6\nMWTy\r\n=qf8m\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_2.0.1_1559390402032_0.9684508611822544"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "@nodelib/fs.stat",
+      "version": "2.0.2",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "tslint \"src/**/*.ts\" -p . -t stylish",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "gitHead": "b56e041e80bc6ae6c5fa31c327d5174ed1b8957a",
+      "_id": "@nodelib/fs.stat@2.0.2",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "lerna/3.16.4/node@v12.8.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-z8+wGWV2dgUhLqrtRYa03yDx4HWMvXKi1z8g3m2JyxAx8F7xk74asqPk5LAETjqDSGLFML/6CDl0+yFunSYicw==",
+        "shasum": "2762aea8fe78ea256860182dcb52d61ee4b8fda6",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.2.tgz",
+        "fileCount": 15,
+        "unpackedSize": 11378,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdZkibCRA9TVsSAnZWagAAZCUP/1nLrQXSFtc4zr/y2ony\nOgNGN9db7WdDhlnYvNLjkGT9mvh+yy2Wc2yW6y4SE4IRXJ1+7b/vP1/Fb4Gg\n4s34ADaFmG10W8E/i7IETaVHEC6u8puZWBsO0M3eVEh9+CtHEg2aHoDg/PvH\n0DYWua/YyILz/5yi+D5bMt3r1V19eBJJ5Bf3zPSacQx8Vbnk+plBoefOAQcD\n39xqCPlPHqwhb/+VCBzgdQZHOtIebD0qGjHyLn5i1bPIojDtWaXed+nOHZdE\npSPREx45fTyaOPd08C9nNYEKmCx3JvTQUKSJR2/fWoDFRg9GFCWelGfajnMd\nQ4YsCB/ZMD8M7gd4NPN13LCLXGAuWE72AsBF1sDUEbe6Arr3xAn/EI7Neskl\nspNSiVOeMx/POOS1er3/hAe6YQhsvVRPt4W13UgM2eUSZinqIe/IsPvefFp5\nArjkdkQhGfWSt+Xw5uQN5PIOx8sAgO66AtDR4FAjlBh67+MIKs/dDhtwTliz\nZjNWm5vBHEmYCsoFH68h3Z4syUX98KcSHz1j3N0xnhMHviMPyheThybhj/xx\n4mAuDUk/iULSuqKmhaE7mlOswVZwaBzrw3UqrMUoB2Ww2W/ip0Kz+LK5vbF6\nqlfKBA16mNR1rFneoAfzejHAmlumkUSiAhR9iTJH6mekQU+gv1Uky1xsE2zQ\nQ15c\r\n=kH+R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_2.0.2_1566984346851_0.271286282712937"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "@nodelib/fs.stat",
+      "version": "2.0.3",
+      "description": "Get the status of a file with some features",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+      },
+      "keywords": [
+        "NodeLib",
+        "fs",
+        "FileSystem",
+        "file system",
+        "stat"
+      ],
+      "engines": {
+        "node": ">= 8"
+      },
+      "main": "out/index.js",
+      "typings": "out/index.d.ts",
+      "scripts": {
+        "clean": "rimraf {tsconfig.tsbuildinfo,out}",
+        "lint": "eslint \"src/**/*.ts\" --cache",
+        "compile": "tsc -b .",
+        "compile:watch": "tsc -p . --watch --sourceMap",
+        "test": "mocha \"out/**/*.spec.js\" -s 0",
+        "build": "npm run clean && npm run compile && npm run lint && npm test",
+        "watch": "npm run clean && npm run compile:watch"
+      },
+      "gitHead": "3b1ef7554ad7c061b3580858101d483fba847abf",
+      "_id": "@nodelib/fs.stat@2.0.3",
+      "_nodeVersion": "12.8.0",
+      "_npmVersion": "lerna/3.16.4/node@v12.8.0+x64 (win32)",
+      "dist": {
+        "integrity": "sha512-bQBFruR2TAwoevBEd/NWMoAAtNGzTRgdrqnYCc7dhzfoNvqPzLyqlEQnzZ3kVnNrSp25iyxE00/3h2fqGAGArA==",
+        "shasum": "34dc5f4cabbc720f4e60f75a747e7ecd6c175bd3",
+        "tarball": "https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.3.tgz",
+        "fileCount": 15,
+        "unpackedSize": 11410,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlvDrCRA9TVsSAnZWagAAPlgP/1IoWIVZ4ikAyMLYWYV5\nspxT3f0dZhAipLIxwQb68bf9eCYHS3apQ+DrIBgPdXpapH2+CBH+wIkYRGMe\n6iS86/wtGGls377ZByPfgFepXUBKeD3h5X738BsGGfE+GkcNnRjIYtNYO00U\nH9yV9POPFICJHRBS0bh1DW8tOa+B5dAEYX/gr8Fb9cI037ESV61HyKPKJm45\nPdjcYsGQROpmfL58R204goQGKcYw+6vu3S8QzhD7eU6Sof5AXotr8B9u8SYo\nv6t4Rn9oyJLo0U+dIc+L0Z8r/qiIBp3NcyZ2Ave0uugCYNOLlHEG7OaW8Esx\nwLHqfydj0QG0SAEY0sYrasMzesswls5NkD3VkWfLbS7sqFXLzPE4GScIvc87\n8E2LlFKJkbfANo2BfFTEAVenBV85nvynAUP3GYO4kjtKHvPhkFAg6/s3usSc\nkPGf9j2ASJO7c5fsFEUBlYg58EEeZqW1/rXiGxVyCVzSSZQmNj7AT8BMTqDj\nrikx0otjIs+iPpxbwslHfGBwV1iMLt7IsUsv5BIDSOzFLayUx6sj6TdInthT\ni2q3Q+xRjh7D4KM0q1rruzsFHQappRTkRaP0HQxvZODvek/ZzmkwfClvn3Yn\nm91VxVR5bxO/+flLCnTH0rVKooZ05tEalNbhSX6V59Orfdf6i1G7Ht26WcvX\nSURC\r\n=jUeA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mrmlnc",
+          "email": "dmalinochkin@rambler.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "mrmlnc",
+        "email": "dmalinochkin@rambler.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fs.stat_2.0.3_1570173163141_0.7325395787436761"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-05-07T18:48:21.038Z",
+    "1.0.0": "2018-05-07T18:48:21.191Z",
+    "modified": "2019-10-04T07:12:45.799Z",
+    "1.0.1": "2018-05-07T18:52:15.926Z",
+    "1.0.2": "2018-05-08T18:58:50.758Z",
+    "1.1.0": "2018-05-23T06:23:10.496Z",
+    "1.1.1": "2018-08-19T16:33:41.063Z",
+    "1.1.2": "2018-09-03T20:35:15.253Z",
+    "1.1.3": "2018-11-02T17:26:40.327Z",
+    "2.0.0": "2019-05-12T10:18:01.978Z",
+    "2.0.1": "2019-06-01T12:00:02.221Z",
+    "2.0.2": "2019-08-28T09:25:46.976Z",
+    "2.0.3": "2019-10-04T07:12:43.265Z"
+  },
+  "maintainers": [
+    {
+      "name": "mrmlnc",
+      "email": "dmalinochkin@rambler.ru"
+    }
+  ],
+  "description": "Get the status of a file with some features",
+  "keywords": [
+    "NodeLib",
+    "fs",
+    "FileSystem",
+    "file system",
+    "stat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat"
+  },
+  "license": "MIT",
+  "readme": "# @nodelib/fs.stat\n\n> Get the status of a file with some features.\n\n## :bulb: Highlights\n\nWrapper around standard method `fs.lstat` and `fs.stat` with some features.\n\n* :beginner: Normally follows symbolic link.\n* :gear: Can safely work with broken symbolic link.\n\n## Install\n\n```console\nnpm install @nodelib/fs.stat\n```\n\n## Usage\n\n```ts\nimport * as fsStat from '@nodelib/fs.stat';\n\nfsStat.stat('path', (error, stats) => { /* … */ });\n```\n\n## API\n\n### .stat(path, [optionsOrSettings], callback)\n\nReturns an instance of `fs.Stats` class for provided path with standard callback-style.\n\n```ts\nfsStat.stat('path', (error, stats) => { /* … */ });\nfsStat.stat('path', {}, (error, stats) => { /* … */ });\nfsStat.stat('path', new fsStat.Settings(), (error, stats) => { /* … */ });\n```\n\n### .statSync(path, [optionsOrSettings])\n\nReturns an instance of `fs.Stats` class for provided path.\n\n```ts\nconst stats = fsStat.stat('path');\nconst stats = fsStat.stat('path', {});\nconst stats = fsStat.stat('path', new fsStat.Settings());\n```\n\n#### path\n\n* Required: `true`\n* Type: `string | Buffer | URL`\n\nA path to a file. If a URL is provided, it must use the `file:` protocol.\n\n#### optionsOrSettings\n\n* Required: `false`\n* Type: `Options | Settings`\n* Default: An instance of `Settings` class\n\nAn [`Options`](#options) object or an instance of [`Settings`](#settings) class.\n\n> :book: When you pass a plain object, an instance of the `Settings` class will be created automatically. If you plan to call the method frequently, use a pre-created instance of the `Settings` class.\n\n### Settings([options])\n\nA class of full settings of the package.\n\n```ts\nconst settings = new fsStat.Settings({ followSymbolicLink: false });\n\nconst stats = fsStat.stat('path', settings);\n```\n\n## Options\n\n### `followSymbolicLink`\n\n* Type: `boolean`\n* Default: `true`\n\nFollow symbolic link or not. Call `fs.stat` on symbolic link if `true`.\n\n### `markSymbolicLink`\n\n* Type: `boolean`\n* Default: `false`\n\nMark symbolic link by setting the return value of `isSymbolicLink` function to always `true` (even after `fs.stat`).\n\n> :book: Can be used if you want to know what is hidden behind a symbolic link, but still continue to know that it is a symbolic link.\n\n### `throwErrorOnBrokenSymbolicLink`\n\n* Type: `boolean`\n* Default: `true`\n\nThrow an error when symbolic link is broken if `true` or safely return `lstat` call if `false`.\n\n### `fs`\n\n* Type: [`FileSystemAdapter`](./src/adapters/fs.ts)\n* Default: A default FS methods\n\nBy default, the built-in Node.js module (`fs`) is used to work with the file system. You can replace any method with your own.\n\n```ts\ninterface FileSystemAdapter {\n\tlstat?: typeof fs.lstat;\n\tstat?: typeof fs.stat;\n\tlstatSync?: typeof fs.lstatSync;\n\tstatSync?: typeof fs.statSync;\n}\n\nconst settings = new fsStat.Settings({\n\tfs: { lstat: fakeLstat }\n});\n```\n\n## Changelog\n\nSee the [Releases section of our GitHub project](https://github.com/nodelib/nodelib/releases) for changelog for each release version.\n\n## License\n\nThis software is released under the terms of the MIT license.\n",
+  "readmeFilename": "README.md"
+}

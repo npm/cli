@@ -1,0 +1,926 @@
+{
+  "_id": "spdx-expression-parse",
+  "_rev": "12-a78f21c3a643bfb77b92dcdbbe139d31",
+  "name": "spdx-expression-parse",
+  "description": "parse SPDX license expressions",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "1.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-exceptions": "^1.0.0",
+        "spdx-license-ids": "^1.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "jison": "^0.4.15"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "generate": "node generate-parser.js > parser.generated.js",
+        "prepublish": "npm run generate",
+        "pretest": "npm run generate",
+        "test": "defence -i javascript README.md | node"
+      },
+      "gitHead": "213bc03808f709a4ceaadb8466740a8c96c1e896",
+      "bugs": {
+        "url": "https://github.com/kemitchell/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@1.0.0",
+      "_shasum": "4fbb7e738c9e98fa0b0914dfd961ac6629fbcdef",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "4fbb7e738c9e98fa0b0914dfd961ac6629fbcdef",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "1.0.1",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-exceptions": "^1.0.4",
+        "spdx-license-ids": "^1.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "uglify-js": "^2.4.24"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "prepublish": "node generate-parser.js | uglifyjs > parser.generated.js",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "gitHead": "b9631a6fee043474446420f157076bded041c20d",
+      "bugs": {
+        "url": "https://github.com/kemitchell/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@1.0.1",
+      "_shasum": "bb4f2ed00d50473a949f7a333d84ecc1ab6d483d",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "bb4f2ed00d50473a949f7a333d84ecc1ab6d483d",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "1.0.2",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-exceptions": "^1.0.4",
+        "spdx-license-ids": "^1.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "uglify-js": "^2.4.24"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "prepublish": "node generate-parser.js | uglifyjs > parser.generated.js",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "gitHead": "ffe2fa7272ebf640b18286fc561f17a844d4f06b",
+      "bugs": {
+        "url": "https://github.com/kemitchell/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@1.0.2",
+      "_shasum": "d52b14b5e9670771440af225bcb563122ac452f6",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "d52b14b5e9670771440af225bcb563122ac452f6",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "1.0.3",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parser.js"
+      ],
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "spdx-exceptions": "^1.0.4",
+        "spdx-license-ids": "^1.0.0",
+        "standard": "^8.0.0"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "prepublish": "node generate-parser.js > parser.js",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "contributors": [
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "gitHead": "50dd70e4fc357b15640b5ebb639588a97f27ee5f",
+      "bugs": {
+        "url": "https://github.com/kemitchell/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@1.0.3",
+      "_shasum": "ca3c3828c4fea8aa44997884b398fc5d67436442",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "ca3c3828c4fea8aa44997884b398fc5d67436442",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spdx-expression-parse-1.0.3.tgz_1472242957783_0.3119904447812587"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "1.0.4",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parser.js"
+      ],
+      "devDependencies": {
+        "defence-cli": "^1.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "spdx-exceptions": "^1.0.4",
+        "spdx-license-ids": "^1.0.0",
+        "standard": "^8.0.0"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kemitchell/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "prepublish": "node generate-parser.js > parser.js",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "gitHead": "326b222ed9e89e9ef472656e9970649b9ee4e8f3",
+      "bugs": {
+        "url": "https://github.com/kemitchell/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/kemitchell/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@1.0.4",
+      "_shasum": "9bdf2f20e1f40ed447fbe273266191fced51626c",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "shasum": "9bdf2f20e1f40ed447fbe273266191fced51626c",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/spdx-expression-parse-1.0.4.tgz_1475698361593_0.7478717286139727"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "2.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parser.js",
+        "scanner.js"
+      ],
+      "dependencies": {
+        "spdx-exceptions": "^2.0.0",
+        "spdx-license-ids": "^2.0.1"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "standard": "^10.0.2"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "(MIT AND CC-BY-3.0)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "prepublish": "jison -p slr -m commonjs -o parser.js parser.json",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "gitHead": "5a31aa2a2110b13772ceafdc703dab4348584259",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@2.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-jbUCw8KGLTtZudkXDI2rTkWJ++O+nUZ/cD2GVgdFab36Smu7L1+5TIOHpPPtQU4hV5kiE+eh15cJk4vZxLPy/g==",
+        "shasum": "aedf74790de7f5c4cfc0b271a213e72d5e2896b9",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-expression-parse-2.0.0.tgz_1496874574399_0.5006706656422466"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "2.0.1",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parser.js",
+        "scanner.js"
+      ],
+      "dependencies": {
+        "spdx-exceptions": "^2.0.0",
+        "spdx-license-ids": "^2.0.1"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "jison": "^0.4.15",
+        "replace-require-self": "^1.0.0",
+        "standard": "^10.0.2"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "prepublish": "jison -p slr -m commonjs -o parser.js parser.json",
+        "pretest": "npm run prepublish",
+        "test": "defence -i javascript README.md | replace-require-self | node"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "gitHead": "c35ccd2161dfc4259e9b9f497d849b4127831397",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@2.0.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-uwTOyZVJS8xcEMfPApWDw2ZstSfdjrNuqzrz57p0FYx3Fiom76qBQUpeytoq1PZkCW6LytvO6vW9lf9nb2fClw==",
+        "shasum": "b33c8458cb85b7166981264745012e741b257bc8",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-expression-parse-2.0.1.tgz_1496902187670_0.2345653399825096"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "2.0.2",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parse.js",
+        "scan.js"
+      ],
+      "dependencies": {
+        "spdx-exceptions": "^2.0.0",
+        "spdx-license-ids": "^2.0.1"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "mocha": "^3.4.2",
+        "replace-require-self": "^1.0.0",
+        "standard": "^10.0.2"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test:readme": "defence -i javascript README.md | replace-require-self | node",
+        "test:mocha": "mocha test/index.js",
+        "test": "npm run test:mocha && npm run test:readme"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Antoine Motet",
+          "email": "antoine.motet@gmail.com"
+        }
+      ],
+      "gitHead": "c425569a2d7745c4024b3afad928f8a520f36b54",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@2.0.2",
+      "_npmVersion": "5.0.4",
+      "_nodeVersion": "6.11.0",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-oFxOkWCfFS0ltNp0H66gXlU4NF6bxg7RkoTYR0413t+yTY9zyj+AIWsjtN8dcVp6703ijDYBWBIARlJ7DkyP9Q==",
+        "shasum": "e2e0f229c057eac704c5a6d1c687eed66aca034b",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-expression-parse-2.0.2.tgz_1499197473038_0.06479334249161184"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "3.0.0",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "http://kemitchell.com"
+      },
+      "files": [
+        "AUTHORS",
+        "index.js",
+        "parse.js",
+        "scan.js"
+      ],
+      "dependencies": {
+        "spdx-exceptions": "^2.1.0",
+        "spdx-license-ids": "^3.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^2.0.1",
+        "mocha": "^3.4.2",
+        "replace-require-self": "^1.0.0",
+        "standard": "^10.0.2"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test:readme": "defence -i javascript README.md | replace-require-self | node",
+        "test:mocha": "mocha test/index.js",
+        "test": "npm run test:mocha && npm run test:readme"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Antoine Motet",
+          "email": "antoine.motet@gmail.com"
+        }
+      ],
+      "gitHead": "063e2d555cc5aef6c433c7dce7c543894476bcb8",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "dist": {
+        "integrity": "sha512-Yg6D3XpRD4kkOmTpdgbUiEJFKghJH03fiC1OPll5h/0sO6neh2jqRDVHOQ4o/LMea0tgCkbMgea5ip/e+MkWyg==",
+        "shasum": "99e119b7a5da00e05491c9fa338b7904823b41d0",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-3.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 11871
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "motet-a",
+          "email": "antoine.motet@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-expression-parse_3.0.0_1519690458018_0.7153856255157998"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "spdx-expression-parse",
+      "description": "parse SPDX license expressions",
+      "version": "3.0.1",
+      "author": {
+        "name": "Kyle E. Mitchell",
+        "email": "kyle@kemitchell.com",
+        "url": "https://kemitchell.com"
+      },
+      "dependencies": {
+        "spdx-exceptions": "^2.1.0",
+        "spdx-license-ids": "^3.0.0"
+      },
+      "devDependencies": {
+        "defence-cli": "^3.0.1",
+        "replace-require-self": "^1.0.0",
+        "standard": "^14.1.0"
+      },
+      "keywords": [
+        "SPDX",
+        "law",
+        "legal",
+        "license",
+        "metadata",
+        "package",
+        "package.json",
+        "standards"
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+      },
+      "scripts": {
+        "lint": "standard",
+        "test:readme": "defence -i javascript README.md | replace-require-self | node",
+        "test:suite": "node test.js",
+        "test": "npm run test:suite && npm run test:readme"
+      },
+      "contributors": [
+        {
+          "name": "C. Scott Ananian",
+          "email": "cscott@cscott.net",
+          "url": "http://cscott.net"
+        },
+        {
+          "name": "Kyle E. Mitchell",
+          "email": "kyle@kemitchell.com",
+          "url": "https://kemitchell.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com"
+        },
+        {
+          "name": "Antoine Motet",
+          "email": "antoine.motet@gmail.com"
+        }
+      ],
+      "gitHead": "d7daff468ce455f636838a8375d8699cf36be64d",
+      "bugs": {
+        "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+      },
+      "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+      "_id": "spdx-expression-parse@3.0.1",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==",
+        "shasum": "cf70f50482eefdc98e3ce0a6833e4a53ceeba679",
+        "tarball": "https://registry.npmjs.org/spdx-expression-parse/-/spdx-expression-parse-3.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 11850,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevBx+CRA9TVsSAnZWagAARh0P/iIEPWbke4T1VUW6gJ2H\nP4LAccPGt1dApovBwdPkC+bg9beC4FW3i522dFdI8c+kyg23tQgpMTpGDmyJ\nxFwEM5CNGL3vNDDqEbT1yCuCGIIR/G3e/Ho4T8fgberj+NJrz0Xr+A0YgGTu\n40eOw9ai5kGPVTJ64ifwXSprNj8lbtpIJ8uNtucb14VyeNvDaDcv0YzfiVZD\nIGtav7bkplNGd3nUu3m3J0QWCPz2isHqb2hWCLuvPJsIJoMAkOjVeTiOsc8O\ns/sDP9Pi4RzApCmmFQJRwtEC9wtUbT6LemK+pyiKdq/fWcKpMwudrQv+Qim7\nJeob+GRISIgiCpcQq26MPGLjdgxY7XZyXG2HvWp0q+Cos0nwOI/gY9jv+29h\nikGrtnDD9tfxytvzAIJGwjBea0v+LUW3L+lC5SE+HVxVO1Y3MKckrvkWzk6S\nxqQG5hmMeA4e8SqnrzJ3PIsBcMI7/DxU/WwVNkf2xHlSZjV7yqxWKV8JZDPP\nNZUTOKBtNJFPVFrsOWc0gdz8IrgFVywN11gn3RmNnWwxCrR1IoqMfVZ9oJrm\nJcCt+KiiBJzjj6/VB2SHiBmdtZLw1hpIXkwX6qu48GQpKamkbOq+HXpZHC1o\nTWWQu1c+Zn0srByRTInI5HVRuCk9W/1nGKN1V8/BevhzneLLq5H32GI6XV2h\nSzim\r\n=Oarx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kemitchell",
+          "email": "kyle@kemitchell.com"
+        },
+        {
+          "name": "motet-a",
+          "email": "antoine.motet@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "kemitchell",
+        "email": "kyle@kemitchell.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/spdx-expression-parse_3.0.1_1589386366213_0.3540249435517262"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "This package parses [SPDX license expression](https://spdx.org/spdx-specification-21-web-version#h.jxpfx0ykyb60) strings describing license terms, like [package.json license strings](https://docs.npmjs.com/files/package.json#license), into consistently structured ECMAScript objects.  The npm command-line interface depends on this package, as do many automatic license-audit tools.\n\nIn a nutshell:\n\n```javascript\nvar parse = require('spdx-expression-parse')\nvar assert = require('assert')\n\nassert.deepEqual(\n  // Licensed under the terms of the Two-Clause BSD License.\n  parse('BSD-2-Clause'),\n  {license: 'BSD-2-Clause'}\n)\n\nassert.throws(function () {\n  // An invalid SPDX license expression.\n  // Should be `Apache-2.0`.\n  parse('Apache 2')\n})\n\nassert.deepEqual(\n  // Dual licensed under either:\n  // - LGPL 2.1\n  // - a combination of Three-Clause BSD and MIT\n  parse('(LGPL-2.1 OR BSD-3-Clause AND MIT)'),\n  {\n    left: {license: 'LGPL-2.1'},\n    conjunction: 'or',\n    right: {\n      left: {license: 'BSD-3-Clause'},\n      conjunction: 'and',\n      right: {license: 'MIT'}\n    }\n  }\n)\n```\n\nThe syntax comes from the [Software Package Data eXchange (SPDX)](https://spdx.org/), a standard from the [Linux Foundation](https://www.linuxfoundation.org) for shareable data about software package license terms.  SPDX aims to make sharing and auditing license data easy, especially for users of open-source software.\n\nThe bulk of the SPDX standard describes syntax and semantics of XML metadata files.  This package implements two lightweight, plain-text components of that larger standard:\n\n1.  The [license list](https://spdx.org/licenses), a mapping from specific string identifiers, like `Apache-2.0`, to standard form license texts and bolt-on license exceptions.  The [spdx-license-ids](https://www.npmjs.com/package/spdx-license-ids) and [spdx-exceptions](https://www.npmjs.com/package/spdx-exceptions) packages implement the license list.  `spdx-expression-parse` depends on and `require()`s them.\n\n    Any license identifier from the license list is a valid license expression:\n\n    ```javascript\n    var identifiers = []\n      .concat(require('spdx-license-ids'))\n      .concat(require('spdx-license-ids/deprecated'))\n\n    identifiers.forEach(function (id) {\n      assert.deepEqual(parse(id), {license: id})\n    })\n    ```\n\n    So is any license identifier `WITH` a standardized license exception:\n\n    ```javascript\n    identifiers.forEach(function (id) {\n      require('spdx-exceptions').forEach(function (e) {\n        assert.deepEqual(\n          parse(id + ' WITH ' + e),\n          {license: id, exception: e}\n        )\n      })\n    })\n    ```\n\n2.  The license expression language, for describing simple and complex license terms, like `MIT` for MIT-licensed and `(GPL-2.0 OR Apache-2.0)` for dual-licensing under GPL 2.0 and Apache 2.0.  `spdx-expression-parse` itself implements license expression language, exporting a parser.\n\n    ```javascript\n    assert.deepEqual(\n      // Licensed under a combination of:\n      // - the MIT License AND\n      // - a combination of:\n      //   - LGPL 2.1 (or a later version) AND\n      //   - Three-Clause BSD\n      parse('(MIT AND (LGPL-2.1+ AND BSD-3-Clause))'),\n      {\n        left: {license: 'MIT'},\n        conjunction: 'and',\n        right: {\n          left: {license: 'LGPL-2.1', plus: true},\n          conjunction: 'and',\n          right: {license: 'BSD-3-Clause'}\n        }\n      }\n    )\n    ```\n\nThe Linux Foundation and its contributors license the SPDX standard under the terms of [the Creative Commons Attribution License 3.0 Unported (SPDX: \"CC-BY-3.0\")](http://spdx.org/licenses/CC-BY-3.0).  \"SPDX\" is a United States federally registered trademark of the Linux Foundation.  The authors of this package license their work under the terms of the MIT License.\n",
+  "maintainers": [
+    {
+      "name": "kemitchell",
+      "email": "kyle@kemitchell.com"
+    },
+    {
+      "name": "motet-a",
+      "email": "antoine.motet@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-13T16:12:49.268Z",
+    "created": "2015-08-02T03:24:08.717Z",
+    "1.0.0": "2015-08-02T03:24:08.717Z",
+    "1.0.1": "2015-11-04T19:54:55.901Z",
+    "1.0.2": "2015-11-24T22:37:36.037Z",
+    "1.0.3": "2016-08-26T20:22:39.822Z",
+    "1.0.4": "2016-10-05T20:12:43.780Z",
+    "2.0.0": "2017-06-07T22:29:34.550Z",
+    "2.0.1": "2017-06-08T06:09:47.812Z",
+    "2.0.2": "2017-07-04T19:44:33.121Z",
+    "3.0.0": "2018-02-27T00:14:18.092Z",
+    "3.0.1": "2020-05-13T16:12:46.317Z"
+  },
+  "homepage": "https://github.com/jslicense/spdx-expression-parse.js#readme",
+  "keywords": [
+    "SPDX",
+    "law",
+    "legal",
+    "license",
+    "metadata",
+    "package",
+    "package.json",
+    "standards"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jslicense/spdx-expression-parse.js.git"
+  },
+  "author": {
+    "name": "Kyle E. Mitchell",
+    "email": "kyle@kemitchell.com",
+    "url": "https://kemitchell.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jslicense/spdx-expression-parse.js/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "flozz": true
+  },
+  "contributors": [
+    {
+      "name": "C. Scott Ananian",
+      "email": "cscott@cscott.net",
+      "url": "http://cscott.net"
+    },
+    {
+      "name": "Kyle E. Mitchell",
+      "email": "kyle@kemitchell.com",
+      "url": "https://kemitchell.com"
+    },
+    {
+      "name": "Shinnosuke Watanabe",
+      "email": "snnskwtnb@gmail.com"
+    },
+    {
+      "name": "Antoine Motet",
+      "email": "antoine.motet@gmail.com"
+    }
+  ]
+}

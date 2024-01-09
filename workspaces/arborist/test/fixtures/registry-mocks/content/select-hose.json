@@ -1,0 +1,154 @@
+{
+  "_id": "select-hose",
+  "_rev": "2-7475937d6c2631c0933136c353093462",
+  "name": "select-hose",
+  "description": "Select protocol using first bytes of incoming data and hose stuff to the handler",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "select-hose",
+      "version": "1.0.1",
+      "description": "Select protocol using first bytes of incoming data and hose stuff to the handler",
+      "main": "lib/hose.js",
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/select-hose.git"
+      },
+      "keywords": [
+        "hose",
+        "select",
+        "balance"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/select-hose/issues"
+      },
+      "homepage": "https://github.com/indutny/select-hose#readme",
+      "devDependencies": {
+        "handle-thing": "^1.2.0",
+        "jscs": "^1.13.1",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "stream-pair": "^1.0.3"
+      },
+      "gitHead": "fc8c6c27bf823f89b8a0a4e5ab95981f7ef2e6f3",
+      "_id": "select-hose@1.0.1",
+      "_shasum": "f2e89274989c779139c451f2a3d139d7958911fa",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f2e89274989c779139c451f2a3d139d7958911fa",
+        "tarball": "https://registry.npmjs.org/select-hose/-/select-hose-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "select-hose",
+      "version": "2.0.0",
+      "description": "Select protocol using first bytes of incoming data and hose stuff to the handler",
+      "main": "lib/hose.js",
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter=spec test/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/select-hose.git"
+      },
+      "keywords": [
+        "hose",
+        "select",
+        "balance"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/select-hose/issues"
+      },
+      "homepage": "https://github.com/indutny/select-hose#readme",
+      "devDependencies": {
+        "handle-thing": "^1.2.0",
+        "jscs": "^1.13.1",
+        "jshint": "^2.8.0",
+        "mocha": "^2.2.5",
+        "stream-pair": "^1.0.3"
+      },
+      "gitHead": "ee7caf9d58e519b736197c65c1b07f5e3d2715b4",
+      "_id": "select-hose@2.0.0",
+      "_shasum": "625d8658f865af43ec962bfc376a37359a4994ca",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "625d8658f865af43ec962bfc376a37359a4994ca",
+        "tarball": "https://registry.npmjs.org/select-hose/-/select-hose-2.0.0.tgz"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# Select Hose\n\n[![Build Status](https://secure.travis-ci.org/indutny/select-hose.png)](http://travis-ci.org/indutny/select-hose)\n[![NPM version](https://badge.fury.io/js/select-hose.svg)](http://badge.fury.io/js/select-hose)\n\nHose the data to the handler\n\n## LICENSE\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2015.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2015-07-14T18:02:25.026Z",
+    "created": "2015-07-14T06:46:47.764Z",
+    "1.0.1": "2015-07-14T06:46:47.764Z",
+    "2.0.0": "2015-07-14T18:02:25.026Z"
+  },
+  "homepage": "https://github.com/indutny/select-hose#readme",
+  "keywords": [
+    "hose",
+    "select",
+    "balance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/select-hose.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/select-hose/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

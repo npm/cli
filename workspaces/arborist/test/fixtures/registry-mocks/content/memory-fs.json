@@ -1,0 +1,500 @@
+{
+  "_id": "memory-fs",
+  "_rev": "33-25a32bb3f4094e41e2056dcccebe175f",
+  "name": "memory-fs",
+  "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+  "dist-tags": {
+    "latest": "0.5.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "memory-fs",
+      "version": "0.1.0",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "gitHead": "0b1b6ace9cd1b87e388d2b65178c204215ec4da8",
+      "_id": "memory-fs@0.1.0",
+      "_shasum": "247e51c6538d17d412222bd4d5a70c79d83081e8",
+      "_from": ".",
+      "_npmVersion": "1.4.16",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "247e51c6538d17d412222bd4d5a70c79d83081e8",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.1.0.tgz"
+      }
+    },
+    "0.1.1": {
+      "name": "memory-fs",
+      "version": "0.1.1",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "gitHead": "fe762d8da5c3544432ec487c7fa3ff76e8ed2423",
+      "_id": "memory-fs@0.1.1",
+      "_shasum": "bec997e8654a29753206e3b921809869bec0e943",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bec997e8654a29753206e3b921809869bec0e943",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.1.1.tgz"
+      }
+    },
+    "0.2.0": {
+      "name": "memory-fs",
+      "version": "0.2.0",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha -R spec",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha -- -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "gitHead": "b90785340f2adf4eed77c59bdda7742a51d16e5e",
+      "_id": "memory-fs@0.2.0",
+      "_shasum": "f2bb25368bc121e391c2520de92969caee0a0290",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f2bb25368bc121e391c2520de92969caee0a0290",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.2.0.tgz"
+      }
+    },
+    "0.3.0": {
+      "name": "memory-fs",
+      "version": "0.3.0",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "bl": "^1.0.0",
+        "codecov.io": "^0.1.4",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "errno": "^0.1.3",
+        "readable-stream": "^2.0.1"
+      },
+      "gitHead": "20dcd920d18c1dfa6501d95707fe7fdb6d30b725",
+      "_id": "memory-fs@0.3.0",
+      "_shasum": "7bcc6b629e3a43e871d7e29aca6ae8a7f15cbb20",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "7bcc6b629e3a43e871d7e29aca6ae8a7f15cbb20",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ]
+    },
+    "0.4.0": {
+      "name": "memory-fs",
+      "version": "0.4.0",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "files": [
+        "lib/"
+      ],
+      "scripts": {
+        "test": "mocha",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "bl": "^1.0.0",
+        "codecov.io": "^0.1.4",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "errno": "^0.1.3",
+        "readable-stream": "^2.0.1"
+      },
+      "gitHead": "bca261622cb9b9bba136300faf87cf9b68b67326",
+      "_id": "memory-fs@0.4.0",
+      "_shasum": "364cb8c6716b5c646b78dbbcecf14989e9b14313",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "364cb8c6716b5c646b78dbbcecf14989e9b14313",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/memory-fs-0.4.0.tgz_1481041955780_0.8974502016790211"
+      }
+    },
+    "0.4.1": {
+      "name": "memory-fs",
+      "version": "0.4.1",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "files": [
+        "lib/"
+      ],
+      "scripts": {
+        "test": "mocha",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "bl": "^1.0.0",
+        "codecov.io": "^0.1.4",
+        "coveralls": "^2.11.2",
+        "istanbul": "^0.2.13",
+        "mocha": "^1.20.1",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "errno": "^0.1.3",
+        "readable-stream": "^2.0.1"
+      },
+      "gitHead": "1b3c3572b47caa8b6d49b938456cfe180834f377",
+      "_id": "memory-fs@0.4.1",
+      "_shasum": "3a9a20b8462523e447cfbc7e8bb80ed667bfc552",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "3a9a20b8462523e447cfbc7e8bb80ed667bfc552",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/memory-fs-0.4.1.tgz_1481117480286_0.17684827325865626"
+      }
+    },
+    "0.5.0": {
+      "name": "memory-fs",
+      "version": "0.5.0",
+      "description": "A simple in-memory filesystem. Holds data in a javascript object.",
+      "main": "lib/MemoryFileSystem.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha",
+        "lint": "eslint lib/*",
+        "cover": "istanbul cover node_modules/mocha/bin/_mocha",
+        "travis": "npm run cover -- --report lcovonly && npm run lint"
+      },
+      "engines": {
+        "node": ">=4.3.0 <5.0.0 || >=5.10"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/memory-fs.git"
+      },
+      "keywords": [
+        "fs",
+        "memory"
+      ],
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/memory-fs/issues"
+      },
+      "homepage": "https://github.com/webpack/memory-fs",
+      "devDependencies": {
+        "bl": "^1.0.0",
+        "codecov.io": "^0.1.4",
+        "coveralls": "^2.11.2",
+        "eslint": "^4.0.0",
+        "istanbul": "0.4.5",
+        "mocha": "3.2.0",
+        "should": "^4.0.4"
+      },
+      "dependencies": {
+        "errno": "^0.1.3",
+        "readable-stream": "^2.0.1"
+      },
+      "gitHead": "3daa18e010ac10b05a3ecaa6342406722a609109",
+      "_id": "memory-fs@0.5.0",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-jA0rdU5KoQMC0e6ppoNRtpp6vjFq6+NY7r8hywnC7V+1Xj/MtHwGIbB1QaK/dunyjWteJzmkpd7ooeWg10T7GA==",
+        "shasum": "324c01288b88652966d161db77838720845a8e3c",
+        "tarball": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.5.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 15236,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnH+QCRA9TVsSAnZWagAAxgAQAITMbXkDuGeAvUACNwQe\nxVUHQssPTu9dMAZ3aUvK/nP96euAFpgmTjgEbJz6MCdo3+ZlcWbMoTnB18Rc\nQECf3UiI3DJtwa6bkrznHtVXeg5b9ItG0n7ldLGb4eU+TzoxodBEtE9vEKZ2\nrlI3B8d3CudhGJOlCCV25E2u31zUN1071xCeWq7gbXxTuT/1HaTW+7t5cwTq\niywND1x2M9X2h3xGbDk3iShZexjaj5aC+m9fA+pZ/YqYnzzFRpOlxKGopy8A\n0jPT3k3Lzrr8NEtxLRE5v7MWcoeBm4EZ6FpfSt2vWuDIlW7VwpXxkahbv8uT\nHrjZLv57mecSyD1LwvX2S291NN6FLc2DhQx5W2QTCca6S21Vf5CtmKb3AY9L\nTYy7gODP4unusqxOHhZanrLHdWO84mDD7N7n9QjBpv2ueVp+b1jDiVqnMlhC\n+O2NWgRwvcn+iOxCgathl/V+bwD8AlA0ucjXEQpS4oY/mhqe21pRFzfjjSEo\nOM5aWImAz65pFEVB2hMX48CucRkYdyYdGsvPuOd8V3/Ofs+65gX9TS+EA3yQ\nJbWk6/y+zmOKXxZq89eAHbDdhJPLQf/f5sbPtkxJttO8t3Vv0FWM2ox9c02v\nsXsXgM5H/dXexOKFOFlu18RBZ+evLeiq0gBk2yCPaSPRI6pnQtOrI8lg1o3Y\nUKwO\r\n=KroS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/memory-fs_0.5.0_1570537359554_0.6422160851660237"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# memory-fs\n\nA simple in-memory filesystem. Holds data in a javascript object.\n\n``` javascript\nvar MemoryFileSystem = require(\"memory-fs\");\nvar fs = new MemoryFileSystem(); // Optionally pass a javascript object\n\nfs.mkdirpSync(\"/a/test/dir\");\nfs.writeFileSync(\"/a/test/dir/file.txt\", \"Hello World\");\nfs.readFileSync(\"/a/test/dir/file.txt\"); // returns Buffer(\"Hello World\")\n\n// Async variants too\nfs.unlink(\"/a/test/dir/file.txt\", function(err) {\n\t// ...\n});\n\nfs.readdirSync(\"/a/test\"); // returns [\"dir\"]\nfs.statSync(\"/a/test/dir\").isDirectory(); // returns true\nfs.rmdirSync(\"/a/test/dir\");\n\nfs.mkdirpSync(\"C:\\\\use\\\\windows\\\\style\\\\paths\");\n```\n\n## License\n\nCopyright (c) 2012-2014 Tobias Koppers\n\nMIT (http://www.opensource.org/licenses/mit-license.php)\n",
+  "maintainers": [
+    {
+      "name": "sokra",
+      "email": "tobias.koppers@googlemail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-08T12:22:44.247Z",
+    "created": "2014-07-01T06:32:03.241Z",
+    "0.1.0": "2014-07-01T06:32:03.241Z",
+    "0.1.1": "2014-12-22T08:17:34.797Z",
+    "0.2.0": "2015-01-16T22:41:46.796Z",
+    "0.3.0": "2015-11-04T23:06:21.535Z",
+    "0.4.0": "2016-12-06T16:32:37.743Z",
+    "0.4.1": "2016-12-07T13:31:22.497Z",
+    "0.5.0": "2019-10-08T12:22:39.687Z"
+  },
+  "homepage": "https://github.com/webpack/memory-fs",
+  "keywords": [
+    "fs",
+    "memory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/memory-fs.git"
+  },
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/memory-fs/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "rkielty": true,
+    "viz": true,
+    "yhui02": true,
+    "detj": true,
+    "itonyyo": true,
+    "wendellm": true,
+    "scottfreecode": true,
+    "xueboren": true,
+    "krofdrakula": true,
+    "stone_breaker": true,
+    "heartnett": true,
+    "bsara": true,
+    "cryogena": true,
+    "d-band": true,
+    "yeming": true,
+    "shuoshubao": true,
+    "wuxiaword": true,
+    "meeh": true,
+    "lunelson": true
+  }
+}

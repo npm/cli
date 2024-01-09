@@ -1,0 +1,167 @@
+{
+  "_id": "@isaacs/testing-peer-deps-b",
+  "_rev": "3-57aa8981e1f2d1f9403b2b80735a410d",
+  "name": "@isaacs/testing-peer-deps-b",
+  "dist-tags": {
+    "latest": "1.2.4"
+  },
+  "versions": {
+    "1.2.3": {
+      "name": "@isaacs/testing-peer-deps-b",
+      "version": "1.2.3",
+      "description": "has a peer dep on c",
+      "peerDependencies": {
+        "@isaacs/testing-peer-deps-c": "*"
+      },
+      "_id": "@isaacs/testing-peer-deps-b@1.2.3",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-MQNi312F4LdRomvO4hmc6Z8UH77TSXaVnYA/vU6OqdpKaXfzh+fvDIrDpi9x9hqyevszJAhyffuEhYHFw4uJug==",
+        "shasum": "c5061d1294f4974809afd32d030e261e58e62ef6",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-deps-b/-/testing-peer-deps-b-1.2.3.tgz",
+        "fileCount": 1,
+        "unpackedSize": 173,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2yKGCRA9TVsSAnZWagAAfHoP/1l8tMbYOoYtOKFiN+2y\nTAWW7Y0Ii08W4pTN7SKNZ+/aY7wrNVKfVTve/V4G4a99plyRnaZth7/7jTWc\ndom7YGJy1Ex2cB9t/fSMgmWs6+9bhAITnX63ORRJGXm1cssi/rRKaxkep0as\nwaF2Y1GmAp9tZRhW8hd2TWLAhq0FsQ5mVOjEFGvFzZ9kylBCkJqAqC+nN4Xr\nt1jvpNsIOGQ4t9rIqA3t0YhiwiJ6VxSJuWvU40R8xB2FlpXIB0vO0QyNB8aq\nJja0Doja1bEIOUu5vdowc0lg20OfdDYnrOWwmbPssj9RPpNBwo6p8nCiNrVV\nXfDWH2ApzInO7AJexixuWjPxHATN2mxuTGkVZyeS/DJFpfkFeCl29O5oNu7S\n8iwslbttHJD7fDWACPUtkMm3THdg4nXGADI0+34BJzCeYO5eViKRukEWkqL9\nhKBWnLC9/YSOC1y+S5Awc6Hig2CP2QBzKlaiuceRvJ0o65tzEY2Cj0Os5QTa\nGe2fhPoBfUhvM6NLYKHSfbo3NoVGFYfYJAEM/ZvmtrdcM4yNRSqDP7Ff1pHW\ndT3J6Nu4kBLyEYnbb4xUo6vOcKk6LJThS21QP770bxq0i9czqBZN2zg6741r\n2bIZQEMkkwW09tpybYn97E8/lLu+fgDMo1RX8o4qFVrk1C6rus/GPTAQNqQP\nlxlJ\r\n=3KOy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-deps-b_1.2.3_1574642309915_0.67129625386416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-peer-deps-b",
+      "version": "2.0.0",
+      "description": "has a peer dep on c",
+      "peerDependencies": {
+        "@isaacs/testing-peer-deps-c": "*"
+      },
+      "_id": "@isaacs/testing-peer-deps-b@2.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-R8VNeTV6gVcED8aSesIMJkVTCHxVjn3c962KqkDkvXqESZ9pRTa7ABdpd/5U9AMu9g6WycJgrogY2kbahtA5ZQ==",
+        "shasum": "d5ae533f7e56beb19d6702eac9587071c2da76eb",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-deps-b/-/testing-peer-deps-b-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 173,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd23D/CRA9TVsSAnZWagAA11AP/Am64l7MPjrsY6U67Wyb\ncPw0zRcdsB72Gx3/7RvFttuo0TFER2PXhw8YTdlkgxP7qe7kd604W6ZM2/2+\nz7Vm9PhkoGnaICdffyVu3PvgIo7km+l5ox1ent36qy8xxgz4x+v/bm68xyz/\nBWYxdKMOgZ/awzM2bTXj9eM4omDBmeZAfajMqEfvNmAf3ZGtOTQV2tNa7/te\nb92vScHEOO583cptKjNvPZb8hrwUSNvvTZCzq2mPA4fl+gWMOIYaDitfKYRZ\npoWET8ip9Qy6EX4eVs61ojvwPTonAehFWUkP3REsOKFsSIEaKR7Tx7zXhQ4i\n9hHbwQkUA4ep3C3xs9J9g8UbbVnK8Tk3xymjM/r2BlENl6t6SgbWFIUeYUFh\nIaQery0AOEUbrIrhisnTsAccphfffL/9unULSY5g9rfOPeQ498Hd0tD9dhCv\nYp/LKKEKJcVBuduT1Wh1XhlHsSGW8OZhI2MSEhMzJR1zLjvbOwImwzBx4DoJ\nMqCpDtQCPr+v8xm+PFXpMOMMWtNwcF8+Bmk1+v8xYfml2MOXGXf3u4mG1b9P\npy7WV5dl6IwJdEAGUMWaTeGvdvKuHOIhBq8oQO2ZGz5pVA0s9vXri3p2+rOn\nhB1fuufS3nAXHtxblWf4AKhBSRk3++riwXR2SvRcKqDVSFy09Y9ks2yPNjdf\nwxW6\r\n=KYly\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-deps-b_2.0.0_1574662398770_0.49139379054017907"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@isaacs/testing-peer-deps-b",
+      "version": "2.0.1",
+      "description": "has a peer dep on c",
+      "peerDependencies": {
+        "@isaacs/testing-peer-deps-c": "2"
+      },
+      "_id": "@isaacs/testing-peer-deps-b@2.0.1",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-sgYGXt0YwVLZ31DZKgoQm7JHEETS71GE2x9g1RIqQ1xarGFfGyor2sF3ekxUOeaE/4FInrh+K+nUP5YgPXLBQQ==",
+        "shasum": "55742ce1224786445a1806696b0dafc044a6382f",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-deps-b/-/testing-peer-deps-b-2.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 173,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd23LZCRA9TVsSAnZWagAARCoP/16mcK6yaGjSEPLZJa2g\n5iRZCMF5QeCaoa1Rdh6Al/Xa+eWSljs+5eEmZHJXjoHpTA/ATEuc4D3Ig7YN\nqDu+cHyE6yn+1fPFQdbt2tIHP9xRhLcmrYURQQbLJSeKYxO0UkNlUaAXwzp+\noYAd++GZLS2wAgK0FF6vspoELnNVyXZvoHRcCF7EY+YCY8mTj6kHbHfXyE0a\ns3kMqRkrRbFltN30IN5VxyfLJJ0ITyaUwbudE4NUrGqUDQriz8YLlzKwwEU3\niNdidazoTAj1XjJavSolra0AlyPTfLSa0miVPXVKA93N4kdNtLPQo+PfWu5V\ny6T8/d16Y2wdgs6PYX1hf//49ylrZhgqiUqQk4ltVJdsgU6n4XzShXScWP6e\npTQjjO79E3jAulvGT+sIkXh3twhphWxiNUyEOiegPGMiBoQg1moUFFzaFf3P\nx2i6ygDz/bGUoO1aKlJ88EK26wSiLkogAaI4wW/F2OzFmVU9NxQwOmX8Jeyo\nVjw04qx9khxXm2hniEnHoZUjKyRGX9MBBnvaFG0VzGEFsc7P9bW8rQ3l4zw3\nzoPSJ5yN5IcVzya0aR7pnpeiDjTadofKecem9ErvykXUSDb+zj3YM0j5EiQK\nAOYCxJa/MDY+1tSoCjwrAuUcCR94d/OYwAnGqDwmdwYf9Spa7aUUTrqZG7jv\n0i5W\r\n=3siK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-deps-b_2.0.1_1574662873137_0.9388819962367445"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.4": {
+      "name": "@isaacs/testing-peer-deps-b",
+      "version": "1.2.4",
+      "description": "has a peer dep on c",
+      "peerDependencies": {
+        "@isaacs/testing-peer-deps-c": "1"
+      },
+      "_id": "@isaacs/testing-peer-deps-b@1.2.4",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-7rfmqBPEKWlRnU+o495Cynlc1A3MxFf+rNEIdXYRawM3lU6RzY7BX2nOtQsEE4uIKnqbEJR5uj7XaR5RWFmcBw==",
+        "shasum": "bd5ad880d1f572c3d710e8e41630f5f20973934d",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-deps-b/-/testing-peer-deps-b-1.2.4.tgz",
+        "fileCount": 1,
+        "unpackedSize": 173,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd23LrCRA9TVsSAnZWagAAOukP/0++Q62e3pj1qgdBIRmR\nP5IgjhrwuytcSp7hJx1ICY7+bmj9EwBHBKUf69u0Y1pfayrD+NRe3NZF8XXh\npLDKIuutkml9zrFxu12HwfgDGKWDCEGinstUBJCEHh2rRXyDjhu17RhYdWJG\ntKkGzcmB4JBKQTs3GAhmY7enbVHk7MZhNQiAKPLYAfdjT+VGuyGzI6kqWLyC\noMq8hpEHpp/wUGXOE3jDXQNrpbNgUF9rbYNcKCcczoXAmFAzYKD9FyIzcf+0\n4ctMB3vR4CBsiSD736M7oB+mEgjmC4A5gXG/Ql09b7FZfVErPINJuBnU+2Yp\nY7lxgA+V0OZOBsoFQq2Wf7rLWVX5ZOuk9wBM3LXYVIghrZGmUtphsLYjou0B\nPqT/IBRljIc6BZGo18rIr7cgS2veu1dsBGf+zUKuWa75Vm2aHf/Jh/9KH0Le\nzzeGXb7rSrJnLdEa1B+hI4t9ZcDqjB4wBmCB8q4zW2o987mzWXP3JMg4V5kb\niRq/l2fe8E2e8SfqaXqg53/6/N5QNGhK4g8ZWImG4RyteUeRxnZnN3/l3cqV\nqTFThBgwQOYbTh1Q6nzKiFbr03gW6unuRxK68QOSaUCJ92cwJFEKXMLo6lgf\nDz+IJnCVoDoLNRp1s8LYl9NpKKf/9TKaWZuzqqL2BZCeJlq7wkBPXwNo+B59\nquRB\r\n=VTu3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-deps-b_1.2.4_1574662891407_0.9197046534330411"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-25T00:38:29.672Z",
+    "1.2.3": "2019-11-25T00:38:30.581Z",
+    "modified": "2019-11-25T06:21:33.749Z",
+    "2.0.0": "2019-11-25T06:13:18.884Z",
+    "2.0.1": "2019-11-25T06:21:13.232Z",
+    "1.2.4": "2019-11-25T06:21:31.501Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "has a peer dep on c",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

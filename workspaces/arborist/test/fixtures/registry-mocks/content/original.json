@@ -1,0 +1,761 @@
+{
+  "_id": "original",
+  "_rev": "27-863ac1562cd685569d128e92dd57002a",
+  "name": "original",
+  "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "original",
+      "version": "0.0.0",
+      "description": "Check if two urls have same URL",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "_id": "original@0.0.0",
+      "_shasum": "a674957d733653d99b9332b9d936abc6174547fa",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a674957d733653d99b9332b9d936abc6174547fa",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "original",
+      "version": "0.0.1",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.0.x"
+      },
+      "gitHead": "fc6695959609055f847f1d7dc69989eef8b428a3",
+      "_id": "original@0.0.1",
+      "_shasum": "387bc64bf1e70ceb42e1b31caad9a5ad1e3f5387",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "387bc64bf1e70ceb42e1b31caad9a5ad1e3f5387",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "original",
+      "version": "0.0.2",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.0.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "41764efd841387831f1ef76d934f38f8928e7b4b",
+      "_id": "original@0.0.2",
+      "_shasum": "772ac5a4f8ea0227d8607fb243d655730421d270",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "772ac5a4f8ea0227d8607fb243d655730421d270",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "original",
+      "version": "0.0.3",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.0.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "71f9296bd8473a3264115c228d1355038b5e1149",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.3",
+      "_shasum": "a0f54512e1b1c1233c79787bf66ed88bc082e7f1",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a0f54512e1b1c1233c79787bf66ed88bc082e7f1",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "original",
+      "version": "0.0.4",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.0.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "db3a521cef937d4ddb040aa4d8e8aaabe17a62e7",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.4",
+      "_shasum": "6fa37fb754c1cf53551f01abc85c10e340b97ba7",
+      "_from": ".",
+      "_npmVersion": "1.4.27",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6fa37fb754c1cf53551f01abc85c10e340b97ba7",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "original",
+      "version": "0.0.5",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.0.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "1.21.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "381cd1532f1e235f4f4706874d74e927ee0f9f0e",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.5",
+      "_shasum": "77a757f62fc7f7371d43ee246dcf8ec302afb784",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "77a757f62fc7f7371d43ee246dcf8ec302afb784",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "original",
+      "version": "0.0.6",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "requires-port": "0.0.x",
+        "url-parse": "0.1.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "c91daa8551a1176a875492c9c6f0e8fb9ff08454",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.6",
+      "_shasum": "079677f0217c6c384650b7ab70094fd095b0a2e7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "079677f0217c6c384650b7ab70094fd095b0a2e7",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.6.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.7": {
+      "name": "original",
+      "version": "0.0.7",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.1.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "f087fdbc4f4b4bc3c1b21636a7c77e11ad1ced9f",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.7",
+      "_shasum": "a1a90a87c676111a04347c0192a38aa668f02f84",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "a1a90a87c676111a04347c0192a38aa668f02f84",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.7.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.8": {
+      "name": "original",
+      "version": "0.0.8",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha --reporter spec --ui bdd test.js",
+        "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
+        "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/unshiftio/original"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "0.2.x"
+      },
+      "devDependencies": {
+        "assume": "0.0.x",
+        "istanbul": "0.3.x",
+        "mocha": "2.0.x",
+        "pre-commit": "0.0.x"
+      },
+      "gitHead": "14c4c0d3c8a7ec654b8f76a12894485ff17df1a2",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original",
+      "_id": "original@0.0.8",
+      "_shasum": "5d0bcc4c673921705e2a8842cdca1684271bae0c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "V1",
+        "email": "info@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "V1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        }
+      ],
+      "dist": {
+        "shasum": "5d0bcc4c673921705e2a8842cdca1684271bae0c",
+        "tarball": "https://registry.npmjs.org/original/-/original-0.0.8.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "original",
+      "version": "1.0.0",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/original.git"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "1.0.x"
+      },
+      "devDependencies": {
+        "assume": "1.3.x",
+        "istanbul": "0.4.x",
+        "mocha": "2.3.x",
+        "pre-commit": "1.1.x"
+      },
+      "gitHead": "ee5fb8a2bad22c67a64337897e0505d94cb23b6b",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original#readme",
+      "_id": "original@1.0.0",
+      "_shasum": "9147f93fa1696d04be61e01bd50baeaca656bd3b",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "maintainers": [
+        {
+          "name": "unshift",
+          "email": "npm@unshift.io"
+        },
+        {
+          "name": "v1",
+          "email": "info@3rd-Eden.com"
+        },
+        {
+          "name": "3rdeden",
+          "email": "npm@3rd-Eden.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9147f93fa1696d04be61e01bd50baeaca656bd3b",
+        "tarball": "https://registry.npmjs.org/original/-/original-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "original",
+      "version": "1.0.1",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/original.git"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "~1.4.0"
+      },
+      "devDependencies": {
+        "assume": "~2.0.1",
+        "istanbul": "0.4.x",
+        "mocha": "~3.5.0",
+        "pre-commit": "~1.2.0"
+      },
+      "gitHead": "f060834a29628284c0c7964c4c789406400a4e80",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original#readme",
+      "_id": "original@1.0.1",
+      "_npmVersion": "6.0.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-IEvtB5vM5ULvwnqMxWBLxkS13JIEXbakizMSo3yoPNPCIWzg8TG3Usn/UhXoZFM/m+FuEA20KdzPSFq/0rS+UA==",
+        "shasum": "b0a53ff42ba997a8c9cd1fb5daaeb42b9d693190",
+        "tarball": "https://registry.npmjs.org/original/-/original-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4796,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+rCtCRA9TVsSAnZWagAAnZQQAJy3HVH2YR3e8iJ/RvVQ\n7edwqIZ2EISxqg3UoRS/bNI5PBkjh04DLNHvxDKOQMbfbX8sxGScyg8x2muC\ntmdCueeBAxs5v85sQNcPTWNdOCL8Dy/xURdbfTYZZ+ewXUYBSN8Bq3g4SOUL\nI/xVcKHzMFnHF5l/iOOk3VA2N1y07hhnVmIDR53y8ff/HhzKr/AF1Myn7bNU\nfF2FOIAPIyt2zd2CXdHus3Fo3wnU4FzaIIagDQ8XJD8HO0fu9MctJ9qjrKwt\niPRHEwc4uUw8/9eBljZNjRvUpvJvTWaf0MB5+WMLkEwEbARHCEQ1X+Zuv68t\n2B7RpuhCd6S+eKN6qfqHpvo+qryFrHtGFXKMmwlIunhFeT9mTtudEXgOp8NY\nYVYqeDoRHgq17GCsUTrx6fEdcOrMp9CEC0bZG179PXlc481DssFzJPBOsp2Z\nW8hxvwoTZzNiu27pIRak9yeFurUYkLLNTBQy+doq3OY+i4rTpcg7x7BZUnob\nf659IB1spGVlArPfmbkfZyBxy4Vh3NyPIUB3MZHrLJs0zUn+TEoDmnGVwlBG\nNa4+62eS/kthZMlZEYhP/Hgmnzt8pFk0M4v7DGIfZc2t8K/GTAYiHnaR/CG7\nJGo685005ZMiXdibDAyTljLU8DxRJk1+9XTacWkb8wxi3AiDlY3t9OY+8BY1\ntmEL\r\n=y8bg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/original_1.0.1_1526378667540_0.16775711344228372"
+      }
+    },
+    "1.0.2": {
+      "name": "original",
+      "version": "1.0.2",
+      "description": "Generate the origin from an URL or check if two URL/Origins are the same",
+      "main": "index.js",
+      "scripts": {
+        "100%": "istanbul check-coverage --statements 100 --functions 100 --lines 100 --branches 100",
+        "test-travis": "istanbul cover _mocha --report lcovonly -- test.js",
+        "coverage": "istanbul cover _mocha -- test.js",
+        "watch": "mocha --watch test.js",
+        "test": "mocha test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/unshiftio/original.git"
+      },
+      "keywords": [
+        "origin",
+        "url",
+        "parse"
+      ],
+      "author": {
+        "name": "Arnout Kazemier"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "url-parse": "^1.4.3"
+      },
+      "devDependencies": {
+        "assume": "~2.1.0",
+        "istanbul": "0.4.x",
+        "mocha": "~3.5.0",
+        "pre-commit": "~1.2.0"
+      },
+      "gitHead": "3a6b7dfc741587920f0cdd3aebe4e589bff0f7d3",
+      "bugs": {
+        "url": "https://github.com/unshiftio/original/issues"
+      },
+      "homepage": "https://github.com/unshiftio/original#readme",
+      "_id": "original@1.0.2",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "3rdeden",
+        "email": "npm@3rd-Eden.com"
+      },
+      "dist": {
+        "integrity": "sha512-hyBVl6iqqUOJ8FqRe+l/gS8H+kKYjrEndd5Pm1MfBtsEKA038HkkdbAl/72EAXGyonD/PFsvmVG+EvcIpliMBg==",
+        "shasum": "e442a61cffe1c5fd20a65f3261c26663b303f25f",
+        "tarball": "https://registry.npmjs.org/original/-/original-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4796,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaGytCRA9TVsSAnZWagAA5noP/2w8i+zQfUXNnSTCcc/x\n9exUswGdlz0qdZIdwvs00rAx4o5S8igwozTmgHgRvDdIxOswb1q3sVE9mRxR\nyl4TmQMoJKbHtHe9RU7ADjrVYJmW8kT9egk/fauEQ8eZcbvxuidzOdc6u7P6\nMP3rA89aZw338m/qN6LNQSQK/5eEw1ENtbqsqFzFqjH73JvRB7AsA8Zbekh0\nBtpOf7Jz75IYRp8L37CVZ4FmeLV3v6eTdicZpPS4d6JXP/tZy//Tx0nTMROJ\njjCYszR1ZYT9HAIoSMT1TnJ7bFAtXXsL+ptp+d3CNjBoke0MM3wPoywiLVxR\n5pByrZ7ad0IAp73uGvIVZQfgK8zEvMxS/Vx2VMVk+rN5eiLvR0u4fkztZW0d\nVmASyrmJ6JZMhj/K8i6u0H+1hQbDR9DoDU+xMckvO7FWFKd/WmO2SrkealPt\n18KW2vhl3ft7SgThVBRcr8ACjWUSBDFvXJgV1B0zGgJsInOCOSiV4Q0/bgif\nhL6hzCB1tblMlxyu0eZpFdTtth/GTvSIqcbeOupLugjMlcSyk26Ci032PAaN\nuUeg5dAYK5e66E5gI0t2b+1gU0s+dqUKSTpNEtvNXAAknverWFHmxnQHQ77K\nvIZ1h5BQoufIBq8wJBsbSG0uGvPjUHvkh1OQg03m6bE0Dh3296b4Uj0fm3Qp\nKO5v\r\n=RYkI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "3rdeden"
+        },
+        {
+          "email": "npm@unshift.io",
+          "name": "unshift"
+        },
+        {
+          "email": "npm@3rd-Eden.com",
+          "name": "v1"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/original_1.0.2_1533570221121_0.20029329496915493"
+      }
+    }
+  },
+  "readme": "# origin(al)\n\n[![Made by unshift](https://img.shields.io/badge/made%20by-unshift-00ffcc.svg?style=flat-square)](http://unshift.io)[![Version npm](http://img.shields.io/npm/v/original.svg?style=flat-square)](http://browsenpm.org/package/original)[![Build Status](http://img.shields.io/travis/unshiftio/original/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/original)[![Dependencies](https://img.shields.io/david/unshiftio/original.svg?style=flat-square)](https://david-dm.org/unshiftio/original)[![Coverage Status](http://img.shields.io/coveralls/unshiftio/original/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/original?branch=master)[![IRC channel](http://img.shields.io/badge/IRC-irc.freenode.net%23unshift-00a8ff.svg?style=flat-square)](http://webchat.freenode.net/?channels=unshift)\n\nOriginal generates the origin URL for a given URL or URL object. In addition to\nthat it also comes with a simple `same` function to check if two URL's have the\nsame origin.\n\n## Install\n\nThis module is browserify and node compatible and is therefor release in the npm\nregistry and can be installed using:\n\n```\nnpm install --save original\n```\n\n## Usage\n\nIn all the examples we assume that the module is loaded using:\n\n```js\n'use strict';\n\nvar origin = require('original');\n```\n\nTo get the origin of a given URL simply call `origin` function with any given\nURL to get origin.\n\n```js\nvar o = origin('https://google.com/foo/bar?path');\n\n// o = https://google.com\n```\n\nTo compare if two URL's share the same origin you can call the `same` method.\n\n```js\nif (origin.same('https://google.com/foo', 'https://primus.io')) {\n  console.log('same');\n} else {\n  console.log('guess what, google.com and primus.io are not the same origin');\n}\n```\n\nAnd that's it.\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "3rdeden"
+    },
+    {
+      "email": "npm@unshift.io",
+      "name": "unshift"
+    },
+    {
+      "email": "npm@3rd-Eden.com",
+      "name": "v1"
+    }
+  ],
+  "time": {
+    "modified": "2018-08-06T15:43:52.297Z",
+    "created": "2014-10-04T18:06:31.427Z",
+    "0.0.0": "2014-10-04T18:06:31.427Z",
+    "0.0.1": "2014-10-08T15:08:08.387Z",
+    "0.0.2": "2014-10-09T12:46:42.420Z",
+    "0.0.3": "2014-10-13T19:43:59.427Z",
+    "0.0.4": "2014-10-15T22:21:47.650Z",
+    "0.0.5": "2014-10-30T14:12:10.117Z",
+    "0.0.6": "2014-11-09T23:04:01.366Z",
+    "0.0.7": "2014-12-06T22:45:42.229Z",
+    "0.0.8": "2014-12-09T10:49:03.256Z",
+    "1.0.0": "2015-10-30T14:44:19.667Z",
+    "1.0.1": "2018-05-15T10:04:27.637Z",
+    "1.0.2": "2018-08-06T15:43:41.371Z"
+  },
+  "keywords": [
+    "origin",
+    "url",
+    "parse"
+  ],
+  "author": {
+    "name": "Arnout Kazemier"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/unshiftio/original#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unshiftio/original.git"
+  },
+  "bugs": {
+    "url": "https://github.com/unshiftio/original/issues"
+  },
+  "users": {
+    "staydan": true
+  },
+  "_attachments": {}
+}

@@ -1,0 +1,1404 @@
+{
+  "_id": "typedarray-to-buffer",
+  "_rev": "29-79de88c5bf300f12b055f2bdf96035c8",
+  "name": "typedarray-to-buffer",
+  "description": "Convert a typed array to a Buffer without a copy",
+  "dist-tags": {
+    "latest": "3.1.5"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "1.0.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "buffer": "~2.1.8",
+        "tape": "2.x"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/4..latest",
+          "firefox/3..latest",
+          "safari/5.1..latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "_id": "typedarray-to-buffer@1.0.0",
+      "dist": {
+        "shasum": "d17ced03474cbfced3e44ce2a0a6d72fa603cd2c",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "1.0.1",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "2.x"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/4..latest",
+          "firefox/3..latest",
+          "safari/5.1..latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "_id": "typedarray-to-buffer@1.0.1",
+      "dist": {
+        "shasum": "e0fec96df3b8c0b11e58b7e2d1955f0be5e2e241",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "1.0.2",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "2.x"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/4..latest",
+          "firefox/3..latest",
+          "safari/5.1..latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "_id": "typedarray-to-buffer@1.0.2",
+      "dist": {
+        "shasum": "9043c2293c03ff7a2299f89690fe1d9edc718e8e",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "1.0.3",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "2.x"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/4..latest",
+          "firefox/3..latest",
+          "safari/5.1..latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "gitHead": "71bbe521ac3f9a30b2822a3804bf3cd448c49b41",
+      "_id": "typedarray-to-buffer@1.0.3",
+      "_shasum": "949c45040dc17ba2ce831595024d34ef7ee97096",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "949c45040dc17ba2ce831595024d34ef7ee97096",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "1.0.4",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "2.x"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js",
+        "browsers": [
+          "ie/6..latest",
+          "chrome/4..latest",
+          "firefox/3..latest",
+          "safari/5.1..latest",
+          "opera/11.0..latest",
+          "iphone/6",
+          "ipad/6"
+        ]
+      },
+      "gitHead": "f27e6e035e07613979d6cf51cb8aa69a21dbf8cc",
+      "_id": "typedarray-to-buffer@1.0.4",
+      "_shasum": "9bb8ba0e841fb3f4cf1fe7c245e9f3fa8a5fe99c",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "9bb8ba0e841fb3f4cf1fe7c245e9f3fa8a5fe99c",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "2.0.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "0.0.0"
+      },
+      "devDependencies": {
+        "tape": "2.x",
+        "zuul": "^1.13.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "9696bd7b2521fc1274e6275900c3484136a640a2",
+      "_id": "typedarray-to-buffer@2.0.0",
+      "_shasum": "c8a08df6e0260ddb819378fd39aa7723cde5fddc",
+      "_from": ".",
+      "_npmVersion": "2.1.6",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "c8a08df6e0260ddb819378fd39aa7723cde5fddc",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "0.0.0"
+      },
+      "devDependencies": {
+        "tape": "2.x",
+        "zuul": "^1.13.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "4292dc8bd742fb2f89ab98f93a9df755531786fc",
+      "_id": "typedarray-to-buffer@3.0.0",
+      "_shasum": "b5333209ebf357b03cd97e56c25d98a5c8128c7d",
+      "_from": ".",
+      "_npmVersion": "2.1.7",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "b5333209ebf357b03cd97e56c25d98a5c8128c7d",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.1",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "0.0.0"
+      },
+      "devDependencies": {
+        "tape": "2.x",
+        "zuul": "^1.13.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "9eedd9f5ac9dd881a6ca0215b2eba45afa31691a",
+      "_id": "typedarray-to-buffer@3.0.1",
+      "_shasum": "de0a601da46a9475b1fc65922c93d9a7c1937f49",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "de0a601da46a9475b1fc65922c93d9a7c1937f49",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.2",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "0.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "39dcf6abd075fe3aa516f9c62781c06cca0e60dd",
+      "_id": "typedarray-to-buffer@3.0.2",
+      "_shasum": "baded34efc36180e88b3294257651b82010d836e",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "baded34efc36180e88b3294257651b82010d836e",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.3",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^3.8.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "cdf662c4de7d59a90754a2797803486203e47451",
+      "_id": "typedarray-to-buffer@3.0.3",
+      "_shasum": "681d3f47db5def4fa30c1a8a5ecd9c5bec8c8903",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "681d3f47db5def4fa30c1a8a5ecd9c5bec8c8903",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.4": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.4",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.1.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "0a1c5c2846dea102002afa5e14e9a97b79c93df1",
+      "_id": "typedarray-to-buffer@3.0.4",
+      "_shasum": "55fad745ad1d5307f1f1551b10b60a5a2c5f7ac5",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "dist": {
+        "shasum": "55fad745ad1d5307f1f1551b10b60a5a2c5f7ac5",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.5": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.0.5",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.1.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "testling": {
+        "files": "test/*.js"
+      },
+      "gitHead": "63662d7f2dafb05a8a813620ad37ecbf99eeaef5",
+      "_id": "typedarray-to-buffer@3.0.5",
+      "_shasum": "842f2ca959cd96280f947bcfeee388c5404e5ec6",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "842f2ca959cd96280f947bcfeee388c5404e5ec6",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.1.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "334a909bf3e3c4c6647c94d74834ac76f2eb281b",
+      "_id": "typedarray-to-buffer@3.1.0",
+      "_shasum": "16b492d1fed806e85511f57c0135a99a7baba704",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "16b492d1fed806e85511f57c0135a99a7baba704",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "3.1.1": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.1",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^5.1.0",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "91bdfea79d8c70ea57853984e0d51fc4317b9f27",
+      "_id": "typedarray-to-buffer@3.1.1",
+      "_shasum": "233e5b32893befe95850b3353058fcddf0f9da6c",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "233e5b32893befe95850b3353058fcddf0f9da6c",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {}
+    },
+    "3.1.2": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.2",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^6.0.4",
+        "tape": "^4.0.0",
+        "zuul": "^3.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test/*.js",
+        "test-browser-local": "zuul --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "f020396a951e83dd576a8173769b67164d9dd017",
+      "_id": "typedarray-to-buffer@3.1.2",
+      "_shasum": "1017b32d984ff556eba100f501589aba1ace2e04",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "shasum": "1017b32d984ff556eba100f501589aba1ace2e04",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/typedarray-to-buffer-3.1.2.tgz_1455142238822_0.33011502446606755"
+      },
+      "directories": {}
+    },
+    "3.1.3": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.3",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "airtap": "0.0.4",
+        "standard": "*",
+        "tape": "^4.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "airtap -- test/*.js",
+        "test-browser-local": "airtap --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "8fc19b35c67ec82974682f5af80156f3847a19b2",
+      "_id": "typedarray-to-buffer@3.1.3",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-zvQEOFYZqMp5xAOvqVuW0NWU2vdJnxYW6Tf2w+JkWku1GMmq3qOuZb1itCEzoEMqcDNDCwykJyNxwvj0jJA1ww==",
+        "shasum": "6c5e0c1b1782cb7b375da2719684d2606102bc6b",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8892
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/typedarray-to-buffer_3.1.3_1520292981940_0.09852773833019524"
+      }
+    },
+    "3.1.4": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.4",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "airtap": "0.0.4",
+        "standard": "*",
+        "tape": "^4.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "airtap -- test/*.js",
+        "test-browser-local": "airtap --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "1668c4689d6c8bfc92cac71615bd1cb7a7dce305",
+      "_id": "typedarray-to-buffer@3.1.4",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-JTZPwvf+dXFWkljvE3oDjTZ6DFg+bbBhB9yA4Xx3JN4Ol9jfMjXuLn/o2gmgt+BJJwJ4MIzrTBz+UbwVMi9vcA==",
+        "shasum": "010b582f7366b351ea7cadcb052f1a5e2d4c6e9f",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8873
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/typedarray-to-buffer_3.1.4_1520293039161_0.41519945934728675"
+      }
+    },
+    "3.1.5": {
+      "name": "typedarray-to-buffer",
+      "description": "Convert a typed array to a Buffer without a copy",
+      "version": "3.1.5",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "http://feross.org/"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/typedarray-to-buffer/issues"
+      },
+      "dependencies": {
+        "is-typedarray": "^1.0.0"
+      },
+      "devDependencies": {
+        "airtap": "0.0.4",
+        "standard": "*",
+        "tape": "^4.0.0"
+      },
+      "homepage": "http://feross.org",
+      "keywords": [
+        "buffer",
+        "typed array",
+        "convert",
+        "no copy",
+        "uint8array",
+        "uint16array",
+        "uint32array",
+        "int16array",
+        "int32array",
+        "float32array",
+        "float64array",
+        "browser",
+        "arraybuffer",
+        "dataview"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/typedarray-to-buffer.git"
+      },
+      "scripts": {
+        "test": "standard && npm run test-node && npm run test-browser",
+        "test-browser": "airtap -- test/*.js",
+        "test-browser-local": "airtap --local -- test/*.js",
+        "test-node": "tape test/*.js"
+      },
+      "gitHead": "328a952e480a143bdc3fc98a2133490e28e2b3a2",
+      "_id": "typedarray-to-buffer@3.1.5",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==",
+        "shasum": "a97ee7a9ff42691b9f783ff1bc5112fe3fca9080",
+        "tarball": "https://registry.npmjs.org/typedarray-to-buffer/-/typedarray-to-buffer-3.1.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8835
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/typedarray-to-buffer_3.1.5_1520537433687_0.8471076032703442"
+      }
+    }
+  },
+  "readme": "# typedarray-to-buffer [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[travis-image]: https://img.shields.io/travis/feross/typedarray-to-buffer/master.svg\n[travis-url]: https://travis-ci.org/feross/typedarray-to-buffer\n[npm-image]: https://img.shields.io/npm/v/typedarray-to-buffer.svg\n[npm-url]: https://npmjs.org/package/typedarray-to-buffer\n[downloads-image]: https://img.shields.io/npm/dm/typedarray-to-buffer.svg\n[downloads-url]: https://npmjs.org/package/typedarray-to-buffer\n[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg\n[standard-url]: https://standardjs.com\n\n#### Convert a typed array to a [Buffer](https://github.com/feross/buffer) without a copy.\n\n[![saucelabs][saucelabs-image]][saucelabs-url]\n\n[saucelabs-image]: https://saucelabs.com/browser-matrix/typedarray-to-buffer.svg\n[saucelabs-url]: https://saucelabs.com/u/typedarray-to-buffer\n\nSay you're using the ['buffer'](https://github.com/feross/buffer) module on npm, or\n[browserify](http://browserify.org/) and you're working with lots of binary data.\n\nUnfortunately, sometimes the browser or someone else's API gives you a typed array like\n`Uint8Array` to work with and you need to convert it to a `Buffer`. What do you do?\n\nOf course: `Buffer.from(uint8array)`\n\nBut, alas, every time you do `Buffer.from(uint8array)` **the entire array gets copied**.\nThe `Buffer` constructor does a copy; this is\ndefined by the [node docs](http://nodejs.org/api/buffer.html) and the 'buffer' module\nmatches the node API exactly.\n\nSo, how can we avoid this expensive copy in\n[performance critical applications](https://github.com/feross/buffer/issues/22)?\n\n***Simply use this module, of course!***\n\nIf you have an `ArrayBuffer`, you don't need this module, because\n`Buffer.from(arrayBuffer)`\n[is already efficient](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_from_arraybuffer_byteoffset_length).\n\n## install\n\n```bash\nnpm install typedarray-to-buffer\n```\n\n## usage\n\nTo convert a typed array to a `Buffer` **without a copy**, do this:\n\n```js\nvar toBuffer = require('typedarray-to-buffer')\n\nvar arr = new Uint8Array([1, 2, 3])\narr = toBuffer(arr)\n\n// arr is a buffer now!\n\narr.toString()  // '\\u0001\\u0002\\u0003'\narr.readUInt16BE(0)  // 258\n```\n\n## how it works\n\nIf the browser supports typed arrays, then `toBuffer` will **augment the typed array** you\npass in with the `Buffer` methods and return it. See [how does Buffer\nwork?](https://github.com/feross/buffer#how-does-it-work) for more about how augmentation\nworks.\n\nThis module uses the typed array's underlying `ArrayBuffer` to back the new `Buffer`. This\nrespects the \"view\" on the `ArrayBuffer`, i.e. `byteOffset` and `byteLength`. In other\nwords, if you do `toBuffer(new Uint32Array([1, 2, 3]))`, then the new `Buffer` will\ncontain `[1, 0, 0, 0, 2, 0, 0, 0, 3, 0, 0, 0]`, **not** `[1, 2, 3]`. And it still doesn't\nrequire a copy.\n\nIf the browser doesn't support typed arrays, then `toBuffer` will create a new `Buffer`\nobject, copy the data into it, and return it. There's no simple performance optimization\nwe can do for old browsers. Oh well.\n\nIf this module is used in node, then it will just call `Buffer.from`. This is just for\nthe convenience of modules that work in both node and the browser.\n\n## license\n\nMIT. Copyright (C) [Feross Aboukhadijeh](http://feross.org).\n",
+  "maintainers": [
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-08T19:30:35.817Z",
+    "created": "2014-04-08T09:03:22.267Z",
+    "1.0.0": "2014-04-08T09:03:22.267Z",
+    "1.0.1": "2014-04-08T09:15:38.242Z",
+    "1.0.2": "2014-04-10T06:53:09.179Z",
+    "1.0.3": "2014-07-08T03:51:53.513Z",
+    "1.0.4": "2014-09-11T19:48:19.906Z",
+    "2.0.0": "2014-11-06T06:38:43.079Z",
+    "3.0.0": "2014-11-07T07:14:43.433Z",
+    "3.0.1": "2014-12-10T19:49:29.968Z",
+    "3.0.2": "2015-05-05T00:55:14.165Z",
+    "3.0.3": "2015-05-28T01:20:51.883Z",
+    "3.0.4": "2015-08-15T12:35:38.886Z",
+    "3.0.5": "2016-01-09T16:14:13.247Z",
+    "3.1.0": "2016-01-27T16:53:16.027Z",
+    "3.1.1": "2016-01-28T14:48:21.037Z",
+    "3.1.2": "2016-02-10T22:10:40.292Z",
+    "3.1.3": "2018-03-05T23:36:22.014Z",
+    "3.1.4": "2018-03-05T23:37:19.233Z",
+    "3.1.5": "2018-03-08T19:30:33.753Z"
+  },
+  "homepage": "http://feross.org",
+  "keywords": [
+    "buffer",
+    "typed array",
+    "convert",
+    "no copy",
+    "uint8array",
+    "uint16array",
+    "uint32array",
+    "int16array",
+    "int32array",
+    "float32array",
+    "float64array",
+    "browser",
+    "arraybuffer",
+    "dataview"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/typedarray-to-buffer.git"
+  },
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/typedarray-to-buffer/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "johnnyscript": true
+  },
+  "_attachments": {}
+}

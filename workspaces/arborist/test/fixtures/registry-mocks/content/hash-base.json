@@ -1,0 +1,933 @@
+{
+  "_id": "hash-base",
+  "_rev": "15-934f10af44f4fb0776454710d52afbeb",
+  "name": "hash-base",
+  "description": "abstract base class for hash-streams",
+  "dist-tags": {
+    "latest": "3.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "hash-base",
+      "version": "1.0.0",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "e315bd2c5c9e98ecac9a45bb5af1c38d87c3bc47",
+      "_id": "hash-base@1.0.0",
+      "_shasum": "72e2cc98c2ba5d6667034376afecdc9383b0bded",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "72e2cc98c2ba5d6667034376afecdc9383b0bded",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hash-base-1.0.0.tgz_1459711075584_0.6947719715535641"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "hash-base",
+      "version": "1.0.1",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "e31f5acb15a16bcc9475308a07949836f38d3daf",
+      "_id": "hash-base@1.0.1",
+      "_shasum": "472384fb22358c460af6b270f15a24e67cf60a1e",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "472384fb22358c460af6b270f15a24e67cf60a1e",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hash-base-1.0.1.tgz_1459765278491_0.9590846872888505"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "hash-base",
+      "version": "1.0.2",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "b10031234ba760da754b2f8fa3a4c20d76336e5b",
+      "_id": "hash-base@1.0.2",
+      "_shasum": "f5d93455e8b5778b855ec6531eb87853a2295688",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "f5d93455e8b5778b855ec6531eb87853a2295688",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hash-base-1.0.2.tgz_1459768485871_0.13139901007525623"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "hash-base",
+      "version": "2.0.0",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "aafd2ed37cde65cd0d5969e1a3f45a7ba6a99197",
+      "_id": "hash-base@2.0.0",
+      "_shasum": "582af12ab8c6d9d218aea9dc849b4582d495d4c6",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "582af12ab8c6d9d218aea9dc849b4582d495d4c6",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hash-base-2.0.0.tgz_1460011600955_0.857208457775414"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "hash-base",
+      "version": "2.0.1",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "3cb689188cfd5aaf4e537316ff0b48669a8acb4c",
+      "_id": "hash-base@2.0.1",
+      "_shasum": "e05d166102b12265782b938f7ba18246222db6d7",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "e05d166102b12265782b938f7ba18246222db6d7",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hash-base-2.0.1.tgz_1460639157385_0.5800484092906117"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "hash-base",
+      "version": "2.0.2",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^6.0.8",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "dff2ded0a9e5d0e5e604dd785213fa991d1af4a5",
+      "_id": "hash-base@2.0.2",
+      "_shasum": "66ea1d856db4e8a5470cadf6fce23ae5244ef2e1",
+      "_from": ".",
+      "_npmVersion": "3.8.3",
+      "_nodeVersion": "5.10.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "66ea1d856db4e8a5470cadf6fce23ae5244ef2e1",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hash-base-2.0.2.tgz_1460889681740_0.6923118229024112"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "hash-base",
+      "version": "3.0.0",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^6.1.1",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "1d905bb490a45987037c78d499971d9b4772217c",
+      "_id": "hash-base@3.0.0",
+      "_shasum": "fab7a974e1522bbcc0e38b9a3b8d625190518769",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "fab7a974e1522bbcc0e38b9a3b8d625190518769",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hash-base-3.0.0.tgz_1462358197141_0.928217556560412"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "hash-base",
+      "version": "3.0.1",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^7.0.0",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "1625296a72c2f93f5f7e52839996cee67e565d0f",
+      "_id": "hash-base@3.0.1",
+      "_shasum": "e151fac39ceae63b6129ad857922e113fa66eb3d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.1",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "e151fac39ceae63b6129ad857922e113fa66eb3d",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hash-base-3.0.1.tgz_1470750706567_0.5660293367691338"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "hash-base",
+      "version": "3.0.2",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^7.0.0",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "78f5c19b5c532d10d31dadae27e126453c174bea",
+      "_id": "hash-base@3.0.2",
+      "_shasum": "7f5964fd83b0034830dc94874336f03b5b9352f8",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "7f5964fd83b0034830dc94874336f03b5b9352f8",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/hash-base-3.0.2.tgz_1472129291617_0.33186267665587366"
+      },
+      "directories": {}
+    },
+    "3.0.3": {
+      "name": "hash-base",
+      "version": "3.0.3",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^7.0.0",
+        "standard": "^7.0.0",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "b967951707050670429e55d21659e6af9ad2f9f0",
+      "_id": "hash-base@3.0.3",
+      "_shasum": "87ec48734bfe354275535150b14821566b083807",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.4.0",
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "dist": {
+        "shasum": "87ec48734bfe354275535150b14821566b083807",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hash-base-3.0.3.tgz_1472409725983_0.894441373180598"
+      },
+      "directories": {}
+    },
+    "3.0.4": {
+      "name": "hash-base",
+      "version": "3.0.4",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "safe-buffer": "^5.0.1"
+      },
+      "devDependencies": {
+        "nyc": "^8.3.2",
+        "standard": "*",
+        "tape": "^4.2.0"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "d36440ed0448a654734ae05464d55d34b189a17a",
+      "_id": "hash-base@3.0.4",
+      "_shasum": "5fc8686847ecd73499403319a6b0a3f3f6ae4918",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.10.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "5fc8686847ecd73499403319a6b0a3f3f6ae4918",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash-base-3.0.4.tgz_1495616777218_0.30660409457050264"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "hash-base",
+      "version": "3.1.0",
+      "description": "abstract base class for hash-streams",
+      "keywords": [
+        "hash",
+        "stream"
+      ],
+      "homepage": "https://github.com/crypto-browserify/hash-base",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/hash-base/issues"
+      },
+      "license": "MIT",
+      "author": {
+        "name": "Kirill Fomichev",
+        "email": "fanatid@ya.ru",
+        "url": "https://github.com/fanatid"
+      },
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/hash-base.git"
+      },
+      "scripts": {
+        "coverage": "nyc node test/*.js",
+        "lint": "standard",
+        "test": "npm run lint && npm run unit",
+        "unit": "node test/*.js"
+      },
+      "dependencies": {
+        "inherits": "^2.0.4",
+        "readable-stream": "^3.6.0",
+        "safe-buffer": "^5.2.0"
+      },
+      "devDependencies": {
+        "nyc": "^15.0.1",
+        "standard": "^14.3.3",
+        "tape": "^5.0.0"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "gitHead": "e0e5732e3d5cdf1bca71bc092d36a9e8f475c271",
+      "_id": "hash-base@3.1.0",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-1nmYp/rhMDiE7AYkDw+lLwlAzz0AntGIe51F3RfFfEqyQ3feY2eI/NcwC6umIQVOASPMsWJLJScWKSSvzL9IVA==",
+        "shasum": "55c381d9e06e1d2997a883b4a3fddfe7f0d3af33",
+        "tarball": "https://registry.npmjs.org/hash-base/-/hash-base-3.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6077,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeq84KCRA9TVsSAnZWagAA0UAQAKMCAKPKYhsmpHWWPTlH\nX4ZJNh3J+teUIQohGNAPW4aTAQFyJlbF9bD92wJVrkbWyJI7GzGfRH5lCsnd\ndydUZ2V3dnT1lUzmoeA+j6zJzPuYZmn3yxEfUFbhY59qNjRqXU8OpZbyFBDA\n6dRkn3O3mW87FJflu68FRU64i10Lt24Da7T2OsH4v9+5IzSsYQlHKf3FgONn\n3pSvfX37sCmWFLJeijoXALRVwnvjYaqXmZi0+8PB4S2VsKekfZCbxCQDTkmz\nmjpf9vvcllFfgB9bah81k3JBS7JmLidC7JnS/lPBy0QMDjoe5O5cDsY7rLko\nbLhqSpgg4EwfAuLbkvpXrhYT1diUvrVxOMG+UjxfYS1Et9r65Ne2nC8HAGmp\nI99NRpRx94YxlcpEUJHDvXs5TRTDxdQ3uYEZUHxjOU6xcm5EMoIvKMs9JfUH\n7lxzyCOpMFgzMKxjfUAcgRVRLKqlq+Au7WwLh1F3NyhVHk8vcmmK0ZlqhnYZ\nezteC8p948bLd/rI6i5XV6srFIuGgt3LLh5XVB6ZXa74EGXbjS3Ly7Vnqfrx\njSrdrsS/vR4dc8KNh0JTxXFi5dBPdioed7paJ8AVncTUstYHgWS6LjxMQ88Q\nnduFVBSp3vMF76lJLANdtpPzSZWMIToKphfjc5boNp3MBdTttRH1+ZlkbhCl\nM0D/\r\n=bRNI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "fanatid",
+          "email": "fanatid@ya.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "fanatid",
+        "email": "fanatid@ya.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hash-base_3.1.0_1588317706470_0.7933367604914434"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# hash-base\n\n[![NPM Package](https://img.shields.io/npm/v/hash-base.svg?style=flat-square)](https://www.npmjs.org/package/hash-base)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/hash-base.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/hash-base)\n[![Dependency status](https://img.shields.io/david/crypto-browserify/hash-base.svg?style=flat-square)](https://david-dm.org/crypto-browserify/hash-base#info=dependencies)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nAbstract base class to inherit from if you want to create streams implementing the same API as node crypto [Hash][1] (for [Cipher][2] / [Decipher][3] check [crypto-browserify/cipher-base][4]).\n\n## Example\n\n```js\nconst HashBase = require('hash-base')\nconst inherits = require('inherits')\n\n// our hash function is XOR sum of all bytes\nfunction MyHash () {\n  HashBase.call(this, 1) // in bytes\n\n  this._sum = 0x00\n}\n\ninherits(MyHash, HashBase)\n\nMyHash.prototype._update = function () {\n  for (let i = 0; i < this._block.length; ++i) this._sum ^= this._block[i]\n}\n\nMyHash.prototype._digest = function () {\n  return this._sum\n}\n\nconst data = Buffer.from([ 0x00, 0x42, 0x01 ])\nconst hash = new MyHash().update(data).digest()\nconsole.log(hash) // => 67\n```\nYou also can check [source code](index.js) or [crypto-browserify/md5.js][5]\n\n## LICENSE\n\nMIT\n\n[1]: https://nodejs.org/api/crypto.html#crypto_class_hash\n[2]: https://nodejs.org/api/crypto.html#crypto_class_cipher\n[3]: https://nodejs.org/api/crypto.html#crypto_class_decipher\n[4]: https://github.com/crypto-browserify/cipher-base\n[5]: https://github.com/crypto-browserify/md5.js\n",
+  "maintainers": [
+    {
+      "name": "cwmma",
+      "email": "calvin.metcalf@gmail.com"
+    },
+    {
+      "name": "dcousens",
+      "email": "email@dcousens.com"
+    },
+    {
+      "name": "fanatid",
+      "email": "fanatid@ya.ru"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-01T07:21:48.921Z",
+    "created": "2016-04-03T19:17:57.853Z",
+    "1.0.0": "2016-04-03T19:17:57.853Z",
+    "1.0.1": "2016-04-04T10:21:20.754Z",
+    "1.0.2": "2016-04-04T11:14:48.156Z",
+    "2.0.0": "2016-04-07T06:46:43.395Z",
+    "2.0.1": "2016-04-14T13:05:59.246Z",
+    "2.0.2": "2016-04-17T10:41:22.907Z",
+    "3.0.0": "2016-05-04T10:36:38.422Z",
+    "3.0.1": "2016-08-09T13:51:49.308Z",
+    "3.0.2": "2016-08-25T12:48:14.540Z",
+    "3.0.3": "2016-08-28T18:42:07.708Z",
+    "3.0.4": "2017-05-24T09:06:17.348Z",
+    "3.1.0": "2020-05-01T07:21:46.608Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/hash-base",
+  "keywords": [
+    "hash",
+    "stream"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/hash-base.git"
+  },
+  "author": {
+    "name": "Kirill Fomichev",
+    "email": "fanatid@ya.ru",
+    "url": "https://github.com/fanatid"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/hash-base/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "fanatid": true
+  }
+}

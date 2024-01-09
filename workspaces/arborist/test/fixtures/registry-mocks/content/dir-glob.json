@@ -1,0 +1,729 @@
+{
+  "_id": "dir-glob",
+  "_rev": "15-27b329b488e8477aaaccecf9b2fe18aa",
+  "name": "dir-glob",
+  "description": "Convert directories to glob compatible strings",
+  "dist-tags": {
+    "latest": "3.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "dir-glob",
+      "version": "1.0.0",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Martensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {
+        "arrify": "^1.0.1",
+        "pify": "^2.3.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "b722df0f9cbcb599c8c6659bf365b8a16762230d",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@1.0.0",
+      "_shasum": "9baf65ea4400a42a7086519af4794a1d3c9cdacb",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "shasum": "9baf65ea4400a42a7086519af4794a1d3c9cdacb",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "dir-glob",
+      "version": "1.0.1",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Martensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {
+        "arrify": "^1.0.1",
+        "pify": "^2.3.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "de4c4967cb54630e1c209ecc71c714113fdb3427",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@1.0.1",
+      "_shasum": "706e3a27b54adf5e930caa5db424703d64960a04",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "shasum": "706e3a27b54adf5e930caa5db424703d64960a04",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "dir-glob",
+      "version": "1.0.2",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Martensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {
+        "arrify": "^1.0.1",
+        "pify": "^2.3.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "8a0da6878cc60ea5d755e9bd9a5a656015a34fea",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@1.0.2",
+      "_shasum": "6c00b50dcf23928fbc100b6a86107e4859e02395",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "shasum": "6c00b50dcf23928fbc100b6a86107e4859e02395",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "dir-glob",
+      "version": "1.1.0",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Martensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [],
+      "dependencies": {
+        "arrify": "^1.0.1",
+        "pify": "^2.3.0",
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "f8d14322a112f95df2df17b8baf44a956c5541ef",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@1.1.0",
+      "_shasum": "1ca515e4b8de6314f5c17ff7d66c32e2328f786e",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "shasum": "1ca515e4b8de6314f5c17ff7d66c32e2328f786e",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "dir-glob",
+      "version": "2.0.0",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "arrify": "^1.0.1",
+        "path-type": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "del": "^3.0.0",
+        "make-dir": "^1.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "b6d7a2dd3c7cb8ae627b1455ef500e282cf86cfc",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@2.0.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-37qirFDz8cA5fimp9feo43fSuRo2gHwaIn6dXL8Ber1dGwUosDrGZeCCXq57WnIqE4aQ+u3eQZzsk1yOzhdwag==",
+        "shasum": "0b205d2b6aef98238ca286598a8204d29d0a0034",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob-2.0.0.tgz_1500913980060_0.7199450209736824"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "dir-glob",
+      "version": "2.2.0",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "path-type": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "del": "^3.0.0",
+        "make-dir": "^1.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "*"
+      },
+      "gitHead": "84f4381fe041b6afd425e8d5c14c33809430d8f1",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@2.2.0",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YqrO+bduKFqPgspvpjDAaKk0qhmvY+SY7NjIRljCDAy6CX7Ft65irIduHbrYXhy+BxJnYKjWuREw6X42w9/+DQ==",
+        "shasum": "7c2986acade3beda2a037dcd9d20af7256cff6c5",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-2.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4881,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcNbmyCRA9TVsSAnZWagAAW1cP/3SWxh3k43ZAemjLs6MZ\noaGyeK1V+QtAZ15Xgn61XO8Kpsjx0Tz8uEQWDxGry4SI3QdvFoy3ThZmSOSt\n98RXk0YR10RONLz0aBFfLLNKV7hIf40q7X4S0ivn61EX1Fu4e69aQiL2laX4\nEVhn4Vn6u07pX9u8eXH1JVpjEHL9VhkwpQnzbDWLNtr9KoHiXFbC3Wej3j76\nNb/mU28hwfwus/mTRqX1UfsBdTVOYer3Hk+1a6eD1Nq47TrFE5vhe8FYhEdM\nbpbe9/6bblS+mRleXj1rjb4lMApfnA2rwXfhP3yQkAwCwIiFQFk4p7WmsWPl\njU8hsFPKgpN9+ArDpRy4bffHOWiXGJbNIeZ0yJQUw02jXLoQLL2aXxnH+BeN\nsDCOEHZuex2dea5RBPbba8VdaGSDXARQylsH0SgQkQSHnaJqYI1uT+BpDGYX\nq2qoiSfw7gbycdI9TlBfuja9mCTEYz+UunT0DNWVpdR+eRATWNXhU9gDqZgu\nxt0hg3dpias/3NK0ut42h/l4OK0w3RgUiB8D2rvI8oBhvToh/ime2kqIM8YK\n/BmhDEpLPes0julZ1Ycn5C5GcbLUniMFd8NgyigxitsK3/dVRR8SFeqLbGG0\niif5jwE/PNHiDxCdC1JVzs188WxEFQTDWLsMn2o67mTj4yNCj7wkHbMPFpQW\nOzyX\r\n=2F3F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob_2.2.0_1547024817450_0.6502301281341873"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.1": {
+      "name": "dir-glob",
+      "version": "2.2.1",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "path-type": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "del": "^3.0.0",
+        "make-dir": "^1.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "^0.20.3"
+      },
+      "gitHead": "4fc6c6e4a821a64dfd46205bc6c665082e82b022",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@2.2.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UN6X6XwRjllabfRhBdkVSo63uurJ8nSvMGrwl94EYVz6g+exhTV+yVSYk5VC/xl3MBFBTtC0J20uFKce4Brrng==",
+        "shasum": "ce8413234ffe8452b76b7741c32f116cf2a7b1a7",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-2.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5238,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcNwK7CRA9TVsSAnZWagAAgecP/35S31VApQyCRqg2Z1YO\nCKN0o8+hb6jhh/jrrxvlvvXPgJHQriBBMwY+Zz0BdC7zY5TNbhiimudQQpo7\nzIryEAVqI2BZr0hEAThZk+wZCXqKDXrl8wJM5NHJuKnXWMDKMFW4kvFtqL+c\n5dOgfiyKhsrLGhnmH+nsoN81pbBZ4mkMMK0dIKG1PvOEfc+vObgNFp51aK2x\n4qaTHXLPCozHS0xqhwzSfBQHXzWiWvz+8dAFyx3zdi5RJ4383/PoGAGdS7P9\nuqM1jCDpcNjGO9g4ntKqqXfGrV4Fq2RGAVN69AxLh5t1AC73N3NR7DKkg1+c\nxfFRf6umwrJw320tz7jV1mpaoLU7b5MugSiKVXwtY/hc/elixXGYk/7RsHzg\nQCFZdT7KUSe0mGvG+e0eAWbFq2Avz2ms50NdgUepjSQL1dHJF1kFKtIbOSzd\npiqt1yGwd0RtKa+6dX/bZngE40vaheYEDF4n5s4dfFRy3KdvbOP+w6aAKzT9\nYRe/ASDZFtEIAXr7CYNPvE6+NwAUEOOOnjUkO1kodzo+qDXUf8B5H2R2dCKx\nRCpG4fJBZ+Z1dPLVWIZ7PWmR9wa6eeDgctKmLimF0fE1N5cBrntU8yJZ1S2+\nPe+giEmnllHg3AScKONjYRWzOCm5loABl0XJtDqfLdV2gInUTOrTbTe2SWvR\n4Q7t\r\n=EgIn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob_2.2.1_1547109050665_0.477537542935319"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.2": {
+      "name": "dir-glob",
+      "version": "2.2.2",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "path-type": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "del": "^3.0.0",
+        "make-dir": "^1.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "^0.20.3"
+      },
+      "gitHead": "12dedcf9aa1ed855e61043e76ca2ee6e8d2f5a21",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@2.2.2",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "11.7.0",
+      "_npmUser": {
+        "name": "kevva",
+        "email": "kevinmartensson@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-f9LBi5QWzIW3I6e//uxZoLBlUt9kcp66qo0sSCxL6YZKc75R1c4MFCoe/LaZiBGmgujvQdxc5Bn3QhfyvK5Hsw==",
+        "shasum": "fa09f0694153c8918b18ba0deafae94769fc50c4",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-2.2.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5299,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcRLbjCRA9TVsSAnZWagAAWskP/RB8/2DBlOCjquPyEQkN\nxbMeMnJKKx94mf+MEbj/1cWqRecfMjSHO4lCstxs/XLSVDG+DeyzPZvygEWy\nU5Fqb4GksJ2hEyRkEXYXRjlGKU/kS73URtnn7QPOLQVrRd5/OOufoG9oQ9j5\nhgAemqifEoyk01D1hXvgnDwXJMZReFOsUFM0aMpLmkFR8JsFljhHRdLgMAy5\njXdQccEozLADWOrqGTGbtzSigXAaLrqvuQN4lWRcP4pLbO/BFFrSMEyqhtEB\nFcDqo4d1MpUzurQWD7ED8BO4fXyibgyh0U6UQ1Au2WUzmCuTC9m/zGFpjbMy\nxuswcy1K+KHySBVlP9D9Z9j8srPk0yYKcBlHEFtgaJx6xRPJAHVo9GPHP5QZ\nkcqKbTuRnvbjuyqL/irDts/fI/mqwEOQVbfTpqArozOQkuHLuNlHp3HVuX46\nrDKtUxI7EwpdgcF3gLDKpp0pvNRYyajbTW0y4uQQcFweBVPnASynobuX53Gs\noZErDxadZUwdfhUE9HZj36huvQpstNDeW6lK5fqlnuY/zxU7MW+injdCZaBj\n3XhmWkIxUKR7/kAb4zYo1LPJo9wIZaDLJWvDfuS4GRiWvhk4pe4y8LvZfJ9Z\nVXdruJglzAgnZdWOgZJRndjyHwHbzQ48KCApfTfiFi6qapLxA5yRkO4oGnDd\nNM4d\r\n=YbM1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "kevva",
+          "email": "kevinmartensson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob_2.2.2_1548007139183_0.2590826452728292"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "dir-glob",
+      "version": "3.0.0",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "path-type": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "del": "^4.1.1",
+        "make-dir": "^3.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "9fded2f4548b14bae2849817fef1d45e6f0f93a5",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@3.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-vMv7/TM9aCcRDKeArqaGTcNoUnLcqOvlnVlHsq4CrBeSfuAYtxdtuklA5BPOat0SJLm5p/UHxqAX9VnX39kv8w==",
+        "shasum": "8a847f69d6af036b316813e2c06a2f0c340a95c5",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5423,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdFKHeCRA9TVsSAnZWagAAHngP/209W3gnhFR7fNjfHWDt\n0iPjQBOXANBEsh+0aDe93S4f3td70Hv7T5GsOGLlAq8Ia4bRkhwCzWEAKKT6\nwN6B7Xkx7n6YNoyNMbXdvTrxGVTx4qH4kPZZ/TPFSSKc2rVCdwb/FyTgpeUg\nYTV0WC49TUU3AgFwqxj4X9/lspSJk/JfjvX421v5tI0dJOKkYwglOqZZp1uN\nM1eImByE7rgB0EMyz7RcjojwuJIpuGDW1oOIcqi7BsE8JOosyZyIlqctGbBC\nlLFdzfMWA6g5LrT8+AGpI/uMFLyjFAvqIhTbX9totAJmoPUiR/5amH2jXKPG\neF+/ck50ayj0VUj6u1rtqrd1WoALmi5NJEet6VlThtI/4FcpLHc0n37RP6Y8\nDY5ZzsWEn39bXG456bC4nRI+QCjWNsFxlQPexJ0w523s26b28xsjC30v6cbl\nyZBYsWK9fTlkqFbA9RPqEFdoznQsDXPtGoe3HKdKiZyRMyXvz2pxm7uGuDOu\nRf33KnW10BUK8VImOJCkG8P4FzXjFx41hlzta3AUVrJHU9uGSbcaFPftdCUy\nnYVLmTyEDRmCxrbXmG9Kv6lRcXtX4zzH4Q3O3Z677ArjGpYxkKfP/wS1560W\nERAXfBaJzEb6MBGP702b/87l6BI+8asLp7CYxnJI7Q+XFPzy9KTmX8QSGf3V\ndsBE\r\n=QK4j\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "kevinmartensson@gmail.com",
+          "name": "kevva"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob_3.0.0_1561633246035_0.7586853509418305"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "dir-glob",
+      "version": "3.0.1",
+      "description": "Convert directories to glob compatible strings",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kevva/dir-glob.git"
+      },
+      "author": {
+        "name": "Kevin Mårtensson",
+        "email": "kevinmartensson@gmail.com",
+        "url": "github.com/kevva"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "convert",
+        "directory",
+        "extensions",
+        "files",
+        "glob"
+      ],
+      "dependencies": {
+        "path-type": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "del": "^4.1.1",
+        "make-dir": "^3.0.0",
+        "rimraf": "^2.5.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "bffbe3282621c39d28dc6aa2219d0b8c917a7594",
+      "bugs": {
+        "url": "https://github.com/kevva/dir-glob/issues"
+      },
+      "homepage": "https://github.com/kevva/dir-glob#readme",
+      "_id": "dir-glob@3.0.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WkrWp9GR4KXfKGYzOLmTuGVi1UWFfws377n9cc55/tb6DuqyF6pcQ5AbiHEshaDpY9v6oaSr2XCDidGmMwdzIA==",
+        "shasum": "56dbf73d992a4a93ba1584f4534063fd2e41717f",
+        "tarball": "https://registry.npmjs.org/dir-glob/-/dir-glob-3.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5417,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdF5AuCRA9TVsSAnZWagAAUj4P/3uYhs27Mt+wucnvlXXZ\nHFpYobUgAdWKLip4VawdA9JZnyV0KrAos/qohUAMgUqnuXNMNAFA7QC+j/Jt\npANYZwnMovOcr9pheP80wCgKa1wYZMwLrsW1Jio6OXtIAqQUISZz9qPxSN3f\nBZqbGRjDcdSFpl6fVTEHxIM7cxu/Og8MHIrdpjpdH64n8sQhrpDB/9mseWEJ\nQ1PjFky3K9Kc/atQJJNZuokKtSdJRYyHekcJWA7K3D0IOxMfEdHzzLaxXRpk\nP7DBeXwKi7UJACIqOaJE9FgKcgujGqXbN9I1t74l+bIOy9v+KfdsOJaN38aC\ndnw0w0EsI2IfUWDMWS6wiEAjF+aLkA0nGx54Q5GcSzq38kDHIuBWMnO1moeJ\nc6f9SpDH3W5XLikcBI3yywQyp0NV3pTYPMkcdqi7gnrxMxCY9RArpuDItXNU\nEU12MRR6PiqXTZP7l98LsP7RxO2iWdrvzjEGMuHLcL83bHq6f5l3QkAJVLCE\n25PlEhuM/zkX1Rrx9L0W7Fedv3UlGslt5OFsPvni/sCW1JsQYpaEW7MXGQGg\nnRC+FLVGU3493DQPdX0ItTAky/yMdXuXdQITlOqxAX91gb/F85EnQfkNt5+a\nzRNI7UwUUTHfqJoe3IvinQVQvhZGmHcBO0WaBBdyE36fyAtzQkuyuumf+Wp3\nBSNO\r\n=uUGV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "kevinmartensson@gmail.com",
+          "name": "kevva"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dir-glob_3.0.1_1561825326043_0.5128953749332821"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# dir-glob [![Build Status](https://travis-ci.org/kevva/dir-glob.svg?branch=master)](https://travis-ci.org/kevva/dir-glob)\n\n> Convert directories to glob compatible strings\n\n\n## Install\n\n```\n$ npm install dir-glob\n```\n\n\n## Usage\n\n```js\nconst dirGlob = require('dir-glob');\n\n(async () => {\n\tconsole.log(await dirGlob(['index.js', 'test.js', 'fixtures']));\n\t//=> ['index.js', 'test.js', 'fixtures/**']\n\n\tconsole.log(await dirGlob(['index.js', 'inner_folder'], {cwd: 'fixtures'}));\n\t//=> ['index.js', 'inner_folder/**']\n\n\tconsole.log(await dirGlob(['lib/**', 'fixtures'], {\n\t\tfiles: ['test', 'unicorn']\n\t\textensions: ['js']\n\t}));\n\t//=> ['lib/**', 'fixtures/**/test.js', 'fixtures/**/unicorn.js']\n\n\tconsole.log(await dirGlob(['lib/**', 'fixtures'], {\n\t\tfiles: ['test', 'unicorn', '*.jsx'],\n\t\textensions: ['js', 'png']\n\t}));\n\t//=> ['lib/**', 'fixtures/**/test.{js,png}', 'fixtures/**/unicorn.{js,png}', 'fixtures/**/*.jsx']\n})();\n```\n\n\n## API\n\n### dirGlob(input, options?)\n\nReturns a `Promise<string[]>` with globs.\n\n### dirGlob.sync(input, options?)\n\nReturns a `string[]` with globs.\n\n#### input\n\nType: `string | string[]`\n\nPaths.\n\n#### options\n\nType: `object`\n\n##### extensions\n\nType: `string[]`\n\nAppend extensions to the end of your globs.\n\n##### files\n\nType: `string[]`\n\nOnly glob for certain files.\n\n##### cwd\n\nType: `string[]`\n\nTest in specific directory.\n",
+  "maintainers": [
+    {
+      "email": "kevinmartensson@gmail.com",
+      "name": "kevva"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-14T09:55:03.469Z",
+    "created": "2016-01-08T10:11:05.346Z",
+    "1.0.0": "2016-01-08T10:11:05.346Z",
+    "1.0.1": "2016-01-08T10:34:14.292Z",
+    "1.0.2": "2016-01-08T12:04:10.573Z",
+    "1.1.0": "2016-01-08T16:47:27.826Z",
+    "2.0.0": "2017-07-24T16:33:00.933Z",
+    "2.2.0": "2019-01-09T09:06:57.690Z",
+    "2.2.1": "2019-01-10T08:30:50.803Z",
+    "2.2.2": "2019-01-20T17:58:59.302Z",
+    "3.0.0": "2019-06-27T11:00:46.162Z",
+    "3.0.1": "2019-06-29T16:22:06.207Z"
+  },
+  "homepage": "https://github.com/kevva/dir-glob#readme",
+  "keywords": [
+    "convert",
+    "directory",
+    "extensions",
+    "files",
+    "glob"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevva/dir-glob.git"
+  },
+  "author": {
+    "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
+    "url": "github.com/kevva"
+  },
+  "bugs": {
+    "url": "https://github.com/kevva/dir-glob/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "kakaman": true
+  }
+}

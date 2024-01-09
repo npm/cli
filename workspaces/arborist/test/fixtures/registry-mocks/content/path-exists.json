@@ -1,0 +1,412 @@
+{
+  "_id": "path-exists",
+  "_rev": "19-6c3573709f7357a865ffc6dca2fd564b",
+  "name": "path-exists",
+  "description": "Check if a path exists",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "path-exists",
+      "version": "1.0.0",
+      "description": "Check if a path exists",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/path-exists"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "exists",
+        "exist",
+        "file",
+        "filepath",
+        "fs",
+        "filesystem",
+        "file-system",
+        "access",
+        "stat"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "be563ef9f750ec4fcbd5cc77603c869bdee05658",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/path-exists/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/path-exists",
+      "_id": "path-exists@1.0.0",
+      "_shasum": "d5a8998eb71ef37a74c34eb0d9eba6e878eea081",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d5a8998eb71ef37a74c34eb0d9eba6e878eea081",
+        "tarball": "https://registry.npmjs.org/path-exists/-/path-exists-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "path-exists",
+      "version": "2.0.0",
+      "description": "Check if a path exists",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/path-exists"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "exists",
+        "exist",
+        "file",
+        "filepath",
+        "fs",
+        "filesystem",
+        "file-system",
+        "access",
+        "stat"
+      ],
+      "dependencies": {
+        "pinkie-promise": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a8d30de3a24e7d71ae2c30a057525e603205447d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/path-exists/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/path-exists",
+      "_id": "path-exists@2.0.0",
+      "_shasum": "c4efe37d7fdc792f9a029ce7906e095e169f9be1",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c4efe37d7fdc792f9a029ce7906e095e169f9be1",
+        "tarball": "https://registry.npmjs.org/path-exists/-/path-exists-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "path-exists",
+      "version": "2.1.0",
+      "description": "Check if a path exists",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/path-exists"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "exists",
+        "exist",
+        "file",
+        "filepath",
+        "fs",
+        "filesystem",
+        "file-system",
+        "access",
+        "stat"
+      ],
+      "dependencies": {
+        "pinkie-promise": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "3af423661e78466764f87c5712263c5d7a1ce5b7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/path-exists/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/path-exists",
+      "_id": "path-exists@2.1.0",
+      "_shasum": "0feb6c64f0fc518d9a754dd5efb62c7022761f4b",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "0feb6c64f0fc518d9a754dd5efb62c7022761f4b",
+        "tarball": "https://registry.npmjs.org/path-exists/-/path-exists-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "path-exists",
+      "version": "3.0.0",
+      "description": "Check if a path exists",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/path-exists.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "path",
+        "exists",
+        "exist",
+        "file",
+        "filepath",
+        "fs",
+        "filesystem",
+        "file-system",
+        "access",
+        "stat"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "4696c60a8b2b9ac61902aa9eab7cb326ab6005c8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/path-exists/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/path-exists#readme",
+      "_id": "path-exists@3.0.0",
+      "_shasum": "ce0ebeaa5f78cb18925ea7d810d7b59b010fd515",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ce0ebeaa5f78cb18925ea7d810d7b59b010fd515",
+        "tarball": "https://registry.npmjs.org/path-exists/-/path-exists-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/path-exists-3.0.0.tgz_1462103091696_0.5805528531782329"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "path-exists",
+      "version": "4.0.0",
+      "description": "Check if a path exists",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/path-exists.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "path",
+        "exists",
+        "exist",
+        "file",
+        "filepath",
+        "fs",
+        "filesystem",
+        "file-system",
+        "access",
+        "stat"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "26b1adf80aa6761a7db35927a20cf59e0fd1a00d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/path-exists/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/path-exists#readme",
+      "_id": "path-exists@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==",
+        "shasum": "513bdbe2d3b95d7762e8c1137efa195c6c61b5b3",
+        "tarball": "https://registry.npmjs.org/path-exists/-/path-exists-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3919,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpXoNCRA9TVsSAnZWagAAnosQAI8XSu8kmOriX6qXOsXw\nVCUJHDFHO4M5dLJdrT1o5o0SDkTQUmOSazUR/CvaA/4pE7rtPjOL58CrHqSI\nKfEF3lTitx+L3kEw3br6bPMVTo+JoSH04L+UXq7YdkfwRigrNmZpjMiIychR\ngxcgTzBfsFBYzRRUia8OUAFkIK9kvzpRorfFSMfzGGB9V+vjbMd2V+OM0N+G\nAc48nmGUsrQKknAiJpkixM5PWMd/51kV5SzO13RLCnwNOYnH/vNij/9oseSt\njO2nkixc7PDMZTD/2kOQoRQpYoKju/gUnFXCynw1A4EHxetv6QB4nbIVLt8t\nyGhu+hrhNlTgP4MBuSddj4iqJ2EY6VpVZzUNNSzI7SzF62AWTZRHoNLG80yM\naSDKS9Vu+9lkT+YOTA1dXFMol2a29Lzo6Q1PAj2vHd++SZ5A0QO5iRVQkocu\ncecYKaeP2XCa6iWaPwAfEN2rJRdnKN3LrKKr1Cbttjd9WI3Kr152uNXYLjw3\nQ4KpUo4B9rNSTArMk7AIJ1/71uDxvCB+T0OYkj+uHTEKAB/wllpUcJXE2V4Q\nnRig/oWco1+oo1qBY0b2OgiiUcTEfuYUDEyecojVV+nmDDzC/GmcO/93hFnL\nEFxqhB1yaFHuaK4+ntJRpFg+fry09I8mu145WqhggK3le4DUTyyrESAjcBOs\n6s47\r\n=Jirh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/path-exists_4.0.0_1554348556736_0.4131618583175338"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# path-exists [![Build Status](https://travis-ci.org/sindresorhus/path-exists.svg?branch=master)](https://travis-ci.org/sindresorhus/path-exists)\n\n> Check if a path exists\n\nNOTE: `fs.existsSync` has been un-deprecated in Node.js since 6.8.0. If you only need to check synchronously, this module is not needed.\n\nWhile [`fs.exists()`](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback) is being [deprecated](https://github.com/iojs/io.js/issues/103), there's still a genuine use-case of being able to check if a path exists for other purposes than doing IO with it.\n\nNever use this before handling a file though:\n\n> In particular, checking if a file exists before opening it is an anti-pattern that leaves you vulnerable to race conditions: another process may remove the file between the calls to `fs.exists()` and `fs.open()`. Just open the file and handle the error when it's not there.\n\n\n## Install\n\n```\n$ npm install path-exists\n```\n\n\n## Usage\n\n```js\n// foo.js\nconst pathExists = require('path-exists');\n\n(async () => {\n\tconsole.log(await pathExists('foo.js'));\n\t//=> true\n})();\n```\n\n\n## API\n\n### pathExists(path)\n\nReturns a `Promise<boolean>` of whether the path exists.\n\n### pathExists.sync(path)\n\nReturns a `boolean` of whether the path exists.\n\n\n## Related\n\n- [path-exists-cli](https://github.com/sindresorhus/path-exists-cli) - CLI for this module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-04T03:29:19.419Z",
+    "created": "2015-05-02T22:43:43.950Z",
+    "1.0.0": "2015-05-02T22:43:43.950Z",
+    "2.0.0": "2015-09-01T07:09:33.519Z",
+    "2.1.0": "2015-11-14T13:55:22.456Z",
+    "3.0.0": "2016-05-01T11:44:53.762Z",
+    "4.0.0": "2019-04-04T03:29:16.887Z"
+  },
+  "homepage": "https://github.com/sindresorhus/path-exists#readme",
+  "keywords": [
+    "path",
+    "exists",
+    "exist",
+    "file",
+    "filepath",
+    "fs",
+    "filesystem",
+    "file-system",
+    "access",
+    "stat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/path-exists.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/path-exists/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "redmonkeydf": true,
+    "timdp": true,
+    "recursion_excursion": true,
+    "banzeh": true,
+    "monjer": true,
+    "antixrist": true,
+    "deneboulton": true,
+    "hyteer": true,
+    "rocket0191": true,
+    "ognjen.jevremovic": true,
+    "serge-nikitin": true,
+    "coinoperatedgoi": true,
+    "kiinlam": true,
+    "ash": true
+  }
+}

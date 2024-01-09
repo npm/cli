@@ -1,0 +1,95 @@
+{
+  "_id": "@isaacs/testing-peer-dep-conflict-chain-e",
+  "_rev": "1-d893fbd814267b6a9626c0ab5565fa5c",
+  "name": "@isaacs/testing-peer-dep-conflict-chain-e",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-peer-dep-conflict-chain-e",
+      "version": "1.0.0",
+      "peerDependencies": {
+        "@isaacs/testing-peer-dep-conflict-chain-a": "1"
+      },
+      "description": "A chain of peer deps.  Installing v1 of any of them requires v1 of all of them.  v2 of any requires v2 of all.  No v1 can coexist with any v2.",
+      "_id": "@isaacs/testing-peer-dep-conflict-chain-e@1.0.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0-beta.5",
+      "dist": {
+        "integrity": "sha512-EDuAVgd6DBGe2tKQKdQt7Z6RoptSWQem4W++F+bqC31E0JuRVJHu44sENtIviUGsi0jVJS5xD75cL6kvvbaw/Q==",
+        "shasum": "bf671e7a03ae3c29e1ac8ca12e5545800a930f64",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-dep-conflict-chain-e/-/testing-peer-dep-conflict-chain-e-1.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 287,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfPGDzCRA9TVsSAnZWagAAm/IP/1bs0pKbON7sno+l78T8\npjlIy1AUOODLqvM2eV+LGr8JoacJPxaWfjkieZJQhYphGESBSd1r8gAXOIQ2\nj95nidQfnO+7lwdVndrVdpGFNS3Mij/pTijrdOutoY985ZAHDTcklqT+mvGO\nj5cP4oG9HlAnRRbPkAt/hmyXnhAM3gmTZiwKgTX98PuzhaTJqVuPp56M4NHH\nZDa69hBU8A3A8LodYXkS07QCrRCQJijefZUN+38j/5BvqJnqhkQaCq0tG4AQ\nQzNgIg6dj6G4wsD6vs3RIV8cUKmGnTdfv7M1Qov+vzF+F4H04UKZyKcqySAx\nCQJQZq5VSxyfKZL5WqvaywWwaOhEimxq7CygwB6hUTD5SPWlS2TU/UPX2nTT\nDOLY+XXyA/yEsexgZMUjA04I2721Ad8lFCbAwccI72K1ysLc8ISRS5M8DAu0\n582BB9AFkG0HYkfz8uWdJ4isjwym461H44HM5MkFNotGp2g1uSQpdi2C8ahn\nXnEL2ZZAfZZkde/Eb71XTIK4xJlT/XrQSCMdziphbB1bMYWjBidLA6heuHL3\ncPUMp1m6Rhp+R+XGoIH4zXzHNzUikKXjaz40I/BPDy0F/sf7wLCSNv+vxmiV\n7NimK3pyKzgpFh73wkINyJREYPPjvKwkSnLgDRJqRriGxBklEVslGp4pd66e\nZqBu\r\n=1q7k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-dep-conflict-chain-e_1.0.0_1597792499452_0.9206078487428315"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-peer-dep-conflict-chain-e",
+      "version": "2.0.0",
+      "peerDependencies": {
+        "@isaacs/testing-peer-dep-conflict-chain-a": "2"
+      },
+      "description": "A chain of peer deps.  Installing v1 of any of them requires v1 of all of them.  v2 of any requires v2 of all.  No v1 can coexist with any v2.",
+      "_id": "@isaacs/testing-peer-dep-conflict-chain-e@2.0.0",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0-beta.5",
+      "dist": {
+        "integrity": "sha512-HEcKq/WWndty//qXYNL9TxDve0FAJqSPAAFU7t6Hm5AtluOGmIPiGUf7Ei9HGe60iBrrfmnzSxfFRG7j0SbW9Q==",
+        "shasum": "7f0b09a44cfe370d24b4654d962b8780062cab1a",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-dep-conflict-chain-e/-/testing-peer-dep-conflict-chain-e-2.0.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 287,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfPGD3CRA9TVsSAnZWagAAFHkQAJhChu55TRO8OnXQw0JX\nsuyIr5+u+PbMwNIbjf7LmdkKoLQrmiRbTBjmCzdhnyv8KPsBGZz09lDdhKWB\nNfUD79whZVHbTehN8mBDWOnyvjo3d/hhTPF6Ie3dsUHirGFyWtd6ZheHiAhx\nQAeeWXbBucroCzUtaxylQ1p8nYi3KDzGqI1xXkgocwhrhKa8xB4QzSvbJd1S\nxLsMWPicm9C2wzOMWPhLdMB9AsqvaBcRbFjgxOH3gg5p2d5yp6FTDOOMS7hu\n9DjLaBypDN/G76CKuMNYBK3jMseynjo6BK3j8BhaW1S5Bhya5YlKK8h+2ncy\nuEacraJb4MCJahT4klUjRNuSbBpwBBROeC1MCmqkwZBf9US0UJHQf2X7Mj/f\nxD6NIPzoAntB39pXQ24jrTmjOUE8gU2LwSXIJUdTeNUULVztYn2ZQksWLfCW\nW0W5G94d//mUjhWRmyHCpiEc+jFQg1XLeNjuvkUdSVTQDAEkTPwnzUvnI8Mt\n2+zPxPHOw7LGj+ULGi2hXutT388fP4CKCIsejdYPH1W9xmB+evPhPLPbQQiB\nSOVxxRkqlYtO6gCOQBBCIrPotgbryjgkRhIzh2X7oKwNIC59EsWwqwLs4e5c\nv7G1XtSXF9WsZ2k6Xvm9eQvFebEpYch4UfJl8LtZT+xNGDOskpJ73NHZMv/v\nikds\r\n=8igK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-dep-conflict-chain-e_2.0.0_1597792503100_0.7443809603717131"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-08-18T23:14:59.452Z",
+    "1.0.0": "2020-08-18T23:14:59.560Z",
+    "modified": "2020-08-18T23:15:06.563Z",
+    "2.0.0": "2020-08-18T23:15:03.282Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "A chain of peer deps.  Installing v1 of any of them requires v1 of all of them.  v2 of any requires v2 of all.  No v1 can coexist with any v2.",
+  "readme": "A chain of peer deps.  Installing v1 of any of them requires v1 of all of\nthem.  v2 of any requires v2 of all.  No v1 can coexist with any v2.\n",
+  "readmeFilename": "README.md"
+}

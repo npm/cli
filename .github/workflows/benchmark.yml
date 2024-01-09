@@ -1,68 +1,87 @@
----
-name: Benchmark Suite
+name: Benchmark - CLI
 
 on:
-  push:
-    branches:
-      - "latest"
   pull_request:
     branches:
-      - "**"
+      - '*'
+    paths:
+      - lib/**
+      - workspaces/**/lib/**
+  issue_comment:
+    types:
+      - created
+      - edited
 
 jobs:
-  build:
-    name: Trigger Benchmarks
-
+  trigger-benchmark:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Handle Incoming Pull-Request
-        env:
-          DISPATCH_REPO: "benchmarks"
-          DISPATCH_OWNER: "npm"
-          EVENT_NAME: ${{ github.event_name }}
-          EVENT_ACTION: ${{ github.event.action }}
-          REPO: ${{ github.event.repository.name }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-          PR_OWNER: ${{ github.event.pull_request.head.repo.owner.login }}
-          PR_COMMITS_URL: ${{ github.event.pull_request.commits_url }}
-          PR_COMMIT_SHA: ${{ github.event.pull_request.head.sha }}
-          AUTH_TOKEN: ${{ secrets.NPM_DEPLOY_USER_PAT }}
-        run: |
-          # Dispatch Handler
+      - name: Incoming Pull Request
+        if: |
+          (
+            github.event_name == 'pull_request' &&
+            github.event.pull_request.head.repo.full_name == 'npm/cli' 
+          ) || (
+            github.event_name == 'issue_comment' &&
+            github.event.issue.pull_request &&
+            github.event.issue.state == 'open' &&
+            startsWith(github.event.comment.body, '@npm-cli-bot benchmark this')
+          )
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.BENCHMARK_DISPATCH_TOKEN }}
+          script: |
+            const {
+              payload,
+              eventName,
+              repo: { owner, repo },
+              issue: { number },
+            } = context
+          
+            if (eventName === 'issue_comment') {
+              const res = await github.rest.repos.getCollaboratorPermissionLevel({
+                owner,
+                repo,
+                username: payload.comment.user.login,
+              })
+              if (res.data.permission !== 'admin') {
+                core.info(`Commenter is not an admin, exiting`)
+                return
+              }
+          
+              // add emoji to comment if user is an admin to signal benchmark is running
+              await github.rest.reactions.createForIssueComment({
+                owner,
+                repo,
+                comment_id: payload.comment.node_id,
+                content: 'rocket',
+              })
+            }
+          
+            const pullRequest = payload.pull_request || await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: number,
+            }).then(r => r.data)
 
-          dispatch_request () {
-            echo "Dispatching request..."
-            REF_SHA=$1
-            curl \
-              -s \
-              -X POST https://api.github.com/repos/${DISPATCH_OWNER}/${DISPATCH_REPO}/dispatches \
-              -H "Accept: application/vnd.github.everest-preview+json" \
-              -H "Authorization: token ${AUTH_TOKEN}" \
-              -d \
-              '
-              {
-                "event_type": "'"${EVENT_NAME}"'",
-                "client_payload": {
-                  "pr_id": "'"${PR_NUMBER}"'",
-                  "repo": "'"${REPO}"'",
-                  "owner": "'"${PR_OWNER}"'",
-                  "commit_sha": "'"${REF_SHA}"'"
-                }
-              }'
-          }
+            core.info(`Pull request: ${pullRequest.number}`)
+            core.info(`Base ref: ${pullRequest.base.ref}`)
+          
+            const matchesRelease = pullRequest.base.ref.match(/^release\/v(\d+)$/)
+            const targetSpec = matchesRelease ? matchesRelease[1] : 'latest'
+            core.info(`Target spec: ${targetSpec}`)
 
-          if [ "${AUTH_TOKEN}" != "" ]; then
-            if [ "${EVENT_ACTION}" == "opened" ]; then
-              # Fetch the head commit sha, since it doesn't exist in the body of this event
-              COMMIT_SHA=$(curl -s "${PR_COMMITS_URL}" | jq -r '.[0].sha')
-
-              # Dispatch request for benchmarks
-              dispatch_request "${COMMIT_SHA}"
-            else
-              # Dispatch request for benchmarks
-              dispatch_request "${PR_COMMIT_SHA}"
-            fi
-          else
-            echo "NO AUTH - FORK PULL REQUEST"
-          fi
+            const eventType = `"${eventName} ${owner}/${repo}#${pullRequest.number}"`
+            core.info(`Event type: ${eventType}`)
+          
+            await github.rest.repos.createDispatchEvent({
+              owner: 'npm',
+              repo: 'benchmarks',
+              event_type: eventType,
+              client_payload: {
+                owner,
+                repo,
+                pr_id: number,
+                target_spec: targetSpec,
+              },
+            })

@@ -1,0 +1,333 @@
+{
+  "_id": "static-extend",
+  "_rev": "3-d927c2a1b5a4df7679c6ee94c0d0b4a9",
+  "name": "static-extend",
+  "description": "Adds a static `extend` method to a class, to simplify inheritance. Extends the static properties, prototype properties, and descriptors from a `Parent` constructor onto `Child` constructors.",
+  "dist-tags": {
+    "latest": "0.1.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "static-extend",
+      "description": "Adds a static `extend` method to a class, to simplify inheritance. Extends the static properties, prototype properties, and descriptors from a `Parent` constructor onto `Child` constructors.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/static-extend",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/static-extend.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/static-extend/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "class",
+        "ctor",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "prop",
+        "properties",
+        "property",
+        "prototype"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b370e8f6e4e7fddba23916faa8bdb446516baad6",
+      "_id": "static-extend@0.1.0",
+      "_shasum": "cddd8ec54d4c52ba631c79871275cfad85744ad8",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cddd8ec54d4c52ba631c79871275cfad85744ad8",
+        "tarball": "https://registry.npmjs.org/static-extend/-/static-extend-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/static-extend-0.1.0.tgz_1457684127303_0.9251366925891489"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "static-extend",
+      "description": "Adds a static `extend` method to a class, to simplify inheritance. Extends the static properties, prototype properties, and descriptors from a `Parent` constructor onto `Child` constructors.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/static-extend",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/static-extend.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/static-extend/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.7",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "class",
+        "ctor",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "prop",
+        "properties",
+        "property",
+        "prototype"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "615e9a3c88bdc93cf7d71793d76a77cf54eb996a",
+      "_id": "static-extend@0.1.1",
+      "_shasum": "7f2fb0d42a1020c2f5919dabc493b42912380060",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f2fb0d42a1020c2f5919dabc493b42912380060",
+        "tarball": "https://registry.npmjs.org/static-extend/-/static-extend-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/static-extend-0.1.1.tgz_1457684793966_0.13632435514591634"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "static-extend",
+      "description": "Adds a static `extend` method to a class, to simplify inheritance. Extends the static properties, prototype properties, and descriptors from a `Parent` constructor onto `Child` constructors.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/static-extend",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/static-extend.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/static-extend/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "object-copy": "^0.1.0"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^0.1.9",
+        "mocha": "^2.5.3"
+      },
+      "keywords": [
+        "class",
+        "ctor",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "prop",
+        "properties",
+        "property",
+        "prototype"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "reflinks": [
+          "verb",
+          "verb-readme-generator"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "ce41369391163eb9403848a1b4daf00be981c56b",
+      "_id": "static-extend@0.1.2",
+      "_shasum": "60809c39cbff55337226fd5e0b520f341f1fb5c6",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "60809c39cbff55337226fd5e0b520f341f1fb5c6",
+        "tarball": "https://registry.npmjs.org/static-extend/-/static-extend-0.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/static-extend-0.1.2.tgz_1465497934772_0.6460855521727353"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# static-extend [![NPM version](https://img.shields.io/npm/v/static-extend.svg?style=flat)](https://www.npmjs.com/package/static-extend) [![NPM downloads](https://img.shields.io/npm/dm/static-extend.svg?style=flat)](https://npmjs.org/package/static-extend) [![Build Status](https://img.shields.io/travis/jonschlinkert/static-extend.svg?style=flat)](https://travis-ci.org/jonschlinkert/static-extend)\n\nAdds a static `extend` method to a class, to simplify inheritance. Extends the static properties, prototype properties, and descriptors from a `Parent` constructor onto `Child` constructors.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install static-extend --save\n```\n\n## Usage\n\n```js\nvar extend = require('static-extend');\n```\n\n## API\n\n### [extend](index.js#L47)\n\nReturns a function for extending the static properties, prototype properties, and descriptors from the `Parent` constructor onto `Child` constructors.\n\n**Params**\n\n* `Parent` **{Function}**: Parent ctor\n* `extendFn` **{Function}**: Optional extend function for handling any necessary custom merging. Useful when updating methods that require a specific prototype.\n* `Child` **{Function}**: Child ctor\n* `proto` **{Object}**: Optionally pass additional prototype properties to inherit.\n* `returns` **{Object}**\n\n**Example**\n\n```js\nvar extend = require('static-extend');\nParent.extend = extend(Parent);\n\n// optionally pass a custom merge function as the second arg\nParent.extend = extend(Parent, function(Child) {\n  Child.prototype.mixin = function(key, val) {\n    Child.prototype[key] = val;\n  };\n});\n\n// extend \"child\" constructors\nParent.extend(Child);\n\n// optionally define prototype methods as the second arg\nParent.extend(Child, {\n  foo: function() {},\n  bar: function() {}\n});\n```\n\n## Contributing\n\nThis document was generated by [verb-readme-generator](https://github.com/verbose/verb-readme-generator) (a [verb](https://github.com/verbose/verb) generator), please don't edit directly. Any changes to the readme must be made in [.verb.md](.verb.md). See [Building Docs](#building-docs).\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new). Or visit the [verb-readme-generator](https://github.com/verbose/verb-readme-generator) project to submit bug reports or pull requests for the readme layout template.\n\n## Building docs\n\nGenerate readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm install -g verb verb-readme-generator && verb\n```\n\n## Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm install -d && npm test\n```\n\n## Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n## License\n\nCopyright © 2016, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT license](https://github.com/jonschlinkert/static-extend/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb](https://github.com/verbose/verb), v0.9.0, on June 09, 2016._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2016-06-09T18:45:37.095Z",
+    "created": "2016-03-11T08:15:29.541Z",
+    "0.1.0": "2016-03-11T08:15:29.541Z",
+    "0.1.1": "2016-03-11T08:26:36.140Z",
+    "0.1.2": "2016-06-09T18:45:37.095Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/static-extend",
+  "keywords": [
+    "class",
+    "ctor",
+    "descriptor",
+    "extend",
+    "extends",
+    "inherit",
+    "inheritance",
+    "merge",
+    "method",
+    "prop",
+    "properties",
+    "property",
+    "prototype"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/static-extend.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/static-extend/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

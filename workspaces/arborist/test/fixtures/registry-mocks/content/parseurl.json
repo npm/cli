@@ -1,0 +1,782 @@
+{
+  "_id": "parseurl",
+  "_rev": "56-c89f6040711784eea001cbf53de41d7f",
+  "name": "parseurl",
+  "description": "parse a url with memoization",
+  "dist-tags": {
+    "latest": "1.3.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.0.0",
+      "dist": {
+        "shasum": "060280cfeecd8788fec6459ca0cc5df218477fe4",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.0.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.0.1",
+      "dist": {
+        "shasum": "2e57dce6efdd37c3518701030944c22bf388b7b4",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.4",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.1.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.1.0",
+      "dist": {
+        "shasum": "b389c827d9426b4d8698ef45eaf14f1b63596371",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.1.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.1.1",
+      "dist": {
+        "shasum": "3b8fdb423aeb18c997dcdf9ac9ecd7f037b3500a",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.1.2",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.1.2",
+      "dist": {
+        "shasum": "d3294c91119d19885e586fcc871b90d2006eb006",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.1.3",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl.git"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues",
+        "email": "me@jongleberry.com"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.1.3",
+      "dist": {
+        "shasum": "1f005738ac71b417bc2d0845cbdfa2a8b63ea639",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.2.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/expressjs/parseurl"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "fast-url-parser": "~1.0.0",
+        "istanbul": "0.3.0",
+        "mocha": "~1.20.0"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+      },
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues"
+      },
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.2.0",
+      "dist": {
+        "shasum": "be7df2d698eb49ffb10ea62939693e152991c008",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.3.0",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/expressjs/parseurl"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "benchmark": "1.0.0",
+        "beautify-benchmark": "0.2.4",
+        "fast-url-parser": "~1.0.0",
+        "istanbul": "0.3.0",
+        "mocha": "~1.21.4"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+      },
+      "gitHead": "03b7ccca240e2bef5df6c25797e99175d28fb2cb",
+      "bugs": {
+        "url": "https://github.com/expressjs/parseurl/issues"
+      },
+      "homepage": "https://github.com/expressjs/parseurl",
+      "_id": "parseurl@1.3.0",
+      "_shasum": "b58046db4223e145afa76009e61bac87cc2281b3",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b58046db4223e145afa76009e61bac87cc2281b3",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.3.1",
+      "author": {
+        "name": "Jonathan Ong",
+        "email": "me@jongleberry.com",
+        "url": "http://jongleberry.com"
+      },
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/pillarjs/parseurl"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "benchmark": "2.0.0",
+        "beautify-benchmark": "0.2.4",
+        "fast-url-parser": "1.1.3",
+        "istanbul": "0.4.2",
+        "mocha": "~1.21.5"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+      },
+      "gitHead": "6d22d376d75b927ab2b5347ce3a1d6735133dd43",
+      "bugs": {
+        "url": "https://github.com/pillarjs/parseurl/issues"
+      },
+      "homepage": "https://github.com/pillarjs/parseurl",
+      "_id": "parseurl@1.3.1",
+      "_shasum": "c8ab8c9223ba34888aa64a297b28853bec18da56",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "mscdex",
+          "email": "mscdex@mscdex.net"
+        },
+        {
+          "name": "fishrock123",
+          "email": "fishrock123@rocketmail.com"
+        },
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c8ab8c9223ba34888aa64a297b28853bec18da56",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.3.2",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pillarjs/parseurl.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.4",
+        "eslint": "3.19.0",
+        "eslint-config-standard": "10.2.1",
+        "eslint-plugin-import": "2.7.0",
+        "eslint-plugin-node": "5.1.1",
+        "eslint-plugin-promise": "3.5.0",
+        "eslint-plugin-standard": "3.0.1",
+        "fast-url-parser": "1.1.3",
+        "istanbul": "0.4.5",
+        "mocha": "2.5.3"
+      },
+      "files": [
+        "LICENSE",
+        "HISTORY.md",
+        "README.md",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint .",
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+      },
+      "gitHead": "0022a009d0973a44ae3849e83112ea4d12ad5b49",
+      "bugs": {
+        "url": "https://github.com/pillarjs/parseurl/issues"
+      },
+      "homepage": "https://github.com/pillarjs/parseurl#readme",
+      "_id": "parseurl@1.3.2",
+      "_shasum": "fc289d4ed8993119460c156253262cdc8de65bf3",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "shasum": "fc289d4ed8993119460c156253262cdc8de65bf3",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parseurl-1.3.2.tgz_1504992079883_0.05658079497516155"
+      },
+      "directories": {}
+    },
+    "1.3.3": {
+      "name": "parseurl",
+      "description": "parse a url with memoization",
+      "version": "1.3.3",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pillarjs/parseurl.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "beautify-benchmark": "0.2.4",
+        "benchmark": "2.1.4",
+        "eslint": "5.16.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-import": "2.17.1",
+        "eslint-plugin-node": "7.0.1",
+        "eslint-plugin-promise": "4.1.1",
+        "eslint-plugin-standard": "4.0.0",
+        "fast-url-parser": "1.1.3",
+        "istanbul": "0.4.5",
+        "mocha": "6.1.3"
+      },
+      "engines": {
+        "node": ">= 0.8"
+      },
+      "scripts": {
+        "bench": "node benchmark/index.js",
+        "lint": "eslint .",
+        "test": "mocha --check-leaks --bail --reporter spec test/",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --check-leaks --reporter dot test/",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --check-leaks --reporter spec test/"
+      },
+      "gitHead": "0a5323370b02f4eff4069472d1e96a0094aef621",
+      "bugs": {
+        "url": "https://github.com/pillarjs/parseurl/issues"
+      },
+      "homepage": "https://github.com/pillarjs/parseurl#readme",
+      "_id": "parseurl@1.3.3",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.15.1",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==",
+        "shasum": "9da19e7bee8d12dff0513ed5b76957793bc2e8d4",
+        "tarball": "https://registry.npmjs.org/parseurl/-/parseurl-1.3.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10299,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJctVcbCRA9TVsSAnZWagAAUsoQAItlF92ss4WrI6lZGFUQ\n94+a7wb5I/oCJxcya6zpvv9F0TjfE2Gv/wdM5wTah83LqQ/FQbKiOKlarWAy\nUFC9i3oFqNCNf9Q4JoiUvFgFpA8K3VdjFL2FG5kXtxSPBEJ7DQ2LiFtp0316\nRJ7BFr6ICgWHl/IA8K0OvLmx4X8/nlbF0Gjuvzdv4dWFkkxWGDNaath51wRt\nKnp32YsQxzQPZJaDFpfOOfweIL4M1Xw3Mzm9T3C7IEdDIH1VeLis41IwVMx6\naCMDeTe9p29yl+uvf6JIBq7gYS1jSmfUgstTU34fu1bgaqavgs5wbv73ECEQ\nYWpS/27rVa/wjAfzIEyahL8Tgw7i3ZuwGaHVApOdackwGY3GZXLufRw5aZt+\n1e20FvF6iap14ONf6fDavmBgla6L5zQfsKPP1uynoPYiPAwLnDGyfK63WNQ4\nuE3CTFJwq8vKZ5byW2g8LrAE1+rDzy2FUWDkLc6sGTz0Nyk+ixM0i8qlA5/Q\nj8qzolmkHixA8UQkgMuCD1pbfDvrj8mrHicZkJLtc8z4mHvZKgAFClTfhcx9\n6LuUqhpkK1LD5kc4HImtYlwZ2NbLSc0QSthgCzxL429GWoxsPl6HnDfStZqR\n6UeYTkoLWR2K9tvhykwPHhCt/cTSpuWnlnDqovHap4ogM/HvLqcKkaomOdVa\nuzpW\r\n=CkLQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parseurl_1.3.3_1555388186313_0.9689221694795169"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# parseurl\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nParse a URL with memoization.\n\n## Install\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install parseurl\n```\n\n## API\n\n```js\nvar parseurl = require('parseurl')\n```\n\n### parseurl(req)\n\nParse the URL of the given request object (looks at the `req.url` property)\nand return the result. The result is the same as `url.parse` in Node.js core.\nCalling this function multiple times on the same `req` where `req.url` does\nnot change will return a cached parsed object, rather than parsing again.\n\n### parseurl.original(req)\n\nParse the original URL of the given request object and return the result.\nThis works by trying to parse `req.originalUrl` if it is a string, otherwise\nparses `req.url`. The result is the same as `url.parse` in Node.js core.\nCalling this function multiple times on the same `req` where `req.originalUrl`\ndoes not change will return a cached parsed object, rather than parsing again.\n\n## Benchmark\n\n```bash\n$ npm run-script bench\n\n> parseurl@1.3.3 bench nodejs-parseurl\n> node benchmark/index.js\n\n  http_parser@2.8.0\n  node@10.6.0\n  v8@6.7.288.46-node.13\n  uv@1.21.0\n  zlib@1.2.11\n  ares@1.14.0\n  modules@64\n  nghttp2@1.32.0\n  napi@3\n  openssl@1.1.0h\n  icu@61.1\n  unicode@10.0\n  cldr@33.0\n  tz@2018c\n\n> node benchmark/fullurl.js\n\n  Parsing URL \"http://localhost:8888/foo/bar?user=tj&pet=fluffy\"\n\n  4 tests completed.\n\n  fasturl            x 2,207,842 ops/sec ±3.76% (184 runs sampled)\n  nativeurl - legacy x   507,180 ops/sec ±0.82% (191 runs sampled)\n  nativeurl - whatwg x   290,044 ops/sec ±1.96% (189 runs sampled)\n  parseurl           x   488,907 ops/sec ±2.13% (192 runs sampled)\n\n> node benchmark/pathquery.js\n\n  Parsing URL \"/foo/bar?user=tj&pet=fluffy\"\n\n  4 tests completed.\n\n  fasturl            x 3,812,564 ops/sec ±3.15% (188 runs sampled)\n  nativeurl - legacy x 2,651,631 ops/sec ±1.68% (189 runs sampled)\n  nativeurl - whatwg x   161,837 ops/sec ±2.26% (189 runs sampled)\n  parseurl           x 4,166,338 ops/sec ±2.23% (184 runs sampled)\n\n> node benchmark/samerequest.js\n\n  Parsing URL \"/foo/bar?user=tj&pet=fluffy\" on same request object\n\n  4 tests completed.\n\n  fasturl            x  3,821,651 ops/sec ±2.42% (185 runs sampled)\n  nativeurl - legacy x  2,651,162 ops/sec ±1.90% (187 runs sampled)\n  nativeurl - whatwg x    175,166 ops/sec ±1.44% (188 runs sampled)\n  parseurl           x 14,912,606 ops/sec ±3.59% (183 runs sampled)\n\n> node benchmark/simplepath.js\n\n  Parsing URL \"/foo/bar\"\n\n  4 tests completed.\n\n  fasturl            x 12,421,765 ops/sec ±2.04% (191 runs sampled)\n  nativeurl - legacy x  7,546,036 ops/sec ±1.41% (188 runs sampled)\n  nativeurl - whatwg x    198,843 ops/sec ±1.83% (189 runs sampled)\n  parseurl           x 24,244,006 ops/sec ±0.51% (194 runs sampled)\n\n> node benchmark/slash.js\n\n  Parsing URL \"/\"\n\n  4 tests completed.\n\n  fasturl            x 17,159,456 ops/sec ±3.25% (188 runs sampled)\n  nativeurl - legacy x 11,635,097 ops/sec ±3.79% (184 runs sampled)\n  nativeurl - whatwg x    240,693 ops/sec ±0.83% (189 runs sampled)\n  parseurl           x 42,279,067 ops/sec ±0.55% (190 runs sampled)\n```\n\n## License\n\n  [MIT](LICENSE)\n\n[coveralls-image]: https://badgen.net/coveralls/c/github/pillarjs/parseurl/master\n[coveralls-url]: https://coveralls.io/r/pillarjs/parseurl?branch=master\n[node-image]: https://badgen.net/npm/node/parseurl\n[node-url]: https://nodejs.org/en/download\n[npm-downloads-image]: https://badgen.net/npm/dm/parseurl\n[npm-url]: https://npmjs.org/package/parseurl\n[npm-version-image]: https://badgen.net/npm/v/parseurl\n[travis-image]: https://badgen.net/travis/pillarjs/parseurl/master\n[travis-url]: https://travis-ci.org/pillarjs/parseurl\n",
+  "maintainers": [
+    {
+      "email": "doug@somethingdoug.com",
+      "name": "dougwilson"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-16T04:16:30.465Z",
+    "created": "2014-03-08T02:08:58.819Z",
+    "1.0.0": "2014-03-08T02:08:58.819Z",
+    "1.0.1": "2014-03-08T02:11:05.583Z",
+    "1.1.0": "2014-07-09T02:22:48.887Z",
+    "1.1.1": "2014-07-09T05:05:40.824Z",
+    "1.1.2": "2014-07-09T05:18:03.016Z",
+    "1.1.3": "2014-07-09T05:25:36.837Z",
+    "1.2.0": "2014-07-21T19:12:21.102Z",
+    "1.3.0": "2014-08-10T02:54:41.099Z",
+    "1.3.1": "2016-01-17T19:49:35.110Z",
+    "1.3.2": "2017-09-09T21:21:20.714Z",
+    "1.3.3": "2019-04-16T04:16:26.547Z"
+  },
+  "homepage": "https://github.com/pillarjs/parseurl#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pillarjs/parseurl.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pillarjs/parseurl/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    }
+  ],
+  "users": {
+    "goodseller": true,
+    "simplyianm": true,
+    "qqqppp9998": true,
+    "princetoad": true,
+    "pandao": true,
+    "aredridel": true,
+    "kankungyip": true,
+    "ramoslin02": true,
+    "wangnan0610": true,
+    "wkaifang": true,
+    "wangshijun": true,
+    "xu_q90": true,
+    "monjer": true,
+    "mojaray2k": true,
+    "hyokosdeveloper": true,
+    "giussa_dan": true,
+    "shuoshubao": true,
+    "justjavac": true,
+    "wxttxw125": true,
+    "eyson": true,
+    "raycharles": true,
+    "avivharuzi": true
+  }
+}

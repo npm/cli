@@ -1,0 +1,623 @@
+{
+  "_id": "@types/object-path",
+  "_rev": "386-3140ab48ba158fef435141c04c0cbc2a",
+  "name": "@types/object-path",
+  "description": "TypeScript definitions for objectPath",
+  "dist-tags": {
+    "latest": "0.11.0",
+    "ts2.0": "0.9.29",
+    "ts2.1": "0.9.29",
+    "ts2.2": "0.9.29",
+    "ts2.3": "0.11.0",
+    "ts2.4": "0.11.0",
+    "ts2.5": "0.11.0",
+    "ts2.6": "0.11.0",
+    "ts2.7": "0.11.0",
+    "ts2.8": "0.11.0",
+    "ts2.9": "0.11.0",
+    "ts3.0": "0.11.0",
+    "ts3.1": "0.11.0",
+    "ts3.2": "0.11.0",
+    "ts3.3": "0.11.0",
+    "ts3.4": "0.11.0",
+    "ts3.5": "0.11.0",
+    "ts3.6": "0.11.0",
+    "ts3.7": "0.11.0",
+    "ts3.8": "0.11.0",
+    "ts3.9": "0.11.0",
+    "ts4.0": "0.11.0",
+    "ts4.1": "0.11.0"
+  },
+  "versions": {
+    "0.9.14-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.14-alpha",
+      "description": "Type definitions for objectPath v0.9.x from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.14-alpha",
+      "_shasum": "8aa5cb5af19fde93df4f987a706f54ab2d0825e9",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "8aa5cb5af19fde93df4f987a706f54ab2d0825e9",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.14-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.14-alpha.tgz_1463509844618_0.49177700793370605"
+      },
+      "directories": {}
+    },
+    "0.9.15-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.15-alpha",
+      "description": "Type definitions for objectPath v0.9.x from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.15-alpha",
+      "_shasum": "8f0e9de7a2a9791264d59efbaa39aa41fa85a881",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "8f0e9de7a2a9791264d59efbaa39aa41fa85a881",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.15-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.15-alpha.tgz_1463694865038_0.6431172071024776"
+      },
+      "directories": {}
+    },
+    "0.9.20-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.20-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.20-alpha",
+      "_shasum": "c1013e41beb76584aea5a2f149b1d9e3b310cdb8",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "c1013e41beb76584aea5a2f149b1d9e3b310cdb8",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.20-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.20-alpha.tgz_1463775608195_0.7051193180959672"
+      },
+      "directories": {}
+    },
+    "0.9.21-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.21-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.21-alpha",
+      "_shasum": "a3c19163de57c5539fd631f4fb4e6dcc49c86d5c",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "a3c19163de57c5539fd631f4fb4e6dcc49c86d5c",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.21-alpha.tgz_1464154592372_0.7357703105080873"
+      },
+      "directories": {}
+    },
+    "0.9.22-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.22-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.22-alpha",
+      "_shasum": "9d05629d74fe6878049971813823ae945a7b2fda",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "9d05629d74fe6878049971813823ae945a7b2fda",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.22-alpha.tgz_1467403989940_0.7563673823606223"
+      },
+      "directories": {}
+    },
+    "0.9.23-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.23-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.23-alpha",
+      "_shasum": "d3b36a273aa865c983d746d72cdd233f3a3294ad",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "d3b36a273aa865c983d746d72cdd233f3a3294ad",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.23-alpha.tgz_1467416245934_0.25777916493825614"
+      },
+      "directories": {}
+    },
+    "0.9.24-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.24-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.24-alpha",
+      "_shasum": "84e30c07c72853e88a87636ffdae4680308fd45b",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "84e30c07c72853e88a87636ffdae4680308fd45b",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.24-alpha.tgz_1467428726401_0.4162269523367286"
+      },
+      "directories": {}
+    },
+    "0.9.25-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.25-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.25-alpha",
+      "_shasum": "9e7176bdddeb4d376d99ac8b4c83a264f74d6ee0",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "9e7176bdddeb4d376d99ac8b4c83a264f74d6ee0",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.25-alpha.tgz_1467593889672_0.509360084310174"
+      },
+      "directories": {}
+    },
+    "0.9.26-alpha": {
+      "name": "@types/object-path",
+      "version": "0.9.26-alpha",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.26-alpha",
+      "_shasum": "2df6672477b66ac337af5b550ef0b91c5904fbd1",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "2df6672477b66ac337af5b550ef0b91c5904fbd1",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.26-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.26-alpha.tgz_1468011594203_0.5229441311676055"
+      },
+      "directories": {}
+    },
+    "0.9.27": {
+      "name": "@types/object-path",
+      "version": "0.9.27",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Paulo Cesar",
+        "email": "https://github.com/pocesar/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/object-path@0.9.27",
+      "_shasum": "88ffa7d953d78f100c4ea8349c0fe600ac7ab082",
+      "_from": "output\\object-path",
+      "_resolved": "file:output\\object-path",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "88ffa7d953d78f100c4ea8349c0fe600ac7ab082",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.27.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.27.tgz_1468510580959_0.2503255628980696"
+      },
+      "directories": {}
+    },
+    "0.9.28": {
+      "name": "@types/object-path",
+      "version": "0.9.28",
+      "description": "TypeScript definitions for objectPath v0.9.x",
+      "license": "MIT",
+      "author": "Paulo Cesar <https://github.com/pocesar/>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "9733d6bae1c6ef38b29fc055b9ad471779ef555d9c5e715a6c23974a8f3e4dd1",
+      "_id": "@types/object-path@0.9.28",
+      "dist": {
+        "shasum": "ea652a4dbd1c052f7c4dfe8fb1e0363a6b19c81b",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/object-path-0.9.28.tgz_1474307848170_0.33037347975187004"
+      },
+      "directories": {}
+    },
+    "0.9.29": {
+      "name": "@types/object-path",
+      "version": "0.9.29",
+      "description": "TypeScript definitions for objectPath",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Paulo Cesar",
+          "url": "https://github.com/pocesar"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "918e26cc689279b81f7cad07eb1a31618e31ca07f0cd288628ad647afad181c7",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/object-path@0.9.29",
+      "dist": {
+        "integrity": "sha512-txsii9cwD2OUOPukfPu3Jpoi3CnznBAwRX3JF26EC4p5T6IA8AaL6PBilACyY2fJkk+ydDNo4BJrJOo/OmNaZw==",
+        "shasum": "fca97eef86e8d78f3d5ada611b30289ec7cc90e8",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.9.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-path-0.9.29.tgz_1503352820275_0.18196129123680294"
+      },
+      "directories": {}
+    },
+    "0.11.0": {
+      "name": "@types/object-path",
+      "version": "0.11.0",
+      "description": "TypeScript definitions for objectPath",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Paulo Cesar",
+          "url": "https://github.com/pocesar",
+          "githubUsername": "pocesar"
+        },
+        {
+          "name": "BendingBender",
+          "url": "https://github.com/BendingBender",
+          "githubUsername": "BendingBender"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1b308c5cab9e01cf511d35e6292511388ecc9491f6f2fcd1fd1fc6555781ab79",
+      "typeScriptVersion": "2.3",
+      "_id": "@types/object-path@0.11.0",
+      "dist": {
+        "integrity": "sha512-/tuN8jDbOXcPk+VzEVZzzAgw1Byz7s/itb2YI10qkSyy6nykJH02DuhfrflxVdAdE7AZ91h5X6Cn0dmVdFw2TQ==",
+        "shasum": "0b744309b2573dc8bf867ef589b6288be998e602",
+        "tarball": "https://registry.npmjs.org/@types/object-path/-/object-path-0.11.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6714,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcKkI2CRA9TVsSAnZWagAAlPUP/3WzZ3rveUJePOgVJUPq\nb710IEdeSaiae1GylZl1kDT2ram3iiRtBeUMVR3fM0U9KWgq4PHWR3gqT5U4\n59guh52L9P+Zg53o+J7nVCfvowlPqrO/UjkzSIumSvlg+TF0gVjhyWqcRl8i\nL0pZZXV9MLiTKbnqRDRT5BSkPOIojxN762GqEHD0IC8N38U1AsZTdJLWjOHQ\nJ/64UAdGsEsxVUswaJLfJ42rQ4M1gzxJyEk6YIUOq1vB2r7w7EnjPOup1B+g\nMFTDC1rh02s2ldcfBAvATQfL2by9mXI8QvIHcnwDgOmPSwLUHjZgkh7Gwlc0\nd2ezcxZDjTjcurg0GV91Oq1vsHTTu9rpKDOQkL5PKbKcdU2JL6eJDirF7O+G\nOxNX8/wnTd/3p/FQ/msNceML1hcJ8IijyromtfWI6TPr+N+6H8oX/5vS8aY0\nzoWLPKmfCRMi6+PQbUw0J2t0UcMmdZ3jDerSk3m0m8Yh6Q5V9ef6YleQcsQE\n9y7hxINfmenB9XLlwneWxIe/ailp7EkXrjCWAIYY5oFShqneZOabV5B3CibR\nei+TKzuoP1RvAD057wAmguISTrDrDj7DvvMtADH5HB598NuUXQi+8ZKbd+5o\nTnu/vhwdJWA6JyTnBA0TiHn2pWDV/JowOnxBuStiaNMWUYreZUTHDEHxq41p\nJpAk\r\n=k0Na\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ts-npm-types@microsoft.com",
+          "name": "types"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/object-path_0.11.0_1546273334297_0.3194961746936631"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/object-path`\r\n\r\n# Summary\r\nThis package contains type definitions for objectPath (https://github.com/mariocasciaro/object-path).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/object-path\r\n\r\nAdditional Details\r\n * Last updated: Mon, 31 Dec 2018 16:21:27 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by Paulo Cesar <https://github.com/pocesar>, BendingBender <https://github.com/BendingBender>.\r\n",
+  "maintainers": [
+    {
+      "email": "ts-npm-types@microsoft.com",
+      "name": "types"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:38:06.799Z",
+    "created": "2016-05-17T18:30:45.218Z",
+    "0.9.14-alpha": "2016-05-17T18:30:45.218Z",
+    "0.9.15-alpha": "2016-05-19T21:54:25.698Z",
+    "0.9.20-alpha": "2016-05-20T20:20:10.383Z",
+    "0.9.21-alpha": "2016-05-25T05:36:32.851Z",
+    "0.9.22-alpha": "2016-07-01T20:13:12.003Z",
+    "0.9.23-alpha": "2016-07-01T23:37:28.611Z",
+    "0.9.24-alpha": "2016-07-02T03:05:26.942Z",
+    "0.9.25-alpha": "2016-07-04T00:58:10.188Z",
+    "0.9.26-alpha": "2016-07-08T20:59:56.520Z",
+    "0.9.27": "2016-07-14T15:36:24.380Z",
+    "0.9.28": "2016-09-19T17:57:31.088Z",
+    "0.9.29": "2017-08-21T22:00:20.345Z",
+    "0.11.0": "2018-12-31T16:22:14.454Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+  },
+  "contributors": [
+    {
+      "name": "Paulo Cesar",
+      "url": "https://github.com/pocesar",
+      "githubUsername": "pocesar"
+    },
+    {
+      "name": "BendingBender",
+      "url": "https://github.com/BendingBender",
+      "githubUsername": "BendingBender"
+    }
+  ],
+  "users": {
+    "nisimjoseph": true
+  }
+}

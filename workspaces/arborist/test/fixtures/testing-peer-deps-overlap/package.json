@@ -1,0 +1,7 @@
+{
+  "name": "testing-peer-deps-overlap",
+  "dependencies": {
+    "@angular-slider/ngx-slider": "^2.0.3",
+    "@angular/forms": "^10.2.4"
+  }
+}

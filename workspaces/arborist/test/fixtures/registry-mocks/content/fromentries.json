@@ -1,0 +1,570 @@
+{
+  "_id": "fromentries",
+  "_rev": "6-6e7b5912e6420f4b710bedb5bf6d916d",
+  "name": "fromentries",
+  "dist-tags": {
+    "latest": "1.2.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.0.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard"
+      },
+      "gitHead": "8a8a7ca9c185e6a1af3fa2f3788b4cf32acf5a1a",
+      "_id": "fromentries@1.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-ARzZtf867NCPBAzSeMplyMTRrFEbQB7dsXg559Qc3sROfiFIYs52BGwjHVocSGK39bphZgCf9H/vozAmkOmStg==",
+        "shasum": "2ecc172fcbbdc615f4bd916d81ab66b746011ad7",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6185,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbK/epCRA9TVsSAnZWagAAf9wP/0ZD3oyoLbF8yigLW1DK\n6lDkV8AUkvTSO7AzPHEsfF39yMCRKvBSHpWErHMi+a4ckmzYeaqfntW6+SC2\nR+0XrFq8cq2sP7rZYU5pGknOvHrYCpkKj2ZbnPd25UV/Kq20n/QIrtMfgs7d\ngzN9Eft5ANiKNfg2ZlU95nLY0GuDfxyyB3/cvrreGiirqwZWOe/8AUI3xyog\nAGOhHuzlCCGrUT2hKPINHph7EU1u8Q7e9sVMPWFlQOjuwApDqUnVpnm9CrOe\nTqHNjovpTERkpTkEws4dGUHZfwDnj2wWlrjCdZqjo1p9pevamWhhaQYfwRKA\nglIjb1Yf6yNCu61iRMoF+bd2qS9Hr7k5Wdp9bN7BiOPjLyIY8d1QR/AsBa1u\nGpzUyvd7PLepesi4As2ZSs1Vle5j0cxKs8InpSQhVJHfvieEfCcE1ipmHXpg\nTxkYa3N71A5DDGs0HWzxbhkEw31mAIC3uFYTPL1kDOmH0ObdVUqBlfiDsILY\n6E7j95frpPyOG2ZW+fDYFX5k3eHrAt6lE7E+0bA/AGnjSAXZVa3x2Z2gePHk\n7Yo7CLhWmV3WocaPzApI+MUgyCAjLHsSFArDsVc1XVaVX+fhKKM0+by64+Sl\nG3ARXOtck/XwUgKX+wTJcdoZewIvcb3/yVOvR/zBnxUAp+ccWACWTFJJoWlp\n2Eae\r\n=p1pW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.0.0_1529608105806_0.3477140904323459"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.0.1",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^4.9.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "gitHead": "0a7aa37e239c0161944ff9111361ef344659663b",
+      "_id": "fromentries@1.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-+AnoOUzFP43mcubAFZpfUr6mJbpfkX3up7ayNgRE5lE1j2UeBSmY3KARmyR8Gyx0JSplPv4zebVgjxU2rhoarQ==",
+        "shasum": "7c006fc66bd748a008ae8b41385f1cad59cd3fdb",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbK/mZCRA9TVsSAnZWagAA1YMP+wXXiKvrfACb8fZzOk/E\nfjPy9nF3Zbwhlgb24kNSzyZ0w0QrgeA3npwdak/lABVoB/OwcI5fo48lL96n\nvDG7Up1rD2Nh6f8pmBodS2OH4OaiADsFkxAYTOMKGOEg4umIYrddINIf/Mez\n9z1Lnj4Zyg1yCu/JKX+px9WJKIkB0mIDVYXanGwYoj0hQqasE0qByC3MQhIl\nWzznyQaNqoCRZXvOzZ6P5T1TRQW5dWoD0wpedNXjGFJ7Sp8qvKa8LxSeKlkY\nlHyUsPlKBBtjGVIcTKOAQn0wYAYW+WNTfvjm9o5otwAkpBnjaSe6NGzooGuR\nl5WmlZspgtf7TAU7k5W0jc1ApYP2CLEURioI5L6KES0vOv3uDAZREd98Fs9v\ns1fD0Ys54ynqDvoNKSbhyaQdwrG3Z/yrqQtCv2T4zBvMiGGeEOuQ7e4cUiDI\nM2w2qy7Z60uF0+7fTFpD6f/ZyrWLiHwkXiYNhUZ2vrZjhHmPm8VU1DyLOUOc\nGLjqcPo7JYhRylFBNecpO0vzKThtYJwChEIGBYGYAKfamSt/ZxHZh8LRcvCu\nrxj7nFgubTppE3kW5CFL30SYYlbgLVxxphHCluk2OGY3VURiuqVud4Ruz4dJ\nV9jybvtE+SXPSvutgEEbrki0tz8R8RwscSv4gp+eFVJ40elEaUtFyi9oHeq1\ntwwV\r\n=yHzN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.0.1_1529608601679_0.6614121603422305"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.0.2",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^4.9.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "gitHead": "5b3c90653222e07832edc88924558197106693c9",
+      "_id": "fromentries@1.0.2",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-4ayOE6D+yaeE9+UK50NxGzXcMr42zeIQztktwV1wWVq60I6ZdHQGQQaw6jJMUJOygLtbsD3lpQmb2J5ZI3Oxpg==",
+        "shasum": "9686c943e879b70babdccb501c13724b45623d06",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4265,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbK/nvCRA9TVsSAnZWagAAycsP/0YZdT5iAsZDmCKQcuFb\nS9TRFoQE09UszZj9P5zvo2k18Kv0/BcxaytisMeK3QCLJpjfvdrWcdrFnOPD\nbAUD7Sr+XYbnP68mj3bV47r9UbGhC/SOb39uO6r+IJpqT6kXDn05QklrYj+k\n3I+CXLEEyDpuLxL3VqZCy6qbHGfM6JYcItyanw7j/GXhUDjTgaNcMkpTYmle\nqtwtKLKpeVG17tylVdZwW7hapPR/qmsctfLX10SLDNlEXzzuTrVmRsn1rAU1\nqJlnqA+Pb4gkXTKFpWnv8vkZcE0OsG72CP7lDjeR2tMJrmJAx/iipn2oLlR2\nOBP1gT3niQIXBb0MIRlaBghgPv6Xf4OYhzFxsCFkD8mQHMtC8+nnKzlMSfTA\nD1GRQraKczGD/33u+W1JgYDZ/W/0kj3xqDDCy9pK37tL8otY6AMjf3S9ZBcK\nTytOQOXobwlNqL+r2/hPlWGNfWLx05eS3SpEnxuiuxxn0kGnMxNI3mT2PIl8\nr436fpk7tmbO7acJMmlsZ+VdataxxLnydHIowalteIbLyjH6Bn5g4/YLyRsT\naE3nUzYpY91x0i549gmKMTG+4NZSZ3lrAT6Ncc+0MNSwcLbx9E4gHJI/TK0I\nOfewPjWJ3XhKDr2rfFIbkwDJCyFdTAQ6qIwva9BlFX4/QyUyM9oukFI4074Y\n3ZPh\r\n=31Bs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.0.2_1529608687541_0.37225627118154825"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.3": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.0.3",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^4.9.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "gitHead": "88ea4719d27b9a480c88e5434d7d805ff447574f",
+      "_id": "fromentries@1.0.3",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-dw6tS8EPGOHHbPdjOPOLONGLXn/pWs41Rd8tWY/Typpjx8JFpk3UUEG3tPDXLY1aqRQcTBLonCwVS2Y4eSXlAg==",
+        "shasum": "1f0b6b5baf648bef7c3e72fb3101cfc8a1bebfba",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4453,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbLBB4CRA9TVsSAnZWagAAvCoP+wZOreq5py1OVTC6T6ZA\n9fEDeHxD3g6lxFlCPbwI2tH9K18mTh44PTXJoABjmOXB/MgxGQOLcR6LTjvN\nKH5qFK3RSIqdjUQX5cooAKCI7lHIaE5yiXIEbr1AN4Demqyk1xqWPqJbRgui\n5fnebWugynaoP5EJcwLYJBVDkdfVW7XXmbxCl5pRzSnBEp3OoR2vnmIRAk92\nr9+u3I6quqrosmqtIvXcOjI8u1cTXRFBAAu95k8NbeOHfAgyPMYOKMseb80u\njX9hxcJTKX7A2I4hSL7x93mVk9ZNUh8CNe4RhEWetPPbsX7VP/UZC1dnv1ya\nUDmKnga8nVkmAr9BVBtmfG7jscQ6SUm62lpWYb+uxz3klAbH6g59ekvnrXMM\n8Px/qqAKNbZfKBIreWP2GTkCxY90D62ierc6lW2gLjy++BB4NvhZHfkgkbRm\nmaTpUW1gGKaGaPL53YQ0WUMDipg+7S8wEoUkqnYZ/LvGvvUULiV4LBSnziOc\ng/PDx+Npv71R6l/poS2AijAXd3NFsQoo1iGEnwFaxgywXt6JWj5e0YI8uxWx\nSovPhEx6hMelnPB0R9hF8TtNeb4GPgk5bAkRj11TdLEiK7Omry7UWC2wKnFD\n/0jZTEQ4aML5vuhyBiZJc5V/kuj7d/h0n+RdGbp02lnJEQxQCA7OxxsboqbS\nQfLK\r\n=qBH/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.0.3_1529614456777_0.5874812239927742"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.1.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^4.9.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "gitHead": "655df914d032dda489ca34dd40b42ba4ae7f6dc0",
+      "_id": "fromentries@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "dist": {
+        "integrity": "sha512-lNaxBVxKFZ9IZthqw+YcHjdf40U5x0L0u8D7i06Z2DpWH2hClmn5sHekzJEa40rElz/w9mWGBAp5Ik3maRsLyQ==",
+        "shasum": "621687fd011650fa39a44f46eac6617b812c6b80",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4461,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbmXAwCRA9TVsSAnZWagAAs9wP/3eJKskezLCsTKo4hCNX\n715HJSWFXxgoyL/a0S3ljNhjlBL4RGpPz5rNfHCwo/WRdbACPQdC/FJ7sUxp\nN+yXaP9sOhfWHxWcbA1Pu6x4fTF2UEn8SEpe4SpK/Lo84WbC3Gn4F267lES/\nzu9SsqQ+CSC0eNlFvhKWz1rKPdnXMGzLVabsrzHH7/dADSdGHF2ry5Q3YAAh\nRClDP7DDPgVEA0kTEgaJSgjyumXW7aZN2/vvwGlhAYjkxVl2NQPbLabnLe9v\nJdBNmnas7Hi5A4rcBpGf1gW+afvup5BENliban/HD4q1wjYcYTvjwFMlIjsd\nAyQHqota+fUZSZEi327gUj6boozso1h8h99emBR2Fvf9SweOBvpVkX+Djsmk\n/xagiAHeFcaAvlZnLRBwxYnmf9zcc+/ZpAHFWHr+Ehuh5AjKEc4dLxdW5nd3\ncNZQPtNvFsyp55eKe/PTN/YEVRdAKowjzj3DcUKabqX1qLBAQVAaINHpR9N3\n+TD/FsizwQdyOpDW1KxC6ihctTxuHf6oi+97hnaEJbbt4/Ed5bdTctxuUgZA\ndTafQbIxNe7DALEQV26gN6616mb+M6+ScNmYVin4IJhgCa1OcarGmyHz6rR5\nzREy+PetDJ1ya11ashHr7m98MHQHTYGHQWxZEvzSrO10stj+95BPJTOoQrkD\nnCfG\r\n=80S+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.1.0_1536782383542_0.2975932698612105"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.2.0",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^4.9.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "gitHead": "2192031b31e6a6add13ffa4e955eb4319eece169",
+      "_id": "fromentries@1.2.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-33X7H/wdfO99GdRLLgkjUrD4geAFdq/Uv0kl3HD4da6HDixd2GUg8Mw7dahLCV9r/EARkmtYBB6Tch4EEokFTQ==",
+        "shasum": "e6aa06f240d6267f913cea422075ef88b63e7897",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4440,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTkIqCRA9TVsSAnZWagAASZQP/ROf3MhxLM29E+1S1lGD\nypFu8iojUOj9BckLlZr3lScn9Zl1M7TFZi/F7pJ6aZz+ni63qeLXkporeOYS\nnr85XXjayYOXB+UPxs4UGvmYtFo0f4UfE5ttofky0kwJgnvFz/vBUvS5HGav\nEeK/H+sKA4F4hp4z6JyzPJ4J7LEdoLLs8aApFtKtHi5HzfW36Phrzrg6o6Mc\nIeQ6TPmr685C/8fpkBlOcgp00E9qMIhlauZlsKiPwMm3Ly9LlOD28QRmMHW5\nmBpAJRS4WTgOC6xVIJfarJ+W7c2YLCbgCWmnZLEZMDn2edHlK1PJqWuwmpHg\nqll7Mexffm9c0CY5qdX4s6uEOqbePDxncQBUgNeHI0iKt6jo7ZgNEaDvsns6\n+mInIEFotMWW+qdBaBHwnsPW1gwVqvo4We5io0RzTr95/9X7yv2wqX3KdtRI\nnKKS0AqrlNdmcJOXU2LYRJwwwjgNeWZcWEgYcJRfZUH4t2RLGuixYADshBEJ\nSg1+iWdMfbGU3xO2JrFdbc5w3vThKEjRJ9SvZQ7XdQIahJAbJpJLVVjKW78E\n0/kGv6DWmg02lo8QHsHIALPq64w1TWEbMYQNA4cp77TkUS8y3WQyA63r/7fl\nSNilVJas9R9f00eNtd7QOqrfjXfo5qVeix+AtLAP3PB5OU35ojPjb8UjLPKc\npu6Z\r\n=HKZT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.2.0_1565409833609_0.05555700444654277"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "fromentries",
+      "description": "Object.fromEntries() ponyfill (in 6 lines)",
+      "version": "1.2.1",
+      "author": {
+        "name": "Feross Aboukhadijeh",
+        "email": "feross@feross.org",
+        "url": "https://feross.org"
+      },
+      "bugs": {
+        "url": "https://github.com/feross/fromentries/issues"
+      },
+      "devDependencies": {
+        "standard": "*",
+        "tape": "^5.0.1"
+      },
+      "homepage": "https://github.com/feross/fromentries",
+      "keywords": [
+        "Object.fromEntries",
+        "Object.entries",
+        "Object.values",
+        "Object.keys",
+        "entries",
+        "values",
+        "fromEntries",
+        "ES7",
+        "ES8",
+        "shim",
+        "object",
+        "keys",
+        "polyfill",
+        "ponyfill"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/feross/fromentries.git"
+      },
+      "scripts": {
+        "test": "standard && tape test/**/*.js"
+      },
+      "funding": [
+        {
+          "type": "github",
+          "url": "https://github.com/sponsors/feross"
+        },
+        {
+          "type": "patreon",
+          "url": "https://www.patreon.com/feross"
+        },
+        {
+          "type": "consulting",
+          "url": "https://feross.org/support"
+        }
+      ],
+      "gitHead": "5d2cedaa77f1c1b985b5c78e84a638073366dde1",
+      "_id": "fromentries@1.2.1",
+      "_nodeVersion": "12.18.2",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-Xu2Qh8yqYuDhQGOhD5iJGninErSfI9A3FrriD3tjUgV5VbJFeH8vfgZ9HnC6jWN80QDVNQK5vmxRAmEAp7Mevw==",
+        "shasum": "64c31665630479bc993cd800d53387920dc61b4d",
+        "tarball": "https://registry.npmjs.org/fromentries/-/fromentries-1.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4798,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfERF+CRA9TVsSAnZWagAAlVIP/2+2usGbOgqEL1OS7J8B\n+wbnMxxaAnOb2fvURCbC1jRxcYgBAQHkpwcyrD6duiv0lKAiBDClfu3g1rHz\ndmtg8HaDRqM2zBwcFfaqiPMEtVaMuS22dwwYze4ylQFLNQdFcjMTsczz7Niu\nrR20VxZqlIR/maHFODAvw8r0vGSSkH4sOWDhinVQ4b1y2qGB6nfPq4fFvBTJ\nZ58uIqgSn8zycfayHxQn63v5cR1/p2rR/sF6BKPAS9G1sRd+rYJIbdsr8yaD\ngNcoIZZYtx+N1xMp4wiYIyb41HahGBXH7JmLzBtfT+gfEki6H3yW2cqDqaeF\noLBba0k1VFCFgaFngzon4Yka3REFrs5CfoUMKLdXk+yRTpzU70z0w5Iea91q\nGL5hpsKTkYG3wi+5aTxVAvu1d7HvEgAlVeEl/BJCfp0+POJkz6p7VNUirLch\nMjUdrSetjpFpHUN1mCGQ05drP7te7kqZzytj4c+zZhMCu72Or+rPO5HM/B8A\nKlSggcgjNoKIwfIsB+u2Pv0QH+TpCUYkATJTuIHuvYV0BRABiDpSwLbUPDKt\ngz9mQ2/Qp94Fx7e2g8BGS4IJtCGjABLzrvEJIuwYUlGAOseWpHFcIXufR2k1\nNdIIZk1mh5P8trjqOiH0oioUMwcN0oMMIR1yMfbmRUlityJRqjqvyQH1Uv59\nhpNx\r\n=XyL0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "feross",
+          "email": "feross@feross.org"
+        }
+      ],
+      "_npmUser": {
+        "name": "feross",
+        "email": "feross@feross.org"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fromentries_1.2.1_1594954109861_0.025570210549232808"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-06-21T19:08:25.806Z",
+    "1.0.0": "2018-06-21T19:08:25.881Z",
+    "modified": "2020-07-17T02:48:33.470Z",
+    "1.0.1": "2018-06-21T19:16:41.770Z",
+    "1.0.2": "2018-06-21T19:18:07.604Z",
+    "1.0.3": "2018-06-21T20:54:16.844Z",
+    "1.1.0": "2018-09-12T19:59:43.655Z",
+    "1.2.0": "2019-08-10T04:03:53.708Z",
+    "1.2.1": "2020-07-17T02:48:29.954Z"
+  },
+  "maintainers": [
+    {
+      "name": "feross",
+      "email": "feross@feross.org"
+    }
+  ],
+  "description": "Object.fromEntries() ponyfill (in 6 lines)",
+  "homepage": "https://github.com/feross/fromentries",
+  "keywords": [
+    "Object.fromEntries",
+    "Object.entries",
+    "Object.values",
+    "Object.keys",
+    "entries",
+    "values",
+    "fromEntries",
+    "ES7",
+    "ES8",
+    "shim",
+    "object",
+    "keys",
+    "polyfill",
+    "ponyfill"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/fromentries.git"
+  },
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "https://feross.org"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/fromentries/issues"
+  },
+  "license": "MIT",
+  "readme": "# fromentries [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]\n\n[travis-image]: https://img.shields.io/travis/feross/fromentries/master.svg\n[travis-url]: https://travis-ci.org/feross/fromentries\n[npm-image]: https://img.shields.io/npm/v/fromentries.svg\n[npm-url]: https://npmjs.org/package/fromentries\n[downloads-image]: https://img.shields.io/npm/dm/fromentries.svg\n[downloads-url]: https://npmjs.org/package/fromentries\n[standard-image]: https://img.shields.io/badge/code_style-standard-brightgreen.svg\n[standard-url]: https://standardjs.com\n\n### Object.fromEntries() ponyfill (in 6 lines)\n\n## Install\n\n```\nnpm install fromentries\n```\n\n## Why this package?\n\nExisting polyfill packages (like\n[`object.fromentries`](https://github.com/es-shims/Object.fromEntries))\npull in a bunch of dependencies and **adds over 8\nKB** to the browser bundle size. This allows them to work in ES3 environments\nlike IE6, but it's also overkill; almost no one supports IE6 anymore.\n\nI'd rather not ship tons of extra code to website visitors. A polyfill for this\nfeature can be implemented in a few short lines of code using modern language\nfeatures. That's what `fromentries` (this package) does.\n\nThis means that `fromentries` only works in evergreen browsers like:\n\n- Chrome\n- Firefox\n- Edge\n- Safari\n- Opera\n\nIt does not work in browsers like IE11 and older (unless you transpile it first).\n\n## Usage\n\n```js\nconst fromEntries = require('fromentries')\n\nconst map = new Map([ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ])\nconst obj = fromEntries(map)\nconstole.log(obj) // { a: 1, b: 2, c: 3 }\n\nconst searchParams = new URLSearchParams('foo=bar&baz=qux')\nconst obj2 = fromEntries(searchParams)\nconsole.log(obj2) // { foo: 'bar', 'baz': 'qux' }\n```\n\n## What is a ponyfill?\n\n> A *ponyfill* is almost the same as a polyfill, but not quite. Instead of\n> patching functionality for older browsers, a ponyfill provides that\n> functionality as a standalone module you can use.\n\nRead more at [PonyFoo](https://ponyfoo.com/articles/polyfills-or-ponyfills).\n\n## See also\n\n- [TC39 proposal for Object.fromEntries](https://github.com/tc39/proposal-object-from-entries)\n\n## License\n\nMIT. Copyright (c) [Feross Aboukhadijeh](http://feross.org).\n",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,2869 @@
+{
+  "_id": "@babel/plugin-transform-typeof-symbol",
+  "_rev": "69-12bfd2e36759e0d650024b1f8611548f",
+  "name": "@babel/plugin-transform-typeof-symbol",
+  "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.4",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-8kv+O+Lq04nIpwaOiTTxI3kYn8BLu9S2UecYe5lV27DQN8BMmaoEJHsy22EdVrBtJ5mQeKY9NVymnHRYV6pK/Q==",
+        "shasum": "af411381a4da838cb0a4cc535b8fdcc9559e57fc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.4.tgz_1509388491473_0.3141512500587851"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.5",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-VRgF/L+K4zdNxr2xWyZIeYa5eIyD3EMdmV9cf/4ZVj579Zf6RuVE9SWRXeGXkss+5725xzAM/ftgd44XV+nTpA==",
+        "shasum": "fa59470380738f14b23e92cd4712ba7684b05f22",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.5.tgz_1509396991089_0.8863304688129574"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.31",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-/0PHYrswVljPv2KYJkfsZMmgzZ9Kgxx6Q3PsBvflcUCzFNRH7IQLUcYPGxug+BFDFtIKpBkNwSbwbf1t5GeS7w==",
+        "shasum": "faad6b603dbdad43c7874ca61dffe4df8793139a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.31.tgz_1509739412427_0.809553315397352"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.32",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-AILpoMhhFg8el2YZSUIw3sZiy+4wvzDOUBPvbvDlJEjUk2wyZpfsZDv5FzY2LiWeRQxg1Ce06slPzaEMIOxEyw==",
+        "shasum": "f819960bcd339fa557ae16c28561852d7a6d1ce6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.32.tgz_1510493603424_0.9401675281114876"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.33",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Esg6NvV7I1BlIg5x831tLrdVmNoE9zGl2nyGwbkjrRTFyT3p4tbIB6/owXtqWAmJ8ShQAJaCIsepByLmS9sq1g==",
+        "shasum": "0bad44faf30e512b0be8e8a148b43851a8becc90",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.33.tgz_1512138507000_0.38911378011107445"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.34",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-zK2W/I6/eafbN7eWtrn7mWUpRdZMbV2GrOfS9yzbMifs9QvLK3jSmXXDSYu1dUPaG2sufxyp73mzvvr3owzpAg==",
+        "shasum": "960c5c822a8e0ac5bad6ff81ec092def1bf93d7b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.34.tgz_1512225568499_0.5362619359511882"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.35",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NzzikFdDh278dKxlwEG51YTtZj/siAebcbLILL00dM/McDrLETnz7WftfDFpVDvbFem9dLf0y59cq9/br6dp+w==",
+        "shasum": "ab8a83cf44fa63556471622ae886a14187e118c2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.35.tgz_1513288073907_0.28600400872528553"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.36",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-1w/EdTveqnYe37O8hCvizL/KmZRHSG59Hh00mOnLc7/Ue5wnV1TLAA1rlNp+4d+D9OJsjf1Qvi7pTYMfLqHADQ==",
+        "shasum": "26c46433f33c9a20c5b8ca7d4394bce38972e5ac",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.36.tgz_1514228686550_0.9648714258801192"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.37",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-7cu6YN3nwa5CMMjVydH5GSDIUIy/FBK13oIXLhXDAjoRAjVAROPwi+7BgKWMiJw1JKcq1QY8v+JPZUk/lYA4Yw==",
+        "shasum": "50706473552b094f00506fe86f86c7bd2db86bc2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.37.tgz_1515427356167_0.4095850025769323"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.38",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-vVULLUBkiLj4Y/p/37jxnutyOW0Ho0k6W2Own2wRe/kcWQoHxTDwwDWU2tGGBed1u1jbbYw5+B26F9IQ63tkvg==",
+        "shasum": "f390a9c6c79c36cf7bf2c9f818ffd52c05a92a59",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.38.tgz_1516206722419_0.8220577037427574"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.39",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-u/kiS8cS8rAhUD8AvZvZ5lGe+4CuDlkY3L3l2soteijVMHKGvRGbGoVf9aqYSQyqhXskNZupgt3yks3QZTFw9w==",
+        "shasum": "ac2134df64e014e864f7678e46770ecd13f604e9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol-7.0.0-beta.39.tgz_1517344058156_0.22929644328542054"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.40",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-y+mXC0tIlTZj04ZD9326grEIvFjI/IeLSIVVKMIf8nSodLDCgipuM6zXhxqXVvjcTrvvUKuxPrvPeSuht0eeMg==",
+        "shasum": "67f0b8a5dd298b0aa5b347c3b6738c9c7baf1bcf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3317
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.40_1518453704183_0.423606201186969"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.41",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-tBBd/wEo4kUaj02vFIsUtq9Oioh3z4rVB3DExWyWy8Ku+TYLysihDP21hyABeyPlq5d5/VQnoV8IClL6xoZcHQ==",
+        "shasum": "954ed7a16170d17c1928ab9cd52667011d69ab12",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3552
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.41_1521044779477_0.5858070778293483"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.42",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-cuDOzCv7kpMqaLypTEN90ErVmKUV3vjTuO8qzCGlmJMZwCcteTpxCiwISJLnAxcGtj++fMVY0vntbcj4nXf9XQ==",
+        "shasum": "7d93fcd194db78b839488cddddefbaa46032e327",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3558
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.42_1521147051742_0.7365829194121514"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.43",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-nHNnVhwb5hZrHhifcu8BewLja+auPbaKlEUdJ+nL+WtM9Ypo6CXwaZf11G3Cjtr0DPtOCjwx40f0bzjs9J02Hg==",
+        "shasum": "b53433041acab36bb12cb09d9bb849998c84b379",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3746
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.43_1522687711079_0.09970118222807489"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.44",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ObXHYNMRrvRcKANNVbR50ZrtX5i7qiJYH2GiD4snt6pOEooWJQmbHALFyTS/+I4eCVhNe6CQ6cMqXDhMl0RYOw==",
+        "shasum": "ba0ded29aea2a51700e0730a054faa64a22ff38a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3820
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.44_1522707613115_0.8873111948287884"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.45",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-a42uuEGopxW9M4wsADnD6vpGgsoYMKpvKKP7LRTTFUuuCn7T3xw6uKbLDFYOEiYlcmPgmsQYeUESE98m0GIfWg==",
+        "shasum": "b846314cc58d0501c5c86c701e58ba4cb81c0331",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3820,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T14CRA9TVsSAnZWagAA27oP/igoUgMaVOSFchAb58a9\nV7ZVuKIrvy+NYQuTwL07f8z3KVEaqctKj7R9TrObQX6MeKl/luhKSIHnW9Lf\nPMzM+c/kteLCal2f9hxCy47WWPh6fdZ1IPP79uaAVCTIdVjMynzCQFufFzNG\nTljTSVfeQLSs7ugEA9UCqW9M3lUIDP5Ay1rwCq8FhrUokXyVRN4A5nnyd5pw\nJF/vnPQbICPdhW/6d+e9NXOob/oroLsRcyiSCUd8bC1p+k/0fpCobtUgnla4\nI8xjgObNXGrBGtFnELZZeLq8+MMiKQVQhvgbm9K8Nxadexd5U3KgezlSxcK+\nKuggE/FmRmX4zWTZFc06L2FZ4iW++LZLcw73qFQZ1aeaN/Rm066f6uEzI6kB\nzQCYzw7cVdhQzkT2CB/j+iV4FJuH7RjUmWl73ISi37bOiwf5WeEm51VWS2AR\nS4U4tvCp89t0N4Di8pXi/0ewztbD5U8OMYOblccTCsjxnMLt76h5kFBjW3Kc\nJPl6FQj9GHAZleZk2rgo2QZygqmYvwrqYaJd734L1ADMVowTYMJ1vCHShXL/\nE0KPeTpgUmAz2WvviVcYT428/U4SgkrSBrq4bxyvk7syJxxdQ7bJq+ht/hU/\n1fytNmFrNlSnbvR8UfiPExxi0CpOaTtYJTmJci9oH2W20DrMWzf8TbF/uud5\ntg9M\r\n=kFBy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.45_1524448630941_0.9519799982390853"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.46",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-l+CfLR2c5KzZ/uZlkflNe7nK2hiEahc/FeiUCTd5Krj4aCKDdLLSdb4Lowf5hdZbqIPQc9TdL9SZt80YhUlmFw==",
+        "shasum": "643529184cbb07199237c94537c89ea9a721fa0a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3820,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGmCRA9TVsSAnZWagAAJ0IQAJLjgwQeRB2SC3Uzdxpv\nDqX1st3YVdtJTB3sfSRH+p+yPVI+ZLNwDIM9mUkLuruIVoPdVb3PWcAHPrGN\nMfd640EQuRaY3paWuv1DyL3uJkHWTvKO5WjNbP0hsb68nn76Kjpj7KZXDBGd\n+KnTtflL8+8Eyo2ir4isPPB5jWANQQPV2J426oI13Bky6Mhy5IjkeeqBoVvw\njgMAT2azgXnOo2rPOz/ejbUCKwJIQMN4b/Q1kvhWZn/cAD83PkJD/Zfi1ha/\nz5xG/zE0/m29I8Teqv3v3CDIb6kPLUtVkSuV5LM0oo8aLDX7xYOxH5FX2qAF\nuK0oR4ctpmt9Ogmb9WhuRLaBS2fkHa+2p+o5eFXczvZuLcfMljcZeb/EAXWF\nScjcURNgR/+SdMQqWs13NeSbA+8eYiA8TAydesl8D8Tivk8wi6ylwStu5laU\nKAIZ+dGgApbDU7MHWVA29ZanFs9Y4YqLY9vPoW/2WM2Lr4YCa7pjhI56UmQN\n6i4LDRD/a8JE4HSLOycjizInB4PQxNnn9M/wyHQ3enMW0EeB/DXGU7J7vUof\n/nQlD0rUDab1/MuInqa348kV86er9kOOJM3vhGzMLvI4nXd8OXeQglegdD4X\n2azvVSd0sAum+yYmeXET3IdKZCqdlOaIs0hOcySM1dAQ6gWP+lJLBDZFE69q\nAJeF\r\n=psFR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.46_1524457894145_0.5479055882746771"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.47",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-PhPy5NUY5MT++fEr7/sxN1/ERSM2siHSbGgdkbqgDlyvf1NlU1HeqyfomHJEFE1Y4PX0hj+XmtjSAali/6XqYA==",
+        "shasum": "03c612ec09213eb386a81d5fa67c234ee4b2034c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3770,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iU0CRA9TVsSAnZWagAAx4gQAJd4eUVf3rusjGXtXCoj\nWuRmGCQ3Xty7qimTXXAg2NRCPwK9P3UkCMOCDQ0HhfnTBlpoq2wq6yEy7DEW\nAvb6TbnsfU5mcybNE/tl5i0MzGL362hhEbT0ZGwRjbyPLreu5cV4AhMmUR76\nAVvZ45fbHSHJt7Rlf8kMOEjtO3kQEW+oa9PQVhVczl38XX/bMJgBsdq3aI6t\nrgWDXR01HkUBzh3mSxVKrIXvnJaLz30ISD9YZHOgU12PNc6WO9w1cXHEYe6v\nhu2kt4L9AW6TSR+Q2CpLBR1biTGVQqueT9uTJRIsFfpqbKMhUrm8k78Opdqd\ndIqpH3BPyP0st3nHNmjQl8v0YQCD+Y9nknuTLtFU/9Mq+gi6kpUHkJLOJiEz\n+H4UxDtS4J1bvBGJIuReYxJyr62HdkKRj0pvjKh92uYutQR2rwCDYdVlXAFe\nf5ikOIsWV/gImfBJgZhebDw08fxqAYxw4K9FfD82Fc5KpGngmuPPhH5GMYyd\nBFxOTIqV3yWSB8awnwZDQz5bqHvcqDanvCfF8/VbFqe0mNhkWN3+l8PMcgEV\nb8AnpkJjcb1+crIIdmMtqScrMhiU4zoNPxXhW5L22pr7eZk/xvgncj1puDUe\nwfuMk7b2UFpc2RK943zmEQIDPc3VcCyhxEtb7HyZ0Wtyk3bK+SKDTExkXPDU\nY9md\r\n=IFei\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.47_1526342964439_0.9685763495736206"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.48",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-oQZYsVherJCr6GGjHWd6hl0CLQB+H9C8QilqiTO98Uw5ng2TRw+UQi1JrjB2fZrGy819Uf11yu/K9OQ2CeF9nA==",
+        "shasum": "8bbc1274f937adbe6d12285dc354df29e483ba71",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3746,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxEZCRA9TVsSAnZWagAAnKUP/iXUVyjgL5bvA6DqNJsd\nN56NS8hZO/fEE/waeU36yr4AMe+2gKkmku8fkNTb7S9sx1eF1DrxJVRpjM8R\n+vPQF4xMD/xVmzO3ZumT8aYr/bs3VHwfjhTXUYnsNvIZvb/x63wJtb/VlwL+\nbz2Ouuv9hr5CrSqSc7m4OziW/9F5AQd8SYcdHiEDJ2ePM+9583JE04+LCaBT\nGqkY5x5ePbZooUjh7Sz6L1IupuEFb8WqejkFA5GTBiqmua5QmSLnL4hBWKn0\nXCf+b7N5A6y2cwfdYGq9zHNn1B+Z4miLM5wjlEZpjl8bkqGe45HwMjWbxcwE\nHJgU9JwfVHJU3Zg3aMQsTuHkJYC6In9q4Bf05JkcnGw8PAnZX+6eucX/B/Q9\ngCpEec6f3WoCxuv/nivX1W52WtAvk5jsUV136kxk1F+719NVv/4hjPTZ81oH\nauI0CVx/xUD88U/hqgZKNUpKSmA4rLHXhSYGO1ZfOTfg+W0MvN+nGeroV0LG\nyf/avBC3JCmYeNbfjD3EHDcypvI/pAujUh5UcSMw2vRLwKeErnDoteetl4Bm\npuzGoMsrUSadzJOP8zUmcx+cFpxZGch25EvZTxfAdmwGTTSY6q2zTMIXxqdW\nSAQf04nnkTA6FSidSa/T0JTucqCSYXDmTb8IHja1JutxwJEm2f6N3XzWTdEU\ng20W\r\n=8wfy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.48_1527189784411_0.498533025549617"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.49",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "365141ba355bf739eefd6c2bb9df1c3b7146e450",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "365141ba355bf739eefd6c2bb9df1c3b7146e450",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3761,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDOcCRA9TVsSAnZWagAA7mgP+wUQfBXe7LSvQvXfvxkQ\nWDJLT7LwJJJmA6wZ1s1l8bIdwqqkF7RM6iWp4DMNo6EVuIeAtHsWmEBfnQ53\nc2pdG49C353H+BGNZdb2cER3dMTBYgn9D2LV9fxafXGaUrK33jz9F8SolZGj\nmYPIX4HzXzPw1bPxblYA45TEpDUzAA0l8hcBFhPk695AChShvWsqONjj0Qjk\ns+x3xAjisY+jDyKcTwr2qq7pIvJ3EPd/agKpIhmNBRkQCOCPcbrWF8pvpO/L\nUujQU3MPz1Ii+TIjVWLbA9gIoCRV7/lgNFmhdBNQ6sFoxuEEoVYSmNUYGnCJ\n1+56LUSjVe68WjO2/6OsFsv2/9jqvMkhQitdSyTl3F2zxiUDTRyzRsF5gdDh\n4RF0cqLGAPJJ9SjCnv7+56cxWQhq6xD8LBy85Ts/pWpcEEXWAFUSCyoojU0r\nnCtT/zSwXltqZe8zUHx4YErdLO2EihZ98K8uvoJJdwJTdrP32s/s2KcEqtwp\nWQzLHfcBzIhKosGrMlBIvwuxcH49jbtioSeOqPX2fLixgDpMQKs+QW8nUXbE\n9dH7yZkRqKZUqxjxPknIzj7GXFeJBTlYQwA7XmhqpUu+7vZuLhJuoyN1wDRU\nG/PTW3uW8mKiL9hxhgsLpavvM0my/BuEFPjjRMnCtPJgljdeipYMEPfNMEJk\nr5jW\r\n=KhfV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.49_1527264156016_0.7132631693199651"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.50",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.50",
+      "dist": {
+        "shasum": "d49ef1c70f05c6908b2c5b4b738f5671c596d582",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3285
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.50_1528832844570_0.4203528878473155"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.51",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.51",
+      "dist": {
+        "shasum": "4950c0c8e3c9e1e141e45cebab5e6148263204c3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3299
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.51_1528838398843_0.3706658491530923"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.52",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.52",
+      "dist": {
+        "shasum": "77070d409f8e199c38911e2b5835db761b9a56d7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3298
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.52_1530838769719_0.35689522509394234"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.53",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.53",
+      "dist": {
+        "shasum": "65aae871a9aa40f611483665731209aebd5c2a2b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3298
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.53_1531316419741_0.8338374239564816"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.54",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.54",
+      "dist": {
+        "shasum": "6d068686239c9ebaf534d1c0d8032953f7b521bc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3298
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.54_1531764010838_0.48221556089864515"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.55",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.55",
+      "dist": {
+        "shasum": "62326918560b765bbe9f362ad3a4ce3bc71477bc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3298
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.55_1532815645257_0.7741145634458177"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-beta.56",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-beta.56",
+      "dist": {
+        "shasum": "76160d2bfee43b7d4ea07cf3c51dd7fa6578f8ec",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.56.tgz",
+        "integrity": "sha512-BnKyH+AUvnVHyl+1Kt40jfr6+0/DUED9huSdirp1DrKwmjlcu4FliGDNcSSKBfawV4covKT7MBjWpE6s+XNk1g==",
+        "fileCount": 5,
+        "unpackedSize": 3298,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPwJCRA9TVsSAnZWagAA9IIQAJUSvSlEZeGJzjkqwRSJ\nfnWSBhILt1cGfYxtBLEkQSIQEEcHLxdzga4EsXQJka5ittPASmCV1ilYI7IG\nVcId63w+AvDojr37doe1udQjTApY69XIzBNpRFw/pqgy6+Eq9DtZ9KMsxhys\nWhehp+bgnD5AnEEQW+/KV8NcWHeP/upiPnZvP4wQ5lc/pD9yF5EYtpjrfisa\nJ/s+CtCSbHpUDYwOcWZQwpd4fL9JBG/20xmfYXzh10+Usnf8AXpHFZe4XVGk\ns7LH9Rhr6Qg1RFk3WGX9o/tIb9ffZ7oMK07zFwhcPQDKJ7PxR0wv7d3+Jvzh\nndKPU83WdYoXIGgeViZEfJiHowSZcR4ZoFBEdMoyBCMrLxds3zHZkyZnKhdr\nGaf38xMHCXSQn4e66xTsveqBJsxqBNqVnxsj8ozOuRCypHAJQDybv8SgWCDg\nEdjaMWUXqDhXzPquGkIamq00JsbxE7Y3b0yevg2DXz7adbahMtt7H0Qyfs2j\nPqUxXMpnmaOmfDxQLt6ADT+VZX4ESeRAf3G180u44WNRbkhOiuR4XjWb0P9Q\nQOQUsbukEheJV1KWgm0XEay1k/W0g3QO6n69KOXKq/aFDXb2oPbTJip4HHB1\nkAvfq64nu7+n4ODap4eMC0wBEQfmK48vthBEvoCAYqlOB73/8ZZ/YTd5KC/D\noA3q\r\n=Uzmi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-beta.56_1533344777099_0.4015616787247207"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-rc.0",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-rc.0",
+      "dist": {
+        "shasum": "6c92d5266513c91623a9af6358188ca20ec82afe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-rc.0.tgz",
+        "integrity": "sha512-DoSEuLQNbutHYODTecmqBr9gDspCrPgOz8ZUReJqmO92ajTC7tEZHNa5LefghGNEAbIn1Ez9MpTtN2fuUVh9+A==",
+        "fileCount": 5,
+        "unpackedSize": 3286,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSxCRA9TVsSAnZWagAAnXMP/0EzLqrwwj4Hhl6bJGZl\navsTZPNIpEfZC/pRiba5+z4pIxhXNBPW6S0EwtlEGhCvjmkKhxbsXtLBDCMW\nrL+WiTxXBkJYX/EViC+9bNt+wfWdqaV6Tg2Q17ZGF3Z/FiVytYTEFNTR/MuW\nQB+i/AvDuT04Aa9L6U2xEf/K8TpbmTgd3Q+qnEJuoRNWzXFYUoPQgnXyIwq8\nhHpU3dT99//waKIkuikL1yqN0xi8Pl9btMrevKQkZDS54zTEdObW5FY3GrUj\n9QqrV9grUOgKZ5K7WvyScW/gion88IsRj9xI6nqAIuw0061FJbg9iEr7+W/E\nKCBGpSlaPvHXai0Ne1SVNxbt/BYEfG3sktoE8MdLpPu+HmRdZGmJYFT627IR\nRFb8EKkH5RgBWoQtm410SmZlcZAn2aDZGxF0tBS8WbPpJ9zHnpfOY/H2CEs2\nEmftGMXue+A6IOc/veZWGqOG1O08mUU0NwtxyYqMNdKHltnCDt1lxLGqSnrs\nTDS5Tl8t3JmyTzvlnJcHULeN/LInYF65gdNQSZA+XPMCb/zWaomYr/UaYN1Z\nm/DUDLsqxaydXTf6Sx31Zv9MDaLQbm57V9k4y1LGCk8nrpr1liN2v45AmVt7\n2kpBCvoeuNR3YGIi2v9t0vj+POQ8ErL2Z+rTlBgW0DyUgSE207wV4gko/7dq\n831C\r\n=oqQ0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-rc.0_1533830320622_0.24987025642440308"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-rc.1",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-rc.1",
+      "dist": {
+        "shasum": "51c628dfcd2a5b6c1792b90e4f2f24b7eb993389",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-rc.1.tgz",
+        "integrity": "sha512-wUKNscuv3WOOFy3tGOBeayeOLyZjixjOSvb0QNXrCDRuENhfPaFQjZt/T0UDAZN0mXvAQ7Ksx2pOtXBsyIBxUA==",
+        "fileCount": 5,
+        "unpackedSize": 3267,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ81CRA9TVsSAnZWagAAurkP+wVfTlcH7NOkARaEwKD2\nlKICewh1nuZhP0CDY7WxTdZ6p2GEUF/hEph4YwejmbzUPYFrXeYGnfOCs2gA\nWNg1ZJKs+QCR7mefy2rP3SrGBq6uy9mRJaIT1G8qyJLtFoZfM5+YS5unEHar\n8rnDN9SRgR72PPvSQKxKXWRBnEm+MD3uYNkI2bNKf3PYKqSb6Ug+000tF4K3\ny8e0JeO5ucUAdLUpInjBHJ5MwXNvhWPVryyffI4yw+TLwInRTlhojgAnBVt9\nEntwy1r99kRqtlXRwAXt95h6P8AK31KCXdtyWMKTeK1mUlAIskUlVFJyoCg4\ndzYENGGROkoFs2PaU14Dwok+Jwyoe5Mw9tu1Q59LkjYZRWk1yYhCYMWlv/QC\n9tjSGQ+FmDf8nl3Dq6b9j6wi7kvaKData3PB4wtw+XLhkgMjkFU3M9xTyPYJ\nME1G/71WkQNCEgAMR0zrnDPvXciHbmWHbE47iEM76bhR/xWULqlYB7ACpC5w\nfb3/thdh3ljr+9GwnByYjY384vuAv0nAvogaV7MpylB4Rel3T60bj5LcqEbq\n6pIVqts+fYzLdBL6oyyBQiCzA1y/PUXCGYvhj5+L/X26ZFMuksLAjE5gbCOY\nriOPqNe9qS4cmXcfXFJ8zPeuIDkL82MhRogYNOlT07U2SAtkSEo66AHU3k+9\nXjM2\r\n=ShkF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-rc.1_1533845300667_0.20029414900516884"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-rc.2",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-rc.2",
+      "dist": {
+        "shasum": "3c9a0721f54ad8bbc8f469b6720304d843fd1ebe",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-rc.2.tgz",
+        "integrity": "sha512-nL5PV6/VjuBreNsaJm00RzdIuC8ITK1O++WFwlZLOen5CPNSFmpOqP84J088hGk3tU9Iw5x4ETEzYHrf/5/72g==",
+        "fileCount": 5,
+        "unpackedSize": 3267,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbmCRA9TVsSAnZWagAAXxEP/jiJnaVLWv48uKAeEr3d\nx85AEbhf1fV4gRCcKiIWCZBWTI5rqx8vjfPVOBXX9YMcCFEWBh4VgKfxnu6T\nz3Gz/6HXnt8vh1xHV9SId4n9ssJfeVb6WGbdlR8qdrVOhX4yj+lJOjRNg/oo\nECReKNd2tbXe3X4MiAdn1W0cdUQrX3ohswsag4PPD0qavVkTd7zsLfvloS1T\nhb/MRMcd7njd8H1XLcCuHibSjloAT0jHiZZ+0yVfM9RvaqGlm5jCU7Smui+8\nIeWJkCQffiNhB5/KjiAq2tkH0smit6acZLSauwiIZXCAJts2FSQEpQC6QvZ8\nsMBoscV9yxLE7iEBvUJxZEe8o/Nnx6fFu2iKUcaCP1QbeI0LTB5xBSvghtJI\n/gN++mznMkPHadkIcl99VjIioWDK/9V3fS4WieCxibS4/HarPbAHxqUWxq+0\nmtAFOiqfGz1YB8iEQfVpzGaWvrxwElioVm2AGTXKkyS65gBWvYBVjaWGz32o\nMzEUY908o7LIv2EXp2Kq4D1b/G8dPw9GONVrBaWLBKNMhq7UWES/EZ0dksRw\nEygY45j8qLqD7Thrao2PvKtYLcZ2KU+tKV4BRVjekHUBFnqvQ+40HGNh84FQ\nGZbrjj1jQbfyQrlRgzX8h982rZmkdRPMnvxZ+X63DUKl2P6v7VxJjVpR48jw\n1nSA\r\n=vOiz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-rc.2_1534879462120_0.38695429483740784"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-rc.3",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-rc.3",
+      "dist": {
+        "shasum": "6ce43fa10a4a2651c35bd4913cefd238b3610e39",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-rc.3.tgz",
+        "integrity": "sha512-OiGvK0lui291koy77hIOF1/OAh5pHUxRRo+IxV6ARd/446JrTm1b2TL1Wb56mJG3kSsjLBncuLaZ32JfuPIqBw==",
+        "fileCount": 6,
+        "unpackedSize": 4366,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmVCRA9TVsSAnZWagAAhTUP/AiJFEUeOj2F2eu/VvKU\nkPvXRYaUSV9lip9MS//7qc0Dk39IrGdpvxIgdvsDef3A0skacb1lMjs+nyl6\ndn11pWO4wIEKcNcFOftiyHOfuJ/6cdClwcSR99D2rIWvcUtSk4N7QM51ZEa5\nf78s8vFd/+hltx8Huo+3UdpALheZ6frNTte4o0sGfiBmtNH+LlcrGgfVFtKK\nALSPXpDMiAX2ri13qHforDymlPNStUiGndq+2V6XyMnfakiEADi+NhfxrA6d\n2Qxx0TKqlD64LUtVRVccLZNF3De4x4A42/o6k6IR35t+DG6Oc5rx8zo0jdRn\nW1enjNOazKaGvUdJuf/JtvRmHkBKMuruOHIuM3EBb3ngNYrQRGjuzKeEsYMl\nTqEctiXsv7Oa9/G0OFx8YkuzpdZ6cZW1g1ydjYSmu0EOvkFP3HSJcro6pSPp\novTz+dCM6b1xJwPpJwRM1CfyLBnj1JmUzSN935ktrru7ZtStUJQBsvZ7DBNC\ntFWIR0Hz7jzYHCDs1WF48OFFytBYf+foGof0d8iOnrGo2O9XBI3aoZ0dKYMt\nA1jw0XEEQY08uTpFoaGBYpOv9p9/aZDYsNPQ8EeFy2vkR8U+FVbxosi3nzzO\ncjbGGLpLfLws2neKdSoUeguib9V/ohjpS+sKC3bDnFwWODumJsDYP1HZf4/X\naP79\r\n=uRWf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-rc.3_1535134100438_0.724931456432029"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0-rc.4",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0-rc.4",
+      "dist": {
+        "shasum": "d0489fe67cfebe39076fa1bd4dc768a287757079",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-rc.4.tgz",
+        "integrity": "sha512-N5cSfQGBobyUtxyTTtaONT7yHgXeygzy5Ni9/ZzIAovSG/hf10mIgQpAhUk7nT4XThIY9qT4ALAGDfgak0x+6w==",
+        "fileCount": 6,
+        "unpackedSize": 4369,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCp0CRA9TVsSAnZWagAA2qIP/3A3Hf6sj817ZRlthWNz\n3VUGtTlZw/x4SxeBsdGDwVx9Mgtkol2xicw4ZJnhf1LZ5+QUkp6+L9Oj4jto\nrDYZ1LqjZhZ7lpWPkW6xThAXMyICnEHgfHKx0dWI2bKQqyrOYTfmo8pSa3j2\nKF6YcVhmxuN6aRfI7h/VfxxQLVoGRdSrIIi7sFKKNt/zE7xapr52eKgoRCQS\nRFBLPUCdNJJBrheT54MJ3+zYZHbAthMxl+3uH70OE5aUpF6jchZzYTwoS1t1\n/J4E+TYz5pLuEdvgYhPCe4jmvhnYkVc1hPt2Mto5yNb8UxVMj2raQ71j53/5\nr8x5L4EbS0yocYMk28FbQouPkB6IfBUuJQHnojmWWjxguhMLddXU6XXt4Js1\nvZhJxc2ikK6X1G95rtdUvsI5f8SKaXwn8uX03Vf270EpRpP1XmjbV5Mv8nHY\nUC4xdr58aTnISxiF7keCcOLdchN3458ucosQ+Beqk3qcndfNIYAmODSJOBoO\neV94G6HIVpBnXNnzcPx87Uh6VBuoBlHRw3EFTAmW4qEfgGuwat2Lb0YrmHTS\nbEbaCrM9weN7p2x14ZynYsSNIJT0muBM0HM3LV8Y2PECIOBctytjDwRlV57F\nj2/0aV4oQVrhfNIWlvsihJow8WFWA+K06xudEwCSA+QLPnun1vXgbIR27H2h\nHXiv\r\n=p0AR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0-rc.4_1535388275605_0.3327958682439187"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.0.0",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-typeof-symbol\n\n> This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)\n\nSee our website [@babel/plugin-transform-typeof-symbol](https://babeljs.io/docs/en/next/babel-plugin-transform-typeof-symbol.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-typeof-symbol\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-typeof-symbol --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.0.0",
+      "dist": {
+        "shasum": "4dcf1e52e943e5267b7313bff347fdbe0f81cec9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0.tgz",
+        "integrity": "sha512-1r1X5DO78WnaAIvs5uC48t41LLckxsYklJrZjNKcevyz83sF2l4RHbw29qrCPr/6ksFsdfRpT/ZgxNWHXRnffg==",
+        "fileCount": 6,
+        "unpackedSize": 4349,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHCECRA9TVsSAnZWagAANJgP/A/wUz805WQUD1R9Mm7B\nHhNAE0fO95MrWRpEfE7n5DvOwOTordoI3wCO6J9ksqZpAbIK/P4RGRS+K5sL\nGpcCPouXXMU2sND4DZedvZZVF/t1oFRWoQI+FlTyg8hoO4gRGMHOWdaAE1WY\nnsLeC8kgwHdYeuvsryeZUCkT90FyCO+InCqspDHq7U7xQcb6GRQWArBPFypu\n/IQUXBMo35p9qg+7gFRvQS1Ih6w1Owy92UKSoPLrOQtzhH//dG8lTgZ7adOW\n+BFLieP3XYy6EIYyF2xuRZ6YTDGaPrdYSuivaK5RvFGaztRll9Fd8uq6XoNj\n8SUCT9OEy0TmmQDdqoXlJasBeiqHwi8rMHkJ6C6ApB+EjxFbdoORcWZjsJPu\nd+8GlFkjQSLlLvZWnJbsLlIS7X4DtJy5dWxTXLbM3zNz7ZvFjiv1HXAkmpqE\nAhQZcPkgjgsjwZMy4guA8DCHwcGhSg6akUkQzWAaArPDZh29rXUqAEB/iKqT\neNh/44rXaBJPf84Mjtc94PGPq8asKrZghZk6YQxS7b7+bB46IByY4gVtL8qp\nuouUAQbvLa098Oi3pLnlwePG1IWdsP0DA65Q6m8aGaciqnGnKexmoDBOWIcI\nskM1+S1CZNQEA+WoFBXgdmPlV11Ev5k2eKAxyuNgbl+zoXGY8tH64A7hgIeW\nS6JU\r\n=WzCP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.0.0_1535406211564_0.5618030172841244"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.2.0",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.2.0",
+      "dist": {
+        "shasum": "117d2bcec2fbf64b4b59d1f9819894682d29f2b2",
+        "integrity": "sha512-2LNhETWYxiYysBtrBTqL8+La0jIoQQnIScUJc74OYvUGRmkskNY4EzLCnjHBzdmb38wqtTaixpo1NctEcvMDZw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 4439,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2kCRA9TVsSAnZWagAAAxcQAJ7PwPL4JdaURRFTmlDW\ndGpZu+UOkXigOaI/6v9tJZ9VMcwBwJ0u592woXXbbK5HRaEvPfdlRIZo0zAA\nxROrM7bWCjNxCmOX+TlDrDX+swl+fP2F9nWEow553JxgIiB8EiiVyFMMIG+d\nX5zUbVIr+m6smjMlaWjOoi/L9QkJBzYvsJGr4s3wmBuief/2NOUFPypLsqy2\nuGyyqzxtDSK2lqltjEk3las64/4RXuZDyRpz2Q3dSoUTMV95KKCHY0nWrTDU\nyfTdBm1Rwy7v3NH8/V/Bd7lHbOgnFnMy2Nmve94SyFyEI2+c2h/YHqJbHPXE\nHS71K2E/BS6BCuUTkIky7Lq4Qwlmxp5CacIY7bKZYMm8ebqX1m13BCgZ9QHH\nM/uxlL9SNQrm+s/0iGmvOL4pk56wry/ZFYOVZzQuwMJH8tv4H2TLr66baoQa\n/D7Ku2pK4tXVN1lpL/hnE0JZBc9u8XNGLxBOobpaQROu7252wLAKFurm5nnK\nVyqVp+t2Fo9Wcsr1XnaOKbYqy3gY/IE5r5b/9fUs5e9fB9Xsiq7P+oakEIOU\nrKnrxtgIGEy0bTmKikZsl7FmzXZsOTpsUf9c1pQzlVwQSKSaPvD1Sil6iLEg\npB+lhCx9FevDLvvd2Hlp0ELMgPasINbnGLYSz0yOvtS9xcl483fhd6JINeCI\nNs3R\r\n=Ba5l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.2.0_1543863716281_0.5146572585088292"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.7.4",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-KQPUQ/7mqe2m0B8VecdyaW5XcQYaePyl9R7IsKd+irzj6jvbhoGnRE+M0aNkyAzI07VfUQ9266L5xMARitV3wg==",
+        "shasum": "3174626214f2d6de322882e498a38e8371b2140e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4294,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HAECRA9TVsSAnZWagAAwNwP/AofqGcEPP1xDcBULlZ5\npzzjPMsmBRFylNv/xg4mKenRoNZReTgmnvW6Mdt7MDv8mW02dFLWNYNVjE8O\ncRuqVecKtnCbqL/8tP+jHq+bUZ9UAg5WUNIplx4LaXeUQWPtOFn+2AznC+aZ\ndvtM92adGulLiY3LV8rLG24eZb7SNGci2vfzaCSAhtafYJUl2+ryziyWghmt\n22pT9RVf+QjXpRMutqtxPEugj1r6pGwgqS9/DuuUiTvvs8LLubKGVT4plR5T\nql9rkbBTfTSaeKElpfVWygabOVB3hWqBsh4YG2dn3Dd4/NvhDK3cGFb7XyNS\nHcYHJBmIeGDuD97/I0LfTLcbD5043vdxdWEjW92MYr/RAkthp/7KGwegL18G\nn3mepdYvoocjL3KbzuzmLxHypopuRzPdMu67AMaaZg1zK3pu9T6HHpx8A5nO\nYNEfh/tRkZu0HMkn4ctyvkx/BM4j/Jh9+KdI9iUwbd1STN92b2ke2mMTmmMR\nlSSir6gNwQbIBWZ1yDkWCuSvvW9m6Il1s0PFm/XiDAJHsaFyr+1zSbvtLUVU\nQNvCDrpy1J95ztsk+zf1joTBpnqopMq6PZqb04LC47LJ3rdybJPgleT6guGo\nmH1yuhlmI/NP4ny62ahlRUrkfCQW+9UFbotEf8utgMz5KvD3eNyCewy8pnws\nCPOj\r\n=XVzh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.7.4_1574465539734_0.38232504063963546"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.8.0",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-rEUBEFzsA9mCS2r7EtXFlM/6GqtzgLdC4WVYM9fIgJX+HcSJ8oMmj8LinfKhbo0ipRauvUM2teE2iNDNqDwO1g==",
+        "shasum": "a8d0dd317349d3dcbb9d659808099c94486554a5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4316,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVrCRA9TVsSAnZWagAAobYP/jh0hq9oAR2gyPfTMGbN\nprHm/wKXtfzjqf2Y1z+5agW3LbJWoMJM4fDjZZ2Uj2Hy9S+5JCQlx2O3e+wR\nbOUGPCkxZAy8eJOuMrzJrQaNIBMdWFL4H0PKl4lghHtlqDsjWigythqbG4Ty\nDjiFc1Y2Ro7Y+sTNpb93nK8E20lmXcWcaYs5y12pKT/k7WjnKlkCm6714OmT\n+nPOGKblRPnIvJKPvcbweMyyxaNwzEiG9WqA54ywJ6b/WkI7FE4CnNLo0IvX\n38PyUXi041xabbYQWHR92Ddy96+YG08umxcvDcIidBPvbaVLLD+tMtcuJ5Fc\nbz89R8PW0iR32ykX/rwAgrnJiRvPzce/vT63k6/yfO4BbbuUREndbLIYNIhw\nZ2GLCbv8eBRW52OZGZ0o+ZHRjULRu1gPIua/REvnyaJoScbcF/OrKW943E8G\nc/N6f2jAx5MiRWRvGVPduw1bAua3G4G14bQbsRDp/3TDl449ZvlSab5qnAHo\nEPSU1cJ203CEhxstCRNaJWLyFJUvv3rFR0VmVFC9RwxMHzIAeCP9CjiE1h4A\n0cqlPMj6JZHqWazNy7jLr5QPiUI/8RyVpX9p27/T1g0HeDhEKI+4v4vlwdWb\nXYPvk8plwx3zybPQKBk0w+MVEeI0GPOrZ1iG9fZLzYDdhC1taGY7HII6RwNZ\nl1wz\r\n=XncQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.8.0_1578788202649_0.23772338542217564"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.8.3",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-3TrkKd4LPqm4jHs6nPtSDI/SV9Cm5PRJkHLUgTcqRQQTMAZ44ZaAdDZJtvWFSaRcvT0a1rTmJ5ZA5tDKjleF3g==",
+        "shasum": "5cffb216fb25c8c64ba6bf5f76ce49d3ab079f4d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4294,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQYCRA9TVsSAnZWagAA05gQAJ9Usplkl5GZrwcBKWAV\ngnflU1sxbkLUZF9lH2DnmCkohB38+vyfcFLTbs8e3QaiRWsolVpneQYTnfpw\niVsnoQ9WdYwBt6U22JAYlT15/kkR35OvIsM2PU1JRRBOO5eLBTNgsfuzgjsB\nVoXYt2r9uehOTUYI/8sZ/S65FrXNkz6l0GlB2+l0KlDWybzEDB7MqQeJkTuV\nJmDhkagJoB174lgeqR0oMPzTtJ9sS4dtoWAVqtT2NB4IpyRm8UWwOlHKku6g\nWQpCV6MYWXOdB9axhiV74uUGM/iSdZd1+HkwYI3pib+riays2cE/xY307d8f\n1Hvyn3EVROlVm5YDTdD+V48nXuLz5Uh8C6smWh31adMxRGg13AIu6X7hEDfj\nWZV3M1FwL46zq+JI3h29htVG1lbYEyexUwLfVWhvMQ1A1aKX2scw9167dkxK\nOwu6KamMXL4fzXk0ZZwyZl0pLnuiMW9pJOQT3uAgolXmXDAEj+jC7xnYJOaq\n4jcWUO8AVC5YO4DuW0pHrQhUUGOX3NSy7T5dunnkuP4kpToSYnmG+xIVtsn7\n+jzLj4f540+u9TuvM3qqdWKF48EBkwSWgk0gstsKcdJxvb5mbR0fkk7auXY7\nU/a/G+wWyioc1YWDx/QvbH3cxkf2B9FqywwxwwE1tosq9jykIAgtLzi5rDEH\nwxec\r\n=uA5T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.8.3_1578951703863_0.6579276029253576"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.4": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.8.4",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.4",
+        "@babel/helper-plugin-test-runner": "^7.8.3",
+        "@babel/runtime": "^7.8.4",
+        "@babel/runtime-corejs2": "^7.8.4",
+        "@babel/runtime-corejs3": "^7.8.4",
+        "resolve": "^1.15.0"
+      },
+      "gitHead": "5c2e6bc07fed3d28801d93168622c99ae622653a",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.8.4",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.7.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-2QKyfjGdvuNfHsb7qnBBlKclbD4CfshH2KvDabiijLMGXPHJXGxtDzwIF7bQP+T0ysw8fYTtxPafgfs/c1Lrqg==",
+        "shasum": "ede4062315ce0aaf8a657a920858f1a2f35fc412",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.8.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4744,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMs3zCRA9TVsSAnZWagAAfh0QAJomIJHn0FVfsdbcIAZ/\nojiDFgv9yQrltVSgxxG4RA099YXWFuklryikNSEDADnfeeucj8yTuMlDZcYe\n3JWkFyDjtP7D3nCPUpCVa+NKGVtBkO21su7+Zi0HXhveQK2KAsF+bif+UKF/\nBRF712zgdRG2WKAKaung80wEA7zR2YAdy2OGVP3HL7RIN5n8stlDrNv5zNQc\nAAeaQDh6wMBVEpogusnQJR0jftYweiPXjXLI1fv1dL3VpvzYSrpClIStDsXE\nB9u1adAQUTWKV7BuaGXXg6rPu22dN8+Z26DMqaI7J4lrAQJJ2rWRSxTkFd/B\n1muaLjFP8uvpwDoz0C7m24AU+SQ8iiG+ib8RY7ytB87TYLpcxpTdF/9UQSMs\nbF6aYE3qcysdOmxM2Jx2dPx0S1z7LV9oPdPnaEK22otThbsnXSuRO4ZgM/9I\nCB9fopW98JlrJ8j5SeNwLdB68O6mNHJPbNBBCxjO5kppl9LtFKTmwrQXLqKU\nt/bydryj4lB127VQUt963kTPIDjw7zR/Ldnu0eoVyWwKAKgLAEE1Y/IHZSQ8\nlyL/DVL9T07KUWd6BhumN4wXwUuacEV0VOWPkRHsVHSescNRhgHpf1JlLr8N\nlRbAEnvQkZAel7nkpG0Dotl8YSt7o8MQ0xt+JGF2LqVSXkQ7nhgXCGIUwd4q\nlycF\r\n=YI25\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.8.4_1580387827219_0.5571340470054063"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.10.1",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1",
+        "@babel/runtime": "^7.10.1",
+        "@babel/runtime-corejs2": "^7.10.1",
+        "@babel/runtime-corejs3": "^7.10.1",
+        "resolve": "^1.15.0"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-qX8KZcmbvA23zDi+lk9s6hC1FM7jgLHYIjuLgULgc8QtYnmB3tAVIYkNoKRQ75qWBeyzcoMoK8ZQmogGtC/w0g==",
+        "shasum": "60c0239b69965d166b80a84de7315c1bc7e0bb0e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4799,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSiCRA9TVsSAnZWagAA18IP/2M9MJQSd/tma5sNngyv\nb3HsL8sllB9DqETfdVYsB6tarzOVzrQM54NMoIUPMPBc7P3A4QxO6kFTO5+M\nXH1sHzkCBNGRLgFqjLGnU8/MnEUrVn4FiYXZsRR72JY2PYei+0xrHct/3ZhF\nx/Iv1UfmSBga/d6CYB9ko8o37slBll8RVTLXtZsiHylvFzUpeRYowLQt6eO/\nxOzRwL0SkvCPoXOxcZw92+9krn+/5gJ/9nFuZhz/osWuxVUYdW4+x7mB93AU\nrQOqJ5kptZGjX+mp2MP6HOcd7BVmlpl4/VzXL4jxM/WV8j2I5NAeVaTSiig/\nX94hq5c4kJrrAQ92bbbcRMhB5aBCsXiKyYopG10B8Fav9lZMthGWP/dGkW+f\nFN84/NISJoIKRPGbT2t06xkGaCe75i+DUCU02KnD86rzZOWdRrTgDajPvBSS\nyebyDVhyTbuSeuovW1zIdppUUeIYkU1LYesOT0ffPy7+Y4F/iZtVA2mpAgNL\nHHC80CSiV58RG+WpVFbo0LS2mNFrTYCVaTt33uRM8VXncViSM+tv/cLYt1PL\n8NUCCP3u+7q7fu6VtT9LC3k228TsVtg/HN7I8g9YiDj0CBBiO8u3K9hwrFrA\nkWiGx5lRhacto2LFPLRIj2pQ5DKC3x/uErtQ28GfP0eYGHSRYRStz7m+ZL3I\nexXK\r\n=q5/y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.10.1_1590617250463_0.6144155182702025"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.10.4",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4",
+        "@babel/runtime": "^7.10.4",
+        "@babel/runtime-corejs2": "^7.10.4",
+        "@babel/runtime-corejs3": "^7.10.4",
+        "resolve": "^1.15.0"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-typeof-symbol@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-QqNgYwuuW0y0H+kUE/GWSR45t/ccRhe14Fs/4ZRouNNQsyd4o3PG4OtHiIrepbM2WKUBDAXKCAK/Lk4VhzTaGA==",
+        "shasum": "9509f1a7eec31c4edbffe137c16cc33ff0bc5bfc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4799,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zouCRA9TVsSAnZWagAA258P/ivMfaj9+z76yVFN7SVQ\nQwASzZH4L82YPEWE60A0RbqfHRevDCdFFQB/J3oLKiL7CGGKzH/FTjTBSkPX\nxeH/jfKGdC3bqTUItGab56Otbc0SrsHeHtljWnpkfYOxhgenTBZVLSYEhTWH\nPlaUWL7F1hfAFQqDLsGwZO5t70NIZc7A22OqmISYcm3S5sHu7SPwRzPQqymY\nux72Kl0pjYPcxAxQTIxsk7KkHjpqaokkJ46+Tlz7AkL2Rs992cLq9ZGqonUj\n28kjH38GKe1gsqZ6OhPTdGGUAVYup9itUTHQD2BAqytnHYJDAwSDNeXCQPvB\nEUFTptmyvNXQOQvXiV8PtyFYHWRB8PrYY+gTadrQkQO5aeAuyyLO9VOtHDUh\nGbOLqSeZ4cWJeG01qV/uIwIKf3hHStq9zQqcqmwAOQ8pjhk4IUwQAz6d2PGJ\nnvE9+oHAmysfPe7BS8lPE6dBeGJ4u/zM1yWtCZJnNZb6LHGCc68tdUPHEyNs\nwkEJVVur04fSyZ6fFLfiBTGRUiXROrYphSimESGT6EwIgVm5tTXrsYW2DiKH\nHAF2RIED+Ms911HplugzuAR7tvmwN0tstULYY79wisnlZu89ehY56yth5E7b\nXcMSOsfA9PfBbWbi4bapM3kdJc7rFywS9O1TPxkzn9sI5Gl7f9m6CknmUlX9\n0YHP\r\n=815G\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.10.4_1593522734032_0.4661851160439039"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-typeof-symbol",
+      "version": "7.12.1",
+      "description": "This transformer wraps all typeof expressions with a method that replicates native behaviour. (ie. returning “symbol” for symbols)",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-typeof-symbol"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4",
+        "@babel/runtime": "^7.12.1",
+        "@babel/runtime-corejs2": "^7.12.1",
+        "@babel/runtime-corejs3": "^7.12.1",
+        "resolve": "^1.15.0"
+      },
+      "_id": "@babel/plugin-transform-typeof-symbol@7.12.1",
+      "dist": {
+        "shasum": "9ca6be343d42512fbc2e68236a82ae64bc7af78a",
+        "integrity": "sha512-EPGgpGy+O5Kg5pJFNDKuxt9RdmTgj5sgrus2XVeMp/ZIbOESadgILUbm50SNpghOh3/6yrbsH+NB5+WJTmsA7Q==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4740,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/iCRA9TVsSAnZWagAAdSgP/1BPeGsDV6oWYWCJh942\ncK2u7XLNj0ZX9HAeLu40nO0bqAnjjUbY0VG3kqFT6cTAbC4M9jde0lGmpPi7\n0Ytr9/r31NVA5Z68lPOP9cGrcMU0q1KDV+6OxB8LFckNRdKKlZpg1ApQy+7A\nIBj3A98hRStlGG3Ub8rTmJ/pFE/TNR01C2O4L1BDN8t43/7s4zehDaLNya44\nZVfyYi2wW7wpEBiqQ/k2U5RaA/vjIAzYzY3CEdltJFvmNg9+maLNSpYzbb+k\nErHhlJUC1+bUC6okKYzbXX6XLtxScCnqeFOwB1P7XoZhQD4PEzPy4BWPnVF3\nHzemWb2Vt8A5ppDbz5s1ZmRYxDi3bA6gC3dBwkJFdBwfKyqjASzyO0IRAFTE\n9uiXIYVEV7v9nqcW4iTTKY5aPalm5RT9vaVFfjaMcSWpAfqgLFPKLyKZvlp0\n/EXOMSyGOyfkudC+IcvAiEzcGxHr3BvvR/ewzVpIIZS8G8v+nT63yVqR3pv3\nYdZJ3Ndq6DLGCmjf1ZyCMQnGeah1IN7HlOrGQXHnq+yG0xGMZnlHD65Omfx2\niO/wPGy/rWDsRJNF20xfztb/5uvFAwt7NvYWkXkwpPbC+Oxg967kbh4cl1DU\nLjRzNHJ17kVhT/TUimptc+QY3II9+Ow85K71YxqxNl3jcWvhAXvB46tuuSs3\nVd3Z\r\n=H6sy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-typeof-symbol_7.12.1_1602801633579_0.27543299708177926"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:37.114Z",
+    "created": "2017-10-30T18:34:51.548Z",
+    "7.0.0-beta.4": "2017-10-30T18:34:51.548Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:31.161Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:32.503Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:24.386Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:27.906Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:29.309Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:53.984Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:47.407Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:36.225Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:02.705Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:38.291Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:44.228Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:19.520Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:51.858Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:31.141Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:13.275Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:11.038Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:34.245Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:24.548Z",
+    "7.0.0-beta.48": "2018-05-24T19:23:04.650Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:36.206Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:24.818Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:58.946Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:29.809Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:20.032Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:10.894Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:25.719Z",
+    "7.0.0-beta.56": "2018-08-04T01:06:17.227Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:40.685Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:20.726Z",
+    "7.0.0-rc.2": "2018-08-21T19:24:22.206Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:20.500Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:35.706Z",
+    "7.0.0": "2018-08-27T21:43:31.668Z",
+    "7.2.0": "2018-12-03T19:01:56.429Z",
+    "7.7.4": "2019-11-22T23:32:19.822Z",
+    "7.8.0": "2020-01-12T00:16:42.785Z",
+    "7.8.3": "2020-01-13T21:41:43.967Z",
+    "7.8.4": "2020-01-30T12:37:07.358Z",
+    "7.10.1": "2020-05-27T22:07:30.569Z",
+    "7.10.4": "2020-06-30T13:12:14.226Z",
+    "7.12.1": "2020-10-15T22:40:33.705Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-typeof-symbol"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

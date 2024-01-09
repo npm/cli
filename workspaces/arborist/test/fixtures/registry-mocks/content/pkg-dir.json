@@ -1,0 +1,592 @@
+{
+  "_id": "pkg-dir",
+  "_rev": "18-7fbe2745a7aae83c456b8ea73f057671",
+  "name": "pkg-dir",
+  "description": "Find the root directory of a Node.js project or npm package",
+  "dist-tags": {
+    "latest": "4.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "pkg-dir",
+      "version": "1.0.0",
+      "description": "Find the root directory of a npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/pkg-dir"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "package",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "a06a60b1a2cddf2f84912221477311327398da01",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir",
+      "_id": "pkg-dir@1.0.0",
+      "_shasum": "7a4b508a8d5bb2d629d447056ff4e9c9314cf3d4",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.12.7",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7a4b508a8d5bb2d629d447056ff4e9c9314cf3d4",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "pkg-dir",
+      "version": "2.0.0",
+      "description": "Find the root directory of a Node.js project or npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^2.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "c18df2945cd928787f3290042a6c69352b4e13a5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+      "_id": "pkg-dir@2.0.0",
+      "_shasum": "f6d5d1109e19d63edf428e0bd57e12777615334b",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f6d5d1109e19d63edf428e0bd57e12777615334b",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/pkg-dir-2.0.0.tgz_1493912348467_0.855934705818072"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "pkg-dir",
+      "version": "3.0.0",
+      "description": "Find the root directory of a Node.js project or npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "bf7429aa96375d76455826a333f1f7f4da150805",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+      "_id": "pkg-dir@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/E57AYkoeQ25qkxMj5PBOVgF8Kiu/h7cYS30Z5+R7WaiCCBfLq58ZI/dSeaEKb9WVJV5n/03QwrN3IeWIFllvw==",
+        "shasum": "2749020f239ed990881b1f71210d51eb6523bea3",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3421,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbJ5rHCRA9TVsSAnZWagAAdbIQAKIgZ2BqfviuK3Pg7GWM\nv12xcztijs0OdD/Gaf5yAvI9ixCAMkSTmzuRB3VHBG5NbGf8/2rB2dX39SWM\nEPL01r0I8zxvZs/N+nUVGT1TA1O6Y2gYFT6LMDEdCBVunKy9Sbe6IpwJOAHz\nRuSDCz08e9VqwGhmmwJIEZPwW+UwymjqlOsq14DkP7nw96ZtVkJ9xWd38d4M\nEyDGnKzCpPnNuZs5kuPzt7tbLCOlqepe/HmH+zIuxt7UiRvtzZxYTc7Na90Y\niTJIneWW/TkMsgfAjpxbcs6sdbZhlvmpKKRZN3Q3YnaXjugwcJA8WlbJPe38\n911s8inJ57QhIbzI6CotAEHgJWuw6e532v4rSxdauU72f11ZGcNu4dna8ICg\nbteYEHLgNVZdLTBRbhn731/kPymmdwqhxAK3CDacj9slWMDGdArWmWh5SlLr\nduxllM82kRUr544f7Pl1WxHrCJZBVzXNCOLoOJF6b1uI0u081SGjnKWt+w7F\nMYRPkkP5O3rRQ4zxNZV/7q/Tsrzu8hplQA2nPDQ3i1Jny88g7DhKob5PZGyw\nor7E5SvJq6KR3wTxNq4E+hkmtm6IzLwsaluTWXC8NdNd+7JbIFBsL5uxm/Li\n6G1rkF+tk5cBFguEBE5rwyx5jDa9o9AdqA6x6CjvACh5+7c9vvcsSbL4OlOp\n0Ija\r\n=n5cf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-dir_3.0.0_1529322182903_0.9901723746601805"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "pkg-dir",
+      "version": "4.0.0",
+      "description": "Find the root directory of a Node.js project or npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2a72e4ece93b2443a2827aeae87f4995bb9e2977",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+      "_id": "pkg-dir@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-1S63UXE5ujsNUTFEgI001K06PkKqNceY07OBdRw24KYs3xvtoG3bkkunIG1p3glRKUjrZYc43opq2Y70R+/Rbw==",
+        "shasum": "1c505f82509ec0165a1fa530892585852e85ce9e",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4221,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch3OVCRA9TVsSAnZWagAAsxAQAKMZbTJT5CuC6U7cdm85\nDTvd/ENSieYsuj8zPTd9O0wRh7Bc9AC18VquPVftu+R1plOHPUQJije07mTt\n3mURCLomZqt4K4kKg6vu9UFZEhDhPidY641pfQsOr5U8grsGWS3MMnICB3gu\nlI6IRKalgwUKvJ4xPcKU6WXYHg6+wnyrjA9qOLiv6jMqwY/n6sMy81E5rUkh\nuO4IKOEB+qPGX7QYsFYsvMGEzUYb2vNDTVduKerVOcgy6lb8T807vHF6lla4\nTb/gFxqugphgXqHe2dFgrDt0eVVQTi4xwVAiLD3JuS79oaP0ewrxGy+tPn/I\nkyPxhN80/eFryWQfQXRpSKUC+WqQI4apriu+wXLxk5lNsYoLSTD2sEJiqCs4\nadCHgzfWAIy8ORsWPh3mjMJuP7GlWbPo1JChQCmmGUgfjpGy0TZSHgmjOI5W\ncarEnYjTaBl/PccfT2pZj32FrzZkJWWG/ph2YqH63aNVzHaJGq7HRfb5Bdi9\n/RwaAAvq03KYOKkEH8ejEU0p93XhgAjtGMihOIW/Xu9GGb0yZu+HO5FHPA8b\nM6rUazvbGJaPF2BekvNM11IPOap6QoPP/4ArNG0sGZFnr2rtBO4taa7dvT85\n9QME8cqbL71DvLatbsKZcosOiw+ltU4s4J81c3hZV1+uQozXCDBoyNTDrPDL\nmgHa\r\n=029U\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-dir_4.0.0_1552380821273_0.15593856451506727"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "pkg-dir",
+      "version": "4.1.0",
+      "description": "Find the root directory of a Node.js project or npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "abe3546fab603463012234bfed768243a074e8d1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+      "_id": "pkg-dir@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-55k9QN4saZ8q518lE6EFgYiu95u3BWkSajCifhdQjvLvmr8IpnRbhI+UGpWJQfa0KzDguHeeWT1ccO1PmkOi3A==",
+        "shasum": "aaeb91c0d3b9c4f74a44ad849f4de34781ae01de",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4751,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpvbXCRA9TVsSAnZWagAA1pAQAI721cM6BaZ4wyuOJ0gE\ngKAPud/NCrGmyivJrcrP4YfMLse1DnIfN67iUv2E/GZ+ujN7X4HJnrrzGWBR\nqlYXkBnZT1RlXsuTPTs4R6hu+chdhZzqMbexlvE4nutQ4wjbqoLE40YaWRzD\nVF7/81B6ZMP3tbcEUQIWmFc+KrtJFZfyNq+A4OYeyVMW2J70r3HCOb1QMJSz\npuBR9ZzLr6cEKe0Mz2IqDeaGHi+CbU7XUZeeidP/iqEarti6KoLtW5l7UfUB\njBsu4a2Y2XqMxQ+JjgtuqhizBtezfbfmfL+adamiPt61rLgj5F1Jml54/bMr\nTpDcxB+cFF+IfGx4+vXw1J8ZqsMi56d2gA8TvwVwa6JTeYJs230t/C3vEI8Z\npd2f0TwDQEAhajQY0Z2LeTe1DQL80oTSlrWUq+6Wkr9XPkR0lL5adFXYZ8qB\ntoUCU5k5H98+tTsTvuXmHO6fZ8JS1nN1nNPdr0pWByaiRiRcyuQoY0nFcMKp\nWdGVyGDtPj9KCzC37QFzpmT4CaAcU8ugQTuKpzMNgNKm+cxzjfswy6UMpwmG\nx6tRXdqaVaW6WtZcIWgTWgequF9cXGrSWtm0TrH4hmHQpr6GgRunqRZ1nQra\niav/vrzAo1zfN4SaBrjClyYbGp5zIY6kjBXrMnSFT8k7L9ZyIoQrmThYXEpY\nZ2C7\r\n=Twve\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-dir_4.1.0_1554446039149_0.43123501399168696"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "pkg-dir",
+      "version": "4.2.0",
+      "description": "Find the root directory of a Node.js project or npm package",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "package",
+        "json",
+        "root",
+        "npm",
+        "entry",
+        "find",
+        "up",
+        "find-up",
+        "findup",
+        "look-up",
+        "look",
+        "file",
+        "search",
+        "match",
+        "resolve",
+        "parent",
+        "parents",
+        "folder",
+        "directory",
+        "dir",
+        "walk",
+        "walking",
+        "path"
+      ],
+      "dependencies": {
+        "find-up": "^4.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tempy": "^0.3.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "e25e5342c5ec425bb4a2c93787a880c29cbf0a49",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/pkg-dir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+      "_id": "pkg-dir@4.2.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==",
+        "shasum": "f099133df7ede422e81d1d8448270eeb3e4261f3",
+        "tarball": "https://registry.npmjs.org/pkg-dir/-/pkg-dir-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4750,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc48Z0CRA9TVsSAnZWagAA9d4QAIA8ki5bJw6PfCFYHATl\n1c7I/rJSZzR+iRY3lQjGcJJ8g5A1aQFcleviJi5dd+wghHbgvtD0ma9OhtTu\n9+bc3IH/46lUhHG5bjl4vWJTfMB1/p3WLe7CHvDJROhbcBp70E3AWE+iGrOR\ng7FpasTIPpbsveGma66ioF2K3aeybee0bklbDsWsuhS38taDCVOPM854yxk5\n2anz7zOaQALYuzfxvMmB7NFYIgPHO5WP8fDqcg1dpVeco97Un9c2E4OnWZfT\nLmpQC8NFvPFYbrypBa6l/jZMvO6+R1YpJd7x6kp02KUPYsd3KPWtvcrjiSE2\nibK6kTXq6ScSFW+uxhBspzK4kFewLc41h9of4bRBFh/dlb4AYFq8voMhcPhS\nQAewS3YpA8V6bwZZQJT+QSchRq4EkLZLGQCtCnXv27JgBBg2TZ3I/ay/rySE\n3Iw10ex72h79mJDyHohPw12l+mBxtNbo6pFx5XdBhjKl/32IzVXu6RWW2lsi\nYG0Ijt9WVD9r4z8FBnLP4zXtcht36YKNwHxj6WSZ9s6VVYy2yLlK+XHCw1Jw\nC/td4HlG/4oMem2GhMvwkcnvBzYKTrLlpqbK+fU2KVlka2PMemcoR51jJ36N\nMBZF2L6L+riT9n5hOtFGGSZao+N062mdCmR0Us3UINDvznq1kxx8D3U5XT8b\nSsUm\r\n=s+NZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pkg-dir_4.2.0_1558431348399_0.7942128019820929"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pkg-dir [![Build Status](https://travis-ci.org/sindresorhus/pkg-dir.svg?branch=master)](https://travis-ci.org/sindresorhus/pkg-dir)\n\n> Find the root directory of a Node.js project or npm package\n\n\n## Install\n\n```\n$ npm install pkg-dir\n```\n\n\n## Usage\n\n```\n/\n└── Users\n    └── sindresorhus\n        └── foo\n            ├── package.json\n            └── bar\n                ├── baz\n                └── example.js\n```\n\n```js\n// example.js\nconst pkgDir = require('pkg-dir');\n\n(async () => {\n\tconst rootDir = await pkgDir(__dirname);\n\n\tconsole.log(rootDir);\n\t//=> '/Users/sindresorhus/foo'\n})();\n```\n\n\n## API\n\n### pkgDir([cwd])\n\nReturns a `Promise` for either the project root path or `undefined` if it couldn't be found.\n\n### pkgDir.sync([cwd])\n\nReturns the project root path or `undefined` if it couldn't be found.\n\n#### cwd\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nDirectory to start from.\n\n\n## Related\n\n- [pkg-dir-cli](https://github.com/sindresorhus/pkg-dir-cli) - CLI for this module\n- [pkg-up](https://github.com/sindresorhus/pkg-up) - Find the closest package.json file\n- [find-up](https://github.com/sindresorhus/find-up) - Find a file by walking up parent directories\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-05-21T09:35:52.580Z",
+    "created": "2015-09-01T07:59:42.497Z",
+    "1.0.0": "2015-09-01T07:59:42.497Z",
+    "2.0.0": "2017-05-04T15:39:08.692Z",
+    "3.0.0": "2018-06-18T11:43:02.957Z",
+    "4.0.0": "2019-03-12T08:53:41.396Z",
+    "4.1.0": "2019-04-05T06:33:59.286Z",
+    "4.2.0": "2019-05-21T09:35:48.505Z"
+  },
+  "homepage": "https://github.com/sindresorhus/pkg-dir#readme",
+  "keywords": [
+    "package",
+    "json",
+    "root",
+    "npm",
+    "entry",
+    "find",
+    "up",
+    "find-up",
+    "findup",
+    "look-up",
+    "look",
+    "file",
+    "search",
+    "match",
+    "resolve",
+    "parent",
+    "parents",
+    "folder",
+    "directory",
+    "dir",
+    "walk",
+    "walking",
+    "path"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/pkg-dir.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/pkg-dir/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "recursion_excursion": true,
+    "ahmed-dinar": true,
+    "rocket0191": true,
+    "hugojosefson": true,
+    "alexreg90": true,
+    "alexreg": true,
+    "drewigg": true,
+    "dwqs": true
+  }
+}

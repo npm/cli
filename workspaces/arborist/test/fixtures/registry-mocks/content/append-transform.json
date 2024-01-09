@@ -1,0 +1,617 @@
+{
+  "_id": "append-transform",
+  "_rev": "13-2c7f0ba062393435a93c548845a08afe",
+  "name": "append-transform",
+  "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.2.0": {
+      "name": "append-transform",
+      "version": "0.2.0",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "coveralls": "^2.11.6",
+        "fake-module-system": "^0.1.0",
+        "nyc": "^4.0.1",
+        "xo": "^0.11.2"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "f7b3ba7b7e0d719bbd948acf430a774607a7e3a5",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/append-transform/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/append-transform#readme",
+      "_id": "append-transform@0.2.0",
+      "_shasum": "69da6084e8252ff47a634b9f4fd2e8cf9e296c1d",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "69da6084e8252ff47a634b9f4fd2e8cf9e296c1d",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "append-transform",
+      "version": "0.2.1",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "coveralls": "^2.11.6",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^4.0.1",
+        "xo": "^0.11.2"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "41e15546de94897de888423abbdc9cf0e982ff49",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/append-transform/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/append-transform#readme",
+      "_id": "append-transform@0.2.1",
+      "_shasum": "06de7b5a6fa1101ebd4edbe6b978c72d0afd58b0",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "06de7b5a6fa1101ebd4edbe6b978c72d0afd58b0",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "append-transform",
+      "version": "0.2.2",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "coveralls": "^2.11.6",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^4.0.1",
+        "xo": "^0.11.2"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "d0f27b8891b179c9e9cd5b1d67198c20202e6781",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/append-transform/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/append-transform#readme",
+      "_id": "append-transform@0.2.2",
+      "_shasum": "c41f3763e910cfe79646092667e6471809938c85",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.2.0",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "c41f3763e910cfe79646092667e6471809938c85",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "append-transform",
+      "version": "0.3.0",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "coveralls": "^2.11.6",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^4.0.1",
+        "xo": "^0.11.2"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "66aed1b6ee4634e96c08478c79b428e25e97928a",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/append-transform/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/append-transform#readme",
+      "_id": "append-transform@0.3.0",
+      "_shasum": "d6933ce4a85f09445d9ccc4cc119051b7381a813",
+      "_from": ".",
+      "_npmVersion": "3.5.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "d6933ce4a85f09445d9ccc4cc119051b7381a813",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "append-transform",
+      "version": "0.4.0",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jamestalmage/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "devDependencies": {
+        "ava": "^0.7.0",
+        "coveralls": "^2.11.6",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^4.0.1",
+        "xo": "^0.11.2"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "dependencies": {
+        "default-require-extensions": "^1.0.0"
+      },
+      "gitHead": "0b737d26fdebbdfb8ed4be096535099ed7da9ab1",
+      "bugs": {
+        "url": "https://github.com/jamestalmage/append-transform/issues"
+      },
+      "homepage": "https://github.com/jamestalmage/append-transform#readme",
+      "_id": "append-transform@0.4.0",
+      "_shasum": "d76ebf8ca94d276e247a36bad44a4b74ab611991",
+      "_from": ".",
+      "_npmVersion": "3.4.0",
+      "_nodeVersion": "0.10.40",
+      "_npmUser": {
+        "name": "jamestalmage",
+        "email": "james@talmage.io"
+      },
+      "dist": {
+        "shasum": "d76ebf8ca94d276e247a36bad44a4b74ab611991",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jamestalmage",
+          "email": "james@talmage.io"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "append-transform",
+      "version": "1.0.0",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "pretest": "xo",
+        "test": "nyc --reporter=lcov --reporter=text ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "dependencies": {
+        "default-require-extensions": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.24.0",
+        "coveralls": "^3.0.0",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^11.3.0",
+        "xo": "^0.15.1"
+      },
+      "xo": {
+        "ignores": [
+          "test/_mock-module-system.js"
+        ]
+      },
+      "gitHead": "a0da526fd3ba79b2e09b351f957f81d3f90057a0",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/append-transform/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/append-transform#readme",
+      "_id": "append-transform@1.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "jakxz",
+        "email": "jgkurian@me.com"
+      },
+      "dist": {
+        "integrity": "sha512-P009oYkeHyU742iSZJzZZywj4QRJdnTWffaKuJQLablCZ1uz6/cW4yaRgcDaoQ+uwOxxnt0gRUcwfsNP2ri0gw==",
+        "shasum": "046a52ae582a228bd72f58acfbe2967c678759ab",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "jgkurian@me.com",
+          "name": "jakxz"
+        },
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "mark@novemberborn.net",
+          "name": "novemberborn"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/append-transform-1.0.0.tgz_1511989130557_0.2158883938100189"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "append-transform",
+      "version": "2.0.0",
+      "description": "Install a transform to `require.extensions` that always runs last, even if additional extensions are added later.",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/append-transform.git"
+      },
+      "author": {
+        "name": "James Talmage",
+        "email": "james@talmage.io",
+        "url": "github.com/jamestalmage"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "pretest": "xo",
+        "test": "nyc --reporter=lcov --reporter=text ava"
+      },
+      "keywords": [
+        "transform",
+        "require",
+        "append",
+        "last",
+        "coverage",
+        "source-map",
+        "extension",
+        "module"
+      ],
+      "dependencies": {
+        "default-require-extensions": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.3.0",
+        "coveralls": "^3.0.6",
+        "fake-module-system": "^0.3.0",
+        "nyc": "^14.1.1",
+        "xo": "^0.24.0"
+      },
+      "xo": {
+        "ignores": [
+          "test/_mock-module-system.js"
+        ]
+      },
+      "gitHead": "3c2618eb953a5de61099452f2b4764a1e1d10674",
+      "bugs": {
+        "url": "https://github.com/istanbuljs/append-transform/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/append-transform#readme",
+      "_id": "append-transform@2.0.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-7yeyCEurROLQJFv5Xj4lEGTy0borxepjFv1g22oAdqFu//SrAlDl1O1Nxx15SH1RoliUml6p8dwJW9jvZughhg==",
+        "shasum": "99d9d29c7b38391e6f428d28ce136551f0b77e12",
+        "tarball": "https://registry.npmjs.org/append-transform/-/append-transform-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8326,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdd9YBCRA9TVsSAnZWagAAXF0P/1FKb//O3LLKexar93QV\nQVXQRj0nxm7XLzINTDzbpTfcX9N/ZZzV/wiVxWjlJ8EfZnvacJ3ZZPJIW6hL\nvW4+BrJRsoAGsu2NLByOrRGOmsAHdhnA/sXAZa3zRNwwtsSLhmoBHE+uFYZh\nMDSXhwY5SVj1gHlxm973tYRZ80AZoT+CBOnOPf/hGDNiRG1ZTEUkDLmvOz+W\n5dM+MU6JfjxrLLh/qGmknGgkywVk/YPsIsEa4ZPHSczhLBAmL6SisWHq/LTT\nVmHH35SIZypMgnoYjsTr1WCTWUXDXO4tagN7K1fHg9v2ujGr4HWXmk+yHdvm\ny3IiPZTPqOinRk1pvM727xyn9MLKpoXDjyw5SbAyn6LU4FhotIjyeQfKmbB9\n/piEFWCZD1LaVVsa6WVvRJQKCiDw2KorBVMXyXtFPELJJ3bZNWjHH8B3ePLA\n+6bHBr8D/+1A6rhZjke0ojBe39usGSv1TgbzCauSuNgjwGL1oA2aJTLtL1w+\nE2a/5eStDhynVP0E8jqH0Nh1Z6x62gvYBypx+91hQbCUfro5C2PET3pK3yCo\nBrQgPs03Av0eg0PTAJ87wmaC4qQq18KuIn684ugZo1pMBqOQQetYO/yGZA0N\ntC8HKQbUBEriPmTGB0MTRD/Ikm8oEaQWqUOwU2WmlYx1fO8upz/35cn1e+Yk\nVKN6\r\n=skpT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ben@npmjs.com",
+          "name": "bcoe"
+        },
+        {
+          "email": "jgkurian@me.com",
+          "name": "jakxz"
+        },
+        {
+          "email": "james@talmage.io",
+          "name": "jamestalmage"
+        },
+        {
+          "email": "mark@novemberborn.net",
+          "name": "novemberborn"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmUser": {
+        "name": "jakxz",
+        "email": "jgkurian@me.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/append-transform_2.0.0_1568134656906_0.9989180739419226"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# append-transform [![Build Status](https://travis-ci.org/istanbuljs/append-transform.svg?branch=master)](https://travis-ci.org/istanbuljs/append-transform) [![Coverage Status](https://coveralls.io/repos/github/istanbuljs/append-transform/badge.svg?branch=master)](https://coveralls.io/github/istanbuljs/append-transform?branch=master)\n\n> Install a transform to `require.extensions` that always runs last, even if additional extensions are added later\n\nThe [typical require extension](https://gist.github.com/jamestalmage/df922691475cff66c7e6) looks something like this:\n\n```js\nconst myTransform = require('my-transform');\n\nconst oldExtension = require.extensions['.js'];\n\nrequire.extensions['.js'] = (module, filename) => {\n\tconst oldCompile = module._compile;\n\n\tmodule._compile = (code, filename) => {\n\t\tcode = myTransform(code);\n\t\tmodule._compile = oldCompile;\n\t\tmodule._compile(code, filename);\n\t};\n\n\toldExtension(module, filename);\n};\n```\n\nIn **almost** all cases, that is sufficient and is the method that should be used (check out [`pirates`](https://www.npmjs.com/package/pirates) for an easy way to do it correctly). In **rare** cases you must ensure your transform remains the last one, even if other transforms are added later. For example, `nyc` uses this module to ensure its transform is applied last so it can capture the final source-map information, and ensure any language extensions it can't understand are already transpiled (ES2015 via `babel` for instance).\n\n*WARNING:* You should be sure you  *actually* need this, as it takes control away from the user. Your transform remains the last one applied, even as users continue to add more transforms. This is potentially confusing. Coverage libraries like `nyc` (and `istanbul` on which it relies) have valid reasons for doing this, but you should prefer conventional transform installation via [`pirates`](https://www.npmjs.com/package/pirates).\n\nReferences:\n- [Detailed Breakdown of How Require Extensions Work](https://gist.github.com/jamestalmage/df922691475cff66c7e6)\n- The [test suite](https://github.com/avajs/append-transform/blob/master/test/execution-order.js) provides a good overview of how this library manipulates the order in which transforms are applied.\n\n\n## Install\n\n```\n$ npm install --save append-transform\n```\n\n\n## Usage\n\n```js\nconst appendTransform = require('append-transform');\nconst myTransform = require('my-transform');\n\nappendTransform((code, filename) => {\n\tif (myTransform.shouldTransform(filename)) {\n\t\tcode = myTransform.transform(code);\n\t}\n\n\treturn code;\n});\n```\n\n## API\n\n### appendTransform(transformFn, [extension])\n\n#### transformFn\n\nType: `function(code: string, filename: string)`\n\nA callback that modifies the incoming `code` argument in some way, and returns the transformed result. `filename` is provided to filter which files the transform applies to. If a transform should not manipulate a particular file, just return `code` without modifying it. It is fairly common to avoid transforming files in `node_modules`. In that case you may want to use [`node-modules-regexp`](https://www.npmjs.com/package/node-modules-regexp) to help reliably detect `node_modules` paths and avoid transforming them.\n\n#### extension\n\nType: `string`<br>\nDefault: `'.js'`\n\nThe extension for the types of files this transform is capable of handling.\n\n\n## License\n\nMIT © [James Talmage](https://github.com/jamestalmage)\n",
+  "maintainers": [
+    {
+      "email": "ben@npmjs.com",
+      "name": "bcoe"
+    },
+    {
+      "email": "jgkurian@me.com",
+      "name": "jakxz"
+    },
+    {
+      "email": "james@talmage.io",
+      "name": "jamestalmage"
+    },
+    {
+      "email": "mark@novemberborn.net",
+      "name": "novemberborn"
+    },
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-10T16:57:40.363Z",
+    "created": "2015-12-12T06:39:37.525Z",
+    "0.2.0": "2015-12-12T06:39:37.525Z",
+    "0.2.1": "2015-12-15T09:28:40.929Z",
+    "0.2.2": "2015-12-18T17:44:11.898Z",
+    "0.3.0": "2016-01-25T05:38:03.281Z",
+    "0.4.0": "2016-01-25T21:30:49.519Z",
+    "1.0.0": "2017-11-29T20:58:50.645Z",
+    "2.0.0": "2019-09-10T16:57:37.060Z"
+  },
+  "homepage": "https://github.com/istanbuljs/append-transform#readme",
+  "keywords": [
+    "transform",
+    "require",
+    "append",
+    "last",
+    "coverage",
+    "source-map",
+    "extension",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istanbuljs/append-transform.git"
+  },
+  "author": {
+    "name": "James Talmage",
+    "email": "james@talmage.io",
+    "url": "github.com/jamestalmage"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/append-transform/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

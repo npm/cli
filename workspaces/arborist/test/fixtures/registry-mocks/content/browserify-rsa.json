@@ -1,0 +1,520 @@
+{
+  "_id": "browserify-rsa",
+  "_rev": "24-fde8d7a1d845e62d1b3362b111fed881",
+  "name": "browserify-rsa",
+  "description": "RSA for browserify",
+  "dist-tags": {
+    "latest": "4.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "browserify-rsa",
+      "version": "1.0.0",
+      "description": "browserify-rsa ====",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^0.16.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:calvinmetcalf/browserify-rsa.git"
+      },
+      "gitHead": "ceb731f7d56e4aba5440b99709dda6c2cb38b5dc",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa",
+      "_id": "browserify-rsa@1.0.0",
+      "_shasum": "bcfd798b92c00b084f31456241bd21cd2b572409",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bcfd798b92c00b084f31456241bd21cd2b572409",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "browserify-rsa",
+      "version": "1.1.0",
+      "description": "browserify-rsa ==== [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-rsa.svg)](https://travis-ci.org/calvinmetcalf/browserify-rsa)",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^0.16.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3",
+        "parse-asn1": "^1.2.0"
+      },
+      "gitHead": "240e16c3b116dca1a63e463f494bd3447abb3b8a",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa",
+      "_id": "browserify-rsa@1.1.0",
+      "_shasum": "c8262236d86ec4cf472d8fc0b839344dec3c0741",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c8262236d86ec4cf472d8fc0b839344dec3c0741",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "browserify-rsa",
+      "version": "1.1.1",
+      "description": "browserify-rsa ==== [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-rsa.svg)](https://travis-ci.org/calvinmetcalf/browserify-rsa)",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^1.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3",
+        "parse-asn1": "^1.2.0"
+      },
+      "gitHead": "4f48f8733048a7115a7459c6c0152b3550e0f08f",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa",
+      "_id": "browserify-rsa@1.1.1",
+      "_shasum": "d7c952e12e44192680613ea7f3baa83af585c8ad",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d7c952e12e44192680613ea7f3baa83af585c8ad",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "browserify-rsa",
+      "version": "2.0.0",
+      "description": "browserify-rsa ==== [![Build Status](https://travis-ci.org/calvinmetcalf/browserify-rsa.svg)](https://travis-ci.org/calvinmetcalf/browserify-rsa)",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3",
+        "parse-asn1": "^3.0.0"
+      },
+      "gitHead": "f0f7efebf5a0dce46cec9f396f21e215328a0c88",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa",
+      "_id": "browserify-rsa@2.0.0",
+      "_shasum": "b3e4f6d03a07db4408bfd9dbc0fef323bfe1bdcb",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b3e4f6d03a07db4408bfd9dbc0fef323bfe1bdcb",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "browserify-rsa",
+      "version": "2.0.1",
+      "description": "browserify-rsa ==== [![Build Status](https://travis-ci.org/crypto-browserify/browserify-rsa.svg)](https://travis-ci.org/crypto-browserify/browserify-rsa)",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3",
+        "parse-asn1": "^3.0.0"
+      },
+      "gitHead": "130a777e463ebde28794645611c099c6685f44bf",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa",
+      "_id": "browserify-rsa@2.0.1",
+      "_shasum": "9e6ec3e5bca3fdd11c9a93c14d2bb146470083bc",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9e6ec3e5bca3fdd11c9a93c14d2bb146470083bc",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "browserify-rsa",
+      "version": "3.0.0",
+      "description": "RSA for browserify",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^3.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3",
+        "parse-asn1": "^3.0.0"
+      },
+      "gitHead": "b0c488809895150afb073cd3274ff82c80d3d2e0",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa#readme",
+      "_id": "browserify-rsa@3.0.0",
+      "_shasum": "9e8ea73e4eb1038aa0291ec4c25d1c41753133fc",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "3.3.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "9e8ea73e4eb1038aa0291ec4c25d1c41753133fc",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "browserify-rsa",
+      "version": "4.0.0",
+      "description": "RSA for browserify",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "randombytes": "^2.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/calvinmetcalf/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "parse-asn1": "^5.0.0",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "c6465e2cecc9872b80e77ffe6dfce993991db142",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/browserify-rsa#readme",
+      "_id": "browserify-rsa@4.0.0",
+      "_shasum": "a72c5e33833fd576c3ccd3d1d5fe61c48fdd974d",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "a72c5e33833fd576c3ccd3d1d5fe61c48fdd974d",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "browserify-rsa",
+      "version": "4.0.1",
+      "description": "RSA for browserify",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "author": "",
+      "license": "MIT",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "randombytes": "^2.0.1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/crypto-browserify/browserify-rsa.git"
+      },
+      "devDependencies": {
+        "parse-asn1": "^5.0.0",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "63b22b3306a8a55b6c2d4f34e2c331db0c8398e7",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/browserify-rsa/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/browserify-rsa#readme",
+      "_id": "browserify-rsa@4.0.1",
+      "_shasum": "21e0abfaf6f2029cf2fafb133567a701d4135524",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.7.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "21e0abfaf6f2029cf2fafb133567a701d4135524",
+        "tarball": "https://registry.npmjs.org/browserify-rsa/-/browserify-rsa-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/browserify-rsa-4.0.1.tgz_1456441196079_0.6414434532634914"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "browserify-rsa\n====\n[![Build Status](https://travis-ci.org/crypto-browserify/browserify-rsa.svg)](https://travis-ci.org/crypto-browserify/browserify-rsa)\n\nRSA private decryption/signing using chinese remainder and blinding.\n\nAPI\n====\n\nGive it a message as a buffer and a private key (as decoded by https://www.npmjs.com/package/parse-asn1) and it returns encrypted data as a buffer.\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T10:53:58.815Z",
+    "created": "2014-12-22T15:58:02.766Z",
+    "1.0.0": "2014-12-22T15:58:02.766Z",
+    "1.1.0": "2014-12-22T18:59:01.867Z",
+    "1.1.1": "2015-01-06T12:47:10.377Z",
+    "1.2.0": "2015-01-28T15:10:33.718Z",
+    "2.0.0": "2015-01-28T17:36:03.303Z",
+    "2.0.1": "2015-05-21T02:56:00.897Z",
+    "3.0.0": "2015-10-26T22:37:16.706Z",
+    "4.0.0": "2015-10-29T14:15:37.450Z",
+    "4.0.1": "2016-02-25T22:59:56.886Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/browserify-rsa#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/crypto-browserify/browserify-rsa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/browserify-rsa/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

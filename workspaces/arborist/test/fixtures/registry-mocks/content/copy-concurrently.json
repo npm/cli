@@ -1,0 +1,484 @@
+{
+  "_id": "copy-concurrently",
+  "_rev": "21-15b9d9072eb5bd648b9e2073e5faa00b",
+  "name": "copy-concurrently",
+  "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+  "dist-tags": {
+    "latest": "1.0.5"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "copy-concurrently",
+      "version": "1.0.0",
+      "description": "Copy files, directories and links, preserving ownership and perms, with configurable concurrency.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "ce8bd33eb3e118227084adc4cf423e3ecb8af5ac",
+      "_id": "copy-concurrently@1.0.0",
+      "_shasum": "178caaffa3ae5e2a0dbcb63429b6787e39b03068",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "178caaffa3ae5e2a0dbcb63429b6787e39b03068",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/copy-concurrently-1.0.0.tgz_1489704187810_0.059374428587034345"
+      }
+    },
+    "1.0.1": {
+      "name": "copy-concurrently",
+      "version": "1.0.1",
+      "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "copy",
+        "cpr"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "c27b675d0a1a8426ed8bdf94a369af0a7b279f5a",
+      "_id": "copy-concurrently@1.0.1",
+      "_shasum": "aa42d41dccd4d08ca71e825c9471ed91e67d7b13",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "aa42d41dccd4d08ca71e825c9471ed91e67d7b13",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/copy-concurrently-1.0.1.tgz_1489704604928_0.8405833058059216"
+      }
+    },
+    "1.0.2": {
+      "name": "copy-concurrently",
+      "version": "1.0.2",
+      "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "copy",
+        "cpr"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "b6b2172b0be5493b848f0fdb130e9e16f6c54ce1",
+      "_id": "copy-concurrently@1.0.2",
+      "_shasum": "9cd371780d1203783d20bc78e2578fb942785106",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "9cd371780d1203783d20bc78e2578fb942785106",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/copy-concurrently-1.0.2.tgz_1489706165061_0.44832303188741207"
+      }
+    },
+    "1.0.3": {
+      "name": "copy-concurrently",
+      "version": "1.0.3",
+      "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "copy",
+        "cpr"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "1b4b93b19c0cb2f6676c8a73dc86a1333d373230",
+      "_id": "copy-concurrently@1.0.3",
+      "_shasum": "45fb7866249a1ca889aa5708e6cbd273e75bb250",
+      "_from": ".",
+      "_npmVersion": "4.4.3",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "45fb7866249a1ca889aa5708e6cbd273e75bb250",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/copy-concurrently-1.0.3.tgz_1489706523710_0.4328302445355803"
+      }
+    },
+    "1.0.4": {
+      "name": "copy-concurrently",
+      "version": "1.0.4",
+      "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "copy",
+        "cpr"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "e26fb43c77e8fdc0e95216dd14d1a711867c85ff",
+      "_id": "copy-concurrently@1.0.4",
+      "_npmVersion": "5.4.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-XXS0XxjvGYHNdCQe3VFiRfXqom2Uf8r+MmHEnuLEqln47OZW7yxIkjS0oaxsL9Q2fCl1sdrYlXdqsaBLofMyuQ==",
+        "shasum": "333c5c0450d234e6498fd17f2d4c28200233aa6e",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/copy-concurrently-1.0.4.tgz_1503701571485_0.4761425491888076"
+      }
+    },
+    "1.0.5": {
+      "name": "copy-concurrently",
+      "version": "1.0.5",
+      "description": "Promises of copies of files, directories and symlinks, with concurrency controls and win32 junction fallback.",
+      "main": "copy.js",
+      "scripts": {
+        "test": "standard && tap --coverage test"
+      },
+      "keywords": [
+        "copy",
+        "cpr"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org/"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "aproba": "^1.1.1",
+        "fs-write-stream-atomic": "^1.0.8",
+        "iferr": "^0.1.5",
+        "mkdirp": "^0.5.1",
+        "rimraf": "^2.5.4",
+        "run-queue": "^1.0.0"
+      },
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tacks": "^1.2.6",
+        "tap": "^10.1.1"
+      },
+      "files": [
+        "copy.js",
+        "is-windows.js"
+      ],
+      "directories": {
+        "test": "test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/copy-concurrently.git"
+      },
+      "bugs": {
+        "url": "https://github.com/npm/copy-concurrently/issues"
+      },
+      "homepage": "https://www.npmjs.com/package/copy-concurrently",
+      "gitHead": "3381d20cdafa55a7aa42ab7b79a2b34f971a44c4",
+      "_id": "copy-concurrently@1.0.5",
+      "_npmVersion": "5.4.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-f2domd9fsVDFtaFcbaRZuYXwtdmnzqbADSwhSWYxYB/Q8zsdUUFMXVRwXGDMWmbEzAn1kdRrtI1T/KTFOL4X2A==",
+        "shasum": "92297398cae34937fcafd6ec8139c18051f0b5e0",
+        "tarball": "https://registry.npmjs.org/copy-concurrently/-/copy-concurrently-1.0.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/copy-concurrently-1.0.5.tgz_1503701787867_0.12750811083242297"
+      }
+    }
+  },
+  "readme": "# copy-concurrently\n\nCopy files, directories and symlinks\n\n```\nconst copy = require('copy-concurrently')\ncopy('/path/to/thing', '/new/path/thing').then(() => {\n  // this is now copied\n}).catch(err => {\n  // oh noooo\n})\n```\n\nCopies files, directories and symlinks.  Ownership is maintained when\nrunning as root, permissions are always maintained.  On Windows, if symlinks\nare unavailable then junctions will be used.\n\n## PUBLIC INTERFACE\n\n### copy(from, to, [options]) → Promise\n\nRecursively copies `from` to `to` and resolves its promise when finished. \nIf `to` already exists then the promise will be rejected with an `EEXIST`\nerror.\n\nOptions are:\n\n* maxConcurrency – (Default: `1`) The maximum number of concurrent copies to do at once.\n* recurseWith - (Default: `copy.item`) The function to call on each file after recursing into a directory.\n* isWindows - (Default: `process.platform === 'win32'`) If true enables Windows symlink semantics. This requires\n  an extra `stat` to determine if the destination of a symlink is a file or directory. If symlinking a directory\n  fails then we'll try making a junction instead.\n\nOptions can also include dependency injection:\n\n* Promise - (Default: `global.Promise`) The promise implementation to use, defaults to Node's.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* writeStreamAtomic - (Default: `require('fs-write-stream-atomic')`) The\n  implementation of `writeStreamAtomic` to use.  Used to inject a mock.\n* getuid - (Default: `process.getuid`) A function that returns the current UID. Used to inject a mock.\n\n## EXTENSION INTERFACE\n\nOrdinarily you'd only call `copy` above.  But it's possible to use it's\ncomponent functions directly.  This is useful if, say, you're writing\n[move-concurently](https://npmjs.com/package/move-concurrently).\n\n### copy.file(from, to, options) → Promise\n\nCopies an ordinary file `from` to destination `to`.  Uses\n`fs-write-stream-atomic` to ensure that the file is either entirely copied\nor not at all.\n\nOptions are:\n\n* uid, gid - (Optional) If `getuid()` is `0` then this and gid will be used to\n  set the user and group of `to`.  If uid is present then gid must be too.\n* mode - (Optional) If set then `to` will have its perms set to `mode`.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* Promise - (Default: `global.Promise`) The promise implementation to use, defaults to Node's.\n* writeStreamAtomic - (Default `require('fs-write-stream-atomic')`) The\n  implementation of `writeStreamAtomic` to use.  Used to inject a mock.\n\n### copy.symlink(from, to, options) → Promise\n\nCopies a symlink `from` to destination `to`.  If you're using Windows and\nsymlinking fails and what you're linking is a directory then junctions will\nbe tried instead.\n\nOptions are:\n\n* top - The top level the copy is being run from.  This is used to determine\n  if the symlink destination is within the set of files we're copying or\n  outside it.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* Promise - (Default: `global.Promise`) The promise implementation to use, defaults to Node's.\n* isWindows - (Default: `process.platform === 'win32'`) If true enables Windows symlink semantics. This requires\n  an extra `stat` to determine if the destination of a symlink is a file or directory. If symlinking a directory\n  fails then we'll try making a junction instead.\n\n### copy.recurse(from, to, options) → Promise\n\nReads all of the files in directory `from` and adds them to the `queue`\nusing `recurseWith` (by default `copy.item`).\n\nOptions are:\n\n* queue - A [`run-queue`](https://npmjs.com/package/run-queue) object to add files found inside `from` to.\n* recurseWith - (Default: `copy.item`) The function to call on each file after recursing into a directory.\n* uid, gid - (Optional) If `getuid()` is `0` then this and gid will be used to\n  set the user and group of `to`.  If uid is present then gid must be too.\n* mode - (Optional) If set then `to` will have its perms set to `mode`.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* getuid - (Default: `process.getuid`) A function that returns the current UID. Used to inject a mock.\n\n### copy.item(from, to, options) → Promise\n\nCopies some kind of `from` to destination `to`.  This looks at the filetype\nand calls `copy.file`, `copy.symlink` or `copy.recurse` as appropriate.\n\nSymlink copies are queued with a priority such that they happen after all\nfile and directory copies as you can't create a junction on windows to a\nfile that doesn't exist yet.\n\nOptions are:\n\n* top - The top level the copy is being run from.  This is used to determine\n  if the symlink destination is within the set of files we're copying or\n  outside it.\n* queue - The [`run-queue`](https://npmjs.com/package/run-queue) object to\n  pass to `copy.recurse` if `from` is a directory.\n* recurseWith - (Default: `copy.item`) The function to call on each file after recursing into a directory.\n* uid, gid - (Optional) If `getuid()` is `0` then this and gid will be used to\n  set the user and group of `to`.  If uid is present then gid must be too.\n* mode - (Optional) If set then `to` will have its perms set to `mode`.\n* fs - (Default: `require('fs')`) The filesystem module to use.  Can be used\n  to use `graceful-fs` or to inject a mock.\n* getuid - (Default: `process.getuid`) A function that returns the current UID. Used to inject a mock.\n* isWindows - (Default: `process.platform === 'win32'`) If true enables Windows symlink semantics. This requires\n  an extra `stat` to determine if the destination of a symlink is a file or directory. If symlinking a directory\n  fails then we'll try making a junction instead.\n* Promise - (Default: `global.Promise`) The promise implementation to use, defaults to Node's.\n* writeStreamAtomic - (Default `require('fs-write-stream-atomic')`) The\n  implementation of `writeStreamAtomic` to use.  Used to inject a mock.\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-19T13:49:37.518Z",
+    "created": "2017-03-16T22:43:08.066Z",
+    "1.0.0": "2017-03-16T22:43:08.066Z",
+    "1.0.1": "2017-03-16T22:50:06.793Z",
+    "1.0.2": "2017-03-16T23:16:05.281Z",
+    "1.0.3": "2017-03-16T23:22:03.959Z",
+    "1.0.4": "2017-08-25T22:52:51.625Z",
+    "1.0.5": "2017-08-25T22:56:27.943Z"
+  },
+  "homepage": "https://www.npmjs.com/package/copy-concurrently",
+  "keywords": [
+    "copy",
+    "cpr"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/copy-concurrently.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/copy-concurrently/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "iarna": true,
+    "youcp": true
+  }
+}

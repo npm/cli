@@ -1,0 +1,2727 @@
+{
+  "_id": "@types/mocha",
+  "_rev": "707-b005c688d9128940ab6b7c7bde48aa6f",
+  "name": "@types/mocha",
+  "description": "TypeScript definitions for mocha",
+  "dist-tags": {
+    "latest": "8.0.3",
+    "ts2.0": "2.2.48",
+    "ts2.1": "5.2.7",
+    "ts2.2": "5.2.7",
+    "ts2.3": "5.2.7",
+    "ts2.4": "5.2.7",
+    "ts2.5": "5.2.7",
+    "ts2.6": "5.2.7",
+    "ts2.7": "5.2.7",
+    "ts2.8": "7.0.2",
+    "ts2.9": "7.0.2",
+    "ts3.0": "8.0.3",
+    "ts3.1": "8.0.3",
+    "ts3.2": "8.0.3",
+    "ts3.3": "8.0.3",
+    "ts3.4": "8.0.3",
+    "ts3.5": "8.0.3",
+    "ts3.6": "8.0.3",
+    "ts3.7": "8.0.3",
+    "ts3.8": "8.0.3",
+    "ts3.9": "8.0.3",
+    "ts4.0": "8.0.3",
+    "ts4.1": "8.0.3"
+  },
+  "versions": {
+    "2.2.14-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.14-alpha",
+      "description": "Type definitions for mocha 2.2.5 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.14-alpha",
+      "_shasum": "46f578db5003fc282aa0caa0566c1c16f6cd5c5e",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "46f578db5003fc282aa0caa0566c1c16f6cd5c5e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.14-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.14-alpha.tgz_1463509299114_0.2814423399977386"
+      },
+      "directories": {}
+    },
+    "2.2.15-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.15-alpha",
+      "description": "Type definitions for mocha 2.2.5 from https://www.github.com/DefinitelyTyped/DefinitelyTyped",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.15-alpha",
+      "_shasum": "8f01a19ed02916e97c43e03c581668a45cffea35",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "8f01a19ed02916e97c43e03c581668a45cffea35",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.15-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.15-alpha.tgz_1463694267216_0.12384066102094948"
+      },
+      "directories": {}
+    },
+    "2.2.20-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.20-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.20-alpha",
+      "_shasum": "ee6a5d5ccf5995f9fbfd02cdf43a2613c5d9f555",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "ee6a5d5ccf5995f9fbfd02cdf43a2613c5d9f555",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.20-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.20-alpha.tgz_1463775108012_0.93696273653768"
+      },
+      "directories": {}
+    },
+    "2.2.21-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.21-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.21-alpha",
+      "_shasum": "99ec07b586a10ad7adb8e3c9dc5bfdc93e35e3d0",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.8.2",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "99ec07b586a10ad7adb8e3c9dc5bfdc93e35e3d0",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.21-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.21-alpha.tgz_1464154162580_0.9921727278269827"
+      },
+      "directories": {}
+    },
+    "2.2.22-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.22-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.22-alpha",
+      "_shasum": "da84ad52d99f331503371cdc4056305768fc074e",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.9.5",
+      "_nodeVersion": "6.2.2",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "da84ad52d99f331503371cdc4056305768fc074e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.22-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.22-alpha.tgz_1467403835189_0.8385074015241116"
+      },
+      "directories": {}
+    },
+    "2.2.23-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.23-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.23-alpha",
+      "_shasum": "8f6a949b3abfad0fe12077945de0a4858f84e2ad",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "8f6a949b3abfad0fe12077945de0a4858f84e2ad",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.23-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.23-alpha.tgz_1467415582559_0.4122004546225071"
+      },
+      "directories": {}
+    },
+    "2.2.24-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.24-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.24-alpha",
+      "_shasum": "e349cdf93d516d6865ad08505c9df69aaedf2b39",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "e349cdf93d516d6865ad08505c9df69aaedf2b39",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.24-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.24-alpha.tgz_1467428473708_0.03915668069384992"
+      },
+      "directories": {}
+    },
+    "2.2.25-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.25-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.25-alpha",
+      "_shasum": "2e5ad3d10fa0b9f4e773916f44aa14aa83438042",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "6.2.1",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "2e5ad3d10fa0b9f4e773916f44aa14aa83438042",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.25-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.25-alpha.tgz_1467593620539_0.30072167981415987"
+      },
+      "directories": {}
+    },
+    "2.2.26-alpha": {
+      "name": "@types/mocha",
+      "version": "2.2.26-alpha",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.26-alpha",
+      "_shasum": "be195719cbfbd09e95e4dfaee48a527975523827",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ryan.cavanaugh@microsoft.com"
+      },
+      "dist": {
+        "shasum": "be195719cbfbd09e95e4dfaee48a527975523827",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.26-alpha.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.26-alpha.tgz_1468011117158_0.8475688032340258"
+      },
+      "directories": {}
+    },
+    "2.2.27": {
+      "name": "@types/mocha",
+      "version": "2.2.27",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "main": "",
+      "scripts": {},
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "license": "MIT",
+      "typings": "index.d.ts",
+      "dependencies": {},
+      "_id": "@types/mocha@2.2.27",
+      "_shasum": "2a3140859993d6887d04a4a4da289302ba40ee6c",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "2a3140859993d6887d04a4a4da289302ba40ee6c",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.27.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.27.tgz_1468509916034_0.8174609274137765"
+      },
+      "directories": {}
+    },
+    "2.2.28": {
+      "name": "@types/mocha",
+      "version": "2.2.28",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": {
+        "name": "Kazi Manzur Rashid",
+        "email": "https://github.com/kazimanzurrashid/"
+      },
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/mocha@2.2.28",
+      "_shasum": "fa6a96206fd7e318739740d7e5d9eb21eafe1d37",
+      "_from": "output\\mocha",
+      "_resolved": "file:output\\mocha",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "dist": {
+        "shasum": "fa6a96206fd7e318739740d7e5d9eb21eafe1d37",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.28.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.28.tgz_1468933979380_0.8759295935742557"
+      },
+      "directories": {}
+    },
+    "2.2.29": {
+      "name": "@types/mocha",
+      "version": "2.2.29",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/mocha@2.2.29",
+      "dist": {
+        "shasum": "5e4906b516cab176b84d02ddfc114b29af142316",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.29.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.29.tgz_1470153632615_0.015868608839809895"
+      },
+      "directories": {}
+    },
+    "2.2.30": {
+      "name": "@types/mocha",
+      "version": "2.2.30",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/mocha@2.2.30",
+      "dist": {
+        "shasum": "e86f3e2f8eb6708c5e4289be412640ba5339d698",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.30.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.30.tgz_1471620847280_0.3792741687502712"
+      },
+      "directories": {}
+    },
+    "2.2.31": {
+      "name": "@types/mocha",
+      "version": "2.2.31",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "_id": "@types/mocha@2.2.31",
+      "dist": {
+        "shasum": "301a5f22268e8772fcce7c147a0f28e23f0e7c00",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.31.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.31.tgz_1472150996983_0.1100123724900186"
+      },
+      "directories": {}
+    },
+    "2.2.32": {
+      "name": "@types/mocha",
+      "version": "2.2.32",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "3dcac2b43e6f3f1f5684f0e8ee8235b23065453de7d98369f003b21680e117f9",
+      "_id": "@types/mocha@2.2.32",
+      "dist": {
+        "shasum": "dda0da6eaf2195d2ff808f42a1725b1a19e7ed69",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.32.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.32.tgz_1474307612995_0.6042824557516724"
+      },
+      "directories": {}
+    },
+    "2.2.33": {
+      "name": "@types/mocha",
+      "version": "2.2.33",
+      "description": "TypeScript definitions for mocha 2.2.5",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typings": "index.d.ts",
+      "typesPublisherContentHash": "781be81f667ad5dfc5a317c96c9192a944f459427b446063fc6810c335964f04",
+      "_id": "@types/mocha@2.2.33",
+      "dist": {
+        "shasum": "d79a0061ec270379f4d9e225f4096fb436669def",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.33.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.33.tgz_1479152195537_0.7563950011972338"
+      },
+      "directories": {}
+    },
+    "2.2.34": {
+      "name": "@types/mocha",
+      "version": "2.2.34",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "9ab020a6fa3d8772c17b20960f90ef2af5bc6ec9d442c4d76bc8378129565001",
+      "_id": "@types/mocha@2.2.34",
+      "dist": {
+        "shasum": "398e8a265f1db1e5f8c6e520064a74cbef84cbdc",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.34.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.34.tgz_1482235904365_0.24369815993122756"
+      },
+      "directories": {}
+    },
+    "2.2.35": {
+      "name": "@types/mocha",
+      "version": "2.2.35",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "31d854969796077894d8ec0c19acfb190f4165dc8dd8457698d8f9fb2bc975c5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.35",
+      "dist": {
+        "shasum": "dd3150b62a6de73368109308515c3aa86f81f1ec",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.35.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.35.tgz_1482830976859_0.5526336077600718"
+      },
+      "directories": {}
+    },
+    "2.2.36": {
+      "name": "@types/mocha",
+      "version": "2.2.36",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "peerDependencies": {},
+      "typesPublisherContentHash": "a2dcb9b497588a252cbacf7a3a9538f8172c04cd24effe1587db8eea4ce28db5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.36",
+      "dist": {
+        "shasum": "84e58982fc5f9ebe47d6fc0b1626dd1133db5c0d",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.36.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.36.tgz_1483735318164_0.55745611153543"
+      },
+      "directories": {}
+    },
+    "2.2.37": {
+      "name": "@types/mocha",
+      "version": "2.2.37",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "31d854969796077894d8ec0c19acfb190f4165dc8dd8457698d8f9fb2bc975c5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.37",
+      "dist": {
+        "shasum": "8e0d5327ffa0734999c1010967853de917f3a38e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.37.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.37.tgz_1483999855060_0.6979530134703964"
+      },
+      "directories": {}
+    },
+    "2.2.38": {
+      "name": "@types/mocha",
+      "version": "2.2.38",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "e4d8b2eb4ebed6bb6c20214cedfed058649c36f845833cba08eec474eb9b300b",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.38",
+      "dist": {
+        "shasum": "8c188f6e34c2e7c3f1d0127d908d5a36e5a60dc9",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.38.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.38.tgz_1484729282211_0.6090715848840773"
+      },
+      "directories": {}
+    },
+    "2.2.39": {
+      "name": "@types/mocha",
+      "version": "2.2.39",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "author": "Kazi Manzur Rashid <https://github.com/kazimanzurrashid/>, otiai10 <https://github.com/otiai10>, jt000 <https://github.com/jt000>, Vadim Macagon <https://github.com/enlight>",
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "8fed843b1703be26d77f60157a0d844e699c7da3927ae8a52ee6ff33c016c3e4",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.39",
+      "dist": {
+        "shasum": "f68d63db8b69c38e9558b4073525cf96c4f7a829",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.39.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.39.tgz_1486175340650_0.8460343088954687"
+      },
+      "directories": {}
+    },
+    "2.2.40": {
+      "name": "@types/mocha",
+      "version": "2.2.40",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid/"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "1d05d1512f71af0090e98e609186f42e31deabe4aabb7280b7c7597a08c63844",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.40",
+      "dist": {
+        "shasum": "9811dd800ece544cd84b5b859917bf584a150c4c",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.40.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.40.tgz_1489196202433_0.13879921101033688"
+      },
+      "directories": {}
+    },
+    "2.2.41": {
+      "name": "@types/mocha",
+      "version": "2.2.41",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid/"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "peerDependencies": {},
+      "typesPublisherContentHash": "a807ebbfd5494dfb5f8a321185bd06e39f4b1fabbe60f26c36cf3d1d86bb9de0",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.41",
+      "dist": {
+        "shasum": "e27cf0817153eb9f2713b2d3f6c68f1e1c3ca608",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.41.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ryan.cavanaugh@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/mocha-2.2.41.tgz_1492451798079_0.05193222127854824"
+      },
+      "directories": {}
+    },
+    "2.2.42": {
+      "name": "@types/mocha",
+      "version": "2.2.42",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "930332ba55f12bfce883eea9e2cfca2ef2cf0d6da67ee1556886d9b13fcbe537",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.42",
+      "dist": {
+        "integrity": "sha512-b6gVDoxEbAQGwbV7gSzeFw/hy3/eEAokztktdzl4bHvGgb9K5zW4mVQDlVYch2w31m8t/J7L2iqhQvz3r5edCQ==",
+        "shasum": "ab769f51d37646b6fe8d4a086a98c285b1fab3f5",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.42.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.42.tgz_1503352709867_0.05115701467730105"
+      },
+      "directories": {}
+    },
+    "2.2.43": {
+      "name": "@types/mocha",
+      "version": "2.2.43",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "985e047c5ee900604004b333b67acf81490a98500c93523e1bed925507455c87",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.43",
+      "dist": {
+        "integrity": "sha512-xNlAmH+lRJdUMXClMTI9Y0pRqIojdxfm7DHsIxoB2iTzu3fnPmSMEN8SsSx0cdwV36d02PWCWaDUoZPDSln+xw==",
+        "shasum": "03c54589c43ad048cbcbfd63999b55d0424eec27",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.43.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.43.tgz_1504904823510_0.03172973496839404"
+      },
+      "directories": {}
+    },
+    "2.2.44": {
+      "name": "@types/mocha",
+      "version": "2.2.44",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "cbcad14ea5a435f9b507c0dbeacda562706726a3c6653846bc3ed88089aa3769",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.44",
+      "dist": {
+        "integrity": "sha512-k2tWTQU8G4+iSMvqKi0Q9IIsWAp/n8xzdZS4Q4YVIltApoMA00wFBFdlJnmoaK1/z7B0Cy0yPe6GgXteSmdUNw==",
+        "shasum": "1d4a798e53f35212fd5ad4d04050620171cd5b5e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.44.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.44.tgz_1509040984571_0.43865496874786913"
+      },
+      "directories": {}
+    },
+    "2.2.45": {
+      "name": "@types/mocha",
+      "version": "2.2.45",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "bfb75ae94444746750e938759a140fed9284c30436addb05c19dc5527b140536",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.45",
+      "dist": {
+        "integrity": "sha512-tE1SYtNG3I3atRVPELSGN2FJJJtPg3O/G0tycYSyzeDqdAbdLPRH089LhpWYA5M/iHeWHkVZq/b0OVKngcK0Eg==",
+        "shasum": "816572b6e45164526a36d4faa123e8267d6d5d0a",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.45.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.45.tgz_1514045127527_0.9121412434615195"
+      },
+      "directories": {}
+    },
+    "2.2.46": {
+      "name": "@types/mocha",
+      "version": "2.2.46",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "5abc7f027105a4e12d38f4e60fbe9780452d521fa58b335a923e46490287ccff",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.46",
+      "dist": {
+        "integrity": "sha512-fwTTP5QLf4xHMkv7ovcKvmlLWX3GrxCa5DRQDOilVyYGCp+arZTAQJCy7/4GKezzYJjfWMpB/Cy4e8nrc9XioA==",
+        "shasum": "b04713f7759d1cf752effdaae7b3969e285ebc16",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.46.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.46.tgz_1515108412651_0.5598636285867542"
+      },
+      "directories": {}
+    },
+    "2.2.47": {
+      "name": "@types/mocha",
+      "version": "2.2.47",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "6efa63f353a3b8d4c11807aafe282592073889354d6ff1b0f8c6ae875cc5b5a5",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.47",
+      "dist": {
+        "integrity": "sha512-v/lko8AvmTt1K8p+ebdhdiHJE7zpPBYsDKjJSNCl8GwPGkKe5xND7s6M36LKye/USbWSPA7gYCDL0+DZ5h0L6Q==",
+        "shasum": "30bbd880834d4af0f609025f282a69b8d4458f06",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.47.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.47.tgz_1516737993236_0.04200023552402854"
+      },
+      "directories": {}
+    },
+    "2.2.48": {
+      "name": "@types/mocha",
+      "version": "2.2.48",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "27056d243d0717a72aece52a5c80847a49c9f9c5882241963aff6bfed2ee4a93",
+      "typeScriptVersion": "2.0",
+      "_id": "@types/mocha@2.2.48",
+      "dist": {
+        "integrity": "sha512-nlK/iyETgafGli8Zh9zJVCTicvU3iajSkRwOh3Hhiva598CMqNJ4NcVCGMTGKpGpTYj/9R8RLzS9NAykSSCqGw==",
+        "shasum": "3523b126a0b049482e1c3c11877460f76622ffab",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-2.2.48.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha-2.2.48.tgz_1517433970537_0.846914844121784"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "@types/mocha",
+      "version": "5.0.0",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "df351fe4d74abaa9859e9ed2e9334c4b55312b85c93f2677f2f3d34afa009fff",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.0.0",
+      "dist": {
+        "integrity": "sha512-ZS0vBV7Jn5Z/Q4T3VXauEKMDCV8nWOtJJg90OsDylkYJiQwcWtKuLzohWzrthBkerUF7DLMmJcwOPEP0i/AOXw==",
+        "shasum": "a3014921991066193f6c8e47290d4d598dfd19e6",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16201
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.0.0_1521741243473_0.9229996335896553"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "@types/mocha",
+      "version": "5.1.0",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "typesPublisherContentHash": "9e92e8f5ac3a9af91f75a931c373b0dca8f8136ce2540e898876b84e9e386dc3",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.1.0",
+      "dist": {
+        "integrity": "sha512-FHnScYtV66SQBo8o2bdU83atlSorfCX2ZYluk2VqI4ZaL0bkVEwuMZL5pHLRgJOTZ7vv24x4nH3gljdRD6zsSQ==",
+        "shasum": "591f158012ec30de978b00065239a84fb1ce4380",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16980,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa18krCRA9TVsSAnZWagAAMckP/0YC4DIzgl6D03CKCiy5\nRxoeHTh1tfvP8CCR0CiOsuKHaQeDPBi/LEnGdx+LO6nCfTtUUKdwzIw7HJvx\n8VoiO3jaBw0j1Rc77rlJ8yk4mf+mSj0w9SPTV8I3H453OopGknWHmwut21Uy\nqC0Lzl30JCyDWpSvFNM/x6XbEbUncEXlU3WtXQUiZeV3ulyZT6uXQplWdT8F\nUn3BijkKwu9iumVeZInXxBDugBxMWHYIZXqi/8GK7vhf+PPFUSQgBbPlTaDD\nvdqdU91RdgYv1kfiMOOooGANwyt0T1gzFAE1gG7nBwmKwtq0exe/PMOQdIIm\nd9I0RSz0yZGi5fvaUdIahgUsF6gPp8XazTmfL/eqHJfCbooF1PtwRBFqMqx7\ni+dtHjWT68oL5GeA1iC6P0ahkTFCJsE8FEf2Wj6EZlVmWa1sg3UiCLgIunor\nkWTQj6B+71oyAXzC8J5qXU409Sp9b1QaZh3kYJ88ruXbRIc5bEwtbGeOSAz0\njaGHWL/0rpTDRypzyyOk64yQyQNMwKILOx8IlhcoWX52HasIsp86A+WfEef7\nS2ddglNFUiBRVuZwdp5edeoXBwmDBmPgrsRaixhXQrsXPif1Po9v/iTI2Jn6\nwMj2Go3NoWawy1SVjnaRWANEUeVAQ4L3NZMJJrNDEs9Wm9KwEEjgGINuXWrh\nHGCM\r\n=En3a\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.1.0_1524091178882_0.38538800876774926"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.0": {
+      "name": "@types/mocha",
+      "version": "5.2.0",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "f1b29da8baadc59c89b1b890780a13271fe24068981de4142294c61f90438621",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.0",
+      "dist": {
+        "integrity": "sha512-YeDiSEzznwZwwp766SJ6QlrTyBYUGPSIwmREHVTmktUYiT/WADdWtpt9iH0KuUSf8lZLdI4lP0X6PBzPo5//JQ==",
+        "shasum": "b3c8e69f038835db1a7fdc0b3d879fc50506e29e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 16644,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa2M4CCRA9TVsSAnZWagAAWr0P/AgaGiEbL4bZ608TJsiG\nIMynzl5J2HepJU6S46gFeNNMquVv00vbkM0pqYdoW/eCjohFhdm6V8hbOrjr\nJctGf9kUfqGp8cHYjZA0fW7mtDg6d67f/6P5EMvLnTehCYXqodsdm3NEEiW5\nmfH/TvHBfLNdwn3p5RFpnBQeK5159pGc7zwvLfyv/ymp4SBMcTMC789HhFG0\nHJqwsfEjBBLnxVtNmcSlHgD7WxCGUlp2dDbxVXX2NnLvBiOzYvdGXqZlarjz\nRPBSJw7ff8DqMfnQjGdfgh9qABft0fQLr7iC0SRKUZkvCt2X3srHMzRzTDLg\nQGmKCjKY0x6/EQx3YzRfZPoNWMjRQpCQb067tEqZoxGxSpQ+Of18KB1GtkgF\nBbxZfuxGxK/qP8PpqaZjodJb4rHW4oiVIeET+0wXcVSqYSSZ6j3gpQa2FpFT\n/x08HGbinbFbk8Uv3Vp0idB+Fn4T5D8ZuaDi4Sb0wWacpuGYP5+YgCInVkC1\nzdubFmLxVntXiyvjKdADjOEWuh2UJ83+ifBrAPgMsvYxEOFyKwR+7WumRu7p\nVukcd4l0n8kzdfh4Fw1FJwdk56nYnEG4NfagQJc2OohvK1t1wO0GEs+BUIPP\numHo4Pc5DjVVo94W8dy4034WGB0vHSy6651oRVJl9gq2yYQhrAZR0WFCZfTn\nxuHd\r\n=lpNZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.0_1524157953713_0.3576552204772421"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.1": {
+      "name": "@types/mocha",
+      "version": "5.2.1",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "672a2f857e5f346bd5463fd026745560020929117988e108b130bee41b03348e",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.1",
+      "dist": {
+        "integrity": "sha512-dOrgprHnkDaj1pmrwdcMAf0QRNQzqTB5rxJph+iIQshSmIvtgRqJ0nim8u1vvXU8iOXZrH96+M46JDFTPLingA==",
+        "shasum": "465450aaf5cec6f7d35523748c6cc89a5e222dc5",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 22153,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbEXSZCRA9TVsSAnZWagAAnHoP/jgO7vKOeSMBJGr68I3Q\nXkZ/OnqddGjYCNx4EGlnL+U0TuzHus03SJk9ilIRJeS0qxnXwtODaETlLWKS\nG00g7/nB6ESZTxqJcZ23vf33TLF3JLLcdCVm+SvBgZYKQo/6Jn+kfaYWN5KB\na1azrlFDGVN89eCfv8pxjmau5EfS1yiNFY0JcKrNwu/WjmPLFroCNib2Pyy+\nsSwZgExZQy+syw/QNNEk6D7DhwlqaH0DrcTdmB1QF/M+3y49ASqT7zIBCGw0\ntyrOJJrb2vtGhNYjtX9jQzCkM5W3qrBYns+BFx4cfv09zgDu1vUpW0LUiFVY\n+hzaPZQ40MLMROQ9zAFbmGweA/juRFGBQiIib2Bzf3qirJqkHhQl3bNygUjx\n+XlpDHvu4g/SuF8XrJZGlbEHX778zcYQ2uDADCtml5WBFb4vnNEb+w6P8QXH\n2/Wz592XD+ganvOOzXbIJs4S+Dkkl32Ysu4QXbwb7J3GN9iks5kdLww9Da2Y\nvZdfo0MptD0c5xzg/9s2MOnK5qEEEMcDtBVOZB+UQANDmKFQZtjdPcNai0Qz\nvtHxj7WLDNOjLQOGlA94erGCI12phxd6ykxleYbrD9l7uWNuUM0V+VHPiNGp\nTRWIN5sIMDfWj6omCz/CuffGDhxVf0PFFLg9JeIBsCHAyRCDGc6dsQowQ4Zy\nterr\r\n=xSTm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.1_1527870615361_0.7138281240958702"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.2": {
+      "name": "@types/mocha",
+      "version": "5.2.2",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "a5663f9070052da015c704e1ce409cc49c6fe30a167ec626b1fee8401fa995ac",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.2",
+      "dist": {
+        "integrity": "sha512-tfg9rh2qQhBW6SBqpvfqTgU6lHWGhQURoTrn7NeDF+CEkO9JGYbkzU23EXu6p3bnvDxLeeSX8ohAA23urvWeNw==",
+        "shasum": "202d2b8fe1364c5b617b439b26a54f0e75eac0a7",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 99005,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbH0CCCRA9TVsSAnZWagAAZD8P/0tbG6Px45geksQxr8oF\nonNCPTPdKBHN6ZVnkG+AjWzwyo6pwpi91y4fUSkTKwlaqI/mmQO1FgD1xgbQ\nFOQuemU05L5sasUwGHs6VEBTIQAJTLjp2HjKOEjPXiiamAT2GToYKGIvu16Z\n53Uh2NGkycwpgiHE0I+3GCEXVaAAlPD/sn/YnCtcByImgUkS2OoJwuL0F+zR\nbsZurKDOSBDOrk/E4sGl5pQhylEPI87tJh0ZF90ppIRQcfRBWdpi/tDbXtUi\ne+IYy2EfINHcnLJUhYob6sEnY0B5Y27Z1czd0Mivo9Vf26qp0ENRpXKgFarp\ngDZDnbajcimfqjUKNQ5WXLhGFpv73YiFsU3OBn5eAuFOq7zPArMkcVqjsSQn\nfoHUB2w5n+F8AbCTd27a+PBpvroDrHiyIto8c40fcjd/mrWYjkUz+iUhAaRl\n4crJRejLf9znTRwoFzhGKkUNbL9W+5XrTVZkJe9VXw0SZp1x9DBuLu37dumh\nNbPRWbWE/tbT/sdzPMDOKBx+5vPq1FtMjNCeUr7Y6XtkjQNDQMb+j36bqvRJ\nlvhIO3mNHkBpxmTXIxdlOoVY5FR7yKW6kN7le10o/X1lHq7w1pPM1CZ42Zwc\n/4+J0p3an9LaNCjpMvaq283qTCXhRjZEBzrKiRSD013v8eZmzFA+LO/J7Mh/\nm/Ux\r\n=AE3f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.2_1528774785778_0.22510160075794006"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.3": {
+      "name": "@types/mocha",
+      "version": "5.2.3",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "491f2fff23c0dd84910b3968a01f69d1a5ce8d8b67f49033c8e2f5de68b83654",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.3",
+      "dist": {
+        "integrity": "sha512-C1wVVr7xhKu6c3Mb27dFzNYR05qvHwgtpN+JOYTGc1pKA7dCEDDYpscn7kul+bCUwa3NoGDbzI1pdznSOa397w==",
+        "shasum": "11f3a5629d67cd444fa6c94536576244e6a52ea9",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 98997,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbKu98CRA9TVsSAnZWagAAxzgP/3lSU7MB6syo7pmyYFl5\n78rQVFC5/5WzWMYI9QvkIHTHMU4RnTXVwCLP6uz6tEEtc/9GLpRYQ8JACNX/\nHbuZ5mVjya6qNK4JbStq6759IKzPpl/0SKxWZu6/3XH7Tem3Xuunfveb5Dod\nYII+ibrKHorYYeY3/YFVRhZIuOArg4fCaP5EzU/n1XY6TtycRF7hUviAOdZM\n6gomgdOLqBMJJdZLH2StxWupLHNZ/9kU1pw5CNOp+KOtbbzoqkUIWtlfVNZx\nV0qZLlmlR+S3bDEwE40Fu5o1e6qirTr4kWkImWcM9QegLbfLDJaFyZHRw+Vg\nEhxB6r+97TJPBg56MqtFFODlxJMF//uw0SJ5KZNYCgAqFh3yY+g7lgtsiiYk\nsC/C6HtjCKV1AeV7KcG3inV6SG69WXP1SG3uT/FDdHxa1G7ktPDTCBnPDz19\nxfi3FD5+IyTlUxpvTbDAqivzJcTiJqYzruDixUm5zyKwAwf2iP0KxaWkXrDK\nWwkEyQdfAQoEK2hiJg4NY0x39eG5EWFH4VdLgDdFUogzCLu53U4LGd87RkrY\neYOfZy2H68YzWsbJatgS3jkXChcd9i/iXDJuzlGjFeAz9KNSHx93WjtAvXGj\n2RrutfSsBCC95QB4ONt/1cxMD2cmbgkmaSvodI5R6hax0WOmcOcO9nmVTyoT\nGFKg\r\n=91F9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.3_1529540476072_0.2910787872525391"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.4": {
+      "name": "@types/mocha",
+      "version": "5.2.4",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "3d4a62445dcdd6d17c4ab8027fba8bdfc1ef14ae38241ee52c4c0772eb730fbb",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.4",
+      "dist": {
+        "integrity": "sha512-XMHApnKWI0jvXU5gLcSTsRjJBpSzP0BG+2oGv98JFyS4a5R0tRy0oshHBRndb3BuHb9AwDKaUL8Ja7GfUvsG4g==",
+        "shasum": "2f8fbdf95c69ebf82150a7864864010f186745bf",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 98946,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbNvA9CRA9TVsSAnZWagAAf6gP+wQgsLXDLD4dUBr0LELD\nRHk1NJWvcgfWJz4zadr6tWf54iNVOhB3GjJic/tk8gKRdqxtUPwwWtcdOqfh\nNQdZ5OPLTYGaVsZqDb3kxLWSr1OjD/qx8No16qMFijR77VcUV3ucpiK2jDWZ\npS8/PhE9Lo2Xrujg1+DErlQsV+pLT9OCgvtO9MvWdcQl56DozypdmWhrlMVS\nvgXFLtlWkWMLEudlXKwTyJ+QmsMyvlGuDh7MMYxlitayUEkzFxgQFHG/1tdR\n/Y+CNX8u7xnAbxW/2FcR4Hla9PwVtGTzF9L0rNMBWou//rkNkdYuVjgwaPUl\nnjk2U6Aux4Dj/9RKLpFlndgAXQTlFRosyQfsEi2MJzLFzqraL+I5qFKVQnVO\n33hmM+ngj5Dh7vIHlAixX1C1gBdNf/o4c6a0avvLZFN2Qu82F6+cU6aN2hy4\n0yJL8Spp8kyd/GhnLPKkqwy+KKalTtbuub4OTCznivFv+mdfewRzmowZnTlH\nKZficpNp/JJOuQztDWehYFo6YgE0iDWm7XwPX9oTrbu7kUyWBkbD09X/qk0J\nNEzTSA3Q5GIHUF8V9K30LJSiEpfatguLVRAHC9Cd1ee7wCtrCxIzPy+19fSL\nEyqCjkACJByL3BVLffUMCVHs8+VL5HadiHNma6qjR2BgItjXfGL9B9ea2Ski\nrtOU\r\n=o1sT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.4_1530327100965_0.22713409682080932"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.5": {
+      "name": "@types/mocha",
+      "version": "5.2.5",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "124e2d9760528f989ad88208285587c1b513b5bca25aba78ebc5fa22e67b5b00",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.5",
+      "dist": {
+        "integrity": "sha512-lAVp+Kj54ui/vLUFxsJTMtWvZraZxum3w3Nwkble2dNuV5VnPA+Mi2oGX9XYJAaIvZi3tn3cbjS/qcJXRb6Bww==",
+        "shasum": "8a4accfc403c124a0bafe8a9fc61a05ec1032073",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 98963,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTNHLCRA9TVsSAnZWagAAK38P/R6FT3ehAA2mzJJ7h/SU\ntfBALmNdqKs0aSwzzkRxce2Vv9H+xqUutONdTivOBDVBM0kWclkIuumaZuDZ\nyFR/NV/VDUiuQ+cT9e75kYrRwqlDJR4+B/LGPEAnhHflFGY6vESkIKZ4IZ1I\nkEM3iWXjBoQ2rYwTxPpvbgQhGsDETKqM6NiRYWCQpj2EhQN6x6VzQDFvhZHc\nXWso6JoP6sLaKbchRTNRn9/ggFgza91hsV68BNU86lM+XINC9MYStVtqkIfg\nelGBzMSju9RKtvtbvvMpvFwueFb1GvkLqnz7GvFLU6PHMFUM8akp9+QQwdPh\nbZfmCU1Ywud27/nQY094Rj1PbdvL0io4+SZV012dLQ6dS6reuauoqBt3QqN3\nNJGWiT80Uad2mmUMQ8vsF+atWYkAWkBAV8M7Q3a208GMK36cbchMeTlc9c/R\n67m6JIRl+i7LNEpxWKgB1U3PE3b0FWErmjgt7BeihnlWYyeUViO79UxCtON5\n1oA8dZSJp6eN6U3lSAEoPSzxROoBuKLg1/SOhGyPY8doeD54cXbdB7Vs1nBB\nKrz+oWzF7Tm/HkFjo4ugwSe616Fu2Q6OrRfJd+EjuX3c1K0ld0i41NM0g8Ib\nzHr39UuW4/bvEzZFpK5q4XtEQEDjGWOWu1Cbn95aS1SxRJfv1AtH1jwlnHEy\nxi2k\r\n=7gt7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.5_1531761099609_0.018950685241243548"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.6": {
+      "name": "@types/mocha",
+      "version": "5.2.6",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "68d6bf0c5663fabce5f3e86d15a965510718cc2fa34f286748b409afb00eb2f9",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.6",
+      "dist": {
+        "integrity": "sha512-1axi39YdtBI7z957vdqXI4Ac25e7YihYQtJa+Clnxg1zTJEaIRbndt71O3sP4GAMgiAm0pY26/b9BrY4MR/PMw==",
+        "shasum": "b8622d50557dd155e9f2f634b7d68fd38de5e94b",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 99008,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZI2ICRA9TVsSAnZWagAAntUP/R3RTmaCX+Itfq/WuMsP\nfStAvUoP04GhBcKmO9Zqij6z5UYhqso1SsXMgAvLUt48p+EYkQTrDT89jdBn\nXivkNX+3zlbNGns0Xxvhml6WOy868DP562O61MdTcsvlf1TkRKTO/pA21pgy\nfSEwttvOQ335aFHO8c5/e48E6CDwTCi8GDEuiDLWuvDleFvzqtCDgNtin+k4\nUye/Kvu7r41gYzhvNc2H5012J/MG5nvKVUsAPuSVaxkg5BK6nj2Z81Cuqyq0\njVbG5dyWudseEDR+sm7bCL0O95+ly8uQtMDGDoocErkuDhK326QQuwBqWN24\nJh3gD55jqv/FEi3Z6HWtgirhUs5Gr969npFACuNwHxoftqMw9DlQVygQ8EoH\nrtXv7bfB06eA87W2q41VKrFVzWWM+2f1zRisVSy7+P239tSGfuD/Sfd5YdBx\ndENm0wKs7+WE7HnOjfDBe2cbUAtnaDt2OQdUDMeGA0D+0QIfrpp71UZhGm0r\ngT/f98BCJpSEq/1s6iJzB74BY6LRKNDg0xy30x/E1Oy0MDMsXkBKjlYWkszw\nt5K7UAL6+FmyvmuqHLi9jsTgnxHaBdV6LbP7eFS23UITdJ896PM/HeVB72VA\n0qEyWbqQXo9tFgzFULTheKD1Bx1x7vcMGOoBk76NH5P936dYEYy9A6/uDUrU\nsYuB\r\n=u0mX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.6_1550093703454_0.9999814126844213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.2.7": {
+      "name": "@types/mocha",
+      "version": "5.2.7",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "c1da64ed19c05073426a3b86ee04ba2b1e743c51422ebf1b3d022b7be11b75f1",
+      "typeScriptVersion": "2.1",
+      "_id": "@types/mocha@5.2.7",
+      "dist": {
+        "integrity": "sha512-NYrtPht0wGzhwe9+/idPaBB+TqkY9AhTvOLMkThm0IoEfLaiVQZwBwyJ5puCkO3AUCWrmcoePjp2mbFocKy4SQ==",
+        "shasum": "315d570ccb56c53452ff8638738df60726d5b6ea",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-5.2.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 99030,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc8BueCRA9TVsSAnZWagAAxqIQAIs9YKHbdDyZMOr4ZVoZ\nxPs1rvb7m7dx0XDJrJkjQEk/vE+RIzNCii8ZN+gEvg5O4KwN/DHXQjYh5O1Q\na8Pw7vylTTkK41STlaRXs/dnNjBNJe9ObJMOAp+tuFQyyz5oDOLhAsiIUPZA\n9FUFlaXtyEFNEaYIWCzwy5a9u+VARkaAoEEpAYpeQYYX1vw79nbCOMStIuI0\n4zaivMrXlqMXaLEI9C+a9j+1Ife4vqJAQyqj61tYzjp25ev0X6KbStELqM+B\nwanknWbd6iM6iUIQxwvhHmenTmwq7N0HJEPowLcfy/YtC8dO5OgX4gfJnroM\n0umc1r5UH/MPjh/Z5M+LiIq7u/d7xmbLlqXKrCe8f4hdEVQ+nwCp4KjCPtK8\negbwmABfEVQ1c+9Ysi/mMBu5C+jfkXziV/LEl1OTlIBVcheJgW9oyYSIFZg/\nlaGLYBQvsD90tNxGBYSS6xWl2M+9MMU3orbdABKQiM1Sa+TQ4P/0dUNposT8\nRt/C+ZK3rBx8GpSOSaDTZpPYdTxwKexa3jeMT4WwtSGNmnPX+mucD4torqjz\ndHBsGmvVXEM26a+8WR5SxMxoCsjTrtSndhDZkT6VFYScV8Hl+G52+LchLNtk\nb+HEnB0AuWhiv6el5uSJaLVifX7e8Fej/RN41ipnFR1k75c0pRYgldZsqO85\neK2o\r\n=yy4l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_5.2.7_1559239582234_0.8450626812115716"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@types/mocha",
+      "version": "7.0.0",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "3e35c7f1d92160932dd35ac22b288ac109981d97a0db7754c32ce93f38f027b7",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/mocha@7.0.0",
+      "dist": {
+        "integrity": "sha512-6mh1VlA343Ax31blo37+KZ0DxDOA8b6cL963xPOOt7fMYtG07aJJ+0FRLvcDO4KrL45faOS104G7kwAjZc9l4w==",
+        "shasum": "ac65f97746464ec84ce15f4743cd61c449822ad4",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-7.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 100648,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMfzBCRA9TVsSAnZWagAAeKMP/1yEjYFl5Xt4VqjpSJVj\ng3n1q7x9L4uTXAC48ujvXrUMBikoOhOCmMHtGRH636m1taWG+u7kWdN85py6\n8DF3+JSCKsGX+8kCWq2qaI8lw8ckVTaELD8dOjLX8CmI16ioHw1brCiIn95g\nvEbdq/nOdsFaMJMdlBv8NKmYbROGsMTt0wZOw6b8cS5UcqQTA4Bn2wIhvFmN\nOl4LRrKKRKOTPN7ZqQ5dfp9Z8VfrC5XQUfINgKWBAqcSJI8xx5p+IbLUHEAt\nEdTM1QqpzKHTKV7nt7o+G0GjLcEoLYmS9k9W9CYSXSsFUWVRxplUh+pnMUBL\nv8uxrjtHg+XeT7Gte6AjCcZ16bDC/88cnCYmXUsw3qy9OsBN7GvBhjRy47bY\nVEBnqV2HhWa8zEdls7VQH9bq+BTK19pAz9cFYHQAvykNh0HoqtNf5mnr/NXp\naUksA+7JJA2weKGRSZj4anHyaZS0redX7QwrgSobsLScR/8tGyMntE148kqH\nmwU5KqZBgsTYM7QvIwSjEhVtqLZmQ+pz+fPEwqJLx2SpOoPxDf2pnkn2Ll9d\ndmD1lk0Sj83lOe+cfRAdSS4iz/Gkzg+i1nYP1N7jkCAzaexGdWYldAdPhMSW\nfehLkx2ckBcsGwWsfJrwQ4YzNf2RCbLXlyyOw9as+KIxogHOcQzlCnzx7t5S\nSOZc\r\n=2jLO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_7.0.0_1580334273334_0.4013448636238035"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "@types/mocha",
+      "version": "7.0.1",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "971a14d10e80a36f8027110d7bb5159a5d9688ae7ace742de8b9d24a58cdf6d2",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/mocha@7.0.1",
+      "dist": {
+        "integrity": "sha512-L/Nw/2e5KUaprNJoRA33oly+M8X8n0K+FwLTbYqwTcR14wdPWeRkigBLfSFpN/Asf9ENZTMZwLxjtjeYucAA4Q==",
+        "shasum": "5d7ec2a789a1f77c59b7ad071b9d50bf1abbfc9e",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-7.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 100682,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMf5QCRA9TVsSAnZWagAAVwAQAIICoSSpWlxkobWGPopV\noCHfwr3dNnBLYuJRPWz9BisGKbSLYwmKZCsYSfaI6QZ8OL6exAmnS2hg5jB2\njRO+X2odDS94W1yUetY1G+g/xjVRkMt0vfthL4cKprx5dPLkaBiFu/AhRIDF\nAoFUzjTJk4ojZCQRl+qsDX+7GMWgXShlda2pCRNfLaCjSz1wMS35nMhq7FIL\n2hbkNsYXR4X8XdWICt1gPTgfjZKAZOMffI3cWrcSFPg0hldhrK+dlnTlhcoR\nuaXUJgX+45gB3fx3l/ehKiAxwhw03wpf7HvkHY35xAb1tp6FDoawD0xXVNit\nHU3XxVXi5d6yeOZLf87PWt8lGVwtgCy+e4/KeWS1p2lvqeJkFViV1ZCcnZpL\nBPxqE8R9lrFiNg/bW88dI6qu8Y3SKrEwK3bF2l3ct7RKfpak0YYHbJDAlOho\nJj+Co5LeZbpGokrimUxM9wpLAc68Vmj3Jl4+mnFyyfvD23fr0ImHOVOSehXT\n8GDm3KqEV2tffo/tGYM2eiVzEvdp8TcUC+JKToK3OTIEV4YOnGFIQZRMaV7R\ns9BCnToqKvBR8ThfmIU21SkEJqkhA9TwCnMC5hwn1PWF8RTxST0xt67E0hO8\n/fXVjsOKCyIwhKyKmoOhRc0Xu0NS0ZuBOvFOgrq3bQ0M0e0DEul019aLV4iI\nm4/M\r\n=ZsJo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_7.0.1_1580334671835_0.4158917154452819"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.2": {
+      "name": "@types/mocha",
+      "version": "7.0.2",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "060b1c9f92f9d36cce0a526b8c4fde3f56ca2e18b2e0cba16b99e6f646c48efd",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/mocha@7.0.2",
+      "dist": {
+        "integrity": "sha512-ZvO2tAcjmMi8V/5Z3JsyofMe3hasRcaw88cto5etSVMwVQfeivGAlEYmaQgceUSVYFofVjT+ioHsATjdWcFt1w==",
+        "shasum": "b17f16cf933597e10d6d78eae3251e692ce8b0ce",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-7.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 101007,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeXqgrCRA9TVsSAnZWagAAMxQP/io9qKGuQZzcg1g3Huk6\nUJGKIGSVYcZq+vaUQv57K2wJfMiqnHPK8PqvBmmYEnBOFI7mY0afk+SHfIv4\nOYHyqb4R6LPbRp+FItDm5XVvHl2saVqBZ/A5et8gkT+lh8Ix5TjRxceSLM9d\nSC7+ivQJ30I4j31DjvXcFYGtAG/TokLvjXh/Wau4hPsBGm4BRVKXhdZIka/Z\nUYi383qqoBZm3J9nzljIO4U0vUq4MBRPSjcALoKXEzDMjk4T+n7G+R+HNP+e\nhzxhxkpTxvBtV4Jw4ozyuKLggw1x2w846bEf23y3ggsV9kVx3gTjMrQFxVyK\nU2KzltZ3lg1DNXEZXDln6t3Yx6luA/zIPT5KjBJVQHmbH0/Da0onfGmdrrRM\n7KNyv8khKAPrCZWMJpcApkm2v3FIYwLKriDOgfi2yidVVEykPGIMSlJx6Wbe\n1q38PTKfJcE12p4YnWDVqNVlWlxdXdxaS6pbcqBRFhRApKcjI5nzgpQltzIH\nv8mmJqiQVebF67gTcy4ig0Rp6tQLA2KU0Vx3NDGMkoz3bfa/hmtiSssvGGLt\ncJrdMWCvXGaGJU8USt5/xQZs2ka165AWftKwaGqY4sPt3A6g+/bhPLg8BeYc\nH2OKV+yLbH5HbXjqxAsF7yYdygh6RiDmgu4LXOKTMPrcGlgFW0o0fvtR/s/F\nXqEN\r\n=vCoX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_7.0.2_1583261739376_0.273956625709163"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.0": {
+      "name": "@types/mocha",
+      "version": "8.0.0",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "4c90fd1560fbcbbb9c2a9f8d5c48c57aa469bff72646ace6ee06da7dbf0dc98c",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/mocha@8.0.0",
+      "dist": {
+        "integrity": "sha512-jWeYcTo3sCH/rMgsdYXDTO85GNRyTCII5dayMIu/ZO4zbEot1E3iNGaOwpLReLUHjeNQFkgeNNVYlY4dX6azQQ==",
+        "shasum": "b0ba1c5b4cb3880c51a6b488ad007a657d1be888",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-8.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 90023,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfCsrDCRA9TVsSAnZWagAAlU8P/AvGmIrODg0P+0ISKs0q\nZWYvs/+tauqI1Tlq4zwaau+Hnn24aY1pNu/b8n9JLSZd7qJsxyBjNH9fCjH1\nBw5dPNcscLX1LnlFdsgIzVtGM5Tyn/Ltix5LrgjyCKs/kWjWQ8J46VJK0ThO\nRE0cHEU8947i7TpnCvQ0In2tLWBrhCWwQAVHmkk4YdEExeuE6OuXHq1CVl12\nC0V+rYNX8n4KW8/Vjo94YohbTcNWtnYBJeQTJXcZUCQntfnS1cUcXjxEjZ8o\nkc9V2Aw3gkajTEG8NjUcMHpHesOH30+MiKnFs2pL/O+h9t5nniI03h8Z9ta0\nOS9fwzEiQJY397ucDBPgTT/r+JEy2oF9/xxb7VU3VUPg2GPjcVpzfkRNzgJy\nWHMKeQ3YduLgQ9FgQ49i6RpSzSTGqQy8W+oJWSkW3GAzHRNfXN7UcdqmnglP\nNw+//yeI9bYnNpZm6Dc0hat2NmKTbwzwTWob1j5tYVFv5riCL/F1QoxbQOrZ\nUy1+74KZHeAfZZTqush5uIKsEbyAt3/mtTTYqLBvxj5E7vqxl6h3siD3wcAP\n9xzxbRvRTXOgh5dO/4cZT6yot3w7RxjC7sZqhPTztAEIdzPh9N7nslyAgpZ2\nFdksXaeBtgtX38FoykDMgQzvE/Xm/+qyYT6U0a72x/07XS+ROEPnB5UHdCaH\npEi0\r\n=vZ9S\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_8.0.0_1594542787068_0.06226727004411137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.1": {
+      "name": "@types/mocha",
+      "version": "8.0.1",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1503c7c9f6641103b2695542d904ca1919e7cd2cc88d7e5f269d38986aeeff31",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/mocha@8.0.1",
+      "dist": {
+        "integrity": "sha512-TBZ6YdX7IZz4U9/mBoB8zCMRN1vXw8QdihRcZxD3I0Cv/r8XF8RggZ8WiXFws4aj5atzRR5hJrYer7g8nXwpnQ==",
+        "shasum": "813b4ff8dd9920d652e1e6b451ff1e371a4561d2",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-8.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 90033,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfJIMoCRA9TVsSAnZWagAALX8P/0d1V7g2sCtB+B1rKxiw\n1sTKIN9A26/V5FODDISEn5V+lXud5tVN7c1T0qnZPO3goUgqHNIT5DPDH/OU\nK4lzUrNdEnKB39Y2IRiK++fvKopqG+/622077nQNEXCyB9okrjtOdTElKDE7\nj0d+d43XC/8MJpVjoz0rtR29cmPHUpH+xMXrZ2uGwGrw8A62RGNt5jOr5jwB\nb7wMOXCQv+EHABSiFN1BscCLOk1s40bFGG6QLzDumtrPLHeX/cG1MFS68yNi\nVHCgixHsV/yohpgBbOL5ng/C5NY2G8d2oas/2lLlW31mC77QSC7c05GZLRKM\nh/dzJVcHlgzH4zzp4GbU8XroLtDTyZsrRggBf5wQJRRaISdEYt7owxteYknJ\n9+TlnMjgWZbPFVOWUJWETL4qmtgyCzjY7noM6poF1DTZSJ9QfgVOiwRsO4ff\nP3nOiL9Kz9mSQ6R/5OhTXE3RKmyge0+cG1/ZbwDRIlAHOcH/ojlM18bqzQyh\nWUTuu2geD+pAaqQ2sBdirm/zxu5lv+zBAaF9IKb6gLKQWjzm7tqWs/4beF+o\nXg8SVUC2P8zbHgdTPTLjwSiz9VxLh/h+efjTDpzcahWv9CH1dq1hvZOTOH74\nKCfS76N0pdaQbV9ClbCo9jTLcCXaAYVdbs8WpYqr8h0YZEAkSeIC51s7tvEK\ny9+D\r\n=QlgN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_8.0.1_1596228392496_0.6571137053702849"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.2": {
+      "name": "@types/mocha",
+      "version": "8.0.2",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "jt000",
+          "url": "https://github.com/jt000",
+          "githubUsername": "jt000"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "6a2661bb401849e0c45283f1a4311b2f078b804d4c102b5349a51adef4f91982",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/mocha@8.0.2",
+      "dist": {
+        "integrity": "sha512-5cv8rmqT3KX9XtWDvSgGYfS4OwrKM2eei90GWLnTYz+AXRiBv5uYcKBjnkQ4katNvfYk3+o2bHGZUsDhdcoUyg==",
+        "shasum": "cdd160767c5a445bedef94ea8cfc8ab760fff42b",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-8.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 91374,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMu/LCRA9TVsSAnZWagAAvmwQAIiT5YKOwlMmYqZeDy+e\nLcoKSLZfpOLJgUDxZkABG5TxPn/StY0+lJFmcIXjkuTYT+p++H+89j3JnS5/\nUMouLc6OROCd664glyKAvQOxepRLTCAaca0olQgOMAGifgYy1uGwUQDkZfbb\nidxfsnt4SO477jrVUIXV0Ckc98bY3Je5xjJDJbfmUtRfugS5pB3fXEj1kATa\na8GVSqU3GrePCPx1knwyB5L+FK3vH2URk6Z06qDwTvIeYkTR6+FVU2e6eG0F\nDh1LZifZy7AZp8AMmgCefAMYkHjr8ssRCbt6fbs266eCWm3mMd+hvguZhb/W\nh0ewj8fxN6cTbUvg1FPf9TD9075JmrnR6XfRIcRhHEVyQNgrqOXHzuKVGxmt\nj1B815PtorPmmJHzrOsaA1EPhF5pIx7XL4H6DU6KDvXV5bUOp08mNwcqvSkz\nbmXJw47WjsTS4b58NBuyPDzu+NmQpXYkAWGaGy7fxlapm2FTA300jllcZ61Y\nZ+4rCmNzocHpjaRaDJoNJvzYLZLziZB/oq8ek0UlTjCDhz6SjFUinJyDnpMG\nbw+GK0/nuQdS5ERzmS1vwlgd9/tPgD0t62IUh+tWgD/5gc8d0eM28eunahar\nVgTDrr+bRbqqw2jj7hwGo7x03eftoC3+g5cLTMlOr1coIO9eUCllAF6L3Euv\nqMaI\r\n=bJt6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_8.0.2_1597173706481_0.012154886446477109"
+      },
+      "_hasShrinkwrap": false
+    },
+    "8.0.3": {
+      "name": "@types/mocha",
+      "version": "8.0.3",
+      "description": "TypeScript definitions for mocha",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Kazi Manzur Rashid",
+          "url": "https://github.com/kazimanzurrashid",
+          "githubUsername": "kazimanzurrashid"
+        },
+        {
+          "name": "otiai10",
+          "url": "https://github.com/otiai10",
+          "githubUsername": "otiai10"
+        },
+        {
+          "name": "Vadim Macagon",
+          "url": "https://github.com/enlight",
+          "githubUsername": "enlight"
+        },
+        {
+          "name": "Andrew Bradley",
+          "url": "https://github.com/cspotcode",
+          "githubUsername": "cspotcode"
+        },
+        {
+          "name": "Dmitrii Sorin",
+          "url": "https://github.com/1999",
+          "githubUsername": "1999"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/mocha"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "ca9bbd9567b2b673be752506243c17c0e70dfbcba65a99f495b335cc69abedaf",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/mocha@8.0.3",
+      "dist": {
+        "integrity": "sha512-vyxR57nv8NfcU0GZu8EUXZLTbCMupIUwy95LJ6lllN+JRPG25CwMHoB1q5xKh8YKhQnHYRAn4yW2yuHbf/5xgg==",
+        "shasum": "51b21b6acb6d1b923bbdc7725c38f9f455166402",
+        "tarball": "https://registry.npmjs.org/@types/mocha/-/mocha-8.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 91152,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfOuOmCRA9TVsSAnZWagAA+I4P/3RM6uNY8FHxX16bi5MJ\nDCW1EMBoo+gY1rmLcPhSNCpxv5eHBareiRceCNYu8yu7v1EU4+eWF3U8yial\nStat3rdsO1vpccLpSFild3VHuEYMJqnmkeOgqSh5eGTnB92rC0VWCiuYCOTE\nR63lEW7aBdSOy7Xiam4dvgBUmxTj6T4quBafXWmG4MxW3sbdtrDbk+QL3wWy\nAUEAhpeZmyTIPKKygTym9Kv7dcMmUv/h0P+6nKv9auSQEQLjN9zpYbiRRQ5c\nn2tlVkmLQCY9dZ689fuTr9LG1Ox8bMZkVEHt8zJVhdknk9TJPK0Uynb91+aM\nzQwrBjzv3wFl9F3c11Gvvj459DzQU5m9ng9pjsoHGwld8ClLhbS4/Dwkm9vl\nXdugcZt/5spy5D5/d7S/P/k2Pkjjrtel1KmyImxKJsGTwi0ulvH3Bwmid/Ah\nNVNtZxAUNfxzqnI4RCz1uYYmka+SpIbrjDC6EnQMc94QWui0wKwGZTimv3uA\n+20lRhrY7YzCTcVV/cac5VWocEdyMjN5swSfFB4xJnaWyn6vfMgPvngA1rZu\nq5UIjDvQx21UsKAnK0n7IQhlPpxlWOkeCKHcHc0eiekH+s2lb6pOebP5mmFh\n3itCAVcsBn5JvYo/Kpa+uj5VXhxK0YT894eyQs+rfoyBJXq9owurc03T/JDd\nRU65\r\n=Cxv2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/mocha_8.0.3_1597694886115_0.8799209200244853"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/mocha`\r\n\r\n# Summary\r\nThis package contains type definitions for mocha (https://mochajs.org).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/mocha.\r\n\r\n### Additional Details\r\n * Last updated: Mon, 17 Aug 2020 20:07:02 GMT\r\n * Dependencies: none\r\n * Global values: `Mocha`, `after`, `afterEach`, `before`, `beforeEach`, `context`, `describe`, `it`, `mocha`, `run`, `setup`, `specify`, `suite`, `suiteSetup`, `suiteTeardown`, `teardown`, `test`, `xcontext`, `xdescribe`, `xit`, `xspecify`\r\n\r\n# Credits\r\nThese definitions were written by [Kazi Manzur Rashid](https://github.com/kazimanzurrashid), [otiai10](https://github.com/otiai10), [Vadim Macagon](https://github.com/enlight), [Andrew Bradley](https://github.com/cspotcode), and [Dmitrii Sorin](https://github.com/1999).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-25T22:34:56.327Z",
+    "created": "2016-05-17T18:21:39.654Z",
+    "2.2.14-alpha": "2016-05-17T18:21:39.654Z",
+    "2.2.15-alpha": "2016-05-19T21:44:30.683Z",
+    "2.2.20-alpha": "2016-05-20T20:11:48.414Z",
+    "2.2.21-alpha": "2016-05-25T05:29:24.859Z",
+    "2.2.22-alpha": "2016-07-01T20:10:37.267Z",
+    "2.2.23-alpha": "2016-07-01T23:26:24.715Z",
+    "2.2.24-alpha": "2016-07-02T03:01:14.323Z",
+    "2.2.25-alpha": "2016-07-04T00:53:44.203Z",
+    "2.2.26-alpha": "2016-07-08T20:51:58.610Z",
+    "2.2.27": "2016-07-14T15:25:19.255Z",
+    "2.2.28": "2016-07-19T13:13:00.605Z",
+    "2.2.29": "2016-08-02T16:00:34.671Z",
+    "2.2.30": "2016-08-19T15:34:08.482Z",
+    "2.2.31": "2016-08-25T18:49:58.495Z",
+    "2.2.32": "2016-09-19T17:53:33.411Z",
+    "2.2.33": "2016-11-14T19:36:37.473Z",
+    "2.2.34": "2016-12-20T12:11:46.304Z",
+    "2.2.35": "2016-12-27T09:29:38.786Z",
+    "2.2.36": "2017-01-06T20:41:58.402Z",
+    "2.2.37": "2017-01-09T22:10:57.195Z",
+    "2.2.38": "2017-01-18T08:48:03.968Z",
+    "2.2.39": "2017-02-04T02:29:02.543Z",
+    "2.2.40": "2017-03-11T01:36:44.407Z",
+    "2.2.41": "2017-04-17T17:56:39.893Z",
+    "2.2.42": "2017-08-21T21:58:30.031Z",
+    "2.2.43": "2017-09-08T21:07:03.659Z",
+    "2.2.44": "2017-10-26T18:03:04.670Z",
+    "2.2.45": "2017-12-23T16:05:27.620Z",
+    "2.2.46": "2018-01-04T23:26:52.733Z",
+    "2.2.47": "2018-01-23T20:06:33.311Z",
+    "2.2.48": "2018-01-31T21:26:11.559Z",
+    "5.0.0": "2018-03-22T17:54:03.537Z",
+    "5.1.0": "2018-04-18T22:39:39.033Z",
+    "5.2.0": "2018-04-19T17:12:33.765Z",
+    "5.2.1": "2018-06-01T16:30:15.475Z",
+    "5.2.2": "2018-06-12T03:39:45.895Z",
+    "5.2.3": "2018-06-21T00:21:16.138Z",
+    "5.2.4": "2018-06-30T02:51:41.074Z",
+    "5.2.5": "2018-07-16T17:11:39.690Z",
+    "5.2.6": "2019-02-13T21:35:03.588Z",
+    "5.2.7": "2019-05-30T18:06:22.403Z",
+    "7.0.0": "2020-01-29T21:44:33.446Z",
+    "7.0.1": "2020-01-29T21:51:12.010Z",
+    "7.0.2": "2020-03-03T18:55:39.485Z",
+    "8.0.0": "2020-07-12T08:33:07.210Z",
+    "8.0.1": "2020-07-31T20:46:32.627Z",
+    "8.0.2": "2020-08-11T19:21:46.740Z",
+    "8.0.3": "2020-08-17T20:08:06.270Z"
+  },
+  "license": "MIT",
+  "readmeFilename": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/mocha"
+  },
+  "contributors": [
+    {
+      "name": "Kazi Manzur Rashid",
+      "url": "https://github.com/kazimanzurrashid",
+      "githubUsername": "kazimanzurrashid"
+    },
+    {
+      "name": "otiai10",
+      "url": "https://github.com/otiai10",
+      "githubUsername": "otiai10"
+    },
+    {
+      "name": "Vadim Macagon",
+      "url": "https://github.com/enlight",
+      "githubUsername": "enlight"
+    },
+    {
+      "name": "Andrew Bradley",
+      "url": "https://github.com/cspotcode",
+      "githubUsername": "cspotcode"
+    },
+    {
+      "name": "Dmitrii Sorin",
+      "url": "https://github.com/1999",
+      "githubUsername": "1999"
+    }
+  ],
+  "users": {
+    "rickyrattlesnake": true,
+    "ctaggart": true
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "old-package-lock-with-bins",
+  "version": "1.0.0",
+  "dependencies": {
+    "ruy": "^1.0.0"
+  }
+}

@@ -1,0 +1,571 @@
+{
+  "_id": "tmatch",
+  "_rev": "14-79f320496c279d562cb2b7c1a7f4b519",
+  "name": "tmatch",
+  "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+  "dist-tags": {
+    "latest": "5.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "tmatch",
+      "version": "1.0.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^1.4.1"
+      },
+      "gitHead": "a222e1991bcddac0a5411c9eefb1f42e595271e5",
+      "_id": "tmatch@1.0.0",
+      "_shasum": "efdeabe9d454abe25362c50da2ec04f1f7b0bbc3",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "efdeabe9d454abe25362c50da2ec04f1f7b0bbc3",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "tmatch",
+      "version": "1.0.1",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^1.4.1"
+      },
+      "gitHead": "0727f39f226a8f31d39d99fe94df89a2e90e7419",
+      "_id": "tmatch@1.0.1",
+      "_shasum": "72c5b5ed8b2036afe13d773a80ebb6137cd7dfdc",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "72c5b5ed8b2036afe13d773a80ebb6137cd7dfdc",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "tmatch",
+      "version": "1.0.2",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^1.4.1"
+      },
+      "gitHead": "4a9666de9445ba3baa57b707df5db5f335368fca",
+      "_id": "tmatch@1.0.2",
+      "_shasum": "458c7948de0bd522c781fc41235769aa3c447257",
+      "_from": ".",
+      "_npmVersion": "3.3.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "isaacs@npmjs.com"
+      },
+      "dist": {
+        "shasum": "458c7948de0bd522c781fc41235769aa3c447257",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "tmatch",
+      "version": "2.0.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js --coverage --branches=100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^5.5.0"
+      },
+      "gitHead": "ea98aaa7ef1d1c4cdab4b332b3203c3a41742c80",
+      "_id": "tmatch@2.0.0",
+      "_shasum": "813e62c36556a446b3c909cf5194be354bc6802c",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "813e62c36556a446b3c909cf5194be354bc6802c",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/tmatch-2.0.0.tgz_1455733616023_0.05554692237637937"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "tmatch",
+      "version": "2.0.1",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js --coverage --branches=100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^5.5.0"
+      },
+      "gitHead": "e228fa7d9fbb528e1d00580ff1281adfaa5958d5",
+      "_id": "tmatch@2.0.1",
+      "_shasum": "0c56246f33f30da1b8d3d72895abaf16660f38cf",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.6.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "0c56246f33f30da1b8d3d72895abaf16660f38cf",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/tmatch-2.0.1.tgz_1455743948119_0.04794123233295977"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "tmatch",
+      "version": "3.0.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^7.1.2"
+      },
+      "gitHead": "e93bcc039b0fc9abdc2980548a460e346157e290",
+      "_id": "tmatch@3.0.0",
+      "_shasum": "7d2071dedbbc587f194acda3067bd0747b670991",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.5.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "7d2071dedbbc587f194acda3067bd0747b670991",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "isaacs@npmjs.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/tmatch-3.0.0.tgz_1477414347635_0.3005478500854224"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "tmatch",
+      "version": "3.0.1",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap --100 test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^10.4.0"
+      },
+      "gitHead": "41805321eab7ea0545e498cb2e252f430aca55c8",
+      "_id": "tmatch@3.0.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-/GggTrKK7L6Lb4QZzIZ2xzzjCQ28fsZ/PyHukkiqii2NJ9NJA3g5khj1Ox/hOAtguieRtn2ugs+HCH8qtxi9QA==",
+        "shasum": "646bacf1ac0c7427dc7cbc5348bf612d479a5d6b",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-3.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tmatch-3.0.1.tgz_1497889964619_0.4042742250021547"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "tmatch",
+      "version": "3.1.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap --100 test/*.js -J",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^10.4.0"
+      },
+      "gitHead": "be69096f2a7aedb99cb41d281f75a33b656a9ba7",
+      "_id": "tmatch@3.1.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-W3MSATOCN4pVu2qFxmJLIArSifeSOFqnfx9hiUaVgOmeRoI2NbU7RNga+6G+L8ojlFeQge+ZPCclWyUpQ8UeNQ==",
+        "shasum": "701264fd7582d0144a80c85af3358cca269c71e3",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tmatch-3.1.0.tgz_1497935528969_0.6163426826242357"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "tmatch",
+      "version": "4.0.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap --100 test/*.js -J",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^11.1.5"
+      },
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "8cba929866e8cfdd7a1f1b8dd06fc5c9fd5b91ac",
+      "_id": "tmatch@4.0.0",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "integrity": "sha512-Ynn2Gsp+oCvYScQXeV+cCs7citRDilq0qDXA6tuvFwDgiYyyaq7D5vKUlAPezzZR5NDobc/QMeN6e5guOYmvxg==",
+        "shasum": "ba178007f30bf6a70f37c643fca5045fb2f8c448",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10279,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+3JSCRA9TVsSAnZWagAAMKsP/RdSNQ3IighjhqHmiOJK\nqVGczAAxQ5Meqlt/T/T4SZ3SR2cbu055gKTELQooxZ88eKeLN7FjF51qus0i\nAInG9YsUzr2zYIgGv9arXXcNVRifuJbQgU4W2OSs7MoUsvG+6GuqZfUhF9XZ\n3yS+77cDJ9PcwFE6XLD/henhWKqI5Vo744VBT+uX2TfP7k4MGCxJJDK8+ivd\nGgMRS3dsdpynJczZtFn4UHWaOzMvvBfHcyrpKyA5XFOEaxAf0CNDbbmlwYlL\njkoNfLvkVe+WVYd+QwFdtI4jGgLxIyZfTHYVb18F+7uX7j947ox1tPu3i68G\nH3fLULp5+ARND09Ag6cWCBbiL9Ysi/Xae3hG9+s3BWiG6CVSeNwgfWYp33hB\nnUEgwl+ZgTilhaCJCd6mW85hINomwzarrlIP+bIjkCUk1M2ScLo8Rj88aSmf\n7PGdkOkJo7AasnkIDo9aEwQebigBFiw7KU6bbd1nGgZysbsYaYzTajOeXf3p\nzAnmNhYtU82HZOuBCX8d/ZkY/p2qTzOCH3mQlFoQiij24eh5PvR7s3Qs7AU4\nch/d4DG9vUQQvFLUuUHmouHt5QEvOE/AEVZ3ENsyEmMtDY1SzOr2QYbVqTMh\n85rHqFiG/OR1LkAxpt0A4u3LrrJdzixOi7XxgQ19YtB8i7L+1JFJ+53oSWYO\n9CbM\r\n=ueX6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tmatch_4.0.0_1526428241178_0.499757580554538"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "tmatch",
+      "version": "5.0.0",
+      "description": "This module exists to facilitate the `t.match()` method in [`tap`](http://npm.im/tap).",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap --100 test/*.js -J",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/tmatch.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/tmatch/issues"
+      },
+      "homepage": "https://github.com/isaacs/tmatch#readme",
+      "devDependencies": {
+        "tap": "^12.5.1"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "gitHead": "ddf888e4ed2d32efd347d0d2447946b814d57199",
+      "_id": "tmatch@5.0.0",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-Ib9OtBkpHn07tXP04SlN1SYRxFgTk6wSM2EBmjjxug4u5RXPRVLkdFJSS1PmrQidaSB8Lru9nRtViQBsbxzE5Q==",
+        "shasum": "70a5d295ca9109637ea9bc0f0d0f42a9ac900de0",
+        "tarball": "https://registry.npmjs.org/tmatch/-/tmatch-5.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 10354,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWSNECRA9TVsSAnZWagAAtjEP/AwqRvRtjnqlLIXYLwiB\nQrM4G3s6VgVcwIhpTVMOgIqrhD7NACC6d5EyX29mT6lHr1Z6OBfXdrH6WdxC\ncvM0n0zEl2uOQj/I4yKE5GjreG0LKXIof/1NLp0R3lT1BJjwXP2VJ9UwvaZU\nzW7694e8V5cHr2SFpAosZdAqnqWRwmun185yNKz62AI+jkSZ8KUJeCjwyyfI\nlDEEVgL2Mq48/aeQYig3KZI5QpOvC9EohywRiV0/u9k1nTYRnG3L7Bz6IOr9\nLnLcxduVGoavzq00aYvX+xr6Vctjhrxmv27rGgI0/M7XPnOke4vz4t3WKLz4\nW0A5l6cwjHtnRpAN0yztlh6JTg//lvEOlt1GcHTMtO9tLo/Jpvp2pr/q4XXx\n5bhxtWyrjiDfeWLbU9tGh5B0bzm6cm1ax38mbfbA80MgiHYYuk295NanKwRu\noKya33h2JAifRjm8QONSQMPJWSxcbgWlQTJl1iX7P+sVnV1udiNGfWF+NoK4\ngklhe2KP2SPL3rz7ALafIsyKKOUfL+xENA8MSMQTmFoDLIxYhdWGyi0RE+IL\nb5iHoflxfmbSS1vEN8Z8ao0+MNHL4FnXw4mqSeTq2n/jdsFBqxLxwDUuIMYt\ncQsn//n8m4qzjWfZYPs26j+vy2vuxy0TqI13rmsSfiojxFrXdltdac64kD8N\nTKhu\r\n=Qmye\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tmatch_5.0.0_1549345604053_0.24132825250878964"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# tmatch\n\nThis module exists to facilitate the `t.match()` method in\n[`tap`](http://npm.im/tap).\n\nIt checks whether a value matches a given \"pattern\".  A pattern is an\nobject with a set of fields that must be in the test object, or a\nregular expression that a test string must match, or any combination\nthereof.\n\nThe algorithm is borrowed heavily from\n[`only-shallow`](http://npm.im/only-shallow), with some notable\ndifferences with respect to the handling of missing properties and the\nway that regular expressions are compared to strings.\n\n## usage\n\n```javascript\nvar matches = require('tmatch')\n\nif (!matches(testObject, pattern)) console.log(\"yay! diversity!\");\n\n// somewhat more realistic example..\nhttp.get(someUrl).on('response', function (res) {\n  var expect = {\n    statusCode: 200,\n    headers: {\n      server: /express/\n    }\n  }\n\n  if (!tmatch(res, expect)) {\n    throw new Error('Expect 200 status code from express server')\n  }\n})\n```\n\n## details\n\nCopied from the source, here are the details of `tmatch`'s algorithm:\n\n1. If the object loosely equals the pattern, and either they're both\n   objects or neither objects, then return true.  Note that this\n   covers object identity, some type coercion, and matching `null`\n   against `undefined`, and avoids some stuff like `1 == [1]`.\n2. If the object is a RegExp and the pattern is also a RegExp, return\n   true if their source, global, multiline, lastIndex, and ignoreCase\n   fields all match.\n3. If the pattern is a RegExp, then return true if\n   `pattern.test(object)`, casting the object to a string if it is not\n   already a string.\n4. If the pattern is a `Set`, then return true if all the keys in\n   `pattern` appear in `object`.\n5. If the pattern is a `Map`, then return true if all the keys in\n   `pattern` are in `object`, and the values match as well.\n6. If the object is a string and the pattern is a non-empty string,\n   then return true if the string occurs within the object.\n7. If the object and the pattern are both Date objects, then return\n   true if they represent the same date.\n8. If the object is a Date object, and the pattern is a string, then\n   return true if the pattern is parseable as a date that is the same\n   date as the object.\n9. If the object is an `arguments` object, or the pattern is an\n   `arguments` object, then cast them to arrays and compare their\n   contents.\n10. If the pattern is the `Buffer` constructor, then return true if\n    the object is a Buffer.\n11. If the pattern is the `Function` constructor, then return true if\n    the object is a function.\n12. If the pattern is the String constructor, then return true if the\n    pattern is a string.\n13. If the pattern is the Boolean constructor, then return true if the\n    pattern is a boolean.\n14. If the pattern is the Array constructor, then return true if the\n    pattern is an array.\n15. If the pattern is any function, and then object is an object, then\n    return true if the object is an `instanceof` the pattern.\n16. At this point, if the object or the pattern are not objects, then\n    return false (because they would have matched earlier).\n17. If the object is a buffer, and the pattern is also a buffer, then\n    return true if they contain the same bytes.\n18. At this point, both object and pattern are object type values, so\n    compare their keys:\n    1. Get list of all iterable keys in pattern and object.  If both\n       are zero (two empty objects), return true.\n    2. Check to see if this pattern and this object have been tested\n       already (to handle cycles).  If so, return true, since the\n       check higher up in the stack will catch any mismatch.\n    3. For each key in the pattern, match it against the corresponding\n       key in object.  Missing keys in object will be resolved to\n       `undefined`, so it's possible to use `{foo:null}` as a pattern\n       to ensure that the object *doesn't* have a `foo` property.\n\n## license\n\nISC. Go nuts.\n",
+  "maintainers": [
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2019-02-05T05:46:46.615Z",
+    "created": "2015-09-22T07:05:38.933Z",
+    "1.0.0": "2015-09-22T07:05:38.933Z",
+    "1.0.1": "2015-09-22T21:27:32.809Z",
+    "1.0.2": "2015-09-23T21:37:02.249Z",
+    "1.1.0": "2016-02-17T17:38:48.174Z",
+    "2.0.0": "2016-02-17T18:26:58.170Z",
+    "2.0.1": "2016-02-17T21:19:10.307Z",
+    "3.0.0": "2016-10-25T16:52:27.858Z",
+    "3.0.1": "2017-06-19T16:32:44.697Z",
+    "3.1.0": "2017-06-20T05:12:09.074Z",
+    "4.0.0": "2018-05-15T23:50:41.241Z",
+    "5.0.0": "2019-02-05T05:46:44.140Z"
+  },
+  "homepage": "https://github.com/isaacs/tmatch#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/tmatch.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/tmatch/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "moimikey": true
+  }
+}

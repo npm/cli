@@ -1,0 +1,947 @@
+{
+  "_id": "fastq",
+  "_rev": "16-ed8ac9bb74bd91eec43cab1b271e6ba1",
+  "name": "fastq",
+  "description": "Fast, in memory work queue",
+  "dist-tags": {
+    "latest": "1.8.0"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "fastq",
+      "version": "1.0.1",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastqueue.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastqueue/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastqueue#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^4.2.1",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "adc7feb56229c874a2d541f02e1644a9387d6f82",
+      "_id": "fastq@1.0.1",
+      "_shasum": "d9e2aacca8d232b690c57f9026b6b07872acd4b3",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "d9e2aacca8d232b690c57f9026b6b07872acd4b3",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "fastq",
+      "version": "1.0.2",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastqueue.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastqueue/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastqueue#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^4.2.1",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "e8a82dec16a8767a893c14f0e8cbefb00c64da6f",
+      "_id": "fastq@1.0.2",
+      "_shasum": "1e04a6e448e9260ef35452f1d53211637f81f16b",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1e04a6e448e9260ef35452f1d53211637f81f16b",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "fastq",
+      "version": "1.1.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastqueue.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastqueue/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastqueue#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^4.2.1",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "6c9b42cb67997c2f810cbd1b9a655147d75b426f",
+      "_id": "fastq@1.1.0",
+      "_shasum": "67c04791b586aa15bea0979815745f5876cf1bb2",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67c04791b586aa15bea0979815745f5876cf1bb2",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "fastq",
+      "version": "1.1.1",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastqueue.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastqueue/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastqueue#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^4.2.1",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "00de09eb10d703c32f67ae44ba8dcb57c2b35963",
+      "_id": "fastq@1.1.1",
+      "_shasum": "381622d4da4c7f770cb17c437e2b092fd6b54f87",
+      "_from": ".",
+      "_npmVersion": "2.9.1",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "381622d4da4c7f770cb17c437e2b092fd6b54f87",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "fastq",
+      "version": "1.2.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastqueue.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastqueue/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastqueue#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^5.2.0",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "782b5dab2e41209e722e6d10a1c39c735625d9ca",
+      "_id": "fastq@1.2.0",
+      "_shasum": "a4273ef78756c81280aa1b9d667d51290d7863d3",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "a4273ef78756c81280aa1b9d667d51290d7863d3",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "fastq",
+      "version": "1.3.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^1.2.1",
+        "pre-commit": "^1.0.10",
+        "standard": "^5.2.0",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "ed1c6078f7ae0bc0af44ee45728b0b065ec7dc9b",
+      "_id": "fastq@1.3.0",
+      "_shasum": "88c3aa32bd18c82d268239508d19734cc541ff62",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "88c3aa32bd18c82d268239508d19734cc541ff62",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "fastq",
+      "version": "1.4.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^2.0.0-rc.3",
+        "neo-async": "^1.7.0",
+        "pre-commit": "^1.0.10",
+        "standard": "^6.0.0",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "f2a03c95c90657c0f52920ff6c7d1d71760abc91",
+      "_id": "fastq@1.4.0",
+      "_shasum": "8ac6e75855262f0edf54a1ece7ffcedd1f5ac184",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "8ac6e75855262f0edf54a1ece7ffcedd1f5ac184",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fastq-1.4.0.tgz_1461837945770_0.35579590615816414"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "fastq",
+      "version": "1.4.1",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^2.0.0-rc.3",
+        "neo-async": "^1.7.0",
+        "pre-commit": "^1.0.10",
+        "standard": "^6.0.0",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "a799020bddd7b437af907a5c2178c50da6cf6339",
+      "_id": "fastq@1.4.1",
+      "_shasum": "90f55859fa3087832a1c33e2708b95ff92e3695e",
+      "_from": ".",
+      "_npmVersion": "2.15.0",
+      "_nodeVersion": "4.4.2",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "90f55859fa3087832a1c33e2708b95ff92e3695e",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/fastq-1.4.1.tgz_1461876976362_0.5632361315656453"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "fastq",
+      "version": "1.5.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | tap-spec"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^2.1.0",
+        "neo-async": "^2.0.1",
+        "pre-commit": "^1.2.2",
+        "standard": "^8.6.0",
+        "tap-spec": "^4.0.0",
+        "tape": "^4.0.0"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "ee7f5f52a8cb6b8958c230c64ca4807e1507f2e1",
+      "_id": "fastq@1.5.0",
+      "_shasum": "05e32ffb999ec2d945dda27461bf08941436448b",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "05e32ffb999ec2d945dda27461bf08941436448b",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/fastq-1.5.0.tgz_1483910211658_0.9198376317508519"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "fastq",
+      "version": "1.6.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard",
+        "typescript": "tsc --project ./test/tsconfig.json",
+        "test": "standard && tape test/test.js | tap-spec && npm run typescript"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^2.6.1",
+        "neo-async": "^2.5.1",
+        "pre-commit": "^1.2.2",
+        "standard": "^11.0.0",
+        "tap-spec": "^4.1.2",
+        "tape": "^4.9.0",
+        "typescript": "^2.9.1"
+      },
+      "dependencies": {
+        "reusify": "^1.0.0"
+      },
+      "gitHead": "664fbb2ca75aaae14dd3f83d3043302fb67417b0",
+      "_id": "fastq@1.6.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.3.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "integrity": "sha512-jmxqQ3Z/nXoeyDmWAzF9kH1aGZSis6e/SbfPmJpUnyZ0ogr6iscHQaml4wsEepEWSdtmpy+eVXmCRIMpxaXqOA==",
+        "shasum": "4ec8a38f4ac25f21492673adb7eae9cfef47d1c2",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.6.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 21965,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbE5TXCRA9TVsSAnZWagAAWewP/1VQx14Y7iekLOKEUxzE\nNlAh1rAnyR9pfDJN37G7AeDNHwjgPaRBirAUjNdCPEd1dT8TwHwPe1pBEx6G\nVERH8wuz3hhIHJLGytWEcprSjXwp7JqCbssCruQY+brW9cN3yjiKg8ikntJl\niL6sWikg8jDJ3z/RBAGzoiaac+yCUuKbMTRDfNkUbxfqvwX27Ta6HrwuB73M\nwT0FCaiw9elqEHL3es+hdrp0aVTUs7T6gFSmt9kx6U2LYU8HuITUEC2gnkhy\ne2+gdNPF/mXG/G+EK+JclEKEaJmskV15OnzKRR017mBRnqBgygv4qUUSCJdB\nlWCRbNB4zxQpcejTuohCQBcpRVYvSUn2oKO00gjeBSa7QsUi5/FuA6Pd48q4\nFU79a71xxmPMB7g89iFXRVA1sq3rnJFCB7rWUWEorHXtu/5+/zfUiqE0sDpC\n681ptGvwpNHdSEqp6iYwHwvSrnTdVFwsFzaOdDrIxJG0sIzk556UT2Eae6WH\nEAoc1SNYvM68QGfPb7uKzp5hJER6bjU3Q2u/42pWX/3fBrUsx+2iPELfKBo1\np66BSTJwp4nM73tTDeQs/ImlWEYOi9SiWPByBcW4W/PTAX+vAeullfPaarkP\nYfxJozooeVLBO6cKWENC1ypaXSJFHM9+myFgqvTqzFPcOBDgFZCezPmhC/Qz\nkL2K\r\n=KaR9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fastq_1.6.0_1528009941921_0.18227264572935398"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.1": {
+      "name": "fastq",
+      "version": "1.6.1",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard --verbose | snazzy",
+        "unit": "nyc --lines 100 --branches 100 --functions 100 --check-coverage --reporter=text tape test/test.js",
+        "coverage": "nyc --reporter=html --reporter=cobertura --reporter=text tape test/test.js",
+        "test:report": "npm run lint && npm run unit:report",
+        "test": "npm run lint && npm run unit && npm run typescript",
+        "typescript": "tsc --project ./test/tsconfig.json",
+        "legacy": "tape test/test.js"
+      },
+      "pre-commit": [
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^3.1.0",
+        "neo-async": "^2.6.1",
+        "nyc": "^15.0.0",
+        "pre-commit": "^1.2.2",
+        "snazzy": "^8.0.0",
+        "standard": "^14.0.0",
+        "tape": "^4.13.0",
+        "typescript": "^3.5.3"
+      },
+      "dependencies": {
+        "reusify": "^1.0.4"
+      },
+      "gitHead": "19771feef6694c51213a4bd6b4bc07192fd0830c",
+      "_id": "fastq@1.6.1",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-mpIH5sKYueh3YyeJwqtVo8sORi0CgtmkVbK6kZStpQlZBYQuTzG2CZ7idSiJuA7bY0SFCWUc5WIs+oYumGCQNw==",
+        "shasum": "4570c74f2ded173e71cf0beb08ac70bb85826791",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.6.1.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24028,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeWCJ2CRA9TVsSAnZWagAAsMgP/0xyDnpeCChHwkVp/gUJ\nHJ6YHUDLFuda9CI55B6IoFpeUhBRNdNR5WGLT1zhKJNwMEOxFYiu/nDSzpOq\ns1t9H8G0rtwCt9OqpqYRaj4tTogSpkuJ/eV7n+y+M+EeQnA8CQQaNSYrGqbE\nOdRMsIaWobRTwpwrbySXzlvQeew/5N9k9PyRCWwC5YiqMNK+12cDn0rEfgYi\n6xrJcAndK5/HeuV4Os59C16kn5ijWvsXGmFLKAN/NDORwiHQSOFPRcN6J2DC\nrZX7stcPtPX0PBc6KaNF8yldS1N4+gzjY/c07IJ3HhVqWL7DYI/MmIJ1Ks8Q\n3vpCJ2EzeYdm0WDDPM8ixQjiJSkOg227cMl4MYvflsfUrsZvrWBfEI4/GMGH\nhXRtjCNyJthuICVIiBC4D/rim02KfbuiXlgx8HNVVpsCO7+Md/i/eMusSYIg\nUi2mlRAD1iMFTaSxJwATTqHuDfz4SLgUy0p2ouJve1yiiMBDj9vDSIeY1WK3\nOG/khJOhrk2Q/GGhMeaqkq3Vfoo9Fr9i+F/lCxcjg/kQVOxg9K4LEdmQiVih\nAyaazTj8P+TFkuCdRcvBoJ91SwkEzfvYcHezu2Gb0OzASyRPltpXOdbhFFnL\nPw//WRA+Id41fnyot4ynUYGXgsFlW9qyDmSgmZcFudihPjc9a9FMf3vtHHwv\nrRSQ\r\n=69b6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fastq_1.6.1_1582834293634_0.8592684038623051"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "fastq",
+      "version": "1.7.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard --verbose | snazzy",
+        "unit": "nyc --lines 100 --branches 100 --functions 100 --check-coverage --reporter=text tape test/test.js",
+        "coverage": "nyc --reporter=html --reporter=cobertura --reporter=text tape test/test.js",
+        "test:report": "npm run lint && npm run unit:report",
+        "test": "npm run lint && npm run unit && npm run typescript",
+        "typescript": "tsc --project ./test/tsconfig.json",
+        "legacy": "tape test/test.js"
+      },
+      "pre-commit": [
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^3.1.0",
+        "neo-async": "^2.6.1",
+        "nyc": "^15.0.0",
+        "pre-commit": "^1.2.2",
+        "snazzy": "^8.0.0",
+        "standard": "^14.0.0",
+        "tape": "^4.13.2",
+        "typescript": "^3.8.3"
+      },
+      "dependencies": {
+        "reusify": "^1.0.4"
+      },
+      "gitHead": "b3fc271726e7b1e7a215c3d853e91ae73330ca64",
+      "_id": "fastq@1.7.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.14.4",
+      "dist": {
+        "integrity": "sha512-YOadQRnHd5q6PogvAR/x62BGituF2ufiEA6s8aavQANw5YKHERI4AREboX6KotzP8oX2klxYF2wcV/7bn1clfQ==",
+        "shasum": "fcd79a08c5bd7ec5b55cd3f5c4720db551929801",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.7.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 25207,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJehRzgCRA9TVsSAnZWagAABtcQAKH63dyKEoV3cLI1WzXm\ntXV9aRe1jVGz+GH4sSKFR1B6H8vjFx10t7EWXUqxzvEL5vOjnUYwUmz8wij+\ngUNEb//3dJTOrGYs9PXfqcdnKoWjWRQlI35i+Ey+K9rbACUR28y6H6t/WJ+u\nfAp2uPN7yJUzgJCFQLLlOLeH02D4rRayUChMQTghyS4EElF2Gog/+udVR9nz\nji2Wi5qn0qsCNB6cmT+9eYhja6UHHhP8/YRPAaQgfz/uD5JpA1mLvQoELYLw\naH5uw1T5VDcuSeybDf0Ha2qfIK431HBHixRDbfU8Mf6vWQGvBbIF2HE3nocF\nOvjr+XzeflnSslbI0OzMo6/isi9bPy/LCGk4lwn6ZxKQ3U5+Z68e+kT8O3pO\nIHiAvpyB5fSTSWOsDg4voZrEk5bgsvrbCa33Jz8h7J/DpqcvRocDsyz9NoXa\naUVNY0W1DNF3gFJWdj3KGk+2Nq4sBV1bluld2H1hGeUP6lUnGXEWjrqNDYtT\nMb1hFYLvl3amqennJOjiijMmr7KezDAMcYhdFFFfJ0eCJapvisQ+b5UJeXIg\n1UGd9lD6GEhzIWiy2HXsI4L3q7Z9vYbNWe/uOTbIsIiZZ0oEqJRSLYJVE1qF\npSOQANekpbfvbjs/7IMxOks7lp01W06j0mMoaoFk6OaU6n1srU/IBQaQMRcC\nOYDU\r\n=+Cp9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fastq_1.7.0_1585781983713_0.5438727801187897"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "fastq",
+      "version": "1.8.0",
+      "description": "Fast, in memory work queue",
+      "main": "queue.js",
+      "scripts": {
+        "lint": "standard --verbose | snazzy",
+        "unit": "nyc --lines 100 --branches 100 --functions 100 --check-coverage --reporter=text tape test/test.js",
+        "coverage": "nyc --reporter=html --reporter=cobertura --reporter=text tape test/test.js",
+        "test:report": "npm run lint && npm run unit:report",
+        "test": "npm run lint && npm run unit && npm run typescript",
+        "typescript": "tsc --project ./test/tsconfig.json",
+        "legacy": "tape test/test.js"
+      },
+      "pre-commit": [
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/fastq.git"
+      },
+      "keywords": [
+        "fast",
+        "queue",
+        "async",
+        "worker"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/mcollina/fastq/issues"
+      },
+      "homepage": "https://github.com/mcollina/fastq#readme",
+      "devDependencies": {
+        "async": "^3.1.0",
+        "neo-async": "^2.6.1",
+        "nyc": "^15.0.0",
+        "pre-commit": "^1.2.2",
+        "snazzy": "^8.0.0",
+        "standard": "^14.0.0",
+        "tape": "^4.13.2",
+        "typescript": "^3.8.3"
+      },
+      "dependencies": {
+        "reusify": "^1.0.4"
+      },
+      "gitHead": "e2920cafefc9cd4f579de7028f48956cf9b8fee9",
+      "_id": "fastq@1.8.0",
+      "_nodeVersion": "12.16.1",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "integrity": "sha512-SMIZoZdLh/fgofivvIkmknUXyPnvxRE3DhtZ5Me3Mrsk5gyPL42F0xr51TdRXskBxHfMp+07bcYzfsYEsSQA9Q==",
+        "shasum": "550e1f9f59bbc65fe185cb6a9b4d95357107f481",
+        "tarball": "https://registry.npmjs.org/fastq/-/fastq-1.8.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 25946,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeun35CRA9TVsSAnZWagAAvrsP+wbowdoiZFfTQkZexCdu\nw+NGkGTfO6olDo69xaKHyUZK2miJCiiqjpqetZinY5/xjmIEpII/1I5AqMlN\nOerHN4uO6tqVrI7M0Jv6UCRdavWj7SqtAdjJc0vFClEvCuGPKObzx844Y3sp\njLKNqGW3EJqg04gmAJWZdcNCaotyM9KMIl/4kd6FJHmTsCz5G7TXivzyCqZs\nj5Jd9stTw8eFWZUKxOC24jazaMQD0D0BuK7vyy0aQQhBVYciL/qiVYR8HB9n\nDKjHRJnTDyW7NO8rXnWW096hJHcLen/B6PiU6Sv7aacHT+fsxAEpjaaSad9v\nM/+ZMKi6FxsU05UBOPWHgiEjh3L4s5zScQlZDUrnWAYUlFAN6CdsMXTycpKm\nk0daBRFh9m1ISls//YaasJbzkvXLH4ndxaBfCSL2U431nP3z9VvrTjwgeLDV\nuenBl3lyzoAlhLQw94vol9TSj8NXLk/+jaYUY2EK20PDRo93G8rrAeOenr/V\n4NameZH5UmAPV+BAH0nsnQNYNDXlwsmO+PFyiAgHTjnVmDGPVRrjqS34cahf\n99d71fRlE2RcDgi1OfvSiCK44WAeeO2Q6haM1Nx13B7BF2c9kM8qqcfNMmKb\nLQijkVEnq2xuzWaVHTXbolRp9YH5LMnlzrzEkA/lJKh160qWiqIr5eOb9n6E\nlNNV\r\n=xzl/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/fastq_1.8.0_1589280248999_0.6097184822888224"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# fastq\n\n![ci][ci-url]\n[![npm version][npm-badge]][npm-url]\n[![Dependency Status][david-badge]][david-url]\n\nFast, in memory work queue. `fastq` is API compatible with\n[`async.queue`](https://github.com/caolan/async#queueworker-concurrency)\n\nBenchmarks (1 million tasks):\n\n* setImmediate: 812ms\n* fastq: 854ms\n* async.queue: 1298ms\n* neoAsync.queue: 1249ms\n\nObtained on node 12.16.1, on a dedicated server.\n\nIf you need zero-overhead series function call, check out\n[fastseries](http://npm.im/fastseries). For zero-overhead parallel\nfunction call, check out [fastparallel](http://npm.im/fastparallel).\n\n[![js-standard-style](https://raw.githubusercontent.com/feross/standard/master/badge.png)](https://github.com/feross/standard)\n\n  * <a href=\"#install\">Installation</a>\n  * <a href=\"#usage\">Usage</a>\n  * <a href=\"#api\">API</a>\n  * <a href=\"#license\">Licence &amp; copyright</a>\n\n## Install\n\n`npm i fastq --save`\n\n## Usage\n\n```js\n'use strict'\n\nvar queue = require('fastq')(worker, 1)\n\nqueue.push(42, function (err, result) {\n  if (err) { throw err }\n  console.log('the result is', result)\n})\n\nfunction worker (arg, cb) {\n  cb(null, 42 * 2)\n}\n```\n\n### Setting this\n\n```js\n'use strict'\n\nvar that = { hello: 'world' }\nvar queue = require('fastq')(that, worker, 1)\n\nqueue.push(42, function (err, result) {\n  if (err) { throw err }\n  console.log(this)\n  console.log('the result is', result)\n})\n\nfunction worker (arg, cb) {\n  console.log(this)\n  cb(null, 42 * 2)\n}\n```\n\n## API\n\n* <a href=\"#fastqueue\"><code>fastqueue()</code></a>\n* <a href=\"#push\"><code>queue#<b>push()</b></code></a>\n* <a href=\"#unshift\"><code>queue#<b>unshift()</b></code></a>\n* <a href=\"#pause\"><code>queue#<b>pause()</b></code></a>\n* <a href=\"#resume\"><code>queue#<b>resume()</b></code></a>\n* <a href=\"#idle\"><code>queue#<b>idle()</b></code></a>\n* <a href=\"#length\"><code>queue#<b>length()</b></code></a>\n* <a href=\"#getQueue\"><code>queue#<b>getQueue()</b></code></a>\n* <a href=\"#kill\"><code>queue#<b>kill()</b></code></a>\n* <a href=\"#killAndDrain\"><code>queue#<b>killAndDrain()</b></code></a>\n* <a href=\"#concurrency\"><code>queue#<b>concurrency</b></code></a>\n* <a href=\"#drain\"><code>queue#<b>drain</b></code></a>\n* <a href=\"#empty\"><code>queue#<b>empty</b></code></a>\n* <a href=\"#saturated\"><code>queue#<b>saturated</b></code></a>\n\n-------------------------------------------------------\n<a name=\"fastqueue\"></a>\n### fastqueue([that], worker, concurrency)\n\nCreates a new queue.\n\nArguments:\n\n* `that`, optional context of the `worker` function.\n* `worker`, worker function, it would be called with `that` as `this`,\n  if that is specified.\n* `concurrency`, number of concurrent tasks that could be executed in\n  parallel.\n\n-------------------------------------------------------\n<a name=\"push\"></a>\n### queue.push(task, done)\n\nAdd a task at the end of the queue. `done(err, result)` will be called\nwhen the task was processed.\n\n-------------------------------------------------------\n<a name=\"unshift\"></a>\n### queue.unshift(task, done)\n\nAdd a task at the beginning of the queue. `done(err, result)` will be called\nwhen the task was processed.\n\n-------------------------------------------------------\n<a name=\"pause\"></a>\n### queue.pause()\n\nPause the processing of tasks. Currently worked tasks are not\nstopped.\n\n-------------------------------------------------------\n<a name=\"resume\"></a>\n### queue.resume()\n\nResume the processing of tasks.\n\n-------------------------------------------------------\n<a name=\"idle\"></a>\n### queue.idle()\n\nReturns `false` if there are tasks being processed or waiting to be processed.\n`true` otherwise.\n\n-------------------------------------------------------\n<a name=\"length\"></a>\n### queue.length()\n\nReturns the number of tasks waiting to be processed (in the queue).\n\n-------------------------------------------------------\n<a name=\"getQueue\"></a>\n### queue.getQueue()\n\nReturns all the tasks be processed (in the queue). Returns empty array when there are no tasks\n\n-------------------------------------------------------\n<a name=\"kill\"></a>\n### queue.kill()\n\nRemoves all tasks waiting to be processed, and reset `drain` to an empty\nfunction.\n\n-------------------------------------------------------\n<a name=\"killAndDrain\"></a>\n### queue.killAndDrain()\n\nSame than `kill` but the `drain` function will be called before reset to empty.\n\n-------------------------------------------------------\n<a name=\"concurrency\"></a>\n### queue.concurrency\n\nProperty that returns the number of concurrent tasks that could be executed in\nparallel. It can be altered at runtime.\n\n-------------------------------------------------------\n<a name=\"drain\"></a>\n### queue.drain\n\nFunction that will be called when the last\nitem from the queue has been processed by a worker.\nIt can be altered at runtime.\n\n-------------------------------------------------------\n<a name=\"empty\"></a>\n### queue.empty\n\nFunction that will be called when the last\nitem from the queue has been assigned to a worker.\nIt can be altered at runtime.\n\n-------------------------------------------------------\n<a name=\"saturated\"></a>\n### queue.saturated\n\nFunction that will be called when the queue hits the concurrency\nlimit.\nIt can be altered at runtime.\n\n## License\n\nISC\n\n[ci-url]: https://github.com/mcollina/fastq/workflows/ci/badge.svg\n[npm-badge]: https://badge.fury.io/js/fastq.svg\n[npm-url]: https://badge.fury.io/js/fastq\n[david-badge]: https://david-dm.org/mcollina/fastq.svg\n[david-url]: https://david-dm.org/mcollina/fastq\n",
+  "maintainers": [
+    {
+      "name": "matteo.collina",
+      "email": "hello@matteocollina.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-12T10:44:11.519Z",
+    "created": "2015-06-14T18:25:18.741Z",
+    "1.0.1": "2015-06-14T18:25:18.741Z",
+    "1.0.2": "2015-06-16T05:32:42.248Z",
+    "1.1.0": "2015-06-16T15:26:12.208Z",
+    "1.1.1": "2015-08-19T07:56:33.004Z",
+    "1.2.0": "2015-09-13T15:41:20.250Z",
+    "1.3.0": "2015-11-23T08:28:07.680Z",
+    "1.4.0": "2016-04-28T10:05:46.892Z",
+    "1.4.1": "2016-04-28T20:56:17.344Z",
+    "1.5.0": "2017-01-08T21:16:53.813Z",
+    "1.6.0": "2018-06-03T07:12:22.036Z",
+    "1.6.1": "2020-02-27T20:11:33.808Z",
+    "1.7.0": "2020-04-01T22:59:43.868Z",
+    "1.8.0": "2020-05-12T10:44:09.089Z"
+  },
+  "homepage": "https://github.com/mcollina/fastq#readme",
+  "keywords": [
+    "fast",
+    "queue",
+    "async",
+    "worker"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/fastq.git"
+  },
+  "author": {
+    "name": "Matteo Collina",
+    "email": "hello@matteocollina.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mcollina/fastq/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "nicocube": true,
+    "shylesh107": true,
+    "farskipper": true
+  }
+}

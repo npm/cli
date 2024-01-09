@@ -1,0 +1,8 @@
+{
+  "name": "shrinkwrap",
+  "version": "1.0.0",
+  "license": "ISC",
+  "dependencies": {
+    "@isaacs/shrinkwrapped-dependency": "^1.0.0"
+  }
+}

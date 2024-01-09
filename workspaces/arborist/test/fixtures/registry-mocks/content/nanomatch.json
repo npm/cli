@@ -1,0 +1,4497 @@
+{
+  "_id": "nanomatch",
+  "_rev": "36-d3f8df9e68b0c123194770c2cac6d0d9",
+  "name": "nanomatch",
+  "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+  "dist-tags": {
+    "latest": "1.2.13"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. ",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib",
+        "LICENSE",
+        "README.md"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fill-array": "^1.0.0",
+        "is-glob": "^3.0.0",
+        "normalize-path": "^2.0.1",
+        "repeat-string": "^1.5.4",
+        "snapdragon": "^0.5.0"
+      },
+      "devDependencies": {
+        "cross-spawn": "^4.0.0",
+        "delete": "^0.3.2",
+        "gulp-format-md": "^0.1.10",
+        "mocha": "^3.0.2",
+        "yargs-parser": "^3.2.0"
+      },
+      "keywords": [
+        "nanomatch"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "related": {
+          "list": []
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "f4cf2348967fc7a3e4c9902413a61eeeb84b6db1",
+      "_id": "nanomatch@0.1.0",
+      "_shasum": "c84198fd81d2337ec55aa00919b335ea984af41d",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c84198fd81d2337ec55aa00919b335ea984af41d",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.1.0.tgz_1473202109480_0.268375332467258"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Complete Bash 4.3 wildcard support (no support for exglobs, brackets or braces)",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.1.0",
+        "is-glob": "^3.0.0",
+        "is-odd": "^0.1.0",
+        "isobject": "^2.1.0",
+        "normalize-path": "^2.0.1",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.7.2",
+        "to-regex": "^2.1.0"
+      },
+      "devDependencies": {
+        "bash-glob": "^0.1.1",
+        "delete": "^0.3.2",
+        "fs-exists-sync": "^0.1.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "micromatch": "^2.3.11",
+        "minimatch": "^3.0.3",
+        "mkdirp": "^0.5.1",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "write": "^0.3.2",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "100d5edef856bd320363d8a53ee7e5a85bbc8077",
+      "_id": "nanomatch@0.1.1",
+      "_shasum": "da2223a79bda3e9b93cf782fcb38c11a9180be23",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "da2223a79bda3e9b93cf782fcb38c11a9180be23",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.1.1.tgz_1475926753564_0.7053761256393045"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Complete Bash 4.3 wildcard support (no support for exglobs, brackets or braces)",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.1.0",
+        "is-glob": "^3.0.0",
+        "is-odd": "^0.1.0",
+        "isobject": "^2.1.0",
+        "normalize-path": "^2.0.1",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.7.2",
+        "to-regex": "^2.1.0"
+      },
+      "devDependencies": {
+        "bash-glob": "^0.1.1",
+        "delete": "^0.3.2",
+        "fs-exists-sync": "^0.1.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "micromatch": "^2.3.11",
+        "minimatch": "^3.0.3",
+        "mkdirp": "^0.5.1",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "write": "^0.3.2",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5965131bca0065ed6b8b22bea95d0e77a8da993e",
+      "_id": "nanomatch@0.1.2",
+      "_shasum": "10e76a49bb9d2477e020ff393a1a2b83eb201dbe",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "10e76a49bb9d2477e020ff393a1a2b83eb201dbe",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.1.2.tgz_1475927240700_0.9283839506097138"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.1.3",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.1.0",
+        "is-glob": "^3.0.0",
+        "is-odd": "^0.1.0",
+        "isobject": "^2.1.0",
+        "normalize-path": "^2.0.1",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.7.2",
+        "to-regex": "^2.1.0"
+      },
+      "devDependencies": {
+        "bash-glob": "^0.1.1",
+        "delete": "^0.3.2",
+        "fs-exists-sync": "^0.1.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "micromatch": "^2.3.11",
+        "minimatch": "^3.0.3",
+        "mkdirp": "^0.5.1",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "write": "^0.3.2",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "21b4d8a32599a8060cb6803db1e9de19e899637d",
+      "_id": "nanomatch@0.1.3",
+      "_shasum": "c349eda7929459d8e526b4da6306e80feca6d31e",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c349eda7929459d8e526b4da6306e80feca6d31e",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.1.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.1.3.tgz_1475927582148_0.5597628676332533"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.1.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.1.1",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "66a730a149867a11644445d2b79caadfcc10e265",
+      "_id": "nanomatch@0.2.0",
+      "_shasum": "e0f9bf9e03a849b4c39245bc46fafa531cdfd8b5",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e0f9bf9e03a849b4c39245bc46fafa531cdfd8b5",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.2.0.tgz_1476816288006_0.4883343018591404"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.1.1",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "98873aa26f0a81baba10c77c615527f959da7aa4",
+      "_id": "nanomatch@0.2.1",
+      "_shasum": "951b559113d4244f48942888e39fb6e47296616c",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "951b559113d4244f48942888e39fb6e47296616c",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.2.1.tgz_1476998935456_0.11085436539724469"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.2.0",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "2647d80eaea52119530ab013df1b9fc43e89a808",
+      "_id": "nanomatch@0.3.0",
+      "_shasum": "03ce388c067fdaf30a103e6e2a0ae5493933af47",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "03ce388c067fdaf30a103e6e2a0ae5493933af47",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.3.0.tgz_1477017010998_0.3614715200383216"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.2.0",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "035c5b9eab562d4ad63bc0b707f98346486a3f7e",
+      "_id": "nanomatch@0.3.1",
+      "_shasum": "eb4e31ed50fe7175f8cdd6114e3346118d354766",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eb4e31ed50fe7175f8cdd6114e3346118d354766",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.3.1.tgz_1477028329149_0.02597782528027892"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.3.3",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.2.0",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "853d3e75019a4a63d1d5349df990d276a62db623",
+      "_id": "nanomatch@0.3.3",
+      "_shasum": "1c1780ff36bfdadd8b0e684b5a21f44221f37061",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1c1780ff36bfdadd8b0e684b5a21f44221f37061",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.3.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.3.3.tgz_1477766692076_0.7239273490849882"
+      },
+      "directories": {}
+    },
+    "0.3.4": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "0.3.4",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "arr-union": "^3.1.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-glob": "^3.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.1.2",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.2.0",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "expand-brackets",
+            "extglob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "verb",
+          "verb-generate-readme"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "20678df0a65377a5236943f652c873423e792f11",
+      "_id": "nanomatch@0.3.4",
+      "_shasum": "2eed1aa6ffd23b8718a7c33b19430ad1bc312dba",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2eed1aa6ffd23b8718a7c33b19430ad1bc312dba",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-0.3.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-0.3.4.tgz_1478198030727_0.14476874843239784"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-extglob": "^2.1.0",
+        "is-odd": "^0.1.0",
+        "kind-of": "^3.0.4",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^0.2.0",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": true,
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d589901d9a5fa6cb43b84b5be053359887dd64e3",
+      "_id": "nanomatch@1.0.0",
+      "_shasum": "dbfc9b3643a922b40cdd61fe0f8539f3260b20e3",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dbfc9b3643a922b40cdd61fe0f8539f3260b20e3",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.0.0.tgz_1481596160098_0.23512105643749237"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.0.1",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "8b758a8fb66b2fb0d69564beec4ff3cae3283805",
+      "_id": "nanomatch@1.0.1",
+      "_shasum": "2c9a426bf82429fc6e813b9ac139e3974d61c2be",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2c9a426bf82429fc6e813b9ac139e3974d61c2be",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.0.1.tgz_1489522036627_0.17345209699124098"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.0.2",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d3fd29c2a0515d0b50bf24a1c366d27ca9f5f131",
+      "_id": "nanomatch@1.0.2",
+      "_shasum": "73662ebdc8db1bc12426c017a314b8549210dc4e",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.6.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "73662ebdc8db1bc12426c017a314b8549210dc4e",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.0.2.tgz_1489524196739_0.1515828683041036"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.0.3",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "7696801e335f3754f38de23b89e39abfca3220fb",
+      "_id": "nanomatch@1.0.3",
+      "_shasum": "f63a46863e3b1cb057d4bccb62e2c26e4a0020d2",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f63a46863e3b1cb057d4bccb62e2c26e4a0020d2",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.0.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.0.3.tgz_1491521988012_0.7054862163495272"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.0.4",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "e631d36c96bb07167f3ed24c30e12e1f46713162",
+      "_id": "nanomatch@1.0.4",
+      "_shasum": "f066f245a575b7610e41370135422d602d4d60dc",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f066f245a575b7610e41370135422d602d4d60dc",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.0.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.0.4.tgz_1491765043103_0.148184695513919"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "c87e177998cd30ffd983b8f55a194052eec42283",
+      "_id": "nanomatch@1.1.0",
+      "_shasum": "20d61447e20edbb48bfb0b142992d458d77972f3",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "20d61447e20edbb48bfb0b142992d458d77972f3",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.1.0.tgz_1491940765192_0.43833806342445314"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^3.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^0.1.1",
+        "kind-of": "^3.1.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a372bb43e8b12c0ea0351f58a9fc4ef7a9262e8e",
+      "_id": "nanomatch@1.1.1",
+      "_shasum": "08bccc8ad0d5fc71e4230a238c8b60640b6d2223",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "08bccc8ad0d5fc71e4230a238c8b60640b6d2223",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/nanomatch-1.1.1.tgz_1491943903707_0.7717683361843228"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.0",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-extglob": "^2.1.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^4.0.0",
+        "object.pick": "^1.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^0.2.0",
+        "benchmarked": "^0.2.5",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.0",
+        "isobject": "^3.0.0",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.2.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^5.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "common-minimal",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "a-c",
+          "bash-braces",
+          "bash-brackets",
+          "bash-extglobs",
+          "bash-globs",
+          "bash-tilde",
+          "braces",
+          "expand-brackets",
+          "expand-tilde",
+          "extglob",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "9e20bb3d1195acbd8029e6b10965ac136f89f055",
+      "_id": "nanomatch@1.2.0",
+      "_shasum": "76fdb3d4ae7617e37719e7a4047b840857c0cb1c",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "76fdb3d4ae7617e37719e7a4047b840857c0cb1c",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.0.tgz_1496014854658_0.2537494401913136"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.1",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "ansi-cyan": "^0.1.1",
+        "bash-match": "^1.0.2",
+        "benchmarked": "^1.1.1",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-primitive": "^2.0.0",
+        "is-windows": "^1.0.1",
+        "isobject": "^3.0.1",
+        "minimatch": "^3.0.4",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^7.0.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "files": {
+          "merge": true,
+          "devDependencies": [
+            "benchmark/**/*.js"
+          ]
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "a-c",
+          "bash-braces",
+          "bash-brackets",
+          "bash-extglobs",
+          "bash-globs",
+          "bash-tilde",
+          "braces",
+          "expand-brackets",
+          "expand-tilde",
+          "extglob",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "9c1bb72d3088332dc69009db3c52459c9062aded",
+      "_id": "nanomatch@1.2.1",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-yZFZy8D7hJnki1+6+Ky7nJThbPUW6M6aQW4CVk+pgPcU69VdCwLWVIP7Tb5E+xAWROp+HOdjNkp5rnAfCM0XbA==",
+        "shasum": "5e25489283bd318be20305375000fcda2c4132e7",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.1.tgz_1504835537104_0.507095614913851"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.2",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "micromatch",
+            "is-extglob",
+            "is-glob"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "436abb4821120314717c5e490769822570b0a5a8",
+      "_id": "nanomatch@1.2.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-RX0AxGjUX5hqtwl1UDZEpPdSF4yvv70idAcp2NfYqR711ZBkuyUk8543ex3hiWMOwK/8wQEc0zoYY0GswpnRpg==",
+        "shasum": "fd7f41a96744450df0fa8514e72d60262968f18c",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.2.tgz_1505305055739_0.38431209488771856"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.3",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "065c7a01459a0404399dcdba75a18f079c3da73e",
+      "_id": "nanomatch@1.2.3",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-HqDMQWJlwpXbfKDpAnkc6AJQh5PFqVlrjYbruDjYVAS+05TQUb1qhIde4G9jMzHbs/u6bgEok1jMAV4yJzoh+w==",
+        "shasum": "15e1c02dcf990c27a283b08c0ba1801ce249a6a6",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.3.tgz_1505305213142_0.7413746835663915"
+      },
+      "directories": {}
+    },
+    "1.2.4": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.4",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "770f54c59b3a4b60a92dd1c2a396018b5596f13a",
+      "_id": "nanomatch@1.2.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-KmNXxo2Y+psrIuwCnYDOksvCf/l4Wr6zFiaakEBUg7rAtdAH8hVjUdZ/fHJDZNX4S/ginAw5+tLHpCShGhhDCA==",
+        "shasum": "5b9e57e36b989d3a401ecd23cb0e76e6145c3628",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.4.tgz_1508546074801_0.6551594291813672"
+      },
+      "directories": {}
+    },
+    "1.2.5": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.5",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "53892617ee2d7cd97faaa9da0ac8ced1d4a894b3",
+      "_id": "nanomatch@1.2.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZHJamn1utzcUvW8Bais+Kk7pobp6dKmUEKOSQ/HI2glGwOMA/GvjRRKlLyORBUrdRXnwTU/6LIBcW7jYSlutgg==",
+        "shasum": "5c9ab02475c76676275731b0bf0a7395c624a9c4",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.5.tgz_1508550741347_0.5891015559900552"
+      },
+      "directories": {}
+    },
+    "1.2.6": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.6",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "768c3571b39008b4e0c35a70291c5a28a44deaa4",
+      "_id": "nanomatch@1.2.6",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-WJ6XTCbvWXUFPbi/bDwKcYkCeOGUHzaJj72KbuPqGn78Ba/F5Vu26Zlo6SuMQbCIst1RGKL1zfWBCOGAlbRLAg==",
+        "shasum": "f27233e97c34a8706b7e781a4bc611c957a81625",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.6.tgz_1511809803326_0.008779037045314908"
+      },
+      "directories": {}
+    },
+    "1.2.7": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.7",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^1.0.0",
+        "kind-of": "^5.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "00b8596325eb5cd50b41fb1f65712aac9a5e1ccf",
+      "_id": "nanomatch@1.2.7",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-/5ldsnyurvEw7wNpxLFgjVvBLMta43niEYOy0CJ4ntcYSbx6bugRUTQeFb4BR/WanEL1o3aQgHuVLHQaB6tOqg==",
+        "shasum": "53cd4aa109ff68b7f869591fdc9d10daeeea3e79",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch-1.2.7.tgz_1515387512324_0.859608280705288"
+      },
+      "directories": {}
+    },
+    "1.2.8": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.8",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^2.0.0",
+        "is-windows": "^1.0.2",
+        "kind-of": "^6.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.3",
+        "gulp-mocha": "^5.0.0",
+        "helper-changelog": "^0.3.0",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "cce7c04061649bc6b881fc0baecabf8a0bdc53ce",
+      "_id": "nanomatch@1.2.8",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-RPZGc13WgI8XAYvVvh4Jvrk/vQAUhKhUYvosACOu+ZJcbBaHqBsECv6bDyEAKT9iY7rndZge2EO+QTbFA6TfOw==",
+        "shasum": "e2fb86f002b408424731ad1c92564343c5063378",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.8.tgz",
+        "fileCount": 11,
+        "unpackedSize": 98902
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch_1.2.8_1518962647788_0.2155835145534173"
+      }
+    },
+    "1.2.9": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.9",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "fragment-cache": "^0.2.1",
+        "is-odd": "^2.0.0",
+        "is-windows": "^1.0.2",
+        "kind-of": "^6.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.3",
+        "gulp-mocha": "^5.0.0",
+        "helper-changelog": "^0.3.0",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5cc7c1d75605e306fb38fe6ed70a6fc3d791c461",
+      "_id": "nanomatch@1.2.9",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-n8R9bS8yQ6eSXaV6jHUpKzD8gLsin02w1HSFiegwrs9E098Ylhw5jdyKPaYqvHknHaSCKTPp7C8dGCQ0q9koXA==",
+        "shasum": "879f7150cb2dab7a471259066c104eee6e0fa7c2",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.9.tgz",
+        "fileCount": 11,
+        "unpackedSize": 99874
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch_1.2.9_1518978901225_0.8357495998118194"
+      }
+    },
+    "1.2.13": {
+      "name": "nanomatch",
+      "description": "Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)",
+      "version": "1.2.13",
+      "homepage": "https://github.com/micromatch/nanomatch",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/nanomatch.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/nanomatch/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-diff": "^4.0.0",
+        "array-unique": "^0.3.2",
+        "define-property": "^2.0.2",
+        "extend-shallow": "^3.0.2",
+        "fragment-cache": "^0.2.1",
+        "is-windows": "^1.0.2",
+        "kind-of": "^6.0.2",
+        "object.pick": "^1.3.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.3",
+        "gulp-mocha": "^5.0.0",
+        "helper-changelog": "^0.3.0",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.3",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "expand",
+        "expansion",
+        "expression",
+        "file",
+        "files",
+        "filter",
+        "find",
+        "glob",
+        "globbing",
+        "globs",
+        "globstar",
+        "match",
+        "matcher",
+        "matches",
+        "matching",
+        "micromatch",
+        "minimatch",
+        "multimatch",
+        "nanomatch",
+        "path",
+        "pattern",
+        "patterns",
+        "regex",
+        "regexp",
+        "regular",
+        "shell",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "dependencies": {
+          "options": {
+            "lock": {
+              "snapdragon": "^0.8.1"
+            }
+          }
+        },
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": "collapsible",
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "extglob",
+            "is-extglob",
+            "is-glob",
+            "micromatch"
+          ]
+        },
+        "reflinks": [
+          "expand-brackets",
+          "expand-tilde",
+          "glob-object",
+          "micromatch",
+          "minimatch",
+          "options",
+          "snapdragon"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "d2af1083ae338c6c9a5834ee85ae40679be60a46",
+      "_id": "nanomatch@1.2.13",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==",
+        "shasum": "b87a8aa4fc0de8fe6be88895b38983ff265bd119",
+        "tarball": "https://registry.npmjs.org/nanomatch/-/nanomatch-1.2.13.tgz",
+        "fileCount": 9,
+        "unpackedSize": 86258,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbM4rxCRA9TVsSAnZWagAAuwkP/0rvYEh+0SEfAlI5PRAM\n7okQsra74OKrliYpsgWYvH3Tz/TiJVpdgKiS857K86BnLVyjNm79NrYc9d/n\najaa9FC0Bw0m+ETpcD1GiBtl4WmstEsKq3KU9YAjSy0I1XDcKE+IZISiFciS\nuTAlT6zpCW5wCeFWQeOlGNOmwjPMyzAaHNf9D8q4MiE2b9GRLAbvFENE0roy\nB92/WJXbU2GQbJr9/5Yi3nZrre3Rzz3q3GE+vCteXYcxtsa2I1P/dj8wXMX7\nSkOqMj0ZGmJm8SDjoVzxJPFoG2Oqo32i8tDaQ583ghlUZWFjDGil5UrLn6uV\ne9Ce2WmiLJHtDs5mpTYVYIZ46wMhLS2jJ2Q0EezoSt3AOThYs71UphkgF99k\nO+ohezcmilJHphpJUrGDWDNS6ErnKaejZJVYjIo3MxadocJsos6rVO5GAhEf\n0Z6eBWE9gbTU9ov1SfGaJgcgBftE51un/QX+Jn3vup5m82VM0zQlhRLAP/pI\nC7Xtp47avkw0I1vv+atR0T0P7VdrytO+ChJ0r9KUtg3b8uc70tEupPoXJN4N\nLj0HGf+4SrcLie8PTnc3fJAZqTGb+KMxUUvQF4kS63Qi8+vaK53sRKF7N5ps\naR6tNdEcKDqGJIOy7Ne0cM5nY0e7fhPW3pJhvInNzFYUwATHVU72kWVq+J9g\nuGsv\r\n=Adxl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/nanomatch_1.2.13_1530104561322_0.7842921747311051"
+      }
+    }
+  },
+  "readme": "# nanomatch [![NPM version](https://img.shields.io/npm/v/nanomatch.svg?style=flat)](https://www.npmjs.com/package/nanomatch) [![NPM monthly downloads](https://img.shields.io/npm/dm/nanomatch.svg?style=flat)](https://npmjs.org/package/nanomatch) [![NPM total downloads](https://img.shields.io/npm/dt/nanomatch.svg?style=flat)](https://npmjs.org/package/nanomatch) [![Linux Build Status](https://img.shields.io/travis/micromatch/nanomatch.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/nanomatch) [![Windows Build Status](https://img.shields.io/appveyor/ci/micromatch/nanomatch.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/micromatch/nanomatch)\n\n> Fast, minimal glob matcher for node.js. Similar to micromatch, minimatch and multimatch, but complete Bash 4.3 wildcard support only (no support for exglobs, posix brackets or braces)\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Table of Contents\n\n<details>\n<summary><strong>Details</strong></summary>\n\n- [Install](#install)\n- [What is nanomatch?](#what-is-nanomatch)\n- [Getting started](#getting-started)\n  * [Installing nanomatch](#installing-nanomatch)\n  * [Usage](#usage)\n- [Documentation](#documentation)\n  * [Escaping](#escaping)\n- [API](#api)\n- [Options](#options)\n  * [options.basename](#optionsbasename)\n  * [options.bash](#optionsbash)\n  * [options.cache](#optionscache)\n  * [options.dot](#optionsdot)\n  * [options.failglob](#optionsfailglob)\n  * [options.ignore](#optionsignore)\n  * [options.matchBase](#optionsmatchbase)\n  * [options.nocase](#optionsnocase)\n  * [options.nodupes](#optionsnodupes)\n  * [options.noglobstar](#optionsnoglobstar)\n  * [options.nonegate](#optionsnonegate)\n  * [options.nonull](#optionsnonull)\n  * [options.nullglob](#optionsnullglob)\n  * [options.slash](#optionsslash)\n  * [options.star](#optionsstar)\n  * [options.snapdragon](#optionssnapdragon)\n  * [options.sourcemap](#optionssourcemap)\n  * [options.unescape](#optionsunescape)\n  * [options.unixify](#optionsunixify)\n- [Features](#features)\n- [Bash expansion libs](#bash-expansion-libs)\n- [Benchmarks](#benchmarks)\n  * [Running benchmarks](#running-benchmarks)\n  * [Nanomatch vs. Minimatch vs. Multimatch](#nanomatch-vs-minimatch-vs-multimatch)\n- [About](#about)\n\n</details>\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save nanomatch\n```\n\n<details>\n<summary><strong>Release history</strong></summary>\n\n## History\n\n### key\n\nChangelog entries are classified using the following labels _(from [keep-a-changelog](https://github.com/olivierlacan/keep-a-changelog)_):\n\n* `added`: for new features\n* `changed`: for changes in existing functionality\n* `deprecated`: for once-stable features removed in upcoming releases\n* `removed`: for deprecated features removed in this release\n* `fixed`: for any bug fixes\n* `bumped`: updated dependencies, only minor or higher will be listed.\n\n### [1.1.0](https://github.com/micromatch/nanomatch/compare/1.0.4...1.1.0) - 2017-04-11\n\n**Fixed**\n\n* adds support for unclosed quotes\n\n**Added**\n\n* adds support for `options.noglobstar`\n\n### [1.0.4](https://github.com/micromatch/nanomatch/compare/1.0.3...1.0.4) - 2017-04-06\n\nHousekeeping updates. Adds documentation section about escaping, cleans up utils.\n\n### [1.0.3](https://github.com/micromatch/nanomatch/compare/1.0.1...1.0.3) - 2017-04-06\n\nThis release includes fixes for windows path edge cases and other improvements for stricter adherence to bash spec.\n\n**Fixed**\n\n* More windows path edge cases\n\n**Added**\n\n* Support for bash-like quoted strings for escaping sequences of characters, such as `foo/\"**\"/bar` where `**` should be matched literally and not evaluated as special characters.\n\n### [1.0.1](https://github.com/micromatch/nanomatch/compare/1.0.0...1.0.1) - 2016-12-12\n\n**Added**\n\n* Support for windows path edge cases where backslashes are used in brackets or other unusual combinations.\n\n### [1.0.0](https://github.com/micromatch/nanomatch/compare/0.1.0...1.0.0) - 2016-12-12\n\nStable release.\n\n### [0.1.0] - 2016-10-08\n\nFirst release.\n\n</details>\n\n## What is nanomatch?\n\nNanomatch is a fast and accurate glob matcher with full support for standard Bash glob features, including the following \"metacharacters\": `*`, `**`, `?` and `[...]`.\n\n**Learn more**\n\n* [Getting started](#getting-started): learn how to install and begin using nanomatch\n* [Features](#features): jump to info about supported patterns, and a glob matching reference\n* [API documentation](#api): jump to available options and methods\n* [Unit tests](test): visit unit tests. there is no better way to learn a code library than spending time the unit tests. Nanomatch has 36,000 unit tests - go become a glob matching ninja!\n\n<details>\n<summary><strong>How is this different?</strong></summary>\n\n**Speed and accuracy**\n\nNanomatch uses [snapdragon](https://github.com/jonschlinkert/snapdragon) for parsing and compiling globs, which results in:\n\n* Granular control over the entire conversion process in a way that is easy to understand, reason about, and customize.\n* Faster matching, from a combination of optimized glob patterns and (optional) caching.\n* Much greater accuracy than minimatch. In fact, nanomatch passes _all of the spec tests_ from bash, including some that bash still fails. However, since there is no real specification for globs, if you encounter a pattern that yields unexpected match results [after researching previous issues](../../issues), [please let us know](../../issues/new).\n\n**Basic globbing only**\n\nNanomatch supports [basic globbing only](#features), which is limited to `*`, `**`, `?` and regex-like brackets.\n\nIf you need support for the other [bash \"expansion\" types](#bash-expansion-libs) (in addition to the wildcard matching provided by nanomatch), consider using [micromatch](https://github.com/micromatch/micromatch) instead. _(micromatch >=3.0.0  uses the nanomatch parser and compiler for basic glob matching)_\n\n</details>\n\n## Getting started\n\n### Installing nanomatch\n\n**Install with [yarn](https://yarnpkg.com/)**\n\n```sh\n$ yarn add nanomatch\n```\n\n**Install with [npm](https://npmjs.com)**\n\n```sh\n$ npm install nanomatch\n```\n\n### Usage\n\nAdd nanomatch to your project using node's `require()` system:\n\n```js\nvar nanomatch = require('nanomatch');\n\n// the main export is a function that takes an array of strings to match\n// and a string or array of patterns to use for matching\nnanomatch(list, patterns[, options]);\n```\n\n**Params**\n\n* `list` **{String|Array}**: List of strings to perform matches against. This is often a list of file paths.\n* `patterns` **{String|Array}**: One or more [glob paterns](#features) to use for matching.\n* `options` **{Object}**: Any [supported options](#options) may be passed\n\n**Examples**\n\n```js\nvar nm = require('nanomatch');\nconsole.log(nm(['a', 'b/b', 'c/c/c'], '*'));\n//=> ['a']\n\nconsole.log(nm(['a', 'b/b', 'c/c/c'], '*/*'));\n//=> ['b/b']\n\nconsole.log(nm(['a', 'b/b', 'c/c/c'], '**'));\n//=> ['a', 'b/b', 'c/c/c']\n```\n\nSee the [API documentation](#api) for available methods and [options](https://github.com/einaros/options.js).\n\n## Documentation\n\n### Escaping\n\n_Backslashes and quotes_ can be used to escape characters, forcing nanomatch to regard those characters as a literal characters.\n\n**Backslashes**\n\nUse backslashes to escape single characters. For example, the following pattern would match `foo/*/bar` exactly:\n\n```js\n'foo/\\*/bar'\n```\n\nThe following pattern would match `foo/` followed by a literal `*`, followed by zero or more of any characters besides `/`, followed by `/bar`.\n\n```js\n'foo/\\**/bar'\n```\n\n**Quoted strings**\n\nUse single or double quotes to escape sequences of characters. For example, the following patterns would match `foo/**/bar` exactly:\n\n```js\n'foo/\"**\"/bar'\n'foo/\\'**\\'/bar'\n\"foo/'**'/bar\"\n```\n\n**Matching literal quotes**\n\nIf you need to match quotes literally, you can escape them as well. For example, the following will match `foo/\"*\"/bar`, `foo/\"a\"/bar`, `foo/\"b\"/bar`, or `foo/\"c\"/bar`:\n\n```js\n'foo/\\\\\"*\\\\\"/bar'\n```\n\nAnd the following will match `foo/'*'/bar`, `foo/'a'/bar`, `foo/'b'/bar`, or `foo/'c'/bar`:\n\n```js\n'foo/\\\\\\'*\\\\\\'/bar'\n```\n\n## API\n\n### [nanomatch](index.js#L40)\n\nThe main function takes a list of strings and one or more glob patterns to use for matching.\n\n**Params**\n\n* `list` **{Array}**: A list of strings to match\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Array}**: Returns an array of matches\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm(list, patterns[, options]);\n\nconsole.log(nm(['a.js', 'a.txt'], ['*.js']));\n//=> [ 'a.js' ]\n```\n\n### [.match](index.js#L106)\n\nSimilar to the main function, but `pattern` must be a string.\n\n**Params**\n\n* `list` **{Array}**: Array of strings to match\n* `pattern` **{String}**: Glob pattern to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Array}**: Returns an array of matches\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.match(list, pattern[, options]);\n\nconsole.log(nm.match(['a.a', 'a.aa', 'a.b', 'a.c'], '*.a'));\n//=> ['a.a', 'a.aa']\n```\n\n### [.isMatch](index.js#L167)\n\nReturns true if the specified `string` matches the given glob `pattern`.\n\n**Params**\n\n* `string` **{String}**: String to match\n* `pattern` **{String}**: Glob pattern to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if the string matches the glob pattern.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.isMatch(string, pattern[, options]);\n\nconsole.log(nm.isMatch('a.a', '*.a'));\n//=> true\nconsole.log(nm.isMatch('a.b', '*.a'));\n//=> false\n```\n\n### [.some](index.js#L205)\n\nReturns true if some of the elements in the given `list` match any of the given glob `patterns`.\n\n**Params**\n\n* `list` **{String|Array}**: The string or array of strings to test. Returns as soon as the first match is found.\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if any patterns match `str`\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.some(list, patterns[, options]);\n\nconsole.log(nm.some(['foo.js', 'bar.js'], ['*.js', '!foo.js']));\n// true\nconsole.log(nm.some(['foo.js'], ['*.js', '!foo.js']));\n// false\n```\n\n### [.every](index.js#L243)\n\nReturns true if every element in the given `list` matches at least one of the given glob `patterns`.\n\n**Params**\n\n* `list` **{String|Array}**: The string or array of strings to test.\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if any patterns match `str`\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.every(list, patterns[, options]);\n\nconsole.log(nm.every('foo.js', ['foo.js']));\n// true\nconsole.log(nm.every(['foo.js', 'bar.js'], ['*.js']));\n// true\nconsole.log(nm.every(['foo.js', 'bar.js'], ['*.js', '!foo.js']));\n// false\nconsole.log(nm.every(['foo.js'], ['*.js', '!foo.js']));\n// false\n```\n\n### [.any](index.js#L277)\n\nReturns true if **any** of the given glob `patterns` match the specified `string`.\n\n**Params**\n\n* `str` **{String|Array}**: The string to test.\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if any patterns match `str`\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.any(string, patterns[, options]);\n\nconsole.log(nm.any('a.a', ['b.*', '*.a']));\n//=> true\nconsole.log(nm.any('a.a', 'b.*'));\n//=> false\n```\n\n### [.all](index.js#L325)\n\nReturns true if **all** of the given `patterns` match the specified string.\n\n**Params**\n\n* `str` **{String|Array}**: The string to test.\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if any patterns match `str`\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.all(string, patterns[, options]);\n\nconsole.log(nm.all('foo.js', ['foo.js']));\n// true\n\nconsole.log(nm.all('foo.js', ['*.js', '!foo.js']));\n// false\n\nconsole.log(nm.all('foo.js', ['*.js', 'foo.js']));\n// true\n\nconsole.log(nm.all('foo.js', ['*.js', 'f*', '*o*', '*o.js']));\n// true\n```\n\n### [.not](index.js#L359)\n\nReturns a list of strings that _**do not match any**_ of the given `patterns`.\n\n**Params**\n\n* `list` **{Array}**: Array of strings to match.\n* `patterns` **{String|Array}**: One or more glob pattern to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Array}**: Returns an array of strings that **do not match** the given patterns.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.not(list, patterns[, options]);\n\nconsole.log(nm.not(['a.a', 'b.b', 'c.c'], '*.a'));\n//=> ['b.b', 'c.c']\n```\n\n### [.contains](index.js#L394)\n\nReturns true if the given `string` contains the given pattern. Similar to [.isMatch](#isMatch) but the pattern can match any part of the string.\n\n**Params**\n\n* `str` **{String}**: The string to match.\n* `patterns` **{String|Array}**: Glob pattern to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns true if the patter matches any part of `str`.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.contains(string, pattern[, options]);\n\nconsole.log(nm.contains('aa/bb/cc', '*b'));\n//=> true\nconsole.log(nm.contains('aa/bb/cc', '*d'));\n//=> false\n```\n\n### [.matchKeys](index.js#L450)\n\nFilter the keys of the given object with the given `glob` pattern and `options`. Does not attempt to match nested keys. If you need this feature, use [glob-object](https://github.com/jonschlinkert/glob-object) instead.\n\n**Params**\n\n* `object` **{Object}**: The object with keys to filter.\n* `patterns` **{String|Array}**: One or more glob patterns to use for matching.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Object}**: Returns an object with only keys that match the given patterns.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.matchKeys(object, patterns[, options]);\n\nvar obj = { aa: 'a', ab: 'b', ac: 'c' };\nconsole.log(nm.matchKeys(obj, '*b'));\n//=> { ab: 'b' }\n```\n\n### [.matcher](index.js#L479)\n\nReturns a memoized matcher function from the given glob `pattern` and `options`. The returned function takes a string to match as its only argument and returns true if the string is a match.\n\n**Params**\n\n* `pattern` **{String}**: Glob pattern\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed.\n* `returns` **{Function}**: Returns a matcher function.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.matcher(pattern[, options]);\n\nvar isMatch = nm.matcher('*.!(*a)');\nconsole.log(isMatch('a.a'));\n//=> false\nconsole.log(isMatch('a.b'));\n//=> true\n```\n\n### [.capture](index.js#L560)\n\nReturns an array of matches captured by `pattern` in `string, or`null` if the pattern did not match.\n\n**Params**\n\n* `pattern` **{String}**: Glob pattern to use for matching.\n* `string` **{String}**: String to match\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns an array of captures if the string matches the glob pattern, otherwise `null`.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.capture(pattern, string[, options]);\n\nconsole.log(nm.capture('test/*.js', 'test/foo.js'));\n//=> ['foo']\nconsole.log(nm.capture('test/*.js', 'foo/bar.css'));\n//=> null\n```\n\n### [.makeRe](index.js#L595)\n\nCreate a regular expression from the given glob `pattern`.\n\n**Params**\n\n* `pattern` **{String}**: A glob pattern to convert to regex.\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed.\n* `returns` **{RegExp}**: Returns a regex created from the given pattern.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.makeRe(pattern[, options]);\n\nconsole.log(nm.makeRe('*.js'));\n//=> /^(?:(\\.[\\\\\\/])?(?!\\.)(?=.)[^\\/]*?\\.js)$/\n```\n\n### [.create](index.js#L658)\n\nParses the given glob `pattern` and returns an object with the compiled `output` and optional source `map`.\n\n**Params**\n\n* `pattern` **{String}**: Glob pattern to parse and compile.\n* `options` **{Object}**: Any [options](#options) to change how parsing and compiling is performed.\n* `returns` **{Object}**: Returns an object with the parsed AST, compiled string and optional source map.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.create(pattern[, options]);\n\nconsole.log(nm.create('abc/*.js'));\n// { options: { source: 'string', sourcemap: true },\n//   state: {},\n//   compilers:\n//    { ... },\n//   output: '(\\\\.[\\\\\\\\\\\\/])?abc\\\\/(?!\\\\.)(?=.)[^\\\\/]*?\\\\.js',\n//   ast:\n//    { type: 'root',\n//      errors: [],\n//      nodes:\n//       [ ... ],\n//      dot: false,\n//      input: 'abc/*.js' },\n//   parsingErrors: [],\n//   map:\n//    { version: 3,\n//      sources: [ 'string' ],\n//      names: [],\n//      mappings: 'AAAA,GAAG,EAAC,kBAAC,EAAC,EAAE',\n//      sourcesContent: [ 'abc/*.js' ] },\n//   position: { line: 1, column: 28 },\n//   content: {},\n//   files: {},\n//   idx: 6 }\n```\n\n### [.parse](index.js#L697)\n\nParse the given `str` with the given `options`.\n\n**Params**\n\n* `str` **{String}**\n* `options` **{Object}**\n* `returns` **{Object}**: Returns an AST\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.parse(pattern[, options]);\n\nvar ast = nm.parse('a/{b,c}/d');\nconsole.log(ast);\n// { type: 'root',\n//   errors: [],\n//   input: 'a/{b,c}/d',\n//   nodes:\n//    [ { type: 'bos', val: '' },\n//      { type: 'text', val: 'a/' },\n//      { type: 'brace',\n//        nodes:\n//         [ { type: 'brace.open', val: '{' },\n//           { type: 'text', val: 'b,c' },\n//           { type: 'brace.close', val: '}' } ] },\n//      { type: 'text', val: '/d' },\n//      { type: 'eos', val: '' } ] }\n```\n\n### [.compile](index.js#L745)\n\nCompile the given `ast` or string with the given `options`.\n\n**Params**\n\n* `ast` **{Object|String}**\n* `options` **{Object}**\n* `returns` **{Object}**: Returns an object that has an `output` property with the compiled string.\n\n**Example**\n\n```js\nvar nm = require('nanomatch');\nnm.compile(ast[, options]);\n\nvar ast = nm.parse('a/{b,c}/d');\nconsole.log(nm.compile(ast));\n// { options: { source: 'string' },\n//   state: {},\n//   compilers:\n//    { eos: [Function],\n//      noop: [Function],\n//      bos: [Function],\n//      brace: [Function],\n//      'brace.open': [Function],\n//      text: [Function],\n//      'brace.close': [Function] },\n//   output: [ 'a/(b|c)/d' ],\n//   ast:\n//    { ... },\n//   parsingErrors: [] }\n```\n\n### [.clearCache](index.js#L768)\n\nClear the regex cache.\n\n**Example**\n\n```js\nnm.clearCache();\n```\n\n## Options\n\n<details>\n<summary><strong>basename</strong></summary>\n\n### options.basename\n\nAllow glob patterns without slashes to match a file path based on its basename. Same behavior as [minimatch](https://github.com/isaacs/minimatch) option `matchBase`.\n\nType: `boolean`\n\nDefault: `false`\n\n**Example**\n\n```js\nnm(['a/b.js', 'a/c.md'], '*.js');\n//=> []\n\nnm(['a/b.js', 'a/c.md'], '*.js', {matchBase: true});\n//=> ['a/b.js']\n```\n\n</details>\n\n<details>\n<summary><strong>bash</strong></summary>\n\n### options.bash\n\nEnabled by default, this option enforces bash-like behavior with stars immediately following a bracket expression. Bash bracket expressions are similar to regex character classes, but unlike regex, a star following a bracket expression **does not repeat the bracketed characters**. Instead, the star is treated the same as an other star.\n\nType: `boolean`\n\nDefault: `true`\n\n**Example**\n\n```js\nvar files = ['abc', 'ajz'];\nconsole.log(nm(files, '[a-c]*'));\n//=> ['abc', 'ajz']\n\nconsole.log(nm(files, '[a-c]*', {bash: false}));\n```\n\n</details>\n\n<details>\n<summary><strong>cache</strong></summary>\n\n### options.cache\n\nDisable regex and function memoization.\n\nType: `boolean`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>dot</strong></summary>\n\n### options.dot\n\nMatch dotfiles. Same behavior as [minimatch](https://github.com/isaacs/minimatch) option `dot`.\n\nType: `boolean`\n\nDefault: `false`\n\n</details>\n\n<details>\n<summary><strong>failglob</strong></summary>\n\n### options.failglob\n\nSimilar to the `--failglob` behavior in Bash, throws an error when no matches are found.\n\nType: `boolean`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>ignore</strong></summary>\n\n### options.ignore\n\nString or array of glob patterns to match files to ignore.\n\nType: `String|Array`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>matchBase</strong></summary>\n\n### options.matchBase\n\nAlias for [options.basename](#options-basename).\n\n</details>\n\n<details>\n<summary><strong>nocase</strong></summary>\n\n### options.nocase\n\nUse a case-insensitive regex for matching files. Same behavior as [minimatch](https://github.com/isaacs/minimatch).\n\nType: `boolean`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>nodupes</strong></summary>\n\n### options.nodupes\n\nRemove duplicate elements from the result array.\n\nType: `boolean`\n\nDefault: `true` (enabled by default)\n\n**Example**\n\nExample of using the `unescape` and `nodupes` options together:\n\n```js\nnm.match(['a/b/c', 'a/b/c'], '**');\n//=> ['abc']\n\nnm.match(['a/b/c', 'a/b/c'], '**', {nodupes: false});\n//=> ['a/b/c', 'a/b/c']\n```\n\n</details>\n\n<details>\n<summary><strong>nonegate</strong></summary>\n\n### options.noglobstar\n\nDisable matching with globstars (`**`).\n\nType: `boolean`\n\nDefault: `undefined`\n\n```js\nnm(['a/b', 'a/b/c', 'a/b/c/d'], 'a/**');\n//=> ['a/b', 'a/b/c', 'a/b/c/d']\n\nnm(['a/b', 'a/b/c', 'a/b/c/d'], 'a/**', {noglobstar: true});\n//=> ['a/b']\n```\n\n</details>\n\n<details>\n<summary><strong>nonegate</strong></summary>\n\n### options.nonegate\n\nDisallow negation (`!`) patterns, and treat leading `!` as a literal character to match.\n\nType: `boolean`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>nonull</strong></summary>\n\n### options.nonull\n\nAlias for [options.nullglob](#options-nullglob).\n\n</details>\n\n<details>\n<summary><strong>nullglob</strong></summary>\n\n### options.nullglob\n\nIf `true`, when no matches are found the actual (arrayified) glob pattern is returned instead of an empty array. Same behavior as [minimatch](https://github.com/isaacs/minimatch) option `nonull`.\n\nType: `boolean`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong><a name=\"slash\">slash</a></strong></summary>\n\n### options.slash\n\nCustomize the slash character(s) to use for matching.\n\nType: `string|function`\n\nDefault: `[/\\\\]` (forward slash and backslash)\n\n</details>\n\n<details>\n<summary><strong><a name=\"star\">star</a></strong></summary>\n\n### options.star\n\nCustomize the star character(s) to use for matching. It's not recommended that you modify this unless you have advanced knowledge of the compiler and matching rules.\n\nType: `string|function`\n\nDefault: `[^/\\\\]*?`\n\n</details>\n\n<details>\n<summary><strong><a name=\"snapdragon\">snapdragon</a></strong></summary>\n\n### options.snapdragon\n\nPass your own instance of [snapdragon](https://github.com/jonschlinkert/snapdragon) to customize parsers or compilers.\n\nType: `object`\n\nDefault: `undefined`\n\n</details>\n\n<details>\n<summary><strong>snapdragon</strong></summary>\n\n### options.sourcemap\n\nGenerate a source map by enabling the `sourcemap` option with the `.parse`, `.compile`, or `.create` methods.\n\n**Examples**\n\n```js\nvar nm = require('nanomatch');\n\nvar res = nm.create('abc/*.js', {sourcemap: true});\nconsole.log(res.map);\n// { version: 3,\n//   sources: [ 'string' ],\n//   names: [],\n//   mappings: 'AAAA,GAAG,EAAC,iBAAC,EAAC,EAAE',\n//   sourcesContent: [ 'abc/*.js' ] }\n\nvar ast = nm.parse('abc/**/*.js');\nvar res = nm.compile(ast, {sourcemap: true});\nconsole.log(res.map);\n// { version: 3,\n//   sources: [ 'string' ],\n//   names: [],\n//   mappings: 'AAAA,GAAG,EAAC,2BAAE,EAAC,iBAAC,EAAC,EAAE',\n//   sourcesContent: [ 'abc/**/*.js' ] }\n```\n\n</details>\n\n<details>\n<summary><strong>unescape</strong></summary>\n\n### options.unescape\n\nRemove backslashes from returned matches.\n\nType: `boolean`\n\nDefault: `undefined`\n\n**Example**\n\nIn this example we want to match a literal `*`:\n\n```js\nnm.match(['abc', 'a\\\\*c'], 'a\\\\*c');\n//=> ['a\\\\*c']\n\nnm.match(['abc', 'a\\\\*c'], 'a\\\\*c', {unescape: true});\n//=> ['a*c']\n```\n\n</details>\n\n<details>\n<summary><strong>unixify</strong></summary>\n\n### options.unixify\n\nConvert path separators on returned files to posix/unix-style forward slashes.\n\nType: `boolean`\n\nDefault: `true`\n\n**Example**\n\n```js\nnm.match(['a\\\\b\\\\c'], 'a/**');\n//=> ['a/b/c']\n\nnm.match(['a\\\\b\\\\c'], {unixify: false});\n//=> ['a\\\\b\\\\c']\n```\n\n</details>\n\n## Features\n\nNanomatch has full support for standard Bash glob features, including the following \"metacharacters\": `*`, `**`, `?` and `[...]`.\n\nHere are some examples of how they work:\n\n| **Pattern** | **Description** | \n| --- | --- |\n| `*` | Matches any string except for `/`, leading `.`, or `/.` inside a path |\n| `**` | Matches any string including `/`, but not a leading `.` or `/.` inside a path. More than two stars (e.g. `***` is treated the same as one star, and `**` loses its special meaning | when it's not the only thing in a path segment, per Bash specifications) |\n| `foo*` | Matches any string beginning with `foo` |\n| `*bar*` | Matches any string containing `bar` (beginning, middle or end) |\n| `*.min.js` | Matches any string ending with `.min.js` |\n| `[abc]*.js` | Matches any string beginning with `a`, `b`, or `c` and ending with `.js` |\n| `abc?` | Matches `abcd` or `abcz` but not `abcde` |\n\nThe exceptions noted for `*` apply to all patterns that contain a `*`.\n\n**Not supported**\n\nThe following extended-globbing features are not supported:\n\n* [brace expansion](https://github.com/jonschlinkert/braces) (e.g. `{a,b,c}`)\n* [extglobs](https://github.com/jonschlinkert/extglob) (e.g. `@(a|!(c|d))`)\n* [POSIX brackets](https://github.com/jonschlinkert/expand-brackets) (e.g. `[[:alpha:][:digit:]]`)\n\nIf you need any of these features consider using [micromatch](https://github.com/micromatch/micromatch) instead.\n\n## Bash expansion libs\n\nNanomatch is part of a suite of libraries aimed at bringing the power and expressiveness of [Bash's](https://www.gnu.org/software/bash/) matching and expansion capabilities to JavaScript, _and - as you can see by the [benchmarks](#benchmarks) - without sacrificing speed_.\n\n| **Related library** | **Matching Type** | **Example** | **Description** | \n| --- | --- | --- | --- |\n| `nanomatch` (you are here) | Wildcards | `*` | [Filename expansion](https://www.gnu.org/software/bash/manual/html_node/Filename-Expansion.html#Filename-Expansion), also referred to as globbing and pathname expansion, allows the use of [wildcards](#features) for matching. |\n| [expand-tilde](https://github.com/jonschlinkert/expand-tilde) | Tildes | `~` | [Tilde expansion](https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html#Tilde-Expansion) converts the leading tilde in a file path to the user home directory. |\n| [braces](https://github.com/jonschlinkert/braces) | Braces | `{a,b,c}` | [Brace expansion](https://www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html) |\n| [expand-brackets](https://github.com/jonschlinkert/expand-brackets) | Brackets | `[[:alpha:]]` | [POSIX character classes](https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html) (also referred to as POSIX brackets, or POSIX character classes) |\n| [extglob](https://github.com/jonschlinkert/extglob) | Parens | `!(a\\ | b)` | [Extglobs](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html#Pattern-Matching) |\n| [micromatch](https://github.com/micromatch/micromatch) | All | all | Micromatch is built on top of the other libraries. |\n\nThere are many resources available on the web if you want to dive deeper into how these features work in Bash.\n\n## Benchmarks\n\n### Running benchmarks\n\nInstall dev dependencies:\n\n```bash\nnpm i -d && node benchmark\n```\n\n### Nanomatch vs. Minimatch vs. Multimatch\n\n```bash\n# globstar-basic (182 bytes)\n  minimatch x 69,512 ops/sec ±1.92% (88 runs sampled)\n  multimatch x 63,376 ops/sec ±1.41% (89 runs sampled)\n  nanomatch x 432,451 ops/sec ±0.92% (88 runs sampled)\n\n  fastest is nanomatch (by 651% avg)\n\n# large-list-globstar (485686 bytes)\n  minimatch x 34.02 ops/sec ±1.42% (59 runs sampled)\n  multimatch x 33.58 ops/sec ±1.97% (58 runs sampled)\n  nanomatch x 483 ops/sec ±1.06% (86 runs sampled)\n\n  fastest is nanomatch (by 1429% avg)\n\n# long-list-globstar (194085 bytes)\n  minimatch x 383 ops/sec ±0.74% (90 runs sampled)\n  multimatch x 378 ops/sec ±0.59% (89 runs sampled)\n  nanomatch x 990 ops/sec ±1.14% (85 runs sampled)\n\n  fastest is nanomatch (by 260% avg)\n\n# negation-basic (132 bytes)\n  minimatch x 242,145 ops/sec ±1.17% (89 runs sampled)\n  multimatch x 76,403 ops/sec ±0.78% (92 runs sampled)\n  nanomatch x 537,253 ops/sec ±1.44% (86 runs sampled)\n\n  fastest is nanomatch (by 337% avg)\n\n# not-glob-basic (93 bytes)\n  minimatch x 252,402 ops/sec ±1.33% (89 runs sampled)\n  multimatch x 209,954 ops/sec ±1.30% (90 runs sampled)\n  nanomatch x 1,716,468 ops/sec ±1.13% (86 runs sampled)\n\n  fastest is nanomatch (by 742% avg)\n\n# star-basic (93 bytes)\n  minimatch x 182,780 ops/sec ±1.41% (91 runs sampled)\n  multimatch x 153,210 ops/sec ±0.72% (89 runs sampled)\n  nanomatch x 599,621 ops/sec ±1.22% (90 runs sampled)\n\n  fastest is nanomatch (by 357% avg)\n\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\nPlease read the [contributing guide](.github/contributing.md) for advice on opening issues, pull requests, and coding standards.\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [extglob](https://www.npmjs.com/package/extglob): Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob… [more](https://github.com/micromatch/extglob) | [homepage](https://github.com/micromatch/extglob \"Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.\")\n* [is-extglob](https://www.npmjs.com/package/is-extglob): Returns true if a string has an extglob. | [homepage](https://github.com/jonschlinkert/is-extglob \"Returns true if a string has an extglob.\")\n* [is-glob](https://www.npmjs.com/package/is-glob): Returns `true` if the given string looks like a glob pattern or an extglob pattern… [more](https://github.com/jonschlinkert/is-glob) | [homepage](https://github.com/jonschlinkert/is-glob \"Returns `true` if the given string looks like a glob pattern or an extglob pattern. This makes it easy to create code that only uses external modules like node-glob when necessary, resulting in much faster code execution and initialization time, and a bet\")\n* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/micromatch/micromatch \"Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 164 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 1 | [devongovett](https://github.com/devongovett) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on February 18, 2018._",
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-06-27T13:02:45.042Z",
+    "created": "2016-09-06T22:48:30.976Z",
+    "0.1.0": "2016-09-06T22:48:30.976Z",
+    "0.1.1": "2016-10-08T11:39:15.527Z",
+    "0.1.2": "2016-10-08T11:47:21.318Z",
+    "0.1.3": "2016-10-08T11:53:02.865Z",
+    "0.2.0": "2016-10-18T18:44:48.704Z",
+    "0.2.1": "2016-10-20T21:28:57.586Z",
+    "0.3.0": "2016-10-21T02:30:11.916Z",
+    "0.3.1": "2016-10-21T05:38:51.192Z",
+    "0.3.3": "2016-10-29T18:44:52.654Z",
+    "0.3.4": "2016-11-03T18:33:52.713Z",
+    "1.0.0": "2016-12-13T02:29:22.024Z",
+    "1.0.1": "2017-03-14T20:07:18.974Z",
+    "1.0.2": "2017-03-14T20:43:17.611Z",
+    "1.0.3": "2017-04-06T23:39:48.886Z",
+    "1.0.4": "2017-04-09T19:10:43.932Z",
+    "1.1.0": "2017-04-11T19:59:25.936Z",
+    "1.1.1": "2017-04-11T20:51:45.873Z",
+    "1.2.0": "2017-05-28T23:40:55.850Z",
+    "1.2.1": "2017-09-08T01:52:18.255Z",
+    "1.2.2": "2017-09-13T12:17:36.961Z",
+    "1.2.3": "2017-09-13T12:20:14.264Z",
+    "1.2.4": "2017-10-21T00:34:36.060Z",
+    "1.2.5": "2017-10-21T01:52:22.529Z",
+    "1.2.6": "2017-11-27T19:10:03.486Z",
+    "1.2.7": "2018-01-08T04:58:33.465Z",
+    "1.2.8": "2018-02-18T14:04:07.896Z",
+    "1.2.9": "2018-02-18T18:35:01.344Z",
+    "1.2.10": "2018-06-27T02:17:58.156Z",
+    "1.2.11": "2018-06-27T03:54:28.258Z",
+    "1.2.12": "2018-06-27T07:15:18.116Z",
+    "1.2.13": "2018-06-27T13:02:41.391Z"
+  },
+  "homepage": "https://github.com/micromatch/nanomatch",
+  "keywords": [
+    "bash",
+    "expand",
+    "expansion",
+    "expression",
+    "file",
+    "files",
+    "filter",
+    "find",
+    "glob",
+    "globbing",
+    "globs",
+    "globstar",
+    "match",
+    "matcher",
+    "matches",
+    "matching",
+    "micromatch",
+    "minimatch",
+    "multimatch",
+    "nanomatch",
+    "path",
+    "pattern",
+    "patterns",
+    "regex",
+    "regexp",
+    "regular",
+    "shell",
+    "wildcard"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micromatch/nanomatch.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/micromatch/nanomatch/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "jonschlinkert": true
+  },
+  "contributors": [
+    {
+      "name": "Devon Govett",
+      "url": "http://badassjs.com"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    }
+  ],
+  "_attachments": {}
+}

@@ -1,0 +1,1095 @@
+{
+  "_id": "from2",
+  "_rev": "32-7e5fec715ce04d5ae17740d082c921c9",
+  "name": "from2",
+  "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+  "dist-tags": {
+    "latest": "2.3.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "0.0.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "_id": "from2@0.0.0",
+      "dist": {
+        "shasum": "66d98a665a59a6cd5dd29bc9b11d6e48343cbd71",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.25",
+      "_npmUser": {
+        "name": "hughsk",
+        "email": "hughskennedy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.0.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "d0914ee2a5c1b2fb233d984c1b6687e6fa9f3081",
+      "_id": "from2@1.0.0",
+      "_shasum": "ee0974ca65e5fdbe6f151c30f10cce380d4466d6",
+      "_from": ".",
+      "_npmVersion": "1.4.13",
+      "_npmUser": {
+        "name": "hughsk",
+        "email": "hughskennedy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ee0974ca65e5fdbe6f151c30f10cce380d4466d6",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.0.1",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "066e9c3f010a0d67c5a0025d33e5d8ae082ed627",
+      "_id": "from2@1.0.1",
+      "_shasum": "c9d33f6a16c62493f4814d3626e4cd4288040e14",
+      "_from": ".",
+      "_npmVersion": "1.4.13",
+      "_npmUser": {
+        "name": "hughsk",
+        "email": "hughskennedy@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c9d33f6a16c62493f4814d3626e4cd4288040e14",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.1.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "_id": "from2@1.1.0",
+      "_shasum": "bead16cd3b49ecee186008fc9d8573c7e322b852",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bead16cd3b49ecee186008fc9d8573c7e322b852",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.1.1",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "_id": "from2@1.1.1",
+      "_shasum": "100a7cb5e8479baddc54ba90a3a6b080231dfc88",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "100a7cb5e8479baddc54ba90a3a6b080231dfc88",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.2.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "8c5efc9ca4e254208f01609f490bd4ae67c3d9b6",
+      "_id": "from2@1.2.0",
+      "_shasum": "90576dff6fe01b5d0b4e6933cf97bbd78cc95f83",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "90576dff6fe01b5d0b4e6933cf97bbd78cc95f83",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "1.3.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "~2.0.1",
+        "readable-stream": "~1.1.10"
+      },
+      "devDependencies": {
+        "tape": "~2.4.2"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "96118ea0d8aff6fb28cb8b7d8bc63ab1adb946a9",
+      "_id": "from2@1.3.0",
+      "_shasum": "88413baaa5f9a597cfde9221d86986cd3c061dfd",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "88413baaa5f9a597cfde9221d86986cd3c061dfd",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.0.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "8fa9bb234bd99d6bfb074156db80db80d94d81c7",
+      "_id": "from2@2.0.0",
+      "_shasum": "1f3b7b3507a493ba5fc05259d30f25a08c6648ea",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1f3b7b3507a493ba5fc05259d30f25a08c6648ea",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.0.1",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "321cf5ad8be7dc8f5bca04a8cd904b25a144c319",
+      "_id": "from2@2.0.1",
+      "_shasum": "d11c3d98df002f7f22aa86be26fdf8abc49458a5",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d11c3d98df002f7f22aa86be26fdf8abc49458a5",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.0.2",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "1f9ad64c753ccf64f6afe3ab603cd63990f4c5bb",
+      "_id": "from2@2.0.2",
+      "_shasum": "6225505c3171302b6c4c122069be50f932aee5f6",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6225505c3171302b6c4c122069be50f932aee5f6",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.0.3",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "08b671ee713c45064dec6de59da5f79f11e0b053",
+      "_id": "from2@2.0.3",
+      "_shasum": "ba8cab86f25e2083f909eb9798d58bc28abd819f",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ba8cab86f25e2083f909eb9798d58bc28abd819f",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.1.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "32b7efb53c92c8abde09291b06e1f8a009c60b63",
+      "_id": "from2@2.1.0",
+      "_shasum": "2a223b6593903735064a7445afa4dcc59544bf53",
+      "_from": ".",
+      "_npmVersion": "2.12.1",
+      "_nodeVersion": "2.3.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2a223b6593903735064a7445afa4dcc59544bf53",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.1.1",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "c95b2b94e0610a739757ced5c2fabb44c76f9532",
+      "_id": "from2@2.1.1",
+      "_shasum": "0b0e068bdf409ab734f1b15a6a779a217ede5724",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "0b0e068bdf409ab734f1b15a6a779a217ede5724",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.2.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "ca5d76e86cf527871edf214848637a3cf6981802",
+      "_id": "from2@2.2.0",
+      "_shasum": "afe200e83933610a415723c367a68bf8df637b5e",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "afe200e83933610a415723c367a68bf8df637b5e",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/from2-2.2.0.tgz_1471195530446_0.8108480179216713"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "from2",
+      "description": "Convenience wrapper for ReadableStream, with an API lifted from \"from\" and \"through2\"",
+      "version": "2.3.0",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test"
+      },
+      "dependencies": {
+        "inherits": "^2.0.1",
+        "readable-stream": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^4.0.0"
+      },
+      "author": {
+        "name": "Hugh Kennedy",
+        "email": "hughskennedy@gmail.com",
+        "url": "http://hughsk.io/"
+      },
+      "contributors": [
+        {
+          "name": "Mathias Buus",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/hughsk/from2.git"
+      },
+      "bugs": {
+        "url": "https://github.com/hughsk/from2/issues"
+      },
+      "homepage": "https://github.com/hughsk/from2",
+      "keywords": [
+        "from",
+        "stream",
+        "readable",
+        "pull",
+        "convenience",
+        "wrapper"
+      ],
+      "gitHead": "09243c8b8354420059c9bc935875e1896aa58c10",
+      "_id": "from2@2.3.0",
+      "_shasum": "8bfb5502bde4a4d36cfdeea007fcca21d7e382af",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8bfb5502bde4a4d36cfdeea007fcca21d7e382af",
+        "tarball": "https://registry.npmjs.org/from2/-/from2-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hughsk",
+          "email": "hughskennedy@gmail.com"
+        },
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/from2-2.3.0.tgz_1471281357716_0.0004089232534170151"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# from2 [![Flattr this!](https://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=hughskennedy&url=http://github.com/hughsk/from2&title=from2&description=hughsk/from2%20on%20GitHub&language=en_GB&tags=flattr,github,javascript&category=software)[![experimental](http://hughsk.github.io/stability-badges/dist/experimental.svg)](http://github.com/hughsk/stability-badges) #\n\n`from2` is a high-level module for creating readable streams that properly handle backpressure.\n\nConvience wrapper for\n[readable-stream](http://github.com/isaacs/readable-stream)'s `ReadableStream`\nbase class, with an API lifted from\n[from](http://github.com/dominictarr/from) and\n[through2](http://github.com/rvagg/through2).\n\n## Usage ##\n\n[![from2](https://nodei.co/npm/from2.png?mini=true)](https://nodei.co/npm/from2)\n\n### `stream = from2([opts], read)` ###\n\nWhere `opts` are the options to pass on to the `ReadableStream` constructor,\nand `read(size, next)` is called when data is requested from the stream.\n\n* `size` is the recommended amount of data (in bytes) to retrieve.\n* `next(err)` should be called when you're ready to emit more data.\n\nFor example, here's a readable stream that emits the contents of a given\nstring:\n\n``` javascript\nvar from = require('from2')\n\nfunction fromString(string) {\n  return from(function(size, next) {\n    // if there's no more content\n    // left in the string, close the stream.\n    if (string.length <= 0) return next(null, null)\n\n    // Pull in a new chunk of text,\n    // removing it from the string.\n    var chunk = string.slice(0, size)\n    string = string.slice(size)\n\n    // Emit \"chunk\" from the stream.\n    next(null, chunk)\n  })\n}\n\n// pipe \"hello world\" out\n// to stdout.\nfromString('hello world').pipe(process.stdout)\n```\n\n### `stream = from2.obj([opts], read)` ###\n\nShorthand for `from2({ objectMode: true }, read)`.\n\n### `createStream = from2.ctor([opts], read)` ###\n\nIf you're creating similar streams in quick succession you can improve\nperformance by generating a stream **constructor** that you can reuse instead\nof creating one-off streams on each call.\n\nTakes the same options as `from2`, instead returning a constructor which you\ncan use to create new streams.\n\n### See Also\n\n- [from2-array](https://github.com/binocarlos/from2-array) - Create a from2 stream based on an array of source values.\n- [from2-string](https://github.com/yoshuawuyts/from2-string) - Create a stream from a string. Sugary wrapper around from2.\n\n## License ##\n\nMIT. See [LICENSE.md](http://github.com/hughsk/from2/blob/master/LICENSE.md) for details.\n",
+  "maintainers": [
+    {
+      "name": "hughsk",
+      "email": "hughskennedy@gmail.com"
+    },
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-07-19T10:52:04.866Z",
+    "created": "2014-02-10T10:03:36.170Z",
+    "0.0.0": "2014-02-10T10:03:36.170Z",
+    "1.0.0": "2014-07-18T12:00:01.486Z",
+    "1.0.1": "2014-07-18T12:03:25.410Z",
+    "1.1.0": "2014-07-19T10:02:18.699Z",
+    "1.1.1": "2014-07-20T08:35:13.241Z",
+    "1.2.0": "2014-08-07T20:22:42.339Z",
+    "1.3.0": "2015-01-11T22:42:21.511Z",
+    "2.0.0": "2015-06-16T20:32:45.396Z",
+    "2.0.1": "2015-06-16T20:37:19.288Z",
+    "2.0.2": "2015-06-16T21:16:12.733Z",
+    "2.0.3": "2015-06-17T04:32:13.320Z",
+    "2.1.0": "2015-07-15T16:35:14.616Z",
+    "2.1.1": "2016-01-27T10:20:00.083Z",
+    "2.2.0": "2016-08-14T17:25:32.081Z",
+    "2.3.0": "2016-08-15T17:15:59.624Z"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/hughsk/from2",
+  "keywords": [
+    "from",
+    "stream",
+    "readable",
+    "pull",
+    "convenience",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/from2.git"
+  },
+  "author": {
+    "name": "Hugh Kennedy",
+    "email": "hughskennedy@gmail.com",
+    "url": "http://hughsk.io/"
+  },
+  "bugs": {
+    "url": "https://github.com/hughsk/from2/issues"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Mathias Buus",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "users": {
+    "tclay": true,
+    "mohankethees": true,
+    "incendiary": true,
+    "sirrah": true,
+    "nichoth": true,
+    "shiningray": true,
+    "jekrb": true,
+    "knksmith57": true,
+    "quocnguyen": true
+  },
+  "_attachments": {}
+}

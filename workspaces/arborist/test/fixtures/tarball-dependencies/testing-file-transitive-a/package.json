@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-file-transitive-a",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/testing-file-transitive-b": "file:../testing-file-transitive-b/isaacs-testing-file-transitive-b-1.0.0.tgz",
+    "@isaacs/testing-file-transitive-c": "file:./c/isaacs-testing-file-transitive-c-1.0.0.tgz"
+  }
+}

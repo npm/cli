@@ -1,0 +1,746 @@
+{
+  "_id": "public-encrypt",
+  "_rev": "26-99c0668bd18e215637db51b7ce20037c",
+  "name": "public-encrypt",
+  "description": "browserify version of publicEncrypt & privateDecrypt",
+  "dist-tags": {
+    "latest": "4.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "public-encrypt",
+      "version": "1.0.0",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "parse-asn1": "^1.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "a9d35865a5a54e01c1cc42625a21aadeb9e759cd",
+      "_id": "public-encrypt@1.0.0",
+      "_shasum": "56179751a5eb00137fe63f825049ae4504da44c8",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "56179751a5eb00137fe63f825049ae4504da44c8",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-1.0.0.tgz"
+      }
+    },
+    "1.0.1": {
+      "name": "public-encrypt",
+      "version": "1.0.1",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "fe7471ff6f2fad33008f4fe1d5ca69bf949bbb5e",
+      "_id": "public-encrypt@1.0.1",
+      "_shasum": "f4d881f0068cdd24017ef4baa4f49b9d8d055c46",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f4d881f0068cdd24017ef4baa4f49b9d8d055c46",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-1.0.1.tgz"
+      }
+    },
+    "1.1.0": {
+      "name": "public-encrypt",
+      "version": "1.1.0",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "browserify-rsa": "^1.1.0",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "5c099fbcf23ff28a573052d80241c529a5b0e706",
+      "_id": "public-encrypt@1.1.0",
+      "_shasum": "dfaadb4b3edb35c826f4002820637dca1f6b48b9",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfaadb4b3edb35c826f4002820637dca1f6b48b9",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-1.1.0.tgz"
+      }
+    },
+    "1.1.1": {
+      "name": "public-encrypt",
+      "version": "1.1.1",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "parse-asn1": "^1.2.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "7be181d7851b5b988daeb9b2bb6890e5d009e853",
+      "_id": "public-encrypt@1.1.1",
+      "_shasum": "2be5a4963e6814102c6d2baad2d40a0a88e9587d",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2be5a4963e6814102c6d2baad2d40a0a88e9587d",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-1.1.1.tgz"
+      }
+    },
+    "1.1.2": {
+      "name": "public-encrypt",
+      "version": "1.1.2",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^1.1.0",
+        "parse-asn1": "^2.0.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "1624152e382c11db811db30bbd5ebcfd89b8b279",
+      "_id": "public-encrypt@1.1.2",
+      "_shasum": "90711147083bc5bfbe2b51964f9a6b038adb0d4b",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "90711147083bc5bfbe2b51964f9a6b038adb0d4b",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-1.1.2.tgz"
+      }
+    },
+    "2.0.0": {
+      "name": "public-encrypt",
+      "version": "2.0.0",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^3.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "51e36739287358dd4e9d9272bfe1bed8ccb580eb",
+      "_id": "public-encrypt@2.0.0",
+      "_shasum": "9e49010bf021d33f6597c77abd939612a82767fc",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9e49010bf021d33f6597c77abd939612a82767fc",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-2.0.0.tgz"
+      }
+    },
+    "2.0.1": {
+      "name": "public-encrypt",
+      "version": "2.0.1",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "browserify-rsa": "^2.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^3.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "317270f847994330e07bc91d6f8ae9dd8048798a",
+      "_id": "public-encrypt@2.0.1",
+      "_shasum": "ef150418728a93e70700fa5c6a94016e0e596493",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ef150418728a93e70700fa5c6a94016e0e596493",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-2.0.1.tgz"
+      }
+    },
+    "3.0.0": {
+      "name": "public-encrypt",
+      "version": "3.0.0",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^3.2.0",
+        "browserify-rsa": "^3.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^4.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "dc25973941f7a405eeeb80d6e102520987db8e2a",
+      "_id": "public-encrypt@3.0.0",
+      "_shasum": "ae483d0f551ba125f12540e20ecfc9d00f4e60ea",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "3.3.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "ae483d0f551ba125f12540e20ecfc9d00f4e60ea",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ]
+    },
+    "4.0.0": {
+      "name": "public-encrypt",
+      "version": "4.0.0",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": "",
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^5.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "e7654c62f2929caeae09bcf6e3572b1aafcbd8b1",
+      "_id": "public-encrypt@4.0.0",
+      "_shasum": "39f699f3a46560dd5ebacbca693caf7c65c18cc6",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "39f699f3a46560dd5ebacbca693caf7c65c18cc6",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ]
+    },
+    "4.0.2": {
+      "name": "public-encrypt",
+      "version": "4.0.2",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^5.0.0",
+        "randombytes": "^2.0.1"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3",
+        "tap-spec": "^2.1.2"
+      },
+      "gitHead": "8dc63aee4d4da0539bd579eaf9f2e86ec394d613",
+      "_id": "public-encrypt@4.0.2",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4kJ5Esocg8X3h8YgJsKAuoesBgB7mqH3eowiDzMUPKiRDDE7E/BqqZD1hnTByIaAFiwAw246YEltSq7tdrOH0Q==",
+        "shasum": "46eb9107206bf73489f8b85b69d91334c6610994",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.2.tgz",
+        "fileCount": 31,
+        "unpackedSize": 27801
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/public-encrypt_4.0.2_1523449480930_0.42773762674143434"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.3": {
+      "name": "public-encrypt",
+      "version": "4.0.3",
+      "description": "browserify version of publicEncrypt & privateDecrypt",
+      "main": "index.js",
+      "browser": "browser.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "node test/index.js | tspec",
+        "lint": "standard"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/publicEncrypt.git"
+      },
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "browserify-rsa": "^4.0.0",
+        "create-hash": "^1.1.0",
+        "parse-asn1": "^5.0.0",
+        "randombytes": "^2.0.1",
+        "safe-buffer": "^5.1.2"
+      },
+      "devDependencies": {
+        "standard": "^12.0.0",
+        "tap-spec": "^2.1.2",
+        "tape": "^3.0.3"
+      },
+      "gitHead": "aff236f8921dd1309bf61b4f56d14385ec40cbaf",
+      "_id": "public-encrypt@4.0.3",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-zVpa8oKZSz5bTMTFClc1fQOnyyEzpl5ozpi1B5YcvBrdohMjH2rfsBtyXcuNuwjsDIXmBYlF2N5FlJYhR29t8Q==",
+        "shasum": "4fcc9d77a07e48ba7527e7cbe0de33d0701331e0",
+        "tarball": "https://registry.npmjs.org/public-encrypt/-/public-encrypt-4.0.3.tgz",
+        "fileCount": 31,
+        "unpackedSize": 27803,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbsnnECRA9TVsSAnZWagAAXz8P/i2hUVyWz477HJ5gtXrp\n110L14kltYplvOCNvh/PGkVapMFo/ObJ5Siynpn1NKAAVXM0KHQXvhaezLtk\nbzxxY1JE+sLEVmDNmwddGKZ0/8UIRlx9nw8cMEex/HhJyhVDe1rnkqOO/iER\nloT+N4WX5umDtop1BKl4rzeGNSjZgGyk2M+xvMN5tXKzfV/2HW3+FHYLcy3Z\nsyvBZmnfLDrmN9pK/E3hw9oqekM1FfoxkL+0XnIW5H2ybkV6CDZbqTxV/0gE\nbZB0i54I+t1OA9BAh/LtR4tas+xolgH5WqF2NB9MmjaTxWZAxHPGGhKuQ/i5\nxRLuJej37gIN7CZfVoEABHZ8QX3mgBK+yVlk4osOxiALAOxuqCh/Lm0NlQ0q\nprlJ5FGk0i7ZUvohTsJNasBXGS3z9HdCxKW+v4NR22WAfwmCnzm5oumpLROw\n6nKh3YHsw92Mv3UZq2VHK5GPObQKVpaTyuEGq1uKoiwFHsrGM5RvFIT21PxU\nmXkVLpXUSUxmUGqJU9VRJVuhgNjGV5o+egzW9tEXJCD8/V0PrOuN5qL09U3u\nM6/jUPWiKUuxLwMS/tCYF9fTdpQzVWx+nWypP/pbuyq4n0xFqN1aWxx7X7HK\nQOcJU0PjMGHiHHHlWYL1cZvLq1sUWBUxOwpZwc4LE8maZF7h0BrYYvKhBPoT\nb+tq\r\n=gJHG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "npm@dcousens.com",
+          "name": "dcousens"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/public-encrypt_4.0.3_1538423236125_0.6978435794264757"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "publicEncrypt\n===\n\n[![Build Status](https://travis-ci.org/crypto-browserify/publicEncrypt.svg)](https://travis-ci.org/crypto-browserify/publicEncrypt)\n\npublicEncrypt/privateDecrypt for browserify\n\n[Blog post about the moving parts that have gone into this.](http://calvinmetcalf.com/post/109301244759/porting-nodejs-crypto-to-the-browser-part-3)\n",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T05:24:46.308Z",
+    "created": "2014-12-17T12:32:20.274Z",
+    "1.0.0": "2014-12-17T12:32:20.274Z",
+    "1.0.1": "2014-12-18T21:43:23.402Z",
+    "1.1.0": "2014-12-22T19:43:34.256Z",
+    "1.1.1": "2015-01-06T12:36:39.495Z",
+    "1.1.2": "2015-01-06T12:52:08.469Z",
+    "2.0.0": "2015-02-12T13:31:38.132Z",
+    "2.0.1": "2015-05-21T02:58:45.148Z",
+    "3.0.0": "2015-10-27T01:30:15.140Z",
+    "4.0.0": "2015-11-02T14:18:31.325Z",
+    "4.0.2": "2018-04-11T12:24:40.993Z",
+    "4.0.3": "2018-10-01T19:47:16.256Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/publicEncrypt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/publicEncrypt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/publicEncrypt/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "author": {
+    "name": "Calvin Metcalf"
+  }
+}

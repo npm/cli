@@ -1,0 +1,472 @@
+{
+  "_id": "@istanbuljs/load-nyc-config",
+  "_rev": "4-e1098627fd67866b3e9e205199c1eeac",
+  "name": "@istanbuljs/load-nyc-config",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "1.0.0-alpha.0": {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.0.0-alpha.0",
+      "description": "Utility function to load nyc configuration",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot",
+        "release": "standard-version"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+      "dependencies": {
+        "camelcase": "^5.3.1",
+        "find-up": "^4.1.0",
+        "js-yaml": "^3.13.1",
+        "resolve-from": "^5.0.0"
+      },
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "ignores": [
+          "test/fixtures/extends/invalid.*"
+        ],
+        "rules": {
+          "require-atomic-updates": 0
+        }
+      },
+      "gitHead": "8e2f479d4b5c113e3e17886bead4915f2e9d1fba",
+      "_id": "@istanbuljs/load-nyc-config@1.0.0-alpha.0",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-tDRosscSl5tXCN2rYsfRddj/sl8ApLm30ByOhGFpMtCzjVbunPTwwexHFjxcPycSN6pUunUhOW+AcTfb9MB+gA==",
+        "shasum": "d8377265efcd2ef7966e056d706110ac14810af1",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0-alpha.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 6466,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdmjaLCRA9TVsSAnZWagAAd8sQAISikfyagWQoTw7VksDY\nnPfcI+eD9Al9Q0p21fmYQLasjVMUa2JkrNHe5aPsb/aq3nCl5aCXWVS+9xc4\nvVB61gG0gzRZ/qeLzod/WlkITpGL1I8hR6+0q5jIxaixMAKTj40OV9pwSGYd\noUYjjygxwX4DWVA6PLDI8hjBlYK/+yri+qvvpKrflyNeWT2P8eD7lpJKKBbl\n79KyIriRDUDfYPB82U636DNPoqMikn20vyETArmOhEzifC5NcqNRyXkbjBY6\njow46aNjKjT45r6ZQapGdQMEASrBGGPe8qmyiMy2k041smrawIdZ6AI0MGSK\n1Xn8yeRCQCYblJlDazabKEalVn5SKVaEGglj6QRNWqWN7zk7AOxZV7Nnr/wq\nTTnMjrptAZCw9fBUm4c4QHJQ47BncZwSbFUZFbL9FEbBb+hLntnutBF78zFq\nXr+I7JaE/CgMVR8PNz+AalBeSYCgdvbSfKR6qvWrfWLV75+SKBdya3DP6sA4\n/akbQR6xTH0Aps1aGPkJRwowVnPqOUlm7jmr71p4OyMQGHRtix4hpGZxOBrG\nqfBvPt/NPDj4T96jNAHjv5qFoi1R+sY96hi89U56D6tB/bTbTMPsx1EvTGDC\nkvWfNwYDUmnoDEOIbczEmIpOXEzzker41BL6WxfnzufXq2iaAJGbl5rui3vc\n7KtL\r\n=IKmk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/load-nyc-config_1.0.0-alpha.0_1570387595115_0.9456769831574074"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0-alpha.1": {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.0.0-alpha.1",
+      "description": "Utility function to load nyc configuration",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot",
+        "release": "standard-version"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+      "dependencies": {
+        "camelcase": "^5.3.1",
+        "find-up": "^4.1.0",
+        "js-yaml": "^3.13.1",
+        "resolve-from": "^5.0.0"
+      },
+      "devDependencies": {
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "ignores": [
+          "test/fixtures/extends/invalid.*"
+        ],
+        "rules": {
+          "require-atomic-updates": 0
+        }
+      },
+      "gitHead": "9e046f584f00fea4b7444c074f2a725b24e21ef9",
+      "_id": "@istanbuljs/load-nyc-config@1.0.0-alpha.1",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-ztOcmioPc9meI3VRTHFU73bha0xwBr55X2na1+hRZfvtmVWXBknnSm6SI16UOXUrwIzpSMkEmEXsS7FG/gu8ZQ==",
+        "shasum": "9771951889c9c152c076348a0f643de210db8216",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0-alpha.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6610,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnLVaCRA9TVsSAnZWagAAESIP/jTvTDH4XLO3MA6XOyBg\nNFBz93BdHlHteuB9R1/ATbHT6PkC/azgag5QUT46/J8xLLFI1+L+Ei6LpLJI\ntoSnlccY0esDK88Znjm1cAzBTlh7uZrldiyCHhxUxTSgmIm577HY7/vp2nec\nBRUqk+3TnPQVteWhbqHjIE+5ewS+HuQc/HDsodu4DcGjp7bzllxp5loETO8e\nkk1g0e96vGE7wWRfn9ObPspQPlHYOX/wIpIVvv5IyDNzICgCT2o377cO+/3O\naEiw+wEaEmVMYyzDEyM1jbkN40SzYz2/kP6JDe09G4UxwTa7enxX9uvsRdH7\n+t1pI4PtsFbqo+agc/+gSnPAw8hTYE7AEMZzavO09xYRWXutly0BBy1uG+Z7\nRPADzThpODqJ8PG1Ra9JYM68HZQUpW5tewA1wcG5E4LxsrWDkH8UkorybhGH\nuG3tvR4zG8inbq1QKHTuBn1PIlu09Pdm5WjYyFP219ji6Dt+JGuOW2X4ti8S\nLjJ/p8gD8wkEM5wJvaf7EWScmkhaPFp07L1SEIHIt84/9sUbTtVRPkwRPsUT\nVr3v/xtjquTHYUU5BVbX/q14XvfXibGVREl2oSrp1w5w1YXj4MdhO9FEG6gV\nxVSIbCMNI3RjKfZinIHctp/N12qk/p8C9lKNg5a6c+NeuXaswjuTcTYv85m/\nET4m\r\n=I3gZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/load-nyc-config_1.0.0-alpha.1_1570551130341_0.6756414916049391"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0-alpha.2": {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.0.0-alpha.2",
+      "description": "Utility function to load nyc configuration",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot",
+        "release": "standard-version"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+      "dependencies": {
+        "camelcase": "^5.3.1",
+        "find-up": "^4.1.0",
+        "js-yaml": "^3.13.1",
+        "resolve-from": "^5.0.0"
+      },
+      "devDependencies": {
+        "semver": "^6.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.6.5",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "ignores": [
+          "test/fixtures/extends/invalid.*"
+        ],
+        "rules": {
+          "require-atomic-updates": 0
+        }
+      },
+      "gitHead": "d14273210fea5f40eb80333b7c62ce0c3caf41a5",
+      "_id": "@istanbuljs/load-nyc-config@1.0.0-alpha.2",
+      "_nodeVersion": "12.11.0",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-ue0SI/XzxQxIRfO1JN4C7AAtynUIDcbkgnfVvVxLCeC6WkIRAahWxIIX4pTIdLpEPoTO/0DLnKtylE/tzdhKog==",
+        "shasum": "1e4882e86b663fa2d78e0f791299bd9bedd8e5c5",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0-alpha.2.tgz",
+        "fileCount": 6,
+        "unpackedSize": 8233,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2eM3CRA9TVsSAnZWagAAdjAQAKUqD+9lRQiy9sy8i1/A\ndBbPkwvS1avRqJV07IB+fu2Xrwc7GVNW/U3Y8c3x2lUBfW8zCJf3VR2s8+eT\ndYQVTGGNs3qXxDDstS+1jU6gSge7Sx/W4T0ZuMAHq66ysfBAAlMXavqyHCb7\nlQNwxGLuZ+HjuZOkGb4ixeQvnpwB324oNKvFzAsNQWebftv1UWXHAj2DhVOA\ni72g3dseM6zYIqGseWdC0MuZqpioPuqnCLpHYYujS8kM+46lc1r7ZFlTE0bC\nlnhPlyrWkwHWTh6Ha/cE6n3V0ZKvLaGSzp/hEckvEYs+23MPpUIiSBHRMNqN\niBU0uRokBVz4HpiZUXZHm0XWiDKXbjJPZusKjiY90AxrzSaDgQcY4A4Fmd6V\nE5Zzjo0uyIj4bCo1ChHHT1yzjHvCj2q/ZlQhFGCa0IAqX+HEZcWuAcmZZNOk\ne1l1qHnx4OBo3X1wMHFXvCMajEcH7vNok0hrQTjEuc7dbcCHnm1m7TPntDI1\nez0ddCeW+XbbMbYbTtzDsHVQfyMR/isSyHKpL2rfggQx/vB1hr4OZUnTJVdY\n7dwHQvOnQj8uK5Ee6fXtCIH35Bag9RuD+01N9S3ClDDG8F38nA1DesLO+yL7\ncVnmgV7kV8o33qCHG+q4gbCW7XJ/bYgzbGy8wZaBLSxbs4yaIIcrICygq+of\nrGOT\r\n=+4GH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/load-nyc-config_1.0.0-alpha.2_1574560567072_0.12250566311355504"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.0.0",
+      "description": "Utility function to load nyc configuration",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot",
+        "release": "standard-version"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+      "dependencies": {
+        "camelcase": "^5.3.1",
+        "find-up": "^4.1.0",
+        "js-yaml": "^3.13.1",
+        "resolve-from": "^5.0.0"
+      },
+      "devDependencies": {
+        "semver": "^6.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.10.5",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "ignores": [
+          "test/fixtures/extends/invalid.*"
+        ],
+        "rules": {
+          "require-atomic-updates": 0
+        }
+      },
+      "gitHead": "6e6427d8daf2853c2ab46127dc0d463c2ea2f6ca",
+      "_id": "@istanbuljs/load-nyc-config@1.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-ZR0rq/f/E4f4XcgnDvtMWXCUJpi8eO0rssVhmztsZqLIEFA9UUP9zmpE0VxlM+kv/E1ul2I876Fwil2ayptDVg==",
+        "shasum": "10602de5570baea82f8afbfa2630b24e7a8cfe5b",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 9142,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd/TL0CRA9TVsSAnZWagAADzQP/2a2tPbv8eF1OAygSm2S\nymsHJe7rr3iDkf+BFZx0TBlRt470CXVxq7O7AjFOadE36dDTVv+xE5IljbQy\nimz5W9lBm8NhjkWk0nlh4KRur4lSAlRiX6S7PllbrBCKM4FbZjX1kDXS/jgP\nmyOK6rwMjZtg8GMA7xXCu3JgcGjPRLSn1VlHLVW/cw7T0QLWELGZHXlEypya\nlxWZt5dOv41eEjGx7hR2Xd/vRhsPui/TkijFrL4MGIPqG12UCHUMKj8l2vz1\nJfDsOlqsLxE9TOjSFTdV8fkXUyzAUA6isklLaZxeM9CquI8FSaR0LGsih7zO\nwed/mm/cmwe7dLrDTCxDMmDHTiu5v2zL6zDNMu6MvYftoLCM939FgEO9isLg\nLd5skpjkvSbr9zYD2R3t6c84+kV7lUClIAxkG+oQMKsfKpb1L018DLtK/rrm\nCElyeG1Ol2jPJVf09FNGD27nE6V/MABawHuolV7YibnhEZeasFEY8anS54Rk\nzM0ENjx3sggdUXorQ2YcxuiardphCBecRuUfMwrwSri8vzbhtxyOqHqE4E0O\n+oG4BRRnOxbMc9TfsRDnzKjB+fnYVfaMkm+plnVO3g1xlJ69LKmUglpzIt0M\nwL4orgSZzrnj3n3DtIUhZsTNh3loHD+ZjCSioZwj8CmOWJ87lJ3h8X/q7eJ7\nIevq\r\n=/I6T\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/load-nyc-config_1.0.0_1576874740214_0.862865850795296"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "@istanbuljs/load-nyc-config",
+      "version": "1.1.0",
+      "description": "Utility function to load nyc configuration",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "xo",
+        "test": "tap",
+        "snap": "npm test -- --snapshot",
+        "release": "standard-version"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "license": "ISC",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+      },
+      "bugs": {
+        "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+      },
+      "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+      "dependencies": {
+        "camelcase": "^5.3.1",
+        "find-up": "^4.1.0",
+        "get-package-type": "^0.1.0",
+        "js-yaml": "^3.13.1",
+        "resolve-from": "^5.0.0"
+      },
+      "devDependencies": {
+        "semver": "^6.3.0",
+        "standard-version": "^7.0.0",
+        "tap": "^14.10.5",
+        "xo": "^0.25.3"
+      },
+      "xo": {
+        "ignores": [
+          "test/fixtures/extends/invalid.*"
+        ],
+        "rules": {
+          "require-atomic-updates": 0,
+          "capitalized-comments": 0,
+          "unicorn/import-index": 0,
+          "import/extensions": 0,
+          "import/no-useless-path-segments": 0
+        }
+      },
+      "gitHead": "2033a007672d90669c48c79e6a2d63a3cd0851a7",
+      "_id": "@istanbuljs/load-nyc-config@1.1.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==",
+        "shasum": "fd3db1d59ecf7cf121e80650bb86712f9b55eced",
+        "tarball": "https://registry.npmjs.org/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10873,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJexVBoCRA9TVsSAnZWagAAs2wP/2JkQfXmUFMHx4eVHB59\n2+fwTd7kXdB6npQyLFz0unXo7ja5r7Dh7dWGJNeLr2mQLvHQZRJfVDPNiS+N\nQXwHwR3pSn0lEIYekgzQ7QeZlsq7OCNkHMu+wetxCMSwdLtR1pfeuI1pk3e+\nVRqWLZNmJolubR0BorRfqgdKMM4TQBq1wqDTaHE/75wxO0qUGu7NBwBCFUio\nb2SPUmaosJ7YCaCvpNj8VUFDUu5A29XmEBcBCGy8ccwsxrWIgftUQ9XPgyvr\nTMyWl0ffw6cEcDLoAPyeRXLHam6Qjiua5DfusVyFgrbbkIAfBVihsREje7iS\nGVcOG9E7wUQQVWbANapzL3DXcJJvvA93+duhxxhVm/mPiAEqA0aeAjOKIOdD\nS+0LaPywIzsgsKSZOrRg5HFm1gIWBC57uIvJS1gAvpYp9NJedOExuJyMlQMW\nFUWId6zb369UgsNu4epKdE1DnSVa50Otmv3Ic9QTNn1+IOjVaJrPVjYKoDgV\nCKABO3Rv/FRXBJTgQ2HT17W+I8/pDvAVv8yb7GqVdqr9a2AM2Ps5gBMYiDvT\nbiZAHuKjeIxyfZXjBkVHYJLiw/nJn44+NrPCBMIsTzjRUUAWCnylzVCZXpeC\nPxK9MRb+Q11pTidGMldGZnJMuFS10YUkyIo2pVhHGmOLrkEWe7bCQ28X6h1A\ni8MD\r\n=XW3k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bcoe",
+          "email": "bencoe@gmail.com"
+        },
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        },
+        {
+          "name": "gotwarlost",
+          "email": "kananthmail-github@yahoo.com"
+        },
+        {
+          "name": "jakxz",
+          "email": "jgkurian@me.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/load-nyc-config_1.1.0_1589989479472_0.5456091190008927"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-10-06T18:46:35.016Z",
+    "1.0.0-alpha.0": "2019-10-06T18:46:35.222Z",
+    "modified": "2020-05-20T15:44:43.589Z",
+    "1.0.0-alpha.1": "2019-10-08T16:12:10.450Z",
+    "1.0.0-alpha.2": "2019-11-24T01:56:07.218Z",
+    "1.0.0": "2019-12-20T20:45:40.302Z",
+    "1.1.0": "2020-05-20T15:44:39.756Z"
+  },
+  "maintainers": [
+    {
+      "name": "bcoe",
+      "email": "bencoe@gmail.com"
+    },
+    {
+      "name": "coreyfarrell",
+      "email": "git@cfware.com"
+    },
+    {
+      "name": "gotwarlost",
+      "email": "kananthmail-github@yahoo.com"
+    },
+    {
+      "name": "jakxz",
+      "email": "jgkurian@me.com"
+    }
+  ],
+  "description": "Utility function to load nyc configuration",
+  "homepage": "https://github.com/istanbuljs/load-nyc-config#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/istanbuljs/load-nyc-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/istanbuljs/load-nyc-config/issues"
+  },
+  "license": "ISC",
+  "readme": "# @istanbuljs/load-nyc-config\n\nThe utility function which NYC uses to load configuration.\nThis can be used by outside programs to calculate the configuration.\nCommand-line arguments are not considered by this function.\n\n```js\nconst {loadNycConfig} = require('@istanbuljs/load-nyc-config');\n\n(async () {\n  console.log(await loadNycConfig());\n})();\n```\n\n## loadNycConfig([options])\n\n### options.cwd\n\nType: `string`\nDefault: `cwd` from parent nyc process or `process.cwd()`\n\n### options.nycrcPath\n\nType: `string`\nDefault: `undefined`\n\nName of the file containing nyc configuration.\nThis can be a relative or absolute path.\nRelative paths can exist at `options.cwd` or any parent directory.\nIf an nycrc is specified but cannot be found an exception is thrown.\n\nIf no nycrc option is provided the default priority of config files are:\n\n* .nycrc\n* .nycrc.json\n* .nycrc.yml\n* .nycrc.yaml\n* nyc.config.js\n* nyc.config.cjs\n* nyc.config.mjs\n\n## Configuration merging\n\nConfiguration is first loaded from `package.json` if found, this serves as the package\ndefaults.  These options can be overridden by an nycrc if found.  Arrays are not merged,\nso if `package.json` sets `\"require\": [\"@babel/register\"]` and `.nycrc` sets `\"require\": [\"esm\"]`\nthe effective require setting will only include `\"esm\"`.\n\n## isLoading\n\n```js\nconst {isLoading} = require('@istanbuljs/load-nyc-config');\n\nconsole.log(isLoading());\n```\n\nIn some cases source transformation hooks can get installed before the configuration is\nloaded.  This allows hooks to ignore source loads that occur during configuration load.\n\n## `@istanbuljs/load-nyc-config` for enterprise\n\nAvailable as part of the Tidelift Subscription.\n\nThe maintainers of `@istanbuljs/load-nyc-config` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/npm-istanbuljs-load-nyc-config?utm_source=npm-istanbuljs-load-nyc-config&utm_medium=referral&utm_campaign=enterprise)\n",
+  "readmeFilename": "README.md"
+}

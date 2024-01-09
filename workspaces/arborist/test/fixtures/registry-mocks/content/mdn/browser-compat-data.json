@@ -1,0 +1,530 @@
+{
+  "_id": "@mdn/browser-compat-data",
+  "_rev": "4-22da4cded076f2ec5c153ce70a874dae",
+  "name": "@mdn/browser-compat-data",
+  "dist-tags": {
+    "latest": "2.0.3"
+  },
+  "versions": {
+    "2.0.0-1": {
+      "name": "@mdn/browser-compat-data",
+      "version": "2.0.0-1",
+      "description": "Browser compatibility data provided by MDN Web Docs",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "dependencies": {
+        "extend": "3.0.2"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdn/browser-compat-data.git"
+      },
+      "keywords": [
+        "browser-compat-data",
+        "browser",
+        "compatibility",
+        "data",
+        "mdn",
+        "mozilla"
+      ],
+      "author": {
+        "name": "MDN Web Docs"
+      },
+      "license": "CC0-1.0",
+      "bugs": {
+        "url": "https://github.com/mdn/browser-compat-data/issues"
+      },
+      "homepage": "https://github.com/mdn/browser-compat-data#readme",
+      "devDependencies": {
+        "ajv": "~6.12.2",
+        "better-ajv-errors": "~0.6.7",
+        "chalk": "~3.0.0",
+        "compare-versions": "~3.6.0",
+        "mdn-confluence": "~2.1.0",
+        "ora": "~4.0.3",
+        "prettier": "~1.19.1",
+        "yargs": "~15.4.1"
+      },
+      "scripts": {
+        "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+        "lint": "node test/lint",
+        "fix": "node scripts/fix",
+        "mirror": "node scripts/mirror",
+        "stats": "node scripts/statistics",
+        "release-notes": "node scripts/release-notes",
+        "show-errors": "npm test 1> /dev/null",
+        "test": "npm run lint",
+        "traverse": "node scripts/traverse"
+      },
+      "gitHead": "191a578bfc87ed0c03321b94b4ef65db48e993fb",
+      "_id": "@mdn/browser-compat-data@2.0.0-1",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-bvLlIwAmnzVcoKPhgR5WGQAZYHdbA71IDZpJ8CwlHYgoaV6ZIcym498z5WTKt3le9WdtpezVUIchAzEZXSdLpQ==",
+        "shasum": "7ed0f7871cbceee25c71d64bc394dbe9c2ceb467",
+        "tarball": "https://registry.npmjs.org/@mdn/browser-compat-data/-/browser-compat-data-2.0.0-1.tgz",
+        "fileCount": 2277,
+        "unpackedSize": 18163117,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfY0g3CRA9TVsSAnZWagAAtLUP/1HMs4GzLnzVJhcJN92D\nezaTyT+vGuC6uOJ9pxXHKXpAsztJXgKs3MqTihmByAMQSD4+7qfDrYYU79Lu\nzdgn6Ljk6KO/Njo+lX9sfHucgNbDGEXUrw7hYoIAbs2Qf+gtSp3+v4v3Drmx\nq1NSjaeGNzQHbcAu+GbixX7wKmQPR6K7C5u0wwVmUTKK/pu+C+aPzSGpY/kI\nzoSuyBn7XVCQzcKOCqOUXorS/NTPI82KkYS3Dcw2qLVxtx8wGClNZGOlpABz\nk2ien7NEigdWp6m4SabxGgQS6G7iPKXU+55U4R35tdM9oArDF4fzygjyINn2\nAf+4oI8WDDrnyZA4RzyYA9+Mh9IOHOz+uQqHg+43I4ufc9qBb5bVuk8awX29\nQXDizoxInWXqEaDFgljiplsFYeM+cBMqQPjzD41yltavAbbEEfIJUY6xOin3\n3BVlA3OHsfIHDt1b7Wjap+hyUqPBHY4WYQmIeU6tiDs04jApzRJOCDZUOq0g\n3E7IxVKxhyv+f86cM/iEHFDaQcMMCNvnABFb9Wp9P7YZrGj11fPppVUORi+Q\nnQ2aPP/F+puINbqgVCUPeYj1FelrVCl1NpTzHVw675xEQn7DMsp22mcAFh+G\nK7Mr2XJYSpi/226ADOJRvSGbDL/s6qPoKRrVL/wr60OQEhOh+Gn6It+F060+\nxPhq\r\n=Ei3t\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ddbeck",
+          "email": "daniel@ddbeck.com"
+        },
+        {
+          "name": "schalkneethling",
+          "email": "volume4.schalk+npmjs@gmail.com"
+        },
+        {
+          "name": "peterbe",
+          "email": "mail@peterbe.com"
+        },
+        {
+          "name": "mdn-npmjs",
+          "email": "mdn-npm@mozilla.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ddbeck",
+        "email": "daniel@ddbeck.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-compat-data_2.0.0-1_1600342071285_0.5255690400856721"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@mdn/browser-compat-data",
+      "version": "2.0.0",
+      "description": "Browser compatibility data provided by MDN Web Docs",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "dependencies": {
+        "extend": "3.0.2"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdn/browser-compat-data.git"
+      },
+      "keywords": [
+        "browser-compat-data",
+        "browser",
+        "compatibility",
+        "data",
+        "mdn",
+        "mozilla"
+      ],
+      "author": {
+        "name": "MDN Web Docs"
+      },
+      "license": "CC0-1.0",
+      "bugs": {
+        "url": "https://github.com/mdn/browser-compat-data/issues"
+      },
+      "homepage": "https://github.com/mdn/browser-compat-data#readme",
+      "devDependencies": {
+        "ajv": "~6.12.2",
+        "better-ajv-errors": "~0.6.7",
+        "chalk": "~3.0.0",
+        "compare-versions": "~3.6.0",
+        "mdn-confluence": "~2.1.0",
+        "ora": "~4.0.3",
+        "prettier": "~1.19.1",
+        "yargs": "~15.4.1"
+      },
+      "scripts": {
+        "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+        "lint": "node test/lint",
+        "fix": "node scripts/fix",
+        "mirror": "node scripts/mirror",
+        "stats": "node scripts/statistics",
+        "release-notes": "node scripts/release-notes",
+        "show-errors": "npm test 1> /dev/null",
+        "test": "npm run lint",
+        "traverse": "node scripts/traverse"
+      },
+      "gitHead": "4878b3b2226b68ece69ab9c20bfc5cf338c92612",
+      "_id": "@mdn/browser-compat-data@2.0.0",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-roBXuLIX2HQ6BP+UuoXekJ9yENSE4JbeA9NpBgfg+zjSU4tnG2MpHeKaNsM48gj3gnhdBhi7wBjggE55zwCDAg==",
+        "shasum": "b3e17c343de02886e0dac353c5c53bac94f2e193",
+        "tarball": "https://registry.npmjs.org/@mdn/browser-compat-data/-/browser-compat-data-2.0.0.tgz",
+        "fileCount": 2281,
+        "unpackedSize": 18183456,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfbNzaCRA9TVsSAnZWagAAzWAP/jo6bfeyn/4k9aZplij7\ni65Wi5t2blgA15qASJw79y+WY3EbcTi/B/5NznuFW0zwnTT8dYGveHf2sx2s\ntxkzCcXm5eRdp6UHBpgoA3i98Y7xIvPej/uUVlZ0ytBGYg+PJ7L7tVSqCIBx\nhND5utcV30Kh67c+E5du+oHsYV/cm1CXeg7tur6Hw1joV31zjrBmhzRix4J+\nTVff17GWaTZCo6OCDuFYGaOvYeWH3JWNj0utpR5OL1jcTM8pAz7N6NZ/F6K7\n3wqZ0AwL05gO32D3MS+CCgMfCK1AWGeMZoRzG2qpNAu0n258pQ60Dfo0tA9x\nms5akRbQ6fEvY+3alG+FXg45KuvDC8ZUz/ZPKKQtmoDjfbvrTTqUJRQWe8g9\nwQTYI7MdTGCPUYWtt61qAOEoz9OIpw0JF9MpdbgVP2+IBNuuZvKPmxNRzBr7\nmAlM10sFAiyBYw+DDsM7oW/TKy4pZb1z5e2wbANh5VnBbX5+BXTjX8flN8zf\nPf1HVLhyZXuod0rXTePhuhGtyUJwtEAnh4X6e96xUUSgBme9JGCEz5FqQ7+S\nVTdihe/6qEk66N0tbYnl5ITusweNL0B0H50VZpggdlXmvW50rs2SY23kUQRh\nDBKJXh8Z6km+JMNLTP7aeF3nmupXi6/KPxTvfFRzVJdkgOJVv5z0FBER4nD0\neogE\r\n=3w7c\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ddbeck",
+          "email": "daniel@ddbeck.com"
+        },
+        {
+          "name": "schalkneethling",
+          "email": "volume4.schalk+npmjs@gmail.com"
+        },
+        {
+          "name": "peterbe",
+          "email": "mail@peterbe.com"
+        },
+        {
+          "name": "mdn-npmjs",
+          "email": "mdn-npm@mozilla.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ddbeck",
+        "email": "daniel@ddbeck.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-compat-data_2.0.0_1600969945638_0.8018115088902755"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@mdn/browser-compat-data",
+      "version": "2.0.1",
+      "description": "Browser compatibility data provided by MDN Web Docs",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "dependencies": {
+        "extend": "3.0.2"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdn/browser-compat-data.git"
+      },
+      "keywords": [
+        "browser-compat-data",
+        "browser",
+        "compatibility",
+        "data",
+        "mdn",
+        "mozilla"
+      ],
+      "author": {
+        "name": "MDN Web Docs"
+      },
+      "license": "CC0-1.0",
+      "bugs": {
+        "url": "https://github.com/mdn/browser-compat-data/issues"
+      },
+      "homepage": "https://github.com/mdn/browser-compat-data#readme",
+      "devDependencies": {
+        "ajv": "~6.12.2",
+        "better-ajv-errors": "~0.6.7",
+        "chalk": "~3.0.0",
+        "compare-versions": "~3.6.0",
+        "mdn-confluence": "~2.1.0",
+        "ora": "~4.0.3",
+        "prettier": "~1.19.1",
+        "yargs": "~15.4.1"
+      },
+      "scripts": {
+        "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+        "lint": "node test/lint",
+        "fix": "node scripts/fix",
+        "mirror": "node scripts/mirror",
+        "stats": "node scripts/statistics",
+        "release-notes": "node scripts/release-notes",
+        "show-errors": "npm test 1> /dev/null",
+        "test": "npm run lint",
+        "traverse": "node scripts/traverse"
+      },
+      "gitHead": "3331bed505ca9115150079eaa27a2d27d49dc301",
+      "_id": "@mdn/browser-compat-data@2.0.1",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-3EoAQjXcR+UXAjb48z5el061KLZt2oLULeIcHgKSAqk8SyQLSE4zKj/+Y2nhqaXygkDPXiQ+vf0JMamdy161ZQ==",
+        "shasum": "c5e3c63156e852fef8a89d059c092b396717e80a",
+        "tarball": "https://registry.npmjs.org/@mdn/browser-compat-data/-/browser-compat-data-2.0.1.tgz",
+        "fileCount": 2281,
+        "unpackedSize": 18193959,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfdgu9CRA9TVsSAnZWagAAwnsP/35rV2ZY3UBu2jHJb0vx\nJFWfYMtlq1njh3+OINFHIDV5Jmd9gPs05FK38/S9kTikq5csimHDdyKU2pbg\ndPXSJaCIpNVlsEzxzDK7cgzBkKnCKZZyFYFHilADZwLbgrRPFsYsha3V9a2S\nChtei19TjChf4jrBLD3Folafi5S2Hb2iYOKZ+2/+ISkk/ZUznphvoOLSMmyA\nGDYQAkuAu3i8qfLXGR9yUpOzg/ceVzMsFXf49hsrY+6n+V14tWV7ZBIDHnWs\nDIc8wd0UeHoche0sIVkQmKU55etyYM3aL7uo909QrEp2ScxoLm5zsO/iraWR\nu8MKbJfA4yyEPsQce8nZzfTl3bzoV4TjXabI38lxiItyXn6zZgpRJ7u3lFEl\n91vp25U564+2Deq6YlU6tbbraSIAlFif3Jr7rziYFI/cMhkx4D7yhxmpFEBi\nnHvuoqrZIRStN/lep4ijcxv41+jwj9FDZtY7pk2NYYrOSBrVfa9+6BARPiar\n++xl6sW4vMJ/F/LMeAxhkDn3gCJbwlQzV2I0ZuS5WBVPj0LAmRRU5VNCWiM1\nNRHD/1gBP7FmtH0eaGJncbf/YQQP97fvxpTIKU+irYRCTlm1zIK3tg4dEVmg\nM5XXO6wzowaRySpYqHpHPVc+U525bb/Mrjy290u7dXrgVa3mfYh2IuA2XtH6\nwda4\r\n=H0qM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ddbeck",
+          "email": "daniel@ddbeck.com"
+        },
+        {
+          "name": "schalkneethling",
+          "email": "volume4.schalk+npmjs@gmail.com"
+        },
+        {
+          "name": "peterbe",
+          "email": "mail@peterbe.com"
+        },
+        {
+          "name": "mdn-npmjs",
+          "email": "mdn-npm@mozilla.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ddbeck",
+        "email": "daniel@ddbeck.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-compat-data_2.0.1_1601571773017_0.1825247081939596"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "@mdn/browser-compat-data",
+      "version": "2.0.2",
+      "description": "Browser compatibility data provided by MDN Web Docs",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "dependencies": {
+        "extend": "3.0.2"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdn/browser-compat-data.git"
+      },
+      "keywords": [
+        "browser-compat-data",
+        "browser",
+        "compatibility",
+        "data",
+        "mdn",
+        "mozilla"
+      ],
+      "author": {
+        "name": "MDN Web Docs"
+      },
+      "license": "CC0-1.0",
+      "bugs": {
+        "url": "https://github.com/mdn/browser-compat-data/issues"
+      },
+      "homepage": "https://github.com/mdn/browser-compat-data#readme",
+      "devDependencies": {
+        "ajv": "~6.12.2",
+        "better-ajv-errors": "~0.6.7",
+        "chalk": "~3.0.0",
+        "compare-versions": "~3.6.0",
+        "mdn-confluence": "~2.1.0",
+        "ora": "~4.0.3",
+        "prettier": "~1.19.1",
+        "yargs": "~15.4.1"
+      },
+      "scripts": {
+        "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+        "lint": "node test/lint",
+        "fix": "node scripts/fix",
+        "mirror": "node scripts/mirror",
+        "stats": "node scripts/statistics",
+        "release-notes": "node scripts/release-notes",
+        "show-errors": "npm test 1> /dev/null",
+        "test": "npm run lint",
+        "traverse": "node scripts/traverse"
+      },
+      "gitHead": "5d3a9c0e20e48b125d3598c5871216bfb2013621",
+      "_id": "@mdn/browser-compat-data@2.0.2",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-WzqfYVh3HaKgQnD5gTReaonKPcd/w2IXTGpwrm9qt4FCog9+gpyNbd091XfmVN/arc5d7QtY9rVs3v43INqiFw==",
+        "shasum": "3104c04b0c047d735f4738f4364f9f86beb9b822",
+        "tarball": "https://registry.npmjs.org/@mdn/browser-compat-data/-/browser-compat-data-2.0.2.tgz",
+        "fileCount": 2281,
+        "unpackedSize": 18205471,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJff1JYCRA9TVsSAnZWagAAGCwP/1to7Od8miCsMZI4lE9V\nx2CXrxd72zlhWmeFpGpYO1rbIAJgQpElrAt6wUeQc3vloGkwgpt+2a1lYlfE\nRUuHxI0OaSD4ZxaJSF7lJNOnzExp3EtSBDbDqC3lR4Bgvf9W/LKFoqet0n2S\ne7KPDphl/dcNn5fSu9S1QIzsYg5GTtww/N28XVPhK0t2lRAQFAkVUNAUO7hj\nU+diA0PMRkiLueQcK0G66KnDpIEiZ5rE0Xo3rD5AgHwtiC+8nO9vAYQaNlCu\nSPpAGvX9gMUL3Psp44Z7KRSXtGLK3J7bP8+47r62Bx4inHicx+PYzJvOCzG7\n9vwzYt0N79Je0haamISDbwonFVnjfF5UiiDUxHno5Hs6VGPlgNHqQAeiWtAr\nbbLAWGi2aWAk6r/63cAEKoLs9Aw8xx8Y3Dg+5UjPPwMhl2sAdhN2Q/qUCZaF\nG69sgwfTgOXIWs6t9tXuWrtA2P0KyHujjIHt4nCokQMia56rV6QHkdA4pbQS\nEON7j/5ncy+vvPMh0KFNUuR7D9Wq2iqvWOgSO6yRNhQQ05TjNWr7zLKqEslL\noYfppsv6ZoS9Hrb8+RXDdMvbV2wN/Zggr1IwQCEH4c//5Dw06LwLJe/tmZYn\nCPuvlDU3FUkgx+pvBWKVLsW9yuYK7g9HKdxlvYuNAisr7wU7tprAVo6HV2y4\noKV5\r\n=xYLp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ddbeck",
+          "email": "daniel@ddbeck.com"
+        },
+        {
+          "name": "schalkneethling",
+          "email": "volume4.schalk+npmjs@gmail.com"
+        },
+        {
+          "name": "peterbe",
+          "email": "mail@peterbe.com"
+        },
+        {
+          "name": "mdn-npmjs",
+          "email": "mdn-npm@mozilla.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ddbeck",
+        "email": "daniel@ddbeck.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-compat-data_2.0.2_1602179671669_0.42468904982226463"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "@mdn/browser-compat-data",
+      "version": "2.0.3",
+      "description": "Browser compatibility data provided by MDN Web Docs",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "dependencies": {
+        "extend": "3.0.2"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mdn/browser-compat-data.git"
+      },
+      "keywords": [
+        "browser-compat-data",
+        "browser",
+        "compatibility",
+        "data",
+        "mdn",
+        "mozilla"
+      ],
+      "author": {
+        "name": "MDN Web Docs"
+      },
+      "license": "CC0-1.0",
+      "bugs": {
+        "url": "https://github.com/mdn/browser-compat-data/issues"
+      },
+      "homepage": "https://github.com/mdn/browser-compat-data#readme",
+      "devDependencies": {
+        "ajv": "~6.12.2",
+        "better-ajv-errors": "~0.6.7",
+        "chalk": "~3.0.0",
+        "compare-versions": "~3.6.0",
+        "mdn-confluence": "~2.2.0",
+        "ora": "~4.0.3",
+        "prettier": "~1.19.1",
+        "yargs": "~15.4.1"
+      },
+      "scripts": {
+        "confluence": "node ./node_modules/mdn-confluence/main/generate.es6.js --output-dir=. --bcd-module=./index.js",
+        "lint": "node test/lint",
+        "fix": "node scripts/fix",
+        "mirror": "node scripts/mirror",
+        "stats": "node scripts/statistics",
+        "release-notes": "node scripts/release-notes",
+        "show-errors": "npm test 1> /dev/null",
+        "test": "npm run lint",
+        "traverse": "node scripts/traverse"
+      },
+      "gitHead": "d694a8d075893fb2e19ff03a177a0f39e9f5a6dd",
+      "_id": "@mdn/browser-compat-data@2.0.3",
+      "_nodeVersion": "8.17.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-lj5M4JRzOOCFdjkAVU746EpPEj9v4IbSd2Mq/2BQTa02Opno98DOD/FjPrjBhF6CRLUHHF6ITSZVZASRDb2jJQ==",
+        "shasum": "582603cd7793d765954c1eac0af01090bbee2bda",
+        "tarball": "https://registry.npmjs.org/@mdn/browser-compat-data/-/browser-compat-data-2.0.3.tgz",
+        "fileCount": 2281,
+        "unpackedSize": 18222099,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiJekCRA9TVsSAnZWagAAKu0P/3Lt44UYbsa4iSm8MOpB\nmQTOkQgvoLSxTWn5Um8vVtiENtr4ZegHeGknEYGywGO9n9+ywTma8Kx2ufun\nBP4xZ9N4VG0xn0Whnf1fATISroUmdGpmICL9y/l9o5Ovjxz42Yg54+Qw+K5V\nXnOIxvUvJVnfrJNrr0nm57rtwOrTt50Y5u9a8VwrJ9zbnG8x6JQp/iF79zqC\n84QmhbpEhLU+HFi/wj1ruaNkU7CYApEOt7AeC87thbDLld8cieXiTQtyFZXC\nkpra7sJIOm7u7nibfkVRxoIhpotlws+8R5779BmOveqG/Ng8Vfwvor3xn3z4\nr/Gq7gUJuoHtfMoKp7vp0JmcDICR7GFyxmENJsAkIjSF29hqcETc4MA/qNwa\n21AfLwWvQc5aIrDglUraq4yRNIZt2qijJWgEbQW7SEVqJdpVLgr+fztpIRng\njvNczFBv56vNPmAF6/peCyeLdahADkJYWTrjmOnpdGgnc3MV7QBWRRDFSWYP\nRqgg/qDdgCza5au4J/XvWH5RTXUlYFgKkXcmAL6Pu6P4szpyp6x0e28HfwJA\n6/6QgPwTufI2gk4KcNFN3F21Y477ZCTKGphrBkW9pYFBWbHZOLDwIOnLomlU\n7LjT5p0RfWgo2AlBubYbnyM2U4SpDj4ujreYEOPbsz5EcRQkGl7hE7zpNXY5\n4oly\r\n=vHCJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ddbeck",
+          "email": "daniel@ddbeck.com"
+        },
+        {
+          "name": "schalkneethling",
+          "email": "volume4.schalk+npmjs@gmail.com"
+        },
+        {
+          "name": "peterbe",
+          "email": "mail@peterbe.com"
+        },
+        {
+          "name": "mdn-npmjs",
+          "email": "mdn-npm@mozilla.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ddbeck",
+        "email": "daniel@ddbeck.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/browser-compat-data_2.0.3_1602787235796_0.20746085428859717"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-09-17T11:27:51.022Z",
+    "2.0.0-1": "2020-09-17T11:27:51.462Z",
+    "modified": "2020-10-15T18:40:38.383Z",
+    "2.0.0": "2020-09-24T17:52:25.956Z",
+    "2.0.1": "2020-10-01T17:02:53.261Z",
+    "2.0.2": "2020-10-08T17:54:31.969Z",
+    "2.0.3": "2020-10-15T18:40:35.968Z"
+  },
+  "maintainers": [
+    {
+      "name": "ddbeck",
+      "email": "daniel@ddbeck.com"
+    },
+    {
+      "name": "schalkneethling",
+      "email": "volume4.schalk+npmjs@gmail.com"
+    },
+    {
+      "name": "peterbe",
+      "email": "mail@peterbe.com"
+    },
+    {
+      "name": "mdn-npmjs",
+      "email": "mdn-npm@mozilla.com"
+    }
+  ],
+  "description": "Browser compatibility data provided by MDN Web Docs",
+  "homepage": "https://github.com/mdn/browser-compat-data#readme",
+  "keywords": [
+    "browser-compat-data",
+    "browser",
+    "compatibility",
+    "data",
+    "mdn",
+    "mozilla"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdn/browser-compat-data.git"
+  },
+  "author": {
+    "name": "MDN Web Docs"
+  },
+  "bugs": {
+    "url": "https://github.com/mdn/browser-compat-data/issues"
+  },
+  "license": "CC0-1.0",
+  "readme": "# `@mdn/browser-compat-data`\n\n[https://github.com/mdn/browser-compat-data](https://github.com/mdn/browser-compat-data)\n\nThis repository contains compatibility data for Web technologies.\nBrowser compatibility data describes which platforms (where \"platforms\" are\nusually, but not always, web browsers) support particular Web APIs.\n\nThis data can be used in documentation, to build compatibility tables listing\nbrowser support for APIs. For example:\n[Browser support for WebExtension APIs](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Browser_support_for_JavaScript_APIs).\n\n[![npm](https://img.shields.io/npm/v/@mdn/browser-compat-data.svg)](https://www.npmjs.com/package/@mdn/browser-compat-data)\n[![Build Status](https://travis-ci.org/mdn/browser-compat-data.svg?branch=master)](https://travis-ci.org/mdn/browser-compat-data)\n[![Twitter Follow](https://img.shields.io/twitter/follow/mozdevnet.svg?style=social&label=Follow&style=plastic)](https://twitter.com/MozDevNet)\n\nRead how this project is [governed](https://github.com/mdn/browser-compat-data/blob/master/GOVERNANCE.md).\n\nChat on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org).\n\n## Installation\n\nYou can install `@mdn/browser-compat-data` as a node package.\n\n```\nnpm install @mdn/browser-compat-data\n```\n\n## Usage\n\n```js\nconst bcd = require('@mdn/browser-compat-data');\nbcd.css.properties.background;\n// returns a compat data object (see schema)\n```\n\n## Repository contents\n\nThere's a top-level directory for each broad area covered: for example, \"http\",\n\"javascript\", \"webextensions\". Inside each of these directories is one or more\nJSON file containing the compatibility data.\n\n- [api/](https://github.com/mdn/browser-compat-data/tree/master/api) contains data for each [Web API](https://developer.mozilla.org/en-US/docs/Web/API) interface.\n\n- [css/](https://github.com/mdn/browser-compat-data/tree/master/css) contains data for [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) properties, selectors, and at-rules.\n\n- [html/](https://github.com/mdn/browser-compat-data/tree/master/html) contains data for\n  [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) elements, attributes, and global attributes.\n\n- [http/](https://github.com/mdn/browser-compat-data/tree/master/http) contains data for [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP) headers, statuses, and methods.\n\n- [javascript/](https://github.com/mdn/browser-compat-data/tree/master/javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.\n\n- [mathml/](https://github.com/mdn/browser-compat-data/tree/master/mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.\n\n- [svg/](https://github.com/mdn/browser-compat-data/tree/master/svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.\n\n- [webdriver/](https://github.com/mdn/browser-compat-data/tree/master/webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.\n\n- [webextensions/](https://github.com/mdn/browser-compat-data/tree/master/webextensions) contains data for [WebExtensions](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) JavaScript APIs and manifest keys.\n\n- [xpath/](https://github.com/mdn/browser-compat-data/tree/master/xpath) contains data for [XPath](https://developer.mozilla.org/docs/Web/XPath) axes, and functions.\n\n- [xslt/](https://github.com/mdn/browser-compat-data/tree/master/xslt) contains data for [XSLT](https://developer.mozilla.org/docs/Web/XSLT) elements, attributes, and global attributes.\n\n## Format of the browser compat json files\n\nThe definitive description of the format used to represent compatibility data is the [schema file](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data.schema.json).\nYou can also have a look at the [schema documentation](https://github.com/mdn/browser-compat-data/blob/master/schemas/compat-data-schema.md).\n\n## Issues?\n\nIf you find a problem, please [file a bug](https://github.com/mdn/browser-compat-data/issues/new).\n\n## Contributing\n\nWe're very happy to accept contributions to this data. See [Contributing to browser-compat-data](/docs/contributing.md) for more information.\n\n## Projects using the data\n\nHere are some projects using the data, as an [npm module](https://www.npmjs.com/browse/depended/@mdn/browser-compat-data) or directly:\n\n- [Add-ons Linter](https://github.com/mozilla/addons-linter) - the Add-ons Linter is used on [addons.mozilla.org](https://addons.mozilla.org/) and the [web-ext](https://github.com/mozilla/web-ext/) tool. It uses browser-compat-data to check that the Firefox version that the add-on lists support for does in fact support the APIs used by the add-on.\n- [Browser Compatibility Data Explorer](https://github.com/connorshea/mdn-compat-data-explorer) - View, search, and visualize data from the compatibility dataset.\n- [caniuse](https://caniuse.com/) - In addition to the existing caniuse database, caniuse includes features from the MDN BCD project, formatted and interactive like any other caniuse support table.\n- [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows compatibility data for the current site in the developer tools.\n- [compat-tester](https://github.com/SphinxKnight/compat-tester) - Scan local documents for compatibility issues.\n- [Visual Studio Code](https://code.visualstudio.com) - Shows the compatibility information in [the code completion popup](https://code.visualstudio.com/updates/v1_25#_improved-accuracy-of-browser-compatibility-data).\n- [webhint.io](https://webhint.io/docs/user-guide/hints/hint-compat-api/) - Hints to check if your CSS HTML and JavaScript have deprecated or not broadly supported features.\n- [WebStorm](https://www.jetbrains.com/webstorm/whatsnew/#v2019-1-html-and-css) - JavaScript IDE allowing you to check whether all CSS properties you use are supported in the target browser version.\n- [Hexo Plugin: hexo-compat-report](https://github.com/TimDaub/hexo-compat-report) - Allows to embed MDN's compatibility table in a hexo blog post.\n\n## Acknowledgments\n\nThanks to:\n\n<table>\n  <tr align=\"center\">\n    <td>\n      <img\n        src=\"https://user-images.githubusercontent.com/498917/52569900-852b3080-2e12-11e9-9bd0-f1e256b13e53.png\"\n        height=\"86\"\n        alt=\"BrowserStack\"\n      />\n      <p>\n        The\n        <a href=\"https://www.browserstack.com/open-source\"\n          >BrowserStack Open Source Program</a\n        >\n        for testing services\n      </p>\n    </td>\n    <td>\n      <img\n        src=\"https://opensource.saucelabs.com/images/opensauce/powered-by-saucelabs-badge-white.png?sanitize=true\"\n        height=\"86\"\n        alt=\"Testing Powered By Sauce Labs\"\n      />\n      <p>\n        <a href=\"https://opensource.saucelabs.com/\">Sauce Labs Open Source</a\n        >\n        for testing services\n      </p>\n    </td>\n  </tr>\n</table>\n",
+  "readmeFilename": "README.md"
+}

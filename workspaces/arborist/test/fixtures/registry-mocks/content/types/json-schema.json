@@ -1,0 +1,686 @@
+{
+  "_id": "@types/json-schema",
+  "_rev": "464-6acad01518313021ef81e73cb65e3793",
+  "name": "@types/json-schema",
+  "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+  "dist-tags": {
+    "latest": "7.0.6",
+    "ts2.2": "7.0.3",
+    "ts2.3": "7.0.3",
+    "ts2.4": "7.0.3",
+    "ts2.5": "7.0.3",
+    "ts2.6": "7.0.3",
+    "ts2.7": "7.0.3",
+    "ts2.8": "7.0.4",
+    "ts2.9": "7.0.4",
+    "ts3.0": "7.0.5",
+    "ts3.1": "7.0.6",
+    "ts3.2": "7.0.6",
+    "ts3.3": "7.0.6",
+    "ts3.4": "7.0.6",
+    "ts3.5": "7.0.6",
+    "ts3.6": "7.0.6",
+    "ts3.7": "7.0.6",
+    "ts3.8": "7.0.6",
+    "ts3.9": "7.0.6",
+    "ts4.0": "7.0.6",
+    "ts4.1": "7.0.6"
+  },
+  "versions": {
+    "4.0.0": {
+      "name": "@types/json-schema",
+      "version": "4.0.0",
+      "description": "TypeScript definitions for json-schema",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {
+        "@types/node": "*"
+      },
+      "peerDependencies": {},
+      "typesPublisherContentHash": "cac63b5636698357e41e4602b733389ac15c85ca6df1c87534227ebe2408e62d",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@4.0.0",
+      "dist": {
+        "shasum": "fbf6c078369546bd15ffa78ba7f3f2e170480769",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/json-schema-4.0.0.tgz_1492528083185_0.7843128894455731"
+      },
+      "directories": {}
+    },
+    "6.0.0": {
+      "name": "@types/json-schema",
+      "version": "6.0.0",
+      "description": "TypeScript definitions for json-schema 4.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "4ec73e3090a6ba402893bbfcf3069afcce94d178fa4e318a56cb6f25b79e7634",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@6.0.0",
+      "dist": {
+        "integrity": "sha512-pPrN0ECtb1iCz5M47uYefeECFzsSn84pRe9qnYpV9PcIurPlPieJiwhbCito+YiUsX38XydNvIDy0jixSUFlYg==",
+        "shasum": "5842b43db9d199a2dabf6fe52b6d09200e8203bc",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-6.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema-6.0.0.tgz_1512318460487_0.13760951673611999"
+      },
+      "directories": {}
+    },
+    "6.0.1": {
+      "name": "@types/json-schema",
+      "version": "6.0.1",
+      "description": "TypeScript definitions for json-schema 4.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "5c07b3f559a36032852670dda7149875d6a81180ce537279d154d550556fb348",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@6.0.1",
+      "dist": {
+        "integrity": "sha512-vuL/tG01yKO//gmCmnV3OZhx2hs538t+7FpQq//sUV1sF6xiKi5V8F60dvAxe/HkC4+QaMCHqrm/akqlppTAkQ==",
+        "shasum": "a761975746f1c1b2579c62e3a4b5e88f986f7e2e",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-6.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 21699
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_6.0.1_1521155981168_0.5014673712057454"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@types/json-schema",
+      "version": "7.0.0",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "ef0c5629d4da15a4e911b66ec83ecbe8f9da2c530a7304d78924ca62637b2ba8",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@7.0.0",
+      "dist": {
+        "integrity": "sha512-vKFTUFiUOLIoe80UE1l3ZvnlDYxgNCrpa/KEesJoTMIvWuI4zA6pxNlOBHR81ghVpyx3M4CRf0LPTd9HivK7Mg==",
+        "shasum": "5a2b780fec9f2cf851e1b5e0a29a4cac6c9686c5",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 26327,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbV9H+CRA9TVsSAnZWagAAlwgP/RgxBCXbw7UX2gc7rwL3\no9OyFtrd4gzvQOnSQ2XL5VOnyRXOl8UkSeo8tyma/LCXgYCb7FUEiuQow04x\n/GWkcM11wGJc+LfcFJLAxnVRtp29210sR4mSzC75cr0QvKp+3dRX1qaFcSMq\nKsABKZ61x1f19KivbwvtVVYenPDWiXnECWLOeSzGs5RamslkJ4C3QsrQSpga\noVa7bn5W/O1MGJKPHvCDWqmm+pyHFnVecRy6KZEWo/oyASOl5IXNwhyf8RdA\ngeBdQJkIgs08gpIp/2qwmh2W/4+SepBLn/UIA54IUP/TBdQirVX6GftGtUo8\nAfcBbUwG8iVXxl5XPiSdHKbO5ZSdMPkGy0axt65vRJ57MgTr/xY/mUq3cFZb\nRDS8UmiYGDVQDpRBZW74Wkq5AL1JMzM0fJqSXFkzEy5RluGghB1yjB65P5Qg\nAZ95tcRkUyBQEvR8k9mEeMjxxuWwBnk/GaDMRQs1RvTKeWv8yP1g+e5Tne9m\nhaY1mkFVR5LCCRZa5axbX6bG3WMUx5RO55gSFTpKGgV05nER/sdNbCxfDVMP\nJeuta8JJjwyou0uPWwj77jaKarUNHWAqfMOjCQP0p7fJzOkrBvRwZyc3pmu/\nKyesRkE0iUvX4I6cRuE4F52Lpb++TjogIik93W+5RBO60bXWVys75u9wHXGr\nCpSc\r\n=eJZi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.0_1532482046552_0.7756135088281311"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "@types/json-schema",
+      "version": "7.0.1",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        }
+      ],
+      "main": "",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "1d7882aae5175e28c219f017173825d4ad27a8c949ff86a12b015a1d0d5fd563",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@7.0.1",
+      "dist": {
+        "integrity": "sha512-NVQEMviDWjuen3UW+mU1J6fZ0WhOfG1yRce/2OTcbaz+fgmTw2cahx6N2wh0Yl+a+hg2UZj/oElZmtULWyGIsA==",
+        "shasum": "fcaa655260285b8061850789f8268c51a4ec8ee1",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27385,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpBn2CRA9TVsSAnZWagAATfcP/0tOGlB65t+jEbEMHxJD\nc/F+EZfRsTvXHS1CypnFL7I/v/qLOLJTmVhwY0YoV+CNoCEAB0B0r8Q3QtLa\nIP5E5eCuh5oeHutTN7wMkCQ9uVspSTyjor5lIVCVarTB5hENZnzRhXftnqLc\nUok+j7TRHjce2kxgTEgzIxipj/il/psMMcPYNKiDMAAicPJOF6G0wkVh7DG4\nzWWsLekvHCgsOs+cbGQh6y5Vp11ir4Z4kYQqQ1jDez2eGnxi2bgk3Tr2A8Eu\n+Ac/R5oYEEdznlnyS1cp7SJOZgfxk6roVQsoxF8RHG3YZh02RQIu4PF+BK0J\nAu/qtjQqIvFNvvyOT9acGRIZrPlDpM5k+CSbglyTRDAy23G7XTEQd8mZB3Xu\nOaDwkeNg0qqD7CGFTIe+oTKhzHD3IccIMrp8G1QN2gWJ/hL39HqCFS76BceR\nktvbLiGqQcm+7uNyRL46cBibSXtDoXC7AsENpbC38kuCpkD/xYLRwiF/LJ3x\nCS/Zbxq80AIvfqoepjDRedOFcNO9DzvcOyhF0xQRSG4lgG3jlXczaV7H36EX\nZ0FJ9uGoeAYmqtwv2DOrRsIQNHVG3BAny//AJENh53HwXA25aKMtRq4tPJ15\njwk3GehScee+i19xFlwKMjBQxdOe58wJvCljcVM3PItnmTaBn0CUC9d+MzX8\nQRBV\r\n=fJ/z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.1_1537481206031_0.1327706648229745"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.2": {
+      "name": "@types/json-schema",
+      "version": "7.0.2",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "2b6bccb0106a3a136e309bae456373a4f14bb3bd6b85ac9151f5137ff9c0fc5f",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@7.0.2",
+      "dist": {
+        "integrity": "sha512-XawGUgMoPEBwyN+P8FzzH8RfoJcmkyNPdMdX/Ejeit8y5M/VllcBjyGS72a3SCAQedsSnVn2pnf3lQ0OVR7f5g==",
+        "shasum": "39e4bb68007c8cfa56393d867d192917a59b0723",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.2.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27240,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcVK7UCRA9TVsSAnZWagAArNQQAIB/4Vk+FcWKUqxdfEFw\nkDaxstf0lE9WtLVOlM/0zVRI8EMrJkwlahnpmxe6ILn4cWzzRn4uv0KPp0XK\nHl0wvCfqXLCtJAaFJjC5WwK/RF8erA6ZRXUCNHGkeShzDDNlQMWNdSUkPNEO\nXfoifbgB+cTWjoNiFD1+7oiGE8LB9atLopPlWCmH0d0C66hgJ7HAInVVMlV9\nRNkNS8tU+5Tq8ap/woF0lXbRXfoXf/9qqUYeIVb81nEa6/Vr2M5lamfK4Ixc\nOV4zVykwI5tXQVHTjsw16VlO8HsnBHbAD2d2x8X6phj5NAZttx6RevRNm/yO\nwhmQgRlBjLE382c3khLZFIiBg7c1WvSkh6k61Vq3bTLFTMPX359Nf3Vc3Sw6\nIndn4i3+Ej5jLqHXpdnNXSS7NQe03E5iKx9efVuZ2pO7GkE+MUNJrmFTRJaB\nycSlvz5KOdhlHuAqALYbUAzWvkcp+F2+oBDxDOPOoLH3DIjtqv7jVNRFB7Rh\nm1bBCD+/mR4CliUSx7xP6EfUJzsPp/+ZTWggTBkjzX0Kn0PaMPvxzFMgXL9x\nsqbFPAAg4irFC/qlDrDXn1hqXkA79WkppMmEGxlncQOfzIKBbp+XJ6WoOHQz\nY2epkjuS9Kaa9FSebdKw7/TAAwbUH3UDG9Qtu7qmbHVjmLHJWpGDVDc27THo\nrVOW\r\n=c2xE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.2_1549053651807_0.11659938635121891"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.3": {
+      "name": "@types/json-schema",
+      "version": "7.0.3",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        }
+      ],
+      "main": "",
+      "types": "index",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "4fedab4ea57f920a295b3d27f75afbe1e2156a36991650487260757be56d811c",
+      "typeScriptVersion": "2.2",
+      "_id": "@types/json-schema@7.0.3",
+      "dist": {
+        "integrity": "sha512-Il2DtDVRGDcqjDtE+rF8iqg1CArehSK84HZJCT7AMITlyXRBpuPhqGLDQMowraqqu1coEaimg4ZOqggt6L6L+A==",
+        "shasum": "bdfd69d61e464dcc81b25159c270d75a73c1a636",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 27234,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZG0uCRA9TVsSAnZWagAAF9UP/1djLVcClBIV/T545nmZ\nc7b4V59ZGbwTeKbXoqbFaUcqnsxYsSw1qpCqYK2zy42vmeXAyxBZqhjZmzlX\nDasp0JwEkPkoUpupQDNjpuSD5IhvTppdKIk2auTaiIMMlDCak8PB/dLWSByM\n3TMwmSJVenlGfIybN8+tHKG357twTr3DosuINPV2uxlk76NKgoiKssA0hJVD\nn7vOzYcuYi3KbNhAHDV2/JSKelA1L153+XQvptnId5M3mE+hcnjcgGIo5lh4\nkHyeYYhR8VHtCxIDmNxCRr1HYkTpDeQi18lLwv62vvIj3c6eg1nAvpQOXz1V\nyCQsKRY6EZqoOLgrKjAvHaCzfA9DvvLY8Yrfnxh4ZlhDhGh13kbRPOj59H1T\nfO2XTUP1vZIWWCO8qn4hhHhuDF/O5H5R7v1Rxx10xAueBcIQSBpVJWSsp4mQ\nfI5ak7Jv2ykaWWzzge2qAXzWYcpEU6/awz/4SwpO+RDDgScTGzBgw6bac6TB\naJsbIOuDp1hFhpGmoExBcyFjgvC6dl9O5QAzpTO0gbAQ1d4JpxB7vNXe2fEL\nfbCE9j1vkAzraFhci/bbm1vt42l38nqFQjwGEQ/qqEuNxgaFjEJ7THDyTH3k\nYg2kDa+szYhDoWui+geh+2xiGRsAv54i2/x4a9X5fBsrEnSlyd0A03qJXVj9\nK0Pn\r\n=dY7y\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.3_1550085421630_0.9196625457772489"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.4": {
+      "name": "@types/json-schema",
+      "version": "7.0.4",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/json-schema"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "868495cc33eb63def9feb79d7da312499752aa5641dde5a5dad8edbd13998a40",
+      "typeScriptVersion": "2.8",
+      "_id": "@types/json-schema@7.0.4",
+      "dist": {
+        "integrity": "sha512-8+KAKzEvSUdeo+kmqnKrqgeE+LcA0tjYWFY7RPProVYwnqDjukzO+3b6dLD56rYX5TdWejnEOLJYOIeh4CXKuA==",
+        "shasum": "38fd73ddfd9b55abb1e1b2ed578cb55bd7b7d339",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 28579,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeAR7+CRA9TVsSAnZWagAATlgP/3XPajRjXVADEoUMews6\nJ9ameDIDuJGFOtJtaCFJrcf4rdj/iCMmRBXTDSmbE8dPJ9sf4ZtIPd+6njCf\njDiEFTR/XgNSt/3FlPaFXgEOVn3/cGo/mPXRLUGIldY73nngJf+hZAPgXimq\niBvMazOckKzLi/pB4ruDkEeD171VfD22SD9YOrsMus056pTRSHxhQxPLtvIX\nELuFDP7dtOtUZlinypbDzQcPQJ8quiBHaTgVYKD+e4NecGBkzcFbzpxdbx2S\nkEH9rbqUsCxOKX7wJl1qBWTI4FeDXE/ir6Ro68H5DMQnrUHHfcpLTpcBWmuA\nHh9Q8/TpINQrcO66QA1eWzAgsM3gBKuyO21AaPAqie66Qc60TZeyaXQOK8dg\nz9KBcJQUVK38fHYfyQrEWeqD8Q/xtqsRwPS4ZQOI89Z2W//7Nw19PvqSgzlY\n4bu0h+etGwLmjtFxSNLUa17ve5hN1CvODN2TfaCaFjeSfMSTlC2pnrgAXN0V\nj4KxiIfN7IeyszCCZy/6OvHWWZh+H1SBIOAn5bpA3KuBNwURzHIZuxBKAxy0\nO28iR8o9oz8RnTKOz4M+rnUPfF5yA31zgrbskYm/GulzY2nyFamPUvxO5dUl\nJG8PABrzZIKYjh6TVrI1zI76qJ68V6pqF9svD9C7+AlD2AZhjIQJlDK5KI1l\nM+TO\r\n=EqR3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.4_1577131773570_0.31945875120162137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.5": {
+      "name": "@types/json-schema",
+      "version": "7.0.5",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/json-schema"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "13bc0b77525d2b007b8b1b2ca14737cc908edb09aac83ec9a200f7d79ec25973",
+      "typeScriptVersion": "3.0",
+      "_id": "@types/json-schema@7.0.5",
+      "dist": {
+        "integrity": "sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==",
+        "shasum": "dcce4430e64b443ba8945f0290fb564ad5bac6dd",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 30561,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe38FSCRA9TVsSAnZWagAAZN8P/jRirXBy7yEvJzBk3rIR\n54N3S0QojJ5tGKKJSwkFRI2MaJ1/f4LL/NPsMkGeUhxBjmqeI/CIXVc/bn38\nOmxPw16kzjSfDpRXRuOrnD8xmegR94gS65jrI0vICrYly14ifb+1lx3BWmgP\ncwlG4uNj5Iw3i+JIMZkerLc7ppNUTpbiHqpy1X4o6GwJMFIumzRCcxcPoOUZ\nSa5odIXAspZPEA97H4xQ94j5Y1gdC5clFOdhAIpLdl5HMF2ljF06yfKXx/A9\nwKGh4fc+8IzAUpbkn0ZswoiUhjbeQujmSw10UXC1gdSfYK1GIskGSTAj2D9w\nvkiJxb1+41WakS3N38TAEa27pGhe1ZJ6xmQaCDYxIfkkUIm0ZTUB8BhaVTMl\nnki6vpmLtfKUhSFPnTIai9rv75u2oWaUx3Uw+aPKCU705BCAyEuCFs9VZq1C\nUdqxR4jAzmcCcnCWNWCNT2WmlhFSxY2RD57Z/L35vSDOtLz/qyJyhhzPxZVs\nHGtfNfehMEc23qVAgI4Lu+zdg+9GFf5YgEypy1rPj9roKFVtPwRmjZ4K0ODs\nKC6ZmXEGUCAODUlkmmXcRD4FFRJFdx4a0QelrB+xmcU6jjsJwLH7Uhok5lq9\nFNyFvvCDPf2YXvNMWcT8Tc1TAdxu/1ObTlkjBZ8qcMij7fNP2BZkzyUKGiB/\nK/TB\r\n=2FKp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.5_1591722321756_0.9552025277216876"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.6": {
+      "name": "@types/json-schema",
+      "version": "7.0.6",
+      "description": "TypeScript definitions for json-schema 4.0, 6.0 and",
+      "license": "MIT",
+      "contributors": [
+        {
+          "name": "Boris Cherny",
+          "url": "https://github.com/bcherny",
+          "githubUsername": "bcherny"
+        },
+        {
+          "name": "Cyrille Tuzi",
+          "url": "https://github.com/cyrilletuzi",
+          "githubUsername": "cyrilletuzi"
+        },
+        {
+          "name": "Lucian Buzzo",
+          "url": "https://github.com/lucianbuzzo",
+          "githubUsername": "lucianbuzzo"
+        },
+        {
+          "name": "Roland Groza",
+          "url": "https://github.com/rolandjitsu",
+          "githubUsername": "rolandjitsu"
+        },
+        {
+          "name": "Jason Kwok",
+          "url": "https://github.com/JasonHK",
+          "githubUsername": "JasonHK"
+        }
+      ],
+      "main": "",
+      "types": "index.d.ts",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/json-schema"
+      },
+      "scripts": {},
+      "dependencies": {},
+      "typesPublisherContentHash": "bb4b22e70ee94bf7b787307444fcee2f57a8869f012a460ed8f15b5b6985ed70",
+      "typeScriptVersion": "3.1",
+      "_id": "@types/json-schema@7.0.6",
+      "dist": {
+        "integrity": "sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==",
+        "shasum": "f4c7ec43e81b319a9815115031709f26987891f0",
+        "tarball": "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 30561,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfTW7iCRA9TVsSAnZWagAAjCoQAKGSM75Ki2DMgtzSIZAc\nVG2c2KRPjxMRx3a2p0L2oHcNAxeVYwcvURx27uo2P+t2Pd+ZXYpmbwy8zRcx\nWsXZtF+7cE00EI7CYll3Jdmg8RbG9T+sl5Cyvg5yAHx3J3QGRp+irtYXsDff\nPfNrOQk/9AY7df4DClE36rr4HTdEebIUdrzflMq3Ann47roujaHRbI7/Z4VY\nAnHz5i/AYvOglPFyyZCUy4QBoe3S1dlnB5jHJQYfMpm5d0ILK0cLFhw/iizE\nLu37wkK5wBKforrX3tx7HPpZ18d2Y6urYhczAlZ1+diyPpKZkoWonOPvmmZF\nthFCaVndTQ1t5PrGslxiVCfvqKXMjquc5viPnGa6azrbffdcj4IrzSGWYDun\nhvRJ8uF67DtPMpXv9mANeonjXVF8i6AIa2/lqSeyOoIGwpu68GqxNLQ9Ph2R\ndVNUBg8hE+52F3ShjWIrO7Ye/vrHOii7NfJZao7kQWv/GY4bkjmgRSmzdZCq\n0Lw/jEj3hizL8A0Zlu+s+cqL7S2kBRhL4kCZ5fx2oKf1SStSzSECePl8dXY5\nas8q8L5gFBiDCv/GJ1ZID9vWsFPSydwBC2AiLgw1ET4ZtQV0Z0gEpHBRWGfp\nhvuZX51FUR3w2z4d8jfm6lVP+fFNwAozdba1yDQwXvdXnaLm+MnuZeHPHe7t\njNUd\r\n=vyv3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "types",
+          "email": "ts-npm-types@microsoft.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "types",
+        "email": "ts-npm-types@microsoft.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/json-schema_7.0.6_1598910178004_0.5328752125857465"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Installation\r\n> `npm install --save @types/json-schema`\r\n\r\n# Summary\r\nThis package contains type definitions for json-schema 4.0, 6.0 and (https://github.com/kriszyp/json-schema).\r\n\r\n# Details\r\nFiles were exported from https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema.\r\n\r\n### Additional Details\r\n * Last updated: Mon, 31 Aug 2020 21:41:49 GMT\r\n * Dependencies: none\r\n * Global values: none\r\n\r\n# Credits\r\nThese definitions were written by [Boris Cherny](https://github.com/bcherny), [Cyrille Tuzi](https://github.com/cyrilletuzi), [Lucian Buzzo](https://github.com/lucianbuzzo), [Roland Groza](https://github.com/rolandjitsu), and [Jason Kwok](https://github.com/JasonHK).\r\n",
+  "maintainers": [
+    {
+      "name": "types",
+      "email": "ts-npm-types@microsoft.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-31T21:43:07.451Z",
+    "created": "2017-04-18T15:08:04.964Z",
+    "4.0.0": "2017-04-18T15:08:04.964Z",
+    "6.0.0": "2017-12-03T16:27:40.649Z",
+    "6.0.1": "2018-03-15T23:19:41.331Z",
+    "7.0.0": "2018-07-25T01:27:26.648Z",
+    "7.0.1": "2018-09-20T22:06:46.196Z",
+    "7.0.2": "2019-02-01T20:40:52.065Z",
+    "7.0.3": "2019-02-13T19:17:01.767Z",
+    "7.0.4": "2019-12-23T20:09:33.968Z",
+    "7.0.5": "2020-06-09T17:05:21.886Z",
+    "7.0.6": "2020-08-31T21:42:58.103Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+    "directory": "types/json-schema"
+  },
+  "contributors": [
+    {
+      "name": "Boris Cherny",
+      "url": "https://github.com/bcherny",
+      "githubUsername": "bcherny"
+    },
+    {
+      "name": "Cyrille Tuzi",
+      "url": "https://github.com/cyrilletuzi",
+      "githubUsername": "cyrilletuzi"
+    },
+    {
+      "name": "Lucian Buzzo",
+      "url": "https://github.com/lucianbuzzo",
+      "githubUsername": "lucianbuzzo"
+    },
+    {
+      "name": "Roland Groza",
+      "url": "https://github.com/rolandjitsu",
+      "githubUsername": "rolandjitsu"
+    },
+    {
+      "name": "Jason Kwok",
+      "url": "https://github.com/JasonHK",
+      "githubUsername": "JasonHK"
+    }
+  ],
+  "license": "MIT",
+  "readmeFilename": ""
+}

@@ -1,0 +1,898 @@
+{
+  "_id": "is-regex",
+  "_rev": "19-b272ea0fbb4a518866101e34a0784754",
+  "name": "is-regex",
+  "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "is-regex",
+      "version": "0.0.0",
+      "description": "Is this value a JS regex?",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.3.2",
+        "covert": "~0.3.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "_id": "is-regex@0.0.0",
+      "dist": {
+        "shasum": "b7a058f7b65f0c5145df21474662bdb90472215d",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-regex",
+      "version": "1.0.0",
+      "description": "Is this value a JS regex?",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~2.13.1",
+        "covert": "~0.4.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "_id": "is-regex@1.0.0",
+      "_shasum": "8ee666ad53df3dfb1e7deaad541f02a50005a99f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8ee666ad53df3dfb1e7deaad541f02a50005a99f",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-regex",
+      "version": "1.0.1",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet",
+        "lint": "jscs *.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~3.4.0",
+        "covert": "1.0.0",
+        "jscs": "~1.10.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "c278e21982ab6be7eff8223dd6ffb16326637382",
+      "_id": "is-regex@1.0.1",
+      "_shasum": "ae1de0fd81f62aa1978ccebf87cf35670b026114",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae1de0fd81f62aa1978ccebf87cf35670b026114",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-regex",
+      "version": "1.0.2",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node test.js && npm run coverage-quiet",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet",
+        "lint": "jscs *.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~3.4.0",
+        "covert": "1.0.0",
+        "jscs": "~1.10.0",
+        "semver": "~4.2.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "ed8047dc58e07376bb2962a1cfeaa415df8a5293",
+      "_id": "is-regex@1.0.2",
+      "_shasum": "6087e95c826e91fb5ced034ed63de4a893da5aae",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6087e95c826e91fb5ced034ed63de4a893da5aae",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "is-regex",
+      "version": "1.0.3",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node test.js && npm run security",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet",
+        "lint": "npm run jscs && npm run eslint",
+        "jscs": "jscs *.js",
+        "eslint": "eslint test.js *.js",
+        "eccheck": "editorconfig-tools check *.js **/*.js > /dev/null",
+        "security": "nsp package"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~3.4.0",
+        "covert": "1.0.0",
+        "jscs": "~1.10.0",
+        "editorconfig-tools": "~0.0.1",
+        "nsp": "~1.0.0",
+        "eslint": "~0.13.0",
+        "semver": "~4.2.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "405685f6172a14d85e7a5f45e7112c9a608813f2",
+      "_id": "is-regex@1.0.3",
+      "_shasum": "0d55182bddf9f2fde278220aec3a75642c908637",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0d55182bddf9f2fde278220aec3a75642c908637",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "is-regex",
+      "version": "1.0.4",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "tests-only": "node --harmony --es-staging test.js",
+        "posttest": "npm run security",
+        "coverage": "covert test.js",
+        "coverage-quiet": "covert test.js --quiet",
+        "lint": "npm run jscs && npm run eslint",
+        "jscs": "jscs *.js",
+        "eslint": "eslint test.js *.js",
+        "eccheck": "editorconfig-tools check *.js **/*.js > /dev/null",
+        "security": "nsp check"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {
+        "has": "^1.0.1"
+      },
+      "devDependencies": {
+        "tape": "^4.6.3",
+        "covert": "^1.1.0",
+        "jscs": "^3.0.7",
+        "editorconfig-tools": "^0.1.1",
+        "nsp": "^2.6.2",
+        "eslint": "^3.15.0",
+        "@ljharb/eslint-config": "^11.0.0",
+        "semver": "^5.3.0",
+        "replace": "^0.3.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "9c718fe1b3997eb70d5cbf7a6f5f233461868a00",
+      "_id": "is-regex@1.0.4",
+      "_shasum": "5517489b547091b0930e095654ced25ee97e9491",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "shasum": "5517489b547091b0930e095654ced25ee97e9491",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-regex-1.0.4.tgz_1487407180290_0.1654177566524595"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "is-regex",
+      "version": "1.0.5",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "tests-only": "node --harmony --es-staging test",
+        "posttest": "npx aud",
+        "coverage": "covert test/index.js",
+        "lint": "eslint .",
+        "eccheck": "eclint check *.js **/*.js > /dev/null",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {
+        "has": "^1.0.3"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "covert": "^1.1.1",
+        "eclint": "^2.8.1",
+        "eslint": "^6.7.2",
+        "tape": "^4.11.0"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "840278ad33eb09c12a47d819b86274287b3144d5",
+      "_id": "is-regex@1.0.5",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-vlKW17SNq44owv5AQR3Cq0bQPEb8+kF3UKZ2fiZNOWtztYE5i0CzCZxFDwO58qAOWtxdBRVO/V5Qin1wjCqFYQ==",
+        "shasum": "39d589a358bf18967f726967120b8fc1aed74eae",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.0.5.tgz",
+        "fileCount": 9,
+        "unpackedSize": 23381,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd9siZCRA9TVsSAnZWagAAokkP/2N1wKqUsMEFUugp+kIL\nWrER05HxW+puflKg0JIMUOHyctZ8myGkoczxkK5lhdAtyES9eVTD+pS20Mk7\n7ZlMLswszjZTR3Vjby0W/8Yhf1GKsiueptWy5aH4dP0ZLuNL4wgs5S6UXrbc\n78b8g732VY2Gmg79mm56x3QPeOkquAUSmIDbiXg5PKOnnt56aQmHf/aEXnAL\nzpsqaCmU467ls8CKLKg2IRAXFH7TnhyL4iaKf46p+/PNW0/Fj0TEQnHPCG62\neXZR4uHG3OEfLHr1ETiGtBkIIHFQt/uJTmZAtxgWPg1tq63j8GvDH2qDfEZg\nyd7P+wEMqkYOX4ZfDW3sobobo3JPTTSKlAYDOor0a6VdMsnS2W1LdYxfXTcR\nslVtlxxnZ+HdpAJjTdNl/VRBQXrNLosT0BX1/gWVSSW2/SRKoOlUPccxOCEK\nIeB5X5ksPKHoHiztN044gdJV4SnJ569d029C2lUPzd7yMFe+9MM4QKWA9l26\nD5Nx0T9L1nOnOa60YNP8Nax2dqjgbaGqydyj3l9pFFXh9qQ6al3Xq5oNW0SA\nCNYqiR7gM0eX8yntjnQa+KRibwV4/bcKYRsBnND5vLGSKgUx5IwFLF4DmkGu\nPFKp1w8Qo3pYLTnLxPvicXMP38chE/Vtc1GSFTXX7Y4xDiKTC/1CAPK/+z1v\nRrEg\r\n=TaqF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-regex_1.0.5_1576454296870_0.2660881285185357"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "is-regex",
+      "version": "1.1.0",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "tests-only": "node --harmony --es-staging test",
+        "posttest": "npx aud --production",
+        "coverage": "covert test/index.js",
+        "lint": "eslint .",
+        "eccheck": "eclint check *.js **/*.js > /dev/null",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {
+        "has-symbols": "^1.0.1"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^17.1.0",
+        "aud": "^1.1.2",
+        "auto-changelog": "^2.0.0",
+        "covert": "^1.1.1",
+        "eclint": "^2.8.1",
+        "eslint": "^7.1.0",
+        "foreach": "^2.0.5",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^5.0.1"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "7f2381d7273c9e0575519fee28e3386acd2882c5",
+      "_id": "is-regex@1.1.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-iI97M8KTWID2la5uYXlkbSDQIg4F6o1sYboZKKTDpnDQMLtUL86zxhgDet3Q2SriaYsyGqZ6Mn2SjbRKeLHdqw==",
+        "shasum": "ece38e389e490df0dc21caea2bd596f987f767ff",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.1.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 26170,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe2Jm9CRA9TVsSAnZWagAAbE4P/iXMUYPTqB1ICJwyky3Q\nKbO1m5SVgfehrIvWftC/YFL956ifUF8WLZma8y/w0Lety/GF4erc3VZwCjkg\nKV/tOjsfCcyaUtiStgPDUEphSDVnFEpJjetBzcgGcVk541ImaehKs9B3OcOX\n461WeMb7hjA0IptcApQnkM5xz5Zxma8pqsLMR/fx5AcGpb/WKPe0lm41UJUy\nBseLyv6jajYF/4EjbUgsKxgvW9OqRIquu7zrYYJoDLMH7vbQT3C9nc0G+Pmw\nlF7c2EGkzTcyYvljy33273UqVvqpnNgfb0/WnfqihkMsy3k+9sALl5m3yCta\nK1aPalwLNy/tng2XDhLnCycFqgQ3QrBEz9uXaGlPwbYtEh1yA8nlmExoExod\n3pP/2gw8UB0/YZRWhq9YngQqKBaWA8xLxwEU92E/yFH/PUnic64mkZBi0GGc\nKooZJ5Ufuy32z02cElJNeIAdSigXLu57BXofumAgMb1Fdr8JpC1iaLnr5h9O\nY7muj0+3JQb2fBwcejEl3jYMc4jh03eA3IQFEzcfVjG6ztXTiDFMGuH8aIaf\nQvfbFOuf8qiRaRb3n/2oWvcspuOkiUIpi+d2Cq4NONyM6bXAbmczWzvrwNpZ\n06VI67Y3OXEBV1WFbd4WL7vqmafF7XheFIYa+F+ANO5Hq2ZMPYYi0+CkLBuV\nHQVc\r\n=hiO0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-regex_1.1.0_1591253437030_0.9131496985380159"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.1": {
+      "name": "is-regex",
+      "version": "1.1.1",
+      "description": "Is this value a JS regex? Works cross-realm/iframe, and despite ES6 @@toStringTag",
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "tests-only": "node --harmony --es-staging test",
+        "posttest": "npx aud --production",
+        "coverage": "covert test/index.js",
+        "lint": "eslint .",
+        "eccheck": "eclint check *.js **/*.js > /dev/null",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/ljharb/is-regex/issues"
+      },
+      "homepage": "https://github.com/ljharb/is-regex",
+      "keywords": [
+        "regex",
+        "regexp",
+        "is",
+        "regular expression",
+        "regular",
+        "expression"
+      ],
+      "dependencies": {
+        "has-symbols": "^1.0.1"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^17.1.0",
+        "aud": "^1.1.2",
+        "auto-changelog": "^2.2.0",
+        "covert": "^1.1.1",
+        "eclint": "^2.8.1",
+        "eslint": "^7.6.0",
+        "foreach": "^2.0.5",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^5.0.1"
+      },
+      "testling": {
+        "files": "test.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..12.0",
+          "opera/15.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false,
+        "hideCredit": true
+      },
+      "gitHead": "b8086365dabb5933a0b5471c9ebf63ed4f4136ee",
+      "_id": "is-regex@1.1.1",
+      "_nodeVersion": "14.7.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-1+QkEcxiLlB7VEyFtyBg94e08OAsvq7FUBgApTq/w2ymCLyKJgDPsybBENVtA7XCQEgEXxKPonG+mvYRxh/LIg==",
+        "shasum": "c6f98aacc546f6cec5468a07b7b153ab564a57b9",
+        "tarball": "https://registry.npmjs.org/is-regex/-/is-regex-1.1.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 26943,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfKO6zCRA9TVsSAnZWagAA4icP/RHEwsMqFDp2v0knexQT\nllncASf/EKg5Cx1cPTfLvPdENCwTAL/7nJFWDdQvAvfgO4z3BVtB8u9AJL56\nQZxmMewsFq2n0rZMYSnodT8DJupCBp/BnbDoKfS631cVfHSk43xQit9wJsh5\nw+fzbUgdkSjwgKFmPay1LVFXVJDkiiXdviPQmPOhGKDkFIWHStu8tCCUXAxR\n8YP+dH49yP4CBLbiqc7f1Lrezdvy7riAWI2TVSWR/JnyhPMmtrowkqJP7ME9\nWbK/o5E2oNZZ2Axc4qlFjpA2gPoJxGJNdf8r0arQ3H0oYV6rnF7gr/y5FOyu\ns5wmsVGICIhaJtwoh1KBlMgej2qmiMTcW0yLrkmi1Kr5vBwMGv/KhYewixwv\nwrtgk58kfiezZZiqEAh5kLOuZGCz/lwrviEoj09ZM+TY2mvE7XM6DtKQUDRU\nIpC99vw4ETIR4wTlTuWLw6Ks8hKtg3p1KxXq7nnRBhydinAhF+nOWisGpntV\n8iF1c9vhLfy9J0eMnosqutt2mNmJRCoIOpqkx+5nwsIXsBXWI4ZVHVFOp6O1\nmBhjsNjIWJ/QTHNL3thseCe37AKNw/a6AJLX7lUwxw/KdV80RDd9psw2H4Aq\nH1wJpAD9IB2FJekIvmxZsyVZ3kQC7lVvK7lrUCstEeDvOr4LYI7wUu3xnStB\nGHAT\r\n=dFPU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-regex_1.1.1_1596518067179_0.43200921521753965"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "#is-regex <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nIs this value a JS regex?\nThis module works cross-realm/iframe, and despite ES6 @@toStringTag.\n\n## Example\n\n```js\nvar isRegex = require('is-regex');\nvar assert = require('assert');\n\nassert.notOk(isRegex(undefined));\nassert.notOk(isRegex(null));\nassert.notOk(isRegex(false));\nassert.notOk(isRegex(true));\nassert.notOk(isRegex(42));\nassert.notOk(isRegex('foo'));\nassert.notOk(isRegex(function () {}));\nassert.notOk(isRegex([]));\nassert.notOk(isRegex({}));\n\nassert.ok(isRegex(/a/g));\nassert.ok(isRegex(new RegExp('a', 'g')));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-regex\n[2]: http://versionbadg.es/ljharb/is-regex.svg\n[3]: https://travis-ci.org/ljharb/is-regex.svg\n[4]: https://travis-ci.org/ljharb/is-regex\n[5]: https://david-dm.org/ljharb/is-regex.svg\n[6]: https://david-dm.org/ljharb/is-regex\n[7]: https://david-dm.org/ljharb/is-regex/dev-status.svg\n[8]: https://david-dm.org/ljharb/is-regex#info=devDependencies\n[9]: https://ci.testling.com/ljharb/is-regex.png\n[10]: https://ci.testling.com/ljharb/is-regex\n[11]: https://nodei.co/npm/is-regex.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-regex.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-regex.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-regex\n\n",
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-04T05:14:31.876Z",
+    "created": "2014-01-15T09:16:09.209Z",
+    "0.0.0": "2014-01-15T09:16:09.209Z",
+    "1.0.0": "2014-05-19T07:26:17.660Z",
+    "1.0.1": "2015-01-28T21:56:26.403Z",
+    "1.0.2": "2015-01-29T22:29:04.957Z",
+    "1.0.3": "2015-01-30T08:01:27.392Z",
+    "1.0.4": "2017-02-18T08:39:40.514Z",
+    "1.0.5": "2019-12-15T23:58:16.987Z",
+    "1.1.0": "2020-06-04T06:50:37.146Z",
+    "1.1.1": "2020-08-04T05:14:27.392Z"
+  },
+  "users": {
+    "arteffeckt": true,
+    "rocket0191": true
+  },
+  "homepage": "https://github.com/ljharb/is-regex",
+  "keywords": [
+    "regex",
+    "regexp",
+    "is",
+    "regular expression",
+    "regular",
+    "expression"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ljharb/is-regex.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ljharb/is-regex/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

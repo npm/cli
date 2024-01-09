@@ -1,0 +1,410 @@
+{
+  "_id": "xdg-basedir",
+  "_rev": "14-4a0fbb3a0858e284ec0ee473ef74741c",
+  "name": "xdg-basedir",
+  "description": "Get XDG Base Directory paths",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "xdg-basedir",
+      "version": "1.0.0",
+      "description": "Get XDG Base Directory paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/xdg-basedir"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "xdg",
+        "base",
+        "directory",
+        "dir",
+        "basedir",
+        "path",
+        "data",
+        "config",
+        "cache"
+      ],
+      "dependencies": {
+        "user-home": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "8116a2fd05718de88b740861764739dc1879916f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/xdg-basedir",
+      "_id": "xdg-basedir@1.0.0",
+      "_shasum": "95ea42a738d98a9470fd5a21d08556dbd61dc74a",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "95ea42a738d98a9470fd5a21d08556dbd61dc74a",
+        "tarball": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "xdg-basedir",
+      "version": "1.0.1",
+      "description": "Get XDG Base Directory paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/xdg-basedir"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "xdg",
+        "base",
+        "directory",
+        "dir",
+        "basedir",
+        "path",
+        "data",
+        "config",
+        "cache"
+      ],
+      "dependencies": {
+        "user-home": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "2eaf176e5d0c9c1bd64e6fc8a60a3a8e3dba4e79",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/xdg-basedir",
+      "_id": "xdg-basedir@1.0.1",
+      "_shasum": "14ff8f63a4fdbcb05d5b6eea22b36f3033b9f04e",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "14ff8f63a4fdbcb05d5b6eea22b36f3033b9f04e",
+        "tarball": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "xdg-basedir",
+      "version": "2.0.0",
+      "description": "Get XDG Base Directory paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/xdg-basedir"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "xdg",
+        "base",
+        "directory",
+        "dir",
+        "basedir",
+        "path",
+        "data",
+        "config",
+        "cache",
+        "linux",
+        "unix",
+        "spec"
+      ],
+      "dependencies": {
+        "os-homedir": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4",
+        "require-uncached": "^1.0.2"
+      },
+      "gitHead": "0ad9e461ca531fcc1532c66932df386739aeffb2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/xdg-basedir",
+      "_id": "xdg-basedir@2.0.0",
+      "_shasum": "edbc903cc385fc04523d966a335504b5504d1bd2",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "edbc903cc385fc04523d966a335504b5504d1bd2",
+        "tarball": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "xdg-basedir",
+      "version": "3.0.0",
+      "description": "Get XDG Base Directory paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/xdg-basedir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "xdg",
+        "base",
+        "directory",
+        "dir",
+        "basedir",
+        "path",
+        "data",
+        "config",
+        "cache",
+        "linux",
+        "unix",
+        "spec"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "require-uncached": "^1.0.2",
+        "xo": "*"
+      },
+      "gitHead": "d441833e9dad9694b04495905ab8fe484e3b8b99",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/xdg-basedir#readme",
+      "_id": "xdg-basedir@3.0.0",
+      "_shasum": "496b2cc109eca8dbacfe2dc72b603c17c5870ad4",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "496b2cc109eca8dbacfe2dc72b603c17c5870ad4",
+        "tarball": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/xdg-basedir-3.0.0.tgz_1486978344594_0.5195651547983289"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "xdg-basedir",
+      "version": "4.0.0",
+      "description": "Get XDG Base Directory paths",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/xdg-basedir.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "xdg",
+        "base",
+        "directory",
+        "basedir",
+        "path",
+        "data",
+        "config",
+        "cache",
+        "linux",
+        "unix",
+        "spec"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "import-fresh": "^3.0.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "bc65ded91e797cbdedbe3e5e1a2882372e3ba983",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/xdg-basedir#readme",
+      "_id": "xdg-basedir@4.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==",
+        "shasum": "4bc8d9984403696225ef83a1573cbbcb4e79db13",
+        "tarball": "https://registry.npmjs.org/xdg-basedir/-/xdg-basedir-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5693,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcx8qMCRA9TVsSAnZWagAAXYcQAJBYvVO5Ga+5eLBnXIoN\n9S7SxuKKQlMPGsyAzVVwNiKCqN4rb0EZ8MRiVvZbqdccaqTP/Zk0X3SxXyCZ\nRxNpYAA+uIDNkcf0NbzF49svPw6493dJp7qdCPcVzfzSegjLBaFKadglDEg9\nL7d1zQ+muR7/FWstWr8nUhezpOKn9Di6Rw5ngmUDQ/uqWppqk6vqpcz2yPKW\nVmUvRyYsUIoyTF9Xb4YOlhtmI/VI8n7iT4/0/1Uy1+P81+JN8ROJP1bF2Pca\npKuuQ7XoZpd5AJSWeJwpAjLHzHkc73YjQ+i7BN+wkQXBoI3zkMXWY4OgKV/i\nm7cp+hF3/+1AHSd7gQ+2w8wYrjpg+s7a3PQxGE+Yz6V0lO/jZ7w+7qj5m5Aa\nDTmWig9SbCoMjW7/0JLQfEAtOvUw1qidrj59/rJlQRJ+16/kzpC8qz4k+0J8\nNQR8CjYi/E+WyllqrIIDp7W3aOrlq5YEjzpEGAWuLaZr2QQsMCQm4pTIC+v1\nImgr+GFPoZxpl8JuU9iWbp2fv16ESMhRgUsb5iR6TN1KVittjLHrn36cban1\nm0R/5colnO/1Oh3bFtoekXJ1AeDpNUCIHM/3k4qPm+j5wT2DfMXieykN846x\nBT2Stjbf64PkuCcrT10fHnQd8Sv7g0RL/EP7HBOFBHJbFqMxRAwTP/7Tw761\nUAZJ\r\n=zFLM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/xdg-basedir_4.0.0_1556597386863_0.809265814738712"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# xdg-basedir [![Build Status](https://travis-ci.org/sindresorhus/xdg-basedir.svg?branch=master)](https://travis-ci.org/sindresorhus/xdg-basedir)\n\n> Get [XDG Base Directory](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html) paths\n\n\n## Install\n\n```\n$ npm install xdg-basedir\n```\n\n\n## Usage\n\n```js\nconst xdgBasedir = require('xdg-basedir');\n\nxdgBasedir.data;\n//=> '/home/sindresorhus/.local/share'\n\nxdgBasedir.config;\n//=> '/home/sindresorhus/.config'\n\nxdgBasedir.dataDirs\n//=> ['/home/sindresorhus/.local/share', '/usr/local/share/', '/usr/share/']\n```\n\n\n## API\n\nThe properties `.data`, `.config`, `.cache`, `.runtime` will return `null` in the uncommon case that both the XDG environment variable is not set and the users home directory can't be found. You need to handle this case. A common solution is to [fall back to a temp directory](https://github.com/yeoman/configstore/blob/b82690fc401318ad18dcd7d151a0003a4898a314/index.js#L15).\n\n### .data\n\nDirectory for user-specific data files.\n\n### .config\n\nDirectory for user-specific configuration files.\n\n### .cache\n\nDirectory for user-specific non-essential data files.\n\n### .runtime\n\nDirectory for user-specific non-essential runtime files and other file objects (such as sockets, named pipes, etc).\n\n### .dataDirs\n\nPreference-ordered array of base directories to search for data files in addition to `.data`.\n\n### .configDirs\n\nPreference-ordered array of base directories to search for configuration files in addition to `.config`.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-30T04:09:50.100Z",
+    "created": "2014-10-06T12:42:04.417Z",
+    "1.0.0": "2014-10-06T12:42:04.417Z",
+    "1.0.1": "2015-01-13T17:57:21.801Z",
+    "2.0.0": "2015-06-13T12:47:10.440Z",
+    "3.0.0": "2017-02-13T09:32:24.818Z",
+    "4.0.0": "2019-04-30T04:09:47.550Z"
+  },
+  "homepage": "https://github.com/sindresorhus/xdg-basedir#readme",
+  "keywords": [
+    "xdg",
+    "base",
+    "directory",
+    "basedir",
+    "path",
+    "data",
+    "config",
+    "cache",
+    "linux",
+    "unix",
+    "spec"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/xdg-basedir.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/xdg-basedir/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "julien-f": true,
+    "itonyyo": true,
+    "chocolateboy": true,
+    "akiva": true,
+    "jessaustin": true
+  }
+}

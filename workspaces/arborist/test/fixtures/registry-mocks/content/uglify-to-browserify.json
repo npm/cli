@@ -1,0 +1,323 @@
+{
+  "_id": "uglify-to-browserify",
+  "_rev": "19-c21196978ecc08d21f817638b8fa396d",
+  "name": "uglify-to-browserify",
+  "description": "A transform to make UglifyJS work in browserify.",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "uglify-to-browserify",
+      "version": "0.0.1",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {
+        "readable-stream": "~1.0.2"
+      },
+      "devDependencies": {
+        "uglify-js": "~2.3.6",
+        "source-map": "~0.1.27"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "_id": "uglify-to-browserify@0.0.1",
+      "dist": {
+        "shasum": "8994028d4369316dfc1aaf93ef1239dfe9ae7231",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.10",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindesay.co.uk"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "uglify-to-browserify",
+      "version": "1.0.0",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {
+        "readable-stream": "~1.0.2"
+      },
+      "devDependencies": {
+        "uglify-js": "~2.3.6",
+        "source-map": "~0.1.27"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "_id": "uglify-to-browserify@1.0.0",
+      "dist": {
+        "shasum": "58d686f4cd2ce75726af8683453953f489dabcfa",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.10",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindesay.co.uk"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "uglify-to-browserify",
+      "version": "1.0.1",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "uglify-js": "~2.4.0",
+        "source-map": "~0.1.27"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify/issues"
+      },
+      "_id": "uglify-to-browserify@1.0.1",
+      "dist": {
+        "shasum": "0e9ada5d4ca358a59a00bb33c8061e2f40ef97d2",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.32",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindesay.co.uk"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "uglify-to-browserify",
+      "version": "1.0.2",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "uglify-js": "~2.4.0",
+        "source-map": "~0.1.27"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify/issues"
+      },
+      "homepage": "https://github.com/ForbesLindesay/uglify-to-browserify",
+      "_id": "uglify-to-browserify@1.0.2",
+      "dist": {
+        "shasum": "6e0924d6bda6b5afe349e39a6d632850a0f882b7",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindeay.co.uk"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "uglify-to-browserify",
+      "version": "2.0.0",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "resolve": "^1.3.1",
+        "uglify-js": "~3.0.4"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "gitHead": "49b1378cd7dbcdcbafa8f738bdaf8a8130440921",
+      "bugs": {
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify/issues"
+      },
+      "homepage": "https://github.com/ForbesLindesay/uglify-to-browserify#readme",
+      "_id": "uglify-to-browserify@2.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindesay.co.uk"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-IFHwVO18WjrPuffK0nAbLJEO8F20N+ZA7BtcuNJZZc7Bo7Vhvo5a/W5d0puxovuByvTPM3fFa8s4U+OzhPFw2w==",
+        "shasum": "bcf294ad12cd028c1d38dfd79b3d4865683b4101",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/uglify-to-browserify-2.0.0.tgz_1498221347661_0.7665365741122514"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "uglify-to-browserify",
+      "version": "2.1.0",
+      "description": "A transform to make UglifyJS work in browserify.",
+      "keywords": [],
+      "dependencies": {},
+      "devDependencies": {
+        "resolve": "^1.3.1",
+        "uglify-js": "^3.3.9"
+      },
+      "scripts": {
+        "test": "node test/index.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ForbesLindesay/uglify-to-browserify.git"
+      },
+      "author": {
+        "name": "ForbesLindesay"
+      },
+      "license": "MIT",
+      "gitHead": "03c6e29b35fb09a836233921343ece6db2a50c11",
+      "bugs": {
+        "url": "https://github.com/ForbesLindesay/uglify-to-browserify/issues"
+      },
+      "homepage": "https://github.com/ForbesLindesay/uglify-to-browserify#readme",
+      "_id": "uglify-to-browserify@2.1.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "forbeslindesay",
+        "email": "forbes@lindesay.co.uk"
+      },
+      "dist": {
+        "integrity": "sha512-k2Os2bGaYigvnyiu/CSyuM8ufVKj/YLwr8p7t15qtmexazci4Gxw5WcSkjtkozKuIvaGKyZHz7gpCr6sK42XZQ==",
+        "shasum": "c1e170dc9ca89f1060fdace4e70392135956b52d",
+        "tarball": "https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "forbeslindesay",
+          "email": "forbes@lindesay.co.uk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/uglify-to-browserify-2.1.0.tgz_1517575967790_0.34835800249129534"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# uglify-to-browserify\n\nA transform to make UglifyJS work in browserify.\n\n[![Build Status](https://img.shields.io/travis/ForbesLindesay/uglify-to-browserify/master.svg)](https://travis-ci.org/ForbesLindesay/uglify-to-browserify)\n[![Dependency Status](https://img.shields.io/david/ForbesLindesay/uglify-to-browserify.svg)](https://david-dm.org/ForbesLindesay/uglify-to-browserify)\n[![NPM version](https://img.shields.io/npm/v/uglify-to-browserify.svg)](https://www.npmjs.com/package/uglify-to-browserify)\n[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/uglify-to-browserify.svg)](https://greenkeeper.io/)\n\n## Installation\n\n    npm install uglify-to-browserify\n\n## License\n\n  MIT\n",
+  "maintainers": [
+    {
+      "name": "forbeslindesay",
+      "email": "forbes@lindesay.co.uk"
+    }
+  ],
+  "time": {
+    "modified": "2018-02-02T12:52:48.750Z",
+    "created": "2013-08-01T04:30:47.032Z",
+    "0.0.1": "2013-08-01T04:30:49.179Z",
+    "1.0.0": "2013-08-01T04:51:06.660Z",
+    "1.0.1": "2013-08-25T01:34:21.871Z",
+    "1.0.2": "2014-02-05T12:40:02.383Z",
+    "2.0.0": "2017-06-23T12:35:48.679Z",
+    "2.1.0": "2018-02-02T12:52:48.750Z"
+  },
+  "author": {
+    "name": "ForbesLindesay"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForbesLindesay/uglify-to-browserify.git"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "maxmaximov": true,
+    "kerry95": true,
+    "mojaray2k": true,
+    "kkuehl": true,
+    "b4z81": true,
+    "suemcnab": true,
+    "ierceg": true
+  },
+  "homepage": "https://github.com/ForbesLindesay/uglify-to-browserify#readme",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/ForbesLindesay/uglify-to-browserify/issues"
+  },
+  "license": "MIT",
+  "_attachments": {}
+}

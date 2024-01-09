@@ -1,0 +1,296 @@
+{
+  "_id": "file-uri-to-path",
+  "_rev": "5-e511c37d50d3af8c15e2884f826019bf",
+  "name": "file-uri-to-path",
+  "description": "Convert a file: URI to a file path",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "file-uri-to-path",
+      "version": "0.0.1",
+      "description": "Convert a file: URI to a file path",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/file-uri-to-path.git"
+      },
+      "keywords": [
+        "file",
+        "uri",
+        "convert",
+        "path"
+      ],
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://n8.io/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/file-uri-to-path/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/file-uri-to-path",
+      "devDependencies": {
+        "mocha": "~1.17.1"
+      },
+      "_id": "file-uri-to-path@0.0.1",
+      "dist": {
+        "shasum": "e443f3ace914db5a8053363f8efd14d8aac79ae9",
+        "tarball": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ]
+    },
+    "0.0.2": {
+      "name": "file-uri-to-path",
+      "version": "0.0.2",
+      "description": "Convert a file: URI to a file path",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/file-uri-to-path.git"
+      },
+      "keywords": [
+        "file",
+        "uri",
+        "convert",
+        "path"
+      ],
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://n8.io/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/file-uri-to-path/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/file-uri-to-path",
+      "devDependencies": {
+        "mocha": "~1.17.1"
+      },
+      "_id": "file-uri-to-path@0.0.2",
+      "dist": {
+        "shasum": "37cdd1b5b905404b3f05e1b23645be694ff70f82",
+        "tarball": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ]
+    },
+    "1.0.0": {
+      "name": "file-uri-to-path",
+      "version": "1.0.0",
+      "description": "Convert a file: URI to a file path",
+      "main": "index.js",
+      "types": "index.d.ts",
+      "directories": {
+        "test": "test"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/file-uri-to-path.git"
+      },
+      "keywords": [
+        "file",
+        "uri",
+        "convert",
+        "path"
+      ],
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://n8.io/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/file-uri-to-path/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/file-uri-to-path",
+      "devDependencies": {
+        "mocha": "3"
+      },
+      "gitHead": "db012b4db2c9da9f6eeb5202b4a493450482e0e4",
+      "_id": "file-uri-to-path@1.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "dist": {
+        "integrity": "sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==",
+        "shasum": "553a7b8446ff6f684359c445f1e37a05dacc33dd",
+        "tarball": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/file-uri-to-path-1.0.0.tgz_1499377910342_0.7947268672287464"
+      }
+    },
+    "2.0.0": {
+      "name": "file-uri-to-path",
+      "version": "2.0.0",
+      "description": "Convert a file: URI to a file path",
+      "main": "dist/src/index",
+      "typings": "dist/src/index",
+      "scripts": {
+        "prebuild": "rimraf dist",
+        "build": "tsc",
+        "postbuild": "cpy --parents src test '!**/*.ts' dist",
+        "test": "mocha --reporter spec dist/test/*.js",
+        "test-lint": "eslint src --ext .js,.ts",
+        "prepublishOnly": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/file-uri-to-path.git"
+      },
+      "engines": {
+        "node": ">= 6"
+      },
+      "keywords": [
+        "file",
+        "uri",
+        "convert",
+        "path"
+      ],
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://n8.io/"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/file-uri-to-path/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/file-uri-to-path",
+      "devDependencies": {
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^10.5.3",
+        "@typescript-eslint/eslint-plugin": "1.6.0",
+        "@typescript-eslint/parser": "1.1.0",
+        "cpy-cli": "^2.0.0",
+        "eslint": "5.16.0",
+        "eslint-config-airbnb": "17.1.0",
+        "eslint-config-prettier": "4.1.0",
+        "eslint-import-resolver-typescript": "1.1.1",
+        "eslint-plugin-import": "2.16.0",
+        "eslint-plugin-jsx-a11y": "6.2.1",
+        "eslint-plugin-react": "7.12.4",
+        "mocha": "^6.2.0",
+        "rimraf": "^3.0.0",
+        "typescript": "^3.5.3"
+      },
+      "gitHead": "701a2d8e6927a74b40f605e7f6071ec57cd978f0",
+      "_id": "file-uri-to-path@2.0.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-hjPFI8oE/2iQPVe4gbrJ73Pp+Xfub2+WI2LlXDbsaJBwT5wuMh35WNWVYYTpnz895shtwfyutMFLFywpQAFdLg==",
+        "shasum": "7b415aeba227d575851e0a5b0c640d7656403fba",
+        "tarball": "https://registry.npmjs.org/file-uri-to-path/-/file-uri-to-path-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 7880,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdoORhCRA9TVsSAnZWagAAntwQAJZa/7FN144+7M/sKt5m\nBCh2ZDR0HyEuROh+jAjCoXCWI5HY5CZXW0ThM6P8XYv5Y+NsXDjqY9W46S2m\nMPmAJktmvfh2xLaSUV8ww9E8doqcVhBytFzaL9qwckbDQXgaFwmDU6/Byeo9\nrzGI1/z4Co00G2a9ZTR8Jv/15xc2K5Bd+ymnqjCPu6Lru71hi5FPr4kNNa/F\nTnE1PB5uEkakv5xDGjgSTg3I8BFVbXrbCaT5V5RlvIexl5sXQzJ7P+YuCALA\nRF4ocMouqfm8fUbqZ9XmmdXCrVq05i/IRrOP7o5kNq915e0ghbctUwr0KY2w\nPxKpSjiYnNO6f9SrhuP9bKQ5D2nAntzkzsMFZdJj9jMtgzzHCeflpxvBDrlc\n+DgH4ELUpEt5f9E8Pse+oDye2oymtuU/sPBok6CEcsuiTFjSRV8Cjh1GSPis\nV8aWWhhkRlpcg+kIft8ugl2RCIUwuj1bGkZpzNFM6fC3WtAJy7md8kPMNPS+\nb8xyngudxYjU/HPujuVi0Sb90f9yxNpw5tep6tBzC4FKMtmafwII77lI9Md/\nMIfSZkPNAaOpyrrYxcWr2+fjd2LsPw5PP/N2Kiw+t622w/oLdfj7A/y2oOpP\nxlxS64Fq9nIXdSDzNowxSWC/wniA9poNZI4AjrUAkurQ9PV4pFF/woTlGcIg\nH6WX\r\n=JNiM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/file-uri-to-path_2.0.0_1570825313193_0.4774934534232189"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "file-uri-to-path\n================\n### Convert a `file:` URI to a file path\n[![Build Status](https://github.com/TooTallNate/file-uri-to-path/workflows/Node%20CI/badge.svg)](https://github.com/TooTallNate/file-uri-to-path/actions?workflow=Node+CI)\n\nAccepts a `file:` URI and returns a regular file path suitable for use with the\n`fs` module functions.\n\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install file-uri-to-path\n```\n\n\nExample\n-------\n\n``` js\nvar uri2path = require('file-uri-to-path');\n\nuri2path('file://localhost/c|/WINDOWS/clock.avi');\n// \"c:\\\\WINDOWS\\\\clock.avi\"\n\nuri2path('file:///c|/WINDOWS/clock.avi');\n// \"c:\\\\WINDOWS\\\\clock.avi\"\n\nuri2path('file://localhost/c:/WINDOWS/clock.avi');\n// \"c:\\\\WINDOWS\\\\clock.avi\"\n\nuri2path('file://hostname/path/to/the%20file.txt');\n// \"\\\\\\\\hostname\\\\path\\\\to\\\\the file.txt\"\n\nuri2path('file:///c:/path/to/the%20file.txt');\n// \"c:\\\\path\\\\to\\\\the file.txt\"\n```\n\n\nAPI\n---\n\n### fileUriToPath(String uri) → String\n\n\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2014 Nathan Rajlich &lt;nathan@tootallnate.net&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "tootallnate",
+      "email": "nathan@tootallnate.net"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-11T20:21:55.798Z",
+    "created": "2014-01-27T08:05:51.258Z",
+    "0.0.1": "2014-01-27T08:05:51.258Z",
+    "0.0.2": "2014-01-27T08:13:31.848Z",
+    "1.0.0": "2017-07-06T21:51:51.414Z",
+    "2.0.0": "2019-10-11T20:21:53.304Z"
+  },
+  "readmeFilename": "README.md",
+  "users": {
+    "vonthar": true
+  },
+  "homepage": "https://github.com/TooTallNate/file-uri-to-path",
+  "keywords": [
+    "file",
+    "uri",
+    "convert",
+    "path"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/file-uri-to-path.git"
+  },
+  "author": {
+    "name": "Nathan Rajlich",
+    "email": "nathan@tootallnate.net",
+    "url": "http://n8.io/"
+  },
+  "bugs": {
+    "url": "https://github.com/TooTallNate/file-uri-to-path/issues"
+  },
+  "license": "MIT"
+}

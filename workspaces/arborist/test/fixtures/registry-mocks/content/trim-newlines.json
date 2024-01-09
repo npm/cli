@@ -1,0 +1,274 @@
+{
+  "_id": "trim-newlines",
+  "_rev": "3-561ddca165bf69d4f3a2a57a5e337c1c",
+  "name": "trim-newlines",
+  "description": "Trim newlines from the start and/or end of a string",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "trim-newlines",
+      "version": "1.0.0",
+      "description": "Trim newlines from the start and/or end of a string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/trim-newlines"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "trim",
+        "newline",
+        "newlines",
+        "linebreak",
+        "lf",
+        "crlf",
+        "left",
+        "right",
+        "start",
+        "end",
+        "string",
+        "str",
+        "remove",
+        "delete",
+        "strip"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "f651a2d4cbf382c2936e6e53edee9316602e4ce7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/trim-newlines/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/trim-newlines",
+      "_id": "trim-newlines@1.0.0",
+      "_shasum": "5887966bb582a4503a41eb524f7d35011815a613",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "5887966bb582a4503a41eb524f7d35011815a613",
+        "tarball": "https://registry.npmjs.org/trim-newlines/-/trim-newlines-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "trim-newlines",
+      "version": "2.0.0",
+      "description": "Trim newlines from the start and/or end of a string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/trim-newlines.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "trim",
+        "newline",
+        "newlines",
+        "linebreak",
+        "lf",
+        "crlf",
+        "left",
+        "right",
+        "start",
+        "end",
+        "string",
+        "str",
+        "remove",
+        "delete",
+        "strip"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "9db1edbbc6ffe44cb8a11ae7690be6044dfe95c7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/trim-newlines/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/trim-newlines#readme",
+      "_id": "trim-newlines@2.0.0",
+      "_shasum": "b403d0b91be50c331dfc4b82eeceb22c3de16d20",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b403d0b91be50c331dfc4b82eeceb22c3de16d20",
+        "tarball": "https://registry.npmjs.org/trim-newlines/-/trim-newlines-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/trim-newlines-2.0.0.tgz_1492866373755_0.2756255145650357"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "trim-newlines",
+      "version": "3.0.0",
+      "description": "Trim newlines from the start and/or end of a string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/trim-newlines.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "trim",
+        "newline",
+        "newlines",
+        "linebreak",
+        "lf",
+        "crlf",
+        "left",
+        "right",
+        "start",
+        "end",
+        "string",
+        "remove",
+        "delete",
+        "strip"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "bd3309053f8e8795fb1ba7044000e2fd9c763597",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/trim-newlines/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/trim-newlines#readme",
+      "_id": "trim-newlines@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-C4+gOpvmxaSMKuEf9Qc134F1ZuOHVXKRbtEflf4NTtuuJDEIJ9p5PXsalL8SkeRw+qit1Mo+yuvMPAKwWg/1hA==",
+        "shasum": "79726304a6a898aa8373427298d54c2ee8b1cb30",
+        "tarball": "https://registry.npmjs.org/trim-newlines/-/trim-newlines-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3700,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcxn1xCRA9TVsSAnZWagAASxgP/3+oiwZfVvr/zugu6X/e\nTirVrONOCk3KVRRxt8K55qcNvNpnAxvp3ejzQHRjGbEUK4QDAt4e8tv9ndHd\nn/TVIkgz8PueWotP9yozBtxIjO5JesqoA6GckOhqGMSzXsnz02jhqFOsaOCI\n1E93t5EBOUFkqjSOtn6Cuq2m+RdamGNVM71xllmFQVVRhYs8OmUO42c08psK\nnozkczUzAJAzzh77YcNsPPYREAcejqRc9DR5TLThGYfY6DQ5oqqssJ4ir276\n8+8yXOx81bGL5rvyNGiYIF4hnS71xbWSN7ytZio5oXejwwUBJDLZkRR7Cyaq\nFa/pg7qV5vtOPDenanFU2cdYV4mkHGbhYaWJ0RF0z1GYAUR0/fy2tYG7B9Ow\ndxfKBW7Vi0F1eLSx11CnaX6Yacq5Ca7iUdDlJWfj905n2gADPkwNWkMDY6+0\noEsNzgDhHb52ZdGPVzn9eFwW9l7m+s86A63mAiAOy3YaDJr5chkHyg2Mwz+I\nrA2bTHlvSE4dPc0VIAi8sWmCG1g98vXRiONywE1jx8sAiSbzxdhmV/vNlrCj\nPE7EkzUIukcPcX7CDul9StzlRrTQhcZtfKy8VkhzM4izwFqa8ovklt3jOb+f\nh6Yr5j7Yf4FotxAbXMWyZN7677O6AmJDjTPLilzAuzaakE+1Dten7bRKa8M7\n8+YC\r\n=aQG3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/trim-newlines_3.0.0_1556512112742_0.7758115744914702"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# trim-newlines [![Build Status](https://travis-ci.org/sindresorhus/trim-newlines.svg?branch=master)](https://travis-ci.org/sindresorhus/trim-newlines)\n\n> Trim [newlines](https://en.wikipedia.org/wiki/Newline) from the start and/or end of a string\n\n\n## Install\n\n```\n$ npm install trim-newlines\n```\n\n\n## Usage\n\n```js\nconst trimNewlines = require('trim-newlines');\n\ntrimNewlines('\\n🦄\\r\\n');\n//=> '🦄'\n\ntrimNewlines.start('\\n🦄\\r\\n');\n//=> '🦄\\r\\n'\n\ntrimNewlines.end('\\n🦄\\r\\n');\n//=> '\\n🦄'\n```\n\n\n## API\n\n### trimNewlines(string)\n\nTrim from the start and end of a string.\n\n### trimNewlines.start(string)\n\nTrim from the start of a string.\n\n### trimNewlines.end(string)\n\nTrim from the end of a string.\n\n\n## Related\n\n- [trim-left](https://github.com/sindresorhus/trim-left) - Similar to `String#trim()` but removes only whitespace on the left\n- [trim-right](https://github.com/sindresorhus/trim-right) - Similar to `String#trim()` but removes only whitespace on the right.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-29T04:28:35.365Z",
+    "created": "2015-09-29T09:28:27.741Z",
+    "1.0.0": "2015-09-29T09:28:27.741Z",
+    "2.0.0": "2017-04-22T13:06:15.702Z",
+    "3.0.0": "2019-04-29T04:28:32.845Z"
+  },
+  "homepage": "https://github.com/sindresorhus/trim-newlines#readme",
+  "keywords": [
+    "trim",
+    "newline",
+    "newlines",
+    "linebreak",
+    "lf",
+    "crlf",
+    "left",
+    "right",
+    "start",
+    "end",
+    "string",
+    "remove",
+    "delete",
+    "strip"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/trim-newlines.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/trim-newlines/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

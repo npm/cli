@@ -1,0 +1,178 @@
+{
+  "_id": "utils-merge",
+  "_rev": "19-7bfd688b048615cd1315611e5c8e0535",
+  "name": "utils-merge",
+  "description": "merge() utility function",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "utils-merge",
+      "version": "1.0.0",
+      "description": "merge() utility function",
+      "keywords": [
+        "util"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jaredhanson/utils-merge.git"
+      },
+      "bugs": {
+        "url": "http://github.com/jaredhanson/utils-merge/issues"
+      },
+      "author": {
+        "name": "Jared Hanson",
+        "email": "jaredhanson@gmail.com",
+        "url": "http://www.jaredhanson.net/"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://www.opensource.org/licenses/MIT"
+        }
+      ],
+      "main": "./index",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "1.x.x",
+        "chai": "1.x.x"
+      },
+      "scripts": {
+        "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "_id": "utils-merge@1.0.0",
+      "dist": {
+        "shasum": "0294fb922bb9375153541c4f7096231f287c8af8",
+        "tarball": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.25",
+      "_npmUser": {
+        "name": "jaredhanson",
+        "email": "jaredhanson@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jaredhanson",
+          "email": "jaredhanson@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "utils-merge",
+      "version": "1.0.1",
+      "description": "merge() utility function",
+      "keywords": [
+        "util"
+      ],
+      "author": {
+        "name": "Jared Hanson",
+        "email": "jaredhanson@gmail.com",
+        "url": "http://www.jaredhanson.net/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jaredhanson/utils-merge.git"
+      },
+      "bugs": {
+        "url": "http://github.com/jaredhanson/utils-merge/issues"
+      },
+      "license": "MIT",
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "http://opensource.org/licenses/MIT"
+        }
+      ],
+      "main": "./index",
+      "dependencies": {},
+      "devDependencies": {
+        "make-node": "0.3.x",
+        "mocha": "1.x.x",
+        "chai": "1.x.x"
+      },
+      "engines": {
+        "node": ">= 0.4.0"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+      },
+      "gitHead": "680a65305312a990751fd32b83bd2c12d67809d4",
+      "homepage": "https://github.com/jaredhanson/utils-merge#readme",
+      "_id": "utils-merge@1.0.1",
+      "_shasum": "9f95710f50a267947b2ccc124741c1028427e713",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "jaredhanson",
+        "email": "jaredhanson@gmail.com"
+      },
+      "dist": {
+        "shasum": "9f95710f50a267947b2ccc124741c1028427e713",
+        "tarball": "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jaredhanson",
+          "email": "jaredhanson@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/utils-merge-1.0.1.tgz_1505866719585_0.7930543632246554"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# utils-merge\n\n[![Version](https://img.shields.io/npm/v/utils-merge.svg?label=version)](https://www.npmjs.com/package/utils-merge)\n[![Build](https://img.shields.io/travis/jaredhanson/utils-merge.svg)](https://travis-ci.org/jaredhanson/utils-merge)\n[![Quality](https://img.shields.io/codeclimate/github/jaredhanson/utils-merge.svg?label=quality)](https://codeclimate.com/github/jaredhanson/utils-merge)\n[![Coverage](https://img.shields.io/coveralls/jaredhanson/utils-merge.svg)](https://coveralls.io/r/jaredhanson/utils-merge)\n[![Dependencies](https://img.shields.io/david/jaredhanson/utils-merge.svg)](https://david-dm.org/jaredhanson/utils-merge)\n\n\nMerges the properties from a source object into a destination object.\n\n## Install\n\n```bash\n$ npm install utils-merge\n```\n\n## Usage\n\n```javascript\nvar a = { foo: 'bar' }\n  , b = { bar: 'baz' };\n\nmerge(a, b);\n// => { foo: 'bar', bar: 'baz' }\n```\n\n## License\n\n[The MIT License](http://opensource.org/licenses/MIT)\n\nCopyright (c) 2013-2017 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>\n\n<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/utils-merge'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/utils-merge.svg' /></a>\n",
+  "maintainers": [
+    {
+      "name": "jaredhanson",
+      "email": "jaredhanson@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-09-20T00:18:39.692Z",
+    "created": "2013-07-11T19:00:16.016Z",
+    "1.0.0": "2013-07-11T19:00:17.317Z",
+    "1.0.1": "2017-09-20T00:18:39.692Z"
+  },
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jaredhanson/utils-merge.git"
+  },
+  "users": {
+    "cmj": true,
+    "simplyianm": true,
+    "princetoad": true,
+    "fengchenxiujisd": true,
+    "456wyc": true,
+    "iori20091101": true,
+    "mojaray2k": true,
+    "sunggun": true,
+    "chinawolf_wyp": true,
+    "wjszxli": true,
+    "wanglq80": true
+  },
+  "keywords": [
+    "util"
+  ],
+  "bugs": {
+    "url": "http://github.com/jaredhanson/utils-merge/issues"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jaredhanson/utils-merge#readme",
+  "license": "MIT",
+  "_attachments": {}
+}

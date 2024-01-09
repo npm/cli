@@ -1,0 +1,86 @@
+{
+  "_id": "@isaacs/dedupe-tests-b",
+  "_rev": "1-4ee624c39b978360900784288bcb0c33",
+  "name": "@isaacs/dedupe-tests-b",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/dedupe-tests-b",
+      "version": "1.0.0",
+      "_id": "@isaacs/dedupe-tests-b@1.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-3nmvzIb8QL8OXODzipwoV3U8h9OQD9g9RwOPuSBQqjqSg9JZR1CCFOWNsDUtOfmwY8HFUJV9EAZ124uhqVxq+w==",
+        "shasum": "271e2dbd45f48540e5a1c8e826d28147dc04e60e",
+        "tarball": "https://registry.npmjs.org/@isaacs/dedupe-tests-b/-/dedupe-tests-b-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 61,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2s4GCRA9TVsSAnZWagAAmrIP/3Loethgl8h5b8ZFBkH2\ndo4J9e8x6ANgMwMfs20TkbrL/Lr//roOVKOAhxl9Be4UJhsrpn8Id7EJgC9D\n1iVsQHnfUiQS/hVoXkFuis+AEK/IMMQHBSahrMtgg3++0NjjeaKLgMqcoz63\nbCkqrnWqBCTDD8eJl2Q+RGhz9N2rO+VJjWW7GvOEAxj2wXCUEEBRMoX504TC\npstmOwG6+EACojRHPMLi9B+gLjYEzXV7ax7M1WuVl42/iO8uUFmFtEg7euP8\nQ8XDYhDF5076+Turvksbpz4/qDSstt4A6CoQXVnzvVmYShxkJem/pEY0NUjr\nx8HjcsshgYvCakRXVnZcXAJY9BBNyeGlVypU3SsEg1VnnXbNS+apj30w4yLF\nFq2LThs4HsPo/Y+viDr6zcYKyNWBrH8J6F79yzAPNMpQ+93zTbNfpzsXtMxV\nxfs4UnOI/CnW9oI/zhrgJ86gOdVfI8XYM8sasFi3LwlG0fBgW5s+AdtzBsd8\nHXI9eAlVGC3cKsp3AhfqKORy3YuOtZUrS3KqXeQUJ7mu28WQCJxkfOpn9/kY\nsW2tvCATgYW7UIRyoAZRf0jLaoz9fqmUnqToT2B+hruC9KfVH6/Gi/WxQzWW\na15/QPwhSrrNkshghbSKE2LEAktJ1+M9piJzceazolvPbfmdcCvSOqgool3K\n2Izy\r\n=VhM0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dedupe-tests-b_1.0.0_1574620678480_0.24698912026724473"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/dedupe-tests-b",
+      "version": "2.0.0",
+      "_id": "@isaacs/dedupe-tests-b@2.0.0",
+      "_nodeVersion": "12.12.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-KTYkpRv9EzlmCg4Gsm/jpclWmRYFCXow8GZKJXjK08sIZBlElTZEa5Bw/UQxIvEfcKmWXczSqItD49Kr8Ax4UA==",
+        "shasum": "d650866f08a607f05d262225fdd14a883d02aed7",
+        "tarball": "https://registry.npmjs.org/@isaacs/dedupe-tests-b/-/dedupe-tests-b-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 61,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2s4eCRA9TVsSAnZWagAAwMQP/1jF5O1EW/ot1zAqP58C\n7sYYRa8ROTw6y+gIxValm6Wdym5J/tc55MOn0XjsCPDccimrbND4AgPbm5tw\nzyRfBxDZNON+WXAxQ63X/GPhXBjHCBBHpR0wUIXMNfe2cexNG/7FvP/epa5C\nqEDQgEMPuTDWXKgeUX7gk0QpiMxW+6RWwXwubr0lQX+jlvE2rMiKpRl0/A1Z\nnL7PCyC+Ky3FqO6UeJ7+7kgRK9yHPmTXYOviOYIAq5paQzKMogFVAtPU0Zvf\neuSVyBv2WHmIbS2WVvvuc6XJICDq2O+gUBodRD7fgeWnAwyJlUcTAJhhnUou\nvOpuJ4nA9pScuTUji7/2TBecsZ3J7TMgwqLkn7WaRWJwBr3fyy4xmQgj9c+1\n/UlGOVCi1DZOOwEzgzD21KOKI9LpU25BKadLmvFYHZ17UDB1hI0SXQRmVbh/\ni2so4S1hO8U94lF79aK0CextRqeFpzgdhS4t9aGfHXVN5B6YCn7vpM1PV7YC\n3X5BuvfCm8XRFl6odYj6vn6SsQVP85/HUW4HUM2VKG2eQWu2YSToxMfK1Vvi\nvC1VRu6tQGeCaAdW01jmBAokAgqDgg0Tq2SrvPxdp4m2snkX6Wf8RoWux1qb\nIi1Aub228GmluF9vit8cA/GsVywXNG87Md0piE4RB1M6Cs/dgcm2LOCa1xz5\n1xjD\r\n=RyqR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/dedupe-tests-b_2.0.0_1574620702558_0.3211766918525385"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-24T18:37:58.256Z",
+    "1.0.0": "2019-11-24T18:37:58.595Z",
+    "modified": "2019-11-24T18:38:24.920Z",
+    "2.0.0": "2019-11-24T18:38:22.654Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

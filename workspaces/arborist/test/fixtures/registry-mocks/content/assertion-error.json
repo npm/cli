@@ -1,0 +1,321 @@
+{
+  "_id": "assertion-error",
+  "_rev": "11-59e56454bc42563f6d78baaf0dedc7a2",
+  "name": "assertion-error",
+  "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "assertion-error",
+      "version": "0.1.0",
+      "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+      "author": {
+        "name": "Jake Luer",
+        "email": "jake@qualiancy.com",
+        "url": "http://qualiancy.com"
+      },
+      "license": "MIT",
+      "keywords": [],
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:qualiancy/assertion-error.git"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "main": "./index",
+      "scripts": {
+        "test": "make test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "component": "*"
+      },
+      "_id": "assertion-error@0.1.0",
+      "dist": {
+        "shasum": "555cb007e89be44ba73e7b9600c3907dc381ce2b",
+        "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.14",
+      "_npmUser": {
+        "name": "jakeluer",
+        "email": "jake@alogicalparadox.com"
+      },
+      "maintainers": [
+        {
+          "name": "jakeluer",
+          "email": "jake@alogicalparadox.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "assertion-error",
+      "version": "1.0.0",
+      "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+      "author": {
+        "name": "Jake Luer",
+        "email": "jake@qualiancy.com",
+        "url": "http://qualiancy.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "test",
+        "assertion",
+        "assertion-error"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:chaijs/assertion-error.git"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "main": "./index",
+      "scripts": {
+        "test": "make test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "component": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/chaijs/assertion-error/issues"
+      },
+      "_id": "assertion-error@1.0.0",
+      "dist": {
+        "shasum": "c7f85438fdd466bc7ca16ab90c81513797a5d23b",
+        "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.23",
+      "_npmUser": {
+        "name": "jakeluer",
+        "email": "jake@alogicalparadox.com"
+      },
+      "maintainers": [
+        {
+          "name": "jakeluer",
+          "email": "jake@alogicalparadox.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "assertion-error",
+      "version": "1.0.1",
+      "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+      "author": {
+        "name": "Jake Luer",
+        "email": "jake@qualiancy.com",
+        "url": "http://qualiancy.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "test",
+        "assertion",
+        "assertion-error"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:chaijs/assertion-error.git"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "main": "./index",
+      "scripts": {
+        "test": "make test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "component": "*"
+      },
+      "gitHead": "db10d2fc753f00b3dad24956921056eaf1e03708",
+      "bugs": {
+        "url": "https://github.com/chaijs/assertion-error/issues"
+      },
+      "homepage": "https://github.com/chaijs/assertion-error",
+      "_id": "assertion-error@1.0.1",
+      "_shasum": "35aaeec33097f11f42399ecadf33faccd27f5c4c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jakeluer",
+        "email": "jake@alogicalparadox.com"
+      },
+      "maintainers": [
+        {
+          "name": "jakeluer",
+          "email": "jake@alogicalparadox.com"
+        }
+      ],
+      "dist": {
+        "shasum": "35aaeec33097f11f42399ecadf33faccd27f5c4c",
+        "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "assertion-error",
+      "version": "1.0.2",
+      "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+      "author": {
+        "name": "Jake Luer",
+        "email": "jake@qualiancy.com",
+        "url": "http://qualiancy.com"
+      },
+      "license": "MIT",
+      "keywords": [
+        "test",
+        "assertion",
+        "assertion-error"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/chaijs/assertion-error.git"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "main": "./index",
+      "scripts": {
+        "test": "make test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "component": "*"
+      },
+      "gitHead": "b36f593951c1487fa33747c9911025734923f28c",
+      "bugs": {
+        "url": "https://github.com/chaijs/assertion-error/issues"
+      },
+      "homepage": "https://github.com/chaijs/assertion-error#readme",
+      "_id": "assertion-error@1.0.2",
+      "_shasum": "13ca515d86206da0bac66e834dd397d87581094c",
+      "_from": ".",
+      "_npmVersion": "3.8.9",
+      "_nodeVersion": "5.7.0",
+      "_npmUser": {
+        "name": "chaijs",
+        "email": "chaijs@keithcirkel.co.uk"
+      },
+      "dist": {
+        "shasum": "13ca515d86206da0bac66e834dd397d87581094c",
+        "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "chaijs",
+          "email": "chaijs@keithcirkel.co.uk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/assertion-error-1.0.2.tgz_1465237527264_0.8082898685242981"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "assertion-error",
+      "version": "1.1.0",
+      "description": "Error constructor for test and validation frameworks that implements standardized AssertionError specification.",
+      "author": {
+        "name": "Jake Luer",
+        "email": "jake@qualiancy.com",
+        "url": "http://qualiancy.com"
+      },
+      "license": "MIT",
+      "types": "./index.d.ts",
+      "keywords": [
+        "test",
+        "assertion",
+        "assertion-error"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/chaijs/assertion-error.git"
+      },
+      "engines": {
+        "node": "*"
+      },
+      "main": "./index",
+      "scripts": {
+        "test": "make test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "component": "*",
+        "typescript": "^2.6.1"
+      },
+      "gitHead": "faa3f8cbbdba74d2760f9d2e95c008ba9ce4812e",
+      "bugs": {
+        "url": "https://github.com/chaijs/assertion-error/issues"
+      },
+      "homepage": "https://github.com/chaijs/assertion-error#readme",
+      "_id": "assertion-error@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.8.0",
+      "_npmUser": {
+        "name": "chaijs",
+        "email": "chaijs@keithcirkel.co.uk"
+      },
+      "dist": {
+        "integrity": "sha512-jgsaNduz+ndvGyFt3uSuWqvy4lCnIJiovtouQN5JZHOKCS2QuhEdbcQHFhVksz2N2U9hXJo8odG7ETyWlEeuDw==",
+        "shasum": "e60b6b0e8f301bd97e5375215bda406c85118c0b",
+        "tarball": "https://registry.npmjs.org/assertion-error/-/assertion-error-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "chaijs",
+          "email": "chaijs@keithcirkel.co.uk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assertion-error-1.1.0.tgz_1515337170361_0.5846316555980593"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# AssertionError [![Build Status](https://travis-ci.org/chaijs/assertion-error.png?branch=master)](https://travis-ci.org/chaijs/assertion-error)\n\n> Error constructor for test and validation frameworks that implements standardized AssertionError specification.\n\n## Installation\n\n### Node.js\n\n`assertion-error` is available on [npm](http://npmjs.org).\n\n    $ npm install assertion-error\n\n### Component\n\n`assertion-error` is available as a [component](https://github.com/component/component).\n\n    $ component install chaijs/assertion-error\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2013 Jake Luer <jake@qualiancy.com> (http://qualiancy.com)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "name": "chaijs",
+      "email": "chaijs@keithcirkel.co.uk"
+    }
+  ],
+  "time": {
+    "modified": "2018-01-07T14:59:31.257Z",
+    "created": "2013-04-07T22:59:41.018Z",
+    "0.1.0": "2013-04-07T22:59:42.826Z",
+    "1.0.0": "2013-06-08T20:41:17.202Z",
+    "1.0.1": "2015-03-05T23:45:54.576Z",
+    "1.0.2": "2016-06-06T18:25:29.009Z",
+    "1.1.0": "2018-01-07T14:59:31.257Z"
+  },
+  "author": {
+    "name": "Jake Luer",
+    "email": "jake@qualiancy.com",
+    "url": "http://qualiancy.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/chaijs/assertion-error.git"
+  },
+  "homepage": "https://github.com/chaijs/assertion-error#readme",
+  "keywords": [
+    "test",
+    "assertion",
+    "assertion-error"
+  ],
+  "bugs": {
+    "url": "https://github.com/chaijs/assertion-error/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

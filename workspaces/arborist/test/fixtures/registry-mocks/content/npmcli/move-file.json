@@ -1,0 +1,199 @@
+{
+  "_id": "@npmcli/move-file",
+  "_rev": "7-4f2dd2d37f8a9ff0890e722a4d2fe290",
+  "name": "@npmcli/move-file",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@npmcli/move-file",
+      "version": "1.0.0",
+      "description": "move a file (fork of move-file)",
+      "dependencies": {
+        "mkdirp": "^1.0.4"
+      },
+      "devDependencies": {
+        "require-inject": "^1.4.4",
+        "tap": "^14.10.7"
+      },
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/move-file.git"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "license": "MIT",
+      "gitHead": "87340c2856f495058c6aacbdd6b4747b4e7765fd",
+      "bugs": {
+        "url": "https://github.com/npm/move-file/issues"
+      },
+      "homepage": "https://github.com/npm/move-file#readme",
+      "_id": "@npmcli/move-file@1.0.0",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-pYo136mVTRpGpGO1vr9o5eD/XM3ivMlQQSi67DGt8np0pl9+5K2JXG7um39C+86W8zNNaw4B3+GyEzM3jMrniw==",
+        "shasum": "f50a712695100a96c04163b15fcbed9417fc7a8c",
+        "tarball": "https://registry.npmjs.org/@npmcli/move-file/-/move-file-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4996,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1uV8CRA9TVsSAnZWagAA/BAP/2YlLrShn9Qbs7dqC3KM\nhvfJVhR469jef0igIQxVZN463dBb8l5R2O3fvebWEagBOo7wxVjKmS33RySS\nY6BaAAI51Nztv4qJuo0Zn0yqr5fB0PFoT3xQM8eGq7++HOqIyNyvCspt4Q8n\nT4KAororGvaQllB9tDWSqW4VlB7hcOjrdJ2TyIrN1EZuDwhwLEAOmfem2YyX\nsAZOPV5E9kOlB8VnGoXt2ttc/VmQhIma+p69JZFA4yJ4SYpYQQj90VZuXe4z\ntLu0CpVYXot0mYwj3Klq4u7iNQ/TvCZhc7DWa3gFeHSxpYMq8OlZrQJ4a8Sd\nNlTYrOHosRQct7mdyo9rxibK6OgNE1ujpbK0mJntupPqaGU3Q9jkyHOAAxVD\nNxZsmlCP/jfhijzUdBH8fKUl8KsWrdmPEjIlSzFQ0mjQYLqjJGucmw4L2wmg\nyGu2Mzo6yHpVSXGdzrYItjiwmFOGtJ6rhpm++V1qIvXN/GLqsfIgRNJUXwvp\n+/aLKT6pklciU0U/32oC6eSuJ/g2SsElB3sNoItg9Gh4zwTiD3q6wPZMKDa6\naehFAkxhT3RMe0BSZwYxygBtyr/WwjD8w0me0UHL/CEn9CX2LJ8AfjfZpKEh\nNbn2N1E4cByY1j6oXd2S3zqKHFAbTYqMx9le/3twUD5wPW3o9hFd2TTchbn+\nwcTu\r\n=MT/M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        },
+        {
+          "name": "claudiahdz",
+          "email": "cghr1990@gmail.com"
+        },
+        {
+          "name": "darcyclarke",
+          "email": "darcy@darcyclarke.me"
+        },
+        {
+          "name": "adam_baldwin",
+          "email": "evilpacket@gmail.com"
+        },
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/move-file_1.0.0_1591141756117_0.17984452306055188"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@npmcli/move-file",
+      "version": "1.0.1",
+      "description": "move a file (fork of move-file)",
+      "dependencies": {
+        "mkdirp": "^1.0.4"
+      },
+      "devDependencies": {
+        "require-inject": "^1.4.4",
+        "tap": "^14.10.7"
+      },
+      "scripts": {
+        "test": "tap",
+        "snap": "tap",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "prepublishOnly": "git push origin --follow-tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/move-file.git"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "license": "MIT",
+      "engines": {
+        "node": ">=10"
+      },
+      "gitHead": "c2081b7c1528a3d948ab9d8ffba5e2a3d6b197b1",
+      "bugs": {
+        "url": "https://github.com/npm/move-file/issues"
+      },
+      "homepage": "https://github.com/npm/move-file#readme",
+      "_id": "@npmcli/move-file@1.0.1",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-Uv6h1sT+0DrblvIrolFtbvM1FgWm+/sy4B3pvLp67Zys+thcukzS5ekn7HsZFGpWP4Q3fYJCljbWQE/XivMRLw==",
+        "shasum": "de103070dac0f48ce49cf6693c23af59c0f70464",
+        "tarball": "https://registry.npmjs.org/@npmcli/move-file/-/move-file-1.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5035,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1uaTCRA9TVsSAnZWagAAG50P/0CFWBcyHCFJQOxtmboc\n8rPOnbZSLnHzouL3PPqihx0yz+mrnMskoIpZSv2Byy2Ji1MCyTeFFiZ/PnqC\nFizBB32NLFk8k5pDMqIKoVWZDwKl+2AUwWT7UwKmwWTH7fHF5GpwAJaobilV\nihpEmEydZ70s5Mii7zy9ty/tbfbUxJx29RBYYaOL9PimpK5PBT0QWZ9uMcfl\nCOgFee8zgPJO03KgF9XnZeVKxHK+jXDSX5/XVCSM2jCcQR7fZy5738/3lOTH\nzA7UQ7BpJroLh1mwLCOABaa5Tr1r5JhoqcNCE/t8xbNNKHkDjsLdaKBDbqmy\nNiOsqHYmwuf+al5+25Q6LDEqy6nFZQHb7SEqT3beqVicifq4Tj4DD4b3lKky\nBMdhUgiGItGh/2UT4Psotwnlsb+vkbBHEiKR55ig6XiLFe0F6P6Qcu5TO2c+\nvni5b/SUVBvboJ+Ebm/gETqp02F9t2uyss5rCYVUbneqV250cce/zBNIBECG\ncHnekxO4TWFca9b2ILf5r7+gyRq9GmVHsQAca+MUAlFS/6jZQGvQLzNXvTmq\nCFjoevSg4+yosp1JsmBQKvJiri5pa6TAPFd7s8OGsbe4iqkb24aqvMxn0Is3\nZohC+BNDFf5DjMQF5o+HrQ0dGHYqZ7XzbSR8QIv96LOwpiiNbajHxDY5Rymh\n//LJ\r\n=0T3F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "adam_baldwin",
+          "email": "evilpacket@gmail.com"
+        },
+        {
+          "name": "claudiahdz",
+          "email": "cghr1990@gmail.com"
+        },
+        {
+          "name": "darcyclarke",
+          "email": "darcy@darcyclarke.me"
+        },
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        },
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/move-file_1.0.1_1591142034779_0.7981442693487335"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-06-02T23:49:15.875Z",
+    "1.0.0": "2020-06-02T23:49:16.235Z",
+    "modified": "2020-10-19T13:49:47.342Z",
+    "1.0.1": "2020-06-02T23:53:54.901Z"
+  },
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "description": "move a file (fork of move-file)",
+  "homepage": "https://github.com/npm/move-file#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/move-file.git"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/move-file/issues"
+  },
+  "license": "MIT",
+  "readme": "# @npmcli/move-file\n\nA fork of [move-file](https://github.com/sindresorhus/move-file) with\ncompatibility with all node 10.x versions.\n\n> Move a file\n\nThe built-in\n[`fs.rename()`](https://nodejs.org/api/fs.html#fs_fs_rename_oldpath_newpath_callback)\nis just a JavaScript wrapper for the C `rename(2)` function, which doesn't\nsupport moving files across partitions or devices. This module is what you\nwould have expected `fs.rename()` to be.\n\n## Highlights\n\n- Promise API.\n- Supports moving a file across partitions and devices.\n- Optionally prevent overwriting an existing file.\n- Creates non-existent destination directories for you.\n- Support for Node versions that lack built-in recursive `fs.mkdir()`\n\n## Install\n\n```\n$ npm install @npmcli/move-file\n```\n\n## Usage\n\n```js\nconst moveFile = require('@npmcli/move-file');\n\n(async () => {\n\tawait moveFile('source/unicorn.png', 'destination/unicorn.png');\n\tconsole.log('The file has been moved');\n})();\n```\n\n## API\n\n### moveFile(source, destination, options?)\n\nReturns a `Promise` that resolves when the file has been moved.\n\n### moveFile.sync(source, destination, options?)\n\n#### source\n\nType: `string`\n\nFile you want to move.\n\n#### destination\n\nType: `string`\n\nWhere you want the file moved.\n\n#### options\n\nType: `object`\n\n##### overwrite\n\nType: `boolean`\\\nDefault: `true`\n\nOverwrite existing destination file.\n",
+  "readmeFilename": "README.md"
+}

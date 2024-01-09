@@ -1,0 +1,102 @@
+{
+  "_id": "eslint-config-es5",
+  "_rev": "3-275cb9b50516179e98d6535a4dc612ba",
+  "name": "eslint-config-es5",
+  "description": "An Javascript ES5 ESLint config that following Airbnb ES5 Style Guide",
+  "dist-tags": {
+    "latest": "0.5.0"
+  },
+  "versions": {
+    "0.5.0": {
+      "name": "eslint-config-es5",
+      "version": "0.5.0",
+      "description": "An Javascript ES5 ESLint config that following Airbnb ES5 Style Guide",
+      "main": "index.js",
+      "scripts": {
+        "lint": "eslint ."
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ipluser/eslint-config-es5.git"
+      },
+      "keywords": [
+        "eslint",
+        "eslintconfig",
+        "config",
+        "airbnb",
+        "javascript",
+        "es5"
+      ],
+      "devDependencies": {
+        "eslint": "^2.8.0"
+      },
+      "author": {
+        "name": "ipluser"
+      },
+      "license": "MIT",
+      "gitHead": "0ae8b275a0823e82d57ef736e040bcbf2abc0924",
+      "bugs": {
+        "url": "https://github.com/ipluser/eslint-config-es5/issues"
+      },
+      "homepage": "https://github.com/ipluser/eslint-config-es5#readme",
+      "_id": "eslint-config-es5@0.5.0",
+      "_shasum": "ac300f5f75c456993adabcb5ccb4d28ccf00e175",
+      "_from": ".",
+      "_npmVersion": "3.8.7",
+      "_nodeVersion": "4.4.0",
+      "_npmUser": {
+        "name": "ipluser",
+        "email": "ipluser@163.com"
+      },
+      "dist": {
+        "shasum": "ac300f5f75c456993adabcb5ccb4d28ccf00e175",
+        "tarball": "https://registry.npmjs.org/eslint-config-es5/-/eslint-config-es5-0.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "ipluser",
+          "email": "ipluser@163.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-config-es5-0.5.0.tgz_1463098263794_0.6315028935205191"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "## eslint-config-es5\nAn Javascript ES5 ESLint config that following [Airbnb ES5 Style Guide](https://github.com/airbnb/javascript/tree/master/es5).\n\n### Quick Start\n1. `npm install eslint-config-es5 --save-dev`\n2. add `\"extends\": \"eslint-config-es5\"` to .eslintrc.*\n\n### License\n[MIT](LICENSE)",
+  "maintainers": [
+    {
+      "name": "ipluser",
+      "email": "ipluser@163.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-07-09T01:31:43.155Z",
+    "created": "2016-05-13T00:11:04.278Z",
+    "0.5.0": "2016-05-13T00:11:04.278Z"
+  },
+  "homepage": "https://github.com/ipluser/eslint-config-es5#readme",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "airbnb",
+    "javascript",
+    "es5"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipluser/eslint-config-es5.git"
+  },
+  "author": {
+    "name": "ipluser"
+  },
+  "bugs": {
+    "url": "https://github.com/ipluser/eslint-config-es5/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

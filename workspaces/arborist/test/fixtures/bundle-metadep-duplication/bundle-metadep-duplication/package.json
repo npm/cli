@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/bundle-metadep-duplication-root",
+  "version": "1.0.0",
+  "dependencies": {
+    "@isaacs/bundle-metadep-duplication-x": "1"
+  }
+}

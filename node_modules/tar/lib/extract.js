@@ -6,31 +6,38 @@ const Unpack = require('./unpack.js')
 const fs = require('fs')
 const fsm = require('fs-minipass')
 const path = require('path')
+const stripSlash = require('./strip-trailing-slashes.js')
 
-const x = module.exports = (opt_, files, cb) => {
-  if (typeof opt_ === 'function')
+module.exports = (opt_, files, cb) => {
+  if (typeof opt_ === 'function') {
     cb = opt_, files = null, opt_ = {}
-  else if (Array.isArray(opt_))
+  } else if (Array.isArray(opt_)) {
     files = opt_, opt_ = {}
+  }
 
-  if (typeof files === 'function')
+  if (typeof files === 'function') {
     cb = files, files = null
+  }
 
-  if (!files)
+  if (!files) {
     files = []
-  else
+  } else {
     files = Array.from(files)
+  }
 
   const opt = hlo(opt_)
 
-  if (opt.sync && typeof cb === 'function')
+  if (opt.sync && typeof cb === 'function') {
     throw new TypeError('callback not supported for sync tar functions')
+  }
 
-  if (!opt.file && typeof cb === 'function')
+  if (!opt.file && typeof cb === 'function') {
     throw new TypeError('callback only supported with file option')
+  }
 
-  if (files.length)
+  if (files.length) {
     filesFilter(opt, files)
+  }
 
   return opt.file && opt.sync ? extractFileSync(opt)
     : opt.file ? extractFile(opt, cb)
@@ -41,7 +48,7 @@ const x = module.exports = (opt_, files, cb) => {
 // construct a filter that limits the file entries listed
 // include child entries if a dir is included
 const filesFilter = (opt, files) => {
-  const map = new Map(files.map(f => [f.replace(/\/+$/, ''), true]))
+  const map = new Map(files.map(f => [stripSlash(f), true]))
   const filter = opt.filter
 
   const mapHas = (file, r) => {
@@ -55,30 +62,28 @@ const filesFilter = (opt, files) => {
   }
 
   opt.filter = filter
-    ? (file, entry) => filter(file, entry) && mapHas(file.replace(/\/+$/, ''))
-    : file => mapHas(file.replace(/\/+$/, ''))
+    ? (file, entry) => filter(file, entry) && mapHas(stripSlash(file))
+    : file => mapHas(stripSlash(file))
 }
 
 const extractFileSync = opt => {
   const u = new Unpack.Sync(opt)
 
   const file = opt.file
-  let threw = true
-  let fd
   const stat = fs.statSync(file)
   // This trades a zero-byte read() syscall for a stat
   // However, it will usually result in less memory allocation
-  const readSize = opt.maxReadSize || 16*1024*1024
+  const readSize = opt.maxReadSize || 16 * 1024 * 1024
   const stream = new fsm.ReadStreamSync(file, {
     readSize: readSize,
-    size: stat.size
+    size: stat.size,
   })
   stream.pipe(u)
 }
 
 const extractFile = (opt, cb) => {
   const u = new Unpack(opt)
-  const readSize = opt.maxReadSize || 16*1024*1024
+  const readSize = opt.maxReadSize || 16 * 1024 * 1024
 
   const file = opt.file
   const p = new Promise((resolve, reject) => {
@@ -88,12 +93,12 @@ const extractFile = (opt, cb) => {
     // This trades a zero-byte read() syscall for a stat
     // However, it will usually result in less memory allocation
     fs.stat(file, (er, stat) => {
-      if (er)
+      if (er) {
         reject(er)
-      else {
+      } else {
         const stream = new fsm.ReadStream(file, {
           readSize: readSize,
-          size: stat.size
+          size: stat.size,
         })
         stream.on('error', reject)
         stream.pipe(u)
@@ -103,10 +108,6 @@ const extractFile = (opt, cb) => {
   return cb ? p.then(cb, cb) : p
 }
 
-const extractSync = opt => {
-  return new Unpack.Sync(opt)
-}
+const extractSync = opt => new Unpack.Sync(opt)
 
-const extract = opt => {
-  return new Unpack(opt)
-}
+const extract = opt => new Unpack(opt)

@@ -1,0 +1,443 @@
+{
+  "_id": "responselike",
+  "_rev": "5-a1aa344e8d5b93c153af4d13b5fc0ce8",
+  "name": "responselike",
+  "description": "A response-like object for mocking a Node.js HTTP response stream",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "responselike",
+      "version": "0.1.0",
+      "description": "A response-like object for mocking a native Node.js HTTP response",
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "request",
+        "responselike"
+      ],
+      "scripts": {
+        "test": "node test"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "gitHead": "603af7088210b166764883e84c3d4b6ac495ab53",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@0.1.0",
+      "_shasum": "93684efcea96d2c1e96f88a1dbec48d5cc1e5ebd",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "93684efcea96d2c1e96f88a1dbec48d5cc1e5ebd",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/responselike-0.1.0.tgz_1493884273503_0.28556131827645004"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "responselike",
+      "version": "0.2.0",
+      "description": "A response-like object for mocking a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "mock",
+        "request",
+        "responselike"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "gitHead": "3b21755458e0fbae4ad51cc2ba672888e97546e7",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@0.2.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cDn1dhdwkAr3fjk36gC0qB4oU78IdJUl8YKdqTrYzED2O3BWIBGYwxIrWDmC00/Nrn9p3q40icy350fTQgOuxw==",
+        "shasum": "81b12fe4b59e4356b41c1f8db8f24dc07db0bace",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/responselike-0.2.0.tgz_1497870552306_0.4606168167665601"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "responselike",
+      "version": "1.0.0",
+      "description": "A response-like object for mocking a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "mock",
+        "request",
+        "responselike"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "ava": "^0.19.1",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^10.3.2",
+        "xo": "^0.19.0"
+      },
+      "dependencies": {
+        "lowercase-keys": "^1.0.0"
+      },
+      "gitHead": "8d5ea0b607b862239c10ea5f3af301369773107f",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@1.0.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-lBZecxOwpiohz05HLwKmE8tSTNta9RnpSaSM/n52gTGnFfzxg/Ffh2PpmQGl/stsQYyq5Noymvj+Ctwqemjuig==",
+        "shasum": "271c6b7fbe4d3efdc5a63f9b43628e59690119de",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/responselike-1.0.0.tgz_1498030086941_0.4431796863209456"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "responselike",
+      "version": "1.0.1",
+      "description": "A response-like object for mocking a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "mock",
+        "request",
+        "responselike"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "ava": "^0.20.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.0.3",
+        "xo": "^0.19.0"
+      },
+      "dependencies": {
+        "lowercase-keys": "^1.0.0"
+      },
+      "gitHead": "0d59bc473f63d2155aa0ff24d81951d134a74ea2",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@1.0.1",
+      "_shasum": "7af77f584979e9aee316d5a8923c762bbc0f90d8",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.1.2",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "7af77f584979e9aee316d5a8923c762bbc0f90d8",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/responselike-1.0.1.tgz_1498827878831_0.5962018952704966"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "responselike",
+      "version": "1.0.2",
+      "description": "A response-like object for mocking a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "mock",
+        "request",
+        "responselike"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "ava": "^0.22.0",
+        "coveralls": "^2.13.1",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.1.0",
+        "xo": "^0.19.0"
+      },
+      "dependencies": {
+        "lowercase-keys": "^1.0.0"
+      },
+      "gitHead": "69366dfd6e161b46bc4503c114d067b87e30dd60",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@1.0.2",
+      "_shasum": "918720ef3b631c5642be068f15ade5a46f4ba1e7",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "dist": {
+        "shasum": "918720ef3b631c5642be068f15ade5a46f4ba1e7",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/responselike-1.0.2.tgz_1502988434730_0.1581996688619256"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "responselike",
+      "version": "2.0.0",
+      "description": "A response-like object for mocking a Node.js HTTP response stream",
+      "main": "src/index.js",
+      "scripts": {
+        "test": "xo && nyc ava",
+        "coverage": "nyc report --reporter=text-lcov | coveralls"
+      },
+      "xo": {
+        "extends": "xo-lukechilds"
+      },
+      "keywords": [
+        "http",
+        "https",
+        "response",
+        "mock",
+        "request",
+        "responselike"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lukechilds/responselike.git"
+      },
+      "author": {
+        "name": "lukechilds"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.0",
+        "eslint-config-xo-lukechilds": "^1.0.0",
+        "get-stream": "^3.0.0",
+        "nyc": "^11.8.0",
+        "xo": "^0.19.0"
+      },
+      "dependencies": {
+        "lowercase-keys": "^2.0.0"
+      },
+      "gitHead": "6dff4cd69cfc91710dc9864e26d3a3dff558376a",
+      "bugs": {
+        "url": "https://github.com/lukechilds/responselike/issues"
+      },
+      "homepage": "https://github.com/lukechilds/responselike#readme",
+      "_id": "responselike@2.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.2",
+      "dist": {
+        "integrity": "sha512-xH48u3FTB9VsZw7R+vvgaKeLKzT6jOogbQhEe/jewwnZgzPcnyWui2Av6JpoYZF/91uueC+lqhWqeURw5/qhCw==",
+        "shasum": "26391bcc3174f750f9a79eacc40a12a5c42d7723",
+        "tarball": "https://registry.npmjs.org/responselike/-/responselike-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4626,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdnQooCRA9TVsSAnZWagAAJy8P/iYRnJqTgkCPFJ/JbQVS\n0WIVX62VbUjgBuCPZtY1sc55fENFgyamx9zP54FVPCT3mui/ozPLXp+jqwu1\nMlGPhvGKoUKdbIbDYHeVkge+77RbuIE+f8tQ3pv40Ig6yrnnsKQTO7P99W4R\ndZb+RbpWbvdOfGGVurZdIoCNQm0nKbiWkQE3G6vypVlIHxsI4YQP9FUPxkbi\nikDvA2kYN2mlel4JecgMQ2Z1H1KmeoFHItleGyCsqFMFLH1KCcKJCV8BY+NQ\nXM9wmL6tchtYi0NbXOyHubZfZf0eb4REmujij/vAWU5oJGfb65aUQRDvax5U\nHWVib0OXPLrKQLRotr0hRG+mXGD3KZmunRZFxOqQvHfMvW9qmmeWpu0FJw9I\nyDppUbudoCPpuelr9SIKQEt5/gAuWPzIpXOMRKeeH2+kEBU5eN3AybkZIk+Q\nqOTOVCgYAdCFqev9AMwwb6ZKY9cKGYPPDUCwvZSGkFbci8LaDixQkNBGmpgh\nxtkfnhBA6BLJ+Ld/0hzsTzy+fqGr3WefZ9PilTPFTXRXaeU6noI/XDFA9mhb\nBljujyGGQFpEc1dZ9o6+IJg7JJodWEiUar8o1DCVntO2TZBmgtTwrDeVGluu\nqPhDajkHYA132ary5CVKGlX8fvAfIhmZ/LclxPIm7QMQLIfGqGpfboRacp0E\nSdaB\r\n=0pem\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "lukechilds",
+          "email": "lukechilds123@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/responselike_2.0.0_1570572839625_0.018801265196460415"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# responselike\n\n> A response-like object for mocking a Node.js HTTP response stream\n\n[![Build Status](https://travis-ci.org/lukechilds/responselike.svg?branch=master)](https://travis-ci.org/lukechilds/responselike)\n[![Coverage Status](https://coveralls.io/repos/github/lukechilds/responselike/badge.svg?branch=master)](https://coveralls.io/github/lukechilds/responselike?branch=master)\n[![npm](https://img.shields.io/npm/dm/responselike.svg)](https://www.npmjs.com/package/responselike)\n[![npm](https://img.shields.io/npm/v/responselike.svg)](https://www.npmjs.com/package/responselike)\n\nReturns a streamable response object similar to a [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage). Useful for formatting cached responses so they can be consumed by code expecting a real response.\n\n## Install\n\n```shell\nnpm install --save responselike\n```\n\nOr if you're just using for testing you'll want:\n\n```shell\nnpm install --save-dev responselike\n```\n\n## Usage\n\n```js\nconst Response = require('responselike');\n\nconst response = new Response(200, { foo: 'bar' }, Buffer.from('Hi!'), 'https://example.com');\n\nresponse.statusCode;\n// 200\nresponse.headers;\n// { foo: 'bar' }\nresponse.body;\n// <Buffer 48 69 21>\nresponse.url;\n// 'https://example.com'\n\nresponse.pipe(process.stdout);\n// Hi!\n```\n\n\n## API\n\n### new Response(statusCode, headers, body, url)\n\nReturns a streamable response object similar to a [Node.js HTTP response stream](https://nodejs.org/api/http.html#http_class_http_incomingmessage).\n\n#### statusCode\n\nType: `number`\n\nHTTP response status code.\n\n#### headers\n\nType: `object`\n\nHTTP headers object. Keys will be automatically lowercased.\n\n#### body\n\nType: `buffer`\n\nA Buffer containing the response body. The Buffer contents will be streamable but is also exposed directly as `response.body`.\n\n#### url\n\nType: `string`\n\nRequest URL string.\n\n## License\n\nMIT © Luke Childs\n",
+  "maintainers": [
+    {
+      "name": "lukechilds",
+      "email": "lukechilds123@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-08T22:14:02.319Z",
+    "created": "2017-05-04T07:51:15.890Z",
+    "0.1.0": "2017-05-04T07:51:15.890Z",
+    "0.2.0": "2017-06-19T11:09:12.432Z",
+    "1.0.0": "2017-06-21T07:28:07.128Z",
+    "1.0.1": "2017-06-30T13:04:39.730Z",
+    "1.0.2": "2017-08-17T16:47:15.629Z",
+    "2.0.0": "2019-10-08T22:13:59.825Z"
+  },
+  "homepage": "https://github.com/lukechilds/responselike#readme",
+  "keywords": [
+    "http",
+    "https",
+    "response",
+    "mock",
+    "request",
+    "responselike"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukechilds/responselike.git"
+  },
+  "author": {
+    "name": "lukechilds"
+  },
+  "bugs": {
+    "url": "https://github.com/lukechilds/responselike/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

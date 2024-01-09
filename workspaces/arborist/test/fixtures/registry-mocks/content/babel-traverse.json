@@ -1,0 +1,5415 @@
+{
+  "_id": "babel-traverse",
+  "_rev": "212-3f986271ab5c581bdeac10358917186d",
+  "name": "babel-traverse",
+  "dist-tags": {
+    "latest": "6.26.0",
+    "next": "7.0.0-beta.3"
+  },
+  "versions": {
+    "6.0.2": {
+      "name": "babel-traverse",
+      "version": "6.0.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.2",
+        "babel-messages": "^6.0.2",
+        "babel-runtime": "^6.0.2",
+        "babel-types": "^6.0.2",
+        "babylon": "^6.0.2",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "babel-traverse@6.0.2",
+      "scripts": {},
+      "_shasum": "132f21f46001f3ae5a53fcc8f8d46bdd2af1765c",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "132f21f46001f3ae5a53fcc8f8d46bdd2af1765c",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.14": {
+      "name": "babel-traverse",
+      "version": "6.0.14",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.14",
+        "babylon": "^6.0.14",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.14",
+      "scripts": {},
+      "_shasum": "1d0abd3834e9c93ae5d22b2bec8877bcf33306c4",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "1d0abd3834e9c93ae5d22b2bec8877bcf33306c4",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.16": {
+      "name": "babel-traverse",
+      "version": "6.0.16",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.14",
+        "babylon": "^6.0.14",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.16",
+      "scripts": {},
+      "_shasum": "2d539d25e07e186b158704bc042a3445b1b248f6",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "2d539d25e07e186b158704bc042a3445b1b248f6",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.17": {
+      "name": "babel-traverse",
+      "version": "6.0.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.17",
+        "babylon": "^6.0.17",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.17",
+      "scripts": {},
+      "_shasum": "183c1b288374c804f55b73a1279fb812ae9e5f22",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "183c1b288374c804f55b73a1279fb812ae9e5f22",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.18": {
+      "name": "babel-traverse",
+      "version": "6.0.18",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.18",
+        "babylon": "^6.0.18",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.18",
+      "scripts": {},
+      "_shasum": "e781b022f17a4c11e5d4b4a8536017eb447528ac",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "e781b022f17a4c11e5d4b4a8536017eb447528ac",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.19": {
+      "name": "babel-traverse",
+      "version": "6.0.19",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.19",
+        "babylon": "^6.0.18",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.19",
+      "scripts": {},
+      "_shasum": "609692e76d6ba8b2113e3dcc6666585e203dfae3",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "609692e76d6ba8b2113e3dcc6666585e203dfae3",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.19.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.0.20": {
+      "name": "babel-traverse",
+      "version": "6.0.20",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.0.19",
+        "babylon": "^6.0.18",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.0.20",
+      "scripts": {},
+      "_shasum": "09895a7ecbbc9e2c0f5fd061bdef1054124178d4",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "09895a7ecbbc9e2c0f5fd061bdef1054124178d4",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.0.20.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.2": {
+      "name": "babel-traverse",
+      "version": "6.1.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.0.14",
+        "babel-messages": "^6.0.14",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.1.2",
+        "babylon": "^6.1.2",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.1.2",
+      "scripts": {},
+      "_shasum": "d79da3c1514a8256d88c5dcc51593479b44e03a3",
+      "_from": ".",
+      "_npmVersion": "2.14.9",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "d79da3c1514a8256d88c5dcc51593479b44e03a3",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.4": {
+      "name": "babel-traverse",
+      "version": "6.1.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.4",
+        "babel-messages": "^6.1.4",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.1.4",
+        "babylon": "^6.1.4",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.1.4",
+      "scripts": {},
+      "_shasum": "b610cff115b0c5aeac6fab201187bfa8d5368223",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "b610cff115b0c5aeac6fab201187bfa8d5368223",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.17": {
+      "name": "babel-traverse",
+      "version": "6.1.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.17",
+        "babel-messages": "^6.1.17",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.1.17",
+        "babylon": "^6.1.17",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.1.17",
+      "scripts": {},
+      "_shasum": "0179428dbf6d4f1cf49fe7f74cd3fe594785f5b5",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "0179428dbf6d4f1cf49fe7f74cd3fe594785f5b5",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.1.17.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.18": {
+      "name": "babel-traverse",
+      "version": "6.1.18",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.18",
+        "babel-messages": "^6.1.18",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.1.18",
+        "babylon": "^6.1.18",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.1.18",
+      "scripts": {},
+      "_shasum": "e558fc0b5d11131a0634338c1d4fa6ec5bb45aad",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "e558fc0b5d11131a0634338c1d4fa6ec5bb45aad",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.1.18.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.1.20": {
+      "name": "babel-traverse",
+      "version": "6.1.20",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.18",
+        "babel-messages": "^6.1.18",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.1.18",
+        "babylon": "^6.1.20",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.1.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.1.20",
+      "scripts": {},
+      "_shasum": "0c94b2b13ae5b61eae8fed1986a455b5d51b57a5",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "0c94b2b13ae5b61eae8fed1986a455b5d51b57a5",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.1.20.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.0": {
+      "name": "babel-traverse",
+      "version": "6.2.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.18",
+        "babel-messages": "^6.2.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.2.0",
+        "babylon": "^6.2.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.2.0",
+      "scripts": {},
+      "_shasum": "0347d4d8f5987ce1d9165938578ee6c51499cddb",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "0347d4d8f5987ce1d9165938578ee6c51499cddb",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.2.4": {
+      "name": "babel-traverse",
+      "version": "6.2.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.2.4",
+        "babel-messages": "^6.2.4",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.2.4",
+        "babylon": "^6.2.4",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.2.4",
+      "scripts": {},
+      "_shasum": "f87c85d3a27fa7325812b6f0366470899c4bcf6a",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "f87c85d3a27fa7325812b6f0366470899c4bcf6a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.2": {
+      "name": "babel-traverse",
+      "version": "6.3.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.1.18",
+        "babel-messages": "^6.2.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.2.0",
+        "babylon": "^6.2.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.2",
+      "scripts": {},
+      "_shasum": "0d850308a50595e7bab1815dbfa67e41fbc0b939",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "0d850308a50595e7bab1815dbfa67e41fbc0b939",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.13": {
+      "name": "babel-traverse",
+      "version": "6.3.13",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.13",
+        "babylon": "^6.3.13",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.13",
+      "scripts": {},
+      "_shasum": "5c10779e53f87d7fb149cb05a86bd103bf2fea73",
+      "_from": ".",
+      "_npmVersion": "3.3.10",
+      "_nodeVersion": "4.1.0",
+      "_npmUser": {
+        "name": "sebmck",
+        "email": "sebmck@gmail.com"
+      },
+      "dist": {
+        "shasum": "5c10779e53f87d7fb149cb05a86bd103bf2fea73",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.13.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.14": {
+      "name": "babel-traverse",
+      "version": "6.3.14",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.14",
+        "babylon": "^6.3.14",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.14",
+      "scripts": {},
+      "_shasum": "1089827a2255245b12bdf5107d907e0b97064fe2",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "1089827a2255245b12bdf5107d907e0b97064fe2",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.14.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.15": {
+      "name": "babel-traverse",
+      "version": "6.3.15",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.14",
+        "babylon": "^6.3.15",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.15",
+      "scripts": {},
+      "_shasum": "3348bb4e67db1ebb642d4809a577cfa980c04f35",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "3348bb4e67db1ebb642d4809a577cfa980c04f35",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.15.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.16": {
+      "name": "babel-traverse",
+      "version": "6.3.16",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.14",
+        "babylon": "^6.3.15",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.16",
+      "scripts": {},
+      "_shasum": "8553554f1399e6531892c2bc43b158e6c1b555d8",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "8553554f1399e6531892c2bc43b158e6c1b555d8",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.16.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.3.17": {
+      "name": "babel-traverse",
+      "version": "6.3.17",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.17",
+        "babylon": "^6.3.15",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.17",
+      "scripts": {},
+      "_shasum": "3ed809918589fe545c899a87ae8678b82c029a12",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3ed809918589fe545c899a87ae8678b82c029a12",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.17.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.19": {
+      "name": "babel-traverse",
+      "version": "6.3.19",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.17",
+        "babylon": "^6.3.15",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.19",
+      "scripts": {},
+      "_shasum": "66b5ab5f272867e19ab82e21a9d8273d5ce8e7f0",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "66b5ab5f272867e19ab82e21a9d8273d5ce8e7f0",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.19.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.21": {
+      "name": "babel-traverse",
+      "version": "6.3.21",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.21",
+        "babylon": "^6.3.21",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.21",
+      "scripts": {},
+      "_shasum": "108ad2fdc0f9527da798cb6f43485912e442ece4",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "108ad2fdc0f9527da798cb6f43485912e442ece4",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.21.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.24": {
+      "name": "babel-traverse",
+      "version": "6.3.24",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.24",
+        "babylon": "^6.3.21",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.24",
+      "scripts": {},
+      "_shasum": "7f4bbe207bfd165d38d737ee2e5d246c6a45f413",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7f4bbe207bfd165d38d737ee2e5d246c6a45f413",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.24.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.25": {
+      "name": "babel-traverse",
+      "version": "6.3.25",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.24",
+        "babylon": "^6.3.25",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.25",
+      "scripts": {},
+      "_shasum": "0e01af3fc55a883f5e733c7e81bba0a299e9e577",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0e01af3fc55a883f5e733c7e81bba0a299e9e577",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.25.tgz"
+      },
+      "directories": {}
+    },
+    "6.3.26": {
+      "name": "babel-traverse",
+      "version": "6.3.26",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.3.24",
+        "babylon": "^6.3.26",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.3.26",
+      "scripts": {},
+      "_shasum": "7b9c62b36bdfcf80ac06c327d3384f4e0e046047",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b9c62b36bdfcf80ac06c327d3384f4e0e046047",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.3.26.tgz"
+      },
+      "directories": {}
+    },
+    "6.4.5": {
+      "name": "babel-traverse",
+      "version": "6.4.5",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.4.5",
+        "babylon": "^6.4.5",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.4.5",
+      "scripts": {},
+      "_shasum": "84b95416ee0895f1e423cc59376f35bfb08884db",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "84b95416ee0895f1e423cc59376f35bfb08884db",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.4.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "directories": {}
+    },
+    "6.5.0": {
+      "name": "babel-traverse",
+      "version": "6.5.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.3.13",
+        "babel-messages": "^6.3.13",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.4.5",
+        "babylon": "^6.4.5",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.5.0",
+      "scripts": {},
+      "_shasum": "d8e510ccb9c5c4b8b2f4b0285562c21e3bc703d3",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "d8e510ccb9c5c4b8b2f4b0285562c21e3bc703d3",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.5.0.tgz_1454803708029_0.29783695633523166"
+      },
+      "directories": {}
+    },
+    "6.5.0-1": {
+      "name": "babel-traverse",
+      "version": "6.5.0-1",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.5.0-1",
+        "babel-messages": "^6.5.0-1",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.5.0-1",
+        "babylon": "^6.5.0-1",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.5.0-1",
+      "scripts": {},
+      "_shasum": "396bbb2affd42b6652531efc48688aebb11fef3a",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "396bbb2affd42b6652531efc48688aebb11fef3a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.5.0-1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.5.0-1.tgz_1454812911297_0.3087839598301798"
+      },
+      "directories": {}
+    },
+    "6.6.0": {
+      "name": "babel-traverse",
+      "version": "6.6.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.0",
+        "babel-messages": "^6.6.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.6.0",
+        "babylon": "^6.6.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.6.0",
+      "scripts": {},
+      "_shasum": "bd2201519feb6378349035e37832d63a134bf3e2",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "bd2201519feb6378349035e37832d63a134bf3e2",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.6.0.tgz_1456780388594_0.8406692559365183"
+      },
+      "directories": {}
+    },
+    "6.6.2": {
+      "name": "babel-traverse",
+      "version": "6.6.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.0",
+        "babel-messages": "^6.6.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.6.0",
+        "babylon": "^6.6.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.6.2",
+      "scripts": {},
+      "_shasum": "a935614d7e7776442fbbb6898d354ddda8e2bc69",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "a935614d7e7776442fbbb6898d354ddda8e2bc69",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.6.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.6.2.tgz_1456841317221_0.32986891083419323"
+      },
+      "directories": {}
+    },
+    "6.6.3": {
+      "name": "babel-traverse",
+      "version": "6.6.3",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.0",
+        "babel-messages": "^6.6.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.6.0",
+        "babylon": "^6.6.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.6.3",
+      "scripts": {},
+      "_shasum": "bb76f8dc894606e5d4308407c0228721d0df4e5a",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "bb76f8dc894606e5d4308407c0228721d0df4e5a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.6.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.6.3.tgz_1456850450667_0.9637772047426552"
+      },
+      "directories": {}
+    },
+    "6.6.4": {
+      "name": "babel-traverse",
+      "version": "6.6.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.0",
+        "babel-messages": "^6.6.0",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.6.4",
+        "babylon": "^6.6.4",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.6.4",
+      "scripts": {},
+      "_shasum": "c319c0fbacff36fee4d253aa3ca28a06c4a22704",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "c319c0fbacff36fee4d253aa3ca28a06c4a22704",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.6.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.6.4.tgz_1456954199675_0.6165918519254774"
+      },
+      "directories": {}
+    },
+    "6.6.5": {
+      "name": "babel-traverse",
+      "version": "6.6.5",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.5",
+        "babel-messages": "^6.6.5",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.6.5",
+        "babylon": "^6.6.5",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.6.5",
+      "scripts": {},
+      "_shasum": "ade61a636fdf8bef7465b328c8c6f73c32da79aa",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "ade61a636fdf8bef7465b328c8c6f73c32da79aa",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.6.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.6.5.tgz_1457133434398_0.29119264520704746"
+      },
+      "directories": {}
+    },
+    "6.7.0": {
+      "name": "babel-traverse",
+      "version": "6.7.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.6.5",
+        "babel-messages": "^6.6.5",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.0",
+      "scripts": {},
+      "_shasum": "1df98b1f83fa70d12671695464f171034691ede6",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1df98b1f83fa70d12671695464f171034691ede6",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.0.tgz_1457484785112_0.9374506496824324"
+      },
+      "directories": {}
+    },
+    "6.7.2": {
+      "name": "babel-traverse",
+      "version": "6.7.2",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.7.2",
+        "babel-messages": "^6.7.2",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.2",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.2",
+      "scripts": {},
+      "_shasum": "8b7edd004f984be75fd4cdd889b98973a2f5f380",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8b7edd004f984be75fd4cdd889b98973a2f5f380",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.2.tgz_1457649694274_0.07456223061308265"
+      },
+      "directories": {}
+    },
+    "6.7.3": {
+      "name": "babel-traverse",
+      "version": "6.7.3",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.7.2",
+        "babel-messages": "^6.7.2",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.2",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.3",
+      "scripts": {},
+      "_shasum": "9f5f12093c82edeb2db0749a8fbf15aa5d401ccb",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "amasad",
+        "email": "amjad.masad@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9f5f12093c82edeb2db0749a8fbf15aa5d401ccb",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.3.tgz_1457660157803_0.19202633947134018"
+      },
+      "directories": {}
+    },
+    "6.7.4": {
+      "name": "babel-traverse",
+      "version": "6.7.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.7.4",
+        "babel-messages": "^6.7.2",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.2",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.4",
+      "scripts": {},
+      "_shasum": "8f1a7eb5c154fb6da1d8f50819038b4cc48a6f4c",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "8f1a7eb5c154fb6da1d8f50819038b4cc48a6f4c",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.4.tgz_1458704270185_0.4022115166299045"
+      },
+      "directories": {}
+    },
+    "6.7.5": {
+      "name": "babel-traverse",
+      "version": "6.7.5",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.7.5",
+        "babel-messages": "^6.7.2",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.2",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.5",
+      "scripts": {},
+      "_shasum": "e487c5881cbe216c4b92c6df271e0309b5980c56",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "e487c5881cbe216c4b92c6df271e0309b5980c56",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.5.tgz_1460085893653_0.8699750732630491"
+      },
+      "directories": {}
+    },
+    "6.7.6": {
+      "name": "babel-traverse",
+      "version": "6.7.6",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.7.5",
+        "babel-messages": "^6.7.2",
+        "babel-runtime": "^5.0.0",
+        "babel-types": "^6.7.2",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.7.6",
+      "scripts": {},
+      "_shasum": "a14928044040b2a6c80aa595148af0b6378d1c93",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "a14928044040b2a6c80aa595148af0b6378d1c93",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.7.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.7.6.tgz_1460132834453_0.9241116049233824"
+      },
+      "directories": {}
+    },
+    "6.8.0": {
+      "name": "babel-traverse",
+      "version": "6.8.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.0.0",
+        "babel-types": "^6.8.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^3.10.1",
+        "repeating": "^1.1.3"
+      },
+      "_id": "babel-traverse@6.8.0",
+      "scripts": {},
+      "_shasum": "bcda9de2362c3f3c8b161019cf8f3e1b244d6533",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bcda9de2362c3f3c8b161019cf8f3e1b244d6533",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.8.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.8.0.tgz_1462232722863_0.44219556194730103"
+      },
+      "directories": {}
+    },
+    "6.9.0": {
+      "name": "babel-traverse",
+      "version": "6.9.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.9.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.9.0",
+      "scripts": {},
+      "_shasum": "6656b3828c7aa97a72ad44985efb2c3619a93566",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.1.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6656b3828c7aa97a72ad44985efb2c3619a93566",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.9.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.9.0.tgz_1463510987507_0.9268293839413673"
+      },
+      "directories": {}
+    },
+    "6.10.4": {
+      "name": "babel-traverse",
+      "version": "6.10.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.9.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.10.4",
+      "scripts": {},
+      "_shasum": "dbcf41ff1f32eb614859cead4871160f1f120d78",
+      "_from": ".",
+      "_npmVersion": "3.9.3",
+      "_nodeVersion": "5.9.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "dbcf41ff1f32eb614859cead4871160f1f120d78",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.10.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.10.4.tgz_1466527417697_0.9045669895131141"
+      },
+      "directories": {}
+    },
+    "6.11.4": {
+      "name": "babel-traverse",
+      "version": "6.11.4",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.9.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.11.4",
+      "scripts": {},
+      "_shasum": "3a7def6a4c1fe9f58b59c9a22be81f619f82976c",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "3a7def6a4c1fe9f58b59c9a22be81f619f82976c",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.11.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.11.4.tgz_1468979998807_0.6544460768345743"
+      },
+      "directories": {}
+    },
+    "6.12.0": {
+      "name": "babel-traverse",
+      "version": "6.12.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.9.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.12.0",
+      "scripts": {},
+      "_shasum": "f22f54fa0d6eeb7f63585246bab6e637858f5d94",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "f22f54fa0d6eeb7f63585246bab6e637858f5d94",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.12.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.12.0.tgz_1469647399647_0.3270771431270987"
+      },
+      "directories": {}
+    },
+    "6.13.0": {
+      "name": "babel-traverse",
+      "version": "6.13.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.13.0",
+        "babylon": "^6.7.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.13.0",
+      "scripts": {},
+      "_shasum": "8835b4abae31814e8f7adebb8296b8c7ad0cecc1",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "8835b4abae31814e8f7adebb8296b8c7ad0cecc1",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.13.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.13.0.tgz_1470353707523_0.158957946812734"
+      },
+      "directories": {}
+    },
+    "6.14.0": {
+      "name": "babel-traverse",
+      "version": "6.14.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.14.0",
+        "babylon": "^6.9.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.14.0",
+      "scripts": {},
+      "_shasum": "8d6bbf6273fc98ebc7eb9a222e9fb5260e9efab2",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "8d6bbf6273fc98ebc7eb9a222e9fb5260e9efab2",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.14.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.14.0.tgz_1472082061476_0.062074568355455995"
+      },
+      "directories": {}
+    },
+    "6.15.0": {
+      "name": "babel-traverse",
+      "version": "6.15.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.8.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.15.0",
+        "babylon": "^6.9.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.15.0",
+      "scripts": {},
+      "_shasum": "f0114c8c84cfee32c94eca02bcd0d2cbc8928478",
+      "_from": ".",
+      "_npmVersion": "3.10.6",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "f0114c8c84cfee32c94eca02bcd0d2cbc8928478",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.15.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.15.0.tgz_1472742190859_0.07589285587891936"
+      },
+      "directories": {}
+    },
+    "6.16.0": {
+      "name": "babel-traverse",
+      "version": "6.16.0",
+      "description": "",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.16.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.16.0",
+        "babylon": "^6.11.0",
+        "debug": "^2.2.0",
+        "globals": "^8.3.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.16.0",
+      "scripts": {},
+      "_shasum": "fba85ae1fd4d107de9ce003149cc57f53bef0c4f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "5.11.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "fba85ae1fd4d107de9ce003149cc57f53bef0c4f",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.16.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.16.0.tgz_1475091545513_0.8843282114248723"
+      },
+      "directories": {}
+    },
+    "6.18.0": {
+      "name": "babel-traverse",
+      "version": "6.18.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.16.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.18.0",
+        "babylon": "^6.11.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.18.0",
+      "scripts": {},
+      "_shasum": "5aeaa980baed2a07c8c47329cd90c3b90c80f05e",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "5aeaa980baed2a07c8c47329cd90c3b90c80f05e",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.18.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.18.0.tgz_1477343952143_0.5957284863106906"
+      },
+      "directories": {}
+    },
+    "6.19.0": {
+      "name": "babel-traverse",
+      "version": "6.19.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.16.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.9.0",
+        "babel-types": "^6.19.0",
+        "babylon": "^6.11.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.19.0",
+      "scripts": {},
+      "_shasum": "68363fb821e26247d52a519a84b2ceab8df4f55a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "68363fb821e26247d52a519a84b2ceab8df4f55a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.19.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.19.0.tgz_1479312928128_0.19104824378155172"
+      },
+      "directories": {}
+    },
+    "6.20.0": {
+      "name": "babel-traverse",
+      "version": "6.20.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.20.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.20.0",
+        "babel-types": "^6.20.0",
+        "babylon": "^6.11.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.20.0",
+      "scripts": {},
+      "_shasum": "5378d1a743e3d856e6a52289994100bbdfd9872a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "5378d1a743e3d856e6a52289994100bbdfd9872a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.20.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.20.0.tgz_1481239547481_0.5646860331762582"
+      },
+      "directories": {}
+    },
+    "6.21.0": {
+      "name": "babel-traverse",
+      "version": "6.21.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.20.0",
+        "babel-messages": "^6.8.0",
+        "babel-runtime": "^6.20.0",
+        "babel-types": "^6.21.0",
+        "babylon": "^6.11.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "_id": "babel-traverse@6.21.0",
+      "scripts": {},
+      "_shasum": "69c6365804f1a4f69eb1213f85b00a818b8c21ad",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "69c6365804f1a4f69eb1213f85b00a818b8c21ad",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.21.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.21.0.tgz_1481925360737_0.35841084574349225"
+      },
+      "directories": {}
+    },
+    "6.22.0": {
+      "name": "babel-traverse",
+      "version": "6.22.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.22.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.22.0",
+        "babylon": "^6.15.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.22.0"
+      },
+      "_id": "babel-traverse@6.22.0",
+      "scripts": {},
+      "_shasum": "998b6de3228bd2bab0d748a6ec0588c32033d3c7",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "998b6de3228bd2bab0d748a6ec0588c32033d3c7",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.22.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.22.0.tgz_1484872469135_0.6397191134747118"
+      },
+      "directories": {}
+    },
+    "6.22.1": {
+      "name": "babel-traverse",
+      "version": "6.22.1",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.22.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.22.0",
+        "babylon": "^6.15.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.22.0"
+      },
+      "_id": "babel-traverse@6.22.1",
+      "scripts": {},
+      "_shasum": "3b95cd6b7427d6f1f757704908f2fc9748a5f59f",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "3b95cd6b7427d6f1f757704908f2fc9748a5f59f",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.22.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.22.1.tgz_1484881975502_0.13589715771377087"
+      },
+      "directories": {}
+    },
+    "6.23.0": {
+      "name": "babel-traverse",
+      "version": "6.23.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.23.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.23.0",
+        "babylon": "^6.15.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.23.0"
+      },
+      "_id": "babel-traverse@6.23.0",
+      "scripts": {},
+      "_shasum": "dfee7148fc8342e4f7419251fe186947d97b00e0",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "dfee7148fc8342e4f7419251fe186947d97b00e0",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.23.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.23.0.tgz_1487034857969_0.471448345342651"
+      },
+      "directories": {}
+    },
+    "6.23.1": {
+      "name": "babel-traverse",
+      "version": "6.23.1",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.23.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.23.0",
+        "babylon": "^6.15.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.23.0"
+      },
+      "_id": "babel-traverse@6.23.1",
+      "scripts": {},
+      "_shasum": "d3cb59010ecd06a97d81310065f966b699e14f48",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "d3cb59010ecd06a97d81310065f966b699e14f48",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.23.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.23.1.tgz_1487038698436_0.898444565711543"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.1": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.1",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.1",
+        "babel-messages": "7.0.0-alpha.1",
+        "babel-types": "7.0.0-alpha.1",
+        "babylon": "7.0.0-beta.4",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.1"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.1",
+      "scripts": {},
+      "_shasum": "57056517ba1bfaf126f336a454c3c9f00ecbb547",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "57056517ba1bfaf126f336a454c3c9f00ecbb547",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.1.tgz_1488488731630_0.40458606160245836"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.3": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.3",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.3",
+        "babel-messages": "7.0.0-alpha.3",
+        "babel-types": "7.0.0-alpha.3",
+        "babylon": "7.0.0-beta.7",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.3",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.3"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.3",
+      "scripts": {},
+      "_shasum": "ac5bd86d101b410daf705ff4a6cbfc0123ca49f0",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "ac5bd86d101b410daf705ff4a6cbfc0123ca49f0",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.3.tgz_1490298576313_0.14697284251451492"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.7": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.7",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.3",
+        "babel-messages": "7.0.0-alpha.3",
+        "babel-types": "7.0.0-alpha.7",
+        "babylon": "7.0.0-beta.8",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.7",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.7"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.7",
+      "scripts": {},
+      "_shasum": "61cc89061b0ad0a5f9fc6df81117fac428bc4148",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "61cc89061b0ad0a5f9fc6df81117fac428bc4148",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.7.tgz_1491426844529_0.5168882866855711"
+      },
+      "directories": {}
+    },
+    "6.24.1": {
+      "name": "babel-traverse",
+      "version": "6.24.1",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.23.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.24.1",
+        "babylon": "^6.15.0",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.24.1"
+      },
+      "_id": "babel-traverse@6.24.1",
+      "scripts": {},
+      "_shasum": "ab36673fd356f9a0948659e7b338d5feadb31695",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "ab36673fd356f9a0948659e7b338d5feadb31695",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.24.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-6.24.1.tgz_1491578349995_0.6336014487314969"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.8": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.8",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.3",
+        "babel-messages": "7.0.0-alpha.8",
+        "babel-types": "7.0.0-alpha.7",
+        "babylon": "7.0.0-beta.8",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.8",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.8"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.8",
+      "scripts": {},
+      "_shasum": "c2a727265c9e0c36d1d64e28407bad4904e1dd3d",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "c2a727265c9e0c36d1d64e28407bad4904e1dd3d",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.8.tgz_1492456380313_0.5035158100072294"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.9": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.9",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.9",
+        "babel-messages": "7.0.0-alpha.9",
+        "babel-types": "7.0.0-alpha.9",
+        "babylon": "7.0.0-beta.8",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.9",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.9"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.9",
+      "scripts": {},
+      "_shasum": "749abf53c908ca80a8c96f5ca958d33732e0714f",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "749abf53c908ca80a8c96f5ca958d33732e0714f",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.9.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "amasad",
+          "email": "amjad.masad@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "jmm",
+          "email": "npm-public@jessemccarthy.net"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "sebmck",
+          "email": "sebmck@gmail.com"
+        },
+        {
+          "name": "thejameskyle",
+          "email": "me@thejameskyle.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.9.tgz_1492526526605_0.05579920159652829"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.10": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.10",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.9",
+        "babel-helper-function-name": "7.0.0-alpha.7",
+        "babel-messages": "7.0.0-alpha.10",
+        "babel-types": "7.0.0-alpha.10",
+        "babylon": "7.0.0-beta.10",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.10",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.10"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.10",
+      "scripts": {},
+      "_shasum": "ba2cae7d285f7a9677946afb966a8ec01e82959f",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "ba2cae7d285f7a9677946afb966a8ec01e82959f",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.10.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.10.tgz_1495739854826_0.8207667877431959"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.11": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.11",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.11",
+        "babel-helper-function-name": "7.0.0-alpha.7",
+        "babel-messages": "7.0.0-alpha.10",
+        "babel-types": "7.0.0-alpha.11",
+        "babylon": "7.0.0-beta.12",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.11",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.11"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.11",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-d4Im8cS0F6sxAlAUI+vRrr2tPYrZ5/djpn7aIvvknkwqjXIs2pYi0NZE/9yFPQfCmdMEZnnKGGBgCNaoGwaOjQ==",
+        "shasum": "918c9e9172dbd8f2ca7639fb15856c8a6e3b6e22",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.11.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.11.tgz_1496263428154_0.33281793957576156"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.12": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.12",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.12",
+        "babel-helper-function-name": "7.0.0-alpha.7",
+        "babel-messages": "7.0.0-alpha.12",
+        "babel-types": "7.0.0-alpha.12",
+        "babylon": "7.0.0-beta.12",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.12",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.12"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.12",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-PVK+hnJHU6q1s7BiSpjuprk2lhC7z29ZMdb0FIQaFZMLV3rU0Lmqm0vqn1MCHO5/83DKe1UhDfE3IGXgY+DJYA==",
+        "shasum": "0c0855a60287e56e54cf61ea9f135cdf759d6ad0",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.12.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.12.tgz_1496265122882_0.5169086209498346"
+      },
+      "directories": {}
+    },
+    "6.25.0": {
+      "name": "babel-traverse",
+      "version": "6.25.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.22.0",
+        "babel-messages": "^6.23.0",
+        "babel-runtime": "^6.22.0",
+        "babel-types": "^6.25.0",
+        "babylon": "^6.17.2",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.25.0"
+      },
+      "_id": "babel-traverse@6.25.0",
+      "scripts": {},
+      "_shasum": "2257497e2fcd19b89edc13c4c91381f9512496f1",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "2257497e2fcd19b89edc13c4c91381f9512496f1",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.25.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-6.25.0.tgz_1496957347127_0.06925187911838293"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.14": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.14",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.14",
+        "babel-helper-function-name": "7.0.0-alpha.14",
+        "babel-messages": "7.0.0-alpha.14",
+        "babel-types": "7.0.0-alpha.14",
+        "babylon": "7.0.0-beta.15",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.14",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.14"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.14",
+      "scripts": {},
+      "_shasum": "79be03b93663dd7586904eefab6d62df793bdcd8",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "79be03b93663dd7586904eefab6d62df793bdcd8",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.14.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.14.tgz_1499828054469_0.6935784593224525"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.15": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.15",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.15",
+        "babel-helper-function-name": "7.0.0-alpha.15",
+        "babel-messages": "7.0.0-alpha.15",
+        "babel-types": "7.0.0-alpha.15",
+        "babylon": "7.0.0-beta.15",
+        "debug": "^2.2.0",
+        "globals": "^9.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.15",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.15"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.15",
+      "scripts": {},
+      "_shasum": "d7af52cb8ee6e0867b778da17166e6f01498b11a",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "d7af52cb8ee6e0867b778da17166e6f01498b11a",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.15.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.15.tgz_1499830591383_0.04179601022042334"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.16": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.16",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.16",
+        "babel-helper-function-name": "7.0.0-alpha.16",
+        "babel-messages": "7.0.0-alpha.16",
+        "babel-types": "7.0.0-alpha.16",
+        "babylon": "7.0.0-beta.17",
+        "debug": "^2.2.0",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.16",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.16"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.16",
+      "scripts": {},
+      "_shasum": "65f077c16fbb9fdab8ab8c1728120e868cc45759",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "65f077c16fbb9fdab8ab8c1728120e868cc45759",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.16.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.16.tgz_1501017504294_0.7341905233915895"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.17": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.17",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.17",
+        "babel-helper-function-name": "7.0.0-alpha.17",
+        "babel-messages": "7.0.0-alpha.17",
+        "babel-types": "7.0.0-alpha.17",
+        "babylon": "7.0.0-beta.18",
+        "debug": "^2.2.0",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.17",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.17"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.17",
+      "scripts": {},
+      "_shasum": "c8a33788274bc4138c529ec9c29f0bacb573f42c",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "c8a33788274bc4138c529ec9c29f0bacb573f42c",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.17.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.17.tgz_1501072796358_0.05413842457346618"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.18": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.18",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.18",
+        "babel-helper-function-name": "7.0.0-alpha.18",
+        "babel-messages": "7.0.0-alpha.18",
+        "babel-types": "7.0.0-alpha.18",
+        "babylon": "7.0.0-beta.18",
+        "debug": "^2.2.0",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.18",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.18"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.18",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6h0ShBdxosHTlGRkEhxDOURlF289J51H8K65lOZxV/UGG0WidRFmGNSe6Il2ffcPhs8k3jHs+y8cmjLvOU3H2g==",
+        "shasum": "54ef34dbfb527f9394c25e9ab3b1d73ba50ade77",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.18.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.18.tgz_1501798889333_0.7835657526738942"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.19": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.19",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.19",
+        "babel-helper-function-name": "7.0.0-alpha.19",
+        "babel-messages": "7.0.0-alpha.19",
+        "babel-types": "7.0.0-alpha.19",
+        "babylon": "7.0.0-beta.19",
+        "debug": "^2.2.0",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.19",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.19"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.19",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-nW2yJJjVTKnvmqWSh8jsUAJaQMhTDhD4CPdy7hLhOTxGORPKP+V5ax8wQCHhIbgU+lV2oJ9iqJUpvGvjs7GRwA==",
+        "shasum": "083f3f00a413fd9ec38383c0d5ae79511d9ed53d",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.19.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.19.tgz_1502144531921_0.4657626086845994"
+      },
+      "directories": {}
+    },
+    "6.26.0": {
+      "name": "babel-traverse",
+      "version": "6.26.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "^6.26.0",
+        "babel-messages": "^6.23.0",
+        "babel-runtime": "^6.26.0",
+        "babel-types": "^6.26.0",
+        "babylon": "^6.18.0",
+        "debug": "^2.6.8",
+        "globals": "^9.18.0",
+        "invariant": "^2.2.2",
+        "lodash": "^4.17.4"
+      },
+      "devDependencies": {
+        "babel-generator": "^6.26.0"
+      },
+      "_id": "babel-traverse@6.26.0",
+      "scripts": {},
+      "_shasum": "46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee",
+      "_from": ".",
+      "_npmVersion": "4.6.1",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "shasum": "46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-6.26.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-6.26.0.tgz_1502898856222_0.6180560656357557"
+      },
+      "directories": {}
+    },
+    "7.0.0-alpha.20": {
+      "name": "babel-traverse",
+      "version": "7.0.0-alpha.20",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-alpha.20",
+        "babel-helper-function-name": "7.0.0-alpha.20",
+        "babel-messages": "7.0.0-alpha.20",
+        "babel-types": "7.0.0-alpha.20",
+        "babylon": "7.0.0-beta.22",
+        "debug": "^2.2.0",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-alpha.20",
+        "babel-helper-plugin-test-runner": "7.0.0-alpha.20"
+      },
+      "_id": "babel-traverse@7.0.0-alpha.20",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5tWyBompTy/Qa8uJqQ/vNWUr8GQURHXLysi8lPlrGtsTVIpV9AqJRFWa1Wuu9Wrxvb/lNwzbpyGv7rF51WBsHQ==",
+        "shasum": "f11f15ad4db4d911880ea241fed1c5643bbfa377",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-alpha.20.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-alpha.20.tgz_1504119870356_0.4347305514384061"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.0": {
+      "name": "babel-traverse",
+      "version": "7.0.0-beta.0",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-beta.0",
+        "babel-helper-function-name": "7.0.0-beta.0",
+        "babel-messages": "7.0.0-beta.0",
+        "babel-types": "7.0.0-beta.0",
+        "babylon": "7.0.0-beta.22",
+        "debug": "^3.0.1",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.0",
+        "babel-helper-plugin-test-runner": "7.0.0-beta.0"
+      },
+      "_id": "babel-traverse@7.0.0-beta.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-IKzuTqUcQtMRZ0Vv5RjIrGGj33eBKmNTNeRexWSyjPPuAciyNkva1rt7WXPfHfkb+dX7coRAIUhzeTUEzhnwdA==",
+        "shasum": "da14be9b762f62a2f060db464eaafdd8cd072a41",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-beta.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-beta.0.tgz_1505185377313_0.6781482480000705"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.1": {
+      "name": "babel-traverse",
+      "version": "7.0.0-beta.1",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-beta.1",
+        "babel-helper-function-name": "7.0.0-beta.1",
+        "babel-messages": "7.0.0-beta.1",
+        "babel-types": "7.0.0-beta.1",
+        "babylon": "7.0.0-beta.22",
+        "debug": "^3.0.1",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.1",
+        "babel-helper-plugin-test-runner": "7.0.0-beta.1"
+      },
+      "_id": "babel-traverse@7.0.0-beta.1",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Y86/b/nB4bvd7UJgxIjzE6VJuPjUHr2a6GhBERF8ZiDQ14m4fKeAXG3PlsEvjoMEXtiJcFYfQXej3ElXL7kc7A==",
+        "shasum": "24e51e3c6a4b795e7d0798511f314785076324ad",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-beta.1.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-beta.1.tgz_1505852687610_0.42946051713079214"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.2": {
+      "name": "babel-traverse",
+      "version": "7.0.0-beta.2",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-beta.2",
+        "babel-helper-function-name": "7.0.0-beta.2",
+        "babel-messages": "7.0.0-beta.2",
+        "babel-types": "7.0.0-beta.2",
+        "babylon": "7.0.0-beta.25",
+        "debug": "^3.0.1",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.2",
+        "babel-helper-plugin-test-runner": "7.0.0-beta.2"
+      },
+      "_id": "babel-traverse@7.0.0-beta.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-kFgrI9e0DTyGutb1OtTKltpPYWEngVGKzXokcOdzl2+++k14doLgquUMxjHrzQ+2Ymc1Q3qggY2yUwxuo8AZjA==",
+        "shasum": "4073ace28b2602bb250cc6473a49730f516214bb",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-beta.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-beta.2.tgz_1506438959178_0.34125637193210423"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.3": {
+      "name": "babel-traverse",
+      "version": "7.0.0-beta.3",
+      "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "babel-code-frame": "7.0.0-beta.3",
+        "babel-helper-function-name": "7.0.0-beta.3",
+        "babel-types": "7.0.0-beta.3",
+        "babylon": "7.0.0-beta.27",
+        "debug": "^3.0.1",
+        "globals": "^10.0.0",
+        "invariant": "^2.2.0",
+        "lodash": "^4.2.0"
+      },
+      "devDependencies": {
+        "babel-generator": "7.0.0-beta.3",
+        "babel-helper-plugin-test-runner": "7.0.0-beta.3"
+      },
+      "_id": "babel-traverse@7.0.0-beta.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-xyh/aPYuedMAfQlSj2kjHjsEmY5/Dpxs576L05DySAVMrV+ADX6l4mTOLysAEGwJfkePJlDLhFuS6SKaxv1V7w==",
+        "shasum": "3cf0a45d53d934d85275d8770775d7944fc7c199",
+        "tarball": "https://registry.npmjs.org/babel-traverse/-/babel-traverse-7.0.0-beta.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "me@thejameskyle.com",
+          "name": "thejameskyle"
+        },
+        {
+          "email": "sebmck@gmail.com",
+          "name": "sebmck"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/babel-traverse-7.0.0-beta.3.tgz_1508073145080_0.8516760435886681"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# babel-traverse\n\n> babel-traverse maintains the overall tree state, and is responsible for replacing, removing, and adding nodes.\n\n## Install\n\n```sh\n$ npm install --save babel-traverse\n```\n\n## Usage\n\nWe can use it alongside Babylon to traverse and update nodes:\n\n```js\nimport * as babylon from \"babylon\";\nimport traverse from \"babel-traverse\";\n\nconst code = `function square(n) {\n  return n * n;\n}`;\n\nconst ast = babylon.parse(code);\n\ntraverse(ast, {\n  enter(path) {\n    if (path.isIdentifier({ name: \"n\" })) {\n      path.node.name = \"x\";\n    }\n  }\n});\n```\n[:book: **Read the full docs here**](https://github.com/thejameskyle/babel-handbook/blob/master/translations/en/plugin-handbook.md#babel-traverse)\n",
+  "maintainers": [
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    },
+    {
+      "email": "loganfsmyth@gmail.com",
+      "name": "loganfsmyth"
+    },
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "bng412@gmail.com",
+      "name": "existentialism"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-01T07:47:18.667Z",
+    "created": "2015-10-29T18:22:31.769Z",
+    "6.0.2": "2015-10-29T18:22:31.769Z",
+    "6.0.14": "2015-10-30T23:44:25.322Z",
+    "6.0.16": "2015-11-02T07:14:46.282Z",
+    "6.0.17": "2015-11-02T19:54:48.638Z",
+    "6.0.18": "2015-11-03T01:25:33.292Z",
+    "6.0.19": "2015-11-03T03:15:24.091Z",
+    "6.0.20": "2015-11-03T04:22:18.317Z",
+    "6.1.2": "2015-11-05T11:12:26.366Z",
+    "6.1.4": "2015-11-11T10:47:03.157Z",
+    "6.1.17": "2015-11-12T21:44:03.753Z",
+    "6.1.18": "2015-11-12T21:53:16.653Z",
+    "6.1.20": "2015-11-13T11:39:28.621Z",
+    "6.2.0": "2015-11-19T04:34:42.409Z",
+    "6.2.4": "2015-11-25T03:16:05.171Z",
+    "6.3.2": "2015-12-04T03:48:22.724Z",
+    "6.3.13": "2015-12-04T12:01:31.374Z",
+    "6.3.14": "2015-12-04T18:52:43.916Z",
+    "6.3.15": "2015-12-06T16:32:00.979Z",
+    "6.3.16": "2015-12-09T04:10:48.624Z",
+    "6.3.17": "2015-12-11T01:20:39.750Z",
+    "6.3.19": "2015-12-14T22:11:49.258Z",
+    "6.3.21": "2015-12-18T08:23:15.244Z",
+    "6.3.24": "2015-12-18T23:53:55.917Z",
+    "6.3.25": "2015-12-21T21:59:18.386Z",
+    "6.3.26": "2015-12-23T07:12:14.730Z",
+    "6.4.5": "2016-01-19T23:02:59.588Z",
+    "6.5.0": "2016-02-07T00:08:30.921Z",
+    "6.5.0-1": "2016-02-07T02:41:54.110Z",
+    "6.6.0": "2016-02-29T21:13:10.694Z",
+    "6.6.2": "2016-03-01T14:08:40.811Z",
+    "6.6.3": "2016-03-01T16:40:54.722Z",
+    "6.6.4": "2016-03-02T21:30:02.686Z",
+    "6.6.5": "2016-03-04T23:17:17.751Z",
+    "6.7.0": "2016-03-09T00:53:08.529Z",
+    "6.7.2": "2016-03-10T22:41:34.741Z",
+    "6.7.3": "2016-03-11T01:35:58.249Z",
+    "6.7.4": "2016-03-23T03:37:50.789Z",
+    "6.7.5": "2016-04-08T03:24:54.295Z",
+    "6.7.6": "2016-04-08T16:27:15.055Z",
+    "6.8.0": "2016-05-02T23:45:24.007Z",
+    "6.9.0": "2016-05-17T18:49:50.130Z",
+    "6.10.4": "2016-06-21T16:43:40.683Z",
+    "6.11.4": "2016-07-20T02:00:00.183Z",
+    "6.12.0": "2016-07-27T19:23:21.459Z",
+    "6.13.0": "2016-08-04T23:35:09.146Z",
+    "6.14.0": "2016-08-24T23:41:04.438Z",
+    "6.15.0": "2016-09-01T15:03:13.048Z",
+    "6.16.0": "2016-09-28T19:39:07.238Z",
+    "6.18.0": "2016-10-24T21:19:13.958Z",
+    "6.19.0": "2016-11-16T16:15:28.682Z",
+    "6.20.0": "2016-12-08T23:25:48.078Z",
+    "6.21.0": "2016-12-16T21:56:02.605Z",
+    "6.22.0": "2017-01-20T00:34:31.092Z",
+    "6.22.1": "2017-01-20T03:12:57.483Z",
+    "6.23.0": "2017-02-14T01:14:19.882Z",
+    "6.23.1": "2017-02-14T02:18:18.661Z",
+    "7.0.0-alpha.1": "2017-03-02T21:05:33.652Z",
+    "7.0.0-alpha.3": "2017-03-23T19:49:38.219Z",
+    "7.0.0-alpha.7": "2017-04-05T21:14:05.313Z",
+    "6.24.1": "2017-04-07T15:19:10.259Z",
+    "7.0.0-alpha.8": "2017-04-17T19:13:02.188Z",
+    "7.0.0-alpha.9": "2017-04-18T14:42:08.583Z",
+    "7.0.0-alpha.10": "2017-05-25T19:17:35.685Z",
+    "7.0.0-alpha.11": "2017-05-31T20:43:48.264Z",
+    "7.0.0-alpha.12": "2017-05-31T21:12:02.987Z",
+    "6.25.0": "2017-06-08T21:29:07.373Z",
+    "7.0.0-alpha.14": "2017-07-12T02:54:15.637Z",
+    "7.0.0-alpha.15": "2017-07-12T03:36:32.394Z",
+    "7.0.0-alpha.16": "2017-07-25T21:18:25.261Z",
+    "7.0.0-alpha.17": "2017-07-26T12:39:57.686Z",
+    "7.0.0-alpha.18": "2017-08-03T22:21:29.455Z",
+    "7.0.0-alpha.19": "2017-08-07T22:22:12.723Z",
+    "6.26.0": "2017-08-16T15:54:16.482Z",
+    "7.0.0-alpha.20": "2017-08-30T19:04:30.563Z",
+    "7.0.0-beta.0": "2017-09-12T03:02:58.338Z",
+    "7.0.0-beta.1": "2017-09-19T20:24:47.711Z",
+    "7.0.0-beta.2": "2017-09-26T15:16:00.170Z",
+    "7.0.0-beta.3": "2017-10-15T13:12:26.109Z"
+  },
+  "homepage": "https://babeljs.io/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel/tree/master/packages/babel-traverse"
+  },
+  "author": {
+    "name": "Sebastian McKenzie",
+    "email": "sebmck@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "marcellodesales": true,
+    "langri-sha": true,
+    "azz": true,
+    "mrzmmr": true,
+    "dwqs": true
+  },
+  "description": "The Babel Traverse module maintains the overall tree state, and is responsible for replacing, removing, and adding nodes"
+}

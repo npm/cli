@@ -1,0 +1,374 @@
+{
+  "_id": "unicode-match-property-value-ecmascript",
+  "_rev": "4-9038b1d26c0a18d419a79a0643ba4920",
+  "name": "unicode-match-property-value-ecmascript",
+  "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "1.0.0",
+      "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+      "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "data/mappings.js",
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "unicode property values",
+        "unicode property value aliases"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "jsesc": "^2.5.0",
+        "unicode-property-value-aliases-ecmascript": "^1.0.0"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "test": "ava ./tests"
+      },
+      "gitHead": "e171b85426dfc54b81348b04150e0cee05473005",
+      "_id": "unicode-match-property-value-ecmascript@1.0.0",
+      "_shasum": "393fa3e8baf4de2c415b95a8d7338587e3e563be",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "shasum": "393fa3e8baf4de2c415b95a8d7338587e3e563be",
+        "tarball": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/unicode-match-property-value-ecmascript-1.0.0.tgz_1492259112932_0.024113732390105724"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "1.0.1",
+      "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+      "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "data/mappings.js",
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "unicode property values",
+        "unicode property value aliases"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "jsesc": "^2.5.1",
+        "unicode-property-value-aliases-ecmascript": "^1.0.1"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "test": "ava ./tests"
+      },
+      "gitHead": "6ef617714461832ed2ec03f0b9c1ca7bdd6ec44e",
+      "_id": "unicode-match-property-value-ecmascript@1.0.1",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-lM8B0FDZQh9yYGgiabRQcyWicB27VLOolSBRIxsO7FeQPtg+79Oe7sC8Mzr8BObDs+G9CeYmC/shHo6OggNEog==",
+        "shasum": "fea059120a016f403afd3bf586162b4db03e0604",
+        "tarball": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unicode-match-property-value-ecmascript-1.0.1.tgz_1497977536903_0.1487307318020612"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "1.0.2",
+      "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+      "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "files": [
+        "LICENSE-MIT.txt",
+        "data/mappings.js",
+        "index.js"
+      ],
+      "keywords": [
+        "unicode",
+        "unicode property values",
+        "unicode property value aliases"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "jsesc": "^2.5.1",
+        "unicode-property-value-aliases-ecmascript": "^1.0.3"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "test": "ava ./tests"
+      },
+      "gitHead": "922cdacd4323b3fd094fd78a61df24bd2e35cccb",
+      "_id": "unicode-match-property-value-ecmascript@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "dist": {
+        "integrity": "sha512-Rx7yODZC1L/T8XKo/2kNzVAQaRE88AaMvI1EF/Xnj3GW2wzN6fop9DDWuFAKUVFH7vozkz26DzP0qyWLKLIVPQ==",
+        "shasum": "9f1dc76926d6ccf452310564fd834ace059663d4",
+        "tarball": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 23438,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbGTAaCRA9TVsSAnZWagAAYrwP/3qkArAlYDrm7qrJ7l0F\ncTukqygQzPYa0N+oh1ln7DNc1cnyF2ITHdnQq8tT8smq6/R/pGWjUPwglPHe\nY/lNbE1YvW/RDPF7uNe8CPfylMobJUPAj08fVAk3x5FMFGYl887GQGY2WErg\nvxKPZDD3M612f8Jphq0Yo/lUmDqDaJ6oEQU9Uj5JTUmdQfXAtIOZ3MJzF8i3\nK0wpdHFuX/FtnJ9QP7B8+JIPakCxQi2Sn2xRkoXS/rTAnHF36pPcEJFe72e+\nToJjPZBzfcjMfahG5wy2X1cAWaJM3ZKvvv0Lb0exe13r/qnpQEAkBNIeEXuE\nFKVJBu3wG6ecVGsvuXYnt1znC6ll2JLR4nlTcr991OCkpSFrXvCU5SxJ/xrg\nWX5RcntXzWZOL9dqcT1204phVmjNpSTmSH+u2a7PulH0jIXK8g9sfZNapHxG\nTSMHtcGuYR1FwS92fAHYO0YSsA743RkHSELR2aUdQrDSuXRbRtSfuDVI964m\nEVc9QYLGC+TiXPx9Tlo4jW5+Otsjn/lcafi5Fv9Dwq/Cgo/17U4a/YHDsESc\nl98TQzSMEkm30ewYIBY6rHHC1/bq6Q7Cbbii5gT6zsltiw+Hgk3faU2aiQEY\naA4qIAE6KGS4/6ug/afr+oxh5KiSYe6G86RgbraV/7GBmghnFo1b4F5I5Igg\nqqMZ\r\n=OzhP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unicode-match-property-value-ecmascript_1.0.2_1528377369446_0.6768119147776785"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.1.0": {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "1.1.0",
+      "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+      "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "unicode",
+        "unicode property values",
+        "unicode property value aliases"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "jsesc": "^2.5.2",
+        "unicode-property-value-aliases-ecmascript": "^1.0.4"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "test": "ava ./tests"
+      },
+      "gitHead": "92f147349fdedb3e734bb155af18df4511b7874e",
+      "_id": "unicode-match-property-value-ecmascript@1.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.14.1",
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "dist": {
+        "integrity": "sha512-hDTHvaBk3RmFzvSl0UVrUmC3PuW9wKVnpoUDYH0JDkSIovzw+J5viQmeYHxVSBptubnr7PbH2e0fnpDRQnQl5g==",
+        "shasum": "5b4b426e08d13a80365e0d657ac7a6c1ec46a277",
+        "tarball": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 23938,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcfnD+CRA9TVsSAnZWagAAFDAQAIkQV0j0ZDs+v+SpJc0Z\nEPvmO0aLv15n/ULQgp4uG/zOl7hNrt9KIHy6Nj14GODKltVS9NQKYwlNZI85\nPIJZAF9d7LBWYOfejJmlOwcYJdzlxyjMhFnPFDSu7z7KUXEVQHDI4CEnCpp6\nXe4IJUc54E43wzgXm0VrYGbrP9N7g8sLvpICOuNClzU3uV3vwwEFXKyf0uTj\nA+hlvke9dhSWtoVE/eljiTUg9RrYUEiqkKSR6BeOc9ssyhDwQBFM5FCHrizY\n41UNEODOdoDj9BazVfbagCnSeblXR+ZK5vtP/2IQtRFtDx3/1dyZFQptWXFn\ntGV5oGyA7L7ujOagsNUp+/j/ixTye72I8wA7Z4ctHTdH+TNy5Cq926Sm8zc5\nqQxcFbKw1QBZE6v847vv3FOuMW59Qeu6lHRkpNqnpVAejFxEs8XfselndqCr\nwwQNoabiNq0zbxJV9HvzyodkZEsbZW5Q9tCrRCJoEoDKJ9jTceaQPjKvRPFI\nOqk9V35Ud/fEclA7toXcnvlc9YODuk3sFq1TyAhKOXF8ZxYa9+q3ul6nJJq4\nYXN0L+be6yp7eVqZsZRIithRdXnpnVOLnclRB/ySHlSFpOM5x1V8hDo3GJxy\naf5KuvshYWoo4ni3E0SGSHAAiDJ7F76tpgwrH3WTE01AIdeaMwMoibIMFWgp\nSMDp\r\n=r9z3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unicode-match-property-value-ecmascript_1.1.0_1551790334081_0.29775175446317537"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "unicode-match-property-value-ecmascript",
+      "version": "1.2.0",
+      "description": "Match a Unicode property or property alias to its canonical property name per the algorithm used for RegExp Unicode property escapes in ECMAScript.",
+      "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+      "main": "index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "unicode",
+        "unicode property values",
+        "unicode property value aliases"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Mathias Bynens",
+        "url": "https://mathiasbynens.be/"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+      },
+      "bugs": {
+        "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "jsesc": "^2.5.2",
+        "unicode-property-value-aliases-ecmascript": "^1.1.0"
+      },
+      "scripts": {
+        "build": "node scripts/build.js",
+        "test": "ava tests/tests.js"
+      },
+      "gitHead": "5e70c94a6bc4309ae7d8b4a3ab102802966abf2f",
+      "_id": "unicode-match-property-value-ecmascript@1.2.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-wjuQHGQVofmSJv1uVISKLE5zO2rNGzM/KCYZch/QQvez7C1hUhBIuZ701fYXExuufJFMPhv2SyL8CyoIfMLbIQ==",
+        "shasum": "0d91f600eeeb3096aa962b1d6fc88876e64ea531",
+        "tarball": "https://registry.npmjs.org/unicode-match-property-value-ecmascript/-/unicode-match-property-value-ecmascript-1.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 24445,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeaRnhCRA9TVsSAnZWagAAVoYQAKJ/R+3jlhA+7Djnlj9A\n2stDlmA45PftRPwhuAqEd7mdDPbWt1M5HvffnBArfJRMOZsHAx574ZUlGSgP\n0/+EelLEULhnR5zkhEMmlBO/IEB0b9HN1v2RF065FSPncfuCzbgtJmFzi6x9\n46p68JL6WGwtcbiIOeX0SCv6GqnrmUQ1YoTlmjiek36nR6Dr001oIBPZhOwS\nXpVyj8tlau9vVbbqQSIbJkLkyOMauHlHV2J7AYUn9EQMF5zasixbsxKkYWMh\nBF1idFxYwajCtnc4HabV/RCaff2DsPCPgIEpqaHA27X4s16ldL50gqa/DOjJ\n0M+eZaYsJF/Ipa90pKccWLTLMzCMNKEz12j9iiuca0zjf8H73GxXTGGp/8nb\nD9MjUG8h7mKBf+zLq2WzlSJQ2IIXl/Chgyji7gg4RMt2FGc1bwyMF7LdT+eB\ngwUAg27CuKf8XegCvHsbGBftpGFE1m72rdxe/k9tCGpJEcn8Zgp67dLQilru\nVHF6/p8opdPXuFatE+zQb8eYM37q9zKXnsB3vp3EfD0oz2oz1zwatHzEC+8H\nUk1DCCMDHb7nF9RA++kc2o047bGVPWlFmkCw0gpnEzTeDL5wmqznF+nOvmLd\nV/1qj0yHLtxgEkv1rPRombQ+hi7Dh65L8afMNFMc/OPYduTla5yA+VfA/0aO\n8NVE\r\n=J2Z/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mathias",
+          "email": "mathias@qiwi.be"
+        }
+      ],
+      "_npmUser": {
+        "name": "mathias",
+        "email": "mathias@qiwi.be"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/unicode-match-property-value-ecmascript_1.2.0_1583946208724_0.8786277779904508"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# unicode-match-property-value-ecmascript [![Build status](https://travis-ci.org/mathiasbynens/unicode-match-property-value-ecmascript.svg?branch=master)](https://travis-ci.org/mathiasbynens/unicode-match-property-value-ecmascript)\n\n_unicode-match-property-value-ecmascript_ matches a given Unicode property value or [property value alias](https://github.com/mathiasbynens/unicode-property-value-aliases) to its canonical property value without applying [loose matching](https://github.com/mathiasbynens/unicode-loose-match), per the algorithm used for [RegExp Unicode property escapes in ECMAScript](https://github.com/tc39/proposal-regexp-unicode-property-escapes). Consider it a strict alternative to loose matching.\n\n## Installation\n\nTo use _unicode-match-property-value-ecmascript_ programmatically, install it as a dependency via [npm](https://www.npmjs.com/):\n\n```bash\n$ npm install unicode-match-property-value-ecmascript\n```\n\nThen, `require` it:\n\n```js\nconst matchPropertyValue = require('unicode-match-property-value-ecmascript');\n```\n\n## API\n\nThis module exports a single function named `matchPropertyValue`.\n\n### `matchPropertyValue(property, value)`\n\nThis function takes a string `property` that is a canonical/unaliased Unicode property name, and a string `value`. It attemps to  match `value` to a canonical Unicode property value for the given property. If there’s a match, it returns the canonical property value. Otherwise, it throws an exception.\n\n```js\n// Find the canonical property value:\nmatchPropertyValue('Script_Extensions', 'Aghb')\n// → 'Caucasian_Albanian'\n\nmatchPropertyValue('Script_Extensions', 'Caucasian_Albanian')\n// → 'Caucasian_Albanian'\n\nmatchPropertyValue('script_extensions', 'Caucasian_Albanian') // Note: incorrect casing.\n// → throws\n\nmatchPropertyValue('Script_Extensions', 'caucasian_albanian') // Note: incorrect casing.\n// → throws\n```\n\n## Author\n\n| [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias \"Follow @mathias on Twitter\") |\n|---|\n| [Mathias Bynens](https://mathiasbynens.be/) |\n\n## License\n\n_unicode-match-property-value-ecmascript_ is available under the [MIT](https://mths.be/mit) license.\n",
+  "maintainers": [
+    {
+      "name": "mathias",
+      "email": "mathias@qiwi.be"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-11T17:03:31.239Z",
+    "created": "2017-04-15T12:25:14.950Z",
+    "1.0.0": "2017-04-15T12:25:14.950Z",
+    "1.0.1": "2017-06-20T16:52:17.824Z",
+    "1.0.2": "2018-06-07T13:16:09.586Z",
+    "1.1.0": "2019-03-05T12:52:14.201Z",
+    "1.2.0": "2020-03-11T17:03:28.847Z"
+  },
+  "homepage": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript",
+  "keywords": [
+    "unicode",
+    "unicode property values",
+    "unicode property value aliases"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasbynens/unicode-match-property-value-ecmascript.git"
+  },
+  "author": {
+    "name": "Mathias Bynens",
+    "url": "https://mathiasbynens.be/"
+  },
+  "bugs": {
+    "url": "https://github.com/mathiasbynens/unicode-match-property-value-ecmascript/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

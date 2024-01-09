@@ -1,0 +1,760 @@
+{
+  "_id": "detect-passive-events",
+  "_rev": "11-3fd92ec99d974823f0aefc516f49eeaa",
+  "name": "detect-passive-events",
+  "description": "Detect if the browser supports passive events",
+  "dist-tags": {
+    "latest": "2.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "detect-passive-events",
+      "version": "1.0.0",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "lib",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafrex/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "code@rafrex.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafrex/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafrex/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-eslint": "^7.1.0",
+        "babel-preset-es2015": "^6.18.0",
+        "eslint": "^3.9.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "ae21d52528e0bf389c9c6945ba03a725b293579f",
+      "_id": "detect-passive-events@1.0.0",
+      "_shasum": "fd6137d7bb06735fa8937024630162555a8ce027",
+      "_from": ".",
+      "_npmVersion": "3.10.7",
+      "_nodeVersion": "6.2.0",
+      "_npmUser": {
+        "name": "rafrex",
+        "email": "code@rafrex.com"
+      },
+      "dist": {
+        "shasum": "fd6137d7bb06735fa8937024630162555a8ce027",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rafrex",
+          "email": "code@rafrex.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/detect-passive-events-1.0.0.tgz_1478642438914_0.8338881353847682"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "detect-passive-events",
+      "version": "1.0.1",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "lib",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafrex/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "code@rafrex.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafrex/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafrex/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.18.0",
+        "babel-eslint": "^7.1.0",
+        "babel-preset-es2015": "^6.18.0",
+        "eslint": "^3.9.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "385c8de66957d8a595ca5752c14700266e8a6dc4",
+      "_id": "detect-passive-events@1.0.1",
+      "_shasum": "e928ffcec09182275886358b32b397009c7ea5db",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "rafrex",
+        "email": "code@rafrex.com"
+      },
+      "dist": {
+        "shasum": "e928ffcec09182275886358b32b397009c7ea5db",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rafrex",
+          "email": "code@rafrex.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/detect-passive-events-1.0.1.tgz_1487964050450_0.9768088310956955"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "detect-passive-events",
+      "version": "1.0.2",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "lib",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafrex/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "code@rafrex.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafrex/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafrex/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-eslint": "^7.1.1",
+        "babel-preset-es2015": "^6.22.0",
+        "eslint": "^3.16.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "eaa4289f496cdd555589c1bc3f96c9e66a53ff51",
+      "_id": "detect-passive-events@1.0.2",
+      "_shasum": "0e39d7b675907eff55b8965f5be3fc0b0f4178b9",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "rafrex",
+        "email": "code@rafrex.com"
+      },
+      "dist": {
+        "shasum": "0e39d7b675907eff55b8965f5be3fc0b0f4178b9",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rafrex",
+          "email": "code@rafrex.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/detect-passive-events-1.0.2.tgz_1488224528464_0.4624527033884078"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "detect-passive-events",
+      "version": "1.0.3",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "lib",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafrex/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "code@rafrex.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafrex/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafrex/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-eslint": "^7.1.1",
+        "babel-preset-es2015": "^6.22.0",
+        "eslint": "^3.16.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "29f9ba08d4af04c47f3566fabfa712f55e75b7b1",
+      "_id": "detect-passive-events@1.0.3",
+      "_shasum": "8a05fd0583050bbd8622b769fa54f655761fea7e",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "rafrex",
+        "email": "code@rafrex.com"
+      },
+      "dist": {
+        "shasum": "8a05fd0583050bbd8622b769fa54f655761fea7e",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rafrex",
+          "email": "code@rafrex.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events-1.0.3.tgz_1506365525351_0.6964403502643108"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "detect-passive-events",
+      "version": "1.0.4",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "files": [
+        "lib",
+        "src"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafrex/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "code@rafrex.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafrex/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafrex/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-eslint": "^7.1.1",
+        "babel-preset-es2015": "^6.22.0",
+        "eslint": "^3.16.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "6f03f9367bdbad77c1251e98ba8f04fdb5b32568",
+      "_id": "detect-passive-events@1.0.4",
+      "_shasum": "6ed477e6e5bceb79079735dcd357789d37f9a91a",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "rafrex",
+        "email": "code@rafrex.com"
+      },
+      "dist": {
+        "shasum": "6ed477e6e5bceb79079735dcd357789d37f9a91a",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rafrex",
+          "email": "code@rafrex.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events-1.0.4.tgz_1506449460026_0.20262566534802318"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "detect-passive-events",
+      "version": "1.0.5",
+      "description": "Detect if the browser supports passive events",
+      "main": "lib/index.js",
+      "scripts": {
+        "build": "rm -rf lib && babel src --presets babel-preset-es2015 -d lib",
+        "prepublish": "npm run build"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "rafael@rafgraph.dev"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafgraph/detect-passive-events/issues"
+      },
+      "homepage": "https://github.com/rafgraph/detect-passive-events#readme",
+      "devDependencies": {
+        "babel-cli": "^6.23.0",
+        "babel-eslint": "^7.1.1",
+        "babel-preset-es2015": "^6.22.0",
+        "eslint": "^3.16.1",
+        "eslint-config-airbnb-base": "^10.0.1",
+        "eslint-plugin-import": "^2.2.0"
+      },
+      "gitHead": "b6a23021a25b5732b6087c3ba4b47b2cecd55dbf",
+      "_id": "detect-passive-events@1.0.5",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-foW7Q35wwOCxVzW0xLf5XeB5Fhe7oyRgvkBYdiP9IWgLMzjqUqTvsJv9ymuEWGjY6AoDXD3OC294+Z9iuOw0QA==",
+        "shasum": "ce324db665123bef9e368b8059ff95d95217cc05",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-1.0.5.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6453,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfWnvbCRA9TVsSAnZWagAA5SQP/1OFZwxC/5Pwd37jN6qN\n2QLX/ajkU8U7vm1YYv6H3j4Qqn4VgHSFmZoa2Spv1HtkUuPLcNIor6iefvLC\nkF/k4QnGChH+pGwtprhdguQjJm6Gk5OXs0ELpCSKevuVc58+mflDTYXv4vv3\nrK6a5j4Y4vqqkacf/n9t1UknQLsgcQ2c3ELat5IgjRtUe3FuI61zh5VxadiN\na4qiD+ML8ClaC8/KuYGxkaLNBQI+pRpEiwcGD6jzJeC/NOUHCI7gsZzuim9Q\nDTiF/DbBPQgkM3MPRDxnsPP6Yo7lOb5zBmtBhLXun8y1MOWFaeGbeQoQS6LR\nbDl1uip4gUyOiwvx9B16ZLsYKdMKfJlR+oTTvAq7Zia1wqOWPCRNWO0I1Ck+\n2iT8PhdF4a0cgnNuIBfAKz8Vzh9qw5JLjd2yf2F7yG17WSxeo38IWQjp+ZSj\nzNglXJOqNuK5Qf6bNVyb2AGGX33ailrPSECtsHJV+IiUF9aOnp+yWKcDq+3q\nXc46WF2LcMLZOS3cI9WepjTg3DFN0GyfGXndf+X0H6cfCbV6jMVCtzaF7/8e\nDuO3WMLHY6m42HUnka2rCpcRE+6Dz3F9fV7GvkN7oyBVAqauE2DUrFmzzYlq\ncqsYgeSktmLtipwLCA52w2FnHD24s1YoDrNl2vd7szqI3AV9Xc4W1IananeI\nYmeG\r\n=FVtw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rafgraph",
+          "email": "rafael@rafgraph.dev"
+        }
+      ],
+      "_npmUser": {
+        "name": "rafgraph",
+        "email": "rafael@rafgraph.dev"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events_1.0.5_1599765467492_0.1658390660595772"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "detect-passive-events",
+      "version": "2.0.0",
+      "description": "Detect if the browser supports passive events",
+      "source": "src/index.ts",
+      "main": "dist/detect-passive-events.js",
+      "umd:main": "dist/detect-passive-events.umd.min.js",
+      "module": "dist/detect-passive-events.esm.js",
+      "types": "dist/index.d.ts",
+      "scripts": {
+        "dev": "npm link && npm run watch && npm unlink",
+        "watch": "rm -rf dist && trap 'exit 0' SIGINT; microbundle watch --format esm,cjs --no-compress --strict & microbundle watch --format umd --compress --strict",
+        "build": "rm -rf dist && microbundle build --format esm,cjs --no-compress --strict && microbundle build --format umd --compress --strict",
+        "prepublishOnly": "npm run test && npm run build",
+        "tsc": "tsc --watch",
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "coverage": "npx live-server coverage/lcov-report"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "rafael@rafgraph.dev"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafgraph/detect-passive-events/issues"
+      },
+      "homepage": "https://detect-it.rafgraph.dev",
+      "devDependencies": {
+        "@types/jest": "^26.0.14",
+        "jest": "^26.5.3",
+        "microbundle": "^0.12.4",
+        "prettier": "^2.1.2",
+        "ts-jest": "^26.4.1",
+        "typescript": "^4.0.3"
+      },
+      "prettier": {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "printWidth": 100
+      },
+      "gitHead": "fe27bfb367bb62a12047fdc653b6a863c1f62c1a",
+      "_id": "detect-passive-events@2.0.0",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-RkPvKkEzTlCeLno9Pv9DZjz1OW8QBuX56Op9KGbnHzUutgi4mA6Z1bwUUgu6LZXxpKMIQWhPW5POzbWMZUz2lA==",
+        "shasum": "862afcd534021179bb030fac726c416f96d793b7",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-2.0.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 12862,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiET8CRA9TVsSAnZWagAA84IQAIo6NuQG6sdZgtxvd9mZ\n4e0QIhRdmE0i03yfsePzVi+TgF3kPo5llVovMqchVXTr262tHDMbOuLPab+O\n8QZ2Ko7iOCHSgo7fyoN8WzQ2oUhOYyrnRcvOeCuiW/wDU9KNYr4hf3ZCdLpQ\nb+rYQvQCm6htygVRTnlQL+i+KK33h6ljVWsLO+XBLwQQQzKAwLQ4YHGbtu1w\n40d3RTS9vK+YvJVZSVNNzkzFoY3AlBOGl7URMO5hf3FrmnIHQO6TeDa1Tbi+\nC0muiBqZJJumQsSfvjG8zYZa+LWPoMZXRaC8Wl50G+DYVSJ/kUpTCQtgzIiF\n2eU30ii2X8ikB3SW6/x57EHtNhijtJgw2guPSOn00tf0eQNg9N2tLAOZ5GbS\nQd0FZBkCnDEjepeaOtrbwImXGsfZdRDU8QoNH5zyqsPT5Jg4n+BWJHZNfKpd\nx6ns6723ldeHRY0/7NTMZaTJFDs7V7rakxKTJHuou0tOpth4ooKQF6ULyxVf\nVzyXmlfZJZYxeZbxKTB1xjHqOsxRjC8g+TlkGQtPUxa5wGHgEXdbzQoCsyrw\nG5tdRc74TajLZVvUcNh5Ad1tQCwOit6geva4GuOlM20MZ48qxa55BvZg4Zad\n+ZzzJSOGxOn5W4vvfdPPwSI0bid+x/9ULVPb0CrW8h5KWdMlkmzxAo6x1sPg\n2HfZ\r\n=zQ6O\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rafgraph",
+          "email": "rafael@rafgraph.dev"
+        }
+      ],
+      "_npmUser": {
+        "name": "rafgraph",
+        "email": "rafael@rafgraph.dev"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events_2.0.0_1602766075744_0.14560487416648416"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "detect-passive-events",
+      "version": "2.0.1",
+      "description": "Detect if the browser supports passive events",
+      "source": "src/index.ts",
+      "main": "dist/detect-passive-events.js",
+      "umd:main": "dist/detect-passive-events.umd.min.js",
+      "module": "dist/detect-passive-events.esm.js",
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "scripts": {
+        "dev": "npm link && npm run watch && npm unlink",
+        "watch": "rm -rf dist && trap 'exit 0' SIGINT; microbundle watch --format esm,cjs --no-compress --strict & microbundle watch --format umd --compress --strict",
+        "build": "rm -rf dist && microbundle build --format esm,cjs --no-compress --strict && microbundle build --format umd --compress --strict",
+        "prepublishOnly": "npm run test && npm run build",
+        "tsc": "tsc --watch",
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "coverage": "npx live-server coverage/lcov-report"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "rafael@rafgraph.dev"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafgraph/detect-passive-events/issues"
+      },
+      "homepage": "https://detect-it.rafgraph.dev",
+      "devDependencies": {
+        "@types/jest": "^26.0.14",
+        "jest": "^26.5.3",
+        "microbundle": "^0.12.4",
+        "prettier": "^2.1.2",
+        "ts-jest": "^26.4.1",
+        "typescript": "^4.0.3"
+      },
+      "prettier": {
+        "singleQuote": true,
+        "trailingComma": "all",
+        "printWidth": 100
+      },
+      "gitHead": "6583feda83f7ea4f7d8b276b077f3b8dd4ab5d5f",
+      "_id": "detect-passive-events@2.0.1",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.8",
+      "dist": {
+        "integrity": "sha512-7WbRn4mznO63FW0KSYa7S3HgCG94uZ6HGZO1TyVRtdZuMNGUeY/ScWrIx45XnUz1LWoLZVi13ULVHqKE07ZfKg==",
+        "shasum": "fdbd6f6dd5e6ac10c6189a4cb26ab264d41c0835",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-2.0.1.tgz",
+        "fileCount": 14,
+        "unpackedSize": 12922,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiMxbCRA9TVsSAnZWagAAcxYQAIrvjGwp8qokZ1MlY4Lk\nwhgCz67rRSRtQ38D7cG9War2a1lJ/9Qg3BrwywHZLZgslfs46IJyMsP+1oWu\nvprhwm8QPbECGPA1yMTt7p1RPGrRUsQfHhZYXaioPoBp3abhFtIWAkZIkuDH\nr46oMuTAGYpbf03EO1QlzVliEKVFKdw9mVacGA76hZePxPbrHGU96fQVwYtR\nIlTS4RbfZUU1EBoBpLJGfm9ud7FLaBO3bru20c6Gx0MB/lJUZOVDGZYaMcF4\ngrBY1z0U1A0qVYwbGWrlu1umWBfEqmfZFAKdfNvetyNZT1uxLPU4+40bXUIZ\nvaOV0nVxHSeDPjJZ6/Efxxpq1lqTFMBrjuzgcZe7MZMeDdJVXVFvboDckqWn\n9BuXfbP5K/DoeRCOQx8C/IDntvQkSI3qq/JC8cSdHGWor9pFr6BUzK7E0sXV\nQpFxGX/GLzltigW4H3qANhppOHGFmE2IYJmDmkMn2EniczDAETwU2ljmlpf5\n0B/aK035WtV7SQAtVdxFCStAD7B0k40/C5ZQIm/Vq619Mb1gQLXq9lgjq4l8\nlEdNBmBErMZ7r3YHpvNPHOzNIsMkS645QSUimBHjt7Lf5Q/d7YlUVekRiWAE\nEGoRrAhm9PZWaVWLTtler34aRU2BYD9XSW0PJhAva8gbYk2d9Ede24ORImMc\nqthY\r\n=jNPZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rafgraph",
+          "email": "rafael@rafgraph.dev"
+        }
+      ],
+      "_npmUser": {
+        "name": "rafgraph",
+        "email": "rafael@rafgraph.dev"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events_2.0.1_1602800730824_0.15833894325047182"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "detect-passive-events",
+      "version": "2.0.2",
+      "description": "Detect if the browser supports passive events",
+      "main": "dist/detect-passive-events.cjs.js",
+      "module": "dist/detect-passive-events.esm.js",
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "scripts": {
+        "dev": "npm link && npm run watch && npm unlink -g",
+        "build": "rollpkg build",
+        "watch": "rollpkg watch",
+        "prepublishOnly": "npm run lint && npm test && npm run build",
+        "lint": "eslint src",
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "coverage": "npx live-server coverage/lcov-report"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "rafael@rafgraph.dev"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafgraph/detect-passive-events/issues"
+      },
+      "homepage": "https://detect-it.rafgraph.dev",
+      "devDependencies": {
+        "rollpkg": "^0.1.1",
+        "typescript": "^4.1.2"
+      },
+      "prettier": "rollpkg/configs/prettier.json",
+      "eslintConfig": {
+        "extends": [
+          "./node_modules/rollpkg/configs/eslint"
+        ]
+      },
+      "jest": {
+        "preset": "rollpkg"
+      },
+      "gitHead": "3553351e8ff7241381c1d962eecaae83bbddd569",
+      "_id": "detect-passive-events@2.0.2",
+      "_nodeVersion": "14.15.0",
+      "_npmVersion": "7.0.14",
+      "dist": {
+        "integrity": "sha512-Ru7Eiz+pCy++QpqaNOgaIjlM0PzxEsh3Etg3wtntNhW2r3H1/8KkcR8bX9ApPIZChiNO2Pz//60uUg29DPNh3Q==",
+        "shasum": "229d02a20c47371194a2def84144c07d83e324c2",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-2.0.2.tgz",
+        "fileCount": 15,
+        "unpackedSize": 15050,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfwT3ECRA9TVsSAnZWagAAGTEQAIAgzcAhh1UUxzU45uYR\nj7h/y8901QLxLg1FEOJQ2OgpPN7DsW0beqwTGStWZjPfzAFVCFoJtcnSKzUS\nwJPHRZ0sI/Qgy/boSIolQ3JL8M6axvvRops4Dl6N55GL0TsbVu5B0Wkk4FCy\ndyFHni884GUN9B9jHWe7H4omk4b8x+yrqEjeeZoxhnJBVzyLmKpZLSp81uA2\nl6Xi9ykt+vb1oyId8VoHL8/bwm0HQoPVt8xENdhgiFV4kh2lqx5EIwL+J3tN\nRttX1JUK/XM06EV75LI2wc6OR6yerBS8u2qp8BYIXlE0QOFftSpCM0LBwFds\nFSMUMqnBY96J1wFMEb4dPA28/Ww5pcBT2Ws0flh7pMcLKBgcP7oTLXKWrkWY\ntVCfd7FHzxThJrnxa86AhSlL+Uj/lOCGdjT9GEkpVMFT7uO3zpoab6Cl9ThP\nOt3x8PC89LAdCIjdUVaUfUqOjyqa/fRa9rSfsZn3w72GZGheax7lXgxnKZoV\nNRY8/POJHN8UQSnuuTlZv+VYpTwCTUBKDCFIwpV73SXt07dj/vrW7i6URhDd\nkduT23BcsqPM84baVQB/Q+J0DYaTECVdFUxOb1LfzmIZZ1tPvhEUeHSn6urA\nkZ9LG/CubAiY29Xvk6cN0HjhEeBxRDimIMEi0ktgZEPPoFGW/iBvhDDsUbk8\nf7AO\r\n=qNRq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "rafgraph",
+        "email": "rafael@rafgraph.dev"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "rafgraph",
+          "email": "rafael@rafgraph.dev"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events_2.0.2_1606499779614_0.8743462910637769"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "detect-passive-events",
+      "version": "2.0.3",
+      "description": "Detect if the browser supports passive events",
+      "main": "dist/detect-passive-events.cjs.js",
+      "module": "dist/detect-passive-events.esm.js",
+      "types": "dist/index.d.ts",
+      "sideEffects": false,
+      "scripts": {
+        "build": "rollpkg build --addUmdBuild",
+        "watch": "rollpkg watch",
+        "prepublishOnly": "npm run lint && npm test && npm run build",
+        "lint": "eslint src",
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "coverage": "npx live-server coverage/lcov-report"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+      },
+      "keywords": [
+        "detect",
+        "passive",
+        "passive events"
+      ],
+      "author": {
+        "name": "Rafael Pedicini",
+        "email": "rafael@rafgraph.dev"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/rafgraph/detect-passive-events/issues"
+      },
+      "homepage": "https://detect-it.rafgraph.dev",
+      "devDependencies": {
+        "rollpkg": "^0.4.2",
+        "typescript": "^4.1.5"
+      },
+      "prettier": "rollpkg/configs/prettier.json",
+      "eslintConfig": {
+        "extends": [
+          "./node_modules/rollpkg/configs/eslint"
+        ]
+      },
+      "jest": {
+        "preset": "rollpkg"
+      },
+      "dependencies": {
+        "detect-it": "^4.0.1"
+      },
+      "gitHead": "4a4c50c6d9386c86ec9fc952d6763a525cb1e08c",
+      "_id": "detect-passive-events@2.0.3",
+      "_nodeVersion": "14.15.4",
+      "_npmVersion": "7.5.3",
+      "dist": {
+        "integrity": "sha512-QN/1X65Axis6a9D8qg8Py9cwY/fkWAmAH/edTbmLMcv4m5dboLJ7LcAi8CfaCON2tjk904KwKX/HTdsHC6yeRg==",
+        "shasum": "1f75ebf80660a66c615d8be23c3241cdda6977e0",
+        "tarball": "https://registry.npmjs.org/detect-passive-events/-/detect-passive-events-2.0.3.tgz",
+        "fileCount": 15,
+        "unpackedSize": 25016,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgJdKFCRA9TVsSAnZWagAAi0wP/in//1/Ns12fem2BQtnp\nClOR0SdavSInVWghiFZPnvGrfaCjivNo3heoQ+IQuN/MfmX2xiX6je8sEtfu\nsrV9rBFjlApHChey1HFirrV5/sAs03tpPHtfLalASNCxj0vPtG/2iY3bIt+H\n5XmjPDJyLmFcGDJ7Ei468EabSsaLTxaujlGAybIZvajUMmvpvREPtoxvEOrJ\n5fvo0wUfWj1VbiMUQIGEfh7ve+oZr6BOfeEjHQvKPyBBEsddWbPzlzJqmPQ3\nmbIc3K1ATjVpZX/2pyH1nhUjLZpxC2GJzV51onTtSrftxGhkQ+NfXac7T9l2\no3nKI4mWpHxYNLnwDfTTZGmNeRx2APlwBfDvD445CZmeA2qqX9FkJ9xTjNwS\nVMEtqfYC62LPBUUoz32K8nww7yywd/MmbNd4mMfQqI9iIckWT30EZBAjF5Tt\nUYCTmiggeQnU0HlXZDnYgk0+tYPYHmfZY14xt9cfGXHeiryXAOjkLBzD18Jt\nSOM8vBuFshsP2qyecaFJfrsNHTZqwV3xUx//V/zz9pruORSjg78nkM3oLg3P\nh4JmMdGyUvSRPPr4IPokUyne9JP6yHARBD8EUQF5atZJdPzblu0zxZ1EOeQj\nLiNH/kbBP7wE3561/isdhQ6vSvzjYwYMq6ynPpDLKHtA4lmCGg9F6jxN8OWc\nRZnQ\r\n=QsZZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "rafgraph",
+        "email": "rafael@rafgraph.dev"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "rafgraph",
+          "email": "rafael@rafgraph.dev"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/detect-passive-events_2.0.3_1613091460663_0.740634413523988"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Detect Passive Events\n\nDetects if the browser supports passive event listeners. Tree-shakable and side-effect free. Also available as part of [`detect-it`][detectitrepo].\n\n[Live detection test][livedetectiontest]\n\n[![npm](https://img.shields.io/npm/dm/detect-passive-events?label=npm)](https://www.npmjs.com/package/detect-passive-events) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/detect-passive-events?color=purple)](https://bundlephobia.com/result?p=detect-passive-events) ![npm type definitions](https://img.shields.io/npm/types/detect-passive-events?color=blue)\n\n> Note that the code used in the detection is adapted from this [Passive Events Explainer][passiveexplainer].\n\n### Using `detect-passive-events`\n\n```\nnpm install --save detect-passive-events\n```\n\n```js\n// supportsPassiveEvents is a boolean\nimport { supportsPassiveEvents } from 'detect-passive-events';\n\nif (supportsPassiveEvents) {\n  // passive events are supported by the browser\n  document.addEventListener('scroll', handleScroll, { capture: false, passive: true });\n} else {\n  // passive events are not supported by the browser\n  document.addEventListener('scroll', handleScroll, false);\n}\n```\n\n### Or use the script directly in the browser\n\nOptionally, instead using `npm install` you can the load the script directly in the browser. A minified UMD version is available from Unpkg for this purpose.\n\n```html\n<script src=\"https://unpkg.com/detect-passive-events@2/dist/detect-passive-events.umd.production.js\"></script>\n```\n\n```js\n// it will be available on the window as DetectPassiveEvents\nif (window.DetectPassiveEvents.supportsPassiveEvents) {\n  document.addEventListener('scroll', handleScroll, { capture: false, passive: true });\n} else {\n  document.addEventListener('scroll', handleScroll, false);\n}\n```\n\n<!-- links -->\n\n[livedetectiontest]: https://detect-it.rafgraph.dev\n[passiveexplainer]: https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md\n[detectitrepo]: https://github.com/rafgraph/detect-it\n",
+  "maintainers": [
+    {
+      "name": "rafgraph",
+      "email": "rafael@rafgraph.dev"
+    }
+  ],
+  "time": {
+    "modified": "2021-02-12T00:57:44.127Z",
+    "created": "2016-11-08T22:00:39.447Z",
+    "1.0.0": "2016-11-08T22:00:39.447Z",
+    "1.0.1": "2017-02-24T19:20:51.024Z",
+    "1.0.2": "2017-02-27T19:42:08.731Z",
+    "1.0.3": "2017-09-25T18:52:05.451Z",
+    "1.0.4": "2017-09-26T18:11:00.965Z",
+    "1.0.5": "2020-09-10T19:17:47.611Z",
+    "2.0.0": "2020-10-15T12:47:55.855Z",
+    "2.0.1": "2020-10-15T22:25:30.985Z",
+    "2.0.2": "2020-11-27T17:56:19.969Z",
+    "2.0.3": "2021-02-12T00:57:40.793Z"
+  },
+  "homepage": "https://detect-it.rafgraph.dev",
+  "keywords": [
+    "detect",
+    "passive",
+    "passive events"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafgraph/detect-passive-events.git"
+  },
+  "author": {
+    "name": "Rafael Pedicini",
+    "email": "rafael@rafgraph.dev"
+  },
+  "bugs": {
+    "url": "https://github.com/rafgraph/detect-passive-events/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "shakakira": true
+  }
+}

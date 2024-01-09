@@ -1,0 +1,2449 @@
+{
+  "_id": "core-js-compat",
+  "_rev": "46-10799e3c8d1a011fb7249b206864ecd7",
+  "name": "core-js-compat",
+  "dist-tags": {
+    "beta": "3.0.0-beta.20",
+    "latest": "3.6.5"
+  },
+  "versions": {
+    "3.0.0-beta.6": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.6",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.3.6",
+        "semver": "^5.6.0"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.6",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "dist": {
+        "integrity": "sha512-g4XsZrXhU5U+9VKFclI2Mf7tgAPQToFADHhMJAlKcfAiTsOrJ/WGVMGbyfagg8ElrWO+6UrrokEuPFzIIsiZag==",
+        "shasum": "705aa7f7fa75dd043d657b6007312b677a052a16",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 43804,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcIVK3CRA9TVsSAnZWagAAJXsP/0VNPiYcmVsiEqTEIcd5\nyyUbtzbQvqFAMXlQHlW3fpMEVf34IBr7Dl4re3PE0CTxWbuK0zonFNVQvKQ8\nJzJbWZdEKGl8bUzdJThwHf3fyjTEdxVB3Wskw84b/PyqcSZisqDNOOo1Ls8H\n0w5aaCTEIpVG129AlCs0tmakywi6wujzf6YQfuH+aaE9iq1TD4HNh+6atOKE\n3S/ezjp0naGI3VN7uAxEmvuPp73OI5UJInCn+dTxt6Bj5UI27Z140h6ImclS\nNnwwpZcqvLJUOb/DaTV4CgXNMcWf7hfWDhUvhPWRM8MMFk9avFMreeVfTjc5\nKle5ZMm142CoMsDr5GWyZr3FNleaR6R2/55YC/Iv6TEN88EE9Ggn7Q+B8eBi\nXdC0euNNucT6siTG6tkpQ8lqnA0w+vctV5oZVsUHwoommy4HJ1mOGcxmH7em\nrpGp3raFoKdONn8E8g+EPasW15iw9auXRTpRyyG5Z5I47sp59JHS9sjNX7xB\nJs4wzp9GCFpYIW9n3OXoclUuOeP8su2WdLZ2fVNs+7esFIJJWMTs3Nm481xU\nnA6FK3oG8aXv5jAc8D7/n8K+ow3xj/VOz0fBO5VMa2j+tF+OJu5a7mAVs2yQ\n7ERysPXpdKjueuGcxRFW3X8ohh1RGStGBguhLUw6DvMmvEEP9YfBqFFvJIQc\nCl4q\r\n=GD9b\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.6_1545687734806_0.48632858662035483"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.7": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.7",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.3.6",
+        "semver": "^5.6.0"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.7",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "dist": {
+        "integrity": "sha512-+xky1ZSNV9/pDOu+mGSB/Zea0pZcfGoSn+RdUIT5zCQIFJ2o5NRzMoHrT3WpchzSBwuhI8WmeJuVni5xz63ABA==",
+        "shasum": "a380d6b929f024cd3f9753b3cdf4ffd5d56490ca",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 45319,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcJCI1CRA9TVsSAnZWagAAO/MP+gOpo+KoZpOqDe5iG5/I\nAzktTpmKgvs+armQD6y5+TL/wsEE2yMgHY9jSuHiS+P8ooKDDPWlnXL9AcBL\nfVaMaK37t3fZx82ATzI2QXaXBq0+U34CaDWXZHPcNgFueOSakpRp5C0+7+gS\nxmeFYeLpP8wtY5RpSSt9TmiNwpRKLQMgIICjvswYrMXRTIkmGKWZim4uOdTP\n2fNoV5c9ZCNrEIcxcveeWPXI/CTae2fJ/rkjOa6GVYBsnor5Mg4498ljyi62\n1Hxq0BjqSPWK4KDeJGmQuISfGp4CgEO2KsiUEbHmSZSDtGeNTsfS+VMI8C3K\nsh7ZdDMNeAuaZShmTuE33jcfujUWtSlQLbrzvfPIqJBf2q4yvMHwsi7tAmaa\nO6YsMCY1/6vmfXKhX4qNrwSosk97Y2zHlmZzJSE/5Z+7cKELGS7rKPiaIre3\n2lv1Sdd/zpclak6nJhXbNNQ0n7hwW45BEdS08+jo4nWHTUoUc2AAPTjULiEs\nSaFdPUpwIz3DmBKXkE8ei2g0L3auMoW/6jHvdxxMXqhvncAyO5EoWyTQHiNQ\nPtU+b9pTiqWtMox9zJUX1B3jWlk1njodM8+2HF8/N1VD+QGKRT4F0jXRYosB\nCoEObqGHI5uwgDJfCUZKpfz0KQ7eIfB2x+NEGv7fXxVMirUYOsfPlqlQhIzd\nvU1M\r\n=x2rN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.7_1545871923895_0.1531782625684741"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.8": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.8",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.3.7",
+        "semver": "^5.6.0"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.8",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "dist": {
+        "integrity": "sha512-WNZWhxq/kG5S83ISkIniLUqGU/7CGeo8nRWItV/huglRGM2+8ZB0e7n+2weHRFeJaFEJvocr+t4Tbw4HJGEfhQ==",
+        "shasum": "1ea69cdc4fdd32d01b7970ec37dcef9ddec78229",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.8.tgz",
+        "fileCount": 4,
+        "unpackedSize": 45401,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcNvYSCRA9TVsSAnZWagAAO/cP/0mwxwxgdBzDdIES1M0c\n+HwEraK6IYMFXtjmZj/lpx4Dy30rV/LdaxJCsaLyleF2OHODpACO2fQWTsMS\nrdY9hkoE44yd5+LhK3WCG2/+5cDpmzbo0cnWQ0ObLDr8DBB3AYY5t6R7/SoA\nUxhVyngpgjD5Oy3Of11nSJVJHVaWikUGsgk35Arfyi9g/7SChgtR0F+ZsFHq\nMTOEBHiSvHZJgoB7WmY9GKTpufAKotiFNVB/UrHRI5poxp9Gcm8CLzezIojP\nclpi6BVnJNWMq1R2i3VboaCHvdWAs2xRmknLO4NHYNmLg4uvjBgdXyQg4YXH\ntg+5el2062z5H4NTjNsKJy2kK37h1/0WCqJ5IRfwAWbsxGlY8d9jnl/BW2dh\nlu7uS6cwskKy+Yjx6mQaj2jACSkDj8Faea9qiD4cx1W3z3JnpATLfw/HFxFQ\nYii8+Mmb5tkPlDpMhUJL0AlZunhO2cVcSl2u2MRyzbSGpq/AWjUwb4ykG1qq\nTLVhfJKG4n96YZ69RIlztTR9m5LMMYEDK9lbSO7WCULG3F6lDUbgTez8/GOV\nPcAZ2PWcd5fkFWdt207UiDDpy9m6kjvTzTpXowbCOG7tHR1Zy5vlh5Xb7a4q\n5/jREkdK6xS6HS6rjHa/sZ/P62uOnzfrdQqUw/3RLU6xDUCzm4AMuY5nKmFY\nqYXp\r\n=SpLW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.8_1547105809669_0.44593051247422255"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.9": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.9",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.0",
+        "semver": "^5.6.0"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.9",
+      "_npmVersion": "6.5.0",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "dist": {
+        "integrity": "sha512-kgTmY+ewqC1bB6wXiswrzB3CJvrnCRQoo85kbS37LvZ6XSn3Hz5vSQVzZuWS+LjrBudz6woKOAcAGyZB/BETQQ==",
+        "shasum": "cfec65d16ce1df9441d0850ad36c466ddd10d770",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.9.tgz",
+        "fileCount": 4,
+        "unpackedSize": 45400,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcQFaOCRA9TVsSAnZWagAA1sAP/RH4nX5uepnxUCnIJDKW\nFhKRIpmc9xrBhhTb7wqd3sHrtvTBh9yZS0bBx9wKdd+ILjj2dPmKRENZu10A\nK55r84ZRRZW9vpM2Knjof7QpjG7f9eEFt6ziPP0+f8GvqpLE20ZMwToXNEmm\njKLQxqvDBtbMRnGYxIjhoFRO7kEmUPixaH8uT7icIPHaSGHgW1+jf4FsSJ+V\nIYM3y9SxyJxRng5Vm4fEXXgGyJlC2Ds7oYk/23v4pZQH1uxLiw5K3Zt4ONBA\niXXWhUe2Jnk+EFCL/ukYgJZzDMVY6dclzB8dgG0fD4pJMciZUtrecN1inkiv\n0kzv3nnXeSUxP6rRNde31KG9pLXh12LaWlKM4gPSygYFeNd6rGL/vLlTer1i\ntAKHMOpoatba8j7CY/f06Cgle6la0KuV3JQtXcA9hY8tIYaUpfUa/oQr5/2e\n2qcdxEGBW5onLL4f01dJHQ7sxM4LqytcKgFY+kBi+9G5ZBPFWWfhu9+Q9mXK\nwnZ4z2EynzLEOUKUkfvZ8WhEo+Ia3sVpmvpjhnQq9K2wDkiLiCjJg0IUYwQM\nGxw6fh4uBqsAOU2r8pNu95NdTkx6wwo/SSFefNZkdlWguO1RlznnPh4dpWwd\nIqV8MdQCyc26CC/Ot2FJetFSuA6MR0i2tf+99R+pWAyLkL5C85XlpiQ+IEjN\n1TeD\r\n=yzfx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.9_1547720333534_0.48808802998538825"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.10": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.10",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "electron-to-chromium": "^1.3.103"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.10",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.6.0",
+      "dist": {
+        "integrity": "sha512-UWA71SqEDbJvslX7THuMs6kQk9ZDmTgYqSAmqZ/+PkGppcRZyNXjrL0L6afcNU18xfmOBW/8uLqz7Drb54Sm1Q==",
+        "shasum": "54a1d451242d723ce18651e55e01089b5149d13b",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.10.tgz",
+        "fileCount": 4,
+        "unpackedSize": 50416,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcRnThCRA9TVsSAnZWagAA5ZwP/0otZR3gMHa9tPSoSRkS\nqPihsD85rloC8SoIe9U+WL2dF7Pj8tttHC34zyWaxP8E3a/BJTPKPe5kehDP\nn3d8AKnjuBmCHfY5EpV+xaBqB5vAur36diEDWOSmHffFLdbRgzHZqE8a6yV3\nF9koAv4oGH4l6JZgROy+sfoeWHHB89XyZOeZL/11b+Xx52mtwb7Me9amzmBK\naxLthu/xJfmd0U7jQZsBOT4H5Jp7JWfNVZOVChHvmHQO0Cz3HhNhO9yIegVa\nxN4jqJoG2W/r+BHqp9uA/CdUXqaJcUdsIssz3v9jV9K1UMsrXgcAKgG5Sfsa\nYlcIR1px6pFYwFD3fTucbKiVyr2wcmy1GZjISZkyPnTqw3TDI+a4HeBi6cA8\nhH37VNzqyLEPBxPOkFj9KvkTjuOLk7ldWY9UzTWbrz31FAWRdzMThhwWhtgv\ntzWdufxF9Af3xXUpLwlvjftBABr6uJQtUNBsAqziqb5qQV2qZI+JusUDOVS0\ntb1bdT699AVAGzgN98Mo2kGWnjyepvJ7KKtlccDj9CmrvzVE/x0Aqe89FTYz\nfRNDVN/p9iBKR+nl89tSE5+xkEEpugsH3198WxQZB1mhqbHFoMViqfDwvjvW\nSg8pSzR1VTuD5yQGOUoYihwCoUB1rzAAu6YxHYNcF/ssM0op6frLG6dUgDt3\nRsGf\r\n=w1mE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.10_1548121312355_0.16101251856211296"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.11": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.11",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "electron-to-chromium": "^1.3.108"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.11",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-g9UG5O/FeYXQkdyF0IuqCqDGurTjRpt6KbwBvaisDYJntL/n94UDmcj9FL2P2pt9bqOjtJLBFieWxkoDeshW2Q==",
+        "shasum": "fd8c13fda3d48357075640ad9297eb480380700c",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.11.tgz",
+        "fileCount": 4,
+        "unpackedSize": 50639,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcTj6nCRA9TVsSAnZWagAAV0wP/R7xecXgRLO5mDFWsKz/\nZbNGI2vXLqHF5JhSP3h41kTmTkTIygaYIumzQc/yr584nCaLEhUOhyTC46eU\nKbbrywpL3V+pmnabCJIZb1RifX/kHNJw9rUYpv9Lm93IFCJzDMm4s8uAih0e\nrVMOlAx2r6ouKX4eRYzAjB++Y7DCWMyRE5qgdvLW3j8R/5gV8iw5MjWn3bVT\nXwG4Rr2t8lODHhd21ZeuSDG2z4/+dLRIMV+8KtFGb7zy6Qts4G1bddJg601v\nzWlG+580/htmMrzOZb2pJoydSQ0s52vqoP1OQwx4bEbXOb8rnxEYDHsdixct\nynH3ZRVkNKc3FxRmbWAYQvfaXHBGF6lxldTsM4lXKPaOJvYZNugsOaezH2XA\nh5LNPFfNsz20LJMB0FB1iwQodCODi+0P4y+JsTkpLavjgmdN+dsAFtd9P8eY\nnihoRMS6W06h4zQFhxfsJziG2oOWdR82vW6dSxcuXlY66Gl4aUa6LwTPp2PT\nEVpI/3JNRxsezAxz3J1xMXohAPJJgOnHd2FROQqBiuklUpcHrXAqt0Fn5uF+\nGaXrDFOsyufsZLqHiSIPHJD5LikRWt9P8iilASb59D5QSOZFIzOvn6cJGDgD\nHRogZzV1mBhTbwXTgVO2qNShweLIgWwXaNfbJMJwEJjUXW55ItW5POdQkCYF\n5l6L\r\n=QuC7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.11_1548631718564_0.2729189493063182"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.12": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.12",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "electron-to-chromium": "^1.3.111"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.12",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-zEKU5HnV2Wo3dplsWeSfTxzeosa4w1pDqaImT9hnFo+L0wTCF8I0sXJ/wTssgPhpDyhtqlvZ1QZ+vj8l1zfhAQ==",
+        "shasum": "b693c4287280c0136345d3835bbe967b2bff4bfc",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.12.tgz",
+        "fileCount": 4,
+        "unpackedSize": 50740,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcVQUWCRA9TVsSAnZWagAAI38P/1deHBOFwPzJTFnvypT9\nNmSnJBV71ckSp7p85J2hibWUc6NDxu8FD7yRRT1qBLZwaok8VY7dR7V5wizR\ny2JQ+2DQG6jGWl1It7VcsoVku36O1zNL7svmhamyIdyT6BiceeJRHHvZPfRE\nkklurGP6MZ7bm+lXVDKWKrxtxoMp3LYH3hE+TwMyMFUB9AeuvQKJUS+rMBRV\nDeTIowU9wET2aCjQcwlYfr/YTMjSXFGuKwgSOoPsrc3spCpMoVCbgPOjcF9G\nL/kR6NU8eXDPY+d7TmFcFF2IneSIHC2p/MUCm1pvzAtoEXFhidsCZPuH0toT\nCkJyQ/qMnEMSXsUeb0HKVCoiqN8Id6LtZV4GNaOlB/pc7E+JfPy5oCHh/Y/m\nkSGSyxvV7QF/Q6GAXblxSZN/uvrhdtEJ4PqxPnBvOVVDqSrLfuv8uluBph0O\n6QVf0NW0TQyxAQqSjizWiA1hiBevLH5Ia7LlaPPr7acZ0sO/IDDuIwz+ZKT7\nDO/FTfYMPi+YcTbdVIZzkoh0pM9NoH8YGa+M7WyO2gALqc9h4YO7aDYTBFx4\nHNglEAdaa6P7kt0US1XedenXE2i+fzSyhWXYLEnBx8aIWGbuum88Nk6SOB+a\n/uAtnFwL8CJcTj3S1Z6tQarhv8bfCT4MbL8PRO7F+0pyeqEBIv9WUjZgjD3F\nNwfC\r\n=b2PS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.12_1549075734421_0.9212454914015986"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.13": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.13",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "electron-to-chromium": "^1.3.111"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.13",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-4XstosACkR8wtyA8hnSCkmgMFVMEDXw6ilN5bO0f3ZHNo540DgX0Jj9tcmIMWM64rFhVH9jzZLi6m1qc8Mm5+w==",
+        "shasum": "e5dfb726376ead6f379a1a56e33ab8059af1b436",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.13.tgz",
+        "fileCount": 4,
+        "unpackedSize": 50740,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcWA9hCRA9TVsSAnZWagAANJ4QAIQMdPpRjyJze8RxmreR\nPX+q96yPnv1Gg4XBwFm/oII16/glAILrUW8SVvyHwKPE7zmFcHjUXcmH5q19\nCJ3Jj0FQiorHYxVaUb0vRTExR84tAl5JOZIODHFKNneeGdqWi5FflWtRo6aB\nngeaghacbMDXchM5fR4wzhX5mCKFGTAL8N2cc5kd3jKHTupe3PdKXns+sU3T\n2j/AwBaLq2y7hIodD2d21DaLWSW92C0csd+5giq9MR9YgLsvJ910fyVZnbrO\naLwaySBdTbDV90Jc/oQQUOx9a9bVwnARN/KLjiKyDx97cRpWTon8AoBFPBTT\neNdg8BfNtMVAWLlmDdpsU2FxaB20NU49KAeq5CayQxzS9NVk4z3lPYXDPGdL\n1S0AYi0VeJkAzLalWEMxP+R+XR06iKhGxBZ6nCAks8uJne3y3R3NkEOdl0Bg\njgwam8LigefRpzJF+EYJpP1sUqm3nVeUufAwLhdNxKeKgvrQnN2CRFe4jVoK\nwKE5YQYTzx9cXis44QIDOeWhKjQObaJ4gAVnH/6C5VP0928Mo/CDAV9Fdlx0\nSnnAnf0sxNU4P+gO+T5VJoOoQND7NTJAeVzCkVDKpL4JJuVy3/QIMGdBb+Zo\nF8AwI9QZssPyF1oi8CyohwFHu0Y4pEALvBS1+DI/TC7QF2YxxR17NEVELO+T\ngJyO\r\n=Z771\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.13_1549274976565_0.7369195069928163"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.14": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.14",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "electron-to-chromium": "^1.3.113"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.14",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-Wa91HgOcLMgh5ZQp+yw786H/vMc+3n4057PvgBxkrjU1+/SBB72s3FoNGXItn1mw02G5LFfwMWj5+RG5HvEkWw==",
+        "shasum": "7df0a62ead3ac8172cb67d699b371f749568765a",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.14.tgz",
+        "fileCount": 4,
+        "unpackedSize": 50767,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcW+HaCRA9TVsSAnZWagAAdhkQAIqMFYYaeu67FM4PAmb0\nFcmQuHAVXBfyCUZvwEGy0JUhzefAwcutFfm1FUhGfYv6Z+toOjEtlzjSf8R0\noooFB1zeRHTHjoUkE4PmcLemnwt1e5vUA9BmLsPJYfu/Q2ijDyhMfstkvUBL\ndVLzryOJlobiovCVQYSNTmPAHc8wBaXqXF1jvqyeuSHatYvJFl5KLn79fo2H\njnto+rEkK0u8D3dFZriA94aiDTVegbz9nwDyVZsbRk6pg5GV5jZ9c3exo/hq\nyRGdKr0ftLnzw+P3dFpYHgq7F9vkRrwYu79YLLKMli+NpmXlivonxpkFxYH+\n69Lt2ZtLa9ndcPFzCkoRjWmokSKNSzOn3kB9LUnPzR/LY1/InCb6DjFCL5BH\nPWIEhGhJauqeqS59noV5l4IrgncGW6Ehl2wfYvNfFZ50vONMNd8oQgiEG6TN\nfMn9BkOXPS/epeGGGnHuQ/vJo9iW3EsaRtenFZju1A1/mUPRHyh3MJcrRG9m\nfmdzYpWx+zqEbNP/R+Xp/CRe+wFLEo6pZr6VZcDFqhmncNVsGdZnLoXdrj4D\nR+im7XepsAf1JKLFIT0Je6on18GyFLwWQmjd9MOBe2imo4zgw2GHZPwTMQJR\nqarnw0rcE+Yf8yBMz0jFRKMJ95fYXyXhH9vy9VeQ+qkb81/BpGveVv6OixlH\nG6au\r\n=rC+8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.14_1549525465562_0.9868777286974912"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.15": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.15",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.113",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.15",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-4mopxabPB/SCr5ilGVoJviHiPhBK8mE5K/RcNcQQS/DqOPvXuPmeA7Hw+jh9mrJD0o0qujgE25HcxfNZefhIqA==",
+        "shasum": "f4f4ca56ab09e19376560257331e27ea4cbc8328",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.15.tgz",
+        "fileCount": 5,
+        "unpackedSize": 237504,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcX0L3CRA9TVsSAnZWagAADnQP/jOr8D6JN0QTbeAYKfAB\nniSy+PUmx/r9GUGGx6BcNVqUcL/uOGs1ntlTFWGLgrssjJi4EqC9jutM15Rq\nxjiu1F2OUEU7NEPdRREoHtuhf+21m5OZW/zheHdq1+GqRc5jryE8xiOdATD1\nIlfZsUR2PwEtnl/pCeAUxTE6UNLVeysOki9o0YJwgIseue83m4nAr7+HWVcL\nYJpgWhLpQEQOrBSC3mlZOoPWlaoGbqtFbD8pecyrjdi5JaFzA+RZvdTI7udw\nQwlkG+deD4Ih8bQGaBYQ9KICOEurGsjN+HcGyhFJeP1L960vgM+tJ2n1+o+d\nrinf0wj2kE3dMMZ6c3EO8PCuL9EEOaVbekallac0bpAE59dB4C7U4bulHG1I\n3vO0+DPc8TGC5oo/wHqE8pm2QSvgjUYr0K1rAVAL1VOXlJztuQg2TtKi2IeQ\nQyh9zHFCc+YKqXO9HojjVS7HV9iDd3rVRx/Z6uF4ulBDKWePYzQGnzJbSmcw\nXzGCwyp2wd7a8HuH0ge+YJtqpxNhFJ4F9ZKW5WzjHqk+GQ4xK093vqTNElWI\nn5tvE2Az0Bvr+Qub2zWprFOgX8uzgTGvtbpgenzW6I0j8W25PQ3kzqH3ZsLO\nsjJJOG/BBnSRlI+ZeykWL+mqLnoR0kNXwjxLRmw8TmhZaL0KY79qwsRNy7gD\nMlYl\r\n=EQWr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.15_1549746935219_0.8487878051411413"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.16": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.16",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.1",
+        "core-js-pure": "3.0.0-beta.16",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.113",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.16",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-+BqDEwMHx6k4dYqHEkMiUTH8eK4yPByfC8zSfUtw1E2r3WdX5Yl+E0SRVHa/33QTknVq7vNtEVGY1GHqx0+k5g==",
+        "shasum": "3e43e590148f61970e5f3ec362bf53339c2760bf",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.16.tgz",
+        "fileCount": 7,
+        "unpackedSize": 246381,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcaxekCRA9TVsSAnZWagAAuDoP/ixI5Y5HB5qs3L4ONiv3\nPhg03N13h9WuL2QMpUod7UeJ1qR4DUB2+Dk6yrZs+c+ZYI/QgUlGvqqx6aaK\nO7r3CnsodngfC12n3vM2c6aap/Qtepa8OvlPEI0NAKKtv3Lm2DqAIgc6Rocr\nihd6yRCdvfBeygozaYVotLFyLeVI+TYedBTzUFshV8WKb7C4CaEoD8+byO0+\nu9ynw42xoPCBkiuvyVJwIE64kECbrBIHuVNGolLECmQ8CindC8UqUgM2eRVR\nS+kZdtPnYffJpLaHlSraUyYYLRxqFpYik1X39WBncicACXxODPBa9017wQq5\nQ5e0vgzqWXIOLVclYwt2CQbCwz24Ued1xemc4+jITKoWyDO3y7ZkpWY7L/EZ\n4c0xFL739a8lbDv0osmGM+PBd9DTBBNjWlwyafRj6BqNs5JjYV1686TEQO1w\nxGKO4lNQf5CgtEv8pHk18T8ojgYaAwi30LbZKefyVED5NOctEbpUyDvEFHv7\nraEFMMCrCPXnhBjyhVnlUrNSZwkRzK6VDXGb3EXhMAO+QcnTwmNLayJqkSHi\n6Uob5bH4utUAQyqSml60vkCXu5NwdyBgSxhiwfb9E8Arh4bRuUf1OcxilAIg\nztS3FNQYaMJGT83B29OXJWlO3kSMNCbMwJ7cXSsapj5ZQ+bGPQsHTjbX2B54\nHA7p\r\n=IDzw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.16_1550522276204_0.051518059761104906"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.17": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.17",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.2",
+        "core-js": "3.0.0-beta.17",
+        "core-js-pure": "3.0.0-beta.17",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.113",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.17",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-+hfKDdZ4/hwwAYrjKOA9VLlMby1QlgiQW392VVfblVzivPKESWYth3XVqobjEFhaEOrAjiOJHJb43EOpYTLlMw==",
+        "shasum": "cc4d8b11a360649d107a2826adff03b6dbbabf95",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.17.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247070,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchCzKCRA9TVsSAnZWagAAup4P/1sTu00kOj4X5IevaRlp\n1P0xJM0MJN1yw7FMYdPcwAQUUbKHlpBOuqZKGsrK1jO8GIZAJ/8hiJQByGh9\nzQTkh0Afe04u+YV1iQgyrGwD37nsKlZ7ccTs0uJo8i6Fp/UUPjEGiwjEFBmR\nNNhp5FPxiO0AIfNrtL4dcaMn2q/dOPlVXZ6/f0oAB0SV0Cgr861ukQuLlmFz\nozNLhTldjC1XyRjyxVudTWtxwcAsI+MAI7E15MRrQdtyA3wC+YwAGUuifJEB\nipm5H0FQJHneumOTpZvua8Ncz8IXyrnVJ+Y7fslOMTgKwcjC9Rx2Slun8jfN\nM0k5GthH3KX9kc/53i9hFmXiXbRMo8XlGLk2WFHg9FxIYcvQZ04smmkIzN2M\niWNzuU8NLWbSZYAxuX8cY5EmXm/B586nAO8ScM9HdN+O5kIQr6MMPmHkv3IV\n0nrK5uHuzdOre0t2DUv53tT3HsTpjDrPAJ1RAlb70gdMhDdn5PiUoiJvcB1Y\nBfmAGPRW2KHwGOQaLeiPBbJl1UoEEbLJY/dm81/PMEFCvcqKvcqvcf0LJXmO\nPUCvZ7ieSapkXMLKzL1+SyYhcnKXUiaqF5kva/0VJS5yyB9pgCXgHbUaA2Is\npAXDC4RH2LatgwCQPSnH7qLz0pJmUti4n29eDqHsrI1XF4AFrxcNOlljKnsk\n0/CA\r\n=tqVC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.17_1552166089077_0.2872866836434633"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.18": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.18",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.2",
+        "core-js": "3.0.0-beta.18",
+        "core-js-pure": "3.0.0-beta.18",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.113",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.18",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-lGDWwQsHcjRTuLuXxpDlNC2F8/IS9mYvSJKR9E8389fikTWejul/nNvwbSWeXDQyNNdEmZ7rRKA8N0RQqQiCdg==",
+        "shasum": "78aeaff5ab7395e6c83a6c2d65998106084e7691",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.18.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247085,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchDtlCRA9TVsSAnZWagAAoGMP/AsZwN33Gos+OTE94mIg\nBx0eMxrErnqlPA2YuYiPUbg7SFG8N9y9mkNYeUnRiKT4sgZyHWaShuAOXDFQ\napvXgVRRcR4QNBivqg1y8HdsRC3CYJpa/0aP6lANXbRer/fv56tpEXhaJ+wP\nSWNE4V+vxiGgNiHrwOgLxMSA0xmvSUYCz2egMTaisJ1W49VRb4ruNbLVnm6H\nIfHBx+ZgsKHGfBJuba9Ji2mXceqpW7LCSdqSzjY5iSeOWQilGfsiHimNSQ+f\n39J5LKzi+edcZDrXdBY3JHUE0GR8U2Xvywf5SXF9Vjj+SUO58oMpvkfcFc4B\n5y4UDxh33axF51W1FCY7NUWv2RcGkCZhZlJ/xtrrT25/hS09IuN2wfEESrRQ\nZAp7UxtrW7DJwKKex5j/YBWoAstxbx/PFcCXi4nXojt5tnZ0Ek72gGVaGuk+\nNuYHd4CMxM5NSLeyXW2Hl5LYxrJZJ78IFMMrtr5hgdokwLSZgzEkKNysI+a1\njLhTuMxCmUqtS9mBUiNSdDHgMdNfwN3MNs72BnA8BvpaMSyOMwdf9nOY0I2a\nfyjB2Y10NU1/0RAmoQXusKnPHVuoHIScuVCV2tU6olAHESuQNPhu4PTfPWbq\ngEUIpDmXGHaXaL29GTeMVMROqwN6iRcCi1oqz8iuJSWECFlmeDbYQm1qUXTW\nQeGz\r\n=GqMR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.18_1552169829249_0.1850800339756149"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.19": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.19",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.4.2",
+        "core-js": "3.0.0-beta.19",
+        "core-js-pure": "3.0.0-beta.19",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.116",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.19",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-/+MbA4i4kx7SznFon7MLpCACnvkKGNAIZsUeGv8+f/SQIRy8/BZYhPM7gqBtmej3uoPW5wPmZKrdOqye3WsMlg==",
+        "shasum": "fa09f857062d9d1c9a94bac3cfcf4fdd56bfc7b4",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.19.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247201,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcir1ZCRA9TVsSAnZWagAAS4EP/1cNlWQQ1SihHJ5yIj/k\nuzxFoDjt2X96OmtylElqQCNyp8RMrDyQeRMLjzWg2zjjlXe5f6tUHWHWLoPk\nhke9J79DZfd+U55MTmgfHFNqiZ1SzyfR9nW35kVif4VP/WWp2GA6zjtLLBU4\npQf7TOcjhpAldJn/YZUHg5xlgs8LEertE7DwJnG/z8Yna3EX7FocZCsos1OE\nkJprevFRSlskusjZOutQCUqoypuycbNpDekadT169LOvIg1kw742vYGuGBNq\ny0JQdsgSbDgHXy3OxLs9wq6vjdQWzOMAhHOX2kSgln9WKHJFLwQnhVTnadqF\nmgmvEXlUN3BGvpBbL1MVRAKBU5B7wWeCgwFoJ0Da4Jk2bw184M6gORHDui8z\nC+34y7kv87pGdmmyZjpstImiYxBN0+AirC26n4whotT/k9+lXTrg5kAiR+iT\nbCX5xUqGgMAiYWR9Zbkj9m5dY8L04EPPGi68SsaUi7z62uqFESMCwT5MHxjA\no7nOMka1e2HesWJpRbv9iFBXwEssJl6IQbVdm79ej78MzosB+DFM6w9YcLWY\nRZwiKHia/jnjB4gvlHTEXgDShG/wJpkwWaRSH7fLuVIy0sB8Hx6VzUfKCXUN\nsUIFsAgtWGyX9wUwEL7oeFAczrcrXdJ6cuss3E6bUz3KY/C7r/LtXYVoo8lH\nxzAU\r\n=cOoY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.19_1552596312548_0.35358813661519783"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0-beta.20": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0-beta.20",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.5.1",
+        "core-js": "3.0.0-beta.20",
+        "core-js-pure": "3.0.0-beta.20",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.116",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,              // array of required modules\n  targets,           // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%', // browserslist query\n  filter: 'es.',     // optional filter - string-prefix, regexp or list of modules\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.description': { ios: '12.0-12.1' },\n  'es.array.reverse': { ios: '12.0-12.1' },\n  'es.string.replace': { firefox: '63', ios: '12.0-12.1' },\n  'es.string.trim': { ios: '12.0-12.1' },\n  'es.promise': { firefox: '63' },\n  'es.promise.finally': { firefox: '63' },\n  'es.array-buffer.slice': { ios: '12.0-12.1' },\n  'es.typed-array.int8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.0-12.1' },\n  'es.typed-array.int16-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint16-array': { ios: '12.0-12.1' },\n  'es.typed-array.int32-array': { ios: '12.0-12.1' },\n  'es.typed-array.uint32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float32-array': { ios: '12.0-12.1' },\n  'es.typed-array.float64-array': { ios: '12.0-12.1' },\n  'es.typed-array.from': { ios: '12.0-12.1' },\n  'es.typed-array.of': { ios: '12.0-12.1' }\n}\n*/\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](../../CONTRIBUTING.md#updating-core-js-compat-data).\n",
+      "readmeFilename": "README.md",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0-beta.20",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-lS7V31nrWeWMLfzxc1xsIGDQ01nNRwz0iO4pcxOQKVHLeg+u6hjS+HikGTbMekHgXbrmIL6AoBdjn4ftWHEVKg==",
+        "shasum": "eaadd63391464b4558e6713e73f3a5741722faf8",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0-beta.20.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247201,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcjqcpCRA9TVsSAnZWagAAHroQAKFVY8H96NHbZ20MXRQM\n5Guknk1gBghH+2rSSQ8bNpvdEhqL0NXR8eV3Bv+xwCY9kS5AVvnZhhdds1pv\nN1fLWLd1SvuVuloKJTQrTBf4+XA+AXdet3NSB8c7jsV4U6Qs1GpQigGGykmg\nhLURQ2JscB/2xeVGVfKY4zVuUA6wzp9ECP3/ZYVge+ibhYQnUTgwRfPiwpeY\n2wfkBSF3JvdQ9xbqntW9YoGoQDMSOGBVpvPTcfT5fExr20HPTBKi0RPzzl2i\nWfL7+HkiD7wuhCYK0z7wpNnZo3B0HeqDYIwi0/aMqUd5GE1wUAvIsfg1561A\noinNDi1qfZeDuDG8L6EFuE7kmydFbzKEvy6r+9IavINFva/pr+J8S//35PNH\nNT2TwwHjmadAF8vQq8NbQHs41Apn8pTP6lVnIl+CbeRKM3n7f8GCjQ3Ml6pZ\neXITcTd9uCyHsxWC2nwJlL5tOICisEOYnoukz+P5YuLpYoG3hPYw+8AeH60o\nF8NcNgoVeZiVN0xjQ1tJVVQTq2efuwUqsGH2zdPmRgArbDuV5W2x0SeygmOK\nSLvJnidwkJN5iPNVHzzFdPPDs0s1+qLvvtYC3GkzR3xfSOXug6/homAZt9K5\nQGZ04LR6Dm+8/QbxawbLBZsdVQxKpuapKSSgtmsq5t2qkHnFcjyE8yYBcaLk\nchuX\r\n=ljRZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0-beta.20_1552852777159_0.9229699399894047"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.5.1",
+        "core-js": "3.0.0",
+        "core-js-pure": "3.0.0",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.116",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.0",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-W/Ppz34uUme3LmXWjMgFlYyGnbo1hd9JvA0LNQ4EmieqVjg2GPYbj3H6tcdP2QGPGWdRKUqZVbVKLNIFVs/HiA==",
+        "shasum": "cd9810b8000742535a4a43773866185e310bd4f7",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247177,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckUCDCRA9TVsSAnZWagAAO/gP/A7lidIRGmTbpv7aydjY\nciQc7aRIPkDwXgs3+T5CiQGkAlHtmXYWcVY1ZY95vZYW5Zj0B0W5oBDPgiKM\nk+NI6J608J8HmLUjjYx2j/fOlJaUg1zFLs5/ykDyqTfRu0VfpB+tw++TbWuh\nit7Qs7sAvHkryeorCROU04KGyEZLc0JEvAwXobo9m1aRzFwr8+PuEUYStW9l\nVap4U2A+MK5ktx5VyplOAExo3opI/m9ubHKwNWSDkiyUiY5E8HLAap0XeNgl\nMxebSomNS/Scz/7lckEDvHFmV/HDdLt9ggCEWsT/y8dLs4xpVR3vYm/zGzKf\nGDFv5Azmal++HhEDXsm3U+sloW694fZrOmgSx+uSSrBEetGR4rmc06D9a+LY\nXiT/BYpT5+d5pQxiswlXR60rljZQTeBMtbBVAUv2XmDOl+kHiCzuQ8H9Mfk4\nydJTK0d84bh01fTDL0Te4DWlpf7dfgXLAc9JPn1Jy7Ji16yPsmpdC/EwXFzh\nv9pFCVziw+7pnaxPV0Q4nEC5mqWWYW6Iugq1fm0+USh8GIhLTZ0c19JdfnZu\nXsrKQyP8dS+W5AWT+rlww7VKoz1dZbDyylSflInYkB84Na65bg3CBLHIR8xb\n6c7bjmRAMMG1yoq3VYakn/2rHKziAM1Nyh9Anr9r0petCSgPXIVLwdS2pkE6\ne9SB\r\n=Ezh7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.0_1553023107168_0.6057407518228435"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.5.4",
+        "core-js": "3.0.1",
+        "core-js-pure": "3.0.1",
+        "semver": "^6.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.124",
+        "glob": "^7.1.3"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.0.1",
+      "_nodeVersion": "11.7.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-2pC3e+Ht/1/gD7Sim/sqzvRplMiRnFQVlPpDVaHtY9l7zZP7knamr3VRD6NyGfHd84MrDC0tAM9ulNxYMW0T3g==",
+        "shasum": "bff73ba31ca8687431b9c88f78d3362646fb76f0",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 247219,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqFM1CRA9TVsSAnZWagAAq6sP/1aOYU4j7wmf9LsBlylH\nnc6CoMea3ifCNvImxLZaIxb1htGUAbeK0GlV630mytBn/8dTTSLeHli2Fv9Z\nez8TQbkfc3P7D9UM4J9otSxSfc003tW8VISx++Iql5boNA8Thb4wBVJ9JtGN\neu7zoRuwyCN0O0K+6s+2DZbFykoCwIarbgO/ouAdUQgyijhdgeCzRJyoL7nf\nb7bshLgV/DdC/bxuoTaOpFWdSujXwRyToq9KlQxNW0hKCc1MLi7SrN/fiHVm\n0ULAw8LInpmq3ra2C1zkqHlrv+64AdnCZDb4XLM8MMJqWdgJcfdlcN4uWVRq\noGaRzDXtYlmUbmcqybat47uHcNqwOk9cMc3mwIp7ydyzMJTpA9u7YabC6gta\njk7gqZuyRSZvUnJw3UTuNq/5Lyq2vXFnPUYsa0gPVjPK7bKunGh80aEgm097\nPOb7RmKEHnbZTQ4Dv/nuvaCGRrw+Is5J2KEysXZ8ELokM902+VbYah3x5nxu\nFFRTlEHJVCplWkLzqsI+wT/NNvoCJkdId9jFt1B7H2a9KDJfry4TdZYhO9he\nb8MkmkaXruLo3O2sLo0prXSP7XeCyPTRC6AGhSBenOWS5SmNBnMlr5rgOpNW\nk5at6bxNM+Nqt/RkVRJotH7d/xZ/5UtOztp8HSDRXw0GWv0c8mqHrvy063ab\nMl75\r\n=AP0c\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.0.1_1554535220385_0.34622612918491735"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.0",
+        "core-js-pure": "3.1.0",
+        "semver": "^6.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.135",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.1.0",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-v8M7YAMacMOJ4T4Z9QSud3dFYASMDvK9d2RWBHRSJlO4nGboLQVtFdbDmgzxfM7XrvcvO56L0sHcqGjuk/4wTQ==",
+        "shasum": "340492a001d81100812e0f6e874ee6e21639ae92",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 250874,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc4a4DCRA9TVsSAnZWagAAdA8P/3BQnwu6V34dJwX3nBW6\ngROLHKDAOnSd8ISaIQDtK7Lc8o5l9YzoMHPEsI5a2rmr/dP9FShEB87TpB/B\nwB+RaaP3DHyblBk8hvKTeOGK9p4J2YHVKF0uapYmrn/XYsvKN+rySJKty8dD\nNvTL1Up00Ycwe+2pvCul3IAvL+TEcKtROoyt1oRhBCncR3vlaumk2wTyaCHV\nqGWRJBTZdMwRdZXG8NZlRn82z4gDXx9+TwT7GbzEBKqXET/exYHA5bxyudps\nQ0x5Fgn4xMseBnKS9Vxs57FH4+47+eKIvTxdmgyJirohGwFgFFPgmk7mbfam\nme2r3MlqiOpLnfbOkyAmY8DyefUID+c8ut9qztCa9ZfE5bGYKJ89krkHOiWt\nHHYp7+JOJEQWTQdmv5Y+G/AIbUOXqGaz0IWswCURfbtlP9Ro3ixDfnUue0Ki\ndr24aXlbl19khNZ2WM2DHhj4cXKznUttusljBUe8NSItK4yAkn0EJp88oj+r\niSSY2dc94DprsU1wTD+JF6+sZaxnsXnDfzZSXAbtwU4cLNvGijv3xzqaUjW5\n4pFitz/b3hgAYHuXCa0noVIh3vZyTklinWKKaqZ3+mal64CeP0Fk33c79frS\nFNGs3VZhixjq2EbzywloS0gQog32M5s7DRzos7/U8A3O0XD49o5d3m4E5M9P\ncXZm\r\n=lM4C\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.1.0_1558294018780_0.05255055736656189"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.1.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.0",
+        "core-js-pure": "3.1.1",
+        "semver": "^6.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.135",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.1.1",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-RH3kv8NFovFRMdeTEUgu8nMquEWKEVttOY3JFi8mN75sg72zygPqWbpWNTUw4JYEU43562tlzhdWsWqXmdFAnQ==",
+        "shasum": "a1ae7edd5b791066d6eaa969c1b62986b844fd42",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 251339,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc4xEcCRA9TVsSAnZWagAANicP/jcOY/mFwDQXRa3EK1yH\nZZWEAghuAgBnbz3ncGtBviYlpQeedTE2IX6M2tvdrAB5Rev0bfJLkAw0w+Hi\njnhDzk8daVuqDtZhLmr2TlrJRZCXswTb4QT+9StiXzh1f3aoUrL29W5QXsZM\nbHEgkstlDp5gF1ZXa8NtVjOBRnqlCgrRuh9UnDEk4KMEOfJNXz6xRnSl/d3C\ncr7i5STwnr3zO4noSJSWicuETaktwgf/yscUYPqePLZ1EI7MpGrIg2Itt7Zf\nfx9f2ojozJZmuVz1yWMi9VKjzBMfCxun/P4CB4BY2PE09dwDoYNSfgxkvxBA\nA7sEHE79dz9QRNiBuze8EvXBEpI9Id6r92dXnHViQFD7YMKQF6hLhwTQkjqX\nbEcBdAOjDbgN4g3K584EvxYSuaDGGT0+UhEc8gwqY7At83G8azfW6zrT2NZw\n9jeTUk0zuiclTDmp4ucx1puVWV78AR8nL2J8gJPvCUucGlf93FDmOZ86wbPf\noSWbJV1Q5YnocCJqKnOVzMrqQmYa4R1CQQKoo3ivGcqn78H0Dcl8RD27l8rm\nQB4eN0JXkYB7xp8B8f+DSJRZ5fpz3iWCMa0jyivEmhOFKSUzwZOQKd4uM2lc\nHMq/J56xXkNi4lOOhsQBV+k0wmjGNhe/HsixBOwGbkWSwSW2ilpSD/M8mSji\n2UQZ\r\n=PQct\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.1.1_1558384923843_0.40419731377439794"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.2": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.1.2",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.0",
+        "core-js-pure": "3.1.2",
+        "semver": "^6.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.135",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.1.2",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-X0Ch5f6itrHxhg5HSJucX6nNLNAGr+jq+biBh6nPGc3YAWz2a8p/ZIZY8cUkDzSRNG54omAuu3hoEF8qZbu/6Q==",
+        "shasum": "c29ab9722517094b98622175e2218c3b7398176d",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 251339,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc5HtyCRA9TVsSAnZWagAA0eYP/jVTvMgs+odgFXNbRqMP\nKJkjSHceDrkO/wSllzMzRSWN9qwL0rK8jav8ZERIHH603oiC7/DoYSe50DVZ\nENA5NqKK/qkjshMwi6xlkIgmOX4TEk5KEjpsR0LecerjJj4pcTZVcCt3rQ4q\nw/7g4NAWWnagf4bhmmz+YcRi9sG4ywlky1GKPE4QLL0wWhQBBEomBicYkGs1\neUPTK4T8wOP+Sr7kCz8jbwIZKgw6/+T+ac6QC2YizISJB51Aj3/g3acX+WGR\nCXmtCBvS15GN5Txpn6eQVacgNo4sy+tKgF8QftIGvo7IzPxdoJaNSveYM0J5\nX3optvFrxC8uRfqcvH9QmVqENyOMBIx/ckaiahkrV6uVbuuZ/hYUvYtLI4Qj\nmF4M92/hm7Wv/vSJqEuKMeI2EZmOFdoli7K0fWTfOCCZzN9Jwgxtznw+BGt1\nJouVhWgG9Hno6eEsIGTf7r4VS3PL2QkBHkl8PE/0r+/+FTavegmGfNGeJFlE\nFviaFN21OcwqU1hf1WDJsFjKUzvwy1itJ29WchW958s2LUW02I6ABV0+f0bP\nGQvvmbEAt7UKF3VN0iYHzCtEDvyxOcUYsQML2RXLpAI9zgZrvPvKLG4jwaEi\n6MHyO7zjp5hgCZDwLNGwO2yhUtorZ+VAnXGG8K0ygrUkzRC+rcHmrEF9+DWX\n4qZb\r\n=25Jx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.1.2_1558477681418_0.9131659415254603"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.3": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.1.3",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.0",
+        "core-js-pure": "3.1.3",
+        "semver": "^6.1.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.137",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.1.3",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-EP018pVhgwsKHz3YoN1hTq49aRe+h017Kjz0NQz3nXV0cCRMvH3fLQl+vEPGr4r4J5sk4sU3tUC7U1aqTCeJeA==",
+        "shasum": "0cc3ba4c7f62928c2837e1cffbe8dc78b4f1ae14",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 251343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc6+DMCRA9TVsSAnZWagAAo48P/jR/kUdd+JP28aKlXCKi\n7z5iJ5Wwb+n0BVsHRrQr+uG3seHuu19FeuxPbkgZas6H/AHpB9qnum6V3EFL\nMiBj7kEwPyFT+T4s/t5pAVo7HoQYcwo4sAdaxIwml6GQ3wqEIBuQmJ8DcE/S\nZBjKbB8m9MZBUwrqjD7Yq+S5JYAms2lpiKLT7PES8gvXDga5BZyrzGW2xibU\n2HfHOZPsg7oJ/iGHli+bd3oNV0g/aCRw8+fLu5GgLARvYF9f5JAw3eGG6oe6\nFfzxLC0TzxRtwGaGUp2lZjBwOo1QBxHRuWfoHspMgRRraBkHa+nd2xwjF5KM\n76G1XC7Ecr/AAxWPQFtxsD694g1L6jPLR6UxPb9QQi2E5T/w3vXmupTbieFh\n0i+sMfNHYLhYQl2lIVNoXtJTAWI8tjX41X3IWMSnkcjpc/jLUusOHyAf6KU/\nDl+/a6U+BtSSqA60AzaBcmbyXlAuRuRXpUG9czcQuKP9Qlh6fjSj3A4RrlHx\nn+9tDKGC/9b6Q5aLMGFZNwAIYUJ+AlbdrenF0j+7b5/iZ6flER5HIk/G7zBR\n1pPLYMA0q0Y8YKQoEyAGkrgKCGhPBvZ960DgLC+5lxgvAAOmDbKpEszV8Luo\nIhARjDDP4NWLiY5l1JCex3WPtTAc3hpMMHH2vHySCuxeTysxSBTwgmxoOJa+\nI4qw\r\n=AVRc\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.1.3_1558962379898_0.023241886897012787"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.4": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.1.4",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.2",
+        "core-js-pure": "3.1.4",
+        "semver": "^6.1.1"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.161",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.1.4",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Z5zbO9f1d0YrJdoaQhphVAnKPimX92D6z8lCGphH89MNRxlL1prI9ExJPqVwP0/kgkQCv8c4GJGT8X16yUncOg==",
+        "shasum": "e4d0c40fbd01e65b1d457980fe4112d4358a7408",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.1.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 251343,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdBN0pCRA9TVsSAnZWagAAFx0P/3eIA2loMNZbaWUNlxZT\njrvhkD2iIfuYoYU1jIMdEjixl4l61GkMhG0kSmuHdrq4YJyY8KjORO4VvCC2\n2+6O6+AGeDWXkGVC3qfcggcydSOV+/oyOVdY2eIBFXWSF/6keMtki5f9wJ/j\nJY+KLiz9v6zsjIA4EDeA2NgKL60svPr3ekzyuNqDo592sgl7qND1VFeASmlv\n+6jJtVNB0bY1ZKqg/Za6qerjDmYlMpnL13xymIEDwnPohvMwiQb2Vt/OQdxs\ncB3yEoCHoJJ2mC+SnHFw/2yNs8KWZlWiD3o2KTz71Zz9Oag1cceDoae30rqO\nh06GariRkVMw+6Zch99IvZYRtKmtW3E9bN+t7hAw3+TerFDtvb/9FBOVzeH9\nZH7adPyn1CcVmJSaDFVwU+XFZX+Kxs/Rhbq3Obbk/dKac1aUcDN+DaXVW3JX\nkK+vOHrbcaD4suWcZ8AFCF95/p5b/kF6eqFuOdle54Bzhbp69HlieA0sIMrq\nbVxggsDFykggfPY8RH/y6Snkp0Dn70bBJzeFhYtxXbnviHnx1emOdYYC7uH5\nHNtVXnHgapBipKv+XVlH9VvBzZmZ9S/Z8MNwrEJUB5Q3w4b3+TAi/iiKuUll\nlfWEEg5zaO0QyAwvRw+soTYWRGMRlZUMZwt6ADPR/lqyunDGyTOafpZRapCs\nAy+S\r\n=gC8A\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.1.4_1560599848377_0.4911272908968589"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.6",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.220",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.2.0",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-vQve8j3tGPPqIkrsK442hbVwDIGXcngLPnislJaCNJIG1aBWPD0IqRhpxEwjtUOYpzLap8xA7CoGlJBT1ZkcDA==",
+        "shasum": "d7fcc4d695d66b069437bd9d9f411274ceb196d3",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.2.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 254425,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdTJy4CRA9TVsSAnZWagAAErkP/0Pxymd8EUMAGBQ5udc0\nze0KJMAC5wkz51c+iwTaK7CZSSH+NDjxTmxq1xwXJVQqt8B/SqYKasPZYit6\nLAQ2OjQQT5H2ApcYqT//BHnr4Lbt5OA/yspgR/lfk9MvYID5BylK2/1/oPNG\n1+uBBX2yqCF2X3VKYZ90KAJfix2FlKVkRwZEa2IWS5llrVOtlJj0QoEU945N\np5FQlOyPQdRL8YNgIPtPcky83p8haI6VmgZiHH8x75Xm1buZV1ydXRG4zrUE\n0svJK+e9DFmNWpLpxuwCuOJgLmMyu7JC7Z/rHTaWlLSBDx03+BFLEhr5NGhe\nmB2s3cto8PB3TMu9Zq1HnK6NQdyEzoAnHJZHiHikBOrRqteT9Zzq0SNDRt4B\nH99JbW+CpEo8lwuaL6EZPx0gWC0lMjMsScOQ8CJW4VA0c/SxKXovwSJJvxQd\nht+nFBMCQ8BuybFmP3tz5mI09sYWe1Mby7dfMAWhkmjYL8R7FTibjWBi1Mug\nt3duS7i11+bRdzYNoClyYwKEmxP0nQSQTRfvKsfaCuObBOV8iALX/jv+Qd2b\n0e+F6eYUGFOFBr9sybLbOXsIRa8S3X4IDvfoQCHZRUSPrfa7Xm02/2f4mZBI\nHY+CUPjbvlsVkeLF/xW90R2FZMjpP1mQWR3lj9VNU47XJMz5ahLUVuS9k+q2\nOTu4\r\n=hCYp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.2.0_1565301944153_0.4613150367771026"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.2.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.6.6",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.224",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.2.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-MwPZle5CF9dEaMYdDeWm73ao/IflDH+FjeJCWEADcEgFSE9TLimFKwJsfmkwzI8eC0Aj0mgvMDjeQjrElkz4/A==",
+        "shasum": "0cbdbc2e386e8e00d3b85dc81c848effec5b8150",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.2.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 254425,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUVq0CRA9TVsSAnZWagAAU1sP+gNSjlQJlh4oStGvLsxW\nKKHMo2+qgkOs3OfupUTrm8FpXvQSRSHhT6a59gS9vkKH3mNlTjvN+Sq4kewj\nym3/jQrBc8854NVaHqfg5be00dle/TnSq/fkcLYG4AAtD/1WRRqB6WdXfSoq\nags8S+D2zwuHRrnlKrVpQx+2fxpzS1QAIg/jlhZjRqwjT+nbj9SlczS/z+iN\n2IfJP6q6RtD93aE5Dh4ACnAmpyT4CDzqWaZ/LbiLbanLud3ctEgsDtO/mEl1\n5lohU1/G/zCZloRY5aoAWPTinDa2lRQjNTeidgj6X8kbigjCxHwyOh3OKdbA\n1DPvRWQ0NsvPAgRahhm2BvSwH26iX3TII3jPUCO+Sev/eLcxuyO6HULdBeJH\ne3BNJD6Onsi6IEY56CX9CVzJ1SgDkOF5ry2Q282QdLYQVYEso8hytBp2/WR7\n5Xs1syb5TLc8iIUSyb8ttpxj50613n5DLw2eEtQ5rOI/tAfovOvcmqGAjBS6\nCqLVgwID4WZD+nTyNjzQOaA/ccq7phJoEtXcjn+/MTmbcHiQ7kru1bUYT0ZP\nX1WQm2/Sv1F0ZNN+Opl89ot4PR2qO8Fde+sc2rLZekK5AQXPePRQwdw2o7Zf\nys6jyl/AiEe/KilxYHse7vhk8EqvM9mvVBRdFWYah9GawTV0UKVsB+wvZMrr\n52Yy\r\n=1fmT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.2.1_1565612723504_0.855011541306907"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.0",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.282",
+        "glob": "^7.1.4"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.1",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.11.3",
+      "dist": {
+        "integrity": "sha512-R5gisVHlU8ZXrr05qjER3SJ8pp8cYxhWQ0doIfuGhLqtHf9b3eLzzr1ZEfI7MX9JJFwVT+HuyToULupnHl0Ghw==",
+        "shasum": "7a22cb813bdf673b9929b90da5cbf6b3f5a72f70",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 273267,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdoz2BCRA9TVsSAnZWagAAPsoP+QHwtdHBByR/RwhEQCd/\n6YAFCrMe9ZOLUTqpEXmarwkjbahUA295ZaVdE5VIoVH6ZXgHkNlRDRiC+D3p\nPdPtLoxCYYUfEmwi1PHjXlVOqZx8jX4WTDKcdwV5Ai0dKsIKs0vOPK2yoZK4\n4+u9/GYMvE27vyns754JckGrFJn1rJo3Us6i+RpLyGepbkAw2noUh7a+FjR/\nOAghbIlZ1vocNh69yxu4caNfJHfd56xEKtYmsoOvpuMIwuGMJq26FNj8vG4B\nCZq/T5OqeKC6EuOfPJcpmvwRAuOzbDQV/Oai6CpKGMYRkL3t45rdyBDKTmxw\nIJMlV3e04OCKBcFMHSUhVsIFT/nO7iHbxlAhQzT+CzlHftrAl06GvsQIn0Cy\nEmf2TLXAlFcLNAc1SPvRdx8TRijOkrxbE5A2AvyBthfOmFR0E4VbN2Aj+x3+\nXaBFg4lVb94U4yK907HAZo+7pjl7cug/N9LRhTUBqMOP5EvP5jzKWimuxG/P\nfHNk/ih2sIdIMCDCIkbBern6ibyewCLP1YrjFkvcFS6BiBr5j1Pfnr80ZdG2\naPBCrSX+bNg12aKpGl4LH9XqF3QnUPQchhoF9iTNgSP3i4IhiGgjRTwCFMQJ\nTppK8cgyPbioVJf/w5BgKKIu0iQX4aVWVM0Ab09r93uUkjMQde9gF6e/cKAU\nIThb\r\n=8EXg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.1_1570979200583_0.24115446629798232"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.2": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.2",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.0",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.282",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.2",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-gfiK4QnNXhnnHVOIZst2XHdFfdMTPxtR0EGs0TdILMlGIft+087oH6/Sw2xTTIjpWXC9vEwsJA8VG3XTGcmO5g==",
+        "shasum": "1096c989c1b929ede06b5b6b4768dc4439078c03",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 273225,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdpHsdCRA9TVsSAnZWagAAUjEP/ieaK4US+1rDbXxGl5vn\nHlTM4UI9Fp/x2IT2nrR2kBWp/fjXJGTJphSY+GlnO0miHIfxbLfXgqOWW7VI\nxZ0XykCpwZFATbYPr784JsPn3C8goLtjyjRFowdxbSJroM3QeuFpdycLAAoI\nNIIk9qmIHLQ6V1a1rw4T1PkFMY3BOfJOymrFbTgVXfhbHAf+FJkWW3BQ5S1p\nRtEgjGmReUpW71oZ43XZXy97YlyVvuE47weop9L7k3e+guzSej/L69M+Yiwx\nQaRDGo1tKSXV/eS81j1KRFdH1+JLfiMp/yPJ6EJlt+xB+hvlPNAD7fINWju8\nl4Nd7cI/vX6M9A/HQRByjcYQMjPqW8fCRIhTgdWB5/7/UgCFLnWZm+lB5yCK\nnIP6ITtzJYgK4za2YjftERa4ZQK4y4z4f78c9SjDfkkTaq7hWcpKdjeJ9Gai\nH4jehGBya8xGYAs8TH3QGl6iQ3fexvYJni+SRtXs3dQQgLxwKaG/CqwPhCuj\nqB4k1mxEonW6TZmMz0uQ3XbwRMKect43TdlPCgOpLvbwwZqY22Z9VMM12JU+\nrGMTszvelcH27klevfv9if3RBXWbZK/FyLwMzDb6fQtzLPxLBPQVGjvC6nfM\nFKTsa+0pVCNR1Sn2QI6l9ODUwNlI25Qq5PvkRW4y//REuLdFuC/bMkydJy+2\nEWUT\r\n=Wx5x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.2_1571060509189_0.28446647916580625"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.3": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.3",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.1",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.289",
+        "glob": "^7.1.4"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.3",
+      "_nodeVersion": "12.4.0",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-GNZkENsx5pMnS7Inwv7ZO/s3B68a9WU5kIjxqrD/tkNR8mtfXJRk8fAKRlbvWZSGPc59/TkiOBDYl5Cb65pTVA==",
+        "shasum": "82642808cf484a35292b2f8e83ef9376884e760f",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 273511,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdreXvCRA9TVsSAnZWagAAmFkP/RFbsPAGylCoS+IBy2tH\n1ZDwwX5o2TsTnDWPAFqH/M/tGTPCC3t5N/6t0s0hPr6o0pn2B3wGdd5tiGcR\ngo6GLjqRNgVHA/czVABYHSr1uvMPwcYz8sZJRxA4mytiZjUxfrhwF2QrrMkg\n4ERwDijhEH6B30vpVd3pdOzwEd2Neugk3Zc/ahUNq/Ic1w6MWoxBxRx4uA25\ntzYtxYL2dW7U8glP+N1lKfDzpmp6JgO3IgPzzZUdDIqrhZnu6STOc0CCsMkN\ndOtYQgMV5QPpJqXjP1mnYo3k+hVseZSH5HWkbqBi0jLij1yX2ZuLBbpSJXK5\ng2IwooFX92KAZeWBTwGDo2cqRH/3eDk6hnK3CO7m7voHsfRjpQplBgg2YQeC\npFetpsyvvCE7/wU0FjnXhv8ZyaacNojBJW0rw7rRTf5hB7ILPPQz0n6arjvM\n8Bcu0Gc2VfeKyZBKWb0V4mb5c1kdqtzEJ1fMaPbs4Sf03fS3AwibkOGoLBfB\nMQ0fSrogaTnW9u6RU+Cykc3U+uT0WouFDBsiF7pKpWO1s3Rr2TFqqpNf5JJR\nXC0zaxCdYfxMafd09JHoLIxlTHE8R1o2JxdXZ9cEHCKUV9gEpE4JsSX2NQM6\nLOisXfyBuiJIEcKX6zvNyaXbv5oFFrsO4Xk7cEl5BGj3WOqWj3aNQURv7yXB\nuJgo\r\n=URB4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.3_1571677679267_0.9615217341916282"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.4": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.4",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.296",
+        "glob": "^7.1.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.4",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-7OK3/LPP8R3Ovasf3GilEOp+o1w0ZKJ75FMou2RDfTwIV69G5RkKCGFnqgBv/ZhR6xo9GCzlfVALyHmydbE7DA==",
+        "shasum": "a151c6cd754edbfe6a4a2a66b9382df2ae74fbcd",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 273593,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdsteLCRA9TVsSAnZWagAAazkP/0weDFAb5B5tLh8y+Hmt\nBQnMC1x2I6GO3tObzxd2MJ422N/PMDj6Vh+oEJyg1HMoa8xsloqUkrrDhQYK\nAfrNDf1B6ms8C5ybnqS9eVwURShiBVUpAyOMRejsvy6V24dvnBm73JMPe3W0\nxhp5eNYbymJ/XZ0K0UY1dp+L23STOVBcv0Fd9RfmHX+PaSGcXtSTEPKTO3xm\nGOOCISIOlMdKvq5coEk8bBTIE67HGUGv9g/CFnaBumP0wEVg9iOurtA+F8g9\nPgvL3+sJ4bcwXtvAfDl97pZf04rXwRyY6gQocSKJsmFp+v772hMPgSUOl0K3\nHi5uLyU3gCdSVNXQGxnVmoTK+xa3JdkniywDAxXyAbpDIvffBNM2YzCCXDy9\nZHDg+iKCN4kBvx3FuRIQWcCV3/3bsV6abln2hfozNK0Nr1lku32HiWhqSbvi\nVeVZqGkxeXmuq4P9RdvgqC2CFnsYmAY+vTgJ1GtwnwaUrcm7me/mvaSTCsXi\njIWb6UmpoxfCi/bzbix13rzsfkZrwqN6uIH3nZQxTxtUIi9rzWW9+29qnEoR\nhChZ4hSyvsfiWqf04Pa9Hg5jBltIYM/7o8Hc4SRmjAPQ6upLhhjR94ZNSqZI\nxTyOm5E95PcSMBM7bLBO6I8+/dAmql5rX8b5KNndUf/bZbF2d7rABOF5eVSR\n3ecw\r\n=rhzj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.4_1572001675399_0.5682737658455992"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.5": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.296",
+        "glob": "^7.1.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.5",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-44ZORuapx0MUht0MUk0p9lcQPh7n/LDXehimTmjCs0CYblpKZcqVd5w0OQDUDq5OQjEbazWObHDQJWvvHYPNTg==",
+        "shasum": "7abf70778b73dc74aa99d4075aefcd99b76f2c3a",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.5.tgz",
+        "fileCount": 8,
+        "unpackedSize": 274277,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdtyXhCRA9TVsSAnZWagAAyk4P/0J4wU1LjXPQhdvtgyMr\n+bI7qOYhtvMOefkQGRa5h0l4oyLHpFHZeLTmh8I8ReSUwvvnEUuaDAdKQHpM\nYvuByzU/F6DL32Ui7ecJOCAlkwpIO4i3+nnUbLDmQTdOsYZcgB43KTrwKGcP\nlEkLHV75YFanesEh5q575pz6HpYkVskhtci15nEkhHp4Nn3VRai7lXltQlrG\nyFkoHzzauT6el4CtMCce2Mr1BCxGVXACMCxJmo1ytmgcl+S0puX5VOnMsirO\nu3M7U91T5O9hzpuEc3wL0b9EbHfe5Ypsg/Z80wNrxfuO2mbzXV18jpo4QX01\nIRMd1MfltGl//AFxnrJWDb9Mfux11pJFMPV25xsaRWtx2K8+y4TMTCAehrmM\nVoehYHlv/TB6qgSr0vByVifpNgm3ePq96gmEpt5fqPkMRZvg/L/r9sfp9ouS\nuW3qrR6V9C3/FR2mfie8Hwz3DtqGMModwGlSmhnQJiAf2mdprRrGdLDRBJif\nqIZamXQ/bJ2qKc7vH8YtuK63sdxyoBCZ2A0aHKlMoOVDScvSI6K8Nmx0UkpN\nieIUU7UvkhEjUmA5DcFp7UNZBbQKjuImKDrgJwVry9JA571gZiHlTXg5Omev\nlsRjVezLfcgOpDVMrq+li3wIbVWcCTH28AzcMypRAzlA6lSfKc2YdKfmHOKk\nP3Z3\r\n=23Dz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.5_1572283873434_0.6345930257796037"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.6": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.3.6",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.296",
+        "glob": "^7.1.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.3.6",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.12.0",
+      "dist": {
+        "integrity": "sha512-YnwZG/+0/f7Pf6Lr3jxtVAFjtGBW9lsLYcqrxhYJai1GfvrP8DEyEpnNzj/FRQfIkOOfk1j5tTBvPBLWVVJm4A==",
+        "shasum": "70c30dbeb582626efe9ecd6f49daa9ff4aeb136c",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.3.6.tgz",
+        "fileCount": 8,
+        "unpackedSize": 274291,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJduxUlCRA9TVsSAnZWagAAicAP/0kmbx0uOc+BiPrqs6vn\nCKlrjrNVQ3KQeIw2Js7m0Q+hi5qRg7V76M4KkqP5zEmIFTa4G72pwab2v9d3\nC3RXGl+p2/IO9eSf0HvvRGpF0XeJRML9OOMuMUDZ5gaIavEJlx796lTKRxjC\njYPoZH3ZJ3xzkPBB2B/BCruzHzAIRdOjzhokbal3pr1VjzYNJ76dTKL3Ct4/\nr+Z1FhBkFWNuU7n5SLj9aAwJD9Nqknj8Phl3pj1fMqb5u6pqiMNzn/CqZxkY\njF/uEZey5P8sGODoOtCpSm3aDjYVBp/f9aAc7e4S4oEUJa9R0qPI8bh6THxu\nAmQ25IMxiGnVrGlhWu5zdcl7EXJXCkSadZFRT3prUhiN7EcdnTJW/oytAlME\nHOkL9iRi7NCS71+kNisgjloyAszmp6L34BwkJ5bMxODzO4iLoWHXywhpuj7C\n1EKnvfC/yrge6os9Doxw5OyRMfwOk55t1NCW5UKdxrXoocr+6v77PsMXQo4n\naIbO1NRGFTXOBfU1oCBWIkJAOPLpQfg3OjfRJYnCb/nyA8pPAdwsse4akUDQ\n+oy6KuKf/Ky6fZOmsXCDgYfmotFKEdxkbdVauOBtlzFfCgMTS72Y3PJMQQLl\nTCsvlyKdY8lnpxwFVZRKnLaa21kdSbFdMzzXA46jEzzpFHVXe4Ktyf+z5TfR\njmV6\r\n=ES4H\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.3.6_1572541733460_0.5293211560837934"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.303",
+        "glob": "^7.1.5"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-pgQUcgT2+v9/yxHgMynYjNj7nmxLRXv3UC39rjCjDwpe63ev2rioQTju1PKLYUBbPCQQvZNWvQC8tBJd65q11g==",
+        "shasum": "2a47c51d3dc026d290018cacd987495f68a47c75",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 274673,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwz8dCRA9TVsSAnZWagAAkLcP/1wiKIPuD9rVV+Eux7Rp\nItF/yqsS+WAplOyOe6rwougH37TY9eoBP0vIb8xnk/BtiPxr3IWMRl7qbCs7\nG1j74Ht2YtZqG8+ipSKLsNbGtxZqIQbJNm+V7wxL2cjMT5p+P4No+XxSjQEY\n4XUDSiZN8sXAUAVoZGcKLXDDAeZlCChcPq8x3g4Mkv+bMKPCHymsOg1RfQT1\nuA4OWRZ86bbDythUMUDBZaGVP10jV7S6WNtEEN/DYmXK+KyFJqf5WC7uGNZ2\nNpxpUXtAznB3/uSo20O9oZBGTU8sPSa+u0Mlyc8ossoHgxcktByDDVXLgcg4\n7/fvQQ6OFBc+JNaOB8uS5UqkxqjI+5VbW3PuuDd3uOoUT9NR/CzinSch2rL1\n8nuGiSikD07TAVrQ00g/lS/g78zEOjI8y4lIDkYtGYqWTNlWfiMgZrlyuigQ\naEsVVqxBa7+Klkrje5nk1+n+3nwNzx4FgcLb/tjOImiypLUVE/ySXeBqrFMZ\nsxiRp0NrnYjQOOTe/vsioukvHuxredl/Wyr7iQ50VC906Qs74pZQij1L1Xe6\nnMcvGdfBY8olqGAudTvH/pQGDDCV3woflf+erw3eW/TPBr3VY7vCH1hwHk85\nevdXF2sUajb5++8y2vWoIHs8VMzwEKp2ZHJ5QCyKF8gpcm5sD1aiyLUcnU/v\n80/s\r\n=tCHX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.0_1573076764609_0.6766987412055063"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.306",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.1",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-YdeJI26gLc0CQJ9asLE5obEgBz2I0+CIgnoTbS2T0d5IPQw/OCgCIFR527RmpduxjrB3gSEHoGOCTq9sigOyfw==",
+        "shasum": "e12c5a3ef9fcb50fd9d9a32805bfe674f9139246",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 274794,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdykHdCRA9TVsSAnZWagAAAoAP/Ak3UrJBHYfA9UQ/Upyx\n3ahkIqWX7b2dLmfQC0foFJHsocQOe1Yf9FvtUcMEW/247WBQXGe5P2uAf6TU\n33hwvfloMwbSuR64VSp1ryFixLWOuZhwuOWb2mFOXmmuzb0beluycUqAJfTd\nr9hmdwDpUyeK0RWE7f33t6WVyk4+xFVZ5kKB8Bpyvp78Oa8fb8MacVg3Rzfb\nI66UXQcTJgtnE8jqai6r3MEBJxI3/ub6YZI3yUFvVi7Zl+H0eSonWDXAnHB3\nrqheMFq9SJ29A4mSmHCpQ5ScvR4xpEgqV/myfu1luryAXNlxPqfBOSshIcjn\nIivvJmTCSvVFK9885hjP0Y9IchxMZrupmff9PTEQW32iqMzVXGsWQEo3Q8Nq\n9ek+e1GdqTBZ5U6lQpLOCmTWngANqLFy7o+OpEHALyXyn1Ud1pDD6xfSqQgQ\nvBO5Yj3X4tHtGzpOYeExiyME5HsAoEaa1T++YosfS11dHTf1BFAYHE9qX3gF\nF/vMMyF3x3ziz+VljFKX3/g06LTD3WjjAC0Y3MNgFJ+6Vz40z0zw1bx6C556\n6JhrAKOjNT8IRDTB8ghWUAsmcR84+UWI683Ip2SvXn41d/5i2zDrhdJ4mLFH\nZILqeLTUUUW1a1BLxWk63LNtz5uxPHK0p6JHA5jv2J+8hXyjbpD2Fud74XKD\nKg/G\r\n=CSS3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.1_1573536220696_0.9749807500224095"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.2": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.2",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.3",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.308",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.2",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.0",
+      "dist": {
+        "integrity": "sha512-W0Aj+LM3EAxxjD0Kp2o4be8UlnxIZHNupBv2znqrheR4aY2nOn91794k/xoSp+SxqqriiZpTsSwBtZr60cbkwQ==",
+        "shasum": "652fa7c54652b7f6586a893e37001df55ea2ac37",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.2.tgz",
+        "fileCount": 8,
+        "unpackedSize": 274817,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1t9kCRA9TVsSAnZWagAA8NQP/1jLp5N9WbyJW6zr+v3i\nsxqI9zVItsILaPjQ6sw7UDUzBSH1fvH8k01r51RxAfMV8ir0MQlEDoFJ8s8t\nQ4mZzOliYr5u/397vV8KxD3zyI2Nv6IOBjO6yCs6TIKLr4sygv3Ko7tJO5CM\nVDPF8QCFeqEoSPIj06CiAn7YWbZmfarfCeLImjAsiP+KXFxVx7qovdH00Mmb\n2P87wtxg4Ox2ZyGQNPe5ILpp8C4d30+GUVQVIzVErxKbXDiTqO3F9KXQ04t2\n/6jBr3faTtZZCvkXQTbW946dLRb/rjzFeA/jMNKPwYDG/EgxmMbBft25/v4n\n0IeV3IEJMEzLo1vza3LGlqVOsUCqudDG07nJqa8jUhv9XbR9VYqr1KEyh7al\n5GtvL6swKTuojbBoVMQ41NgIPCMCJk5MQRIVlchqZkVgU1Soi5pLy7p/Qay6\n7MS8VdQXhJHvArvSlyFbuSOnMku6d9HdIp93i4itO7vle/8yqs4dOb1lr6gY\n1h3m5jREOC6/iB+tbBungCY7wNl+XJoIY8nJFAGCxquEn7cHbexZUPG+X7dd\nQjx31PVMVNCTKWbIV/kR6I0KyBLdr4f01y3OxxSVCN7knfK+foaWQTWCQvwQ\n2ZpNuuhOpsjbPeWv5TOivNeMeuSuPx6NzUrz7YbX2ttjiVuMRdx1Nr/2GOTy\npu/A\r\n=l3MG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.2_1574362980348_0.017499264780989288"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.3": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.3",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.3",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.314",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.3",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-HgW7pxjAdq6EMxT5uOhbTfjgZo8fvWn0D6QXVlWs3z1Eerux7tRrJ4gcgnZNn6S0OMPHlClJuIEPp0hnow44Sg==",
+        "shasum": "54f2c5cd77b8b5acc5048904cc795722c9d590d1",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.3.tgz",
+        "fileCount": 8,
+        "unpackedSize": 277629,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3TDICRA9TVsSAnZWagAA9gcQAIRxDOGCuDZYNq/9b34A\nezoo0v2KOBiCt3bjMbg6bXRlIJ/cToCRnyxpSKTYqWudHl6NTFmbbGH56lrX\nfMbNQsN36R2GHGLrKDpPxvm8vrUHvZ3soafy/cdskyq7Aj+r6Vp20SYO/Aid\nR7xzflbdmYFSiBcdSWU6rQSca0UCTTyE0/03CxZcxs4In2jP7pMgfpCUu6gQ\nJ7zpZ/QsHcTBBFUJyo+r+CUqK8TEFA+J+Rt4ruyndpBIg43nPtymrON53DyI\nu1tpc65ylRWwEo+Dg/itQkgTy2aDNzAesNZ6eLHc3HacZBvEAoIOTRyLONZE\nkmuaNLtBnOWFR1SP5RM5hPNxHax1tl0STGBnTrijOxNjtnUKK0bb2UumCdpz\nm78p7fg+Rf3NBf0n+J7SQj8yWqi+4EULNTE0qg5g8OuOFUGGXVM70CXNgO0u\nw6NqjJf61Ys23lH4pFs0B+iLJN21Xm6gofGBhwmMKL/r82h0vftLsBA9Kf9x\n7AvgWGVDPi9AYYngEAfSYmODC5RjpqrvNq5He2t1ahzzoaL11T1PRVQ8rjGA\nXg2cAjxZHrOm29o2ldNo/CWxweGxVDGZdjtt8DK2cnGZBksba+BsyCV+pzc3\nM2dWiu+wRzkSRk0+7unl0+IHXu7/eejz3H+GjtHuipcj7JMIbNRnzqCIJCCj\niBSO\r\n=OFgb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.3_1574777031387_0.9774016556666627"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.4": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.4",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.3",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.314",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.4",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-hBbxJ6sOkaFSvwAXjJ/t/1usGIPK5gTbtqV8+T+u1pZBkgQ3lDQgAguN1g01PJ0b3eyQxgRIEgxqGoviE1QtIQ==",
+        "shasum": "d0aa01b1d626e129455d51aa94c27127c564ba2b",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.4.tgz",
+        "fileCount": 8,
+        "unpackedSize": 277678,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3hV3CRA9TVsSAnZWagAA3McP/R12Ms8aUc3xmcbhedxK\n9AL4AJL+1102Amk7a3rjRDvKwNRX8n0jtZPy7jaabI1BtgLi5mEZnIXGR2vv\nuvA6/EFZ3wL2tBWPvhHYmGLJgZ2clSe4cSPcmQ7BpJ+UDJMELjU1e2gQ+h9y\neMTGKQ0NROHKXmTUxd9ZjZ32i+MWz+JnWL51fAqIY1RNgbKykv5oPXbtHWTC\ntQrTU+Ui3vHQ5DbdOot9MabULYEA94+jTBfPvqXSPPsO7hziQ7e4SQnAHc7R\nXW+z3Uqo39J4A06uIHC+akd1TzlR6jAo9t0RIF6jIMrsuEgMyEd4xep6SA81\nHdOs5ohHIfXhPO6oCU2Qxz3bwiZz7R0z0kL/gDjCFEEwTeWIleVdw6zgka7B\n06sV7XGSsnqfkB7M0lPBkNEr7EiqkonKzcUy0phqVRgn2o2pCCRrQovwOqg2\nlBn2QEaE/tdoU1+T7uvGK6nlKJ61BGq4UQ1X2wRvvkBqqHdxhv+vfEsKmroO\nSktAc5195rbkFBEp41qqbQl6b4HzINivR9zTKFp3Gho/LVvWers65VGdH8HM\nDB0WN03Of9E7C0fIb1dF7e5ZnB7BvnVu1oxKndkxJ2qNhr7NleZUX8ArjOR2\ncxLRulHy0OEFp8pFMO1IkOI8V/i8ChuIEaZmnnAwjiHXPOVlcaVpLAUozxqn\nCgNq\r\n=XaDe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.4_1574835575239_0.8105406665240302"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.5": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.7.3",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.314",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.5",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-rYVvzvKJDKoefdAC+q6VP63vp5hMmeVONCi9pVUbU1qRrtVrmAk/nPhnRg+i+XFd775m1hpG2Yd5RY3X45ccuw==",
+        "shasum": "f072059c0b98ad490eacac082296cfe241af1b58",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.5.tgz",
+        "fileCount": 8,
+        "unpackedSize": 278480,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3vOvCRA9TVsSAnZWagAA1tMP/1UHOn2XwPfoCSbkKC9j\nhGBqoWGBeqFGp9ThgzT9Ox347G4mC7ufW29zcwS8n+gHC6rR3FV27oWpM7Wy\n0IRDCz4GiEaEKEVERKntZwIeOQ9Wmd7RgaTu3s1buC25+B/Yiwb2DrcF+0Dr\nbM63qlFQsUhm91uiRtQd/k4FtfNADm5qcLcUijxNZcZzp3zG+B/Lae+W9KQM\nQP6lvLsBSXLf9Nh5cB+QY2LCutqyqgYS7gq2SUPSwX3E6Iq5Wlx6IxB4yLDW\n5BrWo8Ik2B9tb2S8SYYUZFHN9w2HiGfBeR3HXV0RUKlh3iIL98sfyTQWa77o\njo8amQAUBxNQV63iODhz2IMS2BqJf/B9Gj+yrDbkE82usb0IPGlL+5wGHU5/\n8cWpkd2yAAyeM77Np3nocdZxa+HCnHjpXoqlqs6qCO09tXPmCLVeLB2PrV13\nMWljuDph+0rGIin7+R3mf6LrOwgTHtz9E4bUVyOi0GvvY4flvyVWJlrGbE5D\nwUa8mgED9NjhT6S/w5on02MgD498DyuYYeKW+fYY/F1jRVcItVI6zW4lWRlf\nET4CwoF/a9e/ZoC2lqHZSHrS5wbVpgFzGR2mgJwkdm7LNypHHH6LlszXm5Af\nO2JL5d3kZxH5sAWa2dqLdL5/kPy+JuUPIwB/w+Arb43NTBMcf9rp8TTtoA8j\nbn3z\r\n=B+lU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.5_1574892463199_0.773469987728731"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.7": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.7",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.0",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.321",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.7",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-57+mgz/P/xsGdjwQYkwtBZR3LuISaxD1dEwVDtbk8xJMqAmwqaxLOvnNT7kdJ7jYE/NjNptyzXi+IQFMi/2fCw==",
+        "shasum": "39f8080b1d92a524d6d90505c42b9c5c1eb90611",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.7.tgz",
+        "fileCount": 9,
+        "unpackedSize": 278494,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd5VDFCRA9TVsSAnZWagAACAIQAICgpdCZiABzZOZDWw8H\nBYUxRCdCSpw4UHHoqkbycPfzKxGp1Q7jDSAuaOu1ZkQDYHi20Nr3FcuBnum+\nRMk/6p11MsyvtPcbnzjPH4XNm9LgOKyzFqXf20oXEre3nMeFAFz3p8DRIcdT\niesluk073fIOouCENAnWNUF/MDvdaREtagdsZGYgAf7ILbfiAe3+EZQg6dh/\n5FmE18zdbR4/G+6iEe8+OASsKr+AnqRgldO8GSjHGiS854Z1uHh6dLJOWWYF\nUP4cXXJm0b7hbs+HhZCNfpXTTEfVuqxs9zcz8IFJP+/c+GPOC5/6p8Dnfsyq\n4vPiU2NFyLFRfwcpjYeFdA001Q5wIhob4CZWV8XQxJmjMWJqhPuhCsT29/UY\nxBaITOYs8Dbdb1pCCp2jgPBgji4BBjxXnMszMKg0hCDBHhzNd3UPSN0eMgFK\n1HAjb8knAHxxxM6xoVqbW+3/hd+M9wSp/d6ntBxgTCRurZmzhNhMbcRD9JiZ\nYUqzUAdGuvrvyeif3bM+DWBqAhQLhRnXe/tzRK0m5iRM3Sb9XlHwL1hOsXwn\nCm/Puz1mtIZPEjlJ8vVIKSi6uwZ0ywYtI16xleB1KNPf2+ALp8D9dB1+gn+a\nMjLTLyglTZ/neSy1pCZvtl7o3BJlIB1Uf7ziSk97qTMMqPNEdo5cqcwQBsDw\nlahF\r\n=2j2l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.7_1575309509381_0.780216213498659"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.8": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.4.8",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.322",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.4.8",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-l3WTmnXHV2Sfu5VuD7EHE2w7y+K68+kULKt5RJg8ZJk3YhHF1qLD4O8v8AmNq+8vbOwnPFFDvds25/AoEvMqlQ==",
+        "shasum": "f72e6a4ed76437ea710928f44615f926a81607d5",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.4.8.tgz",
+        "fileCount": 11,
+        "unpackedSize": 294411,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7WfACRA9TVsSAnZWagAAAQwP/jAeUzkDzuau8qThHYYn\ngvyo4uU0xiNI1XuJinFjZholfZzPLJEco3C4N0lvcRNO163BCL9qj0jpLO8H\nyYubb3IQ/iaQmmSywvf+DGNgXgXndxLkIyFAs5sEAB+QGVGs3dJForCCctzl\nPH+YGJDzAG2Udun8kTWyifZmaWZ79c64FkoZyvf7i66pmnzOd92PBfqj2T4H\n6Qm4Vz+AaeKuqxakQ2bRvMag7Nk0azM/1OUIVTCI4BB5ozq+O6u4n5kiMkNQ\nNDmwyc6ccHgQlcp5EWIQoLl9DuLrNQY1qJdLCbez8hLuU71Jw8UZJb8659q4\n3TIItlj8L8/jJ2WomNUgbUKIP7n1Ml8tp4FxVrVUhV9IUi0q1VxKxKz5L4r9\nuFYGxiubJMm1uekbuoZyIAV9I0t+BrZ78CricnStadCPAai8TxETBLU0a3+C\nEGVARyJ+NG4u1ZirMxaJt0pWGKuyFzj4+vAKCUWdqgYQyTHmb6r+KmeyLB9M\nTAxuLZ1ZmMAuitGvGfNaQ1Zd4B2IPM1DY5mBKlfXcS7+/4XuF1lcrXEH17rA\nCWVVVetPiAw3iKXnk4o+2JjFtym7aWHlPuojIEY9fEbFiuOOVL7/7RKKV3fG\nc07a4efX/Ki4kpor9KBJWYjAqOSEszOF7e69AJ5SG9kfQw9Ru/fvcGF9IiUf\nTB4C\r\n=dObC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.4.8_1575839679737_0.857226362927773"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.5.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.5.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.2",
+        "semver": "^6.3.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.322",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.5.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-E7iJB72svRjJTnm9HDvujzNVMCm3ZcDYEedkJ/sDTNsy/0yooCd9Cg7GSzE7b4e0LfIkjijdB1tqg0pGwxWeWg==",
+        "shasum": "5a11a619a9e9dd2dcf1c742b2060bc4a2143e5b6",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.5.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 296286,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd8ZELCRA9TVsSAnZWagAAM/YP/Amx3wdjXHzB7/xqt/Kj\nsDFGX6Ms2LH/DdikBtfz/c0vSo7Eam5pnLsgsj0/0gH6MEV56eEogHIv4LW8\nJSHaBS0f1VjcZJRRmHfviSvn224mayvQam1AG7M7lDRDk8eGYFW0AeYxmqAP\nGbtw9SQFH8V+OlqYS3+dUCy1rg/vQ0SPg7OXAJoCacnKXPozo4bjB5JTkDZG\nuk+d1hGk2xNNT3AyVmsUeIXUzWjCHh4PvUNl1ibnUJQwMJO2tunYQk9+pqLD\n67EYhM/J2VYVqOfutzplr/CAV4OKwQKXcxTQSn0wXvaCpY8mOEy37MxNORZ9\nFx0FQ5r+uj9Nv/IXkmZFjAxtGIJ+outuAM+GPJZXyY/jOqZst0jH3+isZsfj\nFcVNbnhc3sMFC1XoSwL7DZGi/8N3DK0xSab8Dt//t/7ezgQDjPbgGL0H9aB1\ngyiVO7Fj0c5YpMgMujJb2jG5TyJ2m2/J9Lx8DZgu7Q+E1ynUGkyrBpSwjRQL\nsAxFx85f5JNgJjtzKl1T8oWLsleONicHqwj8/TgvuXEM/cySF1WreTGDXRAM\n7t4Nij1TpjBIFnHKcZZM1to0wEeGIYcIrMaDCjSjogjr6xisPeGHnWH7hTPc\nCJDWm86yN/yg/y9KbIkA1D6sl5oauntVTmOD+hamWIrS7+eCs5+98nnKUXID\nPM9e\r\n=+NDl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.5.0_1576112394724_0.5941835299389768"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.0": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.0",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.2",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.322",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.0",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-Z3eCNjGgoYluH89Jt4wVkfYsc/VdLrA2/woX5lm0isO/pCT+P+Y+o65bOuEnjDJLthdwTBxbCVzptTXtc18fJg==",
+        "shasum": "4eb6cb69d03d99159ed7c860cd5fcf7d23a62ea9",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 299102,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+rZQCRA9TVsSAnZWagAAGGYP/2galtAf7W0koTJ4pReR\nung6XOX/jVQnOHOvRAGTANkkhdUPJDhUfYZL8Uh79/qku0eSBeWVpW40iNCk\nNklw/NSCJu9YPHS/tikGuBTAZlhUhlVrtUfhD9Vl69/zoesYfyAn/uHetstd\nGYXWw/Co1KTNlkXuzBgxuMRZrkzhGB/QcGswlnbPlatozyOZrqmppnTHAxPP\nzM++T3EanCgjTTJiAuJRxexWEJSCQ4DjzIf3+lwLLfHLiWRFIMLtKFK9VC8E\n6QuWX1yqHXEyrKMrToXexXFXAhZ7A52tIVa6l6PIVBrWgICpbkkrtz/RaJmK\nDa2LWIdaSkJxx4CTr9H2x4U53V2UJjag8X2SAgtf6VGq7s57jvJO2p5J5/rA\nHLTULzV6P4i1KW+eEG+TatsuAM960Y/rHPUz+iY303dilcEGOjQPahWPeMY0\n4t6Ct3Y65U2VBorWrFoeqGCb77/WEqqneSGD3V5wog9w79rdImZs6SVBeis3\nk/5oK/avA3KmqnpzQAtHaRRy0EWKeBBjsZTBIsxDvtxz4a6uZXsEC5rl8XBO\n5LiiMeztavUi5BKX8UEnvhuzDiUd9T0cqEdQZIgf6js7Nc5XRSvtdrrxmZKZ\nuPJ+YN6W1SYgnN/3dRx746QE3vrVCccBn9VavJtRGdyXZWmRt07n8ahNzmRG\nAyyS\r\n=o104\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.0_1576711759869_0.9929416424945838"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.1": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.1",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.2",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.322",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.1",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-2Tl1EuxZo94QS2VeH28Ebf5g3xbPZG/hj/N5HDDy4XMP/ImR0JIer/nggQRiMN91Q54JVkGbytf42wO29oXVHg==",
+        "shasum": "39638c935c83c93a793abb628b252ec43e85783a",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.1.tgz",
+        "fileCount": 13,
+        "unpackedSize": 298977,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeAvxTCRA9TVsSAnZWagAAAc8P+wZpwQ629jU9bnPPkSpo\nOv5TRZgrJw1trkSvqP6hcGz4RMntBzDPHzqr20XYRQcDDgtz7DAYjt8RzObQ\neGrj8x0GP4kx34ssd5iOAaf5MrO2udIy7CjdWgzi8GC9j2TwLL3GuFusCdKA\nZva/6bXM/vPVWMI9t7syN1WA+tCdbK0PGRcOZHRZu8KiQ72BUc6uT7zT7yaA\n4OXhFb2GNKIXOdOEnuwRYwRaim7ohsg+Fa/+q2tEkhlWy6/tof10Ds7aaU/z\ns751naf1gTR6HaL7rupYkIVyelK7fI00S4lXW/DlKifdRIwdwaAsUpam6bMh\nniwtm8f9yZd079AiI+pXTN5iOM5MNj0/WF464EYJQJkTESdQsG72s/vBusxF\nDcjKOdqPBo3CF1l6iq/ELXkmgwI764DEWnX0wQdYNDKJdaFPCV1SBdHFv0UE\n7SBrv0vYKJcf8QrsvXh8awjP/gKdabpQRpNxK/XxvHowdtYEJKfABJ6jXGgp\nS2sf8yFwxkXc13WnpsdqRQPveoS7zR/oxsbv6nLXR+g8+pVenaS0kGKtwjJS\nPkjlvKxtz46rx8h+LQepHgMNbMc53LBd2igPQVwnrerda+vWZ/w3LBBHJAEh\nFeaYXH2vPXh8DzgRdYl4LzpV/Gjl6CbupcZeOTPM0uZo95e5p5TNoszls2Dj\nF8FU\r\n=qaz3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.1_1577253970648_0.2977187989523076"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.2": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.2",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.3",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.327",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.2",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-+G28dzfYGtAM+XGvB1C5AS1ZPKfQ47HLhcdeIQdZgQnJVdp7/D0m+W/TErwhgsX6CujRUk/LebB6dCrKrtJrvQ==",
+        "shasum": "314ca8b84d5e71c27c19f1ecda966501b1cf1f10",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.2.tgz",
+        "fileCount": 13,
+        "unpackedSize": 299154,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeE3ASCRA9TVsSAnZWagAANBQQAJ0as6Ueqiet2GEWAGbf\nsDeBSOTb5QqouDFu4JKho8wNwFh0J0dm1m2XT+G3BxbmaJh76WcjtBhXV34U\nmOvPE4o2tMCc61ck50xfxZ5jpWqzJYqU0Xdeh6nPAFvWkn8LG9iHgj4UxpQ+\nw+a68OcA0uPdt0jDmX8odOlUoLZ+VCDho+b+gWgYMq1rJuez/FxOnh35/fLe\nWWUTCoHPk3dCIT0i0GpTTGWfe1juOlg7Ht0lQ8QVCMzRZhYaHq3hf+kyOTST\nSKgyYVBxr9VDXCq5J497c5ZjHBSk1iP59lJGYbNbh1R17TNfD+IMLn21kB+z\nJ3B/kw/DK2jeNCUli7Dac2Wx8s5L+phNe7GKvx6OghEQelM7lKVAOYQomD0D\nqBcyOEjtAaYb+rG7TiYYFGRMaQj1LBnEj9suXrCueqOxOQHm8A66E/2OVyUE\nmgu/ieiVOmHisAuoOp/y7vmcTBddtMzLJZTByhXw3ajLmx6JE4di0tz2mLVO\nGbmrfxCWLP6Kxr9+4AHSvqFMuvNSz0VV573YqbaAP+AlBjfacnQ1rUfcq5Ao\ndUGXH46muAhcqNvcJ2Vib+iv9PB4fjvOGwOjfPCiHK8slaylWJeGEVrvQL6v\nAFM705G8ejUq1hr3twMyxFuMIVWB1yBykWmAI6EhrmE4dZwZIFXF3rv/bvwH\nrXgg\r\n=PMHG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.2_1578332177781_0.3768001884212371"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.3": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.3",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.3",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.327",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.3",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-Y3YNGU3bU1yrnzVodop23ghArbKv4IqkZg9MMOWv/h7KT6NRk1/SzHhWDDlubg2+tlcUzAqgj1/GyeJ9fUKMeg==",
+        "shasum": "41e281ca771209d5f2eb63ce34f96037d0928538",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.3.tgz",
+        "fileCount": 13,
+        "unpackedSize": 299586,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGQeACRA9TVsSAnZWagAAqUkQAIsVGwgp1FYW8gkCBAlI\nF+1W+SrpGOgfIRoGb4xYyLNRLW5/K2K1UTITaFb5JPwpR/GGvVVhD5HXK9Mj\nSpn0CGIQfmmBF7wdz9rYJW/rV+KpmTl+Ue3yFT5YSQDjPyxMDh/57v8dleTV\nmde/ZxV6F/DJUGTjGrisIKcMrdN6LM8wW3XWTWLVRpPM+bP8Y7ZjHwC3xLaH\nk3duDkV2uvFm8P9zI6r1gDxKW92HIupRyab+my/+feXNFLAB4bSie6DkBMuu\n4AuHV6ERQG5KKAzVD0TVeyGPu1narOSTIwnJjhH1ZZhMdHTLfAtNrgNUpJYn\nr5O+3IIAZbLPmCW4Adac6XcuCMiOQ22wvf+s0zpinqhow0W5/LEH1FJPY68F\nCeS3beq8bgdHShmIgeApB5rtgYKhzjxiCORhYARaODIjos4MCSo8DlIqi4Ma\n/bCXlj9TqktulfYPKURZqcIqEFc3PL+2rPeTXU5DSO8Te3ucdSJHxCVDuLP2\npKN3wX5y8oFdp55HncCKyyrjHG/8JkvUUMhw0/sgXiGEwmyXSEiipmo6R6hI\n8Z2CUltpmHHbKuTnKOtN89t0aD+BZ8NjlU3CMW8jRo6JP9oN1Fhsq4I3uZ5K\nxNpMx/rLYJ98gp5/g/AjTaQF4SnDbprQ9CgAVFHiUddWEmMHd6VyvpvnJ5nf\nuBpv\r\n=lihs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.3_1578698623979_0.5822535802529769"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.4": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.4",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.3",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.332",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.4",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-zAa3IZPvsJ0slViBQ2z+vgyyTuhd3MFn1rBQjZSKVEgB0UMYhUkCj9jJUVPgGTGqWvsBVmfnruXgTcNyTlEiSA==",
+        "shasum": "938476569ebb6cda80d339bcf199fae4f16fff17",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.4.tgz",
+        "fileCount": 13,
+        "unpackedSize": 299586,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHPj4CRA9TVsSAnZWagAAZ/0P/2RsZFUlFlIVIYJqPRXt\nezUwq8PUvuqrbwgb0RUZicAWpQrBeYtRHuDe5U8QkMLKQjOiq84NC8aQgESN\n3fs3AzVK/uxB0o7704gcA9DZ9vIDzLFyfB4+q8acuMNb+v7Lk4Ws0Syo9ctg\n2j5qgwec0WwWS68pmVg1APHHCZKFyqZdh8WborEqDHiXT6e94AsAuNocYLIO\nlK96bz+HStgaLuxkSZuQQtwbqGXadBap3yGq/Ajgko1GAdJVBtPCMzMdCo8B\nb2mG/repFvBxhmciP9ui9Q3xnYd78voOtktsyD09zKt1ohhUjF6cCDZwy5Ma\nclbTq0mta2UeAm4RJTAU3+9mgwuwYsb7kcMIQ5oUyfZd5krZ+ijzZFs+MGy7\npB6ekuiR/7RtncjHDk5JYcz1qGAj/9+5ti8XXhz53QzbGoQqGWjbN4wV45BP\nIyfnkPj6c2A+DI6U3u3Nipwsd7oQlA9OKddiEM62L0H2RKGaK4VRbT57AjTC\n1V3lY5vOpeWGLRBhzSmEQjfU7kwVkk1O4lk2Ab47wLfe2d37m9S/flFmVzb6\n4Qd4cAIq026RgxTfK+gRyXhBjNFtPzFx7S8Xlfy7d0T0gTHJ19jmJHm9AKpb\nICXNqXuY88y8fSDnkt29N3goRJwuk3VPWb8EBfK+E07uaArlYUGVMvNPjcC8\niafR\r\n=YGgS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "zloirock",
+        "email": "zloirock@zloirock.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.4_1578957048539_0.7577059456344721"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.6.5": {
+      "name": "core-js-compat",
+      "description": "core-js compat",
+      "version": "3.6.5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zloirock/core-js.git"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "browserslist": "^4.8.5",
+        "semver": "7.0.0"
+      },
+      "devDependencies": {
+        "detective": "^5.2.0",
+        "electron-to-chromium": "^1.3.332",
+        "glob": "^7.1.6"
+      },
+      "funding": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/core-js"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/zloirock/core-js/issues"
+      },
+      "homepage": "https://github.com/zloirock/core-js#readme",
+      "_id": "core-js-compat@3.6.5",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-7ItTKOhOZbznhXAQ2g/slGg1PJV5zDO/WdkTwi7UEOJmkvsE32PWvx6mKtDjiMpjnR2CNf6BAD6sSxIlv7ptng==",
+        "shasum": "2a51d9a4e25dfd6e690251aa81f99e3c05481f1c",
+        "tarball": "https://registry.npmjs.org/core-js-compat/-/core-js-compat-3.6.5.tgz",
+        "fileCount": 13,
+        "unpackedSize": 299586,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJekJvNCRA9TVsSAnZWagAAz+IP/04kZrGXSe7Q2G2nIq+R\nj6LI7C1OKz1CK9HHvMoHuZHCZSsP26OKxU5Bi4bD6cYZMdyihRnYWS/+8bXP\n4GEqQ5caWopKZgRtEuJrwNd69Wm8unJXGCgNaVFvWclvY5MR+ifQB6+fMkvM\nH6K3N7h/NvNGKN5TneDpd+RpjVJtkyM2pmN7IXIlEWPH8mlEJzzKn4ctS3dx\nr16QAgRHGsKHv+VgA/FmlVvnK3MjBWHa7hXVYi1Fv0nGahNJn4CqFBeGtOb0\nineXwW0vI6tbuqS6aB0pYjV54JTDJm1sIHBibV+Mz2HfhixO2Mf50aVhTyac\nj7SBSVVIVuZN3V1GYBJzF4LW+B5+3YB3dZ/v7BCBtXIQpIsptqXLTuB1Dicz\nBKiPaqEyaNE4o4GUTScmZoaOOAWbHox0f7TMPPIU5ZiKrps62cHxl1VXegJK\nj2T552s7fsE75vfsXlR46XusypuBtJZfLIDq5VJrOaqddsU1BSyJmgytrW28\ntIN9dJGyac/sYyWxLy3uZH2AVyaWTzYfgpRN/3qh2EbJeFL5NoJgUieiDLSr\nqwoDs8kVAJOt3xsINRSl/sAhFv10nzprOb8rMiYLgS2mwpn2VzmTJKD9RYvO\nKhP4AQQ6r/ABzhmEwKQTiy0nsKuGgn/dlErM86kt2MG57DueGHSu0VmEdVuh\n5YeC\r\n=T1Aj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "zloirock",
+          "email": "zloirock@zloirock.ru"
+        }
+      ],
+      "_npmUser": {
+        "name": "slowcheetah",
+        "email": "slow_cheetah@inbox.ru"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/core-js-compat_3.6.5_1586535372829_0.6257533398408435"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-12-24T21:42:14.806Z",
+    "3.0.0-beta.6": "2018-12-24T21:42:14.958Z",
+    "modified": "2020-04-10T16:16:15.400Z",
+    "3.0.0-beta.7": "2018-12-27T00:52:04.537Z",
+    "3.0.0-beta.8": "2019-01-10T07:36:49.762Z",
+    "3.0.0-beta.9": "2019-01-17T10:18:53.628Z",
+    "3.0.0-beta.10": "2019-01-22T01:41:52.527Z",
+    "3.0.0-beta.11": "2019-01-27T23:28:38.659Z",
+    "3.0.0-beta.12": "2019-02-02T02:48:54.506Z",
+    "3.0.0-beta.13": "2019-02-04T10:09:36.664Z",
+    "3.0.0-beta.14": "2019-02-07T07:44:25.670Z",
+    "3.0.0-beta.15": "2019-02-09T21:15:35.385Z",
+    "3.0.0-beta.16": "2019-02-18T20:37:56.342Z",
+    "3.0.0-beta.17": "2019-03-09T21:14:49.292Z",
+    "3.0.0-beta.18": "2019-03-09T22:17:09.536Z",
+    "3.0.0-beta.19": "2019-03-14T20:45:12.790Z",
+    "3.0.0-beta.20": "2019-03-17T19:59:37.293Z",
+    "3.0.0": "2019-03-19T19:18:27.306Z",
+    "3.0.1": "2019-04-06T07:20:20.539Z",
+    "3.1.0": "2019-05-19T19:26:58.906Z",
+    "3.1.1": "2019-05-20T20:42:03.997Z",
+    "3.1.2": "2019-05-21T22:28:01.567Z",
+    "3.1.3": "2019-05-27T13:06:20.038Z",
+    "3.1.4": "2019-06-15T11:57:28.517Z",
+    "3.2.0": "2019-08-08T22:05:44.306Z",
+    "3.2.1": "2019-08-12T12:25:23.619Z",
+    "3.3.1": "2019-10-13T15:06:40.695Z",
+    "3.3.2": "2019-10-14T13:41:49.341Z",
+    "3.3.3": "2019-10-21T17:07:59.417Z",
+    "3.3.4": "2019-10-25T11:07:55.546Z",
+    "3.3.5": "2019-10-28T17:31:13.577Z",
+    "3.3.6": "2019-10-31T17:08:53.615Z",
+    "3.4.0": "2019-11-06T21:46:04.805Z",
+    "3.4.1": "2019-11-12T05:23:40.868Z",
+    "3.4.2": "2019-11-21T19:03:00.459Z",
+    "3.4.3": "2019-11-26T14:03:51.704Z",
+    "3.4.4": "2019-11-27T06:19:35.417Z",
+    "3.4.5": "2019-11-27T22:07:43.350Z",
+    "3.4.6": "2019-12-02T17:27:54.603Z",
+    "3.4.7": "2019-12-02T17:58:29.521Z",
+    "3.4.8": "2019-12-08T21:14:39.861Z",
+    "3.5.0": "2019-12-12T00:59:54.953Z",
+    "3.6.0": "2019-12-18T23:29:20.042Z",
+    "3.6.1": "2019-12-25T06:06:10.742Z",
+    "3.6.2": "2020-01-06T17:36:17.917Z",
+    "3.6.3": "2020-01-10T23:23:44.245Z",
+    "3.6.4": "2020-01-13T23:10:48.728Z",
+    "3.6.5": "2020-04-10T16:16:13.097Z"
+  },
+  "maintainers": [
+    {
+      "name": "zloirock",
+      "email": "zloirock@zloirock.ru"
+    }
+  ],
+  "description": "core-js compat",
+  "homepage": "https://github.com/zloirock/core-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zloirock/core-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zloirock/core-js/issues"
+  },
+  "license": "MIT",
+  "readme": "[`core-js-compat` package](https://github.com/zloirock/core-js/tree/master/packages/core-js-compat) contains data about the necessity of [`core-js`](https://github.com/zloirock/core-js) modules and API for getting a list of required core-js modules by browserslist query.\n\n```js\nconst {\n  list,                  // array of required modules\n  targets,               // object with targets for each module\n} = require('core-js-compat')({\n  targets: '> 2.5%',     // browserslist query or object of minimum environment versions to support\n  filter: /^(es|web)\\./, // optional filter - string-prefix, regexp or list of modules\n  version: '3.4',        // used `core-js` version, by default - the latest\n});\n\nconsole.log(targets);\n/* =>\n{\n  'es.symbol.match-all': { ios: '12.2-12.4' },\n  'es.array.unscopables.flat': { ios: '12.2-12.4' },\n  'es.array.unscopables.flat-map': { ios: '12.2-12.4' },\n  'es.math.hypot': { chrome: '77' },\n  'es.promise.all-settled': { firefox: '69', ios: '12.2-12.4' },\n  'es.promise.finally': { ios: '12.2-12.4' },\n  'es.string.match-all': { chrome: '77', firefox: '69', ios: '12.2-12.4' },\n  'es.string.replace': { firefox: '69', ios: '12.2-12.4' },\n  'es.typed-array.float32-array': { ios: '12.2-12.4' },\n  'es.typed-array.float64-array': { ios: '12.2-12.4' },\n  'es.typed-array.int8-array': { ios: '12.2-12.4' },\n  'es.typed-array.int16-array': { ios: '12.2-12.4' },\n  'es.typed-array.int32-array': { ios: '12.2-12.4' },\n  'es.typed-array.uint8-array': { ios: '12.2-12.4' },\n  'es.typed-array.uint8-clamped-array': { ios: '12.2-12.4' },\n  'es.typed-array.uint16-array': { ios: '12.2-12.4' },\n  'es.typed-array.uint32-array': { ios: '12.2-12.4' },\n  'es.typed-array.from': { ios: '12.2-12.4' },\n  'es.typed-array.of': { ios: '12.2-12.4' },\n  'web.dom-collections.iterator': { ios: '12.2-12.4' },\n  'web.immediate': { chrome: '77', firefox: '69', ios: '12.2-12.4' },\n  'web.url': { ios: '12.2-12.4' },\n  'web.url.to-json': { ios: '12.2-12.4' },\n  'web.url-search-params': { ios: '12.2-12.4' }\n}\n*/\n```\n\nAdditional API:\n\n```js\n// equals of of the method from the example above\nrequire('core-js-compat/compat')({ targets, filter, version }); // => { list: Array<ModuleName>, targets: { [ModuleName]: { [EngineName]: EngineVersion } } }\n// or\nrequire('core-js-compat').compat({ targets, filter, version }); // => { list: Array<ModuleName>, targets: { [ModuleName]: { [EngineName]: EngineVersion } } }\n\n// full compat data:\nrequire('core-js-compat/data'); // => { [ModuleName]: { [EngineName]: EngineVersion } }\n// or\nrequire('core-js-compat').data; // => { [ModuleName]: { [EngineName]: EngineVersion } }\n\n// map of modules by `core-js` entry points:\nrequire('core-js-compat/entries'); // => { [EntryPoint]: Array<ModuleName> }\n// or\nrequire('core-js-compat').entries; // => { [EntryPoint]: Array<ModuleName> }\n\n// full list of modules:\nrequire('core-js-compat/modules'); // => Array<ModuleName>\n// or\nrequire('core-js-compat').modules; // => Array<ModuleName>\n\n// the subset of modules which available in the passed `core-js` version:\nrequire('core-js-compat/get-modules-list-for-target-version')('3.3'); // => Array<ModuleName>\n// or\nrequire('core-js-compat').getModulesListForTargetVersion('3.3'); // => Array<ModuleName>\n```\n\nIf you want to add new / update data about modules required for target engines, [follow this instruction](https://github.com/zloirock/core-js/blob/master/CONTRIBUTING.md#updating-core-js-compat-data).\n",
+  "readmeFilename": "README.md"
+}

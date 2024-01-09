@@ -1,0 +1,1404 @@
+{
+  "_id": "pump",
+  "_rev": "123-fb84d2be33daead23fb122400ae9b757",
+  "name": "pump",
+  "description": "pipe streams together and close all of them if one of them closes",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "pump",
+      "version": "0.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.0",
+      "dist": {
+        "shasum": "666aa286bbee73fa38799dee9ab577102d1ba50d",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "pump",
+      "version": "0.1.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.1",
+      "dist": {
+        "shasum": "9e97f8c8de790cbba09b1433b8e08a0695c6f6d6",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "pump",
+      "version": "0.1.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.2",
+      "dist": {
+        "shasum": "fa9cd64e4ae7e75cfe79c39021f4bb7742a48654",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "pump",
+      "version": "0.1.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.3",
+      "dist": {
+        "shasum": "9df70f0b18e3f54c0ebcde6ba10db546caf76a01",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "pump",
+      "version": "0.1.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.4",
+      "dist": {
+        "shasum": "827811afcfa66abac3b97e0b115b87fe490f1d65",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "pump",
+      "version": "0.1.5",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "_id": "pump@0.1.5",
+      "dist": {
+        "shasum": "f207211a1023311076bb325e5dd0801238ccbd69",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "pump",
+      "version": "0.1.6",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.1.6",
+      "dist": {
+        "shasum": "f0032bffd4f08cbca45f6b05c96d7fac85c71769",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.6.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.7": {
+      "name": "pump",
+      "version": "0.1.7",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.1.7",
+      "dist": {
+        "shasum": "ce24cf21c27ddb70509131e231f896adce11c170",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.1.7.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "pump",
+      "version": "0.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.2.0",
+      "dist": {
+        "shasum": "41c2806a5df966f95130023173f37e8ae09a7247",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "pump",
+      "version": "0.2.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.2"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.2.1",
+      "dist": {
+        "shasum": "ba51e60ae23543600d81cc83950f2ff6d6e8ef82",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "pump",
+      "version": "0.2.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.2"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.2.2",
+      "dist": {
+        "shasum": "43b392b336f5e3a077345e4178b33db9b3c5251f",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "pump",
+      "version": "0.2.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.2"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.2.3",
+      "dist": {
+        "shasum": "8629de0a7f15631e29cb49c513b4e7b44775d8c1",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.2.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.17",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "pump",
+      "version": "0.3.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.2"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.0",
+      "dist": {
+        "shasum": "2c51031c988cf6ae3ebe65962dd06bfdac7a85c7",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "pump",
+      "version": "0.3.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.4"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.1",
+      "dist": {
+        "shasum": "8ea0878556d8991809bf277bd977abd0825075d3",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "pump",
+      "version": "0.3.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.4"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.2",
+      "_shasum": "b264874b905408b6048a995fdcc424a27034d76f",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b264874b905408b6048a995fdcc424a27034d76f",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "pump",
+      "version": "0.3.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.4"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.3",
+      "_shasum": "bda1980336f397443674335b6743b3e237f0a9ee",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bda1980336f397443674335b6743b3e237f0a9ee",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.4": {
+      "name": "pump",
+      "version": "0.3.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~0.1.4"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.4",
+      "_shasum": "2e025d62199c3372e2a03dc283b583dd4c0c8ef3",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2e025d62199c3372e2a03dc283b583dd4c0c8ef3",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.5": {
+      "name": "pump",
+      "version": "0.3.5",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "once": "~1.2.0",
+        "end-of-stream": "~1.0.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@0.3.5",
+      "_shasum": "ae5ff8c1f93ed87adc6530a97565b126f585454b",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae5ff8c1f93ed87adc6530a97565b126f585454b",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-0.3.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "pump",
+      "version": "1.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "dc0a3c33ac51a37f2ac3551d1a292620fdc5ad91",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@1.0.0",
+      "_shasum": "f0250fe282742492e4dea170e5ed3f7bc8a5e32c",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f0250fe282742492e4dea170e5ed3f7bc8a5e32c",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "pump",
+      "version": "1.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "6abb030191e1ccb12c5f735a4f39162307f93b90",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@1.0.1",
+      "_shasum": "f1f1409fb9bd1085bbdb576b43b84ec4b5eadc1a",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f1f1409fb9bd1085bbdb576b43b84ec4b5eadc1a",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "pump",
+      "version": "1.0.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "browser": {
+        "fs": false
+      },
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "90ed7ae8923ade7c7589e3db28c29fbc5c2d42ca",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump",
+      "_id": "pump@1.0.2",
+      "_shasum": "3b3ee6512f94f0e575538c17995f9f16990a5d51",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3b3ee6512f94f0e575538c17995f9f16990a5d51",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/pump-1.0.2.tgz_1482243286673_0.09530888125300407"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "pump",
+      "version": "1.0.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "browser": {
+        "fs": false
+      },
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "28557d8349d8e3b6878f9955d28b4a52c6a44de3",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump#readme",
+      "_id": "pump@1.0.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-8k0JupWme55+9tCVE+FS5ULT3K6AbgqrGa58lTT49RpyfwwcGedHqaC5LlQNdEAumn/wFsu6aPwkuPMioy8kqw==",
+        "shasum": "5dfe8311c33bbf6fc18261f9f34702c47c08a954",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pump-1.0.3.tgz_1510865055632_0.71864059031941"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "pump",
+      "version": "2.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "browser": {
+        "fs": false
+      },
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "e3d0c444ceef59ff694c753303a35052e60b5186",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump#readme",
+      "_id": "pump@2.0.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6MYypjOvtiXhBSTOD0Zs5eNjCGfnqi5mPsCsW+dgKTxrZzQMZQNpBo3XRkLx7id753f3EeyHLBqzqqUymIolgw==",
+        "shasum": "7946da1c8d622b098e2ceb2d3476582470829c9d",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pump-2.0.0.tgz_1512085986230_0.5930282876361161"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "pump",
+      "version": "2.0.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "browser": {
+        "fs": false
+      },
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test-browser.js && node test-node.js"
+      },
+      "gitHead": "4c93a460459fd970dd963fd9600c75b0e90404c2",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump#readme",
+      "_id": "pump@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ruPMNRkN3MHP1cWJc9OWr+T/xDP0jhXYCLfJcBuX54hhfIBnaQmAUMfDcG4DM5UMWByBbJY69QSphm3jtDKIkA==",
+        "shasum": "12399add6e4cf7526d973cbc8b5ce2e2908b3909",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pump-2.0.1.tgz_1516638146695_0.7931882732082158"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "pump",
+      "version": "3.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/pump.git"
+      },
+      "license": "MIT",
+      "description": "pipe streams together and close all of them if one of them closes",
+      "browser": {
+        "fs": false
+      },
+      "keywords": [
+        "streams",
+        "pipe",
+        "destroy",
+        "callback"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "end-of-stream": "^1.1.0",
+        "once": "^1.3.1"
+      },
+      "scripts": {
+        "test": "node test-browser.js && node test-node.js"
+      },
+      "gitHead": "b05d1838cc3be47f7c3cd9020c73f6ebbafd3aa0",
+      "bugs": {
+        "url": "https://github.com/mafintosh/pump/issues"
+      },
+      "homepage": "https://github.com/mafintosh/pump#readme",
+      "_id": "pump@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==",
+        "shasum": "b4a2116815bde2f4e1ea602354e8c75565107a64",
+        "tarball": "https://registry.npmjs.org/pump/-/pump-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pump-3.0.0.tgz_1517391995455_0.9241023743525147"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# pump\n\npump is a small node module that pipes streams together and destroys all of them if one of them closes.\n\n```\nnpm install pump\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/pump.svg?style=flat)](http://travis-ci.org/mafintosh/pump)\n\n## What problem does it solve?\n\nWhen using standard `source.pipe(dest)` source will _not_ be destroyed if dest emits close or an error.\nYou are also not able to provide a callback to tell when then pipe has finished.\n\npump does these two things for you\n\n## Usage\n\nSimply pass the streams you want to pipe together to pump and add an optional callback\n\n``` js\nvar pump = require('pump')\nvar fs = require('fs')\n\nvar source = fs.createReadStream('/dev/random')\nvar dest = fs.createWriteStream('/dev/null')\n\npump(source, dest, function(err) {\n  console.log('pipe finished', err)\n})\n\nsetTimeout(function() {\n  dest.destroy() // when dest is closed pump will destroy source\n}, 1000)\n```\n\nYou can use pump to pipe more than two streams together as well\n\n``` js\nvar transform = someTransformStream()\n\npump(source, transform, anotherTransform, dest, function(err) {\n  console.log('pipe finished', err)\n})\n```\n\nIf `source`, `transform`, `anotherTransform` or `dest` closes all of them will be destroyed.\n\nSimilarly to `stream.pipe()`, `pump()` returns the last stream passed in, so you can do:\n\n```\nreturn pump(s1, s2) // returns s2\n```\n\nIf you want to return a stream that combines *both* s1 and s2 to a single stream use\n[pumpify](https://github.com/mafintosh/pumpify) instead.\n\n## License\n\nMIT\n\n## Related\n\n`pump` is part of the [mississippi stream utility collection](https://github.com/maxogden/mississippi) which includes more useful stream modules similar to this one.\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T05:29:18.825Z",
+    "created": "2013-08-14T20:03:55.441Z",
+    "0.1.0": "2013-08-14T20:03:59.214Z",
+    "0.1.1": "2013-08-14T22:41:45.452Z",
+    "0.1.2": "2013-08-15T05:58:55.737Z",
+    "0.1.3": "2013-08-22T16:58:38.299Z",
+    "0.1.4": "2013-08-24T11:46:46.802Z",
+    "0.1.5": "2013-08-24T14:56:48.720Z",
+    "0.1.6": "2013-11-24T10:25:07.649Z",
+    "0.1.7": "2013-11-24T11:06:56.909Z",
+    "0.2.0": "2013-11-27T01:13:58.376Z",
+    "0.2.1": "2013-11-27T01:19:27.732Z",
+    "0.2.2": "2013-12-01T16:47:22.667Z",
+    "0.2.3": "2013-12-26T09:09:54.429Z",
+    "0.3.0": "2014-02-12T09:56:15.952Z",
+    "0.3.1": "2014-02-18T10:19:54.895Z",
+    "0.3.2": "2014-05-07T15:02:54.986Z",
+    "0.3.3": "2014-07-12T12:12:30.589Z",
+    "0.3.4": "2014-07-12T12:15:23.088Z",
+    "0.3.5": "2014-07-21T11:09:43.572Z",
+    "1.0.0": "2014-09-24T04:16:11.221Z",
+    "1.0.1": "2015-10-23T14:31:11.866Z",
+    "1.0.2": "2016-12-20T14:14:47.280Z",
+    "1.0.3": "2017-11-16T20:44:16.536Z",
+    "2.0.0": "2017-11-30T23:53:07.172Z",
+    "2.0.1": "2018-01-22T16:22:27.684Z",
+    "3.0.0": "2018-01-31T09:46:35.636Z"
+  },
+  "author": {
+    "name": "Mathias Buus Madsen",
+    "email": "mathiasbuus@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/pump.git"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/mafintosh/pump#readme",
+  "keywords": [
+    "streams",
+    "pipe",
+    "destroy",
+    "callback"
+  ],
+  "bugs": {
+    "url": "https://github.com/mafintosh/pump/issues"
+  },
+  "license": "MIT",
+  "users": {
+    "maxogden": true,
+    "timhudson": true,
+    "eagleeye": true,
+    "davidchase": true,
+    "ceejbot": true,
+    "stringparser": true,
+    "alectic": true,
+    "jonatasnona": true,
+    "moimikey": true,
+    "cshum": true,
+    "klaemo": true,
+    "flockonus": true,
+    "robmcguinness": true,
+    "avvs": true,
+    "coalesce": true,
+    "farskipper": true,
+    "sejoker": true,
+    "zewish": true,
+    "matteo.collina": true,
+    "daizch": true,
+    "thesystem": true,
+    "iseric": true,
+    "drewigg": true,
+    "roccomuso": true,
+    "mobeicaoyuan": true,
+    "krampstudio": true,
+    "onlyutkarsh": true,
+    "ifeature": true,
+    "shiningray": true,
+    "quocnguyen": true,
+    "stone-jin": true,
+    "dpjayasekara": true,
+    "ungurys": true,
+    "evovilol": true,
+    "peunzhang": true,
+    "kuzmicheff": true,
+    "raschdiaz": true,
+    "jjonathan": true,
+    "mskjp": true,
+    "akiva": true,
+    "rajiff": true,
+    "itonyyo": true,
+    "ajduke": true,
+    "oleg_tsyba": true,
+    "mucbuc": true,
+    "agplan": true,
+    "norbertparti": true,
+    "arugalab": true,
+    "icognivator": true,
+    "mradko": true,
+    "linger": true,
+    "bura": true,
+    "maoxiaoke": true,
+    "rocket0191": true,
+    "lmangani": true,
+    "diegorbaquero": true,
+    "alexjeffcott": true,
+    "rain-again": true,
+    "axelrindle": true,
+    "seangenabe": true,
+    "nicknaso": true,
+    "jmiziolek": true,
+    "rexpan": true,
+    "monjer": true,
+    "mrxf": true,
+    "zhenguo.zhao": true,
+    "knoja4": true,
+    "nwservices": true,
+    "charlesread": true
+  }
+}

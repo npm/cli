@@ -1,0 +1,286 @@
+{
+  "_id": "pascalcase",
+  "_rev": "4-9c81969d62492c9769a8e7a2076ba8fa",
+  "name": "pascalcase",
+  "description": "Convert a string to pascal-case.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "pascalcase",
+      "description": "Convert a string to pascal-case.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/pascalcase",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/pascalcase.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/pascalcase/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "case",
+        "pascal",
+        "pascal-case",
+        "pascalcase",
+        "string"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "word-wrap",
+            "repeat-string",
+            "justified"
+          ]
+        }
+      },
+      "_id": "pascalcase@0.1.0",
+      "_shasum": "5d26610e847dca1304100f494deb09e4fc49ff82",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5d26610e847dca1304100f494deb09e4fc49ff82",
+        "tarball": "https://registry.npmjs.org/pascalcase/-/pascalcase-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "pascalcase",
+      "description": "Convert a string to pascal-case.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/pascalcase",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/pascalcase.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/pascalcase/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "camelcase",
+        "case",
+        "casing",
+        "pascal",
+        "pascal-case",
+        "pascalcase",
+        "string"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "pad-left",
+            "pad-right",
+            "word-wrap",
+            "repeat-string",
+            "justified"
+          ]
+        }
+      },
+      "gitHead": "c2600f8aa648fe093381a064ba364d99b374911c",
+      "_id": "pascalcase@0.1.1",
+      "_shasum": "b363e55e8006ca6fe21784d2db22bd15d7917f14",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b363e55e8006ca6fe21784d2db22bd15d7917f14",
+        "tarball": "https://registry.npmjs.org/pascalcase/-/pascalcase-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "pascalcase",
+      "description": "Convert a string to pascal-case.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/pascalcase",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/pascalcase.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/pascalcase/issues"
+      },
+      "license": "MIT",
+      "main": "index.js",
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "gulp-format-md": "^2.0.0",
+        "mocha": "^6.2.0"
+      },
+      "keywords": [
+        "camelcase",
+        "case",
+        "casing",
+        "pascal",
+        "pascal-case",
+        "pascal case",
+        "pascalcase",
+        "string",
+        "UpperCamelCase"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "ansi-colors",
+            "word-wrap",
+            "randomatic",
+            "justified"
+          ]
+        },
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "64ee9eefbf4ba9e05152a72eb6d59a284af95dd6",
+      "_id": "pascalcase@1.0.0",
+      "_nodeVersion": "12.7.0",
+      "_npmVersion": "6.10.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-BSExi0rRnCHReJys6NocaK+cfTXNinAegfWBvr0JD3hiaEG7Nuc7r0CIdOJunXrs8gU/sbHQ9dxVAtiVQisjmg==",
+        "shasum": "d2fd7d73f2969606d2b56e17f5261be41c43c381",
+        "tarball": "https://registry.npmjs.org/pascalcase/-/pascalcase-1.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 7235,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdS9vqCRA9TVsSAnZWagAAmbIP/jAt9hdFsQUOs24CYZFl\nq5j8EJCUMI32UZnkYi7KkTMNs55uKXOK+dVYGikYpHNdeL7a7blKaMHk+Ong\nvMG5H6fo+Xc65S03xWJboGs1p2NB6sA0T88nLI15onXPV8YSeFLxLdWEgawm\nOywj3u/pxzEZeIgtcDqeHFBomkRyaLi0+FqK1zBFiKnzVise2U6QVknbNMQ0\ntVghy0qZbhv+IMmdpcbQdrlqPQf/etnk171RrUySHDrJrxnFR/T0YigGIbtg\nqBLoYJoV3xudoL1iBF7OlmsEzmnmF+a9MOoFnemWA+Qs5h2IeosKJ1lP89hZ\nemjGKj+SjYGOKpEN5j2H2Z0qSDqKi1ZlwO/FewgTr6ZqsdrhoNGQgfPbQr8H\naRr27OuEVfByyp9vqb50rLDVzc6q1RJHSsep1omxkp8ih1P62PdSsSqp7q1F\nkERAwONblppybSUENUfnoDZuZh3rqbgWhugqa+vLhMSzPB9C4lEcHBOQRytE\nu1q/rUE07wCvoR4lIcpx2SB7L8HuWd3Eb4dClut68NxTgLnvzIvv4KRWbR/P\n+7POzupaY+wuhuCcryaepLjtf8wRR8skuL5ZSmvo8MwZvKfUbBg42AzCUmIH\n3zRltKUrGqMrl/oCM8FKYunOwnnS6EeLOvMa47gb394QgHrteSGKB6qfZ7pJ\nPBSE\r\n=cwQs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/pascalcase_1.0.0_1565252586202_0.3015869803399853"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# pascalcase [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/pascalcase.svg?style=flat)](https://www.npmjs.com/package/pascalcase) [![NPM monthly downloads](https://img.shields.io/npm/dm/pascalcase.svg?style=flat)](https://npmjs.org/package/pascalcase) [![NPM total downloads](https://img.shields.io/npm/dt/pascalcase.svg?style=flat)](https://npmjs.org/package/pascalcase) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/pascalcase.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/pascalcase)\n\n> Convert a string to pascal-case.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/) (requires [Node.js](https://nodejs.org/en/) >=8):\n\n```sh\n$ npm install --save pascalcase\n```\n\n## Usage\n\n```js\nconst pascalcase = require('pascalcase');\n\nconsole.log(pascalcase('a')); //=> 'A'\nconsole.log(pascalcase('foo bar baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('  foo bar baz  ')); //=> 'FooBarBaz'\nconsole.log(pascalcase('foo_bar-baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('foo.bar.baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('foo/bar/baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('foo[bar)baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('#foo+bar*baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('$foo~bar`baz')); //=> 'FooBarBaz'\nconsole.log(pascalcase('_foo_bar-baz-')); //=> 'FooBarBaz'\nconsole.log(pascalcase('foo 2 bar 5 baz')); //=> 'Foo2Bar5Baz'\nconsole.log(pascalcase('foo2bar5baz')); //=> 'Foo2bar5baz'\n```\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [ansi-colors](https://www.npmjs.com/package/ansi-colors): Easily add ANSI colors to your text and symbols in the terminal. A faster drop-in… [more](https://github.com/doowb/ansi-colors) | [homepage](https://github.com/doowb/ansi-colors \"Easily add ANSI colors to your text and symbols in the terminal. A faster drop-in replacement for chalk, kleur and turbocolor (without the dependencies and rendering bugs).\")\n* [justified](https://www.npmjs.com/package/justified): Wraps words to a specified length and justifies the text in each line. | [homepage](https://github.com/jonschlinkert/justified \"Wraps words to a specified length and justifies the text in each line.\")\n* [randomatic](https://www.npmjs.com/package/randomatic): Generate randomized strings of a specified length using simple character sequences. The original generate-password. | [homepage](https://github.com/jonschlinkert/randomatic \"Generate randomized strings of a specified length using simple character sequences. The original generate-password.\")\n* [word-wrap](https://www.npmjs.com/package/word-wrap): Wrap words to a specified length. | [homepage](https://github.com/jonschlinkert/word-wrap \"Wrap words to a specified length.\")\n\n### Author\n\n**Jon Schlinkert**\n\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n\n### License\n\nCopyright © 2019, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.8.0, on August 08, 2019._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-08-08T08:23:09.034Z",
+    "created": "2015-08-19T05:13:36.572Z",
+    "0.1.0": "2015-08-19T05:13:36.572Z",
+    "0.1.1": "2015-12-04T22:12:32.187Z",
+    "1.0.0": "2019-08-08T08:23:06.351Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/pascalcase",
+  "keywords": [
+    "camelcase",
+    "case",
+    "casing",
+    "pascal",
+    "pascal-case",
+    "pascal case",
+    "pascalcase",
+    "string",
+    "UpperCamelCase"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/pascalcase.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/pascalcase/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "quafoo": true
+  }
+}

@@ -1,0 +1,1547 @@
+{
+  "_id": "extglob",
+  "_rev": "19-22919281743949812134c9c37a7c0023",
+  "name": "extglob",
+  "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "extglob",
+      "description": "Extended globs. Add the expressive power of regular expressions to glob patterns.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/extglob/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "minimatch": "^2.0.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "ksh",
+        "match",
+        "wildcard"
+      ],
+      "dependencies": {
+        "micromatch": "^1.2.2"
+      },
+      "gitHead": "63001457550f367428af54db947d850e03a1dc9f",
+      "_id": "extglob@0.1.0",
+      "_shasum": "2a955b73930ab2068a0d034e89a234733fe03d99",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2a955b73930ab2068a0d034e89a234733fe03d99",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "extglob",
+      "description": "Extended globs. extglobs add the expressive power of regular expressions to glob patterns.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/extglob/blob/master/LICENSE"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "minimatch": "^2.0.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "ksh",
+        "match",
+        "wildcard"
+      ],
+      "dependencies": {
+        "micromatch": "^1.2.2"
+      },
+      "gitHead": "b678062c19a8edfa3dd909baaf7d79d6ed7fa6ed",
+      "_id": "extglob@0.2.0",
+      "_shasum": "316b6bec6e1b33573138ca04ca1e3cb09366f0d7",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "316b6bec6e1b33573138ca04ca1e3cb09366f0d7",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "extglob",
+      "description": "Convert extended globs to regex-compatible strings. Add (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/extglob/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js",
+        "lib/"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-extglob": "^1.0.0"
+      },
+      "devDependencies": {
+        "micromatch": "^2.1.6",
+        "minimatch": "^2.0.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "ksh",
+        "match",
+        "wildcard"
+      ],
+      "gitHead": "055ec507e4938bdf13934b86977330bbaabfab09",
+      "_id": "extglob@0.3.0",
+      "_shasum": "4632f3701bbb201066f316cafadbad624a4eb1d2",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4632f3701bbb201066f316cafadbad624a4eb1d2",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "extglob",
+      "description": "Convert extended globs to regex-compatible strings. Add (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "ansi-green": "^0.1.1",
+        "is-extglob": "^1.0.0",
+        "success-symbol": "^0.1.0"
+      },
+      "devDependencies": {
+        "micromatch": "^2.1.6",
+        "minimatch": "^2.0.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "ksh",
+        "match",
+        "wildcard"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "micromatch",
+            "expand-brackets",
+            "braces",
+            "fill-range",
+            "expand-range"
+          ]
+        }
+      },
+      "gitHead": "7466402011f262f316a3206b6bdce83a57ca3a23",
+      "_id": "extglob@0.3.1",
+      "_shasum": "4f31241c0dddc90ac8c729cb6d7c872dee77c8f5",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4f31241c0dddc90ac8c729cb6d7c872dee77c8f5",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "extglob",
+      "description": "Convert extended globs to regex-compatible strings. Add (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "is-extglob": "^1.0.0"
+      },
+      "devDependencies": {
+        "ansi-green": "^0.1.1",
+        "micromatch": "^2.1.6",
+        "minimatch": "^2.0.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "*",
+        "success-symbol": "^0.1.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "ksh",
+        "match",
+        "wildcard"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "micromatch",
+            "expand-brackets",
+            "braces",
+            "fill-range",
+            "expand-range"
+          ]
+        }
+      },
+      "gitHead": "8c3f38bbd9e0afaf31a87e411c0d15532434ef41",
+      "_id": "extglob@0.3.2",
+      "_shasum": "2e18ff3d2f49ab2765cec9023f011daa8d8349a1",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2e18ff3d2f49ab2765cec9023f011daa8d8349a1",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Isiah Meadows",
+          "email": "me@isiahmeadows.com",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "debug": "^2.2.0",
+        "define-property": "^0.2.5",
+        "expand-brackets": "^2.0.1",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^2.1.0"
+      },
+      "devDependencies": {
+        "bash-match": "^0.1.1",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "micromatch": "^2.3.11",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.2",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "5f690b70ba19aba007a28e6abd4dda4405ebc157",
+      "_id": "extglob@1.0.0",
+      "_shasum": "a9e358990ab13613d973f73ba2fa0bfaa504209f",
+      "_from": ".",
+      "_npmVersion": "3.10.3",
+      "_nodeVersion": "6.7.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a9e358990ab13613d973f73ba2fa0bfaa504209f",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/extglob-1.0.0.tgz_1476998360581_0.40694574313238263"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Isiah Meadows",
+          "email": "me@isiahmeadows.com",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "email": "snnskwtnb@gmail.com",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^0.2.5",
+        "expand-brackets": "^2.0.1",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.0",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^2.1.0"
+      },
+      "devDependencies": {
+        "bash-match": "^0.1.1",
+        "for-own": "^0.1.4",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.0",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^0.2.0",
+        "micromatch": "^2.3.11",
+        "minimatch": "^3.0.3",
+        "mocha": "^3.1.2",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^4.0.2"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        },
+        "reflinks": [
+          "verb",
+          "verb-generate-readme"
+        ]
+      },
+      "gitHead": "169b168668e45a572def51a1a7cb7c30a3655cff",
+      "_id": "extglob@1.1.0",
+      "_shasum": "0678b4e2ce45c0e4e50f5e5eafb1b0dab5b4e424",
+      "_from": ".",
+      "_npmVersion": "3.10.9",
+      "_nodeVersion": "6.9.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0678b4e2ce45c0e4e50f5e5eafb1b0dab5b4e424",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/extglob-1.1.0.tgz_1481433137305_0.8352516428567469"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/micromatch/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Isiah Meadows",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Matt Bierner",
+          "url": "http://mattbierner.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "expand-brackets": "^2.1.4",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "micromatch": "^3.0.4",
+        "minimatch": "^3.0.4",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0",
+        "yargs-parser": "^7.0.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**/*.js"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b1d6afca6b31d035526acf073a137feba34214d0",
+      "_id": "extglob@2.0.0",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-kJltVxjqtPE0FnOB3958UjJSq8SYy1Gc0675qgE+aSjBZf4O5e3NRHQ/gGhizHEHtXYo56LwDwWeGwrMUBmJbQ==",
+        "shasum": "af747cb146aac7d24d845269ca90f32e7e6459dd",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/extglob-2.0.0.tgz_1504836494022_0.23053049435839057"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/micromatch/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Isiah Meadows",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Matt Bierner",
+          "url": "http://mattbierner.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "expand-brackets": "^2.1.4",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "micromatch": "^3.0.4",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**/*.js"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a2acdb1381785146137d8f375016b75141da5655",
+      "_id": "extglob@2.0.2",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-I0+eZBH+jFGL8F5BnIz2ON2nKCjTS3AS3H/5PeSmCp7UVC70Ym8IhdRiQly2juKYQ//f7z1aj1BRpQniFJoU1w==",
+        "shasum": "3290f46208db1b2e8eb8be0c94ed9e6ad80edbe2",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/extglob-2.0.2.tgz_1505103523460_0.48634255840443075"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "2.0.3",
+      "homepage": "https://github.com/micromatch/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Isiah Meadows",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Matt Bierner",
+          "url": "http://mattbierner.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "expand-brackets": "^2.1.4",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "micromatch": "^3.0.4",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**/*.js"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "394fe646dc204ec57ea8029ca353215723d0c301",
+      "_id": "extglob@2.0.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-AyptZexgu7qppEPq59DtN/XJGZDrLcVxSHai+4hdgMMS9EpF4GBvygcWWApno8lL9qSjVpYt7Raao28qzJX1ww==",
+        "shasum": "55e019d0c95bf873949c737b7e5172dba84ebb29",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-2.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/extglob-2.0.3.tgz_1513899863848_0.8606773382052779"
+      },
+      "directories": {}
+    },
+    "2.0.4": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "2.0.4",
+      "homepage": "https://github.com/micromatch/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Isiah Meadows",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Matt Bierner",
+          "url": "http://mattbierner.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "url": "https://shinnn.github.io"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^1.0.0",
+        "expand-brackets": "^2.1.4",
+        "extend-shallow": "^2.0.1",
+        "fragment-cache": "^0.2.1",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.8.1",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "micromatch": "^3.0.4",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**/*.js"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "b00d865652d844b80164ea544323a36c838b3e58",
+      "_id": "extglob@2.0.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-Nmb6QXkELsuBr24CJSkilo6UHHgbekK5UiZgfE6UHD3Eb27YC6oD+bhcT+tJ6cl8dmsgdQxnWlcry8ksBIBLpw==",
+        "shasum": "ad00fe4dc612a9232e8718711dc5cb5ab0285543",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-2.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/extglob-2.0.4.tgz_1515795086299_0.14382277405820787"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "extglob",
+      "description": "Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/micromatch/extglob",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Devon Govett",
+          "url": "http://badassjs.com"
+        },
+        {
+          "name": "Isiah Meadows",
+          "url": "https://www.isiahmeadows.com"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Matt Bierner",
+          "url": "http://mattbierner.com"
+        },
+        {
+          "name": "Shinnosuke Watanabe",
+          "url": "https://shinnn.github.io"
+        },
+        {
+          "name": "Daniel Tschinder",
+          "url": "https://github.com/danez"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/micromatch/extglob.git"
+      },
+      "bugs": {
+        "url": "https://github.com/micromatch/extglob/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "lib"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "array-unique": "^0.3.2",
+        "define-property": "^2.0.2",
+        "expand-brackets": "^4.0.0",
+        "fragment-cache": "^0.2.1",
+        "regex-not": "^1.0.0",
+        "snapdragon": "^0.12.0",
+        "snapdragon-capture": "^0.2.0",
+        "to-regex": "^3.0.1"
+      },
+      "devDependencies": {
+        "bash-match": "^1.0.2",
+        "for-own": "^1.0.0",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "gulp-unused": "^0.2.1",
+        "helper-changelog": "^0.3.0",
+        "is-windows": "^1.0.1",
+        "micromatch": "^3.0.4",
+        "minimatch": "^3.0.4",
+        "minimist": "^1.2.0",
+        "mocha": "^3.5.0",
+        "multimatch": "^2.1.0"
+      },
+      "keywords": [
+        "bash",
+        "extended",
+        "extglob",
+        "glob",
+        "globbing",
+        "ksh",
+        "match",
+        "pattern",
+        "patterns",
+        "regex",
+        "test",
+        "wildcard"
+      ],
+      "lintDeps": {
+        "devDependencies": {
+          "files": {
+            "options": {
+              "ignore": [
+                "benchmark/**/*.js"
+              ]
+            }
+          }
+        }
+      },
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "related": {
+          "list": [
+            "braces",
+            "expand-brackets",
+            "expand-range",
+            "fill-range",
+            "micromatch"
+          ]
+        },
+        "helpers": [
+          "helper-changelog"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "0daa3ed65a05fd73a9fd44714350e6c79c22f780",
+      "_id": "extglob@3.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "danez",
+        "email": "daniel@tschinder.de"
+      },
+      "dist": {
+        "integrity": "sha512-tbNnRL4IMn8VdTyDTZWgT2EpI7nYcQbDncFpltVSsyairady2OttEjUowI5gHyc1/gbOI2RaqcJvUPaAU42z2g==",
+        "shasum": "d244c597a5d4a7813c3ed28cc3fd5a5233137026",
+        "tarball": "https://registry.npmjs.org/extglob/-/extglob-3.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 34533,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa5xYnCRA9TVsSAnZWagAA8DQQAIfcLjbMRZKRYJi19t3P\nNKbcWIpAF5YSsg/o5MdM7rOrBj5za+3qfrgAMK0fc/FXOt8HoUzAL1v0rEMF\nr0lwarTvNHVx30Z1WRtkEpR429Yw1K0OtIjuORFfMO0a3u43qQuNLZTvDOxB\nvFisUkeF0MWewY3os2N19KyqTQ5pXxDdk4L5ZqSgn7GsOvk3Cfjnr/Gj63cr\nVGbj2Jlx9DARYElJx8/qb440+spjflxype9GNogu818VLC2yfKLzkVMhAwL4\nRh4I6vOYm2JelVB6b7ZqTJuM+lCu7OfelOFK87LQBVf/e6M3/OI5vAsuUTDZ\nXTnqcVsqEwMjEc9rfc9HKyXVgvyYpqKiM16fP2oQpIExHV45AdJ0iHnqO2XA\n1s/NNewQKbjCcfHsUwXalBdgdBHccO2doqNK5znXpfASHOfIXdgu+JeHn631\nudbLiqAkf2pUmXFV3Kuynci04CvezQ8yC2qPYsqApjlo+pAcu+T8ntLGF9XK\nIlKdSGSSYsIDWXEOdg5sh8CBLpf4tdkalisGZ/weZdcGy1wSpEklXl0McW6B\nG7H5XPXd9Qnm1SPVEfjSZfzPGhoh1yv4VcbfW6lU2sB3kbt3kAYXsmlFgIVs\nHTjhwkTOfN9zi3d1HhmB5Pn8chupWbdj41Qn0fGs8Q8T5dAmVdKfcMb8S7i6\nLh72\r\n=qWlT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "github@sellside.com",
+          "name": "jonschlinkert"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/extglob_3.0.0_1525093925895_0.8653155433005151"
+      }
+    }
+  },
+  "readme": "# extglob [![NPM version](https://img.shields.io/npm/v/extglob.svg?style=flat)](https://www.npmjs.com/package/extglob) [![NPM monthly downloads](https://img.shields.io/npm/dm/extglob.svg?style=flat)](https://npmjs.org/package/extglob)  [![NPM total downloads](https://img.shields.io/npm/dt/extglob.svg?style=flat)](https://npmjs.org/package/extglob) [![Linux Build Status](https://img.shields.io/travis/micromatch/extglob.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/extglob) [![Windows Build Status](https://img.shields.io/appveyor/ci/micromatch/extglob.svg?style=flat&label=AppVeyor)](https://ci.appveyor.com/project/micromatch/extglob)\n\n> Extended glob support for JavaScript. Adds (almost) the expressive power of regular expressions to glob patterns.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save extglob\n```\n\nInstall with [yarn](https://yarnpkg.com):\n\n```sh\n$ yarn add extglob\n```\n\n* Convert an extglob string to a regex-compatible string.\n* More complete (and correct) support than [minimatch](https://github.com/isaacs/minimatch) (minimatch fails a large percentage of the extglob tests)\n* Handles [negation patterns](#extglob-patterns)\n* Handles [nested patterns](#extglob-patterns)\n* Organized code base, easy to maintain and make changes when edge cases arise\n* As you can see by the [benchmarks](#benchmarks), extglob doesn't pay with speed for it's completeness, accuracy and quality.\n\n**Heads up!**: This library only supports extglobs, to handle full glob patterns and other extended globbing features use [micromatch](https://github.com/jonschlinkert/micromatch) instead.\n\n## Usage\n\nThe main export is a function that takes a string and options, and returns an object with the parsed AST and the compiled `.output`, which is a regex-compatible string that can be used for matching.\n\n```js\nvar extglob = require('extglob');\nconsole.log(extglob('!(xyz)*.js'));\n```\n\n## Extglob cheatsheet\n\nExtended globbing patterns can be defined as follows (as described by the [bash man page](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)):\n\n| **pattern** | **regex equivalent** | **description** |\n| --- | --- | --- |\n| `?(pattern-list)` | `(...\\|...)?` |  Matches zero or one occurrence of the given pattern(s) |\n| `*(pattern-list)` | `(...\\|...)*` |  Matches zero or more occurrences of the given pattern(s) |\n| `+(pattern-list)` | `(...\\|...)+` |  Matches one or more occurrences of the given pattern(s) |\n| `@(pattern-list)` | `(...\\|...)` [^1] |  Matches one of the given pattern(s) |\n| `!(pattern-list)` | N/A |  Matches anything except one of the given pattern(s) |\n\n## API\n\n### [extglob](index.js#L35)\n\nConvert the given `extglob` pattern into a regex-compatible string. Returns an object with the compiled result and the parsed AST.\n\n**Params**\n\n* `pattern` **{String}**\n* `options` **{Object}**\n* `returns` **{String}**\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconsole.log(extglob('*.!(*a)'));\n//=> '(?!\\\\.)[^/]*?\\\\.(?!(?!\\\\.)[^/]*?a\\\\b).*?'\n```\n\n### [.match](index.js#L55)\n\nTakes an array of strings and an extglob pattern and returns a new array that contains only the strings that match the pattern.\n\n**Params**\n\n* `list` **{Array}**: Array of strings to match\n* `pattern` **{String}**: Extglob pattern\n* `options` **{Object}**\n* `returns` **{Array}**: Returns an array of matches\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconsole.log(extglob.match(['a.a', 'a.b', 'a.c'], '*.!(*a)'));\n//=> ['a.b', 'a.c']\n```\n\n### [.isMatch](index.js#L110)\n\nReturns true if the specified `string` matches the given extglob `pattern`.\n\n**Params**\n\n* `string` **{String}**: String to match\n* `pattern` **{String}**: Extglob pattern\n* `options` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst extglob = require('extglob');\n\nconsole.log(extglob.isMatch('a.a', '*.!(*a)'));\n//=> false\nconsole.log(extglob.isMatch('a.b', '*.!(*a)'));\n//=> true\n```\n\n### [.contains](index.js#L149)\n\nReturns true if the given `string` contains the given pattern. Similar to `.isMatch` but the pattern can match any part of the string.\n\n**Params**\n\n* `str` **{String}**: The string to match.\n* `pattern` **{String}**: Glob pattern to use for matching.\n* `options` **{Object}**\n* `returns` **{Boolean}**: Returns true if the patter matches any part of `str`.\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconsole.log(extglob.contains('aa/bb/cc', '*b'));\n//=> true\nconsole.log(extglob.contains('aa/bb/cc', '*d'));\n//=> false\n```\n\n### [.matcher](index.js#L183)\n\nTakes an extglob pattern and returns a matcher function. The returned function takes the string to match as its only argument.\n\n**Params**\n\n* `pattern` **{String}**: Extglob pattern\n* `options` **{String}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconst isMatch = extglob.matcher('*.!(*a)');\n\nconsole.log(isMatch('a.a'));\n//=> false\nconsole.log(isMatch('a.b'));\n//=> true\n```\n\n### [.create](index.js#L213)\n\nConvert the given `extglob` pattern into a regex-compatible string. Returns an object with the compiled result and the parsed AST.\n\n**Params**\n\n* `str` **{String}**\n* `options` **{Object}**\n* `returns` **{String}**\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconsole.log(extglob.create('*.!(*a)').output);\n//=> '(?!\\\\.)[^/]*?\\\\.(?!(?!\\\\.)[^/]*?a\\\\b).*?'\n```\n\n### [.capture](index.js#L247)\n\nReturns an array of matches captured by `pattern` in `string`, or `null` if the pattern did not match.\n\n**Params**\n\n* `pattern` **{String}**: Glob pattern to use for matching.\n* `string` **{String}**: String to match\n* `options` **{Object}**: See available [options](#options) for changing how matches are performed\n* `returns` **{Boolean}**: Returns an array of captures if the string matches the glob pattern, otherwise `null`.\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nextglob.capture(pattern, string[, options]);\n\nconsole.log(extglob.capture('test/*.js', 'test/foo.js'));\n//=> ['foo']\nconsole.log(extglob.capture('test/*.js', 'foo/bar.css'));\n//=> null\n```\n\n### [.makeRe](index.js#L280)\n\nCreate a regular expression from the given `pattern` and `options`.\n\n**Params**\n\n* `pattern` **{String}**: The pattern to convert to regex.\n* `options` **{Object}**\n* `returns` **{RegExp}**\n\n**Example**\n\n```js\nconst extglob = require('extglob');\nconst re = extglob.makeRe('*.!(*a)');\nconsole.log(re);\n//=> /^[^\\/]*?\\.(?![^\\/]*?a)[^\\/]*?$/\n```\n\n## Options\n\nAvailable options are based on the options from Bash (and the option names used in bash).\n\n### options.nullglob\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nWhen enabled, the pattern itself will be returned when no matches are found.\n\n### options.nonull\n\nAlias for [options.nullglob](#optionsnullglob), included for parity with minimatch.\n\n### options.cache\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nFunctions are memoized based on the given glob patterns and options. Disable memoization by setting `options.cache` to false.\n\n### options.failglob\n\n**Type**: `boolean`\n\n**Default**: `undefined`\n\nThrow an error is no matches are found.\n\n## Benchmarks\n\nLast run on April 30, 2018\n\n```sh\n# negation-nested (49 bytes)\n  extglob x 1,380,148 ops/sec ±3.35% (62 runs sampled)\n  minimatch x 156,800 ops/sec ±4.13% (76 runs sampled)\n\n  fastest is extglob (by 880% avg)\n\n# negation-simple (43 bytes)\n  extglob x 1,821,746 ops/sec ±1.61% (76 runs sampled)\n  minimatch x 365,618 ops/sec ±1.87% (84 runs sampled)\n\n  fastest is extglob (by 498% avg)\n\n# range-false (57 bytes)\n  extglob x 2,038,592 ops/sec ±3.39% (85 runs sampled)\n  minimatch x 310,897 ops/sec ±12.62% (87 runs sampled)\n\n  fastest is extglob (by 656% avg)\n\n# range-true (56 bytes)\n  extglob x 2,105,081 ops/sec ±0.69% (91 runs sampled)\n  minimatch x 332,188 ops/sec ±0.45% (91 runs sampled)\n\n  fastest is extglob (by 634% avg)\n\n# star-simple (46 bytes)\n  extglob x 2,154,184 ops/sec ±0.99% (89 runs sampled)\n  minimatch x 452,812 ops/sec ±0.51% (88 runs sampled)\n\n  fastest is extglob (by 476% avg)\n\n```\n\n## Differences from Bash\n\nThis library has complete parity with Bash 4.3 with only a couple of minor differences.\n\n* In some cases Bash returns true if the given string \"contains\" the pattern, whereas this library returns true if the string is an exact match for the pattern. You can relax this by setting `options.contains` to true.\n* This library is more accurate than Bash and thus does not fail some of the tests that Bash 4.3 still lists as failing in their unit tests\n\n## About\n\n### Related projects\n\n* [braces](https://www.npmjs.com/package/braces): Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support… [more](https://github.com/micromatch/braces) | [homepage](https://github.com/micromatch/braces \"Bash-like brace expansion, implemented in JavaScript. Safer than other brace expansion libs, with complete support for the Bash 4.3 braces specification, without sacrificing speed.\")\n* [expand-brackets](https://www.npmjs.com/package/expand-brackets): Expand POSIX bracket expressions (character classes) in glob patterns. | [homepage](https://github.com/micromatch/expand-brackets \"Expand POSIX bracket expressions (character classes) in glob patterns.\")\n* [expand-range](https://www.npmjs.com/package/expand-range): Fast, bash-like range expansion. Expand a range of numbers or letters, uppercase or lowercase. Used… [more](https://github.com/jonschlinkert/expand-range) | [homepage](https://github.com/jonschlinkert/expand-range \"Fast, bash-like range expansion. Expand a range of numbers or letters, uppercase or lowercase. Used by [micromatch].\")\n* [fill-range](https://www.npmjs.com/package/fill-range): Fill in a range of numbers or letters, optionally passing an increment or `step` to… [more](https://github.com/jonschlinkert/fill-range) | [homepage](https://github.com/jonschlinkert/fill-range \"Fill in a range of numbers or letters, optionally passing an increment or `step` to use, or create a regex-compatible range with `options.toRegex`\")\n* [micromatch](https://www.npmjs.com/package/micromatch): Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch. | [homepage](https://github.com/micromatch/micromatch \"Glob matching for javascript/node.js. A drop-in replacement and faster alternative to minimatch and multimatch.\")\n\n### Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n### Contributors\n\n| **Commits** | **Contributor** |  \n| --- | --- |  \n| 54 | [jonschlinkert](https://github.com/jonschlinkert) |  \n| 6  | [danez](https://github.com/danez) |  \n| 2  | [isiahmeadows](https://github.com/isiahmeadows) |  \n| 1  | [doowb](https://github.com/doowb) |  \n| 1  | [devongovett](https://github.com/devongovett) |  \n| 1  | [mjbvz](https://github.com/mjbvz) |  \n| 1  | [shinnn](https://github.com/shinnn) |  \n\n### Building docs\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n### Running tests\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n### Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on April 30, 2018._",
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "github@sellside.com",
+      "name": "jonschlinkert"
+    }
+  ],
+  "time": {
+    "modified": "2018-04-30T13:12:10.790Z",
+    "created": "2015-02-05T21:40:42.212Z",
+    "0.1.0": "2015-02-05T21:40:42.212Z",
+    "0.2.0": "2015-02-05T21:53:13.736Z",
+    "0.3.0": "2015-04-18T22:29:38.758Z",
+    "0.3.1": "2015-08-01T20:11:58.577Z",
+    "0.3.2": "2016-01-20T08:44:58.021Z",
+    "1.0.0": "2016-10-20T21:19:21.320Z",
+    "1.1.0": "2016-12-11T05:12:18.051Z",
+    "2.0.0": "2017-09-08T02:08:15.023Z",
+    "2.0.2": "2017-09-11T04:18:44.503Z",
+    "2.0.3": "2017-12-21T23:44:24.850Z",
+    "2.0.4": "2018-01-12T22:11:27.449Z",
+    "3.0.0": "2018-04-30T13:12:05.961Z"
+  },
+  "homepage": "https://github.com/micromatch/extglob",
+  "keywords": [
+    "bash",
+    "extended",
+    "extglob",
+    "glob",
+    "globbing",
+    "ksh",
+    "match",
+    "pattern",
+    "patterns",
+    "regex",
+    "test",
+    "wildcard"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micromatch/extglob.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/micromatch/extglob/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Devon Govett",
+      "url": "http://badassjs.com"
+    },
+    {
+      "name": "Isiah Meadows",
+      "url": "https://www.isiahmeadows.com"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Matt Bierner",
+      "url": "http://mattbierner.com"
+    },
+    {
+      "name": "Shinnosuke Watanabe",
+      "url": "https://shinnn.github.io"
+    },
+    {
+      "name": "Daniel Tschinder",
+      "url": "https://github.com/danez"
+    }
+  ],
+  "users": {
+    "abhisekp": true,
+    "arteffeckt": true
+  },
+  "_attachments": {}
+}

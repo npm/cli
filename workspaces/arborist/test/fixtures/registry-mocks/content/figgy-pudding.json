@@ -1,0 +1,1117 @@
+{
+  "_id": "figgy-pudding",
+  "_rev": "36-a9e2d2b210f10fc866bd6ce3e314a1a9",
+  "name": "figgy-pudding",
+  "description": "Delicious, festive, cascading config/opts definitions",
+  "dist-tags": {
+    "latest": "3.5.2"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "figgy-pudding",
+      "version": "0.0.1",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "preversion": "npm t",
+        "postversion": "npm publish && git push --follow-tags",
+        "pretest": "standard lib test *.js",
+        "test": "nyc -- tap -j8 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^8.6.0",
+        "tap": "^10.0.2"
+      },
+      "gitHead": "153be98d1cbee45fb39dc4297241d7182baba975",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@0.0.1",
+      "_shasum": "5be4d211c872bb267225346381957c435b7c7c4c",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "5be4d211c872bb267225346381957c435b7c7c4c",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/figgy-pudding-0.0.1.tgz_1486434433688_0.060132883256301284"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "figgy-pudding",
+      "version": "1.0.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "preversion": "npm t",
+        "postversion": "npm publish && git push --follow-tags",
+        "pretest": "standard lib test *.js",
+        "test": "nyc -- tap -j8 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "CC0-1.0",
+      "dependencies": {},
+      "devDependencies": {
+        "nyc": "^10.0.0",
+        "standard": "^8.6.0",
+        "tap": "^10.0.2"
+      },
+      "gitHead": "4bd8c1323046019a7fe947d8230956fb5c9f36ef",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@1.0.0",
+      "_shasum": "00ae832d49ee2373590f1a06416b194936afb627",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "00ae832d49ee2373590f1a06416b194936afb627",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/figgy-pudding-1.0.0.tgz_1486504629065_0.16432326822541654"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "figgy-pudding",
+      "version": "2.0.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "49388fd6049fb0707e1c5580371bab45ff75b134",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@2.0.0",
+      "_npmVersion": "5.8.0-next.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-h67cT0L1BpsDITtxWfgsCAH5BBI3tk9VBnRdTYltSyUMWZF7lqBYgQfaLwRhd6AAIu8Aft0JsneId1dVwKBH6Q==",
+        "shasum": "0079daad9855d2a2585acc6f49d5e4e8b7bd291a",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7283
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_2.0.0_1521177895432_0.26953869904274996"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "figgy-pudding",
+      "version": "2.0.1",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "1b2d18b188e50c7e9b71b36163fa9593efa40a41",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@2.0.1",
+      "_npmVersion": "5.8.0-next.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-yIJPhIBi/oFdU/P+GSXjmk/rmGjuZkm7A5LTXZxNrEprXJXRK012FiI1BR1Pga+0d/d6taWWD+B5d2ozqaxHig==",
+        "shasum": "56c8fc878e06e1090799b9bcc91cbd85c2c92278",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-2.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7589
+      },
+      "maintainers": [
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_2.0.1_1521179306148_0.810228600565964"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "figgy-pudding",
+      "version": "3.0.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "018039231b94ea37318e476afa40afa32bf1c6e4",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.0.0",
+      "_npmVersion": "6.0.0-next.0",
+      "_nodeVersion": "9.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-V5i5eQecLl6rfChOBqAVV9OleahLe6pCXOSG3hWAoYSkDyp28xjhsWh0xRPz1PHFARMP6rp9bOiLXipwF9iObA==",
+        "shasum": "b27194ad339c61b6f492bcc52852b5f107af9a16",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9288
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.0.0_1523051828836_0.7858626678194904"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "figgy-pudding",
+      "version": "3.1.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^11.1.2",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "ab7f0aad103c806dafb134343ae9f21f67435d00",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.1.0",
+      "_npmVersion": "6.0.0-next.0",
+      "_nodeVersion": "9.8.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-Gi2vIue0ec6P/7LNpueGhLuvfF2ztuterl8YFBQn1yKgIS46noGxCbi+vviPdObNYtgUSh5FpHy5q0Cw9XhxKQ==",
+        "shasum": "a77ed2284175976c424b390b298569e9df86dd1e",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10188
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.1.0_1523230922576_0.9253852187715028"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.0": {
+      "name": "figgy-pudding",
+      "version": "3.2.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "f8f11564ce090eb272472ffe6b128c098a557993",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.2.0",
+      "_npmVersion": "6.3.0-next.0",
+      "_nodeVersion": "10.5.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-S2gSvqcqkI4sk+dI3ykKllfEg88dL5cXM0QPT4z9UbOkNygqec8/99d0VB3ikZ7u1/QC5l4e1YJPWvoUFuRVkg==",
+        "shasum": "464626b73d7b0fc045a99753d191b0785957ff73",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10593,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbWkQRCRA9TVsSAnZWagAAkpkQAKAwhXoxByiLiPG4Eyzj\nbs0AXPb3cjBji48wuK6AYYMQ9mvOyH/bNtpBtoooY/H361HjhbIvwLNxWpoT\n0M4bqAAvV1e6a2lGgtCekODinGzL85h3/CsO2V7SdRVB3ywz4dTwxpi8UVds\nhKiJENp36IBAFaUT2Ozekz4lyjwYg4Rpf119lMPT62k9/r3bCP0QIUeRC2kk\n9PBzWgWYkcSZHJrVdcFWiOXVVOZ4tGNh/cBqyQyOF0OXbwrUlXLUi1zxPdM/\nu2tshokpz/eqhPV2wj/6j+ny2csZJVWaiKAy/7iaqAjaZd5fa8OTiH8vfLuw\n1ebi7+Gx+PtnNcZeVS3WtQOkp+D6Z1aPADct1H+WmOLap3bR08J8penAoP8u\n8qBe2RfLadrpzb4OfDntfe17WTv1H/WOp8ze8/B8A+lJq2Yvb2PiRxHy/SJr\noLuLBMQPTudxNofUwVsQQSMKUn83qMSRpLZ2JRUoGkDdh9P5ZNPIItfX1yS+\naxhIbffODboo3LlXm/7eOYwauVznC2vCpOa8X44R7nKAXiGSdOetmOJq8VaF\nSDi1q47T70RKjne5NI8dT33hyk83z0TFllW6zGc/VxPK2m3G+ya/tMX8luNx\nTIR+5VbXO/y/OJf9/naCYZ89khIdpHjJWfseY6l4jn3/c/gGqW7mezkxjPjn\nWIx+\r\n=Rzzu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.2.0_1532642321850_0.076595614169785"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.2.1": {
+      "name": "figgy-pudding",
+      "version": "3.2.1",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "bc6f9edb82baceb2e70a79a8c5fbc6c8751e0459",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.2.1",
+      "_npmVersion": "6.4.0-next.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-1kWvzhClfNh9NhhUaT9D9H7knbQ4kW+SOa7TRYHZshd0YsBWQpffjx9T++Psx5XpXJV6utRSP70sm2Ivb7If3w==",
+        "shasum": "946bdc2515abad5190027113778595462b668eb3",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 11588,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbc4KSCRA9TVsSAnZWagAAL3QP/iUY+zaOP8x8wTmeH2rV\ny8f8RupnpMYwVmVzhQlWjUq5QMvhuuvZSljZ9vRAtJxwTwJWjf05L7TTorYo\negEwByqzdSVB7/rNrteyc175fU7jRkM5Yb58OewDsH0zNVo/WjrV0el0INBf\nBKvE7ZlGTbS591EZsTLMfUxM6XEhry8NfKmE4dQ3zW0S/frRxhxo6XQBf3Su\nz6sG+e/tFEWxVgBKuA6dhObH83oYNnYYk8wVsHv+eK5WF+tpGtv0PBTGD/HY\nPt5NfTR01Q4IzobeWpTMZulxHfGSlUVR40FSUSoHJQA5uvEN/EAUkInLtJ30\nFMtu6fsQSGuJjmvK5xH8uvGgTId/bCp3kb+W04zc9eO5/uHpPb9IqeKZPnXP\n6cTVT64GyL0on4Y+IaTXWVDib8wRUdUbkabAlTgx+Qxxkr/KzX9tB5OYAP+D\nPl+Y7BzVvZVVDLF1YRhajLMLDntKq2mOA5HQXmJwWW1HBO+Lapu367bana2s\njWn9DShUamfuv36Luq2Zz6biERugR6IePqW58GESu+09gGGrSWRl86RQpMv7\naXEaTrok1tfUMqPjn2/wjevboPqM/KB9CJJBQ6ASZgkMucn4wv8f8e1hv9ie\nATfhdIr+oGTuuXdlMlnI7UwZp/RCyx8Lc07RZjR9bT30yKtKWJ7BrOB5FFBL\n4QyI\r\n=HRKN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.2.1_1534296722898_0.3241029239706352"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.3.0": {
+      "name": "figgy-pudding",
+      "version": "3.3.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "3a3e029abb88973819e10fe92f317881c5e9a851",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.3.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-M+rtA1ExfVeoGM+BIXhyhamlc9tptJ0PI5tzy8EEzj4KM0r6uFdthIEU3zwWt3WmmIT/5bExGL4vr5xlqa1ehA==",
+        "shasum": "dd6df760ce955b785ebc7d28a1555ee7e2e40d21",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12996,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdNQoCRA9TVsSAnZWagAAYiMP/3YBWYxqVmjZ7dVKnQM5\n3c8RBE0dizd/RAG7wlc0F+WlT+9UgjKERXjU4N1Haa4rmWF53yoAsUcUof/B\n4urk5bj2PAZ0d7LXXc7c5XAlR/Wm0oJpR5PGlyJFTQ0DVxz/5K7zQ6jIBEmj\n9izHSQwoTEUWFmQSUWpcDAYOTP1q3QJmObndJftRRC8QnxDxfWVLFzY+JlyX\nIPLPkS1nKCC+PEM3SwMEQgSoE1TMyjwk9ISledWSDjCdND4DxFPNrBrz9UxS\n3k/lBmGq3XfWq227SgW2jVtFdwfLRVNASE2CXbzLxXfucZqwtcKPkx+4lq8W\n8wQo78p2hDh+dIQg1Nibm2PkJxiyIinxh41vFFIPKYHNFaFWdUVtLQb0dpuU\nIkYsyl50i+uI09Pp4i/c/IyHRiEIcz4A4ZNKUa3SXNjf12xbyz/m6QcvlAC2\nUTxaDxKYFBeOZdYvJUHs0CzcWZdq3qHWRCRYaeMjf2Mmlu16u/jCzLfQ2IIy\nFw1vUG+4+8UwR45OuD2fXHvUs9jDcmL1ODI8VlRPlIa2OZitnLikU5y9Qhrw\nxshwTccU9jK49YsDi40ddZ3ltA7bnct+gnj91zNbGbZ3wNVjYL+lW37hlDWr\nDbXFeqVmmHHfzs+1+q274NrmjN09cric1c7eJdtbj0wXyBKdVYP5A2w2hgEj\naBrS\r\n=BDox\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.3.0_1534383143468_0.3393609820350276"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.0": {
+      "name": "figgy-pudding",
+      "version": "3.4.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "526571ae8179d774fe7d142fe286daf427d616c7",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.4.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-HC2Jfmr7yxnvCKLwimbztpbC8pdIvKykk6iPOk1wq/nY7S9L12Trq2w0t6LPqpARBaFAoO0hkkFTjKlYjyMxcQ==",
+        "shasum": "683ad8c51b5d443d85c129e66cae9f2714926eea",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.4.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13632,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdOOHCRA9TVsSAnZWagAAczYP/2ngv4eri01XT5V5/aqM\nw55nC/TmH9Q227eYy1VE3Ikk+I2KY3aIJQSWUNHU6D+TFD42yPG0R1mYVBXW\nQ1MBQpAuSHbKbnevTodf5QTKe/q3KTdTitWOcGnaJ4YB9hGuyYThoV1BXLkC\n7F98Tn8uiQmjDb2YgQ+KCBIXVqmV/cMiZt7y9ICe0Tpx/Q9+27fjGPCa0P0y\nfTohcOcjixEf7Zm5yWf06PNPzJQO71DrOPMFhUw3om+zHH0V6OY6CPGrPAzO\nvut74OP9IDeWJxz+OdiBkLzX+XiGUlZ9K/Io9KOrj/7DgNuO9vfYmEQ0GY/O\nLIfZll29aRAMgKj1k00s/jHs1c4znYTX8EoKBIOkxSGt0XsfMvuep2ROr7in\nAES2sphsvRjwtiWGkw72QHLaLCbxzyaelB7r7E269UC7jKDVp8sfLUDu5s6R\nUISH5JY1KSGq1nkewd6B/dtM8isUCV6PAoaQ3rRFjNl65URus21z/nIcb/xd\nWCAOkun3rnwLKSHCrNgoxbzeRW198bk+eDMBAxLLLfDonaO5aB2B2QyGMA+Y\nnLNGIl4GkrSr9b7AubosB001A2i1PLgZsEB3gAA448iRegIrthG+xKT8kS7g\nmZwBZojhrzWjNv8GbsUnplAWZiKYmS/vlw3nvACw0QInzMdp8U0Jl3t+CVZg\nhuYB\r\n=DckI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.4.0_1534387078790_0.15201654260381847"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.4.1": {
+      "name": "figgy-pudding",
+      "version": "3.4.1",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "c306571e40ee96022c93c06511a5dac0f0e1ab01",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.4.1",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-j1SAT641cerGuOvoSBoaE9LbSzh1N/E5ufk9oMpOKuyK8MyW3sGg4rh+4qhLmVTEAzipO5XTHYT4gjb6JYLE8g==",
+        "shasum": "af66da1991fa2f94ff7f33b545a38ea4b3869696",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.4.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14597,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbddpMCRA9TVsSAnZWagAAr1EQAJcWddlhC6GIgzLyauRI\n56jat4zljMsWRE/ujgd44LVEhQTRrBzibMmSl//2TWdL2RFxUNw549WpWJYz\naFfSOp1oiCsnhZuluaGZt+FRCFSHz6mVHX7aBVmuKL1QDCLzB7PPgouhSVSu\nxHFR1C6/yKCwe9ktQRa7IoC3Xa/oh0EFmJJG/tcPPjMB73dYxZ0nzZYhJStj\nOck869ai1XRKcCLbAplyVY19nX7gzy71eiGNoXaA4BwiLHrxPoSIkFi+GZSz\nxF3Yj4Q9oAr0K7Y/II4Cz4aCD4T/GfEUfJmaCynh/Dmxcub1VrKsXZEOzYXI\nuMaAy/yCOAQzCtrmX2unHo/czQKQQmJQlOz4v6qFvOjLtOlglpGXoxq34Rqh\niQc6LUL3cMcooQQou9LifMZpB3MeGYA4+sfL2MlOc+NKkrpRhBHrLVOVp7vE\neI7JPnpZR8Zdkem7BD29Ie6g/w9K45eOXJyc8v/cGwrgepZKRMabxsajyvW4\nho3S7Ps4ksNEn5d5nTZjuRjTmSdMCndFltk1ma5TV6Q2qqRg8gF3sfsBRVQx\n133KCbSAEnhvpW9+HtotLv7opfatC5YdOgceiE6hI7GOL9sXtVavZLuLDB90\n2+4/7oC6Ccd4AdFHzTjKIvUBh5TFF15qIW2FgIXkd7fKjMDtW9/I8hjnK/s3\nLQfg\r\n=7Apo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.4.1_1534450251778_0.2721734825118596"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.5.0": {
+      "name": "figgy-pudding",
+      "version": "3.5.0",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "cbff4729987d1bce00d89f0c31d74718252dc8c8",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.5.0",
+      "_npmVersion": "6.4.1-next.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-3ictE+JYpOWuDoTWQW99aw0xIR0MTKFQnJcsIeDvVt08aoaS/8w8jx6TmXz58r0tnrAwSbaHGa14dK1c1c528g==",
+        "shasum": "50f18167ffb8d6ff199463f2c25e8875753d79bb",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15042,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgM96CRA9TVsSAnZWagAATt4P/0abVn+MiF1gyLd9TdZI\nX8Y7Pje5M1xwct3Ar4RgIoJfmDccQLfIpzu21i/Zi7F5KZ5FJVfEaTwGHxTO\n+Wlg1Vfg3byjvZNcGA/iDPL4yseP/CoUYRFFfjeI0AqXez530gpVBImSxnGK\n6eF2/YCQhd4GLk4Aw+7AMWh6iey/BcUvOdxrU1xPCisgzGWQAtsq162X2XPo\nc5A30Qeu7h3IwzgNq6D5mzyj0MmVgf2bFwtOmH+XY1WdiUWthL4GLW/I5AQu\nCRPCLbTngiJNxUn8rfzZoNGEB4Gm+t01t63M9m65PflOV1dHZ0UJXVrCk2u2\nHIvVL+qdBn4iDo5JFhs0lujSxkdtOL4cvjtkb32hBiYXnomnHOaPZ6w/AWmn\nDvXKUyKuZTixQHTuaZFOsWENrmnDWIU04qhR6WTG2ZFWkUlB1sPVcUoNGRWZ\nZclAQR9qhsDINqHOf2lnUqqueOy6IlakoGTVO61ilRf2JAqKMMEE8wOxP8Nv\nPssFXhuL+/+fDcPBV/RnJg6GNl07evSuLWLbuFZQpfBXfSlcdP+F4PtR/jSK\nxER8u+JBXJVDilusLAlS9IR1tsGa8fhqgM8ga6nlww01s0lT4crao3BKFgoZ\nH2Xi3Oo9eVZSmnUnEIqOC9SxzeyIuvT0VmacNhAMB2F9FhshJZYwr+emGxyz\nY0+8\r\n=LIth\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.5.0_1535168377402_0.38911617295835943"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.5.1": {
+      "name": "figgy-pudding",
+      "version": "3.5.1",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "files": [
+        "*.js",
+        "lib"
+      ],
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --coverage test/*.js",
+        "update-coc": "weallbehave -o . && git add CODE_OF_CONDUCT.md && git commit -m 'docs(coc): updated CODE_OF_CONDUCT.md'",
+        "update-contrib": "weallcontribute -o . && git add CONTRIBUTING.md && git commit -m 'docs(contributing): updated CONTRIBUTING.md'"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zkat/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1",
+        "weallbehave": "^1.2.0",
+        "weallcontribute": "^1.0.8"
+      },
+      "gitHead": "7d68bd3b8bba8d6343aa56c33e95986573d17adf",
+      "bugs": {
+        "url": "https://github.com/zkat/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/zkat/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.5.1",
+      "_npmVersion": "6.4.1-next.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "npm@zkat.tech"
+      },
+      "dist": {
+        "integrity": "sha512-vNKxJHTEKNThjfrdJwHc7brvM6eVevuO5nTj6ez8ZQ1qbXTvGthucRF7S4vf2cr71QVnT70V34v0S1DyQsti0w==",
+        "shasum": "862470112901c727a0e495a80744bd5baa1d6790",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18589,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgbNPCRA9TVsSAnZWagAAd6oQAKAGIrveXRiPm14qfabm\nnimhLk6KXlqLH9C9CyDHq8S+qbsUCK217D8H3jjlOlr+JrZnyfmV8/S0tR8L\ncP5ZsIxiPC3aFn8b7bviVoGraba+/pQ+ZHxrupTrXlaDlaYhIb+u1Nr/cj8c\nSNB7MV+nhu5qdzfecLDCWg4lyas80yUB6BI1S2so694WbFxDsZKQp9SXN7Le\nKGVSJdaz60hqYZF3KRDcR4DiV9yLIgO2dKXaijNYC2J0bvCguoiMD/8eKTBO\ni5UGw5lF7hR0ggMAWECKTgVY2EybePTmtWZ/nLQ/LjPFcPrfOHOnkn1oQp8V\nQJXao3MdQ4YFOezdSUR+Sj9F3ITo0CoztDyCE7p1EkE/s7yh3zKupt/HD7AM\nnFgqR+YnaGedjH8wQ2j12XPMgywv9dRYMyuMrPYp9y5KLgHZTjXbwVN2v8zN\n7V2UfBBta/MsG6p9pDCektV1yI1lpoCf/F5umdZIiwamWsN1S95MdNY/nALX\nXsDQxC9yva+GULLlcLuFRALvXXwP97iqHKYZ6c4thGHVqSh6Cu5wgatbXegr\n1n+09ZWKdmFdsqUfJYwym6/KFHXIJq1D6M39+Y67NZnQ/YQIotHdjPXr6jWJ\nWIHnxSBHvDpY7hl54oFUg6IJhtCnuJokBYyg3fUqnaexTxn0o389vQ1hppq6\nM+Xu\r\n=B/oi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "zkat",
+          "email": "kzm@sykosomatic.org"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.5.1_1535226702466_0.7038187525511241"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.5.2": {
+      "name": "figgy-pudding",
+      "version": "3.5.2",
+      "description": "Delicious, festive, cascading config/opts definitions",
+      "main": "index.js",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --coverage test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/figgy-pudding.git"
+      },
+      "keywords": [
+        "config",
+        "options",
+        "yummy"
+      ],
+      "author": {
+        "name": "Kat Marchán",
+        "email": "kzm@sykosomatic.org"
+      },
+      "license": "ISC",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.0.1"
+      },
+      "gitHead": "757175df2b06e89cdc1550deb86acaf45fac6b21",
+      "bugs": {
+        "url": "https://github.com/npm/figgy-pudding/issues"
+      },
+      "homepage": "https://github.com/npm/figgy-pudding#readme",
+      "_id": "figgy-pudding@3.5.2",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-0btnI/H8f2pavGMN8w40mlSKOfTK2SVJmBfBeVIj3kNw0swwgzyRq0d5TJVOwodFmtvpPeWPN/MCcfuWF0Ezbw==",
+        "shasum": "b4eee8148abb01dcf1d1ac34367d59e12fa61d6e",
+        "tarball": "https://registry.npmjs.org/figgy-pudding/-/figgy-pudding-3.5.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 18434,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeejnFCRA9TVsSAnZWagAA9CgQAJ7iGyn+McTQAEKqjUtC\n2qJsGdCBZmz9MfYTx3VUxHBdSgBkNjcRhmKGzWcY+2KxI7CHS5gAuF9Y/oPJ\nxHHtRMiHeksc0LW0qhPcZiOAsdRml3IQJf02gKUyTR/uvRo6KelAvGuyg+k6\nfjwLI9zq6Hqal2RYILCvH59ysQj+lTvKS5SdNThkLt+tg4dNFzSkmOLn6Y6T\nbCzgf+wb9973BqwwF3floLWhkVPbmjair0+TdL5RnmMXQgNzMRNI7gOFC5fq\nlTSILFyVZzRJ31n+Nr0s12mvBcf8Ete4IUxcQjQcDDOzxMLJpM9v4ij7yZEp\nLcfSVkfQFZZYyQ1OWxAKtDMFK09NEdmYGSlQXq4rumxnrQZC5xsjkybi+Xv7\n+JACxR5YtdK2RVW34T7TbkxIDXaYSwvwMGmDzmJvG2Q1r7yRVcnx36OcZ8On\ntnklwrKPBzJH3WC/6c9BHWIvre8n/Li6+WlrxfRDQxsalcd9x6sMJ92r8vJs\n13gsHTPprS9RTeu/uRKV44N5eb+MyZTx+XHI9ar1hwWg41GqVYWnWyWquONA\nZqlv1cKC5MRIpc+bXNAq1cX7EPCgLBD12ez7uVV2YapO5zV9vAfDNFqccduT\nP4ynpTu1/uKS3KAq+k78uIbVIq1o4BvlbyjReGavQ7FfcoiPRQtbZwL8P6AE\n/jlo\r\n=UMNn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/figgy-pudding_3.5.2_1585068485271_0.8348682273445724"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# Note: pending imminent deprecation\n\n**This module will be deprecated once npm v7 is released.  Please do not rely\non it more than absolutely necessary (ie, only if you are depending on\nit for use with npm v6 internal dependencies).**\n\n----\n\n# figgy-pudding [![npm version](https://img.shields.io/npm/v/figgy-pudding.svg)](https://npm.im/figgy-pudding) [![license](https://img.shields.io/npm/l/figgy-pudding.svg)](https://npm.im/figgy-pudding) [![Travis](https://img.shields.io/travis/npm/figgy-pudding.svg)](https://travis-ci.org/npm/figgy-pudding) [![Coverage Status](https://coveralls.io/repos/github/npm/figgy-pudding/badge.svg?branch=latest)](https://coveralls.io/github/npm/figgy-pudding?branch=latest)\n\n[`figgy-pudding`](https://github.com/npm/figgy-pudding) is a small JavaScript\nlibrary for managing and composing cascading options objects -- hiding what\nneeds to be hidden from each layer, without having to do a lot of manual munging\nand passing of options.\n\n### The God Object is Dead!\n### Now Bring Us Some Figgy Pudding!\n\n## Install\n\n`$ npm install figgy-pudding`\n\n## Table of Contents\n\n* [Example](#example)\n* [Features](#features)\n* [API](#api)\n  * [`figgyPudding(spec)`](#figgy-pudding)\n  * [`PuddingFactory(values)`](#pudding-factory)\n    * [`opts.get()`](#opts-get)\n    * [`opts.concat()`](#opts-concat)\n    * [`opts.toJSON()`](#opts-to-json)\n    * [`opts.forEach()`](#opts-for-each)\n    * [`opts[Symbol.iterator]()`](#opts-symbol-iterator)\n    * [`opts.entries()`](#opts-entries)\n    * [`opts.keys()`](#opts-keys)\n    * [`opts.value()`](#opts-values)\n\n### Example\n\n```javascript\n// print-package.js\nconst fetch = require('./fetch.js')\nconst puddin = require('figgy-pudding')\n\nconst PrintOpts = puddin({\n  json: { default: false }\n})\n\nasync function printPkg (name, opts) {\n  // Expected pattern is to call this in every interface function. If `opts` is\n  // not passed in, it will automatically create an (empty) object for it.\n  opts = PrintOpts(opts)\n  const uri = `https://registry.npmjs.com/${name}`\n  const res = await fetch(uri, opts.concat({\n    // Add or override any passed-in configs and pass them down.\n    log: customLogger\n  }))\n  // The following would throw an error, because it's not in PrintOpts:\n  // console.log(opts.log)\n  if (opts.json) {\n    return res.json()\n  } else {\n    return res.text()\n  }\n}\n\nconsole.log(await printPkg('figgy', {\n  // Pass in *all* configs at the toplevel, as a regular object.\n  json: true,\n  cache: './tmp-cache'\n}))\n```\n\n```javascript\n// fetch.js\nconst puddin = require('figgy-pudding')\n\nconst FetchOpts = puddin({\n  log: { default: require('npmlog') },\n  cache: {}\n})\n\nmodule.exports = async function (..., opts) {\n  opts = FetchOpts(opts)\n}\n```\n\n### Features\n\n* hide options from layer that didn't ask for it\n* shared multi-layer options\n* make sure `opts` argument is available\n* transparent key access like normal keys, through a Proxy. No need for`.get()`!\n* default values\n* key aliases\n* arbitrary key filter functions\n* key/value iteration\n* serialization\n* 100% test coverage using `tap --100`\n\n### API\n\n#### <a name=\"figgy-pudding\"></a> `> figgyPudding({ key: { default: val } | String }, [opts]) -> PuddingFactory`\n\nDefines an Options constructor that can be used to collect only the needed\noptions.\n\nAn optional `default` property for specs can be used to specify default values\nif nothing was passed in.\n\nIf the value for a spec is a string, it will be treated as an alias to that\nother key.\n\n##### Example\n\n```javascript\nconst MyAppOpts = figgyPudding({\n  lg: 'log',\n  log: {\n    default: () => require('npmlog')\n  },\n  cache: {}\n})\n```\n\n#### <a name=\"pudding-factory\"></a> `> PuddingFactory(...providers) -> FiggyPudding{}`\n\nInstantiates an options object defined by `figgyPudding()`, which uses\n`providers`, in order, to find requested properties.\n\nEach provider can be either a plain object, a `Map`-like object (that is, one\nwith a `.get()` method) or another figgyPudding `Opts` object.\n\nWhen nesting `Opts` objects, their properties will not become available to the\nnew object, but any further nested `Opts` that reference that property _will_ be\nable to read from their grandparent, as long as they define that key. Default\nvalues for nested `Opts` parents will be used, if found.\n\n##### Example\n\n```javascript\nconst ReqOpts = figgyPudding({\n  follow: {}\n})\n\nconst opts = ReqOpts({\n  follow: true,\n  log: require('npmlog')\n})\n\nopts.follow // => true\nopts.log // => Error: ReqOpts does not define `log`\n\nconst MoreOpts = figgyPudding({\n  log: {}\n})\nMoreOpts(opts).log // => npmlog object (passed in from original plain obj)\nMoreOpts(opts).follow // => Error: MoreOpts does not define `follow`\n```\n\n#### <a name=\"opts-get\"></a> `> opts.get(key) -> Value`\n\nGets a value from the options object.\n\n##### Example\n\n```js\nconst opts = MyOpts(config)\nopts.get('foo') // value of `foo`\nopts.foo // Proxy-based access through `.get()`\n```\n\n#### <a name=\"opts-concat\"></a> `> opts.concat(...moreProviders) -> FiggyPudding{}`\n\nCreates a new opts object of the same type as `opts` with additional providers.\nProviders further to the right shadow providers to the left, with properties in\nthe original `opts` being shadows by the new providers.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1})\nopts.get('x') // 1\nopts.concat({x: 2}).get('x') // 2\nopts.get('x') // 1 (original opts object left intact)\n```\n\n#### <a name=\"opts-to-json\"></a> `> opts.toJSON() -> Value`\n\nConverts `opts` to a plain, JSON-stringifiable JavaScript value. Used internally\nby JavaScript to get `JSON.stringify()` working.\n\nOnly keys that are readable by the current pudding type will be serialized.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1})\nopts.toJSON() // {x: 1}\nJSON.stringify(opts) // '{\"x\":1}'\n```\n\n#### <a name=\"opts-for-each\"></a> `> opts.forEach((value, key, opts) => {}, thisArg) -> undefined`\n\nIterates over the values of `opts`, limited to the keys readable by the current\npudding type. `thisArg` will be used to set the `this` argument when calling the\n`fn`.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1, y: 2})\nopts.forEach((value, key) => console.log(key, '=', value))\n```\n\n#### <a name=\"opts-entries\"></a> `> opts.entries() -> Iterator<[[key, value], ...]>`\n\nReturns an iterator that iterates over the keys and values in `opts`, limited to\nthe keys readable by the current pudding type. Each iteration returns an array\nof `[key, value]`.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1, y: 2})\n[...opts({x: 1, y: 2}).entries()] // [['x', 1], ['y', 2]]\n```\n\n#### <a name=\"opts-symbol-iterator\"></a> `> opts[Symbol.iterator]() -> Iterator<[[key, value], ...]>`\n\nReturns an iterator that iterates over the keys and values in `opts`, limited to\nthe keys readable by the current pudding type. Each iteration returns an array\nof `[key, value]`. Makes puddings work natively with JS iteration mechanisms.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1, y: 2})\n[...opts({x: 1, y: 2})] // [['x', 1], ['y', 2]]\nfor (let [key, value] of opts({x: 1, y: 2})) {\n  console.log(key, '=', value)\n}\n```\n\n#### <a name=\"opts-keys\"></a> `> opts.keys() -> Iterator<[key, ...]>`\n\nReturns an iterator that iterates over the keys in `opts`, limited to the keys\nreadable by the current pudding type.\n\n##### Example\n\n```js\nconst opts = MyOpts({x: 1, y: 2})\n[...opts({x: 1, y: 2}).keys()] // ['x', 'y']\n```\n\n#### <a name=\"opts-values\"></a> `> opts.values() -> Iterator<[value, ...]>`\n\nReturns an iterator that iterates over the values in `opts`, limited to the keys\nreadable by the current pudding type.\n\n##### Example\n'\n```js\nconst opts = MyOpts({x: 1, y: 2})\n[...opts({x: 1, y: 2}).values()] // [1, 2]\n```\n",
+  "maintainers": [
+    {
+      "email": "quitlahok@gmail.com",
+      "name": "nlf"
+    },
+    {
+      "email": "ruyadorno@hotmail.com",
+      "name": "ruyadorno"
+    },
+    {
+      "email": "darcy@darcyclarke.me",
+      "name": "darcyclarke"
+    },
+    {
+      "email": "i@izs.me",
+      "name": "isaacs"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-19T13:50:01.046Z",
+    "created": "2017-02-07T02:27:13.915Z",
+    "0.0.1": "2017-02-07T02:27:13.915Z",
+    "1.0.0": "2017-02-07T21:57:10.872Z",
+    "2.0.0": "2018-03-16T05:24:55.508Z",
+    "2.0.1": "2018-03-16T05:48:26.275Z",
+    "3.0.0": "2018-04-06T21:57:08.888Z",
+    "3.1.0": "2018-04-08T23:42:02.688Z",
+    "3.2.0": "2018-07-26T21:58:41.911Z",
+    "3.2.1": "2018-08-15T01:32:02.956Z",
+    "3.3.0": "2018-08-16T01:32:23.593Z",
+    "3.4.0": "2018-08-16T02:37:59.067Z",
+    "3.4.1": "2018-08-16T20:10:51.860Z",
+    "3.5.0": "2018-08-25T03:39:37.470Z",
+    "3.5.1": "2018-08-25T19:51:42.627Z",
+    "3.5.2": "2020-03-24T16:48:05.394Z"
+  },
+  "homepage": "https://github.com/npm/figgy-pudding#readme",
+  "keywords": [
+    "config",
+    "options",
+    "yummy"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/figgy-pudding.git"
+  },
+  "author": {
+    "name": "Kat Marchán",
+    "email": "kzm@sykosomatic.org"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/figgy-pudding/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "charlotteis": true,
+    "evocateur": true
+  }
+}

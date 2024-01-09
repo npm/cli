@@ -1,0 +1,897 @@
+{
+  "_id": "source-list-map",
+  "_rev": "16-aa0a6756a5cf2a2640474b118ee1ffcd",
+  "name": "source-list-map",
+  "description": "Fast line to line SourceMap generator.",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "source-list-map",
+      "version": "0.1.0",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "d49e5ea290226aa12d3e8917ad0769d98c62ea2d",
+      "_id": "source-list-map@0.1.0",
+      "_shasum": "eeb532ba476d0ee1b49e90968de466a94eab0377",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "eeb532ba476d0ee1b49e90968de466a94eab0377",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "source-list-map",
+      "version": "0.1.1",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "d9b7d48a6d7ce81fd39e767644bb9f4cda3e1884",
+      "_id": "source-list-map@0.1.1",
+      "_shasum": "5ae13a027500644e9cd2c14b5d92c4c6364e0187",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5ae13a027500644e9cd2c14b5d92c4c6364e0187",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "source-list-map",
+      "version": "0.1.2",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "94d22c9ac5605e62c87b6ee4a62a27b01a01658b",
+      "_id": "source-list-map@0.1.2",
+      "_shasum": "b688e2bd2cb4b6eda6b459230a9fecc63f4b94f1",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b688e2bd2cb4b6eda6b459230a9fecc63f4b94f1",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "source-list-map",
+      "version": "0.1.3",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "42211965a76c4153fbc3a0292fb8cac03604a38f",
+      "_id": "source-list-map@0.1.3",
+      "_shasum": "09de2bc795e2b74f8ddd20ff148679b1148f2f32",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "09de2bc795e2b74f8ddd20ff148679b1148f2f32",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "source-list-map",
+      "version": "0.1.4",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "e70f6cbd8d632f61cef6ed945a2ad5e916a98106",
+      "_id": "source-list-map@0.1.4",
+      "_shasum": "48daaf4e9c020650f09e2c9eee56d78244a1c95e",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "48daaf4e9c020650f09e2c9eee56d78244a1c95e",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "source-list-map",
+      "version": "0.1.5",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "d65780633d31ecae6a89410984e78640de3624e2",
+      "_id": "source-list-map@0.1.5",
+      "_shasum": "ddf32f5173faeca3010561dd7e9a682c027f459e",
+      "_from": ".",
+      "_npmVersion": "2.7.4",
+      "_nodeVersion": "0.12.2",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ddf32f5173faeca3010561dd7e9a682c027f459e",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "source-list-map",
+      "version": "0.1.6",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "c8824e41f9052f960e1c5e4a950b3c428a09c2ee",
+      "_id": "source-list-map@0.1.6",
+      "_shasum": "e1e6f94f0b40c4d28dcf8f5b8766e0e45636877f",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "5.4.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "e1e6f94f0b40c4d28dcf8f5b8766e0e45636877f",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-0.1.6.tgz_1458846714852_0.1817702252883464"
+      },
+      "directories": {}
+    },
+    "0.1.7": {
+      "name": "source-list-map",
+      "version": "0.1.7",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "948f857ad95485172798528db353232862206f9a",
+      "_id": "source-list-map@0.1.7",
+      "_shasum": "d4b5ce2a46535c72c7e8527c71a77d250618172e",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "d4b5ce2a46535c72c7e8527c71a77d250618172e",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.7.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-0.1.7.tgz_1480640695901_0.6327708079479635"
+      },
+      "directories": {}
+    },
+    "0.1.8": {
+      "name": "source-list-map",
+      "version": "0.1.8",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "536858b825d0b3f4d6ba3e7c5becadb78199e309",
+      "_id": "source-list-map@0.1.8",
+      "_shasum": "c550b2ab5427f6b3f21f5afead88c4f5587b2106",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "c550b2ab5427f6b3f21f5afead88c4f5587b2106",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-0.1.8.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-0.1.8.tgz_1484123265459_0.8772335308603942"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "source-list-map",
+      "version": "1.0.0",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "88d1d1f3a7f672921b6ee822982e31fd258161d5",
+      "_id": "source-list-map@1.0.0",
+      "_shasum": "1b7bc7c77d14692f0455bcf38172e546cc6c5f95",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "1b7bc7c77d14692f0455bcf38172e546cc6c5f95",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-1.0.0.tgz_1488913590108_0.6800991683267057"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "source-list-map",
+      "version": "1.0.1",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "3d4e832abc5d8584f8998703f8e7bd940fc1246b",
+      "_id": "source-list-map@1.0.1",
+      "_shasum": "cc1fc17122ae0a51978024c2cc0f8c35659026b8",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "cc1fc17122ae0a51978024c2cc0f8c35659026b8",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-1.0.1.tgz_1488914752346_0.11908297520130873"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "source-list-map",
+      "version": "1.1.0",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "fed961f1685bd205e7f00a2858461fcd3c6828dd",
+      "_id": "source-list-map@1.1.0",
+      "_shasum": "4974e1266d5a0830e50b5134e8d5c6e239ca61c3",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "4974e1266d5a0830e50b5134e8d5c6e239ca61c3",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-1.1.0.tgz_1490389375482_0.06705938302911818"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "source-list-map",
+      "version": "1.1.1",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "8a32dff698df50dd34324208338fb8d526796e65",
+      "_id": "source-list-map@1.1.1",
+      "_shasum": "1a33ac210ca144d1e561f906ebccab5669ff4cb4",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "1a33ac210ca144d1e561f906ebccab5669ff4cb4",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-1.1.1.tgz_1490398503976_0.7048284611664712"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "source-list-map",
+      "version": "1.1.2",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "e6f3e498c946e19823068127a89fa7407455ec7c",
+      "_id": "source-list-map@1.1.2",
+      "_shasum": "9889019d1024cce55cdc069498337ef6186a11a1",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "shasum": "9889019d1024cce55cdc069498337ef6186a11a1",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/source-list-map-1.1.2.tgz_1493890802743_0.5847808860708028"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "source-list-map",
+      "version": "2.0.0",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "files": [
+        "lib"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "572d5107c710b590bbbf358401dff9bae8adcc1c",
+      "_id": "source-list-map@2.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "integrity": "sha512-I2UmuJSRr/T8jisiROLU3A3ltr+swpniSmNPI4Ml3ZCX6tVnDsuZzK7F2hl5jTqbZBWCEKlj5HRQiPExXLgE8A==",
+        "shasum": "aaa47403f7b245a92fbc97ea08f250d6087ed085",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/source-list-map-2.0.0.tgz_1496490051594_0.6906744700390846"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "source-list-map",
+      "version": "2.0.1",
+      "description": "Fast line to line SourceMap generator.",
+      "author": {
+        "name": "Tobias Koppers @sokra"
+      },
+      "main": "lib/index.js",
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/webpack/source-list-map.git"
+      },
+      "keywords": [
+        "source-map"
+      ],
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/webpack/source-list-map/issues"
+      },
+      "homepage": "https://github.com/webpack/source-list-map",
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "gitHead": "4a21840d3a4162e2f94dcb444476aa6f08d46fe8",
+      "_id": "source-list-map@2.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.11.4",
+      "_npmUser": {
+        "name": "sokra",
+        "email": "tobias.koppers@googlemail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qnQ7gVMxGNxsiL4lEuJwe/To8UnK7fAnmbGEEH8RpLouuKbeEm0lhbQVFIrNSuB+G7tVrAlVsZgETT5nljf+Iw==",
+        "shasum": "3993bd873bfc48479cca9ea3a547835c7c154b34",
+        "tarball": "https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 26428,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbvdjoCRA9TVsSAnZWagAA7AMQAKJ+BAH1eDE0EHOFurND\n6EDZutjjrGfHahfy1trPcuLkUfEv2XCd2h3VuOf2Y0TUJBiZPZf0iOzc74Tt\nP8Sbw5Ib/+jxAT0n4fjE+o1e/1+GFu/44rVlZ2u0Lh0xQHDqVM3e7lCopX7L\nc9tU285BrmSsPlgEArOyNn+IhLy1HLWx0rIy8VasyUVRHYc3Tn01jP+KQmvT\n7DwqhXucmhLQUVGbclv8drAp0aObFi9RAK144yGop+v05zjGohUTSQ3qUlTT\n4SIOGCV5TUgJPTwavN75Ty+xvwiPCrPUvVeE8VwwoKY3cdl6p4HqtnLh4dDw\nc150BGmnmv5TwUmYP8z0C1Y4s+PGe9MsWa1XN1O+Wf+2RkZjfz+JoG7F0N94\nedws1DpmL01KWxgZ52xGql4dQZFm7gHhdqh3QA4swA+D225ulq1NiOfJL0KZ\nM7q4biFMGnztsoKV1lQRDWSJeFa5lr9eWJIunjoUMD0Uw9QOCJaWSuyl+QtU\nNlRX89WIy+PkQ4gaWD6Nb0AxGeNvgg7+JmPwdWEtrruPZZvELkV2Tgvt36vY\nk25xQ1kSNJsYeylq4wlg6iWUPHq1uApnMx+8YEs5hjy+eIhmfSY3y/fmAL9p\n+oyZFc0lDt5JVTB/vYEKyEQP5pzGRCA6dcHDNTemF+FevWZ/Km1W6X7ltLuO\nir12\r\n=Hcbn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sokra",
+          "email": "tobias.koppers@googlemail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/source-list-map_2.0.1_1539168488044_0.7850963486184572"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# source-list-map\n\n## API\n\n### Example\n\n``` js\nvar SourceListMap = require(\"source-list-map\").SourceListMap;\n\n// Create a new map\nvar map = new SourceListMap();\n\n// Add generated code that is map line to line to some soure\nmap.add(\"Generated\\ncode1\\n\", \"source-code.js\", \"Orginal\\nsource\");\n\n// Add generated code that isn't mapped\nmap.add(\"Generated\\ncode2\\n\");\n\n// Get SourceMap and generated source\nmap.toStringWithSourceMap({ file: \"generated-code.js\" });\n// {\n//   source: 'Generated\\ncode1\\nGenerated\\ncode2\\n',\n//   map: {\n//      version: 3,\n//      file: 'generated-code.js',\n//      sources: [ 'source-code.js' ],\n//      sourcesContent: [ 'Orginal\\nsource' ],\n//      mappings: 'AAAA;AACA;;;'\n//    }\n// }\n\n// Convert existing SourceMap into SourceListMap\n// (Only the first mapping per line is preserved)\nvar fromStringWithSourceMap = require(\"source-list-map\").fromStringWithSourceMap;\nvar map = fromStringWithSourceMap(\"Generated\\ncode\", { version: 3, ... });\n\n```\n\n### `new SourceListMap()`\n\n### `SourceListMap.prototype.add`\n\n``` js\nSourceListMap.prototype.add(generatedCode: string)\nSourceListMap.prototype.add(generatedCode: string, source: string, originalSource: string)\nSourceListMap.prototype.add(sourceListMap: SourceListMap)\n```\n\nAppend some stuff.\n\n### `SourceListMap.prototype.prepend`\n\n``` js\nSourceListMap.prototype.prepend(generatedCode: string)\nSourceListMap.prototype.prepend(generatedCode: string, source: string, originalSource: string)\nSourceListMap.prototype.prepend(sourceListMap: SourceListMap)\n```\n\nPrepend some stuff.\n\n### `SourceListMap.prototype.toString()`\n\nGet generated code.\n\n### `SourceListMap.prototype.toStringWithSourceMap`\n\n``` js\nSourceListMap.prototype.toStringWithSourceMap(options: object)\n```\n\nGet generated code and SourceMap. `options` can contains `file` property which defines the `file` property of the SourceMap.\n\n### `SourceListMap.prototype.mapGeneratedCode`\n\n``` js\nSourceListMap.prototype.mapGeneratedCode(fn: function) : SourceListMap\n```\n\nApplies `fn` to each generated code block (per line). The returned value is set as new generated code. Returns a new SourceListMap.\n\nRemoving and adding lines is supported. The SourceMap complexity will increase when doing this.\n\n## Test\n\n[![Build Status](https://travis-ci.org/webpack/source-list-map.svg)](https://travis-ci.org/webpack/source-list-map)\n\n## License\n\nCopyright (c) 2017 JS Foundation\n\nMIT (http://www.opensource.org/licenses/mit-license.php)",
+  "maintainers": [
+    {
+      "name": "sokra",
+      "email": "tobias.koppers@googlemail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T12:53:13.297Z",
+    "created": "2015-04-06T22:20:29.036Z",
+    "0.1.0": "2015-04-06T22:20:29.036Z",
+    "0.1.1": "2015-04-07T11:31:19.293Z",
+    "0.1.2": "2015-04-07T12:28:32.242Z",
+    "0.1.3": "2015-04-08T06:38:32.269Z",
+    "0.1.4": "2015-04-08T12:41:28.364Z",
+    "0.1.5": "2015-04-13T18:54:17.920Z",
+    "0.1.6": "2016-03-24T19:11:57.177Z",
+    "0.1.7": "2016-12-02T01:04:56.606Z",
+    "0.1.8": "2017-01-11T08:27:47.591Z",
+    "1.0.0": "2017-03-07T19:06:30.809Z",
+    "1.0.1": "2017-03-07T19:25:53.067Z",
+    "1.1.0": "2017-03-24T21:02:57.392Z",
+    "1.1.1": "2017-03-24T23:35:04.534Z",
+    "1.1.2": "2017-05-04T09:40:04.578Z",
+    "2.0.0": "2017-06-03T11:40:52.487Z",
+    "2.0.1": "2018-10-10T10:48:08.185Z"
+  },
+  "homepage": "https://github.com/webpack/source-list-map",
+  "keywords": [
+    "source-map"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webpack/source-list-map.git"
+  },
+  "author": {
+    "name": "Tobias Koppers @sokra"
+  },
+  "bugs": {
+    "url": "https://github.com/webpack/source-list-map/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

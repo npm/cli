@@ -1,0 +1,497 @@
+{
+  "_id": "is-wsl",
+  "_rev": "5-dbb78f90c1b72773c6b55dbfb438d8d1",
+  "name": "is-wsl",
+  "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+  "dist-tags": {
+    "latest": "2.2.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-wsl",
+      "version": "1.0.0",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "proxyquire": "^1.7.11",
+        "xo": "*"
+      },
+      "ava": {
+        "require": "./pre-test"
+      },
+      "gitHead": "c6ca0e95be14195689497e93e4406a55b5971022",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@1.0.0",
+      "_shasum": "48ad3669f346b13c36578715c4f180a6685e3dba",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "48ad3669f346b13c36578715c4f180a6685e3dba",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-wsl-1.0.0.tgz_1492350076393_0.24916732753627002"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "is-wsl",
+      "version": "1.1.0",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "clear-require": "^2.0.0",
+        "proxyquire": "^1.7.11",
+        "xo": "*"
+      },
+      "gitHead": "60ea5d57a51ee596cb144ef47187c0476a5a421b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@1.1.0",
+      "_shasum": "1f16e4aa22b04d1336b66188a66af3c600c3a66d",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1f16e4aa22b04d1336b66188a66af3c600c3a66d",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-wsl-1.1.0.tgz_1492407587032_0.143065512413159"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-wsl",
+      "version": "2.0.0",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "clear-module": "^3.2.0",
+        "proxyquire": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "259d6f980602b053133efbf03a8868be649106c9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-58xqeym9YpL60zUX4GlBfSLgV0mOL5JRQ6b8HnmmD4crNxprFdL7JGuo9AgtY38+JqseeA6t+XzYCprTkD4nmg==",
+        "shasum": "32849d5bf66413883ce07fada2e924f5505ed493",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3177,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcvsnUCRA9TVsSAnZWagAAkYQQAJiKyFSKTEni5NYMBT/o\nycO6G91B3wbsPbBOzvumTWoQNxhTNUA3vc0/FNRblipfrOiHfpH9TG+9ZF2K\naVRBY8txg8ekXxQF/32XUoYV8+t8yE1XXOMdwLsOWy+5p/auWG7C0i1fghEw\ngkcHaW1y4UZTN+ry5djhylIStzAL+hftB9Cyh03MYN0S56qCK4soK3iG8oR/\nYvs0lY4DcCKZavATkKAT+JZ2TEruQgD91s1lYCUePJKB3KKZ7A+xlilwAjb5\nYethj23pzUObJcBNd5L2Kd3JANOJmal8d1LwBlRClsKUuPog7cTgr0JdrCKT\nnPG/p4CopMFdQmCt4Fal+negehWNvlXtynwwwrPfMYgv9vSjsZY4e1FqWKvA\nWWCqpn41luatUmQa2Zw4Lunfn/gmVqvifIITRLKYTL7OS0Hg7LDGAL+4Jbjm\nzBnEmTwLJb68f5UBGXEOkPA0ThzdH0bPbCLCqc+CEJmANhb+i8oVAD6jQymO\nBmdUGwc/MXdTd4oBoYwRkIzfaXm8V1ixlOpwQzp3KQVK2XPwqf13U9uOBeXf\nwPbFnrXL8365lb86LNwuyTS9AvnA7O80ECBSKUkcnT+aUaejQzhmAbaRzGj+\nah90oaufYLsWuMFBYjHc0aMEhJXZk6ERdCdyJ1Z97rnUwD18/+S0YQ5L80jQ\nIy7n\r\n=yHtf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-wsl_2.0.0_1556007379399_0.8450262724840771"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "is-wsl",
+      "version": "2.1.0",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "clear-module": "^3.2.0",
+        "proxyquire": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "353c6b259583bbdb0942f59f6bba961dad02a590",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@2.1.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pFTjpv/x5HRj8kbZ/Msxi9VrvtOMRBqaDi3OIcbwPI3OuH+r3lLxVWukLITBaOGJIbA/w2+M1eVmVa4XNQlAmQ==",
+        "shasum": "94369bbeb2249ef07b831b1b08590e686330ccbb",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3623,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdDxrwCRA9TVsSAnZWagAAWLkP/1DU4tT/fgQds9lLSnHi\n/zAk/xDd4CInLOYQYOx350siMRo4V0cBgysYJ7Ur8x6ksk76oYltANPhOy5M\nJTJJ0zotuXT2pQ58d5pAqp+GoCo3WJV1jSBV7wZcvv+ErjLRDhNEse5Zrthh\nJ2JjkuuYJJh/oh9+txI5lHVwYOAsvxsDnrpIU9kHrQC5PM6iYho3nQLQloGm\n02qZZzDwgVr5cW6rtqdgQj4/0DNiyauH/WTCWK45ex+jvZYhI08faX4U8o4C\nRvnMmomF7zGjJxXbFDdgl6g2wE4LA5oDduuX4mV1s/bolxPYxF5GAmYoNsYy\nAEP5jJ2l4HT5ujT6jCJol79yq90gdmGdrCV68F9eXLyP85LqCd3t178lTo3y\nZsrmRlXFOhlkppf92iYZbm9MnxVZDXoTS2bUnNlXGSDTM2hxB19tZLRFw2fV\nysQAKfSnMwzquZg3kToc/MosPboFBPAWTgke8ihH29As1a24+9fuCciDNCM4\n7bH75NHkyRKMf24lDSWrWsKJQO/9Z298zUHEf+QgJUUzck+YFIfVWpMiCTnC\nyUlUt97XYmPPxq80munVI1D/7e8JxeQchavvX2/hnjDtBOLYREJckl+sE+cu\n75KOGFBNRKKmq/S1kmtcfeStmlNXF9xgZ+nZ/zE+0aVSCGZyen9sthDDIpzI\neikw\r\n=3yzQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-wsl_2.1.0_1561271023715_0.7919014380053317"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.1": {
+      "name": "is-wsl",
+      "version": "2.1.1",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "clear-module": "^3.2.0",
+        "proxyquire": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "d51f13a2064d2fc86f5efdadb25ed6427345512e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@2.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-umZHcSrwlDHo2TGMXv0DZ8dIUGunZ2Iv68YZnrmCiBPkZ4aaOhtv7pXJKeki9k3qJ3RJr0cDyitcl5wEH3AYog==",
+        "shasum": "4a1c152d429df3d441669498e2486d3596ebaf1d",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-2.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3604,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiGOfCRA9TVsSAnZWagAAfGcP+wdOkb2A/dA5usVpcZ1F\nANSg+92PleiO/tQWhqBzkX55AhQixr37ADH4sicsqiZJl5pskBmm1xNsuIrf\nwuUVUYD6JLt93nOGyRAB/t6JnPi3JJWs7lhu/tYitXQZ79z+sibj1r6wSCnk\n/MfIQ4jGWaaIVn1u1tCS14asU5k6HyDGXmZfZjeBdyOcDDyr572BhmblShTK\nCbpBQ3rOLSZgi7koPqcv3fj++zmMI3uagHL7xa8AZfuD68qt6/fiXt4Phef8\n9hAo9anuwIKKqmHWiy5z4XbvAmhH+Pzk/8LtRXARoeuRbBbtjeiFAZ3K9ejI\nVoUFK5XjU68PWYRuEMb7R2NfKth7arMj4s3hwqDu7Cv+wxQDqTHczaaDeupb\nPxys3/1w0cjQgQ/LpXmf4I6oXrYPqPY/jc/V3FPML2t/oFTa+8fbOrhUn0/B\nqZX4LcxQqOdfyVJ1sBM18giRNWREtPu0vLaDqdxXyUTlfiB0j/8EYaN8feXH\n8ClE8myBq+XXG3q7Rt3V2pAxup1lxSjqFRXEn7Gfc5HNsCmbJUqQz8qKwa9S\ngBilmy69rtFA7SednZioryLsiqnk/xq/+oeSd3Z1N3SwEd5yy9i+CFa0pO1B\nOo3GZ3Vm0aQL8yUrnVw0KXaL9Yt9oQ6WLtu58mN2/0QXyMaqwAgDpa+3Ee8K\n10ed\r\n=GBT6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-wsl_2.1.1_1569219486491_0.5998381945097029"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.0": {
+      "name": "is-wsl",
+      "version": "2.2.0",
+      "description": "Check if the process is running inside Windows Subsystem for Linux (Bash on Windows)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-wsl.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "check",
+        "wsl",
+        "windows",
+        "subsystem",
+        "linux",
+        "detect",
+        "bash",
+        "process",
+        "console",
+        "terminal",
+        "is"
+      ],
+      "dependencies": {
+        "is-docker": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "clear-module": "^3.2.0",
+        "proxyquire": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7f3df4886d5f0292bda51cf240218ea643136961",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-wsl/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+      "_id": "is-wsl@2.2.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-fKzAra0rGJUUBwGBgNkHZuToZcn+TtXHpeCgmkMJMMYx1sQDYaCSyjJBSCa2nH1DGm7s3n1oBnohoVTBaN7Lww==",
+        "shasum": "74a4c76e77ca9fd3f932f290c17ea326cd157271",
+        "tarball": "https://registry.npmjs.org/is-wsl/-/is-wsl-2.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3757,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJernlZCRA9TVsSAnZWagAA88MQAKOHBjGtkem2Q7rCeQve\nEF1wYedxEof28RAhQxjDdB0VN80Z9IuUID6Uh8FMVqzdtx9WNCHAnYO5+4+Y\nQtbf13YNCfZZwC/Wx9/WDm1DyaiUbnnbt/XwAFMltipW5mqyJCKLdVierXVJ\nWhKRUGLR8j5HO5ORumqthREtJgptyesXeLBXdHgidHYqvZlsiRa4fFX5C/Ex\niTyPebRsW8f+QAhMR8aAAnsBZhfiNsrUyqWI3zpoo9JDFkPBHLKF2n+wFGpH\n0zRsE5mzlUvOCdHmf+ygKNWNIbhZ3CUHJOwhqf9LPf4EzWieGL8Pzk4g+8gj\nVbSf+oPkm22599G0DxTT+JW2qmx8YG9gYZ5J0hORXASn0GhJVimUQDh+4XyH\nWaZSAtPIKl8fWVf8Ad39jAaSg9Ma2ZxeRgZ9SDcspb5gB81JKg3fonZhkXMT\nDyFNOkXFzzVTrE+s4W/u8B+xDPFzSi/n8TjKzpi+piSHNLPGK9ahq99UKRie\ndTbGKvhLjoDtOxxiyPEmL/1YQ70GL6mDdYWTnj2ymfoQGZ8XPHHS/MVOpj/6\nEqNVgz3YLOBA+5pvLkaum73Fpw7tzZSLxnfjZ/yQKSHn3m39o1oK45VBZMUB\n/I4AKNDCdsCzXJI0+sFNWSKJqzy8vr+AQHPvtblm4Yq/QBf3GG/VaPEpHHXA\nl+5S\r\n=wRN8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-wsl_2.2.0_1588492632975_0.7188566750778995"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-wsl [![Build Status](https://travis-ci.org/sindresorhus/is-wsl.svg?branch=master)](https://travis-ci.org/sindresorhus/is-wsl)\n\n> Check if the process is running inside [Windows Subsystem for Linux](https://msdn.microsoft.com/commandline/wsl/about) (Bash on Windows)\n\nCan be useful if you need to work around unimplemented or buggy features in WSL. Supports both WSL 1 and WSL 2.\n\n\n## Install\n\n```\n$ npm install is-wsl\n```\n\n\n## Usage\n\n```js\nconst isWsl = require('is-wsl');\n\n// When running inside Windows Subsystem for Linux\nconsole.log(isWsl);\n//=> true\n```\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-is-wsl?utm_source=npm-is-wsl&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-03T07:57:15.650Z",
+    "created": "2017-04-16T13:41:16.689Z",
+    "1.0.0": "2017-04-16T13:41:16.689Z",
+    "1.1.0": "2017-04-17T05:39:47.328Z",
+    "2.0.0": "2019-04-23T08:16:19.492Z",
+    "2.1.0": "2019-06-23T06:23:43.801Z",
+    "2.1.1": "2019-09-23T06:18:06.597Z",
+    "2.2.0": "2020-05-03T07:57:13.100Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-wsl#readme",
+  "keywords": [
+    "check",
+    "wsl",
+    "windows",
+    "subsystem",
+    "linux",
+    "detect",
+    "bash",
+    "process",
+    "console",
+    "terminal",
+    "is"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-wsl.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-wsl/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

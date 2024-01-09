@@ -1,0 +1,3283 @@
+{
+  "_id": "@wessberg/ts-clone-node",
+  "_rev": "23-5088ccec0f2854b26d330be0e3b0a858",
+  "name": "@wessberg/ts-clone-node",
+  "dist-tags": {
+    "latest": "0.3.15"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.0.0",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "npm run generate:scaffold && npm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "npm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "npm run clean:dist",
+        "build": "npm run rollup",
+        "watch": "npm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production npm run build",
+        "version": "npm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@wessberg/rollup-plugin-ts": "^1.1.73",
+        "@wessberg/scaffold": "^1.0.20",
+        "@wessberg/ts-config": "^0.0.42",
+        "ava": "2.4.0",
+        "husky": "^3.0.9",
+        "np": "^5.1.2",
+        "prettier": "^1.18.2",
+        "pretty-quick": "^2.0.1",
+        "standard-changelog": "^2.0.15",
+        "ts-node": "8.4.1",
+        "tslint": "^5.20.1",
+        "rollup": "^1.26.3"
+      },
+      "dependencies": {
+        "@types/node": "^12.12.6",
+        "typescript": "^3.7.2"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register"
+        ]
+      },
+      "gitHead": "1c2a23757fa12e917d0b3e4235f7b4aef3a7ab14",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.0.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-bJ+Hoxh6xU8r6N4fOKIC64nAWUqFxUj0IrT66qGKG7IpF9+pC54Xy/2XSZljEnJGtYgv0WiaeEkRaellwFF42A==",
+        "shasum": "5d103eb8e7768d28b5ef58bde34cb847133ae1ae",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.0.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 564241,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdxsDiCRA9TVsSAnZWagAAoHgP/07UQp2kliM4J4kL+1oM\nMylRKQD/G6ccweYr43I9wZSmF8lZEYP6bdn7IX8xUKgbgh7E+MCyS8SFSnmU\noWrRS2vd3IxKr0Z3ao+iGNSLzm+NFXgathEvTMgE0k/KwIHE12LCMkYDX1cI\nZV3Xc/60Ygc2DQ1E3BG7knl/Jdyp4O3u57XACA9bFnQ7FGwh2tpCUzKTXuFG\ni5RT62x6JYTSxAq2F365Ht6xyJCsDrHZ+U0XFziGoUlsRYO2ycewwUj40M+3\nx2PEghF2G1AL6OEYfDwVEz28EaLo3yDmzONNe2E7SJ8l+gLOrURt44IdtuMD\nhSytnZnYQ7lP/4eHCv6GF6E//vBVaffbaH+FXKl3yYv15qPT08jirY3qzm5P\n68B0/7s7HbCXV2eGQSaYh2xtsgmrAYh2nC3avPdTbCnlByJ77EB/YGRaqg3E\nGrb2cOqkdzSNADnvvjAXuV4B66VojSQwlz9vrn5qsljlJDXJ8T3p75xO+yhK\nzduJ6WUlONKJpu6YS6wWsKU+kmoEOwBce/DI30ETiYiddplLCreyZicfnLyc\nVvg0htyaz/nTyY6oOT3voHrysNSF+Vuw6LhJShsCGHujl5IfNJPJZhHuZewh\nPv+BhfR2uvDKC50PQaGKS9HcoPiVfNdNUIByYLD/Et8KtpR84K+D5RolybTA\nvQp2\r\n=Vx6a\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.0.0_1573306593653_0.48736641488230736"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.0": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.1.0",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.1.83",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^3.1.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.27.14",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4"
+      },
+      "dependencies": {
+        "@types/node": "^13.1.1",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "58e78ee1829f1f94a94a2c78023a97679d705945",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.1.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-5jEKvaKoapFP7vYSairXQhx77X+OVnDX5mAcgddU/LNET4coguVz8bab/SotreeWGUHcE4LKYgPwH2knxSkWPQ==",
+        "shasum": "cf32e861664d798bf9fd7ba8e8f2311155ddfa28",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.1.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 635937,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeBf/VCRA9TVsSAnZWagAABRwP/0PC6jXOzarml8xCAxyj\nsU314OhvX59qWPXqe0yB0DH+94U8YyFqVkP05BLUx6m70fvVrfVFUk10FGg0\nlQLi3WgKtWBsqZbRQ+/BzxfO0VivE1/FHiG7ltRbzV/Fy1qTpXzgYNOl0DWl\nBEPlDWvUwZncynYXlb/YPpPkxF59YCb8dD2MaWPnNjsXaieRaEuwZHXpw0At\nwpXRq87MA+mk2uD/Ej6zOlRuiAcy5LQppha78drKRmmOj+EIvzfPy1Vtg+AJ\nER6Q54cXr/pSAfSzus5cVJdCvo6K6ADq3ihMmn3f5eSBLpszJ+MNGoQcnQFe\nlACqaGOq8boymBKZ1aYa0YcV4HhoUHU/5F98y1eOgFlWV/FkbtfeINLG66qL\n1IjY/2ZKml+AoGcATeb3SU6pp3bqMlGB4iXmsYynigvpk28hfLbT77sOmBoo\ntoM5M4Z+xyYjbXSCOu2AsxDifVWIEwoUHj7TXLWCAjRocilSFG9BJvIRTCDI\nRIeNnWRF3u77E4ueOnLGHeLJkooZppo3vGuc/DgG0vJITck/Rt8GPldlQWTG\nL3xx9EvCdl7nIfhfNYn3P9z9C+yk8ybNrzXZ1IPfn0RS7HD9mT3VTEnwAdXX\nKrw+KoUuE73Ww/i+VHoyofdzyhYPzRsVsM9aX9yezmWNXXJrG6xcaZucugJC\nJZmm\r\n=PJFo\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.1.0_1577451477141_0.17694017817597807"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.1": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.1.1",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.1.83",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^3.1.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.27.14",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4"
+      },
+      "dependencies": {
+        "@types/node": "^13.1.1",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "167ab91cfe8dce962069a9f711aff677c8c937d2",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.1.1",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-OeA902wvpJSHMNSiqWoj3LBqfq2edd9AXCmjwH6CBCMABH4qYs5rllbRsKR+F/eu27tD1h4J52UkJbpl1ccW6w==",
+        "shasum": "c45507e1932d0205c40782937e521d10a6ccb107",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.1.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 638516,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeBgVtCRA9TVsSAnZWagAA3j8QAIHSKrOa7pSfxXhtY4YJ\nbEDOuJnVPqdnqp5au1QJWO7bPowN4xoDwN3QlpsXN6pHDWM2VQQCJ2OStbsi\nkvB2vDF98W61gI8peFortBjw91rkDS6unp5XQEo4jT5cFoCGL7pB8WvsslHV\nu7c/AFLb+HRqyGSX0CYIPqCUi5ifWfAxQ4rWNLtAxqtrRu+ml3mGmRHcJLWS\n3HwZ2nKqgaB/y6slfecST/kg9erRt8YGOdSmudPr6jP2yXXBahMt9GiCz196\n/f6P10Uwc6EQLGvebpfqAsoBXkmPkN3toy+xLGh3E0GYQQVAcVQAjSlRI9/G\nNoDQAzAuKR7Yoabtdbrv+6Rc7MELobGSO6RoywdvynZphrIOm5NhRDcVoyet\nyrAhYFJmXyZUYgtB+JWwSQpaU2gGqc94CSqLtpy59o6SAzfr+EqfsTo9WSJ+\nM8IgCpivfb3grdvCz6J4twf7x9hC+iz8qkXj153M1+CyNM8/x5xIlwYSe/WD\nUzBMznuVsXQhq4MlYTOUVaaiPIEgBrU9pfXfDdoRnvU3vsoREaZEkcLp9KpP\n8yBlbFkbnVXwaZiznir9Vz3DIFGKg/2BErnpgogjOROO8BWXONvSlH1o3/Vg\nBdDdOkXyxG4xkcOX7LtTxrJjJdlo+VZafhi934FgBN288Cl/slQDeuXIRhGg\nuatN\r\n=+rfT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.1.1_1577452909461_0.376862380618997"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.2": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.1.2",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.1.83",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^3.1.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.27.14",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4"
+      },
+      "dependencies": {
+        "@types/node": "^13.1.1",
+        "tslib": "^1.10.0"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "ef36a136dda794d03226e6bbca87f7c2fb3610d3",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.1.2",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-Bky8/kx/uM8W1uCQNc0iZeUmWX9yiP9yxKCwGdiryfAqhl78P1JHFazh6O0K0jqT27olBiKo5NBYs9JCDMwiZA==",
+        "shasum": "1e6cecaa491ce6d7ceb8c123017f69fb349fbfef",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.1.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 640031,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeB8BYCRA9TVsSAnZWagAAyDEQAJ58/7AqwGRDqrDyx3le\nGFicHs6m45VIqdy/iIFZFew1mdZE789hsGz8cJG6nRLpTePryrbBExJCBrzU\nmWly7FGGuVF7VMXrlk6SqV2+HMbwEPaRCN8RDUm4HPos9HElvgheg+g0V4D7\nR3EOfzP1NEEYi3LSoNMaN8zM1LUrr3f4AqInE8Wn9qp05FQAa2dti2ahSdPg\ndomVdARB8uIcKLzBefEEarpG/WHKgkY2Vpsw6rWKQ3/HHonnbbMRaZjnzD/H\nZkmddZQ9b+fixQZfwJ+rXXUac0WafW+8LgeOLWHKKyTC3N9T+2LNRwkEk4gJ\nL3Z6ehzxF9niQMZ6AMVQns9hddzxhT6OxCFuITrc8MQ5dp2p63DueoTt7s4F\nuqXdvzhccyxOznUuKd0Ai0OOWMAtvW3oBMoyG9oLRg/3HegCZi0riMdCGL65\nCEUU+q8/D+UWWnIhP3uOVamGnAQF/qnaGcAmK53Jbv7zkuKN2NW+VUw60Yag\nOuI7MCA02sQrMjixWzs52bD+4VavTMiFHwm0svgb3XqY7AI8WFTS6NEFTWVu\nUviWl6UIJAj2M47EuiXLIPrbF2m2N4HHO9ubQbTG5FIN2h/sMPB50PuyC0ha\nzWdVi5urbhEoiI2Yawij6I2IOOV3E/Mo9fTS6eCTQDdsKJ6SkiNcyZYTyr9U\n1x4W\r\n=ot5f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.1.2_1577566295829_0.9919101357176581"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.3": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.1.3",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.1",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.1.83",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^3.1.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.27.14",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "c15e81c17f10db922e30d9efa0e3413581e0a3fd",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.1.3",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-NfYvTHaR0MqIWxMEBl6e+QrNr5lWZIPI3J/fNy1jGl6QKeCwJF270sVGEJQAkTbRihctyYCls5YKX9UdlAWugw==",
+        "shasum": "613232194f59c4c20024cb17e674bdc9f1ae6d4a",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.1.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 640122,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeB8DeCRA9TVsSAnZWagAArEgP/26F2KR2GeKOIGHNjzFc\nA38y9cFpH8yGF4eJ04ee9v8qrAcP3NUUoZWh3easQ101LmiXG2udQpLoC/kQ\nXLilnbhyZB/RTIQ5BxDfQB2FmDxP8VA+kLQt/cOgLkCICgqukGck9rzxyJgv\n8aDBEHhDg3iye2w6HFIQ3OiGtpt+P9LkfuxwW8wX2Rwaw6w96n6Ff++vzNqg\nJsyB3B5nRQ9Y7N6c6+IvSdnaXz3Nz25+4epuDDyvgb6Zcx2u28EN0Hh3d3za\njn/1xeTqvcOKGTl3pFdMsnCjDYL5xt1wlWiNxScnlYtcqUPKN8WLpSD+q9yj\n3WJIa7XmXeIeaRf2QxrUsWqy2StS7Yh8vC9U4sIzcVj1aNZVnBA0xBM2DoxT\nutYSYETDI4gfBJkVewH3qUhCaUMeGUFH3ojJYLh3xJF/TmGCBSXpFELO+uVg\nZDS+M9BBMYZtCag2k2bpEvYOqkAqcxd1rC4Tp1JV7DrrGjpUxZi4pcrSCHTm\n+YXkwZdaQm5ysFW26TJQvC7+683eWlHmFfILuOuaYRIZppFCZniM5lKAN4mc\nPgJaozvgOgt/sTODb8DVlfNEWHQ1qa+dapd37Nwb+Kgvtw5aKDA8Vth1aoJi\nQAm5+QwOzeDQ7ZytfaIaGxaWBIXu2N0Vd4xWQFpy3f3L9VwWM3liFQ8lyuPs\nKUT6\r\n=ZbXL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.1.3_1577566429830_0.8293067038284565"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.4": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.1.4",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.2",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.0",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^3.1.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.27.14",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "0c42f47d77586b5a8e22ad19b4aadd6126d2a178",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.1.4",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-fEUJ2FdPSq0mv5cjrSIdbkRrcddY53Xc5og9ZDxmgC3r6m4wByyaMRTaRtUCnNj7mn2/7PYwnl94OmWvBiFKaA==",
+        "shasum": "56764f4fe188811bde0a54caae959feb2c18ff3c",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.1.4.tgz",
+        "fileCount": 12,
+        "unpackedSize": 643307,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeDeLHCRA9TVsSAnZWagAAJZsP/0ztz4K3rmO0icnQbHpF\nlyk5fbvYi9UG0oDMvpBHQLJg/zkxG+c8h1g2fwbyKDscTkG/zgoMS7sOnTLl\n8dyL2PRFkJ7ux72nElscj9j9/GvsM4fD1LSJBuWow04ZcIeFCRCYOgtKFuE9\nuB29mEnJmOCEff3ZAm5fwubbFm9Y9lvSdIgcXw07luu9sGmgc+A2DSsb+nMH\n//3deLR6hyKnBNhL3SQoeeEDNR4U8u+KpOVqeUylXugT0Dh1c8EenMHF0O26\nH7sbmH21MSultRBLKSMEqNSKbtMoH6TMTZ/HQw53aNG0uEvfOs55Bcw4cyz+\nXjuWLN+Bz9cWI+IX+DZ1cWxYyLDM0X2yV8U+TaXBkoDa8leYAQh6JjMUWq8b\nCwA0kIQ3USqQKxvb2wpFWk6dLRKsB9SWujkhAtutTB0Jf1UOLelZ4DfbYK0M\nODQR4Y9fieIwRimkqXTVD0oRAdnnnfsXZpWlEb2Zfa7jf8YEr2rg4/Qr1meW\n6QOBCXvecmSjKCQENEENv6V11xfBwIGIjUc8KhjnsKeNfafflyu324cuAsS3\n+8wCFSm2Fpyi4FZoNGUL2mpj2XgJVyuPp/qTsawv3pJmz7I2t6LEr6lUq6gN\nmEukwZAfwLYYMuWeo8QaD+1XcsGAaj+Ty2zYgTVMaqQwGzepSUBc219yTWd4\nlXio\r\n=/6TD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.1.4_1577968326963_0.48746688372242586"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.0": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.2.0",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.4",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.4",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.28.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "14bef6b405f924b1ebad009d2d53c509dcb64fbe",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.2.0",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-WQn8xxOwa+uT9pxE6EDeCS/roVg/n70Z2qxxgIjeZGT831gB2a+MSFat8r3vReGn7aDIwdEs+WxtTDUGOj2FHw==",
+        "shasum": "beacfcd778d9aa68d85c4d86a03a68b9dc871543",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.2.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 877048,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFPzRCRA9TVsSAnZWagAAEU0P/R8fBNR0KXhur/WLUWOH\nUXjxpIAzjafkLMBTgc1DKiBJee2T9Nmh1C7+HvF67nEln5cCl+WeLOvM5xw9\nhWunRcjynNjN7ubHrC6rSRalGo+smd4xz8E27EVpq/3y0aMGPmct5w0uWdDs\nd+R8davLmQjzbz+t9q7FuO8G3svlEwlASVBqGJlx1JEWxX2K/OU4H539ETQ5\nlWXupjcF86CA4bkIIApWEP8WZ1LGXJi1YpqZhM3UW/pZfSP9pUq3DvOc1oKl\nMNl4vLVvCel+Xx0ceTN7DtZbWUfFRq02UxQS6XNPoXvmBHkItGieB2J1GUpi\nFUqf9i+2W9Nb5cP7T2jiad1aqT6nMpi3zENIli2N2MiQUAfu9Zfiyz8Az8/Z\nApftwybIxj/DTKgZZsdJd9+EPNv2hEv4zyjp+hPh/kfw5Ix1yzsUi4WqTIZc\nSpETXzTxlf0rulNSmX2cclSPeZiHhIIYIMMsDVsiurlC2Q6p3cqmbkz4nlsE\ngn8xpn+BB+xJsoaMg4qW4vWe1//69CpF67xT16bw5oSPXFQEa9OY9qZ4ibYs\nO0aoZWuYeLY33t6tH+FVf8MK6lgP3YshjD/28GNKLcEsnsytYXJWbRt64TZL\nqiQ1UNxkg+wDyhYCZisuilRl8Mydh5FBM9Z+Q/kURvY2y7MheEHeEaiBwgZN\nCu4/\r\n=m1bJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.2.0_1578433744661_0.29468058742085756"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.1": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.2.1",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.4",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.4",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.0",
+        "np": "^5.2.1",
+        "pnpm": "^4.6.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.28.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "e7f720941e9f9aeaf3938b933271ff2917ca53c1",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.2.1",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-G8kX88iAJ0+x52ln7iiew1tlxvOOyJ/dJXqdcC0cPBaFDXIgVAEQYHteAitT9Xnb4kyJv0HmFNJwc1ASTCzN6Q==",
+        "shasum": "990c84026bf36d5c9745c0e399775da2c8083443",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.2.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 915292,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeFQKaCRA9TVsSAnZWagAAczsP+wYJx+vEP2WfZ/tTpFbT\nXgI2vvg66zCa2zZU3c7Eb/utH5KGnFKfQC51OqQ319GflDAuh/hnJjN/ndCi\njSf42I7Na4HVTfPFMYHNlOg+W51SsfpLsiT1eOTqid4lHokmTe9r/lRRzaHY\nH2bz4uZb1pAXSDvIapO7IBWMsiVqD3uDwalThBkT8LksKFeiuFsY6h+UmzKZ\n8VKCcwi7pR5wbqsOKAMOMHxF3QAnGM6RP5bObtVRdsnGxNV+xPWQLMhL0gd1\nqpEleFG5zMaKNA3Ry2uiKURI4tKDaas6JVm5TBtD+zZr0DX54YqwWaR0XGNf\n5wbakPoQOyoDh49tKGinMVGGDk7XAfqVynLpd7/Kg7k4PkBbwoaT8ynGTFZv\nRWEO20uPhgkfiNcSjKlY8972P0SSSfxAqUGA4hKPwGrGCmirbQMh0NdHfAWY\nTOiLqzLMsFFENsTIWZfZJoW4xsVlzXZxRxwtbRKlJpMSu9VhB61uW9p653XX\nKdJ50qu/wEgf3RJM/q2IFxJTgwdNUSujf59CwP/Fh5000tQ+3X3HeX08SIDF\ne7eLh7eZZKCFELzm7llBi3BxHI30qF71rnB6I9mPtTT0NXn661u+EQbqKbrs\n/hmvhP4yNCbioH9GWduMbT4KmnWTfnwXZ8d53tbs/Ai/TjX+47TBuPedXgNa\nMOAR\r\n=s4OG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.2.1_1578435225942_0.20491906877151012"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.0": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.0",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.6",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.4",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.4",
+        "np": "^5.2.1",
+        "pnpm": "^4.7.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.29.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "a7d3bd539d28517201ee48b6fe282710c68c0c6b",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.0",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-klckpzgJuNMaXVuFwIk9zc3wrJ01Qey+ksxOLXxmGClTkFmi2eRce+9WMMgYr4ZdmG6jo1rtt4iTGwvxc9YZZA==",
+        "shasum": "c127c2714064dea4f6fd0c9a1fe837be4f3ff7f1",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.0.tgz",
+        "fileCount": 12,
+        "unpackedSize": 767847,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeF8eVCRA9TVsSAnZWagAA5hUP/0056F9GpHsmxD0h1GU6\nOpMthMFWukfR+Lrpl1Js9XVyW0jxd9AluZYYqpiGnijXFR+8guUK+u6M3z9B\nAZm1/tvIGvzkfqDMIPkz9IaA/PgV3hDew/w45EdMTV3eqS1BQIfuKUIyS+BY\nKQq+OWvKwAnvPBeS67PrzXBvFhuCfo4/kC2CC37aV1RU/ijLRkyCVo4//zPq\n6X888RiGpaqqABW5K91fhmGVe57z0LU9FOIv21RDpBlXeQx2xgFJpE/oa1du\nu/Wm53WiPEaNTaGZ82KV8jD6DfAxoVeXyMZyfqkjBHOt7bUbzq/iiHMXsQgs\nMHLOoc/EruMfUyjMwBEbSQcaMMLX1CZXeUqssZiuRczJ7nS3QjrBRS1JCmlZ\ndNx8PIIQUI+BnM4nHU4NfjFosRickskKE2eiK63RYkibc8hr7ZwQtlPx7egf\nOcPzY5LMw1zSsab640c07igiTv7swX/oNETBLm0/SfR1pCEDe4cncrhf7E/l\nWj/35I4gU8n2RjYrCy8IgyXRRMv9zFggeMkYz+fJlPzsFnhYd9XLXkUTt9jz\n4xEiePi+x2QwUH2mXTRxa4uMIfXfdgdJUQjJ9X1F6vENSFdei1cxRpulxC+7\n3fFLT2zmF2LKNnylzv3hdEZWzf9dhO16RatOU7xmGUKdLYfyJM5wZLOX1GCj\nex/D\r\n=Ww8D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.0_1578616724944_0.6988933848347216"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.1": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.1",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.6",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.4",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.4",
+        "np": "^5.2.1",
+        "pnpm": "^4.7.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.29.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.5.4",
+        "tslint": "^5.20.1",
+        "typescript": "^3.7.4",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "48ed50a44a70372a41528c218d3ddb254b7c35f0",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.1",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-EMyk4RMKufydPaY97EyC1JkACn9blncyzBgfwV7wD9CvOXeVAUqoKVbkHCRaMlWwGaEPolUistWbr9hms36GcQ==",
+        "shasum": "69adbe0e49b1567938b7054ca255ec503270f8ff",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 773932,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGNp4CRA9TVsSAnZWagAAGsAP/j8PPsPvZL2e7+ID9REW\n5HxaZPQGyOX/dAX9A54vQN+lLhTaMmccnl3d8n3x+0fNbOoWNJL54LPPH3Vk\nDBOeWHcvwQ+aanP7wiFQ8jz00K/rvhWH9ccz65ILhB0bvF7ZpfzusGS3tsp+\navTu+SbN+8NM3NtlZU196q/KadOjZetzBp66DhO3ZoW2dwVUv8pgLUH1g8z5\nSRHKLQY8c3Z7++omF888T/7g9eL/geKlVwoHNdXPz5wa+50uveQtvK5LW+RI\n4DGcXsb5sPiGctlfdCHhmNJEaTdS9B7QBQ9UcWAtvd6wFJI+fendkChYIcDt\noO3PA1OQbYOYWFbOf2gq8ZG1YZBMS9prdaoy9ETXtQ/JmGzB+yac1LRqOVZL\nWyIT7lTdEcd8IUd38TtlBdSA8qUqulME3ZUGOdIKEE8T9Z6xn+URRqrzMPaV\n5AMmXfGP+1eJ4Mvgxuex60X7256goBga2Tt6/DxuMskL5rukM+g0kBByiDsT\nKwigtl8nAFj+QdmSCZSNw1BtMtKY4v4vZMpy8hCvAjUu+OEEk/YHuAzZgVqL\nIbBLDQdxp+kf2DJbeuMkJOmA4LVpsgFvaa4nevaHZfJodk+FkOQlQ74Ouob6\nW+uaYqRpdvA4anfUBN+epj2HJJPr6F4HQt2cQ/JfoJzNBkajwi2yH+eILV8N\nruv5\r\n=f/rs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.1_1578687095564_0.9489185895754959"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.2": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.2",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.6",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.13",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.9",
+        "np": "^5.2.1",
+        "pnpm": "^4.7.2",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.29.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.6.2",
+        "tslint": "^5.20.1",
+        "typescript": "3.8.0-beta",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "dae0ff904de1fae41a91919c8110a808afb54de0",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.2",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-1lldI+0Rrr65WPrgO014yyaOP6qOruSP1qajuyyxTcvieeGcAfBIl3LpVb41BVR0gL+ch63xZAfvYvUadWESNA==",
+        "shasum": "538f480adcf8d9e865b167826a4e60b1e42b812b",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.2.tgz",
+        "fileCount": 12,
+        "unpackedSize": 801725,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHlNhCRA9TVsSAnZWagAA/1EP/15yXbPWpCJuvktBO/j0\niaQaN2j4pDYZMzaDueAtKA1AtMH8uSWgTC8PsGDmiR/2xmkF+kbyKV0eKEqW\nY1KmRVDQv7ckCwL6+KErd/8MnNj8lEC3o9JeRJDVFQhUJnlxjNDdR83uciYK\nFUGXeXnhBYnCb/jMVu8bW7hFplTFg8/hK+ytuS6uLyAxY4RmdIe+Eu2c1mG1\nWbLQdevW8V5cfLkW7Cesu2VgKGDRYgnlhuw3ay6F63g4sw9m/awX3517Hh5m\nkekIx+qRLKR0r9oGzw7VHxtqMJgihgcQAXUTkAYkvXJX9MCcKstDhwIhuGZc\nY1v7jyPiGW+M67pIK3cSbUVSUb8b6JvPYYIgzW5BKOJ3l6Lp5mEA+N489fNy\ncnGsX5mV90nmwBuFgXejkdj6aEJ1dMmAwP23wiey/1eSL3Qv6lhnZeOHNgfv\nQTDhpt3JR/1Qf8Bip8tjODcbknrrocjvFZlPt8Bx2rv1UVKAHOIBMpD4JxiU\nww1XWJfLcyVIzn732rCAy6JjDC+7yJtYwinbjdLvBl1I75xz/9ar9CbD2j6D\n+EpFtNueWjzrxRTblnWHhEMZKCl9kEHKmO5sGC3dbs4msXTkzHFuQVoCrsng\ntJw65iAnV5UK0EjtS3yI4bZlXBE19F846qGnqAfGqVtI1ZcMgiC1jTTBjvcX\n3QDB\r\n=HBvC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.2_1579045728969_0.15768003017445786"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.3": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.3",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean:dist": "rm -rf dist",
+        "clean": "pnpm run clean:dist",
+        "lint": "tsc --noEmit && tslint -c tslint.json --project tsconfig.json",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean:dist",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "pnpm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.1.6",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.13",
+        "@wessberg/scaffold": "^1.0.23",
+        "@wessberg/ts-config": "^0.0.44",
+        "ava": "2.4.0",
+        "husky": "^4.0.9",
+        "np": "^5.2.1",
+        "pnpm": "^4.7.2",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.29.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "8.6.2",
+        "tslint": "^5.20.1",
+        "typescript": "3.8.0-beta",
+        "tslib": "^1.10.0"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "failFast": true,
+        "compileEnhancements": false,
+        "extensions": [
+          "ts"
+        ],
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "ef9cefd749b5bcbcc605fa32d8f84ad67a845f39",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.3",
+      "_nodeVersion": "13.5.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-uIXVqknaTwtI7PLRSwWAFOOa1olrqhRIYGyej2BuYUAr6Wys18hAJmA7AVewZJmqY5dEJSoFOxOOmelU6Q7Avg==",
+        "shasum": "c9bdcb8aa9fbaefe6f4f7f741ee04b20d8609778",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.3.tgz",
+        "fileCount": 12,
+        "unpackedSize": 802420,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHta2CRA9TVsSAnZWagAACPYP/ir+yOi6w6UhSRLeltL+\nVhYaH2wACYIWfCik1luUQ8gjMC2WIIxJSoNPED2FiCEb6fnhiak6tmH4I1uN\nDMBSwa/bmCsIZ0B18MvPKeLaNC6x9XiiwpGp0SdgZmQcL8lYMKdtOLGedGyK\n8JpkyQoEmCN1ok05Bamn+amseaQvSfPHDx0X60Or0gjTOorsGqmtmspCcNdv\nnJxd3Mfxr+1syBLmGXpmojvpjY4yaTPZucUr2wm0U56St6QBN8unbvJ976Lz\ns22Qese5Lv2Im1SIFInm6J70aQHsuV8g/qhrX8Nrq6UIz9esYXJrIMtfue0A\ndV+3pbTkyskHfh5c6rgV+Tsw0AGpZIq+E+Av78SfTVzUyxWK/I44pyJvWTxm\nyBLO4MumfB5v1WBxSFbhNpr4A1GmT2zMyOBPFqrDjTSErriX6LAzMP8Xi9FR\nLEMFlxdLFRRRI4j+jmgUy307e7h4umiVAdTgfNymW2bhghIkI0ambos/Vt+v\nJDxMesYFhmZjn8yL0Hfk30wQRsl+IcP+gZuScW6nyca1ccA68nCBvh+HyqQZ\nY+GyPyFPAsESImV/DfekpmS7CmZMg8aGDckTGGUjUvCMZ5DqZIFEOkvJnBgR\n5eRGgwjBAwBbN2aYUt25VABDSQpTbXnBGGgUjpmgoGrXibiMV/2cMnFURcbw\nxz3T\r\n=Ce7f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.3_1579079349705_0.6204866462546352"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.4": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.4",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "npx npm-check-updates -u && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.7.7",
+        "@types/prettier": "^1.19.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.18",
+        "@wessberg/scaffold": "^1.0.25",
+        "@wessberg/ts-config": "^1.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.21.0",
+        "@typescript-eslint/parser": "^2.21.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-jsdoc": "^21.0.0",
+        "rimraf": "^3.0.2",
+        "ava": "^3.4.0",
+        "husky": "^4.2.3",
+        "np": "5.2.1",
+        "pnpm": "^4.10.0",
+        "prettier": "^1.19.1",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^1.32.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.8.3",
+        "tslib": "^1.11.1"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "21710262931f0cd5c4ff47c859c2e7a1d0f5f0d9",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.4",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-/JWk3eBbE/Og/42DNdwiWX7YhPPiPvoI5ZxW9xXsy9poRNH55gd4bwsJTNZSkgjmkv5xzq39JNZWQ2+MqfskkA==",
+        "shasum": "4375b5f2ab187c7cf49e1031affc217e97fb8bc1",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.4.tgz",
+        "fileCount": 12,
+        "unpackedSize": 806873,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeWwSLCRA9TVsSAnZWagAAi9IP/RD9LmikQAaFBA3RnWFp\ncgDtpXLFdkXx+OLe9G3B6ydh0Uo9yKj/8RyPEku+MDcFPFXNftw/6W6IaIxa\nDg+h+9qkIlIjz8Qx9ujGPxMYd493b5D7MNV+qqqLYB4vyggqV7kr6iiNNJvm\npIkKr4nC+mjEWcnLyt+zoO06GNqIdZ3fdvtRkBRDOrljIovg56aj1QQLZ3fC\nglkQu3q9Er6X76Wc0Gi1zkNdTT6k1W5qrWjgyHwwLoCeggSzxWB1mo0D3sQs\nUYE/NiEf4FZ+CPo1TcGm3RQiVW84V++ZMFm6TMNYdd/5hp+9bsiIX2sO5qF5\nfTVL0S9MJmw002s+57TzkM5SLl0WwLLsLFtZ16DJI7sLsWBzWGA/O88w8I2P\nOVv0GBRZ1r+GBN144MhTDogGqjbJIUZjIJikZNIuZTpujRjGzw01D+tZpi65\ny/EOIK8R981pmjYZa7ZaatcWokuF5ZOR8LmBMQeg0gEo2+dMgDC9CudHDdys\nzM+x/2TKqMlJzdis3bZM+fT/BuaBJJ4VlwHg3xtORNmvfNewy2MZp/wj6REV\nGrdlscypvkhV42TpahKfJ2q5vS26U4RQ1fT5QO6Jk9hFpGhIVRzw8d0SUwjf\npRob8PVCT5dYbqzHVxiNa+6KvyzGPkJ5OkwJbHQBo+0MhewDlv6abnZgCUqH\nY+c5\r\n=4PGN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.4_1583023242501_0.14904144324509083"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.5": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.5",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "npx npm-check-updates -u && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.9.5",
+        "@types/prettier": "^1.19.1",
+        "@wessberg/rollup-plugin-ts": "^1.2.22",
+        "@wessberg/scaffold": "^1.0.29",
+        "@wessberg/ts-config": "^1.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsdoc": "^22.1.0",
+        "rimraf": "^3.0.2",
+        "ava": "^3.5.1",
+        "husky": "^4.2.3",
+        "np": "5.2.1",
+        "pnpm": "^4.12.1",
+        "prettier": "^2.0.2",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^2.3.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.9.0-beta",
+        "tslib": "^1.11.1"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "6e97d02998215e14d62bccd14945e8ab59c08ffa",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.5",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-0U2ahpKZfGn3fKUsTzm4Qge/mwr1rC7Ym/HnwOTc8fNDnHQxxAC1VrSZSFmtt9KE9Grnh18yRMzbNgoOqOmyrw==",
+        "shasum": "142406d229eff26cbcd3c9f3e3d282a7d7bb0df8",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.5.tgz",
+        "fileCount": 12,
+        "unpackedSize": 805480,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegRLzCRA9TVsSAnZWagAAKe0P/jZxzdUNFkqsGCDPZV99\n23Pmw3JPJWS4dLL6eJCoX7uL9vpfO/UDffPXiCTEdJYmOImWDheNj886Jo4M\nuspRKtDYAlMEbPHCIUbsagsmPdJC+zfl5pQfmrAdt7hWrKbAQ/Qqq+qrD3UA\nJpz5+sLLdX5GTsKIKihVr7LrApYrCfyDuKGIsEY6uJ998KU2Isgk+xIqykzp\nkPzZPOowS9XlUGqyGjgTjY1i4PZtdWJjq/FABX/hcSb2XuNXAszDUL2nB7HF\nTXl+57YiKFp1PG/JSeuSnFGgZ2BZefnKjnADcxjWJmv2kUorHiDJ1vkF/APK\nN1zlqYmrFa1nB6ZWcloKz0qwD/PIXqvB5Duhftvklq0qYwJGUm9me5siDKK0\n2mNkxZS/C7hUiLP6BVxrPdj4PD4fz9O1Wt8QhJHS/FfcrV9ZUrSIXo/nBeVr\nnIJtPLsOr8MCp6KbdZpYSd9VE+C0UPe2/j9CO6MyRS1bGydV5OndtTSwaCkh\n4WtUEv3wISjC14HvfL76tTA05qDZ50603m2ByjWVSqvGo4+JtjarM7r9uJeI\n48qFUkSGpus9b/4uHH38Af5ntu08mPokd3EQRTWUFRxgDJOKt0GOSD/Ju3Lg\n7jUziNt1FGCyY8BqYU9D+Q6STJ2vfiUTGY6LI6mpJEK+maFy/JqNgVyJUTyP\nYWF/\r\n=gcQ2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.5_1585517298718_0.8039285533291123"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.6": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.6",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "npx npm-check-updates -u && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.9.5",
+        "@types/prettier": "^1.19.1",
+        "@wessberg/rollup-plugin-ts": "^1.2.22",
+        "@wessberg/scaffold": "^1.0.29",
+        "@wessberg/ts-config": "^1.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsdoc": "^22.1.0",
+        "rimraf": "^3.0.2",
+        "ava": "^3.5.1",
+        "husky": "^4.2.3",
+        "np": "5.2.1",
+        "pnpm": "^4.12.1",
+        "prettier": "^2.0.2",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^2.3.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.9.0-beta",
+        "tslib": "^1.11.1"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "fae3bdec18ccd0b99d84e10f317f8c30750fbf24",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.6",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-vpUJVv+RBDL/uPDbKmY0urFGX922DW57Hje3L8lZ2GJj/weHRw/3lOqGxXdLJxDgEqYW8bV1iheZ7VxNFjuDhQ==",
+        "shasum": "a9fb9976e223cbf652fbdabb18e18818affaa1b2",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.6.tgz",
+        "fileCount": 12,
+        "unpackedSize": 810289,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegRo7CRA9TVsSAnZWagAAQwAP/2VSN2sVu3r3lALubEtj\nZzlb8ULNH13mGzYTXwQ4noLgTpJMSlvuT3ggzvoiVD18ZOsmJuF1qABV+R0b\npLS6h2HFtm0LI0xwLDWkcICS6R9Alfi5/sTLaHqxdczsuz99JDnPaeR9lvfs\nplsBPBlH9RGmSLGtOPaedp+cItmy8U4LY+lCrs+iwAEpRckkxDTcgE9aUTLA\nh0f2GDLjWWxvEWbfTEekt2/3NcSxtuUeQBoy/uEa0nLA0n6kVeaWneV/ouT2\n2WKNBTyBzfNKjLQMcHcCYq9vqxXRutlDj3NlTsWwc4Ojbl2pg80fNjHX99Ka\nt37n61J65bONBdJP2hkjidBBLENI3zLn3EJm1S6aRYDBAyMTqggqgU2ltmvC\nL4dFanK+TvnlBxkCKk7fbUEwRpFFW7PgpJtzh3MAtrImNkrtNV6EvawlWCIS\nNu9uL1MKbbbB1MkZPIRC+Ph2vxVxm64JKWW9ZG80eg6dJTBG1k/I5naCXn7O\nMe7ssJM9ZmtikojEAbLq8zNiF0yiY7P9IPx/RfD3CxQzhCPowNPxnTlMATFz\nzwOOZgZLG1Ab5E9ahA+MRy7L861bELf1AmEmAo3hwEjHe6J8AJAdlwuKY2GM\nYDVag7QBeC1ZV4c42OAL3pbiZCPCmKZEz7N8ApqAYP+CB+kiytaZycTj8t20\nKiT5\r\n=blKh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.6_1585519163369_0.07632944261125085"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.7": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.7",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "npx npm-check-updates -u && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.9.5",
+        "@types/prettier": "^1.19.1",
+        "@wessberg/rollup-plugin-ts": "^1.2.22",
+        "@wessberg/scaffold": "^1.0.29",
+        "@wessberg/ts-config": "^1.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsdoc": "^22.1.0",
+        "rimraf": "^3.0.2",
+        "ava": "^3.5.1",
+        "husky": "^4.2.3",
+        "np": "5.2.1",
+        "pnpm": "^4.12.1",
+        "prettier": "^2.0.2",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^2.3.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.9.0-beta",
+        "tslib": "^1.11.1"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "8c21b390e9efebe24a1de46c5dfde47831fced1d",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.7",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-FDArJt3IdlvfJAriQTpRUxWCUvO3VtnQo/ZXTxz7zranc0WfYQ0ld+rS90OJ4oLWaU1NlDg3T5Sute2zob3+Fw==",
+        "shasum": "11127dcbb415a34ad20f358d5d9fb548a0c90f7d",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.7.tgz",
+        "fileCount": 12,
+        "unpackedSize": 810979,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegR7+CRA9TVsSAnZWagAAzRkP/jUP8uzjsd0ReVN1egus\nnDfebRQy9e5X85SS5HffHc/UsP7bFZWgZBKCVEM6Q27hqIIZWLw/G0vcd1l/\ngLnpQvTpV94gCvo+5RGNKG/yD168AA4e28qGBvomsY5kUYyZQHD8Z+CWe1zS\nlJVMgI65WYSyFciK9FRRUdWeR2Tkyu0Lv6SkAxnesCxT0Bj+TactO5EjYg4P\nZRJX3pzcirwFraLSmN9Jxyn+FEqgE1Di6VLeCBq7Z7Przr3khIDdm+esRXap\nEaUqkTPdoH6N/Uj8IKIeNMsTRFZggTZxcS08q1jgEMdP+3BTS5QnNr9baXHP\n8qJItGUthYHor2Yy3Js9hYq2BCFNmFm3lcWqIXAHMJbJPjz92QzTbXrVwmbW\ngJ1iLPEHcRMtPE+Pq1QAWr1+JvlX1xgJ2JL0q5vnUxY8TbPepAFUP+eNNSdY\nFkMhcVMBTwwBV3AMBaEgDWTFYBaeftHtNYWAygvuIElTqZoPXU7rvTZ6KRnU\nUFfu1fQvzJ6aBq95PE3ejJIex4DIkf/QOeDVtysvZCUxVhyC53dNY+iABakW\ne2VEfGC8NNyU2elN8gpCrEiMuWt4Vvv1bscosP4BT+xjVyjosoGGqpse3LVq\nZkZqonZcDap2/roZJyc/7DmVfekN5CsFFdPzmAJi80rgdp4BrGk57FPv35id\nc2/b\r\n=f2g1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.7_1585520381832_0.9556159691420536"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.8": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.8",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "npx npm-check-updates -u && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^13.9.5",
+        "@types/prettier": "^1.19.1",
+        "@wessberg/rollup-plugin-ts": "^1.2.22",
+        "@wessberg/scaffold": "^1.0.29",
+        "@wessberg/ts-config": "^1.0.8",
+        "@typescript-eslint/eslint-plugin": "^2.25.0",
+        "@typescript-eslint/parser": "^2.25.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-import": "^2.20.2",
+        "eslint-plugin-jsdoc": "^22.1.0",
+        "rimraf": "^3.0.2",
+        "ava": "^3.5.1",
+        "husky": "^4.2.3",
+        "np": "5.2.1",
+        "pnpm": "^4.12.1",
+        "prettier": "^2.0.2",
+        "pretty-quick": "^2.0.1",
+        "rollup": "^2.3.0",
+        "standard-changelog": "^2.0.21",
+        "ts-node": "^8.8.1",
+        "typescript": "^3.9.0-beta",
+        "tslib": "^1.11.1"
+      },
+      "dependencies": {},
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=8.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "e448b9e021b361f4f018bf586fc59e2c99d4ebca",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.8",
+      "_nodeVersion": "13.10.1",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-m/+1ox7e2K/KwWFe1K7OpiqTHZnraCG6urhCt4Y5Dxw8dr1NMcV52Q8qvJd0lGfhGhZiVD/SWbUj9i2wKzdK6w==",
+        "shasum": "25bf1e0625a4b4b836324427894ab138ebd7fb00",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.8.tgz",
+        "fileCount": 12,
+        "unpackedSize": 814043,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJegSGHCRA9TVsSAnZWagAAzy0P/11ltPhj86IObvpjj8+v\nuyUwAYTBKkN3DyuiywFoxFSamSmIBzPqV8e6krsHAZgauV9RHNd5rAwr2tHw\n3dF1nFqHS9q2Ohj7k8H5SnYZZh/taqyqFKKJ4ClZZ6Q/46QgRytky17oTGZ7\n6iIzpiGMPcZpIYhfuFvzPVDQLfA3Z31hXw8UHX1LXnqF8jpg4pJK+0ezt1Jf\neKI0LYhqs41g6TuNnfYZWmVS2nQ8G/IyY95ESnDnYSoqCauHHn4jy250+wwd\npZm2ewCarFbz/NKeI5djG5cCfemwfPYHH/NfXw1CKiyhP39BsmJIWPN7IiJO\nZVd9z2wrdFCf89mARcyBCz5z+q1M6TkXm/0CkodzhC7jsXm8fI8WFEVVcPng\njGct3jVFy1vmNQ19WRO0Gp1WtTM8X1S36O4Y/HjErf3hbMuQkJlejeE1S/me\ntu+RsaovDuMd7OArTmihY0hqbZQlXuBu7Wx5UiFeAsH2YKNlWpBlwxNpwq6k\nT1EGK1DwyIy8E8vZNXUYDUwvjJKH1PrSZx6rHRHp6F7hpbN+018cptVd9wjJ\nug+lrS5+mBG7ejQ8Hijx//IIq6ijh/ZfdM7J6CUnyIfYGNtW5gi8e2Q7ybXs\noqOZrl5YySN/VCt9i2OrSj39qvOO9Z/TaEKJFI3pJ7VuhbPngDuTnnJF0NIh\nMOPj\r\n=VW8P\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.8_1585521030679_0.43604891676549795"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.9": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.9",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.0.14",
+        "@types/prettier": "^2.0.1",
+        "@typescript-eslint/eslint-plugin": "^3.5.0",
+        "@typescript-eslint/parser": "^3.5.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.27",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.16",
+        "ava": "^3.9.0",
+        "eslint": "^7.4.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^28.6.1",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.2.6",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.18.2",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^8.10.2",
+        "tslib": "^2.0.0",
+        "semver": "7.3.2",
+        "typescript": "4.0.0-beta",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "d6e72f64e4724cdaea041d71ef011c5750137ef1",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.9",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-GmYNuF93CASWeSBQW2/yeB7gGY6lVCcmW0xYBvDs9kjYeLYleAfIZjAw3zqWIhhXSpmtuWCg3HCGMCS9XJSDxg==",
+        "shasum": "1489406c5ceaa91b5207be6bd788dc457ab8ecc8",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.9.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1251896,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe/6TACRA9TVsSAnZWagAAM7sP/jcKPIZiUW85eDnfy5E/\nexYYAqF9y15Hv7B0eo8Xstx6IYqSkg4oUokuzPbdBBT61JlvjnB3ncVmNkNP\n4iHtFPktpfFs/0S1wJEWWkOAFVa9CKsWWk9OZfkGZDgU2lkWgi55zLw5oIvR\nLQyFFZDN1qRGsEehT3yqKvbTwBJ+aQSpeyzVA6+puADupakjw/fSedJ7k74o\nrcK+FCSm04OPj7DstyVQlrU9AhC6A7p4w1/Rj3GT8k1ybzWphZktsmWkxFd2\nPMnxnYlEU/HQyE2hGFH8qCxZT7lLjapWljMnm44gkHJJMNlsoqk1NKot/bCF\ninDc/fezHnY+IrU5xEnHLP2xc09fP0ihfxeXpa1hT5lR5GdS5uk4KspyhJGb\nioiijRiSq74aeKE80Neqyw4oK9u8lTYSh8R9Ah0S8mnF8TWcLt8ghGEdHIAj\naMKeaRS5w8I61Y2UVMs2aw6755L3+1FZUHVL8FKwY/BgXImvYC7nP8z2XZNf\nKv3nuJ+t5lmMUMMnYqzvzjQG5QdVm8Fv2usWcd2oFmN0NqY15dV3o7YiZt6Q\nOVkqKKZHOZuBtU4mjYMb0SeCV10ovKVpoIthsRnHc+vc+jjpR9PlpOPMOgJZ\nGkc2vpH9Jx9FUAqWT4Xs4xZMZ6LccQxYPqJZmIcHFVloYMoP4DmtPW1ph5CD\npZp/\r\n=wpsQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.9_1593812159680_0.10808309271071703"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.10": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.10",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.0.26",
+        "@types/prettier": "^2.0.2",
+        "@typescript-eslint/eslint-plugin": "^3.7.0",
+        "@typescript-eslint/parser": "^3.7.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.28",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.16",
+        "ava": "^3.11.0",
+        "eslint": "^7.5.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.0.3",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.4.6",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.23.0",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^8.10.2",
+        "tslib": "^2.0.0",
+        "semver": "7.3.2",
+        "typescript": "4.0.0-beta",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "563637d53da82748a58a1d28d4cdf64ad49756d9",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.10",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-3+p1KWjTLgbofOyjjuZDn8hNsD+jIMLDXAkzpD/Yn0GHUTtGA75fAzcp+vGJUMlG9TGu2gOQMGRSjcv3doftQA==",
+        "shasum": "c6addf872884a13a7bf1d33390fd564e70c16d87",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.10.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1252574,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfHu2qCRA9TVsSAnZWagAA3FUQAJ1OlpszyMi7/qtOj/km\n8pmZ6H+2z15kxmVwDBsOJv9oCM9QaTz6PeWBhAXJzkbfDHy7EBLUtvUe73ny\nHqB+sphH7zViG55+0vf/uEmGKoq+A+YB7fhr0bigV0dUPasUC4QWV3Kpc0l+\ntXYKsrGs/DS/hQDtvHRYiWY865hVKj3HchIfJ/bLRf+nehG5COXQdw8AFSGJ\noeHdfNpDd4vVH+abdZSjWsFKDXbpqQAWe2D+BV3EF4SgsMceiGsW3Ut0o7O5\nTyKLNVmrTVu1Taj6k7IrEwNRM3lAYn1kghOGxVTiBP5Ci/KJaEBmBhLBEWgj\nOUwf20W7N2JnEiwybUl83rZM47WpUxAk2nJ44RWTpDDFhZfA4pW+VoWlWZD/\neRi7LHLpGopiMvP3OKXPmXLxj1+IZY+McAFwybmZKa4zvQkS9mmZCQkCLgSS\nf8KYtQ8rHyjINEp1+MgN6p1S4aSlW08Rh0uJZFSHiXPvTqIH/rSmRGkAmnHm\n2W3NeqUNudpK8q5mGdk42vMypzKpzF9OATk5HqujTFv2t4ObNS8kM5ftgWPD\nLpxVKEQCxFErPclkSo2AQcUfC1zhaAXUjH94k/cJH8Gc4ZD4umSoSEjItI3W\nEdO90bcQ6nMdilhThMiKJje747QZF4TMeHnrdfeXnm+Ov0jKcZ1VoYZRR4F9\nmI2j\r\n=SF1K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.10_1595862441568_0.4316290640924083"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.11": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.11",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.0.26",
+        "@types/prettier": "^2.0.2",
+        "@typescript-eslint/eslint-plugin": "^3.7.0",
+        "@typescript-eslint/parser": "^3.7.0",
+        "@wessberg/rollup-plugin-ts": "^1.2.28",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.16",
+        "ava": "^3.11.0",
+        "eslint": "^7.5.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.0.3",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.4.6",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.23.0",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^8.10.2",
+        "tslib": "^2.0.0",
+        "semver": "7.3.2",
+        "typescript": "4.0.0-beta",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "3226430dbf0c0ba2899e0e47a37de11aa58e85c5",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.11",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-wXvEc+bt9IIOH5TTYmpgLat4nxgS/ceOv70nUK2TXfBxUn02BVp79C+eA0Yau6eEq3Yh6g8kJIrrXcqs/zseNg==",
+        "shasum": "59fd12036f04b4df705f7d7ef59cb578982e5aec",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.11.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1254324,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfH2c7CRA9TVsSAnZWagAAJlwP/2hLTd4SvKZLB3qUYaTN\ngg9Yqz4yKSCVXDs5Rs4xopxZ7+gb69F+a3Zd4/GJiDzBUcCRYIh2N505vK9M\neTqaJatdTFtVSolnWPMu3Klt9eq4luccH5qHoM7FmA4ow/Gshoqy7PuQfjtW\nB9cSwgYyEmgu3WbSukeEK+57ZXoinCxuTyFyFxH3dQOKSSmPU9Zk7Knir3ux\n2C+c3dRAZ2v0D8CIUjTcfOBDlcwwzweFh0v6aR0uJUcd47eT67rpPLJyCcGS\noR32IN8QhgQTNRchIYnB0MQ/IAFiLxvANwKojU92k3ctRSKFBR69BORioCkw\nwsNikWEUnUmwBmu8aGe9HC0f/ktRNY4UG39ZHGWeU3mn9rcWT5noSJSwbJ9b\nW09y1CsvRmUJx/I5DKEu4djBucHK8Hm+p5Gax9IJKiEva/IyHFFPBhrmd9di\n/cwnni3zUtbxaOO3ATjeCOmvXsN+6jO5VqFvC+VqenbviF5578t7e//HDOoZ\nUWekw1ZdB6rRVOI9mTCQb/MCRVY//T0bQmqRDrBtBWN54UdAisMHjWZl9vNa\nRjKuT5XOXN9+jSZoLKBmrjfUln6Zgq2KnpFJ3KH0nshcPAGpXNyJw6umjYV4\nsGhdFTzp50WvynZT4ZOm+ENUl81Brp+/Bi2M+K+f9vt4NQrFutnVu1nXzFut\nTZb7\r\n=CGah\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.11_1595893563251_0.22155107991845302"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.12": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.12",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np --dep dev,prod && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.0.27",
+        "@types/prettier": "^2.0.2",
+        "@typescript-eslint/eslint-plugin": "^3.8.0",
+        "@typescript-eslint/parser": "^3.8.0",
+        "@wessberg/rollup-plugin-ts": "^1.3.2",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.16",
+        "ava": "^3.11.1",
+        "eslint": "^7.6.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.2.1",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.4.12",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.23.1",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^8.10.2",
+        "tslib": "^2.0.1",
+        "semver": "7.3.2",
+        "typescript": "4.0.0-beta",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "2f76275a7a250c9bd0563669cc96b8afcfb534ed",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.12",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-xV6jPESgPNEJyDoz/1saso4Q9p/tgHGC/BoOkIsyCP8Yek5t3FTLXtMEZdTGQoMC2YmOtKuK85MHwNFvwgGCCg==",
+        "shasum": "76fbe5f8fedab4ddb5aea977fd347c94defd211e",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.12.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1258189,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfLdAHCRA9TVsSAnZWagAAGgsP/3026dw4rn+Fs9pkis4Z\naGMtUqRqH3MlAx4/rvLBRVLL0cKZkXXsjm+rWGrPAOQRyXjyIq/iBjATnbQ7\nYreIowJu4NTRIYc9YGpTHmWcLIsxp9IbmT7pjBD4q0SSNBKsw1NA7PAXIeOg\nAklOS1fWL/mF4xROTD4UfWeSk2NZKmO4Z1Jo5aKn99333uwugLs8oG2/PtKG\nfOSUVUmV1BBDWTK0t8AH4Qvvtwl0w6Trqmn45KdVhLmepeMLIPRjZAkvloOs\nBQJH3FcWMldgbWajHKT/Zv5xM/RcoUo9TIEAW6bTwYk915a/sNt5V8arKllr\nOsEdHmuRj29YdwSso9SkOREVT0m5Vo99MvTi4MAWCBeuPkB0aM8+JlVzKsod\n+Ig/mDySvOUB/D1X5UiSHs3L1LPcuR3+igpYmEkUplJj+OUzZbhUNaPhfMHh\nRtDEWRExZU7JJSBGfwKCJE3sKgA1zuam0UtBQQJD8cbVFmbiltwGhBdXYbDo\nxuSYszt/pI+xvUUDwhzpVtubumUHtIbdHyGwphQYXvMV+fRAXTW/hBbuLDJd\ndf/RMo/AusW3JztZthyKFaGrYv9ioDhFkWYv5P6EOemrXwcc7+bkxysgWYdP\ncivKUMlfeTd4fevRmaBsneX9BFJlh4oH3E6yWCvWxQxJJLI494KGlwlUVPNd\nh1nE\r\n=LuP2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.12_1596837894510_0.8582461278386213"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.13": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.13",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np --dep dev,prod && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.0.27",
+        "@types/prettier": "^2.0.2",
+        "@typescript-eslint/eslint-plugin": "^3.9.0",
+        "@typescript-eslint/parser": "^3.9.0",
+        "@wessberg/rollup-plugin-ts": "^1.3.2",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.16",
+        "ava": "^3.11.1",
+        "eslint": "^7.6.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.2.1",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.5.1",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^2.0.1",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.23.1",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^8.10.2",
+        "tslib": "^2.0.1",
+        "semver": "7.3.2",
+        "typescript": "^4.0.1-rc",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/clone.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "d3bfb836085c5def25fed16043c896587c3eba2e",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.13",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-aljWTaFWM/dHS77TPcEnxufq2bt2zBIs2wZJQJ6x2djMzg7l8kn3ZBN9KPOv/2kGZa4PlE0Zlz/0eE2Bnv8rxw==",
+        "shasum": "93acc8bce5f3a7542a4868b8bfd867fb96aa7425",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.13.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1273363,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfMvZOCRA9TVsSAnZWagAASfIQAIUoswE6scxRocrWCXv3\n3l3srePwavSpD1Snu8c7wUz4pJX3wGfOJIOwa7TNDiw76qjFfOP06rJa7LvW\nqrV0yz29huipkrCTfRKdX1eAmdz1DDlW9i67J/DYho+sBd2HCrhy6+esFKqh\nBXM8IAe+GhCDe4x5gCHAlRIZJbWCUMKyBiabhiiuMdSPaCRNUtv0ldjODUaJ\n8zI2LUm3Ttatv63f4ttJOtfsFqds4odbjw2Duccd/7IJNKzUB8jblqT6WRt2\nAsVDdEGoVEXwaT8j0HTahMJcBuKerN58YnpzZS7+wGVNyZrv70DnOijzBhYT\nLobAlgdH/rgxHZAgdolRzDneUkx5kdu0rxLFBfwXK7vca3jCZ7nv5xBYz/Pk\nehF+2QY1jfdTDBduhasXLcntxVW22C7v21X/Gk67UxX/GXgEd5whEOcqlzkh\nUpayxDPT+/u7TDTnkv4kbqZy1Qjiino06+OwlhnOTiCSA/4PqTeJboTuQdl/\nlFZ9+5AemC2k4GG8En8RBmmdKRhP/R1M0/nNbVrFQfPhLQHWWsUsT4XLqTbf\njVGmmf+ZpOMzFsesos/MyixV23KzppRwmBf5VKdPy+6woB9K/33XCu9V7ei4\nA3kNvO+q7XZs2OQtXJtRj2AdAmd/qvEHhEkMcdmZHTT4pGR/+odeTSGPgi+E\nCg0V\r\n=eggI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.13_1597175374071_0.8767260700986617"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.14": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.14",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np --dep dev,prod && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.6.0",
+        "@types/prettier": "^2.0.2",
+        "@typescript-eslint/eslint-plugin": "^3.9.1",
+        "@typescript-eslint/parser": "^3.9.1",
+        "@wessberg/rollup-plugin-ts": "^1.3.2",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.17",
+        "ava": "^3.11.1",
+        "eslint": "^7.7.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.2.4",
+        "husky": "^4.2.5",
+        "np": "5.2.1",
+        "pnpm": "^5.5.2",
+        "prettier": "^2.0.5",
+        "pretty-quick": "^3.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.5",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^9.0.0",
+        "tslib": "^2.0.1",
+        "semver": "7.3.2",
+        "typescript": "^4.0.2",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "172c8611f3479714b6ff8b0776c50f94cf650f9a",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.14",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-1eltgoIZiXqvd6Mjxg/H2jMaYDniTSjcCCqquaw6p+XrIOqZncEProosXpgF41d6MU9uzLSQjE+j9NHY7X92Pg==",
+        "shasum": "3a2da5fd8df21d73b6b22d41a572c154d3484e7a",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.14.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1285641,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfQq7hCRA9TVsSAnZWagAAbnMP/3bkKJogHIMfIBHdXXH0\nHaPGKOTDVs2NzDrEAlDFDZDo8AV46AHysADrBL3WZDhee0wjnULRRRbQU1/3\nSqhMFCqZ0UNE4xD7PA11JD9wg7LND7zlA9foLHZw8i5vabPSkibLPt3Ccbjo\nuWM0bQzoAc/0Bx6gVvwbuOpqXHTepP2KwT7EvivOdWzFWLWCM8muXAwyC39y\nKBJCYGu7UV5Uk428ckfQ8za3ucUViX6h3jtvVVvMB5eleiL9MvV0E2XV1gUF\n0kQk6j/6s0gjQilIEpn+7evx/n1is3iTBaUzTFY8Y47uDESAqcjGEL6uLNJj\netDoW4j0raXipc15T4tRqnhe0C9vERecItDDVFbAPu10QODctm7XMk9Wj5La\nSYwDCEnsXRGIH5/e8LR1oZ/Lm+Kvv6Cd4/iGc6x1bei79FTx5rICQV/84bJ6\nbrSYufZjVvVSv0USVRmDHSdnIp3N9tu31ZwzfqXfGWBcRNbcLXdNOgzXMsaX\nBouezKRM22CH1KerXskRkFjZkGX97tgjTUvzqW72njx+fJcgWYnit0nqJbki\nPhPRG0YROTpOe2r8R0jC33bTscST2oyabNGxxvm2Zq+/iesEIkxfnrNxRDNP\nnJYf+UTOEKZbHccKTSlbVvjKOjUOluqIhnj+FYbiD4aQlwdYk0a0VV6G2oH2\nNqaV\r\n=gsK6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.14_1598205664718_0.8774735633463602"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.15": {
+      "name": "@wessberg/ts-clone-node",
+      "version": "0.3.15",
+      "description": "A library that helps you clone Nodes from a Typescript AST",
+      "scripts": {
+        "generate:scaffold": "scaffold all --yes",
+        "generate:changelog": "standard-changelog --first-release",
+        "generate:all": "pnpm run generate:scaffold && pnpm run generate:changelog",
+        "clean": "rimraf dist",
+        "lint": "tsc --noEmit && eslint \"src/**/*.ts\" --color",
+        "prettier": "prettier --write '{src,test,documentation}/**/*.{js,ts,json,html,xml,css,md}'",
+        "test": "ava",
+        "prebuild": "pnpm run clean",
+        "build": "pnpm run rollup",
+        "watch": "pnpm run rollup -- --watch",
+        "rollup": "rollup -c rollup.config.js",
+        "preversion": "npm run lint && NODE_ENV=production pnpm run build",
+        "version": "pnpm run generate:all && git add .",
+        "release": "np --no-cleanup --no-yarn",
+        "update": "pnpx npm-check-updates -u -x np --dep dev,prod && pnpm update && pnpm install"
+      },
+      "keywords": [
+        "typescript",
+        "ast",
+        "node",
+        "clone",
+        "copy",
+        "duplicate"
+      ],
+      "contributors": [
+        {
+          "name": "Frederik Wessberg",
+          "email": "frederikwessberg@hotmail.com",
+          "url": "https://github.com/wessberg"
+        }
+      ],
+      "license": "MIT",
+      "devDependencies": {
+        "@types/node": "^14.6.4",
+        "@types/prettier": "^2.1.0",
+        "@typescript-eslint/eslint-plugin": "^4.1.0",
+        "@typescript-eslint/parser": "^4.1.0",
+        "@wessberg/rollup-plugin-ts": "^1.3.4",
+        "@wessberg/scaffold": "^1.0.30",
+        "@wessberg/ts-config": "^1.0.18",
+        "ava": "^3.12.1",
+        "eslint": "^7.8.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-jsdoc": "^30.3.3",
+        "husky": "^4.3.0",
+        "np": "5.2.1",
+        "pnpm": "^5.5.11",
+        "prettier": "^2.1.1",
+        "pretty-quick": "^3.0.0",
+        "rimraf": "^3.0.2",
+        "rollup": "^2.26.10",
+        "standard-changelog": "^2.0.24",
+        "ts-node": "^9.0.0",
+        "tslib": "^2.0.1",
+        "semver": "7.3.2",
+        "typescript": "^4.0.2",
+        "typescript-3-0-1": "npm:typescript@3.0.1",
+        "typescript-3-1-1": "npm:typescript@3.1.1",
+        "typescript-3-2-1": "npm:typescript@3.2.1",
+        "typescript-3-3-1": "npm:typescript@3.3.1",
+        "typescript-3-4-1": "npm:typescript@3.4.1",
+        "typescript-3-5-1": "npm:typescript@3.5.1",
+        "typescript-3-6-2": "npm:typescript@3.6.2",
+        "typescript-3-7-2": "npm:typescript@3.7.2",
+        "typescript-3-8-3": "npm:typescript@3.8.3",
+        "typescript-3-9-2": "npm:typescript@3.9.2"
+      },
+      "peerDependencies": {
+        "typescript": "^3.x || ^4.x"
+      },
+      "main": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js",
+      "browser": "./dist/esm/index.js",
+      "types": "./dist/esm/index.d.ts",
+      "typings": "./dist/esm/index.d.ts",
+      "es2015": "./dist/esm/index.js",
+      "funding": {
+        "type": "github",
+        "url": "https://github.com/wessberg/ts-clone-node?sponsor=1"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/wessberg/ts-clone-node.git"
+      },
+      "bugs": {
+        "url": "https://github.com/wessberg/ts-clone-node/issues"
+      },
+      "engines": {
+        "node": ">=10.0.0"
+      },
+      "husky": {
+        "hooks": {
+          "pre-commit": "pretty-quick --staged"
+        }
+      },
+      "ava": {
+        "files": [
+          "test/**.test.ts"
+        ],
+        "verbose": true,
+        "timeout": "40s",
+        "extensions": [
+          "ts"
+        ],
+        "environmentVariables": {
+          "NODE_OPTIONS": "--max_old_space_size=4096"
+        },
+        "require": [
+          "ts-node/register/transpile-only"
+        ]
+      },
+      "gitHead": "9c5aadb1ece61ae52498d3e0d2486ae4a53fcf05",
+      "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+      "_id": "@wessberg/ts-clone-node@0.3.15",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-WKIbAY/M5h8m6z/8VvDyeNZ/87bSZpBW5DKUb6kTNzktAzmFJwyTl8brn/L9ghjSaD+Efxb+Vqv1+Gz2GyldUA==",
+        "shasum": "c250300000980a2c692bba90bd0c473d1bd7073e",
+        "tarball": "https://registry.npmjs.org/@wessberg/ts-clone-node/-/ts-clone-node-0.3.15.tgz",
+        "fileCount": 12,
+        "unpackedSize": 1285746,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfVo8ECRA9TVsSAnZWagAACxIP/jwdIoIIkMDk5dvAoGSH\neBv61YXq/ZAFsryY+HUWn8T6JIt3arN2lTIsX0nT/9C8oHP53KuobcMiCyED\n+p/Io6abLt/pu9SIcFH/hHW4QJoHREwzRBD3tGonAzzbFN9jD3nk4aGBy8bo\nrjXU3aYhq0XdZhBS5s4aVBpqZ2OxjjvU2xShmOZO2BH/ZxnPvYuVJqHYLRsw\nfArMffuaPP3GbNieoKsN/Kr9V1+RjZDN7WZUDufOIW4SnSHBYbyGxFHh5/XQ\nGpXIj2Q0lR4f/7Av0wuM4y51wEc7u5aHEwXmHAUnZiBYV1PHGaUKNJf7In2h\nr2euEU228n3MbZREHdOcmTx/edTABhr2PmgVicMNBGCEshXTLlolDcITv6wu\nukgt6HYWEGaYxP4VlwPS77vRuvGytAaGlWYgSBy9uqlUVOWXRb6jlCIC5Zk8\nkYUSJiow8e86eUJ2WmfhSKy2/TD0z/Y12zWxqbaOGJ44Ks7HNKzoEmx3hQOq\nOXQQIUKGauvcNMKBM25SXUg5KU+gzOsybujS5YfeW9tSPB3GurrV2WTH6Uy8\nNCuRxYQg+X5CLS0mDdjPVly0NTwljRp33tJKEyPNG/F6ygu9NnL0sXuSfnBq\nC0QllQBhtJ7P2LvlnxJn92Us9VVuVPGbUFNuX8PjmRcjic7hGI3axWvksfuu\nHiJK\r\n=4RLg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "wessberg",
+          "email": "frederikwessberg@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "wessberg",
+        "email": "frederikwessberg@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ts-clone-node_0.3.15_1599508227619_0.687219774225277"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-09T13:36:33.369Z",
+    "0.0.0": "2019-11-09T13:36:33.813Z",
+    "modified": "2020-09-07T19:50:30.033Z",
+    "0.1.0": "2019-12-27T12:57:57.292Z",
+    "0.1.1": "2019-12-27T13:21:49.718Z",
+    "0.1.2": "2019-12-28T20:51:35.975Z",
+    "0.1.3": "2019-12-28T20:53:49.918Z",
+    "0.1.4": "2020-01-02T12:32:07.141Z",
+    "0.2.0": "2020-01-07T21:49:04.850Z",
+    "0.2.1": "2020-01-07T22:13:46.077Z",
+    "0.3.0": "2020-01-10T00:38:45.132Z",
+    "0.3.1": "2020-01-10T20:11:35.704Z",
+    "0.3.2": "2020-01-14T23:48:49.128Z",
+    "0.3.3": "2020-01-15T09:09:09.812Z",
+    "0.3.4": "2020-03-01T00:40:42.621Z",
+    "0.3.5": "2020-03-29T21:28:18.843Z",
+    "0.3.6": "2020-03-29T21:59:23.509Z",
+    "0.3.7": "2020-03-29T22:19:41.950Z",
+    "0.3.8": "2020-03-29T22:30:30.842Z",
+    "0.3.9": "2020-07-03T21:35:59.820Z",
+    "0.3.10": "2020-07-27T15:07:21.748Z",
+    "0.3.11": "2020-07-27T23:46:03.449Z",
+    "0.3.12": "2020-08-07T22:04:54.660Z",
+    "0.3.13": "2020-08-11T19:49:34.176Z",
+    "0.3.14": "2020-08-23T18:01:04.844Z",
+    "0.3.15": "2020-09-07T19:50:27.771Z"
+  },
+  "maintainers": [
+    {
+      "name": "wessberg",
+      "email": "frederikwessberg@gmail.com"
+    }
+  ],
+  "description": "A library that helps you clone Nodes from a Typescript AST",
+  "homepage": "https://github.com/wessberg/ts-clone-node#readme",
+  "keywords": [
+    "typescript",
+    "ast",
+    "node",
+    "clone",
+    "copy",
+    "duplicate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wessberg/ts-clone-node.git"
+  },
+  "contributors": [
+    {
+      "name": "Frederik Wessberg",
+      "email": "frederikwessberg@hotmail.com",
+      "url": "https://github.com/wessberg"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/wessberg/ts-clone-node/issues"
+  },
+  "license": "MIT",
+  "readme": "<!-- SHADOW_SECTION_LOGO_START -->\n\n<div><img alt=\"Logo\" src=\"https://raw.githubusercontent.com/wessberg/ts-clone-node/master/documentation/asset/logo.png\" height=\"150\"   /></div>\n\n<!-- SHADOW_SECTION_LOGO_END -->\n\n<!-- SHADOW_SECTION_DESCRIPTION_SHORT_START -->\n\n> A library that helps you clone Nodes from a Typescript AST\n\n<!-- SHADOW_SECTION_DESCRIPTION_SHORT_END -->\n\n<!-- SHADOW_SECTION_BADGES_START -->\n\n<a href=\"https://npmcharts.com/compare/%40wessberg%2Fts-clone-node?minimal=true\"><img alt=\"Downloads per month\" src=\"https://img.shields.io/npm/dm/%40wessberg%2Fts-clone-node.svg\"    /></a>\n<a href=\"https://www.npmjs.com/package/%40wessberg%2Fts-clone-node\"><img alt=\"NPM version\" src=\"https://badge.fury.io/js/%40wessberg%2Fts-clone-node.svg\"    /></a>\n<a href=\"https://david-dm.org/wessberg/ts-clone-node\"><img alt=\"Dependencies\" src=\"https://img.shields.io/david/wessberg%2Fts-clone-node.svg\"    /></a>\n<a href=\"https://github.com/wessberg/ts-clone-node/graphs/contributors\"><img alt=\"Contributors\" src=\"https://img.shields.io/github/contributors/wessberg%2Fts-clone-node.svg\"    /></a>\n<a href=\"https://github.com/prettier/prettier\"><img alt=\"code style: prettier\" src=\"https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square\"    /></a>\n<a href=\"https://opensource.org/licenses/MIT\"><img alt=\"License: MIT\" src=\"https://img.shields.io/badge/License-MIT-yellow.svg\"    /></a>\n<a href=\"https://www.patreon.com/bePatron?u=11315442\"><img alt=\"Support on Patreon\" src=\"https://img.shields.io/badge/patreon-donate-green.svg\"    /></a>\n\n<!-- SHADOW_SECTION_BADGES_END -->\n\n<!-- SHADOW_SECTION_DESCRIPTION_LONG_START -->\n\n## Description\n\n<!-- SHADOW_SECTION_DESCRIPTION_LONG_END -->\n\nThe Typescript Compiler API is very powerful and comes with a lot of `create` and `update` functions that can be used for creating and updating nodes in [Custom transformers](https://github.com/Microsoft/TypeScript/pull/13940) while visiting\na `SourceFile`. Under such circumstances, it is easy to run into problems if you reuse a Node in another part of the tree without properly cloning it, since the `parent` chain, as well as the `pos` and `end` values will have wrong values and will lead to malformed output after your transformations have been applied.\n\nThis can be cumbersome for example when you want to simply add or remove a specific modifier from an arbitrary node in a given position.\nThis library exports a `cloneNode` function that makes it easy to deep-clone a Node from a Typescript AST without any faulty parent links.\nAdditionally, you get a simple hook with which you can do simple things such as edit the top-level properties of the cloned object such as its modifiers, decorators, etc.\n\n<!-- SHADOW_SECTION_FEATURES_START -->\n\n### Features\n\n<!-- SHADOW_SECTION_FEATURES_END -->\n\n- Simple to use\n- Extensible\n- Supports dynamic TypeScript versions\n\n<!-- SHADOW_SECTION_FEATURE_IMAGE_START -->\n\n<!-- SHADOW_SECTION_FEATURE_IMAGE_END -->\n\n<!-- SHADOW_SECTION_TOC_START -->\n\n## Table of Contents\n\n- [Description](#description)\n  - [Features](#features)\n- [Table of Contents](#table-of-contents)\n- [Install](#install)\n  - [npm](#npm)\n  - [Yarn](#yarn)\n  - [pnpm](#pnpm)\n  - [Peer Dependencies](#peer-dependencies)\n- [Usage](#usage)\n- [Configuration](#configuration)\n  - [Hooking into and altering transformations](#hooking-into-and-altering-transformations)\n  - [Passing in a specific TypeScript version](#passing-in-a-specific-typescript-version)\n  - [Passing in a specific NodeFactory](#passing-in-a-specific-nodefactory)\n  - [Setting parent pointers](#setting-parent-pointers)\n  - [Setting original node pointers](#setting-original-node-pointers)\n  - [Preserving comments](#preserving-comments)\n  - [Preserving symbols](#preserving-symbols)\n- [Contributing](#contributing)\n- [Maintainers](#maintainers)\n- [Backers](#backers)\n  - [Patreon](#patreon)\n- [FAQ](#faq)\n  - [What is the point of this library](#what-is-the-point-of-this-library)\n- [License](#license)\n\n<!-- SHADOW_SECTION_TOC_END -->\n\n<!-- SHADOW_SECTION_INSTALL_START -->\n\n## Install\n\n### npm\n\n```\n$ npm install @wessberg/ts-clone-node\n```\n\n### Yarn\n\n```\n$ yarn add @wessberg/ts-clone-node\n```\n\n### pnpm\n\n```\n$ pnpm add @wessberg/ts-clone-node\n```\n\n### Peer Dependencies\n\n`@wessberg/ts-clone-node` depends on `typescript`, so you need to manually install this as well.\n\n<!-- SHADOW_SECTION_INSTALL_END -->\n\n<!-- SHADOW_SECTION_USAGE_START -->\n\n## Usage\n\n<!-- SHADOW_SECTION_USAGE_END -->\n\nTo clone a Node from a Typescript AST, all you have to do is:\n\n```typescript\nimport {cloneNode} from \"@wessberg/ts-clone-node\";\n\n// Clone the Node\nconst clonedNode = cloneNode(someNode);\n```\n\n## Configuration\n\n### Hooking into and altering transformations\n\nYou can pass in a hook that enables you to modify the clone, agnostic to the kind of Node it is.\nFor example:\n\n```typescript\nimport {cloneNode} from \"@wessberg/ts-clone-node\";\n\n// Clone the Node, and alter the modifiers such that they don't include a modifier pointing\n// to the 'declare' keyword\nconst clonedNode = cloneNode(someNode, {\n\thook: node => {\n\t\treturn {\n\t\t\tmodifiers: modifiers => ensureNoDeclareModifier(modifiers)\n\t\t};\n\t}\n});\n```\n\nThere is also a _'finalize'_ which is invoked after a node has been cloned at any recursive step from the top node, allowing you to perform\nfinal alterations or track the node for other purposes.\n\n```typescript\nconst clonedNode = cloneNode(someNode, {\n\tfinalize: (clonedNode, oldNode) => trackSomething(clonedNode, oldNode)\n});\n```\n\n### Passing in a specific TypeScript version\n\nYou can use pass a specific TypeScript to use as an option to `cloneNode`:\n\n```typescript\ncloneNode(someNode, {\n\ttypescript: specialTypescriptVersion\n});\n```\n\nThis can be useful, for example, in an environment where multiple packages in the same project depends\non different TypeScript versions and you're relying on `cloneNode`.\n\n### Passing in a specific NodeFactory\n\nFrom TypeScript v4 and forward, a `NodeFactory` can be retrieved from a `TransformationContext` to signal which transformer was responsible for creating or altering nodes. If you want to pass a specific `NodeFactory`, you can pass it as an option to `cloneNode`:\n\n```typescript\ncloneNode(someNode, {\n\tfactory: nodeFactoryFromTransformationContext\n});\n```\n\n### Setting parent pointers\n\nBy default, when you clone a node, it won't update the parent pointers such that you and TypeScripts compiler APIs can traverse the parent tree.\nYou can toggle this behavior with the `setParents` option:\n\n```typescript\ncloneNode(someNode, {\n\tsetParents: true\n});\n```\n\n### Setting original node pointers\n\nBy default, when you clone a node, it won't keep references to the original nodes recursively.\nYou can toggle this behavior with the `setOriginalNodes` option:\n\n```typescript\ncloneNode(someNode, {\n\tsetOriginalNodes: true\n});\n```\n\n### Preserving comments\n\nBy default, when you clone a node, comments will be preserved as much as possible and added to the cloned nodes as `emitNodes`.\nYou can toggle this behavior with the `preserveComments` option:\n\n```typescript\ncloneNode(someNode, {\n\tpreserveComments: false\n});\n```\n\n### Preserving symbols\n\nBy default, when you clone a node, it won't preserve symbols from the original nodes.\nYou can toggle this behavior with the `preserveSymbols` option:\n\n```typescript\ncloneNode(someNode, {\n\tpreserveSymbols: true\n});\n```\n\n<!-- SHADOW_SECTION_CONTRIBUTING_START -->\n\n## Contributing\n\nDo you want to contribute? Awesome! Please follow [these recommendations](./CONTRIBUTING.md).\n\n<!-- SHADOW_SECTION_CONTRIBUTING_END -->\n\n<!-- SHADOW_SECTION_MAINTAINERS_START -->\n\n## Maintainers\n\n| <a href=\"mailto:frederikwessberg@hotmail.com\"><img alt=\"Frederik Wessberg\" src=\"https://avatars2.githubusercontent.com/u/20454213?s=460&v=4\" height=\"70\"   /></a>                                                                |\n| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| [Frederik Wessberg](mailto:frederikwessberg@hotmail.com)<br><strong>Twitter</strong>: [@FredWessberg](https://twitter.com/FredWessberg)<br><strong>Github</strong>: [@wessberg](https://github.com/wessberg)<br>_Lead Developer_ |\n\n<!-- SHADOW_SECTION_MAINTAINERS_END -->\n\n<!-- SHADOW_SECTION_BACKERS_START -->\n\n## Backers\n\n[Become a sponsor/backer](https://github.com/wessberg/ts-clone-node?sponsor=1) and get your logo listed here.\n\n| <a href=\"https://usebubbles.com\"><img alt=\"Bubbles\" src=\"https://uploads-ssl.webflow.com/5d682047c28b217055606673/5e5360be16879c1d0dca6514_icon-thin-128x128%402x.png\" height=\"70\"   /></a> | <a href=\"https://github.com/cblanc\"><img alt=\"Christopher Blanchard\" src=\"https://avatars0.githubusercontent.com/u/2160685?s=400&v=4\" height=\"70\"   /></a> |\n| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| [Bubbles](https://usebubbles.com)<br><strong>Twitter</strong>: [@use_bubbles](https://twitter.com/use_bubbles)                                                                              | [Christopher Blanchard](https://github.com/cblanc)                                                                                                         |\n\n### Patreon\n\n<a href=\"https://www.patreon.com/bePatron?u=11315442\"><img alt=\"Patrons on Patreon\" src=\"https://img.shields.io/endpoint.svg?url=https://shieldsio-patreon.herokuapp.com/wessberg\"  width=\"200\"  /></a>\n\n<!-- SHADOW_SECTION_BACKERS_END -->\n\n<!-- SHADOW_SECTION_FAQ_START -->\n\n## FAQ\n\n<!-- SHADOW_SECTION_FAQ_END -->\n\n### What is the point of this library\n\nIf you've run into the kind of trouble I'm explaining here, you'll understand. If not, I'm happy for you. You can move along!\n\n<!-- SHADOW_SECTION_LICENSE_START -->\n\n## License\n\nMIT © [Frederik Wessberg](mailto:frederikwessberg@hotmail.com) ([@FredWessberg](https://twitter.com/FredWessberg)) ([Website](https://github.com/wessberg))\n\n<!-- SHADOW_SECTION_LICENSE_END -->\n",
+  "readmeFilename": "README.md"
+}

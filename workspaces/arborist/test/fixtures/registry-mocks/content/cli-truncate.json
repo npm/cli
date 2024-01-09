@@ -1,0 +1,583 @@
+{
+  "_id": "cli-truncate",
+  "_rev": "8-dfd64982602a53d81f6f826e3ee0d65d",
+  "name": "cli-truncate",
+  "description": "Truncate a string to a specific width in the terminal",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "cli-truncate",
+      "version": "0.1.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/cli-truncate"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi"
+      ],
+      "dependencies": {
+        "string-width": "^1.0.1",
+        "wrap-ansi": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "dbc522d6f3c1fd7b287b39521ed73a7c9e98fd66",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate",
+      "_id": "cli-truncate@0.1.0",
+      "_shasum": "914809251f8fcfc4f22a716061731c6b94513935",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "914809251f8fcfc4f22a716061731c6b94513935",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cli-truncate-0.1.0.tgz_1457686382816_0.01899998914450407"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "cli-truncate",
+      "version": "0.2.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/cli-truncate"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi"
+      ],
+      "dependencies": {
+        "slice-ansi": "0.0.4",
+        "string-width": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "86ee06ef054f93afe78b42333e00e9ed3cd70835",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate",
+      "_id": "cli-truncate@0.2.0",
+      "_shasum": "def59aa9a148d7b826178c545779871df3cafef3",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "def59aa9a148d7b826178c545779871df3cafef3",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/cli-truncate-0.2.0.tgz_1457855333123_0.12254591472446918"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "cli-truncate",
+      "version": "0.2.1",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/cli-truncate"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi"
+      ],
+      "dependencies": {
+        "slice-ansi": "0.0.4",
+        "string-width": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "b76c964800573b5131e4965b3c0f2eaff22a3650",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate",
+      "_id": "cli-truncate@0.2.1",
+      "_shasum": "9f15cfbb0705005369216c626ac7d05ab90dd574",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9f15cfbb0705005369216c626ac7d05ab90dd574",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cli-truncate-0.2.1.tgz_1459844422490_0.3644009679555893"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "cli-truncate",
+      "version": "1.0.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-truncate.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi"
+      ],
+      "dependencies": {
+        "slice-ansi": "0.0.4",
+        "string-width": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "4da60e7a45a8c333843ffdc941726edd9f0cd050",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate#readme",
+      "_id": "cli-truncate@1.0.0",
+      "_shasum": "21eb91f47b3f6560f004db77a769b4668d9c5518",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "21eb91f47b3f6560f004db77a769b4668d9c5518",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/cli-truncate-1.0.0.tgz_1484304234747_0.6612277985550463"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "cli-truncate",
+      "version": "1.1.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-truncate.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi"
+      ],
+      "dependencies": {
+        "slice-ansi": "^1.0.0",
+        "string-width": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "94f26977e8f1603b306e8759147c8c9159ab3b39",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate#readme",
+      "_id": "cli-truncate@1.1.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bAtZo0u82gCfaAGfSNxUdTI9mNyza7D8w4CVCcaOsy7sgwDzvx6ekr6cuWJqY3UGzgnQ1+4wgENup5eIhgxEYA==",
+        "shasum": "2b2dfd83c53cfd3572b87fc4d430a808afb04086",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-truncate-1.1.0.tgz_1500807402887_0.6349338984582573"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "cli-truncate",
+      "version": "2.0.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-truncate.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi",
+        "string"
+      ],
+      "dependencies": {
+        "slice-ansi": "^2.1.0",
+        "string-width": "^4.1.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4ded8c0075e0bedd4dba69db9017d0ec7c6798a3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate#readme",
+      "_id": "cli-truncate@2.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-C4hp+8GCIFVsUUiXcw+ce+7wexVWImw8rQrgMBFsqerx9LvvcGlwm6sMjQYAEmV/Xb87xc1b5Ttx505MSpZVqg==",
+        "shasum": "68ff6aaa53b203b52ad89b8b1a80f1f61ad1e1d5",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 9873,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdAfkUCRA9TVsSAnZWagAAsgMQAIl1CuCUiDcV48KyVEU2\n5i3wGAIp94PVNWI7rEAc1yjtXIA51R2jagtUqDv6u/Z2r4hPNneR3Qi9Wl2g\n65iyRGZxRE8lBVH0Wz0ONSqkJPeIuzhjAblgvyBWyFB/GKXDMKhUDH0hnpfK\n6jOPCbfW3raxwC9QqyPMYKTX4ljrRIRaUEiDyeYRiqUd7akfVU+/dkXuVkU5\nuTky27YrJPj9gN2Xt4iMOp06ivIgwzvV43AsDZgnfGSE8WLF/rsYRLw99+xP\nS+0wmui9C4WIgejPKPiqar3SnOuFY6euSH59aCGI/77u0QFVgh7z/a8ixl2j\nQOXPSCAF3Wragvdenw/QZ03mUTZp5Dz2F6seRs3zDN9WcN6QQxOEDFWXgY2R\nsbpUs0ZFE2wyt+wDl56XH9cf6roo1q0DqF3neztc9FgqJntnC+pn/eBg4aou\nLwRTKCSVeFSIf0ucGmEyg32esWTuHJcRVnqtiCJ2Waw8ppToOdFds7HdlimP\novbFEpkBTIdFkaAksThG1xbt7xojJ9iuKPx2HI5pU1kb+CtpaIYFitt6Xt4H\n9V+r9h9c9EH4g2DIIngUda57rpwUbKoNFW+LKMl3/6/hgKzJ8nlD0dlTuACg\ne1O0bbT//qZrbUEQkRx5GuaPDJruhEwX30YbDHPGcp6Cj7PK0LKyYC0f8feq\nFYEL\r\n=7V+O\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-truncate_2.0.0_1560410388373_0.3194934995762728"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "cli-truncate",
+      "version": "2.1.0",
+      "description": "Truncate a string to a specific width in the terminal",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/cli-truncate.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "truncate",
+        "ellipsis",
+        "text",
+        "limit",
+        "slice",
+        "cli",
+        "terminal",
+        "term",
+        "shell",
+        "width",
+        "ansi",
+        "string"
+      ],
+      "dependencies": {
+        "slice-ansi": "^3.0.0",
+        "string-width": "^4.2.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "2f422c146701b9e76ac93b2f88753a915be37301",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/cli-truncate/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/cli-truncate#readme",
+      "_id": "cli-truncate@2.1.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.13.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-n8fOixwDD6b/ObinzTrp1ZKFzbgvKZvuz/TvejnLn1aQfC6r52XEx85FmuC+3HI+JM7coBRXUvNqEU2PHVrHpg==",
+        "shasum": "c39e28bf05edcde5be3b98992a22deed5a2b93c7",
+        "tarball": "https://registry.npmjs.org/cli-truncate/-/cli-truncate-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 10357,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd6gesCRA9TVsSAnZWagAAbm4QAIdYis7Se3KxP0KrxVV9\nItI7IF/Yzy+6M6FtovLkkimWLWOBZYso408GT0+6YCuQIqluLdg80Hh49m/7\nOFjH2iUPfIN4U/ogtf/OxnnxaTviJB2t72xSlIEE90pQuwOUv4D0+4G7GCQ0\nw93wXhmquyociDHxDaAhJEvI3Gf3tAfmAkBwD5D0lh7Zfz53mbOVU3a+ZtXA\n67M31rKlnrFwS2hU3ONa10k0USB6t+thHleSDt5DroDaZ8xEj01+RLxWLH1u\nrXi3ATRInJECu/hKCffWiAhIkdFaG5fHEuoh0pKsKdjQKP84ZjOQ1MPyeoeU\nEry4cNKYvp5BjeKhxUp4nkwR+VSPICMKPytd42FlEb+sQROhOorJOykSt09G\nUQDf0FgXND8Qdk+loncEfSDCh4Nqz7cnnytioWiHE0seOo5lOiSdLN5x1Zve\nxcH3wgHITMiWLjd4XFHddc52myEwswkzHli1QAJdnOt+9wTXs9Sd+jDYmIHV\nmyl5ifrP6EnI0itc5Nin4trkqgZQTURvGrFl/V7LK7w50hHc/xDQTygNHHhy\nH6sKzpWf6eJHmKc2HL00kBtFK/CcISXYHCEWFdBD+GcTS/nhfphjAlIxj+sb\n8m5fZSWoZPBlPa3rOIVEKI/nfhGvtO6+dyluOhzMuq0QfV+vTXrV5ZwMD5+B\njJgD\r\n=ogSx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/cli-truncate_2.1.0_1575618475548_0.4744743301264074"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# cli-truncate [![Build Status](https://travis-ci.org/sindresorhus/cli-truncate.svg?branch=master)](https://travis-ci.org/sindresorhus/cli-truncate)\n\n> Truncate a string to a specific width in the terminal\n\nGracefully handles [ANSI escapes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles). Like a string styled with [`chalk`](https://github.com/chalk/chalk). It also supports Unicode surrogate pairs and fullwidth characters.\n\n## Install\n\n```\n$ npm install cli-truncate\n```\n\n## Usage\n\n```js\nconst cliTruncate = require('cli-truncate');\n\ncliTruncate('unicorn', 4);\n//=> 'uni…'\n\n// Truncate at different positions\ncliTruncate('unicorn', 4, {position: 'start'});\n//=> '…orn'\n\ncliTruncate('unicorn', 4, {position: 'middle'});\n//=> 'un…n'\n\ncliTruncate('unicorns rainbow dragons', 6, {position: 'end'})\n//=> 'unico…'\n\ncliTruncate('\\u001B[31municorn\\u001B[39m', 4);\n//=> '\\u001B[31muni\\u001B[39m…'\n\n// Truncate Unicode surrogate pairs\ncliTruncate('uni\\uD83C\\uDE00corn', 5);\n//=> 'uni\\uD83C\\uDE00…'\n\n// Truncate fullwidth characters\ncliTruncate('안녕하세요', 3);\n//=> '안…'\n\n// Truncate the paragraph to the terminal width\nconst paragraph = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.';\ncliTruncate(paragraph, process.stdout.columns));\n//=> 'Lorem ipsum dolor sit amet, consectetuer adipiscing…'\n```\n\n## API\n\n### cliTruncate(text, columns, options?)\n\n#### text\n\nType: `string`\n\nText to truncate.\n\n#### columns\n\nType: `number`\n\nColumns to occupy in the terminal.\n\n#### options\n\nType: `object`\n\n##### position\n\nType: `string`\\\nDefault: `'end'`\\\nValues: `'start'` `'middle'` `'end'`\n\nPosition to truncate the string.\n\n##### space\n\nType: `boolean`\\\nDefault: `false`\n\nAdd a space between the text and the ellipsis.\n\n```js\ncliTruncate('unicorns', 5, {space: false});\n//=> 'unic…'\n\ncliTruncate('unicorns', 5, {space: true});\n//=> 'uni …'\n\ncliTruncate('unicorns', 6, {position: 'start', space: true});\n//=> '… orns'\n\ncliTruncate('unicorns', 7, {position: 'middle', space: true});\n//=> 'uni … s'\n```\n\n##### preferTruncationOnSpace\n\nType: `boolean`\\\nDefault: `false`\n\nTruncate the string from a whitespace if it is within 3 characters from the actual breaking point.\n\n```js\ncliTruncate('unicorns rainbow dragons', 20, {position: 'start', preferTruncationOnSpace: true})\n//=> '…rainbow dragons'\n\n// without preferTruncationOnSpace\ncliTruncate('unicorns rainbow dragons', 20, {position: 'start'})\n//=> '…rns rainbow dragons'\n\ncliTruncate('unicorns rainbow dragons', 20, {position: 'middle', preferTruncationOnSpace: true})\n//=> 'unicorns…dragons'\n\ncliTruncate('unicorns rainbow dragons', 6, {position: 'end', preferTruncationOnSpace: true})\n//=> 'unico…'\n\n// preferTruncationOnSpace would have no effect if space isn't found within next 3 indexes\ncliTruncate('unicorns rainbow dragons', 6, {position: 'middle', preferTruncationOnSpace: true})\n//=> 'uni…ns'\n```\n\n## Related\n\n- [wrap-ansi](https://github.com/chalk/wrap-ansi) - Wordwrap a string with ANSI escape codes\n- [slice-ansi](https://github.com/chalk/slice-ansi) - Slice a string with ANSI escape codes\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-cli-truncate?utm_source=npm-cli-truncate&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-06T07:47:58.056Z",
+    "created": "2016-03-11T08:53:03.286Z",
+    "0.1.0": "2016-03-11T08:53:03.286Z",
+    "0.2.0": "2016-03-13T07:48:53.614Z",
+    "0.2.1": "2016-04-05T08:20:22.975Z",
+    "1.0.0": "2017-01-13T10:43:54.984Z",
+    "1.1.0": "2017-07-23T10:56:44.162Z",
+    "2.0.0": "2019-06-13T07:19:48.480Z",
+    "2.1.0": "2019-12-06T07:47:55.662Z"
+  },
+  "homepage": "https://github.com/sindresorhus/cli-truncate#readme",
+  "keywords": [
+    "truncate",
+    "ellipsis",
+    "text",
+    "limit",
+    "slice",
+    "cli",
+    "terminal",
+    "term",
+    "shell",
+    "width",
+    "ansi",
+    "string"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/cli-truncate.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/cli-truncate/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "insomniaqc": true
+  }
+}

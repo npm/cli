@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/optional-dep-enotarget",
+  "version": "1.0.0",
+  "description": "an optional dep that is not satisfiable",
+  "optionalDependencies": {
+    "tap": "9999.0000.9999"
+  }
+}

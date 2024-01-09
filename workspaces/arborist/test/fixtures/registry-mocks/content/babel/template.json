@@ -1,0 +1,3339 @@
+{
+  "_id": "@babel/template",
+  "_rev": "76-a9de36f0d165fae56e1678486fba7cc9",
+  "name": "@babel/template",
+  "description": "Generate an AST from a string template.",
+  "dist-tags": {
+    "latest": "7.10.4"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.4",
+        "@babel/types": "7.0.0-beta.4",
+        "babylon": "7.0.0-beta.30",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-1oCfesMjxhJFfIq4eEI9hOR6nBleUjhMzPWeWwfBc9ZLt9Wwp9SnEIe1yegTQ3F2dv1qQaFCPz/bYSRDH/KlUg==",
+        "shasum": "1c6f73a1893ce929287354e2ca5c9b3cde0d759e",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.4.tgz_1509388533643_0.49645234481431544"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.5",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.5",
+        "@babel/types": "7.0.0-beta.5",
+        "babylon": "7.0.0-beta.30",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qi13rtAl+X/nt6eJlvASlxvk2nQoLMtYN4iijG2ZbMCDhLkWcyIVzwNFIUDwQtl6g7oz1rifCKVMXyv4b1i5xQ==",
+        "shasum": "400a58ee90230d77d5cd7f2fc5820b5d2f0ae18d",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.5.tgz_1509397030264_0.0010916688479483128"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.31",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.31",
+        "@babel/types": "7.0.0-beta.31",
+        "babylon": "7.0.0-beta.31",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-97IRmLvoDhIDSQkqklVt3UCxJsv0LUEVb/0DzXWtc8Lgiyxj567qZkmTG9aR21CmcJVVIvq2Y/moZj4oEpl5AA==",
+        "shasum": "577bb29389f6c497c3e7d014617e7d6713f68bda",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.31.tgz_1509739439952_0.20948258810676634"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.32",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.32",
+        "@babel/types": "7.0.0-beta.32",
+        "babylon": "7.0.0-beta.32",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-DB9sLgX2mfE29vjAkxHlzLyWr31EO9HaYoAM/UsPSsL70Eudl0i25URwIfQT6S6ckeVFnFP1t6PhERVeV4EAHA==",
+        "shasum": "e1d9fdbd2a7bcf128f2f920744a67dab18072495",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.32.tgz_1510493625345_0.10954077425412834"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.33",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.33",
+        "@babel/types": "7.0.0-beta.33",
+        "babylon": "7.0.0-beta.33",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-fJptoRZlfyfs+LV6AVvAlq/m0j5BqU3Y8+5diD/SUCHvshJlkh5+9gW+QFVzxLldaqDkJVUEj7rv5DZ9QeyVbA==",
+        "shasum": "55c5fe149ac005fb65f42dd6534e4b4729dd3ee3",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.33.tgz_1512138535117_0.30046806181780994"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.34",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.34",
+        "@babel/types": "7.0.0-beta.34",
+        "babylon": "7.0.0-beta.34",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-dldLn8DUQEb3aq8bIiMcmffKIKn4jetne3cnzS2nk0LBSm/8Uhh0yQc4REk4uRs0Bz24iUBdlrb/9cjDqTDgow==",
+        "shasum": "35fa7eb6c540f4619927ec1c1b113719ecc59446",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.34.tgz_1512225594978_0.3722605281509459"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.35",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.35",
+        "@babel/types": "7.0.0-beta.35",
+        "babylon": "7.0.0-beta.35",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NLd3Dfs8hmkxPvaD8ohNtEp9WXp48lxpW//6fXcT9bJWIO3isrH3OTYL9kjX7xFPPasJ1E9bUNSaPFUUgvPZSQ==",
+        "shasum": "459230417f51c29401cf71162aeeff6cef2bcca7",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.35.tgz_1513288093571_0.5508315046317875"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.36",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.36",
+        "@babel/types": "7.0.0-beta.36",
+        "babylon": "7.0.0-beta.36",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-mUBi90WRyZ9iVvlWLEdeo8gn/tROyJdjKNC4W5xJTSZL+9MS89rTJSqiaJKXIkxk/YRDL/g/8snrG/O0xl33uA==",
+        "shasum": "02e903de5d68bd7899bce3c5b5447e59529abb00",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.36.tgz_1514228716223_0.6133986939676106"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.37",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.37",
+        "@babel/types": "7.0.0-beta.37",
+        "babylon": "7.0.0-beta.37",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5naM+sRnXLQ+cfOVSjsqdaqVn5EPh+M4Uv+qJR6G5dtuos/RNINp23Y2etDjp/BmMfEalrLXqAaVD3oAscYTKQ==",
+        "shasum": "d51a5c8c7bfc1ff08f3623231b7d388a9e9b3570",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.37.tgz_1515427376433_0.8377085751853883"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.38",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.38",
+        "@babel/types": "7.0.0-beta.38",
+        "babylon": "7.0.0-beta.38",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ygOSe1+ekKVkn5zxCH0rqv5sZtvLfC72yPQSaXLTHtYSYdAyXNqOW7q1ua1zJll9glk0UWYAnUEcehQXXc3fEA==",
+        "shasum": "8a2d403a01da320beb8333dc6403500fa79e8597",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.38.tgz_1516206744542_0.15441198414191604"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.39",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.39",
+        "@babel/types": "7.0.0-beta.39",
+        "babylon": "7.0.0-beta.39",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EDVszuqo0ZtNeC6j0yFrWIW1Sh5v+pv0POnj1xjPHy6gsg1U5IYjcc6uVarFgTCmtWsjFB5KSRqxC7N+YYcwCQ==",
+        "shasum": "98bd7b132d99f73547c473f2862f481ae84981c9",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template-7.0.0-beta.39.tgz_1517344073244_0.39974867436103523"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.40",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.40",
+        "@babel/types": "7.0.0-beta.40",
+        "babylon": "7.0.0-beta.40",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-RlQiVB7eL7fxsKN6JvnCCwEwEL28CBYalXSgWWULuFlEHjtMoXBqQanSie3bNyhrANJx67sb+Sd/vuGivoMwLQ==",
+        "shasum": "034988c6424eb5c3268fe6a608626de1f4410fc8",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.40.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25051
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.40_1518453745453_0.31040931355775325"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.41",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.41",
+        "@babel/types": "7.0.0-beta.41",
+        "babylon": "7.0.0-beta.41",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EiFgrLPJQ64+Im0+fg9fHcos0eooRG/iuTM6vlF4X9b+j/9Z/VCZejbvgqLYtuseT67GKQHEeEoXM07HK6in2Q==",
+        "shasum": "628eeb93f9b5b423a252d3b6183f12e09505ab55",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.41.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25053
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.41_1521044797116_0.34970186656805136"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.42",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.42",
+        "@babel/types": "7.0.0-beta.42",
+        "babylon": "7.0.0-beta.42",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EK7YdTe47j4VxlwNvz5bnlk5Jx/wWublnqfgOY2IuSNdxCQgXrLD34PfTnabGxywNSkJkcSo6jwr2JGT+S48dA==",
+        "shasum": "7186d4e70d44cdec975049ba0a73bdaf5cdee052",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.42.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25053
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.42_1521147110420_0.6918832603367278"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.43",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.43",
+        "@babel/types": "7.0.0-beta.43",
+        "babylon": "7.0.0-beta.43",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EnFZw/OGzr3P93SMZdJdcCrrFmfeerPpaZA9YDK3g1OT6ho7+3dvAxu+tDJ8DJEAFfDh6XRvg3R8LjqeyZKIkg==",
+        "shasum": "0d34fa1da16835b23dd136b942c753ad97540c24",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.43.tgz",
+        "fileCount": 10,
+        "unpackedSize": 23861
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.43_1522687725462_0.6520247797386718"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.44",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.44",
+        "@babel/types": "7.0.0-beta.44",
+        "babylon": "7.0.0-beta.44",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-w750Sloq0UNifLx1rUqwfbnC6uSUk0mfwwgGRfdLiaUzfAOiH0tHJE6ILQIUi3KYkjiCDTskoIsnfqZvWLBDng==",
+        "shasum": "f8832f4fdcee5d59bf515e595fc5106c529b394f",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.44.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25804
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.44_1522707626275_0.13392116826667722"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.45",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.45",
+        "@babel/types": "7.0.0-beta.45",
+        "babylon": "7.0.0-beta.45",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-2MYzewkv9DMmvm3Ub+hziMGg+/KvN/Vv9eXqq5KkzJB4OgRlacE/cUV7qXSkEpbDXSClkzHEJXt+oy+uJgCIbg==",
+        "shasum": "a12ef8d61cafbdb0da0d82210e8bcd81533c8487",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.45.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25804,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T2lCRA9TVsSAnZWagAAc50QAKQaTBfxtqJiHBAWI2It\nOu9vwuGFrQSaa3oj9zOazdIdlCgdw9boVcaCI5vrlBHMkidyz2nzMGBwz2Mm\ntNn9IzhSiyNLd5Alg4wea6DIqTXrPDhLbkt4IdbLBtyrcUsh4r1ERKtIMjTC\n/MrDPFuU9Wm9Xl1NqUtam3y7C0Tl5BNJCfxu2ArCdzJXtEvSMtx9py3Fio+i\nfU60Y61N1DEwhMsY61dbbB2JzleAh3N/cmZUqCaV/8GRDll1UCPlHY3Uv2DG\nlHqPj8N1nUOjav+WUndJBf4fwY26YXjA6pEH1SW0Px1dRI1ejP60cC1gCnv1\nbo9WD+XQAxbxuygJ5+bG+e2yZ004CoWDNO4v4Pl+dEhlUZZV6De0bieScn/j\nr7MrIMnusg7whVpD+SWBH8pEXjcGAMdwtpx/apCkGvcjmT0W+rESWzGG+qHf\np2AGD2mNd3VHC8VvRfMxRATHZ42uNWx02PHNDpBR8FJqHrjZoj+NlRx8E1qG\nHlQzKLtvUy9vFr/1Q8fKfzC3x0d7KPQgEHGH+hvW1+sNshfJOI/xBa7QAmjS\nTNYtLqpYukCYFHo4brQPcWzRR+QHwBCPy4AIprA6peCqy/GNNLXs2/niE7G5\n5jQToVc9CjtzhkCjD9Zw9NzeQHhc7X1fF9RX03IwZIRxZcVki2XVRDqdkBlF\nNBmu\r\n=XDmA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.45_1524448676972_0.49216790410003486"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.46",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.46",
+        "@babel/types": "7.0.0-beta.46",
+        "babylon": "7.0.0-beta.46",
+        "lodash": "^4.2.0"
+      },
+      "_id": "@babel/template@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3/qi4m0l6G/vZbEwtqfzJk73mYtuE7nvAO1zT3/ZrTAHy4sHf2vaF9Eh1w+Tau263Yrkh0bjVQPb9zw6G+GeMQ==",
+        "shasum": "8b23982411d5b5dbfa479437bfe414adb1411bb9",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.46.tgz",
+        "fileCount": 10,
+        "unpackedSize": 25804,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WHQCRA9TVsSAnZWagAApHEQAJgAiL61mZdiR8xTRXkR\npa6Nx4ptc6FpDkBfWJH+kHu7C/0vVugorXKAh9rkAyJG//Va6DGwalF4wL+X\n2F56DFlC/dCvJFt6PteAbUJa7QIkQOP7OHhDoOQMQVdbYoiEeVlQisWEZ5bC\n6pyU8GszrLnwATXn3qX6PAkdp3FotpDuF9AedDRgPWsWj21Mxpm5h0DmFiNl\n2dkCOdfNWF6enSCI8RMHMV8Akb0yHRFjfMuWyUEwj9eujzGWoiJPCI1LU8I5\npVdfnL1pix/8764nV6i4XtaYwJLsaUmuXhG95iPjc9IDGONGTIbkv/JFpBIY\nyHKlYwH/C9glrgJp5Z0I6rNQDC8m5iDqVxnS1Esdb8P9taigY6IxrxrOShT0\nF8PBr72jlUDAeXWMJYivpTPYiaLnVGmZUcE4kB2SfIPsmWj8eXVE8v+NUO9x\nWobTfUffaZSWSRL4vFmLmscT+6iHsLscyLYRUGOl/YXiYA7VEExcDuZv4wA9\nRn/Xw+wDrq7t8Hnb1XukpyWmMrZqBaQfz8dN8CRYmrTAtSwIrNPpvuqBLVKe\nD0QU5XSK2PUh29E5a6JOZhvSZ2oBeuEVSAsbJtK2TetaNGtwJEyqJ5LXpKkB\n7pdBUaaOr1O9LhrfHRmIIuOwgjMcaARl00qSKuRT5oyTXXKInt6dgElDofzg\nslYB\r\n=eQBn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.46_1524457936325_0.8401393552076999"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.47",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.47",
+        "@babel/types": "7.0.0-beta.47",
+        "babylon": "7.0.0-beta.47",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-mAzrOCLwOb4jAobHi0kTwIkoamP1Do28c6zxvrDXjYSJFZHz6KGuzMaT0AV7ZCq7M3si7QypVVMVX2bE6IsuOg==",
+        "shasum": "0473970a7c0bee7a1a18c1ca999d3ba5e5bad83d",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.47.tgz",
+        "fileCount": 10,
+        "unpackedSize": 24778,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iVkCRA9TVsSAnZWagAAA58P/jU5M9DB04JmNIToMvon\nN37kZBFrjqHe2AEVdCfoN/FwNVQqSHJPkMTAAMqg6Z9ePIOUjPSyn+LsDLXM\nkajjSNLQ9E0VQMJP2Xp8vughsQRcAVlkuZMfwiptTQnwxihXXNcqvUQ2XIMw\nsvpH7OX/XEsny/n8buvqbbsEcBGOl80LAiW0AIU2UjnV6E7tA2N4MkWZEKAT\nYlE/63DtKXzLeIsvFIPqucRo+10vFFMiaZ/O0MVgfybeNUtOagdwA6dsytoI\ncwObI7px9auJx9HQH5pAuBP8AIl1QIeBFif78EjJbAyqc910gOC/RUeT7Wpm\nWyffwWVYEBNX2/U2XVtdy8c4gidjGu2+7c7QPz3YuDqWpVNaZJ+8LdKi7wra\neesPKkNFWMOrKobxLi/dGlziBVhWshrhvuAhQfVxom36hxLbV6qQ6pMx6N5d\n8TUYljl2ivD8JnYZ2V2wq8RjbHt0IqDje4G6FEit8XX4zigocCDIB3CCNqOB\n2XCoupLC3VqC37uLgskfZi8yAy3wgjIHOEePAGeBKrmBlOeHYt2BDH7yL9k0\nlS6e3rFZZWKvzcOdHF+YkdDpBc61pBQuFjuMwMw1mrO+vY+WMduP1JRenY2c\no+WWyjcHFBNyRkyNwvYczQ1r8ObGBL7ZP5s4zmvz9mk2L3bTNoev0pEUPznD\nA83R\r\n=SSyF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.47_1526343011762_0.3708117451654258"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.48",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.48",
+        "@babel/parser": "7.0.0-beta.48",
+        "@babel/types": "7.0.0-beta.48",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-mFrSP6UZR02YGsqlnH/8IUENCnqs749RfujSGQ/CqeJYpeZ73PAJqk1Wg2khl+Huv4L4LW8dJh7qOQ/CBkRqEg==",
+        "shasum": "1792741eeabdee09687d24dbfa47fc5437aebd66",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.48.tgz",
+        "fileCount": 10,
+        "unpackedSize": 23919,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxFZCRA9TVsSAnZWagAAn6kP/izm4QcjEdbwh8mfukaM\nv2rjVayIGn0op63s7HzVGv/5jq9xFKUvE61TBSRJBz3dYEV5d+N5/LNa/dub\nlk++n4gR4jeTEEKO+9MECj9zgMbC0lVs8v9tsBfoTVvtjJt3RjpvYajDOmSk\nhasS/62wgz23So5MHKXhKvKw+PfuTlUyB9Tj/rikvsUmZ7pTCx8rlCFKLiJA\nSSE+JH02t1dBtJAdri4C0GCGGgfGsF/1TGes9sVNgZVL1eseyHuG5B87e5Cf\nMRaflOTWHfAvfy2gHDt9dhiHmmVbalx7vh6EBg/E24vWRn8+N103He1DS/8+\nGmfU94lmlqcZxFIi6UHsEB2O+3AAeXidQkX4+JVKVPHO4eHAUaUSUPN9JAwA\n8Ac/NoYJXciU4AFp1HSciDo+i795E651PccNvYFC6nd3S/8/avz7ZlkUmJE0\ns//znjx8CazwCVFMbsrBoTczOfDAqVtAWIlqpBsRXaADQ+3S4QMRFik3sghG\n79ql4DfrgF8WVX90+JWeKNuTQqtKB9m/KRrZ3KD0lgEI4zlB5E8st7io17K+\n8uLEjXAMXFk61uqNykD6+YPoDev6BbbqEHf0Rav+TMzS/+E4mNewj0cBxtw8\nVtY+3l2PwU564EaXMunr5Gho1R1gr57OLDiQvHcQJwEDnWYZ4kxDlUirRAPd\nlRy9\r\n=Kveq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.48_1527189849329_0.03685678742695586"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.49",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.49",
+        "@babel/parser": "7.0.0-beta.49",
+        "@babel/types": "7.0.0-beta.49",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "e38abe8217cb9793f461a5306d7ad745d83e1d27",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "e38abe8217cb9793f461a5306d7ad745d83e1d27",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.49.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23934,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDPbCRA9TVsSAnZWagAAhccP/1H/lfkogQ/2SRlGcWYg\nnDqhnKtKjqzcejsrdE4E2ElP25nluEIQ0hHU6X3FFVw8lrEkh/He4MWzKwFL\nz50k3sQUFIQQ2Dnjn+J/wmwGlyAqL93zXdOJLZFq733tooOc+v2LmyHnFWdK\nZbyCBnDtRaMb2Tzbo8tR/j6sbL9VDyAAvl7uaZm6QEiH9rG7AbCnlXzD3ugD\nz5rY5LpYJyAgLHVTO3/5nmZoewIA1SqUXyqccv4BIbfQ/T7ee8Pdr6+vJPp/\noqBPAAOpj3aAIC/+XnA6MSd6m+5F4EgvUjefzzJVVw7YCFXFbQVt+RdLHQKQ\nJmyzy9Ht/kEtDXHVEPhtgIRKVJ64zjZRl5GrM7SVasb8b7DFgU0M8rAlJlCm\np9w9Ra6/CHU4+d8EAAyXyyBcJSIuvg1NqyyOiJyTKnwOiSYaA5Vkq2pWXmEG\nR38g6Bk7skWqw/7CoEaZBnBhFIfHYGG+X5Al2NvgbSyx9kFDWpbN/45hErhj\njuOVRYug0geEBtAYlg3XoK46N/oHV+OULDxEunbTUfy5oE/18PBRrixZSmdK\nhAOrqQOvso0NJG6I6+rxzLJLwLgRBcw6tMcdpLLO5vBEpr0DrVnrBR0DfEU7\nRvQC1dmqG5BbahUtjc/UFP4A+grWK55UTnuIsiN0GRbVSJIJtqXaQrT7byNN\n6IGh\r\n=Lh3h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.49_1527264219632_0.2897897284488067"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.50",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.50",
+        "@babel/parser": "7.0.0-beta.50",
+        "@babel/types": "7.0.0-beta.50",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.50",
+      "dist": {
+        "shasum": "c534b70d3510f2bca7bccaafbe0885220edd9e47",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.50.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20160
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.50_1528832866686_0.0033106983590218686"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.51",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.51",
+        "@babel/parser": "7.0.0-beta.51",
+        "@babel/types": "7.0.0-beta.51",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.51",
+      "dist": {
+        "shasum": "9602a40aebcf357ae9677e2532ef5fc810f5fbff",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.51.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20160
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.51_1528838424893_0.7294445366796298"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.52",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.52",
+        "@babel/parser": "7.0.0-beta.52",
+        "@babel/types": "7.0.0-beta.52",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.52",
+      "dist": {
+        "shasum": "44e18fac38251f57f92511d6748f095ab02f996e",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.52.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20159
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.52_1530838778757_0.19550432741747947"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.53",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.53",
+        "@babel/parser": "7.0.0-beta.53",
+        "@babel/types": "7.0.0-beta.53",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.53",
+      "dist": {
+        "shasum": "3322290900d0b187b0a7174381e1f3bb71050d2e",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.53.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20159
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.53_1531316438299_0.17394379011193295"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.54",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.54",
+        "@babel/parser": "7.0.0-beta.54",
+        "@babel/types": "7.0.0-beta.54",
+        "lodash": "^4.17.5"
+      },
+      "_id": "@babel/template@7.0.0-beta.54",
+      "dist": {
+        "shasum": "d5b0d2d2d55c0e78b048c61a058f36cfd7d91af3",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.54.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20159
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.54_1531764020734_0.35224206075566555"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.55",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.55",
+        "@babel/parser": "7.0.0-beta.55",
+        "@babel/types": "7.0.0-beta.55",
+        "lodash": "^4.17.10"
+      },
+      "_id": "@babel/template@7.0.0-beta.55",
+      "dist": {
+        "shasum": "c6cab0e2722ba5e33fe034073b6d31673aba326e",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.55.tgz",
+        "fileCount": 12,
+        "unpackedSize": 20160
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.55_1532815663521_0.8432258365467495"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/template",
+      "version": "7.0.0-beta.56",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-beta.56",
+        "@babel/parser": "7.0.0-beta.56",
+        "@babel/types": "7.0.0-beta.56",
+        "lodash": "^4.17.10"
+      },
+      "_id": "@babel/template@7.0.0-beta.56",
+      "dist": {
+        "shasum": "a428197e0c9db142f8581cbfdcfa9289b0dd7fd7",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-beta.56.tgz",
+        "integrity": "sha512-rsR9K18h0oiJTUmS/ICYREbV8qhPTic4SIqDSkzv9xOxupt7dKj8hWmZQLGPySO5x6cdn8py039o1wPQnsEGHg==",
+        "fileCount": 12,
+        "unpackedSize": 20160,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPxiCRA9TVsSAnZWagAAzcIP/ROFQ5QX3wsAeADjRw2D\nw0keliPE0e4iyiQLQm+YrIHmshjBnPiB6FZfchAQHBSDaKDIErECbq571h9D\nDNcoWMBUxWdIYEAKcLwcS4ZKZYT3bfbeCafVdFsD4LNhEzZjVdOJAlWcEwt3\n0M7CBR5Yq5fcFy2g8IjKJ/MBgfxUHi+ppTY/Z/kt5C6MuzE/4y71PXGdjAhc\nUUGROepqh8sMWRfZJiU9NUQ6P+5f80Z1DsSV3QJjUikDGt9ESSgj47nBaUyN\nDWxXpjPCMWqEKvdyY028yno6SmYeSaoAKh0C1+/OBh0pM3iNUSbgadvoRLyp\naTFjFEuhHma/BV++v9uQ6t3QU1Nr792cr0sO1zZC8+4c1qA72vasiRVDu/tD\nI8QqHkgkhhU3+az0vNi4fgQZWYS2GAKdP6IuNiJZORZJZsHdYluLlZCYf0FK\nij/C58vgp84d555cmKhY9BFSTzlRzzw0w6DFEUB4rlbfEZKJZsEDTZ4UOo6C\nxgLpfp7ZeRMO3eoJyeBY66MAbqmW2jk3kbwKBLDYcbRzJuxirkEI/fcFO59d\nm+BIF8dEr/LjUpyYtShPDwFDy6jRY7ZVeyWXPA3GyoLOE49eMo4vxjdlzoU1\ncnRgX46MPHG3AkzsNKihPI6Kfh/L1YXGLPYX3ZmBugNFPtVwWnBqa4D7AM8x\n4hH9\r\n=Ccdw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-beta.56_1533344865690_0.29637059352641737"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/template",
+      "version": "7.0.0-rc.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-rc.0",
+        "@babel/parser": "7.0.0-rc.0",
+        "@babel/types": "7.0.0-rc.0",
+        "lodash": "^4.17.10"
+      },
+      "_id": "@babel/template@7.0.0-rc.0",
+      "dist": {
+        "shasum": "ef2e7d5bfe1681909dab445a97dcc097d68bf11c",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-rc.0.tgz",
+        "integrity": "sha512-xyCTQ5PlSUn0SSwp0ea7zf9xv19UHTB2UGHNE8INqNCIlUBYK+P57DikxBE6cmc5bQTsw/O8uv777RYrTh74sQ==",
+        "fileCount": 12,
+        "unpackedSize": 20148,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGTcCRA9TVsSAnZWagAAvRMP/2/+RujVIN2/6+HJi3yW\ngSYXYr2JD/D+kgRWeF1+JXtX7oXRJN5v8DTbKYm9EleV+VS5sLPFCbhRugsi\nDZZElHl975CUCEdNv7AZMNW4KkC1E0eaxkSr6fcQajuKwmIFOBYHPgsw69l8\njS2QQSMyMM8exhpIpRvjUSdB55/oz5IGpc3aC4SQZRCGKyNYnS8vQn+VOheD\nqRFEoXckaEGv0hA7jMOe6x/4kzu8VZpVPB8SWMYKefY9sSqJoDP3ijF3z7Qq\niDUpaf37fg7XAlRqNJ1xXotX5Q5i3ikLkB9mhkRH3WoQqihPm4ba3sgks3r6\nEkLBuHY4ajOAjpNLQEXn70tlYXdXybl6KLV7aNpf8Xat6sVqbGoLGmgWwFqh\nQ3zXmNbYu/pzTyHPDfC9SlTo8QcagBQ7NKd0mWRrJYvl/lELVxiv6iO42XwZ\neDPVBMIp8GzHfCNRrfqqbsI98vNZYk0r+kZS4/DWibranGBpyXK95cY+vAA9\nDuqNTgI/6c+1DRcBevslvHqXTXSH7OrSQ/5uMeIA4NgOl48RBmmBz3UBw2ps\nN+Yq40Huyl+T6E2T2bL9g188C3XeK7yzwr0MobL+h6tU10RJkG9bdkVtwVKp\nc6OgzP3ktMMM1elhKvqkYVfPNX3mRWD0TbZtMssXgeVbTrZB2qdnZdnk14J1\n178G\r\n=fAQ5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-rc.0_1533830364084_0.525186667452183"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/template",
+      "version": "7.0.0-rc.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-rc.1",
+        "@babel/parser": "7.0.0-rc.1",
+        "@babel/types": "7.0.0-rc.1",
+        "lodash": "^4.17.10"
+      },
+      "_id": "@babel/template@7.0.0-rc.1",
+      "dist": {
+        "shasum": "5f9c0a481c9f22ecdb84697b3c3a34eadeeca23c",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-rc.1.tgz",
+        "integrity": "sha512-gPLng2iedNlkaGD0UdwaUByQXK8k4bnaoq2RH5JgR2mqHvh2RyjkDdaMbZFlSss1Iu8+PrXwbIRworTl8iRqbA==",
+        "fileCount": 12,
+        "unpackedSize": 20148,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ9nCRA9TVsSAnZWagAAP0YP/iFkr6X5/f1HbPrSRYX/\nqvj2hQXwYpHdd4PnPwjcrS7Nklr53OkfCK76CE+sZwSNkYo7+MMH4dNRXRDB\nwm6F6O1AE6ZJhaHvcxpgHxxmcFKoR5GP+TW5xU6Y0Kd9i1rdmXWExRsytgur\nxvby5+T2X7iCsJctdFIrKjw+lFup0/UZIrekuRH3kG5s+47URVsVY5Udfv5A\ncS2lp7MdbuwMkl8dj1TTq/0d58tssIR/8rxihd3lO9XXnIMxLJhlBvHP93FT\nTl35oFOeFYi/sZIVVoaF9gxVJuLgrFPEEfKGSrkEXpjWn7vLmeOyaBFnasd1\n0ipIQ639XJpQLOZ5N3BMW1Tk6w0Z24Fp/j98chMf2LtrMXAxignl0GRFGXqR\nou/Owh7EfrdaynFmR7DAt/+mW4ExDEDXPhWkap/oXrvv0i3DkGBbJ49N31rv\nan/FZ2KZhtWz2Pyuj1rjnXdsx9yzWSlF+tKXHIQNAVaLHfc6SCSeFBE407y3\n6H2nA6OJReZAA1bYLh6bAu/s9BVrKvPp+Jnu78SOr4NQSAg9oVSdgM4f/jyh\nZmxWmMufekGcYOT5ywUdK1xZIgIpeMLWXNsiEyr8o0PHR/opyq1lT3oO0aVW\ntXRyNkdt8yd0Y/m4RKeb69lMCvKrIMFocVT2khq0ejO5oqZeFhEsAQKCOy9A\nXng5\r\n=sdF4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-rc.1_1533845351039_0.9378156713155144"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/template",
+      "version": "7.0.0-rc.2",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-rc.2",
+        "@babel/parser": "7.0.0-rc.2",
+        "@babel/types": "7.0.0-rc.2"
+      },
+      "_id": "@babel/template@7.0.0-rc.2",
+      "dist": {
+        "shasum": "53f6be6c1336ddc7744625c9bdca9d10be5d5d72",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-rc.2.tgz",
+        "integrity": "sha512-CryGZ01Nko2/g8gkYiiPc7x9ZinrX59/BTWMZV1sDj5cAeia64vhyNnXTcNeim885IdGOdYyia1PNBWKnFxuSw==",
+        "fileCount": 12,
+        "unpackedSize": 19815,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGcgCRA9TVsSAnZWagAAaIQP/0EBwIisxMfzlO5scvjq\nwm4hoQ0gO8dryAZj6C/gvnPl9QPeU50oti9DjYJb84LQ+evdaXocOA5IRrgb\neiqUg+vz9afondv2tDOK7ceIi9ILy1p0fH7Tf1m1h6F1coelQ2uNWUYouTwW\n9ul/Tu8hy+PR3QEaTujSz0/b8/ALImYO0u/V3/NogMj1IfqmrNQ14OUlwdn+\nYfdKx95OQoXLTbAoVp47vNSgeAkTRXsd8Ha/LmQXDVIvEgsXyBE28+/suT/Z\nrB22RHloI9hbJqJa1FTskUEupDvsexVi5Ob3WIUUeU8gY9Nw7NUBGGXQlBeT\nV5nTrV7a9zXBIIFDGlKev8M1jmiWnYKb0oRJ42lMjLWHAlnf/4V12fGuavI8\nDNno73tguexa9IdSbPnqCm3Q1e166xhv3u/MImiN2szU32jzyUOAKqNZtbI6\nDcEmkl+hR7AL1GZVYcozUVpR+gPdzdcdolGr7B1LFP64aDDLNE4vJfnwUbGm\nUkosMzJljDHbL18IOaf+qb12FcxdqANabJCbPGBHl2JVYcR/9vz2FTnqFbOQ\n3VFxu2amHhB5PdwkQYydbRxkXD3eMM/sP6TR6RzEY6TdDkbZ4TBfSfvia0rB\nTc4f2TDj+Ar+Xleq2kgntZOWZHfl+vmADVo5BaZK0qyjcVV9P/O7v1ydj2rz\nv0hD\r\n=VoJ0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-rc.2_1534879519759_0.8641797599570287"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/template",
+      "version": "7.0.0-rc.3",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "7.0.0-rc.3",
+        "@babel/parser": "7.0.0-rc.3",
+        "@babel/types": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.0.0-rc.3",
+      "dist": {
+        "shasum": "2ba7d00f86744762632d06a0ffb0494f8443581f",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-rc.3.tgz",
+        "integrity": "sha512-UaP8IpJkOuo4w7dUl7Wn/zvW3HTp+OHWX2Rve3xF/TnzFni06hOUEzb5XOZqvAkMNbchPA179OUQuXsobnPB6Q==",
+        "fileCount": 13,
+        "unpackedSize": 20914,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEm+CRA9TVsSAnZWagAAdqEQAJQiksPBLwkFYQMZUDlA\n0yPSUP/PxTG+mE+lL/X3bTLzswGDTMQnFl62nsvmwIC7yaAEHzu5wiUwRMmb\naoLnKSIdkE9DMgeCgYu8ymm0qk9vMXFOO5ILwzGZzwp2vl6ODFtonsceAMxa\nyesh0JwCgaQsxvcxfuO13WAiPE39M1eecOW1xwO2+ZBqf8WC05xu4SFS/0Zs\nOvfTTW9NoZaRvXS7yizAI+0GuWRpoBOEoXHI2t5imibVjjJxQ1DSUwoo49x7\nxIYUwwfeKLtKiV2DOvQZtWNn5yXvm6n1kvt4FTIXUt+bCGpMrAm0OCsCwRtE\n8SNVsBNsK+qiN1Qzy4HvSsGIJnAnsNrReU2zmRG2USYEln4FPHjvQ/azxiDY\nk2ZxfMjv8fHkWIDzFtQavzIacB3gJn+jZ4cgNgwlbIbLFIcogi4eGocY2em+\n6YGMF0me34mg/qDyuvhoTXdYd8IStKc2LpPEQj2KPv4UYb/Ojg20XZ3fxSoY\nmabjet0KY8nq0M1u8n+8sDulb2ajYIy3ByEyxs5eL0b3/NUyx3JwqxV/FCxK\nRWNzs2VvATv9G+BtT5z0jkb7Jz9oHdRIi7NUQj48DOJ74yCmjyNWj6F7HR0h\ngG4KnkC4YP4TD4xyh3qevHcJmlSLfAnC+zVgOLca2O1ojmf8DCeFAg9Fs+T5\nVLht\r\n=ZOKq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-rc.3_1535134141269_0.8806934820999559"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/template",
+      "version": "7.0.0-rc.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0-rc.4",
+        "@babel/parser": "^7.0.0-rc.4",
+        "@babel/types": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.0.0-rc.4",
+      "dist": {
+        "shasum": "695b6d9bf90ec193fd90d533a7b8b3b904f21eae",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0-rc.4.tgz",
+        "integrity": "sha512-zI5LcbmvFwGYT8/5t75sj7OpzYizm7PkJlpAujDl50NE1mFxArfq13maUEmjRmjfgl7jeUlbv0YyuyRkDot54w==",
+        "fileCount": 13,
+        "unpackedSize": 20917,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCqrCRA9TVsSAnZWagAAMTgP/3fm6bsycUkG9qXBQAOa\nBmuMgy4SSsvFUzeJ7BqHuRDqS7o2R8REoRukFRflLyVycbmTdeg5nEVEr6ST\nAsruL/zz+oP/+lEO8Bs8/Dqx5Qz89X82N0jKNbg/JEcH6DZO3nUHnCciUp5v\ngjAL53y4C9lVRmg8Q2qedN2BZJ1eSRPxeQAbVHaXTs4MR09ffjPWbYC+OEb0\n2tvokdLFt0LGNJISnA4+5YB+NTr7pJampoPQQLjlwQlxkk458WTH0jteROot\n5HSvz8fPmdu7Wc8+PLTE++KhO90F859YUHqZFX3gZoYDHu69R2Lth2f+ncyb\nxbW6FXj4Q/6Kzq5lQmt+DKHZNlrBi8rDsT+mTaqMnhVP6QgfTYPKSeZexX8w\nIjoosGFXC/P4PSF04GFLnC+PwGDRj7Xp30qJ4wjUo4XSXp7iZ1y1zztqm6SO\nW73W97yanYW6Eh2ew2BPtFDUtSvlwgqjrRqrd6sL84iVWre5s3IhujopA2/h\nQK4QGQopE3CzVVGzxfFwHCLJ4kp1EXWVkgkYO95Ul0OaqJKomYgVvHV0DsfD\nQdCk2/BsK4QBka/96OwP7LTU9cSi+/WhFIC0xnTDLM6fObGmZ3cCdkjZUrEd\nzq4ZyWcLmKP1KlwJVrcZUn9K5Enzz5OVABBHXiUKBJYJc2Qg2VXD9CnWqTFn\n7K2r\r\n=wMqF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0-rc.4_1535388330679_0.7331847851545827"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/template",
+      "version": "7.0.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.0.0",
+        "@babel/types": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/template\n\n> Generate an AST from a string template.\n\nSee our website [@babel/template](https://babeljs.io/docs/en/next/babel-template.html) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20template%22+is%3Aopen) associated with this package.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/template\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/template --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.0.0",
+      "dist": {
+        "shasum": "c2bc9870405959c89a9c814376a2ecb247838c80",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.0.0.tgz",
+        "integrity": "sha512-VLQZik/G5mjYJ6u19U3W2u7eM+rA/NGzH+GtHDFFkLTKLW66OasFrxZ/yK7hkyQcswrmvugFyZpDFRW0DjcjCw==",
+        "fileCount": 13,
+        "unpackedSize": 20897,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHCxCRA9TVsSAnZWagAAqrYP/08K3klbnnAE3oHvGTTH\nmVIU52SUa0zSmCJuRsjpEUyCjToRcs+mLFr1M3qc0jrXASKti8J7irY/a+yW\n/Ew5S4v1qQ44uyMRor7RYSy+h+x+kv4/4NsID/Nxx/pJbVwSgGwhWLUKjAjS\nt18MwlbSuljqHskvBjvsZQ3k1xF2M9oO6k0Pz4VOSBEe1joKHVtilcAv9BQe\n0PeA9XZZFFSzzNW7QfpPI+ujFbLb11rBGDOoZ9xf2xOMQN0ku9Gnd8QMya4q\n+CXgwf+0Iud+sXRxUqQpLIqQit0kJWZw2JQjRDxrBs0V8sBfN4kYPTa2lb4L\n4Dhlvey9eV+baS+H3pqaPpK5LTToMBU8oiIg8gTG51tqfHc3GkT+ts+rPCMM\nrVEASI5DER6YeyOVupuxz5hOtbpmtTqfezY5J7v386+duU/sG4+SK8CoO3iA\nE93BtG9GYQbmwtXSnLhFZs2oqjT+3ZwthM8iVZxy6HGVPA9ApfnfPWUfrsyh\naZvIUYoQKjZdXpw27UllwZgG5oP64Hnq3T6+Ag22BEwUhewoZ3WRXbH+bg9D\nCVQZgF1fHtLwE/PFCrcdFUeQui0VoMu5P/T+GCo+JFJMJ8Hx9X7czYXvcGGg\nyckTMARLaN+Z/aIAbmSWQnu2Z4MCEs59V4S7cUxL7YP0naxNdWhPwPk7dY+e\nZryn\r\n=DwqQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.0.0_1535406257342_0.38945552281265083"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "@babel/template",
+      "version": "7.1.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.1.0",
+        "@babel/types": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.1.0",
+      "dist": {
+        "shasum": "58cc9572e1bfe24fe1537fdf99d839d53e517e22",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.1.0.tgz",
+        "integrity": "sha512-yZ948B/pJrwWGY6VxG6XRFsVTee3IQ7bihq9zFpM00Vydu6z5Xwg0C3J644kxI9WOTzd+62xcIsQ+AT1MGhqhA==",
+        "fileCount": 13,
+        "unpackedSize": 20950,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboADVCRA9TVsSAnZWagAATJ4P+gKR3B+BiCvrFm0UEXgm\nb0rpVWZunjc+XNuCb8jEsdXcQ5vgpNgf1YXjLsynNOEtqR90GPqd+udBOhu6\nksbdlZIjGY3NaBOZPLeQllWyHLMHANmnAzUfR383QnbSkOtP5YldflBBn95h\nf9j4Wdm/MSszX5wpgY1WHdRFFl9WfamRUhL7FYs0yj0lAPvwmxUEHFtuiwxC\ncSA0RU7y5qvBI6jP+JtVrEEj1zsqJaWMNfp+qCVX1+LjQQSjrh4qVhMZMB+y\ngz3QMqjOO86uDmhIIO+O2L2JpfNVk68cGMiNtp0poUgUzawPjiigIcYx2hxs\nO/dNoXMeWcTKNNeqDPm6E3s4461koEsTZHprHvu361K0ic+BAUNdszfTZokq\nHe3QFH9ZllyCtY5TCAU1hwCJ5ZxM7YW6uXEFrDCL0wmn1WKxUhKhRqWCXd9m\nGt8FK+0lYOA6uBiTfb3+pekP37BzQVNYNNIK59et9k9OZjjEvy7VyGWWsh3d\nql08LJ9hVv+a5ElZJFLsU+568DTFXzE8oDJw45fZjhXOUHl4w0mUqHcxQEhB\nFJ2CexpvW035Pq0A1ABlAvP/guc/0IHsSfryEAihsLv04umL4hNbldY14HjL\nGOo3aVpdU1shNar+UiwqF/H8Tw5sFaDEx+Uo1aqe0HxLhbh1t2t3XDFUi3bb\nSWQ9\r\n=PEyT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.1.0_1537212629037_0.16583121514978583"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.1": {
+      "name": "@babel/template",
+      "version": "7.1.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.1.1",
+        "@babel/types": "^7.1.1"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.1.1",
+      "dist": {
+        "shasum": "21430719f1c6cbbbcf274623b42bbe96fda896dc",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.1.1.tgz",
+        "integrity": "sha512-TnZ0OJeQ1isSbrZewCV4Y3qzVtC9mTsXlmGPSMkka6AN5DNBbIxevqeuhuDwosTB6QqaKUUaMfkOyAcp6Jn9MA==",
+        "fileCount": 13,
+        "unpackedSize": 20950,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbroj2CRA9TVsSAnZWagAAmu8P/3SKzKGBsR3IEsZnXKjq\nzoDaCPKV4+ZZtXdyskuW4owHFiPd/uElh0RoIq6EZPra7GiSk8YL0Q/IEQrT\noLhMPIJ9v9FS+kZLrjBBDHSx/pIgAws3+IhioiWt5GDw7Bjoz8vcVMw5qzCC\nQlhiy070UYP2706irdK1oIgxuoROI7CRyhdW4ePYvnD7aOfua06GJBFOYIig\nWQckBTIVSC+UKh9rGLja+PVMX/7zin4Y6btHRfqW5jIpi1SuXZzJrd8/e1RR\nGqhorkqBCmANVa58lJSo6fgsmFg+SHzybKPlog/JvoOGhwjpISHvpbej9tF6\nqLhHiyUBEi/NQhTz9vQsElKA8EIPi60nel7fO+RGmsBXkFhaLpyr6Mx4Gp91\nzcNInqj5U+RVZwXwMgedz+L0AWX6NnZWJdPYQADayflu6nkQY5qg+0ooxGf2\nGBsFXj6eb4CCABXc5T8D43Ob2FjNrhP+uCdqljTGACg7a3Xr2+bIOxaznBsQ\nsu9ZF02OG99s9YK3IfhJAXD5mDzGAKXTEfHdeWiU2ZbnUtVvLcvb3We0ru1s\n+Tx5rvzVXY3UTgYDTzImdrZhBJmW2lk0pQxibyRtsiecDHmBDam/z+TQAmvB\nbRrNjk7wZ2ZI+alRVXPTmBJnhNj1xFCxTbfXi6PmL4p+BA0Lw7DMkmryjtdL\nYqSw\r\n=bFRi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.1.1_1538164981973_0.7493697494638516"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.2": {
+      "name": "@babel/template",
+      "version": "7.1.2",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.1.2",
+        "@babel/types": "^7.1.2"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.1.2",
+      "dist": {
+        "shasum": "090484a574fef5a2d2d7726a674eceda5c5b5644",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.1.2.tgz",
+        "integrity": "sha512-SY1MmplssORfFiLDcOETrW7fCLl+PavlwMh92rrGcikQaRq4iWPVH0MpwPpY3etVMx6RnDjXtr6VZYr/IbP/Ag==",
+        "fileCount": 13,
+        "unpackedSize": 20950,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbrqkOCRA9TVsSAnZWagAACg4P/j9X7EAfQD8szYle5cb8\nFvRmbNgAf3yP0+duA3yVm179nFhUfNrghlebdsHNIGIH+c7Q8PmAkwa0oT8S\ncYx4uQpj4e+mTT2+yHQRjWg6J9Vi5QEJyfz0OZoHqKjgyapKjcCLVgbGsMh7\n/k7QGErCA417QpTXSW/0xemMo470LL/xRs0uVBxKerLeRytbhIAMj9Y6dJO6\niRvPnHScZl/07ru+Sh7LbY8C3+G+5LVZFAxfZgSPqkDkpn6wCYTHGayQ+UGf\njDmlaXRu9LdgXk9fDCZLukHCWyWenhzHC8QMafQFnvuCRgemRc1FBzS014D+\nvfrPTcOC/oT2UQeY7V41dxJEYwmqsfnGWtSsUpEh+HrtRj5OwFtEHIZYcJsX\nj8RtaQo/0FHrRNSbeCBvg33LV9389laS/i+pu8n1qPP1pm/XRFP+s4dbkpHY\nmE5W4JR7opJPs8p4Eta07bzczTpUrulLOFZyy3xeI0mkuva2I4Ow8VM5M722\nvAMzH5ucncRXONsd+CHY48N5/gGh2QLXmltzW87IWuS6MHY8hayHDUCcJEqG\n0KZeLgPBv93rB/pq5u9GpxdGHPnCIy76021YNMQeYJajB6EewAMAYN1/fzY5\nqy73fLUFkh5xtI/FNhGHcg852hhgt5KtkMrVY+fzzlWKUGhiVdQUcZQfhpOF\n/oCB\r\n=iSOU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.1.2_1538173197451_0.06801225069014816"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.2": {
+      "name": "@babel/template",
+      "version": "7.2.2",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.2.2",
+        "@babel/types": "^7.2.2"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.2.2",
+      "dist": {
+        "shasum": "005b3fdf0ed96e88041330379e0da9a708eb2907",
+        "integrity": "sha512-zRL0IMM02AUDwghf5LMSSDEz7sBCO2YnNmpg3uWTZj/v1rcG2BmQUvaGU8GhU8BvfMh1k2KIAYZ7Ji9KXPUg7g==",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.2.2.tgz",
+        "fileCount": 13,
+        "unpackedSize": 20950,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcFNHzCRA9TVsSAnZWagAAd9QP/2aTYMyyPzt3+5A1Hm2C\nJY1T4i3VyFydv/VmjGErWqy6M4pZcbvddbYjRi5qtNNFBnqx7QYx7Q8aM4ym\nCC83UpRPZYAWl0DCi1Ajgm62nk25jE6bqMAjaMaD501J3g/I7Zrto8PlomYV\nlPK+oEEI1zSi/6MS5rDf5T660BD5AI/1LFUZjohEx2DG6Ac09NNkx3cB5y5o\nHHwopFrooMv4SyXPPGlZO9TiLS/78mFLWQXc6vCQAnm0bPVS+2jGXsRdiIMs\n4/uUC1Lgx5ylzqLZL22TW/aMZwxMDWFIuL5ZhebLgEQxuTUhEAHrpBemT7U4\nL/O4DqUSNA3NaOpeo56QACOsnXq1jYSNb/AJM5roaDeVnmwWpWeaAZM4BzYH\nnkgnWD6q4PotM1RcE9zgqZngXRpd+8VIB3Y7hTQsyFXVdQjGuYM3HHndkaCR\nw/nj/4HmHta2V+VPu8SYcxfkz5mJatBCbXncxATcDIOVP3uPl7BfhIINRNl0\nMmh1TeTjfPcF8lfJ+qFODNqTXnkPO1Vux1gVGwvNtGG5wP9h8lee89tKqgK1\n9kUBuUTszRKZQ5cB+1h58aAeZTIvIHnWibUX1RM2VXDi3KukxrcCUS8tghF+\n7ZEgtwoJonHcadlSYkAuB1+Kn90wUUB+B6oogHM31XY5oyjmeTY+9ihTNA6r\nP2w0\r\n=60bK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.2.2_1544868338742_0.08358106317967606"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.0": {
+      "name": "@babel/template",
+      "version": "7.4.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.4.0",
+        "@babel/types": "^7.4.0"
+      },
+      "gitHead": "f1328fb913b5a93d54dfc6e3728b1f56c8f4a804",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.4.0",
+      "dist": {
+        "shasum": "12474e9c077bae585c5d835a95c0b0b790c25c8b",
+        "integrity": "sha512-SOWwxxClTTh5NdbbYZ0BmaBVzxzTh2tO/TeLTbF6MO6EzVhHTnff8CdBXx3mEtazFBoysmEM6GU/wF+SuSx4Fw==",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.4.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23019,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckVTRCRA9TVsSAnZWagAAp/wQAJsEZuN7tKei6nAnJmkH\n8VREykC1Xnu/JU2LtXeAxG+nzz+/kTmaKrNdPQlEAWnYFoS0MAzdP4rqlXUd\n/54+h72HVpmJ41OBC5pR4wIzQwxutv4MNAsvbzkt7Yjf5iGIUAiuVE32WmLK\nrvsi2fRdB+8HGxbS3L7VAUUgh6wiRG+fP/E+khqMQq2Z5P3SGVkOGF88LaPz\nG7C0bxAfsuJt2CCwFfZ022krMNi/l8UTyaydo5/+KsuqAqMjyjXpYJ8a+G9Z\nkejSCe9agSGGYpBsG6hV3gIFI19fBa8Yf2PF6PIKGZXKkwHZfIsu1SbpDaag\nWBw6bX1ID4ExzfEGlsLCVHEw+6aVdt2sDowQ3lhGv/TQHgLlsE1HP9kS+TiO\nP9PK2rZ2OifY5W0Lzd99mHXTqUYWATLWxr+ouqDW2smny42ZnJTB0Id/WK1f\n0EQaZI1jkG73BybjSMXnPHQx+tesaQsCmL+57kv8iPDsAO8zyIRyysFwqidV\nTzJ/5IfbKKubjFLjMj5J2EOiaO3ycOaSg0/vsT0oIfztAvTbRQawmf/0+3MW\nPLqsvfqB3n1mVuSRkMi2mgfceFV7zSKPjWkLXRyOeblS2HwVQNAhmKmYqx/G\n9zb0Ex2QuqGgp4y2i3WiUFQ6zgiUMn8DVkDXCeYaN7auIHbMcaAZ5NkU+51W\n9UCL\r\n=yRDZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.4.0_1553028304479_0.7451371334071337"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.4": {
+      "name": "@babel/template",
+      "version": "7.4.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.4.4",
+        "@babel/types": "^7.4.4"
+      },
+      "gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/template@7.4.4",
+      "dist": {
+        "shasum": "f4b88d1225689a08f5bc3a17483545be9e4ed237",
+        "integrity": "sha512-CiGzLN9KgAvgZsnivND7rkA+AeJ9JB0ciPOD4U59GKbQP2iQl+olF1l76kJOupqidozfZ32ghwBEJDhnk9MEcw==",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.4.4.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23019,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3JmCRA9TVsSAnZWagAAW5EP/1lvCz5/KaQV5IyG3RTP\nXThFdEueazeXmvDxET593LUjajeWmG1R6zfr+kTfagEqZ/aI3Z3kSkZ3Ckwv\nf/tp54PSyU7vD7ImROyxytNJtNFUK+L/QpMAauR3nrrUkv6GFW/oZI+SnXob\ntzl2n5oDc0I74DTenBRqa9KNiU+iLTJZtBF1PIuOpWMuhTt61EPz0cCCaJA3\nPVoFbrktSUra12hLZ/lMljxCxm8MBlD/cGf3iFo0Eqq2N1WZP7vlLhCcinrl\nTe2yUeKpbxoGLrXWT9p8GWKOt7D+gGN2Lk9LZAaTQHFajX7ZCC45Sb3i6b7E\nsx6894PprKmI6fm6bOBhP8PwEexlyRIMBdPTu1//hqxX9YNM9GF3m4DvbC8Y\nGLK/xxVwIVIVzRSysKdp+Iz/kfW+Va4SSpDyg0K7c89827NT6CNyAVYTIau3\nwj67crGUlXP4HaG4KeH5StNRWw22tCipzlQm0IBzOPnbtDGg2iuYuN5mr1B1\njrlu/CMXJKFsu42103hHINS1tOm1Eaeijihv3LnhOTRMnYB0qIr1vAdYlepF\nkw5Xup/lLUimoSplSmpi4Fs5BQslh5tf5ykPetxzAHRU8p9xAIgojasRknsF\nDloGg7NMrETNyejGfl+JbAKqN7JoaaBpj4qKDGeE0dfp65MUXssMemrHVeQw\njM5S\r\n=I1Xw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.4.4_1556312678207_0.7036806719627691"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.6.0": {
+      "name": "@babel/template",
+      "version": "7.6.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.6.0",
+        "@babel/types": "^7.6.0"
+      },
+      "gitHead": "cbd5a26e57758e3f748174ff84aa570e8780e85d",
+      "_id": "@babel/template@7.6.0",
+      "_nodeVersion": "11.14.0",
+      "_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-5AEH2EXD8euCk446b7edmgFdub/qfH1SN6Nii3+fyXP807QRx9Q73A2N5hNwRRslC2H9sNzaFhsPubkS4L8oNQ==",
+        "shasum": "7f0159c7f5012230dad64cca42ec9bdb5c9536e6",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.6.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23023,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcpiACRA9TVsSAnZWagAAN84P/26ByWaBKvvaiiOS+vlV\n/Uk6KN4Jw9AWeaG8SJc5G7FimqPco9O/is91it3cjHToyjRoSzoKqHgqN5HU\ne+9M525VI/TM2ZRQBlohLBIo63Hr8H8+Ptx2OL/FVSFKInXdnycZFfvv6c+f\neXKxDJxpLTMZvMXW6jeD8v0FmYhhwFtgn9XeYC+XoarpghC2pPufHQiNJLzw\nsK1hdIJXBrDRbHq2GhBK4a7uBawyU5SIQnmhhbUfKPE1ywvI6EFU9hnmTlqH\njC1s5D/dAl1XcaLK5J/eZdfxdtDl29iwOZN7uzXHY2QOvYf2gOZQbLr368hM\neitLc1kdvJpwhiirKedNYt5cexLXPNRO+usi4G9uxc99uuyCOhLSapTuH0YB\nOgBq73Iy7JUDCRWqT5r9jLSYjOLk+1sq16K766r/32vlCNW4nQPhutXBcJmc\nbWd4RIE7zebRLt50yeMZlaFzmY9uoaYfXYp75rOmbMCV85z/3w2uTi+dumEJ\n5ufsDtoh7/0/ywvp8Zf60JgjR3P7HyrwO9oBy8pKK6dh4c91iziFgfCtnjDC\nHzVaaXUo8/MM4NvGH4c8P1sx+FDuEBMWdoN2mNwc2VmUKyHhd/SYemwHkw2N\n9EdEvtchbync2u7XazElGBcSZqMSIglRrBKN1d0nhloEP7kNim8h7GNkjKRw\nBD7z\r\n=QqL0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.6.0_1567791232093_0.8906835466423977"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.0": {
+      "name": "@babel/template",
+      "version": "7.7.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.7.0",
+        "@babel/types": "^7.7.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/template@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-OKcwSYOW1mhWbnTBgQY5lvg1Fxg+VyfQGjcBduZFljfc044J5iDlnDSfhQ867O17XHiSCxYHUxHg2b7ryitbUQ==",
+        "shasum": "4fadc1b8e734d97f56de39c77de76f2562e597d0",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.7.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23737,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVSpCRA9TVsSAnZWagAAE2EP/jo+j62I0HKANiBPt7lh\nWZIvJkT66vvmb2EXbwfGIag5wKVKioP3eLSHy74CthNsffv5THuRWrINt2dk\nCgGmAckB+o9HJT+/rqMErO+ffbv/uaPRT5kottqyRvuLZX9OYUGCsQ5vB1CX\n4v0+j9n3A9aZukCT2m8eU/kO0XBDibjr6lKdZujXm0QDJusxwk6ZChvRUxS7\nRO2dEB3bbV7PDsYYCDiSF/TNKkbKlzRayvmn3fCYQPFyabKQMx/0ad0JveJr\nOkKLrIziolIeBMYnaoy5XM7A+s/g66DanEGaajPrzsTbH+hXDZicCDAN0JFp\n+OBRivd2SXcmFb74pJflmmiw3bTkZb7IslVjQd7zak6hXuHKiZ9vmYMr+8S8\nf7uSQVZnB6HWW2WC+joEw5AbBq2SsOZBPYIn/sULhxmQIBsnycE3hQqK4ohu\nVDk06Ll+DyVFccju4tXlSONiNkLYmUh1D60BXUu/EqeK3L6+7SrAy+dglkw9\nb+Hgej2oYztCuq4FkNznHVS6lrR0t3vna0/APSWHFEtw3QlEcsjomvpniyv3\nZMYFmAG9Y7uHV4fjKrbOhbq4pj4d4eMZflS2y5rb1srkqh5Nap9EWX/p+Y5F\nLRRUBPEnbZyDmUpNcSH5A5P086XwsFJT7ulgoCC9MWZ153CPAx+QvaGHSn55\nK+Fb\r\n=+W3g\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.7.0_1572951208701_0.9047429993918386"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/template",
+      "version": "7.7.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.0.0",
+        "@babel/parser": "^7.7.4",
+        "@babel/types": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/template@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-qUzihgVPguAzXCK7WXw8pqs6cEwi54s3E+HrejlkuWO6ivMKx9hZl3Y2fSXp9i5HgyWmj7RKP+ulaYnKM4yYxw==",
+        "shasum": "428a7d9eecffe27deac0a98e23bf8e3675d2a77b",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.7.4.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23983,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HBICRA9TVsSAnZWagAAmxEP/0urcRtJCz0lRyTjgY77\nDxNuHgmgvePkr/H1qpxNNUvfibXbh+ef9dE2CH6hD0a/IYVtP1pkrvZ7v/qQ\nxyYkFv42OOqAXaGCGrcwlehq/ZfEvLNLh8HvLYnu0BrMjKzy4qPdFNm3ysDW\nyMxHg2dPbanGhtcA0JPRY1npkU3htSTtYdnior+eCjVvCdVGH4UuJnLd73VN\nRUlmED6ZLwbfTY1DbwytW9S8gSRIiSx5zgHyy1zkQlwuOFk0G6VE/isTYm1i\ncyqvYFOtG9hvkR1c/dHD7yCiSOf4+mVoVRgV78IufI9UFQqtD6gubXvq/iNv\nBujmIIH45eqooC6Ykn/+bjji6ojEGxgd/4s3ubWJ9XjtvjrmkdjTbjYamp1p\nlIeiRNtBXXBh2/VMKPDb5xD3WvP8JuA1M3/rfZF/f7bX6x++aOiLY9l4OCPe\nYKMhOprnzaAcwQggbCwSLQKGLjorvxcopBGPHh/jBWXZ9BuIsbxJkchkbPd4\nv7Y5rbxk1YbKiF/N1s2JGUW/+9gCBHKYz5Cghym42OPcOPrFLS7mfZwcnGol\nfHgPVr/itZLuhIWene2sA+iQ5voi6ehfA57kXOIpx78UTFLBlxrNfbqcmqFO\nH1Zs0gDlozPqsc37ig2UkalnACGFZcl+ZO5W7WuZLgKeJlxLiVStU6PTArNp\nQV3Y\r\n=hEWd\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.7.4_1574465608116_0.5263317892392974"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/template",
+      "version": "7.8.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.8.0",
+        "@babel/parser": "^7.8.0",
+        "@babel/types": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/template@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-0NNMDsY2t3ltAVVK1WHNiaePo3tXPUeJpCX4I3xSKFoEl852wJHG8mrgHVADf8Lz1y+8al9cF7cSSfzSnFSYiw==",
+        "shasum": "a32f57ad3be89c0fa69ae87b53b4826844dc6330",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.8.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24005,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVzCRA9TVsSAnZWagAA830P/RoiUb9otU0wQv3pa3wb\nWXmh9vKU7QWInvzitSQ9FVB3OlStph75oeSg9FGDg18qUlQOJToOO4MKn5J7\nicSSDo4uqZHUdsIdeonDJA9FeKChd3N7ZAY82zlKStubQuMuyq45EVzNkwt2\nQ2DeEtk6hnVDmmV7ZQdYg0u9y1wpknjmWrLmNwcgajiYROS+xuZ7DZrRl5RA\ntspi2ejBc2PZCVbLt5LWBHy1/sWyeypNL/FH3rRsIZBVQ0tnBssaNMqaT9UF\n9s60w/k4GQz4AfAw28pvAFNAHCweGDiAZfEittitrhbCi185QfQfPkt+QIl3\nwBrrQX2jM4RsWLDKO694+ZW1QWXWVftSGVTjimftvtAAmkTRAIWvm9HEY9iN\nQe+npI/SqFcRNyXAMur45yAs4ux1WSkghfkd5pO+5kcOFsDXsyp92M06ih9a\nm8L5L4LnbnxSi31D4Mmd0eJVo6uwNCZPzDfKAkTUjmEbSbyrmTYpNK2cUA64\nwP1C1Ah3U81rvTpFMCxQkVbzzW5rHhN7OPPV/WrwsLem5mds2XD1N9mm2zwq\ntIIgzFnK0sJMUvlOTux3bSvDZZO+zT2G+R64rOIfyL2vhuJLikI4k6ve5kD5\nYymY+ct+fOes6e/1y8OfgRNdFG6Yu56DN3P9l+Cz0VD96wAa4MdmrUjVv5RK\nRW0Q\r\n=LifD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.8.0_1578788210916_0.39301972791909723"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/template",
+      "version": "7.8.3",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.8.3",
+        "@babel/parser": "^7.8.3",
+        "@babel/types": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/template@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-04m87AcQgAFdvuoyiQ2kgELr2tV8B4fP/xJAVUL3Yb3bkNdMedD3d0rlSQr3PegP0cms3eHjl1F7PWlvWbU8FQ==",
+        "shasum": "e02ad04fe262a657809327f578056ca15fd4d1b8",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.8.3.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23983,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQrCRA9TVsSAnZWagAAbQYP+QBkZfCgNceYTgS0y3SA\nC49PHfpE7/OO1B2t+20L4QDzSSnrrra+25RWcRvqFoOmr0PSCUU9FaHKus64\nw6cREpKHQCwej5hDXVE2j9xm4oo5XNpzWQ9lMk1xQXN3O0IDidHGaBdBrMuC\nJFHeiuPPH7zZ/z3/7YLTxW6KqpuLfbfao/MbvF7/DeJIMIa7Mw4hwuppa2Mj\nOG0tWkrz4A6bCxMXW0JV0PYQSrgJfnIxruJrAkv+Fxtjk6qRNOHnYbOj2d/D\n78R94QFP0/b6iaaAccjAeJDIBowkV1TdqSm0U/0WSJ6910ljhHjgeh3e9CVx\n1+iLJMK49P9Tum6SYY3UyFKiEhOSpulxH7ana8BpMVc0kmLKSisA0td3kdfz\nNnlWrBh6LjhX5TU9Rknihe3v04RmBq7orViLtR0H5n51pJVLGrwBmWQwqTzx\nT0e6VJFnYo/eXgxpWd7fbvcGJxJJyPt/Al5RVVO5SWbIpWK1hMo4imtydixz\nKZkmjulx9M6ZLZeZRk9+aesbYTXF3F27z5uwNOQ3SqQNTHgUWdabn6uBtRsO\n65e3KmRAPXedY8awUxLruG9I/IUdXEVGBaav0PXR1xasC8PYaLV0lYygU8Zj\nNVhNWr6PIBi2dW3oFHExFwlDF2lxjuk2X6qxb57NkQeFOq7Dgf14JS3MzE7B\necyA\r\n=j8sU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.8.3_1578951722808_0.18120116454852164"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.6": {
+      "name": "@babel/template",
+      "version": "7.8.6",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.8.3",
+        "@babel/parser": "^7.8.6",
+        "@babel/types": "^7.8.6"
+      },
+      "gitHead": "750d3dde3bd2d390819820fd22c05441da78751b",
+      "_id": "@babel/template@7.8.6",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.7.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-zbMsPMy/v0PWFZEhQJ66bqjhH+z0JgMoBWuikXybgG3Gkd/3t5oQ1Rw2WQhnSrsOmsKXnZOx15tkC4qON/+JPg==",
+        "shasum": "86b22af15f828dfb086474f964dcc3e39c43ce2b",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.8.6.tgz",
+        "fileCount": 11,
+        "unpackedSize": 23987,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeV7RNCRA9TVsSAnZWagAACZwP+wR0bMzEV1Z5u2ym89m2\nIDfDtg2f7KUuDgqD3sj97bYq+h8qGvSDgNSmdH8RguKq9N7WUHmw4gIBKnfy\n+/Xhq8tCObZHtMXO2O6E3GMkW19Jym8etm7GFpZaBAf+7By2uqH/0/f2CIhg\nIdbtbKhqCu6IHW5y2tvB305zSgsjooLNmspph5i+Y1FNzRSzUCTp/neibY33\nEePg5/Lo5KKbmKRb4KtVQ5q0BlN75srIvwgGgfPmgwnaDSpwW2w/jJ7ftIZd\n5/YiGO3J9J27Vx1MokwypDOQy7dpTINR1v5VbLaQo7b5w1Dz5Zcb5xPdwcTe\niQSgvcU6c75Qv8hyY/PKdE6eHBI9kRqubybvVA+9gDKexCl1ijhwU7vSaDrb\nEpR7PDTIVOKrPMBwTW3yN2szB5ZO1j29/QKfRkls3zq3yQI3Z3Jr1MdtVXkc\nVCYuHGVpNCKtliY4yorMcOy4ipfP2Oqlirdf7amX1B2dhan4WvTWo1dVaPQd\nuNKHiQM2pcZ6QMsmWHNZ8v1hpOA1JM/AvpLQFmxEQlQ3gNM1NT/7E2cpaU2z\nTtC2clJrjVq77K1xCekLqqnanT5hGKmttIVvfg+XPm8UhudglL9bTgi/M4G5\n7W0xSUAmXYjzkepBCp/zETPJNi/IL8K608kbBdijYMuX0qWrclFTraL4ESLL\nqrF6\r\n=DwHT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.8.6_1582806092994_0.12577470391090428"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.0": {
+      "name": "@babel/template",
+      "version": "7.10.0",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.8.3",
+        "@babel/parser": "^7.10.0",
+        "@babel/types": "^7.10.0"
+      },
+      "gitHead": "5da2440adff6f25579fb6e9a018062291c89416f",
+      "_id": "@babel/template@7.10.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.3.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-aMLEQn5tcG49LEWrsEwxiRTdaJmvLem3+JMCMSeCy2TILau0IDVyWdm/18ACx7XOCady64FLt6KkHy28tkDQHQ==",
+        "shasum": "f15d852ce16cd5fb3e219097a75f662710b249b1",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.10.0.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24086,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezY2CCRA9TVsSAnZWagAAM4IP/iVEoMDot658Yx8WgTyL\n2OwnETj7MspK5GQksNtDo1F5sgxmUDjYhrgoAHBGN111At6whM2e3st/+Afl\ns0Bsq+zrLQUXyaHDyA5WEl8lcB0Y12l7bCYFBnpX4Oi/EPx3gjjsFZ7KXEok\n/+8Fex5jhJdZTIeQb5FpofNmEgSWbL0tqGH5hDqUOPfetuXVDACLx2dxoOUH\nORQ2BRETMQ+YN1whsx6FiRQyUFHX1XP8HbMTf0/sfBMLHCoTS8bZ8uE8uOcV\nwL6RuKac8sYhynwVi6s8CKXzRaxVfqAFY1q6luIIjGEEl/eG48a75HtjhCBN\n8j3MN8NkKDTejJCJHCNc4MRh2+JtxxTM0oanHyslJL1cX8EUOeWoakdn4lcD\nxzqhS4SKfsOJJXE9B4xOnEtuCE/V8BQDLDoSFG6410lTZxR3zBVYmI9goJO4\nmy+tqn5TEBTaVrEr8oOGwsvtM6gyVd3PsakHyNu+lfWL5unzrWmWVML3MTUA\nTeSHUiTQI6i24IH7l4s1+QB5fNKhum0CBW0uC1ZnEFibUzvrMtBekXMxVIK3\nZQx0uDLaSUzTCBPwi8C2Jie9BkqMjE1fRxEuAVbL0IEfWLpEmXixt0QWlYeN\nFmrrEtN+rIQOK6AUgkr6R7wTlua5+kYUcK4aXy0kc7VKeQX4PxY5oRSSnwJJ\n3cd+\r\n=7ZKl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.10.0_1590529410194_0.654548207323411"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/template",
+      "version": "7.10.1",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.10.1",
+        "@babel/parser": "^7.10.1",
+        "@babel/types": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "@babel/template@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-OQDg6SqvFSsc9A0ej6SKINWrpJiNonRIniYondK2ViKhB06i3c0s+76XUft71iqBEe9S1OKsHwPAjfHnuvnCig==",
+        "shasum": "e167154a94cb5f14b28dc58f5356d2162f539811",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.10.1.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24135,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuS0CRA9TVsSAnZWagAA9s4QAJuMJChHvxAJIa3GxjMQ\nlegs3V08fRLE4wqVPRWFwCPKefrzFctNVk5a26Shi5kzVJ6hsVeDGqTsKTSJ\n4/4edyAVzHybM2O7elRZ2hqCadp8c9YgNIrnaVSsyBxgHi+sr9UhgnLYQ53M\nBAA0736UnGywWcTDZSxEDEJ5RRSFgKKg7oiukC21HARSFqsM/VOncAGPbyOC\nbOin7KyHLRUo24i1kwEZL9CtyPFZIZaflv5KkGHPtkXOLD9HQ+0f6kuonPmM\nEMSr2AONh1IAW0OWb3214C0rXnbhfPiomg0ml+Sngeb7WvQoH+2Lx4iLRW0l\nRVzwZG3HZ5SaI4Q9CImh08OxHEWy5SpgElEyu5j61Gt2lgqqEEzi21FZmjlZ\nsk0AoybNjAgmYm45A+RixtL8+G25nF2M7MoExieAytAg9LV6tuCygaY2ILOD\nQ8qBT4O7cGEV4xPrj36a/JGyIlfOesW814xjVeaFt0++PFmQ1J1aMMeU1ivU\nEgctB8Jjqjb0C5iVoTLceHl5QixvdFMuI6b+216zAuMJh2LvJYuBwEbRkPK5\nUKakQ5zxAccBe5FuQxhczWfmtdfT9zUt93QQc3FW/onFGVb5XJqr0VrPgwNg\nSpSO4shkJzqsmAkHqr+j7iCQvWWYb8SHbz5X1o47UeyWTTscJpkvK42Y8AsM\nDAs1\r\n=8/1o\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.10.1_1590617268270_0.6780331120459875"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.3": {
+      "name": "@babel/template",
+      "version": "7.10.3",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.10.3",
+        "@babel/parser": "^7.10.3",
+        "@babel/types": "^7.10.3"
+      },
+      "gitHead": "2787ee2f967b6d8e1121fca00a8d578d75449a53",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "@babel/template@7.10.3",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-5BjI4gdtD+9fHZUsaxPHPNpwa+xRkDO7c7JbhYn2afvrkDu5SfAAbi9AIMXw2xEhO/BR35TqiW97IqNvCo/GqA==",
+        "shasum": "4d13bc8e30bf95b0ce9d175d30306f42a2c9a7b8",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.10.3.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24231,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7SYJCRA9TVsSAnZWagAASlkP/0fa1yFJBXIeSzwyVlt0\nhBigvF2WpL9kx8kqmZsE1t407sR0y9wMoO9S8ZmmWkyYiujP+eByUBf4WCL5\nPRv2HiakblPw2K7v+YQTaw4Rp2hM9IUZ5mSU7v8tGdqyAeO+EeAw0Ugw2MXr\nmeGYL4GD2jcvaD65MxcZa9RCDI2DAWK8S9CfwcPrtNiUFoeosqTxNSCTQH5c\nlpInDHB8jJf5T4/WdX6mXE7y+pZnQaynF2CzrB7KHTfm+ZC3X6X7BldeniAp\nlqfPMJtjBf+cu45wdDPODtQsRIv5MQ5mS4v6grSqYDnDVy8wHIMti1CpBGJx\n0s6g4TGCJ5e8AUJ1gHztrDbnsoun27MfplT2A3nvBm4cZyXTjPed9XmqQaOw\n5vR9OwWP3H9m8Gi5awGqneZxyCvy2fC5IFhtQyd9D6/K0zrWNsktoaG5yghZ\nfpaw6uh5Emto0nENbHC483eLX+XpqMUdJoeh46h/JCNzskgmdVbWTvJ1cVkK\nUJRcOiuMw+1AMpm666NgFfZcUZpyANL+iToLNXERq23VkKtzPtnr0CIwNTxY\nFvMsSlV/0DZDGn2oRY1bOv2gzh8IVz6BPvG8LSJaaZDlwBw5BOJznLzQWqIp\nxCiOg+2RYVo6cEtqibWqDtxn5CnPDixxUsWTppYi6X0zJDoMXjgn+DAphrHf\nKB+B\r\n=zMuI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.10.3_1592600072718_0.6810434029044472"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/template",
+      "version": "7.10.4",
+      "description": "Generate an AST from a string template.",
+      "author": {
+        "name": "Sebastian McKenzie",
+        "email": "sebmck@gmail.com"
+      },
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-template"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/code-frame": "^7.10.4",
+        "@babel/parser": "^7.10.4",
+        "@babel/types": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "_id": "@babel/template@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-ZCjD27cGJFUB6nmCB1Enki3r+L5kJveX9pq1SvAUKoICy6CZ9yD8xO086YXdYhvNjBdnekm4ZnaP5yC8Cs/1tA==",
+        "shasum": "3251996c4200ebc71d1a8fc405fba940f36ba278",
+        "tarball": "https://registry.npmjs.org/@babel/template/-/template-7.10.4.tgz",
+        "fileCount": 11,
+        "unpackedSize": 24231,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zpMCRA9TVsSAnZWagAABdEP/0M5zdn8brFCWtdi8GfD\n7wzOhNe4YtS5CzqnTiNRhdTQ7P/891ZaS0LD8BlNbLa3mRaMW2e+bjrXMh/h\nKJzVINfDmD1SjgN6vXFcSctt0r7hOd3uAC21edT2bckBG3vKvHqV68qMHJOM\neFJsPFrflVtmaLgqFQBL8NHWWLY3JkJaV3Y+qR0WC7bXKfC8s6vrMrPgNgWv\na9ig9keIXP+dzpLXHWLvVX53geal0tdNcBVnipfd0awuBynybzqjGYD8YfnD\nENE0pjbvPZrw3VQBMQ4hz853n6xyJUfoM797bbZ9yYH2M7gKygI4s2I3/J4M\nWFXl7H/2CVB2LYaYxPzeW6XWVbGUycF/HESEHSYa5QpnhRK27Bh9kKhWpjcW\npvIy8ek9kVKecQoIaniSCjIhhjbQ87thLDfasRtF824MClnz5XJbwgQgI22f\nyB81a9Wjm07bLFLpRwfKrDy5KtxL0OCTFmsvx4S7DYMjqEDkgXNBZWCB4Au7\nOc6XJNkcDiZ69UE9jNkjNfjBN9EcXwvmkbtYpnooDQYGKeNj10of8rBhpywU\nMaweS6wUjPK/h2JIFCwAZZiEtLAQFIs/ONRPyg22kK4oSU44VZ5tXC6+5/V9\n1mzqHrf0b2ZoXjXXqOPZb67GQBCgP3MVKbPBFDAuj4z4nykejtTDoGGA9ABi\ny/7d\r\n=+j9v\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/template_7.10.4_1593522763822_0.08416775203985671"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# @babel/template\n\n> Generate an AST from a string template.\n\nSee our website [@babel/template](https://babeljs.io/docs/en/next/babel-template.html) for more information or the [issues](https://github.com/babel/babel/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3A%22pkg%3A%20template%22+is%3Aopen) associated with this package.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/template\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/template --dev\n```\n",
+  "maintainers": [
+    {
+      "email": "daniel@tschinder.de",
+      "name": "danez"
+    },
+    {
+      "email": "bng412@gmail.com",
+      "name": "existentialism"
+    },
+    {
+      "email": "hi@henryzoo.com",
+      "name": "hzoo"
+    },
+    {
+      "email": "i@jhuang.me",
+      "name": "jlhwung"
+    },
+    {
+      "email": "loganfsmyth@gmail.com",
+      "name": "loganfsmyth"
+    },
+    {
+      "email": "nicolo.ribaudo@gmail.com",
+      "name": "nicolo-ribaudo"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-30T13:12:48.215Z",
+    "created": "2017-10-30T18:35:33.711Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:33.711Z",
+    "7.0.0-beta.5": "2017-10-30T20:57:10.361Z",
+    "7.0.0-beta.31": "2017-11-03T20:04:00.039Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:45.470Z",
+    "7.0.0-beta.33": "2017-12-01T14:28:55.185Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:55.211Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:13.698Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:16.354Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:56.542Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:24.609Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:53.383Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:25.501Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:37.157Z",
+    "7.0.0-beta.42": "2018-03-15T20:51:50.480Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:45.508Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:26.488Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:57.075Z",
+    "7.0.0-beta.46": "2018-04-23T04:32:16.385Z",
+    "7.0.0-beta.47": "2018-05-15T00:10:11.879Z",
+    "7.0.0-beta.48": "2018-05-24T19:24:09.406Z",
+    "7.0.0-beta.49": "2018-05-25T16:03:39.692Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:46.796Z",
+    "7.0.0-beta.51": "2018-06-12T21:20:24.948Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:38.857Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:38.388Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:20.811Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:43.570Z",
+    "7.0.0-beta.56": "2018-08-04T01:07:45.770Z",
+    "7.0.0-rc.0": "2018-08-09T15:59:24.133Z",
+    "7.0.0-rc.1": "2018-08-09T20:09:11.125Z",
+    "7.0.0-rc.2": "2018-08-21T19:25:19.823Z",
+    "7.0.0-rc.3": "2018-08-24T18:09:01.331Z",
+    "7.0.0-rc.4": "2018-08-27T16:45:30.727Z",
+    "7.0.0": "2018-08-27T21:44:17.393Z",
+    "7.1.0": "2018-09-17T19:30:29.158Z",
+    "7.1.1": "2018-09-28T20:03:02.198Z",
+    "7.1.2": "2018-09-28T22:19:57.594Z",
+    "7.2.2": "2018-12-15T10:05:38.929Z",
+    "7.4.0": "2019-03-19T20:45:04.692Z",
+    "7.4.4": "2019-04-26T21:04:38.296Z",
+    "7.6.0": "2019-09-06T17:33:52.250Z",
+    "7.7.0": "2019-11-05T10:53:28.805Z",
+    "7.7.4": "2019-11-22T23:33:28.291Z",
+    "7.8.0": "2020-01-12T00:16:51.065Z",
+    "7.8.3": "2020-01-13T21:42:02.911Z",
+    "7.8.6": "2020-02-27T12:21:33.135Z",
+    "7.10.0": "2020-05-26T21:43:30.312Z",
+    "7.10.1": "2020-05-27T22:07:48.424Z",
+    "7.10.3": "2020-06-19T20:54:32.896Z",
+    "7.10.4": "2020-06-30T13:12:43.921Z"
+  },
+  "homepage": "https://babeljs.io/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel/babel.git",
+    "directory": "packages/babel-template"
+  },
+  "author": {
+    "name": "Sebastian McKenzie",
+    "email": "sebmck@gmail.com"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "colshacol": true
+  },
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-optional-metadep-tgz-missing",
+  "version": "1.0.0",
+  "description": "a package with an optional metadep that does not exist",
+  "optionalDependencies": {
+    "@isaacs/testing-prod-dep-tgz-missing": "*"
+  }
+}

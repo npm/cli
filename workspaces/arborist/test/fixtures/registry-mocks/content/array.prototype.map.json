@@ -1,0 +1,364 @@
+{
+  "_id": "array.prototype.map",
+  "_rev": "4-3c36fbac60fc85b532f1191aaf555b83",
+  "name": "array.prototype.map",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "array.prototype.map",
+      "version": "1.0.0",
+      "description": "An ES5 spec-compliant `Array.prototype.map` shim/polyfill/replacement that works as far down as ES3.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "preversion": "auto-changelog",
+        "prelint": "evalmd README.md",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "tests-only": "es-shim-api --bound && npm run test:shimmed && npm run test:module && npm run test:implementation",
+        "test:implementation": "node test/implementation",
+        "test:shimmed": "node test/shimmed",
+        "test:module": "node test/index",
+        "testling": "npx testling --html > test.html",
+        "coverage": "covert test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/es-shims/Array.prototype.map.git"
+      },
+      "keywords": [
+        "Array.prototype.map",
+        "map",
+        "array",
+        "ES5",
+        "shim",
+        "polyfill",
+        "es-shim API"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/es-shims/Array.prototype.map/issues"
+      },
+      "homepage": "https://github.com/es-shims/Array.prototype.map#readme",
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "devDependencies": {
+        "@es-shims/api": "^2.1.2",
+        "@ljharb/eslint-config": "^14.1.0",
+        "auto-changelog": "^1.16.1",
+        "covert": "^1.1.1",
+        "eslint": "^6.4.0",
+        "evalmd": "^0.0.19",
+        "functions-have-names": "^1.1.1",
+        "has-strict-mode": "^1.0.0",
+        "is-string": "^1.0.4",
+        "safe-publish-latest": "^1.1.3",
+        "tape": "^4.11.0"
+      },
+      "dependencies": {
+        "define-properties": "^1.1.3",
+        "es-abstract": "^1.14.2",
+        "es-array-method-boxes-properly": "^1.0.0",
+        "function-bind": "^1.1.1"
+      },
+      "auto-changelog": {
+        "backfillLimit": false,
+        "commitLimit": false,
+        "template": "keepachangelog"
+      },
+      "gitHead": "e0db5743bf9a64243bf6546910271dc03d334c39",
+      "_id": "array.prototype.map@1.0.0",
+      "_nodeVersion": "12.10.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-ADlS5cAlJxi2jXF8EqSR4wZ+oVCeP1yN1pZheBWNbodEFzddyKilnTOUgO12FTR4PtunFt3FUzOy5rkWYCw64A==",
+        "shasum": "94a8847b016675302581f3e2f20f717ff66a0eb0",
+        "tarball": "https://registry.npmjs.org/array.prototype.map/-/array.prototype.map-1.0.0.tgz",
+        "fileCount": 16,
+        "unpackedSize": 27684,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdjw7xCRA9TVsSAnZWagAAo5cP/i1xbdCBLTaj9WdvaWBu\naZR/pQuxAk9ok0FBjCiqM4IX/a1nQdhuEpboaY7jxE2oDggSGVwLWWUtUVd/\nVVTQQtY6gczPsS10UhAwyaPC7uYGRYGlVrWc42/+JjQIFWx1DOtNgCd3btgQ\n7ylXMUc35qWPfA7zuvq1wnrmxoSubMxpwTKVtN9L/Mqz70Q+0PcZv6wrFKAQ\ng0CO8JBcSf2D3onGPZuZqiwa8LP0fIovQOwESoHwOyr6bfEKco1Rjnrx9mgE\nCqII6mm6QoIaQs/F+7MtgDEll39XAl3usnkIp9jSVkvNmSTz2CGbpoqwy3Xt\nVtI4fE68pgK72rt9cAXiFwX2bP9/jQmvBFp3NXIctCnZ5EYEwiu/pNQ6duaH\n95prPda/dMhxL1Fnpkde160EmTvDJft47Q4CjrHxAuJLFW48RGz6MuaFLkGN\n+Gpyqiy5Ix+WGZG7bHxXJeBSPYIGT/UXK3k1pXzWXjS14z8NldBRoIYwtsLE\nyGYRd2wPU5qBN6tz0lWGb49r3bseBNnWPFdO9CQ4fBMAH8ofurov2uIo+xFx\nhvex5reyy6tXwU2SZk6Bi2oWXnk/G/J+k6RKvfKfurjcenDOLjgTykkaBLGA\nhcCFUH/4g1zUxD8Af2Vo18JA20epNS2dHW7g6DHg5nHMDlboo9dE78W3DZcu\ntQLZ\r\n=44/5\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array.prototype.map_1.0.0_1569656560291_0.4275679168608193"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "array.prototype.map",
+      "version": "1.0.1",
+      "description": "An ES5 spec-compliant `Array.prototype.map` shim/polyfill/replacement that works as far down as ES3.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "preversion": "auto-changelog",
+        "prelint": "evalmd README.md",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "tests-only": "es-shim-api --bound && npm run test:shimmed && npm run test:module && npm run test:implementation",
+        "test:implementation": "node test/implementation",
+        "test:shimmed": "node test/shimmed",
+        "test:module": "node test/index",
+        "testling": "npx testling --html > test.html",
+        "coverage": "covert test/*.js",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/es-shims/Array.prototype.map.git"
+      },
+      "keywords": [
+        "Array.prototype.map",
+        "map",
+        "array",
+        "ES5",
+        "shim",
+        "polyfill",
+        "es-shim API"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/es-shims/Array.prototype.map/issues"
+      },
+      "homepage": "https://github.com/es-shims/Array.prototype.map#readme",
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "devDependencies": {
+        "@es-shims/api": "^2.1.2",
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "covert": "^1.1.1",
+        "eslint": "^6.6.0",
+        "evalmd": "^0.0.19",
+        "function-bind": "^1.1.1",
+        "functions-have-names": "^1.2.0",
+        "has-strict-mode": "^1.0.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "dependencies": {
+        "define-properties": "^1.1.3",
+        "es-abstract": "^1.16.0",
+        "es-array-method-boxes-properly": "^1.0.0",
+        "is-string": "^1.0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "8528c17d65b7b43a1f74826c0c9f472f0878cc25",
+      "_id": "array.prototype.map@1.0.1",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-qWw0c1MYCp8Ta2N5l5S1xdNPT5NE2KGzmPe6ZeuLFEwhtNTQGzQkT37r3RoDwZwc7nEPSQyp0ohWbwDTdIwvQg==",
+        "shasum": "481519dd51f7658ddf2fbdbc1d0e986e2777f96c",
+        "tarball": "https://registry.npmjs.org/array.prototype.map/-/array.prototype.map-1.0.1.tgz",
+        "fileCount": 17,
+        "unpackedSize": 20846,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd11isCRA9TVsSAnZWagAAvuwQAJ0sQKGL+20ijzSTk9BD\n0B4B6BmOawuuAihgMEj9e+sWz90HalUj3AhzaJ3YMSL8Ukbly8+CNBjb2+Wp\nMeuKuZZ+CDBSMINE17rZDHe0mtIno0txO0n2Y2yDO4Q9LyC9WJyeFmYEVRyQ\nm0Iz5UDJbY9KzWD8Kqwn3n+H0Zam9cY2CUfrJdfTAUt6WYdsh1mSK/B/d11q\nrIaSiu9+7/5czDQ1SnwfCFzoGKfRB3YThhemhL7MVmH4Hi6SLIsE8zO8ETfI\nTMQj0/FDPFqZGfP6zo5ElaAIaauPYdd0jiK1fpQ9BYDRWHgRQ+tdrQXzyYMe\nTygYjVLk795Pdv5nAIZS6dxnmCbXtGkBYrQd6trAP1A9ryA32kQSMz6G5kiB\nlaNU/sF6peaEyYQP9aMX5ElSZEvd4m60mr2y5HhnLaK8JjcerP32QwTqyak9\nCa19i3OvqSPREI3coqIJccDx4WcUPZA9WLz1/zVWvBOmZVaJJEmdlPbok+F4\nPHEen82VyYJlzt4ml9QIKYjmEp7yyqwHeZX5zsdIFCL3QRUaD75R45szf8of\nxMuaooMTNjypEfh+5E8wh+DIaJImcK1LmdB0g4kRlQvSCUKJ4FO/veN3OUz6\n9h76Zz0oYZBLqIWOhM27+7mFjNKZlCfwtpU+bedHgLiIDDb4pxgd3er3t+/i\nmGQf\r\n=Ff37\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb+esshims@gmail.com",
+          "name": "es-shims-owner"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array.prototype.map_1.0.1_1574394028248_0.8997492113929351"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "array.prototype.map",
+      "version": "1.0.2",
+      "description": "An ES5 spec-compliant `Array.prototype.map` shim/polyfill/replacement that works as far down as ES3.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "preversion": "auto-changelog",
+        "prelint": "evalmd README.md",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "tests-only": "es-shim-api --bound && npm run test:shimmed && npm run test:module && npm run test:implementation",
+        "test:implementation": "node test/implementation",
+        "test:shimmed": "node test/shimmed",
+        "test:module": "node test/index",
+        "testling": "npx testling --html > test.html",
+        "coverage": "covert test/*.js",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/es-shims/Array.prototype.map.git"
+      },
+      "keywords": [
+        "Array.prototype.map",
+        "map",
+        "array",
+        "ES5",
+        "shim",
+        "polyfill",
+        "es-shim API"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/es-shims/Array.prototype.map/issues"
+      },
+      "homepage": "https://github.com/es-shims/Array.prototype.map#readme",
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "devDependencies": {
+        "@es-shims/api": "^2.1.2",
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "covert": "^1.1.1",
+        "eslint": "^6.7.2",
+        "evalmd": "^0.0.19",
+        "function-bind": "^1.1.1",
+        "functions-have-names": "^1.2.0",
+        "has-strict-mode": "^1.0.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "dependencies": {
+        "define-properties": "^1.1.3",
+        "es-abstract": "^1.17.0-next.1",
+        "es-array-method-boxes-properly": "^1.0.0",
+        "is-string": "^1.0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "be4373339e8f526b4aae72eb0f2562a9320c1f42",
+      "_id": "array.prototype.map@1.0.2",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-Az3OYxgsa1g7xDYp86l0nnN4bcmuEITGe1rbdEBVkrqkzMgDcbdQ2R7r41pNzti+4NMces3H8gMmuioZUilLgw==",
+        "shasum": "9a4159f416458a23e9483078de1106b2ef68f8ec",
+        "tarball": "https://registry.npmjs.org/array.prototype.map/-/array.prototype.map-1.0.2.tgz",
+        "fileCount": 17,
+        "unpackedSize": 21842,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd99gWCRA9TVsSAnZWagAAQgkP/ivrdDz9Cun51FAoDAnY\nz3ix0ZdsMafX8T7zdO77tM5xZTOhZVrLRLOjgDbVVkZ7eim63sXtfz6q7URg\nXILlHaht7uwS/DDNJhDKr9PNh+AKXEVMLg339e1YP7ePMFt2zdnSe01iJB6s\nGxH69uFW14Ep9LcSd3Dqa07ADivcxWp3rGMXEpc6xtXF8RWEkrYp216llZKM\n+tizxenEq/ke2W33RFASwvtfdugbFW/Rsl0S1kp4wkfVyg8op3sDSFFjFZT8\nsE6nCRiZ3pInl+U7xcYYsjOil/UCBklhQp7v+8xwYCjC0pZ4IXmYC37UHkr3\n0fybZp/CqqFH1w4ldfLeSxYzQ6oukKAegy39Tv4bC9uGwHNzc+2MufP+Ywm9\neoUsAieHFAKIXHLDaI9Zdo8Qn9ssHyhBfFLyH7QF/33A3IKyv5f1WL/cGPFp\nxtKFNO8l9LnAwRy4dTuBUnxSeJrIOB2FZt8FPiYx8KJXIitl8pg1dkv16C1T\nNl5aK4XasM5vsjCIhpP/OBSQBHghxbyHoDS3ZpdUFTvE5zOmuSPeSxsAxLR8\nesnckzTiFjnLQ2MCxmBGI8qZx9/waM7cjX2HA+zcwTxOSfVgBDx0j0z8Q875\nwUKP0j7XHhw1fhWxnlg7XMSkaRS99vkijTbjM52wZbC1P9Z6B6hOaWgX8Nv9\nAsuc\r\n=FSBr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb+esshims@gmail.com",
+          "name": "es-shims-owner"
+        },
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array.prototype.map_1.0.2_1576523797636_0.6455225271154759"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-09-28T07:42:40.291Z",
+    "1.0.0": "2019-09-28T07:42:40.392Z",
+    "modified": "2020-03-28T22:24:07.860Z",
+    "1.0.1": "2019-11-22T03:40:28.409Z",
+    "1.0.2": "2019-12-16T19:16:37.741Z"
+  },
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "description": "An ES5 spec-compliant `Array.prototype.map` shim/polyfill/replacement that works as far down as ES3.",
+  "homepage": "https://github.com/es-shims/Array.prototype.map#readme",
+  "keywords": [
+    "Array.prototype.map",
+    "map",
+    "array",
+    "ES5",
+    "shim",
+    "polyfill",
+    "es-shim API"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/es-shims/Array.prototype.map.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/es-shims/Array.prototype.map/issues"
+  },
+  "license": "MIT",
+  "readme": "# array.prototype.map <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nAn ES5 spec-compliant `Array.prototype.map` shim/polyfill/replacement that works as far down as ES3.\n\nThis package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](http://www.ecma-international.org/ecma-262/5.1/).\n\nBecause `Array.prototype.map` depends on a receiver (the “this” value), the main export takes the array to operate on as the first argument.\n\n## Example\n\n```js\nvar map = require('array.prototype.map');\nvar assert = require('assert');\n\nassert.deepEqual(map([1, 1, 1], function (x) { return x + 1; }), [2, 2, 2]);\nassert.deepEqual(map([1, 0, 1], function (x) { return x + 1; }), [2, 1, 2]);\n```\n\n```js\nvar map = require('array.prototype.map');\nvar assert = require('assert');\n/* when Array#map is not present */\ndelete Array.prototype.map;\nvar shimmedMap = map.shim();\nassert.equal(shimmedMap, map.getPolyfill());\nvar arr = [1, 2, 3];\nvar add4 = function (x) { return x + 4; };\nassert.deepEqual(arr.map(add4), map(arr, add4));\n```\n\n```js\nvar map = require('array.prototype.map');\nvar assert = require('assert');\n/* when Array#map is present */\nvar shimmedMap = map.shim();\nassert.equal(shimmedMap, Array.prototype.map);\nassert.deepEqual(arr.map(add4), map(arr, add4));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[package-url]: https://npmjs.org/package/array.prototype.map\n[npm-version-svg]: http://versionbadg.es/es-shims/Array.prototype.map.svg\n[travis-svg]: https://travis-ci.org/es-shims/Array.prototype.map.svg\n[travis-url]: https://travis-ci.org/es-shims/Array.prototype.map\n[deps-svg]: https://david-dm.org/es-shims/Array.prototype.map.svg\n[deps-url]: https://david-dm.org/es-shims/Array.prototype.map\n[dev-deps-svg]: https://david-dm.org/es-shims/Array.prototype.map/dev-status.svg\n[dev-deps-url]: https://david-dm.org/es-shims/Array.prototype.map#info=devDependencies\n[npm-badge-png]: https://nodei.co/npm/array.prototype.map.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/array.prototype.map.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/array.prototype.map.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=array.prototype.map\n",
+  "readmeFilename": "README.md"
+}

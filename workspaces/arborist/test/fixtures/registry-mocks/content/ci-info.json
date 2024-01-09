@@ -1,0 +1,984 @@
+{
+  "_id": "ci-info",
+  "_rev": "16-1f9e7efb512fa3fde5993ab19b021c10",
+  "name": "ci-info",
+  "description": "Get details about the current Continuous Integration environment",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "ci-info",
+      "version": "1.0.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^8.4.0"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.68768499999999,
+        12.5955698
+      ],
+      "gitHead": "b9b1629b602f09ff8ee0b6158bfd16bb5af432b3",
+      "_id": "ci-info@1.0.0",
+      "_shasum": "dc5285f2b4e251821683681c381c3388f46ec534",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "dc5285f2b4e251821683681c381c3388f46ec534",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ci-info-1.0.0.tgz_1476979279035_0.6885495139285922"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "ci-info",
+      "version": "1.0.1",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^8.4.0"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.6773705,
+        12.5614183
+      ],
+      "gitHead": "aac11e070bf228af71192d8720c2dff6ad2b56ba",
+      "_id": "ci-info@1.0.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-u+kVhyCfR37aSKEneBwRcsff8tCLIyBvngsqL/fgOoWJsBhSFVVRaXWUI3HuAQKu8cLawFFRxNxpDUktZUXScw==",
+        "shasum": "e5913b63f7e1fda8db99a3125d45cbabcde55ba9",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info-1.0.1.tgz_1504539054919_0.6077480302192271"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "ci-info",
+      "version": "1.1.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^8.4.0"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.681141,
+        12.5643633
+      ],
+      "gitHead": "4142f07e702c4b9aeb9d7161df815c2043d2f96f",
+      "_id": "ci-info@1.1.0",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-Kdy57gJlQwVmleFb/XKd1ZJ/iSgYGlh2sKeT8uY4t544qv27FdcnWvb1BH8LKok2lgdKa/w5qHlvAOqz2NR0bA==",
+        "shasum": "37f6e917002864c263af2579cedcb4abb24fa467",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info-1.1.0.tgz_1504611213844_0.9689220797736198"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "ci-info",
+      "version": "1.1.1",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^10.0.3"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.6773705,
+        12.5614183
+      ],
+      "gitHead": "e75edeafca0330955d71ee0eb0ea4af412d63003",
+      "_id": "ci-info@1.1.1",
+      "_npmVersion": "5.4.0",
+      "_nodeVersion": "8.2.1",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-vHDDF/bP9RYpTWtUhpJRhCFdvvp3iDWvEbuDbWgvjUrNGV1MXJrE0MPcwGtEled04m61iwdBLUIHZtDgzWS4ZQ==",
+        "shasum": "47b44df118c48d2597b56d342e7e25791060171a",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.1.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info-1.1.1.tgz_1504612390657_0.2857714928686619"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "ci-info",
+      "version": "1.1.2",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^10.0.3"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.777569,
+        12.589702
+      ],
+      "gitHead": "bd4e2a1e4ff616764c4967e83f3e3b3c415ae476",
+      "_id": "ci-info@1.1.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.2.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-uTGIPNx/nSpBdsF6xnseRXLLtfr9VLqkz8ZqHXr3Y7b6SftyRxBGjwMtJj1OhNbmlc1wZzLNAlAcvyIiE8a6ZA==",
+        "shasum": "03561259db48d0474c8bdc90f5b47b068b6bbfb4",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info-1.1.2.tgz_1510945915514_0.49366038176231086"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "ci-info",
+      "version": "1.1.3",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^10.0.3"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.777613,
+        12.589943
+      ],
+      "gitHead": "a8d33c93296bcca821b0b9b56d4567dcf5393235",
+      "_id": "ci-info@1.1.3",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.6.1",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-SK/846h/Rcy8q9Z9CAwGBLfCJ6EkjJWdpelWDufQpqVDYq2Wnnv8zlSO6AMQap02jvhVruKKpEtQOufo3pFhLg==",
+        "shasum": "710193264bb05c77b8c90d02f5aaf22216a667b2",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.1.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6120
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.1.3_1520884277112_0.3492393126009503"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.0": {
+      "name": "ci-info",
+      "version": "1.2.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^10.0.3"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.6809148,
+        12.5644041
+      ],
+      "gitHead": "cf3fbe16d1b1dc4a14ed41267cc5439fce61b557",
+      "_id": "ci-info@1.2.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-U4aoLsSz44FhOyZ2E7bCufaBr2IUzNYujBd+b9vHiFH7SUzIhKcD94PQP5QSFn7ngPof6OF2yPk4/hygqwMJhA==",
+        "shasum": "8d1e9cb4051482ff70cd52a89b4b095a8fb635f6",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7142,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbcpKdCRA9TVsSAnZWagAA5hQP/jCwmJ7c7vBO3N9GjA2M\nUqSjQoWKJEANIO2j3AovAFU0KlzLzxXHSjYa26oOCJ9uzwc1Lv6hM42jo8kS\n+uPi9+fGgk2eTbEtNTY1pjqDHpxHtgiFl/edXfRLg1ppWnMDtjMDF2EHREOS\nffZ1SQD5o47rIRuGBbjOkoZnE9Nf0EfyEvpXaAoJfJCfHzdTiHLj/84hjGE3\nsFGkd4ldtTGaCuKhf+DYsEm/L9KcZtNr3rOUfoKPhKG4iAUOTLS9LDavTDL+\nJS3hefGZuvmNHNnSaV/VVvodFRa7Ojk+AcLX6Ka4fbggLgNmLLjRkE+2SAXu\nMQjpXlDnrysQi+1swp8sM4bGqaknAe6noMqH2q9Z+CcTr2jerud3Wt5FJtpf\nzQP+zu42wSZz+SkHfMoJMD6pD8IRtBDoSW3m7NBZYKjO7Z4r3XCZaH6wG7kC\nAKsu8pq4mnr0cWjc1kNXyIGOc+VPkQD1dsSf3Szwso8yYRr7j8xuPHtD5M8n\n5p6/CWDoPBTK7qHFoBfrz1TI7sgqqKrUaKO6Ty1N7IwW48YpgkJ+tesfLRSr\nP1p7tCMkbnZh0MZtWPZbHxCv99pyAz9gHAJtbU4tsZ6FU0dhXRqjoSox8+wz\nm24hguI1KPEobNPfZW7IN45GYI050vwVevulylXXg5ilWqVAyI9PZuPPbTjy\nW0co\r\n=Coai\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.2.0_1534235293084_0.09870438557547523"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "ci-info",
+      "version": "1.3.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^11.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.777197,
+        12.592028
+      ],
+      "gitHead": "fc23ab9ad05a32d690eacdef5821d691bfc48a65",
+      "_id": "ci-info@1.3.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-mPdvoljUhH3Feai3dakD3bwYl/8I0tSo16Ge2W+tY88yfYDKGVnXV2vFxZC8VGME01CYp+DaAZnE93VHYVapnA==",
+        "shasum": "ea8219b0355a58692b762baf1cdd76ceb4503283",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7526,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbc0eTCRA9TVsSAnZWagAAFQoP/3IS1P2bKTht9EcFb353\nd/uNyp+EKFKb2gOKPG5cZWiFZOSnfNEsBf84sdR4g8WcGIHyvejV43H8NTNq\nVC2AjlP/aWcRs4Ocmr8olkl6+p6yM/H2zZRLWnalPBytoKiqtxmLsCqwZAy+\n7thjekY5Buyh088udaNYFHtz68lT0DG+a1LbvVMWL5l2RNImXMgLXCpEk7sd\nS5e8RzJSwVrtTjm4lqyg9EGTY7QBS5JcRxsEoHx7rRP9j/eKIUO+eI+uC50j\nG3YjQJgZ2hAVPxIsWLU/zpjIvlTNKuS/cnMF1hk6ND9rs5Z4lJlEgAAIu9rN\nNGRdGJ2LcYn3YntzkIorRB8v+UfiVTWBTSom9XgA+VwaSLcA+o6IIb46mv3K\nk29lWXlgkyds2+9pifGcb7UfIDWr/2uejuodsjiyAVtJJDwh5BW59XrMkM81\nsFNgSR3z94UBXAQUd3hG7pPxXNiApAiV03iDL+qI42VAG1IPfx66XUMwtnVw\nEAf/B1G5s98862EJIS5qrRl/fjXi/bf8+DyqjnGOnqk2FgRKpvxnhEMet75K\nHXp/PwX+4vLG2j1bGC062GkqEbfGG9fASUG57aD/Zp8RIUQbhSjs4LsiIKST\nVRyUMbUY34gNePaojZcEYMwixLlk/MxRm6OuVH6iZevbVJ9F5IVdjCkVNf1/\n0xSt\r\n=70AB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.3.0_1534281618862_0.3978395804022148"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.1": {
+      "name": "ci-info",
+      "version": "1.3.1",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^11.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.777514,
+        12.592202
+      ],
+      "gitHead": "fe48e8e67211262d10bfc8744cdcb1b69c921b95",
+      "_id": "ci-info@1.3.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-l4wK/SFEN8VVTQ9RO1I5yzIL2vw1w6My29qA6Gwaec80QeHxfXbruuUWqn1knyMoJn/X5kav3zVY1TlRHSKeIA==",
+        "shasum": "da21bc65a5f0d0d250c19a169065532b42fa048c",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.3.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6612,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdZx+CRA9TVsSAnZWagAAKDMP/1ETs7jSSHS0tUlOPCZx\nzFUqUhtSQoxaRZ3xQLI5C2OihxCdYVdXMRCaDpBUebLBHLl9unR8zMtdS3kp\nrGw1xWi3EbLfraRXceHh5CMHJNM2HUf37VOxcqMOlv3P0zt2aLjrx+radMCm\nSlIbAtaUlNs4rLzHITK5yXCZObOVnK3b1123OKWkE8SsKkOWYYlJ1Ginuq3g\nW/CrDswcgbNtN9Gzb9cXJeaZuuJ5snrQV2xkR/4XHbUFmVGM01Fs290uZ9Vv\nKQddshENl+n/BhsROsqsxlyg208enGVZYZozeJYMk1sH9MHigNUYJjteAzEo\nQJ7+2DrODwAZl7sQcAqk0QJ8Re0rv0zSJqaQaxXUphS6hOQZ4pkXSLJx23Gh\n0wJ6/ONjzm/T9uxydcWawLitFgtHLSrwJKMD0SN30bzWsH2P7Qq6q4jfFLEx\n0qENy0g0ZK++eaSyuO48gtNLxpfeR2WV4ESBCAyCtC6aFsL73mem26JfriPj\nTz8rQ+QCK91gllw58kl/Hr5CIw/WwDSDfoGQ7lacUCn80LUvLvPAa9g0aMfH\nMpTndzYQOebI7BR2Y0sJmszKiboz753rfihk+0Ljwy2Be9BFJ444duYjiIfu\ndFxBVPxPyTdSvAD7oAuwQ1QOoDi8YAbdiGVKZkvETE8yt1Plgyh0ur5uqHJU\nEga5\r\n=+CgS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.3.1_1534434429486_0.6573735856162741"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "ci-info",
+      "version": "1.4.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^11.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.0113914,
+        14.9747494
+      ],
+      "gitHead": "5f1b8850452ad7be2ced88711cc3087d854c1878",
+      "_id": "ci-info@1.4.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-Oqmw2pVfCl8sCL+1QgMywPfdxPJPkC51y4usw0iiE2S9qnEOAqXy8bwl1CpMpnoU39g4iKJTz6QZj+28FvOnjQ==",
+        "shasum": "4841d53cad49f11b827b648ebde27a6e189b412f",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.4.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8012,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbepCFCRA9TVsSAnZWagAA9RoQAJSxL0P6PUyfjG+ClvG+\nlAAjyF3V5vi/LDrK4ULf9vHhLKGNXYugaGsrIdf+sA1yx6WIwpkMpV2PCaZR\nNuSHDIdheOY2IvrQI6lUE01dbWHg9sTWsJUO372Te6Sj9LSwqAJd4exfhNr/\n9E9VZklGlp9/kOVlucSZrvcUPh7DzjGs1ym/Ng1QnpHWltP5GIgqGiwJds2J\nnUineJxFdqC9Yf/jitbfX35cDruk378VYpNjZG5dewy6k+ZQLg58rAGDTyDR\nge7LTMasne0eTk96w/SB8++4wy4kafY5ZlIUHjtHQmT7ge1mJT0zaqBZDGh3\nCtY/n0n0ypx+iJtdIjoazAH+VNxMYH/8RGsfq0+RcDOWUufLHWzUV0S/eJVi\n0sDTvVKrFGGaUj5AdlOEx0AEKz62DqjYMungUIOKf21/GolF1Md8BJ5hQqHf\nyns3bbFnEq5OzgxOTdGqZ7dXCgTRyYqeYMZZDObgDglGOMth5ckBGbs/yv7H\nTaxe9HdZGGxNBNr8whWAqTPGW6zkSI21jtc7v3YvIzzoVafED2AvamnfB9+d\nKkFan2HKKdCOxUabj2wcmfeEXuGa/voJaZj2Cr77zxTmUcrKdjWAF1J9RxSN\nZx3sxetKi2zgqn4uCRQidqS5wDrx9jorm05nl4CyFr7Grr0dJOdSr5bfAgqf\nKGLj\r\n=dyHn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.4.0_1534759044627_0.7635631480866367"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.0": {
+      "name": "ci-info",
+      "version": "1.5.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.776761,
+        12.592082
+      ],
+      "gitHead": "32a557ca8e9e193dbca085773842e4db4aa98752",
+      "_id": "ci-info@1.5.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-Bx/xWOzip4whERIvC97aIHjWCa8FxEn0ezng0oVn4kma6p+90Fbs3bTcJw6ZL0da2EPHydxsXJPZxNUv5oWb1Q==",
+        "shasum": "38327c69e98dab18487744b84e5d6e841a09a1a7",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.5.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10579,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJblGJVCRA9TVsSAnZWagAA1/oP/i9cxFjqPcE57cdVRFiv\n6bpRVlJ2LMfhGPpsACbDIUdUoku2SE23DnUUvjrahhWvfgStwzUsEOhug1OJ\nFW+uUKRxpsPBT4xnHVe9U0Zb+w/pzyH+qVcbL3JXJ0Ekmc0mdB8omb1spYB7\ninssw1kbCbNEyer9wixOOgXQlU6QJuCivPeyc5Fj6lQ8crUi8m0w7hnlP1z0\nGW9TJPjY9iKBCJ3nJfowmt6tjgrBR7jadVw8UnUfBeEPnNSN+upD/1/IFpfT\n7gvLVHRtBuJPCL7lMQl/sKZJJHggEXw9hhhXvFZ6l7XN5c0bNJrkMK1LpZr+\nkSLz0qS9KWnfOkWW7RAXCcQKL6DLtzQC6RTqSPCQMdHnI3rDLWPNrT6CYPtp\nZ7STW3bhZKlb6CG4SL50FGU2fXmc1ByJRutFt8CMIbYzUInwJb/9F4o0ptPE\nOJZRgSTRLTvc9xo/rxtvhAm4Ro9tn0b14/ZU/wkM5Ta5sU8NSgudnngF7cnA\nuWfWCGzs1ioFb3iEmvNyvjWSuA9cteskfa08jRWMA/vrjUMrc8VMxfPFLcXo\nuos/LavXIUdCwH2sXZUxtkPhd7kMYVsMFHY7bY4br6hI0VOxO2FpzOFQ9scH\nqRAKaYZsZKAB/wTIhYUDNeD9UzL/+Vu/eoCMpKzUu+v4tQ3EC+KNZgbh0mU5\nRxzk\r\n=gLea\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.5.0_1536451156728_0.12514766830933355"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.1": {
+      "name": "ci-info",
+      "version": "1.5.1",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.778273,
+        12.593054
+      ],
+      "gitHead": "d2837c895da577a1a63698d97fb6a78780c1c404",
+      "_id": "ci-info@1.5.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-fKFIKXaYiL1exImwJ0AhR/6jxFPSKQBk2ayV5NiNoruUs2+rxC2kNw0EG+1Z9dugZRdCrppskQ8DN2cyaUM1Hw==",
+        "shasum": "17e8eb5de6f8b2b6038f0cbb714d410bfa9f3030",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.5.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 10584,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJblPerCRA9TVsSAnZWagAAp9EP/3VdZoPIJEXby7IgLqTM\nJ7J3sCBTPb+Oxa2kd94Sav8EQ3KcA76HfYvCT7tvtTtChNlymZGz7LNfgmSJ\ncovADvxHZ5oglqEvfLLxSqlwMtq6jGABL91thJqBit72C4RNC4Ecyolkr6CE\nDINeteOjFLlJDGAaCXbdw32+FYCyufJFNnbl1mpF6oeSil6ACtIcTwnGLu1R\nUXsTG9YJcQlDe1WZmpufdHv2i9GP/BeQD1fRIHxwjkjCNtR8Xp5knyw6Yedr\nAbJTdxMvJds8rGLGsSRvyIYR5HrAUM96PXgpwyTR2CWmGJ9u+zE7q3BCvFWq\nVtLHZGu6ew09S8d//b0V5ASaytGVzyQPavRjAQ5wibZHT9b/5pbj/sqSqJjE\njZIC/pa5dlG+Lt4sSF80R5+bm704Jmh+PX96z/aQGb2IQMoNaWVKvBsN2rod\n+AuzQZyX25RLCeFVKJLCf9SET8pTz+R9Aj3vVw+rcRh5Xdhi/E3D9w8Hc+wR\nBcsPKHjZGN6kRFHsI7Rjk8OUs5cLDtU366UNlBVMEShJYMRLEpw0N5EJI4SU\nLGZ8kEDO53Pvj0M71HadECDJVXgm+g73yoadvQaMTgCsnknCUANnIjtFqydc\n5jsSj8cUPelZ49Zg82dKnvxDr89GPHjkJ69b4ORkYpjXaRoBRZJOrzfvPCLH\nH2nw\r\n=AseE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.5.1_1536489386481_0.010115633667440393"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.0": {
+      "name": "ci-info",
+      "version": "1.6.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.778271,
+        12.593091
+      ],
+      "gitHead": "3d07175c39b07090ab939471c47ef363ea74ab97",
+      "_id": "ci-info@1.6.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-vsGdkwSCDpWmP80ncATX7iea5DWQemg1UgCW5J8tqjU3lYw4FBYuj89J0CTVomA7BEfvSZd84GmHko+MxFQU2A==",
+        "shasum": "2ca20dbb9ceb32d4524a683303313f0304b1e497",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-1.6.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 11845,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbo1wtCRA9TVsSAnZWagAANfwP/ROk4A97KwBmsJw5o/ev\nlaftMiVwnI/966mQ6Ak1GfTWx28SjLWKnE+IGKK+1dXDOoXrb6td8TCl/FUQ\n2e7khqDoPswsPtUJfJWY4dYCtS8UfvfJk6BlsMR7ebHxDc9dVpIhZ+V0MpVk\n7HdW3ay5sGoLUXenULN/8WoaRkpujVPJ9sltX25ZkEj1fvGuF33VszNAC7b5\nYXRKCPVFsMZF7APoJiMs9120tlIdw+uiT812ZY6QiwX0HlcHnYswE33h70NA\nZ7Od1js8nAWpdZi1FPiJtCQtl99iAIZboBijRhpkDILdeGR8S/f25HDTvjHW\n3oXk5/Im6hzFnPYezUs3EKf4GT92Bs4fDuCF8Sp1EoChtE+r35L09WFNRKzE\npp7L4+ZHPsszHz44z7Q84TZKtmBPX51fwoTSL//2ix1g31ZrMfYuvCA/s1Yf\n7+3IVlNMW0sUnzGepgF8+jevtOE238XcLHBrTl4LhTsSwmEyR9sRKs6xD1Lx\nQbmyBRWpsluaHnmxaQVoVxzJCz0J7RReE6/UUfGzzmeF6vrKtd6eCv2ZUECk\nSQwVW90PUjr1IgPaVa8stjq9kFxQtG0mwTS2eEO+gxM3hb0RT2t3ecdG3Zq9\n0INHULVlKDtKMXpoQ2QEV3XaZM0X2j2sqnQxuYsQHt6Al45Q43rcz/yGgjWT\nICTT\r\n=iAOM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_1.6.0_1537432620983_0.7446311114890938"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "ci-info",
+      "version": "2.0.0",
+      "description": "Get details about the current Continuous Integration environment",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^12.0.1",
+        "tape": "^4.9.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/ci-info.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/ci-info/issues"
+      },
+      "homepage": "https://github.com/watson/ci-info",
+      "coordinates": [
+        55.778231,
+        12.593179
+      ],
+      "gitHead": "18fe88088b626a6dcefc66e66fb32badb05ea216",
+      "_id": "ci-info@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.3.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==",
+        "shasum": "67a9e964be31a51e15e5010d58e6f12834002f46",
+        "tarball": "https://registry.npmjs.org/ci-info/-/ci-info-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 12808,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcCEClCRA9TVsSAnZWagAAew4P/32dPsJ9LK3e9rXxaZtj\n32KCjxPFBFTCTNQT0CYdSU0plsSDuyc0WLM+CXmlVHUDp9nSkqayo6prPQhV\n9qjDh7y0YPRSgQF+QXzMhlGafHTdkMXy3OVE/2DLSLD7DkeEe+4XL1H0sSke\n4rS/y2EtanHtkp0L7wdIrkdVveBqSMk952vkIjyT6ehqOQoz22n5HGZOJ2aD\nxkkDemY0tZwDFOcGRNMPj+3D6bvppIPt+daZEK2jCVk2rAIeTCV8UIvwpoPR\nNt+49d0q84iiV9Q1sYg6VYv7qGjLgDPXoZwFw1NEnp6bOccT5mvCV7+jPeup\nw6S92VLOFP1ovGYX8EwvYXXOzw+bjCoqGUUSNf4IuMOA736G+nWXFkIVEi4M\n+jZSr8LYLo+ehabsqseDqlCLtKrWG7hXreqSgUaFuXn+qbu3LSicaWVs2VUs\nUeddGWOVcYJuJpoVy+emVbqH9MN9rRDm18/FI6We+u6u+ES9MtxRV6wcefaM\nHOaUUKI7phseccZUIIlu5EdFAE8pnCaBB9q7yTSva7DvtaesSEH4IS99dvzQ\ndIx6ASWwq4Djkse4dybrXIMQTSMy2FSKQDabHVFG1WC7RuckSg6T4im8cN7E\nHWwBEf1SivrkTUCoJ8UsWmnZA1A0R/0MiiN2q5/DUtEq6G2BDLs914AjCgrV\npShr\r\n=Du3l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ci-info_2.0.0_1544044708403_0.40541284673323297"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# ci-info\n\nGet details about the current Continuous Integration environment.\n\nPlease [open an\nissue](https://github.com/watson/ci-info/issues/new?template=ci-server-not-detected.md)\nif your CI server isn't properly detected :)\n\n[![npm](https://img.shields.io/npm/v/ci-info.svg)](https://www.npmjs.com/package/ci-info)\n[![Build status](https://travis-ci.org/watson/ci-info.svg?branch=master)](https://travis-ci.org/watson/ci-info)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n\n## Installation\n\n```bash\nnpm install ci-info --save\n```\n\n## Usage\n\n```js\nvar ci = require('ci-info')\n\nif (ci.isCI) {\n  console.log('The name of the CI server is:', ci.name)\n} else {\n  console.log('This program is not running on a CI server')\n}\n```\n\n## Supported CI tools\n\nOfficially supported CI servers:\n\n| Name | Constant | isPR |\n|------|----------|------|\n| [AWS CodeBuild](https://aws.amazon.com/codebuild/) | `ci.CODEBUILD` | 🚫 |\n| [AppVeyor](http://www.appveyor.com) | `ci.APPVEYOR` | ✅ |\n| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `ci.AZURE_PIPELINES` | ✅ |\n| [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian | `ci.BAMBOO` | 🚫 |\n| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) | `ci.BITBUCKET` | ✅ |\n| [Bitrise](https://www.bitrise.io/) | `ci.BITRISE` | ✅ |\n| [Buddy](https://buddy.works/) | `ci.BUDDY` | ✅ |\n| [Buildkite](https://buildkite.com) | `ci.BUILDKITE` | ✅ |\n| [CircleCI](http://circleci.com) | `ci.CIRCLE` | ✅ |\n| [Cirrus CI](https://cirrus-ci.org) | `ci.CIRRUS` | ✅ |\n| [Codeship](https://codeship.com) | `ci.CODESHIP` | 🚫 |\n| [Drone](https://drone.io) | `ci.DRONE` | ✅ |\n| [dsari](https://github.com/rfinnie/dsari) | `ci.DSARI` | 🚫 |\n| [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` | 🚫 |\n| [GoCD](https://www.go.cd/) | `ci.GOCD` | 🚫 |\n| [Hudson](http://hudson-ci.org) | `ci.HUDSON` | 🚫 |\n| [Jenkins CI](https://jenkins-ci.org) | `ci.JENKINS` | ✅ |\n| [Magnum CI](https://magnum-ci.com) | `ci.MAGNUM` | 🚫 |\n| [Netlify CI](https://www.netlify.com/) | `ci.NETLIFY` | ✅ |\n| [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |\n| [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |\n| [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |\n| [Solano CI](https://www.solanolabs.com/) | `ci.SOLANO` | ✅ |\n| [Strider CD](https://strider-cd.github.io/) | `ci.STRIDER` | 🚫 |\n| [TaskCluster](http://docs.taskcluster.net) | `ci.TASKCLUSTER` | 🚫 |\n| [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains | `ci.TEAMCITY` | 🚫 |\n| [Travis CI](http://travis-ci.org) | `ci.TRAVIS` | ✅ |\n\n## API\n\n### `ci.name`\n\nReturns a string containing name of the CI server the code is running on.\nIf CI server is not detected, it returns `null`.\n\nDon't depend on the value of this string not to change for a specific\nvendor. If you find your self writing `ci.name === 'Travis CI'`, you\nmost likely want to use `ci.TRAVIS` instead.\n\n### `ci.isCI`\n\nReturns a boolean. Will be `true` if the code is running on a CI server,\notherwise `false`.\n\nSome CI servers not listed here might still trigger the `ci.isCI`\nboolean to be set to `true` if they use certain vendor neutral\nenvironment variables. In those cases `ci.name` will be `null` and no\nvendor specific boolean will be set to `true`.\n\n### `ci.isPR`\n\nReturns a boolean if PR detection is supported for the current CI server. Will\nbe `true` if a PR is being tested, otherwise `false`. If PR detection is\nnot supported for the current CI server, the value will be `null`.\n\n### `ci.<VENDOR-CONSTANT>`\n\nA vendor specific boolean constant is exposed for each support CI\nvendor. A constant will be `true` if the code is determined to run on\nthe given CI server, otherwise `false`.\n\nExamples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a\ncomplete list, see the support table above.\n\nDeprecated vendor constants that will be removed in the next major\nrelease:\n\n- `ci.TDDIUM` (Solano CI) This have been renamed `ci.SOLANO`\n\n## License\n\n[MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-08T05:32:48.012Z",
+    "created": "2016-10-20T16:01:20.750Z",
+    "1.0.0": "2016-10-20T16:01:20.750Z",
+    "1.0.1": "2017-09-04T15:30:55.785Z",
+    "1.1.0": "2017-09-05T11:33:34.768Z",
+    "1.1.1": "2017-09-05T11:53:11.571Z",
+    "1.1.2": "2017-11-17T19:11:56.371Z",
+    "1.1.3": "2018-03-12T19:51:17.183Z",
+    "1.2.0": "2018-08-14T08:28:13.186Z",
+    "1.3.0": "2018-08-14T21:20:19.004Z",
+    "1.3.1": "2018-08-16T15:47:09.554Z",
+    "1.4.0": "2018-08-20T09:57:24.747Z",
+    "1.5.0": "2018-09-08T23:59:16.943Z",
+    "1.5.1": "2018-09-09T10:36:26.599Z",
+    "1.6.0": "2018-09-20T08:37:01.113Z",
+    "2.0.0": "2018-12-05T21:18:28.926Z"
+  },
+  "homepage": "https://github.com/watson/ci-info",
+  "keywords": [
+    "ci",
+    "continuous",
+    "integration",
+    "test",
+    "detect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/ci-info.git"
+  },
+  "author": {
+    "name": "Thomas Watson Steen",
+    "email": "w@tson.dk",
+    "url": "https://twitter.com/wa7son"
+  },
+  "bugs": {
+    "url": "https://github.com/watson/ci-info/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "vdsabev": true,
+    "hualei": true
+  }
+}

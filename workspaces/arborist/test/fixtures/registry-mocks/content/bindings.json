@@ -1,0 +1,1023 @@
+{
+  "_id": "bindings",
+  "_rev": "65-b8adcff19f24c3a370fc855ab2804495",
+  "name": "bindings",
+  "description": "Helper module for loading your native module's .node file",
+  "dist-tags": {
+    "latest": "1.5.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.0.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": ">= 0.6.0"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.0.1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "47d7d976e541539cb997c2728d0dc3fef461b976",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.1.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": ">= 0.6.0"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.1.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.6.9",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "34c516b389c2ed39c06bd1d8212bc43f400f8d56",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.1.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": ">= 0.6.0"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.1.1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "212a9c27336e9d2122405ad0b19fc37f1779eedd",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.2.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": ">= 0.6.0"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.2.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.7.2",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "50425eebdcbd39cc8257b11e33d1c2babc3feb7b",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.2.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.2.1",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.0-2",
+      "_nodeVersion": "v0.7.2",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "cc314e1b6bb575b980df3d107f82f96a60e3e607",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.2.2",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.2.2",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.1",
+      "_nodeVersion": "v0.7.3",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "3e646cd70134d7beb688c18942016c3ed7b0a720",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.2.3",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.2.3",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.1",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "658de98121f38da6bcd699e8c8877e7136f7dca5",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.4": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.2.4",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.2.4",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.1",
+      "_nodeVersion": "v0.6.10",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "0b147402a7198e7d7e644d13412676d73eb5a3fe",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's bindings in a cross-platform way",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.3.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_npmUser": {
+        "name": "TooTallNate",
+        "email": "nathan@tootallnate.net"
+      },
+      "_id": "bindings@0.3.0",
+      "dependencies": {},
+      "devDependencies": {},
+      "optionalDependencies": {},
+      "_engineSupported": true,
+      "_npmVersion": "1.1.1",
+      "_nodeVersion": "v0.6.11",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "2d01b7061ca312c6600c9b512404fd3ef99c06f3",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "bindings",
+      "description": "node-bindings ============= ### Helper module for loading your native module's bindings in a cross-platform way.",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp"
+      ],
+      "version": "0.4.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "engines": {
+        "node": "*"
+      },
+      "_id": "bindings@0.4.0",
+      "dist": {
+        "shasum": "3ec1bc8aebe77c908b63908c15bd1613c865057c",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-0.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.0.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "_id": "bindings@1.0.0",
+      "dist": {
+        "shasum": "c3ccde60e9de6807c6f1aa4ef4843af29191c828",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.1.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "_id": "bindings@1.1.0",
+      "dist": {
+        "shasum": "f3cc4deec19fe31f255864eb1e6ffad857266ef0",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.12",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.1.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "_id": "bindings@1.1.1",
+      "dist": {
+        "shasum": "951f7ae010302ffc50b265b124032017ed2bf6f3",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.2",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.2.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "_id": "bindings@1.2.0",
+      "dist": {
+        "shasum": "c224fc5b349a84043779f97a6271d9d70da7636f",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.2.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "license": "MIT",
+      "gitHead": "e404152ee27f8478ccbc7122ee051246e8e5ec02",
+      "_id": "bindings@1.2.1",
+      "scripts": {},
+      "_shasum": "14ad6113812d2d37d72e67b4cacb4bb726505f11",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "maintainers": [
+        {
+          "name": "TooTallNate",
+          "email": "nathan@tootallnate.net"
+        },
+        {
+          "name": "tootallnate",
+          "email": "nathan@tootallnate.net"
+        }
+      ],
+      "dist": {
+        "shasum": "14ad6113812d2d37d72e67b4cacb4bb726505f11",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.3.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "license": "MIT",
+      "gitHead": "7fd065ee85386ad3d074d2506e03abe8f9b1588b",
+      "_id": "bindings@1.3.0",
+      "_npmVersion": "5.0.3",
+      "_nodeVersion": "8.1.3",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "dist": {
+        "integrity": "sha512-DpLh5EzMR2kzvX1KIlVC0VkC3iZtHKTgdtZ0a3pglBZdaQFjt5S9g9xd1lE+YvXyfd6mtCeRnrUfOLYiTMlNSw==",
+        "shasum": "b346f6ecf6a95f5a815c5839fc7cdb22502f1ed7",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bindings-1.3.0.tgz_1500923768710_0.3334669852629304"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.3.1",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "license": "MIT",
+      "gitHead": "81ba74973e97ff2e42aa4bbae8de057ae62e9387",
+      "_id": "bindings@1.3.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "dist": {
+        "integrity": "sha512-i47mqjF9UbjxJhxGf+pZ6kSxrnI3wBLlnGI2ArWJ4r0VrvDS7ZYXkprq/pLaBWYq4GM0r4zdHY+NNRqEMU7uew==",
+        "shasum": "21fc7c6d67c18516ec5aaa2815b145ff77b26ea5",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.3.1.tgz",
+        "fileCount": 3,
+        "unpackedSize": 9107,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb/FxZCRA9TVsSAnZWagAAhVQP/jQl2mQD1vWSzK5/xAf5\njtcv2Vhixd7Tp8a/ZzjU1e/hKWa7GtlGgKd1c5T3LcPuBJYOXDIH8VRtWo3U\n9xxQl9+1E2JuA8p9Yps/HwKGbOSTPtYft8i6w0S9RgpTXpwM5duDOso9bPLC\nqUmP6zaD71FOx6g5f9vlw8NL9pHTANLcHEqV2m8YWDSEXRTC8dUw3qnYtvAd\nfGy9lpw/JQaC4QGny5xuy4u+cfuP6WIyWusM72jQKWIr1tdGrGPWDApLqH5j\nEVuC10tt5bkN4qzW59BZ74YRr42SEraC/UZt6d4rzHc8N2rGoNiCg0zIBNgb\nYTbiF9aIFq9gnU0Zn97idQZ33Gk5Ici4IS4/JGwQhjJ1u2zj0qnVV7uE7BIm\nJazUdbPvKbYGRZqOXEJYe8lhkvuwzud94bLDi5k0whTX3cdVm1iP8gHMXn7R\nB1D4yZZRUP8/e/m/2jDX+FNi3IenmX+vAQGPi6myTeaedbP8q/PN3XPBdRZ+\nSQ+Oie89Lj5v4m1cMErNWl9n9E71me8d8a3Yn9Tu+2o1w/FGvVmXEuCjD3qL\nVCyoeXYSsewCsknRoUr+ST8v0UnmL6g1crbUtBxaFNwcubjvddb45FkEK2r1\n5RR/yg6ZU0sZ+2KR/XLI26mG/sLP/y9tKA7XEMOj406h8mNi3N1fFcKbHmU/\nYaFQ\r\n=z9PJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bindings_1.3.1_1543265368475_0.5592200215369445"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.4.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "license": "MIT",
+      "dependencies": {
+        "file-uri-to-path": "1.0.0"
+      },
+      "gitHead": "e1213580fa8fc308114f1f0c38725d627937c5b2",
+      "_id": "bindings@1.4.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "dist": {
+        "integrity": "sha512-7znEVX22Djn+nYjxCWKDne0RRloa9XfYa84yk3s+HkE3LpDYZmhArYr9O9huBoHY3/oXispx5LorIX7Sl2CgSQ==",
+        "shasum": "909efa49f2ebe07ecd3cb136778f665052040127",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.4.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11128,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcSOE7CRA9TVsSAnZWagAAHPsQAJlhGhAXnyI5bPhXia5F\nYnMO6gDwWdu+nj+i6Cf348sMJ/mjBsDdU8LpWCk0d50BSYpG5s9ObC/aC3QT\n5lMKq9ENExLl171VgP2LSNW3Q96Eqnj9imYQC/To1Vd7QEGcSH7Am45yI6UA\nU4Trj/g8h2dKUcqUrfuoYiMPb4kTS5+eU5nCd9uIxyJa+hgrgeJ8GjNIMzks\nMnoFrJwcPChd55yH8UDfy6rTPvixqSPdtGbyyypcAmAOZptIpNVoRIuEKcj/\n/q6RwYcMzc75dRFDRkd3uHEBM5XdyWHtBSWIPCzVr5Ld+7x/P3g2yLiUgLmj\njNykprjacj3L/fYqY6ltulXZiRsPKLNCLChtILLrMcuDVzcARITJEmiFMkmt\nkdOOZk8qKl2cGt2+YFV236piSUTYfp3N+D3SYVrgW/27lgc/v3IqvbtFwdV5\ntA93F0u6BRcCa9sgNl1ZXCrXE92/QeiYo0JXsElASKVMtmRYwqRVwk9E7q1t\nAnhdRu9b4UNxbi5TTA3v36KsOfgboPL9ln9uNB+bfWbbASICgT8VOQSHBoeH\nF0pzWJv/zKzpmQR+8NVy69dBmCz3dLX6YqrvTf+qnI6U/bDS3qTl20Ez4PfU\n0a8DoVRA3xBz0rgmEVqPYM4Tzt0cwCueumoMDsJ3cBBr/07b7+3+GZSw1Yy/\n48dv\r\n=1BNK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bindings_1.4.0_1548280122416_0.6999840321496205"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.0": {
+      "name": "bindings",
+      "description": "Helper module for loading your native module's .node file",
+      "keywords": [
+        "native",
+        "addon",
+        "bindings",
+        "gyp",
+        "waf",
+        "c",
+        "c++"
+      ],
+      "version": "1.5.0",
+      "author": {
+        "name": "Nathan Rajlich",
+        "email": "nathan@tootallnate.net",
+        "url": "http://tootallnate.net"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/TooTallNate/node-bindings.git"
+      },
+      "main": "./bindings.js",
+      "bugs": {
+        "url": "https://github.com/TooTallNate/node-bindings/issues"
+      },
+      "homepage": "https://github.com/TooTallNate/node-bindings",
+      "license": "MIT",
+      "dependencies": {
+        "file-uri-to-path": "1.0.0"
+      },
+      "gitHead": "bcdc7cadf839ef84c9bd9e21c697f2a727b2b1d3",
+      "_id": "bindings@1.5.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "tootallnate",
+        "email": "nathan@tootallnate.net"
+      },
+      "dist": {
+        "integrity": "sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==",
+        "shasum": "10353c9e945334bc0511a6d90b38fbc7c9c504df",
+        "tarball": "https://registry.npmjs.org/bindings/-/bindings-1.5.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 11230,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdxU0CRA9TVsSAnZWagAA8woP/iZQzUdSp2KE6NlY8BIs\nX6bpJ0taAvKOPpmyf173+PRd3csu4POuROZYQRS0SH62XApfwJEm/4N9GwnM\nJlky/urUw9py0w/U5hVejperQcgyovc5f1Wjr6VB8Rj+uuH/hnnEqa5ExQZv\n6BDsFgPf4B1TIBladuqra6EDkLCLD5jX8rlhDVCnQwwJcgrpYRz8W6jmO3p6\nvypvViUQyC/9R1lpecxaQk5aKZQnS6+CMXeYCUI0DzksqC0ZtuRQVL0akJ47\nFF+naaaOcJO0SnqJ/KVbfQcp//KzAaj0prq324UvZCtOteZgyfLUclzQ6DeW\noS7fnWHD83gDaqVQzm4TH7I4OnTizh+A4jpcaMEGFEeROXwC/SlR/S/sUBj4\n25Gfrp9PDAZL/j5w0RNi9zZZSQfPgcVMv9kTnSzOcp80drLAZYuotRqvtRNq\nxwUSmB8maQLjW/m2ZREvMb31vmDanpqy/Ve3VkepwM/uPjduwsChb9QT3veq\nlNraiUCX4lLBHcy00xTHq0R14EI2klC954Ao97+LLlwfb2Vb9D/V3OmlauRu\nDZGQAVR5Z0OteKGeNQUFuM+f819THz0Uixba9XbbAmJq8u8SLK/3TzwOt4Hz\nWpxLogiRd021itDxKElr33Mtb4FbR7dnbQxkfu36y6WRIRF3oJH1JUMhHRYc\npGp7\r\n=e5yW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "nathan@tootallnate.net",
+          "name": "tootallnate"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/bindings_1.5.0_1551308084120_0.9910986257879217"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "node-bindings\n=============\n### Helper module for loading your native module's `.node` file\n\nThis is a helper module for authors of Node.js native addon modules.\nIt is basically the \"swiss army knife\" of `require()`ing your native module's\n`.node` file.\n\nThroughout the course of Node's native addon history, addons have ended up being\ncompiled in a variety of different places, depending on which build tool and which\nversion of node was used. To make matters worse, now the `gyp` build tool can\nproduce either a __Release__ or __Debug__ build, each being built into different\nlocations.\n\nThis module checks _all_ the possible locations that a native addon would be built\nat, and returns the first one that loads successfully.\n\n\nInstallation\n------------\n\nInstall with `npm`:\n\n``` bash\n$ npm install --save bindings\n```\n\nOr add it to the `\"dependencies\"` section of your `package.json` file.\n\n\nExample\n-------\n\n`require()`ing the proper bindings file for the current node version, platform\nand architecture is as simple as:\n\n``` js\nvar bindings = require('bindings')('binding.node')\n\n// Use your bindings defined in your C files\nbindings.your_c_function()\n```\n\n\nNice Error Output\n-----------------\n\nWhen the `.node` file could not be loaded, `node-bindings` throws an Error with\na nice error message telling you exactly what was tried. You can also check the\n`err.tries` Array property.\n\n```\nError: Could not load the bindings file. Tried:\n → /Users/nrajlich/ref/build/binding.node\n → /Users/nrajlich/ref/build/Debug/binding.node\n → /Users/nrajlich/ref/build/Release/binding.node\n → /Users/nrajlich/ref/out/Debug/binding.node\n → /Users/nrajlich/ref/Debug/binding.node\n → /Users/nrajlich/ref/out/Release/binding.node\n → /Users/nrajlich/ref/Release/binding.node\n → /Users/nrajlich/ref/build/default/binding.node\n → /Users/nrajlich/ref/compiled/0.8.2/darwin/x64/binding.node\n    at bindings (/Users/nrajlich/ref/node_modules/bindings/bindings.js:84:13)\n    at Object.<anonymous> (/Users/nrajlich/ref/lib/ref.js:5:47)\n    at Module._compile (module.js:449:26)\n    at Object.Module._extensions..js (module.js:467:10)\n    at Module.load (module.js:356:32)\n    at Function.Module._load (module.js:312:12)\n    ...\n```\n\nThe searching for the `.node` file will originate from the first directory in which has a `package.json` file is found.\n\nLicense\n-------\n\n(The MIT License)\n\nCopyright (c) 2012 Nathan Rajlich &lt;nathan@tootallnate.net&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "email": "nathan@tootallnate.net",
+      "name": "tootallnate"
+    }
+  ],
+  "time": {
+    "modified": "2019-02-27T22:54:46.886Z",
+    "created": "2012-01-28T22:29:53.409Z",
+    "0.0.1": "2012-01-28T22:29:54.674Z",
+    "0.1.0": "2012-01-30T05:21:01.149Z",
+    "0.1.1": "2012-02-04T00:12:39.290Z",
+    "0.2.0": "2012-02-07T01:33:09.621Z",
+    "0.2.1": "2012-02-07T02:38:46.274Z",
+    "0.2.2": "2012-02-12T01:46:40.563Z",
+    "0.2.3": "2012-02-14T17:28:06.105Z",
+    "0.2.4": "2012-02-15T18:40:22.228Z",
+    "0.3.0": "2012-02-28T19:39:05.034Z",
+    "0.4.0": "2012-06-25T18:40:06.605Z",
+    "1.0.0": "2012-07-18T18:49:12.866Z",
+    "1.1.0": "2013-03-07T09:16:27.293Z",
+    "1.1.1": "2013-07-11T05:05:03.115Z",
+    "1.2.0": "2014-04-04T06:27:01.504Z",
+    "1.2.1": "2014-06-28T18:13:25.303Z",
+    "1.3.0": "2017-07-24T19:16:08.991Z",
+    "1.3.1": "2018-11-26T20:49:28.621Z",
+    "1.4.0": "2019-01-23T21:48:42.499Z",
+    "1.5.0": "2019-02-27T22:54:44.325Z"
+  },
+  "author": {
+    "name": "Nathan Rajlich",
+    "email": "nathan@tootallnate.net",
+    "url": "http://tootallnate.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TooTallNate/node-bindings.git"
+  },
+  "users": {
+    "fgribreau": true,
+    "werle": true,
+    "tootallnate": true,
+    "stdarg": true,
+    "jalcine": true,
+    "guananddu": true,
+    "mastayoda": true,
+    "whitelynx": true,
+    "panlw": true,
+    "pgilad": true,
+    "pandao": true,
+    "magicxiao85": true,
+    "cocopas": true,
+    "lestad": true,
+    "princetoad": true,
+    "evanjbowling": true,
+    "lukicdarkoo": true,
+    "nohomey": true,
+    "steel1990": true,
+    "kodekracker": true,
+    "zwwggg": true,
+    "2lach": true,
+    "xtx1130": true,
+    "sn0wdr1am": true
+  },
+  "homepage": "https://github.com/TooTallNate/node-bindings",
+  "keywords": [
+    "native",
+    "addon",
+    "bindings",
+    "gyp",
+    "waf",
+    "c",
+    "c++"
+  ],
+  "bugs": {
+    "url": "https://github.com/TooTallNate/node-bindings/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
+}

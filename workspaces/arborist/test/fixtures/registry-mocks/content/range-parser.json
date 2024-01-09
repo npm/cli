@@ -1,0 +1,803 @@
+{
+  "_id": "range-parser",
+  "_rev": "37-b40ccccaf5dbba422755f7105073a391",
+  "name": "range-parser",
+  "description": "Range header field string parser",
+  "dist-tags": {
+    "latest": "1.2.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "0.0.1",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "range-parser@0.0.1",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.24",
+      "_nodeVersion": "v0.6.19",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "dec6a8b9792caaef485e733b75b5b73fc7095770",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "0.0.2",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "range-parser@0.0.2",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.19",
+      "_nodeVersion": "v0.6.16",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "034fafbd8b266f64d8effe8fa638392b2290b288",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "0.0.3",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "range-parser@0.0.3",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.19",
+      "_nodeVersion": "v0.6.16",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "6e6488fb73843bd4bd626797f76b870da9765ae9",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "0.0.4",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "_id": "range-parser@0.0.4",
+      "optionalDependencies": {},
+      "engines": {
+        "node": "*"
+      },
+      "_engineSupported": true,
+      "_npmVersion": "1.1.19",
+      "_nodeVersion": "v0.6.16",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "c0427ffef51c10acba0782a46c9602e744ff620b",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-0.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.0.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/visionmedia/node-range-parser.git"
+      },
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "mocha": "*",
+        "should": "*"
+      },
+      "licenses": [
+        {
+          "type": "MIT",
+          "url": "https://github.com/visionmedia/node-range-parser#license"
+        }
+      ],
+      "bugs": {
+        "url": "https://github.com/visionmedia/node-range-parser/issues"
+      },
+      "_id": "range-parser@1.0.0",
+      "dist": {
+        "shasum": "a4b264cfe0be5ce36abe3765ac9c2a248746dbc0",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.30",
+      "_npmUser": {
+        "name": "tjholowaychuk",
+        "email": "tj@vision-media.ca"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.0.1",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/range-parser"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1",
+        "should": "2"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --reporter spec --require should",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --require should",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --require should"
+      },
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "files": [
+        "index.js"
+      ],
+      "gitHead": "9d84686c20af96aef0941d90cf254b31d6172049",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser",
+      "_id": "range-parser@1.0.1",
+      "_shasum": "f9da15b7451fe1b261959b63342dd92921d34da2",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "jongleberry",
+        "email": "jonathanrichardong@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f9da15b7451fe1b261959b63342dd92921d34da2",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.0.2",
+      "license": "MIT",
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/range-parser"
+      },
+      "devDependencies": {
+        "istanbul": "0",
+        "mocha": "1",
+        "should": "2"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec --require should",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --require should",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot --require should"
+      },
+      "gitHead": "ae23b02ce705b56e7f7c48e832d41fa710227ecc",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser",
+      "_id": "range-parser@1.0.2",
+      "_shasum": "06a12a42e5131ba8e457cd892044867f2344e549",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "06a12a42e5131ba8e457cd892044867f2344e549",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.0.3",
+      "license": "MIT",
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/range-parser"
+      },
+      "devDependencies": {
+        "istanbul": "0.4.0",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+      },
+      "gitHead": "18e46a3de74afff9f4e22717f11ddd6e9aa6d845",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser",
+      "_id": "range-parser@1.0.3",
+      "_shasum": "6872823535c692e2c2a0103826afd82c2e0ff175",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6872823535c692e2c2a0103826afd82c2e0ff175",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.1.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/range-parser"
+      },
+      "devDependencies": {
+        "eslint": "2.9.0",
+        "eslint-config-standard": "5.3.1",
+        "eslint-plugin-promise": "1.1.0",
+        "eslint-plugin-standard": "1.3.2",
+        "istanbul": "0.4.3",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint **/*.js",
+        "test": "mocha --reporter spec",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+      },
+      "gitHead": "82089bc84646dc4165985f77798e91d3afc97f3c",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser",
+      "_id": "range-parser@1.1.0",
+      "_shasum": "425c2c5bf8b159d89513fe55f26c29d07b88512b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "dist": {
+        "shasum": "425c2c5bf8b159d89513fe55f26c29d07b88512b",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/range-parser-1.1.0.tgz_1463166914433_0.4869228946045041"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.2.0",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "James Wyatt Cready",
+          "email": "wyatt.cready@lanetix.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jshttp/range-parser"
+      },
+      "devDependencies": {
+        "eslint": "2.11.1",
+        "eslint-config-standard": "5.3.1",
+        "eslint-plugin-promise": "1.1.0",
+        "eslint-plugin-standard": "1.3.2",
+        "istanbul": "0.4.3",
+        "mocha": "1.21.5"
+      },
+      "files": [
+        "HISTORY.md",
+        "LICENSE",
+        "index.js"
+      ],
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint **/*.js",
+        "test": "mocha --reporter spec",
+        "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+        "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
+      },
+      "gitHead": "0665aca31639d799dee1d35fb10970799559ec48",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser",
+      "_id": "range-parser@1.2.0",
+      "_shasum": "f49be6b487894ddc40dcc94a322f611092e00d5e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "maintainers": [
+        {
+          "name": "dougwilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "jonathanong",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "jongleberry",
+          "email": "jonathanrichardong@gmail.com"
+        },
+        {
+          "name": "tjholowaychuk",
+          "email": "tj@vision-media.ca"
+        }
+      ],
+      "dist": {
+        "shasum": "f49be6b487894ddc40dcc94a322f611092e00d5e",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/range-parser-1.2.0.tgz_1464803293097_0.6830497414339334"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "range-parser",
+      "author": {
+        "name": "TJ Holowaychuk",
+        "email": "tj@vision-media.ca",
+        "url": "http://tjholowaychuk.com"
+      },
+      "description": "Range header field string parser",
+      "version": "1.2.1",
+      "contributors": [
+        {
+          "name": "Douglas Christopher Wilson",
+          "email": "doug@somethingdoug.com"
+        },
+        {
+          "name": "James Wyatt Cready",
+          "email": "wyatt.cready@lanetix.com"
+        },
+        {
+          "name": "Jonathan Ong",
+          "email": "me@jongleberry.com",
+          "url": "http://jongleberry.com"
+        }
+      ],
+      "license": "MIT",
+      "keywords": [
+        "range",
+        "parser",
+        "http"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jshttp/range-parser.git"
+      },
+      "devDependencies": {
+        "deep-equal": "1.0.1",
+        "eslint": "5.16.0",
+        "eslint-config-standard": "12.0.0",
+        "eslint-plugin-markdown": "1.0.0",
+        "eslint-plugin-import": "2.17.2",
+        "eslint-plugin-node": "8.0.1",
+        "eslint-plugin-promise": "4.1.1",
+        "eslint-plugin-standard": "4.0.0",
+        "mocha": "6.1.4",
+        "nyc": "14.1.1"
+      },
+      "engines": {
+        "node": ">= 0.6"
+      },
+      "scripts": {
+        "lint": "eslint --plugin markdown --ext js,md .",
+        "test": "mocha --reporter spec",
+        "test-cov": "nyc --reporter=html --reporter=text npm test",
+        "test-travis": "nyc --reporter=text npm test"
+      },
+      "gitHead": "0f56ff8d4b579599f9f225f0a19f4ef1628c585f",
+      "bugs": {
+        "url": "https://github.com/jshttp/range-parser/issues"
+      },
+      "homepage": "https://github.com/jshttp/range-parser#readme",
+      "_id": "range-parser@1.2.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "dougwilson",
+        "email": "doug@somethingdoug.com"
+      },
+      "dist": {
+        "integrity": "sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==",
+        "shasum": "3cf37023d199e1c24d1a55b84800c2f3e6468031",
+        "tarball": "https://registry.npmjs.org/range-parser/-/range-parser-1.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8457,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc1hb6CRA9TVsSAnZWagAA6MIP/2aFx73ToT5iGRN0mgZw\nLy7BEmRQkblBxo81k9Cvjt8jucfv/PtDUllITbke596JI/jHnb5oU5XV5Fzd\nK1WklG8rJC9z1y9iEaEe4pRcnvkPvkHtFMmPcYS9dm5XQyYw9fYcApRl/6zH\neuV/1CtwzQnCCErvfmolfSQ13v1d4LyWwrMRcG79uOGYBm8XSuTb3fKrEbBj\n3Gms6SQA2mC5ntKrf6VQRXzWvGIvWp2Q3RGFkgI1fnEPFfq7DbNqvHiD+KV4\nXV2wOD6B8pBlpbpSdNMHfUBSVSMHqFv9rOJqJumBAEZeUcwQzO06/2kUw5/f\nWCaFTHYTMCvSNX9qg71EoRZuuvNS0E53quFagdmTxq2vf04vz01PgRc5G64m\nTlz07gVHos3CQ9fU4NP0Aim1rtgOLJj15IF+z/kSSQoQZ6DhW5aTs8zCa3AS\nk4xWFafBuzyG1ApCSJrRCsqzY+oRqHPyTSZx5fBv75qZIEKe4moBpJ6EkaqZ\nRc6EqCpJjwOZVOssoPN3RiP+f/g43ytkVmUoYSXTs2bpkwNQUJShg2ItsT55\nkxkfZx8YbNxkFKp8S/uwUGQjbmXXspWozrkKNHikpzWMgDmuj9k2fx3LPo0c\nDSEq295fDQlKdxcfuGpOkH1PSzMHuIef26IGNDjMlOyBSY2FrQJaxpYtpQYq\nw1FC\r\n=GGKV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "doug@somethingdoug.com",
+          "name": "dougwilson"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jonathanong"
+        },
+        {
+          "email": "jonathanrichardong@gmail.com",
+          "name": "jongleberry"
+        },
+        {
+          "email": "tj@vision-media.ca",
+          "name": "tjholowaychuk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/range-parser_1.2.1_1557534457659_0.5973624508825055"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# range-parser\n\n[![NPM Version][npm-version-image]][npm-url]\n[![NPM Downloads][npm-downloads-image]][npm-url]\n[![Node.js Version][node-image]][node-url]\n[![Build Status][travis-image]][travis-url]\n[![Test Coverage][coveralls-image]][coveralls-url]\n\nRange header field parser.\n\n## Installation\n\nThis is a [Node.js](https://nodejs.org/en/) module available through the\n[npm registry](https://www.npmjs.com/). Installation is done using the\n[`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):\n\n```sh\n$ npm install range-parser\n```\n\n## API\n\n<!-- eslint-disable no-unused-vars -->\n\n```js\nvar parseRange = require('range-parser')\n```\n\n### parseRange(size, header, options)\n\nParse the given `header` string where `size` is the maximum size of the resource.\nAn array of ranges will be returned or negative numbers indicating an error parsing.\n\n  * `-2` signals a malformed header string\n  * `-1` signals an unsatisfiable range\n\n<!-- eslint-disable no-undef -->\n\n```js\n// parse header from request\nvar range = parseRange(size, req.headers.range)\n\n// the type of the range\nif (range.type === 'bytes') {\n  // the ranges\n  range.forEach(function (r) {\n    // do something with r.start and r.end\n  })\n}\n```\n\n#### Options\n\nThese properties are accepted in the options object.\n\n##### combine\n\nSpecifies if overlapping & adjacent ranges should be combined, defaults to `false`.\nWhen `true`, ranges will be combined and returned as if they were specified that\nway in the header.\n\n<!-- eslint-disable no-undef -->\n\n```js\nparseRange(100, 'bytes=50-55,0-10,5-10,56-60', { combine: true })\n// => [\n//      { start: 0,  end: 10 },\n//      { start: 50, end: 60 }\n//    ]\n```\n\n## License\n\n[MIT](LICENSE)\n\n[coveralls-image]: https://badgen.net/coveralls/c/github/jshttp/range-parser/master\n[coveralls-url]: https://coveralls.io/r/jshttp/range-parser?branch=master\n[node-image]: https://badgen.net/npm/node/range-parser\n[node-url]: https://nodejs.org/en/download\n[npm-downloads-image]: https://badgen.net/npm/dm/range-parser\n[npm-url]: https://npmjs.org/package/range-parser\n[npm-version-image]: https://badgen.net/npm/v/range-parser\n[travis-image]: https://badgen.net/travis/jshttp/range-parser/master\n[travis-url]: https://travis-ci.org/jshttp/range-parser\n",
+  "maintainers": [
+    {
+      "email": "doug@somethingdoug.com",
+      "name": "dougwilson"
+    },
+    {
+      "email": "jonathanrichardong@gmail.com",
+      "name": "jonathanong"
+    },
+    {
+      "email": "jonathanrichardong@gmail.com",
+      "name": "jongleberry"
+    },
+    {
+      "email": "tj@vision-media.ca",
+      "name": "tjholowaychuk"
+    }
+  ],
+  "time": {
+    "modified": "2019-05-11T00:27:40.264Z",
+    "created": "2012-06-11T16:08:20.957Z",
+    "0.0.1": "2012-06-11T16:08:22.373Z",
+    "0.0.2": "2012-06-18T00:15:02.069Z",
+    "0.0.3": "2012-06-18T00:28:29.754Z",
+    "0.0.4": "2012-06-18T00:56:34.968Z",
+    "1.0.0": "2013-12-11T20:35:49.123Z",
+    "1.0.1": "2014-09-08T01:00:41.796Z",
+    "1.0.2": "2014-09-09T02:45:20.606Z",
+    "1.0.3": "2015-10-29T23:12:00.478Z",
+    "1.1.0": "2016-05-13T19:15:16.506Z",
+    "1.2.0": "2016-06-01T17:48:14.367Z",
+    "1.2.1": "2019-05-11T00:27:37.805Z"
+  },
+  "author": {
+    "name": "TJ Holowaychuk",
+    "email": "tj@vision-media.ca",
+    "url": "http://tjholowaychuk.com"
+  },
+  "users": {
+    "m42am": true,
+    "abdul": true,
+    "simplyianm": true,
+    "shavyg2": true,
+    "glebec": true,
+    "mojaray2k": true,
+    "gpuente": true,
+    "hualei": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jshttp/range-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jshttp/range-parser/issues"
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jshttp/range-parser#readme",
+  "keywords": [
+    "range",
+    "parser",
+    "http"
+  ],
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Douglas Christopher Wilson",
+      "email": "doug@somethingdoug.com"
+    },
+    {
+      "name": "James Wyatt Cready",
+      "email": "wyatt.cready@lanetix.com"
+    },
+    {
+      "name": "Jonathan Ong",
+      "email": "me@jongleberry.com",
+      "url": "http://jongleberry.com"
+    }
+  ]
+}

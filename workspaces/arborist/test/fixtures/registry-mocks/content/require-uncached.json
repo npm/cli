@@ -1,0 +1,279 @@
+{
+  "_id": "require-uncached",
+  "_rev": "21-7d8cdd462df1bef0acbce71d2f2be58b",
+  "name": "require-uncached",
+  "description": "Require a module bypassing the cache",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.2": {
+      "name": "require-uncached",
+      "version": "1.0.2",
+      "description": "Require a module bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/require-uncached"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "caller-path": "^0.1.0",
+        "resolve-from": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.3"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/require-uncached/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/require-uncached",
+      "_id": "require-uncached@1.0.2",
+      "_shasum": "67dad3b733089e77030124678a459589faf6a7ec",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67dad3b733089e77030124678a459589faf6a7ec",
+        "tarball": "https://registry.npmjs.org/require-uncached/-/require-uncached-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "require-uncached",
+      "version": "1.0.3",
+      "description": "Require a module bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/require-uncached.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "heapdump": "node heapdump.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "caller-path": "^0.1.0",
+        "resolve-from": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "^0.16.0",
+        "heapdump": "^0.3.7"
+      },
+      "xo": {
+        "rules": {
+          "import/no-dynamic-require": "off"
+        }
+      },
+      "gitHead": "c56e296e0028357629ea27c61c591c67e818db5f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/require-uncached/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/require-uncached#readme",
+      "_id": "require-uncached@1.0.3",
+      "_shasum": "4e0d56d6c9662fd31e43011c4b95aa49955421d3",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4e0d56d6c9662fd31e43011c4b95aa49955421d3",
+        "tarball": "https://registry.npmjs.org/require-uncached/-/require-uncached-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/require-uncached-1.0.3.tgz_1478234613915_0.2802360118366778"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "require-uncached",
+      "version": "2.0.0",
+      "description": "Require a module bypassing the cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/require-uncached.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava",
+        "heapdump": "node heapdump.js"
+      },
+      "keywords": [
+        "require",
+        "cache",
+        "uncache",
+        "uncached",
+        "module",
+        "fresh",
+        "bypass"
+      ],
+      "dependencies": {
+        "caller-path": "^0.1.0",
+        "resolve-from": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "^0.16.0",
+        "heapdump": "^0.3.7"
+      },
+      "xo": {
+        "rules": {
+          "import/no-dynamic-require": "off"
+        }
+      },
+      "gitHead": "c56e296e0028357629ea27c61c591c67e818db5f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/require-uncached/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/require-uncached#readme",
+      "_id": "require-uncached@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-rPv1//BQwg4gzIbpJcKXWIfjDJEtgS8jzbsNoLcdVSE5FpBzKEKKuoG6MfCbLC28ZTv+qlQWC9/K7J5GBGPSMg==",
+        "shasum": "ad54186d77fecf07b63d82f8dd7aad448863b06d",
+        "tarball": "https://registry.npmjs.org/require-uncached/-/require-uncached-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3530,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb4+58CRA9TVsSAnZWagAAdIcP/jcaHA19EWy3wthOo6jY\nRWrvmTOIMQr/MBahtcKgwR1ILMBMfgn4SDg4z/yCy5srB40Tliiu1dxb0pB2\n7asonoF+S5QcYIUi7UUYzCrBvOa4fyJaJA2CDh5sVO8Gw2/BQhazqyh6po3N\n7w2eSgM8t3AFWG7UgZG6pIWyrEIOy0XW9rA9yo798Z+7AYWbZwermIusnbvq\ndTiL9kz7R4rVqICLg302Ahrgx9SNlPARFC7jFUhcM8x+TJJUzZKXzNAq0pH/\nMX0vKdTJ+I/ybvdhp2r7Yy4mLlMkmG6bkJzHW6qHyXuBiNtGMjJmcZQ5VViL\nNZU4ATjo3kxFe0MbiEjIUYdOmIiVRcLQzuRtYFJsgpCrJIf/isi+kTWgmX/A\nxkIUv5N1CVdyjFw9DMbIF1JQR9LT2HquOFpL8l3UOfhXv5fEQ9izfrwcT4ei\n8CEP33fLkmgfgehVsMN/AYwAVk7p5EKO1JAuDKFRbmRBvAjZZ9utM8bhyyd3\ntamU9yXS97lP9ZTUojAYfO+kEdaA54rhtaU5gEpeB4EOiyub6JEvvwP4KD/K\nCMkhJ9BDzwI1FgV3u7Ae/kJbSnfTn3LGRGVujJzJCV677ueXVFQXLGR8x9Qs\noIdJDWQd4+q5mWaknE4ZD5le83vktasBMb+Evu7EX/aPeloWN9j3lkhFMg2c\nrdTe\r\n=5ljA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/require-uncached_2.0.0_1541664379309_0.02037256681069466"
+      },
+      "_hasShrinkwrap": false,
+      "deprecated": "Renamed to `import-fresh`."
+    }
+  },
+  "readme": "# require-uncached [![Build Status](https://travis-ci.org/sindresorhus/require-uncached.svg?branch=master)](https://travis-ci.org/sindresorhus/require-uncached)\n\n> Require a module bypassing the [cache](https://nodejs.org/api/modules.html#modules_caching)\n\nUseful for testing purposes when you need to freshly require a module.\n\n\n## Install\n\n```\n$ npm install --save require-uncached\n```\n\n\n## Usage\n\n```js\n// foo.js\nlet i = 0;\nmodule.exports = () => ++i;\n```\n\n```js\nconst requireUncached = require('require-uncached');\n\nrequire('./foo')();\n//=> 1\n\nrequire('./foo')();\n//=> 2\n\nrequireUncached('./foo')();\n//=> 1\n\nrequireUncached('./foo')();\n//=> 1\n```\n\n\n## Related\n\n- [clear-require](https://github.com/sindresorhus/clear-require) - Clear a module from the require cache\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-05T09:37:28.672Z",
+    "created": "2014-07-19T22:24:20.806Z",
+    "1.0.0": "2014-07-19T22:24:20.806Z",
+    "1.0.1": "2014-07-19T22:43:31.521Z",
+    "1.0.2": "2014-07-20T00:37:08.849Z",
+    "1.0.3": "2016-11-04T04:43:34.148Z",
+    "2.0.0": "2018-11-08T08:06:19.445Z"
+  },
+  "homepage": "https://github.com/sindresorhus/require-uncached#readme",
+  "keywords": [
+    "require",
+    "cache",
+    "uncache",
+    "uncached",
+    "module",
+    "fresh",
+    "bypass"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/require-uncached.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/require-uncached/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "stringparser": true,
+    "stanzhai": true,
+    "jonabrams": true,
+    "nickeltobias": true,
+    "rocket0191": true,
+    "heartnett": true,
+    "robmcguinness": true,
+    "zuojiang": true
+  }
+}

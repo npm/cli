@@ -1,0 +1,362 @@
+{
+  "_id": "iterate-value",
+  "_rev": "2-440524d71422a90602ee1e132e526335",
+  "name": "iterate-value",
+  "dist-tags": {
+    "latest": "1.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "iterate-value",
+      "version": "1.0.0",
+      "description": "Iterate any iterable JS value. Works robustly in all environments, all versions.",
+      "main": "index.js",
+      "exports": [
+        {
+          "default": "./index.js"
+        },
+        "./index.js"
+      ],
+      "type": "commonjs",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "tests-only": "node test",
+        "posttest": "npx aud",
+        "test": "npm run tests-only",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ljharb/iterate-value.git"
+      },
+      "keywords": [
+        "iterate",
+        "map",
+        "set",
+        "collection",
+        "string",
+        "array",
+        "es2015",
+        "es6",
+        "iterator",
+        "symbol.iterator",
+        "symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/iterate-value/issues"
+      },
+      "homepage": "https://github.com/ljharb/iterate-value#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "eslint": "^6.7.1",
+        "for-each": "^0.3.3",
+        "has-bigints": "^1.0.0",
+        "has-symbols": "^1.0.1",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "dependencies": {
+        "es-get-iterator": "^1.0.0"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "7d5d1d34f91db9c2a080ba645b8341b00fcb5994",
+      "_id": "iterate-value@1.0.0",
+      "_nodeVersion": "13.2.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-1wabWdgALXxn9SStGM9Pj3Pi1htYmtqDWCdBD/QC35HSUCoK1KrPJRXrgmMLaeUNitnADh5SCOQtAnueMZeRVw==",
+        "shasum": "9cbde71d1bd3123f82c8d5476563727eca420a98",
+        "tarball": "https://registry.npmjs.org/iterate-value/-/iterate-value-1.0.0.tgz",
+        "fileCount": 10,
+        "unpackedSize": 13212,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3f+GCRA9TVsSAnZWagAAT8cP/Ri60Ww4pb+tOxNpHkv2\noqxzZvmlHYDSLWr0j9E0mqkYErxQa694uYODIbyDl6dr6wh6QVmWgSNeN68y\nI+vRlN+N3gKjvnYFN9JArtV4LKaWnTPDNk9DhuKsy616CMgiQklKi+OMbffp\nTd3PNWhZQhuJBac8sAa/w35cR2zBBAG/aoOrGv5Ka/T6pstVo8JjZRcUhnF3\naKGXSnJ3OEDGFcvXgj48d8Bnq6SoJCZq0yb46A/r9uAskSQJzsTjaE3Cw4gS\nFm5BYsCHUvi0j6DM0tWyM0RiE9P3MHp99E2T1JJNHtV+9mgyvqpfQGVqqf1t\nex5KqEHqCJGlj2qLjymTPzjD5IohBg26MhZA7OrQ5CjUjnMaLniP6Ucq7Gae\nG09uyft3tuKJLTeLTLxIKJ4KCGNBQlx+JRae0E1VSkuI0i0uAOhJgi0pkJCG\nBYa7Ydx0Ec0H8Ky1AAvQqjRWA8jqVQNVieITa6sevQSV70ObgJ4v9yQswQ1d\njyTwKZHbxjMRzCheYCKx2OYuqsAK0rRSiVx3PjC44zTPNpmhgE2pw4e7vAsG\n5I1ZK+7rc0L7tavagd/a3HHMFJymCCvAiCkeSTGEwjox3SxeDTjjjwkBAOuV\n/JnfQv3g2T6/MCszJ7sIIoVLgIwl3tMMbFjlGnzaJgFrOSRl4vRnROpEyVL+\ncf5d\r\n=UvmA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iterate-value_1.0.0_1574829957815_0.41142292824820026"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "iterate-value",
+      "version": "1.0.1",
+      "description": "Iterate any iterable JS value. Works robustly in all environments, all versions.",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ]
+      },
+      "type": "commonjs",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "tests-only": "node test",
+        "posttest": "npx aud",
+        "test": "npm run tests-only",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ljharb/iterate-value.git"
+      },
+      "keywords": [
+        "iterate",
+        "map",
+        "set",
+        "collection",
+        "string",
+        "array",
+        "es2015",
+        "es6",
+        "iterator",
+        "symbol.iterator",
+        "symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/iterate-value/issues"
+      },
+      "homepage": "https://github.com/ljharb/iterate-value#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "eslint": "^6.7.2",
+        "for-each": "^0.3.3",
+        "has-bigints": "^1.0.0",
+        "has-symbols": "^1.0.1",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "dependencies": {
+        "es-get-iterator": "^1.0.1"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "605603a68503e9a9bb46fd3ad7c2dc2c4809c32d",
+      "_id": "iterate-value@1.0.1",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-xc6jTbwPOWEdD26y41BpJBqh/w3kuEcsQxTypXD+xYQA2+OZIfemmkm725cnRbm1cHj4SMLUO1+7oIA97e88gg==",
+        "shasum": "d2003239b4a06c91a3f8092e379f6062b03c268c",
+        "tarball": "https://registry.npmjs.org/iterate-value/-/iterate-value-1.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 13757,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd9CwjCRA9TVsSAnZWagAA2sUP/A2ymw0gaxTSMJJPeetO\nXbo7dH8c8sJLlN99NPzyii0/x4FQiUDmGn0J3RyTf4zywoBGJVqxkHVL3GxN\nppDf2fu+dlpr6lmWKh4E9Oh0nmbDXQbxKCP47QjqKeATr/w+iLUSetCRFAoj\nqDjt+OOrk/pnpnJ8t5J4bGO2un04JksXZ27LZ7mnS/CHmLI26hAr961lz2cR\nAsAy05zjfnrsMD3c+XDGOzYoIr7/+ygDUMH1SnXesSxgi7DjJ9+8UrsnHQzi\nxEWVWOaivxSe06R44AjCNaH4rw6s+ktZ9hPd+AyAsTJa3JVC5zYNEJFPzIwn\ncFMcArCkY2x76aok3N03VT7fD0/39K7dHAIS8T7DqfPa1y5sKCzAYl/fslZh\nTvu6ew6EyaqAxrCi/jmviIaLLa6o95opiFP5YfVNrV7Fg3aKh4ZMt3Q4s4LW\nz5ubym3bSHxAJSiHDukuP8a/s17dOTPxIg/TyG5cSTl0COuIc5/Etx2f39de\nVBhGZM1HJ4n3QtYAZKBJ9wxDNLDtzPzy66MBIJmRYKHIBQaCme4VuKZ6oKwz\nmqUCnt7AZnBw/JTQF/4RUIFK9a2n2VoYPZulue0jxNC0Le5J3b10j+lTON53\nz9udWZi7yb7nbOLeaHDArXRebQyZyECyxHUGt52plJgtNv+QPMJOZPKINVIh\n34jz\r\n=RASg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iterate-value_1.0.1_1576283170447_0.9971842149145462"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.2": {
+      "name": "iterate-value",
+      "version": "1.0.2",
+      "description": "Iterate any iterable JS value. Works robustly in all environments, all versions.",
+      "main": "index.js",
+      "exports": {
+        ".": [
+          {
+            "default": "./index.js"
+          },
+          "./index.js"
+        ]
+      },
+      "type": "commonjs",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "prelint": "evalmd README.md",
+        "lint": "eslint .",
+        "pretest": "npm run lint",
+        "tests-only": "node test",
+        "posttest": "npx aud",
+        "test": "npm run tests-only",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ljharb/iterate-value.git"
+      },
+      "keywords": [
+        "iterate",
+        "map",
+        "set",
+        "collection",
+        "string",
+        "array",
+        "es2015",
+        "es6",
+        "iterator",
+        "symbol.iterator",
+        "symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/iterate-value/issues"
+      },
+      "homepage": "https://github.com/ljharb/iterate-value#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.1.0",
+        "auto-changelog": "^1.16.2",
+        "eslint": "^6.8.0",
+        "evalmd": "^0.0.19",
+        "for-each": "^0.3.3",
+        "has-bigints": "^1.0.0",
+        "has-symbols": "^1.0.1",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^5.0.0-next.3"
+      },
+      "dependencies": {
+        "es-get-iterator": "^1.0.2",
+        "iterate-iterator": "^1.0.1"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "ce95188f526a840f3fa2e4ab2caa9cdfa8eea8ab",
+      "_id": "iterate-value@1.0.2",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-A6fMAio4D2ot2r/TYzr4yUWrmwNdsN5xL7+HUiyACE4DXm+q8HtPcnFTp+NnW3k4N05tZ7FVYFFb2CR13NxyHQ==",
+        "shasum": "935115bd37d006a52046535ebc8d07e9c9337f57",
+        "tarball": "https://registry.npmjs.org/iterate-value/-/iterate-value-1.0.2.tgz",
+        "fileCount": 10,
+        "unpackedSize": 14211,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeIzdkCRA9TVsSAnZWagAAN6MP/Ax0QswnzGyypUcp7Z75\nIniMnkG6pPNrsNZozwNklHYaFH4WAeR3oiXjzts7cON2DvcWTL8Wm6FiHFvC\nflf1RJq0rZ5jN9gpyuJnq6G82wzJpC7iBj64+jIljWlofSpL6KvypVHsD6EH\nPPFec0DQt7Acd0UPPM/UeFa5NW3rwAQPPxu/9hBY72jcArDaDU/0+k72UcDX\n9JDGBq/MZyK0v9mye9KL1jiXPToORJnV6yyUVzXLJTpSlvPz34X6Fj1crv7L\nwLgNJDkHhEE5NQdLet7IpHoQv4v4ZI9vlMD64Qrmx6rivVXz4QcKCHRb/2NX\nwUW6WGLwPJAcPPVe4R8PY8UdWcKuwKIlVT/kw6Gjo31bP+axu2RfjHpGMmjF\nLB3xw8xOeplHQR/q7n1KIYe6aIp71CLQXmlk5NnF+pdtzAqIVtQGzt7pcT5d\nws+h5cc/JcmIHwWmv3N4VtDsgm2M3h6USjZmML25y1EI56DkkAQP1Fn4zCM1\nGHpPRiKGm+bLCfo3s2+gdy6vC1VCdnCVz741fYtPq/dDWx2zCQikUAO1q85P\nm+F3C7oIytJSbFtQXuWZFWRh+ddeKoVfClzOB98U8K1jSfMfBdjLesrekR3L\n199Sae+B2NCv5/+t2vz7rlEGYs73mKPXtL9ii8hty2AqDHvEEBU30Klc5h1o\nt09+\r\n=Dya3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/iterate-value_1.0.2_1579366243770_0.046982518371430304"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-11-27T04:45:57.815Z",
+    "1.0.0": "2019-11-27T04:45:57.982Z",
+    "modified": "2020-01-18T16:50:46.333Z",
+    "1.0.1": "2019-12-14T00:26:10.568Z",
+    "1.0.2": "2020-01-18T16:50:43.928Z"
+  },
+  "maintainers": [
+    {
+      "name": "ljharb",
+      "email": "ljharb@gmail.com"
+    }
+  ],
+  "description": "Iterate any iterable JS value. Works robustly in all environments, all versions.",
+  "homepage": "https://github.com/ljharb/iterate-value#readme",
+  "keywords": [
+    "iterate",
+    "map",
+    "set",
+    "collection",
+    "string",
+    "array",
+    "es2015",
+    "es6",
+    "iterator",
+    "symbol.iterator",
+    "symbol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljharb/iterate-value.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ljharb/iterate-value/issues"
+  },
+  "license": "MIT",
+  "readme": "# iterate-value <sup>[![Version Badge][npm-version-svg]][package-url]</sup>\n\n[![Build Status][travis-svg]][travis-url]\n[![dependency status][deps-svg]][deps-url]\n[![dev dependency status][dev-deps-svg]][dev-deps-url]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][npm-badge-png]][package-url]\n\nIterate any iterable JS value. Works robustly in all environments, all versions.\n\nIn modern engines, `[...value]` or `Array.from(value)` or `for (const item of value) { }` are sufficient to iterate an iterable value (an object with a `Symbol.iterator` method). However, older engines:\n - may lack `Symbol`, array spread, or `for..of` support altogether\n - may have `Symbol.iterator` but not implement it on everything it should, like arguments objects\n - may have `Map` and `Set`, but a non-standard name for the iterator-producing method (`.iterator` or `['@@iterator']`, eg) and no syntax to support it\n - may be old versions of Firefox that produce values until they throw a StopIteration exception, rather than having iteration result objects\n - may be polyfilled/shimmed/shammed, with `es6-shim` or `core-js` or similar\n\nThis library attempts to provide an abstraction over all that complexity!\n\nIf called with a single value, it will return an array of the yielded values. If also called with a callback function, it will instead call that callback once for each yielded value.\n\nIn node v13+, `exports` is used by the `es-get-iterator` dependency to provide a lean implementation that lacks all the complexity described above, in combination with the `browser` field so that bundlers will pick up the proper implementation.\n\nIf you are targeting browsers that definitely all have Symbol support, then you can configure your bundler to replace `require('has-symbols')()` with a literal `true`, which should allow dead code elimination to reduce the size of the bundled code.\n\n## Example\n\n```js\nvar iterate = require('iterate-value');\nvar assert = require('assert');\n\nassert.deepEqual(iterate('a 💩'), ['a', ' ', '💩']);\nassert.deepEqual(iterate([1, 2]), [1, 2]);\nassert.deepEqual(iterate(new Set([1, 2])), [1, 2]);\nassert.deepEqual(iterate(new Map([[1, 2], [3, 4]])), [[1, 2], [3, 4]]);\n\nfunction assertWithCallback(iterable, expected) {\n\tvar values = [];\n\tvar callback = function (x) { values.push(x); };\n\titerate(iterable, callback);\n\tassert.deepEqual(values, expected);\n}\nassertWithCallback('a 💩', ['a', ' ', '💩']);\nassertWithCallback([1, 2], [1, 2]);\nassertWithCallback(new Set([1, 2]), [1, 2]);\nassertWithCallback(new Map([[1, 2], [3, 4]]), [[1, 2], [3, 4]]);\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[package-url]: https://npmjs.org/package/iterate-value\n[npm-version-svg]: http://versionbadg.es/ljharb/iterate-value.svg\n[travis-svg]: https://travis-ci.org/ljharb/iterate-value.svg\n[travis-url]: https://travis-ci.org/ljharb/iterate-value\n[deps-svg]: https://david-dm.org/ljharb/iterate-value.svg\n[deps-url]: https://david-dm.org/ljharb/iterate-value\n[dev-deps-svg]: https://david-dm.org/ljharb/iterate-value/dev-status.svg\n[dev-deps-url]: https://david-dm.org/ljharb/iterate-value#info=devDependencies\n[npm-badge-png]: https://nodei.co/npm/iterate-value.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/iterate-value.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/iterate-value.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=iterate-value\n",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "@isaacs/testing-fail-preinstall",
+  "version": "1.0.0",
+  "scripts": {
+    "preinstall": "exit 1"
+  },
+  "license": "ISC"
+}

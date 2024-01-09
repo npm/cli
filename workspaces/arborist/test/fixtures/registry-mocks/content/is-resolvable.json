@@ -1,0 +1,405 @@
+{
+  "_id": "is-resolvable",
+  "_rev": "10-3c4dc7773ee5a7d6afd283f944fdb96a",
+  "name": "is-resolvable",
+  "description": "Check if a module ID is resolvable with require()",
+  "dist-tags": {
+    "latest": "1.1.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "is-resolvable",
+      "version": "0.0.0",
+      "description": "Check if a module ID is resolvable with require()",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/is-resolvable.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "pretest": "eslint --config node_modules/@shinnn/eslintrc-node/rc.json index.js test.js",
+        "test": "node test.js",
+        "coverage": "istanbul cover test.js"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "read",
+        "file",
+        "font",
+        "glyph",
+        "code-point",
+        "unicode",
+        "parse",
+        "cmap",
+        "table",
+        "data",
+        "metadata"
+      ],
+      "dependencies": {
+        "tryit": "^1.0.1"
+      },
+      "devDependencies": {
+        "@shinnn/eslintrc-node": "^1.0.2",
+        "eslint": "^0.24.0",
+        "istanbul": "^0.3.17",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "e68ea1b3affa382cbd31b4bae1e1421040249a73",
+      "bugs": {
+        "url": "https://github.com/shinnn/is-resolvable/issues"
+      },
+      "homepage": "https://github.com/shinnn/is-resolvable#readme",
+      "_id": "is-resolvable@0.0.0",
+      "_shasum": "fca6296e095745b6a1075472af6f3065b8ee8af6",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "2.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "fca6296e095745b6a1075472af6f3065b8ee8af6",
+        "tarball": "https://registry.npmjs.org/is-resolvable/-/is-resolvable-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-resolvable",
+      "version": "1.0.0",
+      "description": "Check if a module ID is resolvable with require()",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/is-resolvable.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "pretest": "eslint --config node_modules/@shinnn/eslintrc-node/rc.json index.js test.js",
+        "test": "node test.js",
+        "coverage": "istanbul cover test.js"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "read",
+        "file",
+        "font",
+        "glyph",
+        "code-point",
+        "unicode",
+        "parse",
+        "cmap",
+        "table",
+        "data",
+        "metadata"
+      ],
+      "dependencies": {
+        "tryit": "^1.0.1"
+      },
+      "devDependencies": {
+        "@shinnn/eslintrc-node": "^1.0.2",
+        "eslint": "^0.24.0",
+        "istanbul": "^0.3.17",
+        "tape": "^4.0.0"
+      },
+      "gitHead": "e68ea1b3affa382cbd31b4bae1e1421040249a73",
+      "bugs": {
+        "url": "https://github.com/shinnn/is-resolvable/issues"
+      },
+      "homepage": "https://github.com/shinnn/is-resolvable#readme",
+      "_id": "is-resolvable@1.0.0",
+      "_shasum": "8df57c61ea2e3c501408d100fb013cf8d6e0cc62",
+      "_from": ".",
+      "_npmVersion": "2.13.1",
+      "_nodeVersion": "2.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "shasum": "8df57c61ea2e3c501408d100fb013cf8d6e0cc62",
+        "tarball": "https://registry.npmjs.org/is-resolvable/-/is-resolvable-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-resolvable",
+      "version": "1.0.1",
+      "description": "Check if a module ID is resolvable with require()",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/is-resolvable.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "pretest": "eslint --fix --format=codeframe index.js test.js",
+        "test": "node --throw-deprecation --track-heap-objects test.js",
+        "coverage": "istanbul cover --print=both test.js"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "file",
+        "path",
+        "resolve",
+        "resolvable",
+        "check",
+        "module"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^4.0.2",
+        "eslint": "^4.11.0",
+        "istanbul": "^0.4.5",
+        "tape": "^4.8.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node",
+        "rules": {
+          "no-var": "off"
+        }
+      },
+      "gitHead": "dda475f7785e3cb15248f9651859d5353efe922d",
+      "bugs": {
+        "url": "https://github.com/shinnn/is-resolvable/issues"
+      },
+      "homepage": "https://github.com/shinnn/is-resolvable#readme",
+      "_id": "is-resolvable@1.0.1",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.2.1",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-y5CXYbzvB3jTnWAZH1Nl7ykUWb6T3BcTs56HUruwBf8MhF56n1HWqhDWnVFo8GHrUPDgvUUNVhrc2U8W7iqz5g==",
+        "shasum": "acca1cd36dbe44b974b924321555a70ba03b1cf4",
+        "tarball": "https://registry.npmjs.org/is-resolvable/-/is-resolvable-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-resolvable-1.0.1.tgz_1513137457789_0.045880579156801105"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-resolvable",
+      "version": "1.0.2",
+      "description": "Check if a module ID is resolvable with require()",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/is-resolvable.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "pretest": "eslint --fix --format=codeframe index.js test.js",
+        "test": "node --throw-deprecation --track-heap-objects test.js",
+        "coverage": "istanbul cover --print=both test.js"
+      },
+      "license": "ISC",
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "file",
+        "path",
+        "resolve",
+        "resolvable",
+        "check",
+        "module"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^5.0.0",
+        "eslint": "^4.16.0",
+        "istanbul": "^0.4.5",
+        "tape": "^4.8.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node",
+        "rules": {
+          "no-var": "off",
+          "prefer-template": "off"
+        }
+      },
+      "gitHead": "b0bc88b5c74f92e95e6256cbb53b80a866320bfb",
+      "bugs": {
+        "url": "https://github.com/shinnn/is-resolvable/issues"
+      },
+      "homepage": "https://github.com/shinnn/is-resolvable#readme",
+      "_id": "is-resolvable@1.0.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-k41lo7RYmK/ApuSU9GM9x6V3XFYbGaohvjDsr0zXbqL8JzAOGwlZQrVsOc3WdxKelper8cQiEKReAz3m7gaY8w==",
+        "shasum": "e2f4ec2aa45d2b3079a95a28e1547cbd608ceeaa",
+        "tarball": "https://registry.npmjs.org/is-resolvable/-/is-resolvable-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-resolvable-1.0.2.tgz_1516610180786_0.6343863350339234"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "is-resolvable",
+      "version": "1.1.0",
+      "description": "Check if a module ID is resolvable with require()",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/shinnn/is-resolvable.git"
+      },
+      "author": {
+        "name": "Shinnosuke Watanabe",
+        "url": "https://github.com/shinnn"
+      },
+      "scripts": {
+        "pretest": "eslint --fix --format=codeframe index.js test.js",
+        "test": "node --throw-deprecation --track-heap-objects test.js",
+        "coverage": "istanbul cover --print=both test.js"
+      },
+      "license": "ISC",
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "file",
+        "path",
+        "resolve",
+        "resolvable",
+        "check",
+        "module"
+      ],
+      "devDependencies": {
+        "@shinnn/eslint-config-node": "^5.0.0",
+        "eslint": "^4.16.0",
+        "istanbul": "^0.4.5",
+        "tape": "^4.8.0"
+      },
+      "eslintConfig": {
+        "extends": "@shinnn/node",
+        "rules": {
+          "no-var": "off",
+          "prefer-template": "off"
+        }
+      },
+      "gitHead": "ec72480eff8dc3a97f61dbd702f8f333d7f7529c",
+      "bugs": {
+        "url": "https://github.com/shinnn/is-resolvable/issues"
+      },
+      "homepage": "https://github.com/shinnn/is-resolvable#readme",
+      "_id": "is-resolvable@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "shinnn",
+        "email": "snnskwtnb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==",
+        "shasum": "fb18f87ce1feb925169c9a407c19318a3206ed88",
+        "tarball": "https://registry.npmjs.org/is-resolvable/-/is-resolvable-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "shinnn",
+          "email": "snnskwtnb@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-resolvable-1.1.0.tgz_1516612223746_0.7059133381117135"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# is-resolvable\n\n[![npm version](https://img.shields.io/npm/v/is-resolvable.svg)](https://www.npmjs.com/package/is-resolvable)\n[![Build Status](https://travis-ci.org/shinnn/is-resolvable.svg?branch=master)](https://travis-ci.org/shinnn/is-resolvable)\n[![Build status](https://ci.appveyor.com/api/projects/status/ww1cdpignehlasbs?svg=true)](https://ci.appveyor.com/project/ShinnosukeWatanabe/is-resolvable)\n[![Coverage Status](https://img.shields.io/coveralls/shinnn/is-resolvable.svg)](https://coveralls.io/r/shinnn/is-resolvable)\n\nA [Node.js](https://nodejs.org/) module to check if a given module ID is resolvable with [`require()`](https://nodejs.org/api/globals.html#globals_require)\n\n```javascript\nconst isResolvable = require('is-resolvable');\n\nisResolvable('fs'); //=> true\nisResolvable('path'); //=> true\n\n// When ./index.js exists\nisResolvable('./index.js') //=> true\nisResolvable('./index') //=> true\nisResolvable('.') //=> true\n```\n\n## Installation\n\n[Use](https://docs.npmjs.com/cli/install) [npm](https://docs.npmjs.com/getting-started/what-is-npm).\n\n```\nnpm install is-resolvable\n```\n\n## API\n\n```javascript\nconst isResolvable = require('is-resolvable');\n```\n\n### isResolvable(*moduleId* [, *options*])\n\n*moduleId*: `string` (module ID)  \n*options*: `Object` ([`require.resolve`](https://nodejs.org/api/modules.html#modules_require_resolve_request_options) options)  \nReturn: `boolean`\n\nIt returns `true` if `require()` can load a file form a given module ID, otherwise `false`.\n\n```javascript\nconst isResolvable = require('is-resolvable');\n\n// When ./foo.json exists\nisResolvable('./foo.json'); //=> true\nisResolvable('./foo'); //=> true\n\nisResolvable('./foo.js'); //=> false\n\n// When `eslint` module is installed but `jshint` isn't\nisResolvable('eslint'); //=> true\nisResolvable('jshint'); //=> false\n\n// When `lodash` module is installed\nisResolvable('lodash/isObject'); //=> true\nisResolvable('lodash/fp/reject.js'); //=> true\n```\n\nThe second argument accepts an options object for `require.resolve()`.\n\n```javascript\n// When ./bar/baz.js exists\n\nisResolvable('./baz.js'); //=> false\nisResolvable('./baz.js', {paths: ['bar']}); //=> true\n```\n\n## License\n\n[ISC License](./LICENSE) © 2018 Shinnosuke Watanabe\n",
+  "maintainers": [
+    {
+      "name": "shinnn",
+      "email": "snnskwtnb@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-06-21T13:49:04.152Z",
+    "created": "2015-08-12T10:05:51.209Z",
+    "0.0.0": "2015-08-12T10:05:51.209Z",
+    "1.0.0": "2015-08-12T10:20:36.148Z",
+    "1.0.1": "2017-12-13T03:57:37.847Z",
+    "1.0.2": "2018-01-22T08:36:20.860Z",
+    "1.1.0": "2018-01-22T09:10:23.856Z"
+  },
+  "homepage": "https://github.com/shinnn/is-resolvable#readme",
+  "keywords": [
+    "file",
+    "path",
+    "resolve",
+    "resolvable",
+    "check",
+    "module"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinnn/is-resolvable.git"
+  },
+  "author": {
+    "name": "Shinnosuke Watanabe",
+    "url": "https://github.com/shinnn"
+  },
+  "bugs": {
+    "url": "https://github.com/shinnn/is-resolvable/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "moimikey": true,
+    "rocket0191": true,
+    "arcticicestudio": true
+  },
+  "_attachments": {}
+}

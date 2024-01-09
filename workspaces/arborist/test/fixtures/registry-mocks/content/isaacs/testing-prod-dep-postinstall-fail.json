@@ -1,0 +1,101 @@
+{
+  "_id": "@isaacs/testing-prod-dep-postinstall-fail",
+  "_rev": "1-0fd68864db2ef9e904d842d2e4fc3bdc",
+  "name": "@isaacs/testing-prod-dep-postinstall-fail",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-prod-dep-postinstall-fail",
+      "version": "1.0.0",
+      "description": "a prod dependency that fails to install",
+      "license": "ISC",
+      "dependencies": {
+        "@isaacs/testing-fail-postinstall": "^1.0.0"
+      },
+      "_id": "@isaacs/testing-prod-dep-postinstall-fail@1.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-0OUhi2IXYma2CBXQt4tUknTp5D58qfYAfE5m/wOaeHmnAk7f0qwHoNiytPbtziyVEVYwWBWABBm7mW1McneyBw==",
+        "shasum": "ea11e9a51de8ef4b17f3651438c34f4e33bc363d",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-prod-dep-postinstall-fail/-/testing-prod-dep-postinstall-fail-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 234,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHSABCRA9TVsSAnZWagAAMgcP/2gko4R8bFfRAZO9fFCJ\nWQk5JMZCHkyFQBabJ6y+pMiICgZ9ATDdkw6EvqDvciIDL5LP3DuvMnSYc1sE\nvQyYbS63riyVVE4mIWU5BNfGD5TvEeCsaLLJyfWMab2DBMljImZZ6VBjbKaL\nR1pVW3ugpSvzy3ievgxprOkSkPtgskrbw7DvCk467QSlX/G1xKppHeC0Upgy\nB4325SumiOnPHQobezBTxET2SKF7BiP1nW0YcJAc+459yNI+oIVO/pJ9b7Uf\n/xd3Nlgo1PTyEX9jqAkQ9HeeU8kHIZ2bCSD6In2PGi/QVDD3R88EyxMMzgEk\nkGZ5kKHDxMg0j+LjNPC0HEJ8WePG7rRum+5cq/E8v2iCmq3OZOlv7U6/h+HC\nqOqlb4z9CNvsVf7FrVk6bJ7sdJ/evXqqPcNvVSSdBAcrsS2sWmzwiRBYdn+0\nV/kz8cBB8Uy7DTJhtcwmgJwltwujAGygns40Mr9yNGh7yGyuP54y+IGpMXZ7\nILKaMm/oR8FI/Z2UyI1xWqlaVeVYuMs7Glo4A0YQXmxtz4yJCvSjBNVYDD7C\nLqUGz7Y8jkyx6HL+3HXAgEdmTbevEhbrHxCZeJ8UzKQKbwr4syKmkMuRz3Al\neHwZi16ePDAwzTJRxPY0o4urA+jXlzEnrd/nMAr1DkBJOt1eBmkdCfBE/Lya\nZuEh\r\n=Wz0/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-prod-dep-postinstall-fail_1.0.0_1578967040904_0.5704263575735302"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.1": {
+      "name": "@isaacs/testing-prod-dep-postinstall-fail",
+      "version": "1.0.1",
+      "description": "a prod dependency that fails to install",
+      "license": "ISC",
+      "dependencies": {
+        "@isaacs/testing-fail-postinstall": "^1.0.0"
+      },
+      "scripts": {
+        "install": "this will never run"
+      },
+      "_id": "@isaacs/testing-prod-dep-postinstall-fail@1.0.1",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-Jiy28dixcI7P1fM0aBr98OZHbC9rOCE/wwnVhFhrB/qKu71Q7eU0agaMDC+9Xxuo/qyhZ/9u/+D/MyIq+0qWeQ==",
+        "shasum": "6a2c7d0885ebbdf6aab94c4aaa1d9f94b1b65459",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-prod-dep-postinstall-fail/-/testing-prod-dep-postinstall-fail-1.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 291,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMLKJCRA9TVsSAnZWagAA6gQQAI9bo2sg80gtEZDyesPb\nb7wU/SkCUA2Qhmf2ctI4cFYJgjNcqZmIJ9xdFSTCVK2FlSb9FBpVjM1O4Kmm\nvfU0KlGRxuZG7g4b5grCYn/nFnS8DOsFym4KoUEI10je7TvgMCYW1EXKnHQX\n6qlIF+AIoN+bcyjLtm8c++1O3KbGK7p9viXaKditcsks7BfLZJSgfnEdEq4C\nXS5EU2r4xFJj7SndqxpJsUbzCkxPlFPDUbrxi1p6xbhCeTcUoJTU3Kq2t6yx\n+sOn6UKp57vYE2QwYC8QUrp/Y2aMNRz8As6MN7SQgWy0X4pd2UXIoJYI/0UB\nHE6Sv3wCGXsKETTPoiyUGFw7U966Wj3eRqgsNlyrMBuMc6gvLVw75ozyq86E\nzSopgIernAY5BI/tsFyMbLmliZr2+jiu2m7rvzIY19lZ3tDAjFPpZwg2BGmR\n27gZP4ZiHlaEAd+UPMpwacUgIfz5mMoaQd0b3KGB5BiRVtMHwhBMricENZ4c\nywPBwTh4pzqylfHqlMt6vFLoAl/2Lege2Tv+7il8CmpK9DRS6GE/TAbPMUfN\nC08nPotLeRcWkXSq2ASO2hFd+bP0s48Rc8wuuzda99ASPeA8lek59sp205+m\nYZYDYimcaugr9PBM9CkMctDvnPRZG6kkRgC15nSVwaFbMmyczdVWL5TEn5ls\nWWEh\r\n=BTnq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-prod-dep-postinstall-fail_1.0.1_1580249736979_0.7673921445264478"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-01-14T01:57:20.872Z",
+    "1.0.0": "2020-01-14T01:57:21.013Z",
+    "modified": "2020-01-28T22:15:42.678Z",
+    "1.0.1": "2020-01-28T22:15:37.164Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "a prod dependency that fails to install",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

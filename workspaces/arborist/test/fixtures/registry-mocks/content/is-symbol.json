@@ -1,0 +1,414 @@
+{
+  "_id": "is-symbol",
+  "_rev": "8-8011fd451a32d0a0e21c8faf36bcf775",
+  "name": "is-symbol",
+  "description": "Determine if a value is an ES6 Symbol or not.",
+  "dist-tags": {
+    "latest": "1.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-symbol",
+      "version": "1.0.0",
+      "description": "Determine if a function is an ES6 generator function or not.",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node --es-staging --harmony test/index.js && npm run security",
+        "coverage": "covert test/index.js",
+        "coverage:quiet": "covert test/index.js --quiet",
+        "lint": "jscs *.js */*.js",
+        "security": "nsp package"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-symbol.git"
+      },
+      "keywords": [
+        "symbol",
+        "es6",
+        "is",
+        "Symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/is-symbol/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~3.4.0",
+        "covert": "1.0.0",
+        "jscs": "~1.10.0",
+        "nsp": "~1.0.0",
+        "semver": "~4.2.0"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "86c2f7d882ebfbe5b2d3d8b874e59f5db1cd22cb",
+      "homepage": "https://github.com/ljharb/is-symbol",
+      "_id": "is-symbol@1.0.0",
+      "_shasum": "75934ad042fb1675c52f687f2cb47d66d5c45af2",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "1.0.4",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "75934ad042fb1675c52f687f2cb47d66d5c45af2",
+        "tarball": "https://registry.npmjs.org/is-symbol/-/is-symbol-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-symbol",
+      "version": "1.0.1",
+      "description": "Determine if a value is an ES6 Symbol or not.",
+      "main": "index.js",
+      "scripts": {
+        "test": "npm run lint && node --es-staging --harmony test/index.js && npm run security",
+        "coverage": "covert test/index.js",
+        "coverage:quiet": "covert test/index.js --quiet",
+        "lint": "jscs *.js */*.js",
+        "security": "nsp package"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-symbol.git"
+      },
+      "keywords": [
+        "symbol",
+        "es6",
+        "is",
+        "Symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/is-symbol/issues"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~3.4.0",
+        "covert": "1.0.0",
+        "jscs": "~1.10.0",
+        "nsp": "~1.0.0",
+        "semver": "~4.2.0"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "5bbd991ff41a459a941d205de65d533cc6c3cd8c",
+      "homepage": "https://github.com/ljharb/is-symbol",
+      "_id": "is-symbol@1.0.1",
+      "_shasum": "3cc59f00025194b6ab2e38dbae6689256b660572",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3cc59f00025194b6ab2e38dbae6689256b660572",
+        "tarball": "https://registry.npmjs.org/is-symbol/-/is-symbol-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-symbol",
+      "version": "1.0.2",
+      "description": "Determine if a value is an ES6 Symbol or not.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "tests-only": "node --es-staging --harmony test",
+        "test": "npm run tests-only",
+        "posttest": "npm run security",
+        "coverage": "covert test",
+        "lint": "npm run jscs && npm run eslint",
+        "jscs": "jscs *.js */*.js",
+        "eslint": "eslint *.js */*.js",
+        "security": "nsp check"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/ljharb/is-symbol.git"
+      },
+      "keywords": [
+        "symbol",
+        "es6",
+        "is",
+        "Symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/ljharb/is-symbol/issues"
+      },
+      "dependencies": {
+        "has-symbols": "^1.0.0"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^12.2.1",
+        "covert": "^1.1.0",
+        "eslint": "^4.19.1",
+        "jscs": "^3.0.7",
+        "nsp": "^3.2.1",
+        "object-inspect": "^1.6.0",
+        "safe-publish-latest": "^1.1.2",
+        "semver": "^5.5.0",
+        "tape": "^4.9.0"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "gitHead": "9769e1bdc9a265e3f69cc0fab2002991bf0999b2",
+      "homepage": "https://github.com/ljharb/is-symbol#readme",
+      "_id": "is-symbol@1.0.2",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HS8bZ9ox60yCJLH9snBpIwv9pYUAkcuLhSA1oero1UB5y9aiQpRA8y2ex945AOtCZL1lJDeIk3G5LthswI46Lw==",
+        "shasum": "a055f6ae57192caee329e7a860118b497a950f38",
+        "tarball": "https://registry.npmjs.org/is-symbol/-/is-symbol-1.0.2.tgz",
+        "fileCount": 13,
+        "unpackedSize": 23337,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpDtaCRA9TVsSAnZWagAA9jMQAIEIRC5OduDYW1t7iLkI\n5RJTupgMQPmC/oXFX801sLvVQ4HlcUkWj4Qg8iY1B8tjWtWYiiMGnwvnH6ew\ncA0bSWtZoMGsduOSeIE8NuRIYKIoqbVVr+RPr1wQAlMA0lqVffoWmKmTyD7+\nS51VvVm6KHU7c+FV+roS2fgkElDnM4Ua0x7/0qWeA4C0xoTa51Q+bHg8wQVx\n3flwQXc2jH2PHmHO3TkmgomblIi0NPfD7naiZam3AWgmKBZgCEqLEP6wG149\n7Ct1uaaHZd/9UFmNr+Azg2bLRDi4YqR3GBiB3jj6YsqYAyvkBpudkLrdJdwN\nlOL8JRb4h0B+Ftih4NayQNbKSXMxUwiIfmh+DiAiDv5yVJ+Z444iIafeRyBl\nNdignBobmoa3mYm0M/hT5ZDD7EqZLR/aiu79v161H1RzOGh1kYtaPfSa/0bX\nT5gIzoZdO9HmFdgUHvCaUg5Pc+emccTeiI4oW0vDEu4TpwEpN8nUJb4Nf9Nq\n07cBt5o/XzKbd8kNxe404Nmfo8FoBgc1I7ewZobbxHeZdfc0UVk8mvK0ZdrK\nakdExSu6TFq5eshWXRNtYFarkHe99oaFzZthEu3ZHHT5L+5o2LNwp6wovssH\nP4LNpMXyNB/rkcaxoIDYdujTYYqHDh8w5qUyFzE5ANEnAFEn0A0hu8svXyoP\nv/0z\r\n=nc9A\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "ljharb",
+          "email": "ljharb@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-symbol_1.0.2_1537489754249_0.5751165752963447"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.3": {
+      "name": "is-symbol",
+      "version": "1.0.3",
+      "description": "Determine if a value is an ES6 Symbol or not.",
+      "main": "index.js",
+      "scripts": {
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "tests-only": "node --es-staging --harmony test",
+        "test": "npm run tests-only",
+        "posttest": "npx aud",
+        "coverage": "covert test",
+        "lint": "eslint .",
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/inspect-js/is-symbol.git"
+      },
+      "keywords": [
+        "symbol",
+        "es6",
+        "is",
+        "Symbol"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/inspect-js/is-symbol/issues"
+      },
+      "dependencies": {
+        "has-symbols": "^1.0.1"
+      },
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "covert": "^1.1.1",
+        "eslint": "^6.6.0",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "semver": "^6.3.0",
+        "tape": "^4.11.0"
+      },
+      "testling": {
+        "files": "test/index.js",
+        "browsers": [
+          "iexplore/6.0..latest",
+          "firefox/3.0..6.0",
+          "firefox/15.0..latest",
+          "firefox/nightly",
+          "chrome/4.0..10.0",
+          "chrome/20.0..latest",
+          "chrome/canary",
+          "opera/10.0..latest",
+          "opera/next",
+          "safari/4.0..latest",
+          "ipad/6.0..latest",
+          "iphone/6.0..latest",
+          "android-browser/4.2"
+        ]
+      },
+      "engines": {
+        "node": ">= 0.4"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "f42e0be5f676e6c82c83c9cad70f1fbb3b81c8ca",
+      "homepage": "https://github.com/inspect-js/is-symbol#readme",
+      "_id": "is-symbol@1.0.3",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-OwijhaRSgqvhm/0ZdAcXNZt9lYdKFpcRDT5ULUuYXPoT794UNOdU+gpT6Rzo7b4V2HUl/op6GqY894AZwv9faQ==",
+        "shasum": "38e1014b9e6329be0de9d24a414fd7441ec61937",
+        "tarball": "https://registry.npmjs.org/is-symbol/-/is-symbol-1.0.3.tgz",
+        "fileCount": 13,
+        "unpackedSize": 22166,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1drhCRA9TVsSAnZWagAA+dMP/it5bVrCSip2D6SrsOhP\n2omcv+riWONUT2mhdthVYtABZhnL+MDyQOa4COYAXFocacST50tpTGX5QlKE\namv1ZNFtmnHvnBsa/XrjwjHCe8JFzYyeEUaa9gTJ8r6cEMrXs07sGyDi4gWy\nxQ7VQPq07lXXIoDmI7AaX+V6yYqSFH5JDwqRbPyvT1fqr/IznGCn+1WmKdCY\n7vtRd3tR8VmwRev5YvYzWSn8tqlrVzMMqG+q8JLNDawix1i1UMQB/N/NMJ5s\nz2jHkr2JUObEE6n16Zq8qac914uX7d0ylyvS/CScJIsVgbQ/UaOYqtKOt2VN\nFSX1CedVUuATMcDzxAoL39nOIVRg4X6eS6xi2UL0l6TstdV20Mx7HmGou9VF\nce4a6e5h8C5VC9M/dPEmOiXY2qEJaAxFCPEuE+PBCV0TjOnkP5gPf4yyaJ/F\n27UFbmxBvG97Lu3zkc9TW3qRiWfsui3DFVNgcHPbS+wIsCDEDK/gCGMU1657\nNH/Qwjg8OXMbcFmASpY9PkVJZFLB/aBRtMCSXcY+8pCWvNxPrruyWfrVd84W\nMpPf2mSu8vx05IeUM6oYkq6s5/EVMeHUl4V+8pm1y8prtWT04V+E8XNQo6tU\nNeFn3IaZmHXOMvPDJ7RMEcrcWDWtWt9tYyHGeBapwprMUFEq3ujSlwEbauB5\np/Tz\r\n=OpBp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-symbol_1.0.3_1574296288922_0.5948718360504404"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "#is-symbol <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\n[![browser support][9]][10]\n\nIs this an ES6 Symbol value?\n\n## Example\n\n```js\nvar isSymbol = require('is-symbol');\nassert(!isSymbol(function () {}));\nassert(!isSymbol(null));\nassert(!isSymbol(function* () { yield 42; return Infinity; });\n\nassert(isSymbol(Symbol.iterator));\nassert(isSymbol(Symbol('foo')));\nassert(isSymbol(Symbol.for('foo')));\nassert(isSymbol(Object(Symbol('foo'))));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-symbol\n[2]: http://versionbadg.es/inspect-js/is-symbol.svg\n[3]: https://travis-ci.org/inspect-js/is-symbol.svg\n[4]: https://travis-ci.org/inspect-js/is-symbol\n[5]: https://david-dm.org/inspect-js/is-symbol.svg\n[6]: https://david-dm.org/inspect-js/is-symbol\n[7]: https://david-dm.org/inspect-js/is-symbol/dev-status.svg\n[8]: https://david-dm.org/inspect-js/is-symbol#info=devDependencies\n[11]: https://nodei.co/npm/is-symbol.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-symbol.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-symbol.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-symbol\n",
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2019-11-21T00:31:33.527Z",
+    "created": "2015-01-24T22:13:24.626Z",
+    "1.0.0": "2015-01-24T22:13:24.626Z",
+    "1.0.1": "2015-01-26T09:47:09.285Z",
+    "1.0.2": "2018-09-21T00:29:14.405Z",
+    "1.0.3": "2019-11-21T00:31:29.035Z"
+  },
+  "homepage": "https://github.com/inspect-js/is-symbol#readme",
+  "keywords": [
+    "symbol",
+    "es6",
+    "is",
+    "Symbol"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/inspect-js/is-symbol.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/inspect-js/is-symbol/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

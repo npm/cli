@@ -1,0 +1,3816 @@
+{
+  "_id": "@babel/plugin-transform-modules-systemjs",
+  "_rev": "80-96c3e6f1da1b5bcf1d2108fd3f5e3f5b",
+  "name": "@babel/plugin-transform-modules-systemjs",
+  "description": "This plugin transforms ES2015 modules to SystemJS",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.4",
+        "@babel/template": "7.0.0-beta.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-PKmxvFt2OjAsITH24PqsPfB+D6xgpnXAx1OL4JKDxdWj/P+GB97DmQ1saDHs0kWsEAZSazhFLnlB2tX9ZSoi0Q==",
+        "shasum": "533be976119f750a8d155e4607c86358076eca32",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.4.tgz_1509388539064_0.5707535815890878"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.5",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.5",
+        "@babel/template": "7.0.0-beta.5"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-b/ofn6vcR5F+XqOCjoGTCY6n7ILuDfTBl9b95bCXXrMPZY2ifRTWkSfkZo21m3xAd9bzpal2qb+aWBaFZQjyCA==",
+        "shasum": "769d6ef918c75184fd054a1daf591d81a4b2e0fd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.5.tgz_1509397037548_0.7783535500057042"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.31",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.31",
+        "@babel/template": "7.0.0-beta.31"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-B/MT8Y4cQ97BurBwDtUto56W11GxQy1sfdZGfkby2u3p94ZwmJXvU6pXAFXF19CJTcVqE91DLN/amm9DoftLAw==",
+        "shasum": "0f600f8f92a326e648e8f0fff8541a0f39c22860",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.31.tgz_1509739443657_0.49310054699890316"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.32",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.32"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-JMGVoc03u1BHebJVuDSZ37ZmNAsxsRsVq3rJb7piLOM4k0TTdD0wyAPjNk8+/90kPaFFeP6qhpkUqgAed1Y2Jg==",
+        "shasum": "8a2f14e0c5fbf6c0bb77ad4464c4d1f2e89c3697",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.32.tgz_1510493627055_0.5729620789643377"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.33",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.33"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Wrb1XGhawm/Xb1sxVzyCdq80opRgd7kGHqMK1NvsrBvpkzGTKEV+JFtoiI/QnxJXgkt2SrjNnzfM7xJasfMT1Q==",
+        "shasum": "a1c4c013d69fb6659f452179e4d935b91af1b364",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.33.tgz_1512138541236_0.06988815101794899"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.34",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.34"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Z0xcWUq52XASvWgsqAMW0XRzxJkF5Ymyt5xuFaCWOyLgKS65tkD5U6sElfh/TSq+3x6ooDsWUeKWo8kJ7F76hw==",
+        "shasum": "2f9a5f9b4448b9d308e1755170eafbee18ab58eb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.34.tgz_1512225598069_0.10024980688467622"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.35",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.35"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-oHGov6ZhsAQeGW9Gpz7Otrau927948oi1khhKS7GmXcTalDpublxDWcji8FfcJXWt6tyuxVPweuxtTTjeUmtqg==",
+        "shasum": "ef9704902423054fa6326f9d0596aa3a46e5be80",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.35.tgz_1513288095708_0.20327564561739564"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.36",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.36"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-o+1uL5N3+9mcqj4xxOsb97QCBX9RbezSpf5GZp+nN7zbDuL4/tBFUZbR6RnU5dTw+y2xVGPsqAWH9wo0Hs5QhA==",
+        "shasum": "c3ce365abbaf1b4726d09b1b458d57e338aa5d09",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.36.tgz_1514228721690_0.4824665836058557"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.37",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.37"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-UR8zwgPSMTkW01wyYTgvuFCgS4Hwmonhk8lDz0XiltuuGljqtNElye8pTzB7kotzHW+PxaI01VluKrpzVpMnRg==",
+        "shasum": "9459dd8651b1746332feb8cd48e76a60c1df6480",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.37.tgz_1515427411358_0.8083731182850897"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.38",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.38"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-iS7AVaR46bdzx6mHFyc69P2EDt9Dk/U+q2a/hdWrKo6JKdyquYC1O2saaCVTR7/o9pYrgk/xdAKyZGNvpNrLaQ==",
+        "shasum": "755a8561a3a347ea230970b4ab9ea8c3b444cc95",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.38.tgz_1516206747644_0.19550029071979225"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.39",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.39"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qm0PMsmmBq5IGwRQHrS5ho6TsFrjj+8yg0M9u+uz4PDep1E4pDU8NQxFXqfyBhDsKZ3+BkEoDMtxQ9SdaKU53A==",
+        "shasum": "3ec4ba068077ac618e106273bb9636b2ee467406",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs-7.0.0-beta.39.tgz_1517344075223_0.4451635326258838"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.40",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.40"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-q5IpFXNlzrK2ObpHkH5jzTCqRVzoNzmH8RoE8ZHQvLLiaIT346u8ynNv/BH1ltA49SPUPWyYpA+Z7OqCM4d3NA==",
+        "shasum": "808b372bdbe06a28bf7a3870d8e810bd7298227a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17017
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.40_1518453740251_0.9817911203831011"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.41",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.41",
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-goKILKk4KqZU67mtbto+5N8P/Siqocs8ns8pIgX37AuwfR86xSkkSzKup2uD1NoAELTFsQjWGCpEoShh58KsDA==",
+        "shasum": "f4159e05c1f82994be1e82e351a4edfe83354ac7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17225
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.41_1521044790594_0.0882852821430753"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.42",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.42",
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-IEN3HVHpMPWrnI2EAEHg0248+Axkg2nrdspajefIyeZMlrN0dUt0gDgVsZtza5PK/1a+RZlpli7dDgcA7heTMg==",
+        "shasum": "424e25542b4d6ea6ea5f933df6ec9c345358b070",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17225
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.42_1521147103914_0.7219796125397275"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.43",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.43",
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-sQGc2tCLBD1wk4b4FHzz6BHYtb3jbtKg5gYXZp8kzoGJKd/ujPNj/LzITmJUj6KS+teuboqgo4rEVKmN0rKHmQ==",
+        "shasum": "58f5f7f126f1ea48996e7ae7236eb98bf970daca",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 14398
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.43_1522687720128_0.502801631178565"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.44",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.44",
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-sFY/F3a5WzscOsHqcEyKLxySZzpQLuz98ZBwzDOplpY7BlkJGWNLwwh98Z/F+EddvHJ54Q9WgSw/PMC9LUKXSQ==",
+        "shasum": "f27e97e592dd9739c8c5df478f1729bb4b63b386",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17701
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.44_1522707620545_0.587103387260077"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.45",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.45",
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-+ki50329yZDcG6fz3hp94Be439PSDQVZf4+K5gekwY7qpkfE7K48nNbPHX6FW4N+jxEKKy3ak2lorQQ1WLejEA==",
+        "shasum": "48e8cb68e396342d59a9e97c0a51f7b181492771",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17484,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T2SCRA9TVsSAnZWagAA+noP/jtcb59qi8yVzQzo7WL+\noJnjMlYnpoovl6Oia2lmy/8sL5G55I+6QvBdvewf5vKY7znKzsuwONG3+8vO\nJKn5CK556g8DwURUO2XTHT5dRkvJgdR9okmhr06MWkg+FNQmiXDnN2QiPvc1\nds2jg/khDfBmUxDxM7Bt/nscxUpo5C2dIhmD/AKbAuAYGERnvsfyOUPTWnJc\n6L/486RLBcjwfAAWDa/QtyXmHT2EWA0Wm4OpHq1F9RVBv0QZCIb9RhBJO/22\nQuQFMdz4ieo8Ur9kuslSpbeUYsP3A80qT2twvJdCIjwwnSmaq4omt5nDgajC\nsLxgZFS+8I3bblspCgFKkFhRJGpLzr16cMyGQB7lrqOUNebX1jTstAarczru\nwoQhWTifPXBUqR6lIGKxWb6zBgNKhoJTocJzhfAr0Ywof8FyEwlIK8csClIE\n9elQihrt6tOLAPDBzqWvuwQT+XLiygnxKBJoJB+dusVb54hnteu/xnDOBH0z\n1VnnA3C/WyjRNhi6s2SZkGkAF31eVxKVJ0pJM73AIw+0GbIUMKQqGFXcf8vY\nBthWbWNlH3K9Yxs2FJ6xAg+Wa7r8DqnOCmzgzCrf5GNUVlugSFZGeSCNXqRF\n7K1PX8uCR81mxuUO/IXNnm12Yx6fyW2w3U9aRcNW7Z/ZGyiW3GSupddQh59T\nBp3N\r\n=B6uZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.45_1524448658532_0.9902766011646476"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.46",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.46",
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-dCIuCGaE4UyM6cYC/a2veO0vKT/iSjBZ6ux4v/LePXA/N6v9648nwE6CRmCK1/LtRw+eU0sCo+c0TPeALCszYA==",
+        "shasum": "313e13e8edccaae6c645e3798a043521cf73df04",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17484,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WHACRA9TVsSAnZWagAAvDgP/0h2B/hip5XHuua7wdD9\nOnrbfnAXaIXS73rMkyrbomSbXRVlVP4ri3MTESz/UEqJ6mALGnTmHyhdwC05\nN/+vf6D/uYBtZ43AlxoA6CCMKDnRR5tBkusMHIFA1fwkDywkYygEAYV0RSSs\n3QlrLnyIAUD423BAhGcoiniLBXWCzEfMMXF9gjZhBCU0+VOMKnbsFj7SqvY1\nbZQdaIBHYvOnkz5ywngTTzClvRhuKI+0ZRXophU3HTREtyreXJQIlFDDW3AQ\n3UzbJwVGEKIWAQ0s6InceLHAfI1Zmz7imDXxgRX3rGn61SXAoOAqtMrb4lgI\nZt9ESBg8bjv4bZMy2AMheGQX8RxYQ1hphyvkhajn/Z/X63WSwBoIA0e8bwLt\n9z0uh5xbn08FSYqQ/Vv6aQz/qssz/x6U1yNoTsvRklnA+wK61DbiXZnIPCsH\nEP7uTtnKWMBPmDaJiuFqzVXtTwTGGufhkBPleG6oHBeki1o7IyCGEVbwLrJf\navcqhAednsLHnoXUXqgIP8LQAj5TLjEylvZyNgxkmUqkwBhE3PRe9KcRT53c\nlMGKYa2mIAQLwFtM6LlBAQGX9YbK2bt7iPP/MyCfcTECraLWovk3q0pJHmEB\nohY4WhmohAMquIo06FKJCMBOqZLAu+5wfwaG/VafcDJNyrhULmby+NGTUyyr\nEH42\r\n=1IGa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.46_1524457920032_0.5920753484700156"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.47",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.47",
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-bMQy3/jEZRpoUg7RdOouphBO8+7Sfjl7XrO84PtgBx4ck+ZPc4xOlBQyr2rkmsJNmmGLi42nnMI1cZZJT3LVnQ==",
+        "shasum": "8514dbcdfca3345abd690059e7e8544e16ecbf05",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 17137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iVTCRA9TVsSAnZWagAAH84P/RhSfIV8U925Nku5T0Rn\nx9Q1KdjOiAi5nKIZsB/WmMDWUbQDedSKa8hLaIhRm8ABEOPv1W2nNzbBLiWr\n+CCU5TX31fYn5UAo7YUn4idyHKxfOoh6hzAZZUz2X05LXiMbv7JYSVWah4/d\ncdRLvaRCSNDsokItixGeHjNayMHG15pxhoP/Aw4uVypv1s+3w73mxUxw5xph\n+x25f/45aUWQ0eCoLiB3yx0tuCeBd8WRU3hatwgmJxkSo9JSUTSGQ9KvXa7f\nebc1zR3XWy5mSUrsbb8nXXUQy+46WIIHPqDVnnKbEfMH83UIr94gsWVau8/Y\nHh3/xwWKHdA8AybSPGaUtlC9gvtSN3w/LFiBTPstA8bzaiPxcAeWXoTpuxLZ\nKDVpmIhmYqCjspbenNUi+PnmCrB2LjEafDcamOKcsG06BwSFChQK7kUCM3pB\ns9/HyOuzQAzmIv2D08rp6umAnP+0Y0mzUNyDY37FPuiKrVleTTX559HrwujA\nXbg3LGawY1b8WzKmeXMKc/jMBtWlD3q/Vj05AznGM+Jj8LwV8glAJB88TBiS\nPQBiVta6R8m8H7mW/YEANJv99eYuWiVjch6i1xIoJXnlYVLwqZMyGrPqGiqT\nYXQ/6pgJPveH3hsi/wSDekK+iP1QtmI3vF1EWNmpFAkMo/TX1YvfklEo/yjV\nu4He\r\n=xMKn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.47_1526342995373_0.817803861530773"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.48",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.48",
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-A+KCLWb8kNWdL9srvzJT/CKCBGKrmMKBhJQxFfFmYoFoqoD+y8paM4spRaTd2HvwlMXBgNKy3WI5O100Cy6+QA==",
+        "shasum": "7cb42cde7567aa4082da04326c7811542b2af8eb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 14183,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxFLCRA9TVsSAnZWagAAUZEP/0vWEuQfL5rjz5C6IxAa\nYOmgx7+he21QTOJCCv1Qj/4hdaixhnfEjMg5EFZi7dF7dViW4vkpluN8rGoa\nb1jaw5Jyleo6iZUfo9BeGmbtXuYaFyxA0/4fVKK2QTf+aA20M4DkAao72QgH\nXF1StcY7T/LTjtQOIQPMgJ9bIX7sXf/VshxOcFoyQLdDpYcWIqLpAOg2d0PF\n5R5RgyDg1BykBGv87ZGk7R+nED6x6c75xGY+DtbLBBmfJvwPIEqI27y1hxjx\naGylep63F1Ws9XwI75PjCfvridaStaBtdkx//HOm18oOd2VyQgPNcsalR5Pc\nkEgB1i7tqIAaqNeiFAHCBVddwSFRXmSgITxDJF6iHCRCEBFkjjDvhWqCjcS0\nV5wjnYRiFgV/XtX432V/T6DMHvskHh5NewsPYB06Gn0nH63ZnCM7E4slFiyA\nCs7ihMu50uShZYoqvlr4S4f5wO8L3+ulSbnf6oRM53UWvM744Oq3iyRpIdWM\n9BFYAfHwJxCNoKF+Oq7sl3DzvgR2O4EJnV1knoJNbH0nzY/QGInGRxTu4pat\nE+hlccxQzaMegWN+V8oe71/xwpapQd6236AQ+RP6WLdEHN1MoJujMWifCnfM\ndiImfUiHTcpajflTgMHXdv1/3ryOds6j3/kFRk027EO13pgF0hgIKqQpsh2R\nTOI0\r\n=ZmQx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.48_1527189834716_0.8361662529735354"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.49",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.49",
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "68225a3ae1312771bc5a36f71ff10d02c1243d9f",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "68225a3ae1312771bc5a36f71ff10d02c1243d9f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 14198,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDPDCRA9TVsSAnZWagAAUkMP/i6ajzFqO1uoxA8vx/5f\nGzCJ/6twuU1iGeG3cxyKtH29T9/wJOYAu0h+xMUFJ8906lpkBcAbFD43f8Pp\nKNj1atkvXPfyJCnoX9JRzGFVAJ4MCzxJGt+SnMaPdc6B2z5y76+oZfYtCmMD\noay1njm5Gsh+BNGbIwaiE4S48B7Y+kd7tbA5FhksWqlz0nBtg1Gg1mgQJM/B\nPc09LPbaPHirtvVPSLNHdKRmtxMtlZmHpNBeFrzk6L+Drs9C51lvJWo7oZ2t\n2Pc5mxMPydRt+ZOCUzwgInVhhWGHVSNBGC5Pl2yttcJKt6JHrwUWCiMr9Mm0\nvCRwlQysdMPAC6mjlr51wkgi8hOnEkOmRFW5yjHCdqEkGaI+6bm4CKr6KArw\n0/D40xcsyIy3FnEIHFFbZ99rTikU01apdQ0PilJCxzUY4S6ERLxkvg5+jsRV\n3hgH5kpCFgxBJi+Br7fHvczF9gyltUPwHodMTpYfXvaAhdy+BgfCN2vrdrmE\nGmBddnayQpacgI14+kAuVGeWPdxzDmV6JQ1fZQcw/E7OHtUke2z6BgeHc0jE\nnn2w5vLVqUfjsOOE+sPh44akioYq9oKuaqjw5BfaOZa6J0TdUlhLVvefPYRa\nZeQWTgovsYPL7ltvULjWFC1YRxrHYPQ3qb9ynIujmxDnK5oTfedLnlSRKQmk\nnqnv\r\n=kUNU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.49_1527264195453_0.41343526900458594"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.50",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.50",
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.50",
+      "dist": {
+        "shasum": "87c5bdee1c50e0588fb552e4e5649e5a6dbf5201",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15742
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.50_1528832858307_0.19380664348838605"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.51",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.51",
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.51",
+      "dist": {
+        "shasum": "6e7fc4ad9421b725cddf37cc924eaf777f228c27",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15756
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.51_1528838416015_0.5663464561706937"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.52",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.52",
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.52",
+      "dist": {
+        "shasum": "38223827dc79486dfdf125ab64886ed3780626d7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15755
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.52_1530838776324_0.8451855433119837"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.53",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.53",
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.53",
+      "dist": {
+        "shasum": "b80fcd9c15972dc6823214f5248527860bbf058e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15755
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.53_1531316435286_0.24434543076189263"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.54",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.54",
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.54",
+      "dist": {
+        "shasum": "0923f012ac252e037467245ff27f8954f4ce6803",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15755
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.54_1531764017451_0.8606189194709408"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.55",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.55",
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.55",
+      "dist": {
+        "shasum": "9e36a7d48c9137781484c5442da426873289594e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 15755
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.55_1532815661172_0.792681004815103"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-beta.56",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-beta.56",
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-beta.56",
+      "dist": {
+        "shasum": "7aecc2a886a151aabfe86e5c01811f5cf9c27d04",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.56.tgz",
+        "integrity": "sha512-tr2KAI4jhBfZLkSIHU4vlS6I1RmFYfMxM49ese+iPryvj1aH7x1VSz2+DEA/Xr+gM4CTXpWk0Xf2r2u260lPEA==",
+        "fileCount": 5,
+        "unpackedSize": 15755,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPw+CRA9TVsSAnZWagAAe0cQAIR2eRe32sAL/RPqf4or\nwPZmlLoAXl+DCBbGffJYElO0Q+7/CbkyeZ6/6V0Hala13CiOc3m3lqdE47Xh\n8V4vpbUTZSeY0SSuaeFUgT3b7t83Fj/nJPPZ0BTr3jAyEe3ZzmARb/Em4vwX\n1Jq6tSL7Col5qNDf50FsH55MCL+yX06Ftq7Qbk/xLC8JsgoR3YykbA0dtDeG\n7KDcWINMieKaZUHCftc+OvcaK/y0fGCjBPKWZm1k4sd5wyOvLNOXZcHbjbGC\nguzetKB/d/q1JU+B3A/fLCU2CP03Q6kOxYnTF3/L3ggPBcK7rrAnKnsVaz/E\nUXgCllVbbOx3EPLcyRnFe1GxQuOCDjHyS1/fp+HB0mt7mzs2+1rV5a2SX+FC\nnZRjHhZsQO+d4oxwi41KVNkg/61Pwvh0pBvIts9T9VHWfu6AUHogDslzc+Ng\nIQrfEUCDW3F1Sa0b68X+W8i1Qo0/qzuuNh7nQiE0gIDAUly32Hh9oKnLukUM\nDVOnHeG2RNWMNSKZt2LZB0WQIZXdG4z89xWtb8Z0gCh3mw1rshy5j16A/ZFb\n87jo9PMrFh9R65kpeiLIX2MEMsDqI7g5NTZvX/i1nwk4Wadgb7XW1lva5ijm\nF3mTH4ypBU2fHoFm4CdfS6a5zYTS5YrAq6T0b/MTLsmDc1NSOO/vQBwhSXUy\nw5bZ\r\n=Rsxw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-beta.56_1533344830419_0.9781009161472181"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-rc.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-rc.0",
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-rc.0",
+      "dist": {
+        "shasum": "b6c4894afd071780a7204e101535235c3f90fa8f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-rc.0.tgz",
+        "integrity": "sha512-R64U2qklRZUHjAux1a6h8gzyTMruQ36VKoqYCgqpm8u/N646QbKVuVVDsZ5SECmfAGf2qtv7ydUUAvV6UWHwQA==",
+        "fileCount": 5,
+        "unpackedSize": 15737,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGTNCRA9TVsSAnZWagAA1KgP/0D2l1RYEKbmlCorhHSR\nsqlrP9NOXDXhP2fKtBvJ35UG3JEhXjDhdL2TmPHotjoMFQsP5wjaWbDhttRy\n32Zel3I6dAaKsThMSW4z1BxLA6LpdNc+6cGW7TkMvj7aXY1pnAnSqqLxGz7J\nIn9EIv+QmgxOx0x2bZ3FTHtcH6nA6IEK5Rvc9zQd/QbgpNIcyuXia1b2Hn30\nsJiQHYsFwaYaTlo0tgkvPLDa1kP+GXIJUVo676nRMLykOBvwASTYfxBcPs1f\nCg5Q6KeaD14zvKQzsyYngoFc680xgx3jFj6caFd4AvqZ9AdiSItGqO7AdGb3\nBISD3Y7PInLwyvXMZbNWjT/8Wm8pxgyuhE0rTiTIUMOiaKNAILdhOlTDsNUH\nWoA6DgUty/lMOFkTS6+kIc9bzAGO5AVe2fgx4+pkEIGikXZgWdLz7QiTUfVi\n6sjm/EWmcAv2ZB1Om8PJVt7z8TgnymP4FoivDJbNaOrNNr4+DC49tRQZ0VrA\n3hQuXfGou/E2Xr5zJrPfnw6bQjpEu0GSpbw4GfbaqWFg43H1WTv3v2nESMA5\nPfwfkDOcvrDYACm3nmY9+2j31lDxFsw1sA60f2EyW2hP7+PtsPl1pRCMKDVU\nriNkqvA62JrA1aSz83mF2qhdWB6sSfZP8xPLO1g5VLu81YDY3uBlGIypMKE4\ncyjy\r\n=znn0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-rc.0_1533830348977_0.1690391611555555"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-rc.1",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-rc.1",
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-rc.1",
+      "dist": {
+        "shasum": "6aca100a57c49e2622f29f177a3e088cc50ecd2e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-rc.1.tgz",
+        "integrity": "sha512-denli1X4utH2boaedaCv3uDmrmBH0CMioIswTxViNY4M8nti3DV1m7wfKE4kDYq8UrIILLYwxxOsAvGxOS9/Ug==",
+        "fileCount": 5,
+        "unpackedSize": 15718,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ9VCRA9TVsSAnZWagAA83IQAI79teJ4RpHeM0P/vPHL\nNR/gfFOwqWFzPe04alrj/TGcy1VjsbW96aWlvkPJ1upnyCsXbDlrkzmbSiTe\nHDRoWi4tutCCyncXOmAOL1uclvbmaBqSXXANtpFnlLDNL9pAPpNtcQbr/s9U\nqQaA+crcJYonjTrCYcd4KvKeaV73dYmnUUqXLX3+2JyXsSD3S+z+LvteezG0\nmEV1RV59RYoTj/iy6+jOaWGjemYJ4efHzsbe19nmBwVPqzxja566YWEp7LI4\nOTi3ugVVIPCcp1d80PdgmDeSo3BPGGBvsKvGCnBfMQXi+pZHdZ1h1d7m+Vcg\nb34WCpaoNVZArn59/zTIrr+XLtTra1DMMw25x6dsHoSwMyhsdw24UizQJfJo\n0GDre0rxosY+XBv/CpEI72L8zUZdpVnqx6WUIU07EhOTb3IxLMLugteoCo4h\nQGybogFFbzpeSXcDfIMVOoiSvLDkt2MuQ6fSkM6Nw22agpbChorOcnojbBd/\nW2O11C5KNdHWCGRohv5n0b6MKrbAm73fStSXHkURwy5Gk/WZ/FdBrnpd+mK0\n3taG7exh+N3NoqrOYvE/jSMP+MTp1AX5gb3iQdL8gb9pVRkXLNC/p9SmWsuI\nlOAo/G5BFKy2LBhrhO87ivWDUUbdwcy8KeTfy0pUXSOQQYSJOTAK1YI5kf47\nIq41\r\n=LYnk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-rc.1_1533845332800_0.46839622790117663"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-rc.2",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-rc.2",
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-rc.2",
+      "dist": {
+        "shasum": "ced5ac5556f0e6068b1c5d600bff2e68004038ee",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-rc.2.tgz",
+        "integrity": "sha512-uIDk/4+OzSSrW9whicWupSfcfDixWUxppUCkPEHBA3UKMNSo7ageneh+35rWKDvZh3f+DrgJxbDfyolFBsr7kg==",
+        "fileCount": 5,
+        "unpackedSize": 15718,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGcPCRA9TVsSAnZWagAAcyAP/AnvWiKGFeH9qaKFjuRW\nCKZZtNMKwUR+5dCCtFZJXD+UxsGnyS/Yqj4GntMmRYcHPw7P8sN/tZmnialy\nvXPjukKeVZpnqXXHBuoZMWWVkypmi1Nn87ZdW8n6RyaqbtY6KOL6wyy6UWpG\nMVCsebkdslOLmCV0401J7gLLQJXV6oqR9SNd/waVUb9WglA+JmhdiypqMkjZ\nU6xy+Fb/ihYZx2ZZUcIGGobMSOqLuAJFcjwIiRPnyvDbCvqlFIMgpAdmEaxp\nCBOtdYPdhn8P+a1J5x3E5zbE/SZjdXQJvHb1XhHTXaCfNrwjZ+Z7yoEGvnpt\n1kOTJtUjkNqSCJFHp1lbn27B0IfDoeaGFTkTklfp+pDkCGRyxYgokCnC8xhl\n/PJb2poDKp+owPB02ABznHHj/nyKkM+rT/5p10rqmBQe83yv7uh7JW3E3/DR\n+8eAASNii+FHCKSIS2/xAYg4XJrYzNKw2GiCDvZq05xUBDLrfosct/SVRpM1\nvQBCmz6AajN7XJcPCLKVSq2jH2ADGqW6h3TYIsAq2xVQU3GJgWMtDTemWHfT\nIZ+qxuJjk0IVpn+PCf5+uUOOIafhNUcUc/IsZjvy4omzHWh7Brf08NWV2NBT\nbAxPx8kO7kJZ5a20KfvEBeopx6i90XUCAclylP0oMJth9Tn1ATpeUQ1WPi2c\n/RvR\r\n=ZTUm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-rc.2_1534879502860_0.7134449422047684"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-rc.3",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "7.0.0-rc.3",
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3",
+        "@babel/plugin-syntax-dynamic-import": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-rc.3",
+      "dist": {
+        "shasum": "36a9ca740fcf9989e02f0341a02b438cd8e9528e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-rc.3.tgz",
+        "integrity": "sha512-v0McTNJXpvzJyWNLZ+RBnvZ1HmFZm15B2nbrHHvWsVBq8w4+e+WtqO+Oht1YMP97dJlZyaATeELqkAe3bVAXVg==",
+        "fileCount": 6,
+        "unpackedSize": 16817,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEmuCRA9TVsSAnZWagAAZ5cP/2X05lG+tLIDuPpRYNf+\nyiIDdCL45EwAfBewA3w9ouFrUGuKTFD6F1aRl5qrKSmJYFFlnBad3HJxrWuV\nB2JXd5UZMLdm94ASvPJ2GmKewzxoLwidL3XEUoFNZiIeEk5hvwpryFV499Y2\nmd5r/R0PHAxqOmBjnXjRxXQGVc61N0NtARA5RS9AB0ADsjieZcfFONo+prXL\nFK+ANbwNhsCUwIXo7CGvrX7sKxgpBOz5W6qcVnFnmeaG0qzpfIgn+0KkOnIc\nj8MwXEPpUsfVZd/s/SwawtW+qHaL31lFXMNdYsgYVJKD1zhSB8qMw2K4OzDX\n9Nr3fzcjMNqsiNB0Ipp05fN/7ffETw0CAv3eEheohQbD4B4yfl7tnRx56PTY\nbPBTiaaXvhj6yhALaeFEGG1NWVFhWv2u1ZFxJjP7ebJJc7XFZUztgMpDP7LH\ngf1KAbLCe7cW2ZJ+uEEODM3iPvsGATSgoXonII1NNxLo0y6/f9r/WkQ5tyI6\nrbCbjktUcv7HGOXo5Ba8g1ce5/jGHgF2IpLmHMuFSB6YJ2UqwxzQ2G+D61aU\nhG7gfbbY8RDTi6TmXXVNrS/JlNKV/jKZPoYJIybYgapQMUEV1bFdyz1AQj+H\nPuV1aQu5zQD5rVhB7BgrtRiecGQI7gbeww9QSscvOuym9RVRHYzyX5eFT9Vb\nK0/h\r\n=gc5k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-rc.3_1535134125620_0.4820935825567867"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0-rc.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.0.0-rc.4",
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0-rc.4",
+      "dist": {
+        "shasum": "0da1c3f3d2f52dda2d6b2c6e62707691514c5ffc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-rc.4.tgz",
+        "integrity": "sha512-VQ8PMRNbD5cFLc4HWKjlP/UhW57S99oLarMoyHC6NYxzdNMylBQ4u4lgtG/eMRDutAlNVs2YSmKZCCA29TPIgg==",
+        "fileCount": 6,
+        "unpackedSize": 16822,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCqXCRA9TVsSAnZWagAAe8QP+wTjN+YYTfwGQw8FYitf\nthU7bXD+jmA82txE5WkMykwUO6XYHuNPqfzYsvSgkyM/D7xK9E9CRRiBXV/t\nHTjX0RKjpupAoGHQ6o9xcThuX1/2YtPimOe8j8SRwoJbMzNznKqe2nnqqtbB\n6fBvyio3ojDtM0L6DrDvGHc6byEnUcQzuJeeu9e/F5K/doJ1k2Nol5mR6/L0\ndueTRIyQcjCjFtHjfOHsj4iQKckgWUMN/LF7llE46mhh6/jg46YkenzhfPoF\nP2isAvtbr9jcCeSC6wiGhnEed25i1KdQ1y32JiiPF48+5XEEFlK8WKPxWO9J\nNJp0a4BLJ/qPl63be+8FhubHpc5FT/etbvaHmai1tIxRtIMIDJQx0waJftuD\nEbrz7QZ7i8u52xV2j7BqqrB9odluIRQteKaVffy+8Aj2CK7G2Ax6KZ3fIvKk\n68AhklJRkoh2TaUprSvwMonqOasgeivTPdcdg80p/H2YFmwO3+o0ZKZ5SaXN\nI8LXJM30lPqaK1cWfy7AP+rHchasb35e7W1VdxoUtUouxUDaSOjRlfHti+ea\nT1exINM38WobgynpR4D1etCRGirdDo0yvacit0yK6Tj7PbkqcNCeAU0VbfYU\ntZhvKiwsLg2UK7OqvrlxYlKQrXABI8uBw+4J2c2kjCADgSO64tquQurq9PL0\nDCAq\r\n=gFcR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0-rc.4_1535388309883_0.2995297724715973"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.0.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-modules-systemjs\n\n> This plugin transforms ES2015 modules to SystemJS\n\nSee our website [@babel/plugin-transform-modules-systemjs](https://babeljs.io/docs/en/next/babel-plugin-transform-modules-systemjs.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-modules-systemjs\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-modules-systemjs --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.0.0",
+      "dist": {
+        "shasum": "8873d876d4fee23209decc4d1feab8f198cf2df4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0.tgz",
+        "integrity": "sha512-8EDKMAsitLkiF/D4Zhe9CHEE2XLh4bfLbb9/Zf3FgXYQOZyZYyg7EAel/aT2A7bHv62jwHf09q2KU/oEexr83g==",
+        "fileCount": 6,
+        "unpackedSize": 16792,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHCjCRA9TVsSAnZWagAA7PsP/Avw1LBO3MS9cZQcSoUU\nDpnrJ4//StiGP1EzxYnFvB8bJ7vufQbe1GmhPtDMl7MlG3npNyKsh8pHfddT\nVVbZxwmpU2XAAYg2RxgJ16+uG6qKio1tGZbOsrXZWU8Gc2Z9jnW49c6I9V29\n8b0PW+0s+uSRuuEckyngAmBgS5bTwprnTgg2+sQ2Q36YIPHmwUydWjVVNlJY\np8jBE8OmQuWL6Hmq5O+M9T+Zpf8uITAsG5mGmEpvXiBcHavh4osHogNM1BPc\nG06O7WUYuxHj8gZPtjOFvM2eVCKVzTOVOwqSET7r7k4tsK0271HnsL5SBx2q\n+bKLujNheAFm5tg1gsh6FKjmJY/TYhqrrqSmjnFy2sdqGxz2F00vLVYTukN6\nD7m3zUZcGHZOlOUtjQbiRPuSlRTUG0hMaMQsSIiVwh9YeLRGkyovVvl3mgjP\no7Xw82IQDZqA45OvNd/yHSyLJTzm++wK44BW0Aeglf487a/Ujh0p4hNHiMYl\nvp4DPJF5m4HJBKW2fuL/I35mqaHS1WSkspZ7SSXl808LZXIctEWg64VpXFzL\nIsQB5JgJWUJLreygv1zmtlyt16G0pJArtkPVmPV6bjH1HLeX0R7IGQ+9dmjJ\no5f+jin3UAkkuYPr8OgSiKA8VAB0OWEuOnyGcOOq3DPUSeukQIhtM4U1Muqi\nce+M\r\n=LQtt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.0.0_1535406242374_0.46066457588825216"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.3": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.1.3",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.1.3",
+      "dist": {
+        "shasum": "2119a3e3db612fd74a19d88652efbfe9613a5db0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.1.3.tgz",
+        "integrity": "sha512-PvTxgjxQAq4pvVUZF3mD5gEtVDuId8NtWkJsZLEJZMZAW3TvgQl1pmydLLN1bM8huHFVVU43lf0uvjQj9FRkKw==",
+        "fileCount": 6,
+        "unpackedSize": 17124,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbv3G2CRA9TVsSAnZWagAAVUkP/3jrkaIpIQiAKyp7gu6O\n+jwahL6rRXif6rQ96ApmaQOZXJxF/XqmbHitzE5ecK894iID8hpulINwZyJY\nk4FthXmJqA1tCShYOllLTM8NfHcEH7fW8+JcmXOoXHUbgQjdK+i3UDIUFajm\nS7hfTxnL+6Ioo8qcTf5AP8FWF+VKptUSk3wQrKGUfKX4G3a/NYwwQnahv5tA\n5BD2EtRIEWj33g+S0xXYNMXD+yKG2LWkKMNws/GySdT0Pu1aYkinyYGucO26\nFvkMl99g5GxqAFC4VwM2G8j08bgVMB8IAYT4ZFvANBdqpV2WrgBvNEX8+u5H\n27HmubwPkuyKTJcRUy5jnxCKwsRHDZYAAAlUxaZ19RYaugRGQK9Snjd0PW4S\nXa8+R26JDwWV6G3vpzZL+ljCvM1msccxEl5fS7SvoJD0faA0N4rkBgDIgE11\nS0yG9d/hijPGp2CotkRmYTX1yJ4MqRgWBpiY9/QEfBYnlwcPVZTV95M+hjMp\nruOpSc09v+R1186uWmmrAckVT4XkwcgvHaeiNz2O2vOoBN4pSaZvtepJutZi\n+Fg55Qd8GIwp0tUPU4Vs5tH6f+0AXO4ljBZ2VU7piSluUkAXC/Gb4ZqEQixa\ntEpKWh7cgq5rJd7+k7eIExW7J/Il8Y8Ucvsb1YsZlcIkA7J1V7OtIXYvlrzQ\nLSKN\r\n=njEu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.1.3_1539273141257_0.21668491411725332"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.2.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.2.0",
+      "dist": {
+        "shasum": "912bfe9e5ff982924c81d0937c92d24994bb9068",
+        "integrity": "sha512-aYJwpAhoK9a+1+O625WIjvMY11wkB/ok0WClVwmeo3mCjcNRjt+/8gHWrB5i+00mUju0gWsBkQnPpdvQ7PImmQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 17164,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX2LCRA9TVsSAnZWagAA1qMP/0/Pw93ptyxIjYJF81vn\nJ+ZtS+ggqRBTIbsQFTwWVLrDZIyyxRDhZ6C/1s2ShJOAzU/Ry7ztyTElI7jd\nuYmUpV8C6Q96mLN08s2mAch9rJM/9xBprOF+4zUtnrliVgufL0lgdxwdTTe3\ngSqWH1yj8dEY6fdY6MN8lCLvD+Rd5nzelaDvnI9sDw2BNy3iegVf8yHoeDuK\n1NjQTC5LfInR1FJPjJ2m1zZnGOnKrxAtQIKnzpiFRvT5/KtcDthJRxWeRiyS\nhHKk5b3tH0ATfhA984bsKHL8+lqYk+DrpfxqOmetzG167pdHUP0DlAtyMJ6y\n55/rDc+sPnQLckCniaYNbK5DDOs4i7+M1up+lmhcbldZD1/ZCVFlxXQabqVo\njr7xisdSseKnjHEq71uMIZIP18rffu4uJNggKjxcwS7KV9fovQygdlhIqBXQ\n7+DQhQYD/ht8ZJnMmSYNkGam5AAh5gGlFUVPxTNveyMdEoaoEcTk7SfqzeYT\nHP47zu3y/hT34CNXQFu21BSbgxinDgXRxqhVajJjMvO4QZuV2xSzOCcG043b\nIQ33AdDs5QA1e2+l5YODIzbiN3Fy4LOcdaFC/Bo8XIaSEFyTXQ7PhoEes995\n0bVvT/0G4pcSQ2DOt705KYLyk7HRFTmru9u9qlHtUm7jHE94C6/WrUsPlmUk\ng0Vg\r\n=DW/8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.2.0_1543863690786_0.18812286302237236"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.3.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.3.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.3.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "gitHead": "1f6454cc90fe33e0a32260871212e2f719f35741",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.3.4",
+      "dist": {
+        "shasum": "813b34cd9acb6ba70a84939f3680be0eb2e58861",
+        "integrity": "sha512-VZ4+jlGOF36S7TjKs8g4ojp4MEI+ebCQZdswWb/T9I4X84j8OtFAyjXjt/M16iIm5RIZn0UMQgg/VgIwo/87vw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.3.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 17225,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcdDVrCRA9TVsSAnZWagAAuhkP/R1089ljwDdvJbGUkJI0\nww3SbqJIKwJ0c5B/QytxMIXIWeoTt9T7lEL9ScuOLNpnUNjEvcDxRegsxuaB\nTnny+XOHgOgBqByGwu7y9IvYELre/mUPvIVm+BG/J0DQWp30Ygdrt6433ske\ndKXui6D4NpA3njoWga6R+KUKefoSICmT+8Gnx1534UeR1DykTiOaTBW/0kcb\n5mkFDN41Z6siaYirz3/yUfrPEk93OU0U39mi9HAmAYNFj8eE+m42sNsLb+Ue\no0MdwZ2Q6nUuHmoavDD85HZEs+UujTzfDKO+7ooL2/iJS4rEsxCtBUNSzh1j\nwWXM79B0Vup1XUDe4xwiCKIwmFHAkXQY7xZATvgN1eae8MWX7MWLKz5iBLsh\nqQLU/84Stpc3CIUWloSK/VBfrQGpUOzYbRftPMwXLoHytFYO62cTnXAdrL37\nx0xYzox1v7M8phsJFD3uRvGUiw6GphILezBaIulbDVDzYYxy+RSm+pBTrQBi\ne0HW8NrTSdLakI9c33RF0xVOxEPOe7qYN+Nr6sTRoOOnI1bus3wf7sapeSqS\nbwPptfReTvGxnpQbC7Fte2v6/9+hZiFyW36sKdLbAlogO5AxZaLl6mnZCM2Z\nYHmkHljKm4C8dlSiygR+KTjS6pw/VCEaZhoaLNZtFbChr2qyozTop0zAaFsD\nc70h\r\n=QCza\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.3.4_1551119722694_0.2348511507342248"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.4.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.4.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "gitHead": "f1328fb913b5a93d54dfc6e3728b1f56c8f4a804",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.4.0",
+      "dist": {
+        "shasum": "c2495e55528135797bc816f5d50f851698c586a1",
+        "integrity": "sha512-gjPdHmqiNhVoBqus5qK60mWPp1CmYWp/tkh11mvb0rrys01HycEGD7NvvSoKXlWEfSM9TcL36CpsK8ElsADptQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.4.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18170,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckVTWCRA9TVsSAnZWagAAvVEP/0R+N4DBFWPbwFGw/Txk\nYGIWmazPr5Q81hh0OU/augopsYzdA76pXYDFsiLuysBlJbLB70QowJGraJkN\nK2QubPJ4dYUZasFofwUBJmjqLkVYdetY0O/XjOEFSUT+SDJOZk7/yTpJ0wJw\nXnOsmhV7a/kKXmIocaiY+Q4H+dpnlES1JGWjUYJqMXznI739ZL31KtK5gTN+\nRgbHq0jKEVqZvbmN9L4voThI0wpqXZM3CMWjdynu5LoPV/nT+z7AgA6yir+d\nwO4Gz7WmXhqJaBpIAXYPr1h0FvGn5npZLrRJig1cP5Kh5xKytfH4zyfIx/PK\nfGuZnV5AI1u9AfUWJveJVbMfVfbzuLx/6kk++T803LnHtYawy9Mv4JLyeuIP\n3FQETBs3e+MlkXwiSBDgsGJurKsU9OlNNTnBQ4zxQ5IMBD6CEoG6f4x/aDWN\nyToHWT3Jcv+Pcy0O49sjq3z0M9SE8WVztMCcHR87cAnrqSI1DHq+3ltIP58W\nCAD/iB5tAX4ESOrVmg03YiYhkAzRT58MqMVWsxh+04fjuyed93yUOgDlqNqg\nqPHSeAQwQ7pnLPsT+LN7fpXDqnQxWp2/0zFRF6LvWGM9CT1H8qanOAIPOl2H\nnd+7i0RQjEVoQSVqdlEu812eZGVSm2eSwNQ/Xxxd4nyR528AB/kWdcx0Yve8\nX/Jk\r\n=cg0o\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.4.0_1553028309888_0.9768425328140422"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.4.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.4.4",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.4.4",
+      "dist": {
+        "shasum": "dc83c5665b07d6c2a7b224c00ac63659ea36a405",
+        "integrity": "sha512-MSiModfILQc3/oqnG7NrP1jHaSPryO6tA2kOMmAQApz5dayPxWiHqmq4sWH2xF5LcQK56LlbKByCd8Aah/OIkQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.4.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18170,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3JrCRA9TVsSAnZWagAA9woQAItEII/qlMdDXOeMN+Fb\ndOy6otVeU5CL4GbSjNRtDNB2VyeNvHYtVLUKYQ6SK8561UlcrW2dquFvE2e6\nMa+2LFccqQaB0IYa4HHqxYl+DDSQ+GJYxMLWjADUzCizsAw6MCmQipUyidUe\nRpz0RtOO3Fna0TUyqMfAwurJw0D6X+02vS3uAQBy7wpG/ulEiBHF6ajtspDY\nNL0M8SPCqntpHxUYIiaO9jbhxw38l9BRohHW3wvAg8RJEZ2S+2vjIh3zCSQf\nWjR8tP+3S97Ecf6Jz5B+qvyvVRNmS0xiotRR9ql6gh+fP6isFdJMvBNJ/a7w\nMMDXn93U+dKDpRkExp1qfMN0peF3UM3n5HvzAiD/uM6aLVSDi8e8nhX2MqhX\nzgY6K7xGtZHoUtYKRwuiQQRzYphQcPIeOack+x3O1mEBHQuVI/kNzswZ7211\nyG400jqQmTeQJSyfIQWrC/ajf0+JHjMmVat9hSkctpq9BXctwfqa5HQpcV08\n4U+mAOShE4idVfhlM+Aq+j4xotqtKEWswjfNwkRBGhWgUGWSciB8sKBDgeFU\naz4sLdrWr0SGwRrDPzOnBw9bCkYfcaJkfuOwWLX3Nrl8PdJscMqQc/RrJlju\nj0B+R4D2mnYZHNhqRgHSeRZbFNmxRJ0zBi0ft28QPtVWwl0pV/Djyd1t7QoW\no6mc\r\n=RmeV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.4.4_1556312682749_0.396827568305101"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.5.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.5.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.4.4",
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.5.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "gitHead": "49da9a07c81156e997e60146eb001ea77b7044c4",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.5.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "lerna/3.14.0/node@v12.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-Q2m56tyoQWmuNGxEtUyeEkm6qJYFqs4c+XyXH5RAuYxObRNz9Zgj/1g2GMnjYp2EUyEy7YTrxliGCXzecl/vJg==",
+        "shasum": "e75266a13ef94202db2a0620977756f51d52d249",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.5.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18847,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdHffZCRA9TVsSAnZWagAAoFIP+wQYadobpKkgMCaD4dYS\nvCVD4NAIO0gzG/xeePapdTNc+pX67271YNCtrb9XAbs77Bd+ocB1wnT6hi7g\nzjZyMbVSdek5K7YjFeAq8rsF3H/a7FDaktAJEu/n5PE3telivnRtis0wRx5h\nBC7EtKdxngxrwxv0EdZ/BQFYQvOFX8Gz/PG9gjMpTkkseddJ2zmqeo3hzROq\nOxdf1p3+6a4k9S2UDsqb/NkX2NgVIGHq5+X3FxNBk46EAqpQYdjlGGr0Pm1F\nWGwqK8GcpsoSTFXPhVe6xBe7EqimTKmTnZjzUgdagecpXiLDDHYT8zMiZubA\nt5gEHALhsEEYeDiCF9eQSx8s1DNPDc/aPDzEUmzdcXu3DmI2X++hiDGZnMid\nmHlmXluYPCj/b1dc7qtTZWLBtmBaEu6oqby8AIykEupalJfBdAer9LZpeOPE\n5AssmwxB+GgxRAfqT5TS9ulkM0jSZ8DK7+vps/NE/dz/NTSfhMCdPwjCyeoz\nYKaRJrQY4TGa/tFDGK59mgQF9u8VijFOmuQrMmkrGJlj7MgC1QEi5stvyM/m\n8Bl+Cd6aiPHwgXk2tvUqTd1seC6OAOyBE3ktnF2J209UUKN84P2Q2540re2F\ncETgqb1b+lN4S6JqlYG8tRO5o6GUk5UifS33jZ51Pxn09ms5jxCMTfplMOHu\nOaRD\r\n=Ln5W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.5.0_1562245080911_0.42822366498816256"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.7.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.7.0",
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.2.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ZAuFgYjJzDNv77AjXRqzQGlQl4HdUM6j296ee4fwKVZfhDR9LAGxfvXjBkb06gNETPnN0sLqRm9Gxg4wZH6dXg==",
+        "shasum": "9baf471213af9761c1617bb12fd278e629041417",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.7.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18325,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVS2CRA9TVsSAnZWagAABAkP/2d1TmNtwC37XrcOis5a\nVjatSfbzMlG+NaOwrN0cNR+11ZaSv6fd6APAC40HlQjvD2RxyOnHSAt2gWmq\ns3lDwrwpcif5L0sKv7cC/3C9idTbEhvFxt8iT4QoBOiVMN6QcCfK+5f+c9jZ\nrKUQzZ3I5Qcvu93C5opn7o7XZPs+XgVzwbZuDQUB39zhy/M2Pj22mAmThh00\nbrP3CcVjqAGN2IWNsmTwDo1tnbW7gGNFYwCICZh7hmMpihwfAFvH+6ob8IA1\noJIAkommQ+U+84pSDU/HBFfQNe+Sr0KjfNGt9Q4Pbd2DcLyRLegKv2CX5eoI\nYFFOSY9UGUoikPGl50OR4NY+R50Sky1opwRxB5MeswiynD4shs/4l7tXVdW8\n28ot5Xse0iEluP493ch/CR0dVANjfuXnsZcqf1PplpEw1O5LuMyAJiUEN9aU\nBWgC63Skzw23eWZMqn+FEDQ4qeiJHaKw6MupVNjfxhl3qslA6nHxTaRWkKvI\nCZtmAccG/qeoG1zWqlTUhYXPvyzENz5F51erYURxiYrTIZxDXaGZYarffccG\neGv3MvozeMFQ7NC7Jo13/xKk0TEliUkY/RlVr04ZRDP41oA9ihfi1Y3ytiLo\ntWempCYZoNZmr9IUR5PGCHSWKb9Z1mgh54bdHaQZgDIVBg6qas5AyiLx4Jn+\npN+N\r\n=DS9k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.7.0_1572951221679_0.20189513064907016"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.7.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.7.4",
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-y2c96hmcsUi6LrMqvmNDPBBiGCiQu0aYqpHatVVu6kD4mFEXKjyNxd/drc18XXAf9dv7UXjrZwBVmTTGaGP8iw==",
+        "shasum": "cd98152339d3e763dfe838b7d4273edaf520bb30",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18325,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HBXCRA9TVsSAnZWagAADloP/RdJW4s53iRLYOnByJYd\nV/eXiJZ/heHvx7HCRCx0DUScp6Cx/4AEpFg01tGGIpGm9FJ6nWOILfOJ9MZs\n7mjQYBA8sF5Sl8taNxstDQt0SV/sjJiVv5qzdpkMcSNNls+0CGqowbwb5Lcy\nESqv126i8aVM/OSQiguuec6OU1rLChy0jlB9tCCK3UU9jkbFJwtxS8j/LyVd\nC+LkEcYxs3p35Sq3S5Epx95sqsNXkEtpWkZEZh4B2JBLegD46I4n7s/WVeEg\ntD0AyHTMobRe18+hle/uRbQzNTlhUFrP3YlialPNqyj1ZoAwPgSaj55M1iN9\nWHUvsc++5GvZNwaGacC/w7zZyUgYCy/04OGXx3zvrx6M+vfOUGuSSgsisjjX\nXTWs1Kp2tmenRzTukA0AKfCCUSRnnbRciMrlIUxhtn0ni9M3Q1lJxyBEnK6K\n7f56Er84hS+qpa1zMyvDLRpOTwEa6nIzDwd9yCcz7ML6XOEBsWlUDzaGiVJJ\nX+CogH77y0KwVReXbV3RRsCeBNvqhDW48yhhuKhLWgbRuLM7ZneHlG0EKsNX\n3/7a6KBje7lanFGEGSdXzK2mS72R/abAPybOCo+O2e8ZZW35EXCKIExbw2n8\n2sqr4Hf4iywsVnZpQUr+w4QU/8/JLFolEN3JUgORRMB0g0a1AUdQ5FA4zRFj\n/YGA\r\n=cPwQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.7.4_1574465620116_0.2162169378942309"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.8.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.8.0",
+        "@babel/helper-module-transforms": "^7.8.0",
+        "@babel/helper-plugin-utils": "^7.8.0",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-tKF9KLiIsiKyWTVU0yo+NcNAylGn7euggYwXw63/tMxGtDTPsB9Y7Ecqv4EoXEwtoJOJ0Lewf17oaWQtindxIA==",
+        "shasum": "b0ff0106a7f8a465a75ce5167c88b648770b0a0c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18611,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmWeCRA9TVsSAnZWagAAb28P/jpWCH9WzMefILg8+6Xu\nQtI8mAh+n4vaSiQeyldIspv3oxUIlgdAgYciW7FbHj+xNRSO41dlipSwHlVo\n0YsGNd/H+aMw6nx8XRI2IYD6Cc1a8323oOc3Unsqil4RkvHheAbUyI7U1O+H\n/xfCjiML2kmYFRsYYokMMjEjoZ0TJQc57nbhdkNUbP1sbr1bt59H/03w01Ei\nCCj1rg3iRXdi319IYQM/8+LCAMqHnQ5Wmda+T/v7LEU1Va9BD4et/gnL8pB4\nbEsVowbMffDXjHQur80jHf0qoFpnHSO1HhS7yk66UfXy1JK/7gLltJB7B4bT\nl0gTvHjW9NxMrZad7Gi6GtbjQpKqSA3eNKcj+bCUeH8BC9prKi4V6gpXxf6H\nfdUtj6RNgHWdvHV70L4RHiD/RSDwc1pW1gB+GqdlzqZAmJcq4IYCNLBgf4QS\nFw24fTsskGnHTz5LaYbpKaWEZtfSFU5NHy3RBi3cC5gy6hxMQ8UO9BCoH7bX\nfCnuV9ZHsNDEl9q4oupsI9k+nzkyT413vOGwlhB8u3bFeiZUKFcShF/lJsUq\nVHnFEsKRbHuZomxR7jsf/dmcs3glOImNqlqhV8yL+cqsQbnwCkMpxyj7Jo0S\n6RyACslGQmLdiCYn34Aq3q/65cv+S9sv7z/YqSwdhOutWDk4agbRa5+qhLMO\nNZdH\r\n=C6yC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.8.0_1578788253899_0.04115702394166432"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.8.3",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.8.3",
+        "@babel/helper-module-transforms": "^7.8.3",
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-8cESMCJjmArMYqa9AO5YuMEkE4ds28tMpZcGZB/jl3n0ZzlsxOAi3mC+SKypTfT8gjMupCnd3YiXCkMjj2jfOg==",
+        "shasum": "d8bbf222c1dbe3661f440f2f00c16e9bb7d0d420",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18589,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHORFCRA9TVsSAnZWagAAZ1oP/RtCV6tZnkF7UyoXZq7q\n4OCRSxCdjiOZnrgMTvMNfuxznjeQucvsC1GYNrFAeC5YdzM+NLZlg7reKaIZ\nfjyL+WxCf2bteyErqgPoKm2lQCO3vrzScb3qQhfz/m+iY7D3s7HdBiqXeNj2\nbfwyGXJdMEcIepkvcAnqvRA4250AfPm66X0lZJqe3CpLuhOFk6jgZrB64XAL\nSYTiRIjP6d+zR2qLZX3xlxiuvz2lFZmbRxOCs9WX7Im0iDCDYjrgndhvdhY8\nArqXV0mIXlUehrADLdQoO0pPaMbcuJa9Th4L0Wy7FuDsBqTkUEkykOEqgIU4\nYRFoWDN/MA/hCX4W/lpjUMqghw+F/BwDlr8ITwWlmp5tkRVZXsWsoWP80uZX\nQktX4mAN1CEHVT0gS4Nrq+N+fBDVyWGqQOuX6q1f5YBOUD01b665B6EdTmei\nMoIKqLeHzT+aw42WsLVv6fPJwm+kHReeX7cIa136+ZHO8c4K0C9oSzMiGqlC\npWM95avcpXyr9vSbFjCUZeUsoByQfiywLcg0SgT8tuM6AsHzjzAGnErWphrK\nlCqi9Q/lUt25kfBNthdDryAEwPSITMcNKSIUDa68ARzsGmcvmFwhRH0/Avii\nr5LcDEDlHOAkpilw6eIC4Bv3vLBfZMTFGE8p17G8/OBBI82Lus11zbFVMqJd\n2ntH\r\n=uHLq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.8.3_1578951749123_0.8511912853503827"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.9.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.9.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.8.3",
+        "@babel/helper-module-transforms": "^7.9.0",
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "babel-plugin-dynamic-import-node": "^2.3.0"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/helper-plugin-test-runner": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "8d5e422be27251cfaadf8dd2536b31b4a5024b02",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.9.0",
+      "_nodeVersion": "13.11.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.11.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-FsiAv/nao/ud2ZWy4wFacoLOm5uxl0ExSQ7ErvP7jpoihLR6Cq90ilOFyX9UXct3rbtKsAiZ9kFt5XGfPe/5SQ==",
+        "shasum": "e9fd46a296fc91e009b64e07ddaa86d6f0edeb90",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.9.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18636,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJedOPBCRA9TVsSAnZWagAAHbMP/j55/90NlceW6pM4OPTh\nkFiKOrDb1nBoFMPeVg4EQ9jaPT4sNCEk4WysbcZ46M1hAZedENhbMfOmqJNv\nN2eH8zgsTxlTxOwIIxvODMo5fKPkR/xnkIMVX1zZT1NmGiSptNa55hgjVMr5\n2yVTNxdU6Xhi7+k0N4B7oE/6NJa699taCctz7FFTe01iOSPzSd6/9yzsMX8k\noHwY1yv6rcK2P/32UeLeYJJmy9IRyXd5ajjr+pTpHuv/xUJiZ4A8mzCsgM+/\nIOxTUHr6r4k3pOUXb7XyB9gPQQ27XUn7ozLVnXylmkG4WBrlufsr4sGdJbXD\nC3mQ7sI9qj6WV5Qj+/Ih6e879WkZLhNugb9qwrL+ZvzTtjN27vb1ks9GLwtH\nCVJo0Z4cdSRlA9rPIMJ10Y7gyXbhl5YlylJUazs6wphhbJoXc0JH3qM+fg2m\nblGsB8UKNd27OkwcRjDhUPZ7IGW7HUlumfxC3d1iDNUxliqnvsua5nwhrKAJ\niMixeazWhF8Jhjmqq/GmQU8qNzfeyzNF9CLIzYi6f8PQv0keLJHNv85sG3rn\nyXdA3GMXDJ+jpmwM4C1+Cew7TxLU0kn5MN5U/i/dhCzu0xyx11nHTS5JhHhY\nNzCNNonogDcP7kbaiFEl/DZleDvL0AvHQxaXYBW9GUzEU+7EOTlGT5R0UhIG\nZHTL\r\n=r42W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.9.0_1584718785323_0.820243223196232"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.9.6": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.9.6",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.8.3",
+        "@babel/helper-module-transforms": "^7.9.0",
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/helper-plugin-test-runner": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "9c2846bcacc75aa931ea9d556950c2113765d43d",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.9.6",
+      "_nodeVersion": "14.0.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.0.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-NW5XQuW3N2tTHim8e1b7qGy7s0kZ2OH3m5octc49K1SdAKGxYxeIx7hiIz05kS1R2R+hOWcsr1eYwcGhrdHsrg==",
+        "shasum": "207f1461c78a231d5337a92140e52422510d81a4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.9.6.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18636,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeqcmFCRA9TVsSAnZWagAA4T8P/irG9g2RTryt2oKj22en\nwjoLJhTq0ca36Aa+k7Z4/CH8Krwlf6Jiv+xfCxgLwHUlIk/p0jrv8DeP/F6P\nfEUtqWsP+azZp9PC9BMKIaEJ7d9I6wm4WqR8hqnrwm5VH0FiUKqADtWoXxrq\nNOQdrJIKViW8zp/WVB1T1mexXAQ0QvkZDU7DmQ59Mom4d5zvR4qtElc17Hcy\nOayBOOM9ukVoKHRaUYSedvkaO9PkNhDFv/fdGthvYL/cWLb7RdDW+1CnHEDT\nR7t2YlBZKrDoJnGf173cX847ZjbK1BzurqPkafRoYc/dqhaN0guT97xbV4aF\nKc3asDgR/v9rGbTv5q6rXA+4qOpjkKPrvvhkQ+9NsM/tlGuv1A9sL4ykFoLG\n7WLtUUX0hwtXC0tx1Dh5OQvTDqkid62E3qOyHtPGlNaLK8Mdwb26KL15VXsm\nP4aa045aP8FWODlr0oy4XkbFbbW44NzhpSn+ZnOgt/jX+lVyTIkYj4wbgnpf\nlBvcyRKIZhs1TkyOmX/9P6VFhOEzvzS6/i+aFF9LxnyjtIrEOwhZwnvxgjeB\nEVFuzxYIrxGUWeWOZFZ2V+6faIAygnD3h14rorfdnmT7/GK+hMn1tlHBdKpw\noUq8MTBCZCAJ8vqyFuHj7FHLyxvPExh5AyH0UDXWWPi27iKxpPvo3fXuxiB4\nqIh4\r\n=02hz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.9.6_1588185476859_0.08352679106609084"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.10.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.8.3",
+        "@babel/helper-module-transforms": "^7.9.0",
+        "@babel/helper-plugin-utils": "^7.8.3",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.0",
+        "@babel/helper-plugin-test-runner": "^7.8.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "5da2440adff6f25579fb6e9a018062291c89416f",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.10.0",
+      "_nodeVersion": "14.3.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.3.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-L/1xADoyJeb01fqKiHhl4ghAJOnFcHvx2JQA7bc8zdaDFDU4k62CJmXqDtNtJUNiOwlHZLWg1l7/Twf1aWARQw==",
+        "shasum": "815aa9b9d59224ed1bb5d4cbb3c86c4d7e12d9bf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.10.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18654,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezY1yCRA9TVsSAnZWagAAfcAP/2qdD4/1obkAI0zHZXAm\nD34C2Zm8hFRwKGP92wSCyEW7XFHN20bD7+VwSuxXZJxniS/4D89JnbQRw1in\nnuqkHbG/f1qAhjxATGZo/hMLET9iEhGAj0AZCBq989P7UXoy3OCv3nuBx+QJ\nXQsN3kBJN7Bu/ohkvz+YXSHPCs9gcDk+c0fZXZKL2iY3WSH1IMZMTBoUmqVT\nNDXnXeErt4q2Xln5B9b3BHRG4ThWP9yXd2FHnP/PiqhPPeeApKwsRCwTdqYD\nbJImp2/WM4FcucSlIPgYOALrZM1jwayJYh1sbumfzRuS+w6E41TC5PiH5d2m\ngk5IMEUUlb16eq5IJluvB86d/OwgLRnNdnWXmv2+F9lutQq8tHNAIU1EqCj5\nYstbAdjJxkNSyXnOTvgWNJIA/bfta/SeBYjAb705fkqcPvp3B8d5iX7z7Upb\nSrHtmM4IKLIF6Ys7uD8ZceWVoxwEsDjKD+wRtWrmluwVu4TyesStOMEOu7s6\ncy/KhI/UKIgXvgencG9316QizQt36RYgQQOIW8TpcsuhrmXS6PhJ0X7klsXo\nCRGrR9yZhemNVnn4C5DHNN9HpFPy42ro6CKPPRIS3kf5k874DHPF8VmTpMYj\nn2/iPKpy+uXaEToKyqEkfuSCXH9b3c8uL08jQiU6HbAOY+NuVixResM/CE5z\nDXTC\r\n=Y8DD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.10.0_1590529393810_0.8319336750713804"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.10.1",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.1",
+        "@babel/helper-module-transforms": "^7.10.1",
+        "@babel/helper-plugin-utils": "^7.10.1",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ewNKcj1TQZDL3YnO85qh9zo1YF1CHgmSTlRQgHqe63oTrMI85cthKtZjAiZSsSNjPQ5NCaYo5QkbYqEw1ZBgZA==",
+        "shasum": "9962e4b0ac6aaf2e20431ada3d8ec72082cbffb6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuTgCRA9TVsSAnZWagAAGDcP/jZfPgJWhGA4w6PKFbpy\n/vP2LDaXuBWiYTWPThvx5f3lng4KV5MUk4Sg61uc9a2iRPqPStuybJlE988M\nq5BRz4g0DMmw+GlLPIZGfd+BNZlDdptsEBnIrtULmoKRdti6smxg5HfRRdqI\nfAy1XgId/4QbZeIqao4Po+pxiwtYute2s6O5tK2QQjtevMudVa7yUPdlBcvI\newcas/VtwtRAqXy2qin3O8HATlo7cNqe3RAL/qrr2NMpsK7G7oqVrnQMXpuo\nvdnWL3MsQoWF9KuU8JRpfTkkgMQ/Lj98aaI1+S0TImVmktHHdzApVdM9oHbM\nnmzrbB5rGRivaxILhS2SgEvYt8hwdM18H7VKuamxemPbBueLlLEWt6kajiyA\nlsK0tpUUP4xwTwAPP9YO3Ekr0GGjpljYVRozgiSbfvPkf1tW2gVjICzNbWt0\njKqgox5oMV3tQEEKOMcS9QNvHyL8xYN2Y5VI5ze3XSdH7Gkf3D9j6dvAcXVX\nY/Q/Suo8HD4QJ1ZZpfHHgTGYQvzDmH+o9YAoJVoikYH234lV3gLhBXKVtirw\nge7fl127wk1nDIF9HkMDR90WBqR/EYwKTFeSmAAYO2aevtPWFmStqVlhkD+R\n2XP/UtROC4HInGEnt7rYadd7UmjZ+1aJkKyzPn3C3Uu9jzHoBbDHPu0puYxY\nKN2/\r\n=0Q1v\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.10.1_1590617311915_0.8861673481037948"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.3": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.10.3",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.3",
+        "@babel/helper-module-transforms": "^7.10.1",
+        "@babel/helper-plugin-utils": "^7.10.3",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.3",
+        "@babel/helper-plugin-test-runner": "^7.10.3",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "2787ee2f967b6d8e1121fca00a8d578d75449a53",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.10.3",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-GWXWQMmE1GH4ALc7YXW56BTh/AlzvDWhUNn9ArFF0+Cz5G8esYlVbXfdyHa1xaD1j+GnBoCeoQNlwtZTVdiG/A==",
+        "shasum": "004ae727b122b7b146b150d50cba5ffbff4ac56b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.10.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe7SYKCRA9TVsSAnZWagAAlaIP/jCw5uZsKOIAlRDMYm6B\nWaW3IbeN83JsOSccfRD0ax3zA09+FeV4PEcamB1umshCBY/7wEoEiALIDdcf\nRSLXocqKS9CHY1T2F7VQm00dAQhyANZ0vVVLNl3Q1CGSzvPtvHloi5aucTO6\nPT/m5f4CbOfxmGsqHle4MXeSu7+7W7+FiwUb5jbOaPaoayDwqB8C/iRsswnn\n05KldTE1TQtd4+SiNvcL2SbkFjzBtEkInGw0aWU5VHxdmbobG0lxFw/0VTkx\ne91odGqnaFPs9LRXXEfR3zleBdqZPAbSXriYoP5WGXeca6Y3tX4AGEbwTolK\nW5IPMt5mvDzO7EfXvN2jV9DUWr/p/OEfMmAABCOyxIz2D697D0nYhCgdiOVH\n7KSgOBIZVTU44NXEOBSOAUVvzKiuqBp9D5pR4DWUCAuADhB1zVJKhz/jE6Wz\nNfp3tvNMGXm7Fnyb7e5jyKZ49cQeV/jhqKec2Mr3ni0x7oUZF6yw3DjbGZtx\noKxwxXEHU7s6wDu4MTQKvA9GghFfwSFQmC9wVt77X1i67XF9snSSHpK3cst2\nvbP+qcACJZ+kaSRCJFBU+GNoCw3jZCJRG0AKQgjwhgwfRrHrVu6EwTdF/CaW\n+m2Wfb+jBX4TKSCmeFWN/UuTc7dmhBw0VWh548gpZEJh3BVSJduS4n6wBbk4\nZggJ\r\n=hVYB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.10.3_1592600073686_0.7860943649373575"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.10.4",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.4",
+        "@babel/helper-module-transforms": "^7.10.4",
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-Tb28LlfxrTiOTGtZFsvkjpyjCl9IoaRI52AEU/VIwOwvDQWtbNJsAqTXzh+5R7i74e/OZHH2c2w2fsOqAfnQYQ==",
+        "shasum": "8f576afd943ac2f789b35ded0a6312f929c633f9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zp7CRA9TVsSAnZWagAA0JAP/jVYrkV5tTMeoOdvsiCK\nDwbqxulBJl1ETOraCYd/TPi1oTMyBQv4iH4w4XQlvOZI6JJyWYMC97cqUC4Q\nkjTZgcNm8S5VPV16f9fq3RD1B7mxkjURGZB4bNXZhhdZxn8R0o1RNzktd2Q3\nZc8iilP1x2ajKdsktqHSL3gwkfE+ID0eW5yjn5M8LpKWZO+ZxqkA2THepIC+\ngSdDW99Q05ey8ypWR5R+EL1q136lHW2H0oBatf51VJwv5AytjJ+UPrz7QW5r\nzj4IaRWfZyu9zeMkQBDkAzkscM0hMs+KH6rYOWvpt5vOU4HjV3CSAWE1YJHc\nwFOBbW2CFgB49AYTciD9OplmtI3YNp6eKtLrwSS7WCAqu/Tz9+qDAQsTOtI2\ng3QRzcJqw41JOjjZ8sSG/F938pjcDYr2YWGn6yqma7+IjChO9v8bwrMoPamz\nFfw5fONE3RsDcYrC7i1pF1lTbmKMwSOdbkXa2RRB3pg955DP5n1W3EIHtdR8\ngyYo544jrKbh1ksO4IV0tjf/2q/wobeME6UajgZ+a1b+P3IYg1tVWdUlsDbI\nmvTh2iYUHsZYTc++Mz04OSKi91JE+xlImyHhMEhTqmrIO0/we2f1gqtKjOlw\nC265VQmN9db8BTUQYe15TWxTgQU/RDnrVOHSFu0tx6GedBQio5vNTBfxpwnm\nu7Ci\r\n=K/F2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.10.4_1593522810718_0.04679352569429729"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.5": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.10.5",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.4",
+        "@babel/helper-module-transforms": "^7.10.5",
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.5",
+        "@babel/helper-plugin-test-runner": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "gitHead": "f7964a9ac51356f7df6404a25b27ba1cffba1ba7",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-modules-systemjs@7.10.5",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.5.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-f4RLO/OL14/FP1AEbcsWMzpbUz6tssRaeQg11RH1BP/XnPpRoVwgeYViMFacnkaw4k4wjRSjn3ip1Uw9TaXuMw==",
+        "shasum": "6270099c854066681bae9e05f87e1b9cadbe8c85",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.10.5.tgz",
+        "fileCount": 4,
+        "unpackedSize": 18749,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfDfbmCRA9TVsSAnZWagAAwuoQAKQwbXGco2SeYOnZNF9G\nwI5UWWnJ15/mlxgCbTP4xIvV//Pc5DS54z9ojOfx9om37EmQpLhOlDOwAiuf\n4Jxuw+0HmGL/CGxn7GNaC8WrTVGk4aPy90VNpZo0zVyzSJc8HkmVAMoK0z5K\npt93c+pLKGp3js0v7nlu6tk+zSpkwEAtXNYAsmYqRtCFAl/T5yp1zNHFnUwr\nS6o9lO0raAUhktXFZfF0AoC6eWPr+BnNgW1bay+mH8SVD4sYk+Nn4/sGSk2R\n9JalhzHyiUQyAdqJy6rrf+eILsqoU91HrlmiuJMO/22+ufeT8824FdNCdgIZ\nmtUbAA9DtnSHrYBekC4e6P07fzjjntsJ6vUno8vs062fK9PVBc68/eE50KmS\n6RwlE4Cm9ttJfmkfKCeMza5xY66p7ZRBlGVNPQajQ53MnrDtRtxrFdyUrbWg\n4LM0nTZDF7I14a/NZhnMMRnDwEX7JJ6NpEcGEfiXEKstDtbE4rYXnMykh1pS\nRKL+RIYMtLwnuZ5y+Zl0ERGX5isXyU1BilsVyZ8op5NpV2J++FncXvfvXneD\npT1EXsZHx7tHo0mFQmamdZUOfPvrT3PI8Ocl+Z/9wlpzQLbaeomFe6O8Vi/5\n9/N2PDyWhMJtE/DGRJCPGVmDs5MK3ny+5GnD1VsRvulZjMKf2iNiAZhlghke\nlx64\r\n=1I9n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.10.5_1594750693842_0.4382641289334943"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.0": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.12.0",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.4",
+        "@babel/helper-module-transforms": "^7.12.0",
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/helper-validator-identifier": "^7.10.4",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.0",
+        "@babel/helper-plugin-test-runner": "^7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.12.0",
+      "dist": {
+        "shasum": "bca842db6980cfc98ae7d0f2c907c9b1df3f874e",
+        "integrity": "sha512-h2fDMnwRwBiNMmTGAWqUo404Z3oLbrPE6hyATecyIbsEsrbM5gjLbfKQLb6hjiouMlGHH+yliYBbc4NPgWKE/g==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.12.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20411,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfh1mUCRA9TVsSAnZWagAAhcoP/iM8BJar9aOkRaVQ67Pz\nP8T0pfMCPtuYivqc3YstZ4OcHr/i69Nt1F2kSq/sqqsYt9jFiH+RdYdPwTJz\no7VcsGowK0yl65sWTuQDekTpKGd8yzvq67ZhMgtbnOAlCfra6KiGy+5dVvke\nM1qMCf7to04hWbXyFqbHpfGXbWcfoBwlOOguGxneVDNJj3XLlcZPsKmg8Scc\nDT0UIvfhEOnywwGgPMwxA/4RnTSFNXT3QPvekHNsS4BAzjWWyJEaZQlE9mfh\nKBbu2SDDPCMeq227oYTW79vYVeiM4md+gQM4bt7b6SYryysihEtfMBdX4c2+\neb0/qqTZqJTYFksDSDS+lNHnwqrG5wHTE13rV8JbJGAr+Pa1nx4JuVmt1xvo\nOgYi4slagJwlFCCpos3aMqYSAzLFIkuUDn4nuiGGLloFgaBeAJHyznJVLoZS\nwiEHpE1KzrMsvG94g5cCLJisxPg7XDtpkl6px18AXRMUMIKY73pMKRCGRZBu\nNkQbUcO1eZVftntjKsOu4C0DfBdsR/W2EkhM9LDwR98u/tQcKlYkW3L4VS6d\nb3gdwqkQmgy2ZRWwriTflWa3K9HdZLO7sgE0FLkohBQaE8i5G/3H6mLVtDfH\nEp6a/juCs++fA3iC6EMnp0bwZWxX2xHlvHyRsvc0YjsrRCg1l7Zr+p0+AqMz\njwrO\r\n=W9A2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.12.0_1602705812002_0.25796952930829975"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-modules-systemjs",
+      "version": "7.12.1",
+      "description": "This plugin transforms ES2015 modules to SystemJS",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-modules-systemjs"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "dependencies": {
+        "@babel/helper-hoist-variables": "^7.10.4",
+        "@babel/helper-module-transforms": "^7.12.1",
+        "@babel/helper-plugin-utils": "^7.10.4",
+        "@babel/helper-validator-identifier": "^7.10.4",
+        "babel-plugin-dynamic-import-node": "^2.3.3"
+      },
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.0"
+      },
+      "_id": "@babel/plugin-transform-modules-systemjs@7.12.1",
+      "dist": {
+        "shasum": "663fea620d593c93f214a464cd399bf6dc683086",
+        "integrity": "sha512-Hn7cVvOavVh8yvW6fLwveFqSnd7rbQN3zJvoPNyNaQSvgfKmDBO9U1YL9+PCXGRlZD9tNdWTy5ACKqMuzyn32Q==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 20410,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiNBDCRA9TVsSAnZWagAA3CoP/A+NH6aV7RWMbmwvUHX8\nRUSc9S30xTPvJYaV1GdxJpORFqNXLJraif51xR4ux/yKBzY6u1Xz0sPhl0if\nNlTlruMfM71roWY/HiANAdcsf55B432r3zfk3JNDNxFXFscYH727Mcpsnx+R\nd9Ps4gmWmwMt4ZWnpp58+0T/V1LikEdGrSjgu5nguVe1r74+gKrQ9IH9/aCr\nTEiBpHifptec5YuvSGKSEn+mz3RY+GGSM5/q4DqmXhswBax7LDpx0evv/7rm\na1r5zVGgXK1khPrc71rpvdQmNyCKHLRX0ZLuqIslJUKFJISBWF7ASm57EufB\nO0BXZmqB/aAKSEGuvynKZrYnlPHzLRj4ODEzoh/Yr2s3WrlUeVGs3VXC1I9/\nn5jrvk+q2nUcoK9AW+IT/8YS0BAKWgW1fyz+IoX/aBdfxBdSBbfdUTj8G5q/\noBrGmJdv5qPKDEJI2Pf8WgdaZ9x7lUaYufGh8EbT2tgOrNINf46sWL36pQ7O\nBiMjzhHQMNO5yckZ950wQawFd5z0KHX9bOLxJwuKpNwWqXge/9GGueeLkLeT\nb46+YOML09LiotMza9QYOwVrDtOKjr8s8C73MuR+O6ZT9gcwVkJpOHmZRC9D\nipy+c2yDPh2WalKzHObu9Nud+y2Ktsn0sMW5Kha6SjLeiA11ssg5oPrMSBsQ\nhWG1\r\n=0o+Q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-modules-systemjs_7.12.1_1602801730801_0.8430002384079152"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:42:15.980Z",
+    "created": "2017-10-30T18:35:39.235Z",
+    "7.0.0-beta.4": "2017-10-30T18:35:39.235Z",
+    "7.0.0-beta.5": "2017-10-30T20:57:17.940Z",
+    "7.0.0-beta.31": "2017-11-03T20:04:03.719Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:47.114Z",
+    "7.0.0-beta.33": "2017-12-01T14:29:02.103Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:58.136Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:15.799Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:22.565Z",
+    "7.0.0-beta.37": "2018-01-08T16:03:31.465Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:27.709Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:55.312Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:20.298Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:30.686Z",
+    "7.0.0-beta.42": "2018-03-15T20:51:43.963Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:40.192Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:20.701Z",
+    "7.0.0-beta.45": "2018-04-23T01:57:38.585Z",
+    "7.0.0-beta.46": "2018-04-23T04:32:00.080Z",
+    "7.0.0-beta.47": "2018-05-15T00:09:55.475Z",
+    "7.0.0-beta.48": "2018-05-24T19:23:54.783Z",
+    "7.0.0-beta.49": "2018-05-25T16:03:15.544Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:38.356Z",
+    "7.0.0-beta.51": "2018-06-12T21:20:16.087Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:36.390Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:35.327Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:17.525Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:41.217Z",
+    "7.0.0-beta.56": "2018-08-04T01:07:10.492Z",
+    "7.0.0-rc.0": "2018-08-09T15:59:09.082Z",
+    "7.0.0-rc.1": "2018-08-09T20:08:52.865Z",
+    "7.0.0-rc.2": "2018-08-21T19:25:02.920Z",
+    "7.0.0-rc.3": "2018-08-24T18:08:45.677Z",
+    "7.0.0-rc.4": "2018-08-27T16:45:10.850Z",
+    "7.0.0": "2018-08-27T21:44:02.570Z",
+    "7.1.3": "2018-10-11T15:52:21.408Z",
+    "7.2.0": "2018-12-03T19:01:30.879Z",
+    "7.3.4": "2019-02-25T18:35:22.786Z",
+    "7.4.0": "2019-03-19T20:45:10.006Z",
+    "7.4.4": "2019-04-26T21:04:42.978Z",
+    "7.5.0": "2019-07-04T12:58:01.021Z",
+    "7.7.0": "2019-11-05T10:53:41.798Z",
+    "7.7.4": "2019-11-22T23:33:40.233Z",
+    "7.8.0": "2020-01-12T00:17:34.453Z",
+    "7.8.3": "2020-01-13T21:42:29.290Z",
+    "7.9.0": "2020-03-20T15:39:45.423Z",
+    "7.9.6": "2020-04-29T18:37:56.952Z",
+    "7.10.0": "2020-05-26T21:43:13.920Z",
+    "7.10.1": "2020-05-27T22:08:32.075Z",
+    "7.10.3": "2020-06-19T20:54:33.811Z",
+    "7.10.4": "2020-06-30T13:13:30.846Z",
+    "7.10.5": "2020-07-14T18:18:13.965Z",
+    "7.12.0": "2020-10-14T20:03:32.165Z",
+    "7.12.1": "2020-10-15T22:42:10.913Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-modules-systemjs"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

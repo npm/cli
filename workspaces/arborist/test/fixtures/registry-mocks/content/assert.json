@@ -1,0 +1,1074 @@
+{
+  "_id": "assert",
+  "_rev": "126-167aace826e534150b8e1f9962962375",
+  "name": "assert",
+  "description": "The assert module from Node.js, for the browser.",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "0.4.9": {
+      "author": {
+        "name": "narwhal.js",
+        "url": "http://narwhaljs.org"
+      },
+      "name": "assert",
+      "description": "Node.JS assert module",
+      "keywords": [
+        "ender",
+        "assert"
+      ],
+      "version": "0.4.9",
+      "homepage": "http://nodejs.org/docs/v0.4.9/api/assert.html",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/coolaj86/nodejs-libs-4-browser.git"
+      },
+      "main": "./assert.js",
+      "directories": {
+        "lib": "."
+      },
+      "engines": {
+        "node": ">= 0.2.0",
+        "ender": ">= 0.5.0"
+      },
+      "dependencies": {
+        "util": ">= 0.4.9"
+      },
+      "devDependencies": {},
+      "_npmJsonOpts": {
+        "file": "/Users/coolaj86/.npm/assert/0.4.9/package/package.json",
+        "wscript": false,
+        "contributors": false,
+        "serverjs": false
+      },
+      "_id": "assert@0.4.9",
+      "_engineSupported": true,
+      "_npmVersion": "1.0.15",
+      "_nodeVersion": "v0.4.8",
+      "_defaultsLoaded": true,
+      "dist": {
+        "shasum": "45faff1a58f718508118873dead940c8b51db939",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-0.4.9.tgz"
+      },
+      "scripts": {}
+    },
+    "1.0.0": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.0.0",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.0"
+      },
+      "devDependencies": {
+        "mocha": "1.14.0"
+      },
+      "scripts": {
+        "test": "mocha --ui qunit test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.0.0",
+      "dist": {
+        "shasum": "11e0629e3bbc13e293bf79570c9febe98b2d7997",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.0.1",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.1"
+      },
+      "devDependencies": {
+        "zuul": "~1.0.4",
+        "mocha": "1.14.0"
+      },
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.0.1",
+      "dist": {
+        "shasum": "af89155b0d01a6dbc2c07803e8ecf94b605cb8f6",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.0.2",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.1"
+      },
+      "devDependencies": {
+        "zuul": "~1.0.9",
+        "mocha": "1.14.0"
+      },
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.0.2",
+      "dist": {
+        "shasum": "aa45c4be60a06ffbf2fa88e81aec400e68de4da7",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.17",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.0.3",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.2"
+      },
+      "devDependencies": {
+        "zuul": "~1.0.9",
+        "mocha": "1.14.0"
+      },
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.0.3",
+      "dist": {
+        "shasum": "b4876fe43cd32fa93679f49e082e5c47e0e42db1",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.1.0",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.2"
+      },
+      "devDependencies": {
+        "zuul": "~1.0.9",
+        "mocha": "1.14.0"
+      },
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.1.0",
+      "dist": {
+        "shasum": "851f832b880525bb9f6c1bb1dfd93ea028247f23",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.1.1",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.2"
+      },
+      "devDependencies": {
+        "zuul": "~1.0.9",
+        "mocha": "1.14.0"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.1.1",
+      "dist": {
+        "shasum": "766549ef4a6014b1e19c7c53f9816eabda440760",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.1.2",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "zuul": "~1.10.2",
+        "mocha": "~1.21.4"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "gitHead": "2c34238b6ad053068680be5372b96721dec48fcb",
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.1.2",
+      "_shasum": "adaa04c46bb58c6dd1f294da3eb26e6228eb6e44",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "adaa04c46bb58c6dd1f294da3eb26e6228eb6e44",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.2.0",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "zuul": "~1.10.2",
+        "mocha": "~1.21.4"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "gitHead": "d08b0bfb8ce5219594a1d4001d38da9ad561d251",
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.2.0",
+      "_shasum": "26ecef6e9cde86d7817e4d9243deb9a191b9befa",
+      "_from": ".",
+      "_npmVersion": "2.1.12",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "26ecef6e9cde86d7817e4d9243deb9a191b9befa",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.3.0",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "zuul": "~1.10.2",
+        "mocha": "~1.21.4"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test": "mocha --ui qunit test.js && zuul -- test.js"
+      },
+      "gitHead": "cc3c9020e9ca440bdc431f92570d676dd8a89a3c",
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.3.0",
+      "_shasum": "03939a622582a812cc202320a0b9a56c9b815849",
+      "_from": ".",
+      "_npmVersion": "2.1.12",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "shtylman",
+        "email": "shtylman@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "shtylman",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "03939a622582a812cc202320a0b9a56c9b815849",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.4.0",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "buffer-shims": "1.0.0",
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "zuul": "~3.9.0",
+        "mocha": "~1.21.4"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test-node": "mocha --ui qunit test.js",
+        "test-browser": "zuul -- test.js",
+        "test": "npm run test-node && npm run test-browser",
+        "test-native": "TEST_NATIVE=true mocha --ui qunit test.js"
+      },
+      "gitHead": "e502eca15424e3118e0e01ffad3e057b274cfd13",
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.4.0",
+      "_shasum": "a29a98e6febf47b8c31538637a8bf8373fed73e9",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.11.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "a29a98e6febf47b8c31538637a8bf8373fed73e9",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/assert-1.4.0.tgz_1463571352633_0.2970228053163737"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "assert",
+      "description": "commonjs assert - node.js api compatible",
+      "keywords": [
+        "assert"
+      ],
+      "version": "1.4.1",
+      "homepage": "https://github.com/defunctzombie/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/defunctzombie/commonjs-assert.git"
+      },
+      "main": "./assert.js",
+      "dependencies": {
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "mocha": "~1.21.4",
+        "zuul": "~3.10.0",
+        "zuul-ngrok": "^4.0.0"
+      },
+      "license": "MIT",
+      "scripts": {
+        "test-node": "mocha --ui qunit test.js",
+        "test-browser": "zuul -- test.js",
+        "test": "npm run test-node && npm run test-browser",
+        "test-native": "TEST_NATIVE=true mocha --ui qunit test.js",
+        "browser-local": "zuul --no-coverage --local 8000 -- test.js"
+      },
+      "gitHead": "ea25d53a51201cf268681c5ec37f7d51b2d82884",
+      "bugs": {
+        "url": "https://github.com/defunctzombie/commonjs-assert/issues"
+      },
+      "_id": "assert@1.4.1",
+      "_shasum": "99912d591836b5a6f5b345c0f07eefc08fc65d91",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "5.11.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "99912d591836b5a6f5b345c0f07eefc08fc65d91",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/assert-1.4.1.tgz_1464703323424_0.46298269950784743"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "assert",
+      "description": "The node.js assert module, re-packaged for web browsers.",
+      "version": "1.5.0",
+      "dependencies": {
+        "object-assign": "^4.1.1",
+        "util": "0.10.3"
+      },
+      "devDependencies": {
+        "mocha": "~1.21.4",
+        "zuul": "~3.10.0",
+        "zuul-ngrok": "^4.0.0"
+      },
+      "homepage": "https://github.com/browserify/commonjs-assert",
+      "keywords": [
+        "assert",
+        "browser"
+      ],
+      "license": "MIT",
+      "main": "./assert.js",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/browserify/commonjs-assert.git"
+      },
+      "scripts": {
+        "browser-local": "zuul --no-coverage --local 8000 -- test.js",
+        "test": "npm run test-node && npm run test-browser",
+        "test-browser": "zuul -- test.js",
+        "test-native": "TEST_NATIVE=true mocha --ui qunit test.js",
+        "test-node": "mocha --ui qunit test.js"
+      },
+      "gitHead": "8386769eb15077c84b5e46f772d41bcb0b40651c",
+      "bugs": {
+        "url": "https://github.com/browserify/commonjs-assert/issues"
+      },
+      "_id": "assert@1.5.0",
+      "_nodeVersion": "11.15.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-EDsgawzwoun2CZkCgtxJbv392v4nbk9XDD06zI+kQYoBM/3RBWLlEyJARDOmhAAosBjWACEkKL6S+lIZtcAubA==",
+        "shasum": "55c109aaf6e0aefdb3dc4b71240c70bf574b18eb",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-1.5.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 37541,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc0tLwCRA9TVsSAnZWagAA3KMP/36EqBpLfT+W0VFB+/PZ\nxYrq/iotOFfaAogM3HHe0ZEaEwHp/Cn6jiXtMB6gdQ4t62ar1rBXKb3ni+En\nmaSwcGBe+G/BFXGf8spavAAlAO53DbJR44yeqSzG54ptEEnbIy7KysNpTCSs\nuPWPeTSQkcJYY8qM3Jdqm2m+dAv+HEWNz7gOYz7E+X5xM/922eSqcfA5YM/k\nPzfvKAcpqwU3eVgoHQXLewGdkHkjU7jOM0eLgw5KXEWhg9ETr8qkip+CvG9u\nbvMNJGDJ/J8/kJQXF+546ck68A6FiRROnERSkebyhDa3LJzqm8Z1D7qLT3H6\nRjIim4Cb91CQdg7rRGMEc5W5q81NQHXddUB7L4ix/OCrv5R5DdyAvyZLjMJn\nzpHYVdIuZhbe6iwTuOsNJ2FjHe678LqrGcya4FAAuH6dn0IWr3+apUn7fJJU\nTNek4wywILe5ZmeBhbUKIMqUewXCardczMKyEJjyPzEcrvlUO2FKUT4FaKcE\naEfc2ZS5E5H9aqol2DkSmq+7hgW7Og39PHaUsiu+bJudjjZaebePuE2OGB7c\n5sBo4gTSD8sorxNuDowHMq2EP7ezsJAkE+6myOf2HHm/ArITPjR7GZWpn2C7\nHQaIZHX3y5436ETpIf6jCtfJjazP3idKKNyPnxkgXnCYEaF/IvODhU/zjGeK\nm6Tx\r\n=ojiR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coolaj86",
+          "email": "coolaj86@gmail.com"
+        },
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "defunctzombie",
+          "email": "shtylman@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "goto-bus-stop",
+        "email": "renee@kooi.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assert_1.5.0_1557320431576_0.12835773716482102"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "assert",
+      "version": "2.0.0",
+      "description": "The assert module from Node.js, for the browser.",
+      "main": "build/assert.js",
+      "license": "MIT",
+      "homepage": "https://github.com/browserify/commonjs-assert",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/browserify/commonjs-assert.git"
+      },
+      "scripts": {
+        "build": "babel assert.js test.js --out-dir build && babel internal --out-dir build/internal && babel test --out-dir build/test",
+        "prepare": "npm run build",
+        "dev": "babel assert.js test.js --watch --out-dir build & babel internal --watch --out-dir build/internal & babel test --watch --out-dir build/test",
+        "test": "npm run build && npm run test:nobuild",
+        "test:nobuild": "node build/test.js",
+        "test:source": "node test.js",
+        "test:browsers": "airtap build/test.js",
+        "test:browsers:local": "npm run test:browsers -- --local"
+      },
+      "keywords": [
+        "assert",
+        "browser"
+      ],
+      "devDependencies": {
+        "@babel/cli": "^7.4.4",
+        "@babel/core": "^7.4.4",
+        "@babel/preset-env": "^7.4.4",
+        "airtap": "^2.0.2",
+        "array-fill": "^1.2.0",
+        "core-js": "^3.0.1",
+        "cross-env": "^5.2.0",
+        "object.entries": "^1.1.0",
+        "object.getownpropertydescriptors": "^2.0.3",
+        "tape": "^4.10.1"
+      },
+      "dependencies": {
+        "es6-object-assign": "^1.1.0",
+        "is-nan": "^1.2.1",
+        "object-is": "^1.0.1",
+        "util": "^0.12.0"
+      },
+      "gitHead": "8969d8eaa74357b5285d99cdd4ade4d993a1c183",
+      "bugs": {
+        "url": "https://github.com/browserify/commonjs-assert/issues"
+      },
+      "_id": "assert@2.0.0",
+      "_nodeVersion": "12.0.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-se5Cd+js9dXJnu6Ag2JFc00t+HmHOen+8Q+L7O9zI0PqQXr20uk2J0XQqMxZEeo5U50o8Nvmmx7dZrl+Ufr35A==",
+        "shasum": "95fc1c616d48713510680f2eaf2d10dd22e02d32",
+        "tarball": "https://registry.npmjs.org/assert/-/assert-2.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 75279,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc1/zMCRA9TVsSAnZWagAAqHQP/jrIv4UgWPqoAFLuLshD\nKRcsLo/VhfQLeOX05qs93gkJUbinh8BeJOeshKJPzwSnuA1xsWRyXCepX/Yx\nB19AfPP8D/2HNDtI09zlWWJqgSmpnQjWBuKRd9YVvWOmkHp4+VZb0O7LoUUU\ni6RuzfNzo+Cq/eZZHnL9KU/Fags6yepdHP3e0KB+NmQKRZglYRAc0mYkLVTN\nbOgmshUhc+i+mtTnltRKFguZ3hYMj7KAE4O+znTswk44KTqoHjnTdarGdPbd\ngs5oT6SDHhlQnvUmPuiacjxkVYxv5yEjmz1baNQNsWm53YLTsxyoC3PZI6JA\nuNA6xezdxenXiSCieqf71DEHQCCNQ33d7G1OiFGmZU1FVV5utf5tBmTN7WSW\n4fupKdHjGGdysPM+z4xb5vbAMvsvImI9zF5AKxgZ/MGqa4MaNe6uNqZt03+/\nz5c/DNvReBcOO7tzUNLlbRdo96bUwOWEKxSQBv99M0g5cuSSfDoH1+wiP/BN\nhA6WDoWg5iIX/UFM534BBerZGxEPDEe5hoglb3krJII4uo26pj144lclPnFH\nm+p7lheOcxuitFegFcS5qm4lAKGVoaLklU7+fuZMZoAUVV/qPQ+IMsA3NVUD\nUKE2I6Zu+Fv3ZCTz/ugxwD5kEHJsyinmJmXgmtBRDkWrXWdY80MxkRwwyl18\nSj+W\r\n=xgzG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "michael.williams@enspiral.com",
+          "name": "ahdinosaur"
+        },
+        {
+          "email": "vestibule@anandthakker.net",
+          "name": "anandthakker"
+        },
+        {
+          "email": "darawk@gmail.com",
+          "name": "ashaffer88"
+        },
+        {
+          "email": "b@lupton.cc",
+          "name": "balupton"
+        },
+        {
+          "email": "post.ben.here@gmail.com",
+          "name": "bpostlethwaite"
+        },
+        {
+          "email": "bcomnes@gmail.com",
+          "name": "bret"
+        },
+        {
+          "email": "coolaj86@gmail.com",
+          "name": "coolaj86"
+        },
+        {
+          "email": "calvin.metcalf@gmail.com",
+          "name": "cwmma"
+        },
+        {
+          "email": "shtylman@gmail.com",
+          "name": "defunctzombie"
+        },
+        {
+          "email": "dominic.tarr@gmail.com",
+          "name": "dominictarr"
+        },
+        {
+          "email": "contact@elnounch.net",
+          "name": "elnounch"
+        },
+        {
+          "email": "github@tixz.dk",
+          "name": "emilbayes"
+        },
+        {
+          "email": "feross@feross.org",
+          "name": "feross"
+        },
+        {
+          "email": "forbes@lindesay.co.uk",
+          "name": "forbeslindesay"
+        },
+        {
+          "email": "pereira.filype@gmail.com",
+          "name": "fpereira1"
+        },
+        {
+          "email": "garann@gmail.com",
+          "name": "garann"
+        },
+        {
+          "email": "me@gkatsev.com",
+          "name": "gkatsev"
+        },
+        {
+          "email": "renee@kooi.me",
+          "name": "goto-bus-stop"
+        },
+        {
+          "email": "hughskennedy@gmail.com",
+          "name": "hughsk"
+        },
+        {
+          "email": "fedor@indutny.com",
+          "name": "indutny"
+        },
+        {
+          "email": "npm-public@jessemccarthy.net",
+          "name": "jmm"
+        },
+        {
+          "email": "jprichardson@gmail.com",
+          "name": "jprichardson"
+        },
+        {
+          "email": "jryans@gmail.com",
+          "name": "jryans"
+        },
+        {
+          "email": "martin.heidegger@gmail.com",
+          "name": "leichtgewicht"
+        },
+        {
+          "email": "lukechilds123@gmail.com",
+          "name": "lukechilds"
+        },
+        {
+          "email": "mathiasbuus@gmail.com",
+          "name": "mafintosh"
+        },
+        {
+          "email": "dave.des@gmail.com",
+          "name": "mattdesl"
+        },
+        {
+          "email": "max@maxogden.com",
+          "name": "maxogden"
+        },
+        {
+          "email": "palmermebane@gmail.com",
+          "name": "mellowmelon"
+        },
+        {
+          "email": "parshap+npm@gmail.com",
+          "name": "parshap"
+        },
+        {
+          "email": "peteris.krumins@gmail.com",
+          "name": "pkrumins"
+        },
+        {
+          "email": "sethvincent@gmail.com",
+          "name": "sethvincent"
+        },
+        {
+          "email": "maochenyan@gmail.com",
+          "name": "stevemao"
+        },
+        {
+          "email": "substack@gmail.com",
+          "name": "substack"
+        },
+        {
+          "email": "me@JoshDuff.com",
+          "name": "tehshrike"
+        },
+        {
+          "email": "terinjokes@gmail.com",
+          "name": "terinjokes"
+        },
+        {
+          "email": "thlorenz@gmx.de",
+          "name": "thlorenz"
+        },
+        {
+          "email": "ungoldman@gmail.com",
+          "name": "ungoldman"
+        },
+        {
+          "email": "yerko.palma@usach.cl",
+          "name": "yerkopalma"
+        },
+        {
+          "email": "yoshuawuyts@gmail.com",
+          "name": "yoshuawuyts"
+        },
+        {
+          "email": "zertosh@gmail.com",
+          "name": "zertosh"
+        }
+      ],
+      "_npmUser": {
+        "name": "lukechilds",
+        "email": "lukechilds123@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/assert_2.0.0_1557658827738_0.4089903976730602"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "lukechilds123@gmail.com",
+      "name": "lukechilds"
+    },
+    {
+      "email": "substack@gmail.com",
+      "name": "substack"
+    },
+    {
+      "email": "renee@kooi.me",
+      "name": "goto-bus-stop"
+    },
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    },
+    {
+      "email": "coolaj86@gmail.com",
+      "name": "coolaj86"
+    },
+    {
+      "email": "shtylman@gmail.com",
+      "name": "defunctzombie"
+    }
+  ],
+  "time": {
+    "modified": "2020-04-09T09:52:36.059Z",
+    "created": "2011-06-30T00:30:08.354Z",
+    "0.4.9": "2011-06-30T00:30:08.699Z",
+    "1.0.0": "2013-11-22T18:46:47.035Z",
+    "1.0.1": "2013-12-18T02:20:33.846Z",
+    "1.0.2": "2013-12-19T03:18:16.080Z",
+    "1.0.3": "2013-12-20T15:27:42.122Z",
+    "1.1.0": "2013-12-29T04:37:51.334Z",
+    "1.1.1": "2014-02-07T17:13:56.404Z",
+    "1.1.2": "2014-08-29T03:33:31.188Z",
+    "1.2.0": "2014-12-21T18:24:52.866Z",
+    "1.3.0": "2014-12-24T02:46:30.815Z",
+    "1.4.0": "2016-05-18T11:35:54.924Z",
+    "1.4.1": "2016-05-31T14:02:04.361Z",
+    "1.5.0": "2019-05-08T13:00:31.722Z",
+    "2.0.0": "2019-05-12T11:00:27.859Z"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserify/commonjs-assert.git"
+  },
+  "users": {
+    "pid": true,
+    "gdbtek": true,
+    "japh": true,
+    "ninjatux": true,
+    "jmorris": true,
+    "kenjisan4u": true,
+    "craigsapp": true,
+    "simplyianm": true,
+    "rsp": true,
+    "heraklion": true,
+    "itonyyo": true,
+    "jeffb_incontact": true,
+    "davidchubbs": true,
+    "m0dred": true,
+    "po": true,
+    "liushoukai": true,
+    "jprempeh": true,
+    "fistynuts": true,
+    "vwal": true,
+    "craql": true,
+    "cfleschhut": true,
+    "almccann": true,
+    "hyteer": true,
+    "a1ip": true,
+    "zhanghaili": true,
+    "zombinary": true,
+    "shaddyhm": true,
+    "ondak": true,
+    "piecioshka": true,
+    "bapinney": true,
+    "ingpdw": true,
+    "yokubee": true,
+    "mickey815": true,
+    "phoenix-xsy": true,
+    "n0f3": true,
+    "gggauravgandhi": true,
+    "lianer": true,
+    "wangfeia": true,
+    "amazingandyyy": true,
+    "jota": true,
+    "olonam": true,
+    "wangnan0610": true,
+    "jirqoadai": true,
+    "mobeicaoyuan": true,
+    "stone_breaker": true,
+    "vitorluizc": true,
+    "bufke": true,
+    "ivan.marquez": true,
+    "ray0214": true,
+    "dada1134": true,
+    "ironheartbj18": true,
+    "karzanosman984": true,
+    "rocket0191": true,
+    "yinfxs": true,
+    "chinawolf_wyp": true,
+    "raycharles": true,
+    "kopepasah": true,
+    "arefm": true,
+    "marinear212": true,
+    "uojo": true,
+    "eb.coder": true,
+    "ivan.xu": true,
+    "justjavac": true,
+    "bhaskarmelkani": true,
+    "eijs": true,
+    "superchenney": true,
+    "eyson": true,
+    "gashira_e": true,
+    "tedyhy": true,
+    "salvationz": true,
+    "ryaned": true,
+    "limintu": true,
+    "maalthous": true,
+    "valenwave": true,
+    "wisetc": true
+  },
+  "readme": "# assert\n\n> The [`assert`](https://nodejs.org/api/assert.html) module from Node.js, for the browser.\n\n[![Build Status](https://travis-ci.org/browserify/commonjs-assert.svg?branch=master)](https://travis-ci.org/browserify/commonjs-assert)\n[![npm](https://img.shields.io/npm/dm/assert.svg)](https://www.npmjs.com/package/assert)\n[![npm](https://img.shields.io/npm/v/assert.svg)](https://www.npmjs.com/package/assert)\n\nWith browserify, simply `require('assert')` or use the `assert` global and you will get this module.\n\nThe goal is to provide an API that is as functionally identical to the [Node.js `assert` API](https://nodejs.org/api/assert.html) as possible. Read the [official docs](https://nodejs.org/api/assert.html) for API documentation.\n\n## Install\n\nTo use this module directly (without browserify), install it as a dependency:\n\n```\nnpm install assert\n```\n\n## Usage\n\nThe goal is to provide an API that is as functionally identical to the [Node.js `assert` API](https://nodejs.org/api/assert.html) as possible. Read the [official docs](https://nodejs.org/api/assert.html) for API documentation.\n\n### Inconsistencies with Node.js `assert`\n\nDue to differences between browsers, some error properties such as `message` and `stack` will be inconsistent. However the assertion behaviour is as close as possible to Node.js and the same error `code` will always be used.\n\n## Contributing\n\nTo contribute, work on the source files. Then build and run the tests against the built files. Be careful to not introduce syntax that will be transpiled down to unsupported syntax. For example, `for...of` loops will be transpiled to use `Symbol.iterator` which is unavailable in IE.\n\n### Build scripts\n\n#### `npm run build`\n\nBuilds the project into the `build` dir.\n\n#### `npm run dev`\n\nWatches source files for changes and rebuilds them into the `build` dir.\n\n#### `npm run test`\n\nBuilds the source files into the `build` dir and then runs the tests against the built project.\n\n#### `npm run test:nobuild`\n\nRuns the tests against the built project without rebuilding first.\n\nThis is useful if you're debugging in the transpiled code and want to re-run the tests without overwriting any changes you may have made.\n\n#### `npm run test:source`\n\nRuns the tests against the unbuilt source files.\n\nThis will only work on modern Node.js versions.\n\n#### `npm run test:browsers`\n\nRun browser tests against the all targets in the cloud.\n\nRequires airtap credentials to be configured on your machine.\n\n#### `npm run test:browsers:local`\n\nRun a local browser test server. No airtap configuration required.\n\nWhen paired with `npm run dev` any changes you make to the source files will be automatically transpiled and served on the next request to the test server.\n\n## License\n\nMIT © Joyent, Inc. and other Node contributors\n",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/browserify/commonjs-assert",
+  "keywords": [
+    "assert",
+    "browser"
+  ],
+  "bugs": {
+    "url": "https://github.com/browserify/commonjs-assert/issues"
+  },
+  "license": "MIT"
+}

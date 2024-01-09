@@ -1,0 +1,394 @@
+{
+  "_id": "is-plain-obj",
+  "_rev": "8-691f909c34962b6f4faf64c55813b824",
+  "name": "is-plain-obj",
+  "description": "Check if a value is a plain object",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-plain-obj",
+      "version": "1.0.0",
+      "description": "Check if a value is a plain object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-plain-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "is",
+        "check",
+        "test",
+        "type",
+        "plain",
+        "vanilla",
+        "pure",
+        "simple"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "ca2adca4deadaa0a632d8abc40e1e4654ccd4c1b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-plain-obj#readme",
+      "_id": "is-plain-obj@1.0.0",
+      "_shasum": "f8d5dc92b99fa4fd077984ba30b798908a0566e7",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f8d5dc92b99fa4fd077984ba30b798908a0566e7",
+        "tarball": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "is-plain-obj",
+      "version": "1.1.0",
+      "description": "Check if a value is a plain object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-plain-obj"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "obj",
+        "object",
+        "is",
+        "check",
+        "test",
+        "type",
+        "plain",
+        "vanilla",
+        "pure",
+        "simple"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "b687098cc30d85bbec07f1633dee4c2d6acb1aa5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-plain-obj",
+      "_id": "is-plain-obj@1.1.0",
+      "_shasum": "71a50c8429dfca773c92a390a4a03b39fcd51d3e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "71a50c8429dfca773c92a390a4a03b39fcd51d3e",
+        "tarball": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-plain-obj",
+      "version": "2.0.0",
+      "description": "Check if a value is a plain object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-plain-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "object",
+        "is",
+        "check",
+        "test",
+        "type",
+        "plain",
+        "vanilla",
+        "pure",
+        "simple"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5d71751309c2dd9a122d5d68fd373b66a4e0ee4f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-plain-obj#readme",
+      "_id": "is-plain-obj@2.0.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EYisGhpgSCwspmIuRHGjROWTon2Xp8Z7U03Wubk/bTL5TTRC5R1rGVgyjzBrk9+ULdH6cRD06KRcw/xfqhVYKQ==",
+        "shasum": "7fd1a7f1b69e160cde9181d2313f445c68aa2679",
+        "tarball": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3318,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcutChCRA9TVsSAnZWagAAMMoQAIRce8vEsvxrjg6nF9JP\nTgj7AEeF4HyskcGaffpEy8FgST4HyaIE9SBJYGb385hbZfmqGXL+y7RggXBd\nMWIvKJtRI7Cs93RT5VvY/n8AIKFsIKxlXwbVdT6lcoJP2xY38n5WPbSYK5HG\nAfVcuRLeg2+rBvHXRcEjRby9jfDhJ6CHX5SR7M0q4KZsnd79zjq2hb2BlbHk\nlILBqo4umBylQzJlhWPfg2NBQO4a9od7tz1GlQdDMxm5RtHVTcgDunexZw2M\noVsnMccOV0FqOwI1zEz4Du7QBfJzoibZc1XJ3DdNq0jF1OJLyMAm4ZI+DW3h\nyDQEQcwLWRER4RwzFm4vr6ttfySUCBssl12sguxis1GAoSNCp0TMIIYZ/gSW\nVI38L7JqLMwPSZM6lI0lXhqTUbw8bgMsqWY2/1nR0OxRd0LItuY804Jp2Spk\n4gzLSUO28gzXREtobVYbAX2aZWSx7KKt0WvDumlst0PoJLlv2rMbqVj/gbVA\nRWMeHJ1YNwUFWID5T0Pq/ZbzmFzgiblHFYDRr3yl/7Vsid85EO496avnA4tK\nE6GRe6IevsvvHQFncsnQ+xXkYKLp1ahtMdDiM3vTXf8p2DXjGNvEFqPc+smP\nyp08nTfTqa60quz45C0Rk61jRfFx8cqkfpr8sH8M4TL0odgjmWioggyhwKrv\n4Nww\r\n=D1wu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-plain-obj_2.0.0_1555746976414_0.14368271805383803"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "is-plain-obj",
+      "version": "2.1.0",
+      "description": "Check if a value is a plain object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-plain-obj.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "object",
+        "is",
+        "check",
+        "test",
+        "type",
+        "plain",
+        "vanilla",
+        "pure",
+        "simple"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "247fd10f4209c36fae7eb8f8562753c77bd78390",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-plain-obj#readme",
+      "_id": "is-plain-obj@2.1.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-YWnfyRwxL/+SsrWYfOpUtz5b3YD+nyfkHvjbcanzk8zgyO4ASD67uVMRt8k5bM4lLMDnXfriRhOpemw+NfT1eA==",
+        "shasum": "45e42e37fccf1f40da8e5f76ee21515840c09287",
+        "tarball": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3689,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeJtO6CRA9TVsSAnZWagAA9+sP/RNI3Nz3+RHIT867XUnI\nYxRxb6touhnjUu0QEtksRjLqLMxWl8ABxSEMQsMHRYpsMXz1k9R44n1OgidM\nT/jYiScrChKyKt54OFqAHyIOUuWwYx69jaG5qk9hrctAYJCby6J5btPlDXGf\nU2bAGnl41XP3EdPhTS70U+ajjw6r1O/aNbrdH5QJkixcd9wVujttQMYPcPdv\nwQtzy93PqlJIWgYu/yGCKZc8tHVebr0PYViBbjSHrYNKbW5SjT8BE4lHbRFX\n1B9CrgZ89JU8v/fCRpoxLZ20zQpd2N46oUGMJJ9aG7C2Mx9/o+w+htPyBx8S\nTt7lLRgqol9M/jeRAAeBsXbBfgdA0+a0ADKaiNN0A6cJCa9rhZs/2Oh9POFU\n+vCFzevAIcR2LSOhAaWgUDYc7OX83N/HJc9xw7B7jiumXsuIrUlf3p+enApl\nvZYoLsP6Di0Fw5I2uZZ4VyUm7ESopYyi26UqOEnXFoDfn0PG8ckAoQCeIJgM\n8uXBpL61Rnhjo8H2a0srjpfFo9SFPfEuMMCtjLTdctxahG8vO6K09MQOPBmI\nkDFqMpX2ZzUUv/ocVWcx3/xXic6CoJHHb8Xu1xP5YzvKNt4pP5GXnPf/rrmM\nyEIIJ+WDx88NEv+FhtyJympqgtWHX8GkyA87NYAsCQZMX0zXr+KZoSLVKrTk\n67ky\r\n=Npvh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-plain-obj_2.1.0_1579602874103_0.307245956613454"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "is-plain-obj",
+      "version": "3.0.0",
+      "description": "Check if a value is a plain object",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-plain-obj.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "object",
+        "is",
+        "check",
+        "test",
+        "type",
+        "plain",
+        "vanilla",
+        "pure",
+        "simple"
+      ],
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.13.1",
+        "xo": "^0.33.1"
+      },
+      "gitHead": "eb9663c8e9cd3b4ae1b9438916d1fc29991387e0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-plain-obj#readme",
+      "_id": "is-plain-obj@3.0.0",
+      "_nodeVersion": "14.11.0",
+      "_npmVersion": "6.14.8",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-gwsOE28k+23GP1B6vFl1oVh/WOzmawBrKwo5Ev6wMKzPkaXaCDIQKzLnvsA42DRlbVTWorkgTKIviAKCWkfUwA==",
+        "shasum": "af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7",
+        "tarball": "https://registry.npmjs.org/is-plain-obj/-/is-plain-obj-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3823,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfhNZ6CRA9TVsSAnZWagAA6+EP/0i5grTrbiJM2g3KvJ0a\nNjS2sWSygDfk8lTG2Fxwwjg0+bbnTk5Fd/KJA7gxIliLhAlvAa2f3mrsJMm8\nCgu/ZbpIsg1odnykeUVBU4AbBIgjeTTKLtmcMb3LJz/O9+zmtTlrfhiHG6oW\n82VoZZrAN9Rv0PSPfRE7rjOBVmO4uXl2O15A0YFaCxEi6N8w/ISzaXJg9qFr\nExb9JdBtmA56isaBWK01OWIhPVcodolrGZtiXOS8olQvJdR2UpIMFqIJtuzn\nZObJLYLUe+TlqFFoNLD5NeaZxfLcAILsGqXwi8AnwzWV2fTvl+OaMQ7yXg/P\nK8BFB3qmjRfqLpXVPFGJDwfjNK8KJuOsJ9Pj0hlaUog4H9QCGEv261t+MlM4\n4F96UOofXCnczdzBiS1m432tX1ldu2+OaG11jjAObEr4kI589f8UcyE8F4ch\nTYO61NOBk5FrYnWwk2CGzkj6Ck7OIqIphK3iYkkjNL3hXwHkv5cE+7Im6bib\nDg3XSE3W94XAOT5tJ86lqvnkklJ07eKgpyjhtDu8AGOKSpR/0LrqkhNxV68J\nWJcB42pGZ8q1NeeaUA3LBvtlhOyYigEYTug/6VlSctN2CX1z0GVBCBhANhiC\nm0taZGLaKVG2S/Aj1sYcphACtEQ2HTyh9BBAePc7D4381UWcUZw0DCSyZsnv\nJ4p+\r\n=z9zE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-plain-obj_3.0.0_1602541177692_0.5816068296449455"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-plain-obj [![Build Status](https://travis-ci.com/sindresorhus/is-plain-obj.svg?branch=master)](https://travis-ci.com/github/sindresorhus/is-plain-obj)\n\n> Check if a value is a plain object\n\nAn object is plain if it's created by either `{}`, `new Object()`, or `Object.create(null)`.\n\n## Install\n\n```\n$ npm install is-plain-obj\n```\n\n## Usage\n\n```js\nconst isPlainObject = require('is-plain-obj');\n\nisPlainObject({foo: 'bar'});\n//=> true\n\nisPlainObject(new Object());\n//=> true\n\nisPlainObject(Object.create(null));\n//=> true\n\nisPlainObject([1, 2, 3]);\n//=> false\n\nclass Unicorn {}\nisPlainObject(new Unicorn());\n//=> false\n```\n\n## Related\n\n- [is-obj](https://github.com/sindresorhus/is-obj) - Check if a value is an object\n- [is](https://github.com/sindresorhus/is) - Type check values\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-is-plain-obj?utm_source=npm-is-plain-obj&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-12T22:19:40.098Z",
+    "created": "2015-07-11T11:16:03.296Z",
+    "1.0.0": "2015-07-11T11:16:03.296Z",
+    "1.1.0": "2015-11-05T09:31:58.189Z",
+    "2.0.0": "2019-04-20T07:56:16.602Z",
+    "2.1.0": "2020-01-21T10:34:34.331Z",
+    "3.0.0": "2020-10-12T22:19:37.844Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-plain-obj#readme",
+  "keywords": [
+    "object",
+    "is",
+    "check",
+    "test",
+    "type",
+    "plain",
+    "vanilla",
+    "pure",
+    "simple"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-plain-obj.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-plain-obj/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "rocket0191": true,
+    "chrisyipw": true,
+    "tdmalone": true
+  }
+}

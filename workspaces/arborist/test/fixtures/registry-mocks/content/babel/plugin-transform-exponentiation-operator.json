@@ -1,0 +1,2909 @@
+{
+  "_id": "@babel/plugin-transform-exponentiation-operator",
+  "_rev": "69-5a72bae219246972e434aae8d8b9f952",
+  "name": "@babel/plugin-transform-exponentiation-operator",
+  "description": "Compile exponentiation operator to ES5",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.4",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.3"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.4"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-x8Aqtag0JLMyi7dnyUL+rsrwVE5cSz2rXKHfrFELXj2N9rWGkBiIFX58TNOEGu8zPwhuYPiJHqAtj60PXlB/sQ==",
+        "shasum": "ac08f28cb2be2cd9cf292ba61f1b468dd839635f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.4.tgz_1509388592019_0.9527770688291639"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.5",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.5"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.4 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.5"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Rw5kW1ipy0wKx1z1phiPoCcsNXIA7fYhhkxNFnECKsmteyyjHRxk7uEgFqHMcL4EHcayLO4XdsJoO5p0nuAxww==",
+        "shasum": "037d37fd41eba27b090e7792fbb0957980c2416d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.5.tgz_1509397089674_0.0937352585606277"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.31",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.31"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Vh27vPuGJCINeQXGg6MMrrccBy6/EqfVB9Qmp+8jXpX28fmQoJm+Su1uIeXhNPclVqdXdphpSp0ViIfc0AeR6A==",
+        "shasum": "2b6090f2138e180acb3246dc1a13dd4a78600383",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.31.tgz_1509739478701_0.5357420609798282"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.32",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.32"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Xvyx5BdBL2Y477bDPjmyb4eQoMxoqwW2g2hlwssVfHnvLP0JqM3tMB0RNfAE2XjkIMoBNVUSwVVCbH8XFWEWxg==",
+        "shasum": "e7d6c516d783b6479251b8b12020667f1d0b06f7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.32.tgz_1510493650948_0.22562264511361718"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.33",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.33"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-jUcnbxugZG6YnGFEfyOrllzfsgtBZcS682ZpdjhSs4ljq871vpmalogxEBxNgF8O0kXdnZsNMIVP6S1qwWx+Fw==",
+        "shasum": "67e58864e80cb47961613adc02a5c58107f592eb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.33.tgz_1512138569423_0.38479531882330775"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.34",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.34"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-RibodTBl0AywXHMEhI0UUywlLiWiP42ACvun4+QOSkOQRMj+PKkyNbC/Nc7bgE8vgih+LrnzJ0KXI3lvHs6q8A==",
+        "shasum": "7fa68b8273695e87cb528e47ab17926ba0104a83",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.34.tgz_1512225628560_0.7958857379853725"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.35",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.35"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-EC1kqX9stnSzfC8pUxjJZRkeOY4dPtDQtDQBhQVwJZG1NkinJPVlzs0/r0kCQUtBfpmmCvZwKYmsnv02wvqQmA==",
+        "shasum": "a5470fad798a7052596e19fefbb6f391b17ac6e8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.35.tgz_1513288114492_0.30010547186248004"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.36",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.36"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Xw80I0Jpf8Rv++hTEetvVKcUE2+nZMJd1zEbcioDcdkLy6pr1GEkUcB1GAvKu7TSDOWis4niHaDDnRpzIs/p5w==",
+        "shasum": "3c61b7412a38a8718f554f6a31e655eee9c2d182",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.36.tgz_1514228752478_0.820149339735508"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.37",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.37"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Q45cpfk84OCCrd8dqdisb4VmfpU6YnT2WGU1FQewjhvmJ3bKieiUUq6fIadZ5GKSgUu1+W8P4rLyLxuFYYsG0g==",
+        "shasum": "dd654935596337ddf7982f0461bebbab7fc963fd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.37.tgz_1515427429508_0.6464445046149194"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.38",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.38"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6FyrtyZswMw9rhf25hXoZEGWhuleB8zWdzU7kmgh1Pztm/Xv4tVBUHMevbOZIt3KCJQucpwhb/T58FrZ/mPwcg==",
+        "shasum": "3c23f57a6f8d50cfcd13270269bb35de21aad666",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.38.tgz_1516206769553_0.9410925533156842"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.39",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.39"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-GBEipvew7Avp5tQz4bQMWe9MTOQn9MRxFGPoVtklxCyV1Ghajf5S4452/kSledaBtzMH3CRqzxs3DlQ200Wm3w==",
+        "shasum": "d0115ee85e3d895ead38c6fd149df223bde6e069",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator-7.0.0-beta.39.tgz_1517344131202_0.26467803586274385"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.40",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.40"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-nh9qIA4P1wQczihazVOvTpkl2EBfoSMfkM6/21p8NBY4GxZJcEwT1O1nke/+RLludUekHqXHGH+9ekfEfLwKRQ==",
+        "shasum": "bf0bafdd5aad7061c25dba25e29e12329838baeb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2330
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.40_1518453780080_0.7543393487621635"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.41",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.41",
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5an3gs8E+AojQ1/x1hL4spCkmv2+r2PU32tSSnayQJkc6MWfkxpzCkIbleuvwx3Vapv4moTFKNYgkuSLLdUKNg==",
+        "shasum": "325fa6e2d53c9ee4e6757853c693a93a54ce0cdc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2541
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.41_1521044829551_0.9213638665170247"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.42",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.42",
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ylnAziSEho282hxQROK5tbNtxm0sSoQaQS74OCSE52eFeDNqSNGapyiNiWMZ71gqs8q5aqYsPgfa/vTccLT7uA==",
+        "shasum": "fe637583e8d00ff6d63461e274a63dd2f373baf5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2541
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.42_1521147139548_0.26186250165455993"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.43",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.43",
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Yl7I0AdmqMk9p6qQJSmlB7AWtWB32CWkzP/SF3AgpqnFyaqUjJ8nfU+05WsLorflk5mA8iLP7Os3/JoVyb1BDQ==",
+        "shasum": "52f1710bcb61c6fffa82b8c9ddb06604f6bad8b8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2883
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.43_1522687746557_0.7487446623484522"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.44",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.44",
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-6muSWR3UxdAnVnk8a4rxESNQk7F+djM+oeKkETMgWbw6TyaNaTD7OYkKGTdyTT5jn2UO97sPdgOBIBdnzQsKQg==",
+        "shasum": "e6a9699b5036a7a75274e1546c23414ba945a135",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2967
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.44_1522707646624_0.4306881779000522"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.45",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.45",
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-DUPGvRzZhcQm1rtiPgcBf2Mtdba/HfBQxvcnGTQ8tNa1tmhLfWoIUnUWSsBYpHBjqSUb2XvkyVmjJBxWOQoN6w==",
+        "shasum": "5ada1abf016a596a89b74922fe8a2f98dbacde7f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2967,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T3oCRA9TVsSAnZWagAA63MP/1HA5Ip64+aMafZynXAH\nLgcaNYztVdr8TMTbrVjjL1rWRtTpx/v81XUz+Z2twsp7+u+D8DLy4FgF5OM/\n1jfriiWujmd7iCrnS/zIDxmYbsUy+gvFggHPHl7xzKbUqkc+6yXwUb6wagUA\nypF159YvAolCMYhn2o3AQBbpjnDucwpVbP1xwr15Lti8bXD0Avy12375xHTr\nwySAiwRXQ1AabNm2g3ySYPxgb9AkJeE4N67n7bYj8idl5Pz5GLlriDvCf+Q5\ne5nbjpxWa52v55rp2uCFiDSgF16LxepT7RI3EGvBu1ynh+5mpP8IButTqiZ8\nRoxI5/JTomVBeggoW5RtRc1G1maclnv2PPagKuoXXLO8VvvQfoe0EUtn+uoO\nlmht9p05Y9w0CbJOVRADcDaStaw+DBoruHnrJ9izJduGa3juWibjRySLv6cp\nrDlOq6/73ypfI19OY5r2KCHPc1Io02tujFg3YI75DPxIs8SZSpQIf9O6PPul\nbdRkraAzYd4sSxUdRIVxG7YTJRDHF8VHj33IdELiqpwORlUNfTDxfaZzoFFr\nfmUvDr1gwSX/qvqswACA/ktTj9I9PqQ+f8VEdRJZWLerkgoIE5+XHxrwbIjP\nThlmrJS336kBdr36cbQnWGSpFLdQnkTvW2vje/Y0jHbaF2Ul5MPfXF9U6jXD\nbeHo\r\n=1Vuf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.45_1524448744054_0.21175222706983265"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.46",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.46",
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-acomgoNW/fwWSmBlhH22C9Eyl1Y/vADBSqzyIRWJGpm4frLhd49QQgKXbRGRHUDxyifXuZDF9+3pRhEmi7/HXA==",
+        "shasum": "95ae2e03456e417d2f5eace6d05a8fccb7af1bcc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2967,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WIOCRA9TVsSAnZWagAAVEMP/RcLXDiwsx9qteQEhSLK\nBC9IShyWTLaU/wasIVnCZS7qSOpUEZEtbdnQLwYjJlL5P85u7kmD7kQAbBZo\nituxK86yofzRFzRBQ3er4LSBBWvcI+hCbj5aW+FoZ68iZqoGzfdiSc1Maym8\nzr5Z7hcgNpvQ4+BWpqGUEYDNBI6kex9W7djREFBiY8o5Y5Ch14cOk2Hzf3UM\nC46hpmtoGArH+51eISYvVJlO4hBzVPFKvfc9ScucKJOAYPLmOI1yOuNF3ICe\nB72UNNEIGag3tEAdynzQfLO2Y3OBx7ORb3IJYMk7uaw3AC3gKoZ4HYfS65Vt\nc9x6tkGyPUY3r8dg4y7oXh+vuCIJZyNZEPv6SZwVlJF6VV0nEZKJVrv9qjzE\nlk+e/U0rlPeE8Oz2MjCXYJEA1mLwHvpkQjOmBD/QbtElbsugjyqr3L8oqpUR\n6+7v98sfwN0T+FGweuH+374ULvTpgrJ2kAtc9M4++E1NEpK+As47XV8f3XSD\n7nWeVZUAgbKbyRaMd50NWAwFcZGUKWDRzpWamzkFM3qXtkjGJA2mZFlLqH3f\nDNtUiAc8JORyGikV0ZCIvVwQRfavG50ayKxa8uE97ihYFeQ+/DPPE6S2nGRT\nuh3gp1gfs6zx7Zv0i0qe+BjoTRAQGxefUxjTlIB/h2XmnwFVuTzu+B84gygJ\nuX6b\r\n=0hND\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.46_1524457998091_0.2191787685943749"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.47",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.47",
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-vyGG3kLIXpMuaPL485aqowdWFrxCxXtbzMXy9p1QTK5Q/+9UHpK9XoAVJZGknnsm091m0Ss7spo8uHaxbzYVog==",
+        "shasum": "930e1abf5db9f4db5b63dbf97f3581ad0be1e907",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2869,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+idOCRA9TVsSAnZWagAAvV8P/A5dYKJFa9eUVesuPA/S\n8Tv05jckfSW/NC3sBiQ6+G9GDDKYKF3vXyDc0+5q+n08nroRve1DXeeeCcIl\ndGV6tajshcyEG0A4pLMhV92HYhdhHYSPBOzIU1g+DP0xOFPr5h9hiewfOaS+\nV4VJTtAsMkhNV0IHOnBd1k5UFDRgoO/TDtzuybD/QVXTXcrtqXkJ8n+hzM/3\nlnhaIZMu/eJ+aiCrjieI2ou4ujcFE9JK1W3o9t4yBPdpXFKPFjx+A5BrbHjC\n1krdVVGBDoRv+ip+IuyC5pYCwBG2QYshCRuVzxNBcanliI7uN7VspubYPwpN\nXSEZKxmjptdFpES1TtGd6PRk79GZoofgjalRqp1aemEHuIelgFha0bLE6TXE\n8hhv0733/IxT6CLY8DYAIpPcg1cy6tFRGq7zajFsBxgeg6brjgOUtpp/DAT4\n8mb/Rztb5neYdchy94hM7I4UlV/ReTGBKwMcaVhqScQFm+EDhtZcs6aCnfxI\nDE+ux4bMveI8/dlDzSgAPf1ovH9MXO6f/sYO9hm2YbqzBe2NyfAUarQS0xPG\niiUq7tMbujvwtwpldh3RtanrU90f0JboDGjAGf8llyMhbDeAQa+InbUpPh8E\nP75FMYngrA5hJkmnMjKTydfR7IFOxbXMPBWJuVTnpk+mCwrGOKvbQMjierh3\nQkel\r\n=+pmm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.47_1526343501492_0.4371888994018793"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.48",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.48",
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-oyUXYa3WMzVTtJIp2cjDBoFME8DRlxW1yBZVOdtI0MDLIkOrZjHMGVwCUblQgT10qfpiMfRYKJTN1t8zx98axw==",
+        "shasum": "b7cb8bd3ee3186d5b271be492d55847e220ba93b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2801,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxGbCRA9TVsSAnZWagAA3jsQAIcMvEILIuVBud5u+Lv5\nG7bQ9ROfy7IR/b9WzjmnxERpYsaMiAXt9vC6AmqwRYGKjqKoaXfjiyquj2ij\nM2mNr4b8lVzVtJAlIMyyrXGW9ypkz/d8XjcKPEhxZYICHdbjOSj9cvd1peAr\nxqwZssc64k3QBI4EWvH7q2WOxAkk3p+VUlPY6P/Iw9v0y+p515qRln2dNO6z\ntZ06rh/O1ZIlYxcoVytupZMAFN1R9gZ5aQ4GBJ0qzjhs2joB13h0FRRPfxN9\nuM+jrhxGOmnxIh9kBpwXpxqwY+/GEvcGF/+BQLgGq1mD5lard2EWtQ3aq2IH\nURXsFsoYZv4v2xKVZ9R/0z4GUTX5cjLEPRrfwsFbcpxUX8ZabHObmc4Rb6D4\nmyx2aDTyfYG1Y8PGdmDe2BLe4YOGzF3K4LX+2GBI9DMdppHDpwu7p6+7Yedq\n4hB1cPrj62xy9PCbzF12c14lZ4+NFINZG5fZfrCKBBwi5wRSRWxX1XVA6gtu\nfsXNAcjZki6dBaqKwABwLlzd5SclKTT7w1Pr9mKH7oGL/eGDcMDkuTH6G3n+\n8Wv9HK/CMMMLnWLBjw+EnLoiSSKd2cRU1B/H/0qpN8UZjDMT3Z0gSzAAys9Y\n/wCBzpXylFXsidKN7ADcf7a4SaaDBxmuc1xpIl0Owr3KiXKP5ZMMe1QAs07Q\nfpfK\r\n=5K5+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.48_1527189914827_0.4707560653263776"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.49",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.49",
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "457b2d09004794684aa6e1b04015080b80a08a14",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "457b2d09004794684aa6e1b04015080b80a08a14",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2816,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDQ3CRA9TVsSAnZWagAAchIP/1HKW7LeOx5fkY7a9V2Q\nmRHHP0LYKhvSPp/4ZwLVs0ar/YzunwsJIfyDK0qCeyuhAaDlA/ppYN0RtuoV\nvY57WXSeceTvqMz/ptgH34na5EChVA4VV21a5RVq0C1c7Q1E8GXTrh4lk5F5\n5b5BN5QA/MUu1wdIdssbcqVys3ICDACUwTzamsw7al+a6D0P7cTg37YyT1Sr\nYvEnBYbSEJV4wAD084CfjKySPP0XqSmKUoTTBjbS/TmFwtPB+RxDl8kaXe3k\nGgCA3pDnWL47g6ZjX5H6UK9tA1YM/hhUhsF7gvvvniltfg19IiC5ifA9zv48\nCnJ6fYZ9W3+6tIF+T38si9q0L1BPSOi0eslFRuIylPohA7WzJdQNBjwTODTx\nVGDFDRhDylTHKZLMqsj7PZxEVYVxu3ZJxXJxjez+VrapuQXjI4cxG0DJ2uiF\nlf0MfhLYRP6ZhoB5N0JGk5JbBFNWQEKejU2xxdESKRhcy3eDSiJn1ojhuVVw\nt75/Jq9BdqMkYSdfXEJv1isN4NY+XyKg0Dmxri2uswtJ4Qr58LSfsuqTr8aZ\nV1RiowNaDCOcYC7QpTL9qC1T2COkv3tmPxPSelKexjV860cMCReP0YyAtOXh\nn4esoSWj79XDJxisC6dL+K4mwbHg/iHzFRO+pG9LW7wjGxjiKEEX9iQnzZX5\nOSWO\r\n=PItF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.49_1527264311423_0.630009744010992"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.50",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.50",
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.50",
+      "dist": {
+        "shasum": "7a7b619cf3bfe0517a9f1b54700fe563fac229f8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2357
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.50_1528832903534_0.2910488482491522"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.51",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.51",
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.51",
+      "dist": {
+        "shasum": "04b4e3e40b3701112dd6eda39625132757881fd4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2371
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.51_1528838466701_0.9420939651734688"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.52",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.52",
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.52",
+      "dist": {
+        "shasum": "e65ca848b586bf4d2b2fd184ab75383fb5567277",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2370
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.52_1530838793793_0.8992239830126738"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.53",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.53",
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.53",
+      "dist": {
+        "shasum": "3e267179204c77519d8417a9b199f252221e8d95",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2370
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.53_1531316457000_0.9525389497561492"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.54",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.54",
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.54",
+      "dist": {
+        "shasum": "1017096366fb43ebca8ed8d8d0cdd1ebd64febb2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2370
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.54_1531764034073_0.3439285060913504"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.55",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.55",
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.55",
+      "dist": {
+        "shasum": "ddcac0ea80e6641681a473a703093cd2f623a59e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2370
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.55_1532815718547_0.7795857524941208"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-beta.56",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-beta.56",
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-beta.56",
+      "dist": {
+        "shasum": "da1c786c70af6249d142771d408dc1abb2fb8871",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.56.tgz",
+        "integrity": "sha512-t32wjgnTXwOMDd8cIUSpYu3k31EqrYTJsZf/Dw44RDT6EXJzeTKchMsvwd2n8vf02OzjO0a9/qXF5dKl4cK0HQ==",
+        "fileCount": 5,
+        "unpackedSize": 2370,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPzICRA9TVsSAnZWagAAGSAP/1RcITcPi+k4vPu1NAlt\nwe5o8Og/Uh8i1ueTIhIpWGDl7IF30DMVzeAMH3ucfjhS3fRyAOWRR7n9QrYx\nvF1aenQ804fhQQXWgIrVX8PjW8P1m8gb9a2c+YuBV5+XqTMDKiPvYMNs1fgg\nR+Zrsr7GTBjvztyHNv7xSAWNkG47FdkkrevFg+ooHmYlxa78q1zfnh5d+4Yy\nFar3cFuNVG5tlsu3XV//iMuseyE3P3q58LvykgQ0hfIv0Dup6ERwD7ibN94K\n6FI6V1aKOZfAatyPOrGtkm9wdwbWiyad2srqR1DPCqA0BYA5OV9Fjxx/B2ir\njy+okM1J1MqGw9l1+iNo/r1PEiCy3qOW/XD1G4Bsb8NHRSUOotZu1VHXzLNx\nVqjkMpYcK4+jM3Az/ihO8ObBDkfDxAtC+UfqOk8XwrFEvtzNgcgTRl2wF2Hi\nmO73CUagU+eWwIH+c2VtUwME427V8UD8njZ/FukKQ9ybHsEMzg1M0IDiuFdY\n7JDY6Z/YSrt+R7TWDdM5WPCHlKhlv7N90AzTzxbnZW79BiQi7nS3BhFjXk3a\nvbj5xGB6K9aOQztfmuQr08flkQEXVQBAX59/wBZyA/cX39Tixrsvbc0UJfdR\nV6JLgIk8IX6QW8Zb7l9p9Y3ecCXOdC62C0+/BAtXsEPp2Ekj9lH+oCk15L1+\nhY6g\r\n=6Dcw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-beta.56_1533344968343_0.031625878960490406"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-rc.0",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-rc.0",
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-rc.0",
+      "dist": {
+        "shasum": "997c4ae71e332495a527720ca5c1981a9edef34b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-rc.0.tgz",
+        "integrity": "sha512-ijhKRqYinRZ72z969LdvW9+eoLGwVMrt81oc6DISNWIcH5DCsZoLlBM3QrR0PmOr9Fbg+2s2YRyDA9j3Pyr4Nw==",
+        "fileCount": 5,
+        "unpackedSize": 2355,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGUsCRA9TVsSAnZWagAAk4UP/R2SDkCFfWqicisJxuow\nX7JMzHcpy5BLG5MIxFF8p+XDSQJLpQ7VoYQ4uU3QmtglW2wGBvywAk1rn1yh\nde8Q6LKci0cwxnLWbniYMbjAYkIBO4fPdqPV0XEyTGhC4qV8GePifTEs1dyU\n/RihH/oImnorNiT07O1OEn6yOghOBttJ+Ek/vFGtyTWoZQ1byelAPdQbdNK2\nQfys4scEwrvbO8t0EUFRfI0idFn64wN0XEYtrKM3r4IbdKG38HIlXiI5Uy8S\nRddI7FGOwvT9+qhT5O8NbML2mtTZqR5sO5n5PtD+LIGx17Aq4Qx0gjcoj09A\n6UUrozTHBj+Z2s9ohFwdwDWxvZIyzU45TrvLk6dM3XuDAUkswcpfLRtC3H8o\nGDozIFa56Zip266VK0dQulpgaMM+GTf/Rye1U7JSI9fGr1tBViwuYZj+E1Mw\nWoAhLzAF2r+luImlVUBh0BTrryc76SO9BHWBvBau0hMLJgJsSkK/FW7kO0V8\n4xY5X7qzViP0gcRy7lat4f04utMLMimuRgtNrqAZH+fEtjxWftwwyhHp+95N\nBZciqYBBZlWxYH316nCa15K4RoR31610aWlkKWskHPq+Kuxq18Yr81Unwqy4\nlgBpmb+J9hdPzJWoroSEoEYavVH8fbDzyaUzr9CHyiSt2iOegZw5XAWwiDwt\nV0h7\r\n=VnXF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-rc.0_1533830444463_0.8951718916595579"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-rc.1",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-rc.1",
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-rc.1",
+      "dist": {
+        "shasum": "b8a7b7862a1e3b14510ad60e496ce5b54c2220d1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-rc.1.tgz",
+        "integrity": "sha512-5lc0nlX8TPdkHSIX3/3jMtqvvJfzcARcev4qqsaVkXWQ6XNrNnD8ExyTEVgoGhr5Ppz1wA0ymAK8W33uGeKSOg==",
+        "fileCount": 5,
+        "unpackedSize": 2336,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ+sCRA9TVsSAnZWagAABF4QAJawHDMtO4TeZK73zI7P\nZVtwt8L1Qx0y3aQzCv619zqCg6w8f/MhVq/Vhw/uQxdTyQICdEjARIO/VCdF\nUsb+RfmH4HyV0F385EAwe5iq4MRel0/QLsfP6e6S6hOrQ9WlzCgxlV8mXKJw\nMDeVUrnFAwLjp1nFapqmY3zXsoUPV+WSFyXtol15xESgbEMfo2gK9OAjt79z\nxa3bmzNpkMGL6RxMi8fo0N3r6FG1dcwy8BcZNR2K0kpVLE12g18DLIuBcgBk\norWmMtmoyebhyT2+LhNiG5tMNkAULsfnG2JJDdYhnAdKoUZ7IawtITx7GmFU\nJuYqei2qBDLs6q4t8W9g6H8BmYFtHoYB2lSpdzkotqg577LadqB0ac9CBJ2t\n2D/rllrcu8DXytemef+C65HdU/2DbZ6M64UFNeZcUHfhtdnYps3ugxt33q1l\nxMu8TB1Zs/+V91SgQJFKevChgg65b7KGjTfxOFLjrswA9R0QBuldM7smICSm\nAkdFxY5dYf1MEUScH+Gt0wtzodBa87eNaWeUwsG6x4Auv/9mF02YPeyBAOaD\nKlYDWWXdAzLGkoQ6hM/8UR69lB0TVE8PvjG0SI/yn6uIdSQ+sVtxFYfD/ZC9\n2eKqidr+TBXwKU72mlvPx98fMtAESYHpKhyQH0uxOQ9OF/SJCBG2T+crNNmC\nrbzn\r\n=nePb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-rc.1_1533845419786_0.3141746417402729"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-rc.2",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-rc.2",
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-rc.2",
+      "dist": {
+        "shasum": "171a4b44c5bb8ba9a57190f65f87f8da045d1db3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-rc.2.tgz",
+        "integrity": "sha512-VnotPddF7jLAQK6QgBNNwzhPUsxxullq+BEFaDKi1zvXnNGqOcgJ+fmemrdfGUoZWV82Zv2aRehwswPkxPcK2w==",
+        "fileCount": 5,
+        "unpackedSize": 2336,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGdiCRA9TVsSAnZWagAArtEP/0IMnrO6yNIC9Y7K4pj5\n5bzsD+LgoZmHclRERv2L6wUI+s+meKHxLpzKpyHLpyKAOUdC0QyW+BdSEBoY\nZgX9gyt62wx/z8QQxT6pawhOnKzxN0JLd73WSCUTILLz+eUw8boJgWOq1BiN\nG77cdsbjXlbjlT0vF8TqUrhq7ONZYgWLACr2jTrf4Iy2/E+OS0eDJD5TQLBm\nSOOhKT/RyC5rn5X4L+B5FPp8enX+0qUAqPHjdJUAxtFPUnCHlq+YNHrxXEBb\n1CiEkB4wDOZOlwyCzRgfSk9CQ7GwlseImq1ljABZjiTRdDRKACVt/tUdr1af\n7QtQtUGvN+G/N49oPU8lTH9AMUD7jXh4Qeix2oOeg4lQTbsb31Wxid5DZT8W\neI2mODvb/GG5FdOq7uhW1ljnG/DlaHgJAcqqM95RjH2Zcs94xRPWUU/E1CEW\n62IX3O1tflY9hu0CsKJBfNdfglIezNBMsHXH+RQIUVTxWHZBzdIVSjJXsRbu\nj+FAs0y+M5ibc+82me+6e+xDMVVBNlg8FGPtqrKxSbvayj8NZkcFR7j2/oWa\nbKllNH5Ftz3epbZ9OBaxjKNz8AP81g3kQLSkl+gEFHW++qwn3KCb4a3Pi/o4\nsYMvPb18/0j98UGYxPaWt9NKAo35vsIIi1tOle589vWpiFi7OW53AlwU0N6X\n0CBr\r\n=+3tM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-rc.2_1534879586066_0.34090790372151036"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-rc.3",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "7.0.0-rc.3",
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-rc.3",
+      "dist": {
+        "shasum": "494cc71920f8e31e02f99548c40935cf699f5be5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-rc.3.tgz",
+        "integrity": "sha512-eQBweWSXf7wsn03BA7Ksq/f6bWLcPdYM9eiN1bMWWfurdxlmtXoDuW0EB2KDf195W5S2y3O2wZQWRW5Z+xZNEQ==",
+        "fileCount": 6,
+        "unpackedSize": 3435,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEoBCRA9TVsSAnZWagAABO4P/3x3qToGSLntEWanJBKK\nsSjshxs3bFaEMkPBonPfi83ASNWLbD7hId01zOqgQRz8bIicPSQ60FEFiQDy\nebrLUABSpyQyQolms5lehchij4bem10IRmKS2HqrAc77QhW0eHoGnAZ+rZr3\nUB0wCmc22Mv1v8pepDd9TDuRe6FCcdQZTr9pT7w7V19EC1tu05XBGaN6jcie\nCpCYEa09w/KrwdZs7oAfKMi0eRT+4ISoBZWHuUzOjFhY1DYfsyUqn/wfX/Y3\nLRNbMaDE/vTrqwFAv8tJ9/FL/oemE+4g87J7NmD+rBvgDSmQwTVeDe+8RkLt\nH7W37uwoqfeKUMKv2zGmTWupoWwr0ReNPje3sMSdAUrTHfE2EAQXyPspfp0h\nz3cNsW9PXdiyewyJrHwgLEET5bmpnxdPfIStqHhwLR7OVGu1OB6qqnPJsOhe\nq5zMgj4mH2GBxfjdRbUFOjihlOYRYYHpJ8Z9vblg0OoxIKsWAEjJbJ7mrKOA\nEnRhfMYI2W+wPvhdkyEejHHKJmZuhKn2emcw5HX0TewKzVCVbADGd56dZbFH\nkxuMjpGI+o7sQTOLWO+Yj6Sxa5GDafaU8lu+l7T4uET0xYZsN0IOBo+eKu14\n9kr9y5qKX9IgA2t/mLj7NCqdnCpOWCGMpxRzAktLFVltcp0nPqePneKsU/mR\nFWrO\r\n=TBlq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-rc.3_1535134208836_0.6822656040833361"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0-rc.4",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.0.0-rc.4",
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0-rc.4",
+      "dist": {
+        "shasum": "f2b06d02b89dbd4a159aa9cdb34f9245e484703c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-rc.4.tgz",
+        "integrity": "sha512-cF0UJqqnQ/em09Xu27CbP/Eqh7xvxECoRpMJOaECrzHHH8GmKx2aV6WO8ixctOI4wJ37Cp86esvxpOCXYy789Q==",
+        "fileCount": 6,
+        "unpackedSize": 3439,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCsKCRA9TVsSAnZWagAAAKwP/jHP+u+279jrq7DA9GVG\ntdH1jtHaAvD7f7bjOg19FrTQ9TmV+yWTV4EwFJjHvuMkdO90Fxi2tiFBJ3J9\nyaK3XjzMODmu8n2dZA4sGhNdb4WiXVnybpbjFQ6YIjetkVFzOmcFmZE1u7bV\nNT89WziFweyVwg22hPl1ZBSm1HeZSNkHd9KNvCYqEDdFX3ErLsopIFD68mld\nvcLbAWGezW8JJ/zf9MQQLV7sxZDc1QjzaJltYxguTQiL1JO7RwEqzlo2t/BN\nWfq5cUSq9cZs2sSUbrQkfAI+I35NJ9DZA7y2G9SEV4R8u5OxnoB4Gln0qhn6\nKOOniv7C95un/vuU3zgtZjBPOBphIX5fw0CMR/xRuArAu8L0IN4m3LGAsmJ8\n9W5e8ACrYgBjXUw245GENpffc8ynnmLxz1qdhqHb0Z5Kac8l+5736eXQqmt8\npdowfIGmH1j2fDlwCxaWkwEhcecu1lmtyTaT90m+zLhz095eOLV2xcyH42mS\n7m5DriHTeo9xymgo7iCOz7qQCyihbsgbLPcleQK7kRAllVsdX7ExFwqUNtx8\n5KWocjbaw2F/4cVxj1sCa/Afq99qeAwKqgWUwVmo1rNQKVlG6JDNED/zgjqj\nhbGJw5/6KpaxjBuV0FXA3NyHX2cZoxXnrmECCpPWB08JWLj890E3oU3kECEr\nY1wH\r\n=jyV6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0-rc.4_1535388425516_0.8526135178555085"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.0.0",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.0.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-exponentiation-operator\n\n> Compile exponentiation operator to ES5\n\nSee our website [@babel/plugin-transform-exponentiation-operator](https://babeljs.io/docs/en/next/babel-plugin-transform-exponentiation-operator.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-exponentiation-operator\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-exponentiation-operator --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.0.0",
+      "dist": {
+        "shasum": "c51b45e090a01876f64d32b5b46c0799c85ea56c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0.tgz",
+        "integrity": "sha512-Ig74elCuFQ0mvHkWUq5qDCNI3qHWlop5w4TcDxdtJiOk8Egqe2uxDRY9XnXGSlmWClClmnixcoYumyvbAuj4dA==",
+        "fileCount": 6,
+        "unpackedSize": 3414,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHDyCRA9TVsSAnZWagAAZaEP/iY71OP7Tm+n47ls6swm\nDivdongEcy8RVi2/rLaCbKpAuNJNV/lH0MBuck1f7jNqAPBJGTvfong/bSPo\nUnBWsFEpjvYnVbHnzr4LL5hxnPrCvX3LltmGz8zV1trhZfUo035lbZnixvOv\nE2HQi+/kVTmE4ib5XEo+SRp2XNW8ffAbzviHXFKN3M0d9qIMRLe3BxGKFmq+\nK+pRyXzFFDiqNiITRunZS7i7Irk1lCwXryIGpOghFMm2xnJ4N5c70uik2wdw\nkwGrDXJplce8RcIPZLi2eIhXZ1/va2B5r5RVQAUNSK0AVnrVbrkpUR7Flopz\nmgsu1ET2DndVNPTXUWBw9eGA1/w9IEkpoYGUVZagdQ/jKN3vRvoQ1+3xkrSX\nHA1Ftui1qQLEzIHMhpV+nqsZiOZql9hEYLdcw8HjE+EQxhNMcJQZ/F9Jfput\nDyi3/L3/c7LPkDOw5PsK8orxHD271oPhnc26R0VEl/d/olZf/jUVwmky5x3j\n0/tGXYtwV8Af1K1Jd+TfUq8bMUtA+t7CwabwbyNBnfANNzytsenrXza3XbLM\nCY1HTRfXNiySCfj+HYwGi1VbHYr9aBUPks+OVBTB1FvgpZGepbaAKh+cdG/S\nmT9W1lulAiYb2fICR3seYqH2jmdIXmDrDtL4tKPh52/625SnXLAYP9CwYM31\nFZZK\r\n=ODkW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.0.0_1535406322279_0.7951447063433252"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.1.0",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.1.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.1.0",
+      "dist": {
+        "shasum": "9c34c2ee7fd77e02779cfa37e403a2e1003ccc73",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.1.0.tgz",
+        "integrity": "sha512-uZt9kD1Pp/JubkukOGQml9tqAeI8NkE98oZnHZ2qHRElmeKCodbTZgOEUtujSCSLhHSBWbzNiFSDIMC4/RBTLQ==",
+        "fileCount": 6,
+        "unpackedSize": 3467,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboAEiCRA9TVsSAnZWagAAPXUP/2kpDmTwP0vpxYrKq3Vl\nMhQnknd0Lz9m1xxN+0970Dzv+uY976HXJTKKZ6jqpMWuQSIzs9XRxC31cZjU\n7Gombtukrdl4sQd5IZKSb7iTjAm5vm1SHuSZI+txL55YIB02NC2HUqNBQBo5\nZG6kzAnLin5MIdIzg9ByXhFZjqLhbJoMJPmVGovvXihlZIL5K4QQ4yzhnZi7\nafsE6AGgNfPsuM/TfKBTEDSngCySZczGsVPq85sB1k4zgTofU6HhO+G8Cmxo\nH2eps1Pu8C7IClxG/nbCFuc7ItCvLhWvf/Sugd7uJe/870gZVQ6VjcnOC81/\neCxrGYmO6E+o6pjf9HyOgI5rEQxtI2UNplPLonoPY/6UtkS4y4PC9S506i6s\nvYJ4Itpku3j02iCSOvPT52TmhpCDZob+vtdIo5m9AkI0v/LO7Qsro/ijsvhJ\nbzlJ1CzFNeVLT63nfLFTAU/+3v50swXw2L+x4DHmiCgX6aNiLDE/Uhf4iZsZ\ncenrIZcR9Ivf/ew2TjUuOUMkFaviFmGbapzoXMfMSXoFFy9YDai1t0+bgla5\newA7jTrYPD1jI+a/y6j+boEfayFLZ+Dm6ART2qRxdKFS7D8TS3KrhNZLSX+z\nXubS0iMVb0xe1CAXhNO/GdMJOzQ2WQmuoLn3m29MR9OkRr5sOJPBPjqCDYSi\nzHFi\r\n=R+2R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.1.0_1537212706087_0.5551505273343202"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.2.0",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.1.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.2.0",
+      "dist": {
+        "shasum": "a63868289e5b4007f7054d46491af51435766008",
+        "integrity": "sha512-umh4hR6N7mu4Elq9GG8TOu9M0bakvlsREEC+ialrQN6ABS4oDQ69qJv1VtR3uxlKMCQMCvzk7vr17RHKcjx68A==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3514,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX1+CRA9TVsSAnZWagAAEWkP/jQkHSSgl0IiThtx4ryJ\nbYypQeMndpbsfkRMnFBK09ujvfLoikXA1yLBkcpBW8RIkEThKGccQcVCPw9c\n0IDpet3TyM70S6ujas4b5xOLtKMcNQ6P77UlEEM8r68b97uR+bbonVZLMUm/\noxHLhdQ/tYV4gbcV6qbuVc9DGS5d6SspRNgAfSqpz0/USKRL9/FyKWrvD9ET\nuMfBhryNfpVC/sidG9z1ftPlwLHwTifBrEeO+v2mK0laCS6O9axRzwFBTLEr\n5DxomuFc7GfaB3PHTjLpne+eNFlbThkjAT0Fsj5yc9IOPQWIAkZZeuFUu2Aq\nC9tl+4p4GyuYuweyr4p916w677IqoET3P7URNhQ6lPkhz3OoEcTGddnJT1iI\niqeFTEdWircUH7k+euNadEn7F9p4iWgNREcyBUU3Ro8/x33QeN0KYE2EXl1h\naBZNC/mZstlPp3mcQvcTlysUzpp7UimwYc4bao6C08XPsTId/Da4+R4u8Cfu\nx2GYcOLVtxlwj/+0Bikt3nc1xUbqELZGt3x+aqvJNMR4cWvQUaEO55KF7Izk\ngd3B5ly4EFlAx9TLhBfYXJMSvIdP9z4DyTH9JzTbSrrVtUTTZG2pfkryxebz\nELFdrzAc6orNMYB5ln8HJTcer/IGwkdSuFZq9F3uaKmt/omPDNrx8j1TTyCx\njpS2\r\n=fyIO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.2.0_1543863677913_0.7178665000800666"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.7.4",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.7.4",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-MCqiLfCKm6KEA1dglf6Uqq1ElDIZwFuzz1WH5mTf8k2uQSxEJMbOIEh7IZv7uichr7PMfi5YVSrr1vz+ipp7AQ==",
+        "shasum": "dd30c0191e3a1ba19bcc7e389bdfddc0729d5db9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3248,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HBmCRA9TVsSAnZWagAAjsAQAJMjybZXTVdekPh/n0U+\n3q0sgJ6R2i+Tbiqfu/UEJ/rI/AG67ZRp4mJjIgZFPyD8shH75MUOfkl1qCvF\nmlUxRVyyN4c03ZFfldLMHEiN0ntXk3Ur+qHjNtU6kXF+ggv9Zp5EGdD6BFsv\nJDgD185up7pkoHkj8uhQxj7PVVq4bHEpGlBDNGHehb5Bijdlh5kY/gkZ9zKQ\nL8YPYOATsYgR5yj0AHZX7LqidU2B5KupdN4QizUAYjeGHPmoUfnWIXo+PVlz\n+kNjbuY/5CxeU0HS6nOyGYfE54gNzn0RgCSQfgfbUxx8UD/WkuYx9gBCqWxK\nrMLBpNaXQPkR/MnTrUbCL+eby8yhX+PmS1dpP5y8zfWwTKu1VnJBII2/BQzd\nQBBLkun0vSQGbiXYeqgT2AYPhamuCcbLbYtl4et5jPhPuSv2g6VsMM7ZPuHO\nTKbfcsVf34SE6n/Oe1AYGpGg5aLdoWiUWs33YkDMMeO03lkUpaU6u1ZddXSV\num+dlVcPbMxN+ycc7+DFZmS/wFUlCebnKf06D/AYBp8be8MwERncgY523xnZ\nyyCHm9TnCetjUGfQaUTUYu7/vsnJeTUQXH0aioENU7/C+jsI5pi6Vo955Eyd\n6e/fvsOZoD8xiVabm/xJKXRPWt2EoJSGpfSWg3lNm1DUWJ//5hkl8FKEK5Eb\neZs2\r\n=NlDZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.7.4_1574465638355_0.2966710506869903"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.8.0",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.8.0",
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-vaDgF3gPLzVcoe3UZqnra6FA7O797sZc+UCHPd9eQTI34cPtpCA270LzopIXS3Fhc3UmFrijLmre9mHTmUKVgg==",
+        "shasum": "72ddf89e1acfac75482992b8976df62f8ad813c4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3270,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmWfCRA9TVsSAnZWagAA7XUP/jTq8W/OGNzUnZKqnW6q\n1qjC2hGa5D9/yvik6G6mvEWsZ9InOS5lIiVcIPf9ayEz0yqYG5IAY7U844YK\neMzdZ2tsZBoql1jxHxjQUxsYNqP5I8ONcMlLJxwOGdAaYgcHEn5Jr1ruUk34\njp7tleDYQ0rUL2dTo3Ne9q6SdEbBrwm0AbtDrg25FyHrWR7x0Wc0hljFeQ6D\ng6YoXrzKe6vrTIyryJhAHheHmmF7J1zelYt+hJOAgzY9kUmi//VnhiCW8Noo\nDYzX9PiJ5/kPqvCKikmGdj+dgH4W9n5Z3KURaDVWOnrGT+8X+NeTSNaf+s+x\nSRSFQN38HJGzN8yyeRritbNl7i5BXvWT7N2wb4lvqX4mQWGEXTJejx7KzblK\nTgVuaNpgwSZwkY/s3hQl1rS7FjwI/KAProHnlbIgHCSFywlEQmDRi9oGnEdF\ncUnc/nO6ZEJSeVQCcoQWhYD6c2MGuugvbTQVwA/9cSgk3ta6kIv3snCXOZ89\nTKtnQjHH1swNhcwp616PdCkt423KcYtigMtlddU4PUTU1Vd8Gnnu2KMMiCTY\nadx9UgXJmgsSek1a3HtkKc7piVCm0yK0glqEtEbdYvhgnzmWqy3M3K1Jzc/J\nfBzYa0OinuDylLpGDAoQFR2cNi/6fJQqTT0AnSf8nnDWWD0/kAKmJp9ub66Z\nTcS/\r\n=cpfS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.8.0_1578788254765_0.09021964660422355"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.8.3",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.8.3",
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-zwIpuIymb3ACcInbksHaNcR12S++0MDLKkiqXHl3AzpgdKlFNhog+z/K0+TGW+b0w5pgTq4H6IwV/WhxbGYSjQ==",
+        "shasum": "581a6d7f56970e06bf51560cd64f5e947b70d7b7",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3248,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHORGCRA9TVsSAnZWagAAkI0QAJ/5m66dUeMrAyaYiRJa\nBFnAvc0sK/YDyPymqIUBsLZa8gw3CfqHvHsKFmf4I/QowQOq1Ge4KvPj1eIE\nFXL0RFCAFK5Y79FAJmlP8/wdwj9h4g0toIJLGM/uCCo0kjdiJjSBDzA0WYN3\n6A4/0VEAvLQQPuPBIMm6eYZgZKy4B3dGuihAkY3cCVQ4++zlAj9so1A39lo3\n0/gtv1UE/4eJZXrgfZ769QXgp5JH+uLxaFh2BbTfDD2u368y1NjsvzRGVJ0E\nZ4KHoF9feN0mNPI1JCB3WVo4/DfreMG6//YfrpQbnq9gY9RK+29ApoRh0KsE\nPxXqFzxfLAkzstRnoqHm6t3CPDf37cgHf7raTH7lo7kaIrlXTxkwCzPfY4qs\n2uX+6X0NwxTf+HwQAMtsUA2giDJT1coRCRPi921yQaLn6GIVp26dQ/xMJ0Gr\nejnv3i3T54vaFtzIDyHMUPsGn4afn/Vjbq6qvOkbRCTYp65gCsLHgO69Jjco\neGktb1/SWBMad7mpfyjJrPsHki3bpeZpjg3K5bW99gsZMJuTNTuPikJWNNn6\nZ887Za4gKNA1ghmRZ7RGsYmtfKsPL6TiXMfVGg8fEWiZVvKyd2RQWPEbO8e1\ngSkHnlbUbI6gLhczTzgnoiP3CiBZCrMLhq72qMUC4bThmZR6rAe7EaPJrzLO\n2ezX\r\n=qkrZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.8.3_1578951749660_0.643268973552805"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.10.1",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.10.1",
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-lr/przdAbpEA2BUzRvjXdEDLrArGRRPwbaF9rvayuHRvdQ7lUTTkZnhZrJ4LE2jvgMRFF4f0YuPQ20vhiPYxtA==",
+        "shasum": "279c3116756a60dd6e6f5e488ba7957db9c59eb3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3301,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuTbCRA9TVsSAnZWagAAFaoP+wcaHzK4sKWn/PQfhZcC\npvkI7CTRiijtXC7bJT4x5KYrHCf9DhqyApdfGPsYr4h2jaGDG1cULqaCC2XN\nSef+YQmTUtyN9kdKJJZFktr9Hxt2/vw+TARu71tMb6udTaW2yMwTLQJm22xz\n6dfb182etkm8dFXMYvSJsgFBL1gb8Df+7hBAcDfX95UBVL9wQQINt2+uzrwJ\nD4uiEUa/5HmcXJX+fSuG5YUlNhzUSck9Q5k7TZ/mMr6RSAv45oW/XLaIUbKl\nDlxQD8VTrfBAffkd9xuZGie0FzYnuQRALFjDq1q2v1sg1kFhXJ9HUcBUeT4s\nLji9XmHyjb9+ocmA+hlAAXVa/0OnBaQ2wHgDPeFEKSRQg5lfoFmsfpps1BWS\nwBaMctTJfQwjbrcoLThOjO0n0/HsxcKd5a7s7xYLrpU9T3HzH8RvfExCL9MV\n1JzBoBSa4Kj3jdjRqCUqMDQCy+pyBulbK+igHasPzUIES8MlyCP/A/gfopkr\nfJhm6G/nq1FV1HBe0aKgUSCooKbUvAW7AYCwIiMSuKh2p5FGhJ7nt0eLjgzs\nwVvvL7s7wo8AyMuKrlth87Pj5ZByZjxSnJMsoGyht2WBKs0GzJ65nLfbz+Uc\nhXuPdBowb7nco9mhK9HMJLJpt54W0s/y57pZPnGK4jBtqM7RlqwGF9QWe2hj\nRHt7\r\n=Wecx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.10.1_1590617307331_0.5626883953308728"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.10.4",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.10.4",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-S5HgLVgkBcRdyQAHbKj+7KyuWx8C6t5oETmUuwz1pt3WTWJhsUV0WIIXuVvfXMxl/QQyHKlSCNNtaIamG8fysw==",
+        "shasum": "5ae338c57f8cf4001bdb35607ae66b92d665af2e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3301,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zpzCRA9TVsSAnZWagAAugkQAI+65ZglLP60zX/Vfrdh\nvHzWeSwOX9xfXzSxkGHRyFWFc8oTKpc9VjuhEegdNogQEwkepuPLjKY+lnee\nc8JePuvjTfFolWsByGTt2CqiyP0S3gIXSDBFb2NG5CkwLwE44ghrleia0b4H\n50xAZpE5kr8w/pE8tcbd+2fs2NULAPEUpE58l+KKWT/vMzuHhd0mjR31wBVa\nN3uXA0Nx6f2ftW0Iho3t860nl56RqVwiK/6KJIk5zK0yh7QJcVsEDhlmXKJr\nhuafxt43s0eRNbzCEjM4Fk2z5KBrdOWQNtsbYkzGiPhuyiywuJwcSWdl+Ukj\n0sMoX2+UemQpAylU215jKo3BDJ9bI4KEYUv3iFbRpcHKSqwaganZbhZnqNgo\nDzqIZqlVNBSSmUzPBBmNtTlgIGo6BkbI21D763UdOGjwVQZ/TOHTC1DarJmz\nJLV8DsUTkadKKYRX5jFyWu6gAZKoovhgulWie67PTuF3+Md2IFM5SjSrgeAO\nn4VJGWnjfIpJi9zFpP6yc7DvP8/w31cB6H5E/G2UKk+ka88GZv+YwUgXBPbo\n8O8FAxSHcF36WCylq3B5z/c3+cqhwe0ofnVHZ7Y6C+3TXX5PgA2elOn6qW1r\nNeKWEnFjt/FBPi7PaS0RBj5qMdkejvucyEMbUIx94jB57B/rDgcyxZ2n9aXl\nbBXS\r\n=hZrR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.10.4_1593522803315_0.45862752030961995"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-exponentiation-operator",
+      "version": "7.12.1",
+      "description": "Compile exponentiation operator to ES5",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-exponentiation-operator"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-builder-binary-assignment-operator-visitor": "^7.10.4",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-exponentiation-operator@7.12.1",
+      "dist": {
+        "shasum": "b0f2ed356ba1be1428ecaf128ff8a24f02830ae0",
+        "integrity": "sha512-7tqwy2bv48q+c1EHbXK0Zx3KXd2RVQp6OC7PbwFNt/dPTAV3Lu5sWtWuAj8owr5wqtWnqHfl2/mJlUmqkChKug==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3242,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/ECRA9TVsSAnZWagAAKUwP/jc2a0DlKp/3Q+QDxWef\nOxYIstz4CAjBHuaGXj5P8zQbyygU0YODJwe8K/shNKGWUmDt/vu2xR4VdXRJ\nxyXn2mVrfG9H+H9sidix2Vr6yHWAjJrQUGsUd1iE5zrzmD6qEXoeE27COZBL\nXrQI+yeGAHLwH76+WGS3HiGHGtWv/00YQrQx3tlBn52MXkstLIlzT/eS6kAn\nvJm9qiKMKP42y/NhJpXzzgEqNbouICtDdi5KlphaZembCQaOPR8WZq1tyQzG\ncPtOCX8cJeIfW1wS4WIuLXNhZLZFNYhYzIFBFLqAYMpJ2RSbuQ47U/vZRGBN\nZ6J/5hUknNMa/3L6GhVBiZJpLRTwMAB5oBvr5bRBXYYSnZYi58MfhmzMNEw+\nW4i+X+vsPVQHlNZRhWKDUpLMaCo5y+KtxXvLNpVtaWIeHvCvjWFFpzByYD00\nz8fiNTXlm8V66M2F0Xvb/PREJfyqXMIQTdh8+1ZiUK/k+ygp3zVg+D2W35zf\n3yiDHYaykLWhNDIWokhlERKkAOT8H1BS7Kgg4uLZLXukXQvOiI1uGAPfoNDp\nzvOHZnlKB3Pl8ej8KlslIXex5/yNuosTlWAq80vBJU53Q03WAV3RlFyOJzFt\nezazFHWhavGAMOau8C06IlgGuY4pyFf82QoEOBFj2x7179eKNSE0wWP6R3pv\nr+Bu\r\n=JasU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-exponentiation-operator_7.12.1_1602801604397_0.6094560990304532"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:40:09.989Z",
+    "created": "2017-10-30T18:36:32.088Z",
+    "7.0.0-beta.4": "2017-10-30T18:36:32.088Z",
+    "7.0.0-beta.5": "2017-10-30T20:58:09.741Z",
+    "7.0.0-beta.31": "2017-11-03T20:04:38.784Z",
+    "7.0.0-beta.32": "2017-11-12T13:34:11.774Z",
+    "7.0.0-beta.33": "2017-12-01T14:29:30.272Z",
+    "7.0.0-beta.34": "2017-12-02T14:40:29.483Z",
+    "7.0.0-beta.35": "2017-12-14T21:48:34.586Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:53.456Z",
+    "7.0.0-beta.37": "2018-01-08T16:03:49.874Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:49.610Z",
+    "7.0.0-beta.39": "2018-01-30T20:28:51.562Z",
+    "7.0.0-beta.40": "2018-02-12T16:43:00.204Z",
+    "7.0.0-beta.41": "2018-03-14T16:27:09.596Z",
+    "7.0.0-beta.42": "2018-03-15T20:52:19.650Z",
+    "7.0.0-beta.43": "2018-04-02T16:49:06.607Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:46.710Z",
+    "7.0.0-beta.45": "2018-04-23T01:59:04.129Z",
+    "7.0.0-beta.46": "2018-04-23T04:33:18.174Z",
+    "7.0.0-beta.47": "2018-05-15T00:18:21.595Z",
+    "7.0.0-beta.48": "2018-05-24T19:25:14.912Z",
+    "7.0.0-beta.49": "2018-05-25T16:05:11.481Z",
+    "7.0.0-beta.50": "2018-06-12T19:48:23.578Z",
+    "7.0.0-beta.51": "2018-06-12T21:21:06.930Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:53.993Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:57.082Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:34.125Z",
+    "7.0.0-beta.55": "2018-07-28T22:08:38.889Z",
+    "7.0.0-beta.56": "2018-08-04T01:09:28.442Z",
+    "7.0.0-rc.0": "2018-08-09T16:00:44.559Z",
+    "7.0.0-rc.1": "2018-08-09T20:10:19.866Z",
+    "7.0.0-rc.2": "2018-08-21T19:26:26.223Z",
+    "7.0.0-rc.3": "2018-08-24T18:10:08.905Z",
+    "7.0.0-rc.4": "2018-08-27T16:47:05.553Z",
+    "7.0.0": "2018-08-27T21:45:22.331Z",
+    "7.1.0": "2018-09-17T19:31:46.245Z",
+    "7.2.0": "2018-12-03T19:01:18.101Z",
+    "7.7.4": "2019-11-22T23:33:58.472Z",
+    "7.8.0": "2020-01-12T00:17:34.883Z",
+    "7.8.3": "2020-01-13T21:42:29.816Z",
+    "7.10.1": "2020-05-27T22:08:27.447Z",
+    "7.10.4": "2020-06-30T13:13:23.480Z",
+    "7.12.1": "2020-10-15T22:40:04.560Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-exponentiation-operator"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

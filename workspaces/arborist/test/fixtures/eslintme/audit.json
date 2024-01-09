@@ -1,0 +1,136 @@
+{
+  "semver": [
+    {
+      "id": 31,
+      "url": "https://npmjs.com/advisories/31",
+      "title": "Regular Expression Denial of Service",
+      "severity": "moderate",
+      "vulnerable_versions": "<4.3.2"
+    }
+  ],
+  "lodash": [
+    {
+      "id": 782,
+      "url": "https://npmjs.com/advisories/782",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<4.17.11"
+    },
+    {
+      "id": 1065,
+      "url": "https://npmjs.com/advisories/1065",
+      "title": "Prototype Pollution",
+      "severity": "high",
+      "vulnerable_versions": "<4.17.12"
+    },
+    {
+      "id": 577,
+      "url": "https://npmjs.com/advisories/577",
+      "title": "Prototype Pollution",
+      "severity": "low",
+      "vulnerable_versions": "<4.17.5"
+    },
+    {
+      "id": 1523,
+      "url": "https://npmjs.com/advisories/1523",
+      "title": "Prototype Pollution",
+      "severity": "low",
+      "vulnerable_versions": "<4.17.19"
+    }
+  ],
+  "js-yaml": [
+    {
+      "id": 788,
+      "url": "https://npmjs.com/advisories/788",
+      "title": "Denial of Service",
+      "severity": "moderate",
+      "vulnerable_versions": "<3.13.0"
+    },
+    {
+      "id": 16,
+      "url": "https://npmjs.com/advisories/16",
+      "title": "Deserialization Code Execution",
+      "severity": "critical",
+      "vulnerable_versions": "<  2.0.5"
+    },
+    {
+      "id": 813,
+      "url": "https://npmjs.com/advisories/813",
+      "title": "Code Injection",
+      "severity": "high",
+      "vulnerable_versions": "<3.13.1"
+    }
+  ],
+  "debug": [
+    {
+      "id": 534,
+      "url": "https://npmjs.com/advisories/534",
+      "title": "Regular Expression Denial of Service",
+      "severity": "low",
+      "vulnerable_versions": "<= 2.6.8 || >= 3.0.0 <= 3.0.1"
+    }
+  ],
+  "eslint-scope": [
+    {
+      "id": 673,
+      "url": "https://npmjs.com/advisories/673",
+      "title": "Malicious Package",
+      "severity": "critical",
+      "vulnerable_versions": "3.7.2"
+    }
+  ],
+  "minimatch": [
+    {
+      "id": 118,
+      "url": "https://npmjs.com/advisories/118",
+      "title": "Regular Expression Denial of Service",
+      "severity": "high",
+      "vulnerable_versions": "<=3.0.1"
+    }
+  ],
+  "brace-expansion": [
+    {
+      "id": 338,
+      "url": "https://npmjs.com/advisories/338",
+      "title": "ReDoS",
+      "severity": "moderate",
+      "vulnerable_versions": "<=1.1.6"
+    }
+  ],
+  "concat-stream": [
+    {
+      "id": 597,
+      "url": "https://npmjs.com/advisories/597",
+      "title": "Memory Exposure",
+      "severity": "moderate",
+      "vulnerable_versions": ">=1.3.0 <1.3.2 || >=1.4.0 <1.4.11 || >=1.5.0 <1.5.2"
+    }
+  ],
+  "ms": [
+    {
+      "id": 46,
+      "url": "https://npmjs.com/advisories/46",
+      "title": "Regular Expression Denial of Service",
+      "severity": "moderate",
+      "vulnerable_versions": "<=0.7.0"
+    }
+  ],
+  "acorn": [
+    {
+      "id": 1488,
+      "url": "https://npmjs.com/advisories/1488",
+      "title": "Regular Expression Denial of Service",
+      "severity": "moderate",
+      "vulnerable_versions": ">=5.5.0 <5.7.4 || >=6.0.0 <6.4.1 || >=7.0.0 <7.1.1"
+    }
+  ],
+  "minimist": [
+    {
+      "id": 1179,
+      "url": "https://npmjs.com/advisories/1179",
+      "title": "Prototype Pollution",
+      "severity": "low",
+      "vulnerable_versions": "<0.2.1 || >=1.0.0 <1.2.3"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+	"name": "tab-indented-package-json",
+	"version": "1.0.0",
+	"dependencies": {
+		"abbrev": "^1.0.0"
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "workspaces-with-files-spec",
+  "workspaces": [
+    "packages/*",
+    "!packages/c"
+  ],
+  "dependencies": {
+    "c": "file:packages/c",
+    "d": "file:d"
+  }
+}

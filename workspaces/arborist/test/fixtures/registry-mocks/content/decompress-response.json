@@ -1,0 +1,777 @@
+{
+  "_id": "decompress-response",
+  "_rev": "9-67e526ca18ef040c44b0f80c07d4566f",
+  "name": "decompress-response",
+  "description": "Decompress a HTTP response if needed",
+  "dist-tags": {
+    "latest": "6.0.0"
+  },
+  "versions": {
+    "3.1.0": {
+      "name": "decompress-response",
+      "version": "3.1.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "maintainers": [
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com",
+          "url": "sindresorhus.com"
+        },
+        {
+          "name": "Vsevolod Strukchinsky",
+          "email": "floatdrop@gmail.com",
+          "url": "github.com/floatdrop"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "get-stream": "^3.0.0",
+        "pify": "^2.3.0",
+        "rfpify": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "5d3ef9a5bc384bb0362e860dc553e435a93e5cda",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@3.1.0",
+      "_shasum": "10402ecc6b3b3ebd5888bc07a66227fb662df78d",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "10402ecc6b3b3ebd5888bc07a66227fb662df78d",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-3.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/decompress-response-3.1.0.tgz_1494065631111_0.5124727436341345"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "name": "decompress-response",
+      "version": "3.2.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "get-stream": "^3.0.0",
+        "pify": "^2.3.0",
+        "rfpify": "^1.0.0",
+        "xo": "*"
+      },
+      "gitHead": "c5ca457170c190ca2baefa591aee3e38a5a8a0f8",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@3.2.0",
+      "_shasum": "d443b8c65cd7434ac7ae15579ccbdd402a61c252",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d443b8c65cd7434ac7ae15579ccbdd402a61c252",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-3.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/decompress-response-3.2.0.tgz_1494151814028_0.4629032590892166"
+      },
+      "directories": {}
+    },
+    "3.3.0": {
+      "name": "decompress-response",
+      "version": "3.3.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed"
+      ],
+      "dependencies": {
+        "mimic-response": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "get-stream": "^3.0.0",
+        "pify": "^3.0.0",
+        "xo": "*"
+      },
+      "gitHead": "dcd62471a9758f970cdcc9a33c104e8d37f366ee",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@3.3.0",
+      "_shasum": "80a4dd323748384bfa248083622aedec982adff3",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "80a4dd323748384bfa248083622aedec982adff3",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-3.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response-3.3.0.tgz_1496432627972_0.16955837607383728"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "decompress-response",
+      "version": "4.0.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.1.0",
+        "get-stream": "^4.1.0",
+        "pify": "^4.0.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "ae6ddbd9aa7bd29efc5bdaf86213b14df1a15810",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.6.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4d74bEpqTQaEgl/nsDmbS3ocXOsRFiGD/tYUOAHl2BSualStrIMU/cmd4I8uFsY0LXDIuGXOLBBB0KRkqeG5hg==",
+        "shasum": "f84a8b5dc0eb859c4d77a139f5787b7cff170e5e",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3567,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcRFK3CRA9TVsSAnZWagAA1p8P/0luESo2pty20vQMjWqy\n4Z127VmiKhG7cbnXRZ03222z3IpoFaXdwO+jDHtWNlFLkQfE6htUtM94kV8K\nR1uUMlh7Qjek9FW6Vy5LdJNxKpKky6UgjHUOIGAtRSZueDHeA50rKyI7M0zs\n0pbJvircmTM7gRlvhTRw+UfCjHo9wF5Xzb2h3CxMb+oR0ufP6fynMQqCr/ve\naBF9CrLiyabSSWeIBKoV7FgRmLthIXjYg/lSnRzhRA3zQ4rovalVl/5LuFws\nvDNGtV25GRUcikFDnddmlHqLKdxf0Xwvyqp0K8mFO36SJcewcO+1JmYI4Bhg\nWqaheXMFK1Z1pX+chstP/wPWVzqr+AleJFnITJAMSPDyulxyIhlC3c4kb4q8\nSwYexPOsmLUqwOavm/gnfKHnYtUuNa9a2wuMK0GUsqBF7Lh5B9QVycPr/l88\nzDjia6rNWexR1tmXX/DaqwaFufCJBTpdJmtG9bWwOrPF+hXgtEyDFYMubTcn\nPzUIT4dOew6eu0FVPT764cG9q0yfylSKwf2I5sv10nzbeaH9gA1MuroXqGTl\nDDNxiy6MkwLM7KgQ+kNdp3wYmw2pjYLKgNMZIFtLWq+m12u4TRa54/NifCFQ\nryUmqOipYvp47eEm86kJzTRwz+aW0YzfRAWnE+9nnKmJlne+TDMEQf1PJm86\nkIBp\r\n=F5C9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_4.0.0_1547981495233_0.9058451655304223"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "decompress-response",
+      "version": "4.1.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.10.5",
+        "ava": "^1.3.1",
+        "get-stream": "^5.0.0",
+        "pify": "^4.0.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "a12b4c81e75a674ca368658276ee58a183b069dc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@4.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6HDRhiJlClQyXGK45905TplMr6ZII1gHZuztMyYBV000nPhMEmbmY8imLUBnr80ei6uSuoX069brW4LTh+HuoA==",
+        "shasum": "0d912451665523e5b34f04baceeac1cbad078b2f",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-4.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4348,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchgZYCRA9TVsSAnZWagAAQC0P/jd/NIXZpXqPlKHcm8zv\n42gGuItmPBZMTsMjuqgn46kLlBHB8KFpnc8Ej1WRSc9E+tzsFhH2nV3kLyh+\noUh2iRfKbR0tdpyxSPwwlE1gkySJUuolX71qeJWJxB0fd/bGWJDGfauSNnWk\nWd/MBPjypm2Ke02CrowGoapOxnsoX0iloRUT1q0WjkotnmlxpCYBRoJLEXeI\nAZ3QyJZhW+K/SyvE9ieEGVZDHZeyyT3TgCY/HucD4/htCrx9GyT6reeaqaT0\nUFp7LSozxs4NLTVNjth0rK6KxmuY8hHJIu+eVbIqxQGzTIEeIDDAHBlOCLAA\n8WoVTQaWGXkzfRc17CPzUusEVaFG2G8iCI1Zut7XKaGeu9+EsU2HdmenSosZ\nGtOM8VCFCiuYW9IiS4XTXeNod41yGOIBQPCLEvgzFHP1oL8gcCjjUJM4FM/L\nq+q+uLpNEf2qisqH6BH1qpZOH0tXlpZVIUnhq+dtR98KZ0/6tzF6g+crKci8\nkHNRXrXlcqA8F+aD6ks9jW3x025aP1sJDYOjN9ZeIKNCGZxeri7woRtubhNT\nwX1Fky/YMdMWR9x9SCh/f3aAEW6O6vOWCXEBwh+xuz++mncwh1BO9z65re9E\nngTzSW0Uv9w6v930df7WwQw72j8uBscZpD5Ctg/PXAlXmsPpkGrlAFx6RLBv\nTHQh\r\n=z/mD\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_4.1.0_1552287319747_0.36787183703384096"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.0": {
+      "name": "decompress-response",
+      "version": "4.2.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "get-stream": "^5.0.0",
+        "pify": "^4.0.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "2f7a9953359234bbb50075cf89c1b1adc73fa6f4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@4.2.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-MHebOkORCgLW1ramLri5vzfR4r7HgXXrVkVr/eaPVRCtYWFUp9hNAuqsBxhpABbpqd7zY2IrjxXfTuaVrW0Z2A==",
+        "shasum": "805ca9d1d3cdf17a03951475ad6cdc93115cec3f",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-4.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 4854,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoKjXCRA9TVsSAnZWagAAuGYP/2fVuN06C95AAuxKaaet\ntrVzYiFJjErVrM6X9sJFiT1UVL5lzQFsiaGKTlaNciqJpS9WFiscCK9QUnAp\nzyt5KCsdJQdw2GrWPok7Bfbsj/n9CEbTJ1Eub8sYBAtpkm46lqxnNDNIhfgm\nlxo28JoPqvYyGugJpBy/l/dlyz1+vjEjEK6qIDiInwvSfPmzkOAvXYHpKNU6\nP6MB/WYXAF0Oq17hrDCi+X0uttl/SsRD5cPLbCuD0WHs5Y4vfbTttlBqDLnD\nQ7CUqNPDWJCirLE9q73LPlwikzCHaI9pIqg3d1WfH1dUFwyAPaXFqD+2KknQ\nVXpl0Vw1z0X00gGgN3YaCqHfBmOWL4waAD7CC+bTZeYfmvYn7tbB7FKXG9gP\nD7vFKLAyljitqlhrcY+FC/0asp1tBpVuHQxsWOI3Qlp58mWp6NzixakFsRhy\n/jLKV6qkcErDWcfMhmzPB91yXGrmVbSmZLebY0bZLT/c6VeABQSagE79o/u2\n0jw8B+5KOFtJk0WmOLicQIgbQwiRoocJKEca2M9ypdXlpksUgvTwW486dPyj\nDQbtDGYcr5iUalhO2zqc7CKbBT35VT0sxw+6jDkr6EGgiefWUkEI60Xru+0Q\nXgWzwMz/f50lUXQYyQy/KlTjNQ5tgujtRHHeu6airzumfEmYaYLA111xFSIm\noKJ1\r\n=8Tx7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_4.2.0_1554032854345_0.012761173080178434"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "decompress-response",
+      "version": "4.2.1",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.7.1",
+        "ava": "^2.2.0",
+        "get-stream": "^5.0.0",
+        "pify": "^4.0.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c6cfc99d36fbb52d61bc252f3e766af51d21ed76",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@4.2.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==",
+        "shasum": "414023cc7a302da25ce2ec82d0d5238ccafd8986",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-4.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5259,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUd2kCRA9TVsSAnZWagAA4gQP/AmmlwU2x5j/7jcxblOj\nZHhBfW745jeURUiiAedjWB/3XzxlDbMBZPefL0fEeLz6SeDyQuPaYTvHM9D+\nimf40ckSM2mzJDxJrzIy/BTPr53lxtiz+g9xPzQxJWVQKVSzVp1wsKpxG06J\nhGRLCKvtkecijSHi0FJ99B3kEyDJ3twmP5c8c6pWu05wc4Oftf8JFq8atSpM\nzEB96pjrJnfSusDzviH/6RHsZSGKUJoohL8KN7njW3qg1wiKRrwg6nHzfdPN\nYrwpGQIvN/2Iou3gMjFiR4ZCwstYlczH+K0gLNnCZhTSsCQOzyf6WpGgkJ6+\n0cZMPgxgmeHjKYPWNB/humCJe+akhII1fx2smRNrH2dgRUobqnnhI+UxQ4R2\nakMNMrF+N2XZWklagOwV9Qx4skSNXB3FL4Z5UspWdp3hpJbBwBX9bLX/8NFS\nqsnKTJaDorGfHqR2rCY3g6yDbJncVht1eE8sdgCilJhCneqIBSL1lFWUjZlg\nj+IHw26yK/+0pAHKO8Xm1RpB28HxqT88LI6Cda4eZct5CFD923FKWnPn252M\ncOyldT18eXkkXiXOM12Mlf6EHesUw4l0CcAPU23frctbHCqjMwRuk0CgOqEO\n/Jp6MhGcQqzzTgngcBFl+2d1qfGaQZRJ81Q5Sz+S3YJeH40LZnZbawz20T/1\nbjkK\r\n=/wjt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_4.2.1_1565646243258_0.8844781198189944"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "decompress-response",
+      "version": "5.0.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^2.0.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.7.1",
+        "ava": "^2.2.0",
+        "get-stream": "^5.0.0",
+        "pify": "^4.0.1",
+        "tsd": "^0.10.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "a31bde7a6bfe23345e41531ffa1a22cedbd4eadd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@5.0.0",
+      "_nodeVersion": "12.13.0",
+      "_npmVersion": "6.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TLZWWybuxWgoW7Lykv+gq9xvzOsUjQ9tF09Tj6NSTYGMTCHNXzrPnD6Hi+TgZq19PyTAGH4Ll/NIM/eTGglnMw==",
+        "shasum": "7849396e80e3d1eba8cb2f75ef4930f76461cb0f",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5047,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdvDjkCRA9TVsSAnZWagAAW3AP/0pZaAOLTKBKdCUcvftc\nvTchYIYap5xb0SYUpWaJh57KZoVSekz5iPKPFb0UvFLhKLHvGBEkla+AwY1g\nxo5X01e9lT0epjPM4RbooLrHOioPRlrpdoj68VB9FCARIrM/E6C/MEb7hmdh\nAlWdtMvOTIxWaU8B7Y9phMIJflxgHNKiWPJTKGp5Ngwf5e2j3Q4ckUjKRRby\n5rlQM00qGKG+iarv62qSgLNqDT1yisZWRdWGL/Ih3hSI16CGOAgvYZawd/DT\nraGCA+PHDYfWLOCL4F7RhjS3wZ8bN+Ew9dK+GkgMDISyecfwYV4nc+4BtKzp\nsV9KX2IjGDyDcTGy8XP3xzsJyZM0vRDJQW8IDj2pXecdlfm7QPwSDoIJ4bUo\nymbXXbTLY/QcaFxbFdycBeBotCmJM6Jq8yd4p8tzSADfvQ1QElswu3Fwg4xf\nLazSCVd+MbohcDBW1QtCLQHOjWRaYXfg4EOirWsJxU/WlxHzUNaq61O2oZTG\n3TIdNQkpSKjeg/RnUOImx2yjpaxvPND4T52QU3XMuZ6lqqkKav/QAw4ua0U9\n8/pYiCYl0brXVHNjiDeSGbExUvcZ6CvmLnghFjEajPDaLa5TSVo6yqtvJFdj\nQ6moHe4LeA2p4D+kAcC8n/ZB1keDVG5kbrgPkq58SUXreRZMv92MuS0cD4ZL\n3kMm\r\n=zmSK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_5.0.0_1572616419647_0.7744270447294967"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "decompress-response",
+      "version": "6.0.0",
+      "description": "Decompress a HTTP response if needed",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/decompress-response.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "decompress",
+        "response",
+        "http",
+        "https",
+        "zlib",
+        "gzip",
+        "zip",
+        "deflate",
+        "unzip",
+        "ungzip",
+        "incoming",
+        "message",
+        "stream",
+        "compressed",
+        "brotli"
+      ],
+      "dependencies": {
+        "mimic-response": "^3.1.0"
+      },
+      "devDependencies": {
+        "@types/node": "^14.0.1",
+        "ava": "^2.2.0",
+        "get-stream": "^5.0.0",
+        "pify": "^5.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.30.0"
+      },
+      "xo": {
+        "rules": {
+          "@typescript-eslint/prefer-readonly-parameter-types": "off"
+        }
+      },
+      "gitHead": "279d53e59fae44eec709e1891d9cf8c2d863f6f3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/decompress-response/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+      "_id": "decompress-response@6.0.0",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ==",
+        "shasum": "ca387612ddb7e104bd16d85aab00d5ecf09c66fc",
+        "tarball": "https://registry.npmjs.org/decompress-response/-/decompress-response-6.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 5472,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJevgetCRA9TVsSAnZWagAAJX4P/0DzKboud5MjqnMCALrC\n2Xaqk/9+ET9Un+MOqWlA/EZn4sf8TMTHQ+81V0UgkN6ZEbpddzSH4ArTZe+j\nUyidbgtyFQ3oXRz7sQW9RzQp5uJ2iFX5U/A+621uz/MaRFWMvT+nLSeBWy/f\nR5x1csDQawVyfzA7T4pGXiZxgpcvxu259gWsOCjdxzLBlya8XpJjHL3OnXlc\nPgN3n7xlLMAsVn/IwpraQ31a69ZBQM5yXf9Mm8+01iJhDiYU7is1G254jVIi\nO+CUWSGAccmfcoMdmjwNmKLzR4n2jP+l6Zgd3TLaLCmDFUCGY/wLDQ7hMzSl\n9/D2LqPDwOOSUSbzjWbIESoSRZa86cwCex2LjBcqGouxS1YabMqQwFyoywin\nLGPYgToOGoxWL9Blm3Xwtd9XVFh2rx4ag3ahBRTRfkMLI88duwVOviBNGm5N\n3MWu/cBAmmOloAwPlv4y0NHfz9AbPcfqPKliKCggyKmozNcPOCSg/HHjGiJR\nKLq0EvzqFD4mFCTKbTN3qlajimqwB4Qukk3kdHuuJm1YGU46yBnMrulM3KB/\nSFTPs3LzWMT9B6M0PHVY9WERYop3/jXn9Nl/hSQ9P47ogQLLtqBVKvD/zc5f\n4ITdU0jTR1Qzx7wnIxY1Q+E/Zf63321uH21BIqLvqI9hssuApHiFKjGWN2Ag\nbK6q\r\n=tAjI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/decompress-response_6.0.0_1589512108663_0.20171740850344988"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# decompress-response [![Build Status](https://travis-ci.com/sindresorhus/decompress-response.svg?branch=master)](https://travis-ci.com/sindresorhus/decompress-response)\n\n> Decompress a HTTP response if needed\n\nDecompresses the [response](https://nodejs.org/api/http.html#http_class_http_incomingmessage) from [`http.request`](https://nodejs.org/api/http.html#http_http_request_options_callback) if it's gzipped, deflated or compressed with Brotli, otherwise just passes it through.\n\nUsed by [`got`](https://github.com/sindresorhus/got).\n\n## Install\n\n```\n$ npm install decompress-response\n```\n\n## Usage\n\n```js\nconst http = require('http');\nconst decompressResponse = require('decompress-response');\n\nhttp.get('https://sindresorhus.com', response => {\n\tresponse = decompressResponse(response);\n});\n```\n\n## API\n\n### decompressResponse(response)\n\nReturns the decompressed HTTP response stream.\n\n#### response\n\nType: [`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage)\n\nThe HTTP incoming stream with compressed data.\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-decompress-response?utm_source=npm-decompress-response&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-05-15T03:08:31.383Z",
+    "created": "2017-05-06T10:13:52.908Z",
+    "3.1.0": "2017-05-06T10:13:52.908Z",
+    "3.2.0": "2017-05-07T10:10:14.249Z",
+    "3.3.0": "2017-06-02T19:43:48.054Z",
+    "4.0.0": "2019-01-20T10:51:35.377Z",
+    "4.1.0": "2019-03-11T06:55:19.918Z",
+    "4.2.0": "2019-03-31T11:47:34.531Z",
+    "4.2.1": "2019-08-12T21:44:03.388Z",
+    "5.0.0": "2019-11-01T13:53:39.809Z",
+    "6.0.0": "2020-05-15T03:08:28.784Z"
+  },
+  "homepage": "https://github.com/sindresorhus/decompress-response#readme",
+  "keywords": [
+    "decompress",
+    "response",
+    "http",
+    "https",
+    "zlib",
+    "gzip",
+    "zip",
+    "deflate",
+    "unzip",
+    "ungzip",
+    "incoming",
+    "message",
+    "stream",
+    "compressed",
+    "brotli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/decompress-response.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/decompress-response/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "wimas": true
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  }
+}

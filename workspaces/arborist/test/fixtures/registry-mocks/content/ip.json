@@ -1,0 +1,1157 @@
+{
+  "_id": "ip",
+  "_rev": "103-0174571d3d925868c7a2936409c9cf89",
+  "name": "ip",
+  "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+  "dist-tags": {
+    "latest": "1.1.5",
+    "stable": "0.1.0"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "ip",
+      "version": "0.0.1",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.0.1",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "bbc68d7cc448560a63fbe99237a01bc50fdca7ec",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "ip",
+      "version": "0.0.2",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.0.2",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "d91c53d43030073e4b9fe3775c19d6e883b73ff7",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.0.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "ip",
+      "version": "0.0.3",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.0.3",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "96cf8bbaf9e814c97f98c33946d5c4cf77a1d08d",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "ip",
+      "version": "0.0.4",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.0.4",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "1f4f02ea217bb01275817f30aef5b050b96412bb",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.0.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "ip",
+      "version": "0.0.5",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.0.5",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "0b405f761a565e2af045cba09854e484dca97706",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.0.5.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.3",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "ip",
+      "version": "0.1.0",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "_id": "ip@0.1.0",
+      "description": "IP address utilities for node.js",
+      "dist": {
+        "shasum": "bf7fccc1608097ecf8e873152ca011234bd99a40",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.18",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "ip",
+      "version": "0.2.0",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@0.2.0",
+      "dist": {
+        "shasum": "41bbf4e945613464c9672034347583811375a88b",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.21",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "ip",
+      "version": "0.3.0",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@0.3.0",
+      "dist": {
+        "shasum": "7a469fffa4e26e56d61b91056a40bf9dbdcd8a8b",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.3.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.24",
+      "_npmUser": {
+        "name": "fedor.indutny",
+        "email": "fedor.indutny@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "ip",
+      "version": "0.3.1",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@0.3.1",
+      "_shasum": "d0871c6ee08449b081bb277fdd6c8ff5e6fc845b",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d0871c6ee08449b081bb277fdd6c8ff5e6fc845b",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "ip",
+      "version": "0.3.2",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "http://github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "gitHead": "978e13d19531c9d9172044654df9dfb7ed116e45",
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@0.3.2",
+      "_shasum": "7d5ed34326688b36b6ab81f1865ea8266c28f0db",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7d5ed34326688b36b6ab81f1865ea8266c28f0db",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.3.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "ip",
+      "version": "0.3.3",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "mocha --reporter spec test/*-test.js"
+      },
+      "license": "MIT",
+      "gitHead": "7798e2d222718087863d8a5a99e3c02f3a30e2b9",
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@0.3.3",
+      "_shasum": "8ee8309e92f0b040d287f72efaca1a21702d3fb4",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "2.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8ee8309e92f0b040d287f72efaca1a21702d3fb4",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-0.3.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "ip",
+      "version": "1.0.0",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js"
+      },
+      "license": "MIT",
+      "gitHead": "2c5b85dc46076551d051ea9010088d9ecb593a78",
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.0.0",
+      "_shasum": "fc627aca013cfe00921743cf0a291563f4a3c90a",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fc627aca013cfe00921743cf0a291563f4a3c90a",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "ip",
+      "version": "1.0.1",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js"
+      },
+      "license": "MIT",
+      "gitHead": "5fa3ae74c70f2af2f3bc1b8784685c5bc004d468",
+      "description": "IP address utilities for node.js",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.0.1",
+      "_shasum": "c7e356cdea225ae71b36d70f2e71a92ba4e42590",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c7e356cdea225ae71b36d70f2e71a92ba4e42590",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "ip",
+      "version": "1.0.2",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js"
+      },
+      "license": "MIT",
+      "gitHead": "f4d0ea6ea9eee10914f9d70c5be4d0997043b9d3",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.0.2",
+      "_shasum": "32e29159fc12840fbc5bca84c3cf0d80c8f5ab58",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "32e29159fc12840fbc5bca84c3cf0d80c8f5ab58",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "ip",
+      "version": "1.1.0",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "52f4ad3102669633f4d5585ac9c3e4da4e8379c6",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.0",
+      "_shasum": "a893493e83af47000e2f553f1176194c6050240e",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "a893493e83af47000e2f553f1176194c6050240e",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "ip",
+      "version": "1.1.1",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "580938b8ae94f689eb15b274ff11f57e2d84bff5",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.1",
+      "_shasum": "239171b6f353f9409827bcf9315e732d930e4199",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.7.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "239171b6f353f9409827bcf9315e732d930e4199",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ip-1.1.1.tgz_1456929054086_0.15509966993704438"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "ip",
+      "version": "1.1.2",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "ed9b6cada5ae340229dbd428401a7caaa7082f73",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.2",
+      "_shasum": "a05ba664479611d0229fd21d2572fec4505f778e",
+      "_from": ".",
+      "_npmVersion": "3.7.3",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "indexzero",
+        "email": "charlie.robbins@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a05ba664479611d0229fd21d2572fec4505f778e",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/ip-1.1.2.tgz_1457119789796_0.21723865694366395"
+      },
+      "directories": {}
+    },
+    "1.1.3": {
+      "name": "ip",
+      "version": "1.1.3",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "7831a9fa1aa42b40b5693e643040e68d2b0c0813",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.3",
+      "_shasum": "12b16294a38925486d618a1103506e4eb4f8b296",
+      "_from": ".",
+      "_npmVersion": "3.8.6",
+      "_nodeVersion": "6.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "12b16294a38925486d618a1103506e4eb4f8b296",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcbailey",
+          "email": "brad@memoryleak.org"
+        },
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ip-1.1.3.tgz_1462574789664_0.8987950989976525"
+      },
+      "directories": {}
+    },
+    "1.1.4": {
+      "name": "ip",
+      "version": "1.1.4",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "d413771ed7497ce61ddc5071a44549e2804482bf",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.4",
+      "_shasum": "de8247ffef940451832550fba284945e6e039bfb",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.8.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "de8247ffef940451832550fba284945e6e039bfb",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcbailey",
+          "email": "brad@memoryleak.org"
+        },
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ip-1.1.4.tgz_1477939130667_0.25871887686662376"
+      },
+      "directories": {}
+    },
+    "1.1.5": {
+      "name": "ip",
+      "version": "1.1.5",
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "homepage": "https://github.com/indutny/node-ip",
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/node-ip.git"
+      },
+      "main": "lib/ip",
+      "devDependencies": {
+        "jscs": "^2.1.1",
+        "jshint": "^2.8.0",
+        "mocha": "~1.3.2"
+      },
+      "scripts": {
+        "test": "jscs lib/*.js test/*.js && jshint lib/*.js && mocha --reporter spec test/*-test.js",
+        "fix": "jscs lib/*.js test/*.js --fix"
+      },
+      "license": "MIT",
+      "gitHead": "43e442366bf5a93493c8c4c36736f87d675b0c3d",
+      "description": "[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)",
+      "bugs": {
+        "url": "https://github.com/indutny/node-ip/issues"
+      },
+      "_id": "ip@1.1.5",
+      "_shasum": "bdded70114290828c0a039e72ef25f5aaec4354a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "7.0.0",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "shasum": "bdded70114290828c0a039e72ef25f5aaec4354a",
+        "tarball": "https://registry.npmjs.org/ip/-/ip-1.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "bcbailey",
+          "email": "brad@memoryleak.org"
+        },
+        {
+          "name": "fedor.indutny",
+          "email": "fedor.indutny@gmail.com"
+        },
+        {
+          "name": "indexzero",
+          "email": "charlie.robbins@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "mmalecki",
+          "email": "me@mmalecki.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/ip-1.1.5.tgz_1488591504778_0.018333946587517858"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# IP  \n[![](https://badge.fury.io/js/ip.svg)](https://www.npmjs.com/package/ip)  \n\nIP address utilities for node.js\n\n## Installation\n\n###  npm\n```shell\nnpm install ip\n```\n\n### git\n\n```shell\ngit clone https://github.com/indutny/node-ip.git\n```\n  \n## Usage\nGet your ip address, compare ip addresses, validate ip addresses, etc.\n\n```js\nvar ip = require('ip');\n\nip.address() // my ip address\nip.isEqual('::1', '::0:1'); // true\nip.toBuffer('127.0.0.1') // Buffer([127, 0, 0, 1])\nip.toString(new Buffer([127, 0, 0, 1])) // 127.0.0.1\nip.fromPrefixLen(24) // 255.255.255.0\nip.mask('192.168.1.134', '255.255.255.0') // 192.168.1.0\nip.cidr('192.168.1.134/26') // 192.168.1.128\nip.not('255.255.255.0') // 0.0.0.255\nip.or('192.168.1.134', '0.0.0.255') // 192.168.1.255\nip.isPrivate('127.0.0.1') // true\nip.isV4Format('127.0.0.1'); // true\nip.isV6Format('::ffff:127.0.0.1'); // true\n\n// operate on buffers in-place\nvar buf = new Buffer(128);\nvar offset = 64;\nip.toBuffer('127.0.0.1', buf, offset);  // [127, 0, 0, 1] at offset 64\nip.toString(buf, offset, 4);            // '127.0.0.1'\n\n// subnet information\nip.subnet('192.168.1.134', '255.255.255.192')\n// { networkAddress: '192.168.1.128',\n//   firstAddress: '192.168.1.129',\n//   lastAddress: '192.168.1.190',\n//   broadcastAddress: '192.168.1.191',\n//   subnetMask: '255.255.255.192',\n//   subnetMaskLength: 26,\n//   numHosts: 62,\n//   length: 64,\n//   contains: function(addr){...} }\nip.cidrSubnet('192.168.1.134/26')\n// Same as previous.\n\n// range checking\nip.cidrSubnet('192.168.1.134/26').contains('192.168.1.190') // true\n\n\n// ipv4 long conversion\nip.toLong('127.0.0.1'); // 2130706433\nip.fromLong(2130706433); // '127.0.0.1'\n```\n\n### License\n\nThis software is licensed under the MIT License.\n\nCopyright Fedor Indutny, 2012.\n\nPermission is hereby granted, free of charge, to any person obtaining a\ncopy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to permit\npersons to whom the Software is furnished to do so, subject to the\nfollowing conditions:\n\nThe above copyright notice and this permission notice shall be included\nin all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS\nOR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN\nNO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,\nDAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR\nOTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE\nUSE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "maintainers": [
+    {
+      "email": "brad@memoryleak.org",
+      "name": "bcbailey"
+    },
+    {
+      "email": "charlie.robbins@gmail.com",
+      "name": "indexzero"
+    },
+    {
+      "email": "me@mmalecki.com",
+      "name": "mmalecki"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "fedor.indutny@gmail.com",
+      "name": "fedor.indutny"
+    }
+  ],
+  "time": {
+    "modified": "2017-12-28T04:23:37.614Z",
+    "created": "2012-08-15T09:10:02.609Z",
+    "0.0.1": "2012-08-15T09:10:05.826Z",
+    "0.0.2": "2013-02-03T12:27:06.756Z",
+    "0.0.3": "2013-02-09T10:50:57.996Z",
+    "0.0.4": "2013-02-11T09:21:41.721Z",
+    "0.0.5": "2013-02-20T11:15:10.430Z",
+    "0.1.0": "2013-05-29T09:37:54.181Z",
+    "0.2.0": "2014-01-18T23:06:09.577Z",
+    "0.3.0": "2014-02-02T20:08:33.857Z",
+    "0.3.1": "2014-07-31T18:50:03.280Z",
+    "0.3.2": "2014-09-23T10:15:34.483Z",
+    "0.3.3": "2015-06-01T16:28:09.267Z",
+    "1.0.0": "2015-09-05T03:22:57.210Z",
+    "1.0.1": "2015-09-10T01:42:39.890Z",
+    "1.0.2": "2015-10-29T01:44:50.765Z",
+    "1.1.0": "2015-11-18T16:27:55.161Z",
+    "1.1.1": "2016-03-02T14:30:56.459Z",
+    "1.1.2": "2016-03-04T19:29:51.260Z",
+    "1.1.3": "2016-05-06T22:46:30.140Z",
+    "1.1.4": "2016-10-31T18:38:52.764Z",
+    "1.1.5": "2017-03-04T01:38:26.801Z"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/node-ip.git"
+  },
+  "users": {
+    "hij1nx": true,
+    "humantriangle": true,
+    "liveinjs": true,
+    "gammasoft": true,
+    "t1st3": true,
+    "amrav": true,
+    "kewin": true,
+    "robksawyer": true,
+    "chengen": true,
+    "sametsisartenep": true,
+    "tinyhill": true,
+    "itonyyo": true,
+    "dac2205": true,
+    "jerrywu": true,
+    "onheiron": true,
+    "mikepol": true,
+    "zedyu": true,
+    "joaocunha": true,
+    "kolomiichenko": true,
+    "evanyeung": true,
+    "jensnilsson": true,
+    "jasonwang1888": true,
+    "ahme-t": true,
+    "wkaifang": true,
+    "thotk": true,
+    "yoking": true,
+    "ghostcode521": true,
+    "psychollama": true,
+    "antixrist": true,
+    "vdeturckheim": true,
+    "shanewholloway": true,
+    "wangnan0610": true,
+    "maintao": true,
+    "programmer.severson": true,
+    "guzgarcia": true,
+    "svstanev": true,
+    "xiaochao": true,
+    "princetoad": true,
+    "comandan": true,
+    "monjer": true,
+    "sopepos": true,
+    "jeremyscalpello": true,
+    "chirag_purohit71085": true,
+    "chhetrisushil": true,
+    "luckyluke": true,
+    "xuu": true,
+    "tpkn": true,
+    "adrtho4": true,
+    "zuojiang": true,
+    "bluelovers": true,
+    "felipebergamin": true,
+    "yinfxs": true,
+    "thouky": true,
+    "ganeshkbhat": true
+  },
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/indutny/node-ip",
+  "bugs": {
+    "url": "https://github.com/indutny/node-ip/issues"
+  },
+  "license": "MIT",
+  "_attachments": {}
+}

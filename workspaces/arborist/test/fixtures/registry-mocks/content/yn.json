@@ -1,0 +1,734 @@
+{
+  "_id": "yn",
+  "_rev": "19-d2e3a44bb1ec5e366187ef46a06418f7",
+  "name": "yn",
+  "description": "Parse yes/no like values",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "yn",
+      "version": "1.0.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/yn"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse"
+      ],
+      "devDependencies": {
+        "ava": "0.0.3"
+      },
+      "gitHead": "538882e720bd9188993da62f0dc9195f2ee73eb7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn",
+      "_id": "yn@1.0.0",
+      "_shasum": "b3455cdf8392aa84d2f8c572098b17eb9514564a",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b3455cdf8392aa84d2f8c572098b17eb9514564a",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "yn",
+      "version": "1.1.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/yn"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "lenient.js"
+      ],
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "3a24bebe671776a92e08d54bee2b4aeec6bec019",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn",
+      "_id": "yn@1.1.0",
+      "_shasum": "1eb23c230ddce3d7db988a0b687b3c151c2a8d3d",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1eb23c230ddce3d7db988a0b687b3c151c2a8d3d",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "yn",
+      "version": "1.2.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "contributors": [
+        {
+          "name": "Justin Woo",
+          "email": "moomoowoo@gmail.com"
+        },
+        {
+          "name": "Mark Stosberg",
+          "email": "mark@rideamigos.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "lenient.js"
+      ],
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "c640cad3ab0eb9084a035068c31c639344324a80",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@1.2.0",
+      "_shasum": "d237a4c533f279b2b89d3acac2db4b8c795e4a63",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d237a4c533f279b2b89d3acac2db4b8c795e4a63",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "yn",
+      "version": "1.3.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "contributors": [
+        {
+          "name": "Justin Woo",
+          "email": "moomoowoo@gmail.com"
+        },
+        {
+          "name": "Mark Stosberg",
+          "email": "mark@rideamigos.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "lenient.js"
+      ],
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "^0.17.0",
+        "xo": "^0.16.0"
+      },
+      "dependencies": {
+        "object-assign": "^4.1.1"
+      },
+      "gitHead": "ad2cf2fd3ed88245ca27fac3b3337a296e4e748f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@1.3.0",
+      "_shasum": "1b0812abb8d805d48966f8df385dc9dacc9a19d8",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1b0812abb8d805d48966f8df385dc9dacc9a19d8",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-1.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/yn-1.3.0.tgz_1494265595762_0.31341670523397624"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "yn",
+      "version": "2.0.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "contributors": [
+        {
+          "name": "Justin Woo",
+          "email": "moomoowoo@gmail.com"
+        },
+        {
+          "name": "Mark Stosberg",
+          "email": "mark@rideamigos.com"
+        }
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "lenient.js"
+      ],
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "56e845e105950b4b3e4651c0370e5126b02dc9c2",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@2.0.0",
+      "_shasum": "e5adabc8acf408f6385fc76495684c88e6af689a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "e5adabc8acf408f6385fc76495684c88e6af689a",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/yn-2.0.0.tgz_1494619444361_0.5543094554450363"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "yn",
+      "version": "3.0.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "tsd-check": "^0.2.1",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "723245e6b90ddd4ce575654192d0954f3a7040f0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.13.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+Wo/p5VRfxUgBUGy2j/6KX2mj9AYJWOHuhMjMcbBFc3y54o9/4buK1ksBvuiK01C3kby8DH9lSmJdSxw+4G/2Q==",
+        "shasum": "0073c6b56e92aed652fbdfd62431f2d6b9a7a091",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-3.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5588,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcDCYaCRA9TVsSAnZWagAAXS8P/jNTm5AlKLdhTFm6SMUV\nUUg80/FUu9cjIBvRUrkwy0yHNYRAmHiHD025SM680hOas0/H2+wQ1orPmAEk\nHzBBs0z2IKPlMF3flnZSRvLPo9OKt98tYRfStAddSQWqGv3W2QRkp/bkN3tO\naxvGdcOVD+4C5DksbiLQqZ5Mn6i3yMzSjicCISrGO/PaEcR2OPops3gpaOpL\nL7I8A685cWZdDqiikDPZUKmQjnnn1gJMj/j6w0Bntik/uCz+ulqsI1Mspv0w\n2Wk++zZ+KvzWsbVJJpB09lwfPK6T1pxzYboy+FtoEA2yzD1ZMotdtVT5Gq/l\nPTegR2btAXDO/df4qu+WAOJrenAVkXAXAtzdZp1oFuFTCyQXX+UvQmwEUlEp\nnBeajH9aPu8gGDjn3WO0I5KAEm0KR47rKSFXOsOMsJ35A8EHyQZGm/njyApe\n7P2M6Maw9hobFxdr9n20NC3f3wUNai9jkZw1GXuQ9MLV8hC08aWiUec+RcSC\nck/IeySe6mSQKOaJphlzrddsdnCXzCgMWPQYrVtJstWkw0OpVUohlOK6Sp0h\nH3UfyAFfC1uuFsl0xqxYWJWR9cBWolPL06yan/f5ZBfPOhdVNJUJpls3uQBI\nI4YnWHXHJX58KNd6qE5nwIIVBFDzPZVx9AWem3XpSZuBSd+ztxtwllmQxZOn\nlxJ3\r\n=DCfx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/yn_3.0.0_1544300057205_0.3769249069611098"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "yn",
+      "version": "3.1.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "1c5a2c081c6afcf543549165391caa0dafd36c96",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@3.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kKfnnYkbTfrAdd0xICNFw7Atm8nKpLcLv9AZGEt+kczL/WQVai4e2V6ZN8U/O+iI6WrNuJjNNOyu4zfhl9D3Hg==",
+        "shasum": "fcbe2db63610361afcc5eb9e0ac91e976d046114",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-3.1.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 6314,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqJPpCRA9TVsSAnZWagAAq3sP/iVnctcIgcyUf6EKc3oT\nxbtCGgtgKMabkTEXJypG4qkWtHLLyk6jHtJYtmxa0/f6Ue82Ni1oPfZyFpHm\n2ZW7MElph16ZfWiNMGYtnrux1QPTiJDcj7QB/NfND3uNRcT1ZRXncN28d6vz\nmGn0NODDN8BZ1N0LcCrMRevYFb6AXvtT7LM+CUxEEp3XIoh6zHqhFLDyaEqI\nILUw2Mz9oHoiET+cpZW4vi/52xaBJJDsY0w8/aA4o2P3nD80QI1gHHn5UlR9\ns9NVauPdKSo+zA+UdNGPXzPlfBbNkv9bFJE05OJBAFneoPntNZouzHJtGuld\nEY2d3SXsyaoK/7R3LTDv+o0Gp8CuM0X1zl4NQmRbmlXy4fMSwOFBrMWTm6CE\nkXQl5odXo9wMm1vme1VxoB9xu99tioC0AYRoigKLPEsXMHmR0Cq0hJIA0Pvg\n/cSZUd2gIVOR1CxbG5qGtqljZB+kpRXzc/IIbs7HpfRdXNBZhoqNq42waGGW\nTBljYn3oy/UK7Y1FHT9sb1hc7dx+hgz7NYrUPHrswslKD1m6wdX/aIhvAFaF\n9YSmVRQmfKFB4tRscDkeXyAFabT9a7DDo1giejBO7b7IDUAzFkFlS9IYIbgN\n3VTlOQJqhKPLtFCRs7tZlIqdeYQz4Tr6zZ9HcD8Vc4qLIfF7Y2gTfxI/gmzG\nQLeo\r\n=4ucM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/yn_3.1.0_1554551784242_0.37789328455859006"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "yn",
+      "version": "3.1.1",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "322fa950779cc4db09b57b0543735b326b9e0c87",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@3.1.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==",
+        "shasum": "1e87401a09d767c1d5eab26a6e4c185182d2eb50",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-3.1.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 6314,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdQIpVCRA9TVsSAnZWagAA4JQP/AzCd61mp80gwaenhzEr\nHheES7noXQH145Zmecb6HMShdw6G21XrQNZ39VDA9/LwmmqVTwNXn0ivaXZs\nuqAd/0Vib7Euh9cqR8aOARIJrGTffDtoK/zEYNJ771G5J2SUqbia8JHKTrlD\nnNxIv/QDHrbNNKOyR1VJSZGV0rGAoW3/ZmwzhG69WADEoBdCbm4wAptcR70w\nBQ8l82nWWEnnOkygjyjLAMRl1UdFVJgIvDriLE83ED9vuK0reYCmQtnUTxm2\nw1PK0Ny8mKMAc9gkx1AfbXxSmJm/P4FlN1Y3XtKhNaoXdJTfVWlrY9qp78tU\nmAhrqztOsFwiLBBhSz0OrYjbEAYpZZhobJYXwn/fujvuNNdUHovMcm9u6DKm\nEr/UOBYu+LH6W41pF0Rwgg/VlfgEESw+z/j3goF3u0dQ0PtokTvQGJS3VBZG\nGYVG/oFlCqMPIXooBnjgKaRgF49r9UljSLTkhfNjThUENE8u2gA6rCrDn2wN\naBh2R0NRglXLfNO3yB9XmLcwnqxBpRoZwa42EQ3Cw++F8lT8AdpEC0ErmgEE\nguKDoT4TNCobHSQfb40UFbz5j+dJI5grxNLcRbfRDcjah/NwO4HwI271Xfb5\nYBZRIf9/tvS2Tem4xpg1ASVszO9VkgcvPc2iyjWb2qy69GyA40q1g/9j1vH2\nJyMI\r\n=wLve\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/yn_3.1.1_1564510804648_0.9811098729648924"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "yn",
+      "version": "4.0.0",
+      "description": "Parse yes/no like values",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/yn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "yn",
+        "yes",
+        "no",
+        "cli",
+        "prompt",
+        "validate",
+        "input",
+        "answer",
+        "true",
+        "false",
+        "parse",
+        "lenient"
+      ],
+      "devDependencies": {
+        "ava": "^2.4.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "028ca5df4818a6fc519bd349686619218f5c3312",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/yn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/yn#readme",
+      "_id": "yn@4.0.0",
+      "_nodeVersion": "10.17.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-huWiiCS4TxKc4SfgmTwW1K7JmXPPAmuXWYy4j9qjQo4+27Kni8mGhAAi1cloRWmBe2EqcLgt3IGqQoRL/MtPgg==",
+        "shasum": "611480051ea43b510da1dfdbe177ed159f00a979",
+        "tarball": "https://registry.npmjs.org/yn/-/yn-4.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 5890,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd44TrCRA9TVsSAnZWagAAFJQP/jxAESoQAOvCj9G1e9Rw\n0JOW3iEfzj4xFzZJOziapnB9aG1LSCQ40s7spJ762ah2FQOPBm4rAJCYWW74\nYHRZX4Fh17o5qdYm8zXu75NADDBfMhjVpF+8mJX+73hinX1nIyYNrtl8t9S2\nUEdsKteb0hbWVvRRpE/QUZ+xe+79qQ2sRrF4OstqLfxWyjfZ3NFVHJBnNOXo\nVW7K8+I4vHf8C9S9F7m3q1/J9MIdlGPso87OEogdWuXJsIN+H6rWq6cZ8yLZ\nMk22QVhtLoL9hb/KBE2RZT7k0WvIgNAs+ZydAmcp8cyJdx8nTF1VYSqE/SFb\nVb34T1x5l+NkWyfae2GyEZ9NrAmagKm/Aw1v4qBOIBM39edLEqMJmM6vNPL+\nQQiFBXXDBiO8uz0y8jS8z/RLXm3yOo6PCCQYfopcLAkNqB94I0T1bVI4XOs0\nR9Gz9qtZwSLlubKCNqBfIHLqIUI6pDFtZcF6oH5Eg+/L+jInfKQG8Kd99aji\naGxPuQSJGYXZDyAx0HIMzbchr/oJgxhelCKq2vXn6hSQya/iGXsvAQ35SqN1\nK7s37lOTQ40AH91LHQx+HykFFA+n2h21ah+iK55jYy4BR1eqhPvcrFtolikJ\nkG4I3SpLiHvOPNz11RWdg562T3NxOU7Ht29X4zFbqf/ePRjDJT3SdPh6OcXl\nAA/y\r\n=uFyL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/yn_4.0.0_1575191786776_0.7972353847491238"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# yn [![Build Status](https://travis-ci.org/sindresorhus/yn.svg?branch=master)](https://travis-ci.org/sindresorhus/yn)\n\n> Parse yes/no like values\n\nUseful for validating answers of a CLI prompt.\n\n---\n\nThe following case-insensitive values are recognized:\n\n```js\n'y', 'yes', 'true', true, '1', 1, 'n', 'no', 'false', false, '0', 0, 'on', 'off'\n```\n\n*Enable lenient mode to gracefully handle typos.*\n\n\n## Install\n\n```\n$ npm install yn\n```\n\n\n## Usage\n\n```js\nconst yn = require('yn');\n\nyn('y');\n//=> true\n\nyn('NO');\n//=> false\n\nyn(true);\n//=> true\n\nyn('abomasum');\n//=> undefined\n\nyn('abomasum', {default: false});\n//=> false\n\nyn('mo', {lenient: true});\n//=> false\n```\n\nUnrecognized values return `undefined`.\n\n\n## API\n\n### yn(input, options?)\n\n#### input\n\nType: `unknown`\n\nValue that should be converted.\n\n#### options\n\nType: `object`\n\n##### lenient\n\nType: `boolean`\\\nDefault: `false`\n\nUse a key distance-based score to leniently accept typos of `yes` and `no`.\n\n##### default\n\nType: `boolean`\\\nDefault: `undefined`\n\nDefault value if no match was found.\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-21T20:41:24.103Z",
+    "created": "2014-08-06T23:45:19.192Z",
+    "1.0.0": "2014-08-06T23:45:19.192Z",
+    "1.1.0": "2014-10-10T09:58:31.491Z",
+    "1.2.0": "2015-09-15T15:21:06.561Z",
+    "1.3.0": "2017-05-08T17:46:35.993Z",
+    "2.0.0": "2017-05-12T20:04:04.605Z",
+    "3.0.0": "2018-12-08T20:14:17.355Z",
+    "3.1.0": "2019-04-06T11:56:24.350Z",
+    "3.1.1": "2019-07-30T18:20:04.773Z",
+    "4.0.0": "2019-12-01T09:16:26.919Z"
+  },
+  "homepage": "https://github.com/sindresorhus/yn#readme",
+  "keywords": [
+    "yn",
+    "yes",
+    "no",
+    "cli",
+    "prompt",
+    "validate",
+    "input",
+    "answer",
+    "true",
+    "false",
+    "parse",
+    "lenient"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/yn.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/yn/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "julien-f": true,
+    "axelav": true,
+    "antixrist": true,
+    "programmer.severson": true,
+    "evanlovely": true,
+    "bsdprojects": true,
+    "huiyifyj": true,
+    "tg-z": true
+  }
+}

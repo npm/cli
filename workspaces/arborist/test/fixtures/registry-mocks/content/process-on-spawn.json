@@ -1,0 +1,99 @@
+{
+  "_id": "process-on-spawn",
+  "name": "process-on-spawn",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "process-on-spawn",
+      "version": "1.0.0",
+      "description": "Execute callbacks when child processes are spawned",
+      "scripts": {
+        "release": "standard-version --sign",
+        "pretest": "xo",
+        "test": "nyc --silent tape test/*.js | tap-mocha-reporter classic",
+        "posttest": "nyc report --check-coverage"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "author": {
+        "name": "Corey Farrell"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cfware/process-on-spawn.git"
+      },
+      "bugs": {
+        "url": "https://github.com/cfware/process-on-spawn/issues"
+      },
+      "homepage": "https://github.com/cfware/process-on-spawn#readme",
+      "dependencies": {
+        "fromentries": "^1.2.0"
+      },
+      "devDependencies": {
+        "nyc": "^15.0.0-beta.3",
+        "standard-version": "^7.0.0",
+        "tap-mocha-reporter": "^5.0.0",
+        "tape": "^4.11.0",
+        "xo": "^0.25.3"
+      },
+      "gitHead": "333106fa246ae4577ce010f8a5405d38061ec359",
+      "_id": "process-on-spawn@1.0.0",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.2",
+      "dist": {
+        "integrity": "sha512-1WsPDsUSMmZH5LeMLegqkPDrsGgsWwk1Exipy2hvB0o/F0ASzbpIctSCcZIK1ykJvtTJULEH+20WOFjMvGnCTg==",
+        "shasum": "95b05a23073d30a17acfdc92a440efd2baefdc93",
+        "tarball": "https://registry.npmjs.org/process-on-spawn/-/process-on-spawn-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7474,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd9xe2CRA9TVsSAnZWagAA3U4QAJ3b5cIYcV4iTN4Yn3BJ\nrp5X/GL48BUXMMfp+F7xBP2s695o2Sd2UmnWwIRaaeiA+DyPw61BDu91rWLu\nVRO7stmfVXKEV9iymQRaHBixtAUD1OoDhDfWloOaxXzlWrN99jD3tLBkG5D/\nTI1VWp0+LtQKBnV4XgVS4SRKN/OgloFgJp/RRNGmvOYrG28a5759cIwqDqAH\nQBoWBP0FA/k/RvKas+jQRSmaOn9Xj72CENSCvwiUbNNDWwSKDDqSgCzfcU/2\nXhkjg4IYe/coNsOe4cHz3P873Tc0IdmMQPgkdTOyRH/hFVF+ZhqbVsNt5kVh\nLgJJBbT1APaU+knWWXG8y0S8zPNJ3hhR/td7f8b8+k1ibQ9wJXjNXbcIHsAm\ngFZT3tYnl51ba+gFdhhSgVVZ+BdtVRRwai2OfAvSk3GNbSEBZ4c9AFuxE+I3\nX01IUmtfx+GGO6FVYJ6c+6673tYcJd3pOC/+AvcQGJCyRjIDyHcsOdNlmw83\nm+byRTsEjyg1aIexcZcZkiMjzqzJ6ukUnRAHSkjhxrjB99pQMmmRJu2R4mc+\nxuvKTHZtIHUDLUGfhRNEbXTxlyru/pe0Y9rL7uGOgZwPXS24ocWBL9cM0A1W\nJTiK02VvCLkD3GWeiuGm1FbIZG2w4rzbyWkmJ2buOwGDc+cKFo6K/KgGhF1Z\nYvD6\r\n=ckzh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "coreyfarrell",
+          "email": "git@cfware.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "coreyfarrell",
+        "email": "git@cfware.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/process-on-spawn_1.0.0_1576474550319_0.9284403132722365"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-12-16T05:35:50.318Z",
+    "1.0.0": "2019-12-16T05:35:50.484Z",
+    "modified": "2019-12-16T05:35:52.819Z"
+  },
+  "maintainers": [
+    {
+      "name": "coreyfarrell",
+      "email": "git@cfware.com"
+    }
+  ],
+  "description": "Execute callbacks when child processes are spawned",
+  "homepage": "https://github.com/cfware/process-on-spawn#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cfware/process-on-spawn.git"
+  },
+  "author": {
+    "name": "Corey Farrell"
+  },
+  "bugs": {
+    "url": "https://github.com/cfware/process-on-spawn/issues"
+  },
+  "license": "MIT",
+  "readme": "# process-on-spawn\n\n[![Travis CI][travis-image]][travis-url]\n[![Greenkeeper badge][gk-image]](https://greenkeeper.io/)\n[![NPM Version][npm-image]][npm-url]\n[![NPM Downloads][downloads-image]][downloads-url]\n[![MIT][license-image]](LICENSE)\n\nExecute callbacks when child processes are spawned.\n\n## Usage\n\n```js\n'use strict';\n\nconst processOnSpawn = require('process-on-spawn');\nprocessOnSpawn.addListener(opts => {\n  opts.env.CHILD_VARIABLE = 'value';\n});\n```\n\n### listener(opts)\n\n* `options` \\<[Object]\\>\n  * `execPath` \\<[string]\\> The command to run.\n  * `args` \\<[string\\[\\]][string]\\> Arguments of the child process.\n  * `cwd` \\<[string]\\> Current working directory of the child process.\n  * `detached` \\<[boolean]\\> The child will be prepared to run independently of its parent process.\n  * `uid` \\<[number]\\> The user identity to be used by the child.\n  * `gid` \\<[number]\\> The group identity to be used by the child.\n  * `windowsVerbatimArguments` \\<[boolean]\\> No quoting or escaping of arguments will be done on Windows.\n  * `windowsHide` \\<[boolean]\\> The subprocess console window that would normally be created on Windows systems will be hidden.\n\nAll properties except `env` are read-only.\n\n### processOnSpawn.addListener(listener)\n\nAdd a listener to be called after any listeners already attached.\n\n### processOnSpawn.prependListener(listener)\n\nInsert a listener to be called before any listeners already attached.\n\n### processOnSpawn.removeListener(listener)\n\nRemove the specified listener.  If the listener was added multiple times only\nthe first is removed.\n\n### processOnSpawn.removeAllListeners()\n\nRemove all attached listeners.\n\n[npm-image]: https://img.shields.io/npm/v/process-on-spawn.svg\n[npm-url]: https://npmjs.org/package/process-on-spawn\n[travis-image]: https://travis-ci.org/cfware/process-on-spawn.svg?branch=master\n[travis-url]: https://travis-ci.org/cfware/process-on-spawn\n[gk-image]: https://badges.greenkeeper.io/cfware/process-on-spawn.svg\n[downloads-image]: https://img.shields.io/npm/dm/process-on-spawn.svg\n[downloads-url]: https://npmjs.org/package/process-on-spawn\n[license-image]: https://img.shields.io/npm/l/process-on-spawn.svg\n[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object\n[string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type\n[boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type\n[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type\n",
+  "readmeFilename": "README.md"
+}

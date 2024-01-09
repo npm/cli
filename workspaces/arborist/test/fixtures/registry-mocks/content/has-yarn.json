@@ -1,0 +1,264 @@
+{
+  "_id": "has-yarn",
+  "_rev": "3-c1f4eb9d8d442511bb1fe62e424b48b1",
+  "name": "has-yarn",
+  "description": "Check if a project is using Yarn",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "has-yarn",
+      "version": "1.0.0",
+      "description": "Check if a project is using Yarn",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/has-yarn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "yarn",
+        "has",
+        "detect",
+        "is",
+        "project",
+        "app",
+        "module",
+        "package",
+        "manager",
+        "npm"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "1cca9daed8891b97535c6d5a6b25e5d45ec84142",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/has-yarn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/has-yarn#readme",
+      "_id": "has-yarn@1.0.0",
+      "_shasum": "89e25db604b725c8f5976fff0addc921b828a5a7",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "89e25db604b725c8f5976fff0addc921b828a5a7",
+        "tarball": "https://registry.npmjs.org/has-yarn/-/has-yarn-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/has-yarn-1.0.0.tgz_1481558101230_0.7273892587982118"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "has-yarn",
+      "version": "2.0.0",
+      "description": "Check if a project is using Yarn",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/has-yarn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "yarn",
+        "has",
+        "detect",
+        "is",
+        "project",
+        "app",
+        "module",
+        "package",
+        "manager",
+        "npm"
+      ],
+      "devDependencies": {
+        "ava": "^1.2.1",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "1eb8b0b50c8927363bb91a8462aa3a22f04811f1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/has-yarn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/has-yarn#readme",
+      "_id": "has-yarn@2.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-QGlbr/PoBGNBNCpmoM8IgN2S9ZoCd8IWdzQEhXVsGIsfYw9UPayvb9f3ZFNtAzsNUQk25ooyHDyIy9EHNnlOdg==",
+        "shasum": "11b77911708db3c5cccd07400537d9acab6131f1",
+        "tarball": "https://registry.npmjs.org/has-yarn/-/has-yarn-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3147,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch+TaCRA9TVsSAnZWagAAingP/3A/VIhAffbdHyM2aAKs\nJfo5QZQjoToLEshEsAgjxRndOm7HfgcrD0e1hCefv2xLRn0aa52xwo3JGK+s\nrL/RxlperTpnIIQZstfx4CV3Ej6iyXQL9WrPldPQ+/xFe6KHSoq3K10uC291\nVvOOYnHivbOEzc3SLpN/5pf57O7vRjNkLkVehW7NzV5VE6BPJFd+VUjd8Eu+\naFD/Px934/SNzkhbBJ1KpMK1iUaOPzZ6fW0xnZTxrw4GBaX1OBYi+/5moHr/\nl1+QouhvD2tZvBAHbN5mBd3dO3II6wWCgluOgOUIvqveBdmwtQePMgJeBZsI\nFM1kOLu9q70ZUmVARNq3eeXW6xHIhwYQVWvHfGHeZnZu4M/uT57ZI9FypfAz\nRebbTwel8F68gZNqrNgWsloNBlHjZm0wns+uiKJ1ml3NMF8DKkY/ifIC8Af3\ntASYCebqWte9QYrOr9iLZHUS0fuBLqnqCGvixBczvQYTFu56mkgID5aOwAcY\ntJawh7U26l6buT+BPu6p3PSXitnxtZoJYCY9OEMaBrjJzo5L3TxL1PonWwu8\nnl86D0OHGpwlXm2FfLGyrjKFzl+jsmhuvb6QepqXyGWT60GFqttaj7glgpBC\nbJg+XLUXnjrtNU15tbQ5WQIJo5dy5FqziJb2BNylx8kR9qXdhj2BFbPz8c3G\nJGpz\r\n=zD8h\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-yarn_2.0.0_1552409817487_0.4087908635323412"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "has-yarn",
+      "version": "2.1.0",
+      "description": "Check if a project is using Yarn",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/has-yarn.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "yarn",
+        "has",
+        "detect",
+        "is",
+        "project",
+        "app",
+        "module",
+        "package",
+        "manager",
+        "npm"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "b7b7b341a2c339050bade6b77152b266c2bdc89c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/has-yarn/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/has-yarn#readme",
+      "_id": "has-yarn@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-UqBRqi4ju7T+TqGNdqAO0PaSVGsDGJUBQvk9eUWNGRY1CFGDzYhLWoM7JQEemnlvVcv/YEmc2wNW8BC24EnUsw==",
+        "shasum": "137e11354a7b5bf11aa5cb649cf0c6f3ff2b2e77",
+        "tarball": "https://registry.npmjs.org/has-yarn/-/has-yarn-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3392,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoSrPCRA9TVsSAnZWagAAK70P/RODGqpE8oEYl26GLC/8\n/zDdpYheVd6QOVO8wBBmuLWMIRYhn6G6dJNL+YBqf09LStabhGEyAJz+d6bW\ntOaOiDu+6lgmTkwp0FUPQj3YVoH5s3HIfqtY/OZghZbmwhtw5Bk+/aY8jnXx\nd54KOYSLYtUt8L6sgfUt/2q4b0qULK4eWtK1xVaJbG2ui3b2cWMlckgoN85B\nWTD5W99i2R/y4QT8CDKb3Ke/NdIrT53oOfzTZJqqElqGlesIY3B3yAUWU10o\nC10XROkMsmkuYPr+1lQYw9lQotbzJKaGUZKb5PgUFNJH4DW/O804G3NusP9C\nWMJFLA32wlvlHK7F2U7vuLbIGzoj3ggUu7ZvRWhYDvSlozIOJlez994zDi8s\noZWBXPm1kOdfkTECyoP51jZ0GCNxGew1KDjniO3GpEmKfIBU0ER37sEBs67y\nzpOMSm7bz6su+Hw8vJzU5M+VCz0yNDk6yh9FnLfoG4oCLIosc8bAS6ceK4b8\nFDRlSA6auBaqeqniln/B3vfJVRRMhXNBIZBlTyWDFVCly9B787z8xAJjvFwD\n3XMNg2Z7EMeDlIThtoFqzX799DVGOyht8pIfhrBZJmQEXVMIhvcfp78HoLWL\nDG5+oWXMnL2UAv71RfR5eTih4avJijr50idkonEOtRFULEY4PEpzS0oRUm/j\nkH0E\r\n=7ej/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/has-yarn_2.1.0_1554066126839_0.4025715435893884"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# has-yarn [![Build Status](https://travis-ci.org/sindresorhus/has-yarn.svg?branch=master)](https://travis-ci.org/sindresorhus/has-yarn)\n\n> Check if a project is using [Yarn](https://yarnpkg.com)\n\nUseful for tools that needs to know whether to use `yarn` or `npm` to install dependencies.\n\nIt checks if a `yarn.lock` file is present in the working directory.\n\n\n## Install\n\n```\n$ npm install has-yarn\n```\n\n\n## Usage\n\n```\n.\n├── foo\n│   └── package.json\n└── bar\n    ├── package.json\n    └── yarn.lock\n```\n\n```js\nconst hasYarn = require('has-yarn');\n\nhasYarn('foo');\n//=> false\n\nhasYarn('bar');\n//=> true\n```\n\n\n## API\n\n### hasYarn([cwd])\n\nReturns a `boolean` of whether the project uses Yarn.\n\n#### cwd\n\nType: `string`<br>\nDefault: `process.cwd()`\n\nCurrent working directory.\n\n\n## Related\n\n- [has-yarn-cli](https://github.com/sindresorhus/has-yarn-cli) - CLI for this module\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-03-31T21:02:10.917Z",
+    "created": "2016-12-12T15:55:01.875Z",
+    "1.0.0": "2016-12-12T15:55:01.875Z",
+    "2.0.0": "2019-03-12T16:56:57.619Z",
+    "2.1.0": "2019-03-31T21:02:06.987Z"
+  },
+  "homepage": "https://github.com/sindresorhus/has-yarn#readme",
+  "keywords": [
+    "yarn",
+    "has",
+    "detect",
+    "is",
+    "project",
+    "app",
+    "module",
+    "package",
+    "manager",
+    "npm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/has-yarn.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/has-yarn/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

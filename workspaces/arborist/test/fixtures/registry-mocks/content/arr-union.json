@@ -1,0 +1,523 @@
+{
+  "_id": "arr-union",
+  "_rev": "10-0fd8e6d54b84107189ff607bee51e652",
+  "name": "arr-union",
+  "description": "Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.",
+  "dist-tags": {
+    "latest": "3.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "arr-union",
+      "description": "Returns an array of unique values using strict equality for comparisons, maintaining the same order as the provided arrays .",
+      "version": "1.0.0",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/arr-union/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "mocha": "*",
+        "should": "^4.3.1"
+      },
+      "dependencies": {
+        "array-unique": "^0.1.1"
+      },
+      "keywords": [
+        "array",
+        "concat",
+        "union",
+        "unique",
+        "javascript",
+        "js",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "_id": "arr-union@1.0.0",
+      "_shasum": "72add1e923d9c3dd9488cd1843c178f4f102108a",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "72add1e923d9c3dd9488cd1843c178f4f102108a",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "arr-union",
+      "description": "Returns an array of unique values using strict equality for comparisons.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/arr-union/blob/master/LICENSE-MIT"
+      },
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha -R spec"
+      },
+      "devDependencies": {
+        "array-union": "^1.0.1",
+        "array-unique": "^0.1.1",
+        "benchmarked": "^0.1.3",
+        "chalk": "^0.5.1",
+        "minimist": "^1.1.0",
+        "mocha": "*",
+        "should": "^4.3.1"
+      },
+      "keywords": [
+        "array",
+        "concat",
+        "javascript",
+        "js",
+        "union",
+        "uniq",
+        "unique",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "475b44f5059072116528bc2a8aac97ec466f0ac0",
+      "_id": "arr-union@2.0.0",
+      "_shasum": "55fb6461d9c1da0164ae706c747365f6fd15ca2d",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "55fb6461d9c1da0164ae706c747365f6fd15ca2d",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "arr-union",
+      "description": "Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": {
+        "type": "MIT",
+        "url": "https://github.com/jonschlinkert/arr-union/blob/master/LICENSE"
+      },
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "array-union": "^1.0.1",
+        "array-unique": "^0.2.1",
+        "benchmarked": "^0.1.3",
+        "chalk": "^1.0.0",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "keywords": [
+        "array",
+        "concat",
+        "javascript",
+        "js",
+        "union",
+        "uniq",
+        "unique",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "475b44f5059072116528bc2a8aac97ec466f0ac0",
+      "_id": "arr-union@2.0.1",
+      "_shasum": "3a08cb18a14a4b54d0765fbc0fd9769ba7a5fa3b",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3a08cb18a14a4b54d0765fbc0fd9769ba7a5fa3b",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "arr-union",
+      "description": "Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.",
+      "version": "2.1.0",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "array-union": "^1.0.1",
+        "array-unique": "^0.2.1",
+        "benchmarked": "^0.1.3",
+        "chalk": "^1.0.0",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.1",
+        "should": "^5.2.0",
+        "verb": "^0.8.6"
+      },
+      "keywords": [
+        "add",
+        "append",
+        "array",
+        "arrays",
+        "combine",
+        "concat",
+        "extend",
+        "union",
+        "uniq",
+        "unique",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "2eb911d44a165f0e2009c61cc10f65454a1049e3",
+      "_id": "arr-union@2.1.0",
+      "_shasum": "20f9eab5ec70f5c7d215b1077b1c39161d292c7d",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "20f9eab5ec70f5c7d215b1077b1c39161d292c7d",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "arr-union",
+      "description": "Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "array-union": "^1.0.1",
+        "array-unique": "^0.2.1",
+        "benchmarked": "^0.1.4",
+        "minimist": "^1.1.1",
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "keywords": [
+        "add",
+        "append",
+        "array",
+        "arrays",
+        "combine",
+        "concat",
+        "extend",
+        "union",
+        "uniq",
+        "unique",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "gitHead": "f348950a55a09f4ae503137179a41410efd793a7",
+      "_id": "arr-union@3.0.0",
+      "_shasum": "8abd14617847f32479a4c76fd286d91a23238030",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8abd14617847f32479a4c76fd286d91a23238030",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "arr-union",
+      "description": "Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.",
+      "version": "3.1.0",
+      "homepage": "https://github.com/jonschlinkert/arr-union",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/arr-union.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/arr-union/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "ansi-bold": "^0.1.1",
+        "array-union": "^1.0.1",
+        "array-unique": "^0.2.1",
+        "benchmarked": "^0.1.4",
+        "gulp-format-md": "^0.1.7",
+        "minimist": "^1.1.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "add",
+        "append",
+        "array",
+        "arrays",
+        "combine",
+        "concat",
+        "extend",
+        "union",
+        "uniq",
+        "unique",
+        "util",
+        "utility",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "arr-diff",
+            "arr-flatten",
+            "arr-filter",
+            "arr-map",
+            "arr-pluck",
+            "arr-reduce",
+            "array-unique"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "array-union"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "ede857f5d5082467534e372fd3da45ce5e782e93",
+      "_id": "arr-union@3.1.0",
+      "_shasum": "e39b09aea9def866a8f206e288af63919bae39c4",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "e39b09aea9def866a8f206e288af63919bae39c4",
+        "tarball": "https://registry.npmjs.org/arr-union/-/arr-union-3.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/arr-union-3.1.0.tgz_1456232075611_0.8481670441105962"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# arr-union [![NPM version](https://img.shields.io/npm/v/arr-union.svg)](https://www.npmjs.com/package/arr-union) [![Build Status](https://img.shields.io/travis/jonschlinkert/arr-union.svg)](https://travis-ci.org/jonschlinkert/arr-union)\n\n> Combines a list of arrays, returning a single array with unique values, using strict equality for comparisons.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm i arr-union --save\n```\n\n## Benchmarks\n\nThis library is **10-20 times faster** and more performant than [array-union](https://github.com/sindresorhus/array-union).\n\nSee the [benchmarks](./benchmark).\n\n```sh\n#1: five-arrays\n  array-union x 511,121 ops/sec ±0.80% (96 runs sampled)\n  arr-union x 5,716,039 ops/sec ±0.86% (93 runs sampled)\n\n#2: ten-arrays\n  array-union x 245,196 ops/sec ±0.69% (94 runs sampled)\n  arr-union x 1,850,786 ops/sec ±0.84% (97 runs sampled)\n\n#3: two-arrays\n  array-union x 563,869 ops/sec ±0.97% (94 runs sampled)\n  arr-union x 9,602,852 ops/sec ±0.87% (92 runs sampled)\n```\n\n## Usage\n\n```js\nvar union = require('arr-union');\n\nunion(['a'], ['b', 'c'], ['d', 'e', 'f']);\n//=> ['a', 'b', 'c', 'd', 'e', 'f']\n```\n\nReturns only unique elements:\n\n```js\nunion(['a', 'a'], ['b', 'c']);\n//=> ['a', 'b', 'c']\n```\n\n## Related projects\n\n* [arr-diff](https://www.npmjs.com/package/arr-diff): Returns an array with only the unique values from the first array, by excluding all… [more](https://www.npmjs.com/package/arr-diff) | [homepage](https://github.com/jonschlinkert/arr-diff)\n* [arr-filter](https://www.npmjs.com/package/arr-filter): Faster alternative to javascript's native filter method. | [homepage](https://github.com/jonschlinkert/arr-filter)\n* [arr-flatten](https://www.npmjs.com/package/arr-flatten): Recursively flatten an array or arrays. This is the fastest implementation of array flatten. | [homepage](https://github.com/jonschlinkert/arr-flatten)\n* [arr-map](https://www.npmjs.com/package/arr-map): Faster, node.js focused alternative to JavaScript's native array map. | [homepage](https://github.com/jonschlinkert/arr-map)\n* [arr-pluck](https://www.npmjs.com/package/arr-pluck): Retrieves the value of a specified property from all elements in the collection. | [homepage](https://github.com/jonschlinkert/arr-pluck)\n* [arr-reduce](https://www.npmjs.com/package/arr-reduce): Fast array reduce that also loops over sparse elements. | [homepage](https://github.com/jonschlinkert/arr-reduce)\n* [array-unique](https://www.npmjs.com/package/array-unique): Return an array free of duplicate values. Fastest ES5 implementation. | [homepage](https://github.com/jonschlinkert/array-unique)\n\n## Contributing\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/arr-union/issues/new).\n\n## Building docs\n\nGenerate readme and API documentation with [verb](https://github.com/verbose/verb):\n\n```sh\n$ npm i verb && npm run docs\n```\n\nOr, if [verb](https://github.com/verbose/verb) is installed globally:\n\n```sh\n$ verb\n```\n\n## Running tests\n\nInstall dev dependencies:\n\n```sh\n$ npm i -d && npm test\n```\n\n## Author\n\n**Jon Schlinkert**\n\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](http://twitter.com/jonschlinkert)\n\n## License\n\nCopyright © 2016 [Jon Schlinkert](https://github.com/jonschlinkert)\nReleased under the [MIT license](https://github.com/jonschlinkert/arr-union/blob/master/LICENSE).\n\n***\n\n_This file was generated by [verb](https://github.com/verbose/verb), v0.9.0, on February 23, 2016._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-10-08T11:14:08.952Z",
+    "created": "2014-12-12T11:05:28.499Z",
+    "1.0.0": "2014-12-12T11:05:28.499Z",
+    "2.0.0": "2015-01-04T15:17:19.961Z",
+    "2.0.1": "2015-03-25T06:40:44.401Z",
+    "2.1.0": "2015-06-15T07:47:52.634Z",
+    "3.0.0": "2015-07-04T05:38:29.731Z",
+    "3.1.0": "2016-02-23T12:54:40.819Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/arr-union",
+  "keywords": [
+    "add",
+    "append",
+    "array",
+    "arrays",
+    "combine",
+    "concat",
+    "extend",
+    "union",
+    "uniq",
+    "unique",
+    "util",
+    "utility",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/arr-union.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/arr-union/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "rocket0191": true,
+    "leix3041": true
+  },
+  "_attachments": {}
+}

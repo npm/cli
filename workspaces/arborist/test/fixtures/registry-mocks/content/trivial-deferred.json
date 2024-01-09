@@ -1,0 +1,147 @@
+{
+  "_id": "trivial-deferred",
+  "_rev": "2-c3a1f06842e9acff9b4c56e0c5b8c213",
+  "name": "trivial-deferred",
+  "description": "The most dead-simple trivial Deferred implementation",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "trivial-deferred",
+      "version": "1.0.0",
+      "description": "The most dead-simple trivial Deferred implementation",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tap": "9||10"
+      },
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/trivial-deferred.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/trivial-deferred/issues"
+      },
+      "homepage": "https://github.com/isaacs/trivial-deferred#readme",
+      "gitHead": "467f2992297680027c3f24bae2d9bb991c2c2738",
+      "_id": "trivial-deferred@1.0.0",
+      "_shasum": "608af60a7976b5f44d4fee1ece87f00a5cedb3a6",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "608af60a7976b5f44d4fee1ece87f00a5cedb3a6",
+        "tarball": "https://registry.npmjs.org/trivial-deferred/-/trivial-deferred-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/trivial-deferred-1.0.0.tgz_1484790127697_0.9726911087054759"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "trivial-deferred",
+      "version": "1.0.1",
+      "description": "The most dead-simple trivial Deferred implementation",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "tap": "9||10"
+      },
+      "scripts": {
+        "test": "tap test.js --100"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/trivial-deferred.git"
+      },
+      "keywords": [],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/trivial-deferred/issues"
+      },
+      "homepage": "https://github.com/isaacs/trivial-deferred#readme",
+      "gitHead": "4e73a1e746aae5c36deafaa9cb055f7b59188d0b",
+      "_id": "trivial-deferred@1.0.1",
+      "_shasum": "376d4d29d951d6368a6f7a0ae85c2f4d5e0658f3",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "8.0.0-pre",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "376d4d29d951d6368a6f7a0ae85c2f4d5e0658f3",
+        "tarball": "https://registry.npmjs.org/trivial-deferred/-/trivial-deferred-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/trivial-deferred-1.0.1.tgz_1485498925773_0.3043494187295437"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# trivial-deferred\n\nThe most dead-simple trivial Deferred implementation\n\nUses bluebird if available, otherwise native promises.\n\n## USAGE\n\n```js\nvar Deferred = require('trivial-deferred')\nvar d = new Deferred\n// promise is d.promise\n// to make the promise reject, do d.reject(error)\n// to make the promise resolve, do d.resolve(value)\n```\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2017-01-27T06:35:27.651Z",
+    "created": "2017-01-19T01:42:07.934Z",
+    "1.0.0": "2017-01-19T01:42:07.934Z",
+    "1.0.1": "2017-01-27T06:35:27.651Z"
+  },
+  "homepage": "https://github.com/isaacs/trivial-deferred#readme",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/trivial-deferred.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/trivial-deferred/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

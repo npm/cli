@@ -1,0 +1,653 @@
+{
+  "_id": "aproba",
+  "_rev": "37-e733fc1dd57e9f122eb3720243a5a609",
+  "name": "aproba",
+  "description": "A ridiculously light-weight argument validator (now browser friendly)",
+  "dist-tags": {
+    "latest": "2.0.0",
+    "😄": "1.1.1",
+    "abc": "1.1.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "aproba",
+      "version": "1.0.0",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tap": "^0.7.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iarna/aproba"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "7b629c6936c66ca96a92f28868ea4a7437ce0423",
+      "_id": "aproba@1.0.0",
+      "_shasum": "f39befddc04b8838d838fedf410c4ac957c6061e",
+      "_from": ".",
+      "_npmVersion": "2.6.0",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "f39befddc04b8838d838fedf410c4ac957c6061e",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.0.0.tgz"
+      }
+    },
+    "1.0.1": {
+      "name": "aproba",
+      "version": "1.0.1",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tap": "^0.7.0"
+      },
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/iarna/aproba"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "a2ea029793a14cddb9457afd0a83dc421889c7ad",
+      "_id": "aproba@1.0.1",
+      "_shasum": "c4ac2cc5becfb8b099de7ef9f02790e7d32d99ef",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "c4ac2cc5becfb8b099de7ef9f02790e7d32d99ef",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.0.1.tgz"
+      }
+    },
+    "1.0.2": {
+      "name": "aproba",
+      "version": "1.0.2",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^7.1.0",
+        "tap": "^5.7.1"
+      },
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "a876671b59fb16f69bd09005373e1c855867a45b",
+      "_id": "aproba@1.0.2",
+      "_shasum": "81f5191afa95e3afb7a54d7843206d80eaf556bc",
+      "_from": ".",
+      "_npmVersion": "3.9.2",
+      "_nodeVersion": "4.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "81f5191afa95e3afb7a54d7843206d80eaf556bc",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/aproba-1.0.2.tgz_1463783935433_0.4466458926908672"
+      }
+    },
+    "1.0.3": {
+      "name": "aproba",
+      "version": "1.0.3",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^7.1.0",
+        "tap": "^5.7.1"
+      },
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "20cc4fc6589bbf870c3ca7bb8b9cb203af9d96a5",
+      "_id": "aproba@1.0.3",
+      "_shasum": "7fb6da3a72c70249db63fd9b5c64b31af718a94f",
+      "_from": ".",
+      "_npmVersion": "3.9.2",
+      "_nodeVersion": "4.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "7fb6da3a72c70249db63fd9b5c64b31af718a94f",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/aproba-1.0.3.tgz_1463784729571_0.7574592484161258"
+      }
+    },
+    "1.0.4": {
+      "name": "aproba",
+      "version": "1.0.4",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^7.1.2",
+        "tap": "^5.7.3"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "c6c8f82d519b9ec3816f20f23a9101083c022200",
+      "_id": "aproba@1.0.4",
+      "_shasum": "2713680775e7614c8ba186c065d4e2e52d1072c0",
+      "_from": ".",
+      "_npmVersion": "3.10.2",
+      "_nodeVersion": "4.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "2713680775e7614c8ba186c065d4e2e52d1072c0",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/aproba-1.0.4.tgz_1466718885402_0.5348939662799239"
+      }
+    },
+    "1.1.0": {
+      "name": "aproba",
+      "version": "1.1.0",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "standard && tap -j3 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "e943d94d7a46edb42a04e649ab04009675059132",
+      "_id": "aproba@1.1.0",
+      "_shasum": "4d8f047a318604e18e3c06a0e52230d3d19f147b",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "4d8f047a318604e18e3c06a0e52230d3d19f147b",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/aproba-1.1.0.tgz_1486503816365_0.2735283097717911"
+      }
+    },
+    "1.1.1": {
+      "name": "aproba",
+      "version": "1.1.1",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "standard && tap -j3 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "e7c76b4b42356092db3cd9e2d9388a0134845eb2",
+      "_id": "aproba@1.1.1",
+      "_shasum": "95d3600f07710aa0e9298c726ad5ecf2eacbabab",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "95d3600f07710aa0e9298c726ad5ecf2eacbabab",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/aproba-1.1.1.tgz_1486593129508_0.5718816472217441"
+      }
+    },
+    "1.1.2": {
+      "name": "aproba",
+      "version": "1.1.2",
+      "description": "A rediculously light-weight argument validator",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^8.6.0",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "standard && tap -j3 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "52c6ebad8d130158e90cc849625a590739c6ce1f",
+      "_id": "aproba@1.1.2",
+      "_npmVersion": "5.0.1",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-ZpYajIfO0j2cOFTO955KUMIKNmj6zhX8kVztMAxFsDaMwz+9Z9SV0uou2pC9HJqcfpffOsjnbrDMvkNy+9RXPw==",
+        "shasum": "45c6629094de4e96f693ef7eab74ae079c240fc1",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aproba-1.1.2.tgz_1496445352224_0.2260909820906818"
+      }
+    },
+    "1.2.0": {
+      "name": "aproba",
+      "version": "1.2.0",
+      "description": "A ridiculously light-weight argument validator (now browser friendly)",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "test": "standard && tap -j3 test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "ee43ce68c9992e8f9d0d925dc2b1f2e1e5c976de",
+      "_id": "aproba@1.2.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.5.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw==",
+        "shasum": "6802e6264efd18c790a1b0d517f0f2627bf2c94a",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aproba-1.2.0.tgz_1505861292502_0.3447994305752218"
+      }
+    },
+    "2.0.0": {
+      "name": "aproba",
+      "version": "2.0.0",
+      "description": "A ridiculously light-weight argument validator (now browser friendly)",
+      "main": "index.js",
+      "directories": {
+        "test": "test"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "tap": "^12.0.1"
+      },
+      "files": [
+        "index.js"
+      ],
+      "scripts": {
+        "pretest": "standard",
+        "test": "tap --100 -J test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iarna/aproba.git"
+      },
+      "keywords": [
+        "argument",
+        "validate"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/iarna/aproba/issues"
+      },
+      "homepage": "https://github.com/iarna/aproba",
+      "gitHead": "f87074e0c9b1afbd6ba1b2eab4736433d29d85f8",
+      "_id": "aproba@2.0.0",
+      "_npmVersion": "6.1.0-next.0",
+      "_nodeVersion": "9.11.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-lYe4Gx7QT+MKGbDsA+Z+he/Wtef0BiwDOlK/XkBrdfsh9J/jPPXbX0tE9x9cl27Tmu5gg3QUbUrQYa/y+KOHPQ==",
+        "shasum": "52520b8ae5b569215b354efc0caa3fe1e45a8adc",
+        "tarball": "https://registry.npmjs.org/aproba/-/aproba-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8047,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBIvMCRA9TVsSAnZWagAAAIcP/1qup9qwIgKp+SCSf0rR\nsHJO1GAdECnBCghAqMfUM7biv6tZOP3RbZkQKhVA8YU+Fl80BgFQ4ZiKa1SU\nazt54yur3sb3Tm80lyR4EZ3v3pBq0Gbzp/gVnJgQuvAoTU4bAba/CDXmj8Df\npmRUZNSPqjJK4zD5tGTfWd3sfY6lgQC/T401z0WafF/T82pE6wpJPMLyds/H\nnw8p5rbHwLNbdYihX/Gv8G4AdHuFtRRFOi1vDky1NUrs8k32N21EmlOaNC4y\nJ7x9VsWNZTqcmb8zwp3fQv+/IGdY36hZTFlF2Ig2u2UaapzL9u2vFEZAOmZ9\n6eGjz8ZYepa11/QuOr1sZJM9xQzJNqT89VsB7gZMci4kJ3pk8e8Za1vJC2Ub\nx7bJSKTsCMUclDjZBLpPv0QczW61os6kIWoZLzEs+MIESCBU8GVX4pNjEaoB\nGFDyMTYmu93c6+23FxTVPjofFI7Bt3tJ55l4v5rX5uNiQhlkVHw71kztYQ9r\nv2Uq5tdeaohrzfRUhNVWxwBup6+zDBJP4fS6G+2l7KPtx1Ylkm9xsT8P6LOm\nW+6426jArfwiygOZgNewZDQHhsvbx2PmpWwZt/+WJpW+hPtdAAxBJCD96NFJ\nJqIwaDaJ7K6gSkr56hhwu2BMOptk8WtcD3w0NTsMUhJqy4tJPzeqtznToSD1\n7dh9\r\n=/XJn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aproba_2.0.0_1527024586301_0.30200366760036923"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "aproba\n======\n\nA ridiculously light-weight function argument validator\n\n```\nvar validate = require(\"aproba\")\n\nfunction myfunc(a, b, c) {\n  // `a` must be a string, `b` a number, `c` a function\n  validate('SNF', arguments) // [a,b,c] is also valid\n}\n\nmyfunc('test', 23, function () {}) // ok\nmyfunc(123, 23, function () {}) // type error\nmyfunc('test', 23) // missing arg error\nmyfunc('test', 23, function () {}, true) // too many args error\n\n```\n\nValid types are:\n\n| type | description\n| :--: | :----------\n| *    | matches any type\n| A    | `Array.isArray` OR an `arguments` object\n| S    | typeof == string\n| N    | typeof == number\n| F    | typeof == function\n| O    | typeof == object and not type A and not type E\n| B    | typeof == boolean\n| E    | `instanceof Error` OR `null` **(special: see below)**\n| Z    | == `null`\n\nValidation failures throw one of three exception types, distinguished by a\n`code` property of `EMISSINGARG`, `EINVALIDTYPE` or `ETOOMANYARGS`.\n\nIf you pass in an invalid type then it will throw with a code of\n`EUNKNOWNTYPE`.\n\nIf an **error** argument is found and is not null then the remaining\narguments are optional.  That is, if you say `ESO` then that's like using a\nnon-magical `E` in: `E|ESO|ZSO`.\n\n### But I have optional arguments?!\n\nYou can provide more than one signature by separating them with pipes `|`.\nIf any signature matches the arguments then they'll be considered valid.\n\nSo for example, say you wanted to write a signature for\n`fs.createWriteStream`.  The docs for it describe it thusly:\n\n```\nfs.createWriteStream(path[, options])\n```\n\nThis would be a signature of `SO|S`.  That is, a string and and object, or\njust a string.\n\nNow, if you read the full `fs` docs, you'll see that actually path can ALSO\nbe a buffer.  And options can be a string, that is:\n```\npath <String> | <Buffer>\noptions <String> | <Object>\n```\n\nTo reproduce this you have to fully enumerate all of the possible\ncombinations and that implies a signature of `SO|SS|OO|OS|S|O`.  The\nawkwardness is a feature: It reminds you of the complexity you're adding to\nyour API when you do this sort of thing.\n\n\n### Browser support\n\nThis has no dependencies and should work in browsers, though you'll have\nnoisier stack traces.\n\n### Why this exists\n\nI wanted a very simple argument validator. It needed to do two things:\n\n1. Be more concise and easier to use than assertions\n\n2. Not encourage an infinite bikeshed of DSLs\n\nThis is why types are specified by a single character and there's no such\nthing as an optional argument. \n\nThis is not intended to validate user data. This is specifically about\nasserting the interface of your functions.\n\nIf you need greater validation, I encourage you to write them by hand or\nlook elsewhere.\n\n",
+  "maintainers": [
+    {
+      "name": "iarna",
+      "email": "me@re-becca.org"
+    }
+  ],
+  "time": {
+    "modified": "2020-01-04T09:18:59.213Z",
+    "created": "2015-02-27T18:11:19.818Z",
+    "1.0.0": "2015-02-27T18:11:19.818Z",
+    "1.0.1": "2015-04-09T19:24:02.127Z",
+    "1.0.2": "2016-05-20T22:38:57.683Z",
+    "1.0.3": "2016-05-20T22:52:09.980Z",
+    "1.0.4": "2016-06-23T21:54:45.947Z",
+    "1.1.0": "2017-02-07T21:43:38.939Z",
+    "1.1.1": "2017-02-08T22:32:11.372Z",
+    "1.1.2": "2017-06-02T23:15:52.316Z",
+    "1.2.0": "2017-09-19T22:48:12.592Z",
+    "2.0.0": "2018-05-22T21:29:46.504Z"
+  },
+  "homepage": "https://github.com/iarna/aproba",
+  "keywords": [
+    "argument",
+    "validate"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iarna/aproba.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/iarna/aproba/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "hal9zillion": true,
+    "nguru": true,
+    "lgomez": true,
+    "iarna": true,
+    "buzuli": true,
+    "oleg_tsyba": true,
+    "wangnan0610": true,
+    "detj": true,
+    "xu3927": true
+  }
+}

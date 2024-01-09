@@ -1,0 +1,580 @@
+{
+  "_id": "tap-yaml",
+  "_rev": "7-144d1c7cc8b86078dfadce7ce5987077",
+  "name": "tap-yaml",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "tap-yaml",
+      "version": "0.0.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "gitHead": "eb0b4fcd29379f64f737657c1ee4a585d30fa38f",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.0.0",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-DvSLO+023iQwye6oggkYvusqrmQyR5oLRfjnpTJCI6pV3YBRNvVcjX/santdy6iFUgArqI6JoCY1eDOwk7BBWg==",
+        "shasum": "b4759e0424a2feaec0054d42586906231b10e0e5",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 3900,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcTPwpCRA9TVsSAnZWagAA4wEP/36kq/I4u0UsbjcxAWk2\nx0eSb4gwPgtEIcGnHjTjH0u4ZplSQUnn100+36vhjnJivP02bDt4697AiNBe\n5ugSoqHLfBbpSMJHlA1cDclcsjsMt7X0wvuJEhth+lAkgn2ZT6tbBdYAI31g\nqYjo62iHQNUd/NPkWo5ChFnyrhN9wi0P/IvJbKB/lSA5C/6G4YjSE5WAEAqS\nbH7G2vbxgDpb5gi28bxWDrHgfROIb+Jqb0Q1I0tjZwr5f1mlo/fHyCmP4xzj\nOw2261a6fiET79SUNcNrqhgq9kh5YbljBVzcaQ1K99CboYnjzmMfoHswK+tQ\nGOdxqi9lidp5m9GOmKuMfS88G9E0UBxZn49dBNIvQm3N0sLjEp2gZHYzvEVN\na02svtFVNpq8Ke/dlPYDe9Tj3+5uqeafckcuT+1fShIiRKO8YVUwklEoZe85\nhHz7ETfJmVYsFFcJ77wIytidVKBJVtZ3EQjDQpGgJzUVL7IO9TdgIdGOolrX\nvFkzWHLkJEIA+zWTDqtLNoiV0aA/czplJ/VEW72tho6B8WhE6t255BGQHjhh\na7vruUIgmY+w3LtcSveJGvgsD/IHDdxtqxphbt+LN7joCiQp6PtksZXUOfKH\njzcL3hMbYCFmPSv5aospkCtoVQBJccQnBEEjfzwVE8emfXji10RNZ2EVct/0\ng+0d\r\n=jH8I\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.0.0_1548549161010_0.1645757695337755"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.0.1": {
+      "name": "tap-yaml",
+      "version": "0.0.1",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js -J --100",
+        "snap": "TAP_SNAPSHOT=1 tap test/*.js -J --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "gitHead": "d6552d33536d9d549b6602113ff2853eef571768",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.0.1",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-kESEC7r7z6mPerY37gSd5GbIkUgkMNknnVn90/iFqr0vKO6fg7k+GMq7KRqhBGVY1zeA6ajni1mEsI38Z2dU7w==",
+        "shasum": "fe6508f5a6aaab2f19af70435f5ca6e8c1c5362a",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.0.1.tgz",
+        "fileCount": 12,
+        "unpackedSize": 6825,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJca6BCCRA9TVsSAnZWagAAtVYP/jU3nOWNfPIpmFgaZjo/\nX16zG2XLIooMz9dcFtb9AGNZKTf/1+X+L54/xql4uCOGOkiA0Ig18zNRU76U\nA3f81dqVU4/2Xa2SgCIWpG19NR6izbe+LHQ0qg/+QQMnDw8MOn3Y7wrQyg9s\nESGovMHxDyAXyAqYRGHjZIDoCiKdSqQXraZrCXH+b1rvjPFpE21tl/8KZkf1\nqTc8rnsLNJ6DAjiVZ4hlC090QRxM8u5hm9HzU8wiBZvIK5+sBbuvVUJ1a860\nIgkiDFi9RCNismq65nK+ETGCpyAN8H1Dt6Vtbo9rvm8TmsCGyXmpx+Z/xNcA\n0eEh4MDKL/VZ7mJeAlop0KG7lSqShF6qlDMJ+lz6aoIWbvnllhwGgO5lWSS0\nHP/kMQVk8Qgv5A46krIG5iobIC0FL/jNxWenaNvXUptEQLLxKyc0NaEUKaW0\nE2njhAJRNRydhHbVX/f8mbPtu8+i26wR++IzRjBGWkQy7ctQXbpipNo3yCgy\n7QE90H2HBApHvFtfe+K0Y27y1s9suL5n+IgyAJHRBXwh67+ErZALbsW9R/R2\naN/+1LxiIJoQAD3dW1lt/HGFBTaUieyiA5T4603Xe6shQ/7ZblhM4RE30P+J\nvqKFzkQ9zslR/L9qhOLoabAAG92bkebHmFBR2V8qrNHtTuJXXov6zhmMcIht\nVSgH\r\n=JBSC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.0.1_1550557249927_0.5132193506721718"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.0.2": {
+      "name": "tap-yaml",
+      "version": "0.0.2",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js -J --100",
+        "snap": "TAP_SNAPSHOT=1 tap test/*.js -J --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "gitHead": "7e760283fa4465708c839a3da6b026fe7b7015a4",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.0.2",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.8.0",
+      "dist": {
+        "integrity": "sha512-+ZJV+qifQ2PAmdejN4gVrEpdiUFBiWspLEOcE2pakaBpdom87yIH0rNaiUPTV/FfVjRjD2GjeVwNM9afBMvqDQ==",
+        "shasum": "2cfccf1f0577d35c1dc3a184162889a9e1fd068a",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.0.2.tgz",
+        "fileCount": 13,
+        "unpackedSize": 7642,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbKvMCRA9TVsSAnZWagAApxcQAKEokWoJUOuMochSsaQ4\nVpUhFsBkPXe3vMgZTEIZcqiyIJRryS4Cq/VI8xxcSI3WWz1ikz0iVb8QRZkh\niYtcAOQ37R0GFeT+AljvMp58q1Eno3ETPJUNtoDV3y+J2XmOKBYopeFLlYWx\nmYO8P0JsLnW6M5iQ6HkW/l1qlKtjTck/zl+4rRHgPKYPOwaLCUc/WFExLwkD\nCE3087KJsXOgyErrcqa+WNT3I20eYu/DBbQGAUeb4bRVxPK77NnamTxacH2A\nJMTNNX3SiY25uH0bdZXQSLT+RQ93AYGlBwc+dZuF42k658O797Frn6SvA1XC\nLj49Sxo6zZXgeFxrTBGDEAXx5bD3S1L3tRNgr4oxKt97Mx8FG36D7aZnHLch\n/ydZjnoO7OvamQErgg/xPycYBdOvQwZwigbOHuhJFJMDDtckrk3x9+XasmVD\nUrpVCkHOWzO57aomi2b7XXBorMBieg77uEpjNgB8Qwkis0Jtf1qec3wQ70FD\n6so4gN+7xI0hKOZg0MnYEV+AXiB8U1hJXvR4KHrEshrwqx3gbIFH6rlTAi1V\nCCbYJgs54W0LP7whmFnm8/HfR/H3r9RqUp5r5hbjL6cHvqz14VU4sWk0pdUq\njOM62CS1G6mc0SQQT1xxqWOcPXVeSzeQ8KVfZZn+emzhUnlOzxyo7JdBRWfd\nUM3i\r\n=OnlA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.0.2_1550625740052_0.07324629392161985"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.1.0": {
+      "name": "tap-yaml",
+      "version": "0.1.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js -J --100",
+        "snap": "TAP_SNAPSHOT=1 tap test/*.js -J --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "gitHead": "aa8613425d97aa99fc880a509469829a252f1aa4",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.1.0",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.9.0-next.0",
+      "dist": {
+        "integrity": "sha512-HqF9e6JvEllGkTUPPBStZoi/wC8uHwbisBZK02jBbVrFo//tH7BiAxOei9KzD8p4BPBxD6uhldSkR64xIh4FXw==",
+        "shasum": "34e8da6fc823ac00b153324ae1de006814c41b04",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.1.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 7642,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcgHanCRA9TVsSAnZWagAArR4P/jghfRkQI9ulw+HW9xdU\n6F3594BQblH43WpHBMWilvEaaS7mNUEnj4lZ79j/zkdh/lIR+X8G7X/ehRyN\nlWhJsUwGRrAbRn2Lwmbado/cBjFsVAAB9RQM2ePuSMmX3stVL4DtI3DhQXFm\nWyGPYdxYl/PzYgdEzL7mk8NaipLY8IYFUtuW95kMvdvFWxeHHQ073r46s+Fg\nb5D7EFz89/7t+SQpHdm37grxfH1f2VaWDI3LT66RmkeqVZtuEbpexoMybH02\n/ABqVrwaEr2agiMgx0+G1YmV/RO6at/J4vvNh/dGz5mA7H3zPmtW9ov+CGEH\nV8IctHYKHQ+NdF70aP/6jCYVe7x5qvz/Hy7LZYcfF3nbjx00eLpIXQDo3cMu\nRQxxXFd1+xJPJzVbDn2Gt9Hv4N2qXZOdiyR51joXP2gqgauT6my+xQOk80IY\nZh/f/pbIdk6bIp8P01rGsqCNbfRcNg/9AtngBNBXuqbTYKEIn5bq3Nk37HxC\nj7gxqgHmO/DyRg1y1fypXbkFMOwLfXIlQ6XtOrTOeTXPvDfOy6b1QxyncRFC\nhfXJyYnTT137e29h9Q5DnSymIsqzZaa9XLc1jg7vggSYr0q5ObN4ZiaQtwQY\n9DhdeZYmBanr6cJFHBIhCey2chG7UAc0qlZOzBNOtWcam4q0YEQHWml9NEZK\nbBWv\r\n=EXH0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.1.0_1551922854758_0.3017039326516189"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.2.0": {
+      "name": "tap-yaml",
+      "version": "0.2.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js -J --100",
+        "snap": "TAP_SNAPSHOT=1 tap test/*.js -J --100",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^12.5.3"
+      },
+      "gitHead": "1ef41b3b0fc264301d1ca3317b21bf8d05e22a15",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.2.0",
+      "_nodeVersion": "11.8.0",
+      "_npmVersion": "6.9.0-next.0",
+      "dist": {
+        "integrity": "sha512-Cy5RfopxF1qhE+sds0XOMeKegT80NVV43JAMsD7Be9l/tjRPO5YzewOpQq8jUnOngI4GOiOgG2M7GB772hIVwA==",
+        "shasum": "b565e4b9df3d7c75d91c4421046b9e96ff5c7458",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.2.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 7818,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchVkiCRA9TVsSAnZWagAAN0cP/jD+qGVed0/5zpObwhM1\nZBLA3IUBW8zeqRRU7tzN2U6qIm2zBMW2fqf7eh185fFRXUZpmEEBHIiLumeT\nTDIP35GdO97RU48JbVr+CUoH4lq4xwJEmpJuZov1ZypAejdQH0K8gdrTATRP\nhSYbT+LetqEfNgekU6zF3+rCyPsQmxISKq7gH5GrDEq65kIHISBnZ6XffCuu\nw2a/GmG7/Ql+mp7Iolr3FQ5rXmVman8QZnGEbpM+LywWD3upTUFWpXAgcaOp\nDioSgkLkJ2Q9Snj/Veedgc10Bow34BeqSQ15YPqwUpoK5aX098O+rmCXMSbl\nZ2Y8Enuy+XGdkVBNQoMfnlP5SgqNsVzKDhjfmH150/+DuMSLpw023wg/E5dI\n/cKrXz1H6M+4VEMwaBkbvQ5vrOMnE34XlE8UVQOalf2sBoE3uE6yO1RyKgef\nPVyjP1sfrJ7RQ7ZpzXDJKV51nsgzglve5lhnRGipyRLVsVWl/ckCuExEEjbC\nwjmGVR/03aVrtM+ZhisaiBd8ZemivXWTNsErK/FjvG51kU2avZQs1hAeGyZC\nE9ddW0EOLbFAapjxXThtC8QsTWJHxNbVZlPjCV2qa6E4aQqG6vuvhaU2uEMs\ntngW4B704B+67E1T+qP0/g/bKx2sJ5QYSWTCtqGKh1ARuhIC6anBxBfpFSm4\nOIB1\r\n=XaKJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.2.0_1552242977276_0.6119482554666724"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.3.0": {
+      "name": "tap-yaml",
+      "version": "0.3.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js",
+        "snap": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^13.0.0-rc.11"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "gitHead": "6f18db6837af13da257204d61cfd0aa77cfe8428",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.3.0",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-t9H7AbSNSKnd+//cZO2icbO3rbN3XVMDsMnzvfE4+ubsAd7Cl+872QMLt5z/6ci7r2fIjXQlXkM83X9cwJbaxQ==",
+        "shasum": "cd66385d3628ea202ba420f33b479fe96d7f3b72",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.3.0.tgz",
+        "fileCount": 13,
+        "unpackedSize": 8202,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJckysQCRA9TVsSAnZWagAAMZsP/0UQitL12eyUCXNaKyas\nQIPXwNBtCQ6mSgrPXXhvKY9jvhgUoHdRToeOiYrYn3F3aiUslp95AyLquS/f\ndsZNv1tMFezrTJ8LfgQmJhv3nPAXnkXr3Brz3Uy1lNMYjpnG/lA1bjMbltTV\nUPN3fMkRCzRmBR8MCVv0+L7qfnvCRrMdEYytK+i7PDaOm1AUF9aBOM4ahsLH\nOrNGSY8cvE014uNdR8jBtJL+Sr4vP34gkrJV8RgT8XdnvzTDIbVA0mXs2vQO\nwyFPoHHGdWz/BWpYnD4hzgFek5pboZVDh5/Ytmt+saRMXuOU7oN2iNVxJXo9\nivaFYv9jUATBg4xpdDGts70OvCnQYNMlSmqJA2yMxQWhlw3VGs10xIyuSjjj\nQCRpl4GCdAtfUlwwbhuObFspNvhowxfX/SB1gtC7WhoF0iTYgjJPcFcd3qfM\nn4zVyRSGagH4lQ8LqfLFNwWNU3YXszyRKF75Pdrtk/xbsQeyZpQxJEjC7mFn\ntKHxoSLMfJhMdHTWGNZuTB/KCUN7z4ju+SYa60OAqlWCaVULi8s2nrUbFZ/t\nOGO7AWYuNELHbwBb7/9aU9AaEFxrSvO1Q38MnDVX7UuTi3pXmzSlvxvxCkJq\nIb0RnMxLET7PSYYv9gDTcM82JqgY/ndBQYn/KGSSNFzzwvPofvF2mlp3bzEr\ny0Y9\r\n=JJGg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.3.0_1553148687834_0.11845299956202049"
+      },
+      "_hasShrinkwrap": false
+    },
+    "0.4.0": {
+      "name": "tap-yaml",
+      "version": "0.4.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js",
+        "snap": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "github:isaacs/yaml#built"
+      },
+      "devDependencies": {
+        "tap": "^13.0.0-rc.11"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "gitHead": "17c6ef09649b4944c2633bc8dec4f7b0825f6948",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@0.4.0",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-68FJWQa/aVuH0V0S/lCoDGQnC6VP6zNhr4gs2WpFrsGDg0d8CsMaRyCImYSRNfjHg4Qcs5Ab4SqepgF5T8QLSw==",
+        "shasum": "2c2b7bb389ef104bcc2d5cd71a39cd8abb41c5e1",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-0.4.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 9409,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqCY6CRA9TVsSAnZWagAAG7wP/1Bo99rxQ45+K9d5K/Ux\nzvkaOsxrAjZ6T+Pn/tQr/bOgYGWKxEDPUeCG4swgyPzA9yDoD7AQ7oyRrF8/\nObwozBMzwoz8eR0AuHPM6To3VRySe5KPIzNk0N3VfqW30GVK5lgEYyL6OHzN\n6e2ixGy84UtZiyakF8De58UW6vbddmknCPUIdwb4Kr/UYh0ij1QFPgnUH8ap\nForGwG3LCGldJXNyquW+hrAhDYysaIGVZ0E77Ze6o10qwT175OAZxqiv/QBj\nEG+aioVdNYYf6RG7AVWhnCYhveTaNRujX9WSPOZvCggMvRynxssrD44qexR+\nYAdOcjlgASW2Itz3sxOp30jZVddyNwUF8O8hTnKqLj+qjtqM5ksBDh3Onxaj\nfowmnjpwop1f+5Fx8Md/hkpnhiqiv4Ifa4nCbOQzXI/jqo4K1ETOYu99vvOE\n5/GgODBJd0Gn850qgiF0FjgkkAVXianjo9N01ZG8uiy2FWTjCnr6ytuVDHqV\nNJli8JyC4BvEeDZ9bNGhMC2OT8/HliPgT8Z0KdOiYsofEjcj1shXxXuDiBe0\nCgbVn7mfLwDm/RqI6MutGpcdI+fFQKeOPd4c/Heuyz1w9BFkU+r2VwWASdRl\na9CQYFJvbRP8aTNvrmr4k4ZVu2RFi0tX6WMJotSmiCcxYkZmwShN9WUs2kIu\nftzw\r\n=/Zun\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_0.4.0_1554523706060_0.62403743427822"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "tap-yaml",
+      "version": "1.0.0",
+      "description": "Yaml handling for TAP parsers and generators",
+      "main": "index.js",
+      "scripts": {
+        "test": "tap test/*.js",
+        "snap": "tap test/*.js",
+        "preversion": "npm test",
+        "postversion": "npm publish",
+        "postpublish": "git push origin --all; git push origin --tags"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tapjs/tap-yaml.git"
+      },
+      "keywords": [
+        "tap",
+        "yaml",
+        "test",
+        "testanything"
+      ],
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me"
+      },
+      "license": "ISC",
+      "dependencies": {
+        "yaml": "^1.5.0"
+      },
+      "devDependencies": {
+        "tap": "^13.0.0-rc.21"
+      },
+      "tap": {
+        "check-coverage": true
+      },
+      "gitHead": "c44ad18337fd1146d2d4c235ee018af7749f21d6",
+      "bugs": {
+        "url": "https://github.com/tapjs/tap-yaml/issues"
+      },
+      "homepage": "https://github.com/tapjs/tap-yaml#readme",
+      "_id": "tap-yaml@1.0.0",
+      "_nodeVersion": "11.11.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Rxbx4EnrWkYk0/ztcm5u3/VznbyFJpyXO12dDBHKWiDVxy7O2Qw6MRrwO5H6Ww0U5YhRY/4C/VzWmFPhBQc4qQ==",
+        "shasum": "4e31443a5489e05ca8bbb3e36cef71b5dec69635",
+        "tarball": "https://registry.npmjs.org/tap-yaml/-/tap-yaml-1.0.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 9375,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqPfiCRA9TVsSAnZWagAAIw0P/2Ecj1t4zUFubwC2J6sU\ndbBSRo8A52bNm7zhaeKpuKao3+LWXqh2O3WtqM13om3ytnvXeuTagkXeXLMb\nl0KH68c7j3I1rqefrcv7scQ77udVcZijetctUXJS3Il7WeMAOShOqMsacrUc\n8LO2sOf2cSSIgbZDTUt3JKQ4xANwLHpJot1Z4id6NeUpjuIHOc2kCumegpYv\nc54aYjvH4pFTPg/xPoqV1EAyHfwEpoVgQro7W6RRcqVVgzQK7aKvlemn5cG6\n7Snq+eJbisGYPlOIThdPUKR+CO5gC75Fxn5YSDAesQRfHnhQgjUjdryEmJ8R\nvO7nLdxV0HG+o8WfcDQgU6AovnNsJeNwg/y8o/IYzdJv9oXZlMuJ6oaYjU/k\nNvYicQ5X+7y8rHmWptTN64lFpUQTzyvARggsgKoenvJEe5JAMVsm88wxnM4x\ncaof08cC5wANvuRVw7RHOEn/ZMh29o5rcwWwVFSB+n4rxbUSSVzozmES3OON\nQCCN/5AbX+/BtfTNhw1qCeyg+wJeRCrcLU4PK3krgk5jWPF5jTDlL06BP4iz\nGrxpUhf3+2hxVMOnonCVNxagrHtEAAJhuE24Omo1PCLLVSDlGZhQAYwaWHi2\nwM7xBeJ4NoDiTsZU+6J7uVhqgBeGqhsSsiTGpjlttvYha4YvmcAUDGhxKYAI\nnNmt\r\n=Lppn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/tap-yaml_1.0.0_1554577377147_0.4145193342136264"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-01-27T00:32:41.010Z",
+    "0.0.0": "2019-01-27T00:32:41.215Z",
+    "modified": "2019-04-06T19:03:00.345Z",
+    "0.0.1": "2019-02-19T06:20:50.108Z",
+    "0.0.2": "2019-02-20T01:22:20.198Z",
+    "0.1.0": "2019-03-07T01:40:54.895Z",
+    "0.2.0": "2019-03-10T18:36:17.396Z",
+    "0.3.0": "2019-03-21T06:11:28.303Z",
+    "0.4.0": "2019-04-06T04:08:26.219Z",
+    "1.0.0": "2019-04-06T19:02:57.309Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "Yaml handling for TAP parsers and generators",
+  "homepage": "https://github.com/tapjs/tap-yaml#readme",
+  "keywords": [
+    "tap",
+    "yaml",
+    "test",
+    "testanything"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tapjs/tap-yaml.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me"
+  },
+  "bugs": {
+    "url": "https://github.com/tapjs/tap-yaml/issues"
+  },
+  "license": "ISC",
+  "readme": "# tap-yaml\n\nYaml handling for TAP parsers and generators\n\n## USAGE\n\n```js\nconst yaml = require('tap-yaml')\n\nconst str = yaml.stringify(someObject)\nconst obj = yaml.parse(someString)\n```\n\nThis is essentially a re-export of the [yaml](http://npm.im/yaml)\npackage, with a few custom types and default properties to be more suitable for\nuse in [tap](https://www.node-tap.org).\n\n1. Symbol types are added, so that they don't throw.  Shared symbols will\n   (within the same process) retain the same Symbol identity through encoding\n   and decoding.  Unshared symbols will not retain their object identity.\n2. A \"safe\" `!function` type is added.  Functions aren't parsed to actual\n   functions using `eval()`, since that's obviously a Bad Idea, but they do\n   parse to an empty function with a `toString()` that contains the original\n   string source.\n3. An `Error` type is added, which does its best to maintain its properties,\n   and always shows message, stack, and name, even if these are non-enumerable.\n   If an Error has a custom inspect method that returns an object, then that is\n   used as the source of extra properties, so you may filter out what gets\n   dumped to your TAP stream.\n4. Binary types are implicitly allowed in a standard way.  In Node.js, this\n   means that a Buffer object is created, and Buffers can be dumped to YAML\n   without any weirdness.\n5. `omap` and `set` are configured to refer to Map and Set objects.\n6. Objects with a `null` prototype maintain their null-prototyped-ness.\n7. `Domain` objects are stringified, but without their giant object graph,\n   since that's often a performance issue.\n8. `Date` objects are given a non-default `!date` tag rather than the default\n   YAML 1.1 `!timestamp`, so that they maintain their explicit date object\n   nature through stringifying and re-parsing.\n9. The `prettyErrors` option is always enabled.\n",
+  "readmeFilename": "README.md"
+}

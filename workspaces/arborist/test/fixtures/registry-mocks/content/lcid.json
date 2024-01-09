@@ -1,0 +1,452 @@
+{
+  "_id": "lcid",
+  "_rev": "7-37ebbe1767f7d9f7f7f74de3ec647933",
+  "name": "lcid",
+  "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "lcid",
+      "version": "1.0.0",
+      "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/lcid"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js",
+        "lcid.json"
+      ],
+      "keywords": [
+        "lcid",
+        "locale",
+        "string",
+        "str",
+        "id",
+        "identifier",
+        "windows",
+        "language",
+        "lang",
+        "map",
+        "mapping",
+        "convert",
+        "json",
+        "bcp47",
+        "ietf",
+        "tag"
+      ],
+      "dependencies": {
+        "invert-kv": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "96bb3e617f77f5f8ceb78653c77de5a85abb3b1e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lcid/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lcid",
+      "_id": "lcid@1.0.0",
+      "_shasum": "308accafa0bc483a3867b4b6f2b9506251d1b835",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "308accafa0bc483a3867b4b6f2b9506251d1b835",
+        "tarball": "https://registry.npmjs.org/lcid/-/lcid-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "lcid",
+      "version": "2.0.0",
+      "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lcid.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js",
+        "lcid.json"
+      ],
+      "keywords": [
+        "lcid",
+        "locale",
+        "string",
+        "str",
+        "id",
+        "identifier",
+        "windows",
+        "language",
+        "lang",
+        "map",
+        "mapping",
+        "convert",
+        "json",
+        "bcp47",
+        "ietf",
+        "tag"
+      ],
+      "dependencies": {
+        "invert-kv": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "8badb5ccd339e56f0f546840bbb175a8e20e7bc6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lcid/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lcid#readme",
+      "_id": "lcid@2.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-avPEb8P8EGnwXKClwsNUgryVjllcRqtMYa49NTsbQagYuT1DcXnl1915oxWjoyGrXR6zH/Y0Zc96xWsPcoDKeA==",
+        "shasum": "6ef5d2df60e52f82eb228a4c373e8d1f397253cf",
+        "tarball": "https://registry.npmjs.org/lcid/-/lcid-2.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6365,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaID+CRA9TVsSAnZWagAAJKsP/17BJIcd+2JKznwIGfTy\naLSeMyFzhF7SwQJg337/grXJVdloX4Bu6vVkErktQkXQomcB7efihwXb5UbR\nI0NLoKYEnKXqDu8EGtCDvxWe3osuevKjgFdZzPiDQCbBAuoDGtWnChhds1Qx\nG8J9bRI9unckhH8yHpqbiUxRRXQGYSFCh5O1S1nEUDrobieM4c+WkxdiL5FL\n+NGipS0dGxPBPHVy6ozqGWSI5KHgyH7btnjpJq6cY4XAMfh2bOk4wRgU3Pk8\n/umE4yt1LsLtxJr61hUegEGWYBiN7CX8H9nh9rSnwvBOT+e9i7yTabHeyv3d\n8mNSGvcANxT7srf0a8lo9x9WFRiaVx97Yy3ceSGZaU0ZGMgfGU+0E5lJWAJe\nJ7aaYvxkDuIFsJpw0H+ldxn+g84OhS6Qxn/U9hc5FtSooLBLfsz713Eih9MN\nYAUqneor1NlJ25k6XkKDST+1bl5DUF20GKXkLX1d+YhmplvRhyhfGBEFko/V\n4/RF1C7WvvU5LyTYFQ2Hrqmq+8ziasBrE54HWk8zhMCZ8i9TEH0xav0myQWg\nYDLE7G1+JJuUVL/X5EBY7uDDNA/vF/9czD1NZ0gZ9pkgNyN59LxF+Pkkicai\nMMcw2MITYZzuT6xexeX3s+RtBqPwv1URdgKTOTY0qAgIS3fKWE86rV4MSZJp\nsfyM\r\n=gVix\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lcid_2.0.0_1533575422124_0.1369208248975169"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "lcid",
+      "version": "3.0.0",
+      "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lcid.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "lcid",
+        "locale",
+        "string",
+        "id",
+        "identifier",
+        "windows",
+        "language",
+        "lang",
+        "map",
+        "mapping",
+        "convert",
+        "json",
+        "bcp47",
+        "ietf",
+        "tag"
+      ],
+      "dependencies": {
+        "invert-kv": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "f33d7e0bfba7f8d821ab52d3aa6e04e9b55a5032",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lcid/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lcid#readme",
+      "_id": "lcid@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-cT68NXBqcByQPcYCoMArX8SI5SuzOTjF7nibqHlf24K01zYbFifLHaacZi8Ye3dvmBP9XaatbRO8uXM6YPHlSg==",
+        "shasum": "87b78ec4cdade463aa6380fd3d75972e07d0d20b",
+        "tarball": "https://registry.npmjs.org/lcid/-/lcid-3.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 7622,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyC6TCRA9TVsSAnZWagAABT0P/0cA2ZkXFffN3Dz5O1Z6\nhWeYX8zwiKiHYElOd6ODb/ZwLouw33CbpeIuD4/FDGO1yu9afahwMo1R9xLD\nDum09hlbcPDMs+ZHUXqeYCgw63q7p1th/BsbztjfnK/CKymgQCCtIcElTuh0\narCvVeREmzWB2Mucv/9eX6R1MguarYIOHNzmeefe705rq9KGOt6qmNSJzvLf\nhJJnwnnBs9volrjE4fA8NUUTEW2wQUjE78sC7X68bwF82wiD1mAOoUzkUfE4\npG27jRPj3USygOJsd5PPJLMj0hBosSr9n75JUG53J1nfFEbNnEIZnDobYv+K\n7THQ7jQYleOqO4Lmxg1gUffPG46SbVziyKwDVt+tuiKSInM6TNob/wjdWo9T\n/7m2eJWgJAp4gh64bOLEY0FA9Hjb2JTw0SptWVXPANSAStP5BnIyv7fnKpMG\nqeFEdW1zdmy90nGhxgaYSjWYcCuYKslUAAGVIiDpN6e5ZDYVg9IbwNOUeCc3\nRoqYYSzXhwkDv7NWwO2BdTG0J9vf358w5yrfmu8ZxRX64nP7eKvQj/lV5hDC\nTs0Vpj3V7PrSmfPNA6k7+kNdedU3QjDG7pFxxj3UmGFWZr2HZ3qh6IWe9O8T\nmHUK60cYgFze6O2o/XNbDr+cYOZy6Ttg/N/VWJB+UxQ5TeDNtKjl9Tkd+Pec\nyB1O\r\n=KHdF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lcid_3.0.0_1556622994814_0.5048157801955622"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "lcid",
+      "version": "3.1.0",
+      "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lcid.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "lcid",
+        "locale",
+        "string",
+        "id",
+        "identifier",
+        "windows",
+        "language",
+        "lang",
+        "map",
+        "mapping",
+        "convert",
+        "json",
+        "bcp47",
+        "ietf",
+        "tag"
+      ],
+      "dependencies": {
+        "invert-kv": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "32803e68a77ceca1d3e7ad85170d9e28cf33a447",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lcid/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lcid#readme",
+      "_id": "lcid@3.1.0",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-HC0Rr2YRxWISzAJ9K0ZiCVRUdjDT6fE6kUKZkXZOZgy968cKWOYy++xwUHO497RRQPPNiABY7SwdoQMMNcZmDQ==",
+        "shasum": "526b822fe22b94150afc0779fc7b6c2ce58c63cf",
+        "tarball": "https://registry.npmjs.org/lcid/-/lcid-3.1.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8602,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdhyInCRA9TVsSAnZWagAAdyIP/3BCE2WGmzYSMRltU2/Z\nVDgmsMe5TVsfQtfu4gNX3rQfG99pM5gZiyjiQUWRPSTD6tP0hiXJUg4dXLEl\nhO3XyymKaEEdXBMdy6zjC4K+IoVdGGNd58rlnXFTTy/d52A35LUNEQw8eHq0\nze+xl8Ccl8F0SYGqzwYgmtPTv6ga2XDFddOtyAjur6OFj/isQaWRlqKDqrDm\n1Xw7gy4Db8xXUWPPLQB7BPORcYUIlEJqqBqNp44XScRJ9bITWRUE3zCqSzgo\nDak/doEEy9A2ffy9TGeiZs+cyzROW8SK9YiZ2OMiuqMSBxIdw2QB5uCWKn4a\nHN/4W5LkVPYif5TmneMwTWYdrBlWsmTDyqbMXxU9+rasXECVthRlOv+yXmZM\nya848wpTkXo/j9IQwgfXwbM2SkBRQOquMDujTiGC6Mi6JH84TDQZiDMNmkr9\nPBYPmcG9r3OIhJAXy+ddsDEzQ6MVvhlUvybm5V/TmBI21rfDnUVr78JGunr5\nmpeZB2RZCRZzDmOIaXzzexg0JsuG7S8SpoPr5hyRqMKrn5dIVI0UncwJBlnx\nMdDu5SXmXyvgbLLxjE81BVRlNMiH0FV8IJ7895/KaPGderakkgQueXwrqv3Z\n9Rt4izYu8X3Ar2xvdnjyPSgy/CPdOCHqUm3591UPF3j4qW1cw3v8qTd057t1\ngGCf\r\n=ARmZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lcid_3.1.0_1569137190667_0.5686211735607924"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "lcid",
+      "version": "3.1.1",
+      "description": "Mapping between standard locale identifiers and Windows locale identifiers (LCID)",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/lcid.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "lcid",
+        "locale",
+        "string",
+        "id",
+        "identifier",
+        "windows",
+        "language",
+        "lang",
+        "map",
+        "mapping",
+        "convert",
+        "json",
+        "bcp47",
+        "ietf",
+        "tag"
+      ],
+      "dependencies": {
+        "invert-kv": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "9d03607e1c0f5ad24c7cef016aca424c6e4f8c1a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/lcid/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/lcid#readme",
+      "_id": "lcid@3.1.1",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-M6T051+5QCGLBQb8id3hdvIW8+zeFV2FyBGFS9IEK5H9Wt4MueD4bW1eWikpHgZp+5xR3l5c8pZUkQsIA0BFZg==",
+        "shasum": "9030ec479a058fc36b5e8243ebaac8b6ac582fd0",
+        "tarball": "https://registry.npmjs.org/lcid/-/lcid-3.1.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 8602,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdlablCRA9TVsSAnZWagAAdksP+wbCsay/9blSuEURbxMR\nnAdv3xPgLJYrnlou6C5GBBYzFjysZF4zUsqzSlM8dJhZsBtN/kq6z57EACR5\nvOibiGeW16K/RqLsX4ZoTPAiO8q2UQh3JM6Wrh/TGDjH9Q10g0KncxjV8zIV\n9PwMgnUjBn/Uh/dqT30BnTDoRng1S89cCGgRR0zORzA1wiVlYXsbF8hmhmYc\nXfMIqNpZjRqiJDTBzyt9QoW6b6J3GCWXCcWk7KXFIm/XZucydftDIS8+O+1U\nj/iVdAvmte1EWhfH6GJMLuAhnNmXNskiKn5HAhb0s0aqxRFihrjrquC3FoeK\nazzXH9IebVVnJT4fgech21caDtgfBWgz0VUofYptgmlTrFo1jMHGRWHzByxb\n9mCFcWk+J/H8amOoDJ8ArfUnTGbEIl7LEXdj9YOUTM8tvei0tOPDNWu01WGA\nVxn8zpN0ndichBIAvk5UKnXWUuDlbsAL4Hd5yIdqbT+77jYB9LkVPwC4ClMw\nn2Y/E+S8czIglZqlMdvAEtlIUVmUt7BsMEI2t2Nt2ysXAX2lNX28wI7UyVAk\nCzNunecEtM0H9DvCXBXbLKAOvpFUM+0ZiSl6Nmr38edSzpblxm+A1BLLrQMZ\nkq4cYdWcx8DzYvJ8qi/8zO2LHpSK1QanJMd4JNTnMh/jAgGgdRTh9vMM7/pd\nce2E\r\n=oCtN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/lcid_3.1.1_1570088677029_0.08830697276823041"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# lcid [![Build Status](https://travis-ci.org/sindresorhus/lcid.svg?branch=master)](https://travis-ci.org/sindresorhus/lcid)\n\n> Mapping between [standard locale identifiers](https://en.wikipedia.org/wiki/Locale_(computer_software)) and [Windows locale identifiers (LCID)](https://en.wikipedia.org/wiki/Locale#Specifics_for_Microsoft_platforms)\n\nBased on the [mapping](https://github.com/python/cpython/blob/8f7bb100d0fa7fb2714f3953b5b627878277c7c6/Lib/locale.py#L1465-L1674) used in the Python standard library.\n\nThe mapping itself is just a [JSON file](lcid.json) and can be used anywhere.\n\n\n## Install\n\n```\n$ npm install lcid\n```\n\n\n## Usage\n\n```js\nconst lcid = require('lcid');\n\nlcid.from(1044);\n//=> 'nb_NO'\n\nlcid.to('nb_NO');\n//=> 1044\n\nlcid.all;\n//=> {'af_ZA': 1078, …}\n```\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-lcid?utm_source=npm-lcid&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-10-03T07:44:39.731Z",
+    "created": "2015-03-16T07:04:47.515Z",
+    "1.0.0": "2015-03-16T07:04:47.515Z",
+    "2.0.0": "2018-08-06T17:10:22.232Z",
+    "3.0.0": "2019-04-30T11:16:34.964Z",
+    "3.1.0": "2019-09-22T07:26:30.776Z",
+    "3.1.1": "2019-10-03T07:44:37.196Z"
+  },
+  "homepage": "https://github.com/sindresorhus/lcid#readme",
+  "keywords": [
+    "lcid",
+    "locale",
+    "string",
+    "id",
+    "identifier",
+    "windows",
+    "language",
+    "lang",
+    "map",
+    "mapping",
+    "convert",
+    "json",
+    "bcp47",
+    "ietf",
+    "tag"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/lcid.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/lcid/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "jeben": true
+  }
+}

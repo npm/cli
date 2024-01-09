@@ -1,0 +1,565 @@
+{
+  "_id": "obuf",
+  "_rev": "12-933b69a61011599aec7bd072a68398f9",
+  "name": "obuf",
+  "dist-tags": {
+    "latest": "1.1.2"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "obuf",
+      "version": "0.1.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/offset-buffer"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "2099db18818abf1e01c8b4e415fe9405cfe2c863",
+      "_id": "obuf@0.1.0",
+      "_shasum": "4761976805f7b1306c127525c8200d46a054df2c",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4761976805f7b1306c127525c8200d46a054df2c",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "obuf",
+      "version": "0.1.1",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git@github.com:indutny/offset-buffer"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "958af0d99c9a4b05b586cdf29eb0216e5711028a",
+      "_id": "obuf@0.1.1",
+      "_shasum": "be0444a2ccc1d55ae85a23d9628aeec7b6331166",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "be0444a2ccc1d55ae85a23d9628aeec7b6331166",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "obuf",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "dde321d47819f0f513446e4ca5c66ccca969b3b6",
+      "_id": "obuf@1.0.0",
+      "_shasum": "ca8b9275ea3cf4fe210d87a070b4a3572f8a96ea",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ca8b9275ea3cf4fe210d87a070b4a3572f8a96ea",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "obuf",
+      "version": "1.0.1",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "c13950a3453bed889bbad3be436b0abb6aa9e3fc",
+      "_id": "obuf@1.0.1",
+      "_shasum": "ff94cb1621eab2952755e8e5ef44ea6e389f3669",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ff94cb1621eab2952755e8e5ef44ea6e389f3669",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "obuf",
+      "version": "1.0.2",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "c4f93e589c06d5245e34788225d021996043cfa8",
+      "_id": "obuf@1.0.2",
+      "_shasum": "66e11f272f1cb8d912f8efdb294f3552a31f7b2a",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "66e11f272f1cb8d912f8efdb294f3552a31f7b2a",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "obuf",
+      "version": "1.0.3",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "361c727115bb55d930b832daff70dd99b48391ba",
+      "_id": "obuf@1.0.3",
+      "_shasum": "d8d59659f4689b49589db57f6eeead4464251d0c",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d8d59659f4689b49589db57f6eeead4464251d0c",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "obuf",
+      "version": "1.0.4",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "f14f76d0928ebf139c875a612f180f824a627323",
+      "_id": "obuf@1.0.4",
+      "_shasum": "530a9c3aa6b40c94515ce174701b333ae7ed8757",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "530a9c3aa6b40c94515ce174701b333ae7ed8757",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "obuf",
+      "version": "1.1.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "ff67970a49ca530cab48f3356428fbda399094a4",
+      "_id": "obuf@1.1.0",
+      "_shasum": "2592ef8d00e52bf50a4b13a994e1aa3024e4d630",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2592ef8d00e52bf50a4b13a994e1aa3024e4d630",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "obuf",
+      "version": "1.1.1",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "f14ad53be824cdfc805c0375c36cbf40d8d25f0a",
+      "_id": "obuf@1.1.1",
+      "_shasum": "104124b6c602c6796881a042541d36db43a5264e",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "104124b6c602c6796881a042541d36db43a5264e",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "obuf",
+      "version": "1.1.2",
+      "description": "Byte buffer specialized for data in chunks with special cases for dropping bytes in the front, merging bytes in to various integer types and abandoning buffer without penalty for previous chunk merges.",
+      "main": "index.js",
+      "scripts": {
+        "test": "mocha test/**/*-test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+      },
+      "keywords": [
+        "Offset",
+        "Buffer",
+        "reader"
+      ],
+      "author": {
+        "name": "Fedor Indutny",
+        "email": "fedor@indutny.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/indutny/offset-buffer/issues"
+      },
+      "homepage": "https://github.com/indutny/offset-buffer",
+      "devDependencies": {
+        "mocha": "^1.21.4"
+      },
+      "gitHead": "bac901d63eee226effb9149bf9511aac8d5853f0",
+      "_id": "obuf@1.1.2",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "9.6.1",
+      "_npmUser": {
+        "name": "indutny",
+        "email": "fedor@indutny.com"
+      },
+      "dist": {
+        "integrity": "sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==",
+        "shasum": "09bea3343d41859ebd446292d11c9d4db619084e",
+        "tarball": "https://registry.npmjs.org/obuf/-/obuf-1.1.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 19129
+      },
+      "maintainers": [
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/obuf_1.1.2_1520717598316_0.09991861763110621"
+      }
+    }
+  },
+  "readme": "# obuf - Offset buffer implementation.\n\nByte buffer specialized for data in chunks with special cases for dropping\nbytes in the front, merging bytes in to various integer types and\nabandoning buffer without penalty for previous chunk merges.\n\nUsed in spyd-transport, part of spdy support for http2.\n\nThis software is licensed under the MIT License.\n\nBy Fedor Indutny, 2015.\n\n",
+  "maintainers": [
+    {
+      "name": "indutny",
+      "email": "fedor@indutny.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-03-10T21:33:19.721Z",
+    "created": "2014-08-30T12:51:50.511Z",
+    "0.1.0": "2014-08-30T12:51:50.511Z",
+    "0.1.1": "2014-09-03T10:52:35.520Z",
+    "1.0.0": "2015-06-11T20:16:10.711Z",
+    "1.0.1": "2015-06-16T22:39:56.216Z",
+    "1.0.2": "2015-06-16T22:56:34.623Z",
+    "1.0.3": "2015-06-16T23:00:46.560Z",
+    "1.0.4": "2015-06-19T00:35:24.795Z",
+    "1.1.0": "2015-06-20T23:19:27.859Z",
+    "1.1.1": "2015-07-14T00:30:43.787Z",
+    "1.1.2": "2018-03-10T21:33:18.385Z"
+  },
+  "homepage": "https://github.com/indutny/offset-buffer",
+  "keywords": [
+    "Offset",
+    "Buffer",
+    "reader"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/indutny/offset-buffer.git"
+  },
+  "author": {
+    "name": "Fedor Indutny",
+    "email": "fedor@indutny.com"
+  },
+  "bugs": {
+    "url": "https://github.com/indutny/offset-buffer/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "description": "Byte buffer specialized for data in chunks with special cases for dropping bytes in the front, merging bytes in to various integer types and abandoning buffer without penalty for previous chunk merges.",
+  "_attachments": {}
+}

@@ -1,0 +1,588 @@
+{
+  "_id": "parallel-transform",
+  "_rev": "23-3aedca550f6d9fe32941ad43f50b6218",
+  "name": "parallel-transform",
+  "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "parallel-transform",
+      "version": "0.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.1.0",
+      "dist": {
+        "shasum": "7193939cafb80eb367f4f9665739e7375ff581de",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "parallel-transform",
+      "version": "0.1.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.1.1",
+      "dist": {
+        "shasum": "a1c891797dcc43cda07aa8c0ecb9d63ae947b5c8",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "parallel-transform",
+      "version": "0.1.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.1.2",
+      "dist": {
+        "shasum": "01afe1b54366d8f1835337539009f74173c416cc",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "parallel-transform",
+      "version": "0.1.3",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.1.3",
+      "dist": {
+        "shasum": "01556c3de7d67d3dfcbc477efca0a2e22b29b235",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.1.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "parallel-transform",
+      "version": "0.1.4",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.1.4",
+      "dist": {
+        "shasum": "47629c708a60b472a72cce6dd9069802161592e4",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.1.4.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "parallel-transform",
+      "version": "0.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.2.0",
+      "dist": {
+        "shasum": "46218994bd230e89735ce97b9b395375d3f169a2",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "parallel-transform",
+      "version": "0.2.1",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "_id": "parallel-transform@0.2.1",
+      "dist": {
+        "shasum": "7f92a1e9fd67daa3c0b62e65b9fbfcc4e6b75611",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "parallel-transform",
+      "version": "0.2.2",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "homepage": "https://github.com/mafintosh/parallel-transform",
+      "_id": "parallel-transform@0.2.2",
+      "dist": {
+        "shasum": "77a9c0b4bc99f52349b3bf2c71519506f4758f6e",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-0.2.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "parallel-transform",
+      "version": "1.0.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2"
+      },
+      "gitHead": "f351311406eebfb5eacc1d467d3451154ea6a636",
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "homepage": "https://github.com/mafintosh/parallel-transform",
+      "_id": "parallel-transform@1.0.0",
+      "scripts": {},
+      "_shasum": "6130d87e17adab11999354493d0dbee9a441753c",
+      "_from": ".",
+      "_npmVersion": "2.15.1",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6130d87e17adab11999354493d0dbee9a441753c",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/parallel-transform-1.0.0.tgz_1462544755191_0.5816936211194843"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "parallel-transform",
+      "version": "1.1.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "~0.2.2",
+        "inherits": "^2.0.3",
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "1b4919bc318eb0cbd6e8ee08c4d56f405d74e643",
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "homepage": "https://github.com/mafintosh/parallel-transform",
+      "_id": "parallel-transform@1.1.0",
+      "scripts": {},
+      "_shasum": "d410f065b05da23081fcd10f28854c29bda33b06",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "d410f065b05da23081fcd10f28854c29bda33b06",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/parallel-transform-1.1.0.tgz_1478596056784_0.9169374129269272"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "parallel-transform",
+      "version": "1.2.0",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/mafintosh/parallel-transform.git"
+      },
+      "license": "MIT",
+      "description": "Transform stream that allows you to run your transforms in parallel without changing the order",
+      "keywords": [
+        "transform",
+        "stream",
+        "parallel",
+        "preserve",
+        "order"
+      ],
+      "author": {
+        "name": "Mathias Buus Madsen",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dependencies": {
+        "cyclist": "^1.0.1",
+        "inherits": "^2.0.3",
+        "readable-stream": "^2.1.5"
+      },
+      "gitHead": "4548c6075d990d587fd40e7918fc467890b21dab",
+      "bugs": {
+        "url": "https://github.com/mafintosh/parallel-transform/issues"
+      },
+      "homepage": "https://github.com/mafintosh/parallel-transform#readme",
+      "_id": "parallel-transform@1.2.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-P2vSmIu38uIlvdcU7fDkyrxj33gTUy/ABO5ZUbGowxNCopBq/OoD42bP4UmMrJoPyk4Uqf0mu3mtWBhHCZD8yg==",
+        "shasum": "9049ca37d6cb2182c3b1d2c720be94d14a5814fc",
+        "tarball": "https://registry.npmjs.org/parallel-transform/-/parallel-transform-1.2.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5538,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdcNEWCRA9TVsSAnZWagAAKk4P+QCfs14Ci+r/mwjGFwd0\nzo6q6KXrae5487ZDG/vngyFQnXI0YaTEu8HgsKQ89P/lPZGYspslbJEg15+H\nKImp6sCRJHRBeyiAiiMqIanDTGYEgBeZjRc+d2qpmPUda/egO2vFHaZeS11J\n0EdyuDbz8sUszlruHAVk9uYXMXlR/tUZYoWw8mWo0vpoiMXLolnikOFshqqH\nMi/Gux2m9zKJ78doj9xPEUY5g/gRFuPlhl/BZZFNCHxO18MyN75Gs3IGINXp\n+kxcbCm4KHTHjvADfYG+zQxsqMgsou17bKPO1F1i6D3/JEqhwvGWmJnOckGC\nWXL8PQHVXcoNNssFMjfAIHe7IYE1fG9nM+3b5jG6LBLkYX00VwRl36M5PPAm\nKSnGuoGMytTY+0JMgvXhs9H+LD20EN4UNKtda5M4HzbYLCGv/WuWcP5H9eMI\nNVKNP/7Cf31vB3vceqzvKkwuVsafbc+OdjvCMXdzOBABpdCt9rY+QVvR7Ue3\nzhBxAB4WRdCuodEI06M+beSz7AUxaE79EpUyDi6JdCr3dAY9LpPWNe36BkMf\ncMTf0DfQfgVIez0G8MFdgzcUurisMhtiUoMQs+IIpIVq0CjWS3ESr+yHhtx1\ng97Wnb0bSbEs0qEtbGv4mJXNkxFRLkCtirYkyh0r7hr+gKTzyTAvou7D+8SA\nS1xV\r\n=qMBR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/parallel-transform_1.2.0_1567674645884_0.45734840049735426"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# parallel-transform\n\n[Transform stream](http://nodejs.org/api/stream.html#stream_class_stream_transform_1) for Node.js that allows you to run your transforms\nin parallel without changing the order of the output.\n\n\tnpm install parallel-transform\n\nIt is easy to use\n\n``` js\nvar transform = require('parallel-transform');\n\nvar stream = transform(10, function(data, callback) { // 10 is the parallism level\n\tsetTimeout(function() {\n\t\tcallback(null, data);\n\t}, Math.random() * 1000);\n});\n\nfor (var i = 0; i < 10; i++) {\n\tstream.write(''+i);\n}\nstream.end();\n\nstream.on('data', function(data) {\n\tconsole.log(data); // prints 0,1,2,...\n});\nstream.on('end', function() {\n\tconsole.log('stream has ended');\n});\n```\n\nIf you run the above example you'll notice that it runs in parallel\n(does not take ~1 second between each print) and that the order is preserved\n\n## Stream options\n\nAll transforms are Node 0.10 streams. Per default they are created with the options `{objectMode:true}`.\nIf you want to use your own stream options pass them as the second parameter\n\n``` js\nvar stream = transform(10, {objectMode:false}, function(data, callback) {\n\t// data is now a buffer\n\tcallback(null, data);\n});\n\nfs.createReadStream('filename').pipe(stream).pipe(process.stdout);\n```\n\n### Unordered\nPassing the option `{ordered:false}` will output the data as soon as it's processed by a transform, without waiting to respect the order.\n\n## License\n\nMIT",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-05T09:10:48.581Z",
+    "created": "2013-07-30T21:25:16.628Z",
+    "0.1.0": "2013-07-30T21:25:22.056Z",
+    "0.1.1": "2013-07-30T22:04:52.519Z",
+    "0.1.2": "2013-07-30T22:07:41.892Z",
+    "0.1.3": "2013-07-30T22:59:17.016Z",
+    "0.1.4": "2013-07-30T23:34:23.642Z",
+    "0.2.0": "2013-08-10T16:48:55.586Z",
+    "0.2.1": "2013-08-22T19:39:56.489Z",
+    "0.2.2": "2013-12-13T10:42:00.712Z",
+    "1.0.0": "2016-05-06T14:25:57.650Z",
+    "1.1.0": "2016-11-08T09:07:37.008Z",
+    "1.2.0": "2019-09-05T09:10:46.038Z"
+  },
+  "author": {
+    "name": "Mathias Buus Madsen",
+    "email": "mathiasbuus@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/parallel-transform.git"
+  },
+  "users": {
+    "bmpvieira": true,
+    "zewish": true,
+    "morewry": true
+  },
+  "homepage": "https://github.com/mafintosh/parallel-transform#readme",
+  "keywords": [
+    "transform",
+    "stream",
+    "parallel",
+    "preserve",
+    "order"
+  ],
+  "bugs": {
+    "url": "https://github.com/mafintosh/parallel-transform/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

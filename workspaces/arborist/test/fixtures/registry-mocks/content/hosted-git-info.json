@@ -1,0 +1,3584 @@
+{
+  "_id": "hosted-git-info",
+  "_rev": "81-f851dad9e15fb3d696bfbb502090b943",
+  "name": "hosted-git-info",
+  "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+  "dist-tags": {
+    "latest": "3.0.7",
+    "ancient-legacy-fixes": "2.8.8"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "hosted-git-info",
+      "version": "1.0.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "90b3a42ccaddbf01b2e3338ed2234ed14109d573",
+      "_id": "hosted-git-info@1.0.0",
+      "_shasum": "1e5a5105f78d2e64e6d9f76f3c41a8d0e71d710e",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "1e5a5105f78d2e64e6d9f76f3c41a8d0e71d710e",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "hosted-git-info",
+      "version": "1.1.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "e77196783af6ed1feac594aa467dbe6f4a4c9735",
+      "_id": "hosted-git-info@1.1.0",
+      "_shasum": "79333010d9300f3b8878ea50ea75e1ac8aca225e",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "79333010d9300f3b8878ea50ea75e1ac8aca225e",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "hosted-git-info",
+      "version": "1.2.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "ccf23510368856790ab91794fd0dec83c1a13789",
+      "_id": "hosted-git-info@1.2.0",
+      "_shasum": "ce4fcf9f15177a9160dd8bf7755549271a6eea4a",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "ce4fcf9f15177a9160dd8bf7755549271a6eea4a",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "hosted-git-info",
+      "version": "1.3.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "6fa3c7bc9659180cb4a9ac6e3ddd533dbb718b47",
+      "_id": "hosted-git-info@1.3.0",
+      "_shasum": "b259d2194e362a43e6ddc776c3d5da6e094f8af6",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "b259d2194e362a43e6ddc776c3d5da6e094f8af6",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "hosted-git-info",
+      "version": "1.4.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "cf439e562452dbb7eeb786ce3208c3db880ca163",
+      "_id": "hosted-git-info@1.4.0",
+      "_shasum": "31d0ac07a0e8aa6f21f92a61620866d92c0e7540",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "31d0ac07a0e8aa6f21f92a61620866d92c0e7540",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "hosted-git-info",
+      "version": "1.5.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "e77ce658d490ddcd9c30531ec28dea3504033bc7",
+      "_id": "hosted-git-info@1.5.0",
+      "_shasum": "d311d0a109cd93d41ccf0b35de070099c9403b99",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "d311d0a109cd93d41ccf0b35de070099c9403b99",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.1": {
+      "name": "hosted-git-info",
+      "version": "1.5.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "4fb86d75b3568c30be9aa4de3ee5c473ac893f0b",
+      "_id": "hosted-git-info@1.5.1",
+      "_shasum": "79cbd59dc6b1f44b8cb2452e3cf41b95e6fb4f4a",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "79cbd59dc6b1f44b8cb2452e3cf41b95e6fb4f4a",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.2": {
+      "name": "hosted-git-info",
+      "version": "1.5.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "d891b7a59fa4c73b604ea8690eedc48757c76c42",
+      "_id": "hosted-git-info@1.5.2",
+      "_shasum": "15cdfd09ab6d4d87700437ca695f12d1580f6658",
+      "_from": ".",
+      "_npmVersion": "2.1.11",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "15cdfd09ab6d4d87700437ca695f12d1580f6658",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.5.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.5.3": {
+      "name": "hosted-git-info",
+      "version": "1.5.3",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "tap test/*.js"
+      },
+      "devDependencies": {
+        "tap": "^0.4.13"
+      },
+      "gitHead": "153325f997813ebf8a7ae07b322b4fa89aa25f7d",
+      "_id": "hosted-git-info@1.5.3",
+      "_shasum": "1f46e25e9c0e207852fb7a4b94422ed5f09a03f5",
+      "_from": ".",
+      "_npmVersion": "2.4.0",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "1f46e25e9c0e207852fb7a4b94422ed5f09a03f5",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.5.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "hosted-git-info",
+      "version": "1.6.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "1d06aa7102cbc02a6aa4f4225ccbb4f45e89120a",
+      "_id": "hosted-git-info@1.6.0",
+      "_shasum": "dbc718bed09c2f30abe6bdc68d46b9c5317282db",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "dbc718bed09c2f30abe6bdc68d46b9c5317282db",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-1.6.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "hosted-git-info",
+      "version": "2.0.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "7aa49c01abeb96480dbb2c94b1967ffd03a2e460",
+      "_id": "hosted-git-info@2.0.0",
+      "_shasum": "c2db8b7037d541b4d5e6cae923d7c62e640d4704",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "c2db8b7037d541b4d5e6cae923d7c62e640d4704",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "hosted-git-info",
+      "version": "2.0.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "dfcd2ff3f7c1acff01b36dbe97ff9f9d4d56c9ea",
+      "_id": "hosted-git-info@2.0.1",
+      "_shasum": "2636ccefa9b590ce396d34dc3b64d478ccd29091",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "2636ccefa9b590ce396d34dc3b64d478ccd29091",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "hosted-git-info",
+      "version": "2.0.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "394120a25bc0316f9cb945564291934499861a0a",
+      "_id": "hosted-git-info@2.0.2",
+      "_shasum": "b5b1c5295acdd4b39312d2f3d42ca60b91f7a952",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "b5b1c5295acdd4b39312d2f3d42ca60b91f7a952",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.3": {
+      "name": "hosted-git-info",
+      "version": "2.0.3",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "4631ddc33c8aab40bf1ac17165e4e01527a9970b",
+      "_id": "hosted-git-info@2.0.3",
+      "_shasum": "d58835b6accdfc91ac8fa0707c070cde81f1ddff",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "d58835b6accdfc91ac8fa0707c070cde81f1ddff",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "hosted-git-info",
+      "version": "2.1.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "0d2d6a8ae036bc485b32d1c519ae62a95e60ad9b",
+      "_id": "hosted-git-info@2.1.0",
+      "_shasum": "8b38742f56a7e2dafa3eb9ae85eea8b393f4c13e",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.2",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        }
+      ],
+      "dist": {
+        "shasum": "8b38742f56a7e2dafa3eb9ae85eea8b393f4c13e",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "hosted-git-info",
+      "version": "2.1.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "c4d4f14210372ef010cc8170dea84a0dedf504ca",
+      "_id": "hosted-git-info@2.1.1",
+      "_shasum": "915946c135ee5ff59437ef126f9bd6112192fcb0",
+      "_from": ".",
+      "_npmVersion": "2.7.6",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "915946c135ee5ff59437ef126f9bd6112192fcb0",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.2": {
+      "name": "hosted-git-info",
+      "version": "2.1.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "9f24fee147bb76595e234b7556ecc9d0448215fa",
+      "_id": "hosted-git-info@2.1.2",
+      "_shasum": "f947976852931851c33644bbce80d1e499795246",
+      "_from": ".",
+      "_npmVersion": "2.8.0",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "f947976852931851c33644bbce80d1e499795246",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.3": {
+      "name": "hosted-git-info",
+      "version": "2.1.3",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "d318d6eb4a634a98d45684168ad0f5b09f1a2808",
+      "_id": "hosted-git-info@2.1.3",
+      "_shasum": "60028d70b8e2b0c28005fd643234c1f9dc63cd45",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "60028d70b8e2b0c28005fd643234c1f9dc63cd45",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.4": {
+      "name": "hosted-git-info",
+      "version": "2.1.4",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "9e1a36df8eb050a663713c79e56d89dadba2bd8d",
+      "_id": "hosted-git-info@2.1.4",
+      "_shasum": "d9e953b26988be88096c46e926494d9604c300f8",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "2.0.2",
+      "_npmUser": {
+        "name": "othiym23",
+        "email": "ogd@aoaioxxysz.net"
+      },
+      "dist": {
+        "shasum": "d9e953b26988be88096c46e926494d9604c300f8",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.5": {
+      "name": "hosted-git-info",
+      "version": "2.1.5",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^0.4.13"
+      },
+      "gitHead": "4e6bb323a97a57c18e6b4b891527e26154d04fbe",
+      "_id": "hosted-git-info@2.1.5",
+      "_shasum": "0ba81d90da2e25ab34a332e6ec77936e1598118b",
+      "_from": ".",
+      "_npmVersion": "3.9.1",
+      "_nodeVersion": "5.10.1",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "0ba81d90da2e25ab34a332e6ec77936e1598118b",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.1.5.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.1.5.tgz_1463518889246_0.20443619322031736"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "hosted-git-info",
+      "version": "2.2.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -j8 test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^10.0.2"
+      },
+      "gitHead": "d5ea6d1de852b04589f100c671fa0d3311f3449f",
+      "_id": "hosted-git-info@2.2.0",
+      "_shasum": "7a0d097863d886c0fabbdcd37bf1758d8becf8a5",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.4.0",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kat@sykosomatic.org"
+      },
+      "dist": {
+        "shasum": "7a0d097863d886c0fabbdcd37bf1758d8becf8a5",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.2.0.tgz_1486365886030_0.0815314722713083"
+      },
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "hosted-git-info",
+      "version": "2.3.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -j8 test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "89430baa1261d8539b255dd994eb86986e27b9fb",
+      "_id": "hosted-git-info@2.3.0",
+      "_shasum": "2f7012729081debdd28ff574d52c71f54036f879",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "2f7012729081debdd28ff574d52c71f54036f879",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.3.0.tgz_1489796735897_0.056325131095945835"
+      },
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "hosted-git-info",
+      "version": "2.3.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -j8 test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tap": "^10.0.2"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "e8f2c07d0ed6c222b80de2012e030ba54b06dba0",
+      "_id": "hosted-git-info@2.3.1",
+      "_shasum": "ac439421605f0beb0ea1349de7d8bb28e50be1dd",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "ac439421605f0beb0ea1349de7d8bb28e50be1dd",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.3.1.tgz_1489797476642_0.4580296166241169"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "hosted-git-info",
+      "version": "2.4.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -J --coverage test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "9f7a135b79d3619bbb84e96314628f0765b5ef2f",
+      "_id": "hosted-git-info@2.4.0",
+      "_shasum": "4812ed9c9db720d093a0b5025135e30ac9565933",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "4812ed9c9db720d093a0b5025135e30ac9565933",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.4.0.tgz_1490157102820_0.15581872849725187"
+      },
+      "directories": {}
+    },
+    "2.4.1": {
+      "name": "hosted-git-info",
+      "version": "2.4.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -J --coverage test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "5011515476335394a383ddcd2cb020f077ea0983",
+      "_id": "hosted-git-info@2.4.1",
+      "_shasum": "4b0445e41c004a8bd1337773a4ff790ca40318c8",
+      "_from": ".",
+      "_npmVersion": "4.4.4",
+      "_nodeVersion": "7.7.1",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "4b0445e41c004a8bd1337773a4ff790ca40318c8",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.4.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.4.1.tgz_1490157123444_0.5557378279045224"
+      },
+      "directories": {}
+    },
+    "2.4.2": {
+      "name": "hosted-git-info",
+      "version": "2.4.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -J --coverage test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "91fb3adc2c3c7c024f7fb4e34a1510db0f7625ed",
+      "_id": "hosted-git-info@2.4.2",
+      "_shasum": "0076b9f46a270506ddbaaea56496897460612a67",
+      "_from": ".",
+      "_npmVersion": "4.5.0",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "shasum": "0076b9f46a270506ddbaaea56496897460612a67",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.4.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/hosted-git-info-2.4.2.tgz_1492124098717_0.3664245803374797"
+      },
+      "directories": {}
+    },
+    "2.5.0": {
+      "name": "hosted-git-info",
+      "version": "2.5.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -J --coverage test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "88da66d167a6d896c129d97209ce9864c201d067",
+      "_id": "hosted-git-info@2.5.0",
+      "_npmVersion": "5.0.4",
+      "_nodeVersion": "8.1.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-pNgbURSuab90KbTqvRPsseaTxOJCZBD0a7t+haSN33piP9cCM4l0CqdzAif2hUqm716UovKB2ROmiabGAKVXyg==",
+        "shasum": "6d60e34b3abbc8313062c3b798ef8d901a07af3c",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "iarna",
+          "email": "me@re-becca.org"
+        },
+        {
+          "name": "othiym23",
+          "email": "ogd@aoaioxxysz.net"
+        },
+        {
+          "name": "zkat",
+          "email": "kat@sykosomatic.org"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info-2.5.0.tgz_1498508747138_0.45297089754603803"
+      },
+      "directories": {}
+    },
+    "2.6.0": {
+      "name": "hosted-git-info",
+      "version": "2.6.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "engines": {
+        "node": ">=4"
+      },
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --nyc-arg=--all --coverage test"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "standard-version": "^4.3.0",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "5d2cc4a8c93012387a86a0afa1384ccf7ac31084",
+      "_id": "hosted-git-info@2.6.0",
+      "_npmVersion": "5.7.1",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "zkat",
+        "email": "kzm@sykosomatic.org"
+      },
+      "dist": {
+        "integrity": "sha512-lIbgIIQA3lz5XaB6vxakj6sDHADJiZadYEJB+FgA+C4nubM1NwcuvUr9EJPmnH1skZqpqUzWborWo8EIUi0Sdw==",
+        "shasum": "23235b29ab230c576aab0d4f13fc046b0b038222",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.6.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 18091
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.6.0_1520461244834_0.005355293115920645"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.6.1": {
+      "name": "hosted-git-info",
+      "version": "2.6.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "test": "standard && tap -J --coverage test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^9.0.2",
+        "tap": "^10.3.0"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "729a5a03cbf5b5b46763a61dfa7fbc0aa30754d3",
+      "_id": "hosted-git-info@2.6.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.4.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-Ba4+0M4YvIDUUsprMjhVTU1yN9F2/LJSAl69ZpzaLT4l4j5mwTS6jqqW9Ojvj6lKz/veqPzpJBqGbXspOb533A==",
+        "shasum": "6e4cee78b01bb849dcf93527708c69fdbee410df",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.6.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 17127,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbMUWICRA9TVsSAnZWagAAsc0P/jH+3wQsq7QePWrN427i\nxQ3M+MSJT3u2woFvwrsTLyzRJu4O3RVprSFrwJGMaFSEGGmee6VuKtpi5b36\nDp05Hlz0QWgGAXvKkqD5dd0v2RfEBkL4y74l3Vas1sgOxeMO3uf7WSd7afbM\nhPGKqqZHA7Y7uZEcj0E68JSfaDdxHRq9yTNrM+/aM5pL2kGNkV4eOFujx4Qc\n467jEHgUS5+kj8IJmuzybbwSkbXFR1S3ciszwlormIBrcSwofg/J9KR6QAA2\n3VjvwTsIDzSd8HREQ3tY+Rgs5cjKbvf6E1YYsJk9zV9tyEF8QhKftN2mc77Y\nAt1qggy9PfuzKv+83phvIv4vJAULVUxfvsBxh/HcyK9BJKHpy+P3K+3VmQcf\nuMNN2tCFm3yqD3v7QM02QyfD4YyuCxeavwmiynUERM11j0/I7jky7KkzwaMK\nM5xLuxst0LvC2dCm0qoTELB1wz8FJGtGOfIv2OTtJ7xCDMggIvbjvmBc57dX\n03TJKUxB4yXTYAgwKn9CiL76VuhrGGKrmifcf6yFqWPa4Q82iRycsD7m1M6Y\n/0DbpkISd8t5cYUTh4IO7GLnPOPuhLCMgibRP9mGAn39P3DmDEk9Rk8xHV03\n4xTcBjvpPzvpJ+GBMqcTn4bJTfaYhNQY0kr96ofYzk8JQnLPqgfrU2waMaDN\nuJ2M\r\n=5ZJh\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.6.1_1529955720303_0.4898681570155494"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.0": {
+      "name": "hosted-git-info",
+      "version": "2.7.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --nyc-arg=--all --coverage test"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^12.0.1"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "b7b18a925481d70f6f40a3389446102f19c2db09",
+      "_id": "hosted-git-info@2.7.0",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-cdKzzZ7mHqOQeEeFy5nnVZMZ6hvEdeOw8B1l+pMdGf6V7hcRg/ll1pPi3gBleHp3U/B88Xq/a2SGuO4WVW2/qw==",
+        "shasum": "8aa16a0a8c1381451d967981143d2f1d268f45ec",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.7.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 19123,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbP/5uCRA9TVsSAnZWagAAIkcP/RPA6u2s/bp1uheQv/6T\nQnSXeqYWVlFzOmrBhNte0ONAFXWQu169DhezeRpttJQJ3cTC38zXoKPtGOXQ\nEW1xKN3dG7vbqJrFDP1iju8gXWHrockGf4A6jxLD7KYD49fJ7aWCTHaf+FJL\nMNl9IN1BFqoXI0/0hsShx2afgbj2T4/MbdLeG5ObSSKzFgFfj7hsW4Mmf0VW\nuYifndJZs1lYyb+YyUlSMEZmPtb1A1RyN2TBEav2oDKW4yotT+UfrKJIewB3\n1qn0t6DlO+s3k5YIbBOzIWmAeA/c5u3/1M/H6ts8peFr96s97f0u39mYp5IG\nxzzO4nugemSByeRaowaejtmTwIWoeZIf7ySUUNRB6DbUqF+0fLzwgY7wmEmM\nQX5Jd9uayNTPLB2dmfLueqxumocTnH5FHUF99PwuLnbefL50ePK0LwR1LaTg\nN3VuRaNQO8htcGWhyI32MmVIqXZPH0kLeU8KVsNbqFCKMZge5gypaIwR6xDJ\np0Dct0EbprVGaRzjefNxYxA2xwFeXcgG+WbOsNXkIAW/OQBJrKGYZF78JB1p\ngdvuCIzryPTafzK5CuXg8X3SBZSkXWu3KoBQXKxgZHd3+ba7Kxm1WbyMgX7Q\nKP/UeVj4hu9AAnuvQPdbbpiau0X6FQ+/9hIkHqvuVvq6e3ybNqB8FC3NxwLK\nvVkw\r\n=cj2F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.7.0_1530920558520_0.5396429939085725"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.7.1": {
+      "name": "hosted-git-info",
+      "version": "2.7.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --nyc-arg=--all --coverage test"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.3.0",
+        "tap": "^12.0.1"
+      },
+      "files": [
+        "index.js",
+        "git-host.js",
+        "git-host-info.js"
+      ],
+      "gitHead": "ab35a9024cedf355a6de975e440414061fbb3a27",
+      "_id": "hosted-git-info@2.7.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.6.0",
+      "_npmUser": {
+        "name": "iarna",
+        "email": "me@re-becca.org"
+      },
+      "dist": {
+        "integrity": "sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==",
+        "shasum": "97f236977bd6e125408930ff6de3eec6281ec047",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.7.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 19609,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbQBE4CRA9TVsSAnZWagAAxTEQAI+yjtN4q/ZkmArAqgSI\n+Om6QcyTXqtzp9Q0U+BgC6hsfXYKi4ffrE7Qjta6Zmh2APov5glROoiyI0D5\n/srs1ydXUM+5/McyrHwZz+JCtG5oYkSATqOQdei4iG9+1KwgWRb8dt6D31E+\nsEwlVXEV+l/6KoO7Wvi4dCnKYmJev/ZCWcsUpegvNhE/wswfUgMWOHfX3Z+E\nV4hMVaxCvZbsvFoZUDhQAyk0kkE0/ISFJLFG+LHUIajAR3jZkQj4vdIJc56m\nyMgf1alEXlT13/wXjPEzWtY3p+a7b/NIzG7NAarHT298denmZaSzfd50jTmm\nCykr7WQIV16XwDvV7kCgjH8Plqc/RO2B2t4DzGaKyDtJSzOCPY3j52s+a9gj\nMzPUVL3Zvx+HMdRfp1ay8+ijm1xKCyc99GghlrqBbBc1qHAYNyMtlx1vNB0U\nH39luq4cUew2HCf3qtdm3zvxcL0JZuRIKVHWR8YrSYEGj8yuXcdl1L7hTF0Q\nihSqvwsJCoD5oUdYhl1IQf3UC/ghK8GNAX08Ug/801P1lFjQadIhrP6y6qZl\nvtrneMOL3IpUKZwDmLTyBiCrEWGmRAV7VRTlymUamZ1CaOgC/22F4jgEfP76\nBvdqHOqUZefQlBbBSlg8guoprMxHHFvJ5EZd3QllgoWgR9ecPyj5oEmRj0R/\n47P6\r\n=2k7/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "me@re-becca.org",
+          "name": "iarna"
+        },
+        {
+          "email": "ogd@aoaioxxysz.net",
+          "name": "othiym23"
+        },
+        {
+          "email": "kzm@sykosomatic.org",
+          "name": "zkat"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.7.1_1530925368631_0.45989130379042686"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.0": {
+      "name": "hosted-git-info",
+      "version": "2.8.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "8973221f633a002c69a0de67dd1734c56f8ceb1c",
+      "_id": "hosted-git-info@2.8.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-6rCqQduUUMaQbYbGeUPkj0Gn9ff8XlrEi3zpgyYWd8Kaf7hCtqQ6BcGq1ztE1+XjI1QhDOZQG7PO8r0VfVBG0w==",
+        "shasum": "50cd993ca316f339317744f4a5883643c2204a50",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 21799,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdR4eOCRA9TVsSAnZWagAAajEP/jwy4DUdhzLkfBwCv8mc\nu80fxxCyvANd/3w75TdlGVAtqDphYPhXnxWQ1Q0gYM0TovrhHq6bm3I121K0\n1yeJzZRN/sanNhZmjloSJpR6HXHcp44spZY/kSpAAdD4p7U5Ap1ZhSUlaTK7\nPo7paVbOaK6U6abr9FlcLfXgXh+2TvABLx61PbsBm8PEPoC+TSxhL9gHlRKG\n4OYLFqbhLcUslN8y4c6EcWtYXlif1fc2phzdaoQQW+j0yE+wh6Nv+JDsR8Ie\nDgdxekpszV+aMY187mVUNnJzwPGIKiVz7Bs69n+ErTRn9zUwe/LLpeENbyN1\nLHzvNWDcjwCC6WLp8sHprlMIt9yLAzRyORef9Ak7sYONLqGyteCOdEeJmj/o\nv7ez0nW2+lME2S84gNKb5/VdSEpWUMyCPg2/oTVRMil5dkWIWF1chp9OC6I9\nDV8gLup6NPKgPiNEdBUxM+NHMlLiDnNLQoZOs/iX+rIdmAJFeTdSNxVy7iq5\n//k4rtwWX7wDwr3AmLpV78hZXuL7I1Jm8MQhswLyhpsbS/dyhiS8OM1H3LCJ\nSBsdhaKB9UKWf54QUjzkC3rGcJ+bP54onnWUnX57xgzQ1xpC63BAXVRoHQGb\nF3v5HLRcFMAo55St/IXb+FodAuHamq2Lb6LXOYHezMrAhOrX/J8GvW8Dq/ct\nsSRL\r\n=GZQO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.0_1564968846156_0.820063186986685"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.1": {
+      "name": "hosted-git-info",
+      "version": "2.8.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "2d5aa25e73b4a9558dbed7c6fb9c27aa89c0cc23",
+      "_id": "hosted-git-info@2.8.1",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-qX/0qrxPggEv3tbKU1fJBYe9ZAuXF2mhnvlzXtPQev72NA+0vQUnc0RvubwL5+6LA1CoIawHpQJeWSg6/nq8Mw==",
+        "shasum": "1301382263bd27e829ec1c628b5edbcddca031e7",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdR8V+CRA9TVsSAnZWagAADuAQAKQfuB8A/gNP/nehCeZG\n24pYLtdRkKeWEqWWuCgmw0YtXp8sTCpUD4N1C6bR+wgauQuQ3ZXGNadWc7EO\nR3XWtjjY7ubeYNubUl7jvaelt36RsgPE1ywZHCh54c5IVrd8vCvcykHdxFVQ\nF27J2lgihM/u11HMSUNwyTN19noGpb1mm1p76OQ4Cuu91AlY6PPKQVTd/qVg\nQyzUedlzIKmjmmb/uc6Tl6bcGC77G3bzmk7sBa2yq+o8V2SK+nUjzzRaFx9N\niOTxQ+wQpV9v77DWrHhQMzvikowjMmEhI6yKryUDVR3nhX7ehkf23udJAK2C\nVEKgvr6F1mpi9vVzjDcFuNI2CGMtv786OHqXdwnaNT00hC15RyZfQTIn6qSY\nzqLO3VbtnHlgwX0cgGy7FpBNwqfguPDkQrMo+X4auR/KrYEg3FM01yS4dcpv\n7ZKRlVKFwAsjBZSZ0BdRP+u52IE9NatgjslAMkqZx7dU56rQYgbA7rlmg65J\nfN2G0/RrNm0Ybx6SJXDqoNPqKNzAqcfXHLpqezGNWUHf+2Bp+z+fNhCapL2I\nZBIsOSFP5lt9BXkVgikHoELAGjSlQlHr20MdsoE8XsmzGXeE3g+EsTWlqblI\nM5IGGWegup/BCvszpAyd6Eqk88Jdx2g6ey09+e4ImmgFh3mMTnaHLOqBYJF/\nim/I\r\n=i9at\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.1_1564984702315_0.07500956981526197"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.2": {
+      "name": "hosted-git-info",
+      "version": "2.8.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "96a49ea17d4a21f0d5a507feea09c33dc7080c9b",
+      "_id": "hosted-git-info@2.8.2",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.2",
+      "dist": {
+        "integrity": "sha512-CyjlXII6LMsPMyUzxpTt8fzh5QwzGqPmQXgY/Jyf4Zfp27t/FvfhwoE/8laaMUcMy816CkWF20I7NeQhwwY88w==",
+        "shasum": "a35c3f355ac1249f1093c0c2a542ace8818c171a",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.2.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22546,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdR9IQCRA9TVsSAnZWagAArRgP/R8XIVPByuZw2w2M3HBm\nhU6KWHOnaK6pNmCsImzINiXY3F6zXgnUq6N4iV/O45A17Fz1NJnWcWw3mH5m\nNuULyQ/QSZmyq1/kFkPT4mhklMJkxnPOZnuAWN8o+BCKE83c8QqaJ95wjnaa\nBmradUNVEAzkNAXCxNAKSOoToj7m7vg+GdD2FLAORqfq9FqGRwxjQtZhkNyc\nlUG/zwJpgNjJbXRS54uWk9f5mXGaTPDiWzKH6pVw8+PSXDl0C/tSa30I5GUy\nZMaSWzL4GD8Y4JOloAe36P7G5Tdz5xyl7RNu9IFOAG2R7bgpxQeMiE0UOxKQ\ncowo7T1K9xPOKz5HwXygnqG2pLfYv9WTwvRRbz8OI1OWTGhEzirfm6uYGgNk\nBxi3/l+C0QQNPmFQNVWJcS3zMTVYFYKAXJGL8b/1Il2v5qnQ0VG7NusxHl9w\nVe+hg3ss0jUuwo2KQ7ImA8LkE4Y0IuOZy9uXnzIPMb8XOsKRNHWY4h0He1Gq\n95lozXzI37hntf7DKdvvM3/DPtIoEYYEeAvQz9g9G4LODieEJeQti4Yqq/rl\nthb/wpLJiLbj089gv2Wh1ax8rhup8zOyddb1twM7WArkEjx+GbCGeajHYav2\n+Zc5Ba92wrF/pk+IntGk5Sd+ER1P8qEixXZhyg4g1ZQWZBqdt6gb8J59fG94\nOlGC\r\n=CzEU\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.2_1564987919499_0.01793192251303788"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.3": {
+      "name": "hosted-git-info",
+      "version": "2.8.3",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "cbf63b715ac972d6c895de54cb7df09c74bf2edd",
+      "_id": "hosted-git-info@2.8.3",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-gSxJXCMa4wZSq9YqCxcVWWtXw63FNFSx9XmDfet4IJg0vuiwxAdiLqbgxZty2/X5gHHd9F36v4VmEcAlZMgnGw==",
+        "shasum": "622638609162d788c6c7cc8c491442e7bbdff03e",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22552,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUZE6CRA9TVsSAnZWagAAPuEQAIKv/KTMGXaPzQSmWxLn\nmvE6LD3lzBW9BMDqWktEsTa4vZgsPr9BSyJ3YIkAibt9jnR3caJ9x596XdVi\nmsQsUsr/v8byo/dfbCAud+3UTF30CpQKXmfF/NdZOkyrMxCfsNwTMCEDb1R/\n+kfWw5keEFOpZOjq7JKqi0+mtFHIBnAlPxs1sfVeOVSwyB6xh9lcxxGGwY5H\nr3qgF18eBHdV3HMCp5NBODP5Ex7YodOTq0bAPbvUQuEmcqG4rNOhnkINPg5K\nkJnCD+jx6XvZ+q/02lupdW5uMKM3HjJYqWA4p/xGsaUP4SDYR4opzQMqFmPr\n6rF9gLjK8L/aF194QBNL/maPxqPH2uHqtOsN7QlYw7IPLDEkqnT6tKKzK0gd\nLrkZJFE17IEb/F8OgHR8Zi4Zq8xGAUQ6fyZpJuTfPTQ/eiE1WMPtX0C7X33B\nylQZud/UkXlOdA9GEoVgwU7X9G0rktT6dsJ5kPeflzWLqHh7whsV5sjiJ8xt\n4GYe31QwSAJwuAsnl6O8KxW+a4Ni9bwaLaSKYaG8ebKVoam8xPdzJZ85A+NQ\nYfQlBpa87Wd8wxWMiYJ8wnQ3+xeysX81cXRuqiNRxUJQBZTqtEeJjGqT01mK\nHZIi9Kasvhc72nilM0fqbMmO3tYaOyOSddmc/ND/vNYDlWgiR86RFSj1FLAV\ncR/W\r\n=9L5K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.3_1565626681868_0.01318158366807154"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "hosted-git-info",
+      "version": "3.0.0",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "64f0b645f52371b0680becafe7b200da8d3330ec",
+      "_id": "hosted-git-info@3.0.0",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-zYSx1cP4MLsvKtTg8DF/PI6e6FHZ3wcawcTGsrLU2TM+UfD4jmSrn2wdQT16TFbH3lO4PIdjLG0E+cuYDgFD9g==",
+        "shasum": "dd8af49cd01e73cc8e61ba13e217a772fd4ecd2d",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23065,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUZGFCRA9TVsSAnZWagAAdb8P/2SUZFySxeFZ8hCxKPPl\nhCtqo9nsryAiLBH3EeuN8YBh8hU3iD3V/tGO4cZk+80mf6xh6+S3QbbVm1kX\nQfWR17iaD+9hFdEVjn6LTBZG4pFUDTjpsH165KPn2KrhI/5QcXr2/fGr9jym\nuQjaCec9G8e+OwnbD1PNWk+o+tvFobCzMyapwajBpQt4hdutZDYVLnHs6wwE\nwxyvMpoeEz7sEqgbtznL/69OkmL9SDmtOWvzb95odSn0IZP7cYCe/66FuflZ\neivbSlomgSXJqaCi301Zh26TVl/yBzIcCqXNHqT5Yqp4F9MNQqwquguBNsp5\nrs56K7H9n36DZ3yj8L0yJEt8ZM93uyjMwUHtJa352p5bgGUkDjc3ZMbjLX1i\nNx0jZYLmtejDs2fHU6fHnhF0KJOgMB6lcIUIdHUtwx5xa7nuGmoxXTh/l8K6\n8FS0wgRRCXNvybvhKMgfXCTN59jSpHC6htRTazRngNBCKkmM/04IdO/alXmd\n5nraN8Wk1JcbfN2SFE6DCTpNxUioPUekbr5vfyrEuBtx6q1j5L3wdQKmkI9I\nHy6N+8FdrYFG2rK5PXwE+BJtlCUKnD3/KPHoU425z79R/mPGsOOWbfigkVq9\nqhXFPIFIgTeIcdpaYhXbimaOWCCX0kqnxENibFjIBIH4cr/FP11kdv7PbPs8\ncBEO\r\n=83Pg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.0_1565626757445_0.08981144970161048"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.4": {
+      "name": "hosted-git-info",
+      "version": "2.8.4",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish --tag=ancient-legacy-fixes && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "3d1ad71b9ccfc6db476b5678740866e38bc31f2d",
+      "_id": "hosted-git-info@2.8.4",
+      "_nodeVersion": "12.6.0",
+      "_npmVersion": "6.10.3",
+      "dist": {
+        "integrity": "sha512-pzXIvANXEFrc5oFFXRMkbLPQ2rXRoDERwDLyrcUxGhaZhgP54BBSl9Oheh7Vv0T090cszWBxPjkQQ5Sq1PbBRQ==",
+        "shasum": "44119abaf4bc64692a16ace34700fed9c03e2546",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 22689,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdUfnMCRA9TVsSAnZWagAAUx0QAJRFU+jkhLWFQeIFwttP\n3umi25yWiAqJwDBf34SpIPYVF7b+cg8qbOd6OA9/tQ1+qinvBh8PyWavApM0\nSbVFAuo8mZ7DvMT9b6AkhttEMqlsMXKHN1Z23aENoyjYk2gmI+yigyWAEeFj\nyizBj4VIXx3ncMsCv1GSkd8VJUFPYj77/3c4aYoDohkHa+tuvoI5mq5E4THk\nFSoX1dBMFzDWkuBCGwClaJQw3HGlGjeZ/QlhtMqXPXvIj+yqPzG4eoWoGKMq\nnZXWpImPElZGW90UyOaqc5TWGneUGbRe3rApcAuAlwpFDn9B2QHXtsYmDPCR\njxd6DuiqMHVQdBAck9mjPtbeg6YQgYrCC+tfwHthKs3cOF5ovACzJrCh+NY+\nEl6HnzYIa4w2T9rGIJ7swOTUjPM/wDkbyRaCvL9dkXf7j8snJ8s9ntUGyIQo\n5yFj0vATk5Rjvj8NBZy0gBcIQdLbNoP8sDBmSCyT8X54g02GmWr2RRgbNR+C\nI+1BY6vj7C9aELn8z368o4fYb8yA/FCM5PNaKCK5DkGWm4wOWCK6sED0EV8E\nCrnyQgp18uMDZno7TeUnCspeSdQayIkzwKstSftMYagwpr0niZTFOcgzC/ks\ndAY94/IM7/h8HK0afj06B7mDq61pNpWE0I6fTcNH+hg9DVJQJe1eaySKlA8a\nZaof\r\n=COgu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.4_1565653451648_0.4146260967694717"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.5": {
+      "name": "hosted-git-info",
+      "version": "2.8.5",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish --tag=ancient-legacy-fixes && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "624fd6f301dd5a1fd7ad1b333d6f8921a12ff98c",
+      "_id": "hosted-git-info@2.8.5",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.12.0-next.0",
+      "dist": {
+        "integrity": "sha512-kssjab8CvdXfcXMXVcvsXum4Hwdq9XGtRD3TteMEvEbq0LXyiNQr6AprqKqfeaDXze7SxWvRxdpwE6ku7ikLkg==",
+        "shasum": "759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23278,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdm8t+CRA9TVsSAnZWagAADVAQAJ0ETJf7yD73zAapBPbi\nkRfMzrh3DLU5oZdW5R5HfVJcTfZNmcSqp20v/KcGHpEi+NLQRLTELdAfMM2I\n8fBZ7e87hydcfMZUPnlIqvCxzUSG2wa5+QL35+D/ukv0MEPMGpDWfwXTBcb0\nRzInJo19HNARVAI7hS6Q9zLQP11Yv0SEyNfIrbChYZMrG6ziVUIXqzOCAZ51\nVYX3sC7BpAFYyvXzKSg62x/VmA/YDsQA+JlzZJ4PsoGQTXRwDloN0lmXh7GI\nK9VgPB/snBlH8kFMVbYzbjml/ZOuUe2jnJNwWWsHvUw3kzBfscsz7a0KCoJ6\nhe7Qwedc6MxJJ3J+ltwPGQkrVNtEaJNVV80srfvjyvt9Posaqak8fjiDLD/D\nBGvnq9LSvgrbqVIqQjOmY2RuNlcGSIegHguJ4tqtzzGwdQG8GD3KlsNS36N7\nqQ5ybZwS/JQqHIkG2x2LNurhzpPqUtTbab1nAHxrbYBQonpzM4CUfVSd39jd\nK4jLde7F33FIKwp4W8M8LQ1ESVhwBgDxf1aphAnHHMrm2P7WoB5C6FJTfRHB\nczmWPlZ0SA476SR39DPvBHCYBnIOKWXfMWq38pkFJsTIPDrSXwrlmhNefMX9\nYxOHcX1Ht1OQCrobq0+bqeyavmP55gqFQy5hH0TkQSTrqaSM2p1E/CuYqRWc\n5BFN\r\n=JM5q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.5_1570491262110_0.6998933262288478"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "hosted-git-info",
+      "version": "3.0.1",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "97c8caa84dd0d760e85b7c592b4772ac79dfc3b9",
+      "_id": "hosted-git-info@3.0.1",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.12.0-next.0",
+      "dist": {
+        "integrity": "sha512-lGTU3MEr3+Rt2FRZl9DnrMh+yPj7nRVhD/VpVBj5hPliqsdEw/EvugflNCplBhmj2L2VSfyo2gQIK+GidQv5PA==",
+        "shasum": "bac7defb648d3823d0300ed329665d86f0dfddcf",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23653,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdm8uuCRA9TVsSAnZWagAATtcQAI76Z5iT19fi0QYIM1uR\nzVPylywZKo9QeU8Y5dVdX+4sr6ynhKOdiRK2WLtNDWdN+FZMRRUVQ8lI0sV3\noIAiKnE3jt2pZrdvSTvhdsv3NVApdKTj/iaiHK/c7KVMl3PSpA+yqEssr8jH\nukk0YBpc8LTSwEYZ9vxfZSVjQItA3Cq/NROo/ac8e8o8DyEvPWRCYn9C+TAq\nnc3kKgKOOlUUr4gah2hODjpE3SytgQgBR3NvWQuD8lwqTZrrQvngVhbDVpg9\n2cokr1DvnTaK1wIvM9/zMxUAov+j3EtxKDi1s0gDd4xocnB/kh1WcUeEDzrK\nbaTV3X6pp9xO98tMlq2LVe1vuYZY2ZtPQiJqGDOBcMo1C8F2CRGpzx6eqJYK\neVzomNvYStXWIIIZ1YfQEdZac3T4uKu5b77oT1NK8Xf4fiYTgSdUqrCS0SLX\nsBoJRHxuS/E1G8PhEsgJeqVWSPlgWKkwW/R8gcR0UvwavKoH/lm0vw92dk4Z\nVhjuuFT+tteHvguqzMai7xCmnrcAnm7Y3syFyj5wSI1sBQQScuVg7Fznmsro\nhg0NjrBW/7T1wdBFNVcU+LOfocZv2IFSsBQ6L7c+ErJxVXoHzlYAUxEza2YI\n2YWFzrDJNWEBculiGf48YTsRK7mx2do92r2IIZ8+QlMOauyB2+c9CnJ73PEa\nlNwO\r\n=kbBX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.1_1570491309787_0.23440632371161163"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "hosted-git-info",
+      "version": "3.0.2",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "4636ac9d66f93965086c93e77150b214c8bce339",
+      "_id": "hosted-git-info@3.0.2",
+      "_nodeVersion": "12.11.1",
+      "_npmVersion": "6.12.0-next.0",
+      "dist": {
+        "integrity": "sha512-ezZMWtHXm7Eb7Rq4Mwnx2vs79WUx2QmRg3+ZqeGroKzfDO+EprOcgRPYghsOP9JuYBfK18VojmRTGCg8Ma+ktw==",
+        "shasum": "8b7e3bd114b59b51786f8bade0f39ddc80275a97",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.2.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23974,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdm9R1CRA9TVsSAnZWagAA2H8P/jeg7znrotwa7yrl2R1c\nfpzr7fHpZM1B0uBq42MdkYE1xsTR9LsVLKXTTWvieOw/hofeg8N3rdE2gUfk\nF6P4MdY76ftZVkXlT/f4b3a4zWCd+NCGjcGvrY5usrMpHuImBHRAv1PEg5du\nTS1cMYuohdKl1Okmv1pcQQ+/JbYoBp8UBX+ByV/LtD3vvAJHh2flhNPuavEB\nuJCwPeb6YDDOIK/pK2HD3tg3oCScasTqeSPlpLAiIB3C5UDzD9eIk3+kPu22\nFYF+ymH3FFBrOkqb2mhvgxlVcPglsLsS9PAtai04B9hueeEg7p2D0/0fg/oB\nmo6rVwKmUwVw7GZjWhjjbccG9MAgzEcGgiZsvNX668SWrTx0nDVgE6tfnbxd\nVe6dbSAHoSbTI8QnFlZtmHRGiQ2gc8qZ+f8UrTsjmgQaSXflca4UOqSC2ZY2\n0wZRcFglGRR2Z7XZ+FjD21mhXBngiVWnes1k48hgwc5eYPZGCGQ+3PVZTRzJ\nVDziYl0pU9R7VgzSYGXgPSXa13pcZ1V0oezstCUyOd9vaffqpxE9Y9s23sYC\n4VKwt0qputVU2/wB798Lu80kz9i1SVfCalrgVthlejEylq3Bn4Y9KBmjUV9s\nqLm+Sxz94OncuOgZn9WG44OMA65zgreeMzIpS24FY41CLrJ0GufHmj2BNj17\n940v\r\n=vF9w\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "anne@npmjs.com",
+          "name": "annekimsey"
+        },
+        {
+          "email": "billatnpm@gmail.com",
+          "name": "billatnpm"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.2_1570493556361_0.018885059974120155"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.6": {
+      "name": "hosted-git-info",
+      "version": "2.8.6",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish --tag=ancient-legacy-fixes && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "e1b83df5d9cb1f8bb220352e20565560548d2292",
+      "_id": "hosted-git-info@2.8.6",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.13.7",
+      "_npmUser": {
+        "name": "darcyclarke",
+        "email": "darcy@darcyclarke.me"
+      },
+      "dist": {
+        "integrity": "sha512-Kp6rShEsCHhF5dD3EWKdkgVA8ix90oSUJ0VY4g9goxxa0+f4lx63muTftn0mlJ/+8IESGWyKnP//V2D7S4ZbIQ==",
+        "shasum": "3a6e6d0324c5371fc8c7ba7175e1e5d14578724d",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.6.tgz",
+        "fileCount": 7,
+        "unpackedSize": 23578,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVVZwCRA9TVsSAnZWagAAM/cQAKUfGLugmMYRRjuL521G\nrC+ahWJOzSZsNty3Nh7Gpygy2+mh1ScJIZrFqhH1kReIda12/GeBCkqvxIiL\nOvECNwKZcSBUHJr6AoUcLXGy3XE14KQvVUIyIeVocbrq1QavjyZYjGdu6mdn\nGgfTOJO2dkOanVmMBPHIcwjSoKBLfSxqaGeAJj6ylnyW1Jkv1rcoww2aJWIa\nMaRSHB/SCttWTXhK4WLz/ii9Gg+mDH0i/dkR6JV+6VfkOLUrDgxY8YabVbyp\noOMB1fE9AwxMg0Uw7IXf0qdKlAMzaP/6f3Urgx0zk4sX5l50qfk3XlLctpz9\nQiU5Khi/BEz6sAlWOOSfadZ+7oTrgSglBwbXChW42qbwcvQyXjC+chlfLOuj\nnrDTGQ7TFIGFY1uI0SB0jXtoupKh5YdbFnGL/fA8lPgHaUMxVa7qb5K+kaOI\nQy6DtHLcBqo4OHFj585RMe1e5tF6pGOI+En375CJEO6XdTYmJJRriJPGYOA4\nl+DZc17tPI1btGK1gg/yN2zZYNqjFgSiv/bQdjNmUjLSTZ/1WO9U6LlxuNkj\ngznc+Swxew8aQAE/eNSVvQKnHV2fBzd6miix0U4wjqEWwi7m0sYwnTM6rBJD\n0CqQUqINej9HYkhsH5V2lV91CAnFbkfvQpKyaJ0/zKZBAFvo6FQ914WQVy0G\np0oK\r\n=x1Dr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.6_1582650991980_0.2772298382756859"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.3": {
+      "name": "hosted-git-info",
+      "version": "3.0.3",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "pretest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "6f39e93bae9162663af6f15a9d10bce675dd5de3",
+      "_id": "hosted-git-info@3.0.3",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.13.7",
+      "_npmUser": {
+        "name": "darcyclarke",
+        "email": "darcy@darcyclarke.me"
+      },
+      "dist": {
+        "integrity": "sha512-1ZStA49Bj7WGT+GF2ee50gWMkltL+04v+FgXs20OQbe/usWm9Vh6El9UViiGvD/CEYvsej3AMzABmKmd9DYwnw==",
+        "shasum": "b5d046d96a0ccc1aed0b6b8ce750579f6b77d316",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.3.tgz",
+        "fileCount": 7,
+        "unpackedSize": 24274,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVVbhCRA9TVsSAnZWagAA4EoP/iVyCbldisRKRqVkhJvE\nEqVtEXrZJ4uBd3R34fwgtlP2zzvNV+hx/1s7H1D/uU/xwqNrRyl+BnLISh3r\nmTNlR5T+y4SmvV74wwLSkvt92pBTbt3d0OyxFovvghd3n4q7GYEuwQgIfSkc\nKTh1RIsj9iS4ThJCZ7x/8IuGFrgaIvM1UvqxoMevGzPMf7AuAu5n3U0s4cTf\nOyvbRRUEbGt0Z89LQKmdOMf0iC2cHRtZ/8BVod1d8O+tVGHhzPW7e6Yo0wU2\n77le3GWLLEf5QX+6fh3cEdZrRUYqgNdnn6tJV/i7MsLUD/PWDLr47LSLBnrD\nZKYLSR/Os7HxzWeacd+hvmKvNA9VAgM0GTMwTT0qGWU0XutTGD3KqjuRX0cB\nd0IaKVRrYZ6XOz4PnyHLv9uzzPKzASCKm8zNDP1nB4RKHdnyyl4HrMDpFHJE\nqxKLh6zEV/L6uGL6/LVBBGt3rvIESyHgdwhA8U/O9cq/UlDpdr3n8UCcesBy\nqvJGydTpqOc2r0QA/QklP/u2Li0C64oX/uOdqHeAr1TlolCGE/kwte/ve6Ye\n04C53UTkeTsr2nNZoOI4eV3+NfMBl6AESYvtmZ594JpfCkUS7vPoChS7R0wk\nU1uUYtA6u9qfC9CBN05B9n6+4q8ICuVa4hP8B6HwZIhwcKaFfD1QXeFQ4T0E\nHMFC\r\n=1Ovj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.3_1582651104885_0.15200090066219785"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.7": {
+      "name": "hosted-git-info",
+      "version": "2.8.7",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish --tag=ancient-legacy-fixes && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "7440afa859162051c191e55d8ecfaf69a193b026",
+      "_id": "hosted-git-info@2.8.7",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.14.0",
+      "dist": {
+        "integrity": "sha512-ChkjQtKJ3GI6SsI4O5jwr8q8EPrWCnxuc4Tbx+vRI5x6mDOpjKKltNo1lRlszw3xwgTOSns1ZRBiMmmwpcvLxg==",
+        "shasum": "4d2e0d5248e1cfabc984b0f6a6d75fe36e679511",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.7.tgz",
+        "fileCount": 7,
+        "unpackedSize": 25027,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVwJ1CRA9TVsSAnZWagAAei0QAIQbqXapUz9qVvEZDjLM\nsYU/qXnvf0x+gFbP7iZDlkdxyJ+FhlYhkFQiJytjU8gKTq+Vw2+uR1IsxPXu\n2Y/huZysevzC9NnVBCs4kwi0i9q3dUXE8MOoa/9fJS/DNhNDyV8Hvk1P0L2/\nGnmf2QhrS0T6twr/2TA4KPKsdEqdfZsInCUPpkAV55MP3Zm0vH70vN/niDgW\n1P+67c0ZKvZEHJF00TfEfxeEYNbxf0vJwVMLhRsMp7vHXf8UGIGYJGcwCH8I\n83Vo8TAw8OqAAVsH9+IS0QnJtr7p/iJKF2Xq/f/Mh/1TYiZcK8b7B7MyxyU8\nRHsPWl0pEg9FIfXBekGEtTZSO/dp+GXOWYlQWLa1GuaT3m1R5GTDbI/UDmGJ\n5OVhqKVg1x9bYWUEd3822vY6zapi4EIc7UWUoTggncMhMU8c3dxeCv4M+vBN\n8aHaznvTldr47tRKdORhsWm7iHy0t/07LpPpUez+m2wdNaBkN5h4ttRT1gTo\nB6cRYgD5vCmv7qeZXn3zUVYYh8wbFBHPYElYBufLlpk9lJv3W6SsAzVoj6Kj\nQ1WhZoBhJwpbSMdwV5O/DTMsbkPBCYNnQs/cHKkr8fewUHomqtAOmp6tFH7l\nleqJtsuyO6EqyTH2NzG/Sl+eIUV5aFuPZpevXZmhsXZ0iQoO/f29IqL4RIco\nMDyb\r\n=VJYX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.7_1582760565297_0.6834500115749926"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.4": {
+      "name": "hosted-git-info",
+      "version": "3.0.4",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^5.1.1"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "gitHead": "8e0b0ec70b01e048a260abd68a703a6c912cd5af",
+      "_id": "hosted-git-info@3.0.4",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.14.0",
+      "dist": {
+        "integrity": "sha512-4oT62d2jwSDBbLLFLZE+1vPuQ1h8p9wjrJ8Mqx5TjsyWmBMV5B13eJqn8pvluqubLf3cJPTfiYCIwNwDNmzScQ==",
+        "shasum": "be4973eb1fd2737b11c9c7c19380739bb249f60d",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.4.tgz",
+        "fileCount": 7,
+        "unpackedSize": 25405,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeVwOcCRA9TVsSAnZWagAA7koQAIDkkOhz02vRcBQ4zHOn\nuN+bA8weGnjpU2pP3UcHD8jqsZT/lb1pzQBpZ1IEtrljldKpTXGB+htvIVy7\n4aT1DmqfaC8H/T2/MPkfahFvda5NRfiT1nE3U3baur4DXGOc7NNqMkEq6sgP\nMFWhTiTp4ex1uqfG/cw1Rf3Aa+9riJ2cgYjVVRfoW3eQEHfLjFqUDTU2oxQ7\ne1vkk+BDjEG3k6aNQSrq0jVHAIba35H6aRXNzyfwBC5RCTugWoUXzdkJRco2\nBwvNmrISwGSaiV2cxeajlyZC6lXC/1RU96S/bbJWCDhsCKdqd4XtlRZ2D9MT\nqDHzBTQsCaIEYq0DmWyDUTtcl5cU7DtW4Us3z7p1M7Py9AMIzy8cZDZPa/5n\nv7Ejj01p1sCRTHuV+uuihgYj2UsJjsbDBfwT0xaWbBf9NqZ74MQaLrz0MO0e\nTOl6Rpwzxf2ZBuCd8o01EYY/A/zGoZQkjaHzBRVD+KJcaogIx4obc+pMBN9J\nG16nzUE3jtcUhg6lFcdep9fOUyVdG1vGJTaAR6p1k2oBAaBKxzBY5oL5SZAS\niQxNRzsMOxUZppdWzBgMK0Qiak7WIiOZE3KCmWTH8B+MOGl753YYgXmKU4NI\n77xRNelx3kCO2CyvpRedhaE3xSYTC5UxXwsib9f/FDCWWh7G8hOCOsKxUD4T\nz5Kl\r\n=OjzX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.4_1582760860322_0.38779425147547086"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.8.8": {
+      "name": "hosted-git-info",
+      "version": "2.8.8",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish --tag=ancient-legacy-fixes && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --coverage=90 --no-esm test/*.js",
+        "test": "tap -J --coverage=90 --no-esm test/*.js"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+      "readmeFilename": "README.md",
+      "gitHead": "afeaefdd86ba9bb5044be3c1554a666d007cf19a",
+      "_id": "hosted-git-info@2.8.8",
+      "_shasum": "7539bd4bc1e0e0a895815a2e0262420b12858488",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "darcyclarke",
+        "email": "darcy@darcyclarke.me"
+      },
+      "dist": {
+        "shasum": "7539bd4bc1e0e0a895815a2e0262420b12858488",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-2.8.8.tgz",
+        "integrity": "sha512-f/wzC2QaWBs7t9IYqB4T3sR1xviIViXJRJTWBlx2Gf3g0Xi5vI7Yy4koXQ1c9OYDGHN9sBy1DQ2AB8fqZBWhUg==",
+        "fileCount": 7,
+        "unpackedSize": 25491,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeWukkCRA9TVsSAnZWagAADrEP/3TsCP2Ij+4pZHKRDT+U\nVOo/o8Pf908u2jwnvOrBMBZc8vPxL6RCZcl0sc+yGyUZiSsYG6YzA1CzQ8d0\n73hTS+eScE2ets+eufK2wHd65IQSt67/rmRdv8Fkq8FWh2YnC10ReGqdVy3u\nBqW87ZD6reIbaoaSGKx4V9medagUc9GGeFb94zP9bbrpD7MvlHyd2f6k3fuC\n83RCOT/sniXAW9FgkLvlyeKBEhWICtCckdfHnvmVUbe6qyj/zQQFtvxpCWkR\n1CIYvj1a3S5Jz5c6jrMZj2iLZ+h3O1s2un28ZxJQ3+/eSQdIwHtlK1Q68TmH\nOYlD4N0vinoLzaleWg+6W93lb7iAJ1gFZ/ZYkJ7NqnsuVLaRLtRkqQ1/jgNb\nesgCdWwWey2vMR1nUFvHDuQkgHGAEjEZYcjIPwCDV+Xf4106TMPBlLV+A0Qk\nKbyuD7Mxgavb4iMzMZk4Vz8TsTaxKyQOThGOu/VUXZuadXuJ7JOX99X3gc0y\n/1kKCsHRIME8g1mtuFb7NlMekIPyLVWCGGyjzHW/CRl+ekcZytdDC79E2N/V\niIACJugVnHBCX5c7uaGw9pJ4pgjMf8sMDv/Agugb4EgIjGbbH1vq4im9HTfP\nSy6+ZMiO6OoyMfsW/1QCe1Cff/H/TIcQlJ2zI8dZRB9NmUaAqVXcnUEbds9i\nYQsU\r\n=cwBs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "ahmad@ahmadnassri.com",
+          "name": "ahmadnassri"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "mike@mikecorp.ca",
+          "name": "mikemimik"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_2.8.8_1583016227719_0.2822519276379081"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.5": {
+      "name": "hosted-git-info",
+      "version": "3.0.5",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^6.0.0"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "gitHead": "c53c6ab07f9b9992d9812115ea572e3b14cccfef",
+      "_id": "hosted-git-info@3.0.5",
+      "_nodeVersion": "14.2.0",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-i4dpK6xj9BIpVOTboXIlKG9+8HMKggcrMX7WA24xZtKwX0TPelq/rbaS5rCKeNX8sJXZJGdSxpnEGtta+wismQ==",
+        "shasum": "bea87905ef7317442e8df3087faa3c842397df03",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.5.tgz",
+        "fileCount": 7,
+        "unpackedSize": 25556,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfCRCcCRA9TVsSAnZWagAAN5EP/juJqOlX5NI+R5sZd9Av\nl5P2QEZARETw6mXB6mre20+I/L+ra/t2yrV0bGJ14OB+lWpPsGPfoEaXy/uG\n1g+ur6cRTyjW0NjhSIKNJaNfnZzJHOdPm8dIMScVB4r9iqJqvQQ6BlBSTNHs\nCsvr96/pxWsj1N0dUCt8DDjfYHIBnMXX/0bNtsuD1AC1YrcGjO//zRkOFgJ3\nRwXavYUJ0c2e3p13R3TlrS4rXSVGwg0bMuPAblHLKHa4jhkN97f+3qZzexVk\nYJ/t2j2ZXYqVtAijE6pB4yLZlsc/r7K39PlTWhd0UxUPvqvD0HAhZAckKkBE\nE/YHDLnFiak5HXeE8t4AsoDERRJAZoR0H1FCBRfwLAxLkkSKosNkpO9YNNba\nt+b16kluFTWJMkggCWnJrnTK6yZYKZX8hgZQePB4aEFPsX+PLsH2bNcNAp5N\nhlICc26p3QuJ+huzWC9BVAtquTOnIOTFkKkAYD2YIahmgeNPILZ9ay5EotEd\nJtiWZu8+Vc7Pk9/Gj2+d5mWvjiLW/YU4PGYrOpyJ8DrjeWMM8jnL6uoUXJF8\nLI8yLnRSMiaLogHl6pLIXpppKddHMhhfaEoebUYHMMp2Ubgx7ZQeXb61M5e9\nAc5VfsQvzZfZ/JM86wvz2RwuxyaaubFekxT3ZazI31Z22HMifY4vCBV+zrga\n/UQT\r\n=bTik\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "evilpacket@gmail.com",
+          "name": "adam_baldwin"
+        },
+        {
+          "email": "cghr1990@gmail.com",
+          "name": "claudiahdz"
+        },
+        {
+          "email": "darcy@darcyclarke.me",
+          "name": "darcyclarke"
+        },
+        {
+          "email": "i@izs.me",
+          "name": "isaacs"
+        },
+        {
+          "email": "ruyadorno@hotmail.com",
+          "name": "ruyadorno"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.5_1594429595846_0.2012935564097762"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.6": {
+      "name": "hosted-git-info",
+      "version": "3.0.6",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^6.0.0"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "gitHead": "d30f96e079407da03ee02e4616a0ff22995bf9e3",
+      "_id": "hosted-git-info@3.0.6",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "7.0.0-rc.4",
+      "dist": {
+        "integrity": "sha512-VRvqVD5T6t9HdmNDWTwbi8H/EC722MemAhOSP5QvYAXpDAY0Nhu2I/i+bXsktu4sU5LVHSh/wmXtVU8bDtjedQ==",
+        "shasum": "761da6d68c559238164f3f3078842ef9e8ae1607",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.6.tgz",
+        "fileCount": 7,
+        "unpackedSize": 25859,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfhOIECRA9TVsSAnZWagAAEhMP/2FhToh5rzWojXR3K06O\n8LGijT9el3ORjIIM556fdGihA9hrXvyBu7WQgwWbyHxTBwk0pTD68ZupP4Oq\na2Xjek0URY3E2hvQZaH+kfNgFR5aS9qP5/biOi2BcqzZx+cVo6/ObhgtSztU\n8H5kxaOnv0kUE6DJM5W2lIZEyWz69ATIGZuVx9gWX7GpZsTa98fsvsBhm9og\npzoCa7JY3JorssTUH61cJR0l7lknjkcPW0T1Jc6hdnBMzFiDoreGCzR1Hy9M\nkxiM9zvo5bhwnD7J+ahwjqHyqwFORUm2e4baBgW3GMEBO56DeqgiDeJIibdB\nrEmfkUoqRatHmZIL9joqmJJJ2S37lbrudrOepJxU8mdANkXC6H0h/yjzYtsr\naClIazE7XVHARdQCcuWrU1PCY2jpWUqAnKswHKKNowMcc6hWxxwh/XSLc4gg\nz7n14ZGUuqo8gTOchZ2UB3xrhL2/GFUajE34qNaZ3pmENtC0OP1+ARmLBep1\nTxLIE/HxZ6pfbnIw5X4F6xCBQRnnMzx7etamUa1hsJi70ik0MBCXG7IvHq3p\nq1Ws0nsxjxrD8BwdgeKzA5C7hJjVjp2RDkMb1lJ6DRYoSgUd28K/xOL+ZJ6Q\ny+SnOlVoH1EWz6J5SNdeO0FRoR+fTTICvw1Z6nExioFETt8/kQdvzRWXqzhU\nRZVF\r\n=Ss4F\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bonkydog",
+          "email": "bonkydog@bonkydog.com"
+        },
+        {
+          "name": "nlf",
+          "email": "quitlahok@gmail.com"
+        },
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        },
+        {
+          "name": "darcyclarke",
+          "email": "darcy@darcyclarke.me"
+        },
+        {
+          "name": "adam_baldwin",
+          "email": "evilpacket@gmail.com"
+        },
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "darcyclarke",
+        "email": "darcy@darcyclarke.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.6_1602544131503_0.035038664596681146"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.7": {
+      "name": "hosted-git-info",
+      "version": "3.0.7",
+      "description": "Provides metadata and conversions from repository urls for Github, Bitbucket and Gitlab",
+      "main": "index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/npm/hosted-git-info.git"
+      },
+      "keywords": [
+        "git",
+        "github",
+        "bitbucket",
+        "gitlab"
+      ],
+      "author": {
+        "name": "Rebecca Turner",
+        "email": "me@re-becca.org",
+        "url": "http://re-becca.org"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/npm/hosted-git-info/issues"
+      },
+      "homepage": "https://github.com/npm/hosted-git-info",
+      "scripts": {
+        "prerelease": "npm t",
+        "postrelease": "npm publish && git push --follow-tags",
+        "posttest": "standard",
+        "release": "standard-version -s",
+        "test:coverage": "tap --coverage-report=html -J --100 --no-esm test/*.js",
+        "test": "tap -J --100 --no-esm test/*.js"
+      },
+      "dependencies": {
+        "lru-cache": "^6.0.0"
+      },
+      "devDependencies": {
+        "standard": "^11.0.1",
+        "standard-version": "^4.4.0",
+        "tap": "^12.7.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "gitHead": "afe280820d6c5f76fba40a2dfd7e899d3be526f3",
+      "_id": "hosted-git-info@3.0.7",
+      "_nodeVersion": "14.8.0",
+      "_npmVersion": "7.0.0",
+      "dist": {
+        "integrity": "sha512-fWqc0IcuXs+BmE9orLDyVykAG9GJtGLGuZAAqgcckPgv5xad4AcXGIv8galtQvlwutxSlaMcdw7BUtq2EIvqCQ==",
+        "shasum": "a30727385ea85acfcee94e0aad9e368c792e036c",
+        "tarball": "https://registry.npmjs.org/hosted-git-info/-/hosted-git-info-3.0.7.tgz",
+        "fileCount": 7,
+        "unpackedSize": 26134,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiNXeCRA9TVsSAnZWagAApG0QAJVqWdJuR2aD2hmLcE3u\nm3mvs1JuA1F0O7BjtRPGAxsw8cuIRB8/7eT0FMi4CQxeXL/ER4RyQM4byA9S\nfmnxWUevnD72/zlw+mrF5DRtBKJv2cxwbGRIJJ0BFxBcr6NUqqQti+kqJneb\nlfKjDe4Td9ogMPn1cwm2fb3sDasSdMD7rOLPalpcXrYq01sTgZ6Y+Du1xOdn\n9lghJHo8NYOA2505xz47vXSs64I65Q7pKXpkBGSlGzqJurUI0JvjjpNcxwJG\nl82RO+0hEDpJX/EYRf2PlTzaLDrqXRTSN+zNdo01YLwmQi9ABbvuBhjWP4S4\nY0KHbXD/LpxNwxRZVKydQs9DwADaiP31SNuKeHYC7l1BvCZLj5KEyCuEoP4O\npakhweOUHi9FMTH2f16xCDeA3KepKbnKsJI0KJ2+cls1gK9zaWc6E7XMvwhj\nMJQL/BAzZ3+9bAlh8A1mgv6Id5ZqhSKEo7xllGt4cdFq8Kt7lzszaMwTGtgh\nCmdKyasMKtRNQpDFjUvlNE/Y9hKGCSr4ZfBfl2VucY1eU4B9GLAjddSCwtQ6\n/5HuQgsaqkN+Kcbs1pfheB3n2EFWuOAJbYaZB5TW28w0clKgGTpT0QDHCMPQ\nj3oAkiWp3DxhYzkEi93Vuds789+82dDa+IaUwJAR0DbP3ehcS/XLXG9O98WO\nKEb1\r\n=hcj1\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "nlf",
+          "email": "quitlahok@gmail.com"
+        },
+        {
+          "name": "ruyadorno",
+          "email": "ruyadorno@hotmail.com"
+        },
+        {
+          "name": "darcyclarke",
+          "email": "darcy@darcyclarke.me"
+        },
+        {
+          "name": "adam_baldwin",
+          "email": "evilpacket@gmail.com"
+        },
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/hosted-git-info_3.0.7_1602803165876_0.8102767005401041"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# hosted-git-info\n\nThis will let you identify and transform various git hosts URLs between\nprotocols.  It also can tell you what the URL is for the raw path for\nparticular file for direct access without git.\n\n## Example\n\n```javascript\nvar hostedGitInfo = require(\"hosted-git-info\")\nvar info = hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git\", opts)\n/* info looks like:\n{\n  type: \"github\",\n  domain: \"github.com\",\n  user: \"npm\",\n  project: \"hosted-git-info\"\n}\n*/\n```\n\nIf the URL can't be matched with a git host, `null` will be returned.  We\ncan match git, ssh and https urls.  Additionally, we can match ssh connect\nstrings (`git@github.com:npm/hosted-git-info`) and shortcuts (eg,\n`github:npm/hosted-git-info`).  Github specifically, is detected in the case\nof a third, unprefixed, form: `npm/hosted-git-info`.\n\nIf it does match, the returned object has properties of:\n\n* info.type -- The short name of the service\n* info.domain -- The domain for git protocol use\n* info.user -- The name of the user/org on the git host\n* info.project -- The name of the project on the git host\n\n## Version Contract\n\nThe major version will be bumped any time…\n\n* The constructor stops accepting URLs that it previously accepted.\n* A method is removed.\n* A method can no longer accept the number and type of arguments it previously accepted.\n* A method can return a different type than it currently returns.\n\nImplications:\n\n* I do not consider the specific format of the urls returned from, say\n  `.https()` to be a part of the contract.  The contract is that it will\n  return a string that can be used to fetch the repo via HTTPS.  But what\n  that string looks like, specifically, can change.\n* Dropping support for a hosted git provider would constitute a breaking\n  change.\n\n## Usage\n\n### var info = hostedGitInfo.fromUrl(gitSpecifier[, options])\n\n* *gitSpecifer* is a URL of a git repository or a SCP-style specifier of one.\n* *options* is an optional object. It can have the following properties:\n  * *noCommittish* — If true then committishes won't be included in generated URLs.\n  * *noGitPlus* — If true then `git+` won't be prefixed on URLs.\n\n## Methods\n\nAll of the methods take the same options as the `fromUrl` factory.  Options\nprovided to a method override those provided to the constructor.\n\n* info.file(path, opts)\n\nGiven the path of a file relative to the repository, returns a URL for\ndirectly fetching it from the githost.  If no committish was set then\n`master` will be used as the default.\n\nFor example `hostedGitInfo.fromUrl(\"git@github.com:npm/hosted-git-info.git#v1.0.0\").file(\"package.json\")`\nwould return `https://raw.githubusercontent.com/npm/hosted-git-info/v1.0.0/package.json`\n\n* info.shortcut(opts)\n\neg, `github:npm/hosted-git-info`\n\n* info.browse(path, fragment, opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/package.json`,\n`https://github.com/npm/hosted-git-info/tree/v1.2.0/REAMDE.md#supported-hosts`\n\n* info.bugs(opts)\n\neg, `https://github.com/npm/hosted-git-info/issues`\n\n* info.docs(opts)\n\neg, `https://github.com/npm/hosted-git-info/tree/v1.2.0#readme`\n\n* info.https(opts)\n\neg, `git+https://github.com/npm/hosted-git-info.git`\n\n* info.sshurl(opts)\n\neg, `git+ssh://git@github.com/npm/hosted-git-info.git`\n\n* info.ssh(opts)\n\neg, `git@github.com:npm/hosted-git-info.git`\n\n* info.path(opts)\n\neg, `npm/hosted-git-info`\n\n* info.tarball(opts)\n\neg, `https://github.com/npm/hosted-git-info/archive/v1.2.0.tar.gz`\n\n* info.getDefaultRepresentation()\n\nReturns the default output type. The default output type is based on the\nstring you passed in to be parsed\n\n* info.toString(opts)\n\nUses the getDefaultRepresentation to call one of the other methods to get a URL for\nthis resource. As such `hostedGitInfo.fromUrl(url).toString()` will give\nyou a normalized version of the URL that still uses the same protocol.\n\nShortcuts will still be returned as shortcuts, but the special case github\nform of `org/project` will be normalized to `github:org/project`.\n\nSSH connect strings will be normalized into `git+ssh` URLs.\n\n## Supported hosts\n\nCurrently this supports Github, Bitbucket and Gitlab. Pull requests for\nadditional hosts welcome.\n",
+  "maintainers": [
+    {
+      "name": "nlf",
+      "email": "quitlahok@gmail.com"
+    },
+    {
+      "name": "ruyadorno",
+      "email": "ruyadorno@hotmail.com"
+    },
+    {
+      "name": "darcyclarke",
+      "email": "darcy@darcyclarke.me"
+    },
+    {
+      "name": "adam_baldwin",
+      "email": "evilpacket@gmail.com"
+    },
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T23:06:08.373Z",
+    "created": "2014-10-09T18:34:13.442Z",
+    "1.0.0": "2014-10-09T18:34:13.442Z",
+    "1.1.0": "2014-10-17T11:13:06.236Z",
+    "1.2.0": "2014-10-28T02:04:51.706Z",
+    "1.3.0": "2014-10-28T04:36:20.656Z",
+    "1.4.0": "2014-10-28T08:14:17.551Z",
+    "1.5.0": "2014-11-25T00:37:38.432Z",
+    "1.5.1": "2014-12-30T19:02:46.535Z",
+    "1.5.2": "2014-12-30T19:14:34.476Z",
+    "1.5.3": "2015-01-23T20:16:52.478Z",
+    "1.6.0": "2015-04-06T21:38:27.392Z",
+    "2.0.0": "2015-04-06T21:49:28.439Z",
+    "2.0.1": "2015-04-06T22:06:25.174Z",
+    "2.0.2": "2015-04-06T22:08:37.137Z",
+    "2.0.3": "2015-04-08T21:28:09.812Z",
+    "2.1.0": "2015-04-09T18:02:29.127Z",
+    "2.1.1": "2015-04-10T10:06:43.267Z",
+    "2.1.2": "2015-04-11T17:34:25.377Z",
+    "2.1.3": "2015-05-21T18:46:34.292Z",
+    "2.1.4": "2015-05-21T18:50:00.564Z",
+    "2.1.5": "2016-05-17T21:01:29.825Z",
+    "2.2.0": "2017-02-06T07:24:47.720Z",
+    "2.3.0": "2017-03-18T00:25:37.884Z",
+    "2.3.1": "2017-03-18T00:37:58.413Z",
+    "2.4.0": "2017-03-22T04:31:44.698Z",
+    "2.4.1": "2017-03-22T04:32:05.364Z",
+    "2.4.2": "2017-04-13T22:54:59.033Z",
+    "2.5.0": "2017-06-26T20:25:47.232Z",
+    "2.6.0": "2018-03-07T22:20:44.960Z",
+    "2.5.1": "2018-06-25T19:39:54.381Z",
+    "2.6.1": "2018-06-25T19:42:00.389Z",
+    "2.7.0": "2018-07-06T23:42:38.643Z",
+    "2.7.1": "2018-07-07T01:02:48.707Z",
+    "2.8.0": "2019-08-05T01:34:06.306Z",
+    "2.8.1": "2019-08-05T05:58:22.442Z",
+    "2.8.2": "2019-08-05T06:51:59.641Z",
+    "2.8.3": "2019-08-12T16:18:02.052Z",
+    "3.0.0": "2019-08-12T16:19:17.571Z",
+    "2.8.4": "2019-08-12T23:44:11.758Z",
+    "2.8.5": "2019-10-07T23:34:22.271Z",
+    "3.0.1": "2019-10-07T23:35:09.938Z",
+    "3.0.2": "2019-10-08T00:12:36.495Z",
+    "2.8.6": "2020-02-25T17:16:32.127Z",
+    "3.0.3": "2020-02-25T17:18:25.085Z",
+    "2.8.7": "2020-02-26T23:42:45.438Z",
+    "3.0.4": "2020-02-26T23:47:40.427Z",
+    "2.8.8": "2020-02-29T22:43:47.852Z",
+    "3.0.5": "2020-07-11T01:06:35.987Z",
+    "3.0.6": "2020-10-12T23:08:51.641Z",
+    "3.0.7": "2020-10-15T23:06:06.048Z"
+  },
+  "homepage": "https://github.com/npm/hosted-git-info",
+  "keywords": [
+    "git",
+    "github",
+    "bitbucket",
+    "gitlab"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/npm/hosted-git-info.git"
+  },
+  "author": {
+    "name": "Rebecca Turner",
+    "email": "me@re-becca.org",
+    "url": "http://re-becca.org"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/hosted-git-info/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "iarna": true,
+    "phoenix-xsy": true,
+    "wangnan0610": true
+  }
+}

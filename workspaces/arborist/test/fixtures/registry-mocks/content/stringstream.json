@@ -1,0 +1,363 @@
+{
+  "_id": "stringstream",
+  "_rev": "22-aabfb0461307e1a886d319d41af9b956",
+  "name": "stringstream",
+  "description": "Encode and decode streams into string streams",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "stringstream",
+      "version": "0.0.0",
+      "description": "Encode and decode data streams into string streams",
+      "main": "stringstream.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "homepage": "https://github.com/mhart/StringStream",
+      "repository": {
+        "url": "https://github.com/mhart/StringStream.git"
+      },
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "license": "BSD",
+      "_id": "stringstream@0.0.0",
+      "dist": {
+        "shasum": "4228912fb3a96ca3254b233359df50f9da804e1e",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "stringstream",
+      "version": "0.0.1",
+      "description": "Encode and decode streams into string streams",
+      "main": "stringstream.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "homepage": "https://github.com/mhart/StringStream",
+      "repository": {
+        "url": "https://github.com/mhart/StringStream.git"
+      },
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "license": "BSD",
+      "_id": "stringstream@0.0.1",
+      "dist": {
+        "shasum": "93c24069089395a0a095222ce032aaf453d71f45",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "stringstream",
+      "version": "0.0.2",
+      "description": "Encode and decode streams into string streams",
+      "main": "stringstream.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "homepage": "https://github.com/mhart/StringStream",
+      "repository": {
+        "url": "https://github.com/mhart/StringStream.git"
+      },
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "license": "BSD",
+      "_id": "stringstream@0.0.2",
+      "dist": {
+        "shasum": "663f1171cd94d7951b14074037a622b92bde8669",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "stringstream",
+      "version": "0.0.3",
+      "description": "Encode and decode streams into string streams",
+      "main": "stringstream.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "homepage": "https://github.com/mhart/StringStream",
+      "repository": {
+        "url": "https://github.com/mhart/StringStream.git"
+      },
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "license": "BSD",
+      "_id": "stringstream@0.0.3",
+      "dist": {
+        "shasum": "db9412bd6d349058a437dd483dfabc65b4578b48",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "stringstream",
+      "version": "0.0.4",
+      "description": "Encode and decode streams into string streams",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "stringstream.js",
+      "keywords": [
+        "string",
+        "stream",
+        "base64",
+        "gzip"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/StringStream.git"
+      },
+      "license": "MIT",
+      "_id": "stringstream@0.0.4",
+      "dist": {
+        "shasum": "0f0e3423f942960b5692ac324a57dd093bc41a92",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.4.tgz"
+      },
+      "_npmVersion": "1.2.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.5": {
+      "name": "stringstream",
+      "version": "0.0.5",
+      "description": "Encode and decode streams into string streams",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "stringstream.js",
+      "keywords": [
+        "string",
+        "stream",
+        "base64",
+        "gzip"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/StringStream.git"
+      },
+      "license": "MIT",
+      "gitHead": "1efe3bf507bf3a1161f8473908b60e881d41422b",
+      "bugs": {
+        "url": "https://github.com/mhart/StringStream/issues"
+      },
+      "homepage": "https://github.com/mhart/StringStream#readme",
+      "_id": "stringstream@0.0.5",
+      "scripts": {},
+      "_shasum": "4e484cd4de5a0bbbee18e46307710a8a81621878",
+      "_from": ".",
+      "_npmVersion": "2.14.8",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4e484cd4de5a0bbbee18e46307710a8a81621878",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.6": {
+      "name": "stringstream",
+      "version": "0.0.6",
+      "description": "Encode and decode streams into string streams",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "stringstream.js",
+      "keywords": [
+        "string",
+        "stream",
+        "base64",
+        "gzip"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/StringStream.git"
+      },
+      "license": "MIT",
+      "gitHead": "fee31c5c4a5efc7c7cc2fde4aee633dedefd6d67",
+      "bugs": {
+        "url": "https://github.com/mhart/StringStream/issues"
+      },
+      "homepage": "https://github.com/mhart/StringStream#readme",
+      "_id": "stringstream@0.0.6",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-87GEBAkegbBcweToUrdzf3eLhWNg06FJTebl4BVJz/JgWy8CvEr9dRtX5qWphiynMSQlxxi+QqN0z5T32SLlhA==",
+        "shasum": "7880225b0d4ad10e30927d167a1d6f2fd3b33a72",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-0.0.6.tgz",
+        "fileCount": 6,
+        "unpackedSize": 6242,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/VftCRA9TVsSAnZWagAA6KMP/ieCrg0R0w4OF+ptEu5Z\nMatSI7T+xoZAKA+/dHPcLuEBfBT5Dilim5ryW6l7iqnQpBxfLnmSaqLJo5Jg\n9hBb4ojhblFC1FKmL1tSwqCQt9yQN/PHLi5+iWpRSfSubaqSMG5Ryi2HP4Ek\nssanBMdfB++umdRa6KzXHvyxrUnJ2qK1wDV55qnsVR2tBm4H8TO38mRryedE\n4WMd+XQrTICRvGiAsxOBNYylajvZdAKVdP59yNP5C0EzFpXLxd5wtyHYaewL\nVwdUNNYiRkRXSSeV7IWBzaVCf7m/NF7hm9pRXm7k1He3XBeMzlUiLe3h9rw3\nadrGevZdIkuxuddOV57q6bE2ZSWLZjY/7hmuXMPlGxLMxY2sz8UdT5XHS2Ej\nZfmLexQHr+b83I0xkLTDZrV/Ul+xV2gXa+OdFDMakupsB9lOMUlwzt+drE6G\nEKUBnQ8gtXq00z8EWJiPK2s72I4m/3MWztyHKLU7Xh9wOjaZE0YbsUEBZrOD\ndFdkcyU8BwJVpTHR1pnfwMx8xPzeXGsozQkdnCz9MCe8slrI2zGJiaO8WX1h\nLZlUbTGkmQdow1Tr16KMroipZr4Occ9ywvcdRJZ82ZMbK6mZQVPxPOiTM2is\nlHgSChWwuEO/HDwuSJVU02VFEyQAsYdly7EBD2ghYprVFvb9qYJnsINwU2LF\nuIDd\r\n=TTH/\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stringstream_0.0.6_1526552557136_0.20062352033275022"
+      }
+    },
+    "1.0.0": {
+      "name": "stringstream",
+      "version": "1.0.0",
+      "description": "Encode and decode streams into string streams",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/StringStream.git"
+      },
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "license": "MIT",
+      "main": "stringstream.js",
+      "engines": {
+        "node": ">=4.0.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "gitHead": "8d330f20101c9fb3a0f979e1cf3993606918d895",
+      "bugs": {
+        "url": "https://github.com/mhart/StringStream/issues"
+      },
+      "homepage": "https://github.com/mhart/StringStream#readme",
+      "_id": "stringstream@1.0.0",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qplWI1mgLqGLV2vMTHi6gvfsZxuOSTf5VLfX9k1n3D9vORh3lJnbjD0+cTQqH63Ed1TLcN30zaoMB+g0T7CJZw==",
+        "shasum": "2f0b37e8beae208166560e75700a656beb379ab6",
+        "tarball": "https://registry.npmjs.org/stringstream/-/stringstream-1.0.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 11112,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfwv2CRA9TVsSAnZWagAAyHoP/jrx0b9HWxrDzD3gVU2d\njSOKpOPHaZZByf/5RXVtk3vglAqd5DdRNLiZ9n8hZpfYTtadQmqz9NnYDlIg\n6xdBIthEOi2CA1W4B/j6XuxV+bGsOBqoGyA5PMTtCVTHIuTBgZv42Ht37yCO\nVMpc4lNf6bxRNA9zWYAIG5HV7jKqmxms7x0UqSRgNBXGbx/3hAbAO06ZjxuW\nNdkff/HSHIduydsdh+cSlddAAoCgkrZRipKuNTQYJM0kw7s24jFA2KZvn6FK\no51zNzI3zduJo4L6R1+BMBpq/t3mleAG6ZdPVyQUGayFz/NXHQPjrtzthuVn\nmXQWdvk+4ist05MDK+fYNQL+xrsLFFBnWC53F0vzg0EzxGy3ozQTVUdIGR7L\n4E9Hml3ioB5gkikotGTrzAYRRkn2ZrjnMh42x1diqA3pEujPfyv1k1NEJkdE\nl03DEPWgrA+93FmkVGqwCmzRQrh04fmhkGkjkhFsmycbZ3bshzUhiPCBKv4h\ny8HdqIBSMEKzdMCOkmpz6oQxnuH5c0rCPgEZcSPVUpmap+TtpciYNFwFQZQa\n/f6LFmr9/DHvpPkWSUiubd3oWeJuQ/tsHLrGrvIsgcVMcVhc3HCgD9rUZRKm\nS3jhok4QK0NlIlMi3BTJbRWYddwncr95UqxVtsBlJPKdFjUwWKERgE7csnYh\nc91V\r\n=vgMr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/stringstream_1.0.0_1535052790288_0.9718936037465251"
+      }
+    }
+  },
+  "readme": "# Decode streams into strings without setEncoding\n\n```js\nconst fs = require('fs')\nconst zlib = require('zlib')\nconst strs = require('stringstream')\n\nconst utf8Stream = fs.createReadStream('massiveLogFile.gz')\n  .pipe(zlib.createGunzip())\n  .pipe(strs('utf8'))\n\nutf8Stream.on('data', str => console.log(`This will be a string: ${str}`))\n```\n\n## API\n\n  - `strs(to, [options])` – creates a transform stream that converts the input into strings in `to` encoding (eg, `utf8`, `hex`, `base64`)\n  - `strs(from, to, [options])` – creates a transform stream converts the input from strings in `from` encoding to strings in `to` encoding\n\n`options` can be anything compatible with the standard Node.js [`new stream.Transform([options])` constructor](https://nodejs.org/api/stream.html#stream_new_stream_transform_options)\n\n## NB: This library was originally written before Node.js [correctly encoded base64 strings from streams](https://github.com/nodejs/node/commit/061f2075cf81017cdb40de80533ba18746743c94)\n\nBack in the day, calling `.setEncoding('base64')` on a readable stream didn't\nalign correctly, which was one of the main reasons I wrote this library –\nhowever this hasn't been the case for a long time, so this library is\nnow really only useful in scenarios where you don't want to call\n`.setEncoding()` for whatever reason.\n\nIt also handles input and output text encodings:\n\n```js\n// Stream from utf8 to hex to base64... Why not, ay.\nconst hex64Stream = fs.createReadStream('myFile.txt')\n  .pipe(strs('utf8', 'hex'))\n  .pipe(strs('hex', 'base64'))\n```\n\nAlso deals with `base64` output correctly by aligning each emitted data\nchunk so that there are no dangling `=` characters:\n\n```js\nconst stream = fs.createReadStream('myFile.jpg').pipe(strs('base64'))\n\nlet base64Str = ''\n\nstream.on('data', data => base64Str += data)\nstream.on('end', () => {\n  console.log('My base64 encoded file is: ' + base64Str)\n  console.log('Original file is: ' + Buffer.from(base64Str, 'base64'))\n})\n```\n",
+  "maintainers": [
+    {
+      "name": "hichaelmart",
+      "email": "michael.hart.au@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-08-23T19:33:15.242Z",
+    "created": "2012-06-23T01:34:19.097Z",
+    "0.0.0": "2012-06-23T01:34:23.318Z",
+    "0.0.1": "2012-06-23T03:22:41.897Z",
+    "0.0.2": "2012-06-24T12:45:44.493Z",
+    "0.0.3": "2012-06-27T05:23:45.522Z",
+    "0.0.4": "2013-01-21T06:26:03.334Z",
+    "0.0.5": "2015-10-25T23:27:18.102Z",
+    "0.0.6": "2018-05-17T10:22:37.212Z",
+    "1.0.0": "2018-08-23T19:33:10.411Z"
+  },
+  "author": {
+    "name": "Michael Hart",
+    "email": "michael.hart.au@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhart/StringStream.git"
+  },
+  "users": {
+    "jakemiller": true,
+    "mojaray2k": true,
+    "shanewholloway": true,
+    "ganeshkbhat": true
+  },
+  "homepage": "https://github.com/mhart/StringStream#readme",
+  "bugs": {
+    "url": "https://github.com/mhart/StringStream/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

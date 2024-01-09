@@ -1,0 +1,23 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+# ignore everything in the root
+/*
+# transient test directories
+tap-testdir*/
+
+# keep these
+!**/.gitignore
+!/.eslintrc.js
+!/.eslintrc.local.*
+!/.gitignore
+!/bin/
+!/CHANGELOG*
+!/docs/
+!/lib/
+!/LICENSE*
+!/map.js
+!/package.json
+!/README*
+!/scripts/
+!/tap-snapshots/
+!/test/

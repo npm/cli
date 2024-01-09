@@ -1,0 +1,8 @@
+{
+  "name": "optional-metadep-enotarget",
+  "version": "1.0.0",
+  "description": "optional dep on a dep with a production dep that is not satisfiable",
+  "optionalDependencies": {
+    "@isaacs/prod-dep-enotarget": ""
+  }
+}

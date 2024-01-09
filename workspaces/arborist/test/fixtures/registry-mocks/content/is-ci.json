@@ -1,0 +1,1007 @@
+{
+  "_id": "is-ci",
+  "_rev": "18-3ff4caefed88441fbdf687039d180572",
+  "name": "is-ci",
+  "description": "Detect if the current environment is a CI server",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-ci",
+      "version": "1.0.0",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6877333,
+        12.5956366
+      ],
+      "gitHead": "c23bab424aef3dff1c54dc1580126af6ab767e99",
+      "_id": "is-ci@1.0.0",
+      "_shasum": "4f82a591fcd24e572e5b79957f4d50402c7387c9",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "4f82a591fcd24e572e5b79957f4d50402c7387c9",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-ci",
+      "version": "1.0.1",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6877071,
+        12.5956213
+      ],
+      "gitHead": "2b44b3d250a5d54e009b91f04ea9db84dd8397ed",
+      "_id": "is-ci@1.0.1",
+      "_shasum": "167d497c2f32938a12364f0a9116ecca1b68dc31",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "167d497c2f32938a12364f0a9116ecca1b68dc31",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "is-ci",
+      "version": "1.0.2",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.66658890000001,
+        12.579851
+      ],
+      "gitHead": "b8d583b090312c0a815479104846b341819fe737",
+      "_id": "is-ci@1.0.2",
+      "_shasum": "2b7f64c74532f6e5ebaeaf34fa35dc44add81922",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "2b7f64c74532f6e5ebaeaf34fa35dc44add81922",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "is-ci",
+      "version": "1.0.3",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6665983,
+        12.5798843
+      ],
+      "gitHead": "b382b60b6660ec045496991a32a242742c9352d7",
+      "_id": "is-ci@1.0.3",
+      "_shasum": "43890b37b1791ba5925276f46779a02c8df8bb9e",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "43890b37b1791ba5925276f46779a02c8df8bb9e",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "is-ci",
+      "version": "1.0.4",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6665609,
+        12.5798558
+      ],
+      "gitHead": "211946480b7c9fdae2c0a19f9bbdbb95db51480c",
+      "_id": "is-ci@1.0.4",
+      "_shasum": "5e98ca48f1ecf78238541947b9cfdc94f221931c",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "5e98ca48f1ecf78238541947b9cfdc94f221931c",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "is-ci",
+      "version": "1.0.5",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6666019,
+        12.5798988
+      ],
+      "gitHead": "cc89aa9c9b1ac7946c69486f014100a3b484c922",
+      "_id": "is-ci@1.0.5",
+      "_shasum": "987d7dc08b1459ac70ce2b10bc4464661f7306c5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "987d7dc08b1459ac70ce2b10bc4464661f7306c5",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "is-ci",
+      "version": "1.0.6",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6665508,
+        12.5800325
+      ],
+      "gitHead": "d43b20dac82d381ac3e0671410b92bb21082623b",
+      "_id": "is-ci@1.0.6",
+      "_shasum": "79f6690b6da2f03f33bf670c91d7cafd62e365e1",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "79f6690b6da2f03f33bf670c91d7cafd62e365e1",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.6.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.7": {
+      "name": "is-ci",
+      "version": "1.0.7",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6665983,
+        12.5798458
+      ],
+      "gitHead": "178b148ca3d114462e661f7d00b349cf9d3b6a89",
+      "_id": "is-ci@1.0.7",
+      "_shasum": "a39895b60a4e379b1eee110e960be2bb9e9e4146",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "a39895b60a4e379b1eee110e960be2bb9e9e4146",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.7.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.8": {
+      "name": "is-ci",
+      "version": "1.0.8",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6665609,
+        12.5800815
+      ],
+      "gitHead": "01a9a431a622214bce4ef3469a0dfacd425518a2",
+      "_id": "is-ci@1.0.8",
+      "_shasum": "39e8de9c132fecb4e129c653c9ecbd6370905a87",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "39e8de9c132fecb4e129c653c9ecbd6370905a87",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.8.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/is-ci-1.0.8.tgz_1455302400543_0.5958312251605093"
+      },
+      "directories": {}
+    },
+    "1.0.9": {
+      "name": "is-ci",
+      "version": "1.0.9",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {},
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6876717,
+        12.5955801
+      ],
+      "gitHead": "e7db28828f0fdb36e4ca671f07f6c883b6fb775c",
+      "_id": "is-ci@1.0.9",
+      "_shasum": "de2c5ffe49ab3237fda38c47c8a3bbfd55bbcca7",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "de2c5ffe49ab3237fda38c47c8a3bbfd55bbcca7",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.9.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-ci-1.0.9.tgz_1467926050551_0.5283787720836699"
+      },
+      "directories": {}
+    },
+    "1.0.10": {
+      "name": "is-ci",
+      "version": "1.0.10",
+      "description": "Detect if your code is running on a CI server",
+      "main": "index.js",
+      "dependencies": {
+        "ci-info": "^1.0.0"
+      },
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^5.3.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.6876732,
+        12.5955341
+      ],
+      "gitHead": "248e7a5fdf6be6d8e85fcbb825578e5b3bf744ed",
+      "_id": "is-ci@1.0.10",
+      "_shasum": "f739336b2632365061a9d48270cd56ae3369318e",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "f739336b2632365061a9d48270cd56ae3369318e",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.0.10.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/is-ci-1.0.10.tgz_1476979751234_0.24868635344319046"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "is-ci",
+      "version": "1.1.0",
+      "description": "Detect if your code is running on a CI server",
+      "bin": {
+        "is-ci": "bin.js"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "ci-info": "^1.0.0"
+      },
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^10.0.3"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        56.0093252,
+        11.9592058
+      ],
+      "gitHead": "8153f8844ca631a4c95b7dbf30c034f5dbef6023",
+      "_id": "is-ci@1.1.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-c7TnwxLePuqIlxHgr7xtxzycJPegNHFuIrBkwbf8hc58//+Op1CqFkyS+xnIMkwn9UsJIwc174BIjkyBmSpjKg==",
+        "shasum": "247e4162e7860cebbdaf30b774d6b0ac7dcfe7a5",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-ci-1.1.0.tgz_1514994233368_0.7427189615555108"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "is-ci",
+      "version": "1.2.0",
+      "description": "Detect if your code is running on a CI server",
+      "bin": {
+        "is-ci": "bin.js"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "ci-info": "^1.3.0"
+      },
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^11.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.777776,
+        12.592345
+      ],
+      "gitHead": "bafae86769b698590005e40d0f543c91b149b995",
+      "_id": "is-ci@1.2.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-plgvKjQtalH2P3Gytb7L61Lmz95g2DlpzFiQyRSFew8WoJKxtKRzrZMeyRN2supblm3Psc8OQGy7Xjb6XG11jw==",
+        "shasum": "3f4a08d6303a09882cef3f0fb97439c5f5ce2d53",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.2.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 4706,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdT6xCRA9TVsSAnZWagAAEiAP/0qay1CmSE0558nmIAQp\nfiURE7vHIWsCWeHUKD9i+6vG+6fObsMvt5vPcVcQfk3vI3dUkHoM6Uh+uPuL\niCyoURldmdk/lQ3h27Rhw2u5HnxyY8CCc/+EZ6yt+EBbO/xC+X/4rxEV0LEh\nYaUGfxocI8IW0L0E2AvQ1bsnK95Bm3pEgm7Z1L+WBvJTqgmIm3UOX2JPrsb1\nSBNw8s4w/cSLMiFJNKXuFnA9pUkj10D1vKB3AVaxJ1O02l0JEFOHaKD/RCWL\nv7OkPZ1u7msawJu0AOlHHsmL74yPW/BGzWV7/66kUB6EYZZmsrEdPD4VC/mf\n6k29YRe2SSdG7vBBKFfLCpH13sbijQYN6BB61H/efgr1UjckX9bZE6Paduqo\nqlJ+9SW/Giwac8Jmhti8DDhAbS6jwUPG30w87lnu2ZPwtozjTOy5pQ4Jaeq3\nDoGDQzbELIXWjMqNTIF7L5/BXZYV/Jgfk+HwywvkVuLCWVN/fxcYStbtIf5R\nNYGJqaSsjAaxnpXOJx5oChHRTY8fgLKXmuUlLxldtvSpWbFC7vKVQpyj9dbB\nbSXpSdD0HFMNcv6EIUXDLQB2v+1JRFDu6L2aQoYLgNt0M4i1SFebg5NiQGrf\nxpn4DNFJ4piO+3/UpoFgkaCl9tdxput/gXbK341aFMaz0OsNlBd1NfFvhX4a\nAePH\r\n=NvYa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-ci_1.2.0_1534410416464_0.938502217201985"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.1": {
+      "name": "is-ci",
+      "version": "1.2.1",
+      "description": "Detect if the current environment is a CI server",
+      "bin": {
+        "is-ci": "bin.js"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "ci-info": "^1.5.0"
+      },
+      "devDependencies": {
+        "clear-require": "^1.0.1",
+        "standard": "^11.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.778255,
+        12.593033
+      ],
+      "gitHead": "c441f9f2924e5c51656ee04e5cc203eba227c092",
+      "_id": "is-ci@1.2.1",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.10.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-s6tfsaQaQi3JNciBH6shVqEDvhGut0SUXr31ag8Pd8BBbVVlcGfWhpPmEOoM6RJ5TFhbypvf5yyRw/VXW1IiWg==",
+        "shasum": "e3779c8ee17fccf428488f6e281187f2e632841c",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-1.2.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3313,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJblNCACRA9TVsSAnZWagAAs4gP+wR868vEV+HggZKOkre6\nZp2tQNjUYfMCNjQGzgfERek1wnsZ8yQ/sklC9G+Z+ykkmxhAbWgNWESAqCug\ngzqp+/TiMii0bRm0IOGd+TWLd4b4SPNm7+baF+b5uvQS4WdoYNZyunnBlYaP\ngts9nEG+/n/QcxCBDPTFX2JitTFPyJhmFv1wm4GlMOherBap4OwG98c88nJ0\nVarif07+m6+/CjgshNnVrjOU5JU5z6ETr7QpTBaIWclVErijkvwbaUWowfMr\nbKUH51PRojSU4O0NObFWEh02O4RGL+tCy5B/Xhvpzq8edpLfwUhQ2Vlqlap/\nvLgzsOPfW5tNe7SvHIyam6PYmd4b6YTL/P55UvCipftL5MrBYgDr5GR5kgJG\nYb1H0LN3jabKl3ITQvfQSmoAlafiuJV/RiEQZVgUWHgEKH4xzoHvFvdPNj5M\nfYPMjsouxRyi+h+eU91uEMI4+vnWEOj1RlEcleyTucnLDvgmg7CjFCtTdVgw\nqPNeq2ioOlONiig959ZEvIRVgwLQFt/N2HBqRv/YEWWEZ5hJPJDZm57ssaeY\nkcRl8V++5YcEkLDT+VGMW9c//AaUb/ostV58CfFBIA1NBQcYB9ihJk2Hn7Ek\nf3KlvmayplxxaJfWjL2CJ4fl4FuUtiEi5xM/GgxFyo51Za+LFYV5YR+iUzPJ\noqwd\r\n=3jhe\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-ci_1.2.1_1536479359206_0.9434570997663676"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "is-ci",
+      "version": "2.0.0",
+      "description": "Detect if the current environment is a CI server",
+      "bin": {
+        "is-ci": "bin.js"
+      },
+      "main": "index.js",
+      "dependencies": {
+        "ci-info": "^2.0.0"
+      },
+      "devDependencies": {
+        "clear-module": "^3.0.0",
+        "standard": "^12.0.1"
+      },
+      "scripts": {
+        "test": "standard && node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/watson/is-ci.git"
+      },
+      "keywords": [
+        "ci",
+        "continuous",
+        "integration",
+        "test",
+        "detect"
+      ],
+      "author": {
+        "name": "Thomas Watson Steen",
+        "email": "w@tson.dk",
+        "url": "https://twitter.com/wa7son"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/watson/is-ci/issues"
+      },
+      "homepage": "https://github.com/watson/is-ci",
+      "coordinates": [
+        55.778272,
+        12.593116
+      ],
+      "gitHead": "8b88365d804abc1905ca93f312e99cf95b48fc8a",
+      "_id": "is-ci@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "11.3.0",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "dist": {
+        "integrity": "sha512-YfJT7rkpQB0updsdHLGWrvhBJfcfzNNawYDNIyQXJz0IViGf75O8EBPKSdvw2rF+LGCsX4FZ8tcr3b19LcZq4w==",
+        "shasum": "6bc6334181810e04b5c22b3d589fdca55026404c",
+        "tarball": "https://registry.npmjs.org/is-ci/-/is-ci-2.0.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 3581,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcCEf/CRA9TVsSAnZWagAAMvwP/1cV6uY9uye3xn2vM6vC\nMAhvaWd12GWmBg9POPhJaGi9KwhnaogbAVPHV5hhRiecrhiVXmn/Zu0T/rHt\nIkwPTeZsZ8OH4PkucIEEquj76bSJAV3oGoEWD1j3xZmCw3euSM3qsbiioYDS\nMiOBUVXhfLFZpQ3VqbN7I7L6LeuD1TDWER4rKPAl7qQO5rDgNNhk2T8KR1r/\nwiRI6YYtD1mhPF6RhUAFjUS0mT14NJ+PT+2U0c2FO8ubKb01cUk+xWCAhxax\nj6ebQnpRYDeZqICPpNOdJyenOAmsAZbFbo6vWE8M2AO/j/8+X7+P/kocdKWz\n4xrXdkM3g2Iuy+muIR9WkroWH++r3553Ni7GR1vI0qL49hlm/93zh5Vsc93a\n+VbreKYr6FzcBH+j47LG+P9TO+DZ5medQxr9U8t0WcnK0+nPW62SUoEfzryt\n6dnxeHsSRCTCQDfbgKU7s4rvG7hFmMlHH29MYVFAIwWvSJjXIlUqDsD75DwM\nKoWqNZixUYC3024ioZNxhK8bjr7Vsf6aFmplTt0aILMDuGtKwBzA9ZcijhTQ\nhPdEs24sEly9jeLastC6kvJPKxYeqZkPHvtLjWuKZ3QZMlCQN24QFWSLh2rv\nrLMR55eow/XuPO6hEqlRhSN0W4TTppsoBiravL42eK41ylzd+l80ICLTh+CZ\npcQS\r\n=YX5I\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-ci_2.0.0_1544046590680_0.06142265580938111"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-ci\n\nReturns `true` if the current environment is a Continuous Integration\nserver.\n\nPlease [open an issue](https://github.com/watson/is-ci/issues) if your\nCI server isn't properly detected :)\n\n[![npm](https://img.shields.io/npm/v/is-ci.svg)](https://www.npmjs.com/package/is-ci)\n[![Build status](https://travis-ci.org/watson/is-ci.svg?branch=master)](https://travis-ci.org/watson/is-ci)\n[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)\n\n## Installation\n\n```bash\nnpm install is-ci --save\n```\n\n## Programmatic Usage\n\n```js\nconst isCI = require('is-ci')\n\nif (isCI) {\n  console.log('The code is running on a CI server')\n}\n```\n\n## CLI Usage\n\nFor CLI usage you need to have the `is-ci` executable in your `PATH`.\nThere's a few ways to do that:\n\n- Either install the module globally using `npm install is-ci -g`\n- Or add the module as a dependency to your app in which case it can be\n  used inside your package.json scripts as is\n- Or provide the full path to the executable, e.g.\n  `./node_modules/.bin/is-ci`\n\n```bash\nis-ci && echo \"This is a CI server\"\n```\n\n## Supported CI tools\n\nRefer to [ci-info](https://github.com/watson/ci-info#supported-ci-tools) docs for all supported CI's\n\n## License\n\n[MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-04T05:37:01.129Z",
+    "created": "2015-10-07T23:49:36.993Z",
+    "1.0.0": "2015-10-07T23:49:36.993Z",
+    "1.0.1": "2015-10-08T00:12:22.827Z",
+    "1.0.2": "2015-10-08T10:36:38.039Z",
+    "1.0.3": "2015-10-08T10:47:20.467Z",
+    "1.0.4": "2015-10-08T11:12:25.410Z",
+    "1.0.5": "2015-10-15T09:04:19.368Z",
+    "1.0.6": "2015-10-16T16:41:30.759Z",
+    "1.0.7": "2015-10-16T16:42:38.626Z",
+    "1.0.8": "2016-02-12T18:40:05.201Z",
+    "1.0.9": "2016-07-07T21:14:12.675Z",
+    "1.0.10": "2016-10-20T16:09:11.830Z",
+    "1.1.0": "2018-01-03T15:43:54.241Z",
+    "1.2.0": "2018-08-16T09:06:56.543Z",
+    "1.2.1": "2018-09-09T07:49:19.379Z",
+    "2.0.0": "2018-12-05T21:49:50.810Z"
+  },
+  "homepage": "https://github.com/watson/is-ci",
+  "keywords": [
+    "ci",
+    "continuous",
+    "integration",
+    "test",
+    "detect"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watson/is-ci.git"
+  },
+  "author": {
+    "name": "Thomas Watson Steen",
+    "email": "w@tson.dk",
+    "url": "https://twitter.com/wa7son"
+  },
+  "bugs": {
+    "url": "https://github.com/watson/is-ci/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "heartnett": true
+  }
+}

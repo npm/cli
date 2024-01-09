@@ -1,0 +1,1362 @@
+{
+  "_id": "diffie-hellman",
+  "_rev": "48-c64ebbe947cfbf77a2ba28ff9358856d",
+  "name": "diffie-hellman",
+  "description": "pure js diffie-hellman",
+  "dist-tags": {
+    "latest": "5.0.3"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "diffie-hellman",
+      "version": "1.0.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "gitHead": "923fdc540603443b7da981094c8906f722ce1ef8",
+      "_id": "diffie-hellman@1.0.0",
+      "_shasum": "5322995a62db56d27da61e66243ebbe0f625bc0e",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5322995a62db56d27da61e66243ebbe0f625bc0e",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "diffie-hellman",
+      "version": "1.0.1",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "gitHead": "cb5c7cc72c2a2f76534f9b248aed13f42238347d",
+      "_id": "diffie-hellman@1.0.1",
+      "_shasum": "9fb7008b97b50d760879a4857e7ff17f1b6e34d3",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9fb7008b97b50d760879a4857e7ff17f1b6e34d3",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "diffie-hellman",
+      "version": "1.0.2",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "bea4bc80cb78848609d916ba09eb35c33b83ec9e",
+      "_id": "diffie-hellman@1.0.2",
+      "_shasum": "739d956f3eea8655bc78a06f0eecdd7732d19a3c",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "739d956f3eea8655bc78a06f0eecdd7732d19a3c",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "diffie-hellman",
+      "version": "1.0.3",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "_id": "diffie-hellman@1.0.3",
+      "dist": {
+        "shasum": "60afd81fec7cb37663291d2a7707f9bfc4e742ce",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.0.3.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "diffie-hellman",
+      "version": "1.1.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^0.15.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "_id": "diffie-hellman@1.1.0",
+      "dist": {
+        "shasum": "8e966bbc16c36e3b28e1e8e541b524c6135cd4e5",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "diffie-hellman",
+      "version": "1.1.1",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "_id": "diffie-hellman@1.1.1",
+      "dist": {
+        "shasum": "22fe0c522f11e3e1eba649dd33b88869dab84230",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "diffie-hellman",
+      "version": "1.1.2",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "_id": "diffie-hellman@1.1.2",
+      "dist": {
+        "shasum": "a1b3e9ca89f4e6d1e7198a05549afc6096d7c4c0",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-1.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.3",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "diffie-hellman",
+      "version": "2.0.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2",
+        "miller-rabin": "^1.1.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "6b749680cd5d0228aef962069b99f0c7471b5e1b",
+      "_id": "diffie-hellman@2.0.0",
+      "_shasum": "67ea1d0cbb0a10d332b5098fb9643fa82408c5d4",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "67ea1d0cbb0a10d332b5098fb9643fa82408c5d4",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "diffie-hellman",
+      "version": "2.1.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2",
+        "miller-rabin": "^1.1.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "54f928f1e69b828a0429fecb7a641c314a6231bd",
+      "_id": "diffie-hellman@2.1.0",
+      "_shasum": "2d755b0d30e38251ce3529bd7f4ba97633e2f75b",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d755b0d30e38251ce3529bd7f4ba97633e2f75b",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "diffie-hellman",
+      "version": "2.2.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2",
+        "miller-rabin": "^1.1.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "cf41a506bfcf82f8578bb570a042af22004a7483",
+      "_id": "diffie-hellman@2.2.0",
+      "_shasum": "8072c466fbfb68e7898a84c56e53bc4e71a4c2e2",
+      "_from": ".",
+      "_npmVersion": "2.0.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "8072c466fbfb68e7898a84c56e53bc4e71a4c2e2",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "diffie-hellman",
+      "version": "2.2.1",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "0.15.2",
+        "miller-rabin": "^1.1.1"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "f74fe5cba61322f9b111b0f020dc2ce5f226be00",
+      "_id": "diffie-hellman@2.2.1",
+      "_shasum": "3dbd6ccd24f02229c3a6e6798da3aec578b096c5",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.33",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3dbd6ccd24f02229c3a6e6798da3aec578b096c5",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.2": {
+      "name": "diffie-hellman",
+      "version": "2.2.2",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^0.16.0",
+        "miller-rabin": "^1.1.2"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "8c436ba336b29de1304fc317079e89093a1b3a42",
+      "_id": "diffie-hellman@2.2.2",
+      "_shasum": "1f79b67f0e3ecaf34bddca5af3ffd34b4cb81f43",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1f79b67f0e3ecaf34bddca5af3ffd34b4cb81f43",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.3": {
+      "name": "diffie-hellman",
+      "version": "2.2.3",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/calvinmetcalf/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/calvinmetcalf/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/calvinmetcalf/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "miller-rabin": "^1.1.2"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "7d8de94705545661426506068ba83f2d393fdf36",
+      "_id": "diffie-hellman@2.2.3",
+      "_shasum": "aaf1edb9ed285d91374fba8a1d0f5204681e529a",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "aaf1edb9ed285d91374fba8a1d0f5204681e529a",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-2.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "diffie-hellman",
+      "version": "3.0.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "miller-rabin": "^1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "a18c751bd9a61f437f4d9920824554a4f1e8cd3f",
+      "_id": "diffie-hellman@3.0.0",
+      "_shasum": "3a261d93f55030cba398cb9d92f802a4d9574102",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.11.14",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jp",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3a261d93f55030cba398cb9d92f802a4d9574102",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-3.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.1": {
+      "name": "diffie-hellman",
+      "version": "3.0.1",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^1.0.0",
+        "miller-rabin": "^1.1.2",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "10bb57dbcc32100acf71adc4c8dd1137bc17a1e5",
+      "_id": "diffie-hellman@3.0.1",
+      "_shasum": "13be8fc4ad657278408cd796b554a93e586ed66a",
+      "_from": ".",
+      "_npmVersion": "2.1.10",
+      "_nodeVersion": "0.10.36",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "13be8fc4ad657278408cd796b554a93e586ed66a",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-3.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "3.0.2": {
+      "name": "diffie-hellman",
+      "version": "3.0.2",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^2.0.0",
+        "miller-rabin": "^2.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "d08366d473d086bd14fb75d8f7b12ea6de312452",
+      "_id": "diffie-hellman@3.0.2",
+      "_shasum": "2a565afb1e03589cd284c010d6ebf8077b2886d7",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2a565afb1e03589cd284c010d6ebf8077b2886d7",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-3.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "diffie-hellman",
+      "version": "4.0.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^3.2.0",
+        "miller-rabin": "^3.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "65776f8ccc06e2646d6009a55a6e8ff85f41145e",
+      "_id": "diffie-hellman@4.0.0",
+      "_shasum": "8e1481f15d6eec06543cdfee60d102a3dbd2d49c",
+      "_from": ".",
+      "_npmVersion": "2.14.3",
+      "_nodeVersion": "3.3.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "8e1481f15d6eec06543cdfee60d102a3dbd2d49c",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "diffie-hellman",
+      "version": "5.0.0",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "miller-rabin": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "e101e19b5e80534349595219acdea808e5ed436a",
+      "_id": "diffie-hellman@5.0.0",
+      "_shasum": "f3c957cfd5419fea048540b39a751d7e4363f031",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "f3c957cfd5419fea048540b39a751d7e4363f031",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.1": {
+      "name": "diffie-hellman",
+      "version": "5.0.1",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "miller-rabin": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "6f9fd04569406cd822075efa4a4a2dc82236dda4",
+      "_id": "diffie-hellman@5.0.1",
+      "_shasum": "d33ea6360060e39e321b7b24125694ceda7bd29b",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.4.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "d33ea6360060e39e321b7b24125694ceda7bd29b",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.2": {
+      "name": "diffie-hellman",
+      "version": "5.0.2",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "miller-rabin": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "6a58413e1004b48425b28fb337187db00c2d83c0",
+      "_id": "diffie-hellman@5.0.2",
+      "_shasum": "b5835739270cfe26acf632099fded2a07f209e5e",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "shasum": "b5835739270cfe26acf632099fded2a07f209e5e",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.3": {
+      "name": "diffie-hellman",
+      "version": "5.0.3",
+      "description": "pure js diffie-hellman",
+      "main": "index.js",
+      "browser": "browser.js",
+      "scripts": {
+        "test": "node test.js | tspec"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+      },
+      "keywords": [
+        "diffie",
+        "hellman",
+        "diffiehellman",
+        "dh"
+      ],
+      "author": {
+        "name": "Calvin Metcalf"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+      "dependencies": {
+        "bn.js": "^4.1.0",
+        "miller-rabin": "^4.0.0",
+        "randombytes": "^2.0.0"
+      },
+      "devDependencies": {
+        "tap-spec": "^1.0.1",
+        "tape": "^3.0.1"
+      },
+      "gitHead": "d795c01543385196e44f6d8218ba6f9b5621d4b0",
+      "_id": "diffie-hellman@5.0.3",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "cwmma",
+        "email": "calvin.metcalf@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-kqag/Nl+f3GwyK25fhUMYj81BUOrZ9IuJsjIcDE5icNM9FJHAVm3VcUDxdLPoQtTuUylWm6ZIknYJwwaPxsUzg==",
+        "shasum": "40e8ee98f55a2149607146921c63e1ae5f3d2875",
+        "tarball": "https://registry.npmjs.org/diffie-hellman/-/diffie-hellman-5.0.3.tgz",
+        "fileCount": 9,
+        "unpackedSize": 17297
+      },
+      "maintainers": [
+        {
+          "name": "cwmma",
+          "email": "calvin.metcalf@gmail.com"
+        },
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        },
+        {
+          "name": "dominictarr",
+          "email": "dominic.tarr@gmail.com"
+        },
+        {
+          "name": "indutny",
+          "email": "fedor@indutny.com"
+        },
+        {
+          "name": "jprichardson",
+          "email": "jprichardson@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/diffie-hellman_5.0.3_1523448210144_0.25747828831545383"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "diffie hellman [![Build Status](https://travis-ci.org/crypto-browserify/diffie-hellman.svg)](https://travis-ci.org/crypto-browserify/diffie-hellman)\n====\n\npure js diffie-hellman, same api as node, most hard parts thanks to [bn.js](https://www.npmjs.org/package/bn.js) by [@indutny](https://github.com/indutny).  In node just returns an object with `crypto.createDiffieHellman` and `crypto.getDiffieHellman` in the browser returns a shim. To require the pure JavaScript one in node `require('diffie-hellman/browser');`;",
+  "maintainers": [
+    {
+      "email": "calvin.metcalf@gmail.com",
+      "name": "cwmma"
+    },
+    {
+      "email": "fedor@indutny.com",
+      "name": "indutny"
+    },
+    {
+      "email": "npm@dcousens.com",
+      "name": "dcousens"
+    },
+    {
+      "email": "jprichardson@gmail.com",
+      "name": "jprichardson"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-02T22:10:21.673Z",
+    "created": "2014-11-02T22:53:35.595Z",
+    "1.0.0": "2014-11-02T22:53:35.595Z",
+    "1.0.1": "2014-11-02T23:00:58.769Z",
+    "1.0.2": "2014-11-03T01:05:47.090Z",
+    "1.0.3": "2014-11-04T15:24:05.885Z",
+    "1.1.0": "2014-11-05T14:37:41.895Z",
+    "1.1.1": "2014-11-07T12:54:56.929Z",
+    "1.1.2": "2014-11-07T13:31:06.367Z",
+    "2.0.0": "2014-11-16T19:46:25.817Z",
+    "2.1.0": "2014-11-16T20:29:47.875Z",
+    "2.2.0": "2014-11-16T20:36:42.592Z",
+    "2.2.1": "2014-12-03T20:46:51.469Z",
+    "2.2.2": "2015-01-03T13:27:45.222Z",
+    "2.2.3": "2015-01-06T12:40:04.002Z",
+    "3.0.0": "2015-01-21T12:11:25.510Z",
+    "3.0.1": "2015-01-27T13:21:27.158Z",
+    "3.0.2": "2015-05-21T02:56:37.669Z",
+    "4.0.0": "2015-10-27T09:06:49.549Z",
+    "5.0.0": "2015-10-29T13:08:35.076Z",
+    "5.0.1": "2016-01-12T15:38:27.562Z",
+    "5.0.2": "2016-01-26T14:00:44.523Z",
+    "5.0.3": "2018-04-11T12:03:30.207Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/diffie-hellman",
+  "keywords": [
+    "diffie",
+    "hellman",
+    "diffiehellman",
+    "dh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/diffie-hellman.git"
+  },
+  "author": {
+    "name": "Calvin Metcalf"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/diffie-hellman/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "ryanj": true
+  }
+}

@@ -1,0 +1,464 @@
+{
+  "_id": "path-parse",
+  "_rev": "11-dda862f1d8ed5d02b316a4b17a4415f6",
+  "name": "path-parse",
+  "description": "Node.js path.parse() ponyfill",
+  "dist-tags": {
+    "latest": "1.0.6"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "path-parse",
+      "version": "1.0.0",
+      "description": "Node.js 0.12 path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "_id": "path-parse@1.0.0",
+      "_shasum": "365a0ae12131306628f0958afda62397c3bf0901",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.11.16",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "dist": {
+        "shasum": "365a0ae12131306628f0958afda62397c3bf0901",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "path-parse",
+      "version": "1.0.1",
+      "description": "Node.js 0.11.15 path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "gitHead": "aca55ce4671fca023f53895e2b462d1dcf9483ce",
+      "_id": "path-parse@1.0.1",
+      "_shasum": "d9ea8a3571bb8260bcdbd1a516f931c81861c7f0",
+      "_from": ".",
+      "_npmVersion": "2.3.0",
+      "_nodeVersion": "0.11.16",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "dist": {
+        "shasum": "d9ea8a3571bb8260bcdbd1a516f931c81861c7f0",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "path-parse",
+      "version": "1.0.2",
+      "description": "Node.js 0.11.15 path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "gitHead": "c84afd5580c3fdd73428071535a7711a7670c20d",
+      "_id": "path-parse@1.0.2",
+      "_shasum": "f1122f5c88200371ac27eff5c2643f6aea0bba56",
+      "_from": ".",
+      "_npmVersion": "2.8.3",
+      "_nodeVersion": "0.10.12",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "dist": {
+        "shasum": "f1122f5c88200371ac27eff5c2643f6aea0bba56",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "path-parse",
+      "version": "1.0.3",
+      "description": "Node.js path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "gitHead": "59cee1e73fa1c5d680c29fefed21cdd60fb58443",
+      "_id": "path-parse@1.0.3",
+      "_shasum": "9b8e6f7675b8fb214a14c5dca48cd7ed5159d6f3",
+      "_from": ".",
+      "_npmVersion": "2.8.3",
+      "_nodeVersion": "0.10.12",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "dist": {
+        "shasum": "9b8e6f7675b8fb214a14c5dca48cd7ed5159d6f3",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "path-parse",
+      "version": "1.0.4",
+      "description": "Node.js path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "_id": "path-parse@1.0.4",
+      "_shasum": "219d40738b7d249706d7d57ab71f3151695629bb",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "219d40738b7d249706d7d57ab71f3151695629bb",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.5": {
+      "name": "path-parse",
+      "version": "1.0.5",
+      "description": "Node.js path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "_id": "path-parse@1.0.5",
+      "_shasum": "3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.5.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.6": {
+      "name": "path-parse",
+      "version": "1.0.6",
+      "description": "Node.js path.parse() ponyfill",
+      "main": "index.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jbgutierrez/path-parse.git"
+      },
+      "keywords": [
+        "path",
+        "paths",
+        "file",
+        "dir",
+        "parse",
+        "built-in",
+        "util",
+        "utils",
+        "core",
+        "ponyfill",
+        "polyfill",
+        "shim"
+      ],
+      "author": {
+        "name": "Javier Blanco",
+        "email": "http://jbgutierrez.info"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/jbgutierrez/path-parse/issues"
+      },
+      "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+      "gitHead": "97efc90ce24455d23ec6acedf47589df46e48ea0",
+      "_id": "path-parse@1.0.6",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "10.1.0",
+      "_npmUser": {
+        "name": "jbgutierrez",
+        "email": "jbgutierrez@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==",
+        "shasum": "d62dbb5679405d72c4737ec58600e9ddcf06d24c",
+        "tarball": "https://registry.npmjs.org/path-parse/-/path-parse-1.0.6.tgz",
+        "fileCount": 6,
+        "unpackedSize": 9029,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZ+uFCRA9TVsSAnZWagAA5GwQAI25pLPhwQijTCAsGUSO\nMWrhq2ReoJWhubV2hGPMRIhX7A1v1ov9AmZYutpxnRggBx472fzbMJ5aiQg1\naL1fONHaK9MDDY87zSWRKOAJgvawncbiY2apXJUnBwVNaUeBPTm42RA9bOyO\nkLTbPbQBNTXm7js1U1a47+rOLlvHWusPP1A1+5gPbqr56XqIw/Yh7fz5zH1M\nzNKX9yOlWp1hTXosNQ3TQqRWGp69OqUw/a2B2ddvGre/bv+oDmyiDCFBNPj6\nyVXRkvzThxoVSjkcjspz/UEFZMaFonc9I71q04hK9Aq53USD+ZK+dsLFMaLL\nzgZeiNfMJur2fyXSEZwSccHqCbZ/5uf92egs9zbquf+ULyn2bzk7tZb1QGQp\nur0sH7fFQVoLgSLlmnXXv+uawNY3f51oL4snI56Ik5Zj70u6nKJYIGgIpBj6\nlK1FujTUFojzic9hRd3uc30LLoNbdJHF7dL7FqVrM4bW9/NKmuPsLl8Aiu9M\npH66W3tXW2WrzZuR7wAD12Rt/6n5XIrNJeEjP9l6bEx2tsTka2Z7TgaVXWCD\n2dVCyzk+Tp9OvqXOi+7IAMis+NlmZjtdVJ7js5at12DH7iJY1gaYvCH6b1+C\nAA1T9+EFrMd8di48t20EZEppXWm4nAvRa/6lHEG9VYuK4reR39V/Gn95xksb\n1Md/\r\n=QlIN\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jbgutierrez",
+          "email": "jbgutierrez@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/path-parse_1.0.6_1533537156798_0.8841048033486669"
+      }
+    }
+  },
+  "readme": "# path-parse [![Build Status](https://travis-ci.org/jbgutierrez/path-parse.svg?branch=master)](https://travis-ci.org/jbgutierrez/path-parse)\n\n> Node.js [`path.parse(pathString)`](https://nodejs.org/api/path.html#path_path_parse_pathstring) [ponyfill](https://ponyfill.com).\n\n## Install\n\n```\n$ npm install --save path-parse\n```\n\n## Usage\n\n```js\nvar pathParse = require('path-parse');\n\npathParse('/home/user/dir/file.txt');\n//=> {\n//       root : \"/\",\n//       dir : \"/home/user/dir\",\n//       base : \"file.txt\",\n//       ext : \".txt\",\n//       name : \"file\"\n//   }\n```\n\n## API\n\nSee [`path.parse(pathString)`](https://nodejs.org/api/path.html#path_path_parse_pathstring) docs.\n\n### pathParse(path)\n\n### pathParse.posix(path)\n\nThe Posix specific version.\n\n### pathParse.win32(path)\n\nThe Windows specific version.\n\n## License\n\nMIT © [Javier Blanco](http://jbgutierrez.info)\n",
+  "maintainers": [
+    {
+      "name": "jbgutierrez",
+      "email": "jbgutierrez@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-08-06T06:32:46.640Z",
+    "created": "2015-04-17T11:46:10.675Z",
+    "1.0.0": "2015-04-17T11:46:10.675Z",
+    "1.0.1": "2015-04-17T11:48:59.457Z",
+    "1.0.2": "2015-04-17T12:09:05.247Z",
+    "1.0.3": "2015-04-17T12:31:43.325Z",
+    "1.0.4": "2015-04-21T15:49:40.034Z",
+    "1.0.5": "2015-04-21T16:52:41.476Z",
+    "1.0.6": "2018-08-06T06:32:36.898Z"
+  },
+  "homepage": "https://github.com/jbgutierrez/path-parse#readme",
+  "keywords": [
+    "path",
+    "paths",
+    "file",
+    "dir",
+    "parse",
+    "built-in",
+    "util",
+    "utils",
+    "core",
+    "ponyfill",
+    "polyfill",
+    "shim"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbgutierrez/path-parse.git"
+  },
+  "author": {
+    "name": "Javier Blanco",
+    "email": "http://jbgutierrez.info"
+  },
+  "bugs": {
+    "url": "https://github.com/jbgutierrez/path-parse/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "jbgutierrez": true,
+    "suzuri04x2": true,
+    "koulmomo": true,
+    "kwesi": true
+  },
+  "_attachments": {}
+}

@@ -1,0 +1,1497 @@
+{
+  "_id": "class-utils",
+  "_rev": "15-a92daf6fd45760cb119975789d481430",
+  "name": "class-utils",
+  "description": "Utils for working with JavaScript classes and prototype methods.",
+  "dist-tags": {
+    "latest": "0.3.6"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.1.0",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "_id": "class-utils@0.1.0",
+      "_shasum": "cf628b4d69396ece81931a4452db44bed2561a33",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "cf628b4d69396ece81931a4452db44bed2561a33",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.1.1",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "0aa09badd9d691f5d8ba18eddd77d76ce7944610",
+      "_id": "class-utils@0.1.1",
+      "_shasum": "08bb125e43114084e58c7ed1c9a30092ebaad5f5",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "08bb125e43114084e58c7ed1c9a30092ebaad5f5",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.1.2",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "5773b91bbee08dd0e0dd0893123e7fadbb9ecb60",
+      "_id": "class-utils@0.1.2",
+      "_shasum": "dfb4177384dd39e307f468d7d50d7ebcddc2083a",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dfb4177384dd39e307f468d7d50d7ebcddc2083a",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.2.0",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "18b860275605e3dab9066175e1f9e844779c04ec",
+      "_id": "class-utils@0.2.0",
+      "_shasum": "40b536996529c37638db6718baa4c3034555fc5c",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "40b536996529c37638db6718baa4c3034555fc5c",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.2.1",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "4a74ab5261a91f15be81bf8a3aecc85321417530",
+      "_id": "class-utils@0.2.1",
+      "_shasum": "23c96cdb4612252aae00403674c9341968446d08",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "23c96cdb4612252aae00403674c9341968446d08",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.2.2",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "^2.3.2",
+        "should": "^7.1.0"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "4a74ab5261a91f15be81bf8a3aecc85321417530",
+      "_id": "class-utils@0.2.2",
+      "_shasum": "185c9dc21307e0fbfbb2adbeb44652c7c13b6e5d",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "185c9dc21307e0fbfbb2adbeb44652c7c13b6e5d",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.2.3",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "d9456f7c32923cdc7e78579737f81c04a1f35d35",
+      "_id": "class-utils@0.2.3",
+      "_shasum": "0799c47d8f6b35b39f338d56d8323b889699be95",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0799c47d8f6b35b39f338d56d8323b889699be95",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.0",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "7ef1a4cd2d74de1dd7e3a84d03fce96f50380b95",
+      "_id": "class-utils@0.3.0",
+      "_shasum": "4a2635be33ca3461e01351f1611e2f28348d8689",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "4a2635be33ca3461e01351f1611e2f28348d8689",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.1": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.1",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^0.2.4"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        }
+      },
+      "gitHead": "00a9fa2083603e1aab9b534a983bbcba316e7a5f",
+      "_id": "class-utils@0.3.1",
+      "_shasum": "9db43650b2cd0474eb6cc7148635177864cb1ef9",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "5.1.1",
+      "_npmUser": {
+        "name": "doowb",
+        "email": "brian.woodward@gmail.com"
+      },
+      "dist": {
+        "shasum": "9db43650b2cd0474eb6cc7148635177864cb1ef9",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.3.2": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.2",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.0",
+        "gulp-jshint": "^1.11.2",
+        "gulp-mocha": "^2.1.3",
+        "jshint-stylish": "^2.0.1",
+        "mocha": "*",
+        "should": "*"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "inherit",
+        "object",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "86db31b49ec9deca4c50df474e66f585fbd8b6a1",
+      "_id": "class-utils@0.3.2",
+      "_shasum": "5c282251b7a2f031abc9906e55c048f03988164a",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5c282251b7a2f031abc9906e55c048f03988164a",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/class-utils-0.3.2.tgz_1457560335014_0.4505936591885984"
+      },
+      "directories": {}
+    },
+    "0.3.3": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.3",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "static-extend": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2",
+        "through2": "^2.0.1"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "ctor",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "prototype",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "87216cc3c6482a30c106d6d40b3ec9ddfaf73319",
+      "_id": "class-utils@0.3.3",
+      "_shasum": "59dbf4399579ffd8c400a75124c69a6b2f4e574d",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "59dbf4399579ffd8c400a75124c69a6b2f4e574d",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.3.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/class-utils-0.3.3.tgz_1457685388238_0.9255549304652959"
+      },
+      "directories": {}
+    },
+    "0.3.4": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.4",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0",
+        "lazy-cache": "^1.0.3",
+        "static-extend": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2",
+        "through2": "^2.0.1"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "ctor",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "prototype",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a20c8d1402573756714afa71f6e5b22ee1912d1e",
+      "_id": "class-utils@0.3.4",
+      "_shasum": "9f6c1a572ebe62670c5842cb12be3d9716581f1c",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9f6c1a572ebe62670c5842cb12be3d9716581f1c",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.4.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/class-utils-0.3.4.tgz_1459888510108_0.14073048764839768"
+      },
+      "directories": {}
+    },
+    "0.3.5": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.5",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2",
+        "static-extend": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2",
+        "through2": "^2.0.1"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "ctor",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "prototype",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "58e45f5116ee26365016d5d05ed97aac5e9b1a19",
+      "_id": "class-utils@0.3.5",
+      "_shasum": "17e793103750f9627b2176ea34cfd1b565903c80",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "dist": {
+        "shasum": "17e793103750f9627b2176ea34cfd1b565903c80",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.5.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/class-utils-0.3.5.tgz_1488061458818_0.0674502404872328"
+      },
+      "directories": {}
+    },
+    "0.3.6": {
+      "name": "class-utils",
+      "description": "Utils for working with JavaScript classes and prototype methods.",
+      "version": "0.3.6",
+      "homepage": "https://github.com/jonschlinkert/class-utils",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/class-utils.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/class-utils/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "arr-union": "^3.1.0",
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "static-extend": "^0.1.1"
+      },
+      "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^2.0.0",
+        "gulp-format-md": "^0.1.7",
+        "gulp-istanbul": "^0.10.3",
+        "gulp-mocha": "^2.2.0",
+        "mocha": "^2.4.5",
+        "should": "^8.2.2",
+        "through2": "^2.0.1"
+      },
+      "keywords": [
+        "array",
+        "assign",
+        "class",
+        "copy",
+        "ctor",
+        "define",
+        "delegate",
+        "descriptor",
+        "extend",
+        "extends",
+        "inherit",
+        "inheritance",
+        "merge",
+        "method",
+        "object",
+        "prop",
+        "properties",
+        "property",
+        "prototype",
+        "util",
+        "utils"
+      ],
+      "verb": {
+        "run": true,
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "define-property",
+            "delegate-properties",
+            "is-descriptor"
+          ]
+        },
+        "reflinks": [
+          "verb"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "0ad9e639d6a63d6dc04043ac5931df85fb898e06",
+      "_id": "class-utils@0.3.6",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-qOhPa/Fj7s6TY8H8esGu5QNpMMQxz79h+urzrNYN6mn+9BnxlDGf5QZ+XeCDsxSjPqsSR56XOZOJmpeurnLMeg==",
+        "shasum": "f93369ae8b9a7ce02fd41faad0ca83033190c463",
+        "tarball": "https://registry.npmjs.org/class-utils/-/class-utils-0.3.6.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "doowb",
+          "email": "brian.woodward@gmail.com"
+        },
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/class-utils-0.3.6.tgz_1515682163077_0.6769419175107032"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# class-utils [![NPM version](https://img.shields.io/npm/v/class-utils.svg?style=flat)](https://www.npmjs.com/package/class-utils) [![NPM monthly downloads](https://img.shields.io/npm/dm/class-utils.svg?style=flat)](https://npmjs.org/package/class-utils) [![NPM total downloads](https://img.shields.io/npm/dt/class-utils.svg?style=flat)](https://npmjs.org/package/class-utils) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/class-utils.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/class-utils)\n\n> Utils for working with JavaScript classes and prototype methods.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save class-utils\n```\n\n## Usage\n\n```js\nvar cu = require('class-utils');\n```\n\n## API\n\n### [.has](index.js#L43)\n\nReturns true if an array has any of the given elements, or an object has any of the give keys.\n\n**Params**\n\n* `obj` **{Object}**\n* `val` **{String|Array}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\ncu.has(['a', 'b', 'c'], 'c');\n//=> true\n\ncu.has(['a', 'b', 'c'], ['c', 'z']);\n//=> true\n\ncu.has({a: 'b', c: 'd'}, ['c', 'z']);\n//=> true\n```\n\n### [.hasAll](index.js#L90)\n\nReturns true if an array or object has all of the given values.\n\n**Params**\n\n* `val` **{Object|Array}**\n* `values` **{String|Array}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\ncu.hasAll(['a', 'b', 'c'], 'c');\n//=> true\n\ncu.hasAll(['a', 'b', 'c'], ['c', 'z']);\n//=> false\n\ncu.hasAll({a: 'b', c: 'd'}, ['c', 'z']);\n//=> false\n```\n\n### [.arrayify](index.js#L117)\n\nCast the given value to an array.\n\n**Params**\n\n* `val` **{String|Array}**\n* `returns` **{Array}**\n\n**Example**\n\n```js\ncu.arrayify('foo');\n//=> ['foo']\n\ncu.arrayify(['foo']);\n//=> ['foo']\n```\n\n### [.hasConstructor](index.js#L152)\n\nReturns true if a value has a `contructor`\n\n**Params**\n\n* `value` **{Object}**\n* `returns` **{Boolean}**\n\n**Example**\n\n```js\ncu.hasConstructor({});\n//=> true\n\ncu.hasConstructor(Object.create(null));\n//=> false\n```\n\n### [.nativeKeys](index.js#L174)\n\nGet the native `ownPropertyNames` from the constructor of the given `object`. An empty array is returned if the object does not have a constructor.\n\n**Params**\n\n* `obj` **{Object}**: Object that has a `constructor`.\n* `returns` **{Array}**: Array of keys.\n\n**Example**\n\n```js\ncu.nativeKeys({a: 'b', b: 'c', c: 'd'})\n//=> ['a', 'b', 'c']\n\ncu.nativeKeys(function(){})\n//=> ['length', 'caller']\n```\n\n### [.getDescriptor](index.js#L208)\n\nReturns property descriptor `key` if it's an \"own\" property of the given object.\n\n**Params**\n\n* `obj` **{Object}**\n* `key` **{String}**\n* `returns` **{Object}**: Returns descriptor `key`\n\n**Example**\n\n```js\nfunction App() {}\nObject.defineProperty(App.prototype, 'count', {\n  get: function() {\n    return Object.keys(this).length;\n  }\n});\ncu.getDescriptor(App.prototype, 'count');\n// returns:\n// {\n//   get: [Function],\n//   set: undefined,\n//   enumerable: false,\n//   configurable: false\n// }\n```\n\n### [.copyDescriptor](index.js#L238)\n\nCopy a descriptor from one object to another.\n\n**Params**\n\n* `receiver` **{Object}**\n* `provider` **{Object}**\n* `name` **{String}**\n* `returns` **{Object}**\n\n**Example**\n\n```js\nfunction App() {}\nObject.defineProperty(App.prototype, 'count', {\n  get: function() {\n    return Object.keys(this).length;\n  }\n});\nvar obj = {};\ncu.copyDescriptor(obj, App.prototype, 'count');\n```\n\n### [.copy](index.js#L264)\n\nCopy static properties, prototype properties, and descriptors\nfrom one object to another.\n\n**Params**\n\n* `receiver` **{Object}**\n* `provider` **{Object}**\n* `omit` **{String|Array}**: One or more properties to omit\n* `returns` **{Object}**\n\n### [.inherit](index.js#L299)\n\nInherit the static properties, prototype properties, and descriptors\nfrom of an object.\n\n**Params**\n\n* `receiver` **{Object}**\n* `provider` **{Object}**\n* `omit` **{String|Array}**: One or more properties to omit\n* `returns` **{Object}**\n\n### [.extend](index.js#L343)\n\nReturns a function for extending the static properties, prototype properties, and descriptors from the `Parent` constructor onto `Child` constructors.\n\n**Params**\n\n* `Parent` **{Function}**: Parent ctor\n* `extend` **{Function}**: Optional extend function to handle custom extensions. Useful when updating methods that require a specific prototype.\n* `Child` **{Function}**: Child ctor\n* `proto` **{Object}**: Optionally pass additional prototype properties to inherit.\n* `returns` **{Object}**\n\n**Example**\n\n```js\nvar extend = cu.extend(Parent);\nParent.extend(Child);\n\n// optional methods\nParent.extend(Child, {\n  foo: function() {},\n  bar: function() {}\n});\n```\n\n### [.bubble](index.js#L356)\n\nBubble up events emitted from static methods on the Parent ctor.\n\n**Params**\n\n* `Parent` **{Object}**\n* `events` **{Array}**: Event names to bubble up\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [define-property](https://www.npmjs.com/package/define-property): Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty. | [homepage](https://github.com/jonschlinkert/define-property \"Define a non-enumerable property on an object. Uses Reflect.defineProperty when available, otherwise Object.defineProperty.\")\n* [delegate-properties](https://www.npmjs.com/package/delegate-properties): Deep-clone properties from one object to another and make them non-enumerable, or make existing properties… [more](https://github.com/jonschlinkert/delegate-properties) | [homepage](https://github.com/jonschlinkert/delegate-properties \"Deep-clone properties from one object to another and make them non-enumerable, or make existing properties on an object non-enumerable.\")\n* [is-descriptor](https://www.npmjs.com/package/is-descriptor): Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for… [more](https://github.com/jonschlinkert/is-descriptor) | [homepage](https://github.com/jonschlinkert/is-descriptor \"Returns true if a value has the characteristics of a valid JavaScript descriptor. Works for data descriptors and accessor descriptors.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 34 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 8 | [doowb](https://github.com/doowb) |\n| 2 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [linkedin/in/jonschlinkert](https://linkedin.com/in/jonschlinkert)\n* [github/jonschlinkert](https://github.com/jonschlinkert)\n* [twitter/jonschlinkert](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on January 11, 2018._",
+  "maintainers": [
+    {
+      "name": "doowb",
+      "email": "brian.woodward@gmail.com"
+    },
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-01-11T14:49:23.288Z",
+    "created": "2015-09-15T20:52:19.323Z",
+    "0.1.0": "2015-09-15T20:52:19.323Z",
+    "0.1.1": "2015-09-15T21:06:26.539Z",
+    "0.1.2": "2015-09-20T02:52:22.369Z",
+    "0.2.0": "2015-10-01T21:17:47.326Z",
+    "0.2.1": "2015-10-04T19:32:37.867Z",
+    "0.2.2": "2015-10-21T22:31:35.565Z",
+    "0.2.3": "2015-11-29T07:16:54.623Z",
+    "0.3.0": "2015-12-01T21:48:19.752Z",
+    "0.3.1": "2016-01-27T02:06:47.886Z",
+    "0.3.2": "2016-03-09T21:52:17.394Z",
+    "0.3.3": "2016-03-11T08:36:30.525Z",
+    "0.3.4": "2016-04-05T20:35:12.359Z",
+    "0.3.5": "2017-02-25T22:24:19.614Z",
+    "0.3.6": "2018-01-11T14:49:23.288Z"
+  },
+  "homepage": "https://github.com/jonschlinkert/class-utils",
+  "keywords": [
+    "array",
+    "assign",
+    "class",
+    "copy",
+    "ctor",
+    "define",
+    "delegate",
+    "descriptor",
+    "extend",
+    "extends",
+    "inherit",
+    "inheritance",
+    "merge",
+    "method",
+    "object",
+    "prop",
+    "properties",
+    "property",
+    "prototype",
+    "util",
+    "utils"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/class-utils.git"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/class-utils/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "_attachments": {}
+}

@@ -1,0 +1,563 @@
+{
+  "_id": "is-absolute-url",
+  "_rev": "13-ba04b4fde137ce85cca59d6872ebda7c",
+  "name": "is-absolute-url",
+  "description": "Check if a URL is absolute",
+  "dist-tags": {
+    "latest": "3.0.3"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "is-absolute-url",
+      "version": "0.1.0",
+      "description": "Check if an URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/is-absolute-url"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url",
+      "_id": "is-absolute-url@0.1.0",
+      "_shasum": "7798f8564fa87273035614420bec41f02d546cfc",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7798f8564fa87273035614420bec41f02d546cfc",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "is-absolute-url",
+      "version": "1.0.0",
+      "description": "Check if an URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-absolute-url"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "aed5931a4f223339504593cb41e129512d2b7054",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url",
+      "_id": "is-absolute-url@1.0.0",
+      "_shasum": "2d7ef0fd0bb2a88dac7e92253c6808a0ace24bfb",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2d7ef0fd0bb2a88dac7e92253c6808a0ace24bfb",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-absolute-url",
+      "version": "2.0.0",
+      "description": "Check if an URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "8da870b59600da38e8e42edbfb3f83e56d76c37e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@2.0.0",
+      "_shasum": "9c4b20b0e5c0cbef9a479a367ede6f991679f359",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "9c4b20b0e5c0cbef9a479a367ede6f991679f359",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "is-absolute-url",
+      "version": "2.1.0",
+      "description": "Check if an URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "d2fb33c65ae6805df1fcbfb536d122c76c0f3abb",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@2.1.0",
+      "_shasum": "50530dfb84fcc9aa7dbe7852e83a37b93b9f2aa6",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "50530dfb84fcc9aa7dbe7852e83a37b93b9f2aa6",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-absolute-url-2.1.0.tgz_1481475250580_0.8468719229567796"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "is-absolute-url",
+      "version": "3.0.0",
+      "description": "Check if an URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5170de95986994497ec74d0beeec872e80754533",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@3.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3OkP8XrM2Xq4/IxsJnClfMp3OaM3TAatLPLKPeWcxLBTrpe6hihwtX+XZfJTcXg/FTRi4qjy0y/C5qiyNxY24g==",
+        "shasum": "eb21d69df2ed8ef72a3e6f243e216563036a0913",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2856,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcqFRJCRA9TVsSAnZWagAA7iUP/j27VIC+NSNbjq5d0aE0\nK4kceL2QDMaAZ3varASDuajuziAmSIpW+mexCIWX4SRl97myyyEHrEmRoWuP\nlOrayHUix4w39yghgnUKbWddgkgk3i2/Hhne6B3VPiyXeZc/j13e/oC7y+l1\n2CyeLCOMH7SHQ/7QlRKWV+AG2vA/PkgcI6Km7LX90cKDP0WkJFfpZNgiBqam\n5TYg3btmPBp17DLe456Vtv8wvKZUgPrFlZhifoTzHzDLfZSGmtCkbJ7gs7FF\nhJIGhC5C55aiQfwkWuRQxbvfDE46WIbEmyZVUW9TzbDK7zAlsNWo8ria1Xj0\ny0gqJDy79glBDBPlOfLlVzUi8czZtmfmvQqv7JFmgYfjVv5O26zN295L9BzN\n+eJU6sRRGM8liWcrGzUUifmxM4sEHYED1sE/MpZQ7YfTBWKafABXBCIW1i4T\n8UpEI7Sn1jpjoTOQyqK8c0AyrSPGAvDywiRIwKCvivKJuoAmP1nkPXK9Ecmh\nr9JO+4eVOvGwULzpCYycj2sr8zwjhvF0y5TJ8sY1OYytA/hxMAOwOd2/YAH5\nefqyALjeo7apjWj26KEoy+MnpU6rtCeVgJ2qflFs1gNNS9v7ZxYdyJmppyZ4\nqMX/UH7Dy6Mp0tfz+NIsOUZpkZPIc5ZNABWnSR96XVVWOixstcBIyTffW6yq\nkACC\r\n=LHDl\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-absolute-url_3.0.0_1554535496810_0.42753297726587025"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "is-absolute-url",
+      "version": "3.0.1",
+      "description": "Check if a URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "305031f19aef72681a57396e687b5c11021211c0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@3.0.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-c2QjUwuMxLsld90sj3xYzpFYWJtuxkIn1f5ua9RTEYJt/vV2IsM+Py00/6qjV7qExgifUvt7qfyBGBBKm+2iBg==",
+        "shasum": "e315cbdcbbc3d6789532d591954ac78a0e5049f6",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-3.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3065,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdWTyQCRA9TVsSAnZWagAASvIP/3EhjPKy2dFi2ef7hfcZ\nq4aQ6CzAa6ljKwcsQnTua4ZlEmpQG9YhsNclLJFrD/3Wcuq+3Sy28miPHA5a\nxTd8yq+Q7EDCL4oQ42hVpIeN8BrGz6AH0R0hQkHIUmJdjY7FwR4mbqBplJ3W\n/59KDiARGzwSOtW/6TYQVq9g0XIQ5b1dsimvfcsKG4n4EijqJGepWZc9CKcV\n7SyEohqvY+JguJDGpKFiLZUFAlpFiYXT49L8l1A8K0ls3Jc62FvwIzotSanv\no/nYhanIWgmxAaeypYJrXibIwH2fNcsp5MWDHBqHC5R8YvlT1TO5XX1HlJR6\nVMb3hJ6Ls/sAPKZdbKp3aBPHlr97SxIPBFDC2XS/kVDhoahKkOHE/f8LGQR8\nL0HAX3m54QcSEqwdgJOQnVkRqUlkV0fQUigs5/hg2RxJZG8nocc/Sf2U8pme\nrW4X9ZvaopYohMOsVrN8ltwniJ7Pqcdn5IpbTd9ZV4dk9KyykRztOb3rvwx7\n2rTkWsNo3N13ie95N3pwb8ZQmi8xF/BbVwm3VjuhDiLIiO4FZCvRdH+kdSJY\ns4I+g4IPdutJ8PsXsAueqm4YXhI4iLJ1Hk3Zze7MuLWZVjG8XtL9lYPUq+KH\nqZh1rhq/0n+AnTT3mGuN60dGXFABx9SV5oSMfGvKRshZrMm3tNSuRkZ5mDL5\n8VGA\r\n=Vd24\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-absolute-url_3.0.1_1566129296322_0.2570963314369621"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.2": {
+      "name": "is-absolute-url",
+      "version": "3.0.2",
+      "description": "Check if a URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "219de67a7cd8193a0ae56677930304bbe3a26638",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@3.0.2",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+5g/wLlcm1AcxSP7014m6GvbPHswDx980vD/3bZaap8aGV9Yfs7Q6y6tfaupgZ5O74Byzc8dGrSCJ+bFXx0KdA==",
+        "shasum": "554f2933e7385cc46e94351977ca2081170a206e",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-3.0.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3452,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdexarCRA9TVsSAnZWagAA/KwP/Rpo9pmWlt+h6egxK40D\nkDbe6YhokJJsQejPLcKrO8ajE70zxR2IW4l3PsmuTXQb+2Ydvzd4lhcK2UBp\ndSiUpI9t7/UiIb5DGq0XDwed1W5kcLUQREGBWDq59+ekAaY77KknD29O2HV0\nPrgdlv4/ewYxnoTwPIrghW2rwX7VKr/v2NYAdDTKarW6xKIzaxeEsIbIpdvE\nsWmCQCGkSKJgmOE4CkNX29rdZrdYYBVsmvCFbsCt6HwvPxRIf1L0BACY4BeG\nsSBPMUQfSX1yoCRVNaBUF2Ei9ELdQDRzXg3dZWKKSKVbeSoZ2wqeDlDslNq/\nRxOYThIirtTvJME1xbMfmWS8HDMS8LpsvhCpE+HV0qCXsgxGD6/Csg1+lLFr\ntFRxkgJypwDQTpq/BnXQZU98YT9aAGkDlvftPZfrzZJiYM0Lj/gywh0lv5r5\ndI3M3PbMRWYcfqTIQWsHFsmMc8qolPf2MpncrtQx4WWLqoOR8n7WRE1silMR\nQEQZXhcHH0JHufB/7BCsEEWYSic8TKCPsNLDDyj3Tsfv9RVuvxC/jNW8CWMn\nVV4AOVz63uX/l3rWZaiWr/KC/hoWJPZNQlYM8aVk8ym71+dcHNthpsDWH4lM\nn5zQJ5B8Hwc06DtRLBZUOVS8NlOJxFv70EL4IFfsTQ4xoV0ziU2Xsmkl709Y\n/6r7\r\n=Ve3s\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-absolute-url_3.0.2_1568347818837_0.3173530606423203"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.3": {
+      "name": "is-absolute-url",
+      "version": "3.0.3",
+      "description": "Check if a URL is absolute",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "url",
+        "absolute",
+        "relative",
+        "uri",
+        "is",
+        "check"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "8a57ccec064d925640860674cd32e7182eeb3596",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+      "_id": "is-absolute-url@3.0.3",
+      "_nodeVersion": "10.16.3",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-opmNIX7uFnS96NtPmhWQgQx6/NYFgsUXYMllcfzwWKUMwfo8kku1TvE6hkNcH+Q1ts5cMVrsY7j0bxXQDciu9Q==",
+        "shasum": "96c6a22b6a23929b11ea0afb1836c36ad4a5d698",
+        "tarball": "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-3.0.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3461,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdkEM9CRA9TVsSAnZWagAA46EP/iBsdfAnzL/SXjoD8dlR\nSu3JHSmU+tN4mxHCOpyQl/0tn8QIxxLIo93zNiKivzYjwZgjZe3LJKOMDu59\nj8AjGLYpYn90vt2TiWRO18ZayYFsA7It0mJQjqigsyYuwWuWY7GoZC+N69FS\nnJApZwdBn5SDiyHrkrlkB/DWR26uXIlOBRjjimbpxTROanE9qeeGCGm2bHF/\nZKK60CEMF7X9MG60CGZYNfljf5fGQJIKC4+F0gQxmchJXHBVRD+vIWIe1GdY\nsjOW/7DBOoxp7ubL5Bb+3/so6jxdG3Tm7RqZ2+H2A71ZEWb8U0SL5INLQneP\n0KZe/WWQ8+gkBvh4DM6WrPpP1/TNKkK8SHhvgQof+ZUAteW3sMLuETUHw7Sg\nQUZv/kfb/CJHgDpPVYFjKts06CDYhrnGnLBOS9lLy8kupzGrZiFuCRZQlOlh\nS8fPYpbO6HEPLnrSy4bPKRfgn8rN6yjjmb2Zunb+EreTWy8e5WSaysf5mfuI\nSSheoe2D124A4yRBKIeVT9aT8AkCbK0y5y/i4MC//+hG1xZ7jTunuKyf1Crk\nz4XqfjXkx6UGtRiCjOq1u/nyVTBA6NTaHbMvE9C5yAIWzhYS4sYmfM6edTcO\n57dCLiBOd66HGGkObFVRNfc3DzgT+u5uL2AVPWQdDuN+G6jrbST9YYGGifF5\nvLPj\r\n=ulJJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-absolute-url_3.0.3_1569735484544_0.16914353628578827"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-absolute-url [![Build Status](https://travis-ci.org/sindresorhus/is-absolute-url.svg?branch=master)](https://travis-ci.org/sindresorhus/is-absolute-url)\n\n> Check if a URL is absolute\n\n\n## Install\n\n```\n$ npm install is-absolute-url\n```\n\n\n## Usage\n\n```js\nconst isAbsoluteUrl = require('is-absolute-url');\n\nisAbsoluteUrl('https://sindresorhus.com/foo/bar');\n//=> true\n\nisAbsoluteUrl('//sindresorhus.com');\n//=> false\n\nisAbsoluteUrl('foo/bar');\n//=> false\n```\n\n\n## Related\n\nSee [is-relative-url](https://github.com/sindresorhus/is-relative-url) for the inverse.\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-is-absolute-url?utm_source=npm-is-absolute-url&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-09-29T05:38:08.418Z",
+    "created": "2014-06-29T19:20:33.967Z",
+    "0.1.0": "2014-06-29T19:20:33.967Z",
+    "1.0.0": "2014-08-13T19:20:55.296Z",
+    "2.0.0": "2015-07-03T12:23:23.331Z",
+    "2.1.0": "2016-12-11T16:54:12.315Z",
+    "3.0.0": "2019-04-06T07:24:56.984Z",
+    "3.0.1": "2019-08-18T11:54:56.452Z",
+    "3.0.2": "2019-09-13T04:10:19.096Z",
+    "3.0.3": "2019-09-29T05:38:04.716Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-absolute-url#readme",
+  "keywords": [
+    "url",
+    "absolute",
+    "relative",
+    "uri",
+    "is",
+    "check"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-absolute-url.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-absolute-url/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "sixertoy": true,
+    "rocket0191": true,
+    "shivayl": true
+  }
+}

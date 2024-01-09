@@ -1,0 +1,178 @@
+{
+  "_id": "prettier-linter-helpers",
+  "_rev": "1-95b6b1ca5a615b732827f174e669d8f7",
+  "name": "prettier-linter-helpers",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "prettier-linter-helpers",
+      "version": "0.1.0",
+      "description": "Utilities to help expose prettier output in linting tools",
+      "contributors": [
+        {
+          "name": "Ben Scott"
+        },
+        {
+          "name": "Teddy Katz"
+        }
+      ],
+      "main": "index.js",
+      "license": "MIT",
+      "scripts": {
+        "lint": "eslint .",
+        "test": "npm run lint && mocha",
+        "format": "yarn run prettier '**/*.{js,json,md,yml}' --write && yarn run lint --fix"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prettier/prettier-linter-helpers.git"
+      },
+      "bugs": {
+        "url": "https://github.com/prettier/prettier-linter-helpers/issues"
+      },
+      "homepage": "https://github.com/prettier/prettier-linter-helpers#readme",
+      "dependencies": {
+        "fast-diff": "^1.1.2"
+      },
+      "devDependencies": {
+        "eslint": "^5.6.1",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.7.0",
+        "mocha": "^5.2.0",
+        "prettier": "^1.14.3"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "licenseText": "# The MIT License (MIT)\n\nCopyright © 2017 Andres Suarez and Teddy Katz\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the “Software”), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "prettier-linter-helpers@0.1.0",
+      "dist": {
+        "shasum": "0221c15f03025b722407d0ebfeee7dea960ec853",
+        "tarball": "https://registry.npmjs.org/prettier-linter-helpers/-/prettier-linter-helpers-0.1.0.tgz",
+        "integrity": "sha512-j5e6zr7nDAiX/R9iBSxOKzbzLxJ1OWiCA2yovXNWv7djZOwrB6mPeIwxB+0hip2iXYi6CTWpG+iGmwY27CFBmQ==",
+        "fileCount": 16,
+        "unpackedSize": 9566,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbsaD6CRA9TVsSAnZWagAAIxYQAIUwG/8QxXa/uOdU/flH\nm6TYRhqM6cT9wi3NqasM2vWVgnC2n9F4gWqCH3Th+cG7uNSQMOVp4KS3/Ipz\nRXoYK/iINVTruiPVeJokFlAizNE6uv7QYFIMDBsEg7DZWmvdEd2PdsDOHSVx\n+lOhNwwhN/Cojq72D308FCSJwhMe02ucQ1rlzcYjEy6o23UfHujGRF6FTxxh\n0YM9EoaA+UPQlAqntflmuKVA+tU9ZBtpeOY4VlJrsynLTguolXf5WX9WO4fc\noCXw7WVc+w7+BGPqgYFZLNBN8moD7gu1J3MKqc4xQ6h7KHB+tm9RJ3csrP8s\n9Rj7V8Dv7hKG3saIWGX5WLWnhpuT+8gQ0V+vSuPlwYnuRYoEGjVUPFLDaSo1\nOWL+uOAaq8oKzjOrg5Pz3OFCgeL0KDY21/F4LrZWgdzckuPdFitByKv1wFTd\nMteOmekO5w31LQBVk7aTKJ5R6uyESEeU2PMciBdIew4mppHAaFAC4i6Rdd6G\nErRv32dMiqn+GtI1EuyTB9/hnEQNkJHxf0yef+cwbxnxcxhjHCB98p3aZR6Y\nw2oEJ4tlIzXCwfAzRGn1PCNz1M+5d0QK2gnHRJx5HE34eCHzj30RhTiCPq6a\n7I4PW80Nr+fZ3IJGk6hLyBFz43PlZSc58cZytZD/j8NuTjzEXlNWpy0hNo0Z\ns4Nm\r\n=oiAf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bpscott",
+          "email": "ben@reload.me.uk"
+        }
+      ],
+      "_npmUser": {
+        "name": "bpscott",
+        "email": "ben@reload.me.uk"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prettier-linter-helpers_0.1.0_1538367738220_0.18175366566775875"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.0.0": {
+      "name": "prettier-linter-helpers",
+      "version": "1.0.0",
+      "description": "Utilities to help expose prettier output in linting tools",
+      "contributors": [
+        {
+          "name": "Ben Scott"
+        },
+        {
+          "name": "Teddy Katz"
+        }
+      ],
+      "main": "index.js",
+      "license": "MIT",
+      "scripts": {
+        "lint": "eslint .",
+        "test": "npm run lint && mocha",
+        "format": "yarn run prettier '**/*.{js,json,md,yml}' --write && yarn run lint --fix"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prettier/prettier-linter-helpers.git"
+      },
+      "bugs": {
+        "url": "https://github.com/prettier/prettier-linter-helpers/issues"
+      },
+      "homepage": "https://github.com/prettier/prettier-linter-helpers#readme",
+      "dependencies": {
+        "fast-diff": "^1.1.2"
+      },
+      "devDependencies": {
+        "eslint": "^5.6.1",
+        "eslint-config-prettier": "^3.1.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.7.0",
+        "mocha": "^5.2.0",
+        "prettier": "^1.14.3"
+      },
+      "engines": {
+        "node": ">=6.0.0"
+      },
+      "licenseText": "# The MIT License (MIT)\n\nCopyright © 2017 Andres Suarez and Teddy Katz\n\nPermission is hereby granted, free of charge, to any person\nobtaining a copy of this software and associated documentation\nfiles (the “Software”), to deal in the Software without\nrestriction, including without limitation the rights to use,\ncopy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the\nSoftware is furnished to do so, subject to the following\nconditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES\nOF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT\nHOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,\nWHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\nFROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR\nOTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "prettier-linter-helpers@1.0.0",
+      "dist": {
+        "shasum": "d23d41fe1375646de2d0104d3454a3008802cf7b",
+        "tarball": "https://registry.npmjs.org/prettier-linter-helpers/-/prettier-linter-helpers-1.0.0.tgz",
+        "integrity": "sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==",
+        "fileCount": 16,
+        "unpackedSize": 9578,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbsaJzCRA9TVsSAnZWagAAtIwP/RKj1AWbwI5SCuvIBO2i\nTZZ/QG8WmnzzHHpu6XFvtZbk6m/5PljqRwpVLL9qBczJXkC5ZgYW+xhRZmVJ\nEwFgiC7LR1OtJFM3VkuNWDz8w4xrHxJT7FlnUIFemuA/xl0Q9mE337X93Wfr\nIK9Epgvop+ifTkT/ynX0ay+x8NIwli6AI69uDslYUW6tfPXy3hUEljQy9gc9\n91A3gknd7RS78/vNbDRyUqlW8Oo7Uw4Rraru9V1R2O61FDEnHeoBIaMbK9CJ\naKOnY8qoyC7zimZlW7dwN3km6Clx3N0bOiv6AxHR9I0XlyOZlYFFAb7BF4kR\nFYzb/7QOrsyRW2vuHvPKt2aUP3vVxnTcp1kUaJrc/p/w/UYX8jzD4z4m3Tzv\nQIJ6JuisLNjtsKcukYt6pWrobxs/f7ma7hK3mjjRnfiYcIkWiC8MIQquhajU\nHKMsSdlL8fEU/0A8zqZHage6m56zla7RQfX/SwLeowV7rzveoFeifz4mkO0q\n4bBe3FS6zlN2F4SEoI7u7IT2yD+FncjDGbWd4KZWsvZtx4Da1FmtBi5DsGXd\nTKlWqnmyR1S3l46cUaJuFNAVYH+AfRBExA68lIp8DBUpaqAn7BOdNuv7PcI2\n1kUIaaLUByVkbnzBpIAqRC4KD3ByEl4rS6AdnLUi9cyfgCtfGVBNvlyHDhB7\n/pFq\r\n=/Uvp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bpscott",
+          "email": "ben@reload.me.uk"
+        }
+      ],
+      "_npmUser": {
+        "name": "bpscott",
+        "email": "ben@reload.me.uk"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/prettier-linter-helpers_1.0.0_1538368114713_0.019988871500704164"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-10-01T04:22:18.219Z",
+    "0.1.0": "2018-10-01T04:22:18.416Z",
+    "modified": "2018-10-01T04:28:37.793Z",
+    "1.0.0": "2018-10-01T04:28:34.826Z"
+  },
+  "maintainers": [
+    {
+      "name": "bpscott",
+      "email": "ben@reload.me.uk"
+    }
+  ],
+  "description": "Utilities to help expose prettier output in linting tools",
+  "homepage": "https://github.com/prettier/prettier-linter-helpers#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prettier/prettier-linter-helpers.git"
+  },
+  "contributors": [
+    {
+      "name": "Ben Scott"
+    },
+    {
+      "name": "Teddy Katz"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/prettier/prettier-linter-helpers/issues"
+  },
+  "license": "MIT",
+  "readme": "# prettier-linter-helpers\n\nHelper functions for exposing prettier changes within linting tools.\n\nThis package contains:\n\n- `showInvisibles(string)` - Replace invisible characters with ones you can see for\n  for easier diffing.\n- `generateDifferences(source, prettierSource)` - Generate an array of\n  differences between two strings.\n\n## Inspiration\n\nThis code was extracted from [eslint-plugin-prettier v2.7.0](https://github.com/prettier/eslint-plugin-prettier/blob/v2.7.0/eslint-plugin-prettier.js#L85-L215)\n",
+  "readmeFilename": "README.md"
+}

@@ -1,0 +1,3203 @@
+{
+  "_id": "@babel/plugin-transform-dotall-regex",
+  "_rev": "58-d3f559fefcb0998f9c77707791fca400",
+  "name": "@babel/plugin-transform-dotall-regex",
+  "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.36",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.36",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-b46NEiKIf9wT1Id/nUDjqy8MZkcwAAxaC9CZSCacA6uB9+MdR5weh/vA6u8gxNKBTEE00hmNloBWoRZ9e52FWw==",
+        "shasum": "07b1f135e22d597878fdb4b75a1c414d4d3ae863",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex-7.0.0-beta.36.tgz_1514228712515_0.17982800910249352"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.37",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.37",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-FDuLTnpB5F/jTKgKW6vSA1iGRHKqnhvj1/aOoVP7N7A7ZB1jeV4SCKMxIHM2QMT6Jh2pt5BDREThnWRWGT8JAw==",
+        "shasum": "805cbb032591eb490777f1b1b80516aee65e5fb4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex-7.0.0-beta.37.tgz_1515427373341_0.9675894523970783"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.38",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.38",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-MYjo3Fg3EjmAcZBG+gnbP8HjdmkoRpjGV68+Q9w853Ye9VimO47bz9HBojsClYpXsXbyxNbPRZteGU/jrMcKig==",
+        "shasum": "65f6bf180c3d7a87773db672c26192e361d0f7ed",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex-7.0.0-beta.38.tgz_1516206740589_0.9564708122052252"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.39",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.39",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-GeVYCtbispQixusVDn28jF6BZEM5fihUz2ffTWM9Rlnbn2V5tVCHLuwslbHnqtMaIVdAG6/DmXkhdbkymQElfA==",
+        "shasum": "cb403b70bad7f302832bdbc8eeeb53832852ca5d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex-7.0.0-beta.39.tgz_1517344070679_0.03904038039036095"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.40",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-regex": "7.0.0-beta.40",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5npi7X6QGNWWfXxVBMQl+fEAn0LceNNFT139yaGRkyWZtUXmueFLgXKsa9dY2DhuEis29KuZrwGcmGSQWnEmtg==",
+        "shasum": "89b5ccff477624b97129f9a7e262a436437d7ae2",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.40.tgz",
+        "fileCount": 10,
+        "unpackedSize": 3979
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.40_1518453728976_0.9017522507150202"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.41",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41",
+        "@babel/helper-regex": "7.0.0-beta.41",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-4asyDwqQmjqkfHwdocuBTlZK3OA7jTF+HmbrIzdKAzlZjVtLUwgvYTc4U9QpGZU2jL/982E0RCg9DLSgNpHUPw==",
+        "shasum": "0dc2f0411a11b2821caf0d7a1ca82c079cb35db5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.41.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4275
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.41_1521044766880_0.6396635620484117"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.42",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42",
+        "@babel/helper-regex": "7.0.0-beta.42",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-g/XbJzib6qmbHOJv/2n/bVKLcfJUBRSo9zO73O7lvJEYh8JvHWM/oVU829ztVPpdPT3xgHMiTVhnV/O5r5dYNA==",
+        "shasum": "af7ead30c1b6c3ea8a53973cfcfdbda9edc3c967",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.42.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4275
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.42_1521147040761_0.6448379757070257"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.43",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43",
+        "@babel/helper-regex": "7.0.0-beta.43",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Hq3/nS/1fe/Kfxn3BvKfTyZ+Uxn6kBWkpB6ySJPMfhVI8N1Sp9xvAj9KZy2nqdxYGdwwq1CvYnUXSIUGC8KMOw==",
+        "shasum": "f4c69c5cb09f6e7a6f2bb5441eafaab5b0232c19",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.43.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4575
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.43_1522687703222_0.0804854135033326"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.44",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44",
+        "@babel/helper-regex": "7.0.0-beta.44",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-4oF4gIPOUbljRGzdMdTAKVojOurkoMh3QLsGTPgNp1HrGtIKAQMprojA9O6gXwseIqiaVSnx3RwaVo3nHzS0oA==",
+        "shasum": "414bd71f39199e45a8ddaa8053cb5bd9690707f4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.44.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4633
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.44_1522707605071_0.16252698140953825"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.45",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45",
+        "@babel/helper-regex": "7.0.0-beta.45",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-56rStS71rA/whe/lFvy/uLTVv3w+kEh/hhBBqbfXE76pWOAiSkoc67NyINbQzJ0hzRQ/y6b8tkezeEWThg0LLQ==",
+        "shasum": "f79c7f0ddbe01e85342c6cb6b94c957c68a68f87",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.45.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4633,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1bCRA9TVsSAnZWagAAw8gQAJaHMRYkCFvqQQYNc38I\n3bQCCEI/VKoo0lMq87uxuBOPo99rTK9VoLxyAtW5s3usnYf083oOiMOJEAST\n8HboxRT/bns5lPM+E7j68ueiLwz3gVOPJQO4yPGE9Qz0TvlhQSMZWte2nTBR\nY7mS9puXENZrMb/PHybkWRlfckARTy+ZGZBsa1pRJlYcN9mEdVqkD+P7Mj+/\nIafMlWbTQ27CzOhJH3xPvGrjDKr4h5KSEviGko4DHFlN/VnJnxvbiKSwiqa5\nkUhAn4JihnUiax20ACbGeowEXc6N2g4S4qTknE8C7qlHKOP79MrccGG8D0Hk\nfKKmyXOpU0Bh62yiEcUiWGWXlLX9lcVT7dR4f4kalkkJF5ydKy1t9fWaT9Fn\nhP7aD5lKpRpAXcpS5BGs9WCOuob95O8ZE9/lD+DHUxcicRqpCzb/WKWFA7y4\n7s9YuN820+3VNftAwohMWPJj4FnjXVGBmQUt4+t4AqXhJrQtoZGXwq8WMXPA\niisrbHlx7OBukHnXbGEWATlH7jEl4Sol1LF5wfPPAXk4T0eUkcUH/N7mqbhq\nJSjBr4B0Dg6FTn4GHXgU7cIR3gd7WrKf8PukV/2MXOHbCud9u7/x3GIr/oVy\n+L+ZGgD/8OBiNn/gkISu4++EcyNGzxEEN0VrEp3FV9tNhW6U0SB2mqA+ub4Z\nfHXT\r\n=WBKE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.45_1524448602781_0.294674741012116"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.46",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46",
+        "@babel/helper-regex": "7.0.0-beta.46",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5bO0XvTP+2LFDQ9qT/WaXfyieLtqz1yGsfOuq86VXmwX9tDnBnNS6pCHEGFQ866c1HmlNBWtaXttTTnvWkFBkw==",
+        "shasum": "e5bbd78c1a94455e6d5dd1c77f32357b84355e06",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.46.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4633,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WGKCRA9TVsSAnZWagAAfwEP/Rf00fs4pFw2JMAgimVB\nMjLE43Skini8tblRQ4VQKzivbKvDmCuMmE9j6cXFEuDDNfejM9pMd0qOsrOM\nkI0ZwDTTUvSAH//TTkF8sR0MJhD+4Z74i7DSklyACR9d5aY1UDDQuun0IseH\nmPxUsoU+TJwzqUkqQ4rDvJ+Y8d4gkmIfxr9cNnPtzj9hr+SloO2hbWh2p7e6\nD7v1o6xhKJuCbAREsuKMOa3MhZ2J/F9IOqKA6wX4AY3vwGItbIyjeq2ayLgv\nSboEk14iVYykk16QPXvCpVcjCVTp+a1fSX3iQtrixGnr+PhfoU2ghI+0XNUr\niw5orN7dVIR2Dc7cyeHyCs8cI/QQBCWk0O8pif2vlmkvb84RxQoyrY8dX0w9\nI8Im7dWrax6Ymeijo2k/C4ff81uEOXX4dn085ttCEAYlpmEqeFfwtUH5h/s7\nz6wIXVN2R1fPO+nmA9/g5FfIbUe0mK3ZHXjgrfKfqp4N2vVrz5IvQo1P22Xb\nnv8vn/aGnY7TTV/SbTPwOFt/mVU4+Cghr0qbGs/kkBdRHmE/FMUh1Al3f1oY\nBkogb/+flpU1ccW7V61oh5k3IVIbJ9vSWIZ7iI6gxmsiTcTKtVeB7ErvIJIX\nldmeTclvIUHt87H0LINvEhqs94QprjUNxOiKGkbfpwzg4+Tlhhv0WF17KUMJ\nWXP8\r\n=C70z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.46_1524457866311_0.5999051876150119"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.47",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47",
+        "@babel/helper-regex": "7.0.0-beta.47",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ofB5GwipMoaOH3Qyr5g5FpXWePhIAaD4zMDOoAHDYBPuLWxzAME8YQCa0S3HJf3eTu/HTN/c/G1gDwDB8Z/gKQ==",
+        "shasum": "d8da9b706d4bfc68dec9d565661f83e6e8036636",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.47.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4610,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iUQCRA9TVsSAnZWagAAYc0P/3I4/7Brigf97RghB0Wl\nUEK1rYNm/88xilb8JlC51wwEpu0jzHHtJEm3MXolvK2lwvq+Cf/q0DqvSBLh\nBN1D2CW2Ohaadl2FPlngFp2KUJOsBzeIZxj17KnIY59yt5zc4xkuYudy00eq\nMlHwSROVPcr5FFRmo23y6u+i73nDXbGyhCTwsfBBQZ8VPhViPBLWxLdjWjvd\nSs1A1YoUCwTOEMo6T2jTGWQKTFqHhoGfGA5bTD2X4FIOGRh1Qdv8IoX58sZ2\nkvKa6d4/WnYILw+4Mt0qMoCGKgw+H+aXqRbmbdGr/jm2mfTPKn0PENkYJBKO\nrhaQXvpIHTDeyg18FnrZyfY8s+QUEU+vyD9xC7tp/0wtH8bRq28vgopWWh8X\nHuNvNGisb9fKk41EeSsaYwmD1lEsrndLl05K1nKG5mDFV9DkCmtSR+BUVZjR\nYBJLV+yuU6Ro6pQfWy6DM8SouWCLkp8cY4ylbKN4+NsGK/6rCMQJ0qkjiSlY\nKIU1Q+Xj0JUb/WCDLSFnbaafZlKhwJFeDcejZsA3YNWAr1b3gSiuOMFrbASz\ng3blx5j/17pBAcapEKXk6uMuKg3Mb0o/L1cn4uyYUBXQ5Bp6ipWbm+QK5dII\njWfIqRNWoy4txsV0XsJy8hcrP0HFgK+xMptVfhdsnehlYG650wFj7YCB7uJ8\np/Lq\r\n=ztbs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.47_1526342928387_0.7430125276076824"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.48",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48",
+        "@babel/helper-regex": "7.0.0-beta.48",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-V1aVbyLT4dZGdDU45D5Bh/H8IVrVfY3xZYfHeEIPhR47Qs0gIn54xlJmaUVTLIYp5kx3qEwBPKI07BZbHd/P2g==",
+        "shasum": "90e9d7cc3c8a835c122fafb5f05396ce5b87c090",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.48.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4575,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxDoCRA9TVsSAnZWagAAupoQAJwAgZh/mbXy+iDFrVVh\nRG4bMOJOx0BdDfdhxMIjA7VM2cUQvYkWNsFaOjFz0jDhBSzkmCEFGrOwqVhq\ncFhwio+7796QmMNBrmOVzbA+jRml4qExktw3oRbq9IYBRkf2/VBnDKab6ctW\nGzcKY6aAkUSr20qVLRE61+rVCXxQU/sw9IBsHkq/aHxJ83KXpWFx+dPUpe6k\n9f4qvF0JX45ulWq4N7KT26DFzTZvwzkVyM1KvqowDdI1q8sp0i6x6ig6lf8L\nrsY51J5xQVRLLwYyneckZUHkeus2RLfyL6D4QhUrwtTBRy/ZSn0Vhrze0cJj\nEcoT3CAat9+YzpSEcHfoXlRyiAIeGKu3Yk2r0Wf7ECSxqLkrcpTN2IVNyxfa\nlrQmHxy0Uq8lbNpw09UHZXOijxw8ZcA1LDVB61a2zwtiaCGoBHqvyofRHt1O\nRuJsJYrWHV1ztSC3pf3r91b1jepTdB4+KDJmIMsse3p7Dwlg1e2qP+xjdJST\n6nbAuOuoBuq4PjFZTf3uZuFHdnI5hEgyru4nKUbdVdF8iNhrmY2UO9pvktTn\nSJBP2GridxwQJ1N2ZbkDTkvowYWzwoKcvuNYS4R1oKNfmt9gp7//DAwzgw83\n4Jv2G4gIfOpsWBseDdfjxbWnUEuVVhdfyddvr1/z3tZPwwWiUbb/Lzxg2Ldr\nUq/A\r\n=CmQ9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.48_1527189736165_0.49732441866331323"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.49",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49",
+        "@babel/helper-regex": "7.0.0-beta.49",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "35ae2bc187bee752d0f7785d2704e52b87377369",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "35ae2bc187bee752d0f7785d2704e52b87377369",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.49.tgz",
+        "fileCount": 10,
+        "unpackedSize": 4575,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDN5CRA9TVsSAnZWagAAF4MP/jf/w97FypgHWBmPASxE\n4Nx8VFBoi5J8AyDQsfgeXQjsGHos1qNo8bO9ZrNdGjKSCxv/9s7J+qvXlGN1\nW3+BYOIEvVRMT8JVP759i5u9hyquY/A48JHIq6VF1Nuc7UJr7WPX4zh6MlwC\nHTBw//vbpQRRs1VKRpnHF/veX1HV1aQA+K+j/adiZRMbBZFryaRR61AvCogA\nFjfzTg9wiBQVfX8n09JG5DiktDUV0E9Y/VvHfk6ElhaKddV96P6UTepIc0mN\nPBklxrYS1epd69AYuJ8oRH+P7c0X11+avwaExcYwZEYTfBdvR4bCj95D+BHw\nj3y+L+G9xRYxtn30q6vJahyvJFit++pL5tJLJSJYVBiorR0K1+keDDfXkMA9\nQpqjoh0dcnNoDdgpf8ckf4b5JU0nWQxJeAzsVuO3WnAep/hpxFGbq0pDTqsz\n0Wvrl/NtNNfuBD5yANO9CpjUpTrh27iVTQViN3Lr6x9C01BjrBIcuxk5vA7Q\nRPb7KYiEDZxq4Q9UK3j9kVkIsPzq6sgtrgdN94w5SLv6YYFC6n9RzprzYe42\n9zCxy0QSKui/mI6Q5GHn/ENVqbQirlywpa6b0PtQf2koJCrAj2UhB8kawj/0\nDmeLI3ALjJsv7/jI3qjzHu6u19q1NpGVc2rnT9hv2Rm71C7muVR+zFuFJuLs\nomAf\r\n=iNyE\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.49_1527264120795_0.3452965176105458"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.50",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50",
+        "@babel/helper-regex": "7.0.0-beta.50",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.50",
+      "dist": {
+        "shasum": "70cd491101c3b0ddcd176692760b23fc656d4342",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.50.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3835
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.50_1528832835563_0.6097391313835432"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.51",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51",
+        "@babel/helper-regex": "7.0.0-beta.51",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.51",
+      "dist": {
+        "shasum": "980558a1e5f7e28850f5ffde20404291e2aa33fb",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.51.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3849
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.51_1528838385786_0.9555154104333667"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.52",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52",
+        "@babel/helper-regex": "7.0.0-beta.52",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.52",
+      "dist": {
+        "shasum": "caefead9870a06410ebc807d07b31b85fc46cd3c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.52.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3848
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.52_1530838764130_0.3525773845832789"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.53",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53",
+        "@babel/helper-regex": "7.0.0-beta.53",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.53",
+      "dist": {
+        "shasum": "4c464731a45ff059b7e933ac76cc05cc70651a40",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.53.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3848
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.53_1531316414294_0.09386013311528241"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.54",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54",
+        "@babel/helper-regex": "7.0.0-beta.54",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.54",
+      "dist": {
+        "shasum": "2835b7f4141b19fa0648eb96ffe3c4fccd1eca20",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.54.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3848
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.54_1531764004744_0.7751089137665792"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.55",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55",
+        "@babel/helper-regex": "7.0.0-beta.55",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.55",
+      "dist": {
+        "shasum": "2b9c2d13b79b660789b40f9f49873525d7d77437",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.55.tgz",
+        "fileCount": 18,
+        "unpackedSize": 3848
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.55_1532815634081_0.6245006922933409"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-beta.56",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56",
+        "@babel/helper-regex": "7.0.0-beta.56",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56",
+        "@babel/helper-plugin-test-runner": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-beta.56",
+      "dist": {
+        "shasum": "f8586e81e4d5f6609f1b7be0dcbce77a2bd3bd24",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.56.tgz",
+        "integrity": "sha512-nM7ZXzwdDwviGUleCdDrQ4fGXtTkEFg0HHbZ5LD7XlJrN4goJmi6xHBOoZ8iWdTPrzAuDi+FT87RWCHFDcU4xA==",
+        "fileCount": 18,
+        "unpackedSize": 3848,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPvOCRA9TVsSAnZWagAAPAkP/02ZIqfjDuOBYNY7+SkV\nfIRNiERib8zQuCbWm/3Vz/88mq3GN6wjbYT5WDap3dVdkRojrghsnF/bgz0L\ny1tiHD24w+LowzaYSzAYgAMPUnSNECyGgLXBBX31A7OMaivVOxDSYswEcOBE\n+AKWG764L+2XlXeVv0xMoCEoVnxHZBNrhoo5zTl6SdGCUnKirYnV5Vetlyqa\nsIBKao6Iod7wxQnH7dQPk7ZM5nNqKdCClwUPcamU16sd8PKGFEvCclF+w1km\n4SbnliCg9vrw9oGP5rmnbwh0nEdPDV+4mTSFOD5mlkS7GmZyxwtbQRdQ9xbr\nZHhSJDZm6MEj4bUCtokwRbmgrKSij9oaqB2k2d8U3wCxpaW81aeyvSN/GYI1\nUuF676tuokJyYaJG8kiG4OlYx21PyWHTtRTqRDjkGLWoYMX7hJP4FKY73uuL\njmLk3uo5VpWXTgDTnNaE9VnSP+OkdpWEKvUOOpuPVdQfvlvr6XE+zjI8wKAn\npOXre2jVPgxh4lm1RJ6BjJztIfxJcLfEMhoyks/qPEJrIJNbopZ6YewhZbrw\nzf/ciLy7JyteP8J5HK/BIxSjVVjA0nIkrJGtVm/AjKFEzzNixgXxfFfSrFSM\nKD/d6dmjvob58MIyqE2430r+jVUWUxzEIv2mTd/4AMRFXOwxPhlzmkGJhBUC\nO52l\r\n=Pzq0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-beta.56_1533344717554_0.8614003073525747"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-rc.0",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0",
+        "@babel/helper-regex": "7.0.0-rc.0",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-rc.0",
+      "dist": {
+        "shasum": "e0124033e5801b84b24dbd656e7d692ae21dc5a5",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-rc.0.tgz",
+        "integrity": "sha512-7yub8/f8DXU13lxa1kN+RqmIBE6oEvZY0PyIblM2CQy46sh/0m2nUgUVxdSB626ab2DxlpTTeuuSpMkgy1Zosw==",
+        "fileCount": 18,
+        "unpackedSize": 3833,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGSTCRA9TVsSAnZWagAArIcQAIU4CUKcH2r5HMXh995J\nymi0LXh3rMvhN/qAROG4ZJ+fvJjkMSKdfUa9JidI6KMaBA9yHM6h5D/hBDGS\nyAMXSsGfGId8KmV4AGLnYsGRu8rdVdQA1bWsh70/CzzZgkd6WqhnJNWL98r2\nXPnH2HwdObye/HmfeZ7Aw+r734VtfAq86lhsvwDHeNO7FbaQNKQ3txIcydr/\n9tjPC5SkbYYM+XQ5G9q2pdGmhwxzJCcBGgI051Y5sBVYj9QmG6Z8MRCT8+4E\nLFAI9cus03TzTX+tQufXyFEXbnkPop2hFTmp9604PTSE4Kq0DDlW9q7yQ93X\nIhXyioGhyIyWCJxT1pQFxN9Gx+hreAvHoz+6ODfyM4r0aCDwzcwUC65+I0ok\nvrp28TgNnyqN515o63ybVSFdeyPd48YfKcmREVNo/PyiKQ9uRPtJxGAFRf0s\n9KMF3MrihbnJGhh4AgeRSBZH6hNpAUOSDMjFJwbtKdyalON+nL6Ji2VKLwT8\nVCTxg2Tu7eTMTf10rZgm/IpjFfIvRW8luymRPBR5P/4qh10DSOaVJd6cBWxV\nLC1+jGqjKuzyCzLMDLRKjbp8+HyZOKB2HwEiRUBiJDSLk+eHdYDlvZf+001x\nV/5Jkm8YcmCRzOC9BJSPHtVyuhvW/86haA2nSJzA9fHnbSI0ixcz8bvMiHvl\neos+\r\n=hAi4\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-rc.0_1533830290553_0.3430563624797107"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-rc.1",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1",
+        "@babel/helper-regex": "7.0.0-rc.1",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-rc.1",
+      "dist": {
+        "shasum": "3209d77c7905883482ff9d527c2f96d0db83df0a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-rc.1.tgz",
+        "integrity": "sha512-6G62wnwVWCjhvmWmWatXHO4wfvWhUL1bJX0MABYIf1bpD5ROFly/HxgWkuMVcTSeIuLzsfsYKSF1CMUI0bykXw==",
+        "fileCount": 18,
+        "unpackedSize": 3814,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ8XCRA9TVsSAnZWagAAnBUQAJ0CwHvwT7KQsAVAkomI\nrzIdrxaiOD34zbsYg5ee+sBgyMBshUVOMX9/WigCAOVIJRwg2C8Bt9fET3i1\nXRZzndwRMa8VK0zEtCwCAkc3LLdKfwdQcBCWObGZ5dZXVN7BqBTEbv8+JY/2\n3hQQCysK+VhU5WHghbSQQCKQH6axAyDYZFzQKGddkrqN6et3/w9QSP2/j2O5\n2Pbwk6rkU6OwI7/QTygxqCnPePameihVA9Mr8l1OJNd0jHWMQZ9H1kaHrTpe\nxXOCP4SlKftl8tABc0i77C0aTKWT6h/47DSU6+FGFBzPnF5fN3+7cgr7iMVt\nNw5xBDe+b/R0DzewcnGmJoBevQoN1CO03PaRcRRjBKdeBvXfDxKccHH2FXOQ\n96k2INrgyMTdAipC8u8h9yoF9aY+kEDN+St9uaQEMP3s3MGRLV4gJ1CLrcV3\ntnaKDhtbwf9YlbjqUBVkXQOt3TgsdYTl6e0GdMIpBeio5QajoIMRS7++PFom\nHw4Yp+bs8ubnI2aR0zG5V4CwmX0DB3hgBMnme39QCsBUkrCRzmo1ttJ43PnU\nSsXuuSZtfxFQcX9heRfm8Bq2rJ16rOj9XvuKZDNteWAMewOCqd6PojFJ67Iw\ngl6oSbmKF5Gttj7Cuh31a3fpzf2r1sQI9L8a3r1zYzcyqx0RyvICWALSpU9z\nhUV3\r\n=50hT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-rc.1_1533845270807_0.8668493159414918"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-rc.2",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2",
+        "@babel/helper-regex": "7.0.0-rc.2",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-rc.2",
+      "dist": {
+        "shasum": "012766ab7dcdf6afea5b3a1366f3e6fff368a37f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-rc.2.tgz",
+        "integrity": "sha512-BCeZNoleLez7Rg0+iLKK+dqCJDGufKUPISRZr8e6NvSjwwRvovQuNMtdj4Dxww9Xk8zz0e9eKyf2Dt/h9CyECQ==",
+        "fileCount": 18,
+        "unpackedSize": 3814,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGbECRA9TVsSAnZWagAA6qgP+wWC2SA5ikGpGtesglXs\nmgQPuJqSmdPGRJEwNbHHdYbJSIobCdtMZinykk59SxoUCU4Nm2npWFH6RvgC\nwiOYlljNXUORop2A5QPwADkAWwbBa0p0ZnxJMWLF/EOBO8qtnRYjvHmwbXRS\nsW20ZZkYSPgDIFiYqjVVFiaI1NVldidCxw/COpSLFVQIHUNC5CjkEkrl+Kob\n3LCQreUtJ94mvHgP++zCnam3/fwLLpTIiZn2WuxgRP/P+OV4GCrjl2PWDJGy\nj+8Fca0vCWCWqavZftsaiQANAx5xMlYK8GI/Ulz+eI/hZ6G4df0KHpmbDFT3\nfWj1bosvAmdnSsigNA1WSFIkBn9fwNO83ZAqlIePsv4F5mcGeepG9KuCbWb9\n4HMvAUxnmt/mbV7x7IkNJBA0/fySycEFxmCnrRvr5uVywRja7ehby834Ys76\n1yCoKRXqku6dAgzsohZm79nWkZHjvfbtcT0799nl3a2a92c4O1QGW4GVmEQD\n/Qlyelojq34HZ3o3TrvrWKGsNvIRw2AI9Y3xMXzSC192717wogzMKclggZpf\n6mYQVF3u61cE8S8aEnAxnKCWQJGsasmo/n7mLcrt4RvVRyhhDydVefzR4wV2\nflnfpNpUlXBDfncxunG2/gSNxx1XdJ6lYACHn5Zm+rxUSnpdctJc+BTcnPYq\ndQ4b\r\n=ffC8\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-rc.2_1534879427973_0.7054077372697958"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-rc.3",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3",
+        "@babel/helper-regex": "7.0.0-rc.3",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3",
+        "@babel/helper-plugin-test-runner": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-rc.3",
+      "dist": {
+        "shasum": "7c7acf5cc4279831eabf3817daa85f7862e647cd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-rc.3.tgz",
+        "integrity": "sha512-AI8mGUPXYgJl2c5WfFtA6a9qw4OJJXx0anSk6Q2ZUqURCcXObQ8ID0D2afAEvji7uqpw+nnxN7LLrPYTc3O3WQ==",
+        "fileCount": 19,
+        "unpackedSize": 4913,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgEl5CRA9TVsSAnZWagAAa4oP/32fQmMY9jrxJrf08271\nqzvPDT0eryMD/CHkY2+50vWQhHSi47Xn0xSsqBN72CG4T9KD2M4gzR7SAdaP\nmFCZbAf7SNBJ3jmDl6fecpwu5k7/eaSraq6cqexrmh5dBGPnHwfGKqufaA9v\nXeMOK3/WgMvAihKFm2LL3gDKlw6APmunn66og/jWZ9bgOoBHdeFCpLu8GwnN\nqakjnVL6GqYikfw4tvUl0qQWB7aZzSPQuZvrdGLCIivrH3Zv5I+31EIa8jbE\nU/MibN9+SKqU2UyHfTLqRnVM4mRPAOcry/ioVmtlv+cC9ZS/OSi0AzzXF5Lm\n6S8Ui5xhwYR9e1ynCjR8gUunerVp/J83fe6lXJuXIZ9bYdn9y67fcUKb1RW+\nF14xJbIhYd/3yqxeJM1UqEUNF+F4BNahPOcx9Ok2uwdiaUDAkgEacGyRhLGW\nUFfx9RhwenUiSV+Or2PCNglWAtiyUHkqfhKDpWL2ZE/biyNi4pvNyVG4wgDt\nK2itN1DiW46Uoh+eF5l7HxB7mk7yQb7/tg/Q+SknfUbriKeZscWv2FXZAziQ\nTMjbtwASo5gKF00UTPrdFuWCZtRSJ1G81dOnue9S3mBGVaENFfPlb0fOm4Pa\nLSLp+LpamwDjMJfkXywBFkhFSsOJNgl+FmEiUtgMM2a6FhcfvrV/ySA+94wv\n4IOe\r\n=O1Yu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-rc.3_1535134072688_0.19853497077403026"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0-rc.4",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4",
+        "@babel/helper-regex": "^7.0.0-rc.4",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0-rc.4",
+      "dist": {
+        "shasum": "072b0cd398f9ce93a3855801091e9a49a458627d",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-rc.4.tgz",
+        "integrity": "sha512-k/rzTZFxKHjfzDeQ8Vzqw66S21o4f04ZGkcG8meCb7/0De2he7tRNS90WmibLWzJytZvycO4prY0DYX65pGPhA==",
+        "fileCount": 19,
+        "unpackedSize": 4917,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCpVCRA9TVsSAnZWagAAqAMP/3Sr/PerouXcWQJc2Lp4\nv9F0DU5kEp7IZfILo5u/FIW8kug3Xhodrmnv29Y3VlLBDQE4MVnb5ACPrb89\nPPZPmTGpbYXCFDo0P4dZZmtZRGz7MBVR9G9DqhB2mWrbX2JNpgEpkM7b7P2n\nIzoj+O6rHwfO0dznu62n/lBhFGeeAP/fxPXmJ3IXsO1rsY1piV0OljuzKwu8\nGtiJcuw7oHcRTsvUXNJh3FDCmWhOLF7iujm/DFU4xaqRIL5PShesTiBfzpXf\nNT1xPx/nFXTP34uSr+lw53QkHqES97acdzJSqxctbWaZGiHnxrPQ24FCMK/N\n1qoDWMBLmKc6m54abPx5x3pcdk0pVvJdTcJPEiWkBdhTYH9JVkBYJfCR+art\nJO7Qh2zSmmjV5UhPZJOAE3SDojNQvLiOqLnMKufTT7QEGsV66T4c+JnMNK7k\n25/0jtXasvg0DIDcI6OsjxSvW68u9bjmLR5stokQkbkpjruRl0QCCxt/HsmT\ng6TGLReqqQ8PAEIqZrtb3AZhkHF0TCU3zX6x/jdK/3rP0RTP7bIWyrztO+6g\nag9vBGzsc0X1n0cnzptzWe3/dM9DhvSfBBAC7Hb2WN8GkZnxHXPjR30e0I1C\njA4iU6CTMS2XK5Sd3zdqzG+dVRy9l+4XPte9XX4Ox2uRTHRZ7ID2DpaPFvgB\nQn7j\r\n=g9yu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0-rc.4_1535388244262_0.19273128829291264"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.0.0",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.0.0",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-transform-dotall-regex\n\n> Compile regular expressions using the `s` (`dotAll`) flag to ES5.\n\nSee our website [@babel/plugin-transform-dotall-regex](https://babeljs.io/docs/en/next/babel-plugin-transform-dotall-regex.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-transform-dotall-regex\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-transform-dotall-regex --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.0.0",
+      "dist": {
+        "shasum": "73a24da69bc3c370251f43a3d048198546115e58",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0.tgz",
+        "integrity": "sha512-00THs8eJxOJUFVx1w8i1MBF4XH4PsAjKjQ1eqN/uCH3YKwP21GCKfrn6YZFZswbOk9+0cw1zGQPHVc1KBlSxig==",
+        "fileCount": 19,
+        "unpackedSize": 4892,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHBmCRA9TVsSAnZWagAAaNoP/RirIPcEmyU8+mJRD3D2\nq8J8FZG/r6YRqXi1sYM3zHFbVZj+ZT7h2LbpAb8ViEx2ftsXgehwCvWWDc2T\na5Xa+Q2uuflDe/3ts+DoNIriukbjF8QOEna9j+GWkuZk4RcNFjMG6NQNuMy8\nnpomEBMv4PoIgfJKbIG3XnObU14cXbJSzuoBc0nhJI4iU75xcrBXectullZ/\nzXNITK2q/ZndjB0h5GYGLvKo/GTJWU9vL18RRe7PAhi6aW7VWvgG+pE1E07m\nEGj9rY0N+CGed7IGCotlxZRprymMYeYiEzv7bblFXA/keqhTLmI8qkygnlhU\nFb5iBvAMbnJxemVAdgFVKjggJ4yDh1GeN1KipLe/eGG5BD2Oijs6Jmn5dzPf\n3PT0LbfMrTKZT+OwYByT3jwInKpr0T61zR4bWktioW3nqLAuE2if83PNwSv7\nGPQKyKHMtyjHbj7i0fjMsJvUZl8PGhoKMD45XL61usRnujXxKVtc9f4vuEhL\n5J30NR1T+RHILGJPIuZSbbQW+uOxYKSu98zbGfcLIT+wxDPiO+JU9v55WDNE\n9aXD8Nnmfxg9j3GK6oq0sZAFTmngVo0YDarCnZanN4pgX9YVW5nbB+PA6G6q\nSslQhHvy4shCEk6fLV3Gd/HP57fxD0MFYSMhki3iBEH+VT12ip9G+M+nELKe\ndzvm\r\n=2TF+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.0.0_1535406182334_0.4261867208511658"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.2.0",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex.git"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.0.0",
+        "regexpu-core": "^4.1.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.2.0",
+      "dist": {
+        "shasum": "f0aabb93d120a8ac61e925ea0ba440812dbe0e49",
+        "integrity": "sha512-sKxnyHfizweTgKZf7XsXu/CNupKhzijptfTM+bozonIuyVrLWVUvYjE2bhuSBML8VQeMxq4Mm63Q9qvcvUcciQ==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.2.0.tgz",
+        "fileCount": 19,
+        "unpackedSize": 5018,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX1/CRA9TVsSAnZWagAA1aYP/3VT7s1COH/FxrvxVxD2\nyowgnTykUN0BR03dqm3ft5ziJs0GO8WnE6W/eakg+ix6eLXyuiyg0t4W2SYm\n+aAzxJXWhTL07qtEGbqi3di62A3ABg/DX+KJqelx1TVF2r+fQhCZJwuGfRPd\nM2viHbqO+jWR4ZWrC3xu0HQ3tXzy/M1tXok6bQ5qwidzZLwVBQe3Ai8zMNME\n/GlLKzRfBNzdoAsOk9dHQvkZ8n65MxT1aXjtzzfVlN1ZkPK2Kj1aEr91tx3q\n+6xKHnT753s9Kz6soDa4pl8WDH0B1WtgreGWWmZztyEFsjzBOIJLvFs+vi5Q\njAfFS7h8aFWdqYNdvU5+py24lMPiIm1Lb7gTtZ727C9/LYImSbhsJ3pYRluA\nO+krp0+a0BBT9AwiUxEVnBxHPFT7/8TWyHnzwr3XOQfv7NvT67J3acxPElvA\n/U1VpzZa3jZD30CbgcVBbKX5gW4rUteRRdSZgBRQ4XpmNOdbQpt/J/3fdruf\nbVzcWboX5uD0N9LTdnMzvijvpc2D8pKRbpkY12WcfJGTRz0sK/zxSij3R7//\nYmDUBJIBzOm4xbKM+pjjbbRbGC+9mUaXqVyaJCUiLV5wav+SSRprMX6phH6V\n2i1i5fB1wKcUB6p0cF1AQ3IkjNLmMS9RXyJzgadpzM0nBgk3H7+DuGWsb9L0\n4afy\r\n=DZxj\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.2.0_1543863678309_0.10662234801419035"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.3": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.4.3",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.4.3",
+        "regexpu-core": "^4.5.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "508fde4009f31883f318b9e6546459ac1b086a91",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.4.3",
+      "dist": {
+        "shasum": "fceff1c16d00c53d32d980448606f812cd6d02bf",
+        "integrity": "sha512-9Arc2I0AGynzXRR/oPdSALv3k0rM38IMFyto7kOCwb5F9sLUt2Ykdo3V9yUPR+Bgr4kb6bVEyLkPEiBhzcTeoA==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.4.3.tgz",
+        "fileCount": 11,
+        "unpackedSize": 5038,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJco75gCRA9TVsSAnZWagAAm+0P/RcYbzsCnFhO22w+SdGB\nH9OC58bY4QBjfHAuT9e5UD8XA3r8Zg63og9jQ7E5ugiVbHiMkzsZfJ9uL7G+\ng+FuPJhj/iEOZqDAt7816Mh5uD7ANkSdP+lM1qBixV28NO7EgtmvCzF3rfst\nXjMsbWZZd9wSQVTzrGmhiYjJG0DLSA5SMc4rZhHFfehWz2M1PkztYrnK9Jsu\nFgYMX9HP1Na2zGFnz/Q7GWhKKQyR6xAT6SnFUyFKDS9IrcgRHdoIHXlA4qdc\nvLEaNdQeoyidJenukNqILDRbId9uNEGQ8TGmywFVa9LlntRNvJLomPSi5Afu\ntwU079kSUOT6CHlODb/DiSW3uF2dggX0P9gTXYk0Xaf5VwgADdpEkZn3yNl8\nxAXIyEqGPaUbPSrsI+Y4FwmuYzwR3mmzY0dqQZ7FDv8JOmghvIceUV0byGSH\nyNMDDk282SKz/oY2hIwk5DZHDubvKacvjIt5Y6fkbMMGqpw9o01Paayby8cV\nrsGOUcmIq+LzhPnV2h7GWeHunsYlRxlgHhOOhxvmQWmPlwPAoLFpgPGc906+\ndbTGpdPA5xAqt0Ktn1pxYFg6otdYPN4losv3C0jLkD96Dh9JGyyZSG5BIHsR\nowqhvghM9yocQaPzAhy79wFrMDjdBs/jctiwkSppW75OJeT6u/xxFgFKVBFU\ndH5s\r\n=xm+V\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.4.3_1554234976295_0.3184763836101301"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.4.4": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.4.4",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.4.4",
+        "regexpu-core": "^4.5.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.4.4",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "2c88694388831b1e5b88e4bbed6781eb2be1edba",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-present Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-transform-dotall-regex@7.4.4",
+      "dist": {
+        "shasum": "361a148bc951444312c69446d76ed1ea8e4450c3",
+        "integrity": "sha512-P05YEhRc2h53lZDjRPk/OektxCVevFzZs2Gfjd545Wde3k+yFDbXORgl2e0xpbq8mLcKJ7Idss4fAg0zORN/zg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.4.4.tgz",
+        "fileCount": 11,
+        "unpackedSize": 5038,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcw3JlCRA9TVsSAnZWagAAAp4P/0oNh4dmRriATDxAIVRX\nCrIl5B8YcJwNIgXGAoFNUbMJrtzhpcy7LNO4DjNXeyNs3wfGbCN8aFhrHtdX\nIB7B8lL2DZXafYuHHJznRA9D8c5N+gXYyV/ER0/EczU+5a9suIIod0NjBXmq\nr5eKTj/MBwSf24n9ZrUT/UdqFRNZrLyqExhB1p6OmKoTDZDjWn+rmJRe98Q+\nqJsalXEN/3WQ32qA7a1FmaB3Gul+LKpSEJDNMLStAzcPHdTxFQhlQAaZk51E\nJQn9Bc6uj8wSNOfI/A8TZ4Pd1amRU+JOKGeIQLW54q8eQkUyn0CPbC6LAIU0\nPksRbpadtRUFm+Us5Nd5kl4Rvg8L8wtJ6YFVCA99yVzBDn9qiHMtI0dj5hpD\nuygMry/MFA4VXL/uhBHGhGrqDNBpDkT/vSx3GrvUbg5QFUm8JvSr0hZBKrfN\nnvLng8zrbX0cFQOHBwlzCPnI7UPR7Re00+sxqKrNUmDMK2LQCQAuGXXTkp1S\nXe9tpUNMZmCkJQe8/fdq9yK1IcTaZqqL+Inz9Lhao7QB8MMbQbKDQjH3KrCV\nHGqEznqj/8UoZA8a0xuW4aG5ecFpnEqtFGb9h+fLQx//k22EKr3Dsl1hjPLn\n/T9X0aryfgwpmysG1zeKeEchS/BAjkrlHZxe2g/g8z8d8OJba5C+y1O4qmxR\n6Ufs\r\n=nbYq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.4.4_1556312677372_0.6153472820258472"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.6.2": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.6.2",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "engines": {
+        "node": ">=4"
+      },
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0",
+        "@babel/helper-regex": "^7.4.4",
+        "regexpu-core": "^4.6.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.6.2",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "b9cb4af953afb1a5aeed9b18526192ab15bb45c1",
+      "_id": "@babel/plugin-transform-dotall-regex@7.6.2",
+      "_nodeVersion": "11.14.0",
+      "_npmVersion": "lerna/3.16.4/node@v11.14.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-KGKT9aqKV+9YMZSkowzYoYEiHqgaDhGmPNZlZxX6UeHC4z30nC1J9IrZuGqbYFB1jaIGdv91ujpze0exiVK8bA==",
+        "shasum": "44abb948b88f0199a627024e1508acaf8dc9b2f9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.6.2.tgz",
+        "fileCount": 11,
+        "unpackedSize": 5410,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdiTdfCRA9TVsSAnZWagAAKkEP/1rmikrHbDxsk1O+jG7q\ngzNQYXv/Xyech0+VKRanF8TlMX99Q8BVCVXLA+rRJVDM1JSKPT26Hn6r8is5\nvX1lZtqlgMoad2pFrkiL3yjffNjxYJgA1hKWgHe88tqc6jmCN9m9+mqmXmkR\nu7vwapRyAs/tZ8AMDUYEM+dZ6vZ/D1Fj7Ia46sbh6kg7J0ezICJOOzOXqVHR\nHi4rnRRBKRKxZ/9kVtOoBnxNFpbrbAuSOylvHlBI3sRLmugsyExnnWz3n5wK\nXSzAzZomJUf5SX067ahf4VBuuCEAhLmm4x1HtaLhcqcnSAcwnADlvhK3uMn/\nuQYcQUV8y9w1CvJSL64E4GnZDGnK5hBHqeMxHQHzq+UeoKkzugFSkDSfXZQ/\nFZilh3G+ImsC4QPdbDkF0cAmradu5DLBNdF7tZyJK8cwhZqT1qbbA8pI27lq\nk9sn/FpOuJp1Zly8O829omvGlhl7Y5hWUPBnPPT5RbSTkpb6ABTD5TFHSzZh\nPlF2IUm4NKi4RbrC0yrD90/f94ngFhxo8/t3nQNLq6MKCs4YLtYKd7ooQBZV\nEDPMMjNW2bdbkO5rUFC0gdCt7FnPulLuntFludx7dBvQaGUwx7CWKz7FCu8D\nvS2v/uGFTpXpCwy9AX2OvjCfpEH3ku14GFrcp7NI0igfcLODiN1YPE0GRqzR\niTQ0\r\n=x+Yv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.6.2_1569273694512_0.46372184576285846"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.0": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.7.0",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.7.0",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.0",
+        "@babel/helper-plugin-test-runner": "^7.0.0"
+      },
+      "gitHead": "97faa83953cb87e332554fa559a4956d202343ea",
+      "_id": "@babel/plugin-transform-dotall-regex@7.7.0",
+      "_nodeVersion": "13.0.1",
+      "_npmVersion": "lerna/3.16.4/node@v13.0.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-3QQlF7hSBnSuM1hQ0pS3pmAbWLax/uGNCbPBND9y+oJ4Y776jsyujG2k0Sn2Aj2a0QwVOiOFL5QVPA7spjvzSA==",
+        "shasum": "c5c9ecacab3a5e0c11db6981610f0c32fd698b3b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.7.0.tgz",
+        "fileCount": 14,
+        "unpackedSize": 4197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdwVShCRA9TVsSAnZWagAAY9MP+QCO2DQCDGDcxLWPRs+P\nzspfpcRLrRy4gyCBdPCUuBjA2XOFiQvXNN4TYzHWSG1uf3ysNPClU7a0qNe2\nPGHHl/cCadTkiI/0l1Vb5u553M3ch8ahwOc3Gepf+AysZGjm8A3pXlHcBHtx\nVQ4hqc53dP2HH0yqS5AZm1HrPZc0l13qNXM+bsGFtj6oyvLWlkHNjCFdjJws\nEJBD9CJ+BmeaTL4UNcUhI5VWZUngvOIFtTUfkkNl2ZuIjekEWAZUaoVMyxnQ\nhUvvoc6+fa9KX8W1Q6KmYYn2XvCrb0erI7bNaDqk9HeuCVjDIHKhW8lEKUUZ\nILnmt+HVnVPXkXIuIdR+8K1NoaIFyPh+fOgmQK/YZmSBqH0RMIdEvhM44u9z\nt+jJu/gXTGQeynbL184YZU1wXoIXs89K8kfiCZCAaaXOHKh903P25Of2Ro+S\nZjK3MqHpsXl2BqVyLMdI1ZR7GNkBQAiplBvNt6tlINwV8tDtlm9o4oUHfHTx\nldrQ2BxaJeRbz9z4gHldSgmz743YPe1k0fFVAsBOOvpXO9tyRKB0TfkbxF1d\n/bjO5ZE6xpDeWEZPqfkMyHWkKc91Q21THbLO1JyvYSRE8kOf0AJ/3NoC+4F3\npTrmYYlPWdpjm9gkTZZ+oOML2SyFbF3JLx3xi5RbJhkg/YJfnWxjEUpW+qfC\n2Vpr\r\n=xRsG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.7.0_1572951201567_0.17423415381504137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.7.4",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.7.4",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-transform-dotall-regex@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-mk0cH1zyMa/XHeb6LOTXTbG7uIJ8Rrjlzu91pUx/KS3JpcgaTDwMS8kM+ar8SLOvlL2Lofi4CGBAjCo3a2x+lw==",
+        "shasum": "f7ccda61118c5b7a2599a72d5e3210884a021e96",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.7.4.tgz",
+        "fileCount": 14,
+        "unpackedSize": 4197,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2HASCRA9TVsSAnZWagAAYk8P/jfnTaR2J+kHd2KmYG8n\ncRTsY5lqf3uhLEx/Eik1nsvg2OFg8qRPxGuFbUVjmdTp6Q5t/RN7uwJ4iku5\ncEXrX4E0TWaMCnX4znoevyWjJj7lMkp9CblpIapOwyzTeZBcPVSJKDvkc4TP\ng1DTTVVJF7aYWulLsoY9IkcxsEMH2gJieZq4pYoUttSsU+4evHrtQ8IE+Q/Z\nMCe95veR5vbydU/+IzgH+zQjsJGkceHbfdsNjrgXdSYQy0wWbDIzftXQBLU2\nE4QrHHKn1m7AIhSjZcKFgvKVgDn9YFlQ3ongpz5H8isCeemOJ+yAVpqwuJDa\nmvhQabgdzqp6YFCixdTqOdyjOJnGRxFTrZlthtEnf/bdSniBFmh38zNW6a5h\nbsZkdxBTw0xZqWd75eCEHIcrR67onMM8DEXfYuGCtdkNh2cTHL1ilGhRYbJa\nhZ3vI7GJKTMB8esLmtwtVGqKoXmMqrtMWryDrC+koyeJiuhYxTLFhG78qAMh\n3Xyz8Y9qnS+8ZCni+qEpN/4a9nyU1aewn6AB1ZrwMr3MEI9OlVIHQdduRcg7\nBZniJbN9iqLndK3NP3UVfortOcRuq+/OqA/P1rk2jWXoCXQojSQwTURMw8o4\nZ7QAAUgppbYfR9u6UJPDB7catAzktw66s9mY6soFEPy/LmF5X3Qb/U8ZgVGM\nCy9H\r\n=dzkP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.7.4_1574465554340_0.6062280342619011"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.7": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.7.7",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.7.4",
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/helper-plugin-test-runner": "^7.7.4"
+      },
+      "gitHead": "12da0941c898987ae30045a9da90ed5bf58ecaf9",
+      "_id": "@babel/plugin-transform-dotall-regex@7.7.7",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.4.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-b4in+YlTeE/QmTgrllnb3bHA0HntYvjz8O3Mcbx75UBPJA2xhb5A8nle498VhxSXJHQefjtQxpnLPehDJ4TRlg==",
+        "shasum": "3e9713f1b69f339e87fa796b097d73ded16b937b",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.7.7.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2975,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+snyCRA9TVsSAnZWagAAtw0P/iq45YaPgB/eCc1Xw4pi\nwnqlQOuy2rga+sjzdWLdqar2QzSXrG88228YWDaLCq7OF/yY2izNN2VIvbaO\nFHNdh/sZRwUbKN+e70MYgrJCjHvgM2CLlik5dCN8TML7fLERtRD+aoL8BnBO\nXDsXU3Ml6fum7opQ6fgSjHRw6vCk+kTMgdzavnogStpatztW0suMDuakZ/OY\nxJSK4RfYh2ljdBUhj3wVbjKAE1gCBV2YifDBzsiQHfUCvSCqqqL+/ChgKvsZ\nc2rv+LY3aj97HszQwvti2RgRHjcr3uZZLAXWxWbsXneIiVE8429RUWXNFw+L\nGu5OxCPz1dP3CuSw4vJyzZ4FaOxGCwafFkqQJd6S3SZYzSdy+YTUs3HWwL1q\nrdpNxOsu1nYd/tEyqD49GnglIZCrLzVDQTtKAMKGI5Y6Oftv88JJFRxIPmt6\nNA5KfSLp535N4wPlTGXXsNm2aRevvZALVLbUAjAq6nGSFlro7qZ9Phmnk7A7\nhqWa0Jk2uNyyX8+KwCijuE50uJXlqa+TsgNMAcq5OotdS7hz0DNaRDTlkDvV\nByppEFsRz8xokUnS9FjoAN2i6wma06No1NgYSyKJwMGJY5AcNPVXqsndQT8v\nKVZHJoCI89QdZ+IAT9WDBT+jsNAd1FnB5YsC6T8eE6uc5Lj32TGIztDMgc+P\nFocd\r\n=vlPS\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.7.7_1576716785858_0.6977329693420777"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.8.0",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.8.0",
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/helper-plugin-test-runner": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-transform-dotall-regex@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-pq/XLkDB4MPvTe9ktHJInfWksalXogrIGRZJUG7RiDXhEfdNrlducoMPbACZQuCFtelVgVpD0VyreiY0l38G7g==",
+        "shasum": "7e9e439e85219be091c5dbf1be138320600d1172",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2997,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVzCRA9TVsSAnZWagAAsCwP/1aoArzYwXUuU1R2Cxw4\niQOnBDc/Gqe0jT584N7LBpVNaA06ebNb6xsKHKEQQBCqpnyQ1y0acrnY/IUy\neLKPa0aP/p/sv5XgMMn/ZAyspu/X/RRMScqlm6PCmhIw2bdOwPkaHA45EleK\ncWCuXgargC1uf9ZEFRQtwBy3XufjI/jp6UouX7PI5paBDEGWR+xVsKbjZuXk\n9JvLj6mSNM36HehZTYGtrqeyh/5iiFZ3HvC7RZGgk1U4vC7o3dX0GGmy/2uX\nrg1AtpAVBsCWngvQJjYKFefxn3mjR6c+t/QT6S9f/b//CDCPf6Y/gi1BnuzO\nvUyRJ7zCWe6rULnHYz7ovAGIxJjgWskUwT4xEi/GIoXhAfke3KB6LqTL64bC\namXeg9DzqvLRwZASl1CX3l9PcOjjvwlh+lyunYGw4RI2LY3AWjw96t+eetpd\nyNo5i4qwTMWPZfxyU6V7QQa4Mp2KtXScsFldMeSJUvaghi7z7MVvdHf5G8mP\nlWrdhC7xyXfXF/Uu6y10SXmKC5ehGVnfLuwIetC8OBgoOTFCeOnI8v+JJAEo\nKA7pXjamxAfJNTgmRhnnO9JRBsQZL7E2bx5JTM0Uc4mPHSYQarnxHSTeJrAP\ncnCN2nsMnl9MHGcOWbS0+bPVsY17yzFtfezIf7c9HR3/IFh7+Y22PtwBpCAb\nPgiI\r\n=8rE3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.8.0_1578788211084_0.42533868970647304"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.8.3",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.8.3",
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/helper-plugin-test-runner": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-transform-dotall-regex@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-kLs1j9Nn4MQoBYdRXH6AeaXMbEJFaFu/v1nQkvib6QzTj8MZI5OQzqmD83/2jEM1z0DLilra5aWO5YpyC0ALIw==",
+        "shasum": "c3c6ec5ee6125c6993c5cbca20dc8621a9ea7a6e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2975,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOQxCRA9TVsSAnZWagAAiQUP/0bvREfUf26XrwEG0GJs\nvbr4ZIbJFbNREkUibz+JR+6Rmc4hCFcZxfKpHlflAmfN3KH0yPi00DOeZ8Cu\nz8DrzFunpYX4+AmNVL0x/yORD+4Hop1uxfZtr3i6K8sfTJiSaLv60PIvvXOp\n3+YRxBPk7MLnGo6XYbvIClZEMfnTC4bANIzApIHL1EJ7vsU0QpgKfeXC+SCP\neRXjmXRC/79fcgCUD1stNfsJiujkBJr0Us3sN4v+aQvsBJP2reHi1lKMiuNX\n8ChqnE9rpxjRITpTLsPq4ADRSXElTOLM3hCSwatDxITbV4lrZzK3zRsRGwxd\nGSeo8LInfzyw5n+IhlyO82Tz/oRblgpW8K9QkWeVa9HTFoLrdCOP+mRFZGUe\nW/DFBeUT71mZBfbJBVgCUG+3cn7ZAVZAUdoez4HvwJK18tgthTHLLpsSuekB\n4rXyG/kirzeuBfrau0KSgY7GGLOYtNw5bY0LiNex0a3fKec6AK47lKDNSx4W\nTO8vcfOPskH4MeBOiIZF+J3sldnh0BihPT/JmvJ5uVhTjXWdWDp3MH2byUuu\nsDYHBdzuc754xIMNz7j76xdSdn5+3+VZn0sIQlzUXUFqj6U17PrzAP4W/guD\neKvYGpqH1et6jPxa8G3DObGx+Ug3rNq2QQ0MgTFDDibPMiIO7CeFtAebNoJv\n5UYi\r\n=FaIk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.8.3_1578951729382_0.18605111292073184"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.10.1",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.10.1",
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1",
+        "@babel/helper-plugin-test-runner": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "_id": "@babel/plugin-transform-dotall-regex@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-19VIMsD1dp02RvduFUmfzj8uknaO3uiHHF0s3E1OHnVsNj8oge8EQ5RzHRbJjGSetRnkEuBYO7TG1M5kKjGLOA==",
+        "shasum": "920b9fec2d78bb57ebb64a644d5c2ba67cc104ee",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3028,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuTKCRA9TVsSAnZWagAAzOgQAIipU+8UYzJJnNf73hcP\nD2IxBccQ11BQwtAO4unWmmp4mdqICTCLGfYMoAGXLn11w1/uBDlOonQ9GGsG\ncquR5GFP5t8Uq5tax3f7whkdoGHRTRRu4oHyWTwz/UJYWu7ZMn23FuGo08pg\nk1Siwqouz6A207ajlTn4H0eALRGoy+YqKToPDgh1g0MuP5vBIFzmsYt59Q7O\noPDSORt1rOjJdLGtpvsWAlzCgtF+b2zS3YKPKtnF5QTFpwfsgpvSePbLQaSQ\nVrhl1MYDSv5u9Km2w4f+gEVE/FxRzPW6r73zBA6C7/riWsz6b4DlrJohdCAO\n1ihWK1GiWlYBlt+sweKoibidJR2tLVcdQyoaJBasa9TlAIjFnLes6AKqyFmt\nEsLozNY2R/ots/JV5iDFWoMQmgVV5QVU/CdchDo6Ugxkh/UuEfMiPjdb/zjF\ndcQb1ljO2hwJipjywta4oTA37mVM2IatClgnEIw61NEpjJ14Njf4890Mc1dC\nUl0ZFnfoIxg6JnFDN5vuaXuckmGm2SAbOoPZuy9lkZmGElCEkhQkHhIuzwt9\nkCNjlJfg4J5Sb4BUdv6JRFccip8Xl+c0lR3IaHXxdRoPcUqJXaN3lA0mSQVR\nyqzXscW2O0FJHQ7lHcE3PEKShBBHnyE5sTANnya7P//dvs2ZhldK05tQhK6L\nrk6e\r\n=EaB9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.10.1_1590617289590_0.33390166633759044"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.10.4",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.10.4",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4",
+        "@babel/helper-plugin-test-runner": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "_id": "@babel/plugin-transform-dotall-regex@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-ZEAVvUTCMlMFAbASYSVQoxIbHm2OkG2MseW6bV2JjIygOjdVv8tuxrCTzj1+Rynh7ODb8GivUy7dzEXzEhuPaA==",
+        "shasum": "469c2062105c1eb6a040eaf4fac4b488078395ee",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3028,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zpNCRA9TVsSAnZWagAAl9AP/AlXLaxjoHJpupI88mdE\nOY3MSPM1B2kertmalRCiSEz7FTGXZpA0286DjkDEzyj5vag8IHBF/YuEWP0E\nJo8wwXkrTsbeVN9FkR24fLklWRNvS1/EdtQz9dKj4y5CY765pX5hVwifdrE1\nNTGzGt4w4owrQd2E2FcmFR7WGHlwKb0rXIgeq6oY/nF3Fmy+aou1uYzqNMe9\nal076m02ZZtog+DNo11koaEfEVkFPXv6szvTAScsOEmezy/c5CMRBOM32QEe\nds749dPVSPqgFsdz0aadUi46+Ca/9azpTNx74CuaP+NisqUkWXWwTWjUsRfD\n+W7b4jZVFMbkcaqyS1K0HWyfmE1XoVEOUp6rYJs53DXUW3vIKEPPt4H9Ba3T\n7u6PxIFpXaiDiizPV9+m5dtqocZ0ogwusFsPPs+pHjRCnaeOL8DJNAzDVFnF\nLOpA2f9svOsml7tyGRDdRmg1BtIdkfDTTa01pYpLcHfAus5OlH37dWJ/aqL5\n476LJL0Hq+egG3x+rHFmmXOdBsuDj6Is/+KitHInFYVL8QXHRIoqCS1pmAE/\nrpdnFfyn11DaIXyqxaHi2WaNrzF3dYIBJknzI1PtrZS9yVeifutmlA7Kfi0+\nl8pgi6GLF+pB/pD2NYqQiLQBUs56vgiKbP0DHEOrE/pFiN1SJouE5LkkkmyK\nRnQd\r\n=kt2M\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.10.4_1593522764760_0.347020409703799"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-transform-dotall-regex",
+      "version": "7.12.1",
+      "description": "Compile regular expressions using the `s` (`dotAll`) flag to ES5.",
+      "homepage": "https://babeljs.io/",
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin",
+        "regex",
+        "regexp",
+        "regular expressions",
+        "dotall"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-transform-dotall-regex"
+      },
+      "bugs": "https://github.com/babel/babel/issues",
+      "dependencies": {
+        "@babel/helper-create-regexp-features-plugin": "^7.12.1",
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1",
+        "@babel/helper-plugin-test-runner": "7.10.4"
+      },
+      "_id": "@babel/plugin-transform-dotall-regex@7.12.1",
+      "dist": {
+        "shasum": "a1d16c14862817b6409c0a678d6f9373ca9cd975",
+        "integrity": "sha512-B2pXeRKoLszfEW7J4Hg9LoFaWEbr/kzo3teWHmtFCszjRNa/b40f9mfeqZsIDLLt/FjwQ6pz/Gdlwy85xNckBA==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2969,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiNAKCRA9TVsSAnZWagAAuvEP/2l3h1qKtKhIJyhgPU3R\nPBYJlNuv06SYH4O+C3U0T9EqBQKertcKga7dhudOR7dodu+R53Xj1L7bhwg1\nIy2+2xIzwT5/CAv/Mp7W2yALwYobAe7a2xQeXflyKtPQtjg2YNB6lukj5ijL\ndS7qS7ko6G4xS6QEvIZT0sVqnpHzD/tCvh+Hj0MkLZXk4FfBzw8cPGYp5N75\n0q12SL9875/Ku9k1jB7F4+8bcWVfc4q8HuFrMSiCxrntC/WOX5OKVMmJs7za\nkdmQd+SC9WrfDbPYJ9pzab6Q7BoKWLA7D9ayzdOpyHUXFpZj1POYRtLTcxWo\nlKiMOqH5XT7ZiK5aHMHiNceToKR5NM2pzRu4nCqL9wSf3iaLU4r4wuYIMW6i\nuEkbLgKsQ2fktL48l2ECEC71g3af6xLJ0qBn9kZedXCqqHy1ueHibn7I3c9d\ny4YIiwzKfdsipMYADRhy0VYHb6mQwYQPZ+41kuXoeJOjYcP3h3kUee6TNWYF\nsY4ProSDNwsjMtfw7lNF2esnLlx7zzExmn/7WKEXZlEmdcxmWsd4Gzcvts0v\nFOmtV381ccfgSEvc2xyS0BJ9wJSV9nw3Ssfkegoca1+8OwpTE6IUh8USUkHy\n4OGAFbibDI0meIVibTmXlz2kJ0JjBSVnXHWmUW0jH0HYFedAek5JSMJhBqfr\na6aE\r\n=Mu18\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-transform-dotall-regex_7.12.1_1602801674550_0.040512535758661095"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:41:17.528Z",
+    "created": "2017-12-25T19:05:13.449Z",
+    "7.0.0-beta.36": "2017-12-25T19:05:13.449Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:53.432Z",
+    "7.0.0-beta.38": "2018-01-17T16:32:20.787Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:50.738Z",
+    "7.0.0-beta.40": "2018-02-12T16:42:09.039Z",
+    "7.0.0-beta.41": "2018-03-14T16:26:06.931Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:40.826Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:23.289Z",
+    "7.0.0-beta.44": "2018-04-02T22:20:05.229Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:42.898Z",
+    "7.0.0-beta.46": "2018-04-23T04:31:06.430Z",
+    "7.0.0-beta.47": "2018-05-15T00:08:48.481Z",
+    "7.0.0-beta.48": "2018-05-24T19:22:16.249Z",
+    "7.0.0-beta.49": "2018-05-25T16:02:00.863Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:15.610Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:45.841Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:24.182Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:14.348Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:04.810Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:14.124Z",
+    "7.0.0-beta.56": "2018-08-04T01:05:18.094Z",
+    "7.0.0-rc.0": "2018-08-09T15:58:10.645Z",
+    "7.0.0-rc.1": "2018-08-09T20:07:50.967Z",
+    "7.0.0-rc.2": "2018-08-21T19:23:48.076Z",
+    "7.0.0-rc.3": "2018-08-24T18:07:52.759Z",
+    "7.0.0-rc.4": "2018-08-27T16:44:04.363Z",
+    "7.0.0": "2018-08-27T21:43:02.415Z",
+    "7.2.0": "2018-12-03T19:01:18.484Z",
+    "7.4.3": "2019-04-02T19:56:16.409Z",
+    "7.4.4": "2019-04-26T21:04:37.505Z",
+    "7.6.2": "2019-09-23T21:21:34.622Z",
+    "7.7.0": "2019-11-05T10:53:21.690Z",
+    "7.7.4": "2019-11-22T23:32:34.484Z",
+    "7.7.7": "2019-12-19T00:53:06.069Z",
+    "7.8.0": "2020-01-12T00:16:51.177Z",
+    "7.8.3": "2020-01-13T21:42:09.484Z",
+    "7.10.1": "2020-05-27T22:08:09.750Z",
+    "7.10.4": "2020-06-30T13:12:44.884Z",
+    "7.12.1": "2020-10-15T22:41:14.660Z"
+  },
+  "homepage": "https://babeljs.io/",
+  "keywords": [
+    "babel-plugin",
+    "regex",
+    "regexp",
+    "regular expressions",
+    "dotall"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-transform-dotall-regex"
+  },
+  "bugs": "https://github.com/babel/babel/issues",
+  "license": "MIT",
+  "readmeFilename": ""
+}

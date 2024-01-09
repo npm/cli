@@ -1,0 +1,450 @@
+{
+  "_id": "is-binary-path",
+  "_rev": "10-2db86a2ac6dd258285061685c0d2e179",
+  "name": "is-binary-path",
+  "description": "Check if a file path is a binary file",
+  "dist-tags": {
+    "latest": "2.1.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-binary-path",
+      "version": "1.0.0",
+      "description": "Check if a filepath is a binary file",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-binary-path"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "path",
+        "check",
+        "detect",
+        "is"
+      ],
+      "dependencies": {
+        "binary-extensions": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "455639b70e867213e23480fe0b71348a79263e91",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-binary-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-binary-path",
+      "_id": "is-binary-path@1.0.0",
+      "_shasum": "51a9ab34cc239e8e97d1cb1c874faf25d79d54e5",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "51a9ab34cc239e8e97d1cb1c874faf25d79d54e5",
+        "tarball": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "is-binary-path",
+      "version": "1.0.1",
+      "description": "Check if a filepath is a binary file",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/is-binary-path"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "path",
+        "check",
+        "detect",
+        "is"
+      ],
+      "dependencies": {
+        "binary-extensions": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "0.0.4"
+      },
+      "gitHead": "ed26bd7be5e29dad159c2771cb99dd48913f9de0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-binary-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-binary-path",
+      "_id": "is-binary-path@1.0.1",
+      "_shasum": "75f16642b480f187a711c814161fd3a4a7655898",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "75f16642b480f187a711c814161fd3a4a7655898",
+        "tarball": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-binary-path",
+      "version": "2.0.0",
+      "description": "Check if a filepath is a binary file",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-binary-path.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "path",
+        "check",
+        "detect",
+        "is"
+      ],
+      "dependencies": {
+        "binary-extensions": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "f6e9ccf93e55a46616d46d19967b923a2c135ecd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-binary-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-binary-path#readme",
+      "_id": "is-binary-path@2.0.0",
+      "_shasum": "0e61cea6974b24dda8bcc8366ce58a69265d1a36",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "0e61cea6974b24dda8bcc8366ce58a69265d1a36",
+        "tarball": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/is-binary-path-2.0.0.tgz_1473853977066_0.9813424141611904"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "is-binary-path",
+      "version": "2.0.1",
+      "description": "Check if a filepath is a binary file",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-binary-path.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "bin",
+        "binary",
+        "ext",
+        "extensions",
+        "extension",
+        "file",
+        "path",
+        "check",
+        "detect",
+        "is"
+      ],
+      "dependencies": {
+        "binary-extensions": "^1.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "768ec762098b342c6390a20715e6762af0e9390e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-binary-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-binary-path#readme",
+      "_id": "is-binary-path@2.0.1",
+      "_nodeVersion": "11.12.0",
+      "_npmVersion": "6.7.0",
+      "dist": {
+        "integrity": "sha512-nqiz8guiosvBdlbkIdKI7io7/1LWXqTz+EKwkEvArNjcQ754E1wKdBbtWtJt/kD1yqp/jr9qIHQpf6BqLzJ7RQ==",
+        "shasum": "a3846f848b804f3adf914eef3e4e4f16045bd778",
+        "tarball": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.0.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2825,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcm2kZCRA9TVsSAnZWagAAJF4P/0Ny/4chHzPwr81sWOMH\nOjiqXSYdnmI/sXprW9m9kv8+k1CSdR3WXfOW9xEZZAuhXB7lo4jqD0qzXF0H\nTVs+IOyHxynpymlaQnLdn7stFMw4bONknszBgX0MsowrUO7kVvhFl8pr8ovl\nqVCDOw6gp0h9N+WPYu03tN6r/ZpD8IDifM9xzY9dLXW3XgThKEeoIN1pGlnI\nv2Nll2Zan9q3+7m5k3Ombe++upCX0B45WjbYOyEU8JnjDeeeXpJoYu3y9Pia\n72otvw/Ug4Mp/V3kC7vPoPYGmCavy7+9D5gWRju7y9bPGm82EXuJ+17f4eyb\nWESglodLTFF2sWoY3rbpFnmiHdnEdg1myDkUGTbhG+F2t4ScPGkHaV1rooZ6\nhqiOqAWTC5K+qPaOaxjoHQ9Wsb+xezNdqEalX1RXlLN/RzwF/D7ATm0iF3Xn\n4B+hI6JqLfvX7HHe/DGM9E2cy6d6G+i9V/yZuIlWB9zQ4gfHUHfZu0V3XiYC\nvcbTXFsDhTjMtBsrENVH8ba2lDAynm+j+bgMkYDn9CChAvEmjA9++NBA0hxq\nhFBGdB2mzBklCusLI+QdVt41QCWj67TBRQxkaIcnro8u5GaZ+ikydUoGE+qc\n9TbKHhGgHhz2pOEtkiCHnH5vOLHl8eS1YhxGb7qxlTVMd84dkfD6UYrk6034\nXRno\r\n=LsbV\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "paulmillr",
+        "email": "paul@paulmillr.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-binary-path_2.0.1_1553688856903_0.40911361812754454"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "is-binary-path",
+      "version": "2.1.0",
+      "description": "Check if a file path is a binary file",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/is-binary-path.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "binary",
+        "extensions",
+        "extension",
+        "file",
+        "path",
+        "check",
+        "detect",
+        "is"
+      ],
+      "dependencies": {
+        "binary-extensions": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "efe99d8b3d0ef825925e8b986d047e39bee173c3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/is-binary-path/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/is-binary-path#readme",
+      "_id": "is-binary-path@2.1.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.16.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
+        "shasum": "ea1f7f3b80f064236e83470f86c09c254fb45b09",
+        "tarball": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3078,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcuVHGCRA9TVsSAnZWagAAHJYP/irfvd3+BqqznmABffxg\ndlp7QJa0mBx4VkvLKisN/YYsDCy6favbB4vekifA36+krW/euGG9pDgBox2w\nmihOsa0/WkQ342d1+CUi//entVtm5EsiovpUhpLBKQVF7RTUTR8zjd2PPRAQ\nhx0nYjudHFm/80m3IF7gUXrzponFPr+chhsv+lSJBLs1Rb6nRof8K65yXGa5\nvVUWuNo2EekgvFBn6+IvjFfb6e0nTtt9j165e+Vs9YToaqDBw3bc9RbUNOen\n0mInZbBz51ck9SbsB1eHbG/YesuxOhoazRXwE9rjZbMvX0G+riilAjtsPgrt\nRdHB7wyN7kAdXdGuQ/ATIRgSMH7fCLD5KCT0CVR/0I8epNRTj4/Vf4oDNYyX\nayPm81PG82Jlyz58SwaGSTot5gRr3EVKiUpW+55HhWkOvFbA4K0512dStYst\n8b/U66G6Hd0cwkg7SOZixkdzd2z0ngesoNNzQUvUds8ED3M02WeQeAnBD+WO\nWRlFVRWKd7cdC41ouEjOWW4SZ5KFtzUmO8+UCrR/y5huBtlsyimVixu8dOdW\nGWJzKGBqO+Y6wxg3mNVjnkl1iQSHbJaqlBR7xpnZKg9IIGDYprT/GE3LaM0K\nMTOBla6R8PZp/VYhY+BZg8nJyYniO2E0Qx/WOZMiUBmKiJXllsiqkac1AAdP\ncfPH\r\n=sZyR\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "es128",
+          "email": "elan.shanker+npm@gmail.com"
+        },
+        {
+          "name": "paulmillr",
+          "email": "paul@paulmillr.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-binary-path_2.1.0_1555648965645_0.6777948024491265"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-binary-path [![Build Status](https://travis-ci.org/sindresorhus/is-binary-path.svg?branch=master)](https://travis-ci.org/sindresorhus/is-binary-path)\n\n> Check if a file path is a binary file\n\n\n## Install\n\n```\n$ npm install is-binary-path\n```\n\n\n## Usage\n\n```js\nconst isBinaryPath = require('is-binary-path');\n\nisBinaryPath('source/unicorn.png');\n//=> true\n\nisBinaryPath('source/unicorn.txt');\n//=> false\n```\n\n\n## Related\n\n- [binary-extensions](https://github.com/sindresorhus/binary-extensions) - List of binary file extensions\n- [is-text-path](https://github.com/sindresorhus/is-text-path) - Check if a filepath is a text file\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com), [Paul Miller](https://paulmillr.com)\n",
+  "maintainers": [
+    {
+      "name": "es128",
+      "email": "elan.shanker+npm@gmail.com"
+    },
+    {
+      "name": "paulmillr",
+      "email": "paul@paulmillr.com"
+    },
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-19T04:42:48.507Z",
+    "created": "2015-01-24T09:13:13.344Z",
+    "1.0.0": "2015-01-24T09:13:13.344Z",
+    "1.0.1": "2015-05-25T11:32:32.616Z",
+    "2.0.0": "2016-09-14T11:52:57.308Z",
+    "2.0.1": "2019-03-27T12:14:17.036Z",
+    "2.1.0": "2019-04-19T04:42:45.772Z"
+  },
+  "homepage": "https://github.com/sindresorhus/is-binary-path#readme",
+  "keywords": [
+    "binary",
+    "extensions",
+    "extension",
+    "file",
+    "path",
+    "check",
+    "detect",
+    "is"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/is-binary-path.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/is-binary-path/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "youstrive": true,
+    "faraoman": true
+  }
+}

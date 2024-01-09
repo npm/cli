@@ -1,0 +1,359 @@
+{
+  "_id": "@angular-slider/ngx-slider",
+  "_rev": "3-04731d29f04df3ee997550dd485b14a6",
+  "name": "@angular-slider/ngx-slider",
+  "dist-tags": {
+    "latest": "2.0.3"
+  },
+  "versions": {
+    "2.0.0": {
+      "name": "@angular-slider/ngx-slider",
+      "version": "2.0.0",
+      "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
+      "keywords": [
+        "slider",
+        "ui",
+        "component",
+        "angular",
+        "ng",
+        "ngx"
+      ],
+      "author": {
+        "name": "Piotr Dziwinski"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular-slider/ngx-slider.git"
+      },
+      "bugs": {
+        "url": "https://github.com/angular-slider/ngx-slider/issues"
+      },
+      "homepage": "https://github.com/angular-slider/ngx-slider#readme",
+      "dependencies": {
+        "detect-passive-events": "^1.0.4",
+        "rxjs": "^6.5.2",
+        "rxjs-compat": "^6.5.2",
+        "tslib": "^1.9.0"
+      },
+      "peerDependencies": {
+        "@angular/core": "^6.1.0",
+        "@angular/common": "^6.1.0",
+        "@angular/forms": "^6.1.0"
+      },
+      "main": "bundles/angular-slider-ngx-slider.umd.js",
+      "module": "fesm5/angular-slider-ngx-slider.js",
+      "es2015": "fesm2015/angular-slider-ngx-slider.js",
+      "esm5": "esm5/angular-slider-ngx-slider.js",
+      "esm2015": "esm2015/angular-slider-ngx-slider.js",
+      "fesm5": "fesm5/angular-slider-ngx-slider.js",
+      "fesm2015": "fesm2015/angular-slider-ngx-slider.js",
+      "typings": "angular-slider-ngx-slider.d.ts",
+      "metadata": "angular-slider-ngx-slider.metadata.json",
+      "sideEffects": false,
+      "_id": "@angular-slider/ngx-slider@2.0.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-XzMI9rfkr/6Mqz9WD5DYIGQEpPiBFeDGLkgCVlDU0vLtYzK+5ly7M+5zhpi5yAzrdD2c0uuG3rNm/q11Fz2/8Q==",
+        "shasum": "e082bb2ace734b454f6bcf8a8c2d476697c128d4",
+        "tarball": "https://registry.npmjs.org/@angular-slider/ngx-slider/-/ngx-slider-2.0.0.tgz",
+        "fileCount": 61,
+        "unpackedSize": 3135151,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfnR/ECRA9TVsSAnZWagAA//wP/1KtllVn3iU9Q4RTIc3z\nQ2pyW37KsWVfb9QmNV+/joOAG8R6zoAk6c+7uymW/8Z37/NzAdhl1Fy/AbGR\n0s+9xFpfJEpnVBUQWXH34lWvfbE2BtGdNc8NelAt1VZKwpF0Rkuy8Ffo415w\n4JkqUjr2MGP7yC7LMJfn6CGyGbDdIDx/1CbPmWdzHQwx8ysVZwjAYuS1C+P1\nrQYLds++MKjPdCr5kucqFasVfprborMV+F6TgS9FbkL8VAgi9FiUs6MD/sJO\nDk8AqUollnfopuvd8xM8ieXXPB3Mc8NG8rMtFyRoWjI7lx42TYr6nFJ1o/6V\nuSNsYdlwMOoijdyr58t8q3V3L+DkCyVJE4fDiC/SlVD1bl3AM1bo+z48lsxy\nKHQFMfX6+5SeHJHT2eylKgvvfPKQMFvO6e2qyCWvNSGSt9gv7lp4uh69qPim\nms+aXLkmhfxjNN9Ku0VVRXpYc+37IZ8Gnn7M0wcJ0DYCKC9b5/bIt8EOBLzZ\nKl3kEPVZOB1no9aMqz54vf+/tFgy7Kg9UMSbCzyMKfYu71PCaJCteSQik6Qw\nD+HKxy5c/50YXhbpMf7ICw/30xWjfSJsIMSkjDNwbCS416Bp6eIXwXvLTtjh\nDFAbKlz3H3jI40M0Pef7UC334K72+by/gl/4dozP4Z5D3GKZdObuSLyb6B0w\nfPCq\r\n=RcGg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "piotrdz",
+          "email": "piotrdz@gmail.com"
+        },
+        {
+          "name": "valentinhervieu",
+          "email": "valentin@hervi.eu"
+        }
+      ],
+      "_npmUser": {
+        "name": "piotrdz",
+        "email": "piotrdz@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ngx-slider_2.0.0_1604132803910_0.7514195299030113"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "@angular-slider/ngx-slider",
+      "version": "2.0.1",
+      "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
+      "keywords": [
+        "slider",
+        "ui",
+        "component",
+        "angular",
+        "ng",
+        "ngx"
+      ],
+      "author": {
+        "name": "Piotr Dziwinski"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular-slider/ngx-slider.git"
+      },
+      "bugs": {
+        "url": "https://github.com/angular-slider/ngx-slider/issues"
+      },
+      "homepage": "https://github.com/angular-slider/ngx-slider#readme",
+      "dependencies": {
+        "detect-passive-events": "^1.0.4",
+        "rxjs": "^6.5.2",
+        "rxjs-compat": "^6.5.2",
+        "tslib": "^1.9.0"
+      },
+      "peerDependencies": {
+        "@angular/core": "^6.1.0",
+        "@angular/common": "^6.1.0",
+        "@angular/forms": "^6.1.0"
+      },
+      "main": "bundles/angular-slider-ngx-slider.umd.js",
+      "module": "fesm5/angular-slider-ngx-slider.js",
+      "es2015": "fesm2015/angular-slider-ngx-slider.js",
+      "esm5": "esm5/angular-slider-ngx-slider.js",
+      "esm2015": "esm2015/angular-slider-ngx-slider.js",
+      "fesm5": "fesm5/angular-slider-ngx-slider.js",
+      "fesm2015": "fesm2015/angular-slider-ngx-slider.js",
+      "typings": "angular-slider-ngx-slider.d.ts",
+      "metadata": "angular-slider-ngx-slider.metadata.json",
+      "sideEffects": false,
+      "_id": "@angular-slider/ngx-slider@2.0.1",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-2ZLad1oH9cNEdJLEuPX+FBTr1q9g9JQFYWZCPUUJ9T28DmrwFdvI5ZMfLWDQmXAlC0e6doOtreWX8/9HM+AiwQ==",
+        "shasum": "db6aff753549f642e64667ea244eb601e3c9c5e4",
+        "tarball": "https://registry.npmjs.org/@angular-slider/ngx-slider/-/ngx-slider-2.0.1.tgz",
+        "fileCount": 61,
+        "unpackedSize": 3231486,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfonPbCRA9TVsSAnZWagAAa2sQAIELA3jG7OQIy4oGkEPX\n54mrnYFvoMZ1h7IgRhwtEFCuZOERHMc6KRh6YMsdmskiBjTHy+8IKahoOkJY\niLbWtqIuuKuOThhQDd7d8DCLXRCWQn5qprS73MON6zsVMtBjDklUM7lxxSSt\nlKMTQl02qmq6abEM+AFoTLuv9tNsrLnn2m5PD9BUcSFiqaexB5EpgV+r2wN3\nHBhH4NCpnYRjEau6nCjTfnXVJ560+a+BN040BQ5EzJPhtmmEEgJjioJiK20y\njRTyUNvIYm6JPz4sghaFhCWlFw3HlDlYLOBv6fjlyGwdDGE8MF6rwR73q/iC\nMoyva2rXWffe/nKJG6lWJVxoUXACxiTOhmepP/aTG6ama54KDJiwVtcFAMQD\nGGV7alLH2v0RKb+kuduAXKepp777RSnTVzjftP5bfiixOXKjzeQn7pyB0JVi\nwMN/vSp77pxASVZ9sQED56/bbRkyDG0yezfHPOIIbop7SyCpwCXCafk5MQ6e\nh3C7vsK08Lx/zOkesY6d3M+cZbgljfHbdNBxVDEcdUEdBY+v/OIB2roSS3xI\nY0Ia8PfcHjFRZXf2TNZqFKzVC5vbkeVizOGnTqOzUi8xT1tPhCtZVZXVBLOV\n+XMVrJrXmhN9dHDrHy8BU81/NqeROUNNP6oDgroDeEKdNipVvgAnDoi7fgPo\nunXM\r\n=QyEA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "piotrdz",
+        "email": "piotrdz@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "piotrdz",
+          "email": "piotrdz@gmail.com"
+        },
+        {
+          "name": "valentinhervieu",
+          "email": "valentin@hervi.eu"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ngx-slider_2.0.1_1604482010525_0.7143156537558455"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.2": {
+      "name": "@angular-slider/ngx-slider",
+      "version": "2.0.2",
+      "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
+      "keywords": [
+        "slider",
+        "ui",
+        "component",
+        "angular",
+        "ng",
+        "ngx"
+      ],
+      "author": {
+        "name": "Piotr Dziwinski"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular-slider/ngx-slider.git"
+      },
+      "bugs": {
+        "url": "https://github.com/angular-slider/ngx-slider/issues"
+      },
+      "homepage": "https://github.com/angular-slider/ngx-slider#readme",
+      "dependencies": {
+        "detect-passive-events": "^1.0.4",
+        "rxjs": "^6.5.2",
+        "rxjs-compat": "^6.5.2",
+        "tslib": "^1.9.0"
+      },
+      "peerDependencies": {
+        "@angular/core": ">=6.1.0",
+        "@angular/common": ">=6.1.0",
+        "@angular/forms": ">=6.1.0"
+      },
+      "main": "bundles/angular-slider-ngx-slider.umd.js",
+      "module": "fesm5/angular-slider-ngx-slider.js",
+      "es2015": "fesm2015/angular-slider-ngx-slider.js",
+      "esm5": "esm5/angular-slider-ngx-slider.js",
+      "esm2015": "esm2015/angular-slider-ngx-slider.js",
+      "fesm5": "fesm5/angular-slider-ngx-slider.js",
+      "fesm2015": "fesm2015/angular-slider-ngx-slider.js",
+      "typings": "angular-slider-ngx-slider.d.ts",
+      "metadata": "angular-slider-ngx-slider.metadata.json",
+      "sideEffects": false,
+      "_id": "@angular-slider/ngx-slider@2.0.2",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-Pc/rFCsZsNrchvtHLELDEjpliDtiXcRQHf2UIkG2OzZP6hKEoT6aVAqJDOQpEI8zt+H2vEZJBpppmunboVn6yA==",
+        "shasum": "60a501ffff0ecccd5c8c85e39b90e8f7f627817a",
+        "tarball": "https://registry.npmjs.org/@angular-slider/ngx-slider/-/ngx-slider-2.0.2.tgz",
+        "fileCount": 61,
+        "unpackedSize": 3231489,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfow3JCRA9TVsSAnZWagAA6CIQAIX8q5xZeYHuutQiFU3w\n8NntPEDTIV1l/PZI6jedLV4q5Q4xTZVhgAA45gCdZSetJwtjQaeGunJiVP1F\naVOlQCKb/lLSV/y/y2zPG21QIHsOy7l91KWmx5WtFppphpohN0z8/aQDrVlC\n9FJsHMX0rx0uyXPNInNAT88Vd1SpScB73Ltp6kYXn28KfsILRmErQRgJVley\noiGEdJ4UNNqmOBQeF2C6vG+2WM5VssL4huRrXqkvrtDBdC333ikSj4OXl/LK\nVVUOw3yFJ4lB1KpLMQOXUFDNewxCPaOtfrGfYd/ls172ToR/54GGVUlj+s9N\nEqvkriNyWckC62FEjqGAIlMuYywJrna1opuds+W7q5RqJ2Ou9svJSyI5HToS\n1BIeMWvnZcnQBm44xT0qMN/h/fjgmZDQNVykSH6tbhfbAcvme9xZAQffAZGt\nt++pZUdWukTBr7nGX4FY+ylB9wJZ06qk+D4SHNetB2lSySVGfLMR8tvNYdCG\nZLSA8H12zFPfqZuHpsRYjJd52xz18STAzzFzOVjTGJwAKHPYvXRVzqt8wlN+\nObqTxfGznN+zL4dbtLMo7qf7bUQ1NHdkq2crsCkrjxNKPz7bL4eNE75K9tJC\nyg0v/ROqWVMV5VmGoX7ghuNRYWeAQJYEYw9ADSeND/+mSFW1p/dXG0JFGMgs\nbLyI\r\n=MNVH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "piotrdz",
+        "email": "piotrdz@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "piotrdz",
+          "email": "piotrdz@gmail.com"
+        },
+        {
+          "name": "valentinhervieu",
+          "email": "valentin@hervi.eu"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ngx-slider_2.0.2_1604521416697_0.19943571798500326"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.3": {
+      "name": "@angular-slider/ngx-slider",
+      "version": "2.0.3",
+      "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
+      "keywords": [
+        "slider",
+        "ui",
+        "component",
+        "angular",
+        "ng",
+        "ngx"
+      ],
+      "author": {
+        "name": "Piotr Dziwinski"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/angular-slider/ngx-slider.git"
+      },
+      "bugs": {
+        "url": "https://github.com/angular-slider/ngx-slider/issues"
+      },
+      "homepage": "https://github.com/angular-slider/ngx-slider#readme",
+      "dependencies": {
+        "detect-passive-events": "^1.0.4",
+        "rxjs": "^6.5.2",
+        "rxjs-compat": "^6.5.2",
+        "tslib": "^1.9.0"
+      },
+      "peerDependencies": {
+        "@angular/core": ">=6.1.0",
+        "@angular/common": ">=6.1.0",
+        "@angular/forms": ">=6.1.0"
+      },
+      "main": "bundles/angular-slider-ngx-slider.umd.js",
+      "module": "fesm5/angular-slider-ngx-slider.js",
+      "es2015": "fesm2015/angular-slider-ngx-slider.js",
+      "esm5": "esm5/angular-slider-ngx-slider.js",
+      "esm2015": "esm2015/angular-slider-ngx-slider.js",
+      "fesm5": "fesm5/angular-slider-ngx-slider.js",
+      "fesm2015": "fesm2015/angular-slider-ngx-slider.js",
+      "typings": "angular-slider-ngx-slider.d.ts",
+      "metadata": "angular-slider-ngx-slider.metadata.json",
+      "sideEffects": false,
+      "_id": "@angular-slider/ngx-slider@2.0.3",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-5NSHsYtHomBgJyPe7KtxTAJDLywHbuTb36NjD3dafbbj1VUbshX1m04d4JcyEiAB+Zeetcjkiy4jxQypUXYhHA==",
+        "shasum": "98e805ef388f9326144e111b76226d0db35fe080",
+        "tarball": "https://registry.npmjs.org/@angular-slider/ngx-slider/-/ngx-slider-2.0.3.tgz",
+        "fileCount": 61,
+        "unpackedSize": 3245222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfpf8zCRA9TVsSAnZWagAAbUcP/1joU8foE3hLuh4+0D4E\nlJuXtPD1o//HCoYrWvxI6xv/GE4G//ZOZTLGSvLeHmmhHedfFh+k31GRAD4p\nsWBFVoDJcqoj78LvVdUojG4jvkSxbmVNmE0dsqyuCdCgZbW+dFf1pTPzzTlf\ngTYeqs+t70dWYwoNzmR5wzzVbKsWO4a9gMVVSFaEz/RZ2Qic/Wl449IZGpyV\nbunYlPAptSql+mbgJOLFzud74EGSIBJqKpinjNPv3+auJZx6PDi2854prKui\nQlHzyWD+85fdVQTzJc/wdmqEWc16QpFy+9ndbwNHzhckouPzBQekk8Hpca25\nMu3fc9U8LDW/tyhVJWV0YigtKZkq4sBbBfUDQnt3JdDtG307g/obkfpIYEuD\nKhFqEiQ2aLyUb6J9cPQFRHpVMH7L/JAMXybdH3YwNav/YlflciSVdCMbLN8A\nUc122OKTMEb9jnA+ZlVvieWAfey42jTjXobGF19mi4ClwtJC7tEt0BbY107S\nzExmMMg6eB6UfKx93yAeclOVZcS+WITL4cTgUGFRPQyWnhgpUZ7jg47hxCul\npTYH3ncahrCpvvNvudOLmxWmN9CmLjDlFNBG3EHGVOCIn1OFLHzEFuykLrd/\nM1n+fPfK4oCM4X8waGzz1GV2QEjSVAH1pz79dWYLYHJN2AqHVOQJSC3DN2fD\nm/nL\r\n=5P/l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "piotrdz",
+        "email": "piotrdz@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "piotrdz",
+          "email": "piotrdz@gmail.com"
+        },
+        {
+          "name": "valentinhervieu",
+          "email": "valentin@hervi.eu"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/ngx-slider_2.0.3_1604714290556_0.2301490654400602"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-10-31T08:26:43.571Z",
+    "2.0.0": "2020-10-31T08:26:44.142Z",
+    "modified": "2020-11-07T01:58:13.161Z",
+    "2.0.1": "2020-11-04T09:26:50.698Z",
+    "2.0.2": "2020-11-04T20:23:36.961Z",
+    "2.0.3": "2020-11-07T01:58:10.819Z"
+  },
+  "maintainers": [
+    {
+      "name": "piotrdz",
+      "email": "piotrdz@gmail.com"
+    },
+    {
+      "name": "valentinhervieu",
+      "email": "valentin@hervi.eu"
+    }
+  ],
+  "description": "Self-contained, mobile friendly slider component for Angular 5+ based on angularjs-slider",
+  "homepage": "https://github.com/angular-slider/ngx-slider#readme",
+  "keywords": [
+    "slider",
+    "ui",
+    "component",
+    "angular",
+    "ng",
+    "ngx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-slider/ngx-slider.git"
+  },
+  "author": {
+    "name": "Piotr Dziwinski"
+  },
+  "bugs": {
+    "url": "https://github.com/angular-slider/ngx-slider/issues"
+  },
+  "license": "MIT",
+  "readme": "# ngx-slider\n[![npm version](https://badge.fury.io/js/%40angular-slider%2Fngx-slider.svg)](https://badge.fury.io/js/%40angular-slider%2Fngx-slider)\n[![Travis CI Build](https://travis-ci.org/angular-slider/ngx-slider.svg?branch=master)](https://travis-ci.org/angular-slider/ngx-slider)\n\nWebsite: https://angular-slider.github.io/ngx-slider/\n\nSelf-contained, mobile friendly slider component for Angular 6+ based on [angularjs-slider](https://github.com/angular-slider/angularjs-slider).\n\n**NOTE:** This component used to be known as ng5-slider before the v2.0.0 release. Starting with v2.0.0, it has been re-branded as ngx-slider, targeting Angular 6+. If you have been using the previous version in your app, please follow the instructions in [UPGRADING.md](UPGRADING.md). If you are sticking with the old version, it will continue to be available in the v1.2.x release line under the old name of ng5-slider. If you are looking for documentation for the old version, it is available as [archived copy on Github](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/archive/ng5-slider-v1.2.6-site-archive.zip).\n\n## Demos\n\n * Single slider - [StackBlitz](https://stackblitz.com/edit/ngx-slider-simple-slider-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![simple slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/simple-slider.png)\n\n * Range slider - [StackBlitz](https://stackblitz.com/edit/ngx-slider-range-slider-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![range slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/range-slider.png)\n\n * Slider with ticks - [StackBlitz](https://stackblitz.com/edit/ngx-slider-ticks-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![ticks slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/ticks-slider.png)\n\n * Customised slider - [StackBlitz](https://stackblitz.com/edit/ngx-slider-customised-range-slider-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![customised slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/customised-slider.png)\n\n * Slider with custom style - [StackBlitz](https://stackblitz.com/edit/ngx-slider-styled-slider-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![styled slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/styled-slider.png)\n\n * Vertical slider - [StackBlitz](https://stackblitz.com/edit/ngx-slider-vertical-slider-example?file=src%2Fapp%2Fapp.component.ts)\n\n   ![vertical slider image](https://raw.githubusercontent.com/angular-slider/ngx-slider/master/assets/vertical-slider.png)\n\n * [More examples on official website](https://angular-slider.github.io/ngx-slider/demos)\n\n## Dependencies\n\n * Angular 6+\n * rxjs 6+\n\n## Installation\n\nTo add the slider to your Angular project:\n```\nnpm install --save @angular-slider/ngx-slider\n```\n\nOnce installed, add the slider to your `app.module.ts`:\n```typescript\nimport { NgxSliderModule } from '@angular-slider/ngx-slider';\n\n...\n\n@NgModule({\n   ...\n   imports: [\n     ...\n     NgxSliderModule,\n    ...\n   ],\n   ...\n})\nexport class AppModule {}\n```\n\n## Sample usage\n\nNow you can use the slider component in your app components, for example in `app.component.ts`:\n```typescript\nimport { Options } from '@angular-slider/ngx-slider';\n...\n\n@Component({...})\nexport class AppComponent {\n  value: number = 100;\n  options: Options = {\n    floor: 0,\n    ceil: 200\n  };\n}\n```\n\nAnd in template file `app.component.html`:\n```html\n<ngx-slider [(value)]=\"value\" [options]=\"options\"></ngx-slider>\n```\n\n## Documentation\nFull API documentation is available on [official website](https://angular-slider.github.io/ngx-slider/docs).\n\n## Styling\n\nAn overview of how to apply your own style to the slider is described in [STYLING.md](STYLING.md).\n\n## Animations\n\nAs of v1.2.0 the slider features CSS animations of slider movement. If you prefer the previous behaviour, without animations, you can set the flag `animate: false` in your slider options.\n\n## Keyboard Shortcuts\n\nIn addition to mouse/touch events, the slider can also be controlled through keyboard. The available shortcuts are:\n - right/up arrow - increase by single step,\n - left/down arrow - decrease by single step,\n - page up - increase by 10% of slider range,\n - page down - decrease by 10% of slider range,\n - home - move to minimum value,\n - end - move to maximum value.\n\n## Tooltips\n\nThe slider allows for customising how to implement tooltips. See [TOOLTIPS.md](TOOLTIPS.md) for more information.\n\n## Known Issues\n\nBefore reporting a new bug, please look at [KNOWN_ISSUES.md](KNOWN_ISSUES.md) for a list of known problems and their workarounds. New bugs reports for these problems will not be accepted.\n\n## Bugs\n\nYou can report any bugs as [Github issues](https://github.com/angular-slider/ngx-slider/issues).\n\nPlease describe the issue in detail pasting any relevant code, or preferrably a StackBlitz with reproduction of the problem by [forking and editing this sample StackBlitz](https://stackblitz.com/edit/ngx-slider-simple-slider-example?file=src/app/app.component.ts). Please also provide the version of NPM package you are using.\n\n## Changelog\n\nFor list of changes and bugfixes, see [CHANGELOG.md](CHANGELOG.md).\n\n## Developer information\n\nIf you would like to contribute to the project, see [DEVELOPERS.md](DEVELOPERS.md).\n\n## License\n\nThe project is licensed under the MIT license.\n",
+  "readmeFilename": "README.md"
+}

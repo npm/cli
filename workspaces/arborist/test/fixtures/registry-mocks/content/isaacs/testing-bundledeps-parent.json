@@ -1,0 +1,98 @@
+{
+  "_id": "@isaacs/testing-bundledeps-parent",
+  "_rev": "1-7718ff4683fdc9f114bc1aa34b37a0a5",
+  "name": "@isaacs/testing-bundledeps-parent",
+  "dist-tags": {
+    "latest": "2.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-bundledeps-parent",
+      "description": "depends on a module that has bundled deps",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "@isaacs/testing-bundledeps": "^1.0.0"
+      },
+      "_id": "@isaacs/testing-bundledeps-parent@1.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-b5B6lEyD8JwZczumcy+RmrRqEJ5SS3HzFV/HnZoTH2UN1cYNpFrSiS5WDYs8mrdOm5DQYYrl3X2k/4bIEVmWfw==",
+        "shasum": "69cb49ff70bc4fa26eec98fa81601aa225e12088",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundledeps-parent/-/testing-bundledeps-parent-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeC6jHCRA9TVsSAnZWagAApbcP/110z/9x8LeofjpLRxDL\nOm/mYuRItO2+1ew9Ftd/LXK6zDibNVd3Yzqmy/xxv+PzFncPyb8WGQdO6A+D\nin/zwHwKJZ8z3HNT8nxgE7GdJjsVSBKD3gqfjCI8bnad0wEaj3fIxMV4Lulh\nKdDZX0uj1qC8Hv7Ow55B3aG8Iaf8psdAIN++4wl4m9opfkoyz4Q8KXhyZSO4\nfmjmMa8lqnuhNpXrK7nNdW5v0iusZR4R9J1WsCPTfDcm0iWdDrf57yO1c/RB\n5mrp2NulLqBH/qcbbc+97RDRNZ8YsscMDDtWZnqBuDV1ma2zukbTkaWec+1T\n9rJTjxgJytXRhgGAGcRQt6G9p3wxcnpv70tJShke7pN6wDEzV4MKln6nbU4B\nky/7Y7KzYw3jXzCnsk0/po2pLAEQQVW28YPEA70qBZx0LFg9/iEYLEGFv7dR\nQYvqO7chryZAaO/Mnv2p/xS69q0wFL4iwg74n4vuzvMgnfsa/npCAfhnX4Yf\no7A4eKjpJx+SS3nJCy7WM6WPhNVfyijNssXPHYKQs48MytoYzEXnSpu8Hcmc\ntzAPdZSTBmEmBuSU6tCfiuF9e5eaTa/THbVcTMKn7xSOistxrMgfvbfwGThr\nqSd2l7K6uJNl89ByZnJCHVn+3w7BickFc6d4jodaUwWIINWTxkdvMrJpNfdz\n65Wu\r\n=4ftq\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundledeps-parent_1.0.0_1577822406986_0.5504165467292419"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.0": {
+      "name": "@isaacs/testing-bundledeps-parent",
+      "description": "depends on a module that has bundled deps",
+      "version": "2.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "@isaacs/testing-bundledeps": "^1.0.0"
+      },
+      "_id": "@isaacs/testing-bundledeps-parent@2.0.0",
+      "_nodeVersion": "13.4.0",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-jP5x8UyO4DMzRpxdHAG/OKAooAM85C5gmhCm5CAdonAmNxxevm4mIIQJZs8zdB87nkZJYcow3PW9S7cWcrEkGA==",
+        "shasum": "6b988ca7bac57bd96efeb4662d914e45ace14be9",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-bundledeps-parent/-/testing-bundledeps-parent-2.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 222,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeC6lSCRA9TVsSAnZWagAAuIwP/1gm7gnPbbNhuG1xkndt\nuGU0T+qQoNF/beAXvjsP9VwmlIa0igd5dQn/8YrTihaerV2X2VtBZ6mZATLE\nQEMCzTj+WeEEJeFeDRUqc1Pu5SnDVLpAmLBdHzk5qjkCHfi+41mmywwpWrxV\no1fKdrw64LI7+AjzX1BTnNNlqUo0cYGQuf+SfGjk3SVhIgo/aljfj+o0jhku\nXJVxnZtR4VQFPEyqNqpa7ICJZiIYzfGruMDFgRFg0cqRMIsk2nTDaO1xg6xM\nnAeR2H4VvFHLED59Ypf4ES+SeDlE1O+i4cGnkPQJcfTmKsNEQ0DjvpNGHKV+\nWgXqW83R3iO1YQ7+E2urxfJmAYPfExKtVqf47giTjFMMqiwWGR5Sz5lF2iKU\n81Dp8SO8RQTXY7pUC/mB/hItoQNg1WlIwuNIfHIlZKseNhn5t8a9TdBIXvuf\ny2rOq0fR6wCUVsPkJj1K6LRuOf0nwn9emeiqa6oZ5qrl2lsCxe4WqzqOt86P\nAFA2EVQ9cnxPF2dTMSnKxkLhaKI+zpTo3Dws4i0Sxm6WAKTkLt6FJjPzxDVV\nkDlmhu7+tTrj/Ah7hiaVip3DwP6VENt6FWolpE749AjtP0FFzamtFVl4ER3H\nALA3YJ5wNRpEdvO5Mp62OLtDNFAg2ydPLy4jpnBCl6PuKaXXSpIO46oX7APC\nK5k6\r\n=bnM7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-bundledeps-parent_2.0.0_1577822546271_0.41222133866941935"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2019-12-31T20:00:06.953Z",
+    "1.0.0": "2019-12-31T20:00:07.073Z",
+    "modified": "2019-12-31T20:02:28.784Z",
+    "2.0.0": "2019-12-31T20:02:26.407Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "depends on a module that has bundled deps",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

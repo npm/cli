@@ -1,0 +1,7 @@
+{
+  "name": "test-root-matches-metadep-x",
+  "version": "1.0.0",
+  "dependencies": {
+    "test-root-matches-metadep": "1.0.0"
+  }
+}

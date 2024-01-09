@@ -1,0 +1,3661 @@
+{
+  "_id": "aws4",
+  "_rev": "79-7c76af691ea8da7f6c40e3923ef2850a",
+  "name": "aws4",
+  "description": "Signs and prepares requests using AWS Signature Version 4",
+  "dist-tags": {
+    "latest": "1.10.1"
+  },
+  "versions": {
+    "0.0.1": {
+      "name": "aws4",
+      "version": "0.0.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.0.1",
+      "dist": {
+        "shasum": "244de4ce76d1fa82eefd7264b6511ca97b1b41cd",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.0.1.tgz"
+      },
+      "_npmVersion": "1.1.66",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "aws4",
+      "version": "0.1.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.0",
+      "dist": {
+        "shasum": "a9fd70a58d2ea6bd2e4ad1e943f4e7bb5b9f0810",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.0.tgz"
+      },
+      "_npmVersion": "1.1.66",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "aws4",
+      "version": "0.1.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.1",
+      "dist": {
+        "shasum": "73b9513a96277df45c3d24a2f93d21f0c1d0c51f",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.1.tgz"
+      },
+      "_npmVersion": "1.1.66",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "aws4",
+      "version": "0.1.2",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.2",
+      "dist": {
+        "shasum": "a5dc963a397ee7fa0d1b709acda73d990a40cf28",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.2.tgz"
+      },
+      "_npmVersion": "1.1.66",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "aws4",
+      "version": "0.1.3",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.3",
+      "dist": {
+        "shasum": "a791589a127f4f21097a73e345ad2ba800d289cb",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.3.tgz"
+      },
+      "_npmVersion": "1.1.66",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.4": {
+      "name": "aws4",
+      "version": "0.1.4",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.4",
+      "dist": {
+        "shasum": "e1effd726de95cef76f172f670a962a2b9ebc0c0",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.4.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.5": {
+      "name": "aws4",
+      "version": "0.1.5",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.5",
+      "dist": {
+        "shasum": "1bd035bf7d9fe7e04a7cb35c51383676715200d3",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.5.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.6": {
+      "name": "aws4",
+      "version": "0.1.6",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.6",
+      "dist": {
+        "shasum": "1df3c5d1b8de9084fbc445646e031d3f3697c547",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.6.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.7": {
+      "name": "aws4",
+      "version": "0.1.7",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.7",
+      "dist": {
+        "shasum": "e5600baa7f3756742cf3171964db73b2b583704d",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.7.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.8": {
+      "name": "aws4",
+      "version": "0.1.8",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.8",
+      "dist": {
+        "shasum": "e069d19410247712a2b3783dd566c6b09d740769",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.8.tgz"
+      },
+      "_npmVersion": "1.1.69",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.9": {
+      "name": "aws4",
+      "version": "0.1.9",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.9",
+      "dist": {
+        "shasum": "1cd92abc232f83b1f29ccf5fef8f2f9f872421f6",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.9.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.11",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.10": {
+      "name": "aws4",
+      "version": "0.1.10",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "_id": "aws4@0.1.10",
+      "dist": {
+        "shasum": "5aec181b78dd5230bc22604fa87a38a12d6f8c0f",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.10.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.11",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.12": {
+      "name": "aws4",
+      "version": "0.1.12",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "_id": "aws4@0.1.12",
+      "dist": {
+        "shasum": "e9c9223084a41b62eed44842700b0b564ab0763c",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.1.12.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.2.30",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "aws4",
+      "version": "0.2.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "_id": "aws4@0.2.0",
+      "dist": {
+        "shasum": "1679617aa2c2b05801bbd7affb81d8006f3b6be3",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.2.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.11",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.1": {
+      "name": "aws4",
+      "version": "0.2.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.2.1",
+      "dist": {
+        "shasum": "5980b645c950df357208fa6ef5f05de661e93c9f",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.2.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.13",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.2.2": {
+      "name": "aws4",
+      "version": "0.2.2",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "41a4b43e1ad62ca6947eae49fbe11fd67c5ccf48",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.2.2",
+      "_shasum": "5b39b87a51fbfa92127469ee35739f3a35cc1499",
+      "_from": ".",
+      "_npmVersion": "2.0.0-beta.3",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5b39b87a51fbfa92127469ee35739f3a35cc1499",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.2.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.3": {
+      "name": "aws4",
+      "version": "0.2.3",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "9e0fd36f002e0267f18a65809315a36e1f5157d8",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.2.3",
+      "_shasum": "db0921516606c7704ac556f5f9b026a155a23960",
+      "_from": ".",
+      "_npmVersion": "2.0.0-beta.3",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "db0921516606c7704ac556f5f9b026a155a23960",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.2.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.3.0": {
+      "name": "aws4",
+      "version": "0.3.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "ba832c846ba287bcf19f4297bdbc78c657775f88",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.3.0",
+      "_shasum": "acb28678de00516779342ebf1876f31aaafc7fd4",
+      "_from": ".",
+      "_npmVersion": "1.4.28",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "acb28678de00516779342ebf1876f31aaafc7fd4",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.3.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.0": {
+      "name": "aws4",
+      "version": "0.4.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "4ee9dd44292fb4d1276cf5bf334dd5e032e688a4",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.4.0",
+      "_shasum": "88fcf400ed9f184045b73b041f7c84577fd06d57",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "88fcf400ed9f184045b73b041f7c84577fd06d57",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.4.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.1": {
+      "name": "aws4",
+      "version": "0.4.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudwatch"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "f3ecac42d229e2f265e7d1ca170db68b72c8d69a",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.4.1",
+      "_shasum": "c7846bd6a8b94153b064d7a98b8f3970386834ac",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c7846bd6a8b94153b064d7a98b8f3970386834ac",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.4.1.tgz"
+      },
+      "directories": {}
+    },
+    "0.4.2": {
+      "name": "aws4",
+      "version": "0.4.2",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "~2.3.1"
+      },
+      "devDependencies": {
+        "should": "~1.2.1",
+        "mocha": "~1.7.4"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "0afee5f04f234c660c997795e6e6dc3441b2cc5c",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.4.2",
+      "_shasum": "1fd42c37c38afbe6211a1823836c6d535a4f83d7",
+      "_from": ".",
+      "_npmVersion": "2.1.16",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1fd42c37c38afbe6211a1823836c6d535a4f83d7",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.4.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.0": {
+      "name": "aws4",
+      "version": "0.5.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.5.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "f326a8aed70bd260f66ade4bd215264d5fc34481",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.5.0",
+      "_shasum": "848a0dc6dd2fe7dd486ed1b7a981df60ab8ad94f",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "0.10.37",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "848a0dc6dd2fe7dd486ed1b7a981df60ab8ad94f",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.5.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.5.1": {
+      "name": "aws4",
+      "version": "0.5.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.5.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "02e24d44c9f9ce32796b94bf7db9c60e04716d55",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@0.5.1",
+      "_shasum": "923737a1705fd01cd2fd55e1208067e11527cd3a",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "0.10.37",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "923737a1705fd01cd2fd55e1208067e11527cd3a",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-0.5.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "aws4",
+      "version": "1.0.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.5.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "5bfe09565359f3e9064cc57035ccceedcca270e6",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@1.0.0",
+      "_shasum": "2df807f7ae5652497bcf7e9438bd3a2f0c47f96b",
+      "_from": ".",
+      "_npmVersion": "2.7.1",
+      "_nodeVersion": "0.10.37",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2df807f7ae5652497bcf7e9438bd3a2f0c47f96b",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "aws4",
+      "version": "1.0.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.5.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.1",
+        "should": "^5.2.0"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "9012819433e901378f9aa34657da0f981e0fc031",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4",
+      "_id": "aws4@1.0.1",
+      "_shasum": "c033efaee8d6a45ca1302db7c2bdc3f48c79e2ca",
+      "_from": ".",
+      "_npmVersion": "2.7.3",
+      "_nodeVersion": "0.10.38",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c033efaee8d6a45ca1302db7c2bdc3f48c79e2ca",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "aws4",
+      "version": "1.0.2",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "b48cfc6d1baf56c2a39131b7783ae5ea509d1bf9",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.0.2",
+      "_shasum": "888e5637625ec07bf2f0ebdc5f916e04d58470c9",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "888e5637625ec07bf2f0ebdc5f916e04d58470c9",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "aws4",
+      "version": "1.0.3",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "52f46074897fb74fa3eabfca184a72ca69ac5db1",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.0.3",
+      "_shasum": "ca8880d61a2c7ce40f0542c8f7fea3ca4405386b",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ca8880d61a2c7ce40f0542c8f7fea3ca4405386b",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "aws4",
+      "version": "1.0.4",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "2f73f9f05100c52e8d175e327d86f1fa3ec76bde",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.0.4",
+      "_shasum": "2ae0134fe17af91d556e951b1ecc343a32169788",
+      "_from": ".",
+      "_npmVersion": "2.11.3",
+      "_nodeVersion": "0.10.39",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2ae0134fe17af91d556e951b1ecc343a32169788",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "aws4",
+      "version": "1.1.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "165f451fc25368684385c8ffdd11e77f9a657732",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.1.0",
+      "_shasum": "82291432db9aad5a7c9113b7bcdcb2bce856315a",
+      "_from": ".",
+      "_npmVersion": "2.14.8",
+      "_nodeVersion": "4.2.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "82291432db9aad5a7c9113b7bcdcb2bce856315a",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "aws4",
+      "version": "1.2.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "151b93e6147b1854c8531a9b11ad4fda10067f62",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.2.0",
+      "_shasum": "1d78ffb8b93b6b62ade7aa526993a8295aa8b454",
+      "_from": ".",
+      "_npmVersion": "2.14.15",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1d78ffb8b93b6b62ade7aa526993a8295aa8b454",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "aws4",
+      "version": "1.2.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^2.6.5"
+      },
+      "devDependencies": {
+        "mocha": "^2.2.5",
+        "should": "^7.0.1"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "3d8a3a06a8415bd5255b4f60eb91576952e97f5c",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.2.1",
+      "_shasum": "52b5659a4d32583d405f65e1124ac436d07fe5ac",
+      "_from": ".",
+      "_npmVersion": "2.14.15",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "52b5659a4d32583d405f65e1124ac436d07fe5ac",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "aws4",
+      "version": "1.3.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^4.0.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "736a90cedd14721101a94f91c7aa066bc5bfcfc0",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.3.1",
+      "_shasum": "746e5456c0b8f731245581419c99e885321007b2",
+      "_from": ".",
+      "_npmVersion": "2.14.21",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "746e5456c0b8f731245581419c99e885321007b2",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.3.1.tgz_1456774939650_0.23266926012001932"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "aws4",
+      "version": "1.3.2",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "lru-cache": "^4.0.0"
+      },
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "e899db3aacbf2a034398f7dd483345dc793e8d72",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.3.2",
+      "_shasum": "d39e0bee412ced0e8ed94a23e314f313a95b9fd1",
+      "_from": ".",
+      "_npmVersion": "2.14.21",
+      "_nodeVersion": "4.3.1",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "d39e0bee412ced0e8ed94a23e314f313a95b9fd1",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.3.2.tgz_1456871543899_0.13955276948399842"
+      },
+      "directories": {}
+    },
+    "1.4.0": {
+      "name": "aws4",
+      "version": "1.4.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "905ee9189619d05c574cafa65fad9b9bef179f77",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.4.0",
+      "_shasum": "116711e87093c04fd756d49cdd7a66e244508752",
+      "_from": ".",
+      "_npmVersion": "2.15.4",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "116711e87093c04fd756d49cdd7a66e244508752",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.4.0.tgz_1462572395340_0.5036796217318624"
+      },
+      "directories": {}
+    },
+    "1.4.1": {
+      "name": "aws4",
+      "version": "1.4.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "f126d3ff80be1ddde0fc6b50bb51a7f199547e81",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.4.1",
+      "_shasum": "fde7d5292466d230e5ee0f4e038d9dfaab08fc61",
+      "_from": ".",
+      "_npmVersion": "2.15.4",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fde7d5292466d230e5ee0f4e038d9dfaab08fc61",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.4.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.4.1.tgz_1462643218465_0.6527479749638587"
+      },
+      "directories": {}
+    },
+    "1.5.0": {
+      "name": "aws4",
+      "version": "1.5.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "ba136334ee08884c6042c8578a22e376233eef34",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.5.0",
+      "_shasum": "0a29ffb79c31c9e712eeb087e8e7a64b4a56d755",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0a29ffb79c31c9e712eeb087e8e7a64b4a56d755",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.5.0.tgz_1476226259635_0.2796843808609992"
+      },
+      "directories": {}
+    },
+    "1.6.0": {
+      "name": "aws4",
+      "version": "1.6.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "74bf0b64d1e8cbcd184964999c7ef53f52d7ad32",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.6.0",
+      "_shasum": "83ef5ca860b2b32e4a0deedee8c771b9db57471e",
+      "_from": ".",
+      "_npmVersion": "4.0.5",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "83ef5ca860b2b32e4a0deedee8c771b9db57471e",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/aws4-1.6.0.tgz_1486481933920_0.6127187723759562"
+      },
+      "directories": {}
+    },
+    "1.7.0": {
+      "name": "aws4",
+      "version": "1.7.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "58a4cfddcea0d31c2ea60f967b7ec072b7e42ee5",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.7.0",
+      "_npmVersion": "5.8.0",
+      "_nodeVersion": "8.11.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-32NDda82rhwD9/JBCCkB+MRYDp0oSvlo2IL6rQWA10PQi7tDUM3eqMSltXmY+Oyl/7N3P3qNtAlv7X0d9bI28w==",
+        "shasum": "d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.7.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 31916
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.7.0_1523139854595_0.22793470969680474"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "aws4",
+      "version": "1.8.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js ./test/slow.js -b -t 100s -R list"
+      },
+      "gitHead": "1f450081cdc783c878e0b54df5653eef5a7b6fec",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.8.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.8.0",
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==",
+        "shasum": "f0e003d9ca9e7f59c7a508945d7b2ef9a04a542f",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.8.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 31923,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbaFc9CRA9TVsSAnZWagAAb7kQAICqhE3wrSTWhpcdKyW3\nTKZwkSrT/ifP8bQlO954Z+JthiQPDo82FdUmJfmIy8GPtHRi+UGNZLiB8Pmt\nfdkGlL7qqFV6VBvPVmKr0ncrYCHjFzEyAmXNJqISoVVb/lHbZtwbGJMMDOaP\n9Ye1Hl7Jn1LErzeU1J7lVzL5ikJUwcPSSPpWqqTrM0GMNOXLX5ShPYpEiWgS\nmW2l2pvJUInJiqApRC6rnN6NOibqugQQlBV7fKg9FkqWZxIO++PzojbFl7tY\nFwh68Mq4t2i9uf9I+tGUwGIJWoyho7AE+xqNjm6QumfYTWUFvWKIjiBRfA2w\nOovOe2cUfbSDfgqFlZQjvf2ZEJDO1Ttfq43FShdgak9Z9G4UMuhVw4Pv7ZEc\nkA6MoZ129weunpfZG/lEVJgsPBBlvhjUKYpvWvCb52yzkDpaARgtwyNI9wq8\nKGlVEr9Aa7qEFLJKOgdu3qv/fGqoJiM3P3l0LyshHhDs9bWLt77JJQqjayOF\nBahtsc2AVNIfKuXVb4QTNYYgWzvCUbBo2x8lh/wIDwcrOSRYmdFGu2HK3IS+\nTi+KohN/H3Ix2o/1QYFlCkEtsRLmFjRSwxcS1IvDTAooCMbI2FN3sdp9UxkI\nwQnk1ibJrAloJCFoKGeqX5m0idlx/Ab9SJO3W7mW50qtecXnmlFSym7Bjuqn\njjHR\r\n=/J61\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.8.0_1533564732614_0.9619256235299285"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.0": {
+      "name": "aws4",
+      "version": "1.9.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js -b -t 100s -R list"
+      },
+      "gitHead": "ff76d90d4e47ff4d123ceca2e9af8b1e5e1861c4",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.9.0",
+      "_nodeVersion": "12.13.1",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-Uvq6hVe90D0B2WEnUqtdgY1bATGz3mw33nH9Y+dmA+w5DHvUmBgkr5rM/KCHpCsiFNRUfokW/szpPPgMK2hm4A==",
+        "shasum": "24390e6ad61386b0a747265754d2a17219de862c",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.9.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 32351,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3adrCRA9TVsSAnZWagAA7Y8P/1yA/GMzqcyrIybcemFf\nh3lBfdt3UcZDO9hbCQjCigwpuN8fUwo8/9MGyDzu2woibqBrxBSN+yzVvfVb\niocaholwSI8lnvHD6oEc/cFQ275C8TzcPMa+/pZR+7dC6uLdRE2hhFYugZGh\n9YgSy6wHV9QAOnqEG26Ow45+jciLqvYgxNj8G+Ghf6m9sXuSw/C8leLiGwvr\njgStnRKyNS+1aLoDIMw7goiO7Yfo9lD2HvmUaD/cx1laBkQgqP0UleBw2qN1\nnV8+HhGN8wmc9/CqBKo2UXVRbJutG+/H6XGFvXfHzT9lRY3D2wsuGhCNPZJu\nf0KyUmMFjY5AKzsqJRsyr5flflvHLPQ2VbTx4r3V8ZJaLrbJ/MzZgQlDqJCo\n3Vdf9Iqs9qm9kKvg5zl7B4fDKKZZBz5EQ/pioHspU75wJjA0PUgDnYMiLv0g\n0vwedi8dtAOtvWHIvJuJQi2/qAAt+HwHo/IBuiQXzfd1W7DSVjxghVOwmDc4\nNTPQT2+oDsFZzHWs3M74BUxQNyUc4QGmBF4ByP94G0cCMnQA7IFnPlp80Y/4\no1T6tlLDl7pWAAS/RfzAAyVhB00+kxzHKMtin68KAhsxhqG1IzaD3WURNZ0K\nvlASAIvFCt7q8nZSgOdfxnSBSeI0/hvsgzwIh+P3jhjVoGi+PRUh7fEDV3fi\nNN4x\r\n=nk6x\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.9.0_1574807402671_0.9800245248929691"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.1": {
+      "name": "aws4",
+      "version": "1.9.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "http://github.com/mhart"
+      },
+      "main": "aws4.js",
+      "keywords": [
+        "amazon",
+        "aws",
+        "signature",
+        "s3",
+        "ec2",
+        "autoscaling",
+        "cloudformation",
+        "elasticloadbalancing",
+        "elb",
+        "elasticbeanstalk",
+        "cloudsearch",
+        "dynamodb",
+        "kinesis",
+        "lambda",
+        "glacier",
+        "sqs",
+        "sns",
+        "iam",
+        "sts",
+        "ses",
+        "swf",
+        "storagegateway",
+        "datapipeline",
+        "directconnect",
+        "redshift",
+        "opsworks",
+        "rds",
+        "monitoring",
+        "cloudtrail",
+        "cloudfront",
+        "codedeploy",
+        "elasticache",
+        "elasticmapreduce",
+        "elastictranscoder",
+        "emr",
+        "cloudwatch",
+        "mobileanalytics",
+        "cognitoidentity",
+        "cognitosync",
+        "cognito",
+        "containerservice",
+        "ecs",
+        "appstream",
+        "keymanagementservice",
+        "kms",
+        "config",
+        "cloudhsm",
+        "route53",
+        "route53domains",
+        "logs"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "^2.4.5",
+        "should": "^8.2.2"
+      },
+      "scripts": {
+        "test": "mocha ./test/fast.js -b -t 100s -R list",
+        "integration": "node ./test/slow.js"
+      },
+      "gitHead": "c45e001b09071094ee6dfa5f52429004b459f8cb",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.9.1",
+      "_nodeVersion": "12.14.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==",
+        "shasum": "7e33d8f7d449b3f673cd72deb9abdc552dbe528e",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.9.1.tgz",
+        "fileCount": 6,
+        "unpackedSize": 32645,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHPx8CRA9TVsSAnZWagAAvMEP/jnJRHWums0M5NSFH9Aa\njCvVZ0pfWUslj46gxLSuyN3VEDVJcCCgNmSb0/T/aODbREc/fSpZKZ2FbQnK\n12wunrU2iPZQyqV6F15y4peWR6EZUtbkU6bl9CYRVDtlSvxLJWbLghh1yU20\np3O39X+l9doFQMRKLFVXJc0cDedHp81qS/yWeK4n6a3crFntoPCJwQvHplQ1\nbwApwofEmXLu579ajtjluqZFCCwxESNJpV/S5PuOz1696phudt8zDYolcL6d\nP97J8Z8Xura7l41P2B0UUUoil7SNxrmaZAGeUHKsus6UQE46GjkaX3cnlYr2\nzZZMa8QPJqCYha+ZWVlInVPOJvzxnCNzy8On3VpuHn5kW6eR7OF6HDEduVbF\nLfjh8EX6cOO1t+/A313SRwxh6zAain78qbWnjQ+Wq8Qwl3r/OlbFJuHEzC12\nDrO1a+6+pQ1wi4dJh9UbyLmuImHAZO0GWdHOLpxoDY92cnBlbUnkwnI+Md2N\noFmIelPxKX3Em0mnQEEjVIYW/aRt1o3Fpdrn/1Y5FBRW75T1sLj+Sy1mxSc+\nX8Ses/st/3gKw7vGs6ez1HMcNk3ktFvit+FC13vK84scZWh9q/nqCEB0SzS7\nryi57MCb5X9fsU85xOBuo87JMVKPRlEHNPkVtl0aCGwLsAjsIBNkf9iyUY9i\nKN1L\r\n=mdFt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.9.1_1578957947737_0.4549390524295822"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.0": {
+      "name": "aws4",
+      "version": "1.10.0",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "https://github.com/mhart"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "main": "aws4.js",
+      "scripts": {
+        "test": "mocha ./test/fast.js -R list",
+        "integration": "node ./test/slow.js"
+      },
+      "devDependencies": {
+        "mocha": "^7.1.2",
+        "should": "^13.2.3"
+      },
+      "gitHead": "09c55bf6d424a4b5547150f0809f854bd14f650a",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.10.0",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "6.14.5",
+      "dist": {
+        "integrity": "sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==",
+        "shasum": "a17b3a8ea811060e74d47d306122400ad4497ae2",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.10.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 21087,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeyEJeCRA9TVsSAnZWagAAS9YP/0M/tlgJFdmsgCIekHyU\nRh+roU6P6vIGZQ0rpYgV6yGxRikMJjJUwRi9mi7kQWASaWlvk/LiCM3c3/PN\n/4NeIH9qX3a3/mraEZZFWu3Ot1UAZqRW2+Aa6ipN8+rGmU1+1Gh+/6ztTRTd\nagAev8J9XNL+ZMrxjNUPENhDzFMdRQpZwiqvy52dajrHMq3C2qMfoVU/+Nm0\n2LiSYcjBLpLLOIS75Ammn6kw3XzThBKMMZDBvhyimXRs1pET+Ej/6rFJKAzG\ncIueaiFLSH6ekcgLBpXf8vExlhydDRRNXcqZKEMgA8EFwzrYPRzcIgslEPvM\nLL1/shDkgLaSqyp54fhZvojcdbJiBXsmTC8jeKoIcmLXGNA1eDitESRp2QgM\nLsKkIUYwosApGBGULwjYxJCbDECq/B0o7MRIoQDuFz84ZYHEj7GBhMOvKu/a\nsTM5ocRHm+qwqhAlIlrx7hjqNE4cTMYTExynFwye+FKWrTLl6+xwyqpQpkHr\nG99SgNT1q7QUQVUF0/LM4heju/T5Qab3WGHLs+hB2ylbHwVC1ftXzvxqkQ9U\ni4t4v5fa27H4gjXCxdq2kxwtQDCup87Ta8ZLP5Prog70mLID2fT0SUTWkuDX\nThaLQO15bVyR/mQzteggv/rUujS3tdK8/jYyKR4nBIRQ+AieUZpZ3glmXF5S\ndobo\r\n=x59z\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.10.0_1590182493870_0.10780918062212641"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.10.1": {
+      "name": "aws4",
+      "version": "1.10.1",
+      "description": "Signs and prepares requests using AWS Signature Version 4",
+      "author": {
+        "name": "Michael Hart",
+        "email": "michael.hart.au@gmail.com",
+        "url": "https://github.com/mhart"
+      },
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mhart/aws4.git"
+      },
+      "main": "aws4.js",
+      "scripts": {
+        "test": "mocha ./test/fast.js -R list",
+        "integration": "node ./test/slow.js"
+      },
+      "devDependencies": {
+        "mocha": "^2.5.3",
+        "should": "^8.4.0"
+      },
+      "gitHead": "cfbf3e38012ab82be48518048d1ed87fbca5bf5a",
+      "bugs": {
+        "url": "https://github.com/mhart/aws4/issues"
+      },
+      "homepage": "https://github.com/mhart/aws4#readme",
+      "_id": "aws4@1.10.1",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-zg7Hz2k5lI8kb7U32998pRRFin7zJlkfezGJjUc2heaD4Pw2wObakCDVzkKztTm/Ln7eiVvYsjqak0Ed4LkMDA==",
+        "shasum": "e1e82e4f3e999e2cfd61b161280d16a111f86428",
+        "tarball": "https://registry.npmjs.org/aws4/-/aws4-1.10.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 21509,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfM+1vCRA9TVsSAnZWagAAJh0P/j7ZkqiJlGbi3tpIm5RZ\ntqkUOY3kIOa/j+1i8U4v3P1DW0tL1clJy+Yk4veVAO7gJMEwhm3OkJtz0Xh6\nzzY7QmDiKqEPHtee4Kil6p3bq/n8UiA3LHbrfKvNO8EkSFbUgFSZb2Hu/ESq\ncJP9ngERkQaEkG3ekdwNRl20ZGx/J4ymYj07ZC3fHuGitTTBWkDlXGQ7YVH7\nEZAgjSDucKjIq6nJScCIa/ehzOYVkMeGiePdv1HgXD8EyYw7wMOhX6XolYc/\nxFwLQ4vN0sjAu+EKAqXQS5ea6ZxO3WUBZs24zcN2Iiz4A0/21G7aKW4iu69D\ni6LhWRx32YwW+Rc5kd5HHpQfOYfJxjKbMli6ioxuVEA0m04EpDRQRKEng7Ms\nLfoKYymBwWG2K/x3HgeOS4PKdxYpUYLvcSlAwKv7ZOLUXG9244A4/6PRFiwr\nep3hd27/Sd/azsEzEYFt9zElIDSc3yxU3aHRkNWLikj6phnt6WnUiu8jWoQ+\na4VRWTWplHbVVvH2UHrSQdFwgGBaxxLKf8arph6mMTgZMWF4V4IgSWCgMZ9j\ns9UXAX8i+5VUhQCTK/F/Z9v671/c1qqY2lvYG+RhVoanQJM+JtFJqaf85eQq\n1N8CzMIzvweffSxjsCujt7kdhB8eipwWAZwnhRDj/TUu2jJLxZ2ljTqbXSx/\n35hI\r\n=5Dcs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "hichaelmart",
+          "email": "michael.hart.au@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "hichaelmart",
+        "email": "michael.hart.au@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/aws4_1.10.1_1597238638752_0.4615872487755939"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "aws4\n----\n\n[![Build Status](https://api.travis-ci.org/mhart/aws4.png?branch=master)](https://travis-ci.org/github/mhart/aws4)\n\nA small utility to sign vanilla Node.js http(s) request options using Amazon's\n[AWS Signature Version 4](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).\n\nIf you want to sign and send AWS requests in a modern browser, or an environment like [Cloudflare Workers](https://developers.cloudflare.com/workers/), then check out [aws4fetch](https://github.com/mhart/aws4fetch) – otherwise you can also bundle this library for use [in older browsers](./browser).\n\nThe only AWS service that *doesn't* support v4 as of 2020-05-22 is\n[SimpleDB](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API.html)\n(it only supports [AWS Signature Version 2](https://github.com/mhart/aws2)).\n\nIt also provides defaults for a number of core AWS headers and\nrequest parameters, making it very easy to query AWS services, or\nbuild out a fully-featured AWS library.\n\nExample\n-------\n\n```javascript\nvar https = require('https')\nvar aws4  = require('aws4')\n\n// to illustrate usage, we'll create a utility function to request and pipe to stdout\nfunction request(opts) { https.request(opts, function(res) { res.pipe(process.stdout) }).end(opts.body || '') }\n\n// aws4 will sign an options object as you'd pass to http.request, with an AWS service and region\nvar opts = { host: 'my-bucket.s3.us-west-1.amazonaws.com', path: '/my-object', service: 's3', region: 'us-west-1' }\n\n// aws4.sign() will sign and modify these options, ready to pass to http.request\naws4.sign(opts, { accessKeyId: '', secretAccessKey: '' })\n\n// or it can get credentials from process.env.AWS_ACCESS_KEY_ID, etc\naws4.sign(opts)\n\n// for most AWS services, aws4 can figure out the service and region if you pass a host\nopts = { host: 'my-bucket.s3.us-west-1.amazonaws.com', path: '/my-object' }\n\n// usually it will add/modify request headers, but you can also sign the query:\nopts = { host: 'my-bucket.s3.amazonaws.com', path: '/?X-Amz-Expires=12345', signQuery: true }\n\n// and for services with simple hosts, aws4 can infer the host from service and region:\nopts = { service: 'sqs', region: 'us-east-1', path: '/?Action=ListQueues' }\n\n// and if you're using us-east-1, it's the default:\nopts = { service: 'sqs', path: '/?Action=ListQueues' }\n\naws4.sign(opts)\nconsole.log(opts)\n/*\n{\n  host: 'sqs.us-east-1.amazonaws.com',\n  path: '/?Action=ListQueues',\n  headers: {\n    Host: 'sqs.us-east-1.amazonaws.com',\n    'X-Amz-Date': '20121226T061030Z',\n    Authorization: 'AWS4-HMAC-SHA256 Credential=ABCDEF/20121226/us-east-1/sqs/aws4_request, ...'\n  }\n}\n*/\n\n// we can now use this to query AWS\nrequest(opts)\n/*\n<?xml version=\"1.0\"?>\n<ListQueuesResponse xmlns=\"https://queue.amazonaws.com/doc/2012-11-05/\">\n...\n*/\n\n// aws4 can infer the HTTP method if a body is passed in\n// method will be POST and Content-Type: 'application/x-www-form-urlencoded; charset=utf-8'\nrequest(aws4.sign({ service: 'iam', body: 'Action=ListGroups&Version=2010-05-08' }))\n/*\n<ListGroupsResponse xmlns=\"https://iam.amazonaws.com/doc/2010-05-08/\">\n...\n*/\n\n// you can specify any custom option or header as per usual\nrequest(aws4.sign({\n  service: 'dynamodb',\n  region: 'ap-southeast-2',\n  method: 'POST',\n  path: '/',\n  headers: {\n    'Content-Type': 'application/x-amz-json-1.0',\n    'X-Amz-Target': 'DynamoDB_20120810.ListTables'\n  },\n  body: '{}'\n}))\n/*\n{\"TableNames\":[]}\n...\n*/\n\n// The raw RequestSigner can be used to generate CodeCommit Git passwords\nvar signer = new aws4.RequestSigner({\n  service: 'codecommit',\n  host: 'git-codecommit.us-east-1.amazonaws.com',\n  method: 'GIT',\n  path: '/v1/repos/MyAwesomeRepo',\n})\nvar password = signer.getDateTime() + 'Z' + signer.signature()\n\n// see example.js for examples with other services\n```\n\nAPI\n---\n\n### aws4.sign(requestOptions, [credentials])\n\nCalculates and populates any necessary AWS headers and/or request\noptions on `requestOptions`. Returns `requestOptions` as a convenience for chaining.\n\n`requestOptions` is an object holding the same options that the Node.js\n[http.request](https://nodejs.org/docs/latest/api/http.html#http_http_request_options_callback)\nfunction takes.\n\nThe following properties of `requestOptions` are used in the signing or\npopulated if they don't already exist:\n\n- `hostname` or `host` (will try to be determined from `service` and `region` if not given)\n- `method` (will use `'GET'` if not given or `'POST'` if there is a `body`)\n- `path` (will use `'/'` if not given)\n- `body` (will use `''` if not given)\n- `service` (will try to be calculated from `hostname` or `host` if not given)\n- `region` (will try to be calculated from `hostname` or `host` or use `'us-east-1'` if not given)\n- `signQuery` (to sign the query instead of adding an `Authorization` header, defaults to false)\n- `headers['Host']` (will use `hostname` or `host` or be calculated if not given)\n- `headers['Content-Type']` (will use `'application/x-www-form-urlencoded; charset=utf-8'`\n  if not given and there is a `body`)\n- `headers['Date']` (used to calculate the signature date if given, otherwise `new Date` is used)\n\nYour AWS credentials (which can be found in your\n[AWS console](https://portal.aws.amazon.com/gp/aws/securityCredentials))\ncan be specified in one of two ways:\n\n- As the second argument, like this:\n\n```javascript\naws4.sign(requestOptions, {\n  secretAccessKey: \"<your-secret-access-key>\",\n  accessKeyId: \"<your-access-key-id>\",\n  sessionToken: \"<your-session-token>\"\n})\n```\n\n- From `process.env`, such as this:\n\n```\nexport AWS_ACCESS_KEY_ID=\"<your-access-key-id>\"\nexport AWS_SECRET_ACCESS_KEY=\"<your-secret-access-key>\"\nexport AWS_SESSION_TOKEN=\"<your-session-token>\"\n```\n\n(will also use `AWS_ACCESS_KEY` and `AWS_SECRET_KEY` if available)\n\nThe `sessionToken` property and `AWS_SESSION_TOKEN` environment variable are optional for signing\nwith [IAM STS temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html).\n\nInstallation\n------------\n\nWith [npm](https://www.npmjs.com/) do:\n\n```\nnpm install aws4\n```\n\nCan also be used [in the browser](./browser).\n\nThanks\n------\n\nThanks to [@jed](https://github.com/jed) for his\n[dynamo-client](https://github.com/jed/dynamo-client) lib where I first\ncommitted and subsequently extracted this code.\n\nAlso thanks to the\n[official Node.js AWS SDK](https://github.com/aws/aws-sdk-js) for giving\nme a start on implementing the v4 signature.\n",
+  "maintainers": [
+    {
+      "name": "hichaelmart",
+      "email": "michael.hart.au@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-08-12T13:24:03.165Z",
+    "created": "2012-12-26T04:43:37.518Z",
+    "0.0.1": "2012-12-26T04:43:41.495Z",
+    "0.1.0": "2012-12-26T05:36:58.627Z",
+    "0.1.1": "2012-12-26T06:53:28.885Z",
+    "0.1.2": "2012-12-26T08:28:22.376Z",
+    "0.1.3": "2012-12-26T08:46:07.150Z",
+    "0.1.4": "2013-01-11T05:14:48.712Z",
+    "0.1.5": "2013-01-11T11:22:48.897Z",
+    "0.1.6": "2013-01-12T06:42:59.595Z",
+    "0.1.7": "2013-01-12T07:13:53.650Z",
+    "0.1.8": "2013-01-13T11:35:43.284Z",
+    "0.1.9": "2013-02-20T04:31:18.685Z",
+    "0.1.10": "2013-02-20T05:21:29.413Z",
+    "0.1.12": "2013-06-19T02:09:54.455Z",
+    "0.2.0": "2013-10-06T04:14:54.000Z",
+    "0.2.1": "2013-11-12T09:50:11.173Z",
+    "0.2.2": "2014-09-09T20:33:37.707Z",
+    "0.2.3": "2014-09-09T20:34:55.791Z",
+    "0.3.0": "2014-10-02T03:45:24.482Z",
+    "0.4.0": "2014-12-31T02:48:22.493Z",
+    "0.4.1": "2014-12-31T03:23:46.527Z",
+    "0.4.2": "2015-01-08T23:27:59.859Z",
+    "0.5.0": "2015-03-16T16:38:42.925Z",
+    "0.5.1": "2015-03-16T16:56:23.217Z",
+    "1.0.0": "2015-03-17T00:12:50.344Z",
+    "1.0.1": "2015-04-03T14:08:02.613Z",
+    "1.0.2": "2015-06-30T19:13:29.751Z",
+    "1.0.3": "2015-06-30T20:18:08.420Z",
+    "1.0.4": "2015-07-01T15:22:43.662Z",
+    "1.1.0": "2015-10-12T22:24:06.868Z",
+    "1.2.0": "2015-12-29T21:59:42.644Z",
+    "1.2.1": "2015-12-29T22:10:42.693Z",
+    "1.3.1": "2016-02-29T19:42:23.040Z",
+    "1.3.2": "2016-03-01T22:32:26.246Z",
+    "1.4.0": "2016-05-06T22:06:38.080Z",
+    "1.4.1": "2016-05-07T17:47:00.756Z",
+    "1.5.0": "2016-10-11T22:51:00.450Z",
+    "1.6.0": "2017-02-07T15:38:54.676Z",
+    "1.7.0": "2018-04-07T22:24:14.670Z",
+    "1.8.0": "2018-08-06T14:12:12.685Z",
+    "1.9.0": "2019-11-26T22:30:02.810Z",
+    "1.9.1": "2020-01-13T23:25:47.909Z",
+    "1.10.0": "2020-05-22T21:21:33.965Z",
+    "1.10.1": "2020-08-12T13:23:58.846Z"
+  },
+  "author": {
+    "name": "Michael Hart",
+    "email": "michael.hart.au@gmail.com",
+    "url": "https://github.com/mhart"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhart/aws4.git"
+  },
+  "homepage": "https://github.com/mhart/aws4#readme",
+  "bugs": {
+    "url": "https://github.com/mhart/aws4/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "goliatone": true,
+    "basicsharp": true,
+    "esperluette": true,
+    "kkuehl": true,
+    "gjwiley": true,
+    "bigmountainideas": true,
+    "anacierdem": true,
+    "quocnguyen": true,
+    "necanicum": true,
+    "maemichi-monosense": true,
+    "jonniespratley": true
+  }
+}

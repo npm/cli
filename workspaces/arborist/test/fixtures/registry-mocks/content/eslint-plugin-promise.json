@@ -1,0 +1,2325 @@
+{
+  "_id": "eslint-plugin-promise",
+  "_rev": "60-a5982cbe3606f75db31f173b41ae4d2e",
+  "name": "eslint-plugin-promise",
+  "description": "Enforce best practices for JavaScript promises",
+  "dist-tags": {
+    "latest": "4.2.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "eslint-plugin-promise",
+      "version": "1.0.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "819ac5ce20f0d4b5819d6cff4737f811b505fd19",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.0.0",
+      "_shasum": "dbdf8cdefeeec7281de9cbe304f6f9763113742d",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "dbdf8cdefeeec7281de9cbe304f6f9763113742d",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.8": {
+      "name": "eslint-plugin-promise",
+      "version": "1.0.8",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "4bce2fa6b1459fd0562e6f1bf789a071a606cf51",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.0.8",
+      "_shasum": "80ec3b6d4da040a0c1ec9e182c66bc646d4993ac",
+      "_from": ".",
+      "_npmVersion": "3.5.1",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "80ec3b6d4da040a0c1ec9e182c66bc646d4993ac",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.0.8.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.0.8.tgz_1454732945721_0.4762009852565825"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "eslint-plugin-promise",
+      "version": "1.1.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "5a5cb8968299ba162e4bca953982cccfd8227f72",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.1.0",
+      "_shasum": "4c616e93d06b71bf65bd244f09425158c862abb6",
+      "_from": ".",
+      "_npmVersion": "3.7.1",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4c616e93d06b71bf65bd244f09425158c862abb6",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.1.0.tgz_1456946906011_0.02544745779596269"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "eslint-plugin-promise",
+      "version": "1.2.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "7b961391d51b60360457e11a0d2e11265beb2ec8",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.2.0",
+      "_shasum": "5ccd316685407f573b7191b0973d54aec19f9026",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5ccd316685407f573b7191b0973d54aec19f9026",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.2.0.tgz_1464192014477_0.3232886551413685"
+      },
+      "directories": {}
+    },
+    "1.3.0": {
+      "name": "eslint-plugin-promise",
+      "version": "1.3.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "c7f65880d856cc250768291c6f3232d55176753c",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.3.0",
+      "_shasum": "9ecdf0823d000271e24dcaa62abfab4226c2703a",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9ecdf0823d000271e24dcaa62abfab4226c2703a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.3.0.tgz_1464193097001_0.6447392478585243"
+      },
+      "directories": {}
+    },
+    "1.3.1": {
+      "name": "eslint-plugin-promise",
+      "version": "1.3.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "~1.2.0",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "fa60b28ac144605e6b6fc2777be5dc803d3ba5a4",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.3.1",
+      "_shasum": "7b33ba37367a4b67279162134bf26743eb0ec3b7",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "7b33ba37367a4b67279162134bf26743eb0ec3b7",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.3.1.tgz_1464318898776_0.18408497213386"
+      },
+      "directories": {}
+    },
+    "1.3.2": {
+      "name": "eslint-plugin-promise",
+      "version": "1.3.2",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.11.1",
+        "mocha": "^2.3.4",
+        "standard": "^5.4.1"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "d6bd2a0f8a70b2a11fce4095b63b1f3f2aa2793d",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@1.3.2",
+      "_shasum": "fce332d6f5ff523200a537704863ec3c2422ba7c",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fce332d6f5ff523200a537704863ec3c2422ba7c",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-1.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-1.3.2.tgz_1464981917463_0.6769580077379942"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "eslint-plugin-promise",
+      "version": "2.0.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "4447aec3804614cbd492d4e1404be627f0adf3ce",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@2.0.0",
+      "_shasum": "99a02f2e59ad0b1ec747dc2d0d773715903c5bd2",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "99a02f2e59ad0b1ec747dc2d0d773715903c5bd2",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-2.0.0.tgz_1468421087407_0.3696043184027076"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "eslint-plugin-promise",
+      "version": "2.0.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "117ca69354142ab302866a610bf3d48e58969b71",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@2.0.1",
+      "_shasum": "a9759cefa5e38ab11bb2ef65a04ef042309aa0a4",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a9759cefa5e38ab11bb2ef65a04ef042309aa0a4",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-2.0.1.tgz_1470417951346_0.26136373984627426"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.0.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "2ddda69dead7ba038f075d35fa1c0c3931bcc77d",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.0.0",
+      "_shasum": "1528635d0160f3484e425cce2169cb74cec0186a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1528635d0160f3484e425cce2169cb74cec0186a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.0.0.tgz_1475884706120_0.07756414636969566"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.1.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "98a3a1517b028c74a7161de5eda42d5d3a7aa72a",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.1.0",
+      "_shasum": "57203dee7175c4ab6108334f4c45acd26fb14c0f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "57203dee7175c4ab6108334f4c45acd26fb14c0f",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.1.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.1.0.tgz_1476808053777_0.9119065180420876"
+      },
+      "directories": {}
+    },
+    "3.2.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.2.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "c1519816949c5052a6440c6d12af814bca415fb5",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.2.0",
+      "_shasum": "9693c16f11af6a606c373beda446c1511b82593a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "9693c16f11af6a606c373beda446c1511b82593a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.2.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.2.0.tgz_1476809813786_0.08029205328784883"
+      },
+      "directories": {}
+    },
+    "3.2.1": {
+      "name": "eslint-plugin-promise",
+      "version": "3.2.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^2.10 || ^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "4b59f4c6a02d14d31ecbabb4bda4038aff835b79",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.2.1",
+      "_shasum": "966b3b5077fac4bcfc4a96055818adf1e432c93a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "966b3b5077fac4bcfc4a96055818adf1e432c93a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.2.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.2.1.tgz_1476811432414_0.06422456284053624"
+      },
+      "directories": {}
+    },
+    "3.3.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.3.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "1073219814ebf17551dcdde0fe73bd3c5ad9d328",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.3.0",
+      "_shasum": "20a1ef58b4243ffdaef82ee9360a02353a7cca89",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "20a1ef58b4243ffdaef82ee9360a02353a7cca89",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.3.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.3.0.tgz_1476824019684_0.9396162198390812"
+      },
+      "directories": {}
+    },
+    "3.3.1": {
+      "name": "eslint-plugin-promise",
+      "version": "3.3.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "peerDependencies": {
+        "eslint": "^2.10 || ^3.0"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "license": "ISC",
+      "gitHead": "aa2c76984df56e4075e0efb2715236853678037a",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.3.1",
+      "_shasum": "c1e980cf7c3cac3300731450fb31d2bb843eb226",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c1e980cf7c3cac3300731450fb31d2bb843eb226",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.3.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.3.1.tgz_1478282652094_0.5418632256332785"
+      },
+      "directories": {}
+    },
+    "3.3.2": {
+      "name": "eslint-plugin-promise",
+      "version": "3.3.2",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "25f789acea81411fb6a466c8a14c957f3aad53a3",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.3.2",
+      "_shasum": "c1169ae6487a87cdeae44f659f4cf05131b8dc66",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "c1169ae6487a87cdeae44f659f4cf05131b8dc66",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.3.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.3.2.tgz_1478898547153_0.7972316406667233"
+      },
+      "directories": {}
+    },
+    "3.4.0-0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.4.0-0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "b7f640da179f0ad7c0d82585f7ca42d6b2d1dcbc",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.4.0-0",
+      "_shasum": "bace9e5980949205047bff57f015ce9044817a91",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "bace9e5980949205047bff57f015ce9044817a91",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.4.0-0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.4.0-0.tgz_1479357917420_0.8570851308759302"
+      },
+      "directories": {}
+    },
+    "3.4.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.4.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "2271a7fd162e9fa37a5f68bdca2edc4c38105f00",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.4.0",
+      "_shasum": "6ba9048c2df57be77d036e0c68918bc9b4fc4195",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6ba9048c2df57be77d036e0c68918bc9b4fc4195",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.4.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.4.0.tgz_1479410221006_0.4851676416583359"
+      },
+      "directories": {}
+    },
+    "3.4.1": {
+      "name": "eslint-plugin-promise",
+      "version": "3.4.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "78b7639a6eedbe33c0111d30ec47096e33e027a3",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.4.1",
+      "_shasum": "6911a9010bf84e17d82e19e0ab0f80ab3ad6db4c",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.6.0",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6911a9010bf84e17d82e19e0ab0f80ab3ad6db4c",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.4.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.4.1.tgz_1486419444044_0.7531657656654716"
+      },
+      "directories": {}
+    },
+    "3.4.2": {
+      "name": "eslint-plugin-promise",
+      "version": "3.4.2",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "1aba2bdca970808589bbd6ee5e8f23257d6860e2",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.4.2",
+      "_shasum": "1be2793eafe2d18b5b123b8136c269f804fe7122",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1be2793eafe2d18b5b123b8136c269f804fe7122",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.4.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.4.2.tgz_1487293006860_0.4550455594435334"
+      },
+      "directories": {}
+    },
+    "3.5.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.5.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "cf01cd13145a450e568885e8c5182fff501a4700",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.5.0",
+      "_shasum": "78fbb6ffe047201627569e85a6c5373af2a68fca",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "4.3.2",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "78fbb6ffe047201627569e85a6c5373af2a68fca",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.5.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/eslint-plugin-promise-3.5.0.tgz_1488325487376_0.6478514401242137"
+      },
+      "directories": {}
+    },
+    "3.6.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.6.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "pretest": "standard",
+        "test": "mocha test"
+      },
+      "devDependencies": {
+        "eslint": "^3.0",
+        "mocha": "^2.3.4",
+        "standard": "^7.1.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "gitHead": "9bba1292c569da36d16ae2c0c85e7e8be18177b3",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.6.0",
+      "_npmVersion": "5.4.1",
+      "_nodeVersion": "6.10.3",
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "xjamundx",
+          "email": "jamund@gmail.com"
+        }
+      ],
+      "dist": {
+        "integrity": "sha512-YQzM6TLTlApAr7Li8vWKR+K3WghjwKcYzY0d2roWap4SLK+kzuagJX/leTetIDWsFcTFnKNJXWupDCD6aZkP2Q==",
+        "shasum": "54b7658c8f454813dc2a870aff8152ec4969ba75",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.6.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise-3.6.0.tgz_1507918292092_0.6694121425971389"
+      },
+      "directories": {}
+    },
+    "3.7.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.7.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint index.js rules __tests__ --ignore-pattern '**/*.json'"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^4.17.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jest": "^21.12.2",
+        "eslint-plugin-node": "^6.0.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-promise": "./",
+        "eslint-plugin-standard": "^3.0.1",
+        "husky": "^0.14.3",
+        "jest": "^22.4.2",
+        "jest-runner-eslint": "^0.4.0",
+        "lint-staged": "^6.1.0",
+        "prettier": "^1.10.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "1e95babd7eae2c89d8c946654aa8f8c6c76ab369",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.7.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "macklinu",
+        "email": "macklinu@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-2WO+ZFh7vxUKRfR0cOIMrWgYKdR6S1AlOezw6pC52B6oYpd5WFghN+QHxvrRdZMtbo8h3dfUZ2o1rWb0UPbKtg==",
+        "shasum": "f4bde5c2c77cdd69557a8f69a24d1ad3cfc9e67e",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.7.0.tgz",
+        "fileCount": 26,
+        "unpackedSize": 36131
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_3.7.0_1520530347749_0.3551499037990382"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.8.0": {
+      "name": "eslint-plugin-promise",
+      "version": "3.8.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint index.js rules __tests__ --ignore-pattern '**/*.json'"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^4.17.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-config-standard": "^11.0.0-beta.0",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-import": "^2.8.0",
+        "eslint-plugin-jest": "^21.12.2",
+        "eslint-plugin-node": "^6.0.0",
+        "eslint-plugin-prettier": "^2.6.0",
+        "eslint-plugin-promise": "./",
+        "eslint-plugin-standard": "^3.0.1",
+        "husky": "^0.14.3",
+        "jest": "^22.4.2",
+        "jest-runner-eslint": "^0.4.0",
+        "lint-staged": "^6.1.0",
+        "prettier": "^1.10.2"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "67dad979790f1040afffd02eb037532140ec2e96",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@3.8.0",
+      "_npmVersion": "5.10.0",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "macklinu",
+        "email": "macklinu@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-JiFL9UFR15NKpHyGii1ZcvmtIqa3UTwiDAGb8atSffe43qJ3+1czVGN6UtkklpcJ2DVnqvTMzEKRaJdBkAL2aQ==",
+        "shasum": "65ebf27a845e3c1e9d6f6a5622ddd3801694b621",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-3.8.0.tgz",
+        "fileCount": 27,
+        "unpackedSize": 37183,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbByRUCRA9TVsSAnZWagAAQ4cP/2vGxsI+T+MLeaqnUymW\nzbU03JXbgXDPER/r2ymvs/KZTt6YvEJbpemlbmuxy96ljeWKTQVHVkbnftBH\nOQScy2KF7stMDVNs+0m+QL91x+OZJ6gmRi3CkXiGrHnas15KbQDC7/CAr3mq\nPNhaKkUAVESLE/xUdqTabUXPzPU0lsuJd4AE+Ie64GLvrWGUUE2PGrbaojNZ\n+eKhEDRIQVbeE64YmnxY6JuexFaf1Z4+w9IiRVSEgKcrEm3RuXEEA4pJxdNb\nmddDz4cJyz2nfwM3181eDcG666b6YM9GOdMzeTGpVzsjV1dFl1cxr6pceChV\nr/40MLm6xcc/yyh3R1G11gE14jJUdzSfIbk8fCRBxizXLbMBqcn8fqLYXhx7\n/Kd/G3SBmru1mlIB/+Hbfrhsal2Ekts7W68fbzR2+bCE8b0WKl+JdcAuAr2w\nDrwgCd09zWi/6lbSKFEMoVeQv5987ZHaktJTbPbrjbQKS6/gUTCgbH6xK1Tp\nJsi52t4Ahvudo4osNCZK4rEB4ScAH+/tDNQTA73KekMoKfCqpBigQNwbbfcE\nVPaP7x21S9JRPOOHWO4EZ00nanRgeKPgOHAmWj2Gg1A+PnDPvUaSCVyEG6g+\nucvxsJWp23PSGo5w8uU+enoHWYXIB60MbWrt0cUZeF52KrpLxnKyDIarZoYl\nIm9s\r\n=rF8K\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_3.8.0_1527194707374_0.6170984129537769"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "eslint-plugin-promise",
+      "version": "4.0.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint rules __tests__ index.js"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^5.3.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-jest": "^21.21.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^0.14.3",
+        "jest": "^23.5.0",
+        "jest-runner-eslint": "^0.6.0",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "764f004da82debae043f0639401b50a46aa4ba23",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@4.0.0",
+      "_npmVersion": "6.3.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "macklinu",
+        "email": "macklinu@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-3on8creJifkmNHvT425jCWSuVK0DG0Quf3H75ENZFqvHl6/s2xme8z6bfxww13XwqfELYWKxc/N3AtBXyV1hdg==",
+        "shasum": "bc15a4aa04fa6116113b6c47488c421821b758fc",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.0.0.tgz",
+        "fileCount": 26,
+        "unpackedSize": 37282,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdz0gCRA9TVsSAnZWagAAKjIQAIs+wLM0WaN6Q2KEYILZ\nkCtXYCqv6kOn73PtTcn7WV0kduiwuPZ+l9WBLqbnlu4HMVzjGnbNaR9CM7/2\nBt4aCkGfReMA96TQnx57oD3OpYg2xJzd1FdI6SjM/ilQdcx5pSasNx5/knoX\ndTjJ762ZGC1VPt3DJRIy4v8L04+4g1ZBIz/Ze0uUdxiCYkq2xg/rBGrzzFoA\nQStdvualTfYTqRf4mlrwvkcremFO7fhKZwbxWc3HV7m/jP3qZSZic0MyRLYb\nxdx6BLm758i5KaSUG5pSUbP0/vaekXiGN7ugSacXvuXx9KwSuj/+Br/WdF4C\nc+WOOR/DjHCJw949vaVME55s02pN5oGLwlJag0QAdw78QcayEjuExZcAXdRW\n31wX+nEsFuQYwN72YbphIVs+bguRuwdgSDjtHsYvmHlHeITW5bh74gkO/cNF\nfsk5T70rHpefgr3j9GrZJcQx3xNj7V7uayUu+bFIrmUjflSyGXwVDFphu6dm\nVDzRjMTsIsRiyLSQhKHy6JSbu9/wEXCsUhkczGNHVV5WAAoiiK6s83ttk1eD\nHUSMoNiqu4DjNzSU/3s5gWV1JVA4MXqSDdoC1rnrBgTORkgz+LgGE1j3ntcI\n/Lj8RWo6CJ502lDW+YMyXH2JKnUWPkbJu+/5Jzp8bRZPsOuQcIgbesV/5d35\n+RIR\r\n=6t2q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_4.0.0_1534541087900_0.7150128229176473"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "eslint-plugin-promise",
+      "version": "4.0.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint rules __tests__ index.js"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^5.3.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-jest": "^21.21.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^0.14.3",
+        "jest": "^23.5.0",
+        "jest-runner-eslint": "^0.6.0",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "61a373c708a71994fe21817091c1ca6759a11839",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@4.0.1",
+      "_npmVersion": "6.4.0",
+      "_nodeVersion": "8.11.3",
+      "_npmUser": {
+        "name": "macklinu",
+        "email": "macklinu@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Si16O0+Hqz1gDHsys6RtFRrW7cCTB6P7p3OJmKp3Y3dxpQE2qwOA7d3xnV+0mBmrPoi0RBnxlCKvqu70te6wjg==",
+        "shasum": "2d074b653f35a23d1ba89d8e976a985117d1c6a2",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.0.1.tgz",
+        "fileCount": 26,
+        "unpackedSize": 37169,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkgFMCRA9TVsSAnZWagAAzrAP/0ux3kFYfme+j8fs4VwS\nZyXbNzp0Qj/Dq+fXOAut6cEr/q85sYs539tlFKA4LTx6LRqr1ZSyGDqL8clM\n0RGkZ1TJ+X7lY++pNFcJ+8Dnito/IkTqMrmi1Bl7YdeA00nD9Sb1ZfqJ6U79\nFA6xGk6k2BQHYniywlgMRUvckMAwOggDY+qLpvaK7JMc06vw5a0fBkGb/EZQ\ngZ7/As1pso2H2ILRy013GtOwkWQpjzVx+6PV/bDow5RYbFxeK73Oj5s57QsY\nlB2u/gLKGO9508oHGKu/l5fBh9Uge7nkIYBcEZ8bKDKvx6LzwNyKCJ15gC83\nYM5tKB8FSNl1WexbibDuUVzeAJTJua8/ox6m0xpVwi+3AiGWJjglJyOY8lzU\nbkYgbdPgSC277Rj61WMCzBmDxRDRLHpEPL2ITVxLMn07Liv8lw6/r0/Eua+m\nZGi9FCgj/cDXrGhnHYvYMFGisofgjFT4xp0tZQF28CqKq5S+CMhvHaNMbpp3\ny3Nj8/HsIwC7xP/EFgpyIcDusXO7Ch8ajUSI1o3Z9R2DZ93wSr5IkUZ518PP\nXkju1/U3nTqc8b/0JQh54RBqcoTIYWYg1U8VqZ1Mgr45QblWY8G0Uh5HJE9v\nsGLYOihvsSSJaWZE223pEnHhMvZ71JhbSh+ESM+LAM5KuwW5vgzTRw0XdRcU\nknnD\r\n=QAZ+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_4.0.1_1536295244238_0.9600417829356012"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.0": {
+      "name": "eslint-plugin-promise",
+      "version": "4.1.0",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint rules __tests__ index.js"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^5.3.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-jest": "^21.21.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^0.14.3",
+        "jest": "^23.5.0",
+        "jest-runner-eslint": "^0.6.0",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "088c239b93a2016d89772933dda056201baad943",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@4.1.0",
+      "_nodeVersion": "8.12.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-b4vAjzf+Ivdrj3Qa96wSMcxCru1k5Ha5HR1Uejk+cEFPbnzeI/zwnaL8mhCiw5xJ21smA1xhHzgKx0QTPB1n1w==",
+        "shasum": "e378c90cb557daa51487566cbff1ccee7eea7a49",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.1.0.tgz",
+        "fileCount": 26,
+        "unpackedSize": 37704,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoljZCRA9TVsSAnZWagAABuQP/27Y9wtZSA1nQMbskhgv\nmkTw8I+TY6WtZti445FLn0bqpKb8olCgbD+8Z4aILVesdpztAXurGPDPUuXH\nhlg7tZK3Kyoki0r1CZHtmLyqMTHnjvBXEy4Ab6ehChLFcI0cwD+Oesk3xiuh\nAIFY6aSZnZUZOyr+qbYGuVwJ8W0zLPT71Q5uhbFkTurDxg0xnxUFNQ4YWJ2W\nkbXUj/P3lA6QJ7SO7fEU4gKKGKwCcMetqCaK4SqxWpXOMaAV157a/NA1NIS/\nXf02peWEvr09oDH/9F7SiuMxBsBWkTVw4zT3ghX0HSq1WYOZj021guCnR84I\nMFPfmII+CyDRkr29fhcieRfS1K3FaU69GjoGfUo7yg0oP2tDt1kfPKklI3JZ\nXUwKsIlJ+5UsFixo7ju8Orpi22bLHRfDMyXhl7vjHjlogl52tsb/bfdxLHKL\nfZN+SKaRTfdUA+evXWIdBhUbXXFthz5LoT0Q4kvyPEptgDZLXhsqMJcZHjbk\naD/Iwg93W9J7wkwJrUQQ3hMOPiJVSyj8z7n2EqReRvx+MFq5Z6BH6DPPtTpb\njJ8T9gXK/1kpDbI0iWPzZkDEE77fHf7tEwaguFcrWJC5wTOd2cmKV0h9Yv9S\nWRrVhzsfZWK/735S1GXUFRy6ejywDS2rR0BAn6NXUouP1J4j570WEEJacWma\nMPFK\r\n=57vs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_4.1.0_1554143448667_0.44905837141884564"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.1.1": {
+      "name": "eslint-plugin-promise",
+      "version": "4.1.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint rules __tests__ index.js"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-jest": "^21.21.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^0.14.3",
+        "jest": "^24.5.0",
+        "jest-runner-eslint": "^0.7.3",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "0e0059272793d07822b50cb1fa2954aa675157c9",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@4.1.1",
+      "_nodeVersion": "8.12.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-faAHw7uzlNPy7b45J1guyjazw28M+7gJokKUjC5JSFoYfUEyy6Gw/i7YQvmv2Yk00sUjWcmzXQLpU1Ki/C2IZQ==",
+        "shasum": "1e08cb68b5b2cd8839f8d5864c796f56d82746db",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.1.1.tgz",
+        "fileCount": 26,
+        "unpackedSize": 37705,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcol2xCRA9TVsSAnZWagAAfp0P/if9gsCvwfLxIS+p/e8w\nLl0+yiShQaQwBvRk8gqedppzi6HrM0Lv3MqAID7xbwRJan79F31ZM9Gq7LpJ\np8f1MfSw1EvC8Db46nAwYJI2soBDGgNnV+fMvgvq1jvzuVOVB9agqsCpORrQ\nK2Knmz6Oj8xjRL0ByF5TP6bEKlstlyJ9eZflaUoai9tp4vLdD7RcKo8iw92a\n6YaqkpXg0CjyGHP4wG0lRSCc2Uhyuwgflrmku+zWY97VPZT6Lp7YS80YxIF1\nryoHyfGd/nsyFCzuTSgCIS1rQ0b7OQ65Pwu5ukeA7Tscj7bz1Q+twD9IpRi0\nSrOYM/4xmZRxGwjjhf4JpOiPendDWIOaBgDZMVbMmD55dJJEg8L10b6zkxe6\n/znBMb34Yuj/+Y7R2WC3Uuaq+IPFXTwFPjRqJ6/an30nvFiaGcdCZ1b40+2Q\nxmPrtMFkb8lNPljaDop+UZz+SvRK4xHV2x00Jd1opqzI2ccs1uHwtMEQwhka\n+0H0nSpkmYg0MvcYdm4SD4xz/EXP2S+0SnTIV9jugyc5dcSMphpyhgjO6LxR\ngRnIX713ag60UQyp2rAxsyGUL/iDnDAQqy2QVXJ7lfEW3J+DVkeURIXfBZkm\ndlICFYFYio/fcQT+tTFDVQ+OJm4exng7mwvwhJUolxyYhNB4QZOcijdahR/E\nzcX5\r\n=naGH\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_4.1.1_1554144689055_0.882311106723739"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.2.1": {
+      "name": "eslint-plugin-promise",
+      "version": "4.2.1",
+      "description": "Enforce best practices for JavaScript promises",
+      "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "promise",
+        "promises"
+      ],
+      "author": {
+        "name": "jden",
+        "email": "jason@denizac.org"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+      },
+      "scripts": {
+        "precommit": "lint-staged",
+        "test": "jest",
+        "lint": "eslint rules __tests__ index.js"
+      },
+      "devDependencies": {
+        "doctoc": "^1.3.0",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^3.0.1",
+        "eslint-plugin-eslint-plugin": "^1.4.0",
+        "eslint-plugin-jest": "^21.21.0",
+        "eslint-plugin-node": "^7.0.1",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^0.14.3",
+        "jest": "^24.5.0",
+        "jest-runner-eslint": "^0.7.3",
+        "lint-staged": "^7.2.2",
+        "prettier": "^1.14.2"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "license": "ISC",
+      "lint-staged": {
+        "concurrent": false,
+        "linters": {
+          "{README.md,CONTRIBUTING.md}": [
+            "doctoc --maxlevel 3 --notitle",
+            "git add"
+          ],
+          "*.js": [
+            "prettier --write",
+            "eslint --fix",
+            "git add"
+          ],
+          "*.+(json|md)": [
+            "prettier --write",
+            "git add"
+          ]
+        }
+      },
+      "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "always"
+      },
+      "jest": {
+        "projects": [
+          {
+            "displayName": "test",
+            "testEnvironment": "node"
+          },
+          {
+            "runner": "jest-runner-eslint",
+            "displayName": "lint",
+            "testMatch": [
+              "<rootDir>/rules/**/*.js",
+              "<rootDir>/__tests__/**/*.js",
+              "<rootDir>/index.js"
+            ]
+          }
+        ]
+      },
+      "gitHead": "5b935bdd3c3760a2e58eea9b89c86b6d3243e321",
+      "bugs": {
+        "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+      },
+      "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+      "_id": "eslint-plugin-promise@4.2.1",
+      "_nodeVersion": "8.12.0",
+      "_npmVersion": "6.9.0",
+      "dist": {
+        "integrity": "sha512-VoM09vT7bfA7D+upt+FjeBO5eHIJQBUWki1aPvB+vbNiHS3+oGIJGIeyBtKQTME6UPXXy3vV07OL1tHd3ANuDw==",
+        "shasum": "845fd8b2260ad8f82564c1222fce44ad71d9418a",
+        "tarball": "https://registry.npmjs.org/eslint-plugin-promise/-/eslint-plugin-promise-4.2.1.tgz",
+        "fileCount": 26,
+        "unpackedSize": 38346,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdElm0CRA9TVsSAnZWagAAeEIQAJkpRA9CP/u+Ifs/0Qj0\nQAo7kXif3Qzw1Zl1M3mavR8Isypd/d44E44L/QbBHKam7pfRmvSmnpDs1ZW/\n0MbsYtkDS9Sakof7mnIi9dwfKlN99MLlpBRASfV0hVnIhKP/3nZ1rOYKVZGl\nmY2Ts5XnHoTk6T9ZxlogeXjgGRuDVTLyIp5lWLlfKCyJ2oU/dls4mbR4p+4K\nvRHIGGBa0cg78YsrOOAZWkq9YjA6OV5O855NouzHVGIWUou32Iw0e1/bBhxo\ndERrxEHh7W6LBkwHKBqr6gxyq8mhK63oU9CPA2XrMhbZ0WHySVS+X9FlpXjG\nxvxSLYJQauk67O5sOuvdH+5h3+9dMF9K/sI9QCb1u6rkbuF5V4i3n/5Rfglo\nohUcqQ3wic4kuBZ/51mh8nvhAa2BDgGHdchyZ8/AIutpv/+yR+jvd/aIeD9f\nCErzirSfxwvrrKMHRKREGpgpdzuNI9rHFYHg75mruU4bCXerxcgQX8phdYi1\nWNld2nTWKHZpM8Y3oBpnhvIr4qFPTeufJ4282xAE9fmPip6K5RZQQJc47RM3\nPoskGx30nS2Ha0qfThuz3KPn84VTwOhEN6fG8iV8rbHFCw1Cxx4rzCCAa36w\najonc/fhoZKyHQqfGK6F5MUDKOr0l8Fg4kOHvRIljyqLrc9PdvrCDEfDV/F4\n12kF\r\n=tbNP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "macklinu@gmail.com",
+          "name": "macklinu"
+        },
+        {
+          "email": "jamund@gmail.com",
+          "name": "xjamundx"
+        }
+      ],
+      "_npmUser": {
+        "name": "xjamundx",
+        "email": "jamund@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/eslint-plugin-promise_4.2.1_1561483699814_0.7906910188459748"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# eslint-plugin-promise\n\nEnforce best practices for JavaScript promises.\n\n[![travis-ci](https://travis-ci.org/xjamundx/eslint-plugin-promise.svg)](https://travis-ci.org/xjamundx/eslint-plugin-promise)\n[![npm version](https://badge.fury.io/js/eslint-plugin-promise.svg)](https://www.npmjs.com/package/eslint-plugin-promise)\n[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)\n\n<!-- START doctoc generated TOC please keep comment here to allow auto update -->\n<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->\n\n- [Installation](#installation)\n- [Usage](#usage)\n- [Rules](#rules)\n- [Maintainers](#maintainers)\n- [License](#license)\n\n<!-- END doctoc generated TOC please keep comment here to allow auto update -->\n\n## Installation\n\nYou'll first need to install [ESLint](http://eslint.org):\n\n```\n$ npm install eslint --save-dev\n```\n\nNext, install `eslint-plugin-promise`:\n\n```\n$ npm install eslint-plugin-promise --save-dev\n```\n\n**Note:** If you installed ESLint globally (using the `-g` flag) then you must\nalso install `eslint-plugin-promise` globally.\n\n## Usage\n\nAdd `promise` to the plugins section of your `.eslintrc.json` configuration\nfile. You can omit the `eslint-plugin-` prefix:\n\n```json\n{\n  \"plugins\": [\"promise\"]\n}\n```\n\nThen configure the rules you want to use under the rules section.\n\n```json\n{\n  \"rules\": {\n    \"promise/always-return\": \"error\",\n    \"promise/no-return-wrap\": \"error\",\n    \"promise/param-names\": \"error\",\n    \"promise/catch-or-return\": \"error\",\n    \"promise/no-native\": \"off\",\n    \"promise/no-nesting\": \"warn\",\n    \"promise/no-promise-in-callback\": \"warn\",\n    \"promise/no-callback-in-promise\": \"warn\",\n    \"promise/avoid-new\": \"warn\",\n    \"promise/no-new-statics\": \"error\",\n    \"promise/no-return-in-finally\": \"warn\",\n    \"promise/valid-params\": \"warn\"\n  }\n}\n```\n\nor start with the recommended rule set:\n\n```json\n{\n  \"extends\": [\"plugin:promise/recommended\"]\n}\n```\n\n## Rules\n\n| rule                                                     | description                                                                      | recommended | fixable  |\n| -------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------- | -------- |\n| [`catch-or-return`][catch-or-return]                     | Enforces the use of `catch()` on un-returned promises.                           | :bangbang:  |          |\n| [`no-return-wrap`][no-return-wrap]                       | Avoid wrapping values in `Promise.resolve` or `Promise.reject` when not needed.  | :bangbang:  |          |\n| [`param-names`][param-names]                             | Enforce consistent param names and ordering when creating new promises.          | :bangbang:  |          |\n| [`always-return`][always-return]                         | Return inside each `then()` to create readable and reusable Promise chains.      | :bangbang:  |          |\n| [`no-native`][no-native]                                 | In an ES5 environment, make sure to create a `Promise` constructor before using. |             |          |\n| [`no-nesting`][no-nesting]                               | Avoid nested `then()` or `catch()` statements                                    | :warning:   |          |\n| [`no-promise-in-callback`][no-promise-in-callback]       | Avoid using promises inside of callbacks                                         | :warning:   |          |\n| [`no-callback-in-promise`][no-callback-in-promise]       | Avoid calling `cb()` inside of a `then()` (use [nodeify][] instead)              | :warning:   |          |\n| [`avoid-new`][avoid-new]                                 | Avoid creating `new` promises outside of utility libs (use [pify][] instead)     |             |          |\n| [`no-new-statics`][no-new-statics]                       | Avoid calling `new` on a Promise static method                                   | :bangbang:  | :wrench: |\n| [`no-return-in-finally`][no-return-in-finally]           | Disallow return statements in `finally()`                                        | :warning:   |          |\n| [`valid-params`][valid-params]                           | Ensures the proper number of arguments are passed to Promise functions           | :warning:   |          |\n| [`prefer-await-to-then`][prefer-await-to-then]           | Prefer `await` to `then()` for reading Promise values                            | :seven:     |          |\n| [`prefer-await-to-callbacks`][prefer-await-to-callbacks] | Prefer async/await to the callback pattern                                       | :seven:     |          |\n\n**Key**\n\n| icon       | description                                     |\n| ---------- | ----------------------------------------------- |\n| :bangbang: | Reports as error in recommended configuration   |\n| :warning:  | Reports as warning in recommended configuration |\n| :seven:    | ES2017 Async Await rules                        |\n| :wrench:   | Rule is fixable with `eslint --fix`             |\n\n## Maintainers\n\n- Jamund Ferguson - [@xjamundx][]\n- Macklin Underdown - [@macklinu][]\n\n## License\n\n- (c) MMXV jden <mailto:jason@denizac.org> - ISC license.\n- (c) 2016 Jamund Ferguson <mailto:jamund@gmail.com> - ISC license.\n\n[catch-or-return]: docs/rules/catch-or-return.md\n[no-return-wrap]: docs/rules/no-return-wrap.md\n[param-names]: docs/rules/param-names.md\n[always-return]: docs/rules/always-return.md\n[no-native]: docs/rules/no-native.md\n[no-nesting]: docs/rules/no-nesting.md\n[no-promise-in-callback]: docs/rules/no-promise-in-callback.md\n[no-callback-in-promise]: docs/rules/no-callback-in-promise.md\n[avoid-new]: docs/rules/avoid-new.md\n[no-new-statics]: docs/rules/no-new-statics.md\n[no-return-in-finally]: docs/rules/no-return-in-finally.md\n[valid-params]: docs/rules/valid-params.md\n[prefer-await-to-then]: docs/rules/prefer-await-to-then.md\n[prefer-await-to-callbacks]: docs/rules/prefer-await-to-callbacks.md\n[nodeify]: https://www.npmjs.com/package/nodeify\n[pify]: https://www.npmjs.com/package/pify\n[@macklinu]: https://github.com/macklinu\n[@xjamundx]: https://github.com/xjamundx\n",
+  "maintainers": [
+    {
+      "email": "macklinu@gmail.com",
+      "name": "macklinu"
+    },
+    {
+      "email": "jamund@gmail.com",
+      "name": "xjamundx"
+    }
+  ],
+  "time": {
+    "modified": "2019-06-25T17:28:22.576Z",
+    "created": "2016-01-22T17:12:18.921Z",
+    "1.0.0": "2016-01-22T17:12:18.921Z",
+    "1.0.8": "2016-02-06T04:29:06.502Z",
+    "1.1.0": "2016-03-02T19:28:26.814Z",
+    "1.2.0": "2016-05-25T16:00:17.024Z",
+    "1.3.0": "2016-05-25T16:18:19.814Z",
+    "1.3.1": "2016-05-27T03:15:01.815Z",
+    "1.3.2": "2016-06-03T19:25:19.965Z",
+    "2.0.0": "2016-07-13T14:44:49.303Z",
+    "2.0.1": "2016-08-05T17:25:54.345Z",
+    "3.0.0": "2016-10-07T23:58:26.345Z",
+    "3.1.0": "2016-10-18T16:27:35.636Z",
+    "3.2.0": "2016-10-18T16:56:55.421Z",
+    "3.2.1": "2016-10-18T17:23:53.127Z",
+    "3.3.0": "2016-10-18T20:53:40.236Z",
+    "3.3.1": "2016-11-04T18:04:12.314Z",
+    "3.3.2": "2016-11-11T21:09:07.710Z",
+    "3.4.0-0": "2016-11-17T04:45:18.017Z",
+    "3.4.0": "2016-11-17T19:17:01.721Z",
+    "3.4.1": "2017-02-06T22:17:24.775Z",
+    "3.4.2": "2017-02-17T00:56:47.091Z",
+    "3.5.0": "2017-02-28T23:44:47.687Z",
+    "3.6.0": "2017-10-13T18:11:33.133Z",
+    "3.7.0": "2018-03-08T17:32:28.476Z",
+    "3.8.0": "2018-05-24T20:45:07.521Z",
+    "4.0.0": "2018-08-17T21:24:47.965Z",
+    "4.0.1": "2018-09-07T04:40:44.425Z",
+    "4.1.0": "2019-04-01T18:30:48.876Z",
+    "4.1.1": "2019-04-01T18:51:29.260Z",
+    "4.2.1": "2019-06-25T17:28:20.040Z"
+  },
+  "homepage": "https://github.com/xjamundx/eslint-plugin-promise#readme",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "promise",
+    "promises"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xjamundx/eslint-plugin-promise.git"
+  },
+  "author": {
+    "name": "jden",
+    "email": "jason@denizac.org"
+  },
+  "bugs": {
+    "url": "https://github.com/xjamundx/eslint-plugin-promise/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "users": {
+    "tregusti": true,
+    "ziflex": true,
+    "mswanson1524": true,
+    "jpshankle": true,
+    "jaxelson": true,
+    "langri-sha": true,
+    "sergiodxa": true,
+    "quaelin": true,
+    "rochejul": true,
+    "alopatindev": true,
+    "xueboren": true,
+    "akabeko": true,
+    "npmlincq": true,
+    "jaymcoder": true,
+    "alexxnica": true,
+    "mtdalpizzol": true,
+    "abhijitkalta": true,
+    "vidhill": true,
+    "princetoad": true,
+    "fakefarm": true,
+    "cognivator": true,
+    "hjodiawalla": true,
+    "ta2edchimp": true,
+    "netweb": true
+  }
+}

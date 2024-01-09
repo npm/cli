@@ -1,0 +1,2165 @@
+{
+  "_id": "package-json",
+  "_rev": "48-3bf27b9095371dfc209a346281203651",
+  "name": "package-json",
+  "description": "Get metadata of a package from the npm registry",
+  "dist-tags": {
+    "latest": "6.5.0"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "package-json",
+      "version": "0.1.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^0.3.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@0.1.0",
+      "_shasum": "97add5348cdee72d1d934f75f1a62dd243354685",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "97add5348cdee72d1d934f75f1a62dd243354685",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-0.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "0.2.0": {
+      "name": "package-json",
+      "version": "0.2.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^0.3.0",
+        "registry-url": "^0.1.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@0.2.0",
+      "_shasum": "0316e177b8eb149985d34f706b4a5543b274bec5",
+      "_from": ".",
+      "_npmVersion": "1.4.9",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0316e177b8eb149985d34f706b4a5543b274bec5",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-0.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "package-json",
+      "version": "1.0.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^1.0.1",
+        "registry-url": "^1.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "9023b7fea723fe81d00b60799207f03e1287d403",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@1.0.0",
+      "_shasum": "71ccbbef319c8a7451321b61484d96fc5a1cb9aa",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "71ccbbef319c8a7451321b61484d96fc5a1cb9aa",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "package-json",
+      "version": "1.0.1",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^1.0.1",
+        "registry-url": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "99b98495085673278deee950c52e05ef8354171b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@1.0.1",
+      "_shasum": "89cc831317c4d17922413d5318b23c904e5cf43e",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "89cc831317c4d17922413d5318b23c904e5cf43e",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "package-json",
+      "version": "1.0.2",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module"
+      ],
+      "dependencies": {
+        "got": "^2.4.0",
+        "registry-url": "^2.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "e23886993434cbbdf5b23fbc20c3c97c08ed515b",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@1.0.2",
+      "_shasum": "b3a5ef5a3072c95bc7b62cb643829428972f669b",
+      "_from": ".",
+      "_npmVersion": "2.5.0",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b3a5ef5a3072c95bc7b62cb643829428972f669b",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "package-json",
+      "version": "1.1.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^2.4.0",
+        "registry-url": "^3.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "48bc9ac059412759ef8980df318e366e8def50da",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@1.1.0",
+      "_shasum": "32b427c626385ccce180dc73a66d94f35f545e4b",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "0.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "32b427c626385ccce180dc73a66d94f35f545e4b",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "package-json",
+      "version": "1.2.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^3.2.0",
+        "registry-url": "^3.0.0"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "gitHead": "0119e976716d376994fd8d40ef7112dca597f4b6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@1.2.0",
+      "_shasum": "c8ecac094227cdf76a316874ed05e27cc939a0e0",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c8ecac094227cdf76a316874ed05e27cc939a0e0",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "package-json",
+      "version": "2.0.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^4.2.0",
+        "registry-url": "^3.0.3"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "9f8fc8e0bfe874eb67879186f54e48f7cddadd8a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.0.0",
+      "_shasum": "8e0a833cdc0e95dd974770e47f91f9361a0455ae",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8e0a833cdc0e95dd974770e47f91f9361a0455ae",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "package-json",
+      "version": "2.0.1",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^4.2.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "32fb2517fff37f3500095217b361fb8e445a67e3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.0.1",
+      "_shasum": "533fdef585db480fd8d45e8fe822c3a7a7f7f497",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "533fdef585db480fd8d45e8fe822c3a7a7f7f497",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "package-json",
+      "version": "2.1.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "7938a3866ce510e419b7c4f4234a596be855c821",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.1.0",
+      "_shasum": "ba3333ce5af7322ca5b697bcec5d1e73a51127ed",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ba3333ce5af7322ca5b697bcec5d1e73a51127ed",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "package-json",
+      "version": "2.2.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "4b2eac763f09cc90100df28bdcdc579c7f03fc38",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.2.0",
+      "_shasum": "28baae04bb30abf634ee64cedc694847a466239b",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "28baae04bb30abf634ee64cedc694847a466239b",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.2.1": {
+      "name": "package-json",
+      "version": "2.2.1",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "6f9a9da97f26b2d3e536ddd853de092aff478c2e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.2.1",
+      "_shasum": "1b1fb6a5be2c9c6060d79db65a746c1ab8f450d0",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1b1fb6a5be2c9c6060d79db65a746c1ab8f450d0",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.0": {
+      "name": "package-json",
+      "version": "2.3.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "ignores": [
+          "test.js"
+        ]
+      },
+      "gitHead": "bffb26c0b1a7cb83dfa46fa731699989c4ecf2bf",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@2.3.0",
+      "_shasum": "6938dac7a2744385bf2d79536aee248c1ac72826",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6938dac7a2744385bf2d79536aee248c1ac72826",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.3.1": {
+      "name": "package-json",
+      "version": "2.3.1",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "7183d298faa59a8f36edb59f7c5edc693874bb9a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@2.3.1",
+      "_shasum": "c61ad13d6cc3f281ee3f64595ea07328cc5aa2e5",
+      "_from": ".",
+      "_npmVersion": "3.3.12",
+      "_nodeVersion": "5.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c61ad13d6cc3f281ee3f64595ea07328cc5aa2e5",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.3.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/package-json-2.3.1.tgz_1455375081382_0.5756344250403345"
+      },
+      "directories": {}
+    },
+    "2.3.2": {
+      "name": "package-json",
+      "version": "2.3.2",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/package-json"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "9fffc8f7bc9ac948e44275ce0408dfb6f5ce52e3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json",
+      "_id": "package-json@2.3.2",
+      "_shasum": "914b50eed25b61eb69190a10b65f6df205bf203f",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.3.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "914b50eed25b61eb69190a10b65f6df205bf203f",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.3.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/package-json-2.3.2.tgz_1459790460441_0.8485690641682595"
+      },
+      "directories": {}
+    },
+    "2.3.3": {
+      "name": "package-json",
+      "version": "2.3.3",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "rc": "^1.1.2",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "5aed36ce4645c2323ad32bde5321e9628b18ad1c",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@2.3.3",
+      "_shasum": "14895311a963d18edf8801e06b67ea87795d15b9",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "14895311a963d18edf8801e06b67ea87795d15b9",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.3.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/package-json-2.3.3.tgz_1467579869427_0.6691389454063028"
+      },
+      "directories": {}
+    },
+    "2.4.0": {
+      "name": "package-json",
+      "version": "2.4.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^5.0.0",
+        "registry-auth-token": "^3.0.1",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.0",
+        "xo": "*"
+      },
+      "gitHead": "2e77257cec7604cf18d979b1d5c4baa46928d24d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@2.4.0",
+      "_shasum": "0d15bd67d1cbbddbb2ca222ff2edb86bcb31a8bb",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "0d15bd67d1cbbddbb2ca222ff2edb86bcb31a8bb",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-2.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/package-json-2.4.0.tgz_1472158723527_0.22724637226201594"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "package-json",
+      "version": "3.0.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^6.7.1",
+        "registry-auth-token": "^3.0.1",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.0",
+        "xo": "*"
+      },
+      "gitHead": "1436eb4b8b191f5099a1c453c104e71445bc37fa",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@3.0.0",
+      "_shasum": "dc11f79ebdb436e55fe2b9b294ee3f2a87a33b13",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.6.2",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "dc11f79ebdb436e55fe2b9b294ee3f2a87a33b13",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/package-json-3.0.0.tgz_1486978854880_0.7248586353380233"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "package-json",
+      "version": "3.1.0",
+      "description": "Get the package.json of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^6.7.1",
+        "registry-auth-token": "^3.0.1",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.0",
+        "xo": "*"
+      },
+      "gitHead": "11dcc826e6219bd473f9b3314528def3b61233cf",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@3.1.0",
+      "_shasum": "ce281900fe8052150cc6709c6c006c18fdb2f379",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "ce281900fe8052150cc6709c6c006c18fdb2f379",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/package-json-3.1.0.tgz_1487399518076_0.5145169137977064"
+      },
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "package-json",
+      "version": "4.0.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^6.7.1",
+        "registry-auth-token": "^3.0.1",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.0",
+        "xo": "*"
+      },
+      "gitHead": "7bd0925920a96a16b219e8616c0503313c4230f4",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@4.0.0",
+      "_shasum": "f3c9dc8738f5b59304d54d2cfb3f91d08fdd7998",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "f3c9dc8738f5b59304d54d2cfb3f91d08fdd7998",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/package-json-4.0.0.tgz_1490525005868_0.48269723751582205"
+      },
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "package-json",
+      "version": "4.0.1",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^6.7.1",
+        "registry-auth-token": "^3.0.1",
+        "registry-url": "^3.0.3",
+        "semver": "^5.1.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.0",
+        "xo": "*"
+      },
+      "gitHead": "2312d0437c16d7117d354ae76f640c5ac25fe0e0",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@4.0.1",
+      "_shasum": "8869a0401253661c4c4ca3da6c2121ed555f5eed",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.7.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8869a0401253661c4c4ca3da6c2121ed555f5eed",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/package-json-4.0.1.tgz_1492413595681_0.06575552024878561"
+      },
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "package-json",
+      "version": "5.0.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^8.3.1",
+        "registry-auth-token": "^3.3.2",
+        "registry-url": "^3.1.0",
+        "semver": "^5.5.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "mock-private-registry": "^1.1.2",
+        "xo": "*"
+      },
+      "gitHead": "1a7f10d016f6dd29fb2931831d60866e68a95611",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@5.0.0",
+      "_npmVersion": "6.0.1",
+      "_nodeVersion": "8.11.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EeHQFFTlEmLrkIQoxbE9w0FuAWHoc1XpthDqnZ/i9keOt701cteyXwAxQFLpVqVjj3feh2TodkihjLaRUtIgLg==",
+        "shasum": "a7dbe2725edcc7dc9bcee627672275e323882433",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-5.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5726,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/UCwCRA9TVsSAnZWagAA4HoP/217V8FmNtWCi8Rbhllr\ngjw1W6Lvb+2UOgJGxpR2IFOQ/bKiK0831UU4A0sWJOyPoWjxD1ks8mA9a7tA\nXGWK7G6FbqO3pRWQXnk4mw/ZYdqxPqVmmbTjEe2rljrATOUNAmHE7nBPgHoQ\ntgR0IvFFKyAWRLk3/WxA2kr3z2BcExUNLG5KmOS5Xs8ZLYZ8ugyXth3IyAHI\n33L3Q822ivhtmKUS4iYPdHYYs3T3+nnQEBb7cJPvFmDtsfUXxz0kSZTsPDJD\nnNep0TEfr/zm2C0G4g+K2qN+IBX9U3ueABaLiUHL1uquIiKSEwjV4uWX4WFT\neDn/thZ5GQ00FurrLFz9di4Bh4FHxTHM2mvhM3/GfIYJg54p/7+dtW+MFTNy\nU1hufrPnUvVHLWuUpLia/YKzSJDKTygIP0YvZlK0HN7+Mv1nlEVCNqjESLoL\nSat4zDZ6NZkvwtKodkyTbS2tKXioMmhOTV8LMaccSFf28DpOqdSpbkQobkda\neHLmCHycOAJ2uGKG1IzoJFACX823grWGnbnEhCiWqGN0TwjknyWW/qPQxLXJ\nhcXJS6GBx3oegYoXvlXAZWgW3pDkX0k4BgEfOyiCrM8feyKe4ANms1A5ooOG\nnbJJjV2uTKtoaiPcZ2gicAZSMHrI9v+39/X2S5mRwj6kPpfLKwlAf1ZjpqZa\nvnMl\r\n=ap49\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_5.0.0_1526546608199_0.9080538288939315"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.0.0": {
+      "name": "package-json",
+      "version": "6.0.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^3.3.2",
+        "registry-url": "^4.0.0",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "ava": "^1.2.0",
+        "mock-private-registry": "^1.1.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c43f0ab4333ec95c980257ca5605394c9930a50e",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.15.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-GdLbzmDhU7w9tNy8zKYVKU2AnaXB/hDuzvRBagUg+EjCR2ukO7FQCMATL2I8cRjhko+wi4KmvsEV3G9zUKe/bg==",
+        "shasum": "49e41a4393aba2f26f4c030c333f90539173dcd2",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6427,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcT+jZCRA9TVsSAnZWagAAqxQP/jQsTsxgXET1K1supzZb\nD9SE3//iImc/C9bYz6eXEWK4Jei30TqgPrKsmsWWawpwsD+ksmtOgxRhhLv3\nJsO4c7SFu8Bhu8Zn4+suHrvEl5qszD/DygeMFJGRaAYTskyL4BGDfJ6Z35ZT\n+feWZBz48wjHik+Ew3WuvjkuW9QafR/XuPalKAxkZnEeG+M/54b1bXryWMYG\n07Oxih1CorgC1IWDI/Zf4Urf8dlyraC0jx3gafM2ucDhVgKPOBdxMobRqU5u\n8M4PQIc2xTrPfyI5hck11aHVOA4jR/NS/SFUAEgyvLBlfAcTOHsUsKnH0mYH\nW3+RDM802DEPamMGMpgURYVwvOKe1o8Ihv59pe7iDnuocMc1kdqY2dGL0je/\nZLW3w707GTdoZQ5GGyUPJd/AkQrnr+guOr4QSf3dKN2TKyZUAlsAJsmtJhRc\nsukPUBxSqS2NN1ubL/3ZDaU2xJpkpASXPrEUUi4838Yy68/3TmDfTCw0yuVF\n5sFmmNyX3uQXEJBVPt1NAgRsw8auAptTXj8ttw9UddK6au8+jjNlg1NdW2o5\ngDQ2u9GdbdAhHjWcv9hoSfIKM1QgIf21IgXHVDck5nsUBZsK0vK7Y4GiR7q7\nKN4RUqIHRcq3QgY4P8fHF5aY5rMoHIYbHJEekWz4w2qCc8KZLeRqAmDyKuMv\n03Ex\r\n=iavz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.0.0_1548740824916_0.9087064974831573"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.1.0": {
+      "name": "package-json",
+      "version": "6.1.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^3.3.2",
+        "registry-url": "^5.0.0",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "mock-private-registry": "^1.1.2",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c11a41e279a3ade78a672c3c04e1e1a959ac9ddd",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-TCE9JWb3IU1XMy/d9j3lwLJFF8UUfO7tiXminR3OhtsEm6147k+IFwQ3gAu2VqLZmFvcnOoIKUwOVteUmKwW4Q==",
+        "shasum": "d6f9516e0f8b16ee5c00b7d49f001a665b0c15d2",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 12333,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJch5upCRA9TVsSAnZWagAAfFcP/RZqlUsZ7BzwfFTrJbwu\nxl7A6KC/HV25SeZin3Dzt2t7DhBlep5DLGkoznToh5HnW7+WDKpQaswAySK9\n3+y1pdIp3cdNMxwqKVK9/egPp513B2mPFnMsHHadzsoKwhXvheGoquCOoxPy\nKXtIXfmBCtyGoi800u1hK+Q4h3+h5Fmf5H6nfgBj6MmEqBidGusiwG8C9kOX\nU4rntsNRXsJkGi0iHyz2XMSGsP2efys3CRL8yZXLnz8RtzIjgTXS7A6tQ2lM\n8TK5KQNYLLh59V9S26weBOT51PgG7ncUAIyTFF7bPSVmYHjE/KZOKH3OkGDu\nlJeSWGqarE5GokfsB5pi+CFxxh3RD04r4jH35lqX2mknN68R87piLmHVs1sK\njr0EXJEDmLzEVgnPwHWzMnKBnVeiyHPzDO9Bxuu6OEUDeZEdWBW+mx8LutAH\neCcHZKyKtOfMBu7idNvTtagMHxgPF+LUzD1sE1fsLwJuU8otVrkj94gZ33P5\nRNhwURfoXo/bHenyyLPx+pEexltZTbS0F9mVITpW74zNwLdHxCDKmlth5vW4\nTiknKW9wy9i1bmOkzBRGMgfJgGjktFAVYlNLDnNJPN61cAuWU3JkfbYMiWCH\nEYOfYy9YTBlh1qLYC/TWZsdV/pOT06BEBjnpbA9yuUWpcmirsDwmlBg+hXe9\nOjDg\r\n=t3b9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.1.0_1552391080672_0.706704792086075"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.2.0": {
+      "name": "package-json",
+      "version": "6.2.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd-check"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^3.3.2",
+        "registry-url": "^5.0.0",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "mock-private-registry": "^1.1.2",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c2f3d0706c9e8496faba636ba3c124e22b07efcc",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.2.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-r9i1TSMI5x+0CtzP/hkpcmAoVtwTT7Vdy1UrkUxeSJ5N+Lzeg5+yUMlxD2FYFdOpt9Sb3QLLxdI2eosmRQGwBA==",
+        "shasum": "06ab45d593929f4d694cc113c3ea983554b151c1",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.2.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13077,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJclfMPCRA9TVsSAnZWagAA3ToP/3zNUy5zpvTr2NYz3dXs\nmB7VNd8k5Z8l+lJfCTa5OEnvZviZfSragItU3dEmoFT1R77/+5HJcEWDMJzl\nOncu6eyZ5qaLgzS5GeuqbPP7SHQh9KbnSmC8iFaFSOEgfXsTZrbH9IRXIkwj\nMG+ug1A9KMFGI8MKh+02cKQgO3ucJlV9MPVS4lm7nlAXUfS2t12qTCDABvl/\nmBbKTPIjFrKXAM+CIVWnjKxWezll5+Pd1wyG+MHRd9Pm4LTM/R8PmzA3siLU\n1Re2FKVjMS0uNW7f7wejR4yWjBKSLgxbcVJgmLalJwNBcjOonE5onj/T/x9a\nz5PbG5SX58ukuoNWxLf/iwm7sHNhexNwQvnGCK+2+Fs3tO1w183phdCwAjPM\n0MyFBtA4IRd/xl2Mk8aKdlBfObYFlsz6wO1A+tNVVodnuWZBuAbtukavowme\n6GSE8oFznwA67Uwf10o9+V4n5jgKJ6rAEXWxbCvmME/dtTS1ueTiJIbZUmMs\nevexIg+y3MKFk80QLWrZUzwx54oAOHGfLNtcs7VGbuXqgnxIMii5LouTZRM7\ngjYmQD4S2C86aLyvnSrpCKaeBvgV2AU2AqrF5kdEGEy8OajBkxyVRiEwFwVu\nS0LyBvcO0UGRTqpeWgtIPU1PkQXisTpU62JfyL6Jubtf+ejaWX7uRePxcnHE\nigbt\r\n=qehn\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.2.0_1553330956639_0.7853238241847265"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.3.0": {
+      "name": "package-json",
+      "version": "6.3.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^3.4.0",
+        "registry-url": "^5.0.0",
+        "semver": "^5.6.0"
+      },
+      "devDependencies": {
+        "@types/node": "^11.12.2",
+        "ava": "^1.4.1",
+        "mock-private-registry": "^1.1.2",
+        "tsd": "^0.7.1",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4c6f03d42cba89ce99133f788249579db8f0ff3f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.3.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-XO7WS3EEXd48vmW633Y97Mh9xuENFiOevI9G+ExfTG/k6xuY9cBd3fxkAoDMSEsNZXasaVJIJ1rD/n7GMf18bA==",
+        "shasum": "5ed793418b8322af7abfb985a19a20c2f40c2fb0",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.3.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 13923,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcoK0RCRA9TVsSAnZWagAApYsP/A89gdtBtMMpZetYARLF\nLfF4Akx/dofW00cNg0jc/LEFOI0R3IIINXPXWQTxZRtLaOIVxP+tCuBDhXnA\np0W53mn/tPrXftTsWciRFOUD4Ngm+3uKeOJ30cm6bSqDkQ+w5hd1YW+xt7ym\nUN5DlC9HKjrsXPr/jxk6GO8s6zqO3ZTcT2rG1TqM8+GkHv2HaMDaUoahScAo\nAbOkiG35kE6PGISySwvI4uJMReSiGN4fL9xgR3y7vB/QWlf8Rr0Tq/vob3Wh\nskAyV/gcDvYNXHrtKbXd2+il3NpKAxlFJfID1TKmLr8S3oZE72XFsPNlcRsa\nQVx5C4qyEXXt4Rvrljyuu5oPXX7zh0xX1ajkPzWl13kIVHjx4GA9UOWFO2Xv\nAmTFi4+y1LwtcjrbvUK0wkG573MYl1+b+J7MNLK0cio/Aiel5yyrZBquDACS\nGA6yioGPVCCO05nH2VxHgjKwXMOh8inNgvpxUP1SpfZzWgXpvjK1L6Y0Tq+G\ng3boFis59K3yQOvvgKRd7Gu9bQn7RtgAaVNri7htx7MagEn4fdNtilnfz0NW\nldBLd7AKcMV+ZoqP+6JnlMtRpWiTb9u4YND2iGU9faY2/y0dEF3MF70ydfNO\nx+uRl0P4KRBzQtmnE25bBxyPD8yktHkkSHv+OOwcK+VK6vfsTlT5nZmsaGLh\nWqJ2\r\n=UrhT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.3.0_1554033937100_0.261976357044984"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.4.0": {
+      "name": "package-json",
+      "version": "6.4.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^3.4.0",
+        "registry-url": "^5.0.0",
+        "semver": "^6.1.1"
+      },
+      "devDependencies": {
+        "@types/node": "^12.0.7",
+        "ava": "^2.1.0",
+        "mock-private-registry": "^1.1.2",
+        "tsd": "^0.7.3",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "11759be0b19ef34ff8becdfce0e479ca1fb298ac",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.4.0",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-bd1T8OBG7hcvMd9c/udgv6u5v9wISP3Oyl9Cm7Weop8EFwrtcQDnS2sb6zhwqus2WslSr5wSTIPiTTpxxmPm7Q==",
+        "shasum": "4f626976604f4a9a41723ce1792b204a60b1b61e",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.4.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14277,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc/+OvCRA9TVsSAnZWagAAMPIQAJ2X5nEkQ+Ywo8KAaEhF\nkkkwTCaVX7nuu4BJlz1szQbG6fl/9Ib6Z7ovY48xn/khLmjG/d3J8w/4dLyr\n42sAiWzKc+SP1Y2cC5eBaTzDxuCAcqQFcQpZkE4bhZD+2WY8nswzNs1V7kya\nWvw9uZDymrdsTnnJb6amLDl5wU/Ju2jpsEou/x6vff1vyRBBMelBNIogWLYd\nB3vms8Tau1S1rrnCfRMeKsCzOpdbOKvlqX5hIsUKkOYJKgypz1l/CUvo+Zsq\n+6hM7FK2Y4yBzsFh1cSSfolTnUVYuNmagYvQ8N/YxqvR+xAyqDiCu9Mbr7XI\n1qO7GlV+Qb78wJldWguoIgZnJAoTTJxJnR4MVycsBrkpga98EJmxhWFXhxeG\nqMtriNHUhXA/GEfNJf04V0nUvvio+Rtaj/2wjRsxD+8Taa2qJxUeQQMuu/TJ\n6v3UeAzesCfe7IuuuZx3C5Zl78FzDe6gBoBiB0Pzpbi22S31jjCfpjhzNJB3\nxqZYFZycSkc82dhFBC8650pALTsXohuMwWm/QaUVGmJPLpaCOngeFNvQijkH\nH6wGZEm8a25wO+qRhVLpJEEDCuD9hoB+EsZcIUormfOMNUPqSmVIFTK/SuSy\n5Z/oAZxFcfn6X/jzbIf3sh1Cp1oK9SQuxwKCvCqyHj+uHv3M9zUg/1+yBoFP\nt4r9\r\n=l4oi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.4.0_1560273838777_0.2979488028926629"
+      },
+      "_hasShrinkwrap": false
+    },
+    "6.5.0": {
+      "name": "package-json",
+      "version": "6.5.0",
+      "description": "Get metadata of a package from the npm registry",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/package-json.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "npm",
+        "registry",
+        "package",
+        "pkg",
+        "package.json",
+        "json",
+        "module",
+        "scope",
+        "scoped"
+      ],
+      "dependencies": {
+        "got": "^9.6.0",
+        "registry-auth-token": "^4.0.0",
+        "registry-url": "^5.0.0",
+        "semver": "^6.2.0"
+      },
+      "devDependencies": {
+        "@types/node": "^12.6.8",
+        "ava": "^2.2.0",
+        "mock-private-registry": "^1.1.2",
+        "tsd": "^0.7.4",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "6e7a2ae1cd053465e0dd2b8653f8c90d712c66c6",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/package-json/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/package-json#readme",
+      "_id": "package-json@6.5.0",
+      "_nodeVersion": "10.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-k3bdm2n25tkyxcjSKzB5x8kfVxlMdgsbPr0GkZcwHsLpba6cBjqCt1KlcChKEvxHIcTB1FVMuwoijZ26xex5MQ==",
+        "shasum": "6feedaca35e75725876d0b0e64974697fed145b0",
+        "tarball": "https://registry.npmjs.org/package-json/-/package-json-6.5.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 14277,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdNreQCRA9TVsSAnZWagAA+EoP/RLOdaQoUvAVRSq5IL97\nja+SYcPjL2ifQbrDOZlxFpr/zdFOQ0BhG18WV5gUmCEZnymngRWapb8Mr8I8\nSMrkIwKiyV4n+aXFYLe90C8pH8HcZQbjP0PlnXnMiZHeGSwEI3KQhVAs/bsJ\n8uIVi7o8RMHlHneruEe2JO2E1dhueOCoSjx7JTzRLhcVdC5pxldahBugMTjF\n9Tw0X8gb594YT3fUx7i6kr0ajc6+W1rUAacRxo4sytRPpd/dNCdDOh1RY/Pw\ne49cpB/3ieTAQQmnAz7OsGhD3l8xF+qhzUVJuYtF5KlPJ0KxULgRUMn2wAe3\nTd3ipwoTgd8yL0D3Oa1P7t9NlwmNeb03oPUHAEyz7ezj44lwzofwRbLqLBXR\ndL6jCmBSoKuQUAQuT5/gvHOBC4wD6UMwwmuOrdp4LMezacn/vNH7h3JalR3A\nk6fYm4y5oGTH9s/H34HUiBzhIaPA6TP0jiA9sT/2h4AJMPYNp4ubDF/UV+Bl\nmpUg+CQPDGp3/0lsxkFPMxipILoo4qwI9EYySTrn9m2M6fr7tF5Gjk/kNSbQ\n3mTlSBX0ljBZkxsrxIJN4ouL7QIrHrsgMXThwenz+HtRr5XXFX31oz3kJvH1\nLsXeOswIDgHlaSgECt231RtMBTR4sMRh5AythpDqEnpC4uoLAmWgfViUHLLJ\nnB45\r\n=1Zql\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "rexxars",
+          "email": "rexxars@gmail.com"
+        },
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/package-json_6.5.0_1563867023630_0.19641117586883894"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# package-json [![Build Status](https://travis-ci.org/sindresorhus/package-json.svg?branch=master)](https://travis-ci.org/sindresorhus/package-json)\n\n> Get metadata of a package from the npm registry\n\n\n## Install\n\n```\n$ npm install package-json\n```\n\n\n## Usage\n\n```js\nconst packageJson = require('package-json');\n\n(async () => {\n\tconsole.log(await packageJson('ava'));\n\t//=> {name: 'ava', ...}\n\n\t// Also works with scoped packages\n\tconsole.log(await packageJson('@sindresorhus/df'));\n})();\n```\n\n\n## API\n\n### packageJson(packageName, options?)\n\n#### packageName\n\nType: `string`\n\nName of the package.\n\n#### options\n\nType: `object`\n\n##### version\n\nType: `string`<br>\nDefault: `latest`\n\nPackage version such as `1.0.0` or a [dist tag](https://docs.npmjs.com/cli/dist-tag) such as `latest`.\n\nThe version can also be in any format supported by the [semver](https://github.com/npm/node-semver) module. For example:\n\n- `1` - Get the latest `1.x.x`\n- `1.2` - Get the latest `1.2.x`\n- `^1.2.3` - Get the latest `1.x.x` but at least `1.2.3`\n- `~1.2.3` - Get the latest `1.2.x` but at least `1.2.3`\n\n##### fullMetadata\n\nType: `boolean`<br>\nDefault: `false`\n\nBy default, only an abbreviated metadata object is returned for performance reasons. [Read more.](https://github.com/npm/registry/blob/master/docs/responses/package-metadata.md)\n\n##### allVersions\n\nType: `boolean`<br>\nDefault: `false`\n\nReturn the [main entry](https://registry.npmjs.org/ava) containing all versions.\n\n##### registryUrl\n\nType: `string`<br>\nDefault: Auto-detected\n\nThe registry URL is by default inferred from the npm defaults and `.npmrc`. This is beneficial as `package-json` and any project using it will work just like npm. This option is **only** intended for internal tools. You should **not** use this option in reusable packages. Prefer just using `.npmrc` whenever possible.\n\n##### agent\n\nType: `http.Agent | https.Agent | object | false`\n\nOverwrite the `agent` option that is passed down to [`got`](https://github.com/sindresorhus/got#agent). This might be useful to add [proxy support](https://github.com/sindresorhus/got#proxies).\n\n\n### packageJson.PackageNotFoundError\n\nThe error thrown when the given package name cannot be found.\n\n### packageJson.VersionNotFoundError\n\nThe error thrown when the given package version cannot be found.\n\n\n## Authentication\n\nBoth public and private registries are supported, for both scoped and unscoped packages, as long as the registry uses either bearer tokens or basic authentication.\n\n\n## Related\n\n- [package-json-cli](https://github.com/sindresorhus/package-json-cli) - CLI for this module\n- [latest-version](https://github.com/sindresorhus/latest-version) - Get the latest version of an npm package\n- [pkg-versions](https://github.com/sindresorhus/pkg-versions) - Get the version numbers of a package from the npm registry\n- [npm-keyword](https://github.com/sindresorhus/npm-keyword) - Get a list of npm packages with a certain keyword\n- [npm-user](https://github.com/sindresorhus/npm-user) - Get user info of an npm user\n- [npm-email](https://github.com/sindresorhus/npm-email) - Get the email of an npm user\n\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-package-json?utm_source=npm-package-json&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "rexxars",
+      "email": "rexxars@gmail.com"
+    },
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-07-23T07:30:28.144Z",
+    "created": "2014-06-15T17:37:21.782Z",
+    "0.1.0": "2014-06-15T17:37:21.782Z",
+    "0.2.0": "2014-06-15T19:05:16.179Z",
+    "1.0.0": "2014-08-14T09:27:13.323Z",
+    "1.0.1": "2014-10-10T15:24:55.200Z",
+    "1.0.2": "2015-02-12T07:27:40.657Z",
+    "1.1.0": "2015-02-23T05:46:18.803Z",
+    "1.2.0": "2015-06-04T13:43:03.228Z",
+    "2.0.0": "2015-10-09T19:49:01.197Z",
+    "2.0.1": "2015-10-15T14:44:26.881Z",
+    "2.1.0": "2015-10-18T18:48:56.026Z",
+    "2.2.0": "2015-10-25T19:10:36.902Z",
+    "2.2.1": "2015-10-31T11:52:32.699Z",
+    "2.3.0": "2015-12-09T16:32:41.431Z",
+    "2.3.1": "2016-02-13T14:51:24.543Z",
+    "2.3.2": "2016-04-04T17:21:01.024Z",
+    "2.3.3": "2016-07-03T21:04:31.841Z",
+    "2.4.0": "2016-08-25T20:58:45.209Z",
+    "3.0.0": "2017-02-13T09:40:55.099Z",
+    "3.1.0": "2017-02-18T06:31:59.978Z",
+    "4.0.0": "2017-03-26T10:43:27.660Z",
+    "4.0.1": "2017-04-17T07:19:55.982Z",
+    "5.0.0": "2018-05-17T08:43:28.280Z",
+    "6.0.0": "2019-01-29T05:47:05.080Z",
+    "6.1.0": "2019-03-12T11:44:40.831Z",
+    "6.2.0": "2019-03-23T08:49:16.730Z",
+    "6.3.0": "2019-03-31T12:05:37.287Z",
+    "6.4.0": "2019-06-11T17:23:58.940Z",
+    "6.5.0": "2019-07-23T07:30:23.785Z"
+  },
+  "homepage": "https://github.com/sindresorhus/package-json#readme",
+  "keywords": [
+    "npm",
+    "registry",
+    "package",
+    "pkg",
+    "package.json",
+    "json",
+    "module",
+    "scope",
+    "scoped"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/package-json.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/package-json/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "goliatone": true,
+    "rsp": true,
+    "huhgawz": true,
+    "jowanhelmax": true,
+    "dekatron": true,
+    "shuoshubao": true,
+    "evocateur": true,
+    "nraibaud": true,
+    "jochemstoel": true
+  }
+}

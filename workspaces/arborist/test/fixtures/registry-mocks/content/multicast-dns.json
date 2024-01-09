@@ -1,0 +1,2764 @@
+{
+  "_id": "multicast-dns",
+  "_rev": "54-c0d7bb661bd57b45264196c04d301e17",
+  "name": "multicast-dns",
+  "description": "Low level multicast-dns implementation in pure javascript",
+  "dist-tags": {
+    "latest": "7.2.2"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "multicast-dns",
+      "version": "0.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "ffee0740d1d0f857548e13c4a661c71126c7ff1a",
+      "_id": "multicast-dns@0.0.0",
+      "scripts": {},
+      "_shasum": "b738f4ec1885e1a2c7faf9d017477eba60ab113c",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b738f4ec1885e1a2c7faf9d017477eba60ab113c",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "multicast-dns",
+      "version": "1.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {},
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "aa64712139c083cecffa8402d71b63ee658be40b",
+      "_id": "multicast-dns@1.0.0",
+      "scripts": {},
+      "_shasum": "996c737ffc1ed1335dd81fc5a151835037b7de18",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "996c737ffc1ed1335dd81fc5a151835037b7de18",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "multicast-dns",
+      "version": "1.0.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "061ca3d54df75fdcd94638ef0b177fef97ed88e6",
+      "_id": "multicast-dns@1.0.1",
+      "_shasum": "644d4103196bc4245bf718c9a8d0cf19b3f2125c",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "644d4103196bc4245bf718c9a8d0cf19b3f2125c",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "multicast-dns",
+      "version": "1.0.2",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "eeaf652485cbf7148d3570cd1839555cada9b31d",
+      "_id": "multicast-dns@1.0.2",
+      "_shasum": "6e9250bced55632495038f6b092f52a09d1eaaf9",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6e9250bced55632495038f6b092f52a09d1eaaf9",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "multicast-dns",
+      "version": "1.1.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "d1aeea8a82cc572ca960f1bb8a49aa2fe4b3ebc3",
+      "_id": "multicast-dns@1.1.0",
+      "_shasum": "0ac1f270fa78d38ef2182f32f8d734dca64534c3",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0ac1f270fa78d38ef2182f32f8d734dca64534c3",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "multicast-dns",
+      "version": "1.2.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "cf5578e4d584db3d3fa36cf01799ac20532cba85",
+      "_id": "multicast-dns@1.2.0",
+      "_shasum": "a18e6c3ca3258bd117c65f7a0dab16e12e16b03e",
+      "_from": ".",
+      "_npmVersion": "2.1.17",
+      "_nodeVersion": "0.10.35",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a18e6c3ca3258bd117c65f7a0dab16e12e16b03e",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "multicast-dns",
+      "version": "1.2.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "6860f8f464124301b8a4e175a3a4bfaf7be9c66b",
+      "_id": "multicast-dns@1.2.1",
+      "_shasum": "18ecc801f5f1975007b7afde5ee6db490931723a",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.3.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "18ecc801f5f1975007b7afde5ee6db490931723a",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-1.2.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "multicast-dns",
+      "version": "2.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "9b099b9922b90bc0b746198447bceb1502f8b8b1",
+      "_id": "multicast-dns@2.0.0",
+      "_shasum": "516fa9e32b077669a718d6e840edfdbdabe05c81",
+      "_from": ".",
+      "_npmVersion": "2.5.1",
+      "_nodeVersion": "1.3.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "516fa9e32b077669a718d6e840edfdbdabe05c81",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.0": {
+      "name": "multicast-dns",
+      "version": "2.1.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "e061f37a13437ba55441cec8f6b04cbda1b4cd74",
+      "_id": "multicast-dns@2.1.0",
+      "_shasum": "f0f93e7584bb4e0f59d8f838b2ded055ff77f535",
+      "_from": ".",
+      "_npmVersion": "2.7.5",
+      "_nodeVersion": "1.6.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f0f93e7584bb4e0f59d8f838b2ded055ff77f535",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-2.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.1.1": {
+      "name": "multicast-dns",
+      "version": "2.1.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "d9c08827f3b3c2072ce31ab597d114c15aadca70",
+      "_id": "multicast-dns@2.1.1",
+      "_shasum": "1df0728110409a1f866a78776b7993229960d54e",
+      "_from": ".",
+      "_npmVersion": "2.8.4",
+      "_nodeVersion": "1.8.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1df0728110409a1f866a78776b7993229960d54e",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-2.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "multicast-dns",
+      "version": "2.2.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "c70a6a269d477e0cac2b052426b6667cd5aa2722",
+      "_id": "multicast-dns@2.2.0",
+      "_shasum": "2b4c7403d74206ed0c1fd3081ecf23c5d0d06271",
+      "_from": ".",
+      "_npmVersion": "2.11.0",
+      "_nodeVersion": "2.2.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2b4c7403d74206ed0c1fd3081ecf23c5d0d06271",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-2.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "multicast-dns",
+      "version": "3.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "6f876a5171ad5d4f9019f3aabcd5b11ffbadcd3f",
+      "_id": "multicast-dns@3.0.0",
+      "_shasum": "2bd7956425836b90f9ecb85685e2ae2b35dbae19",
+      "_from": ".",
+      "_npmVersion": "2.10.1",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2bd7956425836b90f9ecb85685e2ae2b35dbae19",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-3.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.0": {
+      "name": "multicast-dns",
+      "version": "4.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "c9da742a675923773637a841db7373d00e583d38",
+      "_id": "multicast-dns@4.0.0",
+      "_shasum": "2a9076182c4029812f27e9f07fa37e639849a2ed",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2a9076182c4029812f27e9f07fa37e639849a2ed",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-4.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "4.0.1": {
+      "name": "multicast-dns",
+      "version": "4.0.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "f357c39d6b8f640d32d8085b04437477553af668",
+      "_id": "multicast-dns@4.0.1",
+      "_shasum": "abf022fc866727055a9e0c2bc98097f5ebad97a2",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "abf022fc866727055a9e0c2bc98097f5ebad97a2",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-4.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.0": {
+      "name": "multicast-dns",
+      "version": "5.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^3.3.2",
+        "tape": "^3.0.3"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "1fa6beb2686749150d7cb4a07ea2207a2b56c008",
+      "_id": "multicast-dns@5.0.0",
+      "_shasum": "2997a51aa027610834d50a325221dacbf86f32dd",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "2997a51aa027610834d50a325221dacbf86f32dd",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.1": {
+      "name": "multicast-dns",
+      "version": "5.0.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "0a789b4a131111797e2da180db4918443f2384ae",
+      "_id": "multicast-dns@5.0.1",
+      "_shasum": "b9a44bbc8c3316e70c9a3505134debfd168a0f3e",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "b9a44bbc8c3316e70c9a3505134debfd168a0f3e",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "5.0.2": {
+      "name": "multicast-dns",
+      "version": "5.0.2",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "a4adef1749c4efc18bd15c4f3669f55558249bc8",
+      "_id": "multicast-dns@5.0.2",
+      "_shasum": "7cb87a2191249bb4d60d6d634bacd251afc1c891",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7cb87a2191249bb4d60d6d634bacd251afc1c891",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {}
+    },
+    "5.1.0": {
+      "name": "multicast-dns",
+      "version": "5.1.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "gitHead": "be7cace1419cadc0c4e27a6cf95db6e07588e48a",
+      "_id": "multicast-dns@5.1.0",
+      "_shasum": "68cfa489abdfe1663fdcfffb26aca52a48c9372c",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "68cfa489abdfe1663fdcfffb26aca52a48c9372c",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {}
+    },
+    "5.2.0": {
+      "name": "multicast-dns",
+      "version": "5.2.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        56.009986032141335,
+        11.961881270211734
+      ],
+      "gitHead": "9c0496bf2985ac27493c1ea999d33b994f19e6a1",
+      "_id": "multicast-dns@5.2.0",
+      "_shasum": "9a30a1e9f36365b17fe23717807ce0f0d4bfdb66",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "9a30a1e9f36365b17fe23717807ce0f0d4bfdb66",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.2.0.tgz"
+      },
+      "directories": {}
+    },
+    "5.3.0": {
+      "name": "multicast-dns",
+      "version": "5.3.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        56.009986032141335,
+        11.961881270211734
+      ],
+      "gitHead": "fafaff9d3cc2039611f37a204948efe875f2c904",
+      "_id": "multicast-dns@5.3.0",
+      "_shasum": "4f776a5ca7a9db0ebdbe13425044133a550a6477",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4f776a5ca7a9db0ebdbe13425044133a550a6477",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.3.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {}
+    },
+    "5.3.1": {
+      "name": "multicast-dns",
+      "version": "5.3.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "c716e7ae050ce046a0897fadcb8483805cd9ee63",
+      "_id": "multicast-dns@5.3.1",
+      "_shasum": "4e732552b91e51fea24f971017416f335c8f3f23",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.2",
+      "_npmUser": {
+        "name": "watson",
+        "email": "w@tson.dk"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "dist": {
+        "shasum": "4e732552b91e51fea24f971017416f335c8f3f23",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.3.1.tgz"
+      },
+      "directories": {}
+    },
+    "5.4.0": {
+      "name": "multicast-dns",
+      "version": "5.4.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "fb320b61c204439553888595d6e18824b86a96cb",
+      "_id": "multicast-dns@5.4.0",
+      "_shasum": "10469e75f4c0e085991ba317d66736a7cd33f70e",
+      "_from": ".",
+      "_npmVersion": "2.14.12",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "10469e75f4c0e085991ba317d66736a7cd33f70e",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.4.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-5.4.0.tgz_1454948282937_0.6237917365506291"
+      },
+      "directories": {}
+    },
+    "5.5.0": {
+      "name": "multicast-dns",
+      "version": "5.5.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "thunky": "^0.1.0",
+        "ip": "^1.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "33aec78966aec9ede8b65b6bd1a74562e2cd86be",
+      "_id": "multicast-dns@5.5.0",
+      "_shasum": "539d822df7a6a2c5c63d57f9d6609074282e1bf5",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "539d822df7a6a2c5c63d57f9d6609074282e1bf5",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-5.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-5-east.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-5.5.0.tgz_1455484952792_0.7457283411640674"
+      },
+      "directories": {}
+    },
+    "6.0.0": {
+      "name": "multicast-dns",
+      "version": "6.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "e723b98fa977a62b510595b7847275f8e876caa4",
+      "_id": "multicast-dns@6.0.0",
+      "_shasum": "78db2a7348e284847d388d258a938849d0647d3a",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "78db2a7348e284847d388d258a938849d0647d3a",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-6-west.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-6.0.0.tgz_1455831537592_0.060629300540313125"
+      },
+      "directories": {}
+    },
+    "6.0.1": {
+      "name": "multicast-dns",
+      "version": "6.0.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "696949229edfe98fb3d0c28bd3d4c3a57319f6ab",
+      "_id": "multicast-dns@6.0.1",
+      "_shasum": "069da64a0b695e156ef47c86a94e69e1a17ff2c2",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "069da64a0b695e156ef47c86a94e69e1a17ff2c2",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-6.0.1.tgz_1456635728829_0.6833660455886275"
+      },
+      "directories": {}
+    },
+    "6.1.0": {
+      "name": "multicast-dns",
+      "version": "6.1.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "a1cabf87e1836a6ec6ebaf943eca8f08d9d66dd0",
+      "_id": "multicast-dns@6.1.0",
+      "_shasum": "8d91824b538556cd34f0adf6f27c60d94b5fb3bf",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.4.3",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "8d91824b538556cd34f0adf6f27c60d94b5fb3bf",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-6.1.0.tgz_1473749323435_0.28012767573818564"
+      },
+      "directories": {}
+    },
+    "6.1.1": {
+      "name": "multicast-dns",
+      "version": "6.1.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "6b3e4ec0c281e51a87a67a005028a7b12e0c60ff",
+      "_id": "multicast-dns@6.1.1",
+      "_shasum": "6e7de86a570872ab17058adea7160bbeca814dde",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.5",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "shasum": "6e7de86a570872ab17058adea7160bbeca814dde",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/multicast-dns-6.1.1.tgz_1488871059154_0.12876599351875484"
+      },
+      "directories": {}
+    },
+    "6.2.0": {
+      "name": "multicast-dns",
+      "version": "6.2.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "36e6695be993e8d9d50f78adb1787790fef46345",
+      "_id": "multicast-dns@6.2.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-tnQqWkuWYHCOVRveiWQf+5KjHUnEmtxUycTy1esL4prQjXoT4qpndIS4fH63zObmHNxIHke3YHRnQrXYpXHf2A==",
+        "shasum": "13f22d0c32dc5ee82a32878e3c380d875b3eab22",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns-6.2.0.tgz_1511110144726_0.12936242623254657"
+      },
+      "directories": {}
+    },
+    "6.2.1": {
+      "name": "multicast-dns",
+      "version": "6.2.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "39f66d960ede11c642501e48e311d6716eed65b7",
+      "_id": "multicast-dns@6.2.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-uV3/ckdsffHx9IrGQrx613mturMdMqQ06WTq+C09NsStJ9iNG6RcUWgPKs1Rfjy+idZT6tfQoXEusGNnEZhT3w==",
+        "shasum": "c5035defa9219d30640558a49298067352098060",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns-6.2.1.tgz_1511551134752_0.5561937538441271"
+      },
+      "directories": {}
+    },
+    "6.2.2": {
+      "name": "multicast-dns",
+      "version": "6.2.2",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.0.1",
+        "thunky": "^0.1.0"
+      },
+      "devDependencies": {
+        "standard": "^5.4.1",
+        "tape": "^4.4.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "9751696bc5f62d2861cbc15bd5df16c5053e7412",
+      "_id": "multicast-dns@6.2.2",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-xTO41ApiRHMVDBYhNL9bEhx7kRf1hq3OqPOnOy8bpTi0JZSxVPDre7ZRpTHLDlxmhf6d/FL+10E8VX1QRd+0DA==",
+        "shasum": "300b6133361f8aaaf2b8d1248e85c363fe5b95a0",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns-6.2.2.tgz_1516231838786_0.7737880831118673"
+      },
+      "directories": {}
+    },
+    "6.2.3": {
+      "name": "multicast-dns",
+      "version": "6.2.3",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^1.3.1",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "8b510f3b85df6ea8f5c6f1d245621330399f9537",
+      "_id": "multicast-dns@6.2.3",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ji6J5enbMyGRHIAkAOu3WdV8nggqviKCEKtXcOqfphZZtQrmHKycfynJ2V7eVPUA4NhJ6V7Wf4TmGbTwKE9B6g==",
+        "shasum": "a0ec7bd9055c4282f790c3c82f4e28db3b31b229",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-6.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns-6.2.3.tgz_1517048238726_0.07778409938327968"
+      },
+      "directories": {}
+    },
+    "7.0.0": {
+      "name": "multicast-dns",
+      "version": "7.0.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "446a6f4c25fb39b52ee34aeebd5c5b9b59647488",
+      "_id": "multicast-dns@7.0.0",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.5.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-BqB5TtIXHo+8gN33N1CA1clsvPsAJlnc6D49SzfQA0xq75cxj15g2y9NaRdf4x2u4v1P66PBC+Wg6YgPO5Bc/g==",
+        "shasum": "68aa14c129377050f36bc318f8ba44101c4b3f38",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.0.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 20849
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.0.0_1518464661645_0.05552138535960793"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.1": {
+      "name": "multicast-dns",
+      "version": "7.0.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "1fa80e31a835b22c65d8c01e917c0ecb4233726c",
+      "_id": "multicast-dns@7.0.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.7.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-jx8bO2QZvx5oJXWhiuEb6I8XgufpPXvKFSAoSvurD2nECVhbQQTilY33IfChreWqhqPgzKZbpgsyHapjnRTnlw==",
+        "shasum": "bd600cdb6f1ae6f4defd4b047d95ddbc2dd001aa",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.0.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 20845,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbc0mZCRA9TVsSAnZWagAAXq4P/j61ylu8jLW/WHvzjruC\nl7VA+lhC+Yv94LiWYvBdrl+fRA7L980/NGCbl+B5FWE5Exl5bFS9zBA/Z9hf\nevARwknnJIcw2aKilNP13ZIxfqV41yZGcdxqouYeQED9G0CBz5q76FgH2o7I\nFg5lZkuEPyCP2wAtVRnA9fGza440lLwl2KfVRwzzNBHje3F4PbujciFkc+gD\nFPNPx4YCMB1Kq3OCnaMU7cADU1qlvrz3W1fqzNPhY/jpFKP5aLb7dJfXIB4q\ndwrCOQDm5dk16Jx8xWml0Qa134aTv1EVOq851ZE61vaJF6UIhdynbhbUGJ6v\nqphQV2eF7iHVqTkhO+K82HmEB7pbWTgqBfck3TROnP27yR8obM6Byg1fFlB/\niy2SyJ7n/LLzsz46EXjf56v6bmK8UIk7oQWjilUBjcVYhewcnCturnCiDFQL\nC0zOT/s4rq1KFjJFz+CcfbUH06qZdZLdo/GKyd5A5O1fFxa5M7hlArUwval9\n/X0BQZ+LQgOwJ9qWWDwOOa9N3h/xBDDC4dKItm2FfPX3N93xKz0AElGknQfU\nBymF/1hvraOkJjw+WpFk+j1RIv26WWnij7hW1tHdOTgE3aH5iNzvtRpStPMU\nQGkRFG3oPHPmJNm3VhNW59GBPxWb0YB0x0XEjeSycdk7v/tse9cx13TqjfIu\n+Gwx\r\n=RyaZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.0.1_1534282137364_0.1577689657919965"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.0": {
+      "name": "multicast-dns",
+      "version": "7.1.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "95104bb8be01a70bdc1429a8d2c743b384b32215",
+      "_id": "multicast-dns@7.1.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-PHrJGpkPvHHu5GwK5X6XYLPdbujk7X9Ne9aOPJM77fWzzrCwoGnNp1kc8YGjfscgZq0OFi34hk0mhB1rONxm+g==",
+        "shasum": "cb4fe0a47cac8fc444f589f9f89d8bbaceba61a7",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.1.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 20916,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjsQPCRA9TVsSAnZWagAA6lQP/1CKN/2heLDgy4WpFqSZ\n4D/p8ZZm4vCvlt+McFcKz8zYAu+kb2ykWNa8U9jONeAKffeWIT4ghSM3rPkd\noZeVaDoq6lyWhowuDjlwsSxmu0mV9DY+AYm0KYT7d7raATaqMxvmh6oDCN5t\nBlmpsLnyYTmRgIgLk8KPdWwwDRDAgz0XdUB7BN+QmiN9eQYLvVP9iKQ/FEpc\nUKgpogjlMGxJOjhD2qQBlh3aqEECmyHK+9kRT35qMiuwYI6dp1APyCc/WYZQ\nl67vBapxaffbcETHW/BkhKE58/DeAP8JQ8d857AsoSx0vCbOed67ahqZ9gzG\nF5hNnoOYZ4VxFed8F5CdxbsQfkEhXZ8aRUgJ6ilposvK5o8FSUNdDFjWotIG\noWPEI0uBcTWcAQU9XA7u0vj+oQIh8VRO72fz5StJ/4GGVnDnE5+zbKUY4oHq\nSAbaUYz4ADr2cIWiwEertNEd/D+S8z/3iQN9BPP+VX7iMyPN+gAjg4UC3guu\ns3BTwlEiG+WnMtmaPGMxVFit3iDTb/2BAr5JSHhXuLnhIZJscb0P0fxtfbab\nM+7AUuwZT+xgtJvk3oub1vpy4MeHm9R+YjaqPYFcdcWKvHKVL+0mXlmmygxI\nzese2jkC1W7M7bc6XTB1JJrhkuvzkjOuUlRxr51nSvW0VgE1k6C5sfThRR4E\ntrn8\r\n=mEJY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.1.0_1536082958916_0.7453463333182493"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.1.1": {
+      "name": "multicast-dns",
+      "version": "7.1.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "5bf4d6f951f97e1aabfb9e9f6da064c7098827a3",
+      "_id": "multicast-dns@7.1.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-/Oxk1oCLB4akIPqBZ8GgvgZhK62b7dlTLSq323QmdsIG2pXdTI6fSmc9dk8904ks2FGSdr3zOCGjcD9MJky/Aw==",
+        "shasum": "974b444bc9ffb92bf19b81eea00b736cceeb9c7b",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.1.1.tgz",
+        "fileCount": 8,
+        "unpackedSize": 20943,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjuYaCRA9TVsSAnZWagAAq4EP/2KdCDDiN5hVIlQtkZ9e\ne6BAPLxNDrOUSQTkrZtlGQNZgN+rzLbUmg9DOhaNAXTeFUkZkjBxjRC82u8F\nOfsmz9F+FZbKsr5a/tZhnonN0ga6JUOCoe4s/WDEEmaJOiL5+Ny5X/Ghzhgd\nKayIfto7oV6RU2GV1DStBDvAIwBSErmtVS7SSKKrfX0rTseCsZtffb2oDO5V\nlgiFyw6EHn5u3ya3u6nKDQsgneaZfqUb9BwPDAZJRasptSR/gmiF3P+k6IMW\nSC+6oufa06aQBal5OJ08x933ZTQM2SQXKyh5lTaHyUlnrottDTZBGwdwade7\ncGNSz2NZPLK6h/P4WWSXCCjWzJPu2Tdj1l/ht14mBRpZpf29qBQbFX72rIo+\n4pP799ngwTYwTKSX7P3wPV116fVyWDmyjoVW7ODAegTA/R+i2SZLO+5c1BTo\nrzqalwh2PawoTqGtqm6eX2jRGb69dLKCyVNQ7ypIhqs4O6SIKN9B7NAKaEyH\nMM6x/w9ckWRwp6Pa6LVsCw4f88k+Plg+qW0e3phSOZjgvQSsFwZGyOjdVIlO\nCj5GwzuESLNBWqVtIwh9ArHd7IXRb+qfjGPXvBX7VoM04owijnyrhcMDn9UZ\nkZXTwHnsHFodsnMNHiVVlDcmvXeqSZW1h83AmzlRkWxT36gFjjCH1sZ/zRrX\nzfC3\r\n=yTDB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.1.1_1536091673768_0.9700297707952059"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "multicast-dns",
+      "version": "7.2.0",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "c6787408772f3e32ee8212e8e59b2fca793e3e74",
+      "_id": "multicast-dns@7.2.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Tu2QORGOFANB124NWQ/JTRhMf/ODouVLEuvu5Dz8YWEU55zQgRgFGnBHfIh5PbfNDAuaRl7yLB+pgWhSqVxi2Q==",
+        "shasum": "7aa49a7efba931a346011aa02e7d1c314a65ac77",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.0.tgz",
+        "fileCount": 8,
+        "unpackedSize": 20966,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbjvrtCRA9TVsSAnZWagAA304P/jKX18bRWHerMpaZs+ER\nipY+F3mfPxLoo8sGLAsiLa84Vt+6aF4KoxrLkKvz7z/DH4EViaUwAoEN3sOn\ndClLmExP73EPSUr3+xv4rKrmbbkYLb4O9YFNOdECbGvAzy06LH9WzkSyysmb\njFfg2tj4Aw/Cpt0vGyLJdUPc4akHPd7QCz9dY9qBqrZQN50EOMDyP06aPJli\nBjPf7HID12ZqSpGy5wqhY8+doW5f6ajS9j221U/qG6OWBjC8h8o1HN3eMtjS\n3gyz7YEtPrlDaC4PqAydHSydvqfzCIGa/uttgDOIkdzLdDu0aLu0vxiowydf\nS0zf9Lz2+caiGM0/04cutTnVIg0Z9CFNiXSOzSjPPPzOriGMn//JPGjyDe+6\natoLLBSYs0i0u7KIeoRQ3BlBcS/4d0S5cxDFjWaNykjJ6X9A3Bi1oooggQZ2\nHYIuGNqPvxIyur9VT+YrdWCz4/U/Kmxa9LEcPLv3XVGTJTAzh1pfCDbuu7ab\nIkXGkXj7jZJts5jIdaGaFLJhACE58Fg7otWZP5g3wAiczb1tKkfvcfdzHf8J\n0Zn4ryKRY+C30yFo20HLLQ0tJkqv0xNUvnIL1sZCy7jPH4w/A12lQFOwTCfS\nc+bQFzbJ/cout43eSX1b5qOQPB6AXJAOcHga9hanThAWKNT0B9OPXluyzFob\nR63o\r\n=QyGg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.2.0_1536097004803_0.7857897042644937"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.1": {
+      "name": "multicast-dns",
+      "version": "7.2.1",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "57f4a22174584e1479f5f80ea750bda904c617ad",
+      "_id": "multicast-dns@7.2.1",
+      "_nodeVersion": "12.14.1",
+      "_npmVersion": "6.13.4",
+      "dist": {
+        "integrity": "sha512-qJaNecNV4wV5FqZ+aBHOgUcHaJXpEMZhiERmuu7CM0YrCyIsgevVLZJGXeyxMAiofN+jby8oAGr8BpQk6xmptw==",
+        "shasum": "bec7853ee8d88a624a3fbfb5098ca1491c354c70",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.1.tgz",
+        "fileCount": 9,
+        "unpackedSize": 21379,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeRpHzCRA9TVsSAnZWagAAAqIP/jOq2NW/sHLDNl5E4cde\n8uujy3mOyVLRMeFj8doj0G05W7f36vthXsiHrDMjqVKAXrbonG3KcJ+EHkby\nHYZ4+Suzu0FL+dcbzUgEDOi+lHOZwdQAy2tcOZF9NE6RWhu9RkiDc1v6Gn33\nmgIAvckTr4Kh6EwvPi1BogvobaSOvwaYtEXv0d/0rvmhsRXEUsMW98Fu1iGt\niltctwIrI9vD22kDv1jV+1rvbqcggIryqWU7SzuDuC0iYPxIFipOr14KtF79\nSiLof1LPadueSjZhheGb/CAZqXE6j90woh3g6QQO4WBKwCBxdmhDiuVJ9cvQ\nBItYkYHR2c3cgIYDGidtN+2mIW3Y4zG6b/T0PMy4vAQanuR3/lOpDjLsyDig\n6yoMoOsyl5pjc5AzJAL6cHT9q+8i7n7sulYrz5dE44Yjc76gd4Rg8qQFawK2\njbsI81X7rW16nU7G5e6eqE9Ug7rSw1FkeY6cwToatwbb0Brt6EcpVvY97Ns5\nWBfJrqK3s1eWEiHohdG2Nhez4FnoiskGgtL1+pwTjKlaGbHzHHsfKUosURcu\nYWbip6mdsAjuqAv4NcnW6/O+hWvGojbWe8YeMchhU8KSHmE7+mKawsh3Pnot\nhwBTAY+nAjNVTKXyW2xfWg9gX+Jktss0CBd9IAhLZRr13+c0f/DQYY0TwF7Z\nO3s1\r\n=ZoU+\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.2.1_1581683187321_0.22578424859357704"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.2": {
+      "name": "multicast-dns",
+      "version": "7.2.2",
+      "description": "Low level multicast-dns implementation in pure javascript",
+      "main": "index.js",
+      "scripts": {
+        "test": "standard && tape test.js"
+      },
+      "bin": {
+        "multicast-dns": "cli.js"
+      },
+      "dependencies": {
+        "dns-packet": "^4.0.0",
+        "thunky": "^1.0.2"
+      },
+      "devDependencies": {
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/multicast-dns.git"
+      },
+      "author": {
+        "name": "Mathias Buus",
+        "url": "@mafintosh"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/multicast-dns/issues"
+      },
+      "homepage": "https://github.com/mafintosh/multicast-dns",
+      "keywords": [
+        "multicast",
+        "dns",
+        "mdns",
+        "multicastdns",
+        "dns-sd",
+        "service",
+        "discovery",
+        "bonjour",
+        "avahi"
+      ],
+      "coordinates": [
+        55.6465878,
+        12.5492251
+      ],
+      "gitHead": "52bf467f79da47b4ad2ed27517bd186f4f9e4db1",
+      "_id": "multicast-dns@7.2.2",
+      "_nodeVersion": "13.9.0",
+      "_npmVersion": "6.13.7",
+      "dist": {
+        "integrity": "sha512-XqSMeO8EWV/nOXOpPV8ztIpNweVfE1dSpz6SQvDPp71HD74lMXjt4m/mWB1YBMG0kHtOodxRWc5WOb/UNN1A5g==",
+        "shasum": "5731da04f47d1e435ac457e5ac7b4b39d866a5a1",
+        "tarball": "https://registry.npmjs.org/multicast-dns/-/multicast-dns-7.2.2.tgz",
+        "fileCount": 9,
+        "unpackedSize": 21480,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJefM7cCRA9TVsSAnZWagAAJKIP/icmoVumFASEsRG6HkdN\nuk79TeYrQL8sprlxypImdfxYiPIUExYQx+5TLFUgZ6ESISoH7PSiV6QyVx1P\noRX2n5ZKiVP9jluFiVR8IpleesAqANTjXcKRDUjVCRpsJHrWm93citkAhQAW\n07+4bIlpU/sNL2DX8j9Mlr2b1j7n9aMCK/ikrmPMgrmFca1Eg4b1r16tZMmW\nz56xJTNJB+IA4kgYqqYhEujJ17H/qfPUkeId1zgWB0La3KNvzu+lZop1WNhm\nEpsaIXEoNioa4Cp14BomsQSrS9+2t0j61bO+Pw9N2Ez86Yl3Ux5jlMstj9Sd\n+NUOXsMfyvZ4MZmKkWg8zUtfUehlENNoDRlJ/cg7Kdh2dxsFdlZXzGA2tb8S\nF1pHKuDl3uGKFR9dOZEX9Qb1+vHQOVFBKGMHFhNplLBkZ/q7NmWfxjsisUbi\n+ydIiiMqTom0OdZGUXtI4rus9rjqVhsyoEIZhwy7uXxQVaEKUsrW+TkA/srp\ntq6VHpdcSBJiSrClKF4eGbNn8oTinGKT4ONe5SHWnx6/6//0b5PpW5wgIQUh\n0mTZEvej9ElHyrmWYLsA/Zt0O3aqk3rPFdlmNv0upSXDRevzkA+nRTCUoled\nXSE3NtNi9ISxKsjp1nqsBYT2dAxmBTwBAZthsLuJ61zh5zOwARN74mUcSy2T\nw7vC\r\n=PcXa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        },
+        {
+          "name": "watson",
+          "email": "w@tson.dk"
+        }
+      ],
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/multicast-dns_7.2.2_1585237724427_0.43089352304777795"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# multicast-dns\n\nLow level multicast-dns implementation in pure javascript\n\n```\nnpm install multicast-dns\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/multicast-dns.svg?style=flat)](http://travis-ci.org/mafintosh/multicast-dns)\n\n## Usage\n\n``` js\nvar mdns = require('multicast-dns')()\n\nmdns.on('response', function(response) {\n  console.log('got a response packet:', response)\n})\n\nmdns.on('query', function(query) {\n  console.log('got a query packet:', query)\n})\n\n// lets query for an A record for 'brunhilde.local'\nmdns.query({\n  questions:[{\n    name: 'brunhilde.local',\n    type: 'A'\n  }]\n})\n```\n\nRunning the above (change `brunhilde.local` to `your-own-hostname.local`) will print an echo of the query packet first\n\n``` js\ngot a query packet: { type: 'query',\n  questions: [ { name: 'brunhilde.local', type: 'A', class: 1 } ],\n  answers: [],\n  authorities: [],\n  additionals: [] }\n```\n\nAnd then a response packet\n\n``` js\ngot a response packet: { type: 'response',\n  questions: [],\n  answers:\n   [ { name: 'brunhilde.local',\n       type: 'A',\n       class: 'IN',\n       ttl: 120,\n       flush: true,\n       data: '192.168.1.5' } ],\n  authorities: [],\n  additionals:\n   [ { name: 'brunhilde.local',\n       type: 'A',\n       class: 'IN',\n       ttl: 120,\n       flush: true,\n       data: '192.168.1.5' },\n     { name: 'brunhilde.local',\n       type: 'AAAA',\n       class: 'IN',\n       ttl: 120,\n       flush: true,\n       data: 'fe80::5ef9:38ff:fe8c:ceaa' } ] }\n```\n\n\n# CLI\n\n```\nnpm install -g multicast-dns\n```\n\n```\nmulticast-dns brunhilde.local\n> 192.168.1.1\n```\n\n# API\n\nA packet has the following format\n\n``` js\n{\n  questions: [{\n    name:'brunhilde.local',\n    type:'A'\n  }],\n  answers: [{\n    name:'brunhilde.local',\n    type:'A',\n    ttl:seconds,\n    data:(record type specific data)\n  }],\n  additionals: [\n    (same format as answers)\n  ],\n  authorities: [\n    (same format as answers)\n  ]\n}\n```\n\nCurrently data from `SRV`, `A`, `PTR`, `TXT`, `AAAA` and `HINFO` records is passed\n\n#### `mdns = multicastdns([options])`\n\nCreates a new `mdns` instance. Options can contain the following\n\n``` js\n{\n  multicast: true // use udp multicasting\n  interface: '192.168.0.2' // explicitly specify a network interface. defaults to all\n  port: 5353, // set the udp port\n  ip: '224.0.0.251', // set the udp ip\n  ttl: 255, // set the multicast ttl\n  loopback: true, // receive your own packets\n  reuseAddr: true // set the reuseAddr option when creating the socket (requires node >=0.11.13)\n}\n```\n\n#### `mdns.on('query', (packet, rinfo))`\n\nEmitted when a query packet is received.\n\n``` js\nmdns.on('query', function(query) {\n  if (query.questions[0] && query.questions[0].name === 'brunhilde.local') {\n    mdns.respond(someResponse) // see below\n  }\n})\n```\n\n#### `mdns.on('response', (packet, rinfo))`\n\nEmitted when a response packet is received.\n\nThe response might not be a response to a query you send as this\nis the result of someone multicasting a response.\n\n#### `mdns.query(packet, [cb])`\n\nSend a dns query. The callback will be called when the packet was sent.\n\nThe following shorthands are equivalent\n\n``` js\nmdns.query('brunhilde.local', 'A')\nmdns.query([{name:'brunhilde.local', type:'A'}])\nmdns.query({\n  questions: [{name:'brunhilde.local', type:'A'}]\n})\n```\n\n#### `mdns.respond(packet, [cb])`\n\nSend a dns response. The callback will be called when the packet was sent.\n\n``` js\n// reply with a SRV and a A record as an answer\nmdns.respond({\n  answers: [{\n    name: 'my-service',\n    type: 'SRV',\n    data: {\n      port:9999,\n      weigth: 0,\n      priority: 10,\n      target: 'my-service.example.com'\n    }\n  }, {\n    name: 'brunhilde.local',\n    type: 'A',\n    ttl: 300,\n    data: '192.168.1.5'\n  }]\n})\n```\n\nThe following shorthands are equivalent\n\n``` js\nmdns.respond([{name:'brunhilde.local', type:'A', data:'192.158.1.5'}])\nmdns.respond({\n  answers: [{name:'brunhilde.local', type:'A', data:'192.158.1.5'}]\n})\n```\n\n#### `mdns.destroy()`\n\nDestroy the mdns instance. Closes the udp socket.\n\n# Development\n\nTo start hacking on this module you can use this example to get started\n\n```\ngit clone git://github.com/mafintosh/multicast-dns.git\nnpm install\nnode example.js\nnode cli.js $(hostname).local\n```\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    },
+    {
+      "name": "watson",
+      "email": "w@tson.dk"
+    }
+  ],
+  "time": {
+    "modified": "2020-03-26T15:48:46.915Z",
+    "created": "2015-01-08T23:35:59.537Z",
+    "0.0.0": "2015-01-08T23:35:59.537Z",
+    "1.0.0": "2015-01-08T23:36:54.558Z",
+    "1.0.1": "2015-01-09T00:20:30.385Z",
+    "1.0.2": "2015-01-09T11:38:19.975Z",
+    "1.1.0": "2015-01-09T11:42:50.369Z",
+    "1.2.0": "2015-01-12T15:15:38.120Z",
+    "1.2.1": "2015-02-22T13:47:41.451Z",
+    "2.0.0": "2015-02-22T15:51:52.753Z",
+    "2.1.0": "2015-04-07T18:03:56.870Z",
+    "2.1.1": "2015-05-03T14:58:58.132Z",
+    "2.2.0": "2015-06-12T01:38:35.083Z",
+    "3.0.0": "2015-07-02T21:11:53.216Z",
+    "4.0.0": "2015-11-08T21:51:51.096Z",
+    "4.0.1": "2015-12-22T20:42:01.142Z",
+    "5.0.0": "2015-12-22T21:32:52.108Z",
+    "5.0.1": "2016-01-05T14:45:30.487Z",
+    "5.0.2": "2016-01-05T15:07:51.495Z",
+    "5.1.0": "2016-01-05T15:11:42.237Z",
+    "5.2.0": "2016-01-09T20:38:22.760Z",
+    "5.3.0": "2016-01-31T13:01:41.003Z",
+    "5.3.1": "2016-01-31T13:27:11.621Z",
+    "5.4.0": "2016-02-08T16:18:04.295Z",
+    "5.5.0": "2016-02-14T21:22:34.959Z",
+    "6.0.0": "2016-02-18T21:39:01.902Z",
+    "6.0.1": "2016-02-28T05:02:09.884Z",
+    "6.1.0": "2016-09-13T06:48:45.227Z",
+    "6.1.1": "2017-03-07T07:17:39.877Z",
+    "6.2.0": "2017-11-19T16:49:05.691Z",
+    "6.2.1": "2017-11-24T19:18:55.673Z",
+    "6.2.2": "2018-01-17T23:30:39.662Z",
+    "6.2.3": "2018-01-27T10:17:19.030Z",
+    "7.0.0": "2018-02-12T19:44:22.323Z",
+    "7.0.1": "2018-08-14T21:28:57.488Z",
+    "7.1.0": "2018-09-04T17:42:39.027Z",
+    "7.1.1": "2018-09-04T20:07:53.882Z",
+    "7.2.0": "2018-09-04T21:36:44.966Z",
+    "7.2.1": "2020-02-14T12:26:27.485Z",
+    "7.2.2": "2020-03-26T15:48:44.510Z"
+  },
+  "homepage": "https://github.com/mafintosh/multicast-dns",
+  "keywords": [
+    "multicast",
+    "dns",
+    "mdns",
+    "multicastdns",
+    "dns-sd",
+    "service",
+    "discovery",
+    "bonjour",
+    "avahi"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/multicast-dns.git"
+  },
+  "author": {
+    "name": "Mathias Buus",
+    "url": "@mafintosh"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/multicast-dns/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "131": true,
+    "goliatone": true,
+    "nneves": true,
+    "manikantag": true,
+    "shanewholloway": true,
+    "netoperatorwibby": true,
+    "damienc": true
+  }
+}

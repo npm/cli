@@ -1,0 +1,277 @@
+{
+  "_id": "redent",
+  "_rev": "3-d50df6f73beec9eede7c8801664a68ec",
+  "name": "redent",
+  "description": "Strip redundant indentation and indent the string",
+  "dist-tags": {
+    "latest": "3.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "redent",
+      "version": "1.0.0",
+      "description": "Strip redundant indentation and indent the string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/redent"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "strip",
+        "trim",
+        "indent",
+        "indentation",
+        "add",
+        "reindent",
+        "normalize",
+        "remove",
+        "whitespace",
+        "space"
+      ],
+      "dependencies": {
+        "indent-string": "^2.1.0",
+        "strip-indent": "^1.0.1"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "97d9db1dbd5894fe1b14e01040da283b8d53409d",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/redent/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/redent",
+      "_id": "redent@1.0.0",
+      "_shasum": "cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde",
+      "_from": ".",
+      "_npmVersion": "2.14.4",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde",
+        "tarball": "https://registry.npmjs.org/redent/-/redent-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "redent",
+      "version": "2.0.0",
+      "description": "Strip redundant indentation and indent the string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/redent.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "string",
+        "str",
+        "strip",
+        "trim",
+        "indent",
+        "indentation",
+        "add",
+        "reindent",
+        "normalize",
+        "remove",
+        "whitespace",
+        "space"
+      ],
+      "dependencies": {
+        "indent-string": "^3.0.0",
+        "strip-indent": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "xo": {
+        "esnext": true
+      },
+      "gitHead": "90d90c6fe45eb7d5fa317c50af03ebac1b7b281f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/redent/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/redent#readme",
+      "_id": "redent@2.0.0",
+      "_shasum": "c1b2007b42d57eb1389079b3c8333639d5e1ccaa",
+      "_from": ".",
+      "_npmVersion": "2.15.5",
+      "_nodeVersion": "4.4.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c1b2007b42d57eb1389079b3c8333639d5e1ccaa",
+        "tarball": "https://registry.npmjs.org/redent/-/redent-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/redent-2.0.0.tgz_1468188510556_0.9630645732395351"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "redent",
+      "version": "3.0.0",
+      "description": "Strip redundant indentation and indent the string",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/redent.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "string",
+        "strip",
+        "trim",
+        "indent",
+        "indentation",
+        "add",
+        "reindent",
+        "normalize",
+        "remove",
+        "whitespace",
+        "space"
+      ],
+      "dependencies": {
+        "indent-string": "^4.0.0",
+        "strip-indent": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "3c13601b64ced8957f15b6a4c288afcc97a2f402",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/redent/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/redent#readme",
+      "_id": "redent@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==",
+        "shasum": "e557b7998316bb53c9f1f56fa626352c6963059f",
+        "tarball": "https://registry.npmjs.org/redent/-/redent-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3599,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcwqdhCRA9TVsSAnZWagAAhTQP/iMV3aVn9U3yi574p2v/\nVfaS5GpMhBUmmOYqWlK1JNMCydq5T9oFPyN3MSXPWX89NXXFL/YDQ5ApgFv6\nUvZNFqZ3StFp2v+6vEjNjJxgXmY+O3MsSEg44Hly7k4cy+8kjNOiKTEBZbjB\nmgyFAhHcdvFp2k5wQ8fnqsNypkgAYbs0/v9VXFL8EUa6R2UAML5ZhLKOF98K\nW3HuOK6c86I7eJAMscgMw7reVSkU5Gswip7vJL9FocoZdQPGSluY9YIUHvqd\nWc8254GzEFppe24mj0DhFAvEhNPmOpnFnYj5te/om2BZkntW7kK8DSlMzRrv\nGSEC3kXeV3IdVjhvU+qWsTgbSbrqiwRW75eBjHDiuuGYrmZ5TvAmkyNItr5K\nNDp1cX4m4/oya3Hv2mI1guN0dLY0gxAs0Q9PZUXVtHktyXbTpe8N+DtCp/LX\nHQtK3YpHpGBjmlx8nd7Gfkk5Oxyo+d6b+nGm2MLDGQQVMnqw8WFIsjEhV8vx\ny1kJx1Yfwb7R+d29pn5AHmyE1gi8o0lFQcU/qyHVyrm8B6MFkK1zdMX7RNF2\n+AODxu773DJYVIqFFlbrdZLeK9oWh6+c6h61deVIV/zmlcNl+dH5BGnaz8NS\ncDDDXk+QxINOdmYnAoMM3ZeFF7SSA9DP+iABNIVv8Hi/fy1PE9oYK6f7oPBk\npJWC\r\n=9NvM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/redent_3.0.0_1556260705251_0.1406445244526373"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# redent [![Build Status](https://travis-ci.org/sindresorhus/redent.svg?branch=master)](https://travis-ci.org/sindresorhus/redent)\n\n> [Strip redundant indentation](https://github.com/sindresorhus/strip-indent) and [indent the string](https://github.com/sindresorhus/indent-string)\n\n\n## Install\n\n```\n$ npm install redent\n```\n\n\n## Usage\n\n```js\nconst redent = require('redent');\n\nredent('\\n  foo\\n    bar\\n', 1);\n//=> '\\n foo\\n   bar\\n'\n```\n\n\n## API\n\n### redent(string, [count], [options])\n\n#### string\n\nType: `string`\n\nThe string to normalize indentation.\n\n#### count\n\nType: `number`<br>\nDefault: `0`\n\nHow many times you want `options.indent` repeated.\n\n#### options\n\nType: `object`\n\n##### indent\n\nType: `string`<br>\nDefault: `' '`\n\nThe string to use for the indent.\n\n##### includeEmptyLines\n\nType: `boolean`<br>\nDefault: `false`\n\nAlso indent empty lines.\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-04-26T06:38:27.843Z",
+    "created": "2015-09-29T10:54:47.673Z",
+    "1.0.0": "2015-09-29T10:54:47.673Z",
+    "2.0.0": "2016-07-10T22:08:32.052Z",
+    "3.0.0": "2019-04-26T06:38:25.407Z"
+  },
+  "homepage": "https://github.com/sindresorhus/redent#readme",
+  "keywords": [
+    "string",
+    "strip",
+    "trim",
+    "indent",
+    "indentation",
+    "add",
+    "reindent",
+    "normalize",
+    "remove",
+    "whitespace",
+    "space"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/redent.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/redent/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

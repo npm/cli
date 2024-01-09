@@ -1,0 +1,278 @@
+{
+  "_id": "is-set",
+  "_rev": "7-eb4b26579e483d160c64296b987643d3",
+  "name": "is-set",
+  "description": "Is this value a JS Set? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+  "dist-tags": {
+    "latest": "2.0.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "is-set",
+      "version": "1.0.0",
+      "description": "Easily check if a specified object is an ES6 Set",
+      "keywords": [
+        "set",
+        "sets",
+        "typeof",
+        "type checking",
+        "check",
+        "es6",
+        "harmony"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Arthur Verschaeve",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "files": [
+        "index.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/arthurvr/is-set"
+      },
+      "scripts": {
+        "test": "node test/test.js"
+      },
+      "devDependencies": {
+        "ava": "^0.0.4"
+      },
+      "engines": {
+        "node": ">=0.12.0"
+      },
+      "gitHead": "116e901813c75fd25e724a88fa7b24ec7d8045d2",
+      "bugs": {
+        "url": "https://github.com/arthurvr/is-set/issues"
+      },
+      "homepage": "https://github.com/arthurvr/is-set",
+      "_id": "is-set@1.0.0",
+      "_shasum": "da5f93e39f083bbb4efd2ebf9528aed87ae70028",
+      "_from": ".",
+      "_npmVersion": "2.4.1",
+      "_nodeVersion": "1.1.0",
+      "_npmUser": {
+        "name": "arthurvr",
+        "email": "contact@arthurverschaeve.be"
+      },
+      "maintainers": [
+        {
+          "name": "arthurvr",
+          "email": "contact@arthurverschaeve.be"
+        }
+      ],
+      "dist": {
+        "shasum": "da5f93e39f083bbb4efd2ebf9528aed87ae70028",
+        "tarball": "https://registry.npmjs.org/is-set/-/is-set-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "is-set",
+      "version": "2.0.0",
+      "description": "Is this value a JS Set? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+      "main": "index.js",
+      "scripts": {
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "node test",
+        "posttests-only": "node -e \"require('es5-shim'); require('es6-shim'); require('./test');\"",
+        "test": "npm run tests-only",
+        "posttest": "npx aud"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/inspect-js/is-set.git"
+      },
+      "keywords": [
+        "map",
+        "set",
+        "collection",
+        "is",
+        "robust"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/inspect-js/is-set/issues"
+      },
+      "homepage": "https://github.com/inspect-js/is-set#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.1",
+        "auto-changelog": "^1.16.2",
+        "es5-shim": "^4.5.13",
+        "es6-shim": "^0.35.5",
+        "eslint": "^6.6.0",
+        "for-each": "^0.3.3",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.11.0"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "b90cab7e75ee3e000c87ea88710ea8c926c6d100",
+      "_id": "is-set@2.0.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "dist": {
+        "integrity": "sha512-So5/xwRDzU3X7kOt2vpvrsj/Asx5E7Q5IyX6itksB96FJgyydSe9tFwfCq7IZ8URDS4h45FhNgfENToTgBfmgw==",
+        "shasum": "ae93342b1de5560c720b4b71599abc799d183cf4",
+        "tarball": "https://registry.npmjs.org/is-set/-/is-set-2.0.0.tgz",
+        "fileCount": 9,
+        "unpackedSize": 8756,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdyxTBCRA9TVsSAnZWagAAtHYQAIJThKJEfwMHzp4TZk8F\n43xl66oo84lJzXHTY2+0fzT3mXZZTkysQIItJ0aMesUCcKBO4eu/A/ZzK8JP\n2U3BPR3pDZoMYgJuy7EX9M30H6Qv/GGj7pfeH9y3ZmYPsZHZrujHblsumt3p\nGgS+zJlf320TcEuOwII+hDZTNQnzMotOiP8bgDoKLJaeHjO8k5lhZKUt7b9N\ni/M7IYxKshiUzO8A8+/M3y3H3WM4ZvzEUvYvpq2zNqbEH/HROKTUuCC0Z8Ej\nwfd8EJ6/1u6+a4304WrUsFm1EDGj72WLv5FcDzkD/yP5+c0PROMK8sI8iCOK\nnvPDd1XQA8EMNE6cjy2D6oNJffzx/I0z53SVe8JBhraGZEenV+TFMD74Nnd/\ng4S++caQ4vecEy/jfuL6un4NZ4hlEdzs6j27aZ7oo081p7WSWn3QAvzKzAbs\nznKPdvtdCpdRFZkFZl31GqiVREgNd1QR6WAv8kpzAtC51t/+wZCcSFoZDtlE\nn063aMWaWXSyU4dfjtF4xBuB1e9p+xcNMREnBcAU3jXm2AiRHXGTX5JQ+tl+\nl2I5/ON/flPPnaj8hF57w9MeOBpVV1JPbD8BRda8P4UtC9vSnXR6a42SW9HJ\nDjdO7uxClR1Hjf70EEGGRjobhgukSyBDYFR1mu8ZfyN4R2g0VbU97c0IDdV8\nOS8n\r\n=rz9W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-set_2.0.0_1573590208684_0.8370407865245786"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.0.1": {
+      "name": "is-set",
+      "version": "2.0.1",
+      "description": "Is this value a JS Set? This module works cross-realm/iframe, and despite ES6 @@toStringTag.",
+      "main": "index.js",
+      "scripts": {
+        "version": "auto-changelog && git add CHANGELOG.md",
+        "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+        "prepublish": "safe-publish-latest",
+        "pretest": "npm run lint",
+        "lint": "eslint .",
+        "tests-only": "node test",
+        "posttests-only": "node -e \"require('es5-shim'); require('es6-shim'); require('./test');\"",
+        "test": "npm run tests-only",
+        "posttest": "npx aud"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/inspect-js/is-set.git"
+      },
+      "keywords": [
+        "map",
+        "set",
+        "collection",
+        "is",
+        "robust"
+      ],
+      "author": {
+        "name": "Jordan Harband",
+        "email": "ljharb@gmail.com"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/ljharb"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/inspect-js/is-set/issues"
+      },
+      "homepage": "https://github.com/inspect-js/is-set#readme",
+      "devDependencies": {
+        "@ljharb/eslint-config": "^15.0.2",
+        "auto-changelog": "^1.16.2",
+        "es5-shim": "^4.5.13",
+        "es6-shim": "^0.35.5",
+        "eslint": "^6.7.2",
+        "for-each": "^0.3.3",
+        "object-inspect": "^1.7.0",
+        "safe-publish-latest": "^1.1.4",
+        "tape": "^4.12.0"
+      },
+      "auto-changelog": {
+        "output": "CHANGELOG.md",
+        "template": "keepachangelog",
+        "unreleased": false,
+        "commitLimit": false,
+        "backfillLimit": false
+      },
+      "gitHead": "07581a60194b428f276f560d96cb8f73b4ab1db3",
+      "_id": "is-set@2.0.1",
+      "_nodeVersion": "13.3.0",
+      "_npmVersion": "6.13.1",
+      "dist": {
+        "integrity": "sha512-eJEzOtVyenDs1TMzSQ3kU3K+E0GUS9sno+F0OBT97xsgcJsF9nXMBtkT9/kut5JEpM7oL7X/0qxR17K3mcwIAA==",
+        "shasum": "d1604afdab1724986d30091575f54945da7e5f43",
+        "tarball": "https://registry.npmjs.org/is-set/-/is-set-2.0.1.tgz",
+        "fileCount": 10,
+        "unpackedSize": 9866,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd+UDKCRA9TVsSAnZWagAAzU0P/RfiGa6u8ghKt2SJsQan\nHVbPTgHE7q+ltdKFPk33mRGF8Jb8qpODAFxYOQF0R3ZvxykauZGJRJRUbbYy\nw1SfPozE6ukI5zm2sM93GU2etx69Igs4zxWkDVu5nMMd2Gt6n2miX/t+rN1R\ngtDrGONjtDrNfL2xRiOPCNGVj6lMJn2mHG7cT6Z/xBh0cARueQ0tzTMw3lzQ\nE+PrYPt3M6I1dLgt0/QRnG0OaeboUe9yyN+ps4+3O+AMqHaOKfdgb62FwR9G\nOJYWTBSnUjJvAVPd3++t5xoYiZeoQjv9B+5oi+F/71EmJ2xrrvaonMX7es+z\nEVL13QixqqFjLD1sHtv+pE4FE8e4pp/avJxXSMvMLPVyHV+lDLozpmNyJnsn\nyrNvy5e2dNw8ZDrkgkKMRJ3gs0OpK4zdbFsVtAUJbs5vJQncCNzYcKzxmVIu\n1AMAuHN/sL/C9m7dxyZLSYPx1czFGc0LJRAFcPVdsCiZRQj6mKWKRtRUiKUj\nGP1VVkIISGmsLk4AMV/pOJwRjrYr78vqM+75Inb2sp3cIbx5ATFf+QJdWHCS\ngEYOa2+7OqSC1qM6WUnLe6zs6oCAcjXtFq0U9dFJfKph0YVIZwfntVyELEGJ\nym63ETJK1O5qgaHkDxUcQe+CZyd4JJAyvUigXbn2MHyIoO7Ssa1dcpTmvAi7\ndUKy\r\n=FDJK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "ljharb@gmail.com",
+          "name": "ljharb"
+        }
+      ],
+      "_npmUser": {
+        "name": "ljharb",
+        "email": "ljharb@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/is-set_2.0.1_1576616138132_0.35866745926426513"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# is-set <sup>[![Version Badge][2]][1]</sup>\n\n[![Build Status][3]][4]\n[![dependency status][5]][6]\n[![dev dependency status][7]][8]\n[![License][license-image]][license-url]\n[![Downloads][downloads-image]][downloads-url]\n\n[![npm badge][11]][1]\n\nIs this value a JS Map? This module works cross-realm/iframe, and despite ES6 @@toStringTag.\n\n## Example\n\n```js\nvar isSet = require('is-set');\nassert(!isSet(function () {}));\nassert(!isSet(null));\nassert(!isSet(function* () { yield 42; return Infinity; });\nassert(!isSet(Symbol('foo')));\nassert(!isSet(1n));\nassert(!isSet(Object(1n)));\n\nassert(!isSet(new Map()));\nassert(!isSet(new WeakSet()));\nassert(!isSet(new WeakMap()));\n\nassert(isSet(new Set()));\n\nclass MySet extends Set {}\nassert(isSet(new MySet()));\n```\n\n## Tests\nSimply clone the repo, `npm install`, and run `npm test`\n\n[1]: https://npmjs.org/package/is-set\n[2]: http://versionbadg.es/inspect-js/is-set.svg\n[3]: https://travis-ci.org/inspect-js/is-set.svg\n[4]: https://travis-ci.org/inspect-js/is-set\n[5]: https://david-dm.org/inspect-js/is-set.svg\n[6]: https://david-dm.org/inspect-js/is-set\n[7]: https://david-dm.org/inspect-js/is-set/dev-status.svg\n[8]: https://david-dm.org/inspect-js/is-set#info=devDependencies\n[11]: https://nodei.co/npm/is-set.png?downloads=true&stars=true\n[license-image]: http://img.shields.io/npm/l/is-set.svg\n[license-url]: LICENSE\n[downloads-image]: http://img.shields.io/npm/dm/is-set.svg\n[downloads-url]: http://npm-stat.com/charts.html?package=is-set\n",
+  "maintainers": [
+    {
+      "email": "ljharb@gmail.com",
+      "name": "ljharb"
+    }
+  ],
+  "time": {
+    "modified": "2019-12-17T20:55:44.193Z",
+    "created": "2015-02-18T11:22:30.744Z",
+    "1.0.0": "2015-02-18T11:22:30.744Z",
+    "2.0.0": "2019-11-12T20:23:28.781Z",
+    "2.0.1": "2019-12-17T20:55:38.219Z"
+  },
+  "homepage": "https://github.com/inspect-js/is-set#readme",
+  "keywords": [
+    "map",
+    "set",
+    "collection",
+    "is",
+    "robust"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inspect-js/is-set.git"
+  },
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/inspect-js/is-set/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

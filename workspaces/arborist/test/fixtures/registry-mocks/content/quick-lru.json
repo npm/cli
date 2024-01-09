@@ -1,0 +1,716 @@
+{
+  "_id": "quick-lru",
+  "_rev": "8-a35b86945297bcbca3bb06d97c1ea3ce",
+  "name": "quick-lru",
+  "description": "Simple “Least Recently Used” (LRU) cache",
+  "dist-tags": {
+    "latest": "5.1.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "quick-lru",
+      "version": "1.0.0",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "coveralls": "^2.12.0",
+        "nyc": "^10.2.0",
+        "xo": "*"
+      },
+      "gitHead": "2ea4c25ec7b5d4eacd37872c9313bdfae0f31d33",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@1.0.0",
+      "_shasum": "7fa80304ab72c1f81cef738739cd47d7cc0c8bff",
+      "_from": ".",
+      "_npmVersion": "4.2.0",
+      "_nodeVersion": "7.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "7fa80304ab72c1f81cef738739cd47d7cc0c8bff",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/quick-lru-1.0.0.tgz_1490864340991_0.10071378503926098"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "quick-lru",
+      "version": "1.1.0",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "coveralls": "^2.12.0",
+        "nyc": "^11.0.3",
+        "xo": "*"
+      },
+      "gitHead": "618c5cdcc591289e58fc02c93830b2dc6162cdfa",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@1.1.0",
+      "_shasum": "4360b17c61136ad38078397ff11416e186dcfbb8",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "4360b17c61136ad38078397ff11416e186dcfbb8",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru-1.1.0.tgz_1501163138777_0.7843833630904555"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "quick-lru",
+      "version": "2.0.0",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && nyc ava"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "coveralls": "^3.0.1",
+        "nyc": "^13.1.0",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "01f18dde7ffba7991906c96adaff3bdf1dc76e5a",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "8.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-DqOtZziv7lDjEyuqyVQacRciAwMCEjTNrLYCHYEIIgjcE/tLEpBF82hiDIwCjRnEL9/hY2GJxA0T8ZvYvVVSSA==",
+        "shasum": "32b017b28d1784631c8ab0a1ed2978e094dbe181",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 5636,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb6GUKCRA9TVsSAnZWagAAsusQAIOK7Ryr7oNHzwTOeRkc\nRTEEMBFyzfwOISbXkvJ9JZr0P9gchIu+j7RWHGEj/88iaW16rA80Prbt1GYP\nOnX8Y7TIyxqxlWhfvln/j6eLMv4O8EzDsRjblbIFWfz1xfCBA/KD95ZwPNvj\n3lXeFXuU1pyIjFWFghLPE2KRj2IdLkqnNQojOGAqJpyB6tDf0Ik2iHIZC/3+\nSmWU9jPy7LDPuwhvJ9f0sQklsD0nSEoxxWff+88AmZX0MLJB0zK2BgNeUB8x\nWv1udh09r8bbsyINKy0pApIM7Q079hG4NWJuWLVrjpMDiQ4X++RvCsDJ5YbB\nWnte4tsFDmIZcWsyqHxAy/r48YR6KaIn2G5O1MbQcbCgd8bLQtfI7jXXorlD\noAuHmGAf0VaD2f2I3NCSaiOdC+3PBQZpcuSBc6wF9AAglUuOjLoUzKiVtSuG\nrHuZPxJgRhjbeYrQmboChQjVWOcUEWcWzeJwm/AMtWD/QxP1dnCCBNhyMaZq\n+p4eow77qNoyLIFyZyKGgkHm/Xh/bV3iyK1okxPfZa5rVNuPy8iJwpaL5TlW\ncRWkFRT3UVwoQ5Rbz6VTF3LEmb/def3CpbRrjueLrEFqro3V1CMnO3va6AUW\nGeDSnIjRxzAWXh4Oq85NsHO+IdKNeAhz+7Of7YSuJGTh96qzQpAGvmpAMoEJ\nkiUz\r\n=muuJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_2.0.0_1541956873962_0.3470425557929264"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "quick-lru",
+      "version": "3.0.0",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd-check"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^1.3.1",
+        "coveralls": "^3.0.1",
+        "nyc": "^13.1.0",
+        "tsd-check": "^0.3.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "c206b5c8e9d6eddba8188a3e741c3a7eb521eea5",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@3.0.0",
+      "_nodeVersion": "10.15.1",
+      "_npmVersion": "6.8.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WLzHLB/msD8Q/5jNh4LviurG896aIEJRS1M3gHz91nSmaXn8q+/q4yOQvNMIETl9f5pAu3igqexB62ARWOUoOg==",
+        "shasum": "2f96145481567e5bc442c6c4a66e86158405c696",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7395,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJchRQDCRA9TVsSAnZWagAAnFIP/3Q3Rcnm6jDi4HGP47lg\nHFleI2YSyoL5FbI6oSyv6cEBaWZf5mzsNac0AuftIvKoPBmu7iQHRLVh44mK\nltsP4TgHbtR/ewYP52/a8QrSZEBNe+MYTJ/85znEM2Av3YFh0dkTIbViXOxy\neyqregn8NXdEjsLaaISq5PY4Xf0z0aCBzvW+9Kqf4oRMJ7Tg8hkHAszBHVJb\nYY+au4zeXMav/2OkZ/DwijoMopcN9osXAaE3vrJWJUAZfxoIo18ehyr/UStU\nH41JzfcjwJNcrRqSs+hJsyyLNt/4NZA8U3XxIUuNbxfzeQWRN0/IUvLVCE7l\nJz1TyMY/4J2ZSgYetYe8uJv5tGkDi/T8FnCHwqLphgLho8GM09e5wWs3Fh6N\nnaymmzIFRLQqOTtKmzPQX1lQXQ+7vQn2ipryUYR+hU12zKCuMdV3y0m872jT\nefZUwBNdwMW9bLRk73rZjkqEDHQh4WNckIAK89mb44vmBY7+5/9NOT+tLvoX\naAe2oqWRFf18KrzIveDRLlsNiYoAoY0VMzEg4pDTB60lcXVdXpMGrPjJLvE5\nNs0ndnRJ2dLZS3PT7v/c6sTWSchYqJRVZeJfNzn7c83bggf7Xn+9mJz65NoO\nbKAIRudlQ/iz9t0gL1jAQoExsUE9yMUchh4UlZb18g+nVSydkxfYS3G7ocpX\nEFjh\r\n=ESNF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_3.0.0_1552225282235_0.7626934676744992"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "quick-lru",
+      "version": "4.0.0",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "coveralls": "^3.0.3",
+        "nyc": "^13.3.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "4e484ef5202ffc07977cd4ae771ceb6fa253ff61",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@4.0.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-5cS39FEMrySKt/8c66v10HrmoexP2iYOsJBhtbVrlAr6Cbuc6khFMN8CHJG87c+QsdxBABivfVscgk20I/rPDw==",
+        "shasum": "a44d44010a776d787af65b1226566dd1ae7b9649",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-4.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7503,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpwDsCRA9TVsSAnZWagAA5WMP/2doQ1zTz99qHRYcwXDX\nPmg6tFIwaRpb04EpQ31evlOKAEwr4f/3ETQY6D0xD2bCei5IUkXSkHPXN+AZ\nl4P+SMS3KH/Bl5z6ksAivF0dwe/jGy2JrNqbnJ0gwz+to+NBLnfzyT77Xjml\nGjEvHQu8rmwuZDatCUruN8p4cbnev5N9g+rnFkpRD2/Li6uuKaD/1GzEfmFf\nVU5YD3HUBgmQrtCmt9xh9dH5yhCw+KCvSi+xqDtPHpttp/HgMcvJzDmEQo7E\n0zF+0xRHYXG55umZETtgIeDccaJF+xtcBHnL7M+WRDJag74Q3ovsrv/qsC6S\nZDStDXvbd7+8hT+21uc46dRwgoLF/8MLUJZkNdJ/wgp0D+SAquwP1nSnWzNS\ncBWr9z1GN4iBi6khiBz03hM/Ix+KOsP4Jzc0DV+tKogXrH2YdzxksXzrg16o\nBN5dOaJ1O+KaNYnRNgewXjDFDvoq6/E4YSUlGDk9kRTdPyU5KjhqlIid87eA\nYO1QFiDj9R6X8O3vG8J0cp57hQG//oXkMOqW57ngEviRy/JTDwqzdUGldh6T\ntaoO36lXzHFPtF7M+zXbe1gadEOnZ27qs8CVScOa/kMsl0l/Z7zlLwRHVd8w\n0OOcfZFB9Gc1d90d3ByimePm/sM0qSu/wLDofWxQ2mUsAIpd+4IpeBLzhSfd\n621s\r\n=0kTf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_4.0.0_1554448619367_0.9515006929966581"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.1": {
+      "name": "quick-lru",
+      "version": "4.0.1",
+      "description": "Simple \"Least Recently Used\" (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "coveralls": "^3.0.3",
+        "nyc": "^14.1.1",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "64c21e6e8898d2f2751357c422ae53c63ac66aff",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@4.0.1",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-ARhCpm70fzdcvNQfPoy49IaanKkTlRWF2JMzqhcJbhSFRZv7nPTvZJdcY7301IPmvW+/p0RgIWnQDLJxifsQ7g==",
+        "shasum": "5b8878f113a58217848c6482026c73e1ba57727f",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-4.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7469,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJc7r+bCRA9TVsSAnZWagAAQx4P/2Nu8oQyT6aWSMNbQXQs\nU8IThgCSLVFHOX3tIqlVhlLc8Zr4+jtY/xXjXSdlAHtPpRzTJNCsZMNU5T8V\n1YS5EMLs+zJbiJLdcbZ+yBI/3eNKxcT5bsWkAS1yLPgsrx6O0ypv4+vxKgV4\nvcST7nniuqi2mhE5aR/g3XP1+vJOR5b8uu4BCQGlL1wrO0oZHSXNfeY5uNsD\n/Tzyr8e+nWPJbo50fTMEm1xbGju4vqf4sgMhSYkIxymfWRuTPdxmnNH/JWU0\nYMH97BXghmhJ5ej3kTev3YkQSnVnAdz7c8bNhE+erbclez/WP65QAQyRLmvR\nJEMlvNd0O6ZOlb2aehzdsjl8nqsH+bL2N//g0ZFPEFGGUe4L+G+rIrv7O6U9\nLo+GpXi0gI/FECODJzsq/05otrIG0lbkVIZY1OH3DM8gQMlnGn1/hf8Hm9Ms\nj863/ckwYYrOza0BZB/hVAz9bMyQV5TMQ6mXINOCFVD+mzBVD3VEA7m58SmG\nFA5hjJ3Zb46nypJtihcqSqyGkSaoQYdXrVjMg01ocavM7dOefnJN2KbGUlwD\nT/rVI9N/ZU+fILQIwi1MxpiY7Eyryr6y6zPvBfbzb4jsYfAkaX8XxBwLEKP6\nl1FDTzMQMxnMzomtF6YxlSUgohoioaV9xWSa0pElsEMBcijlI3SqZfu2NTQq\nTFDL\r\n=Sy0n\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_4.0.1_1559150490405_0.9876888152612853"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.0.0": {
+      "name": "quick-lru",
+      "version": "5.0.0",
+      "description": "Simple “Least Recently Used” (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "coveralls": "^3.0.3",
+        "nyc": "^15.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.26.0"
+      },
+      "gitHead": "b0feed4ec77456836cc2c6934801fe29f69d2b7f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@5.0.0",
+      "_nodeVersion": "10.18.1",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-iNjBLSxM3byM7z8a1MB/Oa+AAeopX4NqKEj/ykgKRi1R4AFXNINR4DSjyjDzXzjqjN9+OBQGfK5w5CAnCtV7jg==",
+        "shasum": "a2b007dd2335408a2348735bfc3aa42af605d37e",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-5.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 7963,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeRUxyCRA9TVsSAnZWagAAA58QAKAT6K91Hy5FC0vIZxEU\nBx14C5OBH5Quf/pYONIGWCDQiNT7De2uQmjbhlBs9uO8+f+5o3aBq5+1ecKS\nExnuvvbeKYzC5tAjinEP2ajFG28BgsirL1ebNjrn5qOdPOaxb5K9ZSOkv8Cj\nQuxBbfQjnc/Wl5qt+xPWuUaP6AZiHXjOhNt88FDIrf+EhzOd2qO//snvSoN+\nK6c0l1Cn8Z/UaFtq5Af+PUM8iCMD/aer0EWaUKBNtOkdQN//PHF4bIiyxgU8\ng/WnfdjTrllxygDK24OUPw12kOio7Qtea9d8ZUby8RQWrJm/0Pw4MQIpuQti\nLAb8VC81/EfbeWdmmxuiZ7l7LPVu2PDfWcr7HZIPCyJeZgTRvjScB5PwuW2W\nfuyGFwtwmSBlgABPxos+zSYn/Y6fy6I/B0fFrZMuClDsyPDEFfCPcHY89MYi\nWW/A0kp0nHMIuCooJjx+96BAGjdhqCSQQ31p0dFvUXprw7Rd/VpgeA2glEnZ\n6/wWOaohgTovkfRFhG/5+rjrcbvwz7vTD1rvfs40DomNu+35TeOe5ZTgrYcs\n7Q30o0NnxxNDnxOqvb2+2wHtGtlRQFW2QepKsGrIfAUjZiUva5Ed8OokArxF\nPeIBM4uuBwX20TX4dvyj5+96NSJoiL9C0LogecdZy2TtqlpTg0Gi0l1652zZ\nEHbz\r\n=G0Xr\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_5.0.0_1581599857888_0.43905769021974583"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.0": {
+      "name": "quick-lru",
+      "version": "5.1.0",
+      "description": "Simple “Least Recently Used” (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "coveralls": "^3.0.3",
+        "nyc": "^15.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.26.0"
+      },
+      "gitHead": "c205876c128de9b34be24ef5189c3194bcbcee23",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@5.1.0",
+      "_nodeVersion": "10.19.0",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WjAKQ9ORzvqjLijJXiXWqc3Gcs1ivoxCj6KJmEjoWBE6OtHwuaDLSAUqGHALUiid7A1KqGqsSHZs8prxF5xxAQ==",
+        "shasum": "1602f339bde554c4dace47880227ec9c2869f2e8",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8625,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeiuDWCRA9TVsSAnZWagAAnSAP/R9/dvrW0C4UIlSIMomV\n1P5FwJcPecxSwouX8YCqUu75uucoCXwSIhMkUyeMRF8g3tXl7D3TYrPRVfhe\nHYa2WhrSgr6ABLmizJ8UQYe6aBVyPt7OKotcmwkViIuraetB2olJEQEHAGXH\n5++rRn0WvvLpjngMyOqfDqo8EkULRZSPGM1i9wjYcFbN2B78O5UzUwcv6/aK\nOaipu0idmFwH2ua8ilmCPE6DgNVa/PI8UkuuUSmV1jTheyBcwSGqSHlzgdnz\nJF1C0Jb0MWZh1xj/MZ74w6Wlu6SP/m6O84OuM6EvNZ3+1Nf5ftAaMNXdK+Fh\nMCyeECYXW48P1WL36lH6mCDBdVGdRmvk3hYf0d/tCoQpHu3ib1L347YSgUBA\nUe2gIzncxXP2fv9pX5gLWlZcXIdLtoBAC0bhdBsljpWUJJKtNlYiUjxJ0Rob\nTPTzioyWyqfv4qG18MYjQjxZjIa7+EoO/UiGG++go+ch6G9tIq0kaE7JWlBQ\nDnMn2fUDtByZ82KUeW0LcKvFt35LNSk744Xjls8GVNIkAnYNAhXC6aUrj742\nSAMlN+6TlZaoqkTKrirsU97eZN463jC+684DoDjs/zJ+V8FbKb061ZnZWkB2\nLTa2T5GHpKgrCm6BG63EsrQ8c0mbWvAOC3ZyFi6CH7T+RKyJY6l4t+kDQJ61\nojDe\r\n=3QYT\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_5.1.0_1586159830047_0.5906710401908553"
+      },
+      "_hasShrinkwrap": false
+    },
+    "5.1.1": {
+      "name": "quick-lru",
+      "version": "5.1.1",
+      "description": "Simple “Least Recently Used” (LRU) cache",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/quick-lru.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && nyc ava && tsd"
+      },
+      "keywords": [
+        "lru",
+        "quick",
+        "cache",
+        "caching",
+        "least",
+        "recently",
+        "used",
+        "fast",
+        "map",
+        "hash",
+        "buffer"
+      ],
+      "devDependencies": {
+        "ava": "^2.0.0",
+        "coveralls": "^3.0.3",
+        "nyc": "^15.0.0",
+        "tsd": "^0.11.0",
+        "xo": "^0.26.0"
+      },
+      "gitHead": "64915f7a4ce7c0cf7aec1cc6320c050f1c4bddd1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/quick-lru/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+      "_id": "quick-lru@5.1.1",
+      "_nodeVersion": "10.20.1",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==",
+        "shasum": "366493e6b3e42a3a6885e2e99d18f80fb7a8c932",
+        "tarball": "https://registry.npmjs.org/quick-lru/-/quick-lru-5.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 8645,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe1P6CCRA9TVsSAnZWagAA80oP/A8WECPR5ihBf9mMDo5O\nBQLFLT8kIYxT7KaKzh3eju70yQ/dW3aq4qqFmTfExIJFW1iKyCtlOs5kNGmN\nKaZ5MI53nRogiTFHn3JVa6pJtL4cWjN4jYEG4VllykhuEsseb6ejcbFRwGMP\no0FnWpEr4fGW8zkDuaycBmWIgXgsdpPqSC0VuSxW+WIt/AfJbxbBEoWIlmgC\niZtYtdkbq1Ouz8pG+3GuR7/Wtou65IjSOrs4d8VB5nhDgjdhVyue1pO9TeEu\ndiIqj8tpbgPvU25odaHZIjm6uSmUqzwzQUPNBO1OEEbiSSnBYi0b/ABSBHsc\nt4bYiTS1ivnldxcekc6T9kfqb66QKYstHKED+uS9Q/cg6z8Qdc9AtA0Gw7BX\nfxwPdwRLbJrUsU5KCNTpvG9tskz5CtUHy4LdteNJGYMKrUx1EZ/EdKQyEbWi\njK9DntuqVrIAXKWvUDpYLnryGj7GFBSwgNShOw5RTfZMojlpdsZBTwFGv1R6\n7D4WotZv8pW/WrE11jEk3FeHQx+v4PMwyR/KogWwnL1ywU1M9TytOgIxKlvv\nZMaqyHwfNvNkHG5vwsFWpm99ThV9YVQNISQkt3tWrxYN0NxfqR+Ez3jF5pgP\nswrks+7RQD33dqpE0kIlVJGnr9cZO+yUWlS6PB1a0v9v+pg9hQ0nLzdcdB6k\n4vjv\r\n=MepF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/quick-lru_5.1.1_1591017089902_0.4589325163276523"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# quick-lru [![Build Status](https://travis-ci.org/sindresorhus/quick-lru.svg?branch=master)](https://travis-ci.org/sindresorhus/quick-lru) [![Coverage Status](https://coveralls.io/repos/github/sindresorhus/quick-lru/badge.svg?branch=master)](https://coveralls.io/github/sindresorhus/quick-lru?branch=master)\n\n> Simple [“Least Recently Used” (LRU) cache](https://en.m.wikipedia.org/wiki/Cache_replacement_policies#Least_Recently_Used_.28LRU.29)\n\nUseful when you need to cache something and limit memory usage.\n\nInspired by the [`hashlru` algorithm](https://github.com/dominictarr/hashlru#algorithm), but instead uses [`Map`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map) to support keys of any type, not just strings, and values can be `undefined`.\n\n## Install\n\n```\n$ npm install quick-lru\n```\n\n## Usage\n\n```js\nconst QuickLRU = require('quick-lru');\n\nconst lru = new QuickLRU({maxSize: 1000});\n\nlru.set('🦄', '🌈');\n\nlru.has('🦄');\n//=> true\n\nlru.get('🦄');\n//=> '🌈'\n```\n\n## API\n\n### new QuickLRU(options?)\n\nReturns a new instance.\n\n### options\n\nType: `object`\n\n#### maxSize\n\n*Required*\\\nType: `number`\n\nThe maximum number of items before evicting the least recently used items.\n\n#### onEviction\n\n*Optional*\\\nType: `(key, value) => void`\n\nCalled right before an item is evicted from the cache.\n\nUseful for side effects or for items like object URLs that need explicit cleanup (`revokeObjectURL`).\n\n### Instance\n\nThe instance is [`iterable`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols) so you can use it directly in a [`for…of`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/for...of) loop.\n\nBoth `key` and `value` can be of any type.\n\n#### .set(key, value)\n\nSet an item. Returns the instance.\n\n#### .get(key)\n\nGet an item.\n\n#### .has(key)\n\nCheck if an item exists.\n\n#### .peek(key)\n\nGet an item without marking it as recently used.\n\n#### .delete(key)\n\nDelete an item.\n\nReturns `true` if the item is removed or `false` if the item doesn't exist.\n\n#### .clear()\n\nDelete all items.\n\n#### .keys()\n\nIterable for all the keys.\n\n#### .values()\n\nIterable for all the values.\n\n#### .size\n\nThe stored item count.\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-quick-lru?utm_source=npm-quick-lru&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-06-01T13:11:32.270Z",
+    "created": "2017-03-30T08:59:02.872Z",
+    "1.0.0": "2017-03-30T08:59:02.872Z",
+    "1.1.0": "2017-07-27T13:45:39.693Z",
+    "2.0.0": "2018-11-11T17:21:14.144Z",
+    "3.0.0": "2019-03-10T13:41:22.484Z",
+    "4.0.0": "2019-04-05T07:16:59.556Z",
+    "4.0.1": "2019-05-29T17:21:30.565Z",
+    "5.0.0": "2020-02-13T13:17:38.014Z",
+    "5.1.0": "2020-04-06T07:57:10.191Z",
+    "5.1.1": "2020-06-01T13:11:30.055Z"
+  },
+  "homepage": "https://github.com/sindresorhus/quick-lru#readme",
+  "keywords": [
+    "lru",
+    "quick",
+    "cache",
+    "caching",
+    "least",
+    "recently",
+    "used",
+    "fast",
+    "map",
+    "hash",
+    "buffer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/quick-lru.git"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "bugs": {
+    "url": "https://github.com/sindresorhus/quick-lru/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

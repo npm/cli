@@ -1,0 +1,2726 @@
+{
+  "_id": "@babel/plugin-syntax-jsx",
+  "_rev": "68-707eae157228afa9b4d1b9492c171bbf",
+  "name": "@babel/plugin-syntax-jsx",
+  "description": "Allow parsing of jsx",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.0.0-beta.4": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.4",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-pDxNWOLJ1ItLHQfvKby/85sqoPPCbUP3mtV0Q5I+oe9yUYVP+NnUOcmuOGDpRF9kBe+BwHmdNGfdRdx4hdbljg==",
+        "shasum": "e25c1733215f7db77f8461fa8d7499e7798862ce",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.4.tgz_1509388460653_0.38778818189166486"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.5": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.5",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-It8AGX4Xnv/HeQbgViLaWmQX7oZpcCKVw5HT+aLNNlOm+uDk7SQEjR+JT97FSm0EMFSFTjyuWBqDrMZ1QWOwYw==",
+        "shasum": "7157e2107388b4ec2ba1ba4d8a11597ee1b6d61a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.5.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.5.tgz_1509396963643_0.5167733312118798"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.31": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.31",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.31"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.31",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.1.4",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-mp2velbcUjwMsYjwfKsE/OZJsa/6hV4zBJRe72reWhZIMuF3vs7QoWR4UTivQ4VZxQDpm4LoUW2LSXbxl6xILQ==",
+        "shasum": "91bd862539a738d1db5b7f8839f5a7259d0981c0",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.31.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.31.tgz_1509739395004_0.9551925798878074"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.32": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.32",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.32"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.32",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-uzI9Qm+udgFo2QL2ozULUhhsWJy3Bv7gAGYwhPe29EZshy1EhBmiqXVwc3FZoPCckliBeoQdDWjGQgWcU2Taog==",
+        "shasum": "ef395991c8fc7ec1bd4678c386635f754b9792e9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.32.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.32.tgz_1510493583165_0.5108483650255948"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.33": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.33",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.33"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.33",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-IZ+Kl0fSAOK6LMn+3NZItbJmyaBnbNp5ty8sNEzHdVAeg8Ah17PyNPTMFhGtn7LHB99SkTW4guPPIxtfWMjg1A==",
+        "shasum": "72c4b59f4654c47e58751a384e41ba0b2daf0ad1",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.33.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.33.tgz_1512137832911_0.34203107305802405"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.34": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.34",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.34"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.34",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-ul0JfSnAyhhsaW+sUlLQTXNpFVrClUZrRNhS8UKgOtvT89X/1qyB6yINEGRULrFn8Ip7lsVFreib129b76UHQA==",
+        "shasum": "15763aaa2ef2df00fb9ff6edb7b4295622e52514",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.34.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.34.tgz_1512225545935_0.7619688352569938"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.35": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.35",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.35"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.35",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Oc97eUcDPxAnye/+qq7wGGabMBLwLrntxYzPt3Zr1YnYecKK+BjyUK4+PTX5tKRC4XlToWFijsHet0mj/ZKKBw==",
+        "shasum": "fd802ab4d7aabdfdb8467d9541987afc051e6f99",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.35.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.35.tgz_1513288055527_0.9178325613029301"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.36": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.36",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.36"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.36",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-j0dwdk3frPLYxGWLn4113/Z27YBS2qCBRSdMOMhUN8fldbQEW5n27IEcGaQ+cvyBQdVqog9Hhot+BNCn6srXbA==",
+        "shasum": "ed12dafe2cb9d3533050d3935d703ef168143371",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.36.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "james@henry.sc",
+          "name": "jameshenry"
+        },
+        {
+          "email": "kent@doddsfamily.us",
+          "name": "kentcdodds"
+        },
+        {
+          "email": "kaicataldo@gmail.com",
+          "name": "kaicataldo"
+        },
+        {
+          "email": "teddy.katz@gmail.com",
+          "name": "not-an-aardvark"
+        },
+        {
+          "email": "star.ctor@gmail.com",
+          "name": "mysticatea"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.36.tgz_1514228663724_0.040064160944893956"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.37": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.37",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.37"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.37",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5ZER7tkR6E1V/lUOTLqxrBDm1KWbEsMppdHsvKdtHxY5WXlW1TCtvKwhr9dradrl8HA+9tIekL2k724f6kMw6Q==",
+        "shasum": "df278e1b27f0247e55bf0f8ef4b7b7301a623ef6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.37.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.37.tgz_1515427343184_0.6907487413845956"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.38": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.38",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.38"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.38",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-UmowkKfyyVNUdQ8HSLII4jC9wZuLsTrynsjwp53jaIzZSoGjKAsHYT6HF8JQkG01DQTN9l9trSv0LClTeAZgbg==",
+        "shasum": "1644f05630105cdbf0d6b4285f62af79fd8dd37f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.38.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.38.tgz_1516206703384_0.22926845191977918"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.39": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.39",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.39"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.39",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-Ir49hnpnyDTz/RlTStks6FTihjNarSOp8jdutwU2yFgBTWFM1OnRgIZV8gVhZjinZDGc6UGdVTr03QtgLwW4bA==",
+        "shasum": "c7f0d1a7e6bbe503a814a265d7d7322f2b230bf6",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.39.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx-7.0.0-beta.39.tgz_1517344047050_0.24711652006953955"
+      },
+      "directories": {}
+    },
+    "7.0.0-beta.40": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.40",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.40"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.40",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.1",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-SLicyImotduRkkRtB9hKtEbwmtpLbMNFxWEwkJINTCOHO9slloGAT7GIEztr6Asud7OurxuSo/ORuOdRyfG4LQ==",
+        "shasum": "db44d52ff06f784be22f2659e694cc2cf97f99f9",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.40.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1087
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.40_1518453683892_0.9718305630288104"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.41": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.41",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.41"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.41"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.41",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-k9VpxQ54oZdwT4mRGPXN7GV5EvLOQFdz1KOrVeMbhB7hUKY/Seo5ET1zVEuAyY2+akF/eZcf8oen+Uly8bAruQ==",
+        "shasum": "b52ebe8cdf19973f63099b09bb6c9468ff8062d3",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.41.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1322
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.41_1521044755470_0.6410935320940798"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.42": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.42",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.42"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.42"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.42",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-NWlawLcYkxMpH2QK4CbYg1ctTuFaKYRVBZGiGkgcO7xD59bNUu2HTG/BXynuaheQiGX96ItoK1igV6vuS9BK/w==",
+        "shasum": "92ef7807bbec0e12a49815a409822262cbaa7ddd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.42.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1322
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.42_1521147030789_0.13332132034294486"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.43": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.43",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.43"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.43"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.43",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-sXrt7md46lMzdmdljlh6S6NXQi6OJMdOZPTcKae/hkBYx1SURJL19G+UGfAZKTWESeT+Pw9DS2nlGMuSIdi6/A==",
+        "shasum": "abd89ce875df4e9037ca20dba00d57054af2ec59",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.43.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1427
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.43_1522687696357_0.7446871645412301"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.44": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.44",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.44"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.44"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.44",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-q0AqflJKM+IcyUTblGnVckka160/tUYkDF77o4fpkk3uCb7TxQIXlnBM8V/mx96Tf+JRyE0AHFwt2mHomd0mWg==",
+        "shasum": "b3475f0e6ea797634f0ba823273d76e93727e52f",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.44.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1478
+      },
+      "maintainers": [
+        {
+          "email": "mateuszburzynski@gmail.com",
+          "name": "andarist"
+        },
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.44_1522707598480_0.8329493059729978"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.45": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.45",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.45"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.45"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.45",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-31z8UocRh9sNBR3GxUP9Qrat88sOdC5DTp00RCFvfW+Y6QRgWv8D+RB34xyYGKXJyUL+QpwPLepSqDowmEUHWQ==",
+        "shasum": "0b0dc8368db9e948528bd3732c4bbe56e057dace",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.45.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1478,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3T1DCRA9TVsSAnZWagAAO24P/jd0wmaPEkwIJkRgV7EB\n7KUCx8QzYrCKvV+UNWsyvA0dVl8LkVS23sw03o141VkRwUu7qdJRgUo+zoaR\nXsD62ogWyVbOyOWZc8KQNh/WJLv91W+ZUf2WvAUAR6pWgTglKHAtsgBVXjny\nF/gIXngH8pZOcW2vp3UHQqdBUbVcHmo9H5eNTwtH9HgHg1yt0IOdrCldCqGF\nLU9oql/HRda8aIrVWY7TgZ1mnRohTu5pEpzGH9KTbK00xW9xzgFOR3h5d9nA\nRY9tXJI0BOpjqIsMYlG2rZvOJsjFL4ReqjWvI/R09CUath3Ol8lWK7KItunS\nfxvqA/IR+Eq1kwCxquPxMgtC9mdIL03ppA5c0DxIsMor08gVyzF59HFLkkco\n1Vl+zYWA1rbkJfEZTHkhYv0XWcZNONZnrc7p0+l0mTrssUxKok2H49B5gJnj\nYqN38N7BzwEgPDsesNDHyx7meRByQeiA0C7AynJJ/hjBO3efbivNLthMNlsv\nN0ELTQpFxDdOdMexpUUZU0UG12j1De7v6xw2+plMxwz5b34RwaHzvs7HVFR6\ngX8PCspD+rqRvj01wPJI/vOklfU2aMwjJErTfaEAbLOU1dYx174KF5t24+sY\nBk6c2DiaAVty5IEmyImtsJ4vJn8+pPDel7BKFjV3zrGzj28Gg0D6Uw4ayhzf\niSjm\r\n=H+Lt\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.45_1524448579268_0.24324076192047817"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.46": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.46",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.46"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.46"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.46",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "9.4.0",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-aYN4vmO4nMux1W36F6/YP2ugNQ0cilrs1eU4jClLrlIouxqd9hqBloWtlGmGlyDxIRV5kzr+UWwridLDb+cN5g==",
+        "shasum": "ed2e8a43716e7904ae33dca71d5f2b436f0f25e8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.46.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1478,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa3WFzCRA9TVsSAnZWagAARk4P/A+v8oEbh23ndh2PkfOB\nG1THgtRf+EUe3z8TF8qQ7IVN4n7/InBlSCK7kWQuNTK+VnsV/4zNFX9y5WrS\nH+mzSoJvWTIS6Fvo/HwcA6uFHULVIP98kaq6yiA6+TqD69LJWmq38TYzL2wY\ntfm5+a+tch/ZCRyuo10U2kvMZa2Mr1n0/vpk6GEYzoml9JKSBtwg9xX701dk\n/HW96I/rTRrN1HxtDz4c+l4OKrE7rXDbze8FRJQA01eydHZPvTtyJ2lCZI5u\nnhIe3hzO/cfqhmPCKMpvAlXg58vybmgaRiZLoeYT4t8k8p9eU5WrAV3Se7V1\nXCCpayilQ/nlSB7r0sHNLsmcS+u3xaJDCp1bBkoTxvgrndU3xSr4/YPS744s\nUXCEh0TcPLNbmQ1rjbvlEg7xqlO41CJKT/z2FUk2JG4Flj9JmCMOOg6TTAy8\nRkLEzNSpiI1nHdZj1IIXiNqEJk7nN3gL0lEgwnUnf5SwwGPemH/OrlJ6vGQE\nKtw1X04sByVH5NHFP/a0QMp+e94YB0cVGdM6ms7mVle26hopfAOihfOrkkh8\n39ZIzdmcpAqvfuo8hFZeDDFn5LgrP2IsUHD23UftF7kaZ6ErINU27vnVVbj2\n73Vt2B1aBgR/H+lQAp2uC6PFPYCfn16lANP/IaMcQ//+f95es3cErNrt97HW\n6SHT\r\n=fOMQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.46_1524457843150_0.14916640038209006"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.47": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.47",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.47"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.47"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.47",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-5scuJzIYZY8M+A1ra8mcKANIwB5TtsRD6Aw94xZxfvnjhhVMFR5RYE9HshVlBrZVY+r3cJDNIQLJMC/fGJHImA==",
+        "shasum": "f3849d94288695d724bd205b4f6c3c99e4ec24a4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.47.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1445,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+iT4CRA9TVsSAnZWagAAQaQQAKPhciKQ2ebvls1evQxr\nvc1lFkGjQB617SxuCFjR6G6q1UlBdg3E/E+S1KLByf1gHLwy8r1i/3uR0b1Y\noJOO2w3fktMYDRFXFfe5UjNZ9YhyW6dNxqrFnFx0CWTLbDf0LMSNZi3ETcff\neVwT+Caji5VA9BQF34He7++XRqL39vI5WQ7t3vaFJyrm3cW5HGNCTfTJ9fV6\nn0LyzI3QSTh87rkkUxtMEU44vaMQhZrF6wrMYH0yJAUP/u9TEnL+hOUUACnl\nw1D8PjKqnvfTmSKoy7LEO9ilSP2jAm+vaog6+8k3aclpdKumYLNMt/TnDDNL\nBpLjXqqanRL5ARF9ZiF/OddzTMXZMZ07al+w4nxJxV6tqG3UbKg/zEqWqvLf\nSBKhnC4drO8GoDLbGGz3UxDFCDUA8nDAAXjWpH/SaySbwSkB8csaj9PiQuAv\nTrRGKwL34Mar41FGd24xO9uLxVGDRj/LCmZSuUQcM/DynIYGvu9jwMartWVE\nqQ56RTOv45cLta2sdCAVRgYU9QCTJStDV1EvPkUYtOoz5YmhWw5fIvWLeFQy\nzYifcWswES43Bq70SsIlJfsnHheT+6mNrzmTeuacw8k/5JEeWfhn/uJ+yosx\nCIczUsAZjXlp7h28Vh8z8HK1KdsYyL07pqXvNbc4QmmPQHFcD6mcouJ9T0ec\nr4d9\r\n=XE2X\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.47_1526342903545_0.22064759306638027"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.48": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.48",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.48"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.48"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.48",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.10.0",
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "dist": {
+        "integrity": "sha512-cXdKK+zz6VrRUZJhq0oo7bfLjgME7y4N3igl15VcOS3XORbyOaWwHK2Nwsa8AalOcGEjvkmAmqb40Ht18/XiXA==",
+        "shasum": "c8bf06aa238009fd0ae01d5d490b7b455a5e6295",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.48.tgz",
+        "fileCount": 3,
+        "unpackedSize": 1542,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBxDJCRA9TVsSAnZWagAAhqQP/0HTtM+f5dV6z6eJvVz2\ni5B/4loAcXJlL3VMxGUv7aCYpwVMps4bCQ/qv3hcZ1Hb71HEoouCm1m23OdL\nfgAD4T0sAjBF6X7uLLS7Sk9NDl+dnnL2fx34sZSn+o3pBPWJy/v5YT4Hw0MQ\nvGZorYWtl2fZigZYM03m21nIAOhy27OwJdla3Sz02cT3+GVw/kTAXhP0Yi6f\nkBiAZ6Kl/n90AgxQEJP8YrFm2MdVJOCtLPDJddVxz6TLOjt0jquX7Os46cdE\nI4ccmvoH+A9b9+kwrOOVDpm3UzD8ZANWmwjsaGi6xkFKxbxhtsvo9CqKhHxt\nNAUYGSrGavseeRfTJQlvME3p5oejUQkpMySrl+0YNqfaymrakHH9SdoSySG7\n/vH2m2dheplUBgiaT5GF7CgQNlc4f4hW5c2oB4mmwvSEgY/TUC62z+5Wx+wL\nTL2oPaZZKbzU+GW447+tQ10oG4nTBkX/HGYZOy2GYHcUCakDkmqjtwEH0H5R\nI/vvBSsBX4FjgRPxQFXNdlVmYZU1j+TgLBytI/6MxgiJ7dGAm9hRSDUriHeW\nWPI/g/GxoAolUP4rZ/zxfHjrmQWhMjKEvUGzNUf/NXB9cC1DLD4FtFNcdtaH\n2BhWmVGRTCFk1l5dzm2q6n5EN1YBFfJyWLJQzNJyDgDV1PkVdVokA6vbs+FR\nS1wc\r\n=pfeF\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.48_1527189704374_0.45095972356696"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.49": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.49",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.49"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.49",
+      "scripts": {},
+      "_shasum": "15b832504b49f116f9c484e8e40a5e17c542ed13",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.12.3",
+      "_npmUser": {
+        "name": "loganfsmyth",
+        "email": "loganfsmyth@gmail.com"
+      },
+      "dist": {
+        "shasum": "15b832504b49f116f9c484e8e40a5e17c542ed13",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.49.tgz",
+        "fileCount": 4,
+        "unpackedSize": 1557,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCDNTCRA9TVsSAnZWagAA9xgP/jWSKFyBX7Ki4woZT96A\n7KKVpcNjLYbWLTxS1xtfumrj/vY4/Lu5o1yxaZBkKF6fN7qTWJli+bpkEKAN\nYoiv245zkzFVpt6Aal0sBDhC7dHTkV2D5QbbDnDWR0a8ZDV6LYBVWIqaWZxQ\n494CVRB3GQ67eK8Uo2a8g9Z6bX1OdM+HNHRNccjcCShyBWw6BakZGn/ys9A6\nJoVagcR19F6f1FaaXlBhWNNyoLqzV2KcoPFsh3E9lH1awB2BPTjGUwfx6Z1H\n4rGlGpds3PIqTQxYWdj04mw+9Y9YLMYARP+2oFlKp6YKbYA1apf4XnqVhq7o\nLLPz88i3YFYii8iBVoY6MhgFVXEIlLoMYGaXlSrKw+U8Vz/d1MN7ILn2E5kc\nmGRRfzF07cYpYimXXd68Ze9RggX6HnbZV9y4a0Fa72wVOCKjwlKSCuT5Or/g\nuOr9mujQMLWdmS3CZNI/9Y5n/2CHc7h7v1Vh73/lmkPWXcJ0JvhzEY3kuL6c\nh3YXjUSqr6rfraNNtAtNfueMUvvo3doQ3VT4R2ynkB++45d/sVx3BK94SrED\nLh2jUr9RX0Q5ILf0AmDojWyir8Lj7xhwvRwSmCVSrok33HW3skx5pnqPhSqu\n8uxhLK3UflNnVWYFNVeBlSq0jeH86toOOaNy0vTdMkcwMX3vo9ul/U3qmSKl\nwm6i\r\n=1mIO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.49_1527264083632_0.726754058072345"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.50": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.50",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.50"
+      },
+      "peerDependencies": {
+        "@babel/core": "7.0.0-beta.49"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.50"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.50",
+      "dist": {
+        "shasum": "b4c2df7ccad6cea6940b28d59d208d5df5f13720",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.50.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1429
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.50_1528832826246_0.4335919461022828"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.51": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.51",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.51"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.51"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.51",
+      "dist": {
+        "shasum": "f672a3371c6ba3fe53bffd2e8ab5dc40495382cf",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.51.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1443
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.51_1528838373710_0.09764703724609869"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.52": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.52",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.52"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.52"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.52",
+      "dist": {
+        "shasum": "ed57b2ca5ab5bcf931c419b111e8df0318f8f65e",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.52.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1442
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.52_1530838759292_0.7207141759147897"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.53": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.53",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.53"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.53"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.53",
+      "dist": {
+        "shasum": "223cc897723339cb220aa8216c655086feb45398",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.53.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1442
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.53_1531316409396_0.591631558678563"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.54": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.54",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.54"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.54"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.54",
+      "dist": {
+        "shasum": "71171aee902b94ccf2e22a810d1426b5165b8d84",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.54.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1442
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.54_1531763999887_0.7071664145908165"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.55": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.55",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.55"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.55"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.55",
+      "dist": {
+        "shasum": "3c16cc972b31c27d4c2e6388e834f146463263a4",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.55.tgz",
+        "fileCount": 5,
+        "unpackedSize": 1442
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.55_1532815624794_0.867291975277185"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-beta.56": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-beta.56",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-beta.56"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-beta.56"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-beta.56",
+      "dist": {
+        "shasum": "d018279f6fc3cae489f72022fa449c568d913681",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.56.tgz",
+        "integrity": "sha512-QsZbghj9DemNxr6ZX7V1ULukXrb+d3kRAU9ErikMnSCx60tKW5MQCIuSnHjr1l5wU4XlAZT2qclb+RYTTz0rAw==",
+        "fileCount": 5,
+        "unpackedSize": 1442,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbZPugCRA9TVsSAnZWagAA8iUP/iwub2VaaFj/uzVGekWq\n5DdJnw+oufwmHevnnmdbqN7nY2zv9M6t0flnGv+bOT72aDuP54QtvudBWhUv\nEXM4OP3Wf/a6PhZz1xXUSZP3MiYf1fKvOR4EHbtWwjTs5UMwdGpxFFoQH/Ra\nVciM7m7WjtNTY3O5g3BCtXWwvK8PTiy5TcwTkj0nVFrQsTZpgEVffFwh/lLE\na869C9qvJbEzHHhzZHZkikPC0/UyctoBhjseaMhiA4weakGiWWyiIKkn8gg/\n1UaTIzQ8/PcPy4nYZmlRPgCltdUSVGGa5556Cb8syHeYpYUx8c+tKp6v4nBU\n1Ai1e5YiaAn7kVZ9GbDNLwIDicHhxLQlUsq+fa96S/m/CKkAf6ABdr9dLL1J\nts0cUj0wCDxeqtIu4e4Gho52NyOWOJBHQjp7+WIcSy99/FGswVZZsJ4khW/W\nArYgO8T6tuTq7AzOYlQH3AXe6W+yIne46g9Byf2HIGuXrHc7XosIfRNEPv6G\n8Uauq7ph1KgSyOi+YIrOGepVQXfn3IDhlVIx1Tqcm5Mx2EZuQP5bSZWdO6RE\nRDBHIwYXKDSwYsoopkKQ2yC14TtuJNnBEzvQ/D8rEcxxTVDq4vEY5bgmN1SB\nYPnqX5EULcuJxbEFTlr6GhJkMzsGv1+RNvTvy+hfdl9AXy/3QFwNJMVUONKY\ncbG6\r\n=/4D0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-beta.56_1533344671522_0.37415261870154826"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.0": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-rc.0",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.0"
+      },
+      "peerDependencies": {
+        "@babel/core": ">=7.0.0-beta.50 <7.0.0-rc.0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.0"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-rc.0",
+      "dist": {
+        "shasum": "b93dccc95fd5a2d0279fd5c3783bf2631ca6b9d8",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-rc.0.tgz",
+        "integrity": "sha512-j4HW2Uk5FXJYMklPabUzxH7uHJPKgTvc24aSeHmPtisn73Gkcjgg0Hi630GnAIzbDT5tgR9iSiCYOK7E8M308w==",
+        "fileCount": 5,
+        "unpackedSize": 1433,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbGR5CRA9TVsSAnZWagAA3rwP/1afga0KBy3zbi2y/J/f\nPF0WgJ/+aCQMcsfHc9xTHRY008i0PepGOT0d2oF6oa/4tRgLVt1653KYmtKc\nJgPHfj2gnBpW8UBKl6QkjUI9VFfvtLiTALe4mtLaj2ZH6WiUuDG/5OJGjxB3\nWpbvyQ2trH0fj1FCnaWVBMuKQB4q7jz4r8WGOEAJESs8VhZw6AtjZWg2BUI+\n7kJ/TpbIwjRUbIo7ZYsSONWThXb5APDLjvhIFZqBSzAMfxW6bK3s4p5M/diN\nh3lcSZcKa2DiqIHMxzAUWs56ZymWGOIouiXWpd64UICudud2A/RCHMtUX5BT\n/tdWcxliRUnSHhQR2hdseVyaPP/ZUl828MHEO0/4it/0G/ac7xKjpp1lf09P\nAIW6Hf2fFRYrcblYDD8ScSWAULJ3iPJ2WHZ0YjcRt/2EYR5UbFRj57u6blPP\n/b72J7iwXWBeriC4d3TnJdFb8BP4Slu9rDhRtEosckSKUrWmzUzXuhHMjiR5\nkrkSErjhVkc2qqv732Fr8XW+42i7jCiAYZMYJOZ5eYMjMR7PfBN2pnXNqG/I\nueS5B0pSfcEmD0Y6tD/JPss7mfObTmVKPCaOwFXiIClXO1bOtT9eweXVHDmE\n/vsyTZSZQfAnTzoVaHPVJSl52Q/p2hBZqO4xRbHw0hopjwzKmOGT6rqDdAQt\nvARi\r\n=H/ph\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-rc.0_1533830264959_0.17905158770962393"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.1": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-rc.1",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.1"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-rc.1",
+      "dist": {
+        "shasum": "f7d19fa482f6bf42225c4b3d8f14e825e3fa325a",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-rc.1.tgz",
+        "integrity": "sha512-n0BcD2LmCrQkDKRhUd7lSiXiRpbo6Z7x77v3FSuevH5oWTFChjX34vHCCOszgVP37NLAxhuf4Jz0KwiPgXnexg==",
+        "fileCount": 5,
+        "unpackedSize": 1414,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbbJ7/CRA9TVsSAnZWagAAJ9MP/jjrxWjI9C2lWMfbk47F\npgg8h11Jm0N6MikrRk12z7dqghOjcqaCycbXfV4VlWClu6pqWATVH82yKH+Y\njDW+rEiu6QtsRr3Dpw4mWwVO6XcI+kf7xXx6wlvIDc1gmleK7QFMd1qfymqb\nqoB1QoQljvBdMIp82+frQLjp98JnyB1QgwJ8tSuD0CqxTJ4t5Up1VlGwKPAu\nhZNop3Eq4A1SsjDCiVhEJral2SJbQNOE0Hkp6HXJYDOCxyFpKlc54aCcpkoC\n3Mxjqba0LALsGp8h++BKPPLxC9NLyXyUD+XMKredTRG2CZIAKbsGHPQf8N4e\n08VhErcwUUSUtYmimgtNUxE6GEyWTdkE0k3arXm52JraERV0RHQ3fdkfgwcj\nDsgpPgsS8aZXzGxPl1Hw2sjJ3Vz0nuo2MXv0trlKS3WtAUi+4CBq/AbuVvum\nDoLmddqbBeStZ0x8zB+Zf6VCHIrPo0+aI18VX5zGqoYTxJTTQqy7eyGByyIa\nLQ6SiBD9LOU3n9/gyeuiSL29Rp3EGiG+0MlXe8FiynX2pccKoq+o2VFiNoHn\nEnWnVPhFauQJMRuhIls3eyjYz/fvdZhtPNZdK5L7WZcQFQqeutXc/9oPofCs\nmZMOUJJwVECWRkw7fcftyY65s9rHtPbdd14VVQKhMApDhYOjzbaVV/Mbgqid\np77g\r\n=y1fy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-rc.1_1533845246515_0.9233217049104605"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.2": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-rc.2",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.2"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.2"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-rc.2",
+      "dist": {
+        "shasum": "c070fd6057ad85c43ba4e7819723e28e760824ff",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-rc.2.tgz",
+        "integrity": "sha512-iReV06m3hBc/RyD85vtHNNcYz4wqf0jPUFzUR+yAkzbhupYclHf6Eecse3GMWSNS3sVNMDA/+hCFcgMni41Dwg==",
+        "fileCount": 5,
+        "unpackedSize": 1414,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbfGanCRA9TVsSAnZWagAAAmIP/2qXUpD3TMX9RrkaYC30\nSuHW8JrVvmfR47o2c7bm4znkaYtAEUlUxodaShwbNCTO9NTIRtED3ld0dLhL\nkQ0pq+4rCEiByo2Ylm3vuw/MZbhhyFjLA7uETPb+v7A6CLGAZZ26uYKPYZgJ\n+vWHHBmibQm0x1Vyvul9eJnoqKWDIxBZ/Fytdfoz3gjj1toHU+qodsPifbXG\nRqOrdCj02fjreG6m9Ir75wRVqVH1TWNUQunb8+zBmmWFvko46p+EnN3MX8jh\n8ZYCuSprriW8Jak4TJ++IIhiy8PJuePjibQnGNEl8/JYz/El/rY/XYYJ1AUk\ngE1IpcWXl/0rJDfbcl+o9aBIWezkCJZ+ZldgsYLXiQaD/BoSOcLXTBXK6tjh\nzywTMGI4blAHfg4dg37mqyVI3r+1Y/gRL29vjO9NRrTfs9oarhznwoTvdfQy\nVBRtvgwR8U9m/7BOpg81ouXUuZamTRbOVV+/a7Uoi1qyRisHgjd6umn03nOP\n/egxXFcfyc2VuU7BPQNPhquSIrsjTJXco6hDzeDXn0J8coVVDxME/4ijobjA\nlUxCAlmdI8yHoGeUmrhwb6asgeY0SYJrm3/dE31drzQOXvnURRGVxpit5ZIK\nB3BuI5PNbVqt0EUYU6rSkNl2ISjOFwNUXijUakqz54JXhKkLnIpElAqhLWer\naNCG\r\n=k1yK\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-rc.2_1534879398570_0.5388724990604588"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.3": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-rc.3",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "7.0.0-rc.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "7.0.0-rc.3"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-rc.3",
+      "dist": {
+        "shasum": "729759abb046444b64df3b03a84d3e536bf68685",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-rc.3.tgz",
+        "integrity": "sha512-t72DUsTHGhmY76AqzCpj1jy0O/DM0VB4BYVIOsUv5ASByT1+UGS7IZKgw+iPKb9iihdw449USchilfmJhkdCrw==",
+        "fileCount": 6,
+        "unpackedSize": 2513,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbgElXCRA9TVsSAnZWagAA8TMP/035ZfOCd1IZIUWOTfY3\nx/LA6bT7SKjgfQV/36pDLIAkmhP7NwJu61R5jZutJ6WbfxUrUrdlfIs0AJP2\n88j5jtYJMJHY3mNByvUX6g2tbGSLDTAOIdjezwo4yS6fPPW4Sa67y0KkR6jO\nVog/CWiOw2SCBgh+qkJbcDBPjcd+wpwwQfMHNwyu/pGFGSVKG1G7ArCEvNeH\nSNASyO+aN3kVP7F3jzc8ux0XeUv1MNpKDMcrykrhzcVFl2vTTFhoDiP583+A\nlwevbXr2Rr4g8oh3dUggbs5r/t3oze6taWZmNSMX6+nIQxCrLY1J6VmjAMth\nwyBLeS6aUVHAnqW/oZDfoPko7B1sJvi63RmOOBDzOAc3SvbJ7gQ75cFLcThc\nfM9OGFbKXCHh6c1xbmKWlD3/5PqimeYVeoZRR7fpKRT0xyFuAlMbQsK1wmrO\nF7eWAr4oKfVcCpqu6qE40wOOaYfst90q1/n93Iklcxve0Xfr7GpDhOL/KKPl\nBYIUrNrcwdHB9Tru4fD68pwmjqE5C2WEZAuW4m1btMBK+CNqLWOh2lFkRzUJ\nrlA5urkpFwHOcHYsaKTdhiIIoxZbb4qzZz7a0XoKukshOlx3UFcgo4qWgXZ9\nI97ZO7RFWF2Uji2mVKrk+fhHtMcr6sOvn/oSW4lqaAl7eOZ90G1zA3j13Vpy\nfUHG\r\n=d16k\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-rc.3_1535134039234_0.0042691903374108"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0-rc.4": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0-rc.4",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0-rc.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0-rc.4"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-syntax-jsx@7.0.0-rc.4",
+      "dist": {
+        "shasum": "b749301cd183d7538044e3cc104828c5577367fd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-rc.4.tgz",
+        "integrity": "sha512-LMjLUqpu/RXG8qflBk0TulGXK69nYQD/zog7nIfb04zunusEbFpIg/zRVXh4cPR5HAyZCDJndhbonD1Ceo3Bew==",
+        "fileCount": 6,
+        "unpackedSize": 2515,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhCo3CRA9TVsSAnZWagAApYoP/2z+5IiAOfNprzy1aSW2\nSdF/kIDK+d71Nt5ZsGUSK5myGFQA/3iF+i6OT4NQwTypdJ4HclXMQ0JhYmJC\n9JnkJW6cgxnHwkyQjCrm/0XhhNQBmZlB020zOXObTftNsWK+ZWyOUC7pQQgw\nVV/9AplUWXtELYtOPJinO/4NEGHympVwoghszm2Pkwkh6r6qB7rjZzh8FA+W\n9ZhtWih3Vixo+wlCf6hMUKKmX6g6iRXOEkwmdmyQKVg9fqsdYro4TyqqK3Dq\ni14LVR5+TzGoRnNkewWU6+N7wG/M2q6MLv9g6bpxeHaNd1EgxFz3rbg56w8M\n8aWnYnZVGQi/smBbG+TN52p6LO3erC3vNVfPcgRvtLCYfDoakGG6mM9JKMAO\nenD6Zzbo5BuBdSWSyk59d6YVlw4fOuAi2muZdtwo3Nf5G9Fb0Oi44FticX11\ncspp1HeKe0bq67Sy3OuXtL4v3gpb3XLUrTXKu4ryQremuUK7AgoJmA3AJhqS\nx1/q6taAsBYjK6OQ+8yaY4co42U8/PeHhV9/7w4XcofpCw9FhjKOPywgJ/l1\n5yhV292P22tdPfBKb7kbhdxLpw5qi4QJWu7WwZ4SsHCDsT2jFz01v1LpvUBe\nXTKquP0FixSOSv8nW0cp8QIXuKjJicfPPnyjH8OFFK/D2VdPRzTTnuOdu5kK\nq+AT\r\n=aecw\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0-rc.4_1535388214214_0.347714998340628"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.0.0": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.0.0",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.0.0"
+      },
+      "readmeFilename": "README.md",
+      "readme": "# @babel/plugin-syntax-jsx\n\n> Allow parsing of jsx\n\nSee our website [@babel/plugin-syntax-jsx](https://babeljs.io/docs/en/next/babel-plugin-syntax-jsx.html) for more information.\n\n## Install\n\nUsing npm:\n\n```sh\nnpm install --save-dev @babel/plugin-syntax-jsx\n```\n\nor using yarn:\n\n```sh\nyarn add @babel/plugin-syntax-jsx --dev\n```\n",
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie <sebmck@gmail.com>\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-syntax-jsx@7.0.0",
+      "dist": {
+        "shasum": "034d5e2b4e14ccaea2e4c137af7e4afb39375ffd",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0.tgz",
+        "integrity": "sha512-PdmL2AoPsCLWxhIr3kG2+F9v4WH06Q3z+NoGVpQgnUNGcagXHq5sB3OXxkSahKq9TLdNMN/AJzFYSOo8UKDMHg==",
+        "fileCount": 6,
+        "unpackedSize": 2500,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbhHBSCRA9TVsSAnZWagAA0JEP/1abBwOj8AKLX9KteBwv\nwGoqVidkV0Sueqt2c20vN3XA6eAsb3VMU0zByk5CUX7KVFQ5KDzb/04YPCXP\npw6mbJ4ogWsUgmmZ4haSy8CpnbVJYKqeSOamPS7mi4D7kzEGeuK5wQUR9qZ8\ncibjyRhznQxb39VzZ8kgfc1Oa44XIEiiYsIFkRfmb7LfuO2iRkxSinJClIJY\nvca+4kcbqcm7nag5Cecl2hu1Nxffuzm3fyUYkgZJ/XqOMd+X2G49rM1uHbBM\nXiI5qWa8xoaG+n1usbapGBUpedn4gi9FFXXcqdal8dVKK5NTwtcs30xvFb55\nPxAgLA8LiE4n/uCADZLUyAfsxs3KCCQG8U/XONagvQUjsq0TZ5CxLEcqo29R\nyLYeI1enAtjCaCSSOjaAbUSACFG/PwNb8LU/nxCE+AnNuHk9E3D8imcdxPnd\ndL/CTL2Z1q3mJ9adST6Y87YG+Tzd3RP8vC6UR5ETIvUZTDt1FHOMVch6XzWr\nTUJNLj90PRm4q4iwL+G4r6jMLR6FXzDvuWvBdCV7egXws+ZsC1S0AoN/vnRs\nw+EQ/sMMSUCyu0TVLLVH2kmXdlIBlhEYN3f7rCXeLYEKv5Pa2uNo/Tya+Vw0\nuQ826+sSjkFNCRGwggFYrsHyi2IUewhnRM/w+LrykZLynAkvamh4mg32/vAY\n2fKl\r\n=85Lz\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "contact@xtuc.fr",
+          "name": "xtuc"
+        }
+      ],
+      "_npmUser": {
+        "name": "hzoo",
+        "email": "hi@henryzoo.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.0.0_1535406162105_0.9676523062775739"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.2.0": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.2.0",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.2.0"
+      },
+      "licenseText": "MIT License\n\nCopyright (c) 2014-2018 Sebastian McKenzie and other contributors\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n\"Software\"), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND\nNONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE\nLIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION\nOF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION\nWITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+      "_id": "@babel/plugin-syntax-jsx@7.2.0",
+      "dist": {
+        "shasum": "0b85a3b4bc7cdf4cc4b8bf236335b907ca22e7c7",
+        "integrity": "sha512-VyN4QANJkRW6lDBmENzRszvZf3/4AXaj9YR7GwrWeeN9tEBPuXbmDYVU9bYBN0D70zCWVwUy0HWq2553VCb6Hw==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.2.0.tgz",
+        "fileCount": 6,
+        "unpackedSize": 2578,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcBX1nCRA9TVsSAnZWagAA1YYQAJg5pipK3PJYCA6QwSL+\nYnC5Cst3BzRxpHCZwgLDmMQPj+rZAqPF4u5xhvrB7tTbNDR0LT6OMegEy1Aa\nOU3YU27Y/qGqQNlJ9uWL46M8z7lpnygdpukfeu/LcykD+XDFOLy/cN+5Ocfs\nRjBbnBkJlGaUwXVTUtY5w1BDlsvJ2CGIPZ+TERCpls3bp4WQsTtR4oBM+wK1\ncYSSNtel164lSMcKgmEvLEyBP598jdqkq+FoezUYAO1eSnVd+K7I4eIoT1rR\n4VWfchHdzrx9KEelsDYbK/cfRGFDoKPL4r1gfc0wxn6OEoiq/mqG2W8iRqd+\nz3vXPzlbIQi/GgDyHS9NGiWii6/2ohFTQqOm/zWqM+/6ctNWO4MH14npPQr6\nvsN9hkbmcm1YGmqa7DGuCMJRiNwgrrl1y5xxSJtMJMmB5wruN8h3MOp1R6Fp\nlVMRKogzpwqHNhxV8yz79jjDa43c6JvQwvzwedWH33rWLKerhoVyF1TLteaH\nAdS+iuK+A5r5vrUk4DZqJbjU1KWDdJEqomjDYsDG5qbshvNz919kWM3vnZDY\nH6sTB22DpBtU1+oRQ6Kmt5RgU/yY/TsaMEzwW1+EoS6Vs0A0euXb1KIyQPcU\nmqwwUt7/sR72V7D9Ub6H/Uyt1wKiaMqiAnv4pwdP++tRtLDMmfIUMDQSLfIY\njMd2\r\n=XIqJ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.2.0_1543863654342_0.7565371567820187"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.7.4": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.7.4",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.0.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.7.4"
+      },
+      "gitHead": "75767d87cb147709b9bd9b99bf44daa6688874a9",
+      "_id": "@babel/plugin-syntax-jsx@7.7.4",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.1.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-wuy6fiMe9y7HeZBWXYCGt2RGxZOj0BImZ9EyXJVnVGBKO/Br592rbR3rtIQn0eQhAk9vqaKP5n8tVqEFBQMfLg==",
+        "shasum": "dab2b56a36fb6c3c222a1fbc71f7bf97f327a9ec",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.7.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2536,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd2G/sCRA9TVsSAnZWagAAruoP/iDTdGWvpVPadvRA0lu/\nKdHxdnlXPLVunBp5gz/T1dWsyJZO5uUOoh4ozueKYLBceTruwKApdyxqJ2yO\nGQoNIgK10cXriiBfvQDULI9JtKo4/PVZrB1/ALP26p5GPBc01A2WnGPGsPQW\nAxZL/xxq5oAPW3GPpoxwvGN8Uen8Jr9FCmrUj9RM8bblK9NVTlOn0tsZSaUJ\nDFyt54dcN6zbnb/kIhAyB7xHiX31xSx5eEusCB08iVgM8TaGl6ZcseYbF1gD\nCk275i4Qbd1H8yQZ/LB5fFkdtHSuLIlZSHsmE/0m4b4Aa/JuGJvBLble/WI9\nSZ8ZnpGsAm52gt8f05n4/ndF+EDPio0DRiBRjfzIY789X/HGagAQe94nUExR\naALaZJwf67cMakYBcBlPATz7eOADSnMjkG1wqUnUUOwUymPhYWv4c45XKnd+\nSRqc0XrEegRaYBj8TPL7RkSS0+XOf6cYbq9x2js2mTFuym2Hf9fV4Zs/2wh+\nBHPk34J8+C8TRSA605mjJ5LyJEHCb474nxr52DkEl+VAjmkza5lC8CGUI3gQ\nMAQulHqTzvi2KWYXy79x4pJJ396Hjh6c9oUyvMaARXkYU8SvdwKF7nXZiWVv\nTYfZiyD8nksSXrvmPgQJcEDn8W+ie9ZFM6TC3rSj9DqIzTTGGrTL4ne+Y7Wy\niHCb\r\n=uB5b\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.7.4_1574465516279_0.21516161001069944"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.0": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.8.0",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "type": "commonjs",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.0"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.0"
+      },
+      "gitHead": "2486615a74580283c49475d66067bd7fcab3330e",
+      "_id": "@babel/plugin-syntax-jsx@7.8.0",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-zLDUckAuKeOtxJhfNE0TlR7iEApb2u7EYRlh5cxKzq6A5VzUbYEdyJGJlug41jDbjRbHTtsLKZUnUcy/8V3xZw==",
+        "shasum": "657a0306e2c74de84e0dcf8b6cb024ed990224fc",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.8.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2558,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeGmVRCRA9TVsSAnZWagAAICcP/jRWAHnWt43tPOjxCW47\n46byOjDWMI5Re45PouF7PJRhBF1bwWArbEX4NY9f4/DPuL+gCt1m6Vg6bS7b\nhVBbesWNIB74Pd3/YmpUfOxBf0kUi0V65jT3/5SSNRhyZMAhaMLmgTYs3z+D\nBSt7D5GB2oVyaGXe/CtDUTdB208dE6BvVOxpdtrmfoQrZKDP+6OuutptbjIo\ngKzltw79XCmnlA3BnmGfE8ZmMNRfCEhsP+qJ4Sta4Y8pFsYk1U31cgKti2l8\nU5qjWQOQTSTuVQDElkPgBUBeelVFS3fwwlDpB/A0DFXUQgJZqiKtqishQFRf\nB79gn5NlKJa1b48jen0iFAZbl3JwR1sNWLEouzxMWYy0hXMYC1jbM1b7dtN9\nQ/4+M+d6SqqhN67BvulwFun2Anqi42bCtpGZ8fmCloZ6H2vXQ4ewVhyRS8O9\n+/MAcL2vDH6s50DUdRTDdIy8TUAujzCUcb5WFWv/8QMXP3tdQbJXnUc6NkxI\nd34rhlzS/V0pa8R93+dUSpJCHFG8X6y7drUIQv5ivpqyyNv9GnklHt96n8Ut\n9fiFiRTQ2oyRLQKcbGpWIb5tD4cGZzYS78WNkdgBg1PIz4XdXLRXQ9G9db+Y\nF57madbkV1n3gQKVuKyIfU9a3aMhjARMpYrobHNaj0Oeu5AHqBZsQDyeL+uq\nT33S\r\n=RCxm\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.8.0_1578788177438_0.25217235305021757"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.8.3": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.8.3",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel/tree/master/packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.8.3"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.8.3"
+      },
+      "gitHead": "a7620bd266ae1345975767bbc7abf09034437017",
+      "_id": "@babel/plugin-syntax-jsx@7.8.3",
+      "_nodeVersion": "13.6.0",
+      "_npmVersion": "lerna/3.19.0/node@v13.6.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-WxdW9xyLgBdefoo0Ynn3MRSkhe5tFVxxKNVdnZSh318WrG2e2jH+E9wd/++JsqcLJZPfz87njQJ8j2Upjm0M0A==",
+        "shasum": "521b06c83c40480f1e58b4fd33b92eceb1d6ea94",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.8.3.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2536,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeHOP/CRA9TVsSAnZWagAAlQwP/jmHnd+BpAmKbmHWziSV\nOtmrzMnX0DlB5gmzlDw0RRKVdx+WphYPyzTvU6K5OgLiNMhlCBvoS1+owtxw\n9sKf/mx3z/g77IBa0mhIyYfUvn82MnEok3iq/FpyTeRhx3YuLuQe6LsxStTv\nxTyMQn/ApFG4k15rf3x4vWOjKySCctTR8VxsbfbmWvykWwLCuLfuJ1DZ38S9\n2efTb5Ia2AsOp8bkSexmxD27p7vgX7wuv29vhHZcftfOMxG5gfxfryPmq52O\na9sB5EMrP9TzQr5vpNAle5jgbX/B+nlU7gOqUNuz0+ZDxh5nDXOGRacAeOV0\nErfEi64t5JRwFPXJDTnUbFd+/Sprsi/APGGvGqg/BT2zHvVSUwdn9L8f1atA\nJuRT45f7qGC62GYoQLOYpDPvUl2R95B0CYNS+b0Rq6xWrIssV8Sx6G40rNkB\nsITT7O3KA73grNEyzaSBAUbjdOOqJohQZbt1jG/Dsgz3BW8Nuz4pw+YbMHYv\n4dlzBNIFoF2qGeg9WQi8+I1juvbjc/e+DOo4iDgyrqdotL9f/FOS4aC5WGbC\nn8PcDfIaT/W6P+TJBsMA5W8lyXFgnq6njLu8gzqCgRNOH3jw/3CGYqUsQ3fr\nKBMpmAwNkoT7sZsUoMxLnF4uaiQMpGkTuQN0A8VtFAD6w3Rdj5nTl7xz6d1O\nZIcr\r\n=IjOP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "jason@developit.ca",
+          "name": "developit"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.8.3_1578951679357_0.07980701298842785"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.1": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.10.1",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.1"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.1"
+      },
+      "gitHead": "88f57a7ea659d25232bf62de1efceb5d6299b8cf",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-syntax-jsx@7.10.1",
+      "_nodeVersion": "12.16.3",
+      "_npmVersion": "lerna/3.19.0/node@v12.16.3+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-+OxyOArpVFXQeXKLO9o+r2I4dIoVoy6+Uu0vKELrlweDM3QJADZj+Z+5ERansZqIZBcLj42vHnDI8Rz9BnRIuQ==",
+        "shasum": "0ae371134a42b91d5418feb3c8c8d43e1565d2da",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.10.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2587,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJezuSTCRA9TVsSAnZWagAAXSoP+wQWfZmhO96rWCvhydZ+\nd0oV6tglwaiEqbJTG/FdFiYsdLTMpSvI1gfa/0jwXq3fxARYHmHy5OAzLW8U\nD3x0x0sT22Y90W4LP3dDTRw1nqers5FyUfIIy35t3hIOStBdEbnqZgrzjm7n\nH9SBhFqJjvWojZ9284zN7t+WUuWxuVP5535Vvm06ziOBwkDdncSGfOLiP5j+\nFLUC0Ws6vBTXZhw5rzPiUCzM9ZP97cLWZrOBylKg55fPbDyHskE7WZGR83v7\nckx24hMpni1Mvx7MEmBlLOyTrBE1h+BTh/c3lUBt6nmiMrUQjWO6sBUdS4Lj\ncZXdSzw5mfsgTuyP3c24uRHRpJCh4dV4YzPqeNdRzq09JVzVWO2mpTGiMI9V\nGU+MEh1P4hx70DwHpOGAV26ku2uOxs43hWImC0Uk18wNvwPen/oHA+M2LEkZ\nGuYY2IvGnFzEBcUW10Zk8xz/N96s5uLameYkQPW3CQrTVcJSMDlgk+5rhK4h\nqnl+zb1+0nF/FeJFleqE9GyMyZAuBnhm8ufHTtd1v0V/XLlpz7wPKXjFd1HK\nxRMQOCL+HxzAGZDqz7rYoKD6FE8JJgZn6lDv1Lvy0ohtqSoKoPchbdITyDL+\nWYIpxon0h4SwrzixVCB/6dUTBxkO462ILncdZaoYkfjpa5MYe4obtUwzHoVK\n4KnU\r\n=VC8t\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.10.1_1590617228513_0.6690040035718903"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.10.4": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.10.4",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.10.4"
+      },
+      "gitHead": "7fd40d86a0d03ff0e9c3ea16b29689945433d4df",
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/plugin-syntax-jsx@7.10.4",
+      "_nodeVersion": "14.4.0",
+      "_npmVersion": "lerna/3.19.0/node@v14.4.0+x64 (darwin)",
+      "dist": {
+        "integrity": "sha512-KCg9mio9jwiARCB7WAcQ7Y1q+qicILjoK8LP/VkPkEKaf5dkaZZK1EcTe91a3JJlZ3qy6L5s9X52boEYi8DM9g==",
+        "shasum": "39abaae3cbf710c4373d8429484e6ba21340166c",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.10.4.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2587,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJe+zoSCRA9TVsSAnZWagAAjUoP/R1FNK/wFK/Yh0zeTerI\nbMvqDnBmjpcSfymb0PDR4areDiKOnRWLkrt326JNov83lrpZu31VUZNww0JC\nF+7fsPJ1gK09PJkMyFxqqqsYQsbZ7UUbRC9EcpC836/5R+G81gI4T5doEpPG\ngy62kCXduwnzno7O9CmlqzYGNZY6CV8qai9/e09dWEPP+U8JXMsrEzS5mEvz\n9YFnW+WgzKgykHrY9XrX8/PIpcnQ1zYsL11HEEFZXyLPLi+2v4zdqYDaYT6q\nfA55hGVHhTTS+aWuvwltqEWwtVwIZ4YxizkDeVxvyESrbTLkFIjeVGeC2j0C\nEQ/GOFStV20dbMzEF7qkJAnK8INV4clEJGR6GRT4bQ2XWu3FjbURAsvzJtUd\nyaqJvxYpS/KMjEjZA3jJcijXqi1Pkq4PLav1dTiY6Pg9Moa331lmW2+FGntj\nuqO5ZsYRbLi2aJ6KP15swFlEHeuy09sXA45kCHducbdMQ1jRuWQbwhbu80NB\nLAXN+xGLNuTHuUgUUtLejYmE40PyA7M8yD3m2niBxU9Kqd9KmyPGyu8ObAh0\ncHLXg30KMWeWfOd5V/6SqbNXiayDpiTD35e010NMYTqJtx2AZW2UL0EojZWS\nUXMIS/vjkekJVNiAM03VJP9ZXUAmnv0NaosYfXQtavTviyIBU6ISn7MrOTHa\ncfeP\r\n=r+Ky\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "daniel@tschinder.de",
+          "name": "danez"
+        },
+        {
+          "email": "bng412@gmail.com",
+          "name": "existentialism"
+        },
+        {
+          "email": "hi@henryzoo.com",
+          "name": "hzoo"
+        },
+        {
+          "email": "i@jhuang.me",
+          "name": "jlhwung"
+        },
+        {
+          "email": "loganfsmyth@gmail.com",
+          "name": "loganfsmyth"
+        },
+        {
+          "email": "nicolo.ribaudo@gmail.com",
+          "name": "nicolo-ribaudo"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.10.4_1593522706605_0.36105834697799066"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/plugin-syntax-jsx",
+      "version": "7.12.1",
+      "description": "Allow parsing of jsx",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-plugin-syntax-jsx"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "lib/index.js",
+      "keywords": [
+        "babel-plugin"
+      ],
+      "dependencies": {
+        "@babel/helper-plugin-utils": "^7.10.4"
+      },
+      "peerDependencies": {
+        "@babel/core": "^7.0.0-0"
+      },
+      "devDependencies": {
+        "@babel/core": "^7.12.1"
+      },
+      "_id": "@babel/plugin-syntax-jsx@7.12.1",
+      "dist": {
+        "shasum": "9d9d357cc818aa7ae7935917c1257f67677a0926",
+        "integrity": "sha512-1yRi7yAtB0ETgxdY9ti/p2TivUxJkTdhu/ZbF9MshVGqOx1TdB3b7xCXs49Fupgg50N45KcAsRP/ZqWjs9SRjg==",
+        "tarball": "https://registry.npmjs.org/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 2529,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM+vCRA9TVsSAnZWagAAkh8P/jokNL1mKU7D8WU9l55Y\nWtFqdt0pdVFQP536TIWWhHDMH+eKARMaXvwC22lh/F7pXrNCK3mC9ktelWjc\n6siK+FDFtuMRNNZXp4EuI+/cFtuc6iuSvyTpzQ6hBL5sC9+1qARfhG2rJmzK\nRg42J2WHs/jmTJ6h2ZkD6oxbkkrL9fTjJCAS2XkOkcwf1oZ1vKRzICN1S636\n+sN/vwFkSd0j2p9IfyCs2R3gDVpPqthPQF4XMfitPG0KAbEpdMjPKwXUKlfz\nOhDubhjfSjfmC60gb9nnnPCJWQ4wxLb8fOWcp2+yEIHlJAp1gKtPh2cAQVOS\n7B1cy3mBCeKs30394lrrrH9WWFPh/wHNVoJZSiditmLQXBbKU67/pdzoGoFJ\n7d61CipoN/Ye3lkh4K80eSeybT2Y3l+6ljFiRzY8e/2sMuWMZ8vYbEiXXbfu\n+6XzRrgKtLjVst53ljOUu2iCqUt3D6fDDghHSDGKWrRpA15tAYfdmQP4d8DG\nW1+QDxi7H86doI7m3ese6vATt7J00pf5LNL4kCDMLQ0MUQ87GEClbuqB1BHF\nWAYIeFS8GOax8dLyctnxZecodIx+d9jShledMXJcrWjJpYWuPlLo5MKBMvY4\n7ItxDXP9KiDc8LoI1cRHxy6Ukbd+VQfx4A1XOYG3dOmeNmazvyI9GyXyAb1k\ncRlx\r\n=ZtAk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/plugin-syntax-jsx_7.12.1_1602801583138_0.041791233816114826"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "",
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:39:48.069Z",
+    "created": "2017-10-30T18:34:20.769Z",
+    "7.0.0-beta.4": "2017-10-30T18:34:20.769Z",
+    "7.0.0-beta.5": "2017-10-30T20:56:03.707Z",
+    "7.0.0-beta.31": "2017-11-03T20:03:15.066Z",
+    "7.0.0-beta.32": "2017-11-12T13:33:03.254Z",
+    "7.0.0-beta.33": "2017-12-01T14:17:13.863Z",
+    "7.0.0-beta.34": "2017-12-02T14:39:06.889Z",
+    "7.0.0-beta.35": "2017-12-14T21:47:35.674Z",
+    "7.0.0-beta.36": "2017-12-25T19:04:24.750Z",
+    "7.0.0-beta.37": "2018-01-08T16:02:23.247Z",
+    "7.0.0-beta.38": "2018-01-17T16:31:43.468Z",
+    "7.0.0-beta.39": "2018-01-30T20:27:27.114Z",
+    "7.0.0-beta.40": "2018-02-12T16:41:23.956Z",
+    "7.0.0-beta.41": "2018-03-14T16:25:55.504Z",
+    "7.0.0-beta.42": "2018-03-15T20:50:30.838Z",
+    "7.0.0-beta.43": "2018-04-02T16:48:16.474Z",
+    "7.0.0-beta.44": "2018-04-02T22:19:58.529Z",
+    "7.0.0-beta.45": "2018-04-23T01:56:19.332Z",
+    "7.0.0-beta.46": "2018-04-23T04:30:43.206Z",
+    "7.0.0-beta.47": "2018-05-15T00:08:23.633Z",
+    "7.0.0-beta.48": "2018-05-24T19:21:44.782Z",
+    "7.0.0-beta.49": "2018-05-25T16:01:23.715Z",
+    "7.0.0-beta.50": "2018-06-12T19:47:06.339Z",
+    "7.0.0-beta.51": "2018-06-12T21:19:33.754Z",
+    "7.0.0-beta.52": "2018-07-06T00:59:19.374Z",
+    "7.0.0-beta.53": "2018-07-11T13:40:09.450Z",
+    "7.0.0-beta.54": "2018-07-16T18:00:00.635Z",
+    "7.0.0-beta.55": "2018-07-28T22:07:04.836Z",
+    "7.0.0-beta.56": "2018-08-04T01:04:31.597Z",
+    "7.0.0-rc.0": "2018-08-09T15:57:45.023Z",
+    "7.0.0-rc.1": "2018-08-09T20:07:26.628Z",
+    "7.0.0-rc.2": "2018-08-21T19:23:18.659Z",
+    "7.0.0-rc.3": "2018-08-24T18:07:19.307Z",
+    "7.0.0-rc.4": "2018-08-27T16:43:34.331Z",
+    "7.0.0": "2018-08-27T21:42:42.222Z",
+    "7.2.0": "2018-12-03T19:00:54.462Z",
+    "7.7.4": "2019-11-22T23:31:56.413Z",
+    "7.8.0": "2020-01-12T00:16:17.557Z",
+    "7.8.3": "2020-01-13T21:41:19.470Z",
+    "7.10.1": "2020-05-27T22:07:08.652Z",
+    "7.10.4": "2020-06-30T13:11:46.747Z",
+    "7.12.1": "2020-10-15T22:39:43.266Z"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-plugin-syntax-jsx"
+  },
+  "license": "MIT",
+  "readmeFilename": ""
+}

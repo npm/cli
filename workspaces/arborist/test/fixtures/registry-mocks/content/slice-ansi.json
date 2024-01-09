@@ -1,0 +1,844 @@
+{
+  "_id": "slice-ansi",
+  "_rev": "13-955d1678c00f268a034d05b0154d2963",
+  "name": "slice-ansi",
+  "description": "Slice a string with ANSI escape codes",
+  "dist-tags": {
+    "latest": "4.0.0"
+  },
+  "versions": {
+    "0.0.2": {
+      "name": "slice-ansi",
+      "version": "0.0.2",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "author": {
+        "name": "David Caccavella",
+        "email": "threedeecee@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "David Caccavella",
+          "email": "threedeecee@gmail.com",
+          "url": "github.com/dthree"
+        },
+        {
+          "name": "Sindre Sorhus",
+          "email": "sindresorhus@gmail.com",
+          "url": "sindresorhus.com"
+        },
+        {
+          "name": "Joshua Appelman",
+          "email": "jappelman@xebia.com",
+          "url": "jbnicolai.com"
+        },
+        {
+          "name": "JD Ballard",
+          "email": "i.am.qix@gmail.com",
+          "url": "github.com/qix-"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js && xo"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "chalk": "^1.1.1",
+        "strip-ansi": "^3.0.0",
+        "xo": "*"
+      },
+      "gitHead": "8b9fa7210c722fed80b5330146e4ada1a9c4db6a",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@0.0.2",
+      "_shasum": "bf0579e665125dd7a7626bd592d337cbffcfe7b3",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "dthree",
+        "email": "threedeecee@gmail.com"
+      },
+      "dist": {
+        "shasum": "bf0579e665125dd7a7626bd592d337cbffcfe7b3",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.3": {
+      "name": "slice-ansi",
+      "version": "0.0.3",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "author": {
+        "name": "David Caccavella",
+        "email": "threedeecee@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dthree",
+          "email": "threedeecee@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js && xo"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "chalk": "^1.1.1",
+        "strip-ansi": "^3.0.0",
+        "xo": "*"
+      },
+      "gitHead": "5582973fe42a2df861cdf09907b28a3bb634f5de",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@0.0.3",
+      "_shasum": "9ee38472a17a9f0f72e7ebc9ec0c328c39dc4a8b",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "dthree",
+        "email": "threedeecee@gmail.com"
+      },
+      "dist": {
+        "shasum": "9ee38472a17a9f0f72e7ebc9ec0c328c39dc4a8b",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-0.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "0.0.4": {
+      "name": "slice-ansi",
+      "version": "0.0.4",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "author": {
+        "name": "David Caccavella",
+        "email": "threedeecee@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "dthree",
+          "email": "threedeecee@gmail.com"
+        }
+      ],
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "node test.js && xo"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {},
+      "devDependencies": {
+        "ava": "^0.2.0",
+        "chalk": "^1.1.1",
+        "strip-ansi": "^3.0.0",
+        "xo": "*"
+      },
+      "gitHead": "8670277262281964b13f051d51b2e24bcfda8a66",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@0.0.4",
+      "_shasum": "edbf8903f66f7ce2f8eafd6ceed65e264c831b35",
+      "_from": ".",
+      "_npmVersion": "2.13.3",
+      "_nodeVersion": "3.2.0",
+      "_npmUser": {
+        "name": "dthree",
+        "email": "threedeecee@gmail.com"
+      },
+      "dist": {
+        "shasum": "edbf8903f66f7ce2f8eafd6ceed65e264c831b35",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-0.0.4.tgz"
+      },
+      "directories": {}
+    },
+    "0.1.0": {
+      "name": "slice-ansi",
+      "version": "0.1.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "author": {
+        "name": "David Caccavella",
+        "email": "threedeecee@gmail.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "chalk": "^1.1.1",
+        "random-item": "^1.0.0",
+        "strip-ansi": "^4.0.0",
+        "xo": "*"
+      },
+      "gitHead": "9ffcf2edf821f3b964375a1eac8482264603936e",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@0.1.0",
+      "_shasum": "a884ecf178e98c36ae4f629253778a24d12ed17b",
+      "_from": ".",
+      "_npmVersion": "2.15.11",
+      "_nodeVersion": "4.8.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "a884ecf178e98c36ae4f629253778a24d12ed17b",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-0.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi-0.1.0.tgz_1498085489784_0.24906234815716743"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "slice-ansi",
+      "version": "1.0.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "author": {
+        "name": "David Caccavella",
+        "email": "threedeecee@gmail.com"
+      },
+      "engines": {
+        "node": ">=4"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "is-fullwidth-code-point": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "*",
+        "chalk": "^2.0.1",
+        "random-item": "^1.0.0",
+        "strip-ansi": "^4.0.0",
+        "xo": "*"
+      },
+      "gitHead": "c63bf1eb57394c7d958a0c9d6c7db2f1a4cb2e93",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@1.0.0",
+      "_npmVersion": "5.0.0",
+      "_nodeVersion": "8.0.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-POqxBK6Lb3q6s047D/XsDVNPnF9Dl8JSaqe9h9lURl0OdNqy/ujDrOiIHtsqXMGbWWTIomRzAMaTyawAU//Reg==",
+        "shasum": "044f1a49d8842ff307aad6b505ed178bd950134d",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi-1.0.0.tgz_1499681932678_0.883340407628566"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "slice-ansi",
+      "version": "2.0.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-styles": "^3.2.0",
+        "astral-regex": "^1.0.0",
+        "is-fullwidth-code-point": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^0.25.0",
+        "chalk": "^2.0.1",
+        "random-item": "^1.0.0",
+        "strip-ansi": "^5.0.0",
+        "xo": "^0.23.0"
+      },
+      "gitHead": "a18333d0409bdc614e372c5616bf50364136074b",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@2.0.0",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.12.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4j2WTWjp3GsZ+AOagyzVbzp4vWGtZ0hEZ/gDY/uTvm6MTxUfTUIsnMIFb1bn8o0RuXiqUw15H1bue8f22Vw2oQ==",
+        "shasum": "5373bdb8559b45676e8541c66916cdd6251612e7",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-2.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4631,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbxjJhCRA9TVsSAnZWagAAIlsQAI1cQSkWp11FKS1dSv5n\nk0rAtgZ7OxAh6o0Ro+0+jM6KHW21uOUsQcDFhmGSIK+urKKr0J/3r3mZQ2SZ\nWdupjkMs/Lki2Il8BKeksCr4MUSlAoTkPD32cyeHB1MlYAFPOmKVqFWzTJDl\njXXv/Rsn9+u8vKoGT+7btxZ0zlxKnr6gb4Eijb2joy8RAHVR0De8j/E7RYqd\nQDrBDsTiFn3zS2RB2wh0iApP0n6qjtWTIa9QTcJQjbv2ermgozdYSr+tJ86g\nxsD8bP81qezhwhTsP1tBmD8X/JBIxRsoZqoFCWf5nWm5HPFg1IupYfaloZhR\nPkH0zbXdccsL5WvmepvLbGhUJu4Lcq+92RoA9+sPbcKKdzCYHGYgupW7arEB\nES6he3bp1UNb8EwOXNaU8d3LWQItxSEptHeZs5e/ZPgbG7nebDKwf5cYfI7X\nD4cuQhlzsRFho60Q9A0uZx+T21E+d3ujN54iOHWRmixHjX8tUK88VXj2X7Fr\njvsjP/5UfA7WorRv8FtGOXbmkAKYJ5atMcFHvx0qx1MqViWWWn/GPVOiravz\nxQW6Z+9rUikWa1eIaYJlELWpEHgTgXQM9R4kIMxeC3651opByrTmA4kfdV4x\nvymffYRfKyCEYCCOBtuIcPdUzO+lCTAI+9IHcEtEk28RovTROVi0xaD340zy\nUPtl\r\n=c5q7\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi_2.0.0_1539715681052_0.05732325438423058"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.1.0": {
+      "name": "slice-ansi",
+      "version": "2.1.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "engines": {
+        "node": ">=6"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-styles": "^3.2.0",
+        "astral-regex": "^1.0.0",
+        "is-fullwidth-code-point": "^2.0.0"
+      },
+      "devDependencies": {
+        "ava": "^1.1.0",
+        "chalk": "^2.4.2",
+        "random-item": "^1.0.0",
+        "strip-ansi": "^5.0.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "bfb33a3eb13f2d3b8023f37ddb421eff3ea7a3ae",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@2.1.0",
+      "_nodeVersion": "8.15.0",
+      "_npmVersion": "6.7.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qu+VC3EwYLldKa1fCxuuvULvSJOKEgk9pi8dZeCVK7TqBfUNTH4sFkk4joj8afVSfAYgJoSOetjx9QWOJ5mYoQ==",
+        "shasum": "cacd7693461a637a5788d92a7dd4fba068e81636",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-2.1.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4632,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcS3yxCRA9TVsSAnZWagAApD0P/jqzsy/wS1Z4V5uVnwpf\nb7V9EiBx1Q7gU4YwxQkhCG3uLf7Q0n4j5U0xvqKTFw6WK+uWPEklrIdj3u5f\nd4eQg0W0kpdnIvTiV2r3fWl9myWDpVTDjvEwJWBcih/uDUodtXHDVZpF55Ya\nJTtFLiWgssMRW83mhOgEmcnV2cMiIYtdGY4AGPPdt2NWQBwFJOPKH3UvOVAt\ngaprNavwh41B8rcafKTHrQscskJmXetqS6wgZgRrQk+yAD6z0klfVduSQwSi\nxJ5/bTkQthNcRUpPrrV3nPZbsttwgn1BIsvWoi0G8MF4Wd00s4Mb9tYuQ/kp\nbDkAuyeIy90/Pqw1oetw+6fDh+1s4po1RDdZ5DSnGUaG9JVCB9oMwO8duGbL\nIjbU8MgE8sxuyZrnHdIt8XsMSjR1Irh4wYuVCVP/Cv7tcQFPknvH7/9PaaYB\n23/CHlBgiIJvvf1r+zNrH/hb6FBbaJRczWFbOZrujDFBhG03ljE+Qco5Iv0L\nIr6MAy9sVgjWW50QgbGAjTvBmVzDj3sR3UWpdp9z2vkExY3fwHPwQC3xiJZG\ntu0kU27oaN1IwiNY/izrpsAjIS8om7/Y6BY9Kx0mnpiTxqjy1eMsS65zBi15\n3GJ6NQXlFYNNmwZ77ohJc31XZdIRK3N7yJ6GM3LZIhLkovsse+ewF8RBRj/M\nQ+Vu\r\n=7Z9e\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi_2.1.0_1548450992729_0.12519637188357136"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "slice-ansi",
+      "version": "3.0.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-styles": "^4.0.0",
+        "astral-regex": "^2.0.0",
+        "is-fullwidth-code-point": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "chalk": "^2.4.2",
+        "random-item": "^3.0.0",
+        "strip-ansi": "^5.0.0",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "adc843879c765ccd06df78297eefe628bc3392da",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@3.0.0",
+      "_nodeVersion": "8.16.1",
+      "_npmVersion": "6.11.3",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-pSyv7bSTC7ig9Dcgbw9AuRNUb5k5V6oDudjZoMBSr13qpLBG7tB+zgCkARjq7xIUgdz5P1Qe8u+rSGdouOOIyQ==",
+        "shasum": "31ddc10930a1b7e0b67b08c96c2f49b77a789787",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-3.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6204,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdgRzwCRA9TVsSAnZWagAAbqkQAJydCZag8YudZ8B7sSDJ\nFsX+LF6ingMlK9YcVhLke8ilx9ZdNcCMKMq7n0yGpupT6JXKZw/a61hIhfi1\njaPYHoNvSkymFyDcNaLjIgG/yJRTLi05uX6F1tBTycuSZkFfQ+gXaWVf3eBZ\nFMEtbXKQwcQcI0M3SIuEd752/VW1IGhM81jDkEfVjqnX64h4zz9DkFG611HD\nH22nidcSeWhJkHg50L/Nat6DWVPSlTwZneDMBkowaTuSodLEZb41td42w/j8\nLgh04LxrciXUBSYXZWAT9hNJJHDGoUBEThKSYjaOBcWzhxQbglBRxdNCY+RB\nRSR3QwCmmXzk8SiM9ZpbuqYSjM29Fsf4HYBt5AW9U9VuXY2yOhvqjqaqUifD\n8QUIP8rJciGX8jS6WsbaTTVLx/5Y8tkvOFlXdN4r+HheWtv8RBdKnNp+VVZl\npXw/qXROFkzI0pMg8Jun/RLhlJBZNJYwNUwG2LPIxt9Y6d7BO84ncY6qw6hq\nZxp/RZKIiXOQcKUB7nAfd2srZes+DONjZ8RqIHDv2G1MSUaA9NLRtJRfm8Kz\neblkMBT6yokynw45dpLrWpqSRjqbq16WpfRtU46dWFHLWDAHx+CcyqxmAfef\nw0WbPi/otUf1IuVhVK9RKA7XZjdaSZ+BZp2ipDb6EqYu7N1RcacMhE2eWT2x\n/5qa\r\n=0Rgk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi_3.0.0_1568742639842_0.1062825822566047"
+      },
+      "_hasShrinkwrap": false
+    },
+    "4.0.0": {
+      "name": "slice-ansi",
+      "version": "4.0.0",
+      "description": "Slice a string with ANSI escape codes",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/chalk/slice-ansi.git"
+      },
+      "funding": "https://github.com/chalk/slice-ansi?sponsor=1",
+      "engines": {
+        "node": ">=10"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "keywords": [
+        "slice",
+        "string",
+        "ansi",
+        "styles",
+        "color",
+        "colour",
+        "colors",
+        "terminal",
+        "console",
+        "cli",
+        "tty",
+        "escape",
+        "formatting",
+        "rgb",
+        "256",
+        "shell",
+        "xterm",
+        "log",
+        "logging",
+        "command-line",
+        "text"
+      ],
+      "dependencies": {
+        "ansi-styles": "^4.0.0",
+        "astral-regex": "^2.0.0",
+        "is-fullwidth-code-point": "^3.0.0"
+      },
+      "devDependencies": {
+        "ava": "^2.1.0",
+        "chalk": "^3.0.0",
+        "random-item": "^3.0.0",
+        "strip-ansi": "^6.0.0",
+        "xo": "^0.26.1"
+      },
+      "gitHead": "6e1176c06fc3a2b22d35584b788f18c710adb2e8",
+      "bugs": {
+        "url": "https://github.com/chalk/slice-ansi/issues"
+      },
+      "homepage": "https://github.com/chalk/slice-ansi#readme",
+      "_id": "slice-ansi@4.0.0",
+      "_nodeVersion": "13.1.0",
+      "_npmVersion": "6.12.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==",
+        "shasum": "500e8dd0fd55b05815086255b3195adf2a45fe6b",
+        "tarball": "https://registry.npmjs.org/slice-ansi/-/slice-ansi-4.0.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 6434,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeSXZ/CRA9TVsSAnZWagAAIeUQAJBGqJTemkljPXjPi976\njQ+aqYI/0rdP1A1bAOnfYSDAJ6zmz32nVxTJmerjA84wy2rFP/fGRfyqTJVo\n9Y/Qo24MQ5NSOW/BTARCpxXSHU3y8JSICxTY0niAMYGTpyOzUmpHwsQo8OIu\n3sxx1DkWeEulcDt89r227y8jcwu7Gze5fuNWDDxr2enTHAy3qyJA748ivdXs\nFJ3RUp1IwlIrMl8vXy3CaoUJnBQn6sv3vukH0zK3PSOSBSzShLJoc6IA94Fw\n2wBsHZH69HGt4vbrWwnLSRZGgJ54ORyy0aToaxLP5Pg1TttuRyQp6VTwICEI\nSuxUZuwVtFxcZg88Ywy/nZq0Pllzd+YTTJRHYV7SHjiyTkSCUwaBDhqFXVP5\nkd9ABwGhJ+1GwbrfXq2L5KdzeC49n3XYu5tXYzmpPT+mWHSBxUzCuznep2zu\nZyytRzkSqlQUgV10aS7tjsO79KY9kWVNknEWdLHI14NLgzwmrcp5Fspa95Je\nWdFm/aTqhvXGyYsbOppZneBN/JN7oPhbWniz4VC7S99W3lAh+9lIMiEFiQLy\nh/GnVhG020t9jWKY9X4pi1vtRQjfm8GOQu/AbZ63tj8zoDd6TG0FLTbhzzDH\nsVE0yOyhCQwhLNWXLRnA2TZaDnUIfkpxGkzkY14w7w7bvTNStWE05VER9OLw\nHQNu\r\n=MR7Q\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "email": "i.am.qix@gmail.com",
+          "name": "qix"
+        },
+        {
+          "email": "sindresorhus@gmail.com",
+          "name": "sindresorhus"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/slice-ansi_4.0.0_1581872767116_0.100639054554162"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# slice-ansi [![Build Status](https://travis-ci.org/chalk/slice-ansi.svg?branch=master)](https://travis-ci.org/chalk/slice-ansi) [![XO: Linted](https://img.shields.io/badge/xo-linted-blue.svg)](https://github.com/xojs/xo)\n\n> Slice a string with [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors_and_Styles)\n\n## Install\n\n```\n$ npm install slice-ansi\n```\n\n## Usage\n\n```js\nconst chalk = require('chalk');\nconst sliceAnsi = require('slice-ansi');\n\nconst string = 'The quick brown ' + chalk.red('fox jumped over ') +\n\t'the lazy ' + chalk.green('dog and then ran away with the unicorn.');\n\nconsole.log(sliceAnsi(string, 20, 30));\n```\n\n## API\n\n### sliceAnsi(string, beginSlice, endSlice?)\n\n#### string\n\nType: `string`\n\nString with ANSI escape codes. Like one styled by [`chalk`](https://github.com/chalk/chalk).\n\n#### beginSlice\n\nType: `number`\n\nZero-based index at which to begin the slice.\n\n#### endSlice\n\nType: `number`\n\nZero-based index at which to end the slice.\n\n## Related\n\n- [wrap-ansi](https://github.com/chalk/wrap-ansi) - Wordwrap a string with ANSI escape codes\n- [cli-truncate](https://github.com/sindresorhus/cli-truncate) - Truncate a string to a specific width in the terminal\n- [chalk](https://github.com/chalk/chalk) - Terminal string styling done right\n\n## Maintainers\n\n- [Sindre Sorhus](https://github.com/sindresorhus)\n- [Josh Junon](https://github.com/qix-)\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-slice_ansi?utm_source=npm-slice-ansi&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "email": "i.am.qix@gmail.com",
+      "name": "qix"
+    },
+    {
+      "email": "sindresorhus@gmail.com",
+      "name": "sindresorhus"
+    }
+  ],
+  "time": {
+    "modified": "2020-02-16T17:06:09.813Z",
+    "created": "2015-09-26T04:25:26.276Z",
+    "0.0.2": "2015-09-26T04:25:26.276Z",
+    "0.0.3": "2015-09-26T04:49:56.857Z",
+    "0.0.4": "2015-09-26T07:53:28.041Z",
+    "0.1.0": "2017-06-21T22:51:30.760Z",
+    "1.0.0": "2017-07-10T10:18:53.559Z",
+    "2.0.0": "2018-10-16T18:48:01.149Z",
+    "2.1.0": "2019-01-25T21:16:33.098Z",
+    "3.0.0": "2019-09-17T17:50:39.941Z",
+    "4.0.0": "2020-02-16T17:06:07.255Z"
+  },
+  "homepage": "https://github.com/chalk/slice-ansi#readme",
+  "keywords": [
+    "slice",
+    "string",
+    "ansi",
+    "styles",
+    "color",
+    "colour",
+    "colors",
+    "terminal",
+    "console",
+    "cli",
+    "tty",
+    "escape",
+    "formatting",
+    "rgb",
+    "256",
+    "shell",
+    "xterm",
+    "log",
+    "logging",
+    "command-line",
+    "text"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chalk/slice-ansi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chalk/slice-ansi/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md",
+  "users": {
+    "scottfreecode": true
+  }
+}

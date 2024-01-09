@@ -1,0 +1,1158 @@
+{
+  "_id": "use",
+  "_rev": "33-6a176d43dd5e15ef11168c4ecaa3e3ea",
+  "name": "use",
+  "description": "Easily add plugin support to your node.js application.",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "use",
+      "version": "1.0.0",
+      "description": "DRY version of require()",
+      "bin": {
+        "moruga": "index.js"
+      },
+      "author": {
+        "name": "Kurt Griffiths",
+        "email": "sffirgk@gmail.com",
+        "url": "http://kgriffs.com"
+      },
+      "keywords": [
+        "require",
+        "multiple",
+        "util"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kgriffs/node-use.git"
+      },
+      "scripts": {
+        "test": "node ./test.js"
+      },
+      "license": "BSD",
+      "main": "use.js",
+      "_id": "use@1.0.0",
+      "dist": {
+        "shasum": "e533919531fd62c67fbf269484df4050bcbf3be2",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.0.0.tgz"
+      },
+      "_npmVersion": "1.1.49",
+      "_npmUser": {
+        "name": "kgriffs",
+        "email": "sffirgk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "kgriffs",
+          "email": "sffirgk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "use",
+      "version": "1.0.1",
+      "description": "DRY version of require()",
+      "bin": {
+        "moruga": "index.js"
+      },
+      "author": {
+        "name": "Kurt Griffiths",
+        "email": "sffirgk@gmail.com",
+        "url": "http://kgriffs.com"
+      },
+      "keywords": [
+        "require",
+        "multiple",
+        "util"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kgriffs/node-use.git"
+      },
+      "scripts": {
+        "test": "node ./test.js"
+      },
+      "license": "BSD",
+      "main": "use.js",
+      "_id": "use@1.0.1",
+      "dist": {
+        "shasum": "40723761b7f661f9ecc6a79aa9e7b3b192bc210d",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.0.1.tgz"
+      },
+      "_npmVersion": "1.1.49",
+      "_npmUser": {
+        "name": "kgriffs",
+        "email": "sffirgk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "kgriffs",
+          "email": "sffirgk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "use",
+      "version": "1.0.2",
+      "description": "DRY version of require()",
+      "bin": {
+        "moruga": "index.js"
+      },
+      "author": {
+        "name": "Kurt Griffiths",
+        "email": "sffirgk@gmail.com",
+        "url": "http://kgriffs.com"
+      },
+      "keywords": [
+        "require",
+        "multiple",
+        "util"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kgriffs/node-use.git"
+      },
+      "scripts": {
+        "test": "node ./test.js"
+      },
+      "license": "BSD",
+      "main": "use.js",
+      "_id": "use@1.0.2",
+      "dist": {
+        "shasum": "99c7f55dd7c04800c9f23ae77f14ca61a33b625b",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.0.2.tgz"
+      },
+      "_npmVersion": "1.1.49",
+      "_npmUser": {
+        "name": "kgriffs",
+        "email": "sffirgk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "kgriffs",
+          "email": "sffirgk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "use",
+      "version": "1.0.3",
+      "description": "DRY version of require()",
+      "bin": {
+        "moruga": "index.js"
+      },
+      "author": {
+        "name": "Kurt Griffiths",
+        "email": "sffirgk@gmail.com",
+        "url": "http://kgriffs.com"
+      },
+      "keywords": [
+        "require",
+        "multiple",
+        "util"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/kgriffs/node-use.git"
+      },
+      "scripts": {
+        "test": "node ./test.js"
+      },
+      "license": "Apache 2.0",
+      "main": "use.js",
+      "_id": "use@1.0.3",
+      "dist": {
+        "shasum": "c2f9b60ca9b9f4f33621742a91dbdfa00d269562",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.0.3.tgz"
+      },
+      "_npmVersion": "1.1.49",
+      "_npmUser": {
+        "name": "kgriffs",
+        "email": "sffirgk@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "kgriffs",
+          "email": "sffirgk@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "1.1.0",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.1",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.0",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*",
+        "should": "*"
+      },
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "ware"
+          ]
+        }
+      },
+      "gitHead": "af88194a72b604e98506e6d2e943f705e2cd288a",
+      "_id": "use@1.1.0",
+      "_shasum": "a06980fb569c1f1470f769207e5d27436a24733c",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a06980fb569c1f1470f769207e5d27436a24733c",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "1.1.1",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.1",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.0",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*"
+      },
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "ware"
+          ]
+        }
+      },
+      "gitHead": "e95134dcd64daac6c898f8b5daeffac694ab89ff",
+      "_id": "use@1.1.1",
+      "_shasum": "609a1b8fd57ccc350a9163a3fa1ceeebf7202f9d",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "609a1b8fd57ccc350a9163a3fa1ceeebf7202f9d",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.1.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.2": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "1.1.2",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^2.0.0"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.1",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.0",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "*"
+      },
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "ware"
+          ]
+        }
+      },
+      "gitHead": "0097888a6dbda1e05f0d4d14062a481213c2fc00",
+      "_id": "use@1.1.2",
+      "_shasum": "6e3832feb8689573494ac6a7acb5fefb377b2cd1",
+      "_from": ".",
+      "_npmVersion": "3.3.6",
+      "_nodeVersion": "5.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6e3832feb8689573494ac6a7acb5fefb377b2cd1",
+        "tarball": "https://registry.npmjs.org/use/-/use-1.1.2.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "2.0.0",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isarray": "^1.0.0",
+        "isobject": "^2.1.0",
+        "lazy-cache": "^2.0.1"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.1",
+        "extend-shallow": "^2.0.1",
+        "gulp": "^3.9.0",
+        "gulp-eslint": "^1.1.0",
+        "gulp-format-md": "^0.1.9",
+        "gulp-istanbul": "^0.10.2",
+        "gulp-mocha": "^2.1.3",
+        "mocha": "^2.4.5"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-methods",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "ware",
+          "verb"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f92a733163d008c1cd160027299c02a2bf13d2a2",
+      "_id": "use@2.0.0",
+      "_shasum": "ca7433aeb802bdb23a14c241437d41ddbbf19aba",
+      "_from": ".",
+      "_npmVersion": "3.6.0",
+      "_nodeVersion": "5.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ca7433aeb802bdb23a14c241437d41ddbbf19aba",
+        "tarball": "https://registry.npmjs.org/use/-/use-2.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/use-2.0.0.tgz_1462995574773_0.8844598333816975"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "2.0.1",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isarray": "^2.0.1",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.13",
+        "extend-shallow": "^2.0.1",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^4.0.1",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base-plugins",
+            "base",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "ware"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5b99f60fb88553a7a57d3f7ed6475265469166b4",
+      "_id": "use@2.0.1",
+      "_shasum": "0c360f251203f05508c6c488d5a613faa807f6fa",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "0c360f251203f05508c6c488d5a613faa807f6fa",
+        "tarball": "https://registry.npmjs.org/use/-/use-2.0.1.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/use-2.0.1.tgz_1488062162743_0.48393849888816476"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "2.0.2",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://github.com/doowb"
+        },
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js",
+        "utils.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0",
+        "lazy-cache": "^2.0.2"
+      },
+      "devDependencies": {
+        "base-plugins": "^0.4.13",
+        "extend-shallow": "^2.0.1",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.11",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^4.0.1",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base",
+            "base-plugins",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "ware"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "a92d5d6342cac34a90f0bafb092e92972ad33a3b",
+      "_id": "use@2.0.2",
+      "_shasum": "ae28a0d72f93bf22422a18a2e379993112dec8e8",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ae28a0d72f93bf22422a18a2e379993112dec8e8",
+        "tarball": "https://registry.npmjs.org/use/-/use-2.0.2.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/use-2.0.2.tgz_1488062718842_0.33749964158050716"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "3.0.0",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "email": "wtgtybhertgeghgtwtg@gmail.com",
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        },
+        {
+          "name": "Brian Woodward",
+          "email": "brian.woodward@gmail.com",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Charlike Mike Reagent",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "email": "jon.schlinkert@sellside.com",
+          "url": "http://twitter.com/jonschlinkert"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "define-property": "^0.2.5",
+        "isobject": "^3.0.0"
+      },
+      "devDependencies": {
+        "base-plugins": "^1.0.0",
+        "extend-shallow": "^2.0.1",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^3.0.1",
+        "gulp-format-md": "^0.1.12",
+        "gulp-istanbul": "^1.1.1",
+        "gulp-mocha": "^3.0.0",
+        "mocha": "^3.2.0"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base",
+            "base-plugins",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "ware"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "f006ad04faef91113f3a2506c090333e266d649a",
+      "_id": "use@3.0.0",
+      "_shasum": "4d1f50411da125c9f473b85b37c9c52f1f14e53a",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.3",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "dist": {
+        "shasum": "4d1f50411da125c9f473b85b37c9c52f1f14e53a",
+        "tarball": "https://registry.npmjs.org/use/-/use-3.0.0.tgz"
+      },
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/use-3.0.0.tgz_1492049949567_0.9469087121542543"
+      },
+      "directories": {}
+    },
+    "3.1.0": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "3.1.0",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "dependencies": {
+        "kind-of": "^6.0.2"
+      },
+      "devDependencies": {
+        "base-plugins": "^1.0.0",
+        "define-property": "^2.0.0",
+        "extend-shallow": "^3.0.1",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^4.0.1"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "related": {
+          "list": [
+            "base",
+            "base-plugins",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "ware"
+        ],
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "5229a8bb1f06a00f5b7c8273deea055a2c671f65",
+      "_id": "use@3.1.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.1.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-6UJEQM/L+mzC3ZJNM56Q4DFGLX/evKGRg15UJHGB9X5j5Z3AFbgZvjUh2yq/UJUY4U5dh7Fal++XbNg1uzpRAw==",
+        "shasum": "14716bf03fdfefd03040aef58d8b4b85f3a7c544",
+        "tarball": "https://registry.npmjs.org/use/-/use-3.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/use-3.1.0.tgz_1512327859875_0.878037923714146"
+      },
+      "directories": {}
+    },
+    "3.1.1": {
+      "name": "use",
+      "description": "Easily add plugin support to your node.js application.",
+      "version": "3.1.1",
+      "homepage": "https://github.com/jonschlinkert/use",
+      "author": {
+        "name": "Jon Schlinkert",
+        "url": "https://github.com/jonschlinkert"
+      },
+      "contributors": [
+        {
+          "name": "Brian Woodward",
+          "url": "https://twitter.com/doowb"
+        },
+        {
+          "name": "Jon Schlinkert",
+          "url": "http://twitter.com/jonschlinkert"
+        },
+        {
+          "name": "Olsten Larck",
+          "url": "https://i.am.charlike.online"
+        },
+        {
+          "url": "https://github.com/wtgtybhertgeghgtwtg"
+        }
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonschlinkert/use.git"
+      },
+      "bugs": {
+        "url": "https://github.com/jonschlinkert/use/issues"
+      },
+      "license": "MIT",
+      "files": [
+        "index.js"
+      ],
+      "main": "index.js",
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "base-plugins": "^1.0.0",
+        "define-property": "^2.0.0",
+        "extend-shallow": "^3.0.1",
+        "gulp": "^3.9.1",
+        "gulp-eslint": "^4.0.0",
+        "gulp-format-md": "^1.0.0",
+        "gulp-istanbul": "^1.1.2",
+        "gulp-mocha": "^3.0.1",
+        "mocha": "^4.0.1"
+      },
+      "keywords": [
+        "use"
+      ],
+      "verb": {
+        "toc": false,
+        "layout": "default",
+        "tasks": [
+          "readme"
+        ],
+        "plugins": [
+          "gulp-format-md"
+        ],
+        "related": {
+          "list": [
+            "base",
+            "base-plugins",
+            "ware"
+          ]
+        },
+        "reflinks": [
+          "verb",
+          "ware"
+        ],
+        "lint": {
+          "reflinks": true
+        }
+      },
+      "gitHead": "163104d5c5cc8ed35602625eb90a687df1dbc487",
+      "_id": "use@3.1.1",
+      "_npmVersion": "6.1.0",
+      "_nodeVersion": "10.0.0",
+      "_npmUser": {
+        "name": "jonschlinkert",
+        "email": "github@sellside.com"
+      },
+      "dist": {
+        "integrity": "sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==",
+        "shasum": "d50c8cac79a19fbc20f2911f56eb973f4e10070f",
+        "tarball": "https://registry.npmjs.org/use/-/use-3.1.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 9514,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbR4xFCRA9TVsSAnZWagAA1YwP/RPHo9+AgKfTsmDxVTH4\nom8gr6Xw75OjefybLHMp6D5diTmmJOoqHJX5MOO4Xn7TrCKgOM7m01xhd3xD\n17RwOBR8XeIpaHcla+GhUCwVBgtmbxfyPsbo+JqL+MCNOOx5w8/cdQ8e66O+\nSWM4JZX9UGg3lvke1hDH8qb6JPCqVKmASisrNWkPfKhX/iG107IQx4ElbvQT\n5VqWoNNs/NMjNdYmfiiQr8rUroAKq7P2sdMKfdHry5gCyOlVchndyjyoOGRk\nqrEt9QdpAXkHg444PTjS2dA/7b36qMkas8keu6VlWXPrwh8+45WFhaLGva1d\nZ3Lg6uu6hUnlxX6pKR8MVoQjdb7GMNMFOkATJA6FrVca8iddvK6IaXDukpVS\nw78bwkAlb7g/h5SwmgvfCOs16kiUiiyPDFE/lsXHcz/jU/oGlIKOiV7Czshh\nS8OPPV8+xtzxQYfrPWKnp/Tqx328+ADCr2yalLSP8QWKqqaWKYWzRJ77EQxt\nnWOZb0iGeLOIeJ2O2fud/5aIcFRJ1RFfzzsjtCtZmc7w/0DjSg6F4kK32aeG\n+oXirG8NBGAn4omdxkkCdtK9/kkKlLbrqH8YPvMRSDPrynLU2kyX54VIlBVb\noMXRIoZN5rmUQPyRJ2BCScJk9liFi9CsR7a6UkiYlSgWHLUODysiufIobBc8\npPz5\r\n=H04c\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jonschlinkert",
+          "email": "github@sellside.com"
+        },
+        {
+          "name": "kgriffs",
+          "email": "kgriffs@me.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/use_3.1.1_1531415621811_0.13512177880723786"
+      }
+    }
+  },
+  "readme": "# use [![NPM version](https://img.shields.io/npm/v/use.svg?style=flat)](https://www.npmjs.com/package/use) [![NPM monthly downloads](https://img.shields.io/npm/dm/use.svg?style=flat)](https://npmjs.org/package/use) [![NPM total downloads](https://img.shields.io/npm/dt/use.svg?style=flat)](https://npmjs.org/package/use) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/use.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/use)\n\n> Easily add plugin support to your node.js application.\n\nPlease consider following this project's author, [Jon Schlinkert](https://github.com/jonschlinkert), and consider starring the project to show your :heart: and support.\n\n## Install\n\nInstall with [npm](https://www.npmjs.com/):\n\n```sh\n$ npm install --save use\n```\n\nA different take on plugin handling! This is not a middleware system, if you need something that handles async middleware, [ware](https://github.com/segmentio/ware) is great for that.\n\n## Usage\n\n```js\nconst use = require('use');\n```\n\nSee the [examples folder](./examples) for usage examples.\n\n## About\n\n<details>\n<summary><strong>Contributing</strong></summary>\n\nPull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).\n\n</details>\n\n<details>\n<summary><strong>Running Tests</strong></summary>\n\nRunning and reviewing unit tests is a great way to get familiarized with a library and its API. You can install dependencies and run tests with the following command:\n\n```sh\n$ npm install && npm test\n```\n\n</details>\n\n<details>\n<summary><strong>Building docs</strong></summary>\n\n_(This project's readme.md is generated by [verb](https://github.com/verbose/verb-generate-readme), please don't edit the readme directly. Any changes to the readme must be made in the [.verb.md](.verb.md) readme template.)_\n\nTo generate the readme, run the following command:\n\n```sh\n$ npm install -g verbose/verb#dev verb-generate-readme && verb\n```\n\n</details>\n\n### Related projects\n\nYou might also be interested in these projects:\n\n* [base-plugins](https://www.npmjs.com/package/base-plugins): Adds 'smart plugin' support to your base application. | [homepage](https://github.com/node-base/base-plugins \"Adds 'smart plugin' support to your base application.\")\n* [base](https://www.npmjs.com/package/base): Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks | [homepage](https://github.com/node-base/base \"Framework for rapidly creating high quality, server-side node.js applications, using plugins like building blocks\")\n* [ware](https://www.npmjs.com/package/ware): Easily create your own middleware layer. | [homepage](https://github.com/segmentio/ware \"Easily create your own middleware layer.\")\n\n### Contributors\n\n| **Commits** | **Contributor** | \n| --- | --- |\n| 37 | [jonschlinkert](https://github.com/jonschlinkert) |\n| 7 | [charlike-old](https://github.com/charlike-old) |\n| 2 | [doowb](https://github.com/doowb) |\n| 2 | [wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg) |\n\n### Author\n\n**Jon Schlinkert**\n\n* [LinkedIn Profile](https://linkedin.com/in/jonschlinkert)\n* [GitHub Profile](https://github.com/jonschlinkert)\n* [Twitter Profile](https://twitter.com/jonschlinkert)\n\n### License\n\nCopyright © 2018, [Jon Schlinkert](https://github.com/jonschlinkert).\nReleased under the [MIT License](LICENSE).\n\n***\n\n_This file was generated by [verb-generate-readme](https://github.com/verbose/verb-generate-readme), v0.6.0, on July 12, 2018._",
+  "maintainers": [
+    {
+      "name": "jonschlinkert",
+      "email": "github@sellside.com"
+    },
+    {
+      "name": "kgriffs",
+      "email": "kgriffs@me.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-07-12T17:13:44.589Z",
+    "created": "2012-08-17T19:06:54.854Z",
+    "1.0.0": "2012-08-17T19:06:55.632Z",
+    "1.0.1": "2012-08-17T19:36:34.763Z",
+    "1.0.2": "2012-08-17T21:13:53.151Z",
+    "1.0.3": "2012-08-17T21:23:42.021Z",
+    "0.1.0": "2015-11-10T23:03:28.173Z",
+    "1.1.0": "2015-11-10T23:04:24.598Z",
+    "1.1.1": "2015-11-10T23:14:04.376Z",
+    "1.1.2": "2015-11-11T00:06:55.998Z",
+    "2.0.0": "2016-05-11T19:39:37.361Z",
+    "2.0.1": "2017-02-25T22:36:03.419Z",
+    "2.0.2": "2017-02-25T22:45:19.516Z",
+    "3.0.0": "2017-04-13T02:19:11.583Z",
+    "3.1.0": "2017-12-03T19:04:20.843Z",
+    "3.1.1": "2018-07-12T17:13:41.903Z"
+  },
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonschlinkert/use.git"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "homepage": "https://github.com/jonschlinkert/use",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/use/issues"
+  },
+  "keywords": [
+    "use"
+  ],
+  "contributors": [
+    {
+      "name": "Brian Woodward",
+      "url": "https://twitter.com/doowb"
+    },
+    {
+      "name": "Jon Schlinkert",
+      "url": "http://twitter.com/jonschlinkert"
+    },
+    {
+      "name": "Olsten Larck",
+      "url": "https://i.am.charlike.online"
+    },
+    {
+      "url": "https://github.com/wtgtybhertgeghgtwtg"
+    }
+  ],
+  "_attachments": {}
+}

@@ -1,0 +1,87 @@
+{
+  "_id": "own-or",
+  "_rev": "1-82bd54ce54ef6d487ddfec09ebb1683f",
+  "name": "own-or",
+  "description": "Either use the object's own property, or a fallback",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "own-or",
+      "version": "1.0.0",
+      "description": "Either use the object's own property, or a fallback",
+      "main": "own-or.js",
+      "scripts": {
+        "test": "node test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/isaacs/own-or.git"
+      },
+      "author": {
+        "name": "Isaac Z. Schlueter",
+        "email": "i@izs.me",
+        "url": "http://blog.izs.me/"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/isaacs/own-or/issues"
+      },
+      "homepage": "https://github.com/isaacs/own-or#readme",
+      "gitHead": "371b3cc5d2699350ab08ffbb2ea89d30de24de44",
+      "_id": "own-or@1.0.0",
+      "_shasum": "4e877fbeda9a2ec8000fbc0bcae39645ee8bf8dc",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "dist": {
+        "shasum": "4e877fbeda9a2ec8000fbc0bcae39645ee8bf8dc",
+        "tarball": "https://registry.npmjs.org/own-or/-/own-or-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/own-or-1.0.0.tgz_1484783691384_0.7121810477692634"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# own-or\n\nEither use the object's own property, or a fallback\n\nUseful for setting default values.\n\n## API\n\n`ownOr(object, key, fallback)`\n\n## USAGE\n\n```js\nvar ownOr = require('own-or')\n\nvar config = { some: 'configs' }\n\nvar foo = ownOr(config, 'bar', 'baz') // 'baz'\nvar some = ownOr(config, 'some', 'quux') // 'configs'\n```\n",
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "time": {
+    "modified": "2017-01-18T23:54:51.605Z",
+    "created": "2017-01-18T23:54:51.605Z",
+    "1.0.0": "2017-01-18T23:54:51.605Z"
+  },
+  "homepage": "https://github.com/isaacs/own-or#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaacs/own-or.git"
+  },
+  "author": {
+    "name": "Isaac Z. Schlueter",
+    "email": "i@izs.me",
+    "url": "http://blog.izs.me/"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacs/own-or/issues"
+  },
+  "license": "ISC",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

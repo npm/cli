@@ -1,0 +1,1213 @@
+{
+  "_id": "strip-json-comments",
+  "_rev": "47-8951ff25c545ab3e3c621c3edbcbaf3e",
+  "name": "strip-json-comments",
+  "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+  "dist-tags": {
+    "latest": "3.1.1"
+  },
+  "versions": {
+    "0.1.0": {
+      "name": "strip-json-comments",
+      "version": "0.1.0",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.14.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@0.1.0",
+      "dist": {
+        "shasum": "ec01ab67f10b79258dcbcaa03ba82485acb589d9",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.1": {
+      "name": "strip-json-comments",
+      "version": "0.1.1",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "~1.14.0"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@0.1.1",
+      "dist": {
+        "shasum": "eb5a750bd4e8dc82817295a115dc11b63f01d4b0",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.2": {
+      "name": "strip-json-comments",
+      "version": "0.1.2",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@0.1.2",
+      "dist": {
+        "shasum": "a5f9cc48c488c9b8cf1303f880cd0959923a9ee1",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.2.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.4.6",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.1.3": {
+      "name": "strip-json-comments",
+      "version": "0.1.3",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "cbd5aede7ccbe5d5a9065b1d47070fd99ad579af",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@0.1.3",
+      "_shasum": "164c64e370a8a3cc00c9e01b539e569823f0ee54",
+      "_from": ".",
+      "_npmVersion": "1.4.13",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "164c64e370a8a3cc00c9e01b539e569823f0ee54",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-0.1.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "strip-json-comments",
+      "version": "1.0.0",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "321b0d02b9e511271cd28e5c2133e96d3bb357c7",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@1.0.0",
+      "_shasum": "5e284febd8826287c8266f224ed2b1fdc7220e9f",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5e284febd8826287c8266f224ed2b1fdc7220e9f",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "strip-json-comments",
+      "version": "1.0.1",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "69a1a17b2ef36056492c5223e7cf910c496b4024",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@1.0.1",
+      "_shasum": "a91252d95ddee4ff38a66135cd6c78de5709f374",
+      "_from": ".",
+      "_npmVersion": "1.4.14",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "a91252d95ddee4ff38a66135cd6c78de5709f374",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "strip-json-comments",
+      "version": "1.0.2",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "http://sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "142dd671c71f90fb7fdba440184b1bb64543acb3",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@1.0.2",
+      "_shasum": "5a48ab96023dbac1b7b8d0ffabf6f63f1677be9f",
+      "_from": ".",
+      "_npmVersion": "2.1.2",
+      "_nodeVersion": "0.10.32",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "5a48ab96023dbac1b7b8d0ffabf6f63f1677be9f",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "strip-json-comments",
+      "version": "1.0.3",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha --ui tdd"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "11420df0403854fb0cdb303edce3564322b5af45",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@1.0.3",
+      "_shasum": "c250d2646a24fc5603e27043005dd97dfb409fc4",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "c250d2646a24fc5603e27043005dd97dfb409fc4",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "strip-json-comments",
+      "version": "1.0.4",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "cli",
+        "bin"
+      ],
+      "license": "MIT",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "files": [
+        "cli.js",
+        "strip-json-comments.js"
+      ],
+      "main": "strip-json-comments",
+      "bin": {
+        "strip-json-comments": "cli.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/strip-json-comments"
+      },
+      "scripts": {
+        "test": "mocha --ui tdd"
+      },
+      "devDependencies": {
+        "mocha": "*"
+      },
+      "engines": {
+        "node": ">=0.8.0"
+      },
+      "gitHead": "f58348696368583cc5bb18525fe31eacc9bd00e1",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@1.0.4",
+      "_shasum": "1e15fbcac97d3ee99bf2d73b4c656b082bbafb91",
+      "_from": ".",
+      "_npmVersion": "2.11.2",
+      "_nodeVersion": "0.12.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "1e15fbcac97d3ee99bf2d73b4c656b082bbafb91",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "strip-json-comments",
+      "version": "2.0.0",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/sindresorhus/strip-json-comments"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "e79a73bfc184e6c8d3a0ebf07f164b3d2ddb5519",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments",
+      "_id": "strip-json-comments@2.0.0",
+      "_shasum": "413fc5a34ef34a29e4376c7eb632c884d2e97f95",
+      "_from": ".",
+      "_npmVersion": "2.14.7",
+      "_nodeVersion": "4.2.1",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "413fc5a34ef34a29e4376c7eb632c884d2e97f95",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "strip-json-comments",
+      "version": "2.0.1",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=0.10.0"
+      },
+      "scripts": {
+        "test": "xo && ava"
+      },
+      "files": [
+        "index.js"
+      ],
+      "keywords": [
+        "json",
+        "strip",
+        "remove",
+        "delete",
+        "trim",
+        "comments",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "conf",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "*",
+        "xo": "*"
+      },
+      "gitHead": "1aef99eaa70d07981156e8aaa722e750c3b4eaf9",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+      "_id": "strip-json-comments@2.0.1",
+      "_shasum": "3c531942e908c2697c0ec344858c286c7ca0a60a",
+      "_from": ".",
+      "_npmVersion": "3.7.2",
+      "_nodeVersion": "4.2.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "shasum": "3c531942e908c2697c0ec344858c286c7ca0a60a",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-9-west.internal.npmjs.com",
+        "tmp": "tmp/strip-json-comments-2.0.1.tgz_1455006605207_0.8280157081317157"
+      },
+      "directories": {}
+    },
+    "3.0.0": {
+      "name": "strip-json-comments",
+      "version": "3.0.0",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "matcha benchmark.js"
+      },
+      "keywords": [
+        "json",
+        "strip",
+        "comments",
+        "remove",
+        "delete",
+        "trim",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "matcha": "^0.7.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "5f5fdd3db64cdbe8cd940a240fbb52a634f3a145",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+      "_id": "strip-json-comments@3.0.0",
+      "_nodeVersion": "10.15.3",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-+yvKOYsd+oXGSoNMD0PgjwWn4MrgXTK/t/Fh54NXLf1cOOf3ceP/JvP5JRDP8jeKBsmtXS9PeoOr2eh1RKWSqg==",
+        "shasum": "86456f81e4bd10d314576c1adf7719ed0894ce3b",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyD4qCRA9TVsSAnZWagAA2R8QAJUeXxjRJnF3A6Lz9ipv\nH+q/1iMewZ5bU1BgtPLNaF6e/r5H36/N3TWsYZ1btNtkSBNiOSjoy7Jc/yp1\nkUOoA89QwE5z8TER7V4rHwksFezpBuxjcBuDxMpSSSatrheI63nfqhza+LiT\nxIUbbTc6JVZGf9tzWmDrsNqS7m+cuVljTHG+dBPfGZx8iCmHVy2gBz/98DuX\nRNIp4HjfibeY79DAMRf6jV7+Jtp2xG0d/L7cMUQN0TGOdrWKNt3vIcuRh/Ub\nEQ2quEi2NXF2bguPQ+O+w6/VzaILxrL7+GmapeZak25d/p7hG0MQqi6+rFC3\n9pZmcQH8UUEqvKpeBTe+aRg7bzSQ9qIK9Tf3OTBc3mp/dxS6IsXzjT9vs7NL\nABYXaBQfXVaYE1uAzz9x7dniHdHXmfvCJ3H0SORubQW2P+lXzjm8V4dhLi7U\nK6TThhODPodo88M9QliOHZbTge1s44dFHDyMRpxCXy5mj+fd/603GuMPKsuT\njkECgdhSttUyJ3Kw2fZ1vV/kos1w+OgBq3mkVDVZXSoFTo0jBZg8CSOZK6Xh\n7khUgJ7sLSlvwTMdCfo2nKYX+cVgnUq+nODouNmIG9fPhaaW3cMRByz3AjE0\nmVYFVGzMTlIanZERd97CgQOVUxZlSICaJJnDGwNGX/5NL5zxek55UJ5NuGZH\nwU5k\r\n=Hpj3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/strip-json-comments_3.0.0_1556626985690_0.4353346723662954"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.0.1": {
+      "name": "strip-json-comments",
+      "version": "3.0.1",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "matcha benchmark.js"
+      },
+      "keywords": [
+        "json",
+        "strip",
+        "comments",
+        "remove",
+        "delete",
+        "trim",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "matcha": "^0.7.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "7eb8be0decd8111ffcc21d2e9deec917657e220f",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+      "_id": "strip-json-comments@3.0.1",
+      "_nodeVersion": "8.16.0",
+      "_npmVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==",
+        "shasum": "85713975a91fb87bf1b305cca77395e40d2a64a7",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.0.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6334,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcyIG3CRA9TVsSAnZWagAAoFkP/2Fg4JABehZLiTFnJiUw\n5ToGpDbTz2vg7WeG8U78uyTYEVQUfnEBnu/kpi9jzM+RWGR1JS/DBvq300kf\n2baOxBKgprjew2H+rMnuPj3eBJ0OXP+hNnzWxHQnlwmBDDHA/0CjnKdxD75z\nJV3X2KtIX/0/oK+c9rgVvcc+TUwAWMnu8J2HraEVQnUCXH0c/9foWBvKkbai\nzLyirUpRon01FzXgx7U/CII49KPFIUVALX+ME8PuAqUP4/iJQDbp8tIXSMeV\nCgcctZv26GgLXV9gyrKN+cRE4hcs2an8Ex0TVJigbd1V6mJWwsu2I8koVxSv\nPBGBDxw7jGaAad7uC0sAbp6q4kUC9Vo3WsRrL70khnfqcINhYDF9oc8xhNj5\nbAIYtp2oe3KR9vmNmKmv/wX9OhlT0fRJFmaNvRL+N0KqVQW0xYzdK+hoyCJe\nEq27Ng+ke/IXerDVv5Z9zaFDxb7Z5h+mC5FCSjlcHYb+eiESRfNzXUQuRVa5\n9Miedd+tcsoWe9EVts715PtArAlUxyy2I4qvdjERIYpG4LPnX0Rjcj6ZreI3\nE97wwEenIIVHhN8HSrCPRaI4FK9kmE3jsm1qc3T5Yy0meBrjiLTp3/6mmI8N\n0XV84neY0vC/0arYRytSZUBITysBU3KWSWzMGwMqf2IioV3hGtwySzDcylRH\n5rpw\r\n=e0gI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/strip-json-comments_3.0.1_1556644278971_0.0530254014196585"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.0": {
+      "name": "strip-json-comments",
+      "version": "3.1.0",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+      },
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "matcha benchmark.js"
+      },
+      "keywords": [
+        "json",
+        "strip",
+        "comments",
+        "remove",
+        "delete",
+        "trim",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "settings",
+        "util",
+        "env",
+        "environment"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "matcha": "^0.7.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "159140d19a5c2ec08a9895ca255c1f1699915e66",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+      "_id": "strip-json-comments@3.1.0",
+      "_nodeVersion": "10.19.0",
+      "_npmVersion": "6.13.4",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-e6/d0eBu7gHtdCqFt0xJr642LdToM5/cN4Qb9DbHjVx1CP5RyeM+zH7pbecEmDv/lBqb0QH+6Uqq75rxFPkM0w==",
+        "shasum": "7638d31422129ecf4457440009fba03f9f9ac180",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6878,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeiuE4CRA9TVsSAnZWagAAyacP/0muJ+pdHtzbxZVVwJWo\npgWHr1x+KEIY5H7ng1Nj3FfPGYjkwftLig8zQhInGuseV9iwFJf8Vj3pRLRQ\na0xNU+H8y6R1qy/awHHtSyAQz7T0tu9nSWUN9w8rsf7x0yLqsVKrl31e0WmQ\nirfvXPxZBH80ts7yaKCJoiCWi4bkfpqMG2HCnPW0MGxFZIZ0zErPK2uN+hOt\nHS80PkJJX4WMSaZVLJi2MyzopVryh7R+Rui14++H9Vi72g6cdnxqCRiTl866\n23MGLEeKRXC5Zuob17ZjXlRzPe/s3gP72cct1DLCMExN0A/dLDrsONFhUok6\niVVqNyx0P5/jWv2ziu/l/rZSu0RTX1qasTGS6+jIOwnKmx2IUNDNAeZMlQmy\nEiYbhlQ/Ss39MG5nIV6wqraCwY8Wcd1GAuaeBrjWnQ4xoaF/IVW9+dko0IiG\nY4kJM4CIpybyF918G19J2Ul7fEsFUn7Gg9LJiSEgHaAqypNNkIiOKEaRsO2m\nEq1f+Hqh5NtFwOQ9s7REHex7si1S6x3PyuMiVG5xl+59x8L2OeGj0WCllf5I\ni5csgxHOto/fCwmc4QjPDE94bMvyjnupqiFZD6A99G8DTRDKg/Yqvjhzv5Z4\nw2byr2Nwfn6pdTHWR7vnWU4BmXUlQKY8JBHlTFrvgHm1VeEyond1G+3BFZAO\nRGQ5\r\n=ycK0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/strip-json-comments_3.1.0_1586159927646_0.07435095027153582"
+      },
+      "_hasShrinkwrap": false
+    },
+    "3.1.1": {
+      "name": "strip-json-comments",
+      "version": "3.1.1",
+      "description": "Strip comments from JSON. Lets you use comments in your JSON files!",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "engines": {
+        "node": ">=8"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd",
+        "bench": "matcha benchmark.js"
+      },
+      "keywords": [
+        "json",
+        "strip",
+        "comments",
+        "remove",
+        "delete",
+        "trim",
+        "multiline",
+        "parse",
+        "config",
+        "configuration",
+        "settings",
+        "util",
+        "env",
+        "environment",
+        "jsonc"
+      ],
+      "devDependencies": {
+        "ava": "^1.4.1",
+        "matcha": "^0.7.0",
+        "tsd": "^0.7.2",
+        "xo": "^0.24.0"
+      },
+      "gitHead": "6355b5792682c7c7a2480e5cbe73fc7ad578e432",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+      "_id": "strip-json-comments@3.1.1",
+      "_nodeVersion": "14.5.0",
+      "_npmVersion": "6.14.5",
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==",
+        "shasum": "31f1281b3832630434831c310c01cccda8cbe006",
+        "tarball": "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6959,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfCyHoCRA9TVsSAnZWagAA2l4P/igAOF4E3r0qoWCs4i37\npaZvhlr1axuDaxKmyT15bAp2TGYcIl0TAGm6+uubqlKU2YW8wAM2h94YzWNT\nXOHyml2tvKA/MtAQylUMXekaY+GEAoDVCyFRGHnD6lZpxcmPOAtcnEKBk4NO\n53O8kl/+LdnvfMwx500L2bFRPZWESIjVLWlw6YIUTOTEgYlOvy4kz3gC3ajG\nUH4ZP2nOKe0v5QOKPsZEXnOjTka97jHowxICgO+v14Z0OrduCOwPzyzpX635\nT7TGPRyKpe5atz1J/p5aCMNPEoQl3F6A1NEglefVINDsOZvV/DPItEsEr53K\nVhuYh8JtZ0WZ4TT1Zj7rrq/kNU0wkqdhwfYHofXqRdWxwIbUvK54E0dAZpaJ\nLBGysB4/fSHSlpHIJTNiNOxlBmGk6dY3ammlyjnO9qeVFbk3i+lH5cYH1/1M\ne3lRFpYvGklgYRPDRZi6UOfJ6715HYRwWm4twWC/ytvCLWxa3QNDNGBXG+Gy\nkfbym+fsXNMkcTweVf26+tBQt0vY8PkeA0ahY3GmUxD/0nNidtZtIFlfNaeZ\npR4JBABun7xbjQtU2tQyEs6NQJz6SK5rBc70HXHB2/cFTPimZWFX3JgGOykZ\n+x4j/E6DceZkAVt4qutuUt3Tv4QrF3EgOGW/jq9JJkfOKfCHpyLDG9VwDMzo\nxCZG\r\n=XcoI\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/strip-json-comments_3.1.1_1594565096474_0.8923371545868197"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# strip-json-comments [![Build Status](https://travis-ci.com/sindresorhus/strip-json-comments.svg?branch=master)](https://travis-ci.com/github/sindresorhus/strip-json-comments)\n\n> Strip comments from JSON. Lets you use comments in your JSON files!\n\nThis is now possible:\n\n```js\n{\n\t// Rainbows\n\t\"unicorn\": /* ❤ */ \"cake\"\n}\n```\n\nIt will replace single-line comments `//` and multi-line comments `/**/` with whitespace. This allows JSON error positions to remain as close as possible to the original source.\n\nAlso available as a [Gulp](https://github.com/sindresorhus/gulp-strip-json-comments)/[Grunt](https://github.com/sindresorhus/grunt-strip-json-comments)/[Broccoli](https://github.com/sindresorhus/broccoli-strip-json-comments) plugin.\n\n## Install\n\n```\n$ npm install strip-json-comments\n```\n\n## Usage\n\n```js\nconst json = `{\n\t// Rainbows\n\t\"unicorn\": /* ❤ */ \"cake\"\n}`;\n\nJSON.parse(stripJsonComments(json));\n//=> {unicorn: 'cake'}\n```\n\n## API\n\n### stripJsonComments(jsonString, options?)\n\n#### jsonString\n\nType: `string`\n\nAccepts a string with JSON and returns a string without comments.\n\n#### options\n\nType: `object`\n\n##### whitespace\n\nType: `boolean`\\\nDefault: `true`\n\nReplace comments with whitespace instead of stripping them entirely.\n\n## Benchmark\n\n```\n$ npm run bench\n```\n\n## Related\n\n- [strip-json-comments-cli](https://github.com/sindresorhus/strip-json-comments-cli) - CLI for this module\n- [strip-css-comments](https://github.com/sindresorhus/strip-css-comments) - Strip comments from CSS\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-strip-json-comments?utm_source=npm-strip-json-comments&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
+  "maintainers": [
+    {
+      "name": "sindresorhus",
+      "email": "sindresorhus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-07-12T14:44:59.217Z",
+    "created": "2013-11-17T15:19:04.627Z",
+    "0.1.0": "2013-11-17T15:19:07.474Z",
+    "0.1.1": "2013-11-17T15:22:21.059Z",
+    "0.1.2": "2014-04-29T19:52:43.968Z",
+    "0.1.3": "2014-05-28T10:38:42.692Z",
+    "1.0.0": "2014-07-26T00:26:03.567Z",
+    "1.0.1": "2014-07-26T00:34:50.278Z",
+    "1.0.2": "2014-10-16T13:25:20.301Z",
+    "1.0.3": "2015-08-01T01:15:27.783Z",
+    "1.0.4": "2015-08-02T00:37:05.861Z",
+    "2.0.0": "2015-11-18T14:23:05.438Z",
+    "2.0.1": "2016-02-09T08:30:06.455Z",
+    "3.0.0": "2019-04-30T12:23:05.813Z",
+    "3.0.1": "2019-04-30T17:11:19.115Z",
+    "3.1.0": "2020-04-06T07:58:47.761Z",
+    "3.1.1": "2020-07-12T14:44:56.568Z"
+  },
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "https://sindresorhus.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindresorhus/strip-json-comments.git"
+  },
+  "users": {
+    "forivall": true,
+    "beatak": true,
+    "prabhash1785": true,
+    "martl": true,
+    "calmwinds": true,
+    "yyscamper": true,
+    "backnight": true,
+    "dominik.palo": true,
+    "ianvanness": true,
+    "mojaray2k": true,
+    "mikestaub": true,
+    "joaquin.briceno": true,
+    "haihepeng": true,
+    "xngiser": true,
+    "usex": true,
+    "erikvold": true,
+    "becomethegamer": true,
+    "raycharles": true,
+    "mysticatea": true,
+    "tdmalone": true,
+    "gamersdelight": true,
+    "pftom": true,
+    "kwpeters": true,
+    "cr8tiv": true
+  },
+  "homepage": "https://github.com/sindresorhus/strip-json-comments#readme",
+  "keywords": [
+    "json",
+    "strip",
+    "comments",
+    "remove",
+    "delete",
+    "trim",
+    "multiline",
+    "parse",
+    "config",
+    "configuration",
+    "settings",
+    "util",
+    "env",
+    "environment",
+    "jsonc"
+  ],
+  "bugs": {
+    "url": "https://github.com/sindresorhus/strip-json-comments/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "readme.md"
+}

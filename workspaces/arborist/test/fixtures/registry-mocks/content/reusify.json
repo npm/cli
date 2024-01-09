@@ -1,0 +1,401 @@
+{
+  "_id": "reusify",
+  "_rev": "9-4d882f20d8910b6d7617cd60cb568749",
+  "name": "reusify",
+  "description": "Reuse objects and functions with style",
+  "dist-tags": {
+    "latest": "1.0.4"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "reusify",
+      "version": "1.0.0",
+      "description": "Reuse objects and functions with style",
+      "main": "reusify.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | faucet "
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/reusify.git"
+      },
+      "keywords": [
+        "reuse",
+        "object",
+        "performance",
+        "function",
+        "fast"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mcollina/reusify/issues"
+      },
+      "homepage": "https://github.com/mcollina/reusify#readme",
+      "devDependencies": {
+        "faucet": "0.0.1",
+        "pre-commit": "^1.1.1",
+        "standard": "^5.2.1",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "460929abe2b5a31fc5e6dae6617242b26f9a5364",
+      "_id": "reusify@1.0.0",
+      "_shasum": "6e227aacc80b984c542ebe38e29e4ce82e911170",
+      "_from": ".",
+      "_npmVersion": "2.14.2",
+      "_nodeVersion": "4.0.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "6e227aacc80b984c542ebe38e29e4ce82e911170",
+        "tarball": "https://registry.npmjs.org/reusify/-/reusify-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "reusify",
+      "version": "1.0.1",
+      "description": "Reuse objects and functions with style",
+      "main": "reusify.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | faucet",
+        "istanbul": "istanbul cover tape test.js",
+        "coverage": "npm run istanbul; cat coverage/lcov.info | coveralls"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/reusify.git"
+      },
+      "keywords": [
+        "reuse",
+        "object",
+        "performance",
+        "function",
+        "fast"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mcollina/reusify/issues"
+      },
+      "homepage": "https://github.com/mcollina/reusify#readme",
+      "engines": {
+        "node": ">=0.10.0",
+        "iojs": ">=1.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.11.6",
+        "faucet": "0.0.1",
+        "istanbul": "^0.4.1",
+        "pre-commit": "^1.1.1",
+        "standard": "^5.2.1",
+        "tape": "^4.2.0"
+      },
+      "gitHead": "41336018ac1527345d47cb6ec18c5515d0e52b7f",
+      "_id": "reusify@1.0.1",
+      "_shasum": "f53584367adc825c87431917263fc7aa19118693",
+      "_from": ".",
+      "_npmVersion": "3.4.1",
+      "_nodeVersion": "4.2.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "shasum": "f53584367adc825c87431917263fc7aa19118693",
+        "tarball": "https://registry.npmjs.org/reusify/-/reusify-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "reusify",
+      "version": "1.0.2",
+      "description": "Reuse objects and functions with style",
+      "main": "reusify.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | faucet",
+        "istanbul": "istanbul cover tape test.js",
+        "coverage": "npm run istanbul; cat coverage/lcov.info | coveralls"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/reusify.git"
+      },
+      "keywords": [
+        "reuse",
+        "object",
+        "performance",
+        "function",
+        "fast"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mcollina/reusify/issues"
+      },
+      "homepage": "https://github.com/mcollina/reusify#readme",
+      "engines": {
+        "node": ">=0.10.0",
+        "iojs": ">=1.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.13.1",
+        "faucet": "0.0.1",
+        "istanbul": "^0.4.5",
+        "pre-commit": "^1.2.2",
+        "standard": "^10.0.0",
+        "tape": "^4.7.0"
+      },
+      "gitHead": "26c9d4d819562a807c2dacbcd1c79b79d32e18d0",
+      "_id": "reusify@1.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.11.1",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "integrity": "sha512-uvHpBEwqP0XOAlNski7iUcFn0xB75j3FupCnAHVMf1Bosyeo0Jwb/i0QB6PLkMU98NVus1q8NUhpJU1wgWdJCw==",
+        "shasum": "e3ca4a613e64daac35d40ff34819e72776bf5d85",
+        "tarball": "https://registry.npmjs.org/reusify/-/reusify-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/reusify-1.0.2.tgz_1500537786491_0.876660275971517"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "reusify",
+      "version": "1.0.3",
+      "description": "Reuse objects and functions with style",
+      "main": "reusify.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | faucet",
+        "istanbul": "istanbul cover tape test.js",
+        "coverage": "npm run istanbul; cat coverage/lcov.info | coveralls"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/reusify.git"
+      },
+      "keywords": [
+        "reuse",
+        "object",
+        "performance",
+        "function",
+        "fast"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mcollina/reusify/issues"
+      },
+      "homepage": "https://github.com/mcollina/reusify#readme",
+      "engines": {
+        "node": ">=0.10.0",
+        "iojs": ">=1.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.13.1",
+        "faucet": "0.0.1",
+        "istanbul": "^0.4.5",
+        "pre-commit": "^1.2.2",
+        "standard": "^10.0.0",
+        "tape": "^4.7.0"
+      },
+      "gitHead": "1d7ea6292ccf73789503da32caddd920ec8b1ed0",
+      "_id": "reusify@1.0.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "8.6.0",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "integrity": "sha512-t8ZQIaf4CHxy8mb4QddDuGOygGiSSiJHMZrtrC+4E7urVtqON4dHVwmV0gfiBOE1tt5p1puae6o8e0b3wkr1Ag==",
+        "shasum": "9da7fc786f39400fd6809e3d694b3b28ecd0f38e",
+        "tarball": "https://registry.npmjs.org/reusify/-/reusify-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/reusify-1.0.3.tgz_1507322290520_0.9243531748652458"
+      },
+      "directories": {}
+    },
+    "1.0.4": {
+      "name": "reusify",
+      "version": "1.0.4",
+      "description": "Reuse objects and functions with style",
+      "main": "reusify.js",
+      "scripts": {
+        "lint": "standard",
+        "test": "tape test.js | faucet",
+        "istanbul": "istanbul cover tape test.js",
+        "coverage": "npm run istanbul; cat coverage/lcov.info | coveralls"
+      },
+      "pre-commit": [
+        "lint",
+        "test"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mcollina/reusify.git"
+      },
+      "keywords": [
+        "reuse",
+        "object",
+        "performance",
+        "function",
+        "fast"
+      ],
+      "author": {
+        "name": "Matteo Collina",
+        "email": "hello@matteocollina.com"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mcollina/reusify/issues"
+      },
+      "homepage": "https://github.com/mcollina/reusify#readme",
+      "engines": {
+        "node": ">=0.10.0",
+        "iojs": ">=1.0.0"
+      },
+      "devDependencies": {
+        "coveralls": "^2.13.3",
+        "faucet": "0.0.1",
+        "istanbul": "^0.4.5",
+        "pre-commit": "^1.2.2",
+        "standard": "^10.0.3",
+        "tape": "^4.8.0"
+      },
+      "gitHead": "89420d4369258d0b768aaebfb1843951193d315d",
+      "_id": "reusify@1.0.4",
+      "_npmVersion": "5.6.0",
+      "_nodeVersion": "8.9.4",
+      "_npmUser": {
+        "name": "matteo.collina",
+        "email": "hello@matteocollina.com"
+      },
+      "dist": {
+        "integrity": "sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==",
+        "shasum": "90da382b1e126efc02146e90845a88db12925d76",
+        "tarball": "https://registry.npmjs.org/reusify/-/reusify-1.0.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "matteo.collina",
+          "email": "hello@matteocollina.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/reusify-1.0.4.tgz_1516958898700_0.8839292053598911"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# reusify\n\n[![npm version][npm-badge]][npm-url]\n[![Build Status][travis-badge]][travis-url]\n[![Coverage Status][coveralls-badge]][coveralls-url]\n\nReuse your objects and functions for maximum speed. This technique will\nmake any function run ~10% faster. You call your functions a\nlot, and it adds up quickly in hot code paths.\n\n```\n$ node benchmarks/createNoCodeFunction.js\nTotal time 53133\nTotal iterations 100000000\nIteration/s 1882069.5236482036\n\n$ node benchmarks/reuseNoCodeFunction.js\nTotal time 50617\nTotal iterations 100000000\nIteration/s 1975620.838848608\n```\n\nThe above benchmark uses fibonacci to simulate a real high-cpu load.\nThe actual numbers might differ for your use case, but the difference\nshould not.\n\nThe benchmark was taken using Node v6.10.0.\n\nThis library was extracted from\n[fastparallel](http://npm.im/fastparallel).\n\n## Example\n\n```js\nvar reusify = require('reusify')\nvar fib = require('reusify/benchmarks/fib')\nvar instance = reusify(MyObject)\n\n// get an object from the cache,\n// or creates a new one when cache is empty\nvar obj = instance.get()\n\n// set the state\nobj.num = 100\nobj.func()\n\n// reset the state.\n// if the state contains any external object\n// do not use delete operator (it is slow)\n// prefer set them to null\nobj.num = 0\n\n// store an object in the cache\ninstance.release(obj)\n\nfunction MyObject () {\n  // you need to define this property\n  // so V8 can compile MyObject into an\n  // hidden class\n  this.next = null\n  this.num = 0\n\n  var that = this\n\n  // this function is never reallocated,\n  // so it can be optimized by V8\n  this.func = function () {\n    if (null) {\n      // do nothing\n    } else {\n      // calculates fibonacci\n      fib(that.num)\n    }\n  }\n}\n```\n\nThe above example was intended for synchronous code, let's see async:\n```js\nvar reusify = require('reusify')\nvar instance = reusify(MyObject)\n\nfor (var i = 0; i < 100; i++) {\n  getData(i, console.log)\n}\n\nfunction getData (value, cb) {\n  var obj = instance.get()\n\n  obj.value = value\n  obj.cb = cb\n  obj.run()\n}\n\nfunction MyObject () {\n  this.next = null\n  this.value = null\n\n  var that = this\n\n  this.run = function () {\n    asyncOperation(that.value, that.handle)\n  }\n\n  this.handle = function (err, result) {\n    that.cb(err, result)\n    that.value = null\n    that.cb = null\n    instance.release(that)\n  }\n}\n```\n\nAlso note how in the above examples, the code, that consumes an istance of `MyObject`,\nreset the state to initial condition, just before storing it in the cache.\nThat's needed so that every subsequent request for an instance from the cache,\ncould get a clean instance.\n\n## Why\n\nIt is faster because V8 doesn't have to collect all the functions you\ncreate. On a short-lived benchmark, it is as fast as creating the\nnested function, but on a longer time frame it creates less\npressure on the garbage collector.\n\n## Other examples\nIf you want to see some complex example, checkout [middie](https://github.com/fastify/middie) and [steed](https://github.com/mcollina/steed).\n\n## Acknowledgements\n\nThanks to [Trevor Norris](https://github.com/trevnorris) for\ngetting me down the rabbit hole of performance, and thanks to [Mathias\nBuss](http://github.com/mafintosh) for suggesting me to share this\ntrick.\n\n## License\n\nMIT\n\n[npm-badge]: https://badge.fury.io/js/reusify.svg\n[npm-url]: https://badge.fury.io/js/reusify\n[travis-badge]: https://api.travis-ci.org/mcollina/reusify.svg\n[travis-url]: https://travis-ci.org/mcollina/reusify\n[coveralls-badge]: https://coveralls.io/repos/mcollina/reusify/badge.svg?branch=master&service=github\n[coveralls-url]:  https://coveralls.io/github/mcollina/reusify?branch=master\n",
+  "maintainers": [
+    {
+      "name": "matteo.collina",
+      "email": "hello@matteocollina.com"
+    }
+  ],
+  "time": {
+    "modified": "2018-01-26T09:28:18.775Z",
+    "created": "2015-09-11T22:13:22.776Z",
+    "1.0.0": "2015-09-11T22:13:22.776Z",
+    "1.0.1": "2015-12-16T15:33:41.090Z",
+    "1.0.2": "2017-07-20T08:03:07.428Z",
+    "1.0.3": "2017-10-06T20:38:10.606Z",
+    "1.0.4": "2018-01-26T09:28:18.775Z"
+  },
+  "homepage": "https://github.com/mcollina/reusify#readme",
+  "keywords": [
+    "reuse",
+    "object",
+    "performance",
+    "function",
+    "fast"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcollina/reusify.git"
+  },
+  "author": {
+    "name": "Matteo Collina",
+    "email": "hello@matteocollina.com"
+  },
+  "bugs": {
+    "url": "https://github.com/mcollina/reusify/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "blitzprog": true,
+    "majgis": true,
+    "hengkiardo": true,
+    "bajtos": true
+  },
+  "_attachments": {}
+}

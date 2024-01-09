@@ -1,0 +1,409 @@
+{
+  "_id": "buffer-indexof",
+  "_rev": "13-cf272bc2c8ae296c237b46592313380f",
+  "name": "buffer-indexof",
+  "description": "find the index of a buffer in a buffer",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffe",
+      "version": "0.0.0",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.1.0"
+      },
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "_id": "buffer-indexof@0.0.0",
+      "dist": {
+        "shasum": "f9eb3eb95f03a171554bb127450b20f64aa8e5c2",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-0.0.0.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.1": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffe",
+      "version": "0.0.1",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.1.0"
+      },
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "_id": "buffer-indexof@0.0.1",
+      "dist": {
+        "shasum": "54dda191a531250309d13b646fc1c80adeee5cf9",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-0.0.1.tgz"
+      },
+      "_from": ".",
+      "_npmVersion": "1.3.8",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "0.0.2": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffe",
+      "version": "0.0.2",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.1.0"
+      },
+      "gitHead": "277ab0cedaf14f6d6ae18571e9dd4d0dea1981a0",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof",
+      "_id": "buffer-indexof@0.0.2",
+      "_shasum": "ed0f36b7ae166a66a7cd174c0467ae8dedf008f5",
+      "_from": ".",
+      "_npmVersion": "1.4.20",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "ed0f36b7ae166a66a7cd174c0467ae8dedf008f5",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-0.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffer",
+      "version": "1.0.0",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "tape": "~1.1.0"
+      },
+      "gitHead": "0a087d8bbeadfaa1d89f8362f205b89699c1660c",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+      "_id": "buffer-indexof@1.0.0",
+      "_shasum": "0f23779be8134b56251bb91f7fe4850a2e7be6ff",
+      "_from": ".",
+      "_npmVersion": "2.13.4",
+      "_nodeVersion": "0.12.4",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "dist": {
+        "shasum": "0f23779be8134b56251bb91f7fe4850a2e7be6ff",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffer",
+      "version": "1.0.1",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "^1.1.3",
+        "tape": "~1.1.0"
+      },
+      "gitHead": "7c33f8df621ac9fbd81c4ac577daca24a2e997e0",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+      "_id": "buffer-indexof@1.0.1",
+      "_shasum": "410b99b2a16b429768693c3ab4de28dc5e126eb4",
+      "_from": ".",
+      "_npmVersion": "3.9.0",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "dist": {
+        "shasum": "410b99b2a16b429768693c3ab4de28dc5e126eb4",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/buffer-indexof-1.0.1.tgz_1472477114459_0.530846269801259"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffer",
+      "version": "1.0.2",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "^1.1.3",
+        "tape": "~1.1.0"
+      },
+      "gitHead": "1e13002692b7bc14726bee3097ed2f501841451a",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+      "_id": "buffer-indexof@1.0.2",
+      "_shasum": "7fff11985ce51fe9ff07c40121ad301781587cdf",
+      "_from": ".",
+      "_npmVersion": "3.9.0",
+      "_nodeVersion": "4.4.4",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "dist": {
+        "shasum": "7fff11985ce51fe9ff07c40121ad301781587cdf",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/buffer-indexof-1.0.2.tgz_1472562186192_0.4908682357054204"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffer",
+      "version": "1.1.0",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "^1.1.3",
+        "tape": "~1.1.0"
+      },
+      "gitHead": "cd1520a3a363b7f5cc231cf06b246d3fc582e92f",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+      "_id": "buffer-indexof@1.1.0",
+      "_shasum": "f54f647c4f4e25228baa656a2e57e43d5f270982",
+      "_from": ".",
+      "_npmVersion": "2.15.9",
+      "_nodeVersion": "4.5.0",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "dist": {
+        "shasum": "f54f647c4f4e25228baa656a2e57e43d5f270982",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-16-east.internal.npmjs.com",
+        "tmp": "tmp/buffer-indexof-1.1.0.tgz_1473953571047_0.6959979394450784"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "buffer-indexof",
+      "description": "find the index of a buffer in a buffer",
+      "version": "1.1.1",
+      "repository": {
+        "url": "git://github.com/soldair/node-buffer-indexof.git"
+      },
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test/*.js"
+      },
+      "author": {
+        "name": "Ryan Day"
+      },
+      "license": "MIT",
+      "dependencies": {},
+      "devDependencies": {
+        "chalk": "^1.1.3",
+        "tape": "~1.1.0"
+      },
+      "gitHead": "9b17551f5f6949358358644757c406f4134ced5c",
+      "bugs": {
+        "url": "https://github.com/soldair/node-buffer-indexof/issues"
+      },
+      "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+      "_id": "buffer-indexof@1.1.1",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "6.9.4",
+      "_npmUser": {
+        "name": "soldair",
+        "email": "soldair@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-4/rOEg86jivtPTeOUUT61jJO1Ya1TrR/OkqCSZDyq84WJh3LuuiphBYJN+fm5xufIk4XAFcEwte/8WzC8If/1g==",
+        "shasum": "52fabcc6a606d1a00302802648ef68f639da268c",
+        "tarball": "https://registry.npmjs.org/buffer-indexof/-/buffer-indexof-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "soldair",
+          "email": "soldair@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/buffer-indexof-1.1.1.tgz_1503366011678_0.98643086431548"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "[![Build Status](https://secure.travis-ci.org/soldair/node-buffer-indexof.png)](http://travis-ci.org/soldair/node-buffer-indexof)\n \n\nbuffer-indexof\n===================\n\nfind the index of a buffer in a buffer. should behave like String.indexOf etc.\n\n```js\n\nvar bindexOf = require('buffer-indexof');\n\nvar newLineBuffer = new Buffer(\"\\n\");\n\nvar b = new Buffer(\"hi\\nho\\nsilver\");\n\n\nbindexOf(b,newLineBuffer) === 2\n\n// you can also start from index\n\nbindexOf(b,newLineBuffer,3) === 5\n\n// no match === -1\n\nbindexOf(b,newLineBuffer,6) === -1\n\n\n```\n\nCHANGELOG\n----------\n\n- 1.0.0\n  - fixed issue finding multibyte needles in haystack.  thanks @imulus\n- 1.0.1\n  - fixed failing to find partial matches as pointed out by @bahaa-aidi in #2\n",
+  "maintainers": [
+    {
+      "name": "soldair",
+      "email": "soldair@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-11-27T05:57:28.386Z",
+    "created": "2013-09-18T23:54:58.413Z",
+    "0.0.0": "2013-09-18T23:54:59.523Z",
+    "0.0.1": "2013-09-19T16:26:20.124Z",
+    "0.0.2": "2014-08-22T03:09:19.834Z",
+    "1.0.0": "2015-08-10T19:02:56.289Z",
+    "1.0.1": "2016-08-29T13:25:16.040Z",
+    "1.0.2": "2016-08-30T13:03:07.608Z",
+    "1.1.0": "2016-09-15T15:32:52.426Z",
+    "1.1.1": "2017-08-22T01:40:11.758Z"
+  },
+  "author": {
+    "name": "Ryan Day"
+  },
+  "repository": {
+    "url": "git://github.com/soldair/node-buffer-indexof.git"
+  },
+  "homepage": "https://github.com/soldair/node-buffer-indexof#readme",
+  "bugs": {
+    "url": "https://github.com/soldair/node-buffer-indexof/issues"
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT",
+  "users": {
+    "heineiuo": true
+  },
+  "_attachments": {}
+}

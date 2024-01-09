@@ -1,0 +1,47 @@
+{
+  "name": "cardinal",
+  "version": "2.1.1",
+  "description": "Syntax highlights JavaScript code with ANSI colors to be printed to the terminal.",
+  "main": "cardinal.js",
+  "scripts": {
+    "test": "npm run run-test && npm run lint",
+    "run-test": "tape test/*.js",
+    "lint": "standart",
+    "lint-fix": "standart --fix",
+    "demo": "node examples/highlight-string.js; node examples/highlight-self; node examples/highlight-self-hide-semicolons;"
+  },
+  "bin": {
+    "cdl": "./bin/cdl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/cardinal.git"
+  },
+  "keywords": [
+    "syntax",
+    "highlight",
+    "theme",
+    "javascript",
+    "json",
+    "terminal",
+    "console",
+    "print",
+    "output"
+  ],
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+  "license": "MIT",
+  "dependencies": {
+    "ansicolors": "~0.3.2",
+    "redeyed": "~2.1.0"
+  },
+  "devDependencies": {
+    "readdirp": "~2.1.0",
+    "standart": "~6.1.0",
+    "tape": "~4.9.0"
+  },
+  "standart": {
+    "ignore": [
+      "test/fixtures"
+    ]
+  }
+}

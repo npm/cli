@@ -1,0 +1,197 @@
+{
+  "_id": "@babel/helper-skip-transparent-expression-wrappers",
+  "_rev": "1-d3487b7a74a516a9d3ef68889df80c74",
+  "name": "@babel/helper-skip-transparent-expression-wrappers",
+  "dist-tags": {
+    "latest": "7.12.1"
+  },
+  "versions": {
+    "7.11.0": {
+      "name": "@babel/helper-skip-transparent-expression-wrappers",
+      "version": "7.11.0",
+      "description": "Helper which skips types and parentheses",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-skip-transparent-expression-wrappers"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": {
+        ".": "./lib/index.js",
+        "./package.json": "./package.json"
+      },
+      "dependencies": {
+        "@babel/types": "^7.11.0"
+      },
+      "devDependencies": {
+        "@babel/traverse": "^7.11.0"
+      },
+      "bugs": {
+        "url": "https://github.com/babel/babel/issues"
+      },
+      "homepage": "https://github.com/babel/babel#readme",
+      "_id": "@babel/helper-skip-transparent-expression-wrappers@7.11.0",
+      "_nodeVersion": "14.6.0",
+      "_npmVersion": "6.14.7",
+      "dist": {
+        "integrity": "sha512-0XIdiQln4Elglgjbwo9wuJpL/K7AGCY26kmEt0+pRP0TAj4jjyNq1MjoRvikrTVqKcx4Gysxt4cXvVFXP/JO2Q==",
+        "shasum": "eec162f112c2f58d3af0af125e3bb57665146729",
+        "tarball": "https://registry.npmjs.org/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.11.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3585,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfIzs3CRA9TVsSAnZWagAAnrUP/AldnaXJmK8Sw/glUx2b\nZ+njzJokyNr8oe05VMG+ly/pM+o0c2fHP8mUuz6nBx7SG3r6LB9Ag20KLNZI\nM5DTGEQp71RDSLMw1t0OV6dVId8KGCPMEBRMfTea/cPRpzSwkcHYWiMNbB2o\ncmwaLM1vC2RC5Jxn+UjTnHBWJhLeL+elf+BLUR4GF/Ymwczo7Dk/4HkO988p\nts5Z/Y9PQhvs/+YZ7uB4bm6zOpO86hf3MMuHmuf12KogcviGNYJI32BM50P4\nrvnfSxNXSGtGsboHKSmIPTZIfPxIL2jw9GnavBslEj0IjR3Zs5KUQN+c9cbv\nQEAoKe09escXEhfS3yz0IfrmvLXCvfuNBcsSXvLiEN7tCk9pSQwGLK0WdS2U\nmmWbPwhCKzflFGp0DshYF5zHrWX7etppsGtMTW5WwFuf3qhDa/IY/rPQhE2n\nusu7p9JwULEMGR8aIwl0q0J2dyDCsHA9ntzzKyLGQb0/pin5Iy/pbh6cySjy\nXHUoRQu8Y/U3G/MP4QzLFEAA89G+7r3QsyGoUv3XcKkT+ZTkZxkRINuBCpHj\nPoh9l2p5GgWnRQwY5YWCINgymL5I6Af0rvE4KNB/gEHDh2mTvZ8qT+MATV2Y\nqnfyVloQcLMSkO2mlNuWYnbbA/OyeGcqyZBAxR0FgPKN4lHMNN58JXWGdIJ1\nz62c\r\n=MjY0\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "jlhwung",
+        "email": "i@jhuang.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-skip-transparent-expression-wrappers_7.11.0_1596144439346_0.4443770267811984"
+      },
+      "_hasShrinkwrap": false
+    },
+    "7.12.1": {
+      "name": "@babel/helper-skip-transparent-expression-wrappers",
+      "version": "7.12.1",
+      "description": "Helper which skips types and parentheses",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/babel/babel.git",
+        "directory": "packages/babel-helper-skip-transparent-expression-wrappers"
+      },
+      "license": "MIT",
+      "publishConfig": {
+        "access": "public"
+      },
+      "main": "./lib/index.js",
+      "exports": {
+        ".": "./lib/index.js",
+        "./package.json": "./package.json"
+      },
+      "dependencies": {
+        "@babel/types": "^7.12.1"
+      },
+      "devDependencies": {
+        "@babel/traverse": "^7.12.1"
+      },
+      "_id": "@babel/helper-skip-transparent-expression-wrappers@7.12.1",
+      "dist": {
+        "shasum": "462dc63a7e435ade8468385c63d2b84cce4b3cbf",
+        "integrity": "sha512-Mf5AUuhG1/OCChOJ/HcADmvcHM42WJockombn8ATJG3OnyiSxBK/Mm5x78BQWvmtXZKHgbjdGL2kin/HOLlZGA==",
+        "tarball": "https://registry.npmjs.org/@babel/helper-skip-transparent-expression-wrappers/-/helper-skip-transparent-expression-wrappers-7.12.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 3584,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiM/8CRA9TVsSAnZWagAAyasP/io1sqmYCqmj6Wi51vNm\nC2IhtKHuoEGtEF0ldDnKOLcStuCybWwWcWKzUKzmMsATV2PUZs/cYiRAAXu2\n7+yFIhiGJeeAZv2RHbXDaxGBNq6DLlwaUZckkvVc/5rAxioxJ8BQ0Y27llIY\njgKS2oL/T+Q+QW0oydY1+dw7PU4lD6mreSf8/0DUCqsAEDnzUjTPuinDT2j9\nikrTKVbPYgadH4K6XOMvagT1bLkJNEEEqnzc1UlQIXJVzFvWE71Y+EyH5btM\nzqULa+smZJqNfV5W2/PmKXEnOjUBQL2/qJFmRl1GWaK5wwdPBWoh0QZDqi3p\nrBeCRGUbt90CX3GefzkAZwmGejpO9AqcT7un+LQseQlzFn6dmKZ0t3AmR4VL\nEM5MKch6RNG7IngKv34UwY3YiqBWudUnbwcDCME3FWDvknOL9alsRQsHbfry\n2MVs/p+XH7UCof6Tf9JvrbQAKHEyUE0ix3zLIdpJKniokd8XSWkEAIhd0lVy\nyJcS8PAGcPV+BISDE7RRBRJkne9R0vHn+OsWfrexfb8h4scPdKSEb1NvwFDG\nwqHzozdZLNiOQPiNBBMAA9EFBvFBz+/g+shQQxPJzh1NVM357mHeZiiZVv47\n8qzskK8XlE2kaQfe8unfvKpfHzqmi4dXLdoNvUz4bxE6qHn7WsORCXgylN/d\nkM3h\r\n=JXND\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "jlhwung",
+          "email": "i@jhuang.me"
+        },
+        {
+          "name": "nicolo-ribaudo",
+          "email": "nicolo.ribaudo@gmail.com"
+        },
+        {
+          "name": "hzoo",
+          "email": "hi@henryzoo.com"
+        },
+        {
+          "name": "loganfsmyth",
+          "email": "loganfsmyth@gmail.com"
+        },
+        {
+          "name": "danez",
+          "email": "daniel@tschinder.de"
+        },
+        {
+          "name": "existentialism",
+          "email": "bng412@gmail.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "nicolo-ribaudo",
+        "email": "nicolo.ribaudo@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-skip-transparent-expression-wrappers_7.12.1_1602801660159_0.5805440487798985"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-07-30T21:27:19.099Z",
+    "7.11.0": "2020-07-30T21:27:19.508Z",
+    "modified": "2020-10-15T22:41:03.932Z",
+    "7.12.1": "2020-10-15T22:41:00.332Z"
+  },
+  "maintainers": [
+    {
+      "name": "jlhwung",
+      "email": "i@jhuang.me"
+    },
+    {
+      "name": "nicolo-ribaudo",
+      "email": "nicolo.ribaudo@gmail.com"
+    },
+    {
+      "name": "hzoo",
+      "email": "hi@henryzoo.com"
+    },
+    {
+      "name": "loganfsmyth",
+      "email": "loganfsmyth@gmail.com"
+    },
+    {
+      "name": "danez",
+      "email": "daniel@tschinder.de"
+    },
+    {
+      "name": "existentialism",
+      "email": "bng412@gmail.com"
+    }
+  ],
+  "description": "Helper which skips types and parentheses",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-skip-transparent-expression-wrappers"
+  },
+  "license": "MIT",
+  "readme": "",
+  "readmeFilename": ""
+}

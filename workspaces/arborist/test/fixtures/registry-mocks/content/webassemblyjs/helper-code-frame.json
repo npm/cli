@@ -1,0 +1,3151 @@
+{
+  "_id": "@webassemblyjs/helper-code-frame",
+  "_rev": "57-69f45136c60ed85edd0e5d9f14df00ab",
+  "name": "@webassemblyjs/helper-code-frame",
+  "dist-tags": {
+    "latest": "1.9.1"
+  },
+  "versions": {
+    "1.2.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.3",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-XimxH+hUcGX4Bvg92P538tHmQWfz/yi7+tsjIBj42I+o5OQaCav5VxUSA9ERkxfrUhUyitrQuqSXozMv1RkUMg==",
+        "shasum": "512a25ee424d9a8e0c8645de3333bba2d3b891d0",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.3.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2591
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.3_1523559953680_0.2925464805552307"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.4": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.4",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.4"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.4"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.4",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-LrySNWLT3BzmZdB60Na6ouxOq8cGsGKLqs4A+3iTVZJkz7gMEmZzI03x+9dWEZbqwmKqyIw1/VFGFH3Du9vbhg==",
+        "shasum": "ec7c48483573c380fadb523192fe50f36609d721",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.4.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.4_1523615507757_0.8968347250793092"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.5": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.5",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.5"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.5"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.5",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-xKp2lgjkOSOXUlvQmASGVcvUtK9CbuC0etXIW+FlgquJytbYFJB/vsETVtPBEO832Tm0K0dia40cTCUxmJNuKQ==",
+        "shasum": "da5573091d5ca48bfefedfb251ae00958be190ff",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.5.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.5_1523639242073_0.6827826458576198"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.6": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.6",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.6"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.6"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.6",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-C5RdyovHbE/kpXfEYyHo87YhLvy7yjVeqFo+eepe87qeFff34BvpjS2JtptdYiQMePzE9q/8SBz1lKU7dkHueg==",
+        "shasum": "3472472a55e4b33ce4f1893fc6077c49f31198f5",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.6.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa1hDECRA9TVsSAnZWagAAlbQP/j6sC7QZ/7rvL9WsETvb\n/3NipqcmI68Yyr/r/MwJaATJXXdadNFM2FsNkavTIH1Y9xrILVEannZ/WYnI\nypfBbm0kTthn0ZjzhJFs2dZPp/NOFAgDPd4JdtIvnbOHTxuTYYPp8l4Zezs8\ny6qZ+D/ASn6r4/sBzwOw903txUqpn6y+2kJ7IAicDiqmXYDClTai+E80SShv\njcEFNUKH2k/ueqQDQe7hRPQcN7xqTHpKEFptAZ1igP/JuFbWWycy0/b/wJJ5\nzbO9ljvzPBBM4v4LpLTUuLxh1DImOKa+1ZNYzWfDTV2/1WBG0kRA0PjEtRrn\nzyKyBskj2TLAbjx2Pc2R+woWAQrcF6PkbCnxFjjwLRZR8DDuEJlhIFKM/K6o\n0BJc8cEN1KSD1cQC8T0cu4/FP02kxXAi0jboHVPLBm27zFF6iSFw0iO9ZRrg\nK81THmCzcOpGdmL1wzGp1iRjvQ0YkjhNmsVELKRUAwr44PH/Oe/Rgtx9ku8g\nwbZHa6wHSXn9uSiZtHRjZormPQBDlF72EAaTIKwyq0c3xYMDdahsRxG6Xxze\nOnjlIsKKO8radH22ygC81Wq6x3qgTjRzSHCRt5wYzQk30qJakcUDImlKGvGi\n0uMYJjti8CLtbSceY/Uc0XRbmneRO+LVAnzjQq9aDtVVm1CFCbnxPBm9dxrz\nig4Z\r\n=kstW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.6_1523978436375_0.6411356283629375"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.7": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.7",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.7"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.7"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.7",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-rTs39EhgkrVuq0rqACYFjXOVGfnAVUm9ghquJgnV4BqqIEvm11E2Ji5VxDOp1p5GdrrxcKo8GPVjsu9QP9pivQ==",
+        "shasum": "7af6870fdd2038adaac31ee11c9b166cd2c4e957",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.7.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa5yunCRA9TVsSAnZWagAASH0P/3FaIFvPzIA7oRcE76lr\nbs/yJoVk/4lcVUxXazU29YCsAPqNMmmck+bktWR77eA4vZ0SvJaKs5gtRS0d\nqGOcWsaxO4DYKS1iCNPbkX10nUQlQleog8Y+VDZpGKa0purHjwFuBMxJfDWS\nFwqrmX6FNGmcMdX1f4oXlhgyPWr347554FYcxXUstEg2gHkdz1d4wR4VA+PF\nWxNDAW1F9wEe/64GIDAQDjZ6msm7Js2CTB4G86XtjCKnbE1eMfhjtxuC6I+A\nvvmZFMohqrGLYbjVpPyF2F2p86dfMu5Hbf3wAdKkvjOgPTuLCfqgOBclv8jQ\n4LuIEV3qLPIQn22ca7MjLEQFJY51wZnCZXr2+YjN7Gx0zNgirsAXuM3yDI50\nUIIeg+N/QTNF79Jd/ST3l9aj30v4SFAi8i5lYzppjnSAP2pe+xhgFw4DueK3\n1+o/4haz78aCjyu7aGFjajgcobeCQ/1GVP8usrKT252XDesO0CV50Y66Be5Q\n0rH/GsC/e3CT9oINxWyp8/cTwAj6AkTM/qbJmXBPDSLDO33k9i/JlwRac0iL\nQA1ActLXm9ZUQrAvvLKQDRGhf420szVQKzK0DyYccIgx5qTE7YLvarVmiEGu\nX22QOktFde7qa24HkORov1GULocW58Isg7wt52mlGW3Fc62yLn9jwsZCSejk\ni5QU\r\n=7C8L\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.7_1525099430932_0.004162015785205142"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.2.8": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.2.8",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.2.8"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.2.8"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.2.8",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-lbZN/DQMisNvYuW02lz8ARLvt7U5HHmT5JTj5OCWl6QMSX8uej/RiXO08tD/UZ8BLkrVmwtQPPMNMKa8Gz34Sw==",
+        "shasum": "da6c230c0d2138ddaee88d19ad2f7052fe9a71e5",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.2.8.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa6fSCCRA9TVsSAnZWagAAxm8P/0IAzgy4Qnnq2ds6VW4E\nFeLrQf0Pw5kcYD9VTF5sRfNfnUOdrlfi6w0ljcPDasf+IMa694xlmmT7S18m\nM/yfhB4YHKScTVHKqf1yuxiuODzo3dyNUZPPnVcFkv0yaJFg3TbjEG/uiiVI\njerD2Np4+JjvnpTtAZ1aQqvTo/JUhn/g1TfYtWoZ1WK2uh4IzaYFsO57B9og\nUKw8cm/pI2OAOm4bDOC9gisVmkcePeyre/Wb2Z4BbxlrgMZWh6ImqsFYTztN\nQylXVE0pdcSp5vW86BAZQWCZ5vlOM2Qd4wN9R8pswDP0czp4YnegpQP8lkCZ\nmM1CcmAcTznxw1NFb+42DzbMwAq1E/4hzSqP9nkYRZQambJL91X0DsPFWEjR\no9i43OO1dWxUQjFqUDeS8u6LX/jT+sdJpcC1XyNavsbgZmIHHjqtSgyJh+iG\nivd74x0hx2kRMjiL45zoyhxJq2iR0e9Pl1ssr1PZgS/xe8PvaNq9OCMgKepv\n0Y0AGnIz3b9M/udTmrp5/jOFdqQvK8TZb8CY7zYxuo6Lz1hbac6sa4d+VZTU\ndDBIDQ5Jg6AzlCvQYQ6FXgZZK56MwuaifTx+R7wAqwKXBo6etogNZg/RKJ4V\nyCrB+wwyngsFvSSvaglA9KEJWXQy7NHcqCwS2D39DCfm6f6jTyvRXx/ocMid\nJLb+\r\n=+pbC\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.2.8_1525281921605_0.004360414848652017"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.3.0",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.3.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.3.0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.3.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-Sn5EhpGFtavLOgvOGQn9HMRiLxkgPHksTGbNcGuZbHvyx20DNO1VHGZYnvupavBqJPtjceS2YjQT2vN3piZwng==",
+        "shasum": "8f7d4cd9a2aed3c633cdd79aa660e96279a349bf",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4905,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7GC6CRA9TVsSAnZWagAAuwwP/AywW224Nx4C926talln\nZNtfRKehTRAfy1Ez+LCNueeWzncSZkcku+6Ma8TcuHovGzPGpUwMA3/LlAwC\nwKDf1WPl0QT2jYPzB0XFC4L8W6+nEn3AqzoISE1yiO2laaqKVXjYH+94qgjO\nQtSMK2RlbNYnAD3EAT0b8yQgBZLIvZh5DXf6SLlerO6wrtWmpG6Ml8LrV4Lu\nUhVGUpMGehULqc9WzWyGJnJY71OlJlU3REFD2RWK5NqmVJeBmuy8E3RuN2CM\nd5NgE1Il1ssYKwO7EHYnlcs7OYZfQ4z5p80CfvJiQYiJ9YNkDuTf01EnVUBZ\n/1x2lJMH86tbeDTFQ1BX9WXrX8huGjWjxY6GbbiRpQAUxt9hHLF8mIlprcLC\nE7ScQPbxgflDxBb8yPNgr30pdHYN+khoSXcb2L7Oo3LommIFMdWF1EG5kqvv\ngFesD0QlEY9oCKtSLBjYAn/w9oRtfVTMXkY/KVtZOEKyu1ShBBLN7g99aXrI\nHYm6kf+qQAvxPrY1MN2GCyPILKuOnvssnMm34R6QyrQOPdQI2tDu/JGHXjh1\nZIGcJ1+7SPmU66BMm1IAZjlaQyrRZsZz46A4LbGDGfYFEljiLaa8daDW50je\nWXDTlT6/6MZDQZZ+ZINGSP10QYqohtxiW6JK0SDWbGM8WSBrz2BrRHLBdjsB\naeed\r\n=pdKQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.3.0_1525440698225_0.5346480519174086"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.3.1",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "GPL-2.0",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.3.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.3.1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.3.1",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-X305tLl7qeTixYz0/Y0Xu+bcNizJLfHUZ1iTiVtorDkh5mLrIZ8hLkkM2oYNSq/oaoW6gpHDrHRfYZItExTeeQ==",
+        "shasum": "b5eba87cf37992e8a62c402545aed87dfd02be83",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.1.tgz",
+        "fileCount": 3,
+        "unpackedSize": 2852,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8JZiCRA9TVsSAnZWagAA+WkP/1DfDKmzPkBnh8hNPaVn\n2SXyvBhR4pnN/mw5ZcaQXRV/BrjwzE2YAikefBxqQ+8xKQRQNMBN4RFAA7tl\nHbe08tlX9nuL3OrXz8+PaFDuDaXNN7QrP9mTVWFiQqiHcqhD1+a7wyIfv1fS\nOe0fkG3GDXEWsnXIApu84rIJmnsC0cXaaGX2ZiKdXKpTOXe8jTQtX8F/aK6t\nbnz59XBVdgGZFRocFfW4DDsjvYLVnKf6rT66fkWIQ10umiA7l9E/hIpJ7Ri7\nMzM9cVR/z46I3EBXiDBF92vbmAGyoGWx7Q+dO1kFFe6O6Xy+OSu8yS1hVTWj\nfsdgHxzAsA61OVIIYdJt+LB1mCJz20PxUOD2IIMWQ46RNBCiMhGXsKKdBEVQ\nBJNaYTsVy6nyYYLZqCJx8xxxQAGHpSLSAV+VuTogtVR8NdaME4mcmkkL5puS\nJbPIxBhEJr5zmMJhrn4F3Nhz+bXqq8QckYs9YfB8h/7FIIz7bihEDZ9u9Tke\nEuKLGoSrTXCCRzWoPCIVIOM+HQhdQRbMzOYrrU9K3AuYZdU6zC92KlciUQkf\nITm43M4C13YGkmVUKHXu+jrNBxi7AT3ik8cMeotx6AOyL+ay+zHO3mf9pFQ/\ndQ/je+Nh6pLlCaUgTkjDWWQaEqcC+6wRFqMOOUh+3eBYWGB1rF/X0MJmlvd9\noxBM\r\n=l1KY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.3.1_1525716577732_0.4451222264130077"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.3.2",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.3.2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.3.2"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.3.2",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-0vZab0rrra8KFDskdAoqWtuJ27PUMcJr7PrVXLBjnoQOIz2NzKR14AV7Ya8sgyj+08wariARQMeDCuOLnKi00Q==",
+        "shasum": "a54b59bf586f91368c8675d20750a05df95c8f3a",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.2.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8fDSCRA9TVsSAnZWagAAk+AP/3lpbMyJXjoSnNCIe1Zk\n/ei4hFVBK97cESSGWcrO3bWkgHpvpmgwpvfu5/ggLPuzeyR7MRIyEtwje5xH\n7zGIYWFnn2HnTb40szU69pykFxwcXHcFm3c4fqTR14eW7rYahMIyk1KI3Rp4\nfB+6S+eslPiwYvULCSxmyNiTl6yCarD17nBZ9zeXomDgJDeRTTC4nR1YNKJQ\n7g5ckNYH5SmJvNpD9tU5zOC5eV2O27fi2OX7n57TGOdLiHJhjHuzyGziORlm\nKR0CD/aMy5xxsSxOKPT9pedlYvSjEmADWQjUJClhaoMi6F514bF/y5HUhpMC\nU/7JirP4JL2mhHN/Sd1+oC7jHVhkOh5WAjEU/wS9BldZz/VPTgkw/bxrNIUD\nc34yHIkk60xedQVCg5RTqk0H2mUVMcg1NoH9rjRofO76gfV/bxm9LiAqwS0C\nv2+lBIw4daLilt5wtotOj+9NpYoSyteW6I32MC/BNPyAXn/XbS2j1GH+YeQC\nrJpsbWOnvYl4t80HtOFebNBLTXU05FREN6DkIOzQKWp+/41Z88fWeC/tfRHj\n6Y1mhsm1cG37qAMUfBxon8abUDB9Cm3Atj8/1rieulCWEuTyW5PMXZwPRhAv\nmbNPW1eYn5rvL2H9spZaLDSsz6x1eVZPI4fafmZkfrtyJwj6zUgTOF4hYeoH\nMknj\r\n=been\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.3.2_1525805266296_0.023844650906650555"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.3.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.3.3",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.3.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.3.3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.3.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-tsEFpOBBMZ3hhSOuPAF3tKhV96uhFFXdg60TwI/m7wjs+Br2qui0OQhwChawN1bF97CBE9IlpISLxoQej76nrg==",
+        "shasum": "9cc6fd0071f5802d5348998b7e5d3ee9971d21dd",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.3.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8qkMCRA9TVsSAnZWagAA52sP/RUWaot9Hobkq6XBfaSQ\nIUg+46bBxaWbgoldyHmnxVXvrXXbJA36DTEZwaY2/MrEHRiHaQIfcuUe5Wor\nuMWQwYdiMNScnG3As00X035t2n9l8eEvqJROLkKO2of3IdbSvPcnwhfY8VYP\nyONRKRtQZGRCtKFc/arxRiG6c7gCOxoL1s1A/bmtAIFZD/ViEYiyXJQh+0fL\nSTlUFjrB2PdMLVuWkKNl+kaoJkVieWuIeoYhIrdPdkFdLsMzWBAfod9vFjn2\nq9ybUKsQHK2NvVxz0QsDRTVzj/yayXBNRb1zPfzBouvOnDTiYM3b0Bf28KFP\noXqJ96abl7SOD5zV1Sqa3EFY3HxgW1B+TupoWm2PxI3DfPvXPyl2xjqSlo0G\nvxwNhbp3aO/zOnP8/IFA6/L7Za1zXmgcfqb/KUA+1LyeR4CY+ze17zrO9oZp\n0J4+3cA0pCwJthfukpNZICDJsN+m+r7sJoSIiXjdVUtP3pjThgUtief2Mxrd\nrhWMr220gEanqo63LEKGowx+/ws2KFHPoSUn7qjkEXeHM07sCm/Za50Jjt5E\n3HzqOJxIFig1uKg1pkiNBAGwF9GASuDS0JiLBJ2vHR+neBO/9J6UOuxt8AoC\nzpxLhuVI9Kr6X9DXQwC7JmK3oaTv0aAwLbFIxEbKluoGgRLIvTZvwWWSZ4bv\nG+uc\r\n=BN4f\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.3.3_1525852428611_0.2083128936267602"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.4.0",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.4.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.4.0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.4.0",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-3Yp1Yfl09IlqJF0g4202Yifct6hu5VCfSfGU6jGVxbEAIz85ykZEg4ydjhY56J+GHNbHkfVAH06ci14WVqUC0g==",
+        "shasum": "c88b5932e312dcac1b01bd5130417820199ad161",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.4.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa8wz0CRA9TVsSAnZWagAAGK8P/0RMU+A5/uJ8s48GtDS9\nrEoh2AaobeWvXVaFuY+Uvb4oMbTFLiKIaEi7HQhA4594ihXhuhKRu1xMiwR5\nurpQABxuLav0QXlH3ZhE7aJtHR6oDdo3HP7x+EARnLDl1O1RUGiTWZecXnLq\n9BaTXpihgmlrLHIAXuqfwOvV6+AmCJBzlMs0RRHgT0uPgGrGe5aYuj7v40M2\nzizjzpS+o8gmQf+q0VdIsNiS1DlVPsiPiZUv8E/7MaJPi3sIZ2Hl3Nd5nwpp\n4QALcM+F9OoLKOLbC0xnMw0kSAqIiQh/vJEePZxEgX6Q9OO0RLIXNjW3/tvD\n0+vbDgq+m/A8Hyq3gXsd+dYJ+BBo9qpao+qIRlVRIrFGbaNrP/f+xCjAdW7v\nbZ3KHjzoYa2jT8GcGspGLo5HvQM1P0yr6a6XbbgMIZikUA19T5Mqq5FbZ7Cq\niaCh4FqfeV7OPTpEUuI7PbtZ9/6rtxjak0mzska7p8NcKtB1wqWYjbW/7Blr\njzd3YF7abqJZ94BloQk9p1uUGEoSD4dcPyF42oda83Bs45sL1goWryZDaer2\nIbxbSOD+zBr27JFKwefR66ZWVCyA70+WSu8cwNtSGSQGsRatVHFTFoqAd+Lv\nAegajHFjEQr4U6ovLwtAflvZzHLrqG2g/hgET0BgDJUOCkaPbclHIXSqGA7I\ndX08\r\n=kl6D\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.4.0_1525878003590_0.26278638885169814"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.4.1",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.4.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.4.1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.4.1",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-EdDjOgn92ZrgtWi/IPLmv2GkoexjHjm2h0gCuwBczdQfOgHbg/8HN/2fG3ibNXhjHpcJChaYl2pGW0BpJqOrUQ==",
+        "shasum": "744fedcb8dcc61ef79a599699cb46fdaa8045d68",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.4.1.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9KFRCRA9TVsSAnZWagAAHaMP/2HjpPt9Ib3t8/4XUqrF\nrhm/DW1tsRSQXy+Gh+Bw/M2nwW5syU6OHzOtE9+iHsuzhQ4BU96HyBf2MayY\nYl4TY7roiVxy5VZzFOdPMeVdSdEX+Y1WREQzGoQpADwLezQmemxEofP9Izv9\nzt0YfeZkjebVguy7aOp29rGZOuNwIgmrD1sCDF+/AjjJ2dAW8Zb10lR+ZDgZ\nkGRHdpQribEdxmbuJ14ER8oOBdyEMKjofiCWqT4Ge4bp0B5BUgZWDygbZCOA\noD+3WVitPUMibKeKGpKboj8Q1Twv0g8FIs1j/3Zcehe65IN0C9yyuvVxlz9r\n6bDAJCcqHMpjSqTyTMraYpVFnT8o2x3xwEU0U6rldv4CcVSXMQlUps5DFZof\nETpDHcWmeAfoyYq1Ak0DC2/ZXERoSazBbclVv4ab5xTGGgMuZt5Xaqp5Xe1L\nS89BUOf0vsg8zizYQSOy94AAhLd/sC5JDdQjQbP491z7vbrG+9mIT9jiCozr\nGLW+uA4qhnL6KjayGtAfYFmcGMa/+hWO1qV3t1pm0g+z4dNPMYuhiS6OdfkK\nubK6ZV9ZUOks9BKwnJNalWTnfcnZSxEDmh61Uc7PV0ql14pVCq15nbaBMn8O\nU4O6CczgG7xhANI2p7h0Mc09IgEqA+UwtqeXYROV8m7lIHUU2Ti8OxrNnC8o\nC4gN\r\n=upqu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.4.1_1525981519900_0.7586329696124239"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.4.2",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.4.2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.4.2"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.4.2",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-xB488/nN5CWWhHbp62OUw7rZp1D1Gl0SU1VH2KhNKDYkHX88LKezURSHPdofVeYZRGfIe/E0Z7sk3Xue5oGd+Q==",
+        "shasum": "20526637c3849f12b08f8661248477eef9642329",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.4.2.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9aUgCRA9TVsSAnZWagAAtQkP/jLaAqAH/g+MlYWpcnT3\nr8wP3K4ONWqew0DvjzvkWFWYVl0VFDSGYBhgOQJ17mFo1ux/x2ZgnQgA2kWs\nvwawx4HX6TiA0kOK07IxJ/3wXcNqMH/mak86t0LJTHhL4jcLaNk6lXMNbGhS\nTbPf1Q/YsckXbb2XTlb0d3AW4ul81M7tTaz78WTAfWLJuJvHe8y71aX3+Jlr\nUCy/UGgRtwRPhfrCOROaoQ10qFRmnrpxgmwnrynThgxicJaRONUBixqCcX7b\ncKb2pf6iIFLdKRjhxkQw1hM4tqDTECzDBrDZ/oC/TgO1n4Mip/6oKfV4dFoZ\nZmNJG9Of20o7MYMil97/o6PszT0F+PaoJwOUdL7aNg5XY4s5DLoOlmFyCmsX\nBtfyWI+OnDJL9GGNZ+8GifsBSz4Y9GsMPqjXCk/vMu3HwI1BoP1aQkKhfVM0\nVVNFYvnAaGdcPiSxR9XUbWXgMSRpFOEmzEhm6+cunSYHZBY3+2loA96YcaWy\nZPXfHV8blcVaIdpSjgVwPX3stqnimLfpK7/N8jh6YSk9gTWNzuMWsNH4ZMWL\nmXpEWpvm7/Ut3Bnl7xK+GQgXEj0bs4hKtQDwmqCHysbV7EH8h2N3bMLzENXt\nU3BEpz+Kwa+blWEWk7hycHI54FvJPiuHSGXKsJm19X+RcwOZZFLP/lP/Fi8h\nVAVU\r\n=An5e\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.4.2_1526048031108_0.20473520360436215"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.4.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.4.3",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.4.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.4.3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.4.3",
+      "_npmVersion": "5.4.2",
+      "_nodeVersion": "6.11.4",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-9FgHEtNsZQYaKrGCtsjswBil48Qp1agrzRcPzCbQloCoaTbOXLJ9IRmqT+uEZbenpULLRNFugz3I4uw18hJM8w==",
+        "shasum": "f1349ca3e01a8e29ee2098c770773ef97af43641",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.4.3.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa9rImCRA9TVsSAnZWagAAODkP/03lQQoc3jPZjlBb8TiW\nwWHeX5qnQQZuUDdg0i0HG79XcAC9oJLGZ7zNrvAPTgKLzvqEIqIC2SFm4Dv+\nqM4ZZliu+XFfUpkWhiPt0CBOuaqbgTgmd6cffZito1I5UBzi2SN8wMFfNWV2\nqMLa+SRFL9J0ddw7wiwyne0q/Rn3ngiZtmuKGyNT1MBfgRLGpgxlTYlQQ1pJ\nuhBUBb3ls/OPXryiMPFQFxpYYuUd4aXVeDOinhO/6n3v/oU4B7AWYNB059zw\nxzsLdRInqZGWfPEoYLjqGPhuo2psmjoXSQErqW//jbLnN4O7IgE1W/I541zg\n4p9Sf6saDqR+GkkbmMb4H9kn2JYy0OAeMtjFSvfi494PjqXrrP5xhQyIIziR\npbwPehQaTqbzwdoulFbyZlrDDrGW58cgwzkNI75U8JQ49n7UYjqOyhAKwu0N\nPIFdkCaLVk8MGv1ypoiFwOToqO+gnWYmIyNPDT0FCHlk6EiczGRH44d9BQNI\n+4qTDLTMDByirDJPKYMaPP+eyDD24tgE10rbdNWiS6nRirISW+spONQ8hrZz\nh8AOthWaSP4NkF82mqE+IYUpay1OR0esKr/T8G+eXX3x+zI/R3futJQ9Nl3o\nx3tpHgfWsLaMuIJOV4qvMSMze6BfeeZh1DgbIpU7gI5b7tr7iy75g8RAP4ni\nN6vK\r\n=svwL\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.4.3_1526116901605_0.9510092491529873"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.0",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-cf3ZgtPEWnt1YWqEFrhurx4p0SI7ND/Z098O1Czzr6V1tMWDsYTdhZXxiyyBqotsPjj9PrSC0sNn/6+kszwEdA==",
+        "shasum": "335bfe462ec6c34a3c6f5b18fb79e729529c131f",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa+b2zCRA9TVsSAnZWagAAVR0P/AmihiixLhXoP5L/FIuz\nMOtd10k8aHmNYeyisnr4BXZZm7ogsNFqbYSpNe7wA/r2eium88hcj04o2kP+\nzNX5eyWAC1KPkwPZwJr7kv2EN2NXxJr+tMWS9UqzBnnIZZtJ9ro+lHjVlrVT\nJUbvJrHjLW7PmWQCWcR6ywu++d82U9uYp+uE8Kl8i9gKABeC30WWygj8opaw\nOeOCk+dC3G/7XrMrx4zPFbCmnEjQvzb09u6via+aDzh/nYQMF9fhMJOoZWBV\nHXrARD5Kw1xLJojA4MgTNx0W34pjwcQZkQn6tqz5L5jET6z27CGRWoFnrvS2\nQKjqjseSkMdARrr13cY3ru7F3vdpZ1eHG+lLW45b4Rwd1kmAXc0NBhMuZMZG\nUgolQqjXumTdtf3M/CexxZmKQ3b/yFIYtUORVcSwa/FLsDhKn8lAz/GC48Bl\nrryZrUVlzCZ4K8Q+NCiP/r9SIMdd6YeZifVvP7JiZ7cVRMfdze+2we/PDTfn\nM2W4EOftcILWM8pk6d/W7ukRpW2hZPH+qUpd4dBiAy8lhIg4zRMPcRSWiJzs\nMIhC+PWZfh5hPtvRMNHcBZadOkqmqmfKvjUccUYTbik7KxrKU0HY3/0wut9r\nOXlMRq7hGH8UOa45RvwRxx4CvyFikqlJ0pVBRRCjElEtuA3hTKpU4RQ6Xxjh\n2pDw\r\n=o23l\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.0_1526316467524_0.31591389284921534"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.1",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-1bsnsSJxyZ5Q/4lzCWl6WPwen8X524mv4k0GEKwGXVqnKjEpJtSkiYq5neDEU4JdpnOCwx0C55LIYcr4llWu4Q==",
+        "shasum": "9170e9e5c0af7ac8154a7a2d0cb85d6f7e318207",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.1.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/BVWCRA9TVsSAnZWagAAuKgQAJG6mkbVhvxomhsIWTEe\nGiiiXC0FPeDIUAiXRt+fETAYoJCz8pgJQxyOUh65Zi3F6/hAzoQYibgfBqi/\nYDc+p4vFb+zhaysGoWwTpL+qPMh8H84flS9g2kv5AlBLJRpwUW+i9uwYPisf\n9z0sDdvm4hXBNBR8QKSbqixSHPpUyF3o7g5lbT/2ZKvyoya2nwwzlEWl8x02\ne71JbwiaEk1blS19ZhuP654sKtiy/PLxMRyM4v6DJehQ2JuPr3Aqf5pwEXmD\nnlHqbTY2jaQ6a8ANUnZqNW4GoftKlGqsj9werAJxY6YPBINa3knP/3UN43/4\n+WdVw9yPnvBzL8vnwvHcHp/WTABvWbCzI5c5ByIrOvpjR9YBJ0kcg6bjYKUS\nGioGdtJk/hDawR+6GuzDLAZP2flBB+TXDMyZPz0M2tBrHxQY0tXhv0c/n009\nIWpNvL0iZvQZeq7S/8aoIDE/O03QU5n+voznnPC3G/81ZB9ga+NrKnFvPi/Q\nG07BCLrTzeT6DEihjFIO6Yu8BCT3FIJpnDBid0H85PB0yA1+R9zdPy1OQnvs\nLmwm/q6s2gdPGMZbmDC6myo35cT/AIkHswl60oc+VqngA8EE7HcTmFO2AMIg\nFw6DbkgFxxCvBMhCmuSXLyNvw/UnPaVlJ2Yf3VZyJuavaiFKJJrO6BG5dHIm\nTDR1\r\n=Bhzg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.1_1526469973682_0.4989893777904344"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.2",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.2"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-0U7oQ/PvmD2gzgbPiXFliw0Sjjl9k+WvF0HkePOB/MAQbASPFYZE4N2WBl5gri1Ztd8YuSCdhCxB3tWNL6v5Dw==",
+        "shasum": "f33753a4a62fd85f37239cfe47703d23e1e1da5f",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.2.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa/XrPCRA9TVsSAnZWagAAnhQP/AzXl2mUpT649xAOyJ0y\n7xg6j77m5TagxJuZualSJGcKBX0SR7BdsNBZlc9oT4MRBXA4/VfIldyJHtpI\nYpN4P5xWE9NoveaDWPLnLFtZPNEP2Nn2+/OT5W4wpt0Hhs5vm/NAHIkB2uLa\nVBLuYd2+34mO1uvozsA6C9o2fnL4rH+MIX5kt1M+yrxyqXNEwnioA8H4lPij\n2cEIVbnf8qtzyAH8kD2WdseeFu4IMW9Hh218p6asTRWxcQSCZ23XhQk5u4Ja\n9wm0HK5DZ5BpJmhxd6NITq1F4aFHe1ZMsnNVz69zckaMgiADBzBcmNtJtKtM\nO+7zNz+U16gFw6nXE9Aud0CIUxiyxbGHk+JcQfCWUs1filGvraB3tTJXXQBL\n8bLj5k+1KmwO7xccZ6oB7prNc3oeJJhjs4ssMzh6oFQdB0U7Tv/wBLFltrCb\nMlsf9WMlnBaUzaUOWkJswX5z59ikfJyP1W3WYR//ONO0E+30lINI2CZiOLzo\n3wlva3b1c0HOV2m/QNDf2tvb3GjS6uT2bLywJNL7BfX5vXEtKlHh5tVgqXoc\nPKBBPjQpYQSMJUuBZohcY/T48PbT3ikFkbWISoEMTRrh+1s6D5V+KXA60ZYR\nC1ap6zzo2tm3aYRbiJZTiLr+o4dD4G0EViLNL8s0mg3wCFlzM9/JyipMDbNR\niL5E\r\n=xqfa\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.2_1526561486005_0.1403892167804126"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.3",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-rt+KtjKvN/3o3KnfDIkP9pn6gz1ydgds1Bw+iYWb8zt2PLH/sg3AJP7ea7s/BN+njGWkVlbcJCPcjng8fjbAWw==",
+        "shasum": "b67e16cd0f09561bb76d882ba230f627d339edcd",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.3.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAqjRCRA9TVsSAnZWagAAXDwP/040k0NJiutKv0HGscfE\nuX4ZbLm+fySyq3fX67h85hqrztnGzWit3omK7bnakxe8Z2UUKN2ejqIYg8ru\n9RnTqr1mu85unx8qVMeVnHjGV8wUlJGRZsHinJ3nnLvWVdSnIPUljXKg8vHI\nShA5SSNwrPvvq5yVeDUG/gye7LIAeZ8pn2nszgaA067WsAfIn9ZSzpvBqrML\nujYjLTSk12pwTj3QFOblQ2F/ENjWplnwgV0oQIXwFbDhBBWizCO9QPuvcyFw\n7aa4URVFWEeNcGG21DyyFnPkw9xQUUpCvDOgyDYkN5vVOC3xA7YH8Way9c4G\n0RZwzRkJQYYEHXnqHrmcTs0N6ecOKaoJVFNLueRkSye1UzxCEbgnC4Hn9IV7\n9IZ87Xo0ntKYP6avtXm7jlNkZN68wJoTVRKIgdU5oyKvZv7PgdzoZgiEbmKr\nHzLr/GDliV5m6BJkjhtBWcotgqXrr6jijs+E7T08TxyXNby49BFpppfOGc2D\nbFqeoIex2A8SIByETCGGU78wddTeUsYbcXg6vQeIHZwKtyhXJNfUWYSR+Igg\nYv6ED18lenbNhZeOD5TRr0aLL46K42NMN+OHbOfwmSQDYZ3bA1ULUX1mQpUe\nJ9NVUkl6esaXn5kpm4ITh6KeQ7SZfQjjWnyIWrt4IpvLG5+ITHTocQi0hsXl\newf8\r\n=ajRs\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.3_1526900944818_0.06795566591921665"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.4": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.4",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.4"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.4"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-g7L2lfJS1iDn3kcg9ughOSTdVwvRl130KTqMjguTFP/Wlq2S0sSo+IAenPcyIo84jb2QDyb0+E9GUmVizCHPLg==",
+        "shasum": "78daa37c08f6c4853d67608e389606c980e9d59e",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.4.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbAsJICRA9TVsSAnZWagAA7isP/iJYB651wooTKiSpY158\nmYn9Cp3jxL7RdxW6EY4CYK1ydOn9t3wTUxBQ4LIOuec3YZkS4sPSsNbH/wWO\n7GTn8YSSV1OZAeZtPYbWlGQ570p75X/5iAHDWhlHAaU0pz6dAvqL3WUieKoc\nuwJs6IVrDsMj2byJS3IW84WZinQBJS/bwGBb940xj3Sr3fguD5NQLu3Z8+0M\nTumLiC8DQclglB8QYuQNIU+EjqsHrK6T6funCUMkaQcyJO8mbfStlDsfX5hF\nJOaCdb/R2GOx5hwnAM8mFLslPxBF3+fa4y6GFjitMCUvQVnsX88BAJpxSXr9\n+6YKzoNsr67JAZfhLUP2y87S9HrKAzJ9G1I2a9iInwYGbi0TagJEzqWgRTs0\nWXmKtM0K3v6ZU9tuIuyDAMV6P4xKlIievvVTOw83S8jHykfFMfBxvx7JIy+U\nWeMS7Z7erqkz14EKNt8n0ljast0n0r5gaRIRiuAoQrsW9GPHpWYMiYdej64h\ntUqp76pcHISD9FVDcHbdcMHYID569oscv/uuplb8yMOIFlbrjL3up9ucaCzn\nW268SN/GFnsOfdz9sqsJ1AoQxCFbBdRdojeycLLkFkHieRLEz2n+f56ikrtl\nuc7BA6NDuB+VByDifzIRkcITXxKzd4CySn+TMEeomJlHq/bIMeq/AI/savaE\nofMZ\r\n=SxJ9\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.4_1526907463961_0.8289773386497583"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.5": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.5",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.5"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.5"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-1+vcfzcV1PwHmLql7MRTMN8hyFjjMDIbK/DMfZr3Eypl009XSTgCndBI4kToaaywrxXy9pQrrXK/dj/sqMV8UA==",
+        "shasum": "edc2ba5ea4970c1e9b840119d2e735b25757a798",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.5.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBnGhCRA9TVsSAnZWagAAHqwQAI8VV3zoZad7n9pf2qhV\nJmkeS7f7XsfNfKTlwolrLW32lZmsvsczWrIlAciOgo49/Pmof7x9JCs9PQc/\nGEZP7YaLrY4mLle0ABY7SfVzSrLPAnsSx4V1UCHCwCpx7Lp+xg2IWycHxTFT\nP18ttSjFJrRWQIpKSuU+YwShCliaceeM+RV0/J+1cbFHdy13HoQQCuGxO8YL\n3JVtIrqLX514dQGESzCEgjSx6LsRvU9HaMQ9VrKYB1hCqisAM74ZNbkwfR/e\naQFQTLPrE3P5hrXayX2xz+GnF6km+jIn9SLVN2tJh++V4Qlv4Vzw7B6OSvFl\nxMqDVjkND1UDSqZ6oNwMpDt+EdPoIzVRwaRoUHkgQ4jG5FC4P/sATO/WCb6w\nB/nJUI9qvlw+OYqgELNyyauuCjtGuvRMEqGcwxle64ucMOowcQ3aZtW33Yh3\nb9oZSDwD0fQtecFkdcVuVih48Nx4Yf06Ar7TS/AvzjyEOst/PH5bIAgp7awR\nebVyxgDgb8Q/JJpEL8ceB/cUK2lF+vqb/B3KmsAcChC/jbs4k7xeypemnJOZ\npmrZIZktWc/yxxJLBHNgT7UJ0MtYb2bKX7ddOUYFQ5HmSxUpfnC7OB5LKX/C\nehUh6t1ZfmBEP/kVnceNtLlQ7JcOk4bx4Nr6BzgF+UB0WpGtI2ZXDxRHVME6\nU2cp\r\n=sizv\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.5_1527148960917_0.8192795103826653"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.6": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.6",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.6"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.6"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.6",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-1r+kewtlw145YyDSHzEyC+xjoPVLJehtFHrhVhOeuSmxS86Z2ucBriYlObS4e1yM+fpEZ/fqMTq07wamoiVvow==",
+        "shasum": "0de5a9b56f438fa1a32c601d336bbb174169883d",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.6.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbBsqnCRA9TVsSAnZWagAAZYEP/0Wr45xC23EFO3cDHfPm\nxTnBLKeZsqQKp2i9PgvqKZVBT3Irm65JUzTmNR6iqktV5v802lKcW4lDn4xl\nQs96RmskSUSV3Cx0I8PXqBF3F9a+cEM+oqXBppDR0tcyw1wbJdx00piwDOGY\nGPaC4Yv/v43m60GQB7QDNmrZWsFMxko0RiXs+F9Tc/WWqv9FOdq7MZYSfMTC\nqh55z/5B8IXE7+rFtZlDPWIeYPvdxQp8RNJ66MrKDa7QJAqjynnl4j94rw6w\nc02Z5/9cvtE4NUL34eDFF+yawYjFKG8XPG1LOg3kB2tyq7N+RkwXnICaBmFD\nDYOWObNkrFJLiuuCM0Qntia8hQMSdS+W9mQtPB9g32P782pQs8heak86cq2Q\npkDazhKhrrOPOL98FxVqozAKq2rasT6dwtLd3cI1/zVoYQCO6GfPYpkXqCY/\nEbbIWjjCq22WNg7ydaXsqcuXKSSw76NtNXLj9lyqNpxmxrAixBeCHxvADLir\nd9NQYXWO8py/awHNaRpc2IMmQkGEEV4MZBpvUz5u0eMwftyGF1FVxWLBx+jB\nwPEv+bKdJAaI9q/kMtpStS44YrTHcjQO/stBoX/D8vzIdVj2/hvppkku9wdx\n8fxlvML8x4fuNIfGsNiWnRFlecfWx7wwAQc6GFgw1SqVfSXUYi9245TJ0YL9\nJwJp\r\n=31Lu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.6_1527171751067_0.22191682460044748"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.7": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.7",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.7"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.7"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.7",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-0FD2ILXx06Z3P5PFfDB6f+bCaX3ArcCCXsL34pOXoc3cqjH6ZHZBXcW6qmXVWiK28fXDuQCZ1osrIJea2nWLiA==",
+        "shasum": "f98b941e32a254b7d85340f8425f31d250ae1aab",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.7.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbCAeqCRA9TVsSAnZWagAAZhwP/1bStYbMAZeW4IcKv+bN\nnBpepLugD/zrYcSkb2s7bt4v2clTlkqMtXY/JMrBRxhK10B0bwSP9VqD0qM+\nWHC4cc2rM2cg2N+ANENUC1xfo4pQ+yguz0vyEhigRRcTuxU8ntfos0lr9emQ\nZuTg8zS38fsshq7fUiKdzMWQ0NtHC0cFWjw23RVEBQtnf6EMD5WQTpVBBJKv\nNzz8SwUq4D+poaMuIrFzJON6Xd/S8YT5saqqdOZQym8d0ssoMSBoXMFWKVVn\nN3fbK5tuwEadeo/6R5cY2m2y3ccJAwf3mB3LmEZo1ZscUPyP9zH8U12atNM5\nKdvpzpYguz05OcAlbNhwdsO6vtJbC+CCReFiyYxUFijH2wKNpZNA/RrrOjSU\nNJaHDhep6lwkofVuLgZiCov6Ag/CxGta8BUF4Z1NI4m0sh+8D/uN9wOqi850\nJ0NoGy60I+bhe+Msj7QFY0kqAssB/gfUzbbhKI7b9wAzermpYfz1Rg9c6xI7\n0Mz/Px+wjampnPNgw8CGmep+E/P25ZF+GeIwT4+JcxSVgAXFELmrDVjO7zcS\ntMkT5H2YvpFMCOhebC6CaeLaIxufIbSDW/44VUzgOK1SGP9cYHpyx9Mm4e9I\n63tons0f0lYT2f+eQOJrQF9dwlyoWRwGzLZYbJGmWa1aq0gUVcrV082rkDHp\nTUuy\r\n=gJkP\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.7_1527252906623_0.0515710503113227"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.8": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.8",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.8"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.8"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.8",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-FYu8dmytZ35g4buu3G+zsvQO5lqv7Vu78IE0SKR1wwvTfz3cvC15hz4pR6N2I4Ox1hQYI4+DxKjLTxLx0td8sw==",
+        "shasum": "6439de475720198a48fa8b4c38e41987798f73cc",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.8.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbC/rqCRA9TVsSAnZWagAAahsP/RjwsF4ajVxeWwOaz1PN\n4MeOf1fiLwDCsKZpFJ46IxSv1WE89FeBvtSXiiCnH8AvL1wKJSosX/oQoVnw\nfKgUQ8DbhYD6WumcczsFvEJryMwa7GsLxT+XguxdcywHJlolfpGbvGG7Azhd\ngW4JOinzpo5wDrsuyNJ/EdS2PxjA+w8QezOPxx4Vg57Fpvln4+K1qDQmla4U\nhKu0+Ltzqge2zr9tb5nru08+bv59vDnoGELvXKmzv6JG6I8LjRD0qiLcb+qL\nfU9nXvSBbA+2ZolMplWLTqT5zS8IqsepTJ2p7ENrAr5CCoZJsmC4z/ygY9X5\nY5vvC/y/9/nlue6FZX6G+xC/2Gho0sV9l9FqpulupigPAz2MFRuNBwPszWTv\nJB7nU72mOpONBscm7BpcZUCfHns+jDGwmJcNkzU64/8W8TYj8WFScIqn9mV8\nOFwIOnE3Nx7i3s8mfjz98DnXqyYihePhJ7SplNzBiNY3NGFuVVEqbejM6cui\nvHGPgpvjMuBcGCJMF2JTCJbN6CdKddtrVtmIIN+2OcIp1HE9mDj6XNIwV6EG\n/kHAIAtrrxwp334bQ8mYrpjfFeXO7JAlBvPIRkxE21NuS1yKlpkbOFHOW50o\nwefjxEc/c8oW8On9/mo1ExBt3Qcrv9T9B7hfLXP4YafOiAt7c1DFmqSl7ohp\nfnR7\r\n=PbMf\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.8_1527511786469_0.8962183770409933"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.9": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.9",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.9"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.9"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.9",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-SYjNAlqcRH+YynslbIhFYOnGvE3WBl82/XlcFXiNkqnWsvHWnNkJbtxAtzrT/dcf69O/2pt8j1Q0+qc/rtacVw==",
+        "shasum": "b56ac06a39c3e1cfefcc421ade1ee471a738a570",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.9.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbDVIlCRA9TVsSAnZWagAAbYwP/3TX8InXl7BMn3DeMjeh\n8zjTcfQA+8SgGEi1xg0JHpvbrcse0REmz24KWdDWWYkLokH1gNLE/jfRFpf8\n5LM7Tn87G/qfxbdKGv59RProgUTJnLKsYTdd43zhMue8rsBetJgQIv7ABH/T\nrF+Ko+rLd+5z8oEofhsTtwWrY6AbjZYtqqTWisq6zHlLxtj5dfWfqNxB+ntv\n6Nf8rI6BtMLNR65ywNN7UFwZOvoQNeFtLB1WA7Ma5mKQIunOmBPKmBAfiAqQ\n03ibmwStb6yo1s/uirRwXG3D72X1cGUw5XklZRyBXJm+ds7Coq3RwLrhWGgQ\nhG87JQ+JPNhgOjWgP/k9CFSLrWYUfgZHSgZwf2MtSsfhlqQDSsMZoD2PZ+pe\nv/0N3c1Boii2qOKyVlm8ARO2DjHjfzurjSYpRdbR0Ixd/2yZYxF7uh0NTyju\nNFkkGOuy5gv+kUQYc7YnPIu+AGSaBA6gav2kFUuJqBFHfB209Uex6Wexjqh7\nUQKXto38gefRK+McnETFRwHIDYKiGIUV8PQbAqL4TLguJY9gi9MjgrnxXCEN\nljIsbwxA9gVBst6qonvlgx4nO4a/UlQMv7Lg0U0eBAFSyps5hevfxJqCcDRY\nEdRm5JSWKDIQd/qMdqFHwzg8d7hixlqkzU+m4qyJUqF60C0eUnddhrcr84VQ\nARQK\r\n=jHUO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.9_1527599652520_0.12155357842868142"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.10": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.10",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.10"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.10"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.10",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-1mNetGdoMMSW+spR7eC5kJZCA8g9aK7G0t2Mc5Q0p9Kw8p+gFgf9dO7fbThHP/+tNLHM6+SwUQ+S8s4BLhBtZQ==",
+        "shasum": "4e23c05431665f16322104580af7c06253d4b4e0",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.10.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1870,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbEUh5CRA9TVsSAnZWagAAQ9QP/RRK93mNsvGYu/SnrDPu\nzHxuftKFhxaHCmohQpV4ylA+e5lUJW4IGvunUPjca7nE8Z+LCp/MjCxahGC3\njnrCvv23ZI4y3SkIXKoIKyUCrj7r95YSX4kP0ssjAi0yKolHzPeEnp/y8amW\nJr2s5c9X5y57GIO0Qu2upTuYTlLNu33eIZyC9hr29gWv/njqUqik1T4m6Ms1\nFjI9ZPfkltSVRoTCdnYHVWjKkUnAwrDAStedZ/We+qXPGxKC0DKWUtoFQ1AF\njQFfWW7oPUgeJFvuvKJEt+4d1b3wxKPuJ7LdK4AzPAwpA5cGUcDMNkc9xnei\ncy6uOmMdjS/Dz1EaEZOYf8In/1ESC+ZEOhp7ZKSTC5pnfr7jdXWJYFdi3MJL\nYMFE2TCM1W6M/OkqoVF+l7Ns9AhAH1Voaev1n0PprnL07TaLRCpolbLrZqeG\ni6JSEDGn9+IzpvOgXHh0IkmLuNYhnHvpvsptYXp9jisQEkwxcwoeqzpfZAK/\nXem5wKhifGrezgMHcqq0BbPh21P8/tdS5OxHNJAMm96+2nKQL18oFY7jKiH0\nUDMPldL+ozyhwl5e6stPTM68zCJCJwa+MvdPNkMwDeswviUL/PFxF68uMzG+\nX818pKi+CdhTA6etwc1qoNNYDzm1VzC+6rKmTH8UJp7vZxAwxC+okpuU9G0G\n+pv8\r\n=GRVY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.10_1527859320879_0.5540595680587055"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.11": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.11",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.11"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.11"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.11",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-8aAP42NSZnJnqUitUO7X9RZFnZDFjDecaLNfbWRyvSKe66DjpqWvXnK+94WcXSEXXcwCmcqREnMgaBF8onpPTA==",
+        "shasum": "803b322b9a831e1aff9eae6d04192510d5ee9921",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.11.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1870,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbF6JlCRA9TVsSAnZWagAAvFUP/jo3+yHONKkekpKkB6p4\nJXy70Wu2aPgP9aNPR5DmkbUD2CeJdM5vK6F+0mcAoY5wR/P98gIgkZJaLZ2K\nJnoz5Nj9YcVAknSk5bMsJ/AHbnWZmjnSdm0KkDBtdjm7zPA5toAT9rmzucx4\nsrSC/1bMI53Xlmq9OCStp6RPhnF1ZhdvgrUZsUmaFbeDI83xM5ZLQ8VZbNym\nQ7DHk8QBa4hLjGcnErJjcg1ULmcqYutH2Z/GDGJBLuia8+0iwxf27bpYsObs\nR6yXUJuSr2q89h/WpVkFsvsWqJxS0HwnFquK296XfbZKHDXOZYltT5+2kPvM\nKGIxYowvFF3JxBpzICmGiCV0e3X+q17TpI3gyeaqw7L96Rbd7zcGCc34fGt/\nNLEUO2N25guGbZJQJ2Kb2c9TI4NjNaFwoXDcVpeb4s1wAPFYoAH9CL5xs3Se\nYquS+8EQkzbQove9+34tr5tQRkSktvtteiH50CMYt9MSXyIgR7yhftDJ5eY9\ns3Bf/pl5e9dg9zktheL/vxwfzTM8fxx3xkVSJLkgj/SowvskTA3QtZOZOuW2\nSqUOt+ps5rKlfSfVLxpN24AMnflxx4fcDaWoR7XMkJ0+1nveFbwiMbtcnqBW\nKHAGY0SygeyNmiRa43qERH4uiVhg86Xr9IRUF73QkA7yzjJU6/WDGIK6PLrC\nh82Z\r\n=HLGY\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.11_1528275557556_0.98751575896067"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.12": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.12",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.12"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.12"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.12",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-0FrJgiST+MQDMvPigzs+UIk1vslLIqGadkEWdn53Lr0NsUC2JbheG9QaO3Zf6ycK2JwsHiUpGaMFcHYXStTPMA==",
+        "shasum": "3cdc1953093760d1c0f0caf745ccd62bdb6627c7",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.12.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1870,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbGPo6CRA9TVsSAnZWagAAGQgQAJt8z9SewyNouK/DbuQT\nyxcw/wHFPPGCtn3ecwM1b+bkgwxG4YDPYQ/s/MG/Zl/JUKt/m2jSteFSi+GT\nXb8t/H0CgoalfXJZQbhs9wWQ/gcIxBEjh4ckB7jwf7oY0h4QKQUaL+cbVF3S\n32QSYuPhqz/JBSGfMLzmja8c95boCOZM1nVuL5K46RwzDpiZRdZVMTqveG/p\nD35NJA7e6KSotTiDkwTufCYCyix0XFj6XN1E8RUNkzJUPN1bZsO803Fp4qZy\n+lYYrYr6c+pGNicHHtPtrOPeGh4LRa525a3dNyMprODj81OhfdN8F5QEVaQI\nh2Da3XyxE+CgKGAMGXNG8FCj15jgJOZot2X9hwW6StggvmlLjSiri3igb0uW\nwU5xRO+31I8k3xV5nFAJxlf8WB/x/4Dz6jJF/dqfvCUWxNqo6QYyd44D7dYX\nUPA/lUaK7z1hBVLcQYzxZeE/XNpB8VyTAXF9JizuClEAEbSv18G/Psj1m9TU\nUWeJdmbmqP/Ybua7p8EiNc9AC8xgQWdyiEKAnxufDos+BxVXKdld5nQYryD3\n4zWyU7vRnCMMcrOdlR+5xkYzOUd2Agab0TFWtAOqI0AwyiEcWRVFhfEX86Lw\nAfGYNMkFYn4+CSJwOHjrLjtQSwHZjyjor8zrwXHfUeRAA3FBUksBKV//M1Lu\nBikE\r\n=RrWM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.12_1528363577973_0.18896138395405448"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.5.13": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.5.13",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.5.13"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.5.13"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.5.13",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-yN6ScQQDFCiAXnVctdVO/J5NQRbwyTbQzsGzEgXsAnrxhjp0xihh+nNHQTMrq5UhOqTb5LykpJAvEv9AT0jnAQ==",
+        "shasum": "1bd2181b6a0be14e004f0fe9f5a660d265362b58",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.13.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1870,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbN4l2CRA9TVsSAnZWagAASU0P/A2aF+B4h4/x7oXPf7CR\n94zAicy77Ux6DWBWQGcj/3hCCa+xhcWXkZfVdrlzNZ00nwT1RiHTJpVhJd8h\nu/b6Q/VXexXj+1f5ggYiqiBeen+pXTf1D6c5C3EuNQG2nEA7CRRX6GALdZyl\nc0XEhNnapF7m+3h/a376bzy4zWE0Gr8aKHr6NObrzSyF5U7SQOn/BIvhGX5o\npJCsny9uMkano6X0KcEzpnu0WyiRuBQVhQnOUzZRifJVXoHDRdMW8lhgzo4g\nl+3wFKm+667bhSg8QQHbKdXF7KwNMqcpXLJTeVxR32S17cRNmeCoZP6g0bjr\nM1CxBERYmNqqWq2Nr0tVE2dpR1Xx/6dtGYUel275fHSQdA9y3Ke6q5XDUAA1\nO7IfG5PSVuA0c390thpJNHwd0A2HuFgWYQUceFMyFaCD0HS3EAAOFAsRrqGe\nH2VQyK2SoHqQQW/IeV1jH0Z8+bJayCqAWYqGta6N6Wg7Mx7xqd+uKgZaKFGr\nkT2VFR80NPO7Ey48cthAmPYXB9L2jvTQHSfudUmbZqZ50qUTOY0g/fOhAAGy\n8tZYHRdbAUCHlV/hvOyl9lJVP0hzbqxy19zIuu/Ikyke2x7FsK6dFmTxe0Qj\nekIGYRgWbZVeSSGW3V26qwT1BV1j1bA3II/44HhjcHjKrH8WBjgzekU8yPZ8\nnIEq\r\n=p8oM\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.5.13_1530366326004_0.9161696313709977"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.6.0",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.6.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.6.0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.6.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-YnqJ9O6d3gLTWGUzV1U7ODOU0GJW0/pzeddT+wJm0um/U0RxA+6fpZY9tX3XUwSuiIcC3Kxgi9xQ1GG8+WTuIg==",
+        "shasum": "9778e45f7fcbdc8840f3f815f99cdd075d91a1ef",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.6.0.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTGAFCRA9TVsSAnZWagAAzt8P+wUJC17Pz6mdUtiEsyI8\niCVmICwWgt2S66rHhG1f4DWZ9SKRv+ppwKG4kLPiw+pIh/zMz626yv3kqwGp\nSO0BRetPObWNDQK2pjFKvfBjst0ncAjgMQAmyDracoqUsFEJiyAQpONfeOW6\n+pupOy+TgEyKLUXaUy+s+RmG+5yl1ZzwskcJpfQDJ6j+EVTat6fFDOKgYcIm\nT//w9yeSH/2NHK3xOeirQrDRxAOOsG1SO1WyduD/4mViibVrmfLSlSrP3q/I\nivTpvIqe4Oj5dYY7sVxsg4yLjNvH4y0/PKZb2/kGUN4f8AsZz13mn3zJseeI\nFUgJEjfYddp3mWHGQxEKDR9cQ5U98CQ3UqWe7tgu0yYSMdYTH4meULMSy9Of\nFqAtDSVvIwEbiJdhPDvAz/ropI8z89QnTjyF0xNmvNmFpA4B76GiV9/egGNA\nso5jDJ4gntWPEXXJ7kcBKfRIlm+yYdOXrmdlzykYxCRl58kClzAANJVRjxg1\nKzxnC63fFE5jGUwTJrht4aPANvfsXbVsRsKVKMV47S0hoavHEw+YAlUN+9E2\nfvTgkyq0VzvGyrani5VjpJdYOGyh/AEycCkkBKHY4tJ3aiDXakXd7nyFqXmN\n+9WPWCRu2Xp+OpNoJaZYnjZhSojP2Xo0k6o/6rz30aFJK5fMW4IdPciLvocB\nqonQ\r\n=p6HQ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.6.0_1531731973627_0.316408915506869"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0-0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.0-0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.0-0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.0-0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.0-0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-XKk2LP5fY1jiVnqipsCj9d6P5hIosIBkEtZY1pBJrCKeFmne2VbhBEg2KIvXQZzordJ4n2aAE5rimYKA+nkBtw==",
+        "shasum": "b2c7517e63655f1263938fa72e30a03ee9d49676",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.0-0.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTzmhCRA9TVsSAnZWagAAzjcP/07hVa6Tn1hZu6W7Qfoe\njAJxZ2LQXJNXEtmBKYeUua9rFdG/qqEY/O7SpNdaMqKN2psaSCZIlc51sV9h\nfoT7RPc/8jasqk85E3pHm3tzy6moFvF3a41LgYqHQeiBFgPWrGiBtxqdzVGK\noiqQOTR20BwH0/3OcgRZsMDFVDN5at9sduj25iaK+d0q6ge1iDqAjJs4sSf9\noSvOH8PDd/z5P5SMW3IjrixCuRlaZR9b6YD7o3N6hnC9kHHvQVDDj/P2vIpV\nUK2lnBGF/40ZtrITavlLSK6lfkebVUW64wONlEjlS5ZbsOGyLpHyD9efOOwg\nRseuPdoiATf2kmYhLpDbwPANL2SsUlOAUbyRpf/PzcF977xaPTQ/sX1QKVCa\nOOko+mHdcqHMXhNRHxzwJI0sTfb2L0j+TcJDHXyX8K7lUWEo3qWOYdQMDSXV\naxzx4kjwZF7+JANpntRG7xfW5jA/obUErNUqDVDmCUJL2LoFyix7DfYBaXSO\nqxD3SbOIkE/SsZnm2kj9GGoNYPf5wTipPEzAELnsJZeQmVbcXSW7yAD5DSHz\n3oUobIK7lHrnvpAlVMusrNssX15yf1FH7QXyQy+RQ9Vs10o1drFtHalVgsYF\ndR38/D6EXc/mTGtoVrnxgrZzfh3IvMx2YTQjcqKM9V1V4NVNoWA/jOEeh2eP\nitzB\r\n=CtmX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.0-0_1531918753820_0.9562815981044517"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.1-0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.1-0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.1-0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.1-0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.1-0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-mcN46JJEsHjb5aMLNdUb27MA40wEZlUlfB5kTnBmc3hj+9qUKqMGlCHOqda8tTq2HIlIoAttqeZ1XcpUZpudUQ==",
+        "shasum": "1905b2fe32ede3278d28c879871699b5095b95ea",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.1-0.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbTzxDCRA9TVsSAnZWagAAzdwP/1gGx8/0ZWQJhxgykKCc\n15/WIImo/VGJcMPFIDYRn4yv2XGK6T1pb3lno3u2kFJwxfS8rLapV+vW6SSK\nP5sWN8VVyWd7Q/nAxsyulZ/UDPG4wWs5xDMAEWYv2qxY3c8aE7syUOZ1TPvU\n3adSmqg/Q5uUqWOHiXPO0G7eUjOK2kzJ3/8HGguzQIHdDwoYVFe6p7JYumQj\nPUbvnWpyrDuje3n3oPixgpRBCRqmzsWKqlasWIUQ4frK34MpAte0FtjNnNp5\nkjr59jjDckqdEGCYA6P/wOQNA48otJSOX1ZCi0e0r8sCG2BUqnNX7gM/YgKu\n7Avmgx+Hr8ran2W8SsTP1nzW80yf1kI5YMDHyWrtlxLn+0fmnLY+7a1FeVJq\nhpDM8JlWZIRRtSCkEsc1e9oxAEMdM9DhHTQW9PK8HidLquBC+gswF509trwj\n7Y/R98mA3cKnIpP/Y5Mp3klh6IWXY0IS1wYrBuAk7AUpcFJFM/ei0kHE8UTb\n4yfwgV1jGRBfZdo4bwFjc1ylB7ltoBhBIwMgC4M+WTdjm8y2s3/By2vd1qNQ\nKGzJw+CtYJ2bF8uJLSclZY4XJnN+0Q/yW91pKfPAxC41iU24i2VAGX9k62BS\nwOAbRaJuiZ4yEUqplwnjkRcWtOJyS7YWC4v3FZXCFe+FtFeD07t/VtnPsfRS\n4U+V\r\n=HBvx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.1-0_1531919427374_0.24073011528939658"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.6.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.6.1",
+      "description": "",
+      "main": "lib/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.6.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.6.1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.6.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-G66nrKHsttJ0Ou+Q21wS1GC45BklXM931Rd+0YMz3Vhemqa/Yod6tK0KVMQDGf/Abbic5DXbLqYq18k1lUFr+g==",
+        "shasum": "3864eefa5f106253ed2c25606c4d2912be14b039",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.6.1.tgz",
+        "fileCount": 2,
+        "unpackedSize": 1867,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbT0XsCRA9TVsSAnZWagAANZgP/0/gMVvgXLSZFhuI+Hzr\nAQ2hVvj3glmadxgd3y7svUXEjKeB2UIpHIkMXD+rlsvU3rvRl0H+w/QaHpQI\neaTJcXG5jA5KmWKERKy8foH8rtuF6yoLbvz6WRWwF5F23Tky5QQkGPD/i63A\nPiJk+kfBToQbW7f1Ai4hOD5AXEoWHzbmEwBOS2fZFMhQezvCCKupUnoxJ3Ks\nshUxaEd1ElQN+PBWFTC4MbW+Q28/ibTjIO9U0//2B2Mmx9PseE+my2ygBjl+\n8vdTgMYg1zVCdFl069nnmTYx7Hy54A3XWLldRGhhoMUpFNyAU2dkt0eQHyrW\ndy1pRjy72H617om/GFokBY74Rf2z+KAYzvABLrD9zUkMSkY5HrEPS8Nh4sJ7\ndQ7o0hX/KEfxUSQDkvIZ0pWSs9zfdymhCp3hwGjqmRxFOy5XWrb8j9mu/Dqu\nr69eYPdoODuQn0Ew7KjC9KtZJFtSySBRBxAFU9ZOSvp/OljZcBMLOF8cO2Ae\ndDnAqGj4uMEs5WldXaurqTZOjQWb3rxQx/Yxs2SojfWklqtltogrBU/V/Mx8\nu7/Y+muKWpnn2/3z5+j3L6lgvGZRLDkaogLwWqcUOG3P67xFdz7oEIQFJI9I\nJa9e7oKkSItCTWpzX6lCEucMJr4elmxZ/zBcxdstedONzzsDNBB4EuG01qWA\n+zdL\r\n=xQps\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.6.1_1531921900545_0.882186969756195"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0-1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.0-1",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.0-1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.0-1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.0-1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-fW2/tHkMMlgmRaXsAZu7fN+OxDga5axx+MBm+yu5F7Mr11qqyRFYLhtmHnaM2lKjnDeb8NVmbqQbSyT1qkuYtg==",
+        "shasum": "8f1b06ecc150ea966d142c9e87f1ecf71667168c",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.0-1.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbT1ZbCRA9TVsSAnZWagAAH5sQAJRtljvNlOarvmn+hQbd\nf6Q+EQi7xJCaZzTNeN5ypRnUpFQdg4i6fhU0KQDcDPdJ005o/0QUx1gDvPXW\nDjwZLpodFSBO/asA9sK9uhFBUBLKuvgK1RnvJCWB7dcg4pyBma5pzig693Kh\nWlFOs4JYpjcTKzHaNC7c2LFuBkb5UbUuOc9yeI07FYkXxRxur/KxlcPU1hlX\ncyv56TsWgX2IGAbWyZmIfEaH3D0HbH3o3xfkogsLp17Bwc8nBH9mleZ4n0eR\nx86ztKopQNVLONv6TEXyKlSQZaDaGyLvakc00NL//QoimWjjA5qpZ7bgnz0N\nRA90gUExG+WzkIGrnyVrkdmuJNUnIg5typZJShv5ZrxHU+Z21UtTcI7rPf4j\nj/wF4buEbcO9OhkUFnZAOKNCqu8TcKHlI+rrw6HeUtVp/aOiXkgozkqXD8W+\nQkbRl0MXBhrd+7N+o6pLchacK+qNYN1cZSdt6UWJn8l6qRe/vChVhmBiIoQA\nR+90Rg99/Z5rObBcxiI9wfbuobwtFW2r0yNlrt1v/DtmFxRRNAQ7ByJCsC8H\n8pTzMM3eSSrBlM0N0MPjFTlraJpgQP2i4AIRP23/tkQEohKYCvw616tSUBv5\nXMuKWDYDBs53xnpYeTqSAjWOqDtN7H8jkTkOMbPTZ1sjLqP5VQv7njl4QVdC\noOAg\r\n=jNPy\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.0-1_1531926107225_0.46954400768038784"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0-2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.0-2",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.0-2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.0-2"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.0-2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-fK0EnCXYFbX9TXVUHqfIX0evuA+Cp9gJAhcdfjIwoCijLnEU2r5sqX6RlqMWc3pjHPbfeptgWuY8g2TPYohIlQ==",
+        "shasum": "3455c88e0e52302dd63aef07c4ccf494ed38b3cb",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.0-2.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbT1noCRA9TVsSAnZWagAAIwgP/0aTxkiiOIRswKw8hR5p\n0e584pDllZU5frcAkXXY9oXCvtu5uDCohOanWQqNTSHXjg7TurzTAuNc2Au9\nQwOD9Hud065UGqA5OuhB4E2W3RvoG5kd+ky7LYen9HHn8PatIZuaj6WtJDFv\n5AGI3pwuUd7LpnOumB45QHe6upFd0grVSINqF2TUYdVGW91EcAGqMnZZcorD\nRjmuRxViwBKD58XSkUy86IXIG0N5aCLuVp8lUw2byh6raWlUkj1Of+9aqsqC\nsrdy9Q6Y8nfcNgXL87x21H5SSoxDwGK/LR+BMdEoQtgLYV0LSEMQtCdsTgD+\nWu1NYMsiRjavB3biAiS5nIFG7Okw1QpK+B9NLRJwhxzaNG7BSwpx7zayJBgB\nRMkDblBBKd1anVn5UQWbEe8F205xFJg5WdnCXws0ujcd0t/9R08iyIojfjKQ\nIyaSsHOF7rOc22rz9jBAi3BxwGMYjGBog7vTAOfV/ZjTllqypEZ2zAGuoyHY\nrfv3DqlS5CkAcIV3Bf3pVa7Dx7SfEQsTmErxlBZMAwvFu5fPJkb5u2FjWiqU\naCaXuLqSVPUC28/Cno/4mYdyOSCGgup9D4YMHK0oedTuF4FsRXLDvmOSSQw/\nh2tzQ6RZsuom/T1LXD9MC5r7nGJBs+gn1lp2RmoqQi3fmU5ANC3qmv4SdvNe\nb5I/\r\n=Sk6v\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.0-2_1531927016350_0.318532030247626"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0-3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.0-3",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.0-3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.0-3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.0-3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-7BuEpbGP9iSpoNpD9iGfKbmhuzdlfxDaMJ8uCm05mHe1Ol6iUkwMqur4BI48Xxhv/cxCjSrRqvnflixcSjNcFA==",
+        "shasum": "3a7287d623f4f4f7721210d683ebc2038a01a0ac",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.0-3.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbT5GOCRA9TVsSAnZWagAAIY4QAKNk+isVkBlkIh/RTihi\n/iDp9jZymvPMpfO5qAb80gk11ZmdUo2xTOPaiUCrDRpvPyLNR3MDFf4OBbAB\n7q0EqQHE87uHyO6TYsXBqF4g/rl6smEnQme/2v1zIlfaRrpUf89SyJFqu5r9\n+6ntgZjptbKgF0p1yz8K5MDLeRK3d0dyQvBO4SSW0lGI6D2W8xZbp7KMsJXH\nb8aLzCA2WQhLWL1rNn9VpGKlVGvDrWJaAHyHkH+OcOV/MOWJAcg3ii/psTu3\nfkJts605O3w5Ui5Qi4qkwl0fwZ/Hj4ycvol4JUHaOnARdvWbhtNMNfSggXN8\nAuvSHz60/LIuoKK3PxzHzlgdlAiz8sqT4Qi9MfnOBQtist5sRr6iowj30JxZ\nC5TvaaEGGUAAWGC7R+NfVGxTdwCXOufLXGzF5CYLVg+SDIApO90dZUwoz/hG\nWJD5PCmIeiJkQfL0c2L10R5HCTk91Ghf4UrVCsEdZF0tr9208cQ0P89gEdV6\nyh1UeESLneq7hmIQ4h0RWoxlessaevH52EbaYDaVs0Zl5FqUQG0qWFfru9LG\n63XBN4y9ZFZ5D/EmHbuvCE0cjRc9mvDKuZ3eWnoWad26fydBMys2Jq6AX81S\nI/qvpD+1Po6AGpqaC+JOoYgdLLnGIqGxy0pajxZEj9z+iBYybnZd6JeboEpg\nkJlG\r\n=lHci\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.0-3_1531941262147_0.6881179340009858"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-vnDVo+wGCmcchbvVXsvoPn8PjZTg3TWGAkldMV1O+98CwlvaV9/o2iP8/zjDZnYW9qgot5RQXfYMU7XrO9dlzw==",
+        "shasum": "cc526d35af8af0d798b309599ab2d2938c6f5a36",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.0.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbULX9CRA9TVsSAnZWagAAo1sP/jcJZwSLVVaM3kIGlp67\nuFRP2UKx+FBYH/SrYnabiqy4G9SxNgL7eQ87fKSIEwN7h4ThfatCuEJcJ5Pp\nwcvmKT7NPT7tk33OTkvlsfd5c3j2F9xBJoUFITfd+6nYqKXomybwRKyIoj5+\nS7B/cEVN7SohA2zxBLJN7an4kuJ3gljgBO0paDErU9LcICuds979cg2EXbGW\nN4pnIBqonEy1rCKsT/VPc1pMuoElXQGmII3fFg/pHzwZYc45azupQzP8XE7S\nEw40rJ9c0cb1baIMXggfGL73EH7f80t/Hil86NUK2kcoEwi/jHj6x8eeC+8p\noJtG/mi82wq306Lh6lxRJ+SiXdiapdGdCUYNbGXshxy3izAJmj5eJvUfKHIr\nHspmmYreQZAEooHaNwpjFt1ZFVwxMQakwktg632scXtbKD0hvh+ipM0MMQlv\n1P2u8qhxzNNJ8fNj3F4eTaD2rlFMRp37eQrm2DS5bluxatUxnJFUKFfMPpXe\ntXz7OAAACRQgnGLnno4ifMZRoTp9bZjE2iW0hB/wlTtsDQjzZgXVsyTtLIlA\nkdpDjh/cyGkc0FE+RuH1eprx8Ag032GGahstAG4D0mwHHQ9DAwsndK/dP8c4\nbMp1EKmtNr1LxHJYyS+RE5TLW3LWzqr7JRk6FW2prH1Xil2c8Mr1L5eKUB0D\nOx2E\r\n=mWH3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.0_1532016124967_0.377991816425304"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.1",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-7IkFU4C9gOpzHfwxOnnSwSDAYsHqpPvwOH4bfWsQahOOxMK2iEQXlzNFU3xCT+hQnL46KuRoHjK9wW9xLY/kPw==",
+        "shasum": "6f3fd0b36601446ae4fe0d950ed04e5ee9d6a880",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.1.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbUL0tCRA9TVsSAnZWagAA0mEP/AxjaJGGhCf/Fe+zap9I\nNwrTOuFT3uV5L2/SSJVwEnpNjSDkUfSn10ChIrKdPFoSraszR298RTEekvqL\nax4BWxDD/WOoKaGcy8b5BIJ0f5WefHfOo4V1VjHJFEChMWq3w0/e2TACzKs+\nOigyoJVCEat2ctivxEK5EaxfQFN+eM7ZQ89+0DajGC5/dp5VJm2G30s98h09\nGj6ISpwjnKDe150KCQHPieKwgEoixvMi4U78DXw+OnidA/iEASpSYrxVEKlP\nsFyRTbzDrLFMADsAHzqxL+G6kOnv0HmzLYIEEHXr7wQzEv1bBiyzd3IB7lOU\n49EBpBpYgKE5C6oUkHPNDdEh3U3jmmySwlbCH+jGUDjLd3Y7ab5zdZG13/Pj\nMdp4J0iuF3P0CMXAZI9Y04KfR2rWWylffBW5U6NGPCpfOgKoz0JdLHH1WGkB\ntbpTD3YIkqGzIeJHqPg4lzoH6gG1JNOvbU5RF3j9l0x2IR4zIucd46Z3rQct\nWvPZgJy5AqWEcVpd8qAPuTO0uK8vtMyvLzwhGPMtYdZnj+iVO9efc4dbNgO5\nvmaq79k+y5Day+/plXWmskVvtZVOP4eyu7S+xXegJ0Z/ojGyAqZYnfUzY/19\nU0e76Voavo8ylzimggyDQZ+Iy3GkbEZdR8UHY9cl+LVjNRx6WKgUqBBljtT+\n65BL\r\n=l8PX\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.1_1532017965014_0.7233779211768918"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.2-0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.2-0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.2-0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.2-0"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.2-0",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-2cwpG8kPafErzBD/C2aVSyiUTO/44Lknzg5gThya4fpf60c9HyIclpTdOXFDQ5PLpK7gTLAVLikD2BWc88eYFQ==",
+        "shasum": "728335ed9f720a044e8b9217c11b1744403e2046",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.2-0.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbUNQtCRA9TVsSAnZWagAA45sP/0RtHEEcaHAVQ7dEI3RA\nfh6TkPyaPTDGQmg+2sZTLTGFLFXDv9R7BJJJHNgIKhtgCFG4TH4vHFNdZm5r\nrw5O+BevRdBfG0WMjYkTUEfFHf1muqHBWLr6rhLbV+uNo7KLyDSMITWhkv5T\ni+ffKnbJ6vxnxFpuCAYimRGhXefIkwml1/ayuEEuMDjKlq8LBrSrbJS+ZKX3\nvu37fQZF+UqyWOuV+NkvbgMgtKI2ZE7z8WfdCAMVpg70cnmgXXeGNrRwYuYq\nw6Fk48ADiuapxrFHLsdgAm2ls0DJg7gu+orUR54egDjuRZIAs+bKmFXbm243\nYXcvIAYgrdDIjqIOAgs+tnuv62Ds8p66m7xLcsW4a2WKv2OGS9MOgIPqnG8e\nRbdaJ0RpPI8egVuSP11Q3nCJxWWdApin89GPZqj2xaXbqdTAB2Vtevy0p7mD\nAGeXl0ftAGraU7agUimqZpZZ/5a4D77tTSQfovW4AIhdOT07D4jMpyaiH4EF\nOFbIQ//G6kgPq1OPBdn7r10MGF/aBqXDPVzoyFk/g8golzeNsX8aY7DJV5IF\nFiuoiWeZ9VMUYRx4d1nFDXjp/zVslXxSnawO6eUqFQqCubx47dt7BK+G8Ali\nQ1Umu6cJvXDwNmpNIjxxrsXJVJJ8IsiUplxMGSu94qOYzhzboSCBerJtyEmr\ne5G/\r\n=6sFg\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.2-0_1532023853675_0.9920988736676173"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.2-1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.2-1",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.2-1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.2-1"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.2-1",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-QT+1q6Y9u9sTQLjHOItxUWTXPicj7L5gyPoB4m0JzlkIW1eP4uRxxhYPgshMOdIrhGR5G9IkQxccauHUmvx1pg==",
+        "shasum": "ac6ed850641b50f30213de600acdef80f51dca31",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.2-1.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3137,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbUNetCRA9TVsSAnZWagAAFQcP/Rf8xZ8EzNOLmgZRQXdR\n7POOErUrs9IWrqNc3yRRSCVxcZz7DobqOJTsvYTT5Lclpt149kN6P0l/96H0\nYi/aEIyFIT/fevAokkHcCPfqA0CqZ0Ql4uwy/cV8f2GjvKW8HJ7nD+zLlAPn\nhdL09dxyR1yNiRmnIzAMnwAcgpAPz0JeQj6y4eiE78aWea4jfhxVOU7NQjZH\nswl6jHZmF9MvcjyIVkYnkW/1bxre7doVf6ZvRR49xLPF6voPZJPkszGnZcox\nezBbFSDco3BuqndjZqqRkwII43XRLA90OsrM480U8e6Eidf/9BYZ0fWbXRuE\nHao7qBSRMe3a9vLCveHaI/UyV6+tT/vkpk7ORU6TAcyxOJnu9Szgzl7/iQQ6\nSfzwv0vSHvq6AsxrTtm9OQge/lifhNsEN9FUBtxm4POF/lc7LVYG6vdPpqb3\nROpDWsQsU4yDy4NzXlYVRphkZYWMlIZ0yyyhZL3wEMrXR4QXL8Q6W1c/QosS\no5y++uRnpyON7Hdq5EDluGj+pVJL9ELiMBjpJy/mWiNmtfnKq9jVBZ5yruYl\nUPX/6wFMHAa3mt7QHnNd+UKaHTzueQhlefYBBR8uYWdmxe9evFrxhNjXfjid\nxZRk3/3q/jHvl4O6iynw3T79tw5Cl/z16rDIQlqQtmE8jOz+kNiXRiKgw6Q8\nXbRr\r\n=3lh6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.2-1_1532024749242_0.79020344066862"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.2",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.2"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.2",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-BfioJkP7RnX9VEpRsDvzq/hJbNtE+6ARZLS2B6vuJXJ4050rN00iV4Ax/dhTDUuyjfP1m47CgOQIf0wLtck7Ig==",
+        "shasum": "03a9fe874f7525097ec859f7d8c916972d3db3e1",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.2.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbUNnFCRA9TVsSAnZWagAAVPkP/3r+0HC1FbU7Hnau9KWz\nh+EbfW+HXR0NLI7g9ubmjmTSF9BgKNhf4Mhix0hOr/ZrSGtfhTuP6iOdh7FL\nX/SIpwytgR87PXzcDTP6XrtdlW1lwXbXESLsIp3iD1rfoM2D2Q1nn+cme5Xg\nAErme/Ek9dAtNdz/baBCArcnqARrAOtZG5k3YTOk0zeomQpjIpoycx9zoYXs\n3huO+wbhQKZxbg9/VFU1VtfPSPJu0OsGcKwJxsku5ELNKn3cvvXJn/r0b/ug\nq2YGzmQXJlwgl5SYmhTYyJpo7XJpiB02C8UhEMtqhxYQVxwzH1onulh3bzFQ\n/C1dLQxU1A0Yfc/awqIo1yAC18tw53uz+j9ByE8xVoTqRAXg1cZks6w0ErJs\nAcZFlkEzjRW1b9i6Ptdr/TVGj9ohUwgwMXTUgSvp6Aflk377GiTaBaAHvSGl\n8aPYERjzmrlKuQUTCmDFSg2z3yZGl0mpr10zkbY2Lw0CFbh58APRIUUJlnIb\nWkS7TbioC85dGNy84faECHxevdmei9XnphSw1VgRhcA8eyRIYEu5qffXit2c\nGzqzBL3phQxoXdr7g9iu8fGih+itFuV8LfkLBOSPa+fiILruWTfG2MySvglg\njUuIwU1hBkiCquHbfp/SyS38h7nnpIeHitR+WjEMRTTDCyuXWaTDcF4Z8SDY\nw5yF\r\n=46yZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.2_1532025285606_0.09757654413681482"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.3",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.3"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.3",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-T20GJICzqS9cH8osfjS2IFkNgonCVF7GaG2sp155Qk246SGvGyLfBy00m2JBoSjTIaFOSTQCSpDuolRe0XgJxg==",
+        "shasum": "dca94437553bd2737a88592f20ac09abfa8164a3",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.3.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbVX29CRA9TVsSAnZWagAA/ioP/3oWu7qS9absnd1f/Xjx\nl7puQWZ/S236kkn8l57MLY2HzxTNO4Q+ji5e0kZkdhd2wkl+1N2uder0dsWE\nPt+RuOJ417Udj6xvpgITiz1FuNF8f9+Y2XCiBc7HcSkRGVR2AotfErEmBhQP\nu8FIXUzL/dPUfa6n04PwPkjNb5FGCeXg2U00ypeNT9bDlwE1gLhBYgl0SFyy\nZmWEQyaJiyIr7bv8exa4OAx1PA6hojqO42jPrzuINCZPZsJx+STzzI+dZLRk\nikz7eei2GFVcLHkympzXZw/LB1AtXokfqre/dx/X7jPrhF7+2m5ZMRq+A4DP\n+b1xOh9vfDD4+E5j1sT7q2etFMFb2OfNKj752kL9JR9hxLx2Ix6ZcyRKUJKK\ngPzxsTOcAZjjBG5QCot+iLJ/UDl5zTDpzoX1oijxHEsKargnVxm53Thoauz8\n18aKsRHk8ox6hpX513TbLnph2uX+3g57u/JpPVs908wfiJXxce6g9QvSQJN4\ng7GrJ0loxmIj0+c6etTFcOrZYjuHHVGSR/1wx9fj9WlahmDoOVGY56vfbWWC\nQusBCBZEO6QSO4oA6DK8vfQs7yd78VpRI2IZCHAoGiRzA2qbGjHDdV6mYZGF\na6SQJoQujfdcfCi2sNa35J6RCnkbqi95XHQx0PAjJEGvFBFfe8q6BFHVXqT4\nHOM6\r\n=cd68\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.3_1532329405149_0.936135042042131"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.4": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.4",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.4"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.4"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.4",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-HsWbLTjCY0TDZixwqIAu07CEv2pa4i7PdvV6M2RFs2AzOpWj6otxlCVsvCt4YPu1lr7iCiZiCZ/j8fu2v/2hTw==",
+        "shasum": "a0f1ed8e195bff6599b8155beda731767a59e30c",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.4.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbVs8xCRA9TVsSAnZWagAAaUIP/AhyORMxuGwlElCjEL/I\nP9XMdycglkWCSgrze4W3v1kpx0LDiNnwpCtFMCnmXwwkLJ+mGLiewR3gRI6e\nTtBkeshyBc9RvC2Q5rK3baPxUUCfe54hvVo57g9wS/ysW0gGDZDm8WpVikEw\noMXQNXlnF19vkOH411v9dymTXoQXUgxCXDcb8Gnjb3E+mGu0EM9PgmTfjKaQ\n1TV9jcwMkyE3KNz9ZN81KfGWEDJj6Cjz2DqWGvsawdgGiBoo1BB7ZuEqCzIu\nw4UBa3eoS6WFzESHvVe5YENghk0httT4bf+WEeoXqBfpVI/tDMguLI7VwWZv\nVQnDYS6gVFD6HTWCoVI9zjymlCVTT0s5VrzXfssiDtYdt0awWynRm8jy68sb\n5GaOkVh2vQQycKpXjqhRYS7ceFcWggoc/GF9GS0P7USd0pLtIsWhWq8trI6p\ncC5ru9/unuPlsQigaMl5m6Uou6dNd33vZdNkwVEKWcup7YOqYqT03eLpRsqL\nYlyvd7YgGtV6GPNDm3mZvV6sNqQV9zt68oRXXvCWR/A9HMuqFIGeh3ZCGeq7\nLwQ5Tsi9tLUWdzxQ6IvUlfKn+cm2L6Ks0aU69JJIYBWpAD7zWYDNJyy3+OYt\nzme0n7MRQteo7xBuun4JDlLb8rvxJQBLzuMpSa9eMeQX1LiW0qUJ70nH0RI7\ntoSz\r\n=DoGO\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.4_1532415793861_0.4859985034495835"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.5": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.5",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.5"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.5"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.5",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-ST8yRrPbYBMa0b27N0EP7/vO2oQYj1gARAQdN9qVrWK8xFoYGNhmHdJR2dclRuEzshTMwplFzPCZiWimJE0OOA==",
+        "shasum": "7c03bd204065d995675ad50427b9968db01459d4",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.5.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbdZBNCRA9TVsSAnZWagAAC6cP/A9RKEiC6KIx3b0tcnTE\ngATfL2YVVQ50Kdzz9/+ABATniXWsGON4Ro7R3OhF6vAFdWWtYz3ofufz7Tyc\nX9Gn9DT7KMRMPM+6CJxDiw8MZ+NOAYMRSolK3Zyi2yu7d0yAlhDjYDtAaa4C\nN/sW+uD+4soDFKkR6XgoaLG/5LtNZ8S5bGIvSWstdvBLVhgMEIrf9Jx6Y+AL\nsZSXoXlr3JN6HIstyJOwaQyH9f9TWhqwUbGVji17m8nLJNqC0Wfc8e2FDhWj\nNOfxTLSYmgquCtbBgdiKK0eIRDWaEyHYecp3LxvhqNu9zFU42kXHnF5cKc9t\nKDpRXCuLrkG9rzzbFL1iTdpLg7IOGKw96dxtHglrKVS7FB0KD/aFTOoF2qXI\nHwOdd3+LIDtFhRdkMysj7R/E2HcbC8ikaDV8IncBgGPc93yh5wQ5VR2h/CuJ\n/JacxoUrOYw0QjHEZ/teqgFB84ibR2f2vH5IVk4H7cgxLHEyjEF/MPiUIYwl\nBxsZ5wjPQViTCqcXBxsLrGXf2ML7nYYnoQVMDG1Hpi07T3iYb0EjXLIhfeBW\n+25rsYqJasW/SgbgnLbXH9Ya4q2FURuzm/tV1LBeGyFFFZIvwcqrnrVYKFHe\nQTFSPB9AN1GYwp9AUH6TvArYrozGoqlBIUFqdLLpenqLFncLuhnMkr7YQ645\n4+vN\r\n=bQ7j\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.5_1534431308764_0.026951019809550614"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.6": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.6",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.6"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.6"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.6",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-+suMJOkSn9+vEvDvgyWyrJo5vJsWSDXZmJAjtoUq4zS4eqHyXImpktvHOZwXp1XQjO5H+YQwsBgqTQEc0J/5zg==",
+        "shasum": "5a94d21b0057b69a7403fca0c253c3aaca95b1a5",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.6.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbln1WCRA9TVsSAnZWagAAzacQAKObb5nvj1+FoTBjayjg\nalgapTVxmz3eeJXRZl72HYNtZNhmP1z05OONvKDC4kyjmJrpxzDpNJBdLyF8\nFAmM22qm+Ef7NXtJNBtXzmMpiCieEZcJVxxyL1P7ztvyxcGEBiSCIKcRGKIK\neCO07G3l3fJzJ6I6BKs+njpUrft03Evj9rfI8cgCS5/rkYooUTMg5zP3mP+X\nrMeHlU9R9BRo0/mJni/Ri1GIJDMTAA+QtMzmP/QLSGPp3ck7rUI688S4gFCa\nKZFF9RXmTq8ndoZ+DaoUlWYYAiQf/lIZ7yC/ZFPNYKFCrAa3VI3IN6MO9pUw\nMOjJTyKiaYEMsoC7EcBDEr5/eeZ7nD4Xv315OQ4Q8vIOQbEJborOwLlFI96f\nMyzAYHvtFHlyWs62lMrjNe9INE4u5AtfYZ3hShGMqrOzUiWPWxH8dHxtd3IQ\n65s8U3eZWlbH0qUr9YUQnp/tLJ7VR43aEPDAAc8VDhXbSH86k/W9AQWAoLN0\n31cHTedx9JLvGRf99kGGlBudu9+yATF3UI+WXQa7TTHkYjEXQeDTQDMa/CMX\nQyRiWJVbQGmfWsMOQ8s2VhTSY1lOp3YIGB8BtOj1+GdtSPOpmuKJW7eI6nmw\nvkxUv97mVXCs5q0Mf4DwTBKJeZVH5R5briALNtFV9Nk0LaYtIEu+tTLdLGLi\ni2+s\r\n=DpT3\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.6_1536589141624_0.04699111747754747"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.7": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.7",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.7"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.7"
+      },
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.7",
+      "_npmVersion": "5.5.1",
+      "_nodeVersion": "9.3.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-25vs0WGz5j9Rz/mZS4oOc/GiX1865cMmmKWEdyM3Gl+pC45oxXLZWCl/BT4pRF0J3ibYpficN7J+wwJ0KZiJWA==",
+        "shasum": "ebed8533dbc1efc38c521c1c998a06ece2d5486e",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.7.tgz",
+        "fileCount": 3,
+        "unpackedSize": 3131,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJboeEzCRA9TVsSAnZWagAA45wQAJrHSfWeaCHf8+CVoYHP\ncQvJy+srhfIyuUIIL69YLYmODIMuwY+fpx977KQO1WmW2bXCFjYH8rusBBrY\nnCfv+6y0J5xnJWPT8FPlyGBt4qr3rcsOEfJS1owpfdFZhT46dNCxxsWM6IlN\nEQzB07VNtJDS0TEXomuzCkm5cdhbXKmgJq0iMBq5xrwEvK0kLZx/b0gt1Nui\nZVhZsf3aTAy7MiLvxWpOaQIRpZ0iXQT7dQN/Ee2BN6V/hph2QkUlfSfNX0BU\n8xXvnKvgFnKxVikMzXlN0KP25hkcCYrawTqv2NYPHeRUc/9n4jhK7a0lZHqu\ndJa4nC8xagSCWBj7mm77XZJ6X7Ozf3rM0ZpCBNImMTW6lrS0IGDTJI8Rwv/q\nCi20mU5XdOysLL/tOJFrQ2RzBRRwS10pQDeov/Gkulvfhe7MhZbyTgzmOmbx\nLO1PAo/1BoS+uJO6F7DwOvy2yWwDQxrBnMojVBrsJkA+w5NY6Em25sYMqyZN\nCvLnM1ozn6w2ox5o7eUhkTYqLwAZnKsLceeWObuvB02lKqrE1+hhevRmIY+C\nTT51MpFMg/0nbZaHeLF6nd/Cce4NvNJeVtAaOxgMOxzAP9Qwo5cxaNESyd/8\njOe/Wp69zoq/cJusQF11Yf1Vxw1Bp8kulJglcJfE8Xu9IrOE2AlBfkFVIl0J\nuodD\r\n=qCR6\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.7_1537335602337_0.8310721584749747"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.8": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.8",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.8"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.8"
+      },
+      "gitHead": "43b83b600939b19c48c3c27a1733592c493c4386",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.8",
+      "dist": {
+        "shasum": "cc5a7e9522b70e7580df056dfd34020cf29645b0",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.8.tgz",
+        "integrity": "sha512-TLQxyD9qGOIdX5LPQOPo0Ernd88U5rHkFb8WAjeMIeA0sPjCHeVPaGqUGGIXjUcblUkjuDAc07bruCcNHUrHDA==",
+        "fileCount": 4,
+        "unpackedSize": 4276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbpJ/rCRA9TVsSAnZWagAAaOUQAIySOdlSo/Hqg8beTUpi\n4pj2uLCZLBcCH+q7MrgOE5vjeFYolGpgstm01/kkm3v1271E0v7LiCZJRhPa\nV1e66QpRrE7aVIOsJQHEFoWw3OCzpeXF0ETTYgc+ykvtX+YzIru3NaEf0QRB\n8hjRtN3lT46GljDk/vdF6gaO/kjm0jYPjn7bRoroD7u8Feqg3I14DK4P6KK7\nq9Zp/Imzo8MWKmE3Fif9YwKWKRUH7AalZZd1f+RhUWEZvSauD76aqPziUAZu\nMIqFHYd96GHhbo4kuuKaPLT0hVWh3fu0YJcZdUoCfUTkA8GkULyCjLEzooF2\n+HhcsXylhAEIsIIP3yfcQCc9dT9CGacADiYkL0MJz6YE+u6bvT+Fa45LE82S\nYA3NtldJR1q7+H5mfeTEalcCrIcM+9rIBxU59HQZH65dW3VV4eVQh4IctAkX\nWAQKgAUdU2il2i01scXtn98qbmfr3ZlThc6oVHSq/ArjUQLbgweIeg2vws9A\n4k93JYbtwm8jEK4iWl0PHMLyJHK/WHXda9vDCy/YwtPgIg22NO2qIqlwV0En\nSJfNU8vPjYxbqrcu+meyHA4hOHXMFHm4nVUEtyyIMqYUp7XCW/5b7vVtfJKw\nM3nZk7kI8YsskrYCY6XUkpdDbU4CLHYJyrtPUNKMVcnoMeeQTf6piIIG258b\nrPs9\r\n=37Ms\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.8_1537515498423_0.811694844739987"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.9": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.9",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.9"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.9"
+      },
+      "gitHead": "6c5bd6e21d734967e12bb7b7aaa38c80697b3b68",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.9",
+      "dist": {
+        "shasum": "7bc1341dc6319673d5d6768f9a0fbf43291f3a88",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.9.tgz",
+        "integrity": "sha512-x/v73OzxV1eWvqxem1Gu/JWWzeRZ46YzCseS9WK7YAZZec87i8KtBgz3cwytghS6+yvZRjvecKPkKkrnhFo/QA==",
+        "fileCount": 4,
+        "unpackedSize": 4276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbyLgoCRA9TVsSAnZWagAA1uQP/3mcU14EojQEXv442Ta1\nOThUksf7iYaDasS17IVsRGVhibSMe99ujku/PyRS1F/Sk6btbwsiQvk47nnd\n9pVc84b7ad5nrwcSMtzhNkhkLZw1GcCODG0s0uTqXrvDpsXSEoehrbSnBYd6\nrnD4Pfwo6++RBKAdJCK4ZHjFO04MzfzgcdTPuxPiANlXwDSX4hXwaCXaq/Y5\nryUMUW6WV8NERRkw1Dz1PkHldsd0BTt9SC47C/Y6xo8gQmWQ97dDXvQHB5gx\nEtDcbeVFn+CzwVz0oDn1EGOxkgb+p417LiW4PMt1XKGYExgMLMCrp8ASKZP0\nCXwcqE5TaGjJ55qulUFtHF+aRHsFK2e6180r7FYixyvgbQ6Ka+SXcLhc+qTf\nFD/OSfpNU3DjshImjD6fTcnhtYM8TZviL8sewFUpZCEjc7QAT9q5ckm/aoUX\nprdU3y6TaGnTTaYwKpEstqVQhvrZZkaeU7ZLesx/dWTCM9kXIB9UuOQSkM2O\nU3PsIRMBfGKGi8fTlBuSyJZD8zUL7xH0wMCTcg8Hmdj/yzFNt87SWDX1zyRi\nwBdBA5Ny570Sa0NWXWs1Ke7+mvnMwIAcOezSj4F4J5KouBf7p1bnJxMuqvll\nnbZ2iK41jNwAPKoU9tLINUge9lSxhLPHBYpA9E9xM4+2zLKfLVI4i6tesSA5\nZRXd\r\n=YnI2\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.9_1539881000170_0.6848390421075259"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.10": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.10",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.10"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.10"
+      },
+      "gitHead": "f558c6c047187f24a2200ab04104f173de226794",
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.10",
+      "_npmVersion": "6.4.1",
+      "_nodeVersion": "10.11.0",
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "dist": {
+        "integrity": "sha512-UiytbpKAULOEab2hUZK2ywXen4gWJVrgxtwY3Kn+eZaaSWaRM8z/7dAXRSoamhKFiBh1uaqxzE/XD9BLlug3gw==",
+        "shasum": "0ab7e22fad0241a173178c73976fc0edf50832ce",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.10.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4947,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbzuwDCRA9TVsSAnZWagAAeyYQAI4VUNOxHK6zfnWS+MHJ\nCZioTuP1ngjpqITf/jFjooAesx6vm4VOs+xysPKpEYpldaTCMK8k3R2rd83/\nfHjF4fwPx1QUEaWYLK9Fe2OWLYnKoaF4GIBeciL22BG7w3LkfoBjuLu1ispH\nEdKo6ouv2bxtm+YT/XlbbNQl5nyzAGD8lsmc5wcr9pDQJ3lEQTp621zMA491\nZiW3egfbygwZsevehMKfVFz2HpqsitiP1diKWB6DoDe/juuRkeAR0Z5bXe6t\n8mShZFXIJ+weTbLSDbuiXDKoTqHmHldDSf5SUEAye/awt374nKu6YrHFTbM3\nrFcNbsVZ1UFCpAGMp3rdW9+2JnOJH83Xb94pPuwPFB1L9bDFPrEMcNl7ktLA\ns3DNN+nZWor1ucm/alNSgR2zPFQNGXeXshgd6rsc+eXCG3aslG+kNWMBFgJy\n7eJU8Wm6a77/HEEmNkNgN+DYpo1aQ6lDOvP3lxB2RTussbGcGm8wI+Zg7CbK\nHr0baELIK44YaF/MKAOCLYHd+7rCG5+1Ld/Zdj9AmS8FoMI1KyurDOE1lRqL\njRp078CNiKoUsUsXr5udZxbeD8/LEBniFp14UaFKNycpvJwFMdaoJy73jjOq\nIiarSQap9aYmPuYzr2gxsu/IGCsrtzq/CKg16sE4Vhxamcc6EMWqsropnBLs\n+OL9\r\n=tLiW\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.10_1540287490663_0.8065068074069077"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.7.11": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.7.11",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.7.11"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.7.11"
+      },
+      "gitHead": "4291990bfc4648bc6676091a955d12dc3c7e5909",
+      "_id": "@webassemblyjs/helper-code-frame@1.7.11",
+      "dist": {
+        "shasum": "cf8f106e746662a0da29bdef635fcd3d1248364b",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.11.tgz",
+        "integrity": "sha512-T8ESC9KMXFTXA5urJcyor5cn6qWeZ4/zLPyWeEXZ03hj/x9weSokGNkVCdnhSabKGYWxElSdgJ+sFa9G/RdHNw==",
+        "fileCount": 5,
+        "unpackedSize": 6035,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb2Jx8CRA9TVsSAnZWagAAnJ4P/2x5nMUpH6d4OclDKheA\nhaJx1GBFxGpH75Xs4d3MD19bqPEsigbNXj2QoV5wuf9JZz9GpI5Wb4cXHHxK\n1ZvvBdn5d2XcZyE6+MCh6viV8KZ9SiCGr0yqRvxp4oHZWs0XJlEGiYMBI2sX\n34Wbas/MseY8/+SbeVQLuIWWls+FcA+Y22mKhDJyFJNA5wBnqRUiT4LUKk9t\nClhdWxCY5hN7U6AsDAmgpMiPTXG1n3n/86Clt3EF7Obp/8kYtoukXIlf/et5\nf3K2/fhiUwcYXEdvLhP5PghrWNSFmf52ZrUVdhgy3HkQTOAMZtj+uS1ufplw\nJKjrX6sWSIp6fIps50PLhkRrx/zUDtwlEERZdApoTLBO6z42dT05zBjx+VIR\nnqVeINdi6Si0TtwPSMnI4FFRLH+RXKGlt+itWuI/9+krHXQ+A9mu1cigOB6V\n2GQYQoMCby5T1IiG0TMkSsmIwYp3JNLn8yZN6hGgtS/i+RlzPf9vkMAaUJON\nCYLsZgFxKOMIDtkzZReGb0wqpVmGSmRnXw4JSUAk3uBkBiBSldpsjeHU2orT\nTU5eLc7N3RHlcfN0qpgia8ZfG1nl7ZCa2iNlav22P41wrmLBJhyfQehb8DzW\npYZ7pZk6bh6dDAne44bVdNBFdSZxlMUuNAkD0tX66GCH3TiOAP4S9phNCh+j\ntKdM\r\n=ig7O\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.7.11_1540922491459_0.21755915804345904"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.0"
+      },
+      "gitHead": "8b2d1afa793ea81f20ec63416134c201e39694eb",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.0",
+      "dist": {
+        "shasum": "e152eb644b37a7c1bd047edf549e64755d09a5d7",
+        "integrity": "sha512-Oqqj4FL0y/cJ6lh6kVwHpre64HcEw+OHv0q6EEfvzIuvSGN8pz08pJbOvDBjeD5XP8NYHeojfxHgrFbpzFQ9kQ==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcD2ZBCRA9TVsSAnZWagAAbhwP/RMotB6FhX2rl7torfmd\nW9mp0slhVcZPx2fiGOBhZIcSvih86BC5TmPC2sSLYFpaJ2z8q6Ha20cFPVSP\neBPCDTC0oK2kU4yZ1u98ZGJfmPBKuXleCu10ALKRo9JKL9gVI7rpOXCm6RSx\naXO/v+IRTWi0Fqn9LWjtlsDfdVoofT8TX17JKFhLhnNzWy6Owt207xbTyEcv\nJSN4vYj1ndcNZOKZmcnJNAeAw2Bd7Ib9GaP/U6hx2/qwL3hhkRtX8bNz1xQl\nIXNUL3/xddL021J42YWL096di+Creb87rfkG+HOxNjTj8w3I4bKJNhRqHrK/\nVTkV7tvM22CcX5L6G2hQ3vAAPY+CWdCszU+olmblX0Cd6EVORVrMkPIdfEgj\nUB7z4JNEH03aJyA/nhyHqtjRAyqDwNj394b0Bj7U5S9q4Os9zb0DVVwzNXzr\n1oFnt/rHlaHj0h4R9itwxgySCyt884GYBfLo7R6hqCjPCnKvdiDgwandcgFK\nM6z/SjHjZyNTZios406KxTDUB9XCPMn5JmQNyOkymmxJ3BlF/MXJJ3b892Ne\n7GTybS5UWkjQEtfLhMAuAqtXqrgYUqQloOBM37e9/Uq3qzRQH//KOv5RYZcC\njm7Lu84ZKVFueumwiSQMLofd6f63UHcOIQjg/oVNiCXwor+C/NEDF+XkWs/s\nR2Fg\r\n=Rf1i\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.0_1544513088179_0.45754498669068977"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.1",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.1"
+      },
+      "gitHead": "a2f42245e9b597e3541e0f697253449d60fc4d79",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.1",
+      "dist": {
+        "shasum": "30ba1d91d72071a389f7f856804b576556b9ccfe",
+        "integrity": "sha512-vSs2ObU/pbPXrvMqfpEUnvTcvlhwHT3ochBdekn+cv5zYR1wtmAIj+UXrmzbkBQYff/yTrZgaeqkFaT3fLLOrA==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.1.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcPZgZCRA9TVsSAnZWagAAM1gP/1GNhpHSxpc6Mr/cM1HK\nA/Eyio6YeMvRHadeQb31FvIna75FPFVxNBeWN0EAsH4QvLYVXBWqReXK3KMY\nEKecwecF+Bnxf7t95arfoZ/7wVld4p5UUXwIAsR2akE9twqMtdIlzkbo4Rj2\nMz8jPV6r0A7wWdU+/JailmM3+7wQxiQvAY5Cr3EpRkpXeA8eom2tGdeaSBcJ\neNM3dx5w3jSBGvjQXi7qkOGTZ894YdGwYCfSa+zSISVbkMcB1ILOY6XL2RUx\npjX0zkwAonhzyuAmsJuxFZMQjDC8Ju9zd83weBpmxBsrIkAz2+BWkky007JA\n9ORNitnx1c48mYVqdnm+/H8h8fn849aiToRWNJEmv8tb/rRoGMlFJyp3BCPm\nIM5lByc05pt7PSokJLYqJzakP4GhVUra0McWp/1/3LQ6ExvDTNkkmoolET0z\nK28AGUF+C7DQL9mrtVHuWHORS7ytum0RSB8cN0mOUhgiuEk1gzdV9SX5NL1I\nS12z/T9gdJP6G+09SjUTk67kqKCr0bVGbIONOohSuGC4/DziPW4oxk8vhJuB\nfsJNiZWlwyKStdYA27bI+efcb6fYnTS3AAg/ECjyfo62OoSU868+DOMStb1P\nSMPy1A3q24SDxX6I60aIndRvgZ/EV7TAS67uMHAeeJww0mSJ30twfctTnfb1\nyrHO\r\n=otUu\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.1_1547540504870_0.40346478264771735"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.2": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.2",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.2"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.2"
+      },
+      "gitHead": "02af462b507aa7a24f5d3201178434b181bcdabb",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.2",
+      "dist": {
+        "shasum": "def3d079fe6ce38d997e939af3ed6cc3a37ff0f8",
+        "integrity": "sha512-5beYTZS4Wsscu8ys2cLZ0SiToEe1wNitzrV/jCr02wGPOcpPHf0ERImR6iBGe/LX0O2cV9Pgi78hFp5WfNKeAg==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.2.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcZZW2CRA9TVsSAnZWagAAdIMQAI63Irw+yUjYGhldYew0\n+PYq+ZyPQKOl0am/wO+2c/8BtoiMiw2F4K/Z+ltb0lQ2oTTiB+dJcbdn19Nv\nZon0NZYnairoSqoeiu9FRKZ7/D3kdb9iT4VXJWbGSxU/8EyzPgMUwLud+/A6\nIVQI0C/TJsplDNZkjCK8usINWhgqzTp3Lj1Nlpuk/MM4CMt85zLpOmlZbcjG\nkfu5R9ZETvFEbvoYd6HmwarkQmksToFh/llD4alommTE5vtujV/BgplS1o+o\nMecERNCIfqzYnsXyUTG4qaA4DtMPBGTubyEVvUKuO+uXym5i7o+/DKKaBDSp\nPbycZY9y8k0HhCcVjLGRmkgE1ST6CBEveb3JqUItL6t7e8QwcTRQHs+vHPHs\n3Ztme+3EYRUCeSWf7r8NOacarmZ6uaDnfW3u5h7WCubrNa5htDMo2/YGE3uc\nuWSkSNSCp5XnN/LVXWjP0am2LcMJJjr492dA2BQNlmgfyGH2+sMBQHxdPQzg\nJ+5YCxMZRVHm5onBtn2349/kooWFNBblndJyC77YfX9ZushNaftQSCSiZ+rC\ntm5vrYSOGIS0S6IdsATzBF+8AHrmYJpilEXykh2CqhoNOwR4V5B1mJVMxryB\nfe0pZzQJWgvL1XXbgvctUBtuDK9JSxTs8QooO/fi3FJ1SfCbm40cTv7pvipR\nqxZo\r\n=90Cx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.2_1550161334361_0.04135218367252813"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.3": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.3",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.3"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.3"
+      },
+      "gitHead": "e482c7ec291d61fc46e42c93d3b8ec7517b629e1",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.3",
+      "dist": {
+        "shasum": "f43ac605789b519d95784ef350fd2968aebdd3ef",
+        "integrity": "sha512-K1UxoJML7GKr1QXR+BG7eXqQkvu+eEeTjlSl5wUFQ6W6vaOc5OwSxTcb3oE9x/3+w4NHhrIKD4JXXCZmLdL2cg==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.3.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcam7PCRA9TVsSAnZWagAAuugP/19fWMgrKgSxsRcHWdoO\nrVm4qJuEalsonCl3pEE72No01EL+MnSGg/arn57z4tgE7t2D5qThWt9n6lRo\n17q9bhm+74DAP0ZMTDJwZjV82dYtpIPBEQfKVtCuA91EUU/RBe0HtAtOD4s7\nurDCPcgdX0JOwKjFex+TFSYssHOTxbyNL1OYPw4bdBBsv3chTbvu9L2LC1bJ\nswI93Un6vlBXPbt5tYc/QT+36vY2Y46GLvVHD23/85Wp945wj97S77WO0z2u\nQror0o5M5rIAhViAi3bJJrdrbAkObqsZbUfAk6ArJXvrhg7c0TqHgNUB5k3M\npp+Pr+xFCVGjZVg2LGn5gfrQa1fphGJIOPuTtITO11Ok2CV/SnM1GQ26hFNS\nH2h9QA/aAPDop4LuIpqEDoZwcTYKMEWzRy3Rq1Bh+ex2c2GnyukATVVcbkN3\n4oiEeoDsnFybbqwiXCXBIMpmkY+YOyi4eZzNptcKZRSV2/2d6E+1ltrWOr/T\ndueZlMKB+J/1fJuhX+1zDP4GjTN9v47CT/cnCT1Eb07Mb0a+eZuuelj830tp\nl954x17307POcJKXAg9ynz3AE5v0thgt8hXqo3BKTM1TLMQTtnNKESpWJ3k0\n5yWpgK3FH4FZWhR6k2GxNUsLyA6w42JXK9a2HnH4lrAFDIaibdlAcJqNj2E8\nMEUu\r\n=6+iA\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.3_1550479054985_0.40798357469903523"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.4": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.4",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.4"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.4"
+      },
+      "gitHead": "0154b989cc9b41c695724a361b3aa6fa19c5b032",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.4",
+      "dist": {
+        "shasum": "510a81bd7654a892c5c02fc9f7ebf17fa1c6d277",
+        "integrity": "sha512-OARFm7ZtGqSRpjyvYMTyskUpZnZ0epQLazvPezqpO88AUeOvl/IoyIPm1W2oqB1EnnKJ3i3dJ8EEfF1hSkPgvA==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.4.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcbDyWCRA9TVsSAnZWagAANawP/0XtF3FBwbKA6NeOykkc\nNfmJXDDgjRv1AxyIuhx/qQppyPHNF9dewzpcq4rkVEZk7osaQNImZN9uSQes\ns6b2W0kE8IWj6Om/dtBfnLPiLHfxVrLa2WSIho9756LnqvQhINB4uVJhexEv\nGJ9y7zq6UEyZZQZupZx4lfNQyJDYJm48YdP7J7JEmwD9J+l352fRyVUM4RIU\nGpRyox3VXMbasciBE+42znTizPOZyXgw2ErtyHuHbaz8YeEUlDd8vfnGylH6\nw/ceyFyj+thXwpMM7b3ZjhG6zRHk5N683vjvIck4SORt8ztaZ8wVARdq3g8v\niBRZQnWpGJP80wzGAsxHgHbEeSobJb0CLge5mKYGSjo4nSvxbuq6u870bR0c\n193VMuqNMiLZLUXZ44Mz0pSF8tLGx476AWkaQAYVKzeEYeZoaRBr/3WkoqNZ\nmmRrK2bBoJqUJsgPne3WJytAw6kWHDJIRuEjnmF34VTIulio9fhfEBS9Fp8m\nesnaLa2T4TWbNbAbmY7CSuC9GZ1gXsoCqvzcvXlXDI3cu+qpfFh24ffZPRXJ\nZb3wz5WYJMZjFQTLaTu4UROKN/ccUek/Bnz1a/uVLLDOL1MDMUL/Zj1BSLI5\nl/PSqR+02oTe/KtvKr4eiDdV9iD1QxAgGJN/yAUrMBCQ5g9VRHd54E0jYYqr\nk+rj\r\n=cMtG\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.4_1550597270169_0.16084274851721125"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.8.5": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.8.5",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.8.5"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.8.5"
+      },
+      "gitHead": "77bc195e9bb463b4fa4cbdb6291eed446d454d49",
+      "_id": "@webassemblyjs/helper-code-frame@1.8.5",
+      "dist": {
+        "shasum": "9a740ff48e3faa3022b1dff54423df9aa293c25e",
+        "integrity": "sha512-VQAadSubZIhNpH46IR3yWO4kZZjMxN1opDrzePLdVKAZ+DFjkGD/rf4v1jap744uPVU6yjL/smZbRIIJTOUnKQ==",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.8.5.tgz",
+        "fileCount": 5,
+        "unpackedSize": 6032,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJccnVFCRA9TVsSAnZWagAA4zoP+QCteUSAZMggXGA45zz+\nQ/ClZG2gUxDnWEdZu7mJX96jnhp1jprBoSYqYeAgFygtVibuUxV91suwFPJZ\nkPZ0bIl4tWm3SIP03zKGFJ22TvzQcg9yKtczvTARHz51NuEZlNW3VpYjKT/p\nnDxv2jxy7gkIjalqodgrJCyJAnztirqwwrCTsBgx3wtkbaSPsLXdUO0PNI9g\nVpyoeWKGFqtRVe6a4RCo4TW4SPSloTgfHZqq9WYi/3aoFhsRTlf0OA2Dor1t\nGs21Nq+HQ+tjfo7UfyAYMKREyy7czjj/7JzQV5b7cUQQhA3sAhrj2dN/Oxuw\nOjwWti0fWoY4yHShK9CJZpdznjPwVrz3X54g2iD16h10VI6LG1AZHQ1mfB5o\nMyWCrXsuRRbdYg4Ct5MENCFrIDx/mON+t7oKjdcLg7sSt8OU/R01piSmmrqh\nAnJSFq7OaaPZ6mW7KtIXRKHtsqutgOESXZpNPROCJ4NCaQMHhB/Y+NHJkWMQ\nHwCuVNI2XZUJYp2elyVO08iiU4v9wkazsSW6b6VRSFlWK5oCLaD1gg/pezo+\nFGo6cXtQxHsL/PzQeSWbNVdB7/2h3lP55D6RePTA4/RwRnI4OsfnCpLoaTuG\nCCIZRv8D978Kovg6aluEWGfpH6A1IkvnVMz3qOjBMoFGBQipQTbE0UNWiLIN\nIJzJ\r\n=U18W\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "contact@xtuc.fr"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.8.5_1551004997277_0.894820120815957"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.0": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.9.0",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.9.0"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.9.0"
+      },
+      "gitHead": "0440b420888c1f7701eb9762ec657775506b87d8",
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.9.0",
+      "_nodeVersion": "12.3.1",
+      "_npmVersion": "lerna/3.13.4/node@v12.3.1+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ERCYdJBkD9Vu4vtjUYe8LZruWuNIToYq/ME22igL+2vj2dQ2OOujIZr3MEFvfEaqKoVqpsFKAGsRdBSBjrIvZA==",
+        "shasum": "647f8892cd2043a82ac0c8c5e75c36f1d9159f27",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.9.0.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeNgexCRA9TVsSAnZWagAArtIP/A9Z291AOzir455KeDYd\nkUPhidzPZTfD0PXjXMrsoE+/GKOxh/EH8r7+MUY0XO9ChCuCHSz2QolecpGF\necWlD5yfzdYcMRcAExOVNwmzD0YQINyAUXDOScuJeQ2fU/96P7rbfdvSUtg/\n988sBDpooJy1RcTCMRWho63aNUSwnPfQuym7SXLLhCSxhBd/pq9mF2NmQvaQ\nVF0GtOKg0DsKQQCzf6LMDaHXvQHio4pB/Teg3afvtayPgqUn8WZe1u+lSJUj\nBKzLndgr1pY+0NwZ8zFXkvxlW7wJKQEuf3okB4OVX6cowiAmK7osSpRX8Kys\nX5YueqduJc2uALGePupiSTDZLqdtY8iYo+1esf4ZxM89RhxXZ9rZ5Ifb5KL7\niUmGqV9pxxUhMso92KXJjq+qcfWRH6a0841dpdIFJJiEhbEQc3bd5mbYV36z\nha7V3/6rOECAOEAqEq7vYcV6Fi/DZMEU+dZ1P30aSy+WjFqaddVa6t2Fb+DG\np04wPd8XHtoOvccgLVbdkm3jnRpDoQ3ax97F9YVF0qJZ/0R+mEpTShq0QZo2\nZXa9knBqRYuOxjdCEJXHrkBuIuMv9hthmjwo/n0Mydz10dD/ECGwJvemYx29\nphgjGgH5SLTKqtZYaiwzrwRWmJxsF/YxLojzZn0USI9DFEOmwDBR0w1MS7yg\nDjGv\r\n=+r7j\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "contact@xtuc.fr"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "npm@sauleau.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.9.0_1580599217590_0.0020238481097198946"
+      },
+      "_hasShrinkwrap": false
+    },
+    "1.9.1": {
+      "name": "@webassemblyjs/helper-code-frame",
+      "version": "1.9.1",
+      "description": "",
+      "main": "lib/index.js",
+      "module": "esm/index.js",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xtuc/webassemblyjs.git"
+      },
+      "publishConfig": {
+        "access": "public"
+      },
+      "author": {
+        "name": "Sven Sauleau"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "@webassemblyjs/wast-printer": "1.9.1"
+      },
+      "devDependencies": {
+        "@webassemblyjs/ast": "1.9.1"
+      },
+      "gitHead": "697a5f63048049e9ecb3205d789c1e80eaadf478",
+      "bugs": {
+        "url": "https://github.com/xtuc/webassemblyjs/issues"
+      },
+      "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+      "_id": "@webassemblyjs/helper-code-frame@1.9.1",
+      "_nodeVersion": "12.2.0",
+      "_npmVersion": "lerna/3.13.4/node@v12.2.0+x64 (linux)",
+      "dist": {
+        "integrity": "sha512-ZQ2ZT6Evk4DPIfD+92AraGYaFIqGm4U20e7FpXwl7WUo2Pn1mZ1v8VGH8i+Y++IQpxPbQo/UyG0Khs7eInskzA==",
+        "shasum": "aab177b7cc87a318a8f8664ad68e2c3828ebc42b",
+        "tarball": "https://registry.npmjs.org/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.9.1.tgz",
+        "fileCount": 4,
+        "unpackedSize": 4276,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfeNotCRA9TVsSAnZWagAAoUEP/RzhUU+rmk85TdiNBqVO\nEv8wujP7BXuaNV4+CwJWchoPt8dLC3Rf3vbP0P2RNwcRXAaGIThuBQyxaKUo\n2YpGZsYNcw+S/JKbHYWBQafwVg03q53z4ZWGEuLro5uymF+97w73i09SjTRu\n0U0xjxcagN8JEiBNiNKCVAsEUnh/frGOA5JXkx2zXBUcHipDx3Xe23WnT7HW\n3bYBljXS08xaGHH3oxj8DroDyoZrRGY3mBNhAhdJsC8XIAkFqtMIQcIZd9/d\n9GdTZQlkXu4QFcS0HPf2IS+eD47mDz6tn0G3BUM/KYJBMRmxgRSNOJT8fwNK\nVevs3vy4FuTqhuCSOumQf7kUh4DEDByxWJpc6ymcpdZr3Gp3wRYHop4DprRG\nPSgRP8w5WRLUOm9ffpbn+MgijUxfqtU9VRd+CuBkjV+T+z5600ZS9ny6/Swv\nNPrsU0+weycgrSD3MAWpYgx2+tGSmeFo5ChtFeIJajKlr8vXUZAkNksmaPpH\nffrx0OWsC6YKfB4s4qeUMYM66BA6l9G2VTo0JRyQUDfKc4seB7Xl3i6qonDz\n1GnOkh0WETr4OW4M+kOUpR4yAZDhFiWDd029v8oVG3pT47+ePwUrbjFg6vnZ\na2cKMuTs7U4kNUKJ5zwMturn/KCKB3LvE+Dm++xvX8hpcYTzC7z33QAjcDDJ\n99cB\r\n=o2Bp\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "xtuc",
+          "email": "npm@sauleau.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "xtuc",
+        "email": "npm@sauleau.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/helper-code-frame_1.9.1_1601755693379_0.6100125620782781"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2018-04-12T19:05:53.627Z",
+    "1.2.3": "2018-04-12T19:05:53.744Z",
+    "modified": "2020-10-03T20:08:16.944Z",
+    "1.2.4": "2018-04-13T10:31:47.808Z",
+    "1.2.5": "2018-04-13T17:07:22.150Z",
+    "1.2.6": "2018-04-17T15:20:36.432Z",
+    "1.2.7": "2018-04-30T14:43:50.987Z",
+    "1.2.8": "2018-05-02T17:25:21.744Z",
+    "1.3.0": "2018-05-04T13:31:38.277Z",
+    "1.3.1": "2018-05-07T18:09:37.864Z",
+    "1.3.2": "2018-05-08T18:47:46.375Z",
+    "1.3.3": "2018-05-09T07:53:48.751Z",
+    "1.4.0": "2018-05-09T15:00:03.698Z",
+    "1.4.1": "2018-05-10T19:45:20.095Z",
+    "1.4.2": "2018-05-11T14:13:51.205Z",
+    "1.4.3": "2018-05-12T09:21:41.697Z",
+    "1.5.0": "2018-05-14T16:47:47.585Z",
+    "1.5.1": "2018-05-16T11:26:13.758Z",
+    "1.5.2": "2018-05-17T12:51:26.758Z",
+    "1.5.3": "2018-05-21T11:09:04.869Z",
+    "1.5.4": "2018-05-21T12:57:44.039Z",
+    "1.5.5": "2018-05-24T08:02:40.977Z",
+    "1.5.6": "2018-05-24T14:22:31.117Z",
+    "1.5.7": "2018-05-25T12:55:06.714Z",
+    "1.5.8": "2018-05-28T12:49:46.654Z",
+    "1.5.9": "2018-05-29T13:14:12.611Z",
+    "1.5.10": "2018-06-01T13:22:01.019Z",
+    "1.5.11": "2018-06-06T08:59:17.742Z",
+    "1.5.12": "2018-06-07T09:26:18.065Z",
+    "1.5.13": "2018-06-30T13:45:26.094Z",
+    "1.6.0": "2018-07-16T09:06:13.696Z",
+    "1.7.0-0": "2018-07-18T12:59:13.891Z",
+    "1.7.1-0": "2018-07-18T13:10:27.425Z",
+    "1.6.1": "2018-07-18T13:51:40.608Z",
+    "1.7.0-1": "2018-07-18T15:01:47.328Z",
+    "1.7.0-2": "2018-07-18T15:16:56.408Z",
+    "1.7.0-3": "2018-07-18T19:14:22.215Z",
+    "1.7.0": "2018-07-19T16:02:05.059Z",
+    "1.7.1": "2018-07-19T16:32:45.111Z",
+    "1.7.2-0": "2018-07-19T18:10:53.794Z",
+    "1.7.2-1": "2018-07-19T18:25:49.321Z",
+    "1.7.2": "2018-07-19T18:34:45.662Z",
+    "1.7.3": "2018-07-23T07:03:25.203Z",
+    "1.7.4": "2018-07-24T07:03:13.934Z",
+    "1.7.5": "2018-08-16T14:55:08.841Z",
+    "1.7.6": "2018-09-10T14:19:01.963Z",
+    "1.7.7": "2018-09-19T05:40:02.478Z",
+    "1.7.8": "2018-09-21T07:38:18.524Z",
+    "1.7.9": "2018-10-18T16:43:20.284Z",
+    "1.7.10": "2018-10-23T09:38:10.802Z",
+    "1.7.11": "2018-10-30T18:01:31.600Z",
+    "1.8.0": "2018-12-11T07:24:48.377Z",
+    "1.8.1": "2019-01-15T08:21:45.009Z",
+    "1.8.2": "2019-02-14T16:22:14.470Z",
+    "1.8.3": "2019-02-18T08:37:35.120Z",
+    "1.8.4": "2019-02-19T17:27:50.299Z",
+    "1.8.5": "2019-02-24T10:43:17.498Z",
+    "1.9.0": "2020-02-01T23:20:17.717Z",
+    "1.9.1": "2020-10-03T20:08:13.517Z"
+  },
+  "maintainers": [
+    {
+      "name": "xtuc",
+      "email": "npm@sauleau.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xtuc/webassemblyjs.git"
+  },
+  "author": {
+    "name": "Sven Sauleau"
+  },
+  "license": "MIT",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "",
+  "homepage": "https://github.com/xtuc/webassemblyjs#readme",
+  "bugs": {
+    "url": "https://github.com/xtuc/webassemblyjs/issues"
+  }
+}

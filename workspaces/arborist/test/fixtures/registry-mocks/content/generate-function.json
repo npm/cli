@@ -1,0 +1,658 @@
+{
+  "_id": "generate-function",
+  "_rev": "19-1f101f1e57d5a12789c70f07ece0cd11",
+  "name": "generate-function",
+  "description": "Module that helps you write generated functions in Node",
+  "dist-tags": {
+    "latest": "2.3.1"
+  },
+  "versions": {
+    "0.0.0": {
+      "name": "generate-function",
+      "version": "0.0.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "f4dc06374d18af82d530b3aecc7ba3cf4803188d",
+      "_id": "generate-function@0.0.0",
+      "_shasum": "fd561eece1948ea5ee9138d50ac479d18f7f7822",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "fd561eece1948ea5ee9138d50ac479d18f7f7822",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-0.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.0": {
+      "name": "generate-function",
+      "version": "1.0.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "5a757a46bb7121e203a25ea301ca3ef6a2091411",
+      "_id": "generate-function@1.0.0",
+      "_shasum": "1e6af3d0ad50f35050b1a9a1c056dad4a2c7f5c5",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "1e6af3d0ad50f35050b1a9a1c056dad4a2c7f5c5",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "generate-function",
+      "version": "1.0.1",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "17c6c09d5ea81fc783481d736388201644962842",
+      "_id": "generate-function@1.0.1",
+      "_shasum": "3c53e1a681619063c3bac744af8cd134d9dc6efa",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "3c53e1a681619063c3bac744af8cd134d9dc6efa",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "generate-function",
+      "version": "1.0.2",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "f74a9edbbaced7cbb481bbadd18b36b1ae233754",
+      "_id": "generate-function@1.0.2",
+      "_shasum": "b6d5748ff5f35567d82908e84e4a921fad23c6d6",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "b6d5748ff5f35567d82908e84e4a921fad23c6d6",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "generate-function",
+      "version": "1.0.3",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "ed65d50801cf4a6ccd9f2272caa262d84fd300ee",
+      "_id": "generate-function@1.0.3",
+      "_shasum": "2083919b224afe5cb884b91693744efd2bf9bb03",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "2083919b224afe5cb884b91693744efd2bf9bb03",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-1.0.3.tgz"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "generate-function",
+      "version": "1.1.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "99be057fb14f2e7f87afa116e5ca4d40a379c080",
+      "_id": "generate-function@1.1.0",
+      "_shasum": "54c21b080192b16d9877779c5bb81666e772365f",
+      "_from": ".",
+      "_npmVersion": "1.4.21",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "54c21b080192b16d9877779c5bb81666e772365f",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-1.1.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "generate-function",
+      "version": "2.0.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/mafintosh/generate-function"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "3d5fc8de5859be95f58e3af9bfb5f663edd95149",
+      "_id": "generate-function@2.0.0",
+      "_shasum": "6858fe7c0969b7d4e9093337647ac79f60dfbe74",
+      "_from": ".",
+      "_npmVersion": "1.4.23",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "dist": {
+        "shasum": "6858fe7c0969b7d4e9093337647ac79f60dfbe74",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-2.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "2.2.0": {
+      "name": "generate-function",
+      "version": "2.2.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/generate-function.git"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^2.13.4"
+      },
+      "gitHead": "1bf54dde865a62f782658f4721e58165778f08d7",
+      "_id": "generate-function@2.2.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-EYWRyUEUdNSsmfMZ2udk1AaxEmJQBaCNgfh+FJo0lcUvP42nyR/Xe30kCyxZs7e6t47bpZw0HftWF+KFjD/Lzg==",
+        "shasum": "1aeac896147293d27bce65eb295ce5f3f094a292",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-2.2.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 7143,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbg1+8CRA9TVsSAnZWagAADloP/1lGfZwTlMJHY2n0F1xu\n6ZJ7WKX9Fh/q1uGtvYgv+eC1E6IEErFp5yo5YC5rwX6YWK3OmZkPb/VGKrpZ\nzmJo4qIxBkGW0ffIl7BpP7zCGf+/sLaBiD5gOsnT7e+ZPX623QqhY0R+qbKc\n+pDg1attXyjZBGjFzzC9pakrEt+T3F266L1ir3eYiLXSf0kpFDu2JNCU11fD\nHLo61MmPqGE8Kz+BucZMs77jA0u1ObDl3O1yjlfqhzHJPQxqXURiiSO8sMe2\n8cq2GEe03idtrqP2fXJ/huiw9XByNRg/S6DMU85FVQw4yZ8rw/jTjr3joz4m\nzKO05OheFV8Ssb70cwpjDhDgFJ514CwEzxxgibMlHUwUSvwfdincXqqt5vO/\nXWhFFswKf+q61oaiDuX7cJ3wRu6pcXF4aqTqtH5HD9WiKKngk3gUegFxvjvA\nW7sGtTFbb2zyhhIEXa58r8pboyPMA8QrI6yScUjHeUnL5z6Ildq8duxlhKsT\negp5BAjIUScUsWWA9PGliOc8zra2LynDEWxwvUzIiXFjM1cgZK9IbBfnG/zf\n4SBskLo+cYbRetoOBSKuvsDHY2P4mCKbZ9tVm1IV/5eD2YqP2SrB7e026+HB\nrAGkONxNKoobIwn7RFcLt/Pp9i9ZtitCjGuZyNmgUr4a7GLGWGSaGjj/KhGW\nSExJ\r\n=9+XB\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/generate-function_2.2.0_1535336379774_0.7369054827033938"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.2.1": {
+      "name": "generate-function",
+      "version": "2.2.1",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/generate-function.git"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^4.9.1"
+      },
+      "dependencies": {
+        "is-property": "^1.0.2"
+      },
+      "gitHead": "bce8178e466f1609b388d3601d73fe6c201738bf",
+      "_id": "generate-function@2.2.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-Qiaeib/wcNIj0igwKAAiWyvPpCcZAAchlrVLg7Q7GSj9ctvZeUXEb+IHu8THPYEz9+LlU01MRMUINA6Do0DEjg==",
+        "shasum": "6e25c0a48fb47cd0b5d4e8815ca286171acc8e27",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-2.2.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 7256,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiUx/CRA9TVsSAnZWagAAjjYQAIahbogMmOhHStVTlcNo\nWQYHJ2d5lSjc2rOymEk+HEJg2RRUAOHmPdnSDPxFqUMz1ZzTWxE/e61dOjdR\n2C72ofjX8VJrrc59kAS7C8+QvoWvPVAHuZUcJAoZUdN3SRRNyp1dU5bY4s2a\n1pCOXZb33lDAHGZI8HyLg13Po7W9i4EhhNWLMSfiYaeRLx5+BVPCDQmWgOen\nMmz4bhKjU8lh4PqGsoqVSM7dUa093eMeF3DA1BWEL6635U4IQVTjdU5XAEWI\nc/IKm+j21y2bzBaD1lmYPRz+hEcUEgWeh3fOsXOIGwFgf7/sJU47hElrv8cC\nVFCpEOdDXphTSuFjtazkpo4GO7NUxW3EagXM7XO+YMdW238whnBRc+lF80CV\nmEWGjv+E26YVv2Q3zJYiI43bAzjh/OiB0NZMzAq05QISYuA6W0qB/JBYgqeJ\nUP76hlsAU8/kcsMfrmsDMg7LUcs74kO1HpSUC5EcJPDCKg8wTWoRLO3CliZR\nSexqyl5v7ZWpkzE+rizmhYENcIpPdUd95mqOACT4H/Zt3MfCsRHBlTOCCAbp\njrWe8oiytjPXA3aSoZsgpchXR/g4BudATTfNErC6x3UeM3u9farUKtYY/wc1\nBuRW26dP5723l2lEjCy5bQjKoSEwIzHwnaelxIQq0dtEngm9okEOyUGJB+V1\nbuY3\r\n=srOi\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/generate-function_2.2.1_1535724670315_0.06041108490401381"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.0": {
+      "name": "generate-function",
+      "version": "2.3.0",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/generate-function.git"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^4.9.1"
+      },
+      "dependencies": {
+        "is-property": "^1.0.2"
+      },
+      "gitHead": "1107e1e0c4e2490a6fc0c6e0a94c30ffafca31a1",
+      "_id": "generate-function@2.3.0",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-l9f57Gv0++DaxzEjIDTnBkvI+9j41AAm+ORz609Z4mf5jEQ30R7tOlzR8beIcaKhM8pos9zBMSnpoPIgOSkm7g==",
+        "shasum": "b3aac2a706a902ddc8954f7ee4c450facb21efa0",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-2.3.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 7540,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiU+8CRA9TVsSAnZWagAAmnwP/jtUyP/wf+Wd7f7hGkgy\n2qVqh7AuX5PQ7aFLO96qvXGVYNfg4C5ixcmd9lnke5DAlv5L2ijx42KiOlkH\nfUGUG+WShDQYc37qmybiRAr+Qgso8qNONbEA+YyXPLcItpxMffVWK+gsVqGr\nI0R70alX8wiTwutl5ztCtXVeZAjSs/CQFEqg8txpui+tRaoX/znuwI0Q20rY\ndHQ/4ctLiiHRxdf3vm/Vtl1XTA599jrb3zpNuYg3Zr4tn002JkfgejSa023C\nh7Q8afl+wq0bzPqQFcyriPANfNsfIOhrboPUap4MBP9RgQjAE6KS/oRz2isW\nHmFIOiAnbzdIO993h+2CLZfW7kfgfxeQpEMymNVNlH8iTgZyBXsBS6ksKsJw\nyQEY+9CDtv8WpTv1roXjagTCTQ/roGjAVrc2PPu/hU3SwsRuxKcrOReLIoo8\n+IBCJOaOjZ4XGjjUC0Tj6TYrK+kjGXifIuSZ3EgyHx5ypf6CS2sHKh4qeB0j\nrR+46+TIrNOiKPPMBocbZXypbj4m3f1ONbvSsPy36ZGX8oIYAS9iakKcK0WL\nnMLCxWOYum0Rwv2wRzJosW0TlV0L3NOLNszQFRlH3lr6nDuzPo65LbmKDNRR\n0gkP2c1lWE3S5BH0Pkq1o4p6mc/v4QsiwdVAtiAHVKCFYVacIWkgSm5Zjo2M\no3qn\r\n=cSHx\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/generate-function_2.3.0_1535725499510_0.761206463485137"
+      },
+      "_hasShrinkwrap": false
+    },
+    "2.3.1": {
+      "name": "generate-function",
+      "version": "2.3.1",
+      "description": "Module that helps you write generated functions in Node",
+      "main": "index.js",
+      "scripts": {
+        "test": "tape test.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mafintosh/generate-function.git"
+      },
+      "keywords": [
+        "generate",
+        "code",
+        "generation",
+        "function",
+        "performance"
+      ],
+      "author": {
+        "name": "Mathias Buus"
+      },
+      "license": "MIT",
+      "bugs": {
+        "url": "https://github.com/mafintosh/generate-function/issues"
+      },
+      "homepage": "https://github.com/mafintosh/generate-function",
+      "devDependencies": {
+        "tape": "^4.9.1"
+      },
+      "dependencies": {
+        "is-property": "^1.0.2"
+      },
+      "gitHead": "240c6ef0f243fa8e37d2656f880c7145c9f6d12d",
+      "_id": "generate-function@2.3.1",
+      "_npmVersion": "6.2.0",
+      "_nodeVersion": "10.9.0",
+      "_npmUser": {
+        "name": "mafintosh",
+        "email": "mathiasbuus@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-eeB5GfMNeevm/GRYq20ShmsaGcmI81kIX2K9XQx5miC8KdHaC6Jm0qQ8ZNeGOi7wYB8OsdxKs+Y2oVuTFuVwKQ==",
+        "shasum": "f069617690c10c868e73b8465746764f97c3479f",
+        "tarball": "https://registry.npmjs.org/generate-function/-/generate-function-2.3.1.tgz",
+        "fileCount": 7,
+        "unpackedSize": 9036,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbiVS9CRA9TVsSAnZWagAAz9MP/0dABEez3UvcrA4MM2M1\nL1GpVcOokTcnKzNPOH/fgNHR635xGF5F54HOgWSbzEKVvOu8wtwTeCG9ZOrG\n7xL7O315dN8N1OjfzoevA2Y5tqVjGmrEaz4yX+x/zgXHQkH19SGHbmSQ64wi\nlpBF7W9OpdGOGreE1mGyeXFpNIwdL+Zfq01H5nCAk4eFIU4r9K8s27Pw/CmK\nueeKfl+0XbpUQ1dEk77ixwVw0JH0/oupKlejg3jshpDpHCfsnDbBD8D0YjLW\nwxSUVPeFvIyZJlNyMVuD3B9fpL1xV/EhGuJ8EbbHWFdxg5cWQj+WurJpVduc\n5CCFYhimHhY0sbnc8XPfEfccC1Kba3VqpbfLDnZ3kDVDs/tMrYJTA4XpKNZq\nHFIsXWsDp1TU65DtdSmFWclrj2zB/j/yi7KerZ3crG4qyUKDqpzjNjYwUzqw\nSNjoliE9c+dABUUVtAZ7wiq48uYPXGoAJdC6Uic7N5V3jHhTVPf0YQJ4ALaW\nUtig2v1t4xKtYOc+hPdLlbIzl3WUuS7Nm/lFIo1/y+1MlheRkD+XD2v5LeFg\ncUeu67CSBtLc876IdyHLLUyY/566R/yJW64Sgxcpnf+LE1KmHyfjbWrkBYgP\ntXO7DFoY8vsWOvoIhPN5IzBqfJjhNbiQ9wpHtlhmvmicAxPfZVtEbQqaUCdS\n+xoQ\r\n=iuGb\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "mafintosh",
+          "email": "mathiasbuus@gmail.com"
+        }
+      ],
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/generate-function_2.3.1_1535726781175_0.7685665533040811"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# generate-function\n\nModule that helps you write generated functions in Node\n\n```\nnpm install generate-function\n```\n\n[![build status](http://img.shields.io/travis/mafintosh/generate-function.svg?style=flat)](http://travis-ci.org/mafintosh/generate-function)\n\n## Disclamer\n\nWriting code that generates code is hard.\nYou should only use this if you really, really, really need this for performance reasons (like schema validators / parsers etc).\n\n## Usage\n\n``` js\nconst genfun = require('generate-function')\nconst { d } = genfun.formats\n\nfunction addNumber (val) {\n  const gen = genfun()\n\n  gen(`\n    function add (n) {')\n      return n + ${d(val)}) // supports format strings to insert values\n    }\n  `)\n\n  return gen.toFunction() // will compile the function\n}\n\nconst add2 = addNumber(2)\n\nconsole.log('1 + 2 =', add2(1))\nconsole.log(add2.toString()) // prints the generated function\n```\n\nIf you need to close over variables in your generated function pass them to `toFunction(scope)`\n\n``` js\nfunction multiply (a, b) {\n  return a * b\n}\n\nfunction addAndMultiplyNumber (val) {\n  const gen = genfun()\n  \n  gen(`\n    function (n) {\n      if (typeof n !== 'number') {\n        throw new Error('argument should be a number')\n      }\n      const result = multiply(${d(val)}, n + ${d(val)})\n      return result\n    }\n  `)\n\n  // use gen.toString() if you want to see the generated source\n\n  return gen.toFunction({multiply})\n}\n\nconst addAndMultiply2 = addAndMultiplyNumber(2)\n\nconsole.log(addAndMultiply2.toString())\nconsole.log('(3 + 2) * 2 =', addAndMultiply2(3))\n```\n\nYou can call `gen(src)` as many times as you want to append more source code to the function.\n\n## Variables\n\nIf you need a unique safe identifier for the scope of the generated function call `str = gen.sym('friendlyName')`.\nThese are safe to use for variable names etc.\n\n## Object properties\n\nIf you need to access an object property use the `str = gen.property('objectName', 'propertyName')`.\n\nThis returns `'objectName.propertyName'` if `propertyName` is safe to use as a variable. Otherwise\nit returns `objectName[propertyNameAsString]`.\n\nIf you only pass `gen.property('propertyName')` it will only return the `propertyName` part safely\n\n## License\n\nMIT\n",
+  "maintainers": [
+    {
+      "name": "mafintosh",
+      "email": "mathiasbuus@gmail.com"
+    }
+  ],
+  "time": {
+    "modified": "2019-01-03T22:50:07.166Z",
+    "created": "2014-07-30T17:17:07.759Z",
+    "0.0.0": "2014-07-30T17:17:07.759Z",
+    "1.0.0": "2014-07-30T17:25:00.747Z",
+    "1.0.1": "2014-07-30T18:22:50.528Z",
+    "1.0.2": "2014-07-30T21:39:22.512Z",
+    "1.0.3": "2014-08-01T09:04:48.912Z",
+    "1.1.0": "2014-08-01T09:50:30.055Z",
+    "2.0.0": "2014-08-21T16:53:53.661Z",
+    "2.2.0": "2018-08-27T02:19:39.872Z",
+    "2.2.1": "2018-08-31T14:11:10.513Z",
+    "2.3.0": "2018-08-31T14:24:59.646Z",
+    "2.3.1": "2018-08-31T14:46:21.330Z"
+  },
+  "homepage": "https://github.com/mafintosh/generate-function",
+  "keywords": [
+    "generate",
+    "code",
+    "generation",
+    "function",
+    "performance"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafintosh/generate-function.git"
+  },
+  "author": {
+    "name": "Mathias Buus"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/generate-function/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "mojaray2k": true
+  }
+}

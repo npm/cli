@@ -1,0 +1,73 @@
+{
+  "_id": "platform-specifying-test-package",
+  "name": "platform-specifying-test-package",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "platform-specifying-test-package",
+      "version": "1.0.0",
+      "description": "A package to test npm platform checks",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "author": {
+        "name": "Brian Jenkins",
+        "email": "bonkydog@github.com"
+      },
+      "license": "ISC",
+      "os": [
+        "not-your-os"
+      ],
+      "cpu": [
+        "not-your-cpu"
+      ],
+      "_id": "platform-specifying-test-package@1.0.0",
+      "_nodeVersion": "12.18.4",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "tarball": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 3481,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfbRvlCRA9TVsSAnZWagAAIQMP/jgNB73uGp5pHvkumGq7\nyA6DC6pqL3vU7Pwctr7QzYi+1jHcWwHtNHHTYwrZZru04xLpiQk8BohAfmOt\nEXstFVfMR/C/Y1pAxi3ITPj79zTmgixUVaor9knGWov8gHyFgQsg+2Jf/90E\nv0fOnAKe4+tb1xZNtKiG+Jc2KBIBhVG3g+YjYc8xYz8FaS4Gj9GPwozhE/kl\nHOu+cAXI/CM2nu1U0Q9Jgxna3i/uzXs8exZVzErgHs6sQPKxBpRwItcl4bOi\nkvUJA+QKmiUNHJauJc/1/vK4O8TD35+kiFSrg82MHnrYuDSzfpRhnjWFKlSb\nfcdLICfV0PhR/6KX4ct+uepUAHHJXBpOe48X5zXjMtFcl1MkImzNzXLbuOZ+\nXo+8LCCc7K5AuBx4HDkAHU0hjdG7k6FLf+fjIdeDbFy/bjPHzb6ecyKf73hX\n+Fh1szs37uwsT2M500qgYgfsLl2GuguBEz2IrFaA7ZGmzXZSF34lsH1dXDgY\nl/CFekaEvA4QaIvGL8BM8CdWkFA2VN8xTuZ9+gC9vsLOSnmaM8Qp1iS+mfr9\nVC5FhANvIi8Ckx0iNJQZ0pC8hMdrT5ox8/oSA42l8XZn4PWQWUco3RA6ksig\n2tcUTuRUDeb40SZV3i1l2xS76YBT4ROeYGyXoiPHBECIo4ps0mGmSd1v3Jdk\nk1n3\r\n=gZQk\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "bonkydog",
+          "email": "bonkydog@bonkydog.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "bonkydog",
+        "email": "bonkydog@bonkydog.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/platform-specifying-test-package_1.0.0_1600986085059_0.5894379369292746"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-09-24T22:21:25.059Z",
+    "1.0.0": "2020-09-24T22:21:25.202Z",
+    "modified": "2020-09-24T22:21:27.433Z"
+  },
+  "maintainers": [
+    {
+      "name": "bonkydog",
+      "email": "bonkydog@bonkydog.com"
+    }
+  ],
+  "description": "A package to test npm platform checks",
+  "author": {
+    "name": "Brian Jenkins",
+    "email": "bonkydog@github.com"
+  },
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

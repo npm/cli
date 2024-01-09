@@ -1,0 +1,302 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Release
+
+on:
+  push:
+    branches:
+      - latest
+      - release/v*
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+
+jobs:
+  release:
+    outputs:
+      pr: ${{ steps.release.outputs.pr }}
+      pr-branch: ${{ steps.release.outputs.pr-branch }}
+      pr-number: ${{ steps.release.outputs.pr-number }}
+      pr-sha: ${{ steps.release.outputs.pr-sha }}
+      releases: ${{ steps.release.outputs.releases }}
+      comment-id: ${{ steps.create-comment.outputs.comment-id || steps.update-comment.outputs.comment-id }}
+      check-id: ${{ steps.create-check.outputs.check-id }}
+    name: Release
+    if: github.repository_owner == 'npm'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        id: node
+        with:
+          node-version: 20.x
+          check-latest: contains('20.x', '.x')
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Release Please
+        id: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx --offline template-oss-release-please --branch="${{ github.ref_name }}" --backport="" --defaultTag="latest"
+      - name: Create Release Manager Comment Text
+        if: steps.release.outputs.pr-number
+        uses: actions/github-script@v6
+        id: comment-text
+        with:
+          result-encoding: string
+          script: |
+            const { runId, repo: { owner, repo } } = context
+            const { data: workflow } = await github.rest.actions.getWorkflowRun({ owner, repo, run_id: runId })
+            return['## Release Manager', `Release workflow run: ${workflow.html_url}`].join('\n\n')
+      - name: Find Release Manager Comment
+        uses: peter-evans/find-comment@v2
+        if: steps.release.outputs.pr-number
+        id: found-comment
+        with:
+          issue-number: ${{ steps.release.outputs.pr-number }}
+          comment-author: 'github-actions[bot]'
+          body-includes: '## Release Manager'
+      - name: Create Release Manager Comment
+        id: create-comment
+        if: steps.release.outputs.pr-number && !steps.found-comment.outputs.comment-id
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ steps.release.outputs.pr-number }}
+          body: ${{ steps.comment-text.outputs.result }}
+      - name: Update Release Manager Comment
+        id: update-comment
+        if: steps.release.outputs.pr-number && steps.found-comment.outputs.comment-id
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          comment-id: ${{ steps.found-comment.outputs.comment-id }}
+          body: ${{ steps.comment-text.outputs.result }}
+          edit-mode: 'replace'
+      - name: Create Check
+        id: create-check
+        uses: ./.github/actions/create-check
+        if: steps.release.outputs.pr-sha
+        with:
+          name: "Release"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ steps.release.outputs.pr-sha }}
+
+  update:
+    needs: release
+    outputs:
+      sha: ${{ steps.commit.outputs.sha }}
+      check-id: ${{ steps.create-check.outputs.check-id }}
+    name: Update - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.pr
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ needs.release.outputs.pr-branch }}
+      - name: Setup Git User
+        run: |
+          git config --global user.email "npm-cli+bot@github.com"
+          git config --global user.name "npm CLI robot"
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        id: node
+        with:
+          node-version: 20.x
+          check-latest: contains('20.x', '.x')
+          cache: npm
+      - name: Check Git Status
+        run: node scripts/git-dirty.js
+      - name: Reset Deps
+        run: node scripts/resetdeps.js
+      - name: Create Release Manager Checklist Text
+        id: comment-text
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node . exec --offline -- template-oss-release-manager --pr="${{ needs.release.outputs.pr-number }}" --backport="" --defaultTag="latest" --lockfile
+      - name: Append Release Manager Comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          comment-id: ${{ needs.release.outputs.comment-id }}
+          body: ${{ steps.comment-text.outputs.result }}
+          edit-mode: 'append'
+      - name: Run Post Pull Request Actions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node . run rp-pull-request --ignore-scripts -ws -iwr --if-present -- --pr="${{ needs.release.outputs.pr-number }}" --commentId="${{ needs.release.outputs.comment-id }}"
+      - name: Commit
+        id: commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git commit --all --amend --no-edit || true
+          git push --force-with-lease
+          echo "sha=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+      - name: Create Check
+        id: create-check
+        uses: ./.github/actions/create-check
+        with:
+          name: "Update - Release"
+          check-name: "Release"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ steps.commit.outputs.sha }}
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ job.status }}
+          check_id: ${{ needs.release.outputs.check-id }}
+
+  ci:
+    name: CI - Release
+    needs: [ release, update ]
+    if: needs.release.outputs.pr
+    uses: ./.github/workflows/ci-release.yml
+    with:
+      ref: ${{ needs.release.outputs.pr-branch }}
+      check-sha: ${{ needs.update.outputs.sha }}
+
+  post-ci:
+    needs: [ release, update, ci ]
+    name: Post CI - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.pr && always()
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Get CI Conclusion
+        id: conclusion
+        run: |
+          result=""
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" ]]; then
+            result="failure"
+          elif [[ "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            result="cancelled"
+          else
+            result="success"
+          fi
+          echo "result=$result" >> $GITHUB_OUTPUT
+      - name: Conclude Check
+        uses: LouisBrunner/checks-action@v1.6.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          conclusion: ${{ steps.conclusion.outputs.result }}
+          check_id: ${{ needs.update.outputs.check-id }}
+
+  post-release:
+    needs: release
+    outputs:
+      comment-id: ${{ steps.create-comment.outputs.comment-id }}
+    name: Post Release - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.releases
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Create Release PR Comment Text
+        id: comment-text
+        uses: actions/github-script@v6
+        env:
+          RELEASES: ${{ needs.release.outputs.releases }}
+        with:
+          result-encoding: string
+          script: |
+            const releases = JSON.parse(process.env.RELEASES)
+            const { runId, repo: { owner, repo } } = context
+            const issue_number = releases[0].prNumber
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${runId}`
+
+            return [
+              '## Release Workflow\n',
+              ...releases.map(r => `- \`${r.pkgName}@${r.version}\` ${r.url}`),
+              `- Workflow run: :arrows_counterclockwise: ${runUrl}`,
+            ].join('\n')
+      - name: Create Release PR Comment
+        id: create-comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ fromJSON(needs.release.outputs.releases)[0].prNumber }}
+          body: ${{ steps.comment-text.outputs.result }}
+
+  release-integration:
+    needs: release
+    name: Release Integration
+    if: needs.release.outputs.releases
+    uses: ./.github/workflows/release-integration.yml
+    with:
+      releases: ${{ needs.release.outputs.releases }}
+
+  post-release-integration:
+    needs: [ release, release-integration, post-release ]
+    name: Post Release Integration - Release
+    if: github.repository_owner == 'npm' && needs.release.outputs.releases && always()
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Get Post Release Conclusion
+        id: conclusion
+        run: |
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" ]]; then
+            result="x"
+          elif [[ "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            result="heavy_multiplication_x"
+          else
+            result="white_check_mark"
+          fi
+          echo "result=$result" >> $GITHUB_OUTPUT
+      - name: Find Release PR Comment
+        uses: peter-evans/find-comment@v2
+        id: found-comment
+        with:
+          issue-number: ${{ fromJSON(needs.release.outputs.releases)[0].prNumber }}
+          comment-author: 'github-actions[bot]'
+          body-includes: '## Release Workflow'
+      - name: Create Release PR Comment Text
+        id: comment-text
+        if: steps.found-comment.outputs.comment-id
+        uses: actions/github-script@v6
+        env:
+          RESULT: ${{ steps.conclusion.outputs.result }}
+          BODY: ${{ steps.found-comment.outputs.comment-body }}
+        with:
+          result-encoding: string
+          script: |
+            const { RESULT, BODY } = process.env
+            const body = [BODY.replace(/(Workflow run: :)[a-z_]+(:)/, `$1${RESULT}$2`)]
+            if (RESULT !== 'white_check_mark') {
+              body.push(':rotating_light::rotating_light::rotating_light:')
+              body.push([
+                '@npm/cli-team: The post-release workflow failed for this release.',
+                'Manual steps may need to be taken after examining the workflow output.'
+              ].join(' '))
+              body.push(':rotating_light::rotating_light::rotating_light:')
+            }
+            return body.join('\n\n').trim()
+      - name: Update Release PR Comment
+        if: steps.comment-text.outputs.result
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          comment-id: ${{ steps.found-comment.outputs.comment-id }}
+          body: ${{ steps.comment-text.outputs.result }}
+          edit-mode: 'replace'

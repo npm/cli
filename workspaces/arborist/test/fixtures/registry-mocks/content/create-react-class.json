@@ -1,0 +1,1505 @@
+{
+  "_id": "create-react-class",
+  "_rev": "61-e277fc9f3d3789f803aaa96c53bb4c90",
+  "name": "create-react-class",
+  "description": "Legacy API for creating React components.",
+  "dist-tags": {
+    "latest": "15.7.0",
+    "dev": "15.5.0",
+    "15-next": "15.6.0-rc.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "create-react-class",
+      "version": "1.0.0",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "e32d9b01a51e6a888512ee1451c51a1a463962c1",
+      "_id": "create-react-class@1.0.0",
+      "_shasum": "3e12c55055fbeb82dc23fff5c8413e87c32e715f",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "3e12c55055fbeb82dc23fff5c8413e87c32e715f",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.0.0.tgz_1483031072535_0.5454653862398118"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "create-react-class",
+      "version": "1.0.1",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "f5f3c8751f3c7bfd1b1acf551da3c6d179a4b2f4",
+      "_id": "create-react-class@1.0.1",
+      "_shasum": "8700f42735605c7cc5a87bbb8cc13ec3dfb7eb04",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "8700f42735605c7cc5a87bbb8cc13ec3dfb7eb04",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.0.1.tgz_1483032174200_0.7143420127686113"
+      },
+      "directories": {}
+    },
+    "1.1.0": {
+      "name": "create-react-class",
+      "version": "1.1.0",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "0e1632018587a2637c62b24d58e96ed1c8b9b0f4",
+      "_id": "create-react-class@1.1.0",
+      "_shasum": "9545ae56fcabb9fd117556ec60f4265d0bf193cf",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "9545ae56fcabb9fd117556ec60f4265d0bf193cf",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.1.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.1.0.tgz_1483038277068_0.5952634606510401"
+      },
+      "directories": {}
+    },
+    "1.1.1": {
+      "name": "create-react-class",
+      "version": "1.1.1",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "5732e108a71c6a2e459bd15dc2ea29db0b31e666",
+      "_id": "create-react-class@1.1.1",
+      "_shasum": "d8009c8c0ba7148eddda0d1585858c7f396057d3",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "d8009c8c0ba7148eddda0d1585858c7f396057d3",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.1.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.1.1.tgz_1483039195202_0.8952286839485168"
+      },
+      "directories": {}
+    },
+    "1.2.0": {
+      "name": "create-react-class",
+      "version": "1.2.0",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "b66836e4b274e96405461ae5e9e3d4b5c6f5fbf8",
+      "_id": "create-react-class@1.2.0",
+      "_shasum": "f505608e6d74e0c02031fe5d33207c9ff3f8f6cb",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "f505608e6d74e0c02031fe5d33207c9ff3f8f6cb",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.2.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.2.0.tgz_1483041723293_0.9617191087454557"
+      },
+      "directories": {}
+    },
+    "1.2.1": {
+      "name": "create-react-class",
+      "version": "1.2.1",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "ebd54dde557558eeaaa28d1cd633852baa2d768a",
+      "_id": "create-react-class@1.2.1",
+      "_shasum": "34026d3157a13ca7dde353f20f84a5a87ef1d306",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "34026d3157a13ca7dde353f20f84a5a87ef1d306",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.2.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.2.1.tgz_1483041840772_0.053662176709622145"
+      },
+      "directories": {}
+    },
+    "1.2.2": {
+      "name": "create-react-class",
+      "version": "1.2.2",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "837fb6bce9aae657871dbfe1e86c635e4b00b63d",
+      "_id": "create-react-class@1.2.2",
+      "_shasum": "713bad57fc1f9e2bcd394638c1ee03aa975fda8d",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.1",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "713bad57fc1f9e2bcd394638c1ee03aa975fda8d",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.2.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.2.2.tgz_1483041937567_0.46449306583963335"
+      },
+      "directories": {}
+    },
+    "1.2.3": {
+      "name": "create-react-class",
+      "version": "1.2.3",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "1f0068b365a9f34896a20a0d4d8eebbc68fb5adb",
+      "_id": "create-react-class@1.2.3",
+      "_shasum": "8a87c5e1164199a7fa338eb814c3ae3d6593b1dd",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "8a87c5e1164199a7fa338eb814c3ae3d6593b1dd",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.2.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.2.3.tgz_1483127521265_0.1386927803978324"
+      },
+      "directories": {}
+    },
+    "1.2.4": {
+      "name": "create-react-class",
+      "version": "1.2.4",
+      "description": "Node module to create the react class structure",
+      "bin": {
+        "create-react-class": "./bin/start.js"
+      },
+      "main": "./lib/index.js",
+      "preferGlobal": true,
+      "scripts": {
+        "test": "mocha tests/*js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/viniciusmarson/create-react-class.git"
+      },
+      "keywords": [
+        "create-react-class",
+        "react-class",
+        "react",
+        "class"
+      ],
+      "author": {
+        "name": "Vinicius Marson"
+      },
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/viniciusmarson/create-react-class/issues"
+      },
+      "homepage": "https://github.com/viniciusmarson/create-react-class#readme",
+      "dependencies": {
+        "fs": "0.0.1-security",
+        "fs-extra": "1.0.0",
+        "yargs": "6.5.0"
+      },
+      "devDependencies": {
+        "chai": "3.5.0",
+        "mocha": "3.2.0"
+      },
+      "gitHead": "39df3541e82aa1d01b855a53378905aff2640a6b",
+      "_id": "create-react-class@1.2.4",
+      "_shasum": "137f3c6deec0a4ed7c26ad70f60c54fc24f3568c",
+      "_from": ".",
+      "_npmVersion": "3.5.2",
+      "_nodeVersion": "4.2.6",
+      "_npmUser": {
+        "name": "vinicius.marson",
+        "email": "vinicius_mars@hotmail.com"
+      },
+      "dist": {
+        "shasum": "137f3c6deec0a4ed7c26ad70f60c54fc24f3568c",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-1.2.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-1.2.4.tgz_1483191777638_0.46103765070438385"
+      },
+      "directories": {}
+    },
+    "15.5.0": {
+      "name": "create-react-class",
+      "version": "15.5.0",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9"
+      },
+      "scripts": {
+        "test": "jest"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "react": "^15.4.2",
+        "react-addons-test-utils": "^15.4.2",
+        "react-dom": "^15.4.2"
+      },
+      "_id": "create-react-class@15.5.0",
+      "_shasum": "7508ffcad56a0804fb244d6ff70b07648abfe5fb",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "acdlite",
+        "email": "acdlite@me.com"
+      },
+      "dist": {
+        "shasum": "7508ffcad56a0804fb244d6ff70b07648abfe5fb",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-15.5.0.tgz_1490997466206_0.8584705472458154"
+      },
+      "directories": {},
+      "deprecated": "create-react-class has known issues with Browserify before version 15.5.3. Please update create-react-class to 15.5.3 or a newer version."
+    },
+    "15.5.1": {
+      "name": "create-react-class",
+      "version": "15.5.1",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9"
+      },
+      "scripts": {
+        "test": "jest"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "react": "^15.4.2",
+        "react-addons-test-utils": "^15.4.2",
+        "react-dom": "^15.4.2"
+      },
+      "_id": "create-react-class@15.5.1",
+      "_shasum": "25a138a42d1c9df6d5c70fea29ec6ccf5ae165b8",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "acdlite",
+        "email": "acdlite@me.com"
+      },
+      "dist": {
+        "shasum": "25a138a42d1c9df6d5c70fea29ec6ccf5ae165b8",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-18-east.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-15.5.1.tgz_1491613528566_0.9435327413957566"
+      },
+      "deprecated": "create-react-class has known issues with Browserify before version 15.5.3. Please update create-react-class to 15.5.3 or a newer version.",
+      "directories": {}
+    },
+    "15.5.2": {
+      "name": "create-react-class",
+      "version": "15.5.2",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "jest"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "react": "^15.5.0",
+        "react-addons-test-utils": "^15.5.0",
+        "react-dom": "^15.5.0"
+      },
+      "_id": "create-react-class@15.5.2",
+      "_shasum": "6a8758348df660b88326a0e764d569f274aad681",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.0",
+      "_npmUser": {
+        "name": "acdlite",
+        "email": "acdlite@me.com"
+      },
+      "dist": {
+        "shasum": "6a8758348df660b88326a0e764d569f274aad681",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "vinicius.marson",
+          "email": "vinicius_mars@hotmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-15.5.2.tgz_1491843083132_0.7065045048948377"
+      },
+      "deprecated": "create-react-class has known issues with Browserify before version 15.5.3. Please update create-react-class to 15.5.3 or a newer version.",
+      "directories": {}
+    },
+    "15.5.3": {
+      "name": "create-react-class",
+      "version": "15.5.3",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "jest"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "react": "^15.5.0",
+        "react-addons-test-utils": "^15.5.0",
+        "react-dom": "^15.5.0"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.5.3",
+      "_shasum": "fb0f7cae79339e9a179e194ef466efa3923820fe",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.7.4",
+      "_npmUser": {
+        "name": "gaearon",
+        "email": "dan.abramov@gmail.com"
+      },
+      "dist": {
+        "shasum": "fb0f7cae79339e9a179e194ef466efa3923820fe",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "brianvaughn",
+          "email": "briandavidvaughn@gmail.com"
+        },
+        {
+          "name": "flarnie",
+          "email": "flarnie.npm@gmail.com"
+        },
+        {
+          "name": "gaearon",
+          "email": "dan.abramov@gmail.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        },
+        {
+          "name": "tomocchino",
+          "email": "tomocchino@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/create-react-class-15.5.3.tgz_1494374356947_0.6229187545832247"
+      },
+      "directories": {}
+    },
+    "15.5.4": {
+      "name": "create-react-class",
+      "version": "15.5.4",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "jest"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "react": "^15.5.0",
+        "react-addons-test-utils": "^15.5.0",
+        "react-dom": "^15.5.0"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.5.4",
+      "_shasum": "188875cb15e2fbe4ca595b6f43eb0e4a1f00fe50",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "6.10.2",
+      "_npmUser": {
+        "name": "flarnie",
+        "email": "flarnie.npm@gmail.com"
+      },
+      "dist": {
+        "shasum": "188875cb15e2fbe4ca595b6f43eb0e4a1f00fe50",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.5.4.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "brianvaughn",
+          "email": "briandavidvaughn@gmail.com"
+        },
+        {
+          "name": "flarnie",
+          "email": "flarnie.npm@gmail.com"
+        },
+        {
+          "name": "gaearon",
+          "email": "dan.abramov@gmail.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        },
+        {
+          "name": "tomocchino",
+          "email": "tomocchino@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class-15.5.4.tgz_1497312137494_0.9659468000754714"
+      },
+      "directories": {}
+    },
+    "15.6.0-rc.0": {
+      "name": "create-react-class",
+      "version": "15.6.0-rc.0",
+      "description": "Deprecated, legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "TEST_ENTRY=./index.js jest",
+        "build:dev": "NODE_ENV=development webpack && TEST_ENTRY=./create-react-class.js jest",
+        "build:prod": "NODE_ENV=production webpack && NODE_ENV=production TEST_ENTRY=./create-react-class.min.js jest",
+        "build": "npm run build:dev && npm run build:prod",
+        "prepublish": "npm test && npm run build"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "webpack": "^2.6.1"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.6.0-rc.0",
+      "_shasum": "80b890d8d7296980733b5beffd64963bec770016",
+      "_from": ".",
+      "_npmVersion": "3.10.10",
+      "_nodeVersion": "7.2.1",
+      "_npmUser": {
+        "name": "gaearon",
+        "email": "dan.abramov@gmail.com"
+      },
+      "dist": {
+        "shasum": "80b890d8d7296980733b5beffd64963bec770016",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.0-rc.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "brianvaughn",
+          "email": "briandavidvaughn@gmail.com"
+        },
+        {
+          "name": "flarnie",
+          "email": "flarnie.npm@gmail.com"
+        },
+        {
+          "name": "gaearon",
+          "email": "dan.abramov@gmail.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        },
+        {
+          "name": "tomocchino",
+          "email": "tomocchino@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class-15.6.0-rc.0.tgz_1497392246630_0.2560876647476107"
+      },
+      "directories": {}
+    },
+    "15.6.0": {
+      "name": "create-react-class",
+      "version": "15.6.0",
+      "description": "Legacy API for creating React components.",
+      "main": "index.js",
+      "license": "BSD-3-Clause",
+      "files": [
+        "LICENSE",
+        "PATENTS",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "TEST_ENTRY=./index.js jest",
+        "build:dev": "NODE_ENV=development webpack && TEST_ENTRY=./create-react-class.js jest",
+        "build:prod": "NODE_ENV=production webpack && NODE_ENV=production TEST_ENTRY=./create-react-class.min.js jest",
+        "build": "npm run build:dev && npm run build:prod",
+        "prepublish": "npm test && npm run build"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "webpack": "^2.6.1"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.6.0",
+      "_shasum": "ab448497c26566e1e29413e883207d57cfe7bed4",
+      "_from": ".",
+      "_npmVersion": "4.1.2",
+      "_nodeVersion": "7.5.0",
+      "_npmUser": {
+        "name": "gaearon",
+        "email": "dan.abramov@gmail.com"
+      },
+      "dist": {
+        "shasum": "ab448497c26566e1e29413e883207d57cfe7bed4",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "acdlite",
+          "email": "acdlite@me.com"
+        },
+        {
+          "name": "brianvaughn",
+          "email": "briandavidvaughn@gmail.com"
+        },
+        {
+          "name": "flarnie",
+          "email": "flarnie.npm@gmail.com"
+        },
+        {
+          "name": "gaearon",
+          "email": "dan.abramov@gmail.com"
+        },
+        {
+          "name": "sebmarkbage",
+          "email": "sebastian@calyptus.eu"
+        },
+        {
+          "name": "spicyj",
+          "email": "ben@benalpert.com"
+        },
+        {
+          "name": "tomocchino",
+          "email": "tomocchino@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class-15.6.0.tgz_1497444690170_0.02068666974082589"
+      },
+      "directories": {}
+    },
+    "15.6.2": {
+      "name": "create-react-class",
+      "version": "15.6.2",
+      "description": "Legacy API for creating React components.",
+      "main": "index.js",
+      "license": "MIT",
+      "files": [
+        "LICENSE",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "TEST_ENTRY=./index.js jest",
+        "build:dev": "NODE_ENV=development webpack && TEST_ENTRY=./create-react-class.js jest",
+        "build:prod": "NODE_ENV=production webpack && NODE_ENV=production TEST_ENTRY=./create-react-class.min.js jest",
+        "build": "npm run build:dev && npm run build:prod",
+        "prepublish": "npm test && npm run build"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "webpack": "^2.6.1"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.6.2",
+      "_shasum": "cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a",
+      "_from": ".",
+      "_npmVersion": "3.10.8",
+      "_nodeVersion": "6.9.0",
+      "_npmUser": {
+        "name": "sophiebits",
+        "email": "npm@sophiebits.com"
+      },
+      "dist": {
+        "shasum": "cf1ed15f12aad7f14ef5f2dfe05e6c42f91ef02a",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.2.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm2@sophiebits.com",
+          "name": "sophiebits"
+        },
+        {
+          "email": "dg@domgan.com",
+          "name": "trueadm"
+        },
+        {
+          "email": "dan.abramov@gmail.com",
+          "name": "gaearon"
+        },
+        {
+          "email": "briandavidvaughn@gmail.com",
+          "name": "brianvaughn"
+        },
+        {
+          "email": "opensource+npm@fb.com",
+          "name": "fb"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class-15.6.2.tgz_1506384833206_0.5694063645787537"
+      },
+      "directories": {}
+    },
+    "15.6.3": {
+      "name": "create-react-class",
+      "version": "15.6.3",
+      "description": "Legacy API for creating React components.",
+      "main": "index.js",
+      "license": "MIT",
+      "files": [
+        "LICENSE",
+        "factory.js",
+        "index.js",
+        "create-react-class.js",
+        "create-react-class.min.js"
+      ],
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "keywords": [
+        "react"
+      ],
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "dependencies": {
+        "fbjs": "^0.8.9",
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "scripts": {
+        "test": "TEST_ENTRY=./index.js jest",
+        "build:dev": "NODE_ENV=development webpack && TEST_ENTRY=./create-react-class.js jest",
+        "build:prod": "NODE_ENV=production webpack && NODE_ENV=production TEST_ENTRY=./create-react-class.min.js jest",
+        "build": "npm run build:dev && npm run build:prod",
+        "prepublish": "npm test && npm run build"
+      },
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "webpack": "^2.6.1"
+      },
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "_id": "create-react-class@15.6.3",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "brianvaughn",
+        "email": "briandavidvaughn@gmail.com"
+      },
+      "dist": {
+        "integrity": "sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==",
+        "shasum": "2d73237fb3f970ae6ebe011a9e66f46dbca80036",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.6.3.tgz"
+      },
+      "maintainers": [
+        {
+          "email": "npm2@sophiebits.com",
+          "name": "sophiebits"
+        },
+        {
+          "email": "dg@domgan.com",
+          "name": "trueadm"
+        },
+        {
+          "email": "dan.abramov@gmail.com",
+          "name": "gaearon"
+        },
+        {
+          "email": "briandavidvaughn@gmail.com",
+          "name": "brianvaughn"
+        },
+        {
+          "email": "opensource+npm@fb.com",
+          "name": "fb"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class-15.6.3.tgz_1517347241795_0.263311407295987"
+      },
+      "directories": {}
+    },
+    "15.7.0": {
+      "browserify": {
+        "transform": [
+          "loose-envify"
+        ]
+      },
+      "bugs": {
+        "url": "https://github.com/facebook/react/issues"
+      },
+      "dependencies": {
+        "loose-envify": "^1.3.1",
+        "object-assign": "^4.1.1"
+      },
+      "deprecated": false,
+      "description": "Legacy API for creating React components.",
+      "devDependencies": {
+        "jest": "^19.0.2",
+        "prop-types": "^15.5.10",
+        "react": "^15.5.4",
+        "react-dom": "^15.5.4",
+        "webpack": "^2.6.1"
+      },
+      "homepage": "https://facebook.github.io/react/",
+      "keywords": [
+        "react"
+      ],
+      "license": "MIT",
+      "main": "index.js",
+      "name": "create-react-class",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/facebook/react.git"
+      },
+      "version": "15.7.0",
+      "_id": "create-react-class@15.7.0",
+      "_nodeVersion": "12.18.3",
+      "_npmVersion": "6.14.6",
+      "dist": {
+        "integrity": "sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==",
+        "shasum": "7499d7ca2e69bb51d13faf59bd04f0c65a1d6c1e",
+        "tarball": "https://registry.npmjs.org/create-react-class/-/create-react-class-15.7.0.tgz",
+        "fileCount": 7,
+        "unpackedSize": 83316,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJfiMzYCRA9TVsSAnZWagAAO0cQAIQ4kDyshFsvcY9CzpFV\n3O6K04yE8w8HNBuo8yhnIsjfrFG7riz4GNGVOODHBPri6vCzeAui+bC6WF8R\nzr6dUjV4a77G54+oA9J1B2+NWy+/yxSF5SYoaS/nv+YLo1/bleoLq2E1ImHt\nl9HI1ZzIbKpOElQH6yb0XBex85WxSv1zGzZd8f6MLdZ8LtFjTZEViHuCwlOZ\niDsCZU1JGR4aP7GfLLoth1EVPFAj+digsIhcSfZxJUzz3/klqnRG+Fh+dN5e\n/ww66qfKeTD1Ui7BBf4OoVd8A3NNopXKNAZadeacZPH32RFC8jqYHKcyUOKo\nUo/W3vGP/3tYy6b4RxBbcHhMeNvPPXoavRowxvWQaZUp+u8nlhbj0Jf7roUy\noSVwtstwuA2klTafc55dp5RD+hKPiBklPiNV2UeA4rWwx8d3Afj/cPg8zQq5\ngzlTQTN4vuBIbFrRbDKRUlXdw6kSJldaKXuM9oyY+gkmAK109fEvLJH2K9Cs\ngy5vLYqmlYFOe0lpoL4wO0gtvhuPx9qeJqAYuzl2B1l8ET9aCwpbuuRA1GMM\n6ohahQmVFFaWve1SM41R5q9OBa8X3k7G6VOCKI6PwI6225L8vx81Ofq1/9Tt\nC5lvX/3atazNMsWWFsfZRI9A3lAXGEKM0KGO/H2fCznZEWuYUKuc1Oq/Mntl\nshXh\r\n=L6qZ\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "gaearon",
+          "email": "dan.abramov@gmail.com"
+        },
+        {
+          "name": "brianvaughn",
+          "email": "briandavidvaughn@gmail.com"
+        },
+        {
+          "name": "fb",
+          "email": "opensource+npm@fb.com"
+        },
+        {
+          "name": "trueadm",
+          "email": "dg@domgan.com"
+        },
+        {
+          "name": "sophiebits",
+          "email": "npm@sophiebits.com"
+        }
+      ],
+      "_npmUser": {
+        "name": "gaearon",
+        "email": "dan.abramov@gmail.com"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/create-react-class_15.7.0_1602800856527_0.6811300845849555"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "readme": "# create-react-class\n\nA drop-in replacement for `React.createClass`.\n\nRefer to the [React documentation](https://facebook.github.io/react/docs/react-without-es6.html) for more information.\n",
+  "maintainers": [
+    {
+      "name": "gaearon",
+      "email": "dan.abramov@gmail.com"
+    },
+    {
+      "name": "brianvaughn",
+      "email": "briandavidvaughn@gmail.com"
+    },
+    {
+      "name": "fb",
+      "email": "opensource+npm@fb.com"
+    },
+    {
+      "name": "trueadm",
+      "email": "dg@domgan.com"
+    },
+    {
+      "name": "sophiebits",
+      "email": "npm@sophiebits.com"
+    }
+  ],
+  "time": {
+    "modified": "2020-10-15T22:27:38.910Z",
+    "created": "2016-12-29T17:04:32.753Z",
+    "1.0.0": "2016-12-29T17:04:32.753Z",
+    "1.0.1": "2016-12-29T17:22:54.439Z",
+    "1.1.0": "2016-12-29T19:04:38.891Z",
+    "1.1.1": "2016-12-29T19:19:57.214Z",
+    "1.2.0": "2016-12-29T20:02:03.532Z",
+    "1.2.1": "2016-12-29T20:04:02.629Z",
+    "1.2.2": "2016-12-29T20:05:39.315Z",
+    "1.2.3": "2016-12-30T19:52:01.502Z",
+    "1.2.4": "2016-12-31T13:42:59.581Z",
+    "15.5.0": "2017-03-31T21:57:48.208Z",
+    "15.5.1": "2017-04-08T01:05:30.464Z",
+    "15.5.2": "2017-04-10T16:51:23.409Z",
+    "15.5.3": "2017-05-09T23:59:19.085Z",
+    "15.5.4": "2017-06-13T00:02:17.587Z",
+    "15.6.0-rc.0": "2017-06-13T22:17:27.688Z",
+    "15.6.0": "2017-06-14T12:51:31.164Z",
+    "15.6.2": "2017-09-26T00:13:53.670Z",
+    "15.6.3": "2018-01-30T21:20:41.890Z",
+    "15.7.0": "2020-10-15T22:27:36.683Z"
+  },
+  "homepage": "https://facebook.github.io/react/",
+  "keywords": [
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facebook/react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/facebook/react/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "users": {
+    "alimaster": true,
+    "panlw": true,
+    "ziflex": true,
+    "usex": true,
+    "koulmomo": true,
+    "tedyhy": true,
+    "tomekf": true,
+    "weite.chen": true,
+    "ciro-maciel": true,
+    "gindis": true
+  }
+}

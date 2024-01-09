@@ -1,0 +1,63 @@
+{
+  "_id": "@isaacs/testing-prod-dep-allinstall-fail",
+  "name": "@isaacs/testing-prod-dep-allinstall-fail",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "@isaacs/testing-prod-dep-allinstall-fail",
+      "version": "1.0.1",
+      "description": "a prod dependency that fails to install",
+      "license": "ISC",
+      "dependencies": {
+        "@isaacs/testing-fail-allinstall": "^1.0.0"
+      },
+      "scripts": {
+        "install": "this will never run"
+      },
+      "_id": "@isaacs/testing-prod-dep-allinstall-fail@1.0.1",
+      "_nodeVersion": "13.7.0",
+      "_npmVersion": "6.13.6",
+      "dist": {
+        "integrity": "sha512-YgaMzPu8Mfm3y73y8tURiI+wsGfFQ7+cw+H47JMq0zYdDWJk8J18hf+djzkRMLPoIlNlecGAYeuHCT805fOKwQ==",
+        "shasum": "a319d1a41b1e801567a07df9cae2700445595489",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-prod-dep-allinstall-fail/-/testing-prod-dep-allinstall-fail-1.0.1.tgz",
+        "fileCount": 1,
+        "unpackedSize": 289,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeMMYgCRA9TVsSAnZWagAAHhsQAJ31UMn9sc2PkMgYihir\nvTAIp63+Gj+uxSOQZ6EZEPogbJTSvkU+dJRk/fMgmd//s61RvAhCLuxz34wj\nBYrUE4+YjyXyb00UTQFcElCB8n99LzmhbmM/4QOWEY+O8+TvaP/7yoQmE3so\nTSopI2g6rZGdKPqnVDZhISDCR7mLsgsGQ3kH4LesSD9EmPyDezIXkem4j4qg\norvipqbHsONlsuI3ij7T+Q19zzVLMxrMo60rF2BYGXvlIklLGeU+97P5O7Ud\nVqh0lR7nLNxbiMzfJGHvhIIiWpBX2QCWqclTMD5/yk8sOQdiB7wg64FFLpIf\nqb6C0Hj+0YnbZcoUO0ZciXkl0X1hAwdvXb1oz+grSd7dPX7sIUAMkfs0ugBd\n9KVJIp6nCHRzxIm1uOKRGggUEk96dLNJRrbZHgaWYKrBQW27xiiDaLJVzQYm\nf8HECLqHQuLDPBLgprUhh/EgyKOINdRtTPaalqjz3yrr0QjecAeBlnCFHGXb\ngJANiPjBIXgFhUmCH3Wc9+m/+k+nPh6K7rXwxZS7l754U31NHDpVE010VqCL\n09wmJ5bq9NLhQDXPERNaCBhJ/76E9T0N/SLyI+S/OI0IO4Dx9GYcyi4DCsxp\nRDV7si3AIu3hOtrzckxeJT/TFTDtJdeS5zpD9oQgxjRe2GaafZ9PsRZca90e\nJW2H\r\n=V83R\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-prod-dep-allinstall-fail_1.0.1_1580254752181_0.15097579628608138"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2020-01-28T23:39:12.151Z",
+    "1.0.1": "2020-01-28T23:39:12.315Z",
+    "modified": "2020-01-28T23:39:15.267Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "description": "a prod dependency that fails to install",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

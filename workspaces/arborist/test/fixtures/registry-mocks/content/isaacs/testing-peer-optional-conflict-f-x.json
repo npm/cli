@@ -1,0 +1,63 @@
+{
+  "_id": "@isaacs/testing-peer-optional-conflict-f-x",
+  "name": "@isaacs/testing-peer-optional-conflict-f-x",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "@isaacs/testing-peer-optional-conflict-f-x",
+      "version": "1.0.0",
+      "peerDependencies": {
+        "@isaacs/testing-peer-optional-conflict-f-w": "1",
+        "@isaacs/testing-peer-optional-conflict-f-y": "1",
+        "@isaacs/testing-peer-optional-conflict-f-z": "1"
+      },
+      "peerDependenciesMeta": {
+        "@isaacs/testing-peer-optional-conflict-f-y": {
+          "optional": true
+        }
+      },
+      "_id": "@isaacs/testing-peer-optional-conflict-f-x@1.0.0",
+      "_nodeVersion": "15.3.0",
+      "_npmVersion": "7.5.4",
+      "dist": {
+        "integrity": "sha512-VB5Qtw6tsslX/iLqppiISZ9VaMlkvGswQhs7KFAYOSapvc+hNx2xJNdW4m+ZBjaaTbnqXiANgtl9OOOlc9kEPg==",
+        "shasum": "85d5d46cdb8a4320897a52df1f892398959449a0",
+        "tarball": "https://registry.npmjs.org/@isaacs/testing-peer-optional-conflict-f-x/-/testing-peer-optional-conflict-f-x-1.0.0.tgz",
+        "fileCount": 1,
+        "unpackedSize": 388,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgLZClCRA9TVsSAnZWagAAtMoP/27ZReRg3mA4aGN7gSTe\n546MkE8BrutJhRvmJoV2rMNvg9apLX0pqoy2koZb+L1/uZ/9csiZjWlauccw\ngUO3asGCpW/lCSFSF8Md/6/2pzervNs+rZ3H7BaOCh0ZMObVgurnLMg46vkS\nfvvGA3KxwJ5Jp/+RDwxyyLm7hp1L8aQsRniSKX3ILt5+9VORy4se3SxH4xnL\n0my9gf8+SRkAiP5uXMaqTh9o147WAjrzr6K2QzfTi9Elavevjyn0dGF59hmn\nA9NGTjPVLMWwuY6lfjKPqDz22awAW0cun61msaX0BCdwEwPRNMrj2h7FvVDy\noN07Jk9Qw/pxTV0M9lyMiqZ+B/QfhnPQrNngWe1IgknWjx8HzBPz1gUbSud+\nIXiKrGbWzUXvEzXMuEFrmORBinxK0gbp2WqQpXFq14Geg+ZkNcDNd/g0zvu3\nTKAnNGcoORo6Z5BBrU6oczVaUd1q9OYXkYcYYQ3gvf+KP46I6p9FvcTIVsCJ\nayEVDvim8KqmUrMEEwtgTVtcCtvzzHuGSULbeXdIn4Isjhq01qcZMsJ4A1xh\ndV4uKsb6KYwUnLOHkWW352b1BUJbVlwnChIJxxiddykJaX4H1k8dQnaGXFTw\n+2LOmMz+DosBCSlmKwhjPrQE9aEjEYfOR9KS3GkkrxTfxEkohTEwGAswAclE\n4cRY\r\n=e8/P\r\n-----END PGP SIGNATURE-----\r\n"
+      },
+      "_npmUser": {
+        "name": "isaacs",
+        "email": "i@izs.me"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "isaacs",
+          "email": "i@izs.me"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/testing-peer-optional-conflict-f-x_1.0.0_1613598885214_0.48891876479478324"
+      },
+      "_hasShrinkwrap": false
+    }
+  },
+  "time": {
+    "created": "2021-02-17T21:54:45.141Z",
+    "1.0.0": "2021-02-17T21:54:45.316Z",
+    "modified": "2021-02-17T21:54:48.247Z"
+  },
+  "maintainers": [
+    {
+      "name": "isaacs",
+      "email": "i@izs.me"
+    }
+  ],
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": ""
+}

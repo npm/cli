@@ -1,0 +1,497 @@
+{
+  "_id": "buffer-xor",
+  "_rev": "7-7bd58f23a2bd19386fdb5299e862a293",
+  "name": "buffer-xor",
+  "description": "A simple module for bitwise-xor on buffers",
+  "dist-tags": {
+    "latest": "2.0.2"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "buffer-xor",
+      "version": "1.0.0",
+      "description": "buffer-xor",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script unit",
+        "unit": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dcousens/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/dcousens/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/dcousens/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "*",
+        "standard": "*"
+      },
+      "gitHead": "92dfa299b905bcf6b3cfe79b13b982c236c23940",
+      "_id": "buffer-xor@1.0.0",
+      "_shasum": "f465d14bce87deecb6ab09aad686fabdffb7b5ea",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "dist": {
+        "shasum": "f465d14bce87deecb6ab09aad686fabdffb7b5ea",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.0.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.1": {
+      "name": "buffer-xor",
+      "version": "1.0.1",
+      "description": "buffer-xor",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script unit",
+        "unit": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dcousens/node-buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/dcousens/node-buffer-xor/issues"
+      },
+      "homepage": "https://github.com/dcousens/node-buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "*",
+        "standard": "*"
+      },
+      "gitHead": "3c08bdde2a5596cadba750ba323864628081b027",
+      "_id": "buffer-xor@1.0.1",
+      "_shasum": "484c6b8824616ffc0f3b7c573964bc63cb919312",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "dist": {
+        "shasum": "484c6b8824616ffc0f3b7c573964bc63cb919312",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.1.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.2": {
+      "name": "buffer-xor",
+      "version": "1.0.2",
+      "description": "buffer-xor",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script unit",
+        "unit": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "*",
+        "standard": "*"
+      },
+      "gitHead": "79c37eb7669b62639b0f4b018aaf155e72d7e204",
+      "_id": "buffer-xor@1.0.2",
+      "_shasum": "231e44571f644bde0789026f61de6e923167124a",
+      "_from": ".",
+      "_npmVersion": "2.9.0",
+      "_nodeVersion": "0.12.3",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "dist": {
+        "shasum": "231e44571f644bde0789026f61de6e923167124a",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.2.tgz"
+      },
+      "directories": {}
+    },
+    "1.0.3": {
+      "name": "buffer-xor",
+      "version": "1.0.3",
+      "description": "A simple module for bitwise-xor on buffers",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script unit",
+        "unit": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "*",
+        "standard": "*"
+      },
+      "gitHead": "8f92b79a8b8133c26a7ae1af09b2c84ec6e3f426",
+      "_id": "buffer-xor@1.0.3",
+      "_shasum": "26e61ed1422fb70dd42e6e36729ed51d855fe8d9",
+      "_from": ".",
+      "_npmVersion": "3.3.3",
+      "_nodeVersion": "4.1.1",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "26e61ed1422fb70dd42e6e36729ed51d855fe8d9",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-1.0.3.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "directories": {}
+    },
+    "2.0.0": {
+      "name": "buffer-xor",
+      "version": "2.0.0",
+      "description": "A simple module for bitwise-xor on buffers",
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run-script unit",
+        "unit": "mocha"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "mocha": "*",
+        "standard": "*"
+      },
+      "gitHead": "83025b66219da45f75463a3a1431abb4f5ed127e",
+      "_id": "buffer-xor@2.0.0",
+      "_shasum": "617efcb4361324b96725313e75d5413da32c7a62",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "5.8.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "617efcb4361324b96725313e75d5413da32c7a62",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-2.0.0.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-12-west.internal.npmjs.com",
+        "tmp": "tmp/buffer-xor-2.0.0.tgz_1457737083942_0.2049625653307885"
+      },
+      "directories": {}
+    },
+    "2.0.1": {
+      "name": "buffer-xor",
+      "version": "2.0.1",
+      "description": "A simple module for bitwise-xor on buffers",
+      "files": [
+        "index.js",
+        "inplace.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "standard": "*",
+        "tape": "*"
+      },
+      "gitHead": "5b2d03d4661236924902a299cc073347c358708d",
+      "_id": "buffer-xor@2.0.1",
+      "_shasum": "ba4d421d30b91a1440441f39f26d8a235e43b8d0",
+      "_from": ".",
+      "_npmVersion": "3.8.0",
+      "_nodeVersion": "5.8.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "email@dcousens.com"
+      },
+      "dist": {
+        "shasum": "ba4d421d30b91a1440441f39f26d8a235e43b8d0",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-2.0.1.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "packages-13-west.internal.npmjs.com",
+        "tmp": "tmp/buffer-xor-2.0.1.tgz_1457846300724_0.5908564073033631"
+      },
+      "directories": {}
+    },
+    "2.0.2": {
+      "name": "buffer-xor",
+      "version": "2.0.2",
+      "description": "A simple module for bitwise-xor on buffers",
+      "files": [
+        "index.js",
+        "inplace.js"
+      ],
+      "main": "index.js",
+      "scripts": {
+        "standard": "standard",
+        "test": "npm run standard && npm run unit",
+        "unit": "tape test/*.js"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+      },
+      "bugs": {
+        "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+      },
+      "homepage": "https://github.com/crypto-browserify/buffer-xor",
+      "keywords": [
+        "bits",
+        "bitwise",
+        "buffer",
+        "buffer-xor",
+        "crypto",
+        "inline",
+        "math",
+        "memory",
+        "performance",
+        "xor"
+      ],
+      "author": {
+        "name": "Daniel Cousens"
+      },
+      "license": "MIT",
+      "devDependencies": {
+        "standard": "*",
+        "tape": "*"
+      },
+      "dependencies": {
+        "safe-buffer": "^5.1.1"
+      },
+      "gitHead": "9ccb25fcb6afa96d23e96da837e7d3379475a954",
+      "_id": "buffer-xor@2.0.2",
+      "_npmVersion": "5.3.0",
+      "_nodeVersion": "8.4.0",
+      "_npmUser": {
+        "name": "dcousens",
+        "email": "npm@dcousens.com"
+      },
+      "dist": {
+        "integrity": "sha512-eHslX0bin3GB+Lx2p7lEYRShRewuNZL3fUl4qlVJGGiwoPGftmt8JQgk2Y9Ji5/01TnVDo33E5b5O3vUB1HdqQ==",
+        "shasum": "34f7c64f04c777a1f8aac5e661273bb9dd320289",
+        "tarball": "https://registry.npmjs.org/buffer-xor/-/buffer-xor-2.0.2.tgz"
+      },
+      "maintainers": [
+        {
+          "name": "dcousens",
+          "email": "email@dcousens.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/buffer-xor-2.0.2.tgz_1503323198580_0.12606958695687354"
+      },
+      "directories": {}
+    }
+  },
+  "readme": "# buffer-xor\n\n[![NPM Package](https://img.shields.io/npm/v/buffer-xor.svg?style=flat-square)](https://www.npmjs.org/package/buffer-xor)\n[![Build Status](https://img.shields.io/travis/crypto-browserify/buffer-xor.svg?branch=master&style=flat-square)](https://travis-ci.org/crypto-browserify/buffer-xor)\n\n[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)\n\nA simple module for bitwise-xor on buffers.\n\n\n## Examples\n\n``` javascript\nvar xor = require('buffer-xor')\nvar a = new Buffer('00ff0f', 'hex')\nvar b = new Buffer('f0f0', 'hex')\n\nconsole.log(xor(a, b))\n// => <Buffer f0 0f 0f>\n```\n\n\nOr for those seeking those few extra cycles, perform the operation in place with\n`xorInplace`:\n\n_NOTE: `xorInplace` won't xor past the bounds of the buffer it mutates so make\nsure it is long enough!_\n\n``` javascript\nvar xorInplace = require('buffer-xor/inplace')\nvar a = new Buffer('00ff0f', 'hex')\nvar b = new Buffer('f0f0', 'hex')\n\nconsole.log(xorInplace(a, b))\n// => <Buffer f0 0f 0f>\n\n// See that a has been mutated\nconsole.log(a)\n// => <Buffer f0 0f 0f>\n```\n\n\n## License [MIT](LICENSE)\n",
+  "maintainers": [
+    {
+      "name": "dcousens",
+      "email": "email@dcousens.com"
+    }
+  ],
+  "time": {
+    "modified": "2017-08-21T13:46:38.904Z",
+    "created": "2015-05-21T05:17:46.626Z",
+    "1.0.0": "2015-05-21T05:17:46.626Z",
+    "1.0.1": "2015-05-21T05:19:08.254Z",
+    "1.0.2": "2015-05-21T05:21:50.497Z",
+    "1.0.3": "2015-09-25T07:15:16.477Z",
+    "2.0.0": "2016-03-11T22:58:04.390Z",
+    "2.0.1": "2016-03-13T05:18:21.254Z",
+    "2.0.2": "2017-08-21T13:46:38.904Z"
+  },
+  "homepage": "https://github.com/crypto-browserify/buffer-xor",
+  "keywords": [
+    "bits",
+    "bitwise",
+    "buffer",
+    "buffer-xor",
+    "crypto",
+    "inline",
+    "math",
+    "memory",
+    "performance",
+    "xor"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crypto-browserify/buffer-xor.git"
+  },
+  "author": {
+    "name": "Daniel Cousens"
+  },
+  "bugs": {
+    "url": "https://github.com/crypto-browserify/buffer-xor/issues"
+  },
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "_attachments": {}
+}

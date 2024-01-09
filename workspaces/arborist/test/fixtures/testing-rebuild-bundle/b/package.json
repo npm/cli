@@ -1,0 +1,7 @@
+{
+  "name": "@isaacs/testing-rebuild-bundle-b",
+  "version": "1.0.1",
+  "scripts": {
+    "install": "node -e \"require('fs').writeFileSync('cwd', process.cwd())\""
+  }
+}
