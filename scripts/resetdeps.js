@@ -12,6 +12,7 @@ const cleanup = async () => {
 }
 
 const main = async ({ packageLock }) => {
+  await git('status') // run ANY @npmcli/git command to instantiate its lazy loading
   await fs.rimraf(join(CWD, 'node_modules'))
   for (const { path } of await pkg.mapWorkspaces()) {
     await fs.rimraf(join(path, 'node_modules'))
