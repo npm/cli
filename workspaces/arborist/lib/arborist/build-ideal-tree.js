@@ -1208,8 +1208,13 @@ This is a one-time fix-up, please be patient...
     } else {
       const cleanRawSpec = cleanUrl(spec.rawSpec)
       log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, cleanRawSpec))
-      const p = pacote.manifest(spec, options)
+      const o = {
+        ...options,
+        fullMetadata: true,
+      }
+      const p = pacote.manifest(spec, o)
         .then(mani => {
+          delete mani.license
           this.#manifests.set(spec.raw, mani)
           return mani
         })
