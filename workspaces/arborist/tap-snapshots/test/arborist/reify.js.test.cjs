@@ -3295,7 +3295,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
@@ -3307,14 +3307,14 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
@@ -3326,9 +3326,28 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "platform-specifying-test-package" => EdgeOut {
+      "name": "platform-specifying-test-package",
+      "spec": "1.0.0",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options",
+  "packageName": "platform-test",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
@@ -33165,7 +33184,7 @@ exports[`test/arborist/reify.js TAP store files with a custom indenting > must m
 
 `
 
-exports[`test/arborist/reify.js TAP success to install optional deps with matched platform specifications with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP success to install optional deps with matched platform specifications with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "children": Map {
     "platform-specifying-test-package" => ArboristNode {
@@ -33180,7 +33199,7 @@ ArboristNode {
       "location": "node_modules/platform-specifying-test-package",
       "name": "platform-specifying-test-package",
       "optional": true,
-      "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options/node_modules/platform-specifying-test-package",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
       "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -33195,9 +33214,9 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
