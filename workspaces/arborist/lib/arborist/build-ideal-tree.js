@@ -1213,8 +1213,7 @@ This is a one-time fix-up, please be patient...
         fullMetadata: true,
       }
       const p = pacote.manifest(spec, o)
-        .then(mani => {
-          delete mani.license
+        .then(({ license, ...mani }) => {
           this.#manifests.set(spec.raw, mani)
           return mani
         })
