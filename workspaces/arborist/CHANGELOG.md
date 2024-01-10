@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.3.0](https://github.com/npm/cli/compare/arborist-v7.2.2...arborist-v7.3.0) (2024-01-10)
+
+### Features
+
+* [`6673c77`](https://github.com/npm/cli/commit/6673c77bc4222d0f1719449fe903b7461b3e6907) [#6914](https://github.com/npm/cli/pull/6914) add `--libc` option to override platform specific install (#6914) (@wraithgar, @Brooooooklyn)
+
 ## [7.2.2](https://github.com/npm/cli/compare/arborist-v7.2.1...arborist-v7.2.2) (2023-12-06)
 
 ### Bug Fixes

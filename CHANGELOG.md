@@ -1,5 +1,37 @@
 # Changelog
 
+## [10.3.0](https://github.com/npm/cli/compare/v10.2.5...v10.3.0) (2024-01-10)
+
+### Features
+
+* [`6673c77`](https://github.com/npm/cli/commit/6673c77bc4222d0f1719449fe903b7461b3e6907) [#6914](https://github.com/npm/cli/pull/6914) add `--libc` option to override platform specific install (#6914) (@wraithgar, @Brooooooklyn)
+
+### Bug Fixes
+
+* [`b7fc10a`](https://github.com/npm/cli/commit/b7fc10aa37bc2422f479119558f82e01bdaab6cd) [#7113](https://github.com/npm/cli/pull/7113) filter C0 and C1 control characters from logs and cli output (#7113) (@wraithgar)
+
+### Dependencies
+
+* [`3fd5213`](https://github.com/npm/cli/commit/3fd521393461639b6b768df43f0b5b71d3ee7dd2) [#7121](https://github.com/npm/cli/pull/7121) `npm-packlist@8.0.2`
+* [`5698415`](https://github.com/npm/cli/commit/56984154b445c479236effdb844888b1ef409250) [#7121](https://github.com/npm/cli/pull/7121) `postcss-selector-parser@6.0.15`
+* [`e56a4f3`](https://github.com/npm/cli/commit/e56a4f3dff9de349917d530074e698c644471080) [#7121](https://github.com/npm/cli/pull/7121) `are-we-there-yet@4.0.2`
+* [`8495b7c`](https://github.com/npm/cli/commit/8495b7c088118e383ff6f3c7ce744df9c0d8e106) [#7121](https://github.com/npm/cli/pull/7121) `cacache@18.0.2`
+* [`796d1c7`](https://github.com/npm/cli/commit/796d1c7507d69382181e515d6c6987930c9ec636) [#7121](https://github.com/npm/cli/pull/7121) `@npmcli/run-script@7.0.3`
+* [`3b7f6f2`](https://github.com/npm/cli/commit/3b7f6f274aceed4218e5e903752d879a41d3a547) [#7121](https://github.com/npm/cli/pull/7121) `@npmcli/promise-spawn@7.0.1`
+* [`7ecd146`](https://github.com/npm/cli/commit/7ecd146a3241723602693ca67c78ca5e2da8cb57) [#7121](https://github.com/npm/cli/pull/7121) `npmcli/git@5.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.3.0): `@npmcli/arborist@7.3.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v8.1.0): `@npmcli/config@8.1.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.5): `libnpmdiff@6.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.6): `libnpmexec@7.0.6`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.3): `libnpmfund@5.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.5): `libnpmpack@6.0.5`
+
+### Chores
+
+* [`2fd8292`](https://github.com/npm/cli/commit/2fd8292eff1155ec84a53f6d4321e6a386df93c7) [#7121](https://github.com/npm/cli/pull/7121) work around @npmcli/git lazy loading (@wraithgar)
+* [`cd9a66d`](https://github.com/npm/cli/commit/cd9a66df2476d602fe3d36a6c3c6185f1bd8c676) [#7121](https://github.com/npm/cli/pull/7121) update devDependencies in lockfile (@wraithgar)
+* [`2dda715`](https://github.com/npm/cli/commit/2dda715c9e72eefe69b49ee07c87fa126c84ff10) [#7121](https://github.com/npm/cli/pull/7121) `tap@16.3.10` (@wraithgar)
+
 ## [10.2.5](https://github.com/npm/cli/compare/v10.2.4...v10.2.5) (2023-12-06)
 
 ### Bug Fixes
