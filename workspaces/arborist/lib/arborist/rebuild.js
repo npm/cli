@@ -387,7 +387,7 @@ module.exports = cls => class Builder extends cls {
         : p)
 
       process.emit('timeEnd', timer)
-    }), limit)
+    }), { limit })
     process.emit('timeEnd', `build:run:${event}`)
   }
 
