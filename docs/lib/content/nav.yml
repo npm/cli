@@ -9,6 +9,9 @@
   - title: npm
     url: /commands/npm
     description: JavaScript package manager
+  - title: npm i
+    url: /commands/npm
+    description: JavaScript package manager
   - title: npm access
     url: /commands/npm-access
     description: Set access level on published packages
