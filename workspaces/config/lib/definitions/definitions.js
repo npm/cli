@@ -786,6 +786,8 @@ define('force', {
 
 define('foreground-scripts', {
   default: false,
+  defaultDescription: `\`false\` unless when using \`npm pack\` or \`npm publish\` where it
+  defaults to \`true\``,
   type: Boolean,
   description: `
     Run all build scripts (ie, \`preinstall\`, \`install\`, and
