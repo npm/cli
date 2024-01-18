@@ -82,7 +82,7 @@ equivalent to `>=1.1.1 <1.2.0`.  So the highest-sorting version that satisfies
 
 #### Caret Dependencies below 1.0.0
 
-Caret dependencies below 1.0.0 consider minor versions to be breaking changes. Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
+Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
 
 ```json
 "dependencies": {
