@@ -256,9 +256,6 @@ into a tarball (b).
     `#semver:<semver>` is specified, then the default branch of the
     repository is used.
 
-    If the repository makes use of submodules, those submodules will be
-    cloned as well.
-
     If the package being installed contains a `prepare` script, its
     `dependencies` and `devDependencies` will be installed, and the prepare
     script will be run, before the package is packaged and installed.
