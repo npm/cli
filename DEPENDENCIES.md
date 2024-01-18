@@ -557,7 +557,6 @@ graph LR;
   npm-->spawk;
   npm-->spdx-expression-parse;
   npm-->ssri;
-  npm-->strip-ansi;
   npm-->supports-color;
   npm-->tap;
   npm-->tar;
