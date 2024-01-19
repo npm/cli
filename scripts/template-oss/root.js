@@ -1,3 +1,12 @@
+const releasePleaseConfig = {
+  'release-please-config.json': {
+    file: 'release-please-config-json.hbs',
+    overwrite: false,
+    filter: (p) => p.config.isPublic,
+    parser: (p) => p.JsonMergeNoComment,
+  },
+}
+
 module.exports = {
   rootModule: {
     add: {
@@ -16,6 +25,7 @@ module.exports = {
       '.github/workflows/ci.yml': 'ci-yml.hbs',
       '.github/workflows/create-node-pr.yml': 'create-node-pr-yml.hbs',
       '.github/workflows/node-integration.yml': 'node-integration-yml.hbs',
+      ...releasePleaseConfig,
     },
   },
   workspaceRepo: {
@@ -26,6 +36,7 @@ module.exports = {
       '.github/workflows/post-dependabot.yml': false,
       '.github/workflows/release.yml': false,
       '.github/workflows/pull-request.yml': false,
+      ...releasePleaseConfig,
     },
   },
   workspaceModule: {
