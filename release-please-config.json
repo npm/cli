@@ -39,7 +39,6 @@
     ".": {
       "package-name": "",
       "exclude-paths": [
-        "docs",
         "smoke-tests",
         "mock-globals",
         "mock-registry",
