@@ -406,21 +406,5 @@ t.test('prints dedupe difference', async t => {
     'dry-run': true,
   })
 
-  t.match(
-    out,
-    'add\tfoo\t1.0.0',
-    'should print added package'
-  )
-
-  t.match(
-    out,
-    'remove\tbar\t1.0.0',
-    'should print removed package'
-  )
-
-  t.match(
-    out,
-    'change\tbar\t1.0.0 -> 2.1.0',
-    'should print changed package'
-  )
+  t.matchSnapshot(out, 'diff table')
 })
