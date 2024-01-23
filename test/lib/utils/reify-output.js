@@ -381,7 +381,7 @@ t.test('added packages should be looked up within returned tree', async t => {
   })
 })
 
-t.test('prints dedupe difference', async t => {
+t.test('prints dedupe difference on dry-run', async t => {
   const mock = {
     actualTree: {
       name: 'foo',
@@ -404,6 +404,34 @@ t.test('prints dedupe difference', async t => {
 
   const out = await mockReify(t, mock, {
     'dry-run': true,
+  })
+
+  t.matchSnapshot(out, 'diff table')
+})
+
+t.test('prints dedupe difference on long', async t => {
+  const mock = {
+    actualTree: {
+      name: 'foo',
+      inventory: {
+        has: () => false,
+      },
+    },
+    diff: {
+      children: [
+        { action: 'ADD', ideal: { name: 'foo', package: { version: '1.0.0' } } },
+        { action: 'REMOVE', actual: { name: 'bar', package: { version: '1.0.0' } } },
+        {
+          action: 'CHANGE',
+          actual: { name: 'bar', package: { version: '1.0.0' } },
+          ideal: { package: { version: '2.1.0' } },
+        },
+      ],
+    },
+  }
+
+  const out = await mockReify(t, mock, {
+    long: true,
   })
 
   t.matchSnapshot(out, 'diff table')
