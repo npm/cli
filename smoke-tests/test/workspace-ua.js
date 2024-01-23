@@ -7,8 +7,6 @@ t.test('basic', async t => {
 
   const mock = () => registry.nock
     .get(`/fail_reflect_user_agent`)
-    // XXX: why does this get fetched twice for each uninstall?
-    .times(2)
     .reply(404, {}, { 'npm-notice': (req) => req.headers['user-agent'] })
 
   await t.test('npm install sends correct user-agent', async t => {
