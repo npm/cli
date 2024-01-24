@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.0.7](https://github.com/npm/cli/compare/libnpmexec-v7.0.6...libnpmexec-v7.0.7) (2024-01-24)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.3.1): `@npmcli/arborist@7.3.1`
+
 ## [7.0.6](https://github.com/npm/cli/compare/libnpmexec-v7.0.5...libnpmexec-v7.0.6) (2024-01-10)
 
 ### Dependencies
