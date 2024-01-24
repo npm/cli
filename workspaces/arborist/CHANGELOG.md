@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.3.1](https://github.com/npm/cli/compare/arborist-v7.3.0...arborist-v7.3.1) (2024-01-24)
+
+### Bug Fixes
+
+* [`d3f1845`](https://github.com/npm/cli/commit/d3f184591af009b0b9471c1da1245c9206449f8b) [#7124](https://github.com/npm/cli/pull/7124) clean up idealTree code (@wraithgar)
+* [`8382fb3`](https://github.com/npm/cli/commit/8382fb3f6acfa39d45d191c3215c7b899966b1f6) [#7126](https://github.com/npm/cli/pull/7126) fetch full packument so that libc can be assessed (@styfle, @ljharb)
+
+### Dependencies
+
+* [`ec77e81`](https://github.com/npm/cli/commit/ec77e81f5ecc3603bb7c9963f860a8c46f6a61ec) [#7124](https://github.com/npm/cli/pull/7124) `promise-call-limit@3.0.1`
+
 ## [7.3.0](https://github.com/npm/cli/compare/arborist-v7.2.2...arborist-v7.3.0) (2024-01-10)
 
 ### Features

@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.0.4](https://github.com/npm/cli/compare/libnpmpublish-v9.0.3...libnpmpublish-v9.0.4) (2024-01-24)
+
+### Dependencies
+
+* [`a50b03b`](https://github.com/npm/cli/commit/a50b03b10046cf769cd328df96adcf292db5c067) [#7141](https://github.com/npm/cli/pull/7141) `sigstore@2.2.0` (#7141) (@bdehamer)
+
 ## [9.0.3](https://github.com/npm/cli/compare/libnpmpublish-v9.0.2...libnpmpublish-v9.0.3) (2023-12-06)
 
 ### Chores
