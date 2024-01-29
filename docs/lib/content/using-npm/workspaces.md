@@ -110,7 +110,7 @@ respect the provided `workspace` configuration.
 
 ### Using workspaces
 
-Given the [specifities of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace
+Given the [specifics of how Node.js handles module resolution](https://nodejs.org/dist/latest-v14.x/docs/api/modules.html#modules_all_together) it's possible to consume any defined workspace
 by its declared `package.json` `name`. Continuing from the example defined
 above, let's also create a Node.js script that will require the workspace `a`
 example module, e.g:
