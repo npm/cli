@@ -40,7 +40,7 @@ Some tips:
 * Don't use the same name as a core Node module.
 * Don't put "js" or "node" in the name.  It's assumed that it's js, since
   you're writing a package.json file, and you can specify the engine using
-  the "engines" field.  (See below.)
+  the "[engines](#engines)" field.  (See below.)
 * The name will probably be passed as an argument to require(), so it
   should be something short, but also reasonably descriptive.
 * You may want to check the npm registry to see if there's something by
