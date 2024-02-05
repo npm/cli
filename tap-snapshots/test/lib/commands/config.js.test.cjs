@@ -128,6 +128,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "rebuild-bundle": true,
   "registry": "https://registry.npmjs.org/",
   "replace-registry-host": "npmjs",
+  "require-run-keyword-for-package-scripts": true,
   "save": true,
   "save-bundle": false,
   "save-dev": false,
@@ -286,6 +287,7 @@ read-only = false
 rebuild-bundle = true 
 registry = "https://registry.npmjs.org/" 
 replace-registry-host = "npmjs" 
+require-run-keyword-for-package-scripts = true 
 save = true 
 save-bundle = false 
 save-dev = false 

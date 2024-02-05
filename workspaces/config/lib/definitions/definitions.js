@@ -1754,6 +1754,19 @@ define('replace-registry-host', {
   flatten,
 })
 
+define('require-run-keyword-for-package-scripts', {
+  default: true,
+  type: Boolean,
+  description: `
+   If true, requires the 'run' command to access most scripts in package.json (ones 
+   that do not have a shortcut already i.e. 'start').
+   
+   If false, commands like 'npm test-ci' will automatically execute as 'npm run test-ci',
+   if there is a matching 'test-ci' script in the project's package.json file.
+  `,
+  flatten,
+})
+
 define('save', {
   default: true,
   defaultDescription: `\`true\` unless when using \`npm update\` where it

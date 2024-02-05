@@ -161,3 +161,35 @@ t.test('unsupported node version', async t => {
     /npm v.* does not support Node\.js 12\.6\.0\./
   )
 })
+
+t.test('run package script if one matches command exactly, if configured', async t => {
+  const { cli, logs, exitHandlerCalled, exitHandlerNpm } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', 'licenses'],
+    },
+    npm: {
+      'require-run-keyword-for-package-scripts': false,
+    },
+  })
+  await cli(process)
+
+  const title = logs.find(log => log[1] === 'title')
+  t.match(title, ['verbose', 'title', 'npm licenses'])
+  t.ok(exitHandlerNpm(), 'exitHandler npm is set')
+  t.strictSame(exitHandlerCalled(), [])
+})
+
+t.test('do not run package script if one matches command, if not configured', async t => {
+  const { cli, outputs, exitHandlerCalled, exitHandlerNpm } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', 'licenses'],
+    },
+  })
+  await cli(process)
+
+  t.match(outputs[0][0], 'Unknown command: "licenses"')
+  t.match(outputs[0][0], 'Did you mean this?')
+  t.match(exitHandlerCalled(), [], 'should call exitHandler with no args')
+  t.ok(exitHandlerNpm(), 'exitHandler npm is set')
+  t.match(process.exitCode, 1)
+})

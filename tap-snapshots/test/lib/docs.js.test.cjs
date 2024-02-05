@@ -1323,6 +1323,20 @@ You may also specify a bare hostname (e.g., "registry.npmjs.org").
 
 
 
+#### \`require-run-keyword-for-package-scripts\`
+
+* Default: true
+* Type: Boolean
+
+If true, requires the 'run' command to access most scripts in package.json
+(ones that do not have a shortcut already i.e. 'start').
+
+If false, commands like 'npm test-ci' will automatically execute as 'npm run
+test-ci', if there is a matching 'test-ci' script in the project's
+package.json file.
+
+
+
 #### \`save\`
 
 * Default: \`true\` unless when using \`npm update\` where it defaults to \`false\`
@@ -2152,6 +2166,7 @@ Array [
   "rebuild-bundle",
   "registry",
   "replace-registry-host",
+  "require-run-keyword-for-package-scripts",
   "save",
   "save-bundle",
   "save-dev",
@@ -2292,6 +2307,7 @@ Array [
   "rebuild-bundle",
   "registry",
   "replace-registry-host",
+  "require-run-keyword-for-package-scripts",
   "save",
   "save-bundle",
   "save-dev",
@@ -2444,6 +2460,7 @@ Object {
   "rebuildBundle": true,
   "registry": "https://registry.npmjs.org/",
   "replaceRegistryHost": "npmjs",
+  "requireRunKeywordForPackageScripts": true,
   "retry": Object {
     "factor": 10,
     "maxTimeout": 60000,
