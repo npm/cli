@@ -1323,7 +1323,7 @@ You may also specify a bare hostname (e.g., "registry.npmjs.org").
 
 
 
-#### \`require-run-keyword-for-package-scripts\`
+#### \`require-run-command-for-package-scripts\`
 
 * Default: true
 * Type: Boolean
@@ -2166,7 +2166,7 @@ Array [
   "rebuild-bundle",
   "registry",
   "replace-registry-host",
-  "require-run-keyword-for-package-scripts",
+  "require-run-command-for-package-scripts",
   "save",
   "save-bundle",
   "save-dev",
@@ -2307,7 +2307,7 @@ Array [
   "rebuild-bundle",
   "registry",
   "replace-registry-host",
-  "require-run-keyword-for-package-scripts",
+  "require-run-command-for-package-scripts",
   "save",
   "save-bundle",
   "save-dev",

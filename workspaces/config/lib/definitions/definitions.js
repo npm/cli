@@ -1754,7 +1754,7 @@ define('replace-registry-host', {
   flatten,
 })
 
-define('require-run-keyword-for-package-scripts', {
+define('require-run-command-for-package-scripts', {
   default: true,
   type: Boolean,
   description: `

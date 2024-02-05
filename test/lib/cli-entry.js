@@ -168,7 +168,7 @@ t.test('run package script if one matches command exactly, if configured', async
       'process.argv': ['node', 'npm', 'licenses'],
     },
     npm: {
-      'require-run-keyword-for-package-scripts': false,
+      'require-run-command-for-package-scripts': false,
     },
   })
   await cli(process)
