@@ -13,7 +13,7 @@ The [`npm query`](/commands/npm-query) command exposes a new dependency selector
 - Unlocks the ability to answer complex, multi-faceted questions about dependencies, their relationships & associative metadata
 - Consolidates redundant logic of similar query commands in `npm` (ex. `npm fund`, `npm ls`, `npm outdated`, `npm audit` ...)
 
-### Dependency Selector Syntax `v1.0.0`
+### Dependency Selector Syntax
 
 #### Overview:
 
@@ -62,6 +62,7 @@ The [`npm query`](/commands/npm-query) command exposes a new dependency selector
 - `:path(<path>)` [glob](https://www.npmjs.com/package/glob) matching based on dependencies path relative to the project
 - `:type(<type>)` [based on currently recognized types](https://github.com/npm/npm-package-arg#result-object)
 - `:outdated(<type>)` when a dependency is outdated
+- `:vuln` when a dependency has a known vulnerability
 
 ##### `:semver(<spec>, [selector], [function])`
 
@@ -100,6 +101,12 @@ Some examples:
 
 - `:root > :outdated(major)` returns every direct dependency that has a new semver major release
 - `.prod:outdated(in-range)` returns production dependencies that have a new release that satisfies at least one of its edges in
+
+##### `:vuln`
+
+The `:vuln` pseudo selector retrieves data from the registry and returns information about which if your dependencies has a known vulnerability.  Only dependencies whose current version matches a vulnerability will be returned.  For example if you have `semver@7.6.0` in your tree, a vulnerability for `semver` which affects versions `<=6.3.1` will not match.
+
+In addition to the filtering performed by the pseudo selector, info about each relevant advisory will be added to the `queryContext` attribute of each node under the `advisories` attribute.
 
 #### [Attribute Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 

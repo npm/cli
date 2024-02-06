@@ -8,6 +8,7 @@ const { minimatch } = require('minimatch')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const semver = require('semver')
+const fetch = require('npm-registry-fetch')
 
 // handle results for parsed query asts, results are stored in a map that has a
 // key that points to each ast selector node and stores the resulting array of
@@ -430,6 +431,45 @@ class Results {
 
   dedupedPseudo () {
     return this.initialItems.filter(node => node.target.edgesIn.size > 1)
+  }
+
+  async vulnPseudo () {
+    if (!this.initialItems.length) {
+      return this.initialItems
+    }
+    const packages = {}
+    // We have to map the items twice, once to get the request, and a second time to filter off the results of that request
+    this.initialItems.map((node) => {
+      if (node.isProjectRoot || node.package.private) {
+        return
+      }
+      if (!packages[node.name]) {
+        packages[node.name] = []
+      }
+      if (!packages[node.name].includes(node.version)) {
+        packages[node.name].push(node.version)
+      }
+    })
+    const res = await fetch('/-/npm/v1/security/advisories/bulk', {
+      ...this.flatOptions,
+      registry: this.flatOptions.auditRegistry || this.flatOptions.registry,
+      method: 'POST',
+      gzip: true,
+      body: packages,
+    })
+    const advisories = await res.json()
+    return this.initialItems.filter(item => {
+      const vulnerable = advisories[item.name]?.filter(advisory =>
+        semver.intersects(advisory.vulnerable_versions, item.version)
+      )
+      if (vulnerable?.length) {
+        item.queryContext = {
+          advisories: vulnerable,
+        }
+        return true
+      }
+      return false
+    })
   }
 
   async outdatedPseudo () {
