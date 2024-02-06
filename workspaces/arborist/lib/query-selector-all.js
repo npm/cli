@@ -445,6 +445,11 @@ class Results {
         return false
       }
 
+      // private packages can't be published, skip them
+      if (node.package.private) {
+        return false
+      }
+
       // we cache the promise representing the full versions list, this helps reduce the
       // number of requests we send by keeping population of the cache in a single tick
       // making it less likely that multiple requests for the same package will be inflight
