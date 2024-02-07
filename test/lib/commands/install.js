@@ -114,6 +114,25 @@ t.test('exec commands', async t => {
     t.strictSame(SCRIPTS, [], 'no scripts when adding dep')
   })
 
+  await t.test('should not self-install package if prefix is the same as PWD', async t => {
+    let REIFY_CALLED_WITH = null
+    const { npm } = await loadMockNpm(t, {
+      mocks: {
+        '{LIB}/utils/reify-finish.js': async () => {},
+        '@npmcli/run-script': () => {},
+        '@npmcli/arborist': function () {
+          this.reify = (opts) => {
+            REIFY_CALLED_WITH = opts
+          }
+        },
+      },
+      prefixOverride: process.cwd(),
+    })
+
+    await npm.exec('install')
+    t.equal(REIFY_CALLED_WITH.add.length, 0, 'did not install current directory as a dependency')
+  })
+
   await t.test('should install globally using Arborist', async t => {
     const SCRIPTS = []
     let ARB_ARGS = null
