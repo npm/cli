@@ -29,9 +29,12 @@
 const { resolve } = require('path')
 const { homedir } = require('os')
 const { depth } = require('treeverse')
+const mapWorkspaces = require('@npmcli/map-workspaces')
+const log = require('proc-log')
+
 const { saveTypeMap } = require('../add-rm-pkg-deps.js')
 const AuditReport = require('../audit-report.js')
-const mapWorkspaces = require('@npmcli/map-workspaces')
+const relpath = require('../relpath.js')
 
 const mixins = [
   require('../tracker.js'),
@@ -45,7 +48,6 @@ const mixins = [
 
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const Base = mixins.reduce((a, b) => b(a), require('events'))
-const getWorkspaceNodes = require('../get-workspace-nodes.js')
 
 // if it's 1, 2, or 3, set it explicitly that.
 // if undefined or null, set it null
@@ -97,9 +99,35 @@ class Arborist extends Base {
   // TODO: We should change these to static functions instead
   //   of methods for the next major version
 
-  // returns an array of the actual nodes for all the workspaces
+  // Get the actual nodes corresponding to a root node's child workspaces,
+  // given a list of workspace names.
   workspaceNodes (tree, workspaces) {
-    return getWorkspaceNodes(tree, workspaces)
+    const wsMap = tree.workspaces
+    if (!wsMap) {
+      log.warn('workspaces', 'filter set, but no workspaces present')
+      return []
+    }
+
+    const nodes = []
+    for (const name of workspaces) {
+      const path = wsMap.get(name)
+      if (!path) {
+        log.warn('workspaces', `${name} in filter set, but not in workspaces`)
+        continue
+      }
+
+      const loc = relpath(tree.realpath, path)
+      const node = tree.inventory.get(loc)
+
+      if (!node) {
+        log.warn('workspaces', `${name} in filter set, but no workspace folder present`)
+        continue
+      }
+
+      nodes.push(node)
+    }
+
+    return nodes
   }
 
   // returns a set of workspace nodes and all their deps
