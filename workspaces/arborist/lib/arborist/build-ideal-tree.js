@@ -45,9 +45,6 @@ const _usePackageLock = Symbol.for('usePackageLock')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
 
-// exposed symbol for unit testing the placeDep method directly
-const _peerSetSource = Symbol.for('peerSetSource')
-
 // used by Reify mixin
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 
@@ -113,6 +110,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   #loadFailures = new Set()
   #manifests = new Map()
   #mutateTree = false
+  // a map of each module in a peer set to the thing that depended on
+  // that set of peers in the first place.  Use a WeakMap so that we
+  // don't hold onto references for nodes that are garbage collected.
+  #peerSetSource = new WeakMap()
   #preferDedupe = false
   #prune
   #strictPeerDeps
@@ -155,10 +156,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_updateNames] = []
     this[_resolvedAdd] = []
 
-    // a map of each module in a peer set to the thing that depended on
-    // that set of peers in the first place.  Use a WeakMap so that we
-    // don't hold onto references for nodes that are garbage collected.
-    this[_peerSetSource] = new WeakMap()
   }
 
   get explicitRequests () {
@@ -889,7 +886,7 @@ This is a one-time fix-up, please be patient...
     // dep if allowed.
 
     const tasks = []
-    const peerSource = this[_peerSetSource].get(node) || node
+    const peerSource = this.#peerSetSource.get(node) || node
     for (const edge of this.#problemEdges(node)) {
       if (edge.peerConflicted) {
         continue
@@ -1088,7 +1085,7 @@ This is a one-time fix-up, please be patient...
 
     // keep track of the thing that caused this node to be included.
     const src = parent.sourceReference
-    this[_peerSetSource].set(node, src)
+    this.#peerSetSource.set(node, src)
 
     // do not load the peers along with the set if this is a global top pkg
     // otherwise we'll be tempted to put peers as other top-level installed
