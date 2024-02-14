@@ -93,8 +93,6 @@ const _omitDev = Symbol('omitDev')
 const _omitOptional = Symbol('omitOptional')
 const _omitPeer = Symbol('omitPeer')
 
-const _global = Symbol.for('global')
-
 const _pruneBundledMetadeps = Symbol('pruneBundledMetadeps')
 
 // defined by Ideal mixin
@@ -138,7 +136,7 @@ module.exports = cls => class Reifier extends cls {
   async reify (options = {}) {
     const linked = (options.installStrategy || this.options.installStrategy) === 'linked'
 
-    if (this[_packageLockOnly] && this[_global]) {
+    if (this[_packageLockOnly] && this.options.global) {
       const er = new Error('cannot generate lockfile for global packages')
       er.code = 'ESHRINKWRAPGLOBAL'
       throw er
@@ -283,7 +281,7 @@ module.exports = cls => class Reifier extends cls {
         .then(() => process.emit('timeEnd', 'reify:loadTrees'))
     }
 
-    const actualOpt = this[_global] ? {
+    const actualOpt = this.options.global ? {
       ignoreMissing: true,
       global: true,
       filter: (node, kid) => {
@@ -310,7 +308,7 @@ module.exports = cls => class Reifier extends cls {
       },
     } : { ignoreMissing: true }
 
-    if (!this[_global]) {
+    if (!this.options.global) {
       return Promise.all([
         this.loadActual(actualOpt),
         this.buildIdealTree(bitOpt),
@@ -342,7 +340,7 @@ module.exports = cls => class Reifier extends cls {
       || this.options.includeWorkspaceRoot && this.options.workspaces.length > 0
 
     const filterNodes = []
-    if (this[_global] && this.explicitRequests.size) {
+    if (this.options.global && this.explicitRequests.size) {
       const idealTree = this.idealTree.target
       const actualTree = this.actualTree.target
       // we ONLY are allowed to make changes in the global top-level
@@ -1216,7 +1214,7 @@ module.exports = cls => class Reifier extends cls {
     // saveIdealTree to be able to write the lockfile by default.
     const saveIdealTree = !(
       (!save && !hasUpdates)
-      || this[_global]
+      || this.options.global
       || this[_dryRun]
     )
 
@@ -1562,7 +1560,7 @@ module.exports = cls => class Reifier extends cls {
     this.actualTree = this.idealTree
     this.idealTree = null
 
-    if (!this[_global]) {
+    if (!this.options.global) {
       await this.actualTree.meta.save()
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep

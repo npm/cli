@@ -49,7 +49,6 @@ const _stcache = Symbol.for('statCache')
 const _peerSetSource = Symbol.for('peerSetSource')
 
 // used by Reify mixin
-const _global = Symbol.for('global')
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 
 // Push items in, pop them sorted by depth and then path
@@ -128,7 +127,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     const {
       follow = false,
-      global = false,
       installStrategy = 'hoisted',
       idealTree = null,
       installLinks = false,
@@ -136,6 +134,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       packageLock = true,
       strictPeerDeps = false,
       workspaces,
+      global,
     } = options
 
     this.#strictPeerDeps = !!strictPeerDeps
@@ -145,11 +144,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this.legacyPeerDeps = legacyPeerDeps
 
     this[_usePackageLock] = packageLock
-    this[_global] = !!global
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
 
-    if (workspaces?.length && this[_global]) {
+    if (workspaces?.length && global) {
       throw new Error('Cannot operate on workspaces in global mode')
     }
 
@@ -187,7 +185,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     process.emit('time', 'idealTree')
 
-    if (!options.add && !options.rm && !options.update && this[_global]) {
+    if (!options.add && !options.rm && !options.update && this.options.global) {
       throw new Error('global requires add, rm, or update option')
     }
 
@@ -286,7 +284,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   async #initTree () {
     process.emit('time', 'idealTree:init')
     let root
-    if (this[_global]) {
+    if (this.options.global) {
       root = await this.#globalRootNode()
     } else {
       try {
@@ -304,7 +302,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       // When updating all, we load the shrinkwrap, but don't bother
       // to build out the full virtual tree from it, since we'll be
       // reconstructing it anyway.
-      .then(root => this[_global] ? root
+      .then(root => this.options.global ? root
       : !this[_usePackageLock] || this[_updateAll]
         ? Shrinkwrap.reset({
           path: this.path,
@@ -320,7 +318,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       // Load on a new Arborist object, so the Nodes aren't the same,
       // or else it'll get super confusing when we change them!
       .then(async root => {
-        if ((!this[_updateAll] && !this[_global] && !root.meta.loadedFromDisk) || (this[_global] && this[_updateNames].length)) {
+        if ((!this[_updateAll] && !this.options.global && !root.meta.loadedFromDisk) || (this.options.global && this[_updateNames].length)) {
           await new this.constructor(this.options).loadActual({ root })
           const tree = root.target
           // even though we didn't load it from a package-lock.json FILE,
@@ -399,7 +397,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       devOptional: false,
       peer: false,
       optional: false,
-      global: this[_global],
+      global: this.options.global,
       installLinks: this.installLinks,
       legacyPeerDeps: this.legacyPeerDeps,
       loadOverrides: true,
@@ -414,7 +412,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
         devOptional: false,
         peer: false,
         optional: false,
-        global: this[_global],
+        global: this.options.global,
         installLinks: this.installLinks,
         legacyPeerDeps: this.legacyPeerDeps,
         root,
@@ -449,14 +447,14 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // If we have a list of package names to update, and we know it's
     // going to update them wherever they are, add any paths into those
     // named nodes to the buildIdealTree queue.
-    if (!this[_global] && this[_updateNames].length) {
+    if (!this.options.global && this[_updateNames].length) {
       this.#queueNamedUpdates()
     }
 
     // global updates only update the globalTop nodes, but we need to know
     // that they're there, and not reinstall the world unnecessarily.
     const globalExplicitUpdateNames = []
-    if (this[_global] && (this[_updateAll] || this[_updateNames].length)) {
+    if (this.options.global && (this[_updateAll] || this[_updateNames].length)) {
       const nm = resolve(this.path, 'node_modules')
       const paths = await readdirScoped(nm).catch(() => [])
       for (const p of paths) {
@@ -501,7 +499,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // triggers a refresh of all edgesOut.  this has to be done BEFORE
     // adding the edges to explicitRequests, because the package setter
     // resets all edgesOut.
-    if (add && add.length || rm && rm.length || this[_global]) {
+    if (add && add.length || rm && rm.length || this.options.global) {
       tree.package = tree.package
     }
 
@@ -1096,7 +1094,7 @@ This is a one-time fix-up, please be patient...
     // otherwise we'll be tempted to put peers as other top-level installed
     // things, potentially clobbering what's there already, which is not
     // what we want.  the missing edges will be picked up on the next pass.
-    if (this[_global] && edge.from.isProjectRoot) {
+    if (this.options.global && edge.from.isProjectRoot) {
       return node
     }
 

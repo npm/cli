@@ -37,8 +37,6 @@ const _checkBins = Symbol.for('checkBins')
 const _queues = Symbol('queues')
 const _scriptShell = Symbol('scriptShell')
 
-const _global = Symbol.for('global')
-
 // defined by reify mixin
 const _handleOptionalFailure = Symbol.for('handleOptionalFailure')
 const _trashList = Symbol.for('trashList')
@@ -150,7 +148,7 @@ module.exports = cls => class Builder extends cls {
     //
     // we avoid doing so if global=true since `bin-links` relies
     // on having the target nodes available in global mode.
-    if (!this[_global]) {
+    if (!this.options.global) {
       for (const node of linkNodes) {
         depNodes.delete(node.target)
       }
