@@ -19,7 +19,6 @@ const boolEnv = b => b ? '1' : ''
 const sortNodes = (a, b) =>
   (a.depth - b.depth) || localeCompare(a.path, b.path)
 
-const _workspaces = Symbol.for('workspaces')
 const _build = Symbol('build')
 const _loadDefaultNodes = Symbol('loadDefaultNodes')
 const _retrieveNodesByType = Symbol('retrieveNodesByType')
@@ -111,10 +110,10 @@ module.exports = cls => class Builder extends cls {
       nodes = tree.inventory.filter(node =>
         filterSet.has(node) || node.isProjectRoot
       )
-    } else if (this[_workspaces] && this[_workspaces].length) {
+    } else if (this.options.workspaces.length) {
       filterSet = this.workspaceDependencySet(
         tree,
-        this[_workspaces],
+        this.options.workspaces,
         this.options.includeWorkspaceRoot
       )
       nodes = tree.inventory.filter(node => filterSet.has(node))

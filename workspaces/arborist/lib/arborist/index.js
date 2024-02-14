@@ -78,6 +78,7 @@ class Arborist extends Base {
       lockfileVersion: lockfileVersion(options.lockfileVersion),
       installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
       force: !!options.force,
+      workspaces: options.workspaces || [],
     }
     // TODO is this even used? If not is that a bug?
     this.replaceRegistryHost = this.options.replaceRegistryHost =

@@ -3,7 +3,6 @@
 const AuditReport = require('../audit-report.js')
 
 // shared with reify
-const _global = Symbol.for('global')
 const _workspaces = Symbol.for('workspaces')
 
 module.exports = cls => class Auditor extends cls {
@@ -30,10 +29,10 @@ module.exports = cls => class Auditor extends cls {
     } else {
       tree = await this.loadVirtual()
     }
-    if (this[_workspaces] && this[_workspaces].length) {
+    if (this.options.workspaces.length) {
       options.filterSet = this.workspaceDependencySet(
         tree,
-        this[_workspaces],
+        this.options.workspaces,
         this.options.includeWorkspaceRoot
       )
     }

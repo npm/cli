@@ -47,7 +47,6 @@ const _retireShallowNodes = Symbol.for('retireShallowNodes')
 const _getBundlesByDepth = Symbol('getBundlesByDepth')
 const _registryResolved = Symbol('registryResolved')
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
-const _workspaces = Symbol.for('workspaces')
 
 // shared by rebuild mixin
 const _trashList = Symbol.for('trashList')
@@ -340,7 +339,7 @@ module.exports = cls => class Reifier extends cls {
 
     const includeWorkspaces = this.options.workspacesEnabled
     const includeRootDeps = !includeWorkspaces
-      || this.options.includeWorkspaceRoot && this[_workspaces].length > 0
+      || this.options.includeWorkspaceRoot && this.options.workspaces.length > 0
 
     const filterNodes = []
     if (this[_global] && this.explicitRequests.size) {
@@ -361,7 +360,7 @@ module.exports = cls => class Reifier extends cls {
     } else {
       if (includeWorkspaces) {
         // add all ws nodes to filterNodes
-        for (const ws of this[_workspaces]) {
+        for (const ws of this.options.workspaces) {
           const ideal = this.idealTree.children.get(ws)
           if (ideal) {
             filterNodes.push(ideal)
@@ -989,10 +988,10 @@ module.exports = cls => class Reifier extends cls {
     const tree = this.idealTree
 
     // if we're operating on a workspace, only audit the workspace deps
-    if (this[_workspaces] && this[_workspaces].length) {
+    if (this.options.workspaces.length) {
       options.filterSet = this.workspaceDependencySet(
         tree,
-        this[_workspaces],
+        this.options.workspaces,
         this.options.includeWorkspaceRoot
       )
     }

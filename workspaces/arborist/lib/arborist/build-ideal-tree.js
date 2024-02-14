@@ -38,7 +38,6 @@ const resetDepFlags = require('../reset-dep-flags.js')
 // them with unit tests and reuse them across mixins
 const _updateAll = Symbol.for('updateAll')
 const _flagsSuspect = Symbol.for('flagsSuspect')
-const _workspaces = Symbol.for('workspaces')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const _updateNames = Symbol.for('updateNames')
 const _resolvedAdd = Symbol.for('resolvedAdd')
@@ -136,10 +135,9 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       legacyPeerDeps = false,
       packageLock = true,
       strictPeerDeps = false,
-      workspaces = [],
+      workspaces,
     } = options
 
-    this[_workspaces] = workspaces || []
     this.#strictPeerDeps = !!strictPeerDeps
 
     this.idealTree = idealTree
@@ -151,7 +149,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this.#installStrategy = global ? 'shallow' : installStrategy
     this.#follow = !!follow
 
-    if (this[_workspaces].length && this[_global]) {
+    if (workspaces?.length && this[_global]) {
       throw new Error('Cannot operate on workspaces in global mode')
     }
 
@@ -431,10 +429,10 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     process.emit('time', 'idealTree:userRequests')
     const tree = this.idealTree.target
 
-    if (!this[_workspaces].length) {
+    if (!this.options.workspaces.length) {
       await this.#applyUserRequestsToNode(tree, options)
     } else {
-      const nodes = this.workspaceNodes(tree, this[_workspaces])
+      const nodes = this.workspaceNodes(tree, this.options.workspaces)
       if (this.options.includeWorkspaceRoot) {
         nodes.push(tree)
       }
