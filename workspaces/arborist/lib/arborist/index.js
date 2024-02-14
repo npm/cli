@@ -30,12 +30,12 @@ const { resolve } = require('path')
 const { homedir } = require('os')
 const { depth } = require('treeverse')
 const { saveTypeMap } = require('../add-rm-pkg-deps.js')
+const mapWorkspaces = require('@npmcli/map-workspaces')
 
 const mixins = [
   require('../tracker.js'),
   require('./audit.js'),
   require('./build-ideal-tree.js'),
-  require('./set-workspaces.js'),
   require('./load-actual.js'),
   require('./load-virtual.js'),
   require('./rebuild.js'),
@@ -44,6 +44,7 @@ const mixins = [
 ]
 
 const _workspacesEnabled = Symbol.for('workspacesEnabled')
+const _setWorkspaces = Symbol.for('setWorkspaces')
 const Base = mixins.reduce((a, b) => b(a), require('events'))
 const getWorkspaceNodes = require('../get-workspace-nodes.js')
 
@@ -160,6 +161,19 @@ class Arborist extends Base {
         [...tree.edgesOut.values()].map(edge => edge.to),
     })
     return rootDepSet
+  }
+
+  async [_setWorkspaces] (node) {
+    const workspaces = await mapWorkspaces({
+      cwd: node.path,
+      pkg: node.package,
+    })
+
+    if (node && workspaces.size) {
+      node.workspaces = workspaces
+    }
+
+    return node
   }
 }
 
