@@ -33,7 +33,6 @@ const { saveTypeMap } = require('../add-rm-pkg-deps.js')
 
 const mixins = [
   require('../tracker.js'),
-  require('./pruner.js'),
   require('./deduper.js'),
   require('./audit.js'),
   require('./build-ideal-tree.js'),

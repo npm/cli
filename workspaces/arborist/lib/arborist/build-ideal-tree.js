@@ -52,7 +52,8 @@ const _peerSetSource = Symbol.for('peerSetSource')
 
 // used by Reify mixin
 const _global = Symbol.for('global')
-const _idealTreePrune = Symbol.for('idealTreePrune')
+const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
+const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
 // Push items in, pop them sorted by depth and then path
 // Sorts physically shallower deps up to the front of the queue, because
@@ -1500,7 +1501,7 @@ This is a one-time fix-up, please be patient...
     // otherwise, don't bother.
     const needPrune = metaFromDisk && (mutateTree || flagsSuspect)
     if (this.#prune && needPrune) {
-      this[_idealTreePrune]()
+      this.#idealTreePrune()
       for (const node of this.idealTree.inventory.values()) {
         if (node.extraneous) {
           node.parent = null
@@ -1511,7 +1512,7 @@ This is a one-time fix-up, please be patient...
     process.emit('timeEnd', 'idealTree:fixDepFlags')
   }
 
-  [_idealTreePrune] () {
+  #idealTreePrune () {
     for (const node of this.idealTree.inventory.values()) {
       if (node.extraneous) {
         node.parent = null
@@ -1530,5 +1531,30 @@ This is a one-time fix-up, please be patient...
         node.parent = null
       }
     }
+  }
+
+  async prune (options = {}) {
+    // allow the user to set options on the ctor as well.
+    // XXX: deprecate separate method options objects.
+    options = { ...this.options, ...options }
+
+    await this.buildIdealTree(options)
+
+    this.#idealTreePrune()
+
+    if (!this[_workspacesEnabled]) {
+      const excludeNodes = this.excludeWorkspacesDependencySet(this.idealTree)
+      for (const node of this.idealTree.inventory.values()) {
+        if (
+          node.parent !== null
+          && !node.isProjectRoot
+          && !excludeNodes.has(node)
+        ) {
+          this[_addNodeToTrashList](node)
+        }
+      }
+    }
+
+    return this.reify(options)
   }
 }
