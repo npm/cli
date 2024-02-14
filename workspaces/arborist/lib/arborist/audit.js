@@ -5,7 +5,6 @@ const AuditReport = require('../audit-report.js')
 // shared with reify
 const _global = Symbol.for('global')
 const _workspaces = Symbol.for('workspaces')
-const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 module.exports = cls => class Auditor extends cls {
   async audit (options = {}) {
@@ -35,7 +34,7 @@ module.exports = cls => class Auditor extends cls {
       options.filterSet = this.workspaceDependencySet(
         tree,
         this[_workspaces],
-        this[_includeWorkspaceRoot]
+        this.options.includeWorkspaceRoot
       )
     }
     if (!options.workspacesEnabled) {

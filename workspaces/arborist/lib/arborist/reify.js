@@ -89,7 +89,6 @@ const _validateNodeModules = Symbol('validateNodeModules')
 const _nmValidated = Symbol('nmValidated')
 const _validatePath = Symbol('validatePath')
 const _reifyPackages = Symbol.for('reifyPackages')
-const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 const _omitDev = Symbol('omitDev')
 const _omitOptional = Symbol('omitOptional')
@@ -341,7 +340,7 @@ module.exports = cls => class Reifier extends cls {
 
     const includeWorkspaces = this.options.workspacesEnabled
     const includeRootDeps = !includeWorkspaces
-      || this[_includeWorkspaceRoot] && this[_workspaces].length > 0
+      || this.options.includeWorkspaceRoot && this[_workspaces].length > 0
 
     const filterNodes = []
     if (this[_global] && this.explicitRequests.size) {
@@ -994,7 +993,7 @@ module.exports = cls => class Reifier extends cls {
       options.filterSet = this.workspaceDependencySet(
         tree,
         this[_workspaces],
-        this[_includeWorkspaceRoot]
+        this.options.includeWorkspaceRoot
       )
     }
 

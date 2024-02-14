@@ -101,6 +101,8 @@ class Arborist extends Base {
   }
 
   // returns a set of workspace nodes and all their deps
+  // TODO why is includeWorkspaceRoot a param?
+  // TODO why is workspaces a param?
   workspaceDependencySet (tree, workspaces, includeWorkspaceRoot) {
     const wsNodes = this.workspaceNodes(tree, workspaces)
     if (includeWorkspaceRoot) {

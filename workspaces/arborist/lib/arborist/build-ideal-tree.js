@@ -45,7 +45,6 @@ const _resolvedAdd = Symbol.for('resolvedAdd')
 const _usePackageLock = Symbol.for('usePackageLock')
 const _rpcache = Symbol.for('realpathCache')
 const _stcache = Symbol.for('statCache')
-const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 // exposed symbol for unit testing the placeDep method directly
 const _peerSetSource = Symbol.for('peerSetSource')
@@ -133,7 +132,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       global = false,
       installStrategy = 'hoisted',
       idealTree = null,
-      includeWorkspaceRoot = false,
       installLinks = false,
       legacyPeerDeps = false,
       packageLock = true,
@@ -165,8 +163,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     // that set of peers in the first place.  Use a WeakMap so that we
     // don't hold onto references for nodes that are garbage collected.
     this[_peerSetSource] = new WeakMap()
-
-    this[_includeWorkspaceRoot] = includeWorkspaceRoot
   }
 
   get explicitRequests () {
@@ -439,7 +435,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
       await this.#applyUserRequestsToNode(tree, options)
     } else {
       const nodes = this.workspaceNodes(tree, this[_workspaces])
-      if (this[_includeWorkspaceRoot]) {
+      if (this.options.includeWorkspaceRoot) {
         nodes.push(tree)
       }
       const appliedRequests = nodes.map(
