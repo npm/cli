@@ -24,7 +24,6 @@ const PackageJson = require('@npmcli/package-json')
 const packageContents = require('@npmcli/installed-package-contents')
 const runScript = require('@npmcli/run-script')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
-const _force = Symbol.for('force')
 
 const treeCheck = require('../tree-check.js')
 const relpath = require('../relpath.js')
@@ -656,7 +655,7 @@ module.exports = cls => class Reifier extends cls {
 
   // do not allow node_modules to be a symlink
   async [_validateNodeModules] (nm) {
-    if (this[_force] || this[_nmValidated].has(nm)) {
+    if (this.options.force || this[_nmValidated].has(nm)) {
       return
     }
     const st = await lstat(nm).catch(() => null)

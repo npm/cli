@@ -40,7 +40,6 @@ const _scriptShell = Symbol('scriptShell')
 const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
-const _force = Symbol.for('force')
 const _global = Symbol.for('global')
 
 // defined by reify mixin
@@ -249,7 +248,7 @@ module.exports = cls => class Builder extends cls {
     // the node path.  Otherwise a package can have a preinstall script
     // that unlinks something, to allow them to silently overwrite system
     // binaries, which is unsafe and insecure.
-    if (!node.globalTop || this[_force]) {
+    if (!node.globalTop || this.options.force) {
       return
     }
     const { path, package: pkg } = node
@@ -420,7 +419,7 @@ module.exports = cls => class Builder extends cls {
       pkg: node.package,
       path: node.path,
       top: !!(node.isTop || node.globalTop),
-      force: this[_force],
+      force: this.options.force,
       global: !!node.globalTop,
     })
 

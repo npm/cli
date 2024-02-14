@@ -51,7 +51,6 @@ const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 const _peerSetSource = Symbol.for('peerSetSource')
 
 // used by Reify mixin
-const _force = Symbol.for('force')
 const _global = Symbol.for('global')
 const _idealTreePrune = Symbol.for('idealTreePrune')
 
@@ -131,7 +130,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
 
     const {
       follow = false,
-      force = false,
       global = false,
       installStrategy = 'hoisted',
       idealTree = null,
@@ -144,7 +142,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     } = options
 
     this[_workspaces] = workspaces || []
-    this[_force] = !!force
     this.#strictPeerDeps = !!strictPeerDeps
 
     this.idealTree = idealTree
@@ -232,7 +229,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const node of this.idealTree.inventory.values()) {
       if (!node.optional) {
         try {
-          checkEngine(node.package, npmVersion, nodeVersion, this[_force])
+          checkEngine(node.package, npmVersion, nodeVersion, this.options.force)
         } catch (err) {
           if (engineStrict) {
             throw err
@@ -243,7 +240,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
             current: err.current,
           })
         }
-        checkPlatform(node.package, this[_force])
+        checkPlatform(node.package, this.options.force)
       }
     }
   }
@@ -616,7 +613,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     //
     // XXX: how to handle top nodes that aren't the root?  Maybe the report
     // just tells the user to cd into that directory and fix it?
-    if (this[_force] && this.auditReport && this.auditReport.topVulns.size) {
+    if (this.options.force && this.auditReport && this.auditReport.topVulns.size) {
       options.add = options.add || []
       options.rm = options.rm || []
       const nodesTouched = new Set()
@@ -958,7 +955,7 @@ This is a one-time fix-up, please be patient...
 
         auditReport: this.auditReport,
         explicitRequest: this.#explicitRequests.has(edge),
-        force: this[_force],
+        force: this.options.force,
         installLinks: this.installLinks,
         installStrategy: this.#installStrategy,
         legacyPeerDeps: this.legacyPeerDeps,
@@ -1328,7 +1325,7 @@ This is a one-time fix-up, please be patient...
       const parentEdge = node.parent.edgesOut.get(edge.name)
       const { isProjectRoot, isWorkspace } = node.parent.sourceReference
       const isMine = isProjectRoot || isWorkspace
-      const conflictOK = this[_force] || !isMine && !this.#strictPeerDeps
+      const conflictOK = this.options.force || !isMine && !this.#strictPeerDeps
 
       if (!edge.to) {
         if (!parentEdge) {
@@ -1415,7 +1412,7 @@ This is a one-time fix-up, please be patient...
       currentEdge: currentEdge ? currentEdge.explain() : null,
       edge: edge.explain(),
       strictPeerDeps: this.#strictPeerDeps,
-      force: this[_force],
+      force: this.options.force,
     }
   }
 
