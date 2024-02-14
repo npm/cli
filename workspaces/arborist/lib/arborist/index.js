@@ -70,16 +70,16 @@ class Arborist extends Base {
       nodeVersion: process.version,
       ...options,
       Arborist: this.constructor,
-      path: options.path || '.',
       cache: options.cache || `${homedir()}/.npm/_cacache`,
-      packumentCache: options.packumentCache || new Map(),
-      workspacesEnabled: options.workspacesEnabled !== false,
-      replaceRegistryHost: options.replaceRegistryHost,
-      lockfileVersion: lockfileVersion(options.lockfileVersion),
-      installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
       force: !!options.force,
-      workspaces: options.workspaces || [],
       global: !!options.global,
+      installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
+      lockfileVersion: lockfileVersion(options.lockfileVersion),
+      packumentCache: options.packumentCache || new Map(),
+      path: options.path || '.',
+      replaceRegistryHost: options.replaceRegistryHost,
+      workspaces: options.workspaces || [],
+      workspacesEnabled: options.workspacesEnabled !== false,
     }
     // TODO is this even used? If not is that a bug?
     this.replaceRegistryHost = this.options.replaceRegistryHost =
