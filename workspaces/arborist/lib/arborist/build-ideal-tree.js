@@ -155,7 +155,6 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this[_updateAll] = false
     this[_updateNames] = []
     this[_resolvedAdd] = []
-
   }
 
   get explicitRequests () {
