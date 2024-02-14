@@ -38,7 +38,6 @@ const _checkBins = Symbol.for('checkBins')
 const _queues = Symbol('queues')
 const _scriptShell = Symbol('scriptShell')
 const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
-const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
 const _global = Symbol.for('global')
 
@@ -108,7 +107,7 @@ module.exports = cls => class Builder extends cls {
     let nodes
     const tree = await this.loadActual()
     let filterSet
-    if (!this[_workspacesEnabled]) {
+    if (!this.options.workspacesEnabled) {
       filterSet = this.excludeWorkspacesDependencySet(tree)
       nodes = tree.inventory.filter(node =>
         filterSet.has(node) || node.isProjectRoot

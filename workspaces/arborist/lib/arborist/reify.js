@@ -48,7 +48,6 @@ const _getBundlesByDepth = Symbol('getBundlesByDepth')
 const _registryResolved = Symbol('registryResolved')
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 const _workspaces = Symbol.for('workspaces')
-const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
 // shared by rebuild mixin
 const _trashList = Symbol.for('trashList')
@@ -340,8 +339,8 @@ module.exports = cls => class Reifier extends cls {
     // to just invalidate the parts that changed, but avoid walking the
     // whole tree again.
 
-    const includeWorkspaces = this[_workspacesEnabled]
-    const includeRootDeps = !this[_workspacesEnabled]
+    const includeWorkspaces = this.options.workspacesEnabled
+    const includeRootDeps = !includeWorkspaces
       || this[_includeWorkspaceRoot] && this[_workspaces].length > 0
 
     const filterNodes = []

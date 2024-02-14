@@ -53,7 +53,6 @@ const _peerSetSource = Symbol.for('peerSetSource')
 // used by Reify mixin
 const _global = Symbol.for('global')
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
-const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
 // Push items in, pop them sorted by depth and then path
 // Sorts physically shallower deps up to the front of the queue, because
@@ -1542,7 +1541,7 @@ This is a one-time fix-up, please be patient...
 
     this.#idealTreePrune()
 
-    if (!this[_workspacesEnabled]) {
+    if (!this.options.workspacesEnabled) {
       const excludeNodes = this.excludeWorkspacesDependencySet(this.idealTree)
       for (const node of this.idealTree.inventory.values()) {
         if (

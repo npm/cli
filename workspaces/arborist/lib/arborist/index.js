@@ -43,7 +43,6 @@ const mixins = [
   require('./isolated-reifier.js'),
 ]
 
-const _workspacesEnabled = Symbol.for('workspacesEnabled')
 const _setWorkspaces = Symbol.for('setWorkspaces')
 const Base = mixins.reduce((a, b) => b(a), require('events'))
 const getWorkspaceNodes = require('../get-workspace-nodes.js')
@@ -83,8 +82,6 @@ class Arborist extends Base {
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
         'registry.npmjs.org' : this.options.replaceRegistryHost
-
-    this[_workspacesEnabled] = this.options.workspacesEnabled
 
     if (options.saveType && !saveTypeMap.get(options.saveType)) {
       throw new Error(`Invalid saveType ${options.saveType}`)
