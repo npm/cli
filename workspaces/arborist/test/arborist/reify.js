@@ -3281,3 +3281,26 @@ t.test('install stategy linked', async (t) => {
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
 })
+
+t.test('second reify with file dependency should not change package-lock.json', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        '@test/a': 'file:a',
+      },
+    }),
+    a: {
+      'package.json': JSON.stringify({
+        name: '@test/a',
+      }),
+    },
+  })
+
+  const arb = newArb({ path })
+  await arb.reify()
+  const packageLockContent1 = fs.readFileSync(path + '/package-lock.json', 'utf8')
+  t.matchSnapshot(packageLockContent1)
+  await arb.reify()
+  const packageLockContent2 = fs.readFileSync(path + '/package-lock.json', 'utf8')
+  t.equal(packageLockContent2, packageLockContent1)
+})

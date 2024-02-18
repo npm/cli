@@ -33172,6 +33172,29 @@ exports[`test/arborist/reify.js TAP scoped registries > should preserve original
 @ruyadorno/theoretically-private-pkg@https://npm.pkg.github.com/@ruyadorno/theoretically-private-pkg/-/theoretically-private-pkg-1.2.3.tgz
 `
 
+exports[`test/arborist/reify.js TAP second reify with file dependency should not change package-lock.json > must match snapshot 1`] = `
+{
+  "name": "tap-testdir-reify-second-reify-with-file-dependency-should-not-change-package-lock.json",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "dependencies": {
+        "@test/a": "file:a"
+      }
+    },
+    "a": {
+      "name": "@test/a"
+    },
+    "node_modules/@test/a": {
+      "resolved": "a",
+      "link": true
+    }
+  }
+}
+
+`
+
 exports[`test/arborist/reify.js TAP still do not install optional deps with mismatched platform specifications even when forced > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
