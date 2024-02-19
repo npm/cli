@@ -1813,6 +1813,7 @@ define('save-dev', {
       return
     }
 
+    flatOptions.save = true
     flatOptions.saveType = 'dev'
   },
 })
@@ -1826,6 +1827,9 @@ define('save-exact', {
     version rather than using npm's default semver range operator.
   `,
   flatten (key, obj, flatOptions) {
+    if (obj[key]) {
+      flatOptions.save = true
+    }
     // just call the save-prefix flattener, it reads from obj['save-exact']
     definitions['save-prefix'].flatten('save-prefix', obj, flatOptions)
   },
@@ -1848,6 +1852,8 @@ define('save-optional', {
       }
       return
     }
+
+    flatOptions.save = true
 
     if (flatOptions.saveType === 'peerOptional') {
       return
@@ -1876,6 +1882,8 @@ define('save-peer', {
       }
       return
     }
+
+    flatOptions.save = true
 
     if (flatOptions.saveType === 'peerOptional') {
       return
@@ -1928,6 +1936,7 @@ define('save-prod', {
       return
     }
 
+    flatOptions.save = true
     flatOptions.saveType = 'prod'
   },
 })
