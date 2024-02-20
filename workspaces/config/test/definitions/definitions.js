@@ -814,11 +814,10 @@ t.test('save-exact', t => {
     'save-exact': true,
     'save-prefix': '~1.2.3',
   }
-  let flat = {}
+  const flat = {}
   mockDefs()['save-exact']
     .flatten('save-exact', { ...obj, 'save-exact': true }, flat)
-  t.strictSame(flat, { savePrefix: '', save: true })
-  flat = {}
+  t.strictSame(flat, { savePrefix: '' })
   mockDefs()['save-exact']
     .flatten('save-exact', { ...obj, 'save-exact': false }, flat)
   t.strictSame(flat, { savePrefix: '~1.2.3' })

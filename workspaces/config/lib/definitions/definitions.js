@@ -1827,9 +1827,6 @@ define('save-exact', {
     version rather than using npm's default semver range operator.
   `,
   flatten (key, obj, flatOptions) {
-    if (obj[key]) {
-      flatOptions.save = true
-    }
     // just call the save-prefix flattener, it reads from obj['save-exact']
     definitions['save-prefix'].flatten('save-prefix', obj, flatOptions)
   },
