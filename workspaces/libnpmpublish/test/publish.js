@@ -1,6 +1,5 @@
 'use strict'
 
-const cloneDeep = require('lodash.clonedeep')
 const crypto = require('crypto')
 const fs = require('fs')
 const npa = require('npm-package-arg')
@@ -180,266 +179,6 @@ t.test('scoped publish - restricted access', async t => {
   t.ok(ret, 'publish succeeded')
 })
 
-t.test('retry after a conflict', async t => {
-  const { publish } = t.mock('..')
-  const registry = new MockRegistry({
-    tap: t,
-    registry: opts.registry,
-    authorization: token,
-  })
-  const REV = '72-47f2986bfd8e8b55068b204588bbf484'
-  const manifest = {
-    name: 'libnpmpublish',
-    version: '1.0.0',
-    description: 'some stuff',
-  }
-
-  const basePackument = {
-    name: 'libnpmpublish',
-    description: 'some stuff',
-    access: 'public',
-    _id: 'libnpmpublish',
-    'dist-tags': {},
-    versions: {},
-    _attachments: {},
-  }
-  const currentPackument = cloneDeep({
-    ...basePackument,
-    time: {
-      modified: new Date().toISOString(),
-      created: new Date().toISOString(),
-      '1.0.1': new Date().toISOString(),
-    },
-    'dist-tags': { latest: '1.0.1' },
-    versions: {
-      '1.0.1': {
-        _id: 'libnpmpublish@1.0.1',
-        _nodeVersion: process.versions.node,
-        _npmVersion: opts.npmVersion,
-        name: 'libnpmpublish',
-        version: '1.0.1',
-        description: 'some stuff',
-        dist: {
-          shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.1.tgz',
-        },
-      },
-    },
-    _attachments: {
-      'libnpmpublish-1.0.1.tgz': {
-        content_type: 'application/octet-stream',
-        data: tarData.toString('base64'),
-        length: tarData.length,
-      },
-    },
-  })
-  const newPackument = cloneDeep({
-    ...basePackument,
-    'dist-tags': { latest: '1.0.0' },
-    versions: {
-      '1.0.0': {
-        _id: 'libnpmpublish@1.0.0',
-        _nodeVersion: process.versions.node,
-        _npmVersion: opts.npmVersion,
-        name: 'libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
-        dist: {
-          shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
-        },
-      },
-    },
-    _attachments: {
-      'libnpmpublish-1.0.0.tgz': {
-        content_type: 'application/octet-stream',
-        data: tarData.toString('base64'),
-        length: tarData.length,
-      },
-    },
-  })
-  const mergedPackument = cloneDeep({
-    ...basePackument,
-    time: currentPackument.time,
-    'dist-tags': { latest: '1.0.0' },
-    versions: { ...currentPackument.versions, ...newPackument.versions },
-    _attachments: { ...currentPackument._attachments, ...newPackument._attachments },
-  })
-
-  registry.nock.put('/libnpmpublish', body => {
-    t.notOk(body._rev, 'no _rev in initial post')
-    t.same(body, newPackument, 'got conflicting packument')
-    return true
-  }).reply(409, { error: 'gimme _rev plz' })
-
-  registry.nock.get('/libnpmpublish?write=true').reply(200, {
-    _rev: REV,
-    ...currentPackument,
-  })
-
-  registry.nock.put('/libnpmpublish', body => {
-    t.same(body, {
-      _rev: REV,
-      ...mergedPackument,
-    }, 'posted packument includes _rev and a merged version')
-    return true
-  }).reply(201, {})
-
-  const ret = await publish(manifest, tarData, opts)
-  t.ok(ret, 'publish succeeded')
-})
-
-t.test('retry after a conflict -- no versions on remote', async t => {
-  const { publish } = t.mock('..')
-  const registry = new MockRegistry({
-    tap: t,
-    registry: opts.registry,
-    authorization: token,
-  })
-  const REV = '72-47f2986bfd8e8b55068b204588bbf484'
-  const manifest = {
-    name: 'libnpmpublish',
-    version: '1.0.0',
-    description: 'some stuff',
-  }
-
-  const basePackument = {
-    name: 'libnpmpublish',
-    description: 'some stuff',
-    access: 'public',
-    _id: 'libnpmpublish',
-  }
-  const currentPackument = { ...basePackument }
-  const newPackument = cloneDeep({
-    ...basePackument,
-    'dist-tags': { latest: '1.0.0' },
-    versions: {
-      '1.0.0': {
-        _id: 'libnpmpublish@1.0.0',
-        _nodeVersion: process.versions.node,
-        _npmVersion: opts.npmVersion,
-        name: 'libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
-        dist: {
-          shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
-        },
-      },
-    },
-    _attachments: {
-      'libnpmpublish-1.0.0.tgz': {
-        content_type: 'application/octet-stream',
-        data: tarData.toString('base64'),
-        length: tarData.length,
-      },
-    },
-  })
-  const mergedPackument = cloneDeep({
-    ...basePackument,
-    'dist-tags': { latest: '1.0.0' },
-    versions: { ...newPackument.versions },
-    _attachments: { ...newPackument._attachments },
-  })
-
-  registry.nock.put('/libnpmpublish', body => {
-    t.notOk(body._rev, 'no _rev in initial post')
-    t.same(body, newPackument, 'got conflicting packument')
-    return true
-  }).reply(409, { error: 'gimme _rev plz' })
-
-  registry.nock.get('/libnpmpublish?write=true').reply(200, {
-    _rev: REV,
-    ...currentPackument,
-  })
-
-  registry.nock.put('/libnpmpublish', body => {
-    t.same(body, {
-      _rev: REV,
-      ...mergedPackument,
-    }, 'posted packument includes _rev and a merged version')
-    return true
-  }).reply(201, {})
-
-  const ret = await publish(manifest, tarData, opts)
-
-  t.ok(ret, 'publish succeeded')
-})
-
-t.test('version conflict', async t => {
-  const { publish } = t.mock('..')
-  const registry = new MockRegistry({
-    tap: t,
-    registry: opts.registry,
-    authorization: token,
-  })
-  const REV = '72-47f2986bfd8e8b55068b204588bbf484'
-  const manifest = {
-    name: 'libnpmpublish',
-    version: '1.0.0',
-    description: 'some stuff',
-  }
-
-  const basePackument = {
-    name: 'libnpmpublish',
-    description: 'some stuff',
-    access: 'public',
-    _id: 'libnpmpublish',
-    'dist-tags': {},
-    versions: {},
-    _attachments: {},
-  }
-  const newPackument = cloneDeep(Object.assign({}, basePackument, {
-    'dist-tags': { latest: '1.0.0' },
-    versions: {
-      '1.0.0': {
-        _id: 'libnpmpublish@1.0.0',
-        _nodeVersion: process.versions.node,
-        _npmVersion: '6.13.7',
-        name: 'libnpmpublish',
-        version: '1.0.0',
-        description: 'some stuff',
-        dist: {
-          shasum,
-          integrity: integrity.toString(),
-          tarball: 'http://mock.reg/libnpmpublish/-/libnpmpublish-1.0.0.tgz',
-        },
-      },
-    },
-    _attachments: {
-      'libnpmpublish-1.0.0.tgz': {
-        content_type: 'application/octet-stream',
-        data: tarData.toString('base64'),
-        length: tarData.length,
-      },
-    },
-  }))
-
-  registry.nock.put('/libnpmpublish', body => {
-    t.notOk(body._rev, 'no _rev in initial post')
-    t.same(body, newPackument, 'got conflicting packument')
-    return true
-  }).reply(409, { error: 'gimme _rev plz' })
-
-  registry.nock.get('/libnpmpublish?write=true').reply(200, {
-    _rev: REV,
-    ...newPackument,
-  })
-
-  try {
-    await publish(manifest, tarData, {
-      ...opts,
-      npmVersion: '6.13.7',
-      token: 'deadbeef',
-    })
-  } catch (err) {
-    t.equal(err.code, 'EPUBLISHCONFLICT', 'got publish conflict code')
-  }
-})
-
 t.test('refuse if package marked private', async t => {
   const { publish } = t.mock('..')
   const registry = new MockRegistry({
@@ -606,7 +345,7 @@ t.test('publish existing package with provenance in gha', async t => {
   const workflowPath = '.github/workflows/publish.yml'
   const repository = 'github/foo'
   const serverUrl = 'https://github.com'
-  const ref = 'refs/heads/main'
+  const ref = 'refs/tags/pkg@1.0.0'
   const sha = 'deadbeef'
   const runID = '123456'
   const runAttempt = '1'
@@ -747,7 +486,7 @@ t.test('publish existing package with provenance in gha', async t => {
         // Can't match length because in github actions certain environment
         // variables are present that are not present when running locally,
         // changing the payload size.
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
       },
     },
   }
@@ -790,6 +529,9 @@ t.test('publish existing package with provenance in gha', async t => {
     t.hasStrict(provenance.predicate.buildDefinition.buildType,
       'https://slsa-framework.github.io/github-actions-buildtypes/workflow/v1',
       'buildType matches expectations')
+    t.hasStrict(provenance.predicate.buildDefinition.externalParameters.workflow.ref,
+      'refs/tags/pkg@1.0.0',
+      'workflowRef matches expectations')
     t.hasStrict(provenance.predicate.runDetails.builder.id,
       `https://github.com/actions/runner/${runnerEnv}`,
       'builder id matches expectations')
@@ -986,7 +728,7 @@ t.test('automatic provenance with incorrect permissions', async t => {
 t.test('user-supplied provenance - success', async t => {
   const { publish } = t.mock('..', {
     '../lib/provenance': t.mock('../lib/provenance', {
-      sigstore: { sigstore: { verify: () => {} } },
+      sigstore: { verify: () => {} },
     }),
   })
 
@@ -1029,7 +771,7 @@ t.test('user-supplied provenance - success', async t => {
         length: tarData.length,
       },
       '@npmcli/libnpmpublish-test-1.0.0.sigstore': {
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
         data: /.*/, // Can't match against static value as signature is always different
         length: 7927,
       },
@@ -1296,7 +1038,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
         // Can't match length because in github actions certain environment
         // variables are present that are not present when running locally,
         // changing the payload size.
-        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.1',
+        content_type: 'application/vnd.dev.sigstore.bundle+json;version=0.2',
       },
     },
   }

@@ -1,5 +1,38 @@
 # Changelog
 
+## [6.0.1](https://github.com/npm/cli/compare/libnpmteam-v6.0.0...libnpmteam-v6.0.1) (2023-12-06)
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+* [`0270a7d`](https://github.com/npm/cli/commit/0270a7d42984210fd388f3d9a70aaa01887d29f6) [#6807](https://github.com/npm/cli/pull/6807) set workspace engines (@lukekarrys)
+* [`fec08ad`](https://github.com/npm/cli/commit/fec08ade0fed990b838b781867adf03253907e91) [#6807](https://github.com/npm/cli/pull/6807) `@npmcli/template-oss@4.19.0` (@lukekarrys)
+
+## [6.0.0](https://github.com/npm/cli/compare/libnpmteam-v6.0.0-pre.0...libnpmteam-v6.0.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
+## [6.0.0-pre.0](https://github.com/npm/cli/compare/libnpmteam-v5.0.3...libnpmteam-v6.0.0-pre.0) (2023-08-31)
+
+### ⚠️ BREAKING CHANGES
+
+* support for node <=16.13 has been removed
+* support for node 14 has been removed
+
+### Bug Fixes
+
+* [`6b251b1`](https://github.com/npm/cli/commit/6b251b1009648b36d49b83a2cc407c348fa225e0) [#6706](https://github.com/npm/cli/pull/6706) drop node 16.13.x support (@lukekarrys)
+* [`8b0e755`](https://github.com/npm/cli/commit/8b0e755b78098d9c0800e69f0cc2f6a457ce28a6) [#6706](https://github.com/npm/cli/pull/6706) drop node14 support (@lukekarrys)
+
+### Dependencies
+
+* [`2ee0fb3`](https://github.com/npm/cli/commit/2ee0fb3ac0c5e49f9eba545d6b05e20be1352414) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@16.0.0`
+* [`5d0d859`](https://github.com/npm/cli/commit/5d0d8592cbf3b816d9fe44c36d390200ec15e87a) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@15.0.0`
+
 ## [5.0.3](https://github.com/npm/cli/compare/libnpmteam-v5.0.2...libnpmteam-v5.0.3) (2023-02-14)
 
 ### Bug Fixes

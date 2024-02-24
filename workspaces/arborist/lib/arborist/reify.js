@@ -31,6 +31,7 @@ const relpath = require('../relpath.js')
 const Diff = require('../diff.js')
 const retirePath = require('../retire-path.js')
 const promiseAllRejectLate = require('promise-all-reject-late')
+const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const optionalSet = require('../optional-set.js')
 const calcDepFlags = require('../calc-dep-flags.js')
 const { saveTypeMap, hasSubKey } = require('../add-rm-pkg-deps.js')
@@ -628,7 +629,7 @@ module.exports = cls => class Reifier extends cls {
     process.emit('time', timer)
     this.addTracker('reify', node.name, node.location)
 
-    const { npmVersion, nodeVersion } = this.options
+    const { npmVersion, nodeVersion, cpu, os, libc } = this.options
     const p = Promise.resolve().then(async () => {
       // when we reify an optional node, check the engine and platform
       // first. be sure to ignore the --force and --engine-strict flags,
@@ -638,7 +639,7 @@ module.exports = cls => class Reifier extends cls {
       // eslint-disable-next-line promise/always-return
       if (node.optional) {
         checkEngine(node.package, npmVersion, nodeVersion, false)
-        checkPlatform(node.package, false)
+        checkPlatform(node.package, false, { cpu, os, libc })
       }
       await this[_checkBins](node)
       await this[_extractOrLink](node)
@@ -817,10 +818,12 @@ module.exports = cls => class Reifier extends cls {
     }
 
     // extract all the nodes with bundles
-    return promiseAllRejectLate(set.map(node => {
-      this[_bundleUnpacked].add(node)
-      return this[_reifyNode](node)
-    }))
+    return promiseCallLimit(set.map(node => {
+      return () => {
+        this[_bundleUnpacked].add(node)
+        return this[_reifyNode](node)
+      }
+    }), { rejectLate: true })
     // then load their unpacked children and move into the ideal tree
       .then(nodes =>
         promiseAllRejectLate(nodes.map(async node => {

@@ -132,6 +132,8 @@ t.test('handles unknown error with logs and debug file', async (t) => {
   const { exitHandler, debugFile, logs } = await mockExitHandler(t)
 
   await exitHandler(err('Unknown error', 'ECODE'))
+  // force logfile cleaning logs to happen since those are purposefully not awaited
+  await require('timers/promises').setTimeout(200)
 
   const fileLogs = await debugFile()
   const fileLines = fileLogs.split('\n')
@@ -141,14 +143,19 @@ t.test('handles unknown error with logs and debug file', async (t) => {
 
   t.equal(process.exitCode, 1)
 
+  let skippedLogs = 0
   logs.forEach((logItem, i) => {
     const logLines = format(i, ...logItem).trim().split(os.EOL)
-    logLines.forEach((line) => {
+    for (const line of logLines) {
+      if (line.includes('logfile') && line.includes('cleaning')) {
+        skippedLogs++
+        continue
+      }
       t.match(fileLogs.trim(), line, 'log appears in debug file')
-    })
+    }
   })
 
-  t.equal(logs.length, parseInt(lastLog) + 1)
+  t.equal(logs.length - skippedLogs, parseInt(lastLog) + 1)
   t.match(logs.error, [
     ['code', 'ECODE'],
     ['ERR SUMMARY', 'Unknown error'],
@@ -337,12 +344,12 @@ t.test('no logs dir', async (t) => {
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: { 'logs-max': 0 },
   })
-
   await exitHandler(new Error())
 
   t.match(logs.error.filter(([t]) => t === ''), [
     ['', 'Log files were not written due to the config logs-max=0'],
   ])
+  t.match(logs.filter(([_, task]) => task === 'npm.load.mkdirplogs'), [])
 })
 
 t.test('timers fail to write', async (t) => {

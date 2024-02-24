@@ -21,6 +21,12 @@
       "os": [
         "not-your-os"
       ],
+      "cpu": [
+        "not-your-cpu"
+      ],
+      "libc": [
+        "not-your-libc"
+      ],
       "_id": "platform-specifying-test-package@1.0.0",
       "_nodeVersion": "12.18.4",
       "_npmVersion": "6.14.6",

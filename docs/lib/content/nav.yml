@@ -150,6 +150,9 @@
   - title: npm run-script
     url: /commands/npm-run-script
     description: Run arbitrary package scripts
+  - title: npm sbom
+    url: /commands/npm-sbom
+    description: Generate a Software Bill of Materials (SBOM)
   - title: npm search
     url: /commands/npm-search
     description: Search for packages

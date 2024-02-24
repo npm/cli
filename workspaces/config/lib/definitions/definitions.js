@@ -64,7 +64,7 @@ const editor = process.env.EDITOR ||
 const shell = isWindows ? process.env.ComSpec || 'cmd'
   : process.env.SHELL || 'sh'
 
-const { tmpdir, networkInterfaces } = require('os')
+const { networkInterfaces } = require('os')
 const getLocalAddresses = () => {
   try {
     return Object.values(networkInterfaces()).map(
@@ -429,24 +429,6 @@ define('cert', {
   flatten,
 })
 
-define('ci-name', {
-  default: ciInfo.name ? ciInfo.name.toLowerCase().split(' ').join('-') : null,
-  defaultDescription: `
-    The name of the current CI system, or \`null\` when not on a known CI
-    platform.
-  `,
-  type: [null, String],
-  deprecated: `
-    This config is deprecated and will not be changeable in future version of npm.
-  `,
-  description: `
-    The name of a continuous integration system.  If not set explicitly, npm
-    will detect the current CI environment using the
-    [\`ci-info\`](http://npm.im/ci-info) module.
-  `,
-  flatten,
-})
-
 define('cidr', {
   default: null,
   type: [null, String, Array],
@@ -486,6 +468,38 @@ define('commit-hooks', {
   type: Boolean,
   description: `
     Run git commit hooks when using the \`npm version\` command.
+  `,
+  flatten,
+})
+
+define('cpu', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override CPU architecture of native modules to install.
+    Acceptable values are same as \`cpu\` field of package.json,
+    which comes from \`process.arch\`.
+  `,
+  flatten,
+})
+
+define('os', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override OS of native modules to install.
+    Acceptable values are same as \`os\` field of package.json,
+    which comes from \`process.platform\`.
+  `,
+  flatten,
+})
+
+define('libc', {
+  default: null,
+  type: [null, String],
+  description: `
+    Override libc of native modules to install.
+    Acceptable values are same as \`libc\` field of package.json
   `,
   flatten,
 })
@@ -649,6 +663,26 @@ define('engine-strict', {
     This can be overridden by setting the \`--force\` flag.
   `,
   flatten,
+})
+
+define('expect-results', {
+  default: null,
+  type: [null, Boolean],
+  exclusive: ['expect-result-count'],
+  description: `
+    Tells npm whether or not to expect results from the command.
+    Can be either true (expect some results) or false (expect no results).
+  `,
+})
+
+define('expect-result-count', {
+  default: null,
+  type: [null, Number],
+  hint: '<count>',
+  exclusive: ['expect-results'],
+  description: `
+    Tells to expect a specific number of results from the command.
+  `,
 })
 
 define('fetch-retries', {
@@ -959,6 +993,7 @@ define('include-workspace-root', {
 
 define('init-author-email', {
   default: '',
+  hint: '<email>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package author's
@@ -968,6 +1003,7 @@ define('init-author-email', {
 
 define('init-author-name', {
   default: '',
+  hint: '<name>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package author's name.
@@ -977,6 +1013,7 @@ define('init-author-name', {
 define('init-author-url', {
   default: '',
   type: ['', url],
+  hint: '<url>',
   description: `
     The value \`npm init\` should use by default for the package author's homepage.
   `,
@@ -984,6 +1021,7 @@ define('init-author-url', {
 
 define('init-license', {
   default: 'ISC',
+  hint: '<license>',
   type: String,
   description: `
     The value \`npm init\` should use by default for the package license.
@@ -993,6 +1031,7 @@ define('init-license', {
 define('init-module', {
   default: '~/.npm-init.js',
   type: path,
+  hint: '<module>',
   description: `
     A module that will be loaded by the \`npm init\` command.  See the
     documentation for the
@@ -1004,6 +1043,7 @@ define('init-module', {
 define('init-version', {
   default: '1.0.0',
   type: semver,
+  hint: '<version>',
   description: `
     The value that \`npm init\` should use by default for the package
     version number, if not already set in package.json.
@@ -1199,6 +1239,33 @@ define('local-address', {
   description: `
     The IP address of the local interface to use when making connections to
     the npm registry.  Must be IPv4 in versions of Node prior to 0.12.
+  `,
+  flatten,
+})
+
+define('sbom-format', {
+  default: null,
+  type: [
+    'cyclonedx',
+    'spdx',
+  ],
+  description: `
+    SBOM format to use when generating SBOMs.
+  `,
+  flatten,
+})
+
+define('sbom-type', {
+  default: 'library',
+  type: [
+    'library',
+    'application',
+    'framework',
+  ],
+  description: `
+    The type of package described by the generated SBOM. For SPDX, this is the
+    value for the \`primaryPackagePurpose\` field. For CycloneDX, this is the
+    value for the \`type\` field.
   `,
   flatten,
 })
@@ -2127,24 +2194,6 @@ define('timing', {
   `,
 })
 
-define('tmp', {
-  default: tmpdir(),
-  defaultDescription: `
-    The value returned by the Node.js \`os.tmpdir()\` method
-    <https://nodejs.org/api/os.html#os_os_tmpdir>
-  `,
-  type: path,
-  deprecated: `
-    This setting is no longer used.  npm stores temporary files in a special
-    location in the cache, and they are managed by
-    [\`cacache\`](http://npm.im/cacache).
-  `,
-  description: `
-    Historically, the location where temporary files were stored.  No longer
-    relevant.
-  `,
-})
-
 define('umask', {
   default: 0,
   type: Umask,
@@ -2222,7 +2271,7 @@ define('user-agent', {
   `,
   flatten (key, obj, flatOptions) {
     const value = obj[key]
-    const ciName = obj['ci-name']
+    const ciName = ciInfo.name?.toLowerCase().split(' ').join('-') || null
     let inWorkspaces = false
     if (obj.workspaces || obj.workspace && obj.workspace.length) {
       inWorkspaces = true

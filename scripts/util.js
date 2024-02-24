@@ -13,10 +13,16 @@ const EOL = '\n'
 const CWD = resolve(__dirname, '..')
 
 const pkg = require(join(CWD, 'package.json'))
-pkg.mapWorkspaces = async () => {
+pkg.mapWorkspaces = async ({ public = false } = {}) => {
   const ws = []
   for (const [name, path] of await mapWorkspaces({ pkg })) {
-    ws.push({ name, path, pkg: require(join(path, 'package.json')) })
+    const pkgJson = require(join(path, 'package.json'))
+
+    if (public && pkgJson.private) {
+      continue
+    }
+
+    ws.push({ name, path, pkg: pkgJson })
   }
   return ws
 }

@@ -27,49 +27,6 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: Get Workflow Job
-        uses: actions/github-script@v6
-        if: inputs.check-sha
-        id: check-output
-        env:
-          JOB_NAME: "Lint All"
-          MATRIX_NAME: ""
-        with:
-          script: |
-            const { owner, repo } = context.repo
-
-            const { data } = await github.rest.actions.listJobsForWorkflowRun({
-              owner,
-              repo,
-              run_id: context.runId,
-              per_page: 100
-            })
-
-            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
-            const job = data.jobs.find(j => j.name.endsWith(jobName))
-            const jobUrl = job?.html_url
-
-            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
-
-            let summary = `This check is assosciated with ${shaUrl}\n\n`
-
-            if (jobUrl) {
-              summary += `For run logs, click here: ${jobUrl}`
-            } else {
-              summary += `Run logs could not be found for a job with name: "${jobName}"`
-            }
-
-            return { summary }
-      - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        id: check
-        if: inputs.check-sha
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: in_progress
-          name: Lint All
-          sha: ${{ inputs.check-sha }}
-          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -78,10 +35,20 @@ jobs:
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
+      - name: Create Check
+        id: create-check
+        if: ${{ inputs.check-sha }}
+        uses: ./.github/actions/create-check
+        with:
+          name: "Lint All"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ inputs.check-sha }}
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
-          node-version: 18.x
+          node-version: 20.x
+          check-latest: contains('20.x', '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -92,12 +59,12 @@ jobs:
       - name: Post Lint
         run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        if: steps.check.outputs.check_id && always()
+        uses: LouisBrunner/checks-action@v1.6.0
+        if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
-          check_id: ${{ steps.check.outputs.check_id }}
+          check_id: ${{ steps.create-check.outputs.check-id }}
 
   test-all:
     name: Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -116,60 +83,15 @@ jobs:
             os: windows-latest
             shell: cmd
         node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
+          - 18.17.0
           - 18.x
+          - 20.5.0
+          - 20.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-      - name: Get Workflow Job
-        uses: actions/github-script@v6
-        if: inputs.check-sha
-        id: check-output
-        env:
-          JOB_NAME: "Test All"
-          MATRIX_NAME: " - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
-        with:
-          script: |
-            const { owner, repo } = context.repo
-
-            const { data } = await github.rest.actions.listJobsForWorkflowRun({
-              owner,
-              repo,
-              run_id: context.runId,
-              per_page: 100
-            })
-
-            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
-            const job = data.jobs.find(j => j.name.endsWith(jobName))
-            const jobUrl = job?.html_url
-
-            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
-
-            let summary = `This check is assosciated with ${shaUrl}\n\n`
-
-            if (jobUrl) {
-              summary += `For run logs, click here: ${jobUrl}`
-            } else {
-              summary += `Run logs could not be found for a job with name: "${jobName}"`
-            }
-
-            return { summary }
-      - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        id: check
-        if: inputs.check-sha
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: in_progress
-          name: Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
-          sha: ${{ inputs.check-sha }}
-          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -178,10 +100,20 @@ jobs:
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
+      - name: Create Check
+        id: create-check
+        if: ${{ inputs.check-sha }}
+        uses: ./.github/actions/create-check
+        with:
+          name: "Test All - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ inputs.check-sha }}
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -194,12 +126,12 @@ jobs:
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        if: steps.check.outputs.check_id && always()
+        uses: LouisBrunner/checks-action@v1.6.0
+        if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
-          check_id: ${{ steps.check.outputs.check_id }}
+          check_id: ${{ steps.create-check.outputs.check-id }}
 
   smoke-publish:
     # This cant be tested on Windows because our node_modules directory
@@ -219,60 +151,15 @@ jobs:
             os: macos-latest
             shell: bash
         node-version:
-          - 14.17.0
-          - 14.x
-          - 16.13.0
-          - 16.x
-          - 18.0.0
+          - 18.17.0
           - 18.x
+          - 20.5.0
+          - 20.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
-      - name: Get Workflow Job
-        uses: actions/github-script@v6
-        if: inputs.check-sha
-        id: check-output
-        env:
-          JOB_NAME: "Smoke Publish"
-          MATRIX_NAME: " - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
-        with:
-          script: |
-            const { owner, repo } = context.repo
-
-            const { data } = await github.rest.actions.listJobsForWorkflowRun({
-              owner,
-              repo,
-              run_id: context.runId,
-              per_page: 100
-            })
-
-            const jobName = process.env.JOB_NAME + process.env.MATRIX_NAME
-            const job = data.jobs.find(j => j.name.endsWith(jobName))
-            const jobUrl = job?.html_url
-
-            const shaUrl = `${context.serverUrl}/${owner}/${repo}/commit/${{ inputs.check-sha }}`
-
-            let summary = `This check is assosciated with ${shaUrl}\n\n`
-
-            if (jobUrl) {
-              summary += `For run logs, click here: ${jobUrl}`
-            } else {
-              summary += `Run logs could not be found for a job with name: "${jobName}"`
-            }
-
-            return { summary }
-      - name: Create Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        id: check
-        if: inputs.check-sha
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          status: in_progress
-          name: Smoke Publish - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
-          sha: ${{ inputs.check-sha }}
-          output: ${{ steps.check-output.outputs.result }}
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -281,10 +168,20 @@ jobs:
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
+      - name: Create Check
+        id: create-check
+        if: ${{ inputs.check-sha }}
+        uses: ./.github/actions/create-check
+        with:
+          name: "Smoke Publish - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sha: ${{ inputs.check-sha }}
       - name: Setup Node
         uses: actions/setup-node@v3
+        id: node
         with:
           node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -312,9 +209,9 @@ jobs:
             exit 1
           fi
       - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.3.1
-        if: steps.check.outputs.check_id && always()
+        uses: LouisBrunner/checks-action@v1.6.0
+        if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
-          check_id: ${{ steps.check.outputs.check_id }}
+          check_id: ${{ steps.create-check.outputs.check-id }}

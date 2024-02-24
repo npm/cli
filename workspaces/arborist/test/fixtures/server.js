@@ -241,6 +241,18 @@ exports.registry = `http://localhost:${PORT}/`
 exports.start = startServer
 exports.stop = () => exports.server.close()
 
+exports.oneSocket = (t) => {
+  t.comment('using http.Agent with maxSockets:1, this is a hack that should be fixed')
+  // work around an unknown issue for know where agents on localhost need a
+  // low maxSockets to avoid ECONNRESET issues when dealing with ipv4 and ipv6
+  // dns resolution (i think)
+  return {
+    agent: new http.Agent({
+      maxSockets: 1,
+    }),
+  }
+}
+
 if (require.main === module) {
   startServer()
     .then(() => console.log(`Mock registry live at:\n${exports.registry}\nPress ^D to close gracefully.`))

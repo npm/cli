@@ -1,5 +1,71 @@
 # Changelog
 
+## [5.0.4](https://github.com/npm/cli/compare/libnpmfund-v5.0.3...libnpmfund-v5.0.4) (2024-01-24)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.3.1): `@npmcli/arborist@7.3.1`
+
+## [5.0.3](https://github.com/npm/cli/compare/libnpmfund-v5.0.2...libnpmfund-v5.0.3) (2024-01-10)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.3.0): `@npmcli/arborist@7.3.0`
+
+## [5.0.2](https://github.com/npm/cli/compare/libnpmfund-v5.0.1...libnpmfund-v5.0.2) (2023-12-06)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.2): `@npmcli/arborist@7.2.2`
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+
+## [5.0.1](https://github.com/npm/cli/compare/libnpmfund-v5.0.0...libnpmfund-v5.0.1) (2023-10-31)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.1): `@npmcli/arborist@7.2.1`
+
+## [5.0.0](https://github.com/npm/cli/compare/libnpmfund-v4.1.1...libnpmfund-v5.0.0) (2023-10-02)
+
+### ⚠️ BREAKING CHANGES
+
+* libnpmfund now supports node ^16.14.0 || >=18.0.0
+
+### Bug Fixes
+
+* [`43241f6`](https://github.com/npm/cli/commit/43241f6fc44f50ceca2572032eb37972a9a921d5) [#6807](https://github.com/npm/cli/pull/6807) set engines to ^16.14.0 || >=18.0.0 (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.2.0): `@npmcli/arborist@7.2.0`
+
+## [4.1.1](https://github.com/npm/cli/compare/libnpmfund-v4.1.0...libnpmfund-v4.1.1) (2023-09-08)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.1.0): `@npmcli/arborist@7.1.0`
+
+## [4.1.0](https://github.com/npm/cli/compare/libnpmfund-v4.0.20...libnpmfund-v4.1.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.0.0): `@npmcli/arborist@7.0.0`
+
+## [4.0.20](https://github.com/npm/cli/compare/libnpmfund-v4.0.19...libnpmfund-v4.0.20) (2023-08-31)
+
+### Dependencies
+
+* [Workspace](https://github.com/npm/cli/releases/tag/arborist-v7.0.0-pre.0): `@npmcli/arborist@7.0.0-pre.0`
+
 ## [4.0.19](https://github.com/npm/cli/compare/libnpmfund-v4.0.18...libnpmfund-v4.0.19) (2023-07-05)
 
 ### Dependencies

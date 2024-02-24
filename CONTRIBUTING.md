@@ -19,7 +19,7 @@ $ git clone git@github.com:npm/cli.git npm
 **2. Navigate into project & install development-specific dependencies...**
 
 ```bash
-$ cd ./npm && node . install
+$ cd ./npm && node ./scripts/resetdeps.js
 ```
 
 **3. Write some code &/or add some tests...**
@@ -47,6 +47,28 @@ We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).  
 ## Test Coverage
 
 We use [`tap`](https://node-tap.org/) for testing & expect that every new feature or bug fix comes with corresponding tests that validate the solutions. Tap also reports on code coverage and it will fail if that drops below 100%.
+
+To run your repository's version of the npm cli on your local machine use the following commands:
+
+**npm commands:**
+```bash
+node . <command>
+```
+
+**npx commands:**
+```bash
+node . exec
+```
+
+For example instead of:
+```bash 
+npm exec -- <package>
+```  
+Use:
+```bash
+node . exec -- <package>
+```
+
 
 ## Performance & Benchmarks
 

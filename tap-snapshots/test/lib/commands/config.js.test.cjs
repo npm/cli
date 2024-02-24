@@ -30,10 +30,12 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "cafile": null,
   "call": "",
   "cert": null,
-  "ci-name": null,
   "cidr": null,
   "color": true,
   "commit-hooks": true,
+  "cpu": null,
+  "os": null,
+  "libc": null,
   "depth": null,
   "description": true,
   "dev": false,
@@ -48,6 +50,8 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "dry-run": false,
   "editor": "{EDITOR}",
   "engine-strict": false,
+  "expect-results": null,
+  "expect-result-count": null,
   "fetch-retries": 2,
   "fetch-retry-factor": 10,
   "fetch-retry-maxtimeout": 60000,
@@ -88,6 +92,8 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "legacy-peer-deps": false,
   "link": false,
   "local-address": null,
+  "sbom-format": null,
+  "sbom-type": "library",
   "location": "user",
   "lockfile-version": null,
   "loglevel": "notice",
@@ -147,7 +153,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "tag": "latest",
   "tag-version-prefix": "v",
   "timing": false,
-  "tmp": "{TMP}",
   "umask": 0,
   "unicode": false,
   "update-notifier": true,
@@ -161,8 +166,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "workspaces": null,
   "workspaces-update": true,
   "yes": null,
-  "npm-version": "{NPM-VERSION}",
-  "metrics-registry": "https://registry.npmjs.org/"
+  "npm-version": "{NPM-VERSION}"
 }
 `
 
@@ -187,10 +191,10 @@ cache-min = 0
 cafile = null 
 call = "" 
 cert = null 
-ci-name = null 
 cidr = null 
 color = true 
 commit-hooks = true 
+cpu = null 
 depth = null 
 description = true 
 dev = false 
@@ -205,6 +209,8 @@ diff-unified = 3
 dry-run = false 
 editor = "{EDITOR}" 
 engine-strict = false 
+expect-result-count = null 
+expect-results = null 
 fetch-retries = 2 
 fetch-retry-factor = 10 
 fetch-retry-maxtimeout = 60000 
@@ -244,6 +250,7 @@ json = false
 key = null 
 legacy-bundling = false 
 legacy-peer-deps = false 
+libc = null 
 link = false 
 local-address = null 
 location = "user" 
@@ -254,7 +261,6 @@ logs-max = 10
 ; long = false ; overridden by cli
 maxsockets = 15 
 message = "%s" 
-metrics-registry = "https://registry.npmjs.org/" 
 node-options = null 
 noproxy = [""] 
 npm-version = "{NPM-VERSION}" 
@@ -263,6 +269,7 @@ omit = []
 omit-lockfile-registry-resolved = false 
 only = null 
 optional = null 
+os = null 
 otp = null 
 pack-destination = "." 
 package = [] 
@@ -291,6 +298,8 @@ save-optional = false
 save-peer = false 
 save-prefix = "^" 
 save-prod = false 
+sbom-format = null 
+sbom-type = "library" 
 scope = "" 
 script-shell = null 
 searchexclude = "" 
@@ -306,7 +315,6 @@ strict-ssl = true
 tag = "latest" 
 tag-version-prefix = "v" 
 timing = false 
-tmp = "{TMP}" 
 umask = 0 
 unicode = false 
 update-notifier = true 

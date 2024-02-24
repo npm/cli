@@ -84,8 +84,8 @@ Some examples:
 The `:outdated` pseudo selector retrieves data from the registry and returns information about which of your dependencies are outdated. The type parameter may be one of the following:
 
 - `any` (default) a version exists that is greater than the current one
-- `in-range` a version exists that is greater than the current one, and satisfies at least one if its dependents
-- `out-of-range` a version exists that is greater than the current one, does not satisfy at least one of its dependents
+- `in-range` a version exists that is greater than the current one, and satisfies at least one if its parent's dependencies
+- `out-of-range` a version exists that is greater than the current one, does not satisfy at least one of its parent's dependencies
 - `major` a version exists that is a semver major greater than the current one
 - `minor` a version exists that is a semver minor greater than the current one
 - `patch` a version exists that is a semver patch greater than the current one
@@ -99,14 +99,14 @@ In addition to the filtering performed by the pseudo selector, some extra data i
 Some examples:
 
 - `:root > :outdated(major)` returns every direct dependency that has a new semver major release
-- `.prod:outdated(in-range)` returns production dependencies that have a new release that satisfies at least one of its edges in
+- `.prod:outdated(in-range)` returns production dependencies that have a new release that satisfies at least one of its parent's dependencies
 
 #### [Attribute Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors)
 
 The attribute selector evaluates the key/value pairs in `package.json` if they are `String`s.
 
 - `[]` attribute selector (ie. existence of attribute)
-- `[attribute=value]` attribute value is equivalant...
+- `[attribute=value]` attribute value is equivalent...
 - `[attribute~=value]` attribute value contains word...
 - `[attribute*=value]` attribute value contains string...
 - `[attribute|=value]` attribute value is equal to or starts with...

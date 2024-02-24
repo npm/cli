@@ -24,7 +24,7 @@ If no package name is specified, all packages in the specified location (global
 or local) will be updated.
 
 Note that by default `npm update` will not update the semver values of direct
-dependencies in your project `package.json`, if you want to also update
+dependencies in your project `package.json`. If you want to also update
 values in `package.json` you can run: `npm update --save` (or add the
 `save=true` option to a [configuration file](/configuring-npm/npmrc)
 to make that the default behavior).
@@ -76,7 +76,7 @@ However, if `app`'s `package.json` contains:
 ```
 
 In this case, running `npm update` will install `dep1@1.1.2`.  Even though the
-`latest` tag points to `1.2.2`, this version do not satisfy `~1.1.1`, which is
+`latest` tag points to `1.2.2`, this version does not satisfy `~1.1.1`, which is
 equivalent to `>=1.1.1 <1.2.0`.  So the highest-sorting version that satisfies
 `~1.1.1` is used, which is `1.1.2`.
 
@@ -90,8 +90,7 @@ Suppose `app` has a caret dependency on a version below `1.0.0`, for example:
 }
 ```
 
-`npm update` will install `dep1@0.2.0`, because there are no other
-versions which satisfy `^0.2.0`.
+`npm update` will install `dep1@0.2.0`.
 
 If the dependence were on `^0.4.0`:
 

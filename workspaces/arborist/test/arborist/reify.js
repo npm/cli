@@ -127,6 +127,7 @@ const {
   stop,
   registry,
   advisoryBulkResponse,
+  oneSocket,
 } = require('../fixtures/server.js')
 
 t.before(start)
@@ -159,6 +160,11 @@ const newArb = (opt) => new Arborist({
 
 const reify = (path, opt) => newArb({ path, ...(opt || {}) }).reify(opt)
 
+t.test('bundled file dep with same name as other dep', async t => {
+  const tree = await printReified(fixture(t, 'conflict-bundle-file-dep'))
+  t.matchSnapshot(tree)
+})
+
 t.test('tarball deps with transitive tarball deps', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'tarball-dependencies'))))
 
@@ -170,7 +176,7 @@ t.test('update a yarn.lock file', async t => {
 })
 
 t.test('weirdly broken lockfile without resolved value', t =>
-  t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved'))))
+  t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved'), oneSocket(t))))
 
 t.test('testing-peer-deps package', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps'))))
@@ -463,6 +469,22 @@ t.test('still do not install optional deps with mismatched platform specificatio
 
 t.test('fail to install deps with mismatched platform specifications', t =>
   t.rejects(printReified(fixture(t, 'platform-specification')), { code: 'EBADPLATFORM' }))
+
+t.test('success to install optional deps with matched platform specifications with os and cpu and libc options', t =>
+  t.resolveMatchSnapshot(printReified(
+    fixture(t, 'optional-platform-specification'), { os: 'not-your-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })))
+
+t.test('fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options', t =>
+  t.resolveMatchSnapshot(printReified(
+    fixture(t, 'optional-platform-specification'), { os: 'not-your-os', cpu: 'another-cpu', libc: 'not-your-libc' })))
+
+t.test('fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options', t =>
+  t.resolveMatchSnapshot(printReified(
+    fixture(t, 'optional-platform-specification'), { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })))
+
+t.test('fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options', t =>
+  t.resolveMatchSnapshot(printReified(
+    fixture(t, 'optional-platform-specification'), { os: 'another-os', cpu: 'not-your-cpu', libc: 'not-your-libc' })))
 
 t.test('dry run, do not get anything wet', async t => {
   const cases = [
@@ -1417,7 +1439,7 @@ t.test('do not reify root when root matches duplicated metadep', async t => {
 
 t.test('reify properly with all deps when lockfile is ancient', async t => {
   const path = fixture(t, 'sax')
-  const tree = await reify(path)
+  const tree = await reify(path, oneSocket(t))
   t.matchSnapshot(printTree(tree))
   fs.statSync(path + '/node_modules/tap/node_modules/.bin/nyc')
 })

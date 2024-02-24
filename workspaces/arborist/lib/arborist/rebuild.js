@@ -7,7 +7,7 @@ const promiseAllRejectLate = require('promise-all-reject-late')
 const rpj = require('read-package-json-fast')
 const binLinks = require('bin-links')
 const runScript = require('@npmcli/run-script')
-const promiseCallLimit = require('promise-call-limit')
+const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const { resolve } = require('path')
 const {
   isNodeGypPackage,
@@ -387,7 +387,7 @@ module.exports = cls => class Builder extends cls {
         : p)
 
       process.emit('timeEnd', timer)
-    }), limit)
+    }), { limit })
     process.emit('timeEnd', `build:run:${event}`)
   }
 

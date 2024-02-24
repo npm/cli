@@ -1,5 +1,76 @@
 # Changelog
 
+## [9.0.4](https://github.com/npm/cli/compare/libnpmpublish-v9.0.3...libnpmpublish-v9.0.4) (2024-01-24)
+
+### Dependencies
+
+* [`a50b03b`](https://github.com/npm/cli/commit/a50b03b10046cf769cd328df96adcf292db5c067) [#7141](https://github.com/npm/cli/pull/7141) `sigstore@2.2.0` (#7141) (@bdehamer)
+
+## [9.0.3](https://github.com/npm/cli/compare/libnpmpublish-v9.0.2...libnpmpublish-v9.0.3) (2023-12-06)
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+
+## [9.0.2](https://github.com/npm/cli/compare/libnpmpublish-v9.0.1...libnpmpublish-v9.0.2) (2023-11-14)
+
+### Bug Fixes
+
+* [`fff8698`](https://github.com/npm/cli/commit/fff8698169441a6398319f6d0510dde4090e01ce) [#6978](https://github.com/npm/cli/pull/6978) publish: split github workflow ref (#6978) (@sxzz)
+
+### Dependencies
+
+* [`cd0c649`](https://github.com/npm/cli/commit/cd0c649ec2b421b59012854e61788a11a77194f2) [#6994](https://github.com/npm/cli/pull/6994) `ci-info@4.0.0`
+
+## [9.0.1](https://github.com/npm/cli/compare/libnpmpublish-v9.0.0...libnpmpublish-v9.0.1) (2023-10-02)
+
+### Dependencies
+
+* [`aa6728b`](https://github.com/npm/cli/commit/aa6728b1d003f0fc620b074ba0396a3e07f2db6a) [#6859](https://github.com/npm/cli/pull/6859) `tar@6.2.0`
+* [`ce9089f`](https://github.com/npm/cli/commit/ce9089f604a01297d3d2dd544283696a6297dce5) [#6859](https://github.com/npm/cli/pull/6859) `npm-package-arg@11.0.1`
+
+## [9.0.0](https://github.com/npm/cli/compare/libnpmpublish-v9.0.0-pre.0...libnpmpublish-v9.0.0) (2023-08-31)
+
+### Features
+
+* [`fb31c7e`](https://github.com/npm/cli/commit/fb31c7e5f00ae39e67f9a5d6b6860c1d839c704b) trigger release process (@lukekarrys)
+
+## [9.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpublish-v8.0.0...libnpmpublish-v9.0.0-pre.0) (2023-08-31)
+
+### ⚠️ BREAKING CHANGES
+
+* support for node <=16.13 has been removed
+* support for node 14 has been removed
+
+### Bug Fixes
+
+* [`6b251b1`](https://github.com/npm/cli/commit/6b251b1009648b36d49b83a2cc407c348fa225e0) [#6706](https://github.com/npm/cli/pull/6706) drop node 16.13.x support (@lukekarrys)
+* [`d431647`](https://github.com/npm/cli/commit/d4316479a7894290586718e412d7c670316a36f2) [#6706](https://github.com/npm/cli/pull/6706) drop node14 support (@lukekarrys)
+
+### Dependencies
+
+* [`812aa6d`](https://github.com/npm/cli/commit/812aa6d2027ed42453b86b22f4cf8de25f6e0180) [#6706](https://github.com/npm/cli/pull/6706) `sigstore@2.1.0`
+* [`0d2e2c9`](https://github.com/npm/cli/commit/0d2e2c9d09ff760d8db09774fcd7ad417a88c4c7) [#6706](https://github.com/npm/cli/pull/6706) bump sigstore from 1.7.0 to 2.0.0
+* [`2ee0fb3`](https://github.com/npm/cli/commit/2ee0fb3ac0c5e49f9eba545d6b05e20be1352414) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@16.0.0`
+* [`c784b57`](https://github.com/npm/cli/commit/c784b57b654d25e8d932e6fe415b87e75dcf9026) [#6706](https://github.com/npm/cli/pull/6706) `npm-package-arg@11.0.0`
+* [`d6b1790`](https://github.com/npm/cli/commit/d6b1790492d9bc96c196d85d8fc9fd98d62d0087) [#6706](https://github.com/npm/cli/pull/6706) `normalize-package-data@6.0.0`
+* [`9117a4f`](https://github.com/npm/cli/commit/9117a4fcf05291ce7609bcad5bb810df9a5158e7) [#6706](https://github.com/npm/cli/pull/6706) `ssri@10.0.5`
+* [`5d0d859`](https://github.com/npm/cli/commit/5d0d8592cbf3b816d9fe44c36d390200ec15e87a) [#6706](https://github.com/npm/cli/pull/6706) `npm-registry-fetch@15.0.0`
+
+## [8.0.0](https://github.com/npm/cli/compare/libnpmpublish-v7.5.0...libnpmpublish-v8.0.0) (2023-07-26)
+
+### ⚠️ BREAKING CHANGES
+
+* the "ci-name" config has been removed
+* libnpmpublish will no longer attempt a single automatic retry on 409 responses during publish.
+
+### Bug Fixes
+
+* [`e0d3edd`](https://github.com/npm/cli/commit/e0d3edd9908f8303abb9941bdd2f6e9aa31bc9d7) [#6641](https://github.com/npm/cli/pull/6641) remove "ci-name" config (@wraithgar)
+* [`0a71ebb`](https://github.com/npm/cli/commit/0a71ebb3d1e7fca07d39ea64e5f1acd22ecd255c) [#6641](https://github.com/npm/cli/pull/6641) stop retrying on 409 conflict (@wraithgar)
+
 ## [7.5.0](https://github.com/npm/cli/compare/libnpmpublish-v7.4.0...libnpmpublish-v7.5.0) (2023-07-05)
 
 ### Features

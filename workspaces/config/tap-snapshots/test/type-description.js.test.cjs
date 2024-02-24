@@ -79,10 +79,6 @@ Object {
     null,
     Function String(),
   ],
-  "ci-name": Array [
-    null,
-    Function String(),
-  ],
   "cidr": Array [
     null,
     Function String(),
@@ -94,6 +90,10 @@ Object {
   ],
   "commit-hooks": Array [
     "boolean value (true or false)",
+  ],
+  "cpu": Array [
+    null,
+    Function String(),
   ],
   "depth": Array [
     null,
@@ -137,6 +137,14 @@ Object {
     Function String(),
   ],
   "engine-strict": Array [
+    "boolean value (true or false)",
+  ],
+  "expect-result-count": Array [
+    null,
+    "numeric value",
+  ],
+  "expect-results": Array [
+    null,
     "boolean value (true or false)",
   ],
   "fetch-retries": Array [
@@ -267,6 +275,10 @@ Object {
   "legacy-peer-deps": Array [
     "boolean value (true or false)",
   ],
+  "libc": Array [
+    null,
+    Function String(),
+  ],
   "link": Array [
     "boolean value (true or false)",
   ],
@@ -338,6 +350,10 @@ Object {
   "optional": Array [
     null,
     "boolean value (true or false)",
+  ],
+  "os": Array [
+    null,
+    Function String(),
   ],
   "otp": Array [
     null,
@@ -431,6 +447,15 @@ Object {
   "save-prod": Array [
     "boolean value (true or false)",
   ],
+  "sbom-format": Array [
+    "cyclonedx",
+    "spdx",
+  ],
+  "sbom-type": Array [
+    "library",
+    "application",
+    "framework",
+  ],
   "scope": Array [
     Function String(),
   ],
@@ -476,9 +501,6 @@ Object {
   ],
   "timing": Array [
     "boolean value (true or false)",
-  ],
-  "tmp": Array [
-    "valid filesystem path",
   ],
   "umask": Array [
     "octal number in range 0o000..0o777 (0..511)",
