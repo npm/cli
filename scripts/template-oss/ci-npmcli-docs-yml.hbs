@@ -1,7 +1,11 @@
-{{> ci }}
+{{> ciYml }}
 
   compare-docs:
-    {{> job jobName="Compare Docs" jobCheckout=(obj fetch-depth=0) jobIf="github.event_name == 'pull_request'" }}
+    {{> jobYml
+      jobName="Compare Docs"
+      jobCheckout=(obj fetch-depth=0)
+      jobIf="github.event_name == 'pull_request'"
+    }}
       - name: Build Docs
         run: |
           node . run build -w docs

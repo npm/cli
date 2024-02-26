@@ -15,7 +15,7 @@
   "author": "GitHub Inc.",
   "license": "ISC",
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "test": "tap",
     "posttest": "node ../.. run lint",
     "snap": "tap",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/template-oss": "4.21.3",
     "require-inject": "^1.4.4",
     "tap": "^16.3.4"
   },
@@ -48,7 +48,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
+    "version": "4.21.3",
     "content": "../../scripts/template-oss/index.js"
   }
 }
