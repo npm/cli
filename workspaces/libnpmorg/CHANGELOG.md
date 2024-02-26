@@ -1,5 +1,17 @@
 # Changelog
 
+## [5.0.5](https://github.com/npm/cli/compare/libnpmorg-v5.0.4...libnpmorg-v5.0.5) (2024-02-26)
+
+### Dependencies
+
+* [`cc0516b`](https://github.com/npm/cli/commit/cc0516b952180b241e090d4286d7245bb936aea2) [#7010](https://github.com/npm/cli/pull/7010) `minipass@7.0.4`
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+* [`608005d`](https://github.com/npm/cli/commit/608005d5a2f5d323e7aa03f0574c370d177cae76) [#6812](https://github.com/npm/cli/pull/6812) `@npmcli/template-oss@4.19.0` (#6812) (@wraithgar)
+* [`3829998`](https://github.com/npm/cli/commit/3829998da12b655fbe212ab083751873f86cef38) [#6654](https://github.com/npm/cli/pull/6654) `@npmcli/template-oss@4.18.0` (#6654) (@wraithgar)
+
 ## [5.0.4](https://github.com/npm/cli/compare/libnpmorg-v5.0.3...libnpmorg-v5.0.4) (2023-05-03)
 
 ### Dependencies

@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.2.2](https://github.com/npm/cli/compare/libnpmfund-v4.2.1...libnpmfund-v4.2.2) (2024-02-26)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v6.5.1): `@npmcli/arborist@6.5.1`
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+
 ## [4.2.1](https://github.com/npm/cli/compare/libnpmfund-v4.2.0...libnpmfund-v4.2.1) (2023-10-06)
 
 ### Dependencies

@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.4.1](https://github.com/npm/cli/compare/config-v6.4.0...config-v6.4.1) (2024-02-26)
+
+### Dependencies
+
+* [`73ee6cc`](https://github.com/npm/cli/commit/73ee6cc17da99ccc1018f325cf3d95e6762c7224) [#7010](https://github.com/npm/cli/pull/7010) `ci-info@4.0.0`
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+
 ## [6.4.0](https://github.com/npm/cli/compare/config-v6.3.0...config-v6.4.0) (2023-10-06)
 
 ### Features

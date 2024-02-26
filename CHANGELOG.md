@@ -1,5 +1,65 @@
 # Changelog
 
+## [9.9.3](https://github.com/npm/cli/compare/v9.9.2...v9.9.3) (2024-02-26)
+
+### Bug Fixes
+
+* [`88ea8c7`](https://github.com/npm/cli/commit/88ea8c772661056aae8d52870b56defed058b9b9) [#7010](https://github.com/npm/cli/pull/7010) set objectMode for search filter stream (@lukekarrys)
+* [`8d9d735`](https://github.com/npm/cli/commit/8d9d7351f5f9cfd7028a9f47cde520ca393218dd) [#7010](https://github.com/npm/cli/pull/7010) unpublish: bubble up all errors parsing local package.json (#7049) (@wraithgar)
+* [`e0e75e5`](https://github.com/npm/cli/commit/e0e75e5c153581b31a8a473e8b5823064716cfe0) [#7010](https://github.com/npm/cli/pull/7010) unpublish bugfixes (#7039) (@wraithgar)
+* [`4d59ce1`](https://github.com/npm/cli/commit/4d59ce1826efaaa4d23f807a3c303c78d28d4195) [#7047](https://github.com/npm/cli/pull/7047) reverse direction of SPDX SBOM dep rels (#7047) (@bdehamer, @antonbauhofer)
+* [`878f22b`](https://github.com/npm/cli/commit/878f22b5323554540ab48271b6ddd5502de97845) [#7008](https://github.com/npm/cli/pull/7008) properly catch missing url opener error (@wraithgar)
+* [`91a8eca`](https://github.com/npm/cli/commit/91a8eca99457092389ee22ff7491b6886cf30654) [#7008](https://github.com/npm/cli/pull/7008) properly catch missing url opener error on interactive prompt (@wraithgar)
+
+### Dependencies
+
+* [`1968e0e`](https://github.com/npm/cli/commit/1968e0e1d2f3b70be638b4d102a2a4d87782cd9b) [#7010](https://github.com/npm/cli/pull/7010) `spdx-license-ids@3.0.17`
+* [`d130576`](https://github.com/npm/cli/commit/d1305763d7981fb0d818f5ad0997ae57a431c991) [#7010](https://github.com/npm/cli/pull/7010) `spdx-exceptions@2.5.0`
+* [`00f28b8`](https://github.com/npm/cli/commit/00f28b8fdea49a4630b1379f859de7dc55ba20c1) [#7010](https://github.com/npm/cli/pull/7010) `signal-exit@4.1.0`
+* [`57096c3`](https://github.com/npm/cli/commit/57096c3fc771a8464c61401439bc1ec90f2a1b96) [#7010](https://github.com/npm/cli/pull/7010) `postcss-selector-parser@6.0.15`
+* [`3ce677e`](https://github.com/npm/cli/commit/3ce677ece00b0dc9fa0aa7e307efe81fbcdbf8f5) [#7010](https://github.com/npm/cli/pull/7010) `minipass-fetch@3.0.4`
+* [`89757ed`](https://github.com/npm/cli/commit/89757ed1dadae3f852dfaa6e34357d093607769a) [#7010](https://github.com/npm/cli/pull/7010) `is-core-module@2.13.1`
+* [`bc1e841`](https://github.com/npm/cli/commit/bc1e841a7048da2ee2dd4ee002f5b5b9ac00099d) [#7010](https://github.com/npm/cli/pull/7010) `socks@2.8.1`
+* [`01f4049`](https://github.com/npm/cli/commit/01f40496ce5c8f07f0afc768e01141ef2d72e775) [#7010](https://github.com/npm/cli/pull/7010) `ignore-walk@6.0.4`
+* [`15f8982`](https://github.com/npm/cli/commit/15f8982000e07afd8dcf3b4c5f8a08daf028ee12) [#7010](https://github.com/npm/cli/pull/7010) `function-bind@1.1.2`
+* [`88ff949`](https://github.com/npm/cli/commit/88ff949e3ad9a1a3d3253ff90b9e698532d72997) [#7010](https://github.com/npm/cli/pull/7010) `cmd-shim@6.0.2`
+* [`3e298f6`](https://github.com/npm/cli/commit/3e298f6d23889dc32f5b152385c5d71941340f5b) [#7010](https://github.com/npm/cli/pull/7010) `bin-links@4.0.3`
+* [`35a6286`](https://github.com/npm/cli/commit/35a6286ec140f8c33c4d414c8382dd793631db39) [#7010](https://github.com/npm/cli/pull/7010) `are-we-there-yet@4.0.2`
+* [`aeb28c4`](https://github.com/npm/cli/commit/aeb28c4047bb3f19a1f493e82687344108e9e976) [#7010](https://github.com/npm/cli/pull/7010) `agentkeepalive@4.5.0`
+* [`edc7e23`](https://github.com/npm/cli/commit/edc7e230c52f74f2027c08b52e6a87f9d4f80cab) [#7010](https://github.com/npm/cli/pull/7010) `@npmcli/query@3.1.0`
+* [`00a3a08`](https://github.com/npm/cli/commit/00a3a085041ef40685d6db340c5b0034d350963c) [#7010](https://github.com/npm/cli/pull/7010) `tar@6.2.0`
+* [`7f424c3`](https://github.com/npm/cli/commit/7f424c3a8a2fc6e297f78b6f53d44787299aa1e0) [#7010](https://github.com/npm/cli/pull/7010) `ssri@10.0.5`
+* [`79b8538`](https://github.com/npm/cli/commit/79b8538356691742c414fd4e08b41618a500ec25) [#7010](https://github.com/npm/cli/pull/7010) `semver@7.6.0`
+* [`b5faf10`](https://github.com/npm/cli/commit/b5faf10efd9869d789e7165e8ab22e73b4c888c0) [#7010](https://github.com/npm/cli/pull/7010) `npm-install-checks@6.3.0`
+* [`2c62266`](https://github.com/npm/cli/commit/2c62266ea09452dc623522d61cb10dea351dfea4) [#7010](https://github.com/npm/cli/pull/7010) `node-gyp@9.4.1`
+* [`cc0516b`](https://github.com/npm/cli/commit/cc0516b952180b241e090d4286d7245bb936aea2) [#7010](https://github.com/npm/cli/pull/7010) `minipass@7.0.4`
+* [`651d362`](https://github.com/npm/cli/commit/651d3620a53af92ba2e5bee1f2d601af05999fc0) [#7010](https://github.com/npm/cli/pull/7010) `json-parse-even-better-errors@3.0.1`
+* [`4b239c6`](https://github.com/npm/cli/commit/4b239c6025606e1f29adb6dd9c25c3feb488796c) [#7010](https://github.com/npm/cli/pull/7010) `glob@10.3.10`
+* [`2f65b46`](https://github.com/npm/cli/commit/2f65b4664ff32748a95be75de40e60e5bea4a5a1) [#7010](https://github.com/npm/cli/pull/7010) `fs-minipass@3.0.3`
+* [`6c73ddf`](https://github.com/npm/cli/commit/6c73ddf6cbc3facfba5e3619e26c7a1b16670ee8) [#7010](https://github.com/npm/cli/pull/7010) `diff@5.2.0`
+* [`73ee6cc`](https://github.com/npm/cli/commit/73ee6cc17da99ccc1018f325cf3d95e6762c7224) [#7010](https://github.com/npm/cli/pull/7010) `ci-info@4.0.0`
+* [`64715a4`](https://github.com/npm/cli/commit/64715a424e433dfdb7432b8fcd36fb2054f4628e) [#7010](https://github.com/npm/cli/pull/7010) `cacache@17.1.4`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v6.5.1): `@npmcli/arborist@6.5.1`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v6.4.1): `@npmcli/config@6.4.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v7.0.3): `libnpmaccess@7.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v5.0.21): `libnpmdiff@5.0.21`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v6.0.5): `libnpmexec@6.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v4.2.2): `libnpmfund@4.2.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v9.0.4): `libnpmhook@9.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v5.0.5): `libnpmorg@5.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v5.0.21): `libnpmpack@5.0.21`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v7.5.2): `libnpmpublish@7.5.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v6.0.3): `libnpmsearch@6.0.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v5.0.4): `libnpmteam@5.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v4.0.3): `libnpmversion@4.0.3`
+
+### Chores
+
+* [`77fa150`](https://github.com/npm/cli/commit/77fa1502bf9236de79aaf6a9610b46f70bf5c99e) [#7252](https://github.com/npm/cli/pull/7252) release: do not exclude docs directory from CLI release commits (#7162) (@lukekarrys)
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+* [`6780643`](https://github.com/npm/cli/commit/678064360ca928d1ae67d06f9f5e6bbaa735984f) [#7010](https://github.com/npm/cli/pull/7010) dev dependency updates (@wraithgar)
+* [`ce701e9`](https://github.com/npm/cli/commit/ce701e9470552ba3e648993f636dd5235b7d6783) [#7048](https://github.com/npm/cli/pull/7048) fix tests for zlib differences between node versions (#7048) (@wraithgar)
+
 ## [9.9.2](https://github.com/npm/cli/compare/v9.9.1...v9.9.2) (2023-11-14)
 
 ### Bug Fixes

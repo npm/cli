@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.4](https://github.com/npm/cli/compare/libnpmhook-v9.0.3...libnpmhook-v9.0.4) (2024-02-26)
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+* [`608005d`](https://github.com/npm/cli/commit/608005d5a2f5d323e7aa03f0574c370d177cae76) [#6812](https://github.com/npm/cli/pull/6812) `@npmcli/template-oss@4.19.0` (#6812) (@wraithgar)
+* [`3829998`](https://github.com/npm/cli/commit/3829998da12b655fbe212ab083751873f86cef38) [#6654](https://github.com/npm/cli/pull/6654) `@npmcli/template-oss@4.18.0` (#6654) (@wraithgar)
+* [`1c8d17a`](https://github.com/npm/cli/commit/1c8d17ad8364c21112befc607b414ce4e187e44e) [#6416](https://github.com/npm/cli/pull/6416) `@npmcli/template-oss@4.14.1` (@wraithgar)
+* [`99cf197`](https://github.com/npm/cli/commit/99cf197d395e368c7161510d61f4373b26ed7cae) [#6275](https://github.com/npm/cli/pull/6275) `@npmcli/template-oss@4.12.1` (@wraithgar)
+* [`b48c43f`](https://github.com/npm/cli/commit/b48c43fcedbf1d99a6cbf784ab65901445494044) [#6229](https://github.com/npm/cli/pull/6229) `@npmcli/template-oss@4.12.0` (#6229) (@lukekarrys)
+
 ## [9.0.3](https://github.com/npm/cli/compare/libnpmhook-v9.0.2...libnpmhook-v9.0.3) (2023-02-07)
 
 ### Bug Fixes
