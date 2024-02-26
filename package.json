@@ -112,7 +112,7 @@
     "semver": "^7.6.0",
     "sigstore": "^1.9.0",
     "spdx-expression-parse": "^3.0.1",
-    "ssri": "^10.0.4",
+    "ssri": "^10.0.5",
     "supports-color": "^9.4.0",
     "tar": "^6.1.15",
     "text-table": "~0.2.0",
