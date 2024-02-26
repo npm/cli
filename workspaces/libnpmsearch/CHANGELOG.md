@@ -1,5 +1,19 @@
 # Changelog
 
+## [6.0.3](https://github.com/npm/cli/compare/libnpmsearch-v6.0.2...libnpmsearch-v6.0.3) (2024-02-26)
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+* [`608005d`](https://github.com/npm/cli/commit/608005d5a2f5d323e7aa03f0574c370d177cae76) [#6812](https://github.com/npm/cli/pull/6812) `@npmcli/template-oss@4.19.0` (#6812) (@wraithgar)
+* [`3829998`](https://github.com/npm/cli/commit/3829998da12b655fbe212ab083751873f86cef38) [#6654](https://github.com/npm/cli/pull/6654) `@npmcli/template-oss@4.18.0` (#6654) (@wraithgar)
+* [`1c8d17a`](https://github.com/npm/cli/commit/1c8d17ad8364c21112befc607b414ce4e187e44e) [#6416](https://github.com/npm/cli/pull/6416) `@npmcli/template-oss@4.14.1` (@wraithgar)
+* [`99cf197`](https://github.com/npm/cli/commit/99cf197d395e368c7161510d61f4373b26ed7cae) [#6275](https://github.com/npm/cli/pull/6275) `@npmcli/template-oss@4.12.1` (@wraithgar)
+* [`b48c43f`](https://github.com/npm/cli/commit/b48c43fcedbf1d99a6cbf784ab65901445494044) [#6229](https://github.com/npm/cli/pull/6229) `@npmcli/template-oss@4.12.0` (#6229) (@lukekarrys)
+* [`66dd0d6`](https://github.com/npm/cli/commit/66dd0d6ca7cc2e37ec092f03786760a54b4a6935) [#6144](https://github.com/npm/cli/pull/6144) `template-oss@4.11.4` (#6144) (@lukekarrys)
+* [`4bf4c22`](https://github.com/npm/cli/commit/4bf4c221a3085eed8a7747d84f3161d5ec5e8714) [#6133](https://github.com/npm/cli/pull/6133) deps: `nock@13.3.0` (@lukekarrys)
+* [`5bb0d15`](https://github.com/npm/cli/commit/5bb0d15363e83e6a1145b9faf9d0c244a1a60b7a) [#6133](https://github.com/npm/cli/pull/6133) deps: `tap@16.3.4` (@lukekarrys)
+
 ## [6.0.2](https://github.com/npm/cli/compare/libnpmsearch-v6.0.1...libnpmsearch-v6.0.2) (2023-02-01)
 
 ### Dependencies

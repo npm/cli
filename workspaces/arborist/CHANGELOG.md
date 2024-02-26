@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.5.1](https://github.com/npm/cli/compare/arborist-v6.5.0...arborist-v6.5.1) (2024-02-26)
+
+### Dependencies
+
+* [`edc7e23`](https://github.com/npm/cli/commit/edc7e230c52f74f2027c08b52e6a87f9d4f80cab) [#7010](https://github.com/npm/cli/pull/7010) `@npmcli/query@3.1.0`
+
+### Chores
+
+* [`1d4c464`](https://github.com/npm/cli/commit/1d4c464b42814c08eda7e716ca424757bf94a76d) [#7252](https://github.com/npm/cli/pull/7252) `@npmcli/template-oss@4.21.3` (@lukekarrys)
+
 ## [6.5.0](https://github.com/npm/cli/compare/arborist-v6.4.0...arborist-v6.5.0) (2023-10-06)
 
 ### Features

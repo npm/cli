@@ -1,6 +1,6 @@
 {
   "name": "libnpmdiff",
-  "version": "5.0.20",
+  "version": "5.0.21",
   "description": "The registry diff",
   "repository": {
     "type": "git",
