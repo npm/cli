@@ -261,8 +261,6 @@ graph LR;
 ```mermaid
 graph LR;
   agent-base-->debug;
-  agentkeepalive-->debug;
-  agentkeepalive-->depd;
   agentkeepalive-->humanize-ms;
   aggregate-error-->clean-stack;
   aggregate-error-->indent-string;
