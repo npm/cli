@@ -33,7 +33,7 @@
   ],
   "license": "ISC",
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "posttest": "node ../.. run lint",
     "test": "tap",
     "snap": "tap",
@@ -51,7 +51,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/template-oss": "4.21.3",
     "bin-links": "^4.0.1",
     "chalk": "^5.2.0",
     "just-extend": "^6.2.0",
@@ -73,7 +73,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
+    "version": "4.21.3",
     "content": "../../scripts/template-oss/index.js"
   }
 }

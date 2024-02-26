@@ -2,6 +2,8 @@
 
 # ignore everything in the root
 /*
+# transient test directories
+tap-testdir*/
 
 # keep these
 !**/.gitignore

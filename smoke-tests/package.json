@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
+    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "node .. run lint -- --fix",
@@ -21,7 +21,7 @@
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^6.0.2",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/template-oss": "4.21.3",
     "proxy": "^2.1.1",
     "tap": "^16.3.4",
     "which": "^3.0.0"
@@ -30,7 +30,7 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
+    "version": "4.21.3",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
