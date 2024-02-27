@@ -22,7 +22,7 @@ t.teardown(stop)
 
 const cache = t.testdir()
 
-// track the warnings that are emitted.  returns a function that removes
+// track the warnings that are emitted. returns a function that removes
 // the listener and provides the list of what it saw.
 const warningTracker = () => {
   const list = []
@@ -126,6 +126,18 @@ t.test('fail on mismatched engine when engineStrict is set', async t => {
   }), { code: 'EBADENGINE' })
 })
 
+t.test('fail on mismatched devEngine when engineStrict is set', async t => {
+  const path = resolve(fixtures, 'dev-engine-specification')
+
+  t.rejects(buildIdeal(path, {
+    ...OPT,
+    nodeVersion: '12.18.4',
+    engineStrict: true,
+  }).then(() => {
+    throw new Error('failed to fail')
+  }), { code: 'EBADENGINE' })
+})
+
 t.test('fail on malformed package.json', t => {
   const path = resolve(fixtures, 'malformed-json')
 
@@ -147,6 +159,18 @@ t.test('ignore mismatched engine for optional dependencies', async () => {
 
 t.test('warn on mismatched engine when engineStrict is false', t => {
   const path = resolve(fixtures, 'engine-specification')
+  const check = warningTracker()
+  return buildIdeal(path, {
+    ...OPT,
+    nodeVersion: '12.18.4',
+    engineStrict: false,
+  }).then(() => t.match(check(), [
+    ['warn', 'EBADENGINE'],
+  ]))
+})
+
+t.test('warn on mismatched devEngine when engineStrict is false', t => {
+  const path = resolve(fixtures, 'dev-engine-specification')
   const check = warningTracker()
   return buildIdeal(path, {
     ...OPT,

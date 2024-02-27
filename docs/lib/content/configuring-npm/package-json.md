@@ -1066,6 +1066,30 @@ Unless the user has set the
 advisory only and will only produce warnings when your package is installed as a
 dependency.
 
+### devEngines
+
+This field works similar to the `engines` field. It is only respected at the project root.
+
+All properties of `devEngines` are optional. Here is a TypeScript interface describing the schema of the object:
+```ts
+interface DevEngines {
+  os?: DevEngineDependency | DevEngineDependency[];
+  cpu?: DevEngineDependency | DevEngineDependency[];
+  runtime?: DevEngineDependency | DevEngineDependency[];
+  packageManager?: DevEngineDependency | DevEngineDependency[];
+}
+
+interface DevEngineDependency {
+  name: string;
+  version?: string;
+  onFail?: 'ignore' | 'warn' | 'error';
+}
+```
+
+`onFail` defaults to `error`. When an unknown `onFail` value is provided, it will error.
+
+When present, the `engines` field is ignored.
+
 ### os
 
 You can specify which operating systems your
