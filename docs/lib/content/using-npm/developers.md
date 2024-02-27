@@ -61,8 +61,9 @@ goes in that file.  At the very least, you need:
 * name: This should be a string that identifies your project.  Please do
   not use the name to specify that it runs on node, or is in JavaScript.
   You can use the "engines" field to explicitly state the versions of node
-  (or whatever else) that your program requires, and it's pretty well
-  assumed that it's JavaScript.
+  (or whatever else) that your program requires (and "devEngines" when the
+  requirements for developers differ from the requirements for users), and
+  it's pretty well assumed that it's JavaScript.
 
   It does not necessarily need to match your github repository name.
 
@@ -71,8 +72,12 @@ goes in that file.  At the very least, you need:
 * version: A semver-compatible version.
 
 * engines: Specify the versions of node (or whatever else) that your
-  program runs on.  The node API changes a lot, and there may be bugs or
-  new functionality that you depend on.  Be explicit.
+  program runs on. The node API changes a lot, and there may be bugs or
+  new functionality that you depend on. Be explicit.
+
+* devEngines: Specify the versions of node (or whatever else) that your
+  program needs for development. The node API changes a lot, and there may
+  be bugs or new functionality that you depend on. Be explicit.
 
 * author: Take some credit.
 

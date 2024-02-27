@@ -1051,6 +1051,12 @@ Unless the user has set the
 advisory only and will only produce warnings when your package is installed as a
 dependency.
 
+### devEngines
+
+This field works exactly like the `engines` field, but it is only respected at the project root.
+
+When present, the `engines` field is ignored.
+
 ### os
 
 You can specify which operating systems your

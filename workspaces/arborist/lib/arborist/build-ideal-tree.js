@@ -232,7 +232,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     for (const node of this.idealTree.inventory.values()) {
       if (!node.optional) {
         try {
-          checkEngine(node.package, npmVersion, nodeVersion, this[_force])
+          checkEngine(node.package, npmVersion, nodeVersion, this[_force], node.isProjectRoot)
         } catch (err) {
           if (engineStrict) {
             throw err

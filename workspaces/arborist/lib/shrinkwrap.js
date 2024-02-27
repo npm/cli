@@ -92,6 +92,7 @@ const pkgMetaKeys = [
   'acceptDependencies',
   'funding',
   'engines',
+  'devEngines',
   'os',
   'cpu',
   '_integrity',
