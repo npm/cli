@@ -637,7 +637,8 @@ recommended that you do not use this option!
 
 #### \`foreground-scripts\`
 
-* Default: false
+* Default: \`false\` unless when using \`npm pack\` or \`npm publish\` where it
+  defaults to \`true\`
 * Type: Boolean
 
 Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`)
