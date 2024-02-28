@@ -919,8 +919,6 @@ const retrieveNodesFromParsedAst = async (opts) => {
   return results.collect(rootAstNode)
 }
 
-// We are keeping this async in the event that we do add async operators, we
-// won't have to have a breaking change on this function signature.
 const querySelectorAll = async (targetNode, query, flatOptions) => {
   // This never changes ever we just pass it around. But we can't scope it to
   // this whole file if we ever want to support concurrent calls to this
