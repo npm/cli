@@ -11,7 +11,7 @@ const auditError = async (t, { command, error, ...config } = {}) => {
     command,
     config,
     exec: true,
-    prefixDir: { 'package.json': '{}', 'package-lock.json': '{}' },
+    prefixDir: { 'package.json': '{ "name": "does not matter" }', 'package-lock.json': '{}' },
   })
 
   const res = {}
