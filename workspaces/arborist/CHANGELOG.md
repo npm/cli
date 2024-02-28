@@ -1,5 +1,20 @@
 # Changelog
 
+## [7.4.0](https://github.com/npm/cli/compare/arborist-v7.3.1...arborist-v7.4.0) (2024-02-28)
+
+### Features
+
+* [`2366edc`](https://github.com/npm/cli/commit/2366edcaf2b32b5d1c6a7c03184c59eef0e08eae) [#7218](https://github.com/npm/cli/pull/7218) query: add :vuln pseudo selector (@wraithgar)
+
+### Bug Fixes
+
+* [`6d1789c`](https://github.com/npm/cli/commit/6d1789cd5f3c8aad4ef83e38c4f5d131460dad0f) [#7237](https://github.com/npm/cli/pull/7237) Arborist code cleanup (#7237) (@wraithgar)
+* [`ed17276`](https://github.com/npm/cli/commit/ed172762e6a0bb020bf8a0cd1e566c3ba67fc070) [#7218](https://github.com/npm/cli/pull/7218) query-selector: don't look up private packages on :outdated (@wraithgar)
+
+### Dependencies
+
+* [`16d4c9f`](https://github.com/npm/cli/commit/16d4c9f0e48a18719f1461460504a4228f8f663d) [#7218](https://github.com/npm/cli/pull/7218) `@npmcli/query@3.1.0`
+
 ## [7.3.1](https://github.com/npm/cli/compare/arborist-v7.3.0...arborist-v7.3.1) (2024-01-24)
 
 ### Bug Fixes
