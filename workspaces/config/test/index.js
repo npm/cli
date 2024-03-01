@@ -908,6 +908,55 @@ t.test('finding the global prefix', t => {
   t.end()
 })
 
+t.test('manages the save flag when flat is retrieved', t => {
+  const npmPath = __dirname
+  t.test('does not set save to true if a save flag is not passed', async t => {
+    const c = new Config({
+      argv: [process.execPath, __filename],
+      shorthands,
+      definitions,
+      npmPath,
+      flatten,
+    })
+    await c.load()
+    t.equal(c.flat.save, false)
+  })
+  t.test('does not set save to true if flag is passed that does not efffect saveType', async t => {
+    const c = new Config({
+      argv: [process.execPath, __filename, '--save-exact'],
+      shorthands,
+      definitions,
+      npmPath,
+      flatten,
+    })
+    await c.load()
+    t.equal(c.flat.save, false)
+  })
+  t.test('does not set save to true if a negative save flag is passed', async t => {
+    const c = new Config({
+      argv: [process.execPath, __filename, '--save-dev=false'],
+      shorthands,
+      definitions,
+      npmPath,
+      flatten,
+    })
+    await c.load()
+    t.equal(c.flat.save, false)
+  })
+  t.test('sets save to true if a save flag is passed', async t => {
+    const c = new Config({
+      argv: [process.execPath, __filename, '--save-prod'],
+      shorthands,
+      definitions,
+      npmPath,
+      flatten,
+    })
+    await c.load()
+    t.equal(c.flat.save, true)
+  })
+  t.end()
+})
+
 t.test('finding the local prefix', t => {
   const path = t.testdir({
     hasNM: {

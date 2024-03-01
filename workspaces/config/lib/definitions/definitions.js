@@ -1813,7 +1813,6 @@ define('save-dev', {
       return
     }
 
-    flatOptions.save = true
     flatOptions.saveType = 'dev'
   },
 })
@@ -1850,8 +1849,6 @@ define('save-optional', {
       return
     }
 
-    flatOptions.save = true
-
     if (flatOptions.saveType === 'peerOptional') {
       return
     }
@@ -1879,8 +1876,6 @@ define('save-peer', {
       }
       return
     }
-
-    flatOptions.save = true
 
     if (flatOptions.saveType === 'peerOptional') {
       return
@@ -1933,7 +1928,6 @@ define('save-prod', {
       return
     }
 
-    flatOptions.save = true
     flatOptions.saveType = 'prod'
   },
 })

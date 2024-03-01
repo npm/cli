@@ -583,8 +583,7 @@ t.test('saveType', t => {
     t.strictSame(flat, { saveType: 'dev' }, 'ignore if false and not already prod')
     obj['save-prod'] = true
     mockDefs()['save-prod'].flatten('save-prod', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'prod', save: true }, 'set to prod if true, and set save to true')
+    t.strictSame(flat, { saveType: 'prod' }, 'set to prod if true')
     t.end()
   })
 
@@ -602,7 +601,7 @@ t.test('saveType', t => {
     t.strictSame(flat, { saveType: 'prod' }, 'ignore if false and not already dev')
     obj['save-dev'] = true
     mockDefs()['save-dev'].flatten('save-dev', obj, flat)
-    t.strictSame(flat, { saveType: 'dev', save: true }, 'set to dev if true, and set save to true')
+    t.strictSame(flat, { saveType: 'dev' }, 'set to dev if true')
     t.end()
   })
 
@@ -626,33 +625,27 @@ t.test('saveType', t => {
 
   t.test('save-peer', t => {
     const obj = { 'save-peer': false }
-    let flat = {}
+    const flat = {}
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
     t.strictSame(flat, {}, 'no effect if false and not yet set')
 
     obj['save-peer'] = true
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'peer', save: true }, 'set saveType to peer if unset, and set save to true')
+    t.strictSame(flat, { saveType: 'peer' }, 'set saveType to peer if unset')
 
-    flat = { saveType: 'optional' }
+    flat.saveType = 'optional'
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'peerOptional', save: true },
-      'set to peerOptional, and set save to true if optional already')
+    t.strictSame(flat, { saveType: 'peerOptional' }, 'set to peerOptional if optional already')
 
-    flat = { saveType: 'optional' }
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'peerOptional', save: true }, 'just set save to true if already peerOptional')
+    t.strictSame(flat, { saveType: 'peerOptional' }, 'no effect if already peerOptional')
 
     obj['save-peer'] = false
-    flat = { saveType: 'optional' }
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
     t.strictSame(flat, { saveType: 'optional' }, 'switch peerOptional to optional if false')
 
     obj['save-peer'] = false
-    flat = { saveType: 'peer' }
+    flat.saveType = 'peer'
     mockDefs()['save-peer'].flatten('save-peer', obj, flat)
     t.strictSame(flat, {}, 'remove saveType if peer and setting false')
 
@@ -661,32 +654,26 @@ t.test('saveType', t => {
 
   t.test('save-optional', t => {
     const obj = { 'save-optional': false }
-    let flat = {}
+    const flat = {}
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
     t.strictSame(flat, {}, 'no effect if false and not yet set')
 
     obj['save-optional'] = true
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
-    t.strictSame(flat, { saveType: 'optional', save: true },
-      'set saveType to optional if unset, and set save to true')
+    t.strictSame(flat, { saveType: 'optional' }, 'set saveType to optional if unset')
 
-    flat = { saveType: 'peer' }
+    flat.saveType = 'peer'
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'peerOptional', save: true },
-      'set to peerOptional if peer already, and set save to true')
+    t.strictSame(flat, { saveType: 'peerOptional' }, 'set to peerOptional if peer already')
 
-    flat = { saveType: 'peer' }
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
-    t.strictSame(flat,
-      { saveType: 'peerOptional', save: true }, 'just set save to true if already peerOptional')
+    t.strictSame(flat, { saveType: 'peerOptional' }, 'no effect if already peerOptional')
 
     obj['save-optional'] = false
-    flat = { saveType: 'peer' }
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
     t.strictSame(flat, { saveType: 'peer' }, 'switch peerOptional to peer if false')
 
-    flat = { saveType: 'optional' }
+    flat.saveType = 'optional'
     mockDefs()['save-optional'].flatten('save-optional', obj, flat)
     t.strictSame(flat, {}, 'remove saveType if optional and setting false')
 

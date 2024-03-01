@@ -232,6 +232,11 @@ class Config {
     for (const { data } of this.data.values()) {
       this.#flatten(data, this.#flatOptions)
     }
+
+    // Ensure 'save' is true if a saveType has been specified
+    if (this.#flatOptions.saveType) {
+      this.#flatOptions.save = true
+    }
     this.#flatOptions.nodeBin = this.execPath
     this.#flatOptions.npmBin = this.npmBin
     process.emit('timeEnd', 'config:load:flatten')
