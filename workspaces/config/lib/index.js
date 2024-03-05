@@ -233,8 +233,9 @@ class Config {
       this.#flatten(data, this.#flatOptions)
     }
 
-    // Ensure 'save' is true if a saveType has been specified
-    if (this.#flatOptions.saveType) {
+    // Only set 'save' to true if a saveType has been specified
+    // and if 'save' is false due to non-default config
+    if (!this.isDefault('save') && this.#flatOptions.saveType) {
       this.#flatOptions.save = true
     }
     this.#flatOptions.nodeBin = this.execPath
