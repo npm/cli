@@ -944,9 +944,9 @@ t.test('manages the save flag when flat is retrieved', t => {
     const c = await buildConfig(['--no-save'], true)
     t.equal(c.flat.save, false)
   })
-  t.test('overwrites save if --no-save is present and also a save flag', async t => {
-    const c = await buildConfig(['--save-prod', '--no-save'], false)
-    t.equal(c.flat.save, true)
+  t.test('oes not overwrite save --no-save is present in addition to save flag', async t => {
+    const c = await buildConfig(['--save-prod', '--no-save'], true)
+    t.equal(c.flat.save, false)
   })
   t.end()
 })
