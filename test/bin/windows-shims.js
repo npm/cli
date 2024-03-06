@@ -94,14 +94,12 @@ t.test('run shims', t => {
     node_modules: {
       npm: {
         bin: {
-          'npm-prefix.js': readFileSync(join(BIN, 'npm-prefix.js')),
-          'npx-cli.js': `throw new Error('this should not be called')`,
-          'npm-cli.js': `
-            const assert = require('assert')
+          'npm-prefix.js': `
             const { resolve } = require('path')
-            assert.equal(process.argv.slice(2).join(' '), 'prefix -g')
             console.log(resolve(__dirname, '../../../global-prefix'))
           `,
+          'npx-cli.js': `throw new Error('local npx should not be called')`,
+          'npm-cli.js': `throw new Error('local npm should not be called')`,
         },
       },
     },
