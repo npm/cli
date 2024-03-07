@@ -23,7 +23,7 @@ async function main () {
     console.log(config.globalPrefix)
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.trace(err)
+    console.error(err)
     process.exit(1)
   }
 }
