@@ -24,7 +24,6 @@ const PackageJson = require('@npmcli/package-json')
 const packageContents = require('@npmcli/installed-package-contents')
 const runScript = require('@npmcli/run-script')
 const { checkEngine, checkPlatform } = require('npm-install-checks')
-const _force = Symbol.for('force')
 
 const treeCheck = require('../tree-check.js')
 const relpath = require('../relpath.js')
@@ -48,8 +47,6 @@ const _retireShallowNodes = Symbol.for('retireShallowNodes')
 const _getBundlesByDepth = Symbol('getBundlesByDepth')
 const _registryResolved = Symbol('registryResolved')
 const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
-const _workspaces = Symbol.for('workspaces')
-const _workspacesEnabled = Symbol.for('workspacesEnabled')
 
 // shared by rebuild mixin
 const _trashList = Symbol.for('trashList')
@@ -91,13 +88,10 @@ const _validateNodeModules = Symbol('validateNodeModules')
 const _nmValidated = Symbol('nmValidated')
 const _validatePath = Symbol('validatePath')
 const _reifyPackages = Symbol.for('reifyPackages')
-const _includeWorkspaceRoot = Symbol.for('includeWorkspaceRoot')
 
 const _omitDev = Symbol('omitDev')
 const _omitOptional = Symbol('omitOptional')
 const _omitPeer = Symbol('omitPeer')
-
-const _global = Symbol.for('global')
 
 const _pruneBundledMetadeps = Symbol('pruneBundledMetadeps')
 
@@ -142,7 +136,7 @@ module.exports = cls => class Reifier extends cls {
   async reify (options = {}) {
     const linked = (options.installStrategy || this.options.installStrategy) === 'linked'
 
-    if (this[_packageLockOnly] && this[_global]) {
+    if (this[_packageLockOnly] && this.options.global) {
       const er = new Error('cannot generate lockfile for global packages')
       er.code = 'ESHRINKWRAPGLOBAL'
       throw er
@@ -287,7 +281,7 @@ module.exports = cls => class Reifier extends cls {
         .then(() => process.emit('timeEnd', 'reify:loadTrees'))
     }
 
-    const actualOpt = this[_global] ? {
+    const actualOpt = this.options.global ? {
       ignoreMissing: true,
       global: true,
       filter: (node, kid) => {
@@ -314,7 +308,7 @@ module.exports = cls => class Reifier extends cls {
       },
     } : { ignoreMissing: true }
 
-    if (!this[_global]) {
+    if (!this.options.global) {
       return Promise.all([
         this.loadActual(actualOpt),
         this.buildIdealTree(bitOpt),
@@ -341,12 +335,12 @@ module.exports = cls => class Reifier extends cls {
     // to just invalidate the parts that changed, but avoid walking the
     // whole tree again.
 
-    const includeWorkspaces = this[_workspacesEnabled]
-    const includeRootDeps = !this[_workspacesEnabled]
-      || this[_includeWorkspaceRoot] && this[_workspaces].length > 0
+    const includeWorkspaces = this.options.workspacesEnabled
+    const includeRootDeps = !includeWorkspaces
+      || this.options.includeWorkspaceRoot && this.options.workspaces.length > 0
 
     const filterNodes = []
-    if (this[_global] && this.explicitRequests.size) {
+    if (this.options.global && this.explicitRequests.size) {
       const idealTree = this.idealTree.target
       const actualTree = this.actualTree.target
       // we ONLY are allowed to make changes in the global top-level
@@ -364,7 +358,7 @@ module.exports = cls => class Reifier extends cls {
     } else {
       if (includeWorkspaces) {
         // add all ws nodes to filterNodes
-        for (const ws of this[_workspaces]) {
+        for (const ws of this.options.workspaces) {
           const ideal = this.idealTree.children.get(ws)
           if (ideal) {
             filterNodes.push(ideal)
@@ -656,7 +650,7 @@ module.exports = cls => class Reifier extends cls {
 
   // do not allow node_modules to be a symlink
   async [_validateNodeModules] (nm) {
-    if (this[_force] || this[_nmValidated].has(nm)) {
+    if (this.options.force || this[_nmValidated].has(nm)) {
       return
     }
     const st = await lstat(nm).catch(() => null)
@@ -992,11 +986,11 @@ module.exports = cls => class Reifier extends cls {
     const tree = this.idealTree
 
     // if we're operating on a workspace, only audit the workspace deps
-    if (this[_workspaces] && this[_workspaces].length) {
+    if (this.options.workspaces.length) {
       options.filterSet = this.workspaceDependencySet(
         tree,
-        this[_workspaces],
-        this[_includeWorkspaceRoot]
+        this.options.workspaces,
+        this.options.includeWorkspaceRoot
       )
     }
 
@@ -1220,7 +1214,7 @@ module.exports = cls => class Reifier extends cls {
     // saveIdealTree to be able to write the lockfile by default.
     const saveIdealTree = !(
       (!save && !hasUpdates)
-      || this[_global]
+      || this.options.global
       || this[_dryRun]
     )
 
@@ -1566,7 +1560,7 @@ module.exports = cls => class Reifier extends cls {
     this.actualTree = this.idealTree
     this.idealTree = null
 
-    if (!this[_global]) {
+    if (!this.options.global) {
       await this.actualTree.meta.save()
       const ignoreScripts = !!this.options.ignoreScripts
       // if we aren't doing a dry run or ignoring scripts and we actually made changes to the dep
@@ -1592,5 +1586,23 @@ module.exports = cls => class Reifier extends cls {
         }
       }
     }
+  }
+
+  async dedupe (options = {}) {
+    // allow the user to set options on the ctor as well.
+    // XXX: deprecate separate method options objects.
+    options = { ...this.options, ...options }
+    const tree = await this.loadVirtual().catch(() => this.loadActual())
+    const names = []
+    for (const name of tree.inventory.query('name')) {
+      if (tree.inventory.query('name', name).size > 1) {
+        names.push(name)
+      }
+    }
+    return this.reify({
+      ...options,
+      preferDedupe: true,
+      update: { names },
+    })
   }
 }
