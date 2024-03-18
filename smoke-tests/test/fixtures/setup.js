@@ -44,8 +44,8 @@ const testdirHelper = (obj) => {
   return obj
 }
 
-const getNpmRoot = (helpText) => {
-  return helpText
+const getNpmRoot = (r) => {
+  return r.stdout
     .split('\n')
     .slice(-1)[0]
     .match(/^npm@.*?\s(.*)$/)
@@ -152,7 +152,6 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
   const baseSpawn = async (spawnCmd, spawnArgs, {
     cwd = paths.project,
     env,
-    stderr: _stderr,
     ...opts } = {}
   ) => {
     log(`CWD: ${cwd}`)
@@ -175,7 +174,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     log(stdout)
     log('='.repeat(40))
 
-    return _stderr ? { stderr, stdout } : stdout
+    return { stderr, stdout }
   }
 
   const baseNpm = async (...a) => {
@@ -255,7 +254,10 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     paths,
     registry,
     npmLocalTarball: async () => SMOKE_PUBLISH_TARBALL ??
-      npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r)),
+      npmLocal('pack', `--pack-destination=${root}`).then(r => {
+        const output = r.stdout.trim().split('\n')
+        return join(root, output[output.length - 1])
+      }),
   }
 }
 

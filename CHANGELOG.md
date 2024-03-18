@@ -1,5 +1,53 @@
 # Changelog
 
+## [10.5.0](https://github.com/npm/cli/compare/v10.4.0...v10.5.0) (2024-02-28)
+
+### Features
+
+* [`2366edc`](https://github.com/npm/cli/commit/2366edcaf2b32b5d1c6a7c03184c59eef0e08eae) [#7218](https://github.com/npm/cli/pull/7218) query: add :vuln pseudo selector (@wraithgar)
+* [`4f3ddbb`](https://github.com/npm/cli/commit/4f3ddbbe88df7c94d1e06e660928a962e973f332) [#5966](https://github.com/npm/cli/pull/5966) add --expect-entries to `npm query` (@wraithgar)
+
+### Bug Fixes
+
+* [`818957c`](https://github.com/npm/cli/commit/818957c0f88c859bf3ea90ff440ec5d9d9e990b9) [#7158](https://github.com/npm/cli/pull/7158) pack, publish: default foreground-scripts to true (#7158) (@ljharb)
+* [`d04111d`](https://github.com/npm/cli/commit/d04111d48ca59fce27909712b328fe5cfc4d016d) [#7197](https://github.com/npm/cli/pull/7197) view: filter out invalid semver (#7197) (@wraithgar)
+* [`b0a3ba0`](https://github.com/npm/cli/commit/b0a3ba0b99ce5920722244f1ccb8b830826abef4) [#7195](https://github.com/npm/cli/pull/7195) prevent adding invalid dist-tag (#7195) (@wraithgar)
+
+### Documentation
+
+* [`c4741fe`](https://github.com/npm/cli/commit/c4741fee8b4e6cdca90c6773385ff710c8b3f7f5) [#7254](https://github.com/npm/cli/pull/7254) Remove additional example and comments about uninstall script (#7254) (@rveerd)
+* [`686a622`](https://github.com/npm/cli/commit/686a622480d32eabf2d69982e422ba3dcd8a6f7c) [#7247](https://github.com/npm/cli/pull/7247) scope: update example command to work in windows (#7247) (@robertobasile84)
+* [`95b5057`](https://github.com/npm/cli/commit/95b505738a73ba740227a41b8c7c87013af5acaf) [#5966](https://github.com/npm/cli/pull/5966) clarify in-range and out-of-range in dependency selectors (@wraithgar)
+* [`5b7184f`](https://github.com/npm/cli/commit/5b7184f3aaf5a9ca58418b6d029616088964ed0a) [#7190](https://github.com/npm/cli/pull/7190) workspaces: fix grammar (#7190) (@alekstech)
+* [`0dd03f9`](https://github.com/npm/cli/commit/0dd03f9450e0cf57fa85ad2ef74b5a54f3c775a9) [#7182](https://github.com/npm/cli/pull/7182) fix typos (#7182) (@GoodDaisy)
+
+### Dependencies
+
+* [`16d4c9f`](https://github.com/npm/cli/commit/16d4c9f0e48a18719f1461460504a4228f8f663d) [#7218](https://github.com/npm/cli/pull/7218) `@npmcli/query@3.1.0`
+* [`06247d1`](https://github.com/npm/cli/commit/06247d18fd3573d48b220512e84f87eaab06210a) [#7242](https://github.com/npm/cli/pull/7242) `spdx-license-ids@3.0.17`
+* [`79d1e0b`](https://github.com/npm/cli/commit/79d1e0bc9f781b02af876f0615595976958ca410) [#7242](https://github.com/npm/cli/pull/7242) `spdx-exceptions@2.5.0`
+* [`67e853a`](https://github.com/npm/cli/commit/67e853a507ab31af5b82fd3fcbcb2fe2f18cad5d) [#7242](https://github.com/npm/cli/pull/7242) `socks@2.8.0`
+* [`4c9fe4b`](https://github.com/npm/cli/commit/4c9fe4be4df39960cfadef2ca07465c90d9ee414) [#7242](https://github.com/npm/cli/pull/7242) `lru-cache@10.2.0`
+* [`4a50c5a`](https://github.com/npm/cli/commit/4a50c5adaa0f28a8e9f6433c34b0eedfc73885a1) [#7242](https://github.com/npm/cli/pull/7242) `https-proxy-agent@7.0.4`
+* [`ed3f254`](https://github.com/npm/cli/commit/ed3f254a09d8f0da49e927e8b7fbd81c1232208e) [#7242](https://github.com/npm/cli/pull/7242) `http-proxy-agent@7.0.2`
+* [`8ec4fd5`](https://github.com/npm/cli/commit/8ec4fd541be937a965e685ad4dbbfb57ae3b2462) [#7242](https://github.com/npm/cli/pull/7242) `hasown@2.0.1`
+* [`98b1189`](https://github.com/npm/cli/commit/98b11894b770065979c8fefb87861c156ad0c895) [#7242](https://github.com/npm/cli/pull/7242) `@npmcli/agent@2.2.1`
+* [`dafa903`](https://github.com/npm/cli/commit/dafa903fe9083343fd17bdd3a5acc6f9acc8f356) [#7242](https://github.com/npm/cli/pull/7242) `sigstore@2.2.2`
+* [`d0bcb76`](https://github.com/npm/cli/commit/d0bcb76bd635eefcb1fae39e831e227a1852ef68) [#7242](https://github.com/npm/cli/pull/7242) `diff@5.2.0`
+* [`a13808e`](https://github.com/npm/cli/commit/a13808e2e8ed0507e12ad27f8b212e5b0b6ccae8) [#7242](https://github.com/npm/cli/pull/7242) `semver@7.6.0`
+* [`d6521ac`](https://github.com/npm/cli/commit/d6521ac9c43ccf909ff4d1564dffa0f07e260503) [#7242](https://github.com/npm/cli/pull/7242) `@sigstore/tuf@2.3.1`
+* [`43cac2f`](https://github.com/npm/cli/commit/43cac2f990aefca283d49e26ff83ba5d6fb28313) [#7242](https://github.com/npm/cli/pull/7242) `ip@2.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.4.0): `@npmcli/arborist@7.4.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v8.2.0): `@npmcli/config@8.2.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.7): `libnpmdiff@6.0.7`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.8): `libnpmexec@7.0.8`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.5): `libnpmfund@5.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.7): `libnpmpack@6.0.7`
+
+### Chores
+
+* [`d6bc684`](https://github.com/npm/cli/commit/d6bc6840edce1957c0ea0ed618819cbfe23fa611) [#7242](https://github.com/npm/cli/pull/7242) update devDependencies in lockfile (@wraithgar)
+
 ## [10.4.0](https://github.com/npm/cli/compare/v10.3.0...v10.4.0) (2024-01-24)
 
 ### Features
