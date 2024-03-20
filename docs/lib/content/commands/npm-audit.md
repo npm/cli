@@ -47,6 +47,13 @@ Registry signatures can be verified using the following `audit` command:
 $ npm audit signatures
 ```
 
+The `audit signatures` command will also verify the provenance attestations of
+downloaded packages. Because provenance attestations are such a new feature,
+security features may be added to (or changed in) the attestation format over
+time. To ensure that you're always able to verify attestation signatures check
+that you're running the latest version of the npm CLI. Please note this often
+means updating npm beyond the version that ships with Node.js.
+
 The npm CLI supports registry signatures and signing keys provided by any registry if the following conventions are followed:
 
 1. Signatures are provided in the package's `packument` in each published version within the `dist` object:
