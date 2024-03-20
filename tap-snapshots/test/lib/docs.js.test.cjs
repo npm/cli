@@ -752,6 +752,18 @@ CI setup.
 
 This value is not exported to the environment for child processes.
 
+#### \`ignore-publish-config\`
+
+* Default: false
+* Type: Boolean
+
+When using \`npm publish\`, the \`--ignore-publish-config\` flag overrides the
+registry URL specified in the package's \`publishConfig\` field, allowing
+users to publish to a different repository. Similarly, when executing \`npm
+unpublish\`
+
+
+
 #### \`ignore-scripts\`
 
 * Default: false
@@ -2058,6 +2070,7 @@ exports[`test/lib/docs.js TAP config > all keys 1`] = `
 Array [
   "_auth",
   "access",
+  "ignore-publish-config",
   "all",
   "allow-same-version",
   "also",
@@ -2218,6 +2231,7 @@ exports[`test/lib/docs.js TAP config > keys that are flattened 1`] = `
 Array [
   "_auth",
   "access",
+  "ignore-publish-config",
   "all",
   "allow-same-version",
   "also",
@@ -2423,6 +2437,7 @@ Object {
   "heading": "npm",
   "httpsProxy": null,
   "ifPresent": false,
+  "ignorePublishConfig": false,
   "ignoreScripts": false,
   "includeStaged": false,
   "includeWorkspaceRoot": false,
@@ -3864,7 +3879,7 @@ Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root]
-[--provenance|--provenance-file <file>]
+[--provenance|--provenance-file <file>] [--ignore-publish-config]
 
 Run "npm help publish" for more info
 
@@ -3881,6 +3896,7 @@ npm publish <package-spec>
 #### \`include-workspace-root\`
 #### \`provenance\`
 #### \`provenance-file\`
+#### \`ignore-publish-config\`
 `
 
 exports[`test/lib/docs.js TAP usage query > must match snapshot 1`] = `
@@ -4338,7 +4354,7 @@ npm unpublish [<package-spec>]
 Options:
 [--dry-run] [-f|--force]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[-ws|--workspaces] [--ignore-publish-config]
 
 Run "npm help unpublish" for more info
 
@@ -4350,6 +4366,7 @@ npm unpublish [<package-spec>]
 #### \`force\`
 #### \`workspace\`
 #### \`workspaces\`
+#### \`ignore-publish-config\`
 `
 
 exports[`test/lib/docs.js TAP usage unstar > must match snapshot 1`] = `

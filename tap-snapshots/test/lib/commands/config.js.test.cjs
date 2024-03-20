@@ -15,6 +15,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "userloaded": "yes",
   "globalloaded": "yes",
   "access": null,
+  "ignore-publish-config": false,
   "all": false,
   "allow-same-version": false,
   "also": null,
@@ -228,6 +229,7 @@ globalconfig = "{GLOBALPREFIX}/npmrc"
 heading = "npm" 
 https-proxy = null 
 if-present = false 
+ignore-publish-config = false 
 ignore-scripts = false 
 include = [] 
 include-staged = false 
