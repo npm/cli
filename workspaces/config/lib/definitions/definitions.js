@@ -172,6 +172,18 @@ define('access', {
   flatten,
 })
 
+define('ignore-publish-config', {
+  default: false,
+  type: Boolean,
+  description: `
+    When using \`npm publish\`, the \`--ignore-publish-config\` flag overrides the registry URL 
+    specified in the package's \`publishConfig\` field, allowing users to publish to a different 
+    repository.
+    Similarly, when executing \`npm unpublish\`
+  `,
+  flatten,
+})
+
 define('all', {
   default: false,
   type: Boolean,
