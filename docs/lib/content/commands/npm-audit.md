@@ -94,7 +94,7 @@ Keys response:
 - `scheme`: only `ecdsa-sha2-nistp256` is currently supported by the npm CLI
 - `key`: base64 encoded public key
 
-See this [example key's response from the public npm registry](https://registry.npmjs.org/-/npm/v1/keys").
+See this [example key's response from the public npm registry](https://registry.npmjs.org/-/npm/v1/keys).
 
 ### Audit Endpoints
 
