@@ -2,6 +2,7 @@
 const mapWorkspaces = require('@npmcli/map-workspaces')
 
 const { resolve } = require('path')
+const assert = require('assert');
 
 const nameFromFolder = require('@npmcli/name-from-folder')
 const consistentResolve = require('../consistent-resolve.js')
@@ -200,6 +201,9 @@ module.exports = cls => class VirtualLoader extends cls {
       const targetPath = resolve(this.path, meta.resolved)
       const targetLoc = relpath(this.path, targetPath)
       const target = nodes.get(targetLoc)
+
+      assert(target, `Missing target node for "${targetLoc}", remove the entry in your lock file and try again.`);
+
       const link = this.#loadLink(location, targetLoc, target, meta)
       nodes.set(location, link)
       nodes.set(targetLoc, link.target)
