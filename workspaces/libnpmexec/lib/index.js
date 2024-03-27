@@ -90,6 +90,7 @@ const exec = async (opts) => {
     path = '.',
     runPath = '.',
     scriptShell = isWindows ? process.env.ComSpec || 'cmd' : 'sh',
+    stdio,
     ...flatOptions
   } = opts
 
@@ -104,6 +105,7 @@ const exec = async (opts) => {
     binPaths,
     runPath,
     scriptShell,
+    stdio,
   })
 
   // interactive mode
