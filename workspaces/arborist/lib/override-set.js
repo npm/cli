@@ -44,6 +44,43 @@ class OverrideSet {
     }
   }
 
+  childrenAreEqual (other) {
+    if (this.children.size !== other.children.size) {
+      return false
+    }
+    for (const [key] of this.children) {
+      if (!other.children.has(key)) {
+        return false
+      }
+      if (this.children.get(key).value !== other.children.get(key).value) {
+        return false
+      }
+      if (!this.children.get(key).childrenAreEqual(other.children.get(key))) {
+        return false
+      }
+    }
+    return true
+  }
+
+  isEqual (other) {
+    if (this === other) {
+      return true
+    }
+    if (!other) {
+      return false
+    }
+    if (this.key !== other.key || this.value !== other.value) {
+      return false
+    }
+    if (!this.childrenAreEqual(other)) {
+      return false
+    }
+    if (!this.parent) {
+      return !other.parent
+    }
+    return this.parent.isEqual(other.parent)
+  }
+
   getEdgeRule (edge) {
     for (const rule of this.ruleset.values()) {
       if (rule.name !== edge.name) {
