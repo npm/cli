@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.4.1](https://github.com/npm/cli/compare/arborist-v7.4.0...arborist-v7.4.1) (2024-03-27)
+
+### Bug Fixes
+
+* [`9bffa13`](https://github.com/npm/cli/commit/9bffa13e0b96efe1039d9075fdcb11d5946b2f90) [#7320](https://github.com/npm/cli/pull/7320) query: properly return :missing nodes (#7320) (@wraithgar)
+
 ## [7.4.0](https://github.com/npm/cli/compare/arborist-v7.3.1...arborist-v7.4.0) (2024-02-28)
 
 ### Features
