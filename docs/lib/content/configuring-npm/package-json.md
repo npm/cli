@@ -339,6 +339,27 @@ not much else.
 
 If `main` is not set, it defaults to `index.js` in the package's root folder.
 
+### exports
+
+The exports field is an object that maps entry points to modules. It supports wild cards (`*`) and explicit names.
+
+For example, you could have:
+
+```json
+{
+  "exports": {
+    ".": "./index.js",
+    "./*": "./*.js",
+    "./*.js": "./*.js",
+    "./foo": "./path/to/foo.js"
+  }
+}
+```
+
+If someone installed your package with this in your `package.json`, they could `require("my-package")` and it would be mapped to `./node_modules/my-package/index.js` because of `".": "./index.js"`.<br>
+If they did `require("my-package/bar")` or `require("my-package/bar.js")`, it would be mapped to `./node_modules/my-package/bar.js` because of the wild cards (`*`).<br>
+If they did `require("my-package/foo")` it would be mapped to `./node_modules/my-package/path/to/foo.js` because of the explicit mapping `"./foo": "./path/to/foo.js"`.<br>
+
 ### browser
 
 If your module is meant to be used client-side the browser field should be
