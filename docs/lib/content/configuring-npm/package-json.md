@@ -342,10 +342,10 @@ If `main` is not set, it defaults to `index.js` in the package's root folder.
 ### exports
 
 The exports field is an object that maps entry points to modules. This field is
-supported by Node.js versions including and higher than 12. It acts as a more
-featureful alternative to the main field. Each key can be an explicit path for
-mapping entry points to modules 1 to 1, or it can include a wild card (`*`) for
-mapping multiple entry points that fit the wild card to corrosponding modules.
+only supported by modern Node.js versions. It acts as a more featureful
+alternative to the main field. Each key can be an explicit path for mapping
+entry points to modules 1 to 1, or it can include a wild card (`*`) for mapping
+multiple entry points that fit the wild card to corrosponding modules.
 
 Each value in the exports field object can be an array of entry point string
 where each path will be iterated through and the first path that leads to a
