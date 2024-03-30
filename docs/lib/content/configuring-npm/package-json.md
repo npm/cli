@@ -361,7 +361,8 @@ For example, you could have:
     "./*": "./*.js",
     "./*.js": "./*.js",
     "./foo": "./path/to/foo.js",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./baz": [ "./try-here.js", "./then-try-here.js" ]
   }
 }
 ```
@@ -390,14 +391,16 @@ Here is an example of conditional exports:
       "./*": "./*.cjs",
       "./*.js": "./*.cjs",
       "./foo": "./path/to/foo.cjs",
-      "./package.json": "./package.json"
+      "./package.json": "./package.json",
+      "./baz": [ "./try-here.cjs", "./then-try-here.cjs" ]
     },
     "import": {
       ".": "./index.js",
       "./*": "./*.js",
       "./*.js": "./*.js",
       "./foo": "./path/to/foo.js",
-      "./package.json": "./package.json"
+      "./package.json": "./package.json",
+      "./baz": [ "./try-here.js", "./then-try-here.js" ]
     }
   }
 ```
