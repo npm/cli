@@ -405,6 +405,10 @@ Here is an example of conditional exports:
   }
 ```
 
+More information on the exports field can be found
+[on the Node.js Docs](https://nodejs.org/docs/latest/api/packages.html#package-entry-points)
+.
+
 ### browser
 
 If your module is meant to be used client-side the browser field should be
