@@ -341,7 +341,16 @@ If `main` is not set, it defaults to `index.js` in the package's root folder.
 
 ### exports
 
-The exports field is an object that maps entry points to modules. It supports wild cards (`*`) and explicit names.
+The exports field is an object that maps entry points to modules. This field is
+supported by Node.js versions including and higher than 12. It acts as a more
+featureful alternative to the main field. Each key can be an explicit path for
+mapping entry points to modules 1 to 1, or it can include a wild card (`*`) for
+mapping multiple entry points that fit the wild card to corrosponding modules.
+
+Each value in the exports field object can be an array of entry point string
+where each path will be iterated through and the first path that leads to a
+module will be used. The value also does not necessarily need to map to a
+JavaScript module, it can also map to a JSON file.
 
 For example, you could have:
 
@@ -351,14 +360,47 @@ For example, you could have:
     ".": "./index.js",
     "./*": "./*.js",
     "./*.js": "./*.js",
-    "./foo": "./path/to/foo.js"
+    "./foo": "./path/to/foo.js",
+    "./package.json": "./package.json"
   }
 }
 ```
 
-If someone installed your package with this in your `package.json`, they could `require("my-package")` and it would be mapped to `./node_modules/my-package/index.js` because of `".": "./index.js"`.<br>
-If they did `require("my-package/bar")` or `require("my-package/bar.js")`, it would be mapped to `./node_modules/my-package/bar.js` because of the wild cards (`*`).<br>
-If they did `require("my-package/foo")` it would be mapped to `./node_modules/my-package/path/to/foo.js` because of the explicit mapping `"./foo": "./path/to/foo.js"`.<br>
+If someone installed your package with this in your `package.json`, they could
+`require("my-package")` and it would be mapped to
+`./node_modules/my-package/index.js` because of `".": "./index.js"`.<br>
+If they did `require("my-package/bar")` or `require("my-package/bar.js")`, it
+would be mapped to `./node_modules/my-package/bar.js` because of the wild cards
+(`*`).<br>
+If they did `require("my-package/foo")` it would be mapped to
+`./node_modules/my-package/path/to/foo.js` because of the explicit mapping
+`"./foo": "./path/to/foo.js"`.
+
+The exports field also supports conditional exports, which will use a different
+object to resolve entry points to modules depending on if the consumer of your
+package is using CommonJS `require()` calls or ESM `import`
+statements/expressions.
+
+Here is an example of conditional exports:
+
+```json
+  "exports": {
+    "require": {
+      ".": "./index.cjs",
+      "./*": "./*.cjs",
+      "./*.js": "./*.cjs",
+      "./foo": "./path/to/foo.cjs",
+      "./package.json": "./package.json"
+    },
+    "import": {
+      ".": "./index.js",
+      "./*": "./*.js",
+      "./*.js": "./*.js",
+      "./foo": "./path/to/foo.js",
+      "./package.json": "./package.json"
+    }
+  }
+```
 
 ### browser
 
