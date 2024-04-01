@@ -1,7 +1,7 @@
 const semver = require('semver')
 const log = require('proc-log')
 const pacote = require('pacote')
-const read = require('read')
+const { read } = require('read')
 const Table = require('cli-table3')
 const { run, git, npm, pkg: cli, spawn } = require('./util.js')
 
