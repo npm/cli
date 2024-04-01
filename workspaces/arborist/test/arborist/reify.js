@@ -127,7 +127,6 @@ const {
   stop,
   registry,
   advisoryBulkResponse,
-  oneSocket,
 } = require('../fixtures/server.js')
 
 t.before(start)
@@ -176,7 +175,7 @@ t.test('update a yarn.lock file', async t => {
 })
 
 t.test('weirdly broken lockfile without resolved value', t =>
-  t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved'), oneSocket(t))))
+  t.resolveMatchSnapshot(printReified(fixture(t, 'dep-missing-resolved'))))
 
 t.test('testing-peer-deps package', t =>
   t.resolveMatchSnapshot(printReified(fixture(t, 'testing-peer-deps'))))
@@ -1439,7 +1438,7 @@ t.test('do not reify root when root matches duplicated metadep', async t => {
 
 t.test('reify properly with all deps when lockfile is ancient', async t => {
   const path = fixture(t, 'sax')
-  const tree = await reify(path, oneSocket(t))
+  const tree = await reify(path)
   t.matchSnapshot(printTree(tree))
   fs.statSync(path + '/node_modules/tap/node_modules/.bin/nyc')
 })
