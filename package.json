@@ -73,7 +73,7 @@
     "glob": "^10.3.12",
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^7.0.1",
-    "ini": "^4.1.1",
+    "ini": "^4.1.2",
     "init-package-json": "^6.0.0",
     "is-cidr": "^5.0.3",
     "json-parse-even-better-errors": "^3.0.1",
