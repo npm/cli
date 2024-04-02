@@ -19,7 +19,7 @@
     "hosted-git-info": "^7.0.1",
     "json-parse-even-better-errors": "^3.0.0",
     "json-stringify-nice": "^1.1.4",
-    "minimatch": "^9.0.0",
+    "minimatch": "^9.0.4",
     "nopt": "^7.0.0",
     "npm-install-checks": "^6.2.0",
     "npm-package-arg": "^11.0.1",
