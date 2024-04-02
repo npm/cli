@@ -66,7 +66,7 @@
     "chalk": "^5.3.0",
     "ci-info": "^4.0.0",
     "cli-columns": "^4.0.0",
-    "cli-table3": "^0.6.3",
+    "cli-table3": "^0.6.4",
     "columnify": "^1.6.0",
     "fastest-levenshtein": "^1.0.16",
     "fs-minipass": "^3.0.3",
