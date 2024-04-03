@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.0.2](https://github.com/npm/cli/compare/libnpmsearch-v7.0.1...libnpmsearch-v7.0.2) (2024-04-03)
+
+### Dependencies
+
+* [`87a61fc`](https://github.com/npm/cli/commit/87a61fc8bb65c950cda389ab3d14ae250ab2345d) [#7334](https://github.com/npm/cli/pull/7334) `npm-registry-fetch@16.2.0`
+
 ## [7.0.1](https://github.com/npm/cli/compare/libnpmsearch-v7.0.0...libnpmsearch-v7.0.1) (2023-12-06)
 
 ### Chores
