@@ -156,6 +156,7 @@ graph LR;
   npm-registry-fetch-->make-fetch-happen;
   npm-registry-fetch-->minipass-fetch;
   npm-registry-fetch-->npm-package-arg;
+  npm-registry-fetch-->npmcli-redact["@npmcli/redact"];
   npm-registry-fetch-->proc-log;
   npmcli-arborist-->bin-links;
   npmcli-arborist-->cacache;
@@ -590,6 +591,7 @@ graph LR;
   npm-registry-fetch-->minipass;
   npm-registry-fetch-->minizlib;
   npm-registry-fetch-->npm-package-arg;
+  npm-registry-fetch-->npmcli-redact["@npmcli/redact"];
   npm-registry-fetch-->proc-log;
   npmcli-agent-->agent-base;
   npmcli-agent-->http-proxy-agent;
@@ -833,4 +835,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen, @npmcli/config
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, normalize-package-data, npm-packlist, bin-links, nopt, npmlog, parse-conflict-json, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, @npmcli/redact, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, are-we-there-yet, gauge, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
