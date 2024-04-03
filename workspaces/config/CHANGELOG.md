@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.2.1](https://github.com/npm/cli/compare/config-v8.2.0...config-v8.2.1) (2024-04-03)
+
+### Dependencies
+
+* [`b048592`](https://github.com/npm/cli/commit/b048592a9583dca6f75a9c837edee57ab4e12ab0) [#7329](https://github.com/npm/cli/pull/7329) `ini@4.1.2`
+
 ## [8.2.0](https://github.com/npm/cli/compare/config-v8.1.0...config-v8.2.0) (2024-02-28)
 
 ### Features

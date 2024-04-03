@@ -1,5 +1,14 @@
 # Changelog
 
+## [7.0.9](https://github.com/npm/cli/compare/libnpmexec-v7.0.8...libnpmexec-v7.0.9) (2024-04-03)
+
+### Dependencies
+
+* [`5469614`](https://github.com/npm/cli/commit/54696148f25986bcdf39e1acb5aca4bf09e7d1a0) [#7327](https://github.com/npm/cli/pull/7327) `init-package-json@6.0.2`
+* [`5469614`](https://github.com/npm/cli/commit/54696148f25986bcdf39e1acb5aca4bf09e7d1a0) [#7327](https://github.com/npm/cli/pull/7327) `promzard@1.0.1`
+* [`5469614`](https://github.com/npm/cli/commit/54696148f25986bcdf39e1acb5aca4bf09e7d1a0) [#7327](https://github.com/npm/cli/pull/7327) `read@3.0.1` (#7327)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.4.1): `@npmcli/arborist@7.4.1`
+
 ## [7.0.8](https://github.com/npm/cli/compare/libnpmexec-v7.0.7...libnpmexec-v7.0.8) (2024-02-28)
 
 ### Dependencies

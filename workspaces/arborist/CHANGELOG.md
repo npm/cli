@@ -1,5 +1,22 @@
 # Changelog
 
+## [7.4.1](https://github.com/npm/cli/compare/arborist-v7.4.0...arborist-v7.4.1) (2024-04-03)
+
+### Bug Fixes
+
+* [`8cab136`](https://github.com/npm/cli/commit/8cab136f731c69be079be08d79e3514e01bbd563) [#7324](https://github.com/npm/cli/pull/7324) ensure maxSockets is respected (#7324) (@lukekarrys)
+* [`9bffa13`](https://github.com/npm/cli/commit/9bffa13e0b96efe1039d9075fdcb11d5946b2f90) [#7320](https://github.com/npm/cli/pull/7320) query: properly return :missing nodes (#7320) (@wraithgar)
+
+### Dependencies
+
+* [`87a61fc`](https://github.com/npm/cli/commit/87a61fc8bb65c950cda389ab3d14ae250ab2345d) [#7334](https://github.com/npm/cli/pull/7334) `npm-registry-fetch@16.2.0`
+* [`6fd94f2`](https://github.com/npm/cli/commit/6fd94f249f43080ae183da36b971981e8ad00882) [#7329](https://github.com/npm/cli/pull/7329) `minimatch@9.0.4`
+* [`8cab136`](https://github.com/npm/cli/commit/8cab136f731c69be079be08d79e3514e01bbd563) [#7324](https://github.com/npm/cli/pull/7324) `agent-base@7.1.1` (@lukekarrys)
+
+### Chores
+
+* [`8cab136`](https://github.com/npm/cli/commit/8cab136f731c69be079be08d79e3514e01bbd563) [#7324](https://github.com/npm/cli/pull/7324) add smoke-test for large prod installs (@lukekarrys)
+
 ## [7.4.0](https://github.com/npm/cli/compare/arborist-v7.3.1...arborist-v7.4.0) (2024-02-28)
 
 ### Features

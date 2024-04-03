@@ -1,5 +1,14 @@
 # Changelog
 
+## [6.0.8](https://github.com/npm/cli/compare/libnpmdiff-v6.0.7...libnpmdiff-v6.0.8) (2024-04-03)
+
+### Dependencies
+
+* [`9ccff72`](https://github.com/npm/cli/commit/9ccff72c332e6062e6ebcf8123c7888d8d617091) [#7329](https://github.com/npm/cli/pull/7329) `tar@6.2.1`
+* [`6fd94f2`](https://github.com/npm/cli/commit/6fd94f249f43080ae183da36b971981e8ad00882) [#7329](https://github.com/npm/cli/pull/7329) `minimatch@9.0.4`
+* [`c9315cb`](https://github.com/npm/cli/commit/c9315cb240be02babbbd99585f7ef23679e1d963) [#7329](https://github.com/npm/cli/pull/7329) `binary-extensions@2.3.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.4.1): `@npmcli/arborist@7.4.1`
+
 ## [6.0.7](https://github.com/npm/cli/compare/libnpmdiff-v6.0.6...libnpmdiff-v6.0.7) (2024-02-28)
 
 ### Dependencies

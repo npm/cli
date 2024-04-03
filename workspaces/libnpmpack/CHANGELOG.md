@@ -1,5 +1,11 @@
 # Changelog
 
+## [6.0.8](https://github.com/npm/cli/compare/libnpmpack-v6.0.7...libnpmpack-v6.0.8) (2024-04-03)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.4.1): `@npmcli/arborist@7.4.1`
+
 ## [6.0.7](https://github.com/npm/cli/compare/libnpmpack-v6.0.6...libnpmpack-v6.0.7) (2024-02-28)
 
 ### Dependencies
