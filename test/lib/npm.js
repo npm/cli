@@ -521,25 +521,16 @@ t.test('timings', async t => {
 })
 
 t.test('output clears progress and console.logs cleaned messages', async t => {
-  t.plan(4)
-  let showingProgress = true
+  t.plan(2)
   const logs = []
   const errors = []
   const { npm } = await loadMockNpm(t, {
     load: false,
-    mocks: {
-      npmlog: {
-        clearProgress: () => showingProgress = false,
-        showProgress: () => showingProgress = true,
-      },
-    },
     globals: {
       'console.log': (...args) => {
-        t.equal(showingProgress, false, 'should not be showing progress right now')
         logs.push(args)
       },
       'console.error': (...args) => {
-        t.equal(showingProgress, false, 'should not be showing progress right now')
         errors.push(args)
       },
     },

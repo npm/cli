@@ -15,13 +15,6 @@ t.test('prompt, accepts', async t => {
       mocks: {
         'ci-info': { isCI: false },
         '../../lib/no-tty.js': () => false,
-        npmlog: {
-          clearProgress () {
-            t.ok(true, 'should call clearProgress function')
-          },
-          disableProgress () {},
-          enableProgress () {},
-        },
         read: { read: async () => 'y' },
       },
     })
@@ -65,7 +58,7 @@ t.test('prompt, accepts', async t => {
 
 t.test('prompt, refuses', async t => {
   t.test('with clearProgress function', async t => {
-    t.plan(3)
+    t.plan(2)
 
     const { pkg, package, fixtures } = createPkg({
       name: '@npmcli/create-index',
@@ -75,12 +68,6 @@ t.test('prompt, refuses', async t => {
       testdir: fixtures,
       mocks: {
         'ci-info': { isCI: false },
-        npmlog: {
-          clearProgress () {
-            t.ok(true, 'should call clearProgress function')
-          },
-          disableProgess () {},
-        },
         read: { read: async () => 'n' },
         '../../lib/no-tty.js': () => false,
       },

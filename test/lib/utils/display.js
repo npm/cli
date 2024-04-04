@@ -42,10 +42,6 @@ t.test('setup', async (t) => {
 t.test('can log cleanly', async (t) => {
   const explains = []
   const { display, logs } = mockDisplay(t, {
-    npmlog: {
-      error: (...args) => logs.push(['error', ...args]),
-      warn: (...args) => logs.push(['warn', ...args]),
-    },
     '{LIB}/utils/explain-eresolve.js': {
       explain: (...args) => {
         explains.push(args)
@@ -68,11 +64,6 @@ t.test('handles log throwing', async (t) => {
     'console.error': (...args) => errors.push(args),
   })
   const { display } = mockDisplay(t, {
-    npmlog: {
-      verbose: () => {
-        throw new Error('verbose')
-      },
-    },
     '{LIB}/utils/explain-eresolve.js': {
       explain: () => {
         throw new Error('explain')
