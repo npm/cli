@@ -20,8 +20,7 @@ const run = async ({
 
   // do the fakey runScript dance
   // still should work if no package.json in cwd
-  const realPkg = await readPackageJson(`${path}/package.json`)
-    .catch(() => ({}))
+  const realPkg = await readPackageJson(`${path}/package.json`).catch(() => ({}))
   const pkg = {
     ...realPkg,
     scripts: {
@@ -36,18 +35,18 @@ const run = async ({
         return log.warn('exec', 'Interactive mode disabled in CI environment')
       }
 
-      locationMsg = locationMsg || ` at location:\n${flatOptions.chalk.dim(runPath)}`
+      const { chalk } = flatOptions
 
       output(`${
-          flatOptions.chalk.reset('\nEntering npm script environment')
-        }${
-          flatOptions.chalk.reset(locationMsg)
-        }${
-          flatOptions.chalk.bold('\nType \'exit\' or ^D when finished\n')
-        }`)
+        chalk.reset('\nEntering npm script environment')
+      }${
+        chalk.reset(locationMsg || ` at location:\n${chalk.dim(runPath)}`)
+      }${
+        chalk.bold('\nType \'exit\' or ^D when finished\n')
+      }`)
     }
   }
-  return await runScript({
+  return runScript({
     ...flatOptions,
     pkg,
     banner: false,
