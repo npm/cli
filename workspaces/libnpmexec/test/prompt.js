@@ -5,123 +5,60 @@ const fs = require('fs/promises')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 
 t.test('prompt, accepts', async t => {
-  t.test('with clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        '../../lib/no-tty.js': () => false,
-        read: { read: async () => 'y' },
-      },
-    })
-
-    await package({ registry, path })
-
-    await exec({
-      args: ['@npmcli/create-index'],
-      yes: undefined,
-    })
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
+  const { pkg, package, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    version: '1.0.0',
+  })
+  const { exec, path, registry } = setup(t, {
+    testdir: fixtures,
+    mocks: {
+      'ci-info': { isCI: false },
+      '../../lib/no-tty.js': () => false,
+      read: { read: async () => 'y' },
+    },
   })
 
-  t.test('without clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        '../../lib/no-tty.js': () => false,
-        read: { read: async () => 'y' },
-      },
-    })
+  await package({ registry, path })
 
-    await package({ registry, path })
-
-    await exec({
-      args: ['@npmcli/create-index'],
-      yes: undefined,
-    })
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
+  await exec({
+    args: ['@npmcli/create-index'],
+    yes: undefined,
   })
+
+  const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
+  t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
 })
 
 t.test('prompt, refuses', async t => {
-  t.test('with clearProgress function', async t => {
-    t.plan(2)
-
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        read: { read: async () => 'n' },
-        '../../lib/no-tty.js': () => false,
-      },
-    })
-
-    await package({ registry, path, times: 1, tarballs: [] })
-
-    await t.rejects(
-      exec({
-        args: ['@npmcli/create-index'],
-        yes: undefined,
-      }),
-      /canceled/,
-      'should throw with canceled error'
-    )
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.rejects(
-      () => fs.stat(resolve(path, installedDir)),
-      { code: 'ENOENT' }
-    )
+  const { pkg, package, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    version: '1.0.0',
+  })
+  const { exec, path, registry } = setup(t, {
+    testdir: fixtures,
+    mocks: {
+      'ci-info': { isCI: false },
+      read: { read: async () => 'n' },
+      '../../lib/no-tty.js': () => false,
+    },
   })
 
-  t.test('without clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        read: { read: async () => 'n' },
-        '../../lib/no-tty.js': () => false,
-      },
-    })
+  await package({ registry, path, times: 1, tarballs: [] })
 
-    await package({ registry, path, times: 1, tarballs: [] })
+  await t.rejects(
+    exec({
+      args: ['@npmcli/create-index'],
+      yes: undefined,
+    }),
+    /canceled/,
+    'should throw with canceled error'
+  )
 
-    await t.rejects(
-      exec({
-        args: ['@npmcli/create-index'],
-        yes: undefined,
-      }),
-      /canceled/,
-      'should throw with canceled error'
-    )
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.rejects(
-      () => fs.stat(resolve(path, installedDir)),
-      { code: 'ENOENT' }
-    )
-  })
+  const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
+  t.rejects(
+    () => fs.stat(resolve(path, installedDir)),
+    { code: 'ENOENT' }
+  )
 })
 
 t.test('prompt, -n', async t => {
