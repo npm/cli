@@ -18,7 +18,7 @@ t.test('token logout - user config', async t => {
   mockRegistry.logout('@foo/')
   await npm.exec('logout', [])
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
@@ -45,7 +45,7 @@ t.test('token scoped logout - user config', async t => {
   mockRegistry.logout('@bar/')
   await npm.exec('logout', [])
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing token for https://diff-registry.npmjs.com/',
     'should log message with correct registry'
   )
@@ -67,7 +67,7 @@ t.test('user/pass logout - user config', async t => {
 
   await npm.exec('logout', [])
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing user credentials for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
@@ -106,7 +106,7 @@ t.test('ignore invalid scoped registry config', async t => {
   await npm.exec('logout', [])
 
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
@@ -135,7 +135,7 @@ t.test('token logout - project config', async t => {
   await npm.exec('logout', [])
 
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
@@ -145,7 +145,7 @@ t.test('token logout - project config', async t => {
     'other-config=true',
   ].join('\n'), 'leaves user config alone')
   t.equal(
-    logs.verbose.find(l => l[0] === 'logout')[1],
+    logs.verbose.byTitle('logout')[0],
     'clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )

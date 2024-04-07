@@ -473,7 +473,7 @@ t.test('profile set <key> <value>', async t => {
     await profile.exec(['set', 'password'])
 
     t.equal(
-      logs.warn[0][1],
+      logs.warn.byTitle('profile')[0],
       'Passwords do not match, please try again.',
       'should log password mismatch message'
     )

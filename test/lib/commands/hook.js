@@ -85,7 +85,7 @@ t.test('npm hook add', async t => {
     },
     'provided the correct arguments to libnpmhook'
   )
-  t.strictSame(outputs[0], ['+ semver  ->  https://google.com'], 'prints the correct output')
+  t.strictSame(outputs[0], '+ semver  ->  https://google.com', 'prints the correct output')
 })
 
 t.test('npm hook add - correct owner hook output', async t => {
@@ -102,7 +102,7 @@ t.test('npm hook add - correct owner hook output', async t => {
     },
     'provided the correct arguments to libnpmhook'
   )
-  t.strictSame(outputs[0], ['+ ~npm  ->  https://google.com'], 'prints the correct output')
+  t.strictSame(outputs[0], '+ ~npm  ->  https://google.com', 'prints the correct output')
 })
 
 t.test('npm hook add - correct scope hook output', async t => {
@@ -119,7 +119,7 @@ t.test('npm hook add - correct scope hook output', async t => {
     },
     'provided the correct arguments to libnpmhook'
   )
-  t.strictSame(outputs[0], ['+ @npmcli  ->  https://google.com'], 'prints the correct output')
+  t.strictSame(outputs[0], '+ @npmcli  ->  https://google.com', 'prints the correct output')
 })
 
 t.test('npm hook add - unicode output', async t => {
@@ -142,7 +142,7 @@ t.test('npm hook add - unicode output', async t => {
     },
     'provided the correct arguments to libnpmhook'
   )
-  t.strictSame(outputs[0], ['+ semver  ➜  https://google.com'], 'prints the correct output')
+  t.strictSame(outputs[0], '+ semver  ➜  https://google.com', 'prints the correct output')
 })
 
 t.test('npm hook add - json output', async t => {
@@ -166,7 +166,7 @@ t.test('npm hook add - json output', async t => {
     'provided the correct arguments to libnpmhook'
   )
   t.strictSame(
-    JSON.parse(outputs[0][0]),
+    JSON.parse(outputs[0]),
     {
       id: 1,
       name: '@npmcli',
@@ -199,12 +199,12 @@ t.test('npm hook add - parseable output', async t => {
   )
 
   t.strictSame(
-    outputs[0][0].split(/\t/),
+    outputs[0].split(/\t/),
     ['id', 'name', 'type', 'endpoint'],
     'prints the correct parseable output headers'
   )
   t.strictSame(
-    outputs[1][0].split(/\t/),
+    outputs[1].split(/\t/),
     ['1', '@npmcli', 'scope', 'https://google.com'],
     'prints the correct parseable values'
   )
@@ -243,8 +243,8 @@ t.test('npm hook ls', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0][0], 'You have 3 hooks configured.', 'prints the correct header')
-  const out = stripVTControlCharacters(outputs[1][0])
+  t.equal(outputs[0], 'You have 3 hooks configured.', 'prints the correct header')
+  const out = stripVTControlCharacters(outputs[1])
   t.match(out, /semver.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints package hook')
   t.match(out, /@npmcli.*https:\/\/google.com.*\n.*\n.*triggered just now/, 'prints scope hook')
   t.match(out, /~npm.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints owner hook')
@@ -266,7 +266,7 @@ t.test('npm hook ls, no results', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0][0], "You don't have any hooks configured yet.", 'prints the correct result')
+  t.equal(outputs[0], "You don't have any hooks configured yet.", 'prints the correct result')
 })
 
 t.test('npm hook ls, single result', async t => {
@@ -292,8 +292,8 @@ t.test('npm hook ls, single result', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0][0], 'You have one hook configured.', 'prints the correct header')
-  const out = stripVTControlCharacters(outputs[1][0])
+  t.equal(outputs[0], 'You have one hook configured.', 'prints the correct header')
+  const out = stripVTControlCharacters(outputs[1])
   t.match(out, /semver.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints package hook')
 })
 
@@ -361,7 +361,7 @@ t.test('npm hook ls - parseable output', async t => {
     'received the correct arguments'
   )
   t.strictSame(
-    outputs.map(line => line[0].split(/\t/)),
+    outputs.map(line => line.split(/\t/)),
     [
       ['id', 'name', 'type', 'endpoint', 'last_delivery'],
       ['1', 'semver', 'package', 'https://google.com', ''],
@@ -404,7 +404,7 @@ t.test('npm hook rm', async t => {
     },
     'received the correct arguments'
   )
-  t.strictSame(outputs[0], ['- semver  X  https://google.com'], 'printed the correct output')
+  t.strictSame(outputs[0], '- semver  X  https://google.com', 'printed the correct output')
 })
 
 t.test('npm hook rm - unicode output', async t => {
@@ -425,7 +425,7 @@ t.test('npm hook rm - unicode output', async t => {
     },
     'received the correct arguments'
   )
-  t.strictSame(outputs[0], ['- semver  ✘  https://google.com'], 'printed the correct output')
+  t.strictSame(outputs[0], '- semver  ✘  https://google.com', 'printed the correct output')
 })
 
 t.test('npm hook rm - silent output', async t => {
@@ -496,7 +496,7 @@ t.test('npm hook rm - parseable output', async t => {
     'received the correct arguments'
   )
   t.strictSame(
-    outputs.map(line => line[0].split(/\t/)),
+    outputs.map(line => line.split(/\t/)),
     [
       ['id', 'name', 'type', 'endpoint'],
       ['1', 'semver', 'package', 'https://google.com'],
@@ -520,7 +520,7 @@ t.test('npm hook update', async t => {
     },
     'received the correct arguments'
   )
-  t.strictSame(outputs[0], ['+ semver  ->  https://google.com'], 'printed the correct output')
+  t.strictSame(outputs[0], '+ semver  ->  https://google.com', 'printed the correct output')
 })
 
 t.test('npm hook update - unicode', async t => {
@@ -543,7 +543,7 @@ t.test('npm hook update - unicode', async t => {
     },
     'received the correct arguments'
   )
-  t.strictSame(outputs[0], ['+ semver  ➜  https://google.com'], 'printed the correct output')
+  t.strictSame(outputs[0], '+ semver  ➜  https://google.com', 'printed the correct output')
 })
 
 t.test('npm hook update - json output', async t => {
@@ -599,7 +599,7 @@ t.test('npm hook update - parseable output', async t => {
     'received the correct arguments'
   )
   t.strictSame(
-    outputs.map(line => line[0].split(/\t/)),
+    outputs.map(line => line.split(/\t/)),
     [
       ['id', 'name', 'type', 'endpoint'],
       ['1', 'semver', 'package', 'https://google.com'],

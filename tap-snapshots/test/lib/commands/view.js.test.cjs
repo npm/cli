@@ -541,11 +541,7 @@ dist-tags:
 `
 
 exports[`test/lib/commands/view.js TAP workspaces remote package name > should have warning of ignoring workspaces 1`] = `
-Array [
-  Array [
-    "Ignoring workspaces for specified package(s)",
-  ],
-]
+Array []
 `
 
 exports[`test/lib/commands/view.js TAP workspaces single workspace --json > must match snapshot 1`] = `

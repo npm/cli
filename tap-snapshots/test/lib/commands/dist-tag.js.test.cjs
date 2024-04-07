@@ -10,7 +10,7 @@ exports[`test/lib/commands/dist-tag.js TAP add new tag > should return success m
 `
 
 exports[`test/lib/commands/dist-tag.js TAP add using valid semver range as name > should return success msg 1`] = `
-dist-tag add 1.0.0 to @scoped/another@7.7.7
+add 1.0.0 to @scoped/another@7.7.7
 `
 
 exports[`test/lib/commands/dist-tag.js TAP ls in current package > should list available tags for current package 1`] = `
@@ -20,7 +20,22 @@ latest: 1.0.0
 `
 
 exports[`test/lib/commands/dist-tag.js TAP ls on missing package > should log no dist-tag found msg 1`] = `
-dist-tag ls Couldn't get dist-tag data for foo@*
+ls Couldn't get dist-tag data for Result {
+ls   type: 'range',
+ls   registry: true,
+ls   where: undefined,
+ls   raw: 'foo',
+ls   name: 'foo',
+ls   escapedName: 'foo',
+ls   scope: undefined,
+ls   rawSpec: '*',
+ls   saveSpec: null,
+ls   fetchSpec: '*',
+ls   gitRange: undefined,
+ls   gitCommittish: undefined,
+ls   gitSubdir: undefined,
+ls   hosted: undefined
+ls }
 `
 
 exports[`test/lib/commands/dist-tag.js TAP ls on named package > should list tags for the specified package 1`] = `
@@ -42,7 +57,7 @@ latest: 2.0.0
 `
 
 exports[`test/lib/commands/dist-tag.js TAP remove existing tag > should log remove info 1`] = `
-dist-tag del c from @scoped/another
+del c from @scoped/another
 `
 
 exports[`test/lib/commands/dist-tag.js TAP remove existing tag > should return success msg 1`] = `
@@ -50,13 +65,13 @@ exports[`test/lib/commands/dist-tag.js TAP remove existing tag > should return s
 `
 
 exports[`test/lib/commands/dist-tag.js TAP remove non-existing tag > should log error msg 1`] = `
-dist-tag del nonexistent from @scoped/another
-dist-tag del nonexistent is not a dist-tag on @scoped/another
+del nonexistent from @scoped/another
+del nonexistent is not a dist-tag on @scoped/another
 `
 
 exports[`test/lib/commands/dist-tag.js TAP set existing version > should log warn msg 1`] = `
-dist-tag add b to @scoped/another@0.6.0
-dist-tag add b is already set to version 0.6.0
+add b to @scoped/another@0.6.0
+add b is already set to version 0.6.0
 `
 
 exports[`test/lib/commands/dist-tag.js TAP workspaces no args > printed the expected output 1`] = `

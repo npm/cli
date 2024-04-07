@@ -212,7 +212,7 @@ t.test('location detection and audit', async (t) => {
     })
     t.equal(npm.config.get('location'), 'user')
     t.equal(npm.config.get('audit'), true)
-    t.equal(logs.warn[0][0], 'config')
-    t.equal(logs.warn[0][1], 'includes both --global and --audit, which is currently unsupported.')
+    t.equal(logs.warn[0],
+      'config includes both --global and --audit, which is currently unsupported.')
   })
 })

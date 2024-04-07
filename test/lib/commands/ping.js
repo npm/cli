@@ -10,7 +10,10 @@ t.test('no details', async t => {
   })
   registry.ping()
   await npm.exec('ping', [])
-  t.match(logs.notice, [['PING', 'https://registry.npmjs.org/'], ['PONG', /[0-9]+ms/]])
+  t.match(logs.notice, [
+    'PING https://registry.npmjs.org/',
+    /PONG [0-9]+ms/,
+  ])
   t.equal(joinedOutput(), '')
 })
 
@@ -23,9 +26,9 @@ t.test('with details', async t => {
   registry.ping({ body: { test: true } })
   await npm.exec('ping', [])
   t.match(logs.notice, [
-    ['PING', 'https://registry.npmjs.org/'],
-    ['PONG', /[0-9]+ms/],
-    ['PONG', '{\n  "test": true\n}'],
+    `PING https://registry.npmjs.org/`,
+    /PONG [0-9]+ms/,
+    `PONG {\nPONG   "a": 1,\nPONG   "b": 2\nPONG }`,
   ])
   t.match(joinedOutput(), '')
 })
@@ -40,7 +43,10 @@ t.test('valid json', async t => {
   })
   registry.ping()
   await npm.exec('ping', [])
-  t.match(logs.notice, [['PING', 'https://registry.npmjs.org/'], ['PONG', /[0-9]+ms/]])
+  t.match(logs.notice, [
+    'PING https://registry.npmjs.org/',
+    /PONG [0-9]+ms/,
+  ])
   t.match(JSON.parse(joinedOutput()), {
     registry: npm.config.get('registry'),
     time: /[0-9]+/,
@@ -58,7 +64,10 @@ t.test('invalid json', async t => {
   })
   registry.ping({ body: '{not: real"json]' })
   await npm.exec('ping', [])
-  t.match(logs.notice, [['PING', 'https://registry.npmjs.org/'], ['PONG', /[0-9]+ms/]])
+  t.match(logs.notice, [
+    'PING https://registry.npmjs.org/',
+    /PONG [0-9]+ms/,
+  ])
   t.match(JSON.parse(joinedOutput()), {
     registry: npm.config.get('registry'),
     time: /[0-9]+/,

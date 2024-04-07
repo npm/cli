@@ -18,7 +18,7 @@ const mockStars = async (t, { npmFetch = noop, exec = true, ...opts }) => {
   return {
     ...mock,
     result: mock.stars.output,
-    logs: () => mock.logs.filter(l => l[1] === 'stars').map(l => l[2]),
+    logs: () => mock.logs.byTitle('stars'),
   }
 }
 

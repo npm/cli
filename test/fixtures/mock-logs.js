@@ -1,51 +1,121 @@
+const { LEVELS: PROC_LOC_LEVELS } = require('proc-log')
 
-const { LEVELS } = require('proc-log')
+const LEVELS = ['timing', ...PROC_LOC_LEVELS]
+const LABELS = new Map([
+  ['error', 'ERR!'],
+  ['warn', 'WARN'],
+  ['verbose', 'verb'],
+  ['silly', 'sill'],
+].reduce((acc, v) => acc.concat([v, v.slice(0).reverse()]), []))
 
-const mockLogs = (otherMocks = {}) => {
-  // Return mocks as an array with getters for each level
-  // that return an array of logged properties with the
-  // level removed. This is for convenience throughout tests
+const LOG_PREFIX = new RegExp(`^npm (${LEVELS.map(l => LABELS.get(l) ?? l).join('|')}) `, 'm')
+const GLOBAL_LOG_PREFIX = new RegExp(LOG_PREFIX.source, 'gm')
+
+function longestCommonPrefix (words) {
+  // check border cases size 1 array and empty first word)
+  if (words.length === 1) {
+    return words[0].split(' ')[0]
+  }
+
+  let i = 0
+  // while all words have the same character at position i, increment i
+  while (words[0][i] && words.every(w => w[i] === words[0][i])) {
+    i++
+  }
+
+  // prefix is the substring from the beginning to the last successfully checked i
+  return words[0].substr(0, i)
+}
+
+module.exports = () => {
+  const outputs = []
+  const outputErrors = []
+
+  const RAW_LOGS = []
+
   const logs = Object.defineProperties(
     [],
-    ['timing', ...LEVELS].reduce((acc, level) => {
+    LEVELS.reduce((acc, level) => {
       acc[level] = {
         get () {
-          return this
-            .filter(([l]) => level === l)
-            .map(([l, ...args]) => args)
+          const byLevel = RAW_LOGS.filter((l) => l.level === level)
+          return Object.defineProperty(
+            byLevel.map((l) => l.titleMessage),
+            'byTitle',
+            {
+              value: (title) => byLevel
+                .filter((l) => l.titleMessage.startsWith(title))
+                .map((l) => l.titleMessage.replace(new RegExp(`^${title} `, 'gm'), '')),
+            }
+          )
         },
       }
       return acc
-    }, {})
+    }, {
+      byTitle: {
+        value: (title) => {
+          return RAW_LOGS
+            .filter((l) => l.titleMessage.startsWith(title))
+            .map((l) => l.titleMessage.replace(new RegExp(`^${title} `, 'gm'), ''))
+        },
+      },
+    })
   )
 
-  // This returns an object with mocked versions of all necessary
-  // logging modules. It mocks them with methods that add logs
-  // to an array which it also returns. The reason it also returns
-  // the mocks is that in tests the same instance of these mocks
-  // should be passed to multiple calls to t.mock.
-  // XXX: this is messy and fragile and should be removed in favor
-  // of some other way to collect and filter logs across all tests
-  const logMocks = {
-    'proc-log': {
-      LEVELS,
-      ...LEVELS.reduce((acc, l) => {
-        acc[l] = (...args) => {
-          // Re-emit log item for since the log file listens on these
-          process.emit('log', l, ...args)
-          // Dont add pause/resume events to the logs. Those aren't displayed
-          // and emitting them is tested in the display layer
-          if (l !== 'pause' && l !== 'resume') {
-            logs.push([l, ...args])
-          }
+  const streams = {
+    stderr: {
+      write: (str) => {
+        // Use the beginning of each line to determine if its a log
+        // or an output error since we write both of those to stderr.
+        // This couples logging format to this test but we only need
+        // to do it in a single place so hopefully its easy to change
+        // in the future if/when we refactor what logs look like.
+        const logMatch = str.match(LOG_PREFIX)
+        if (logMatch) {
+          str = str.trimEnd()
+          const [, label] = logMatch
+          const level = LABELS.get(label) ?? label
+          const fullMessage = str.replace(GLOBAL_LOG_PREFIX, `${level} `)
+          const titleMessage = str.replace(GLOBAL_LOG_PREFIX, '')
+          const title = longestCommonPrefix(titleMessage.split('\n'))
+          const message = titleMessage.replace(new RegExp(`^${title} `, 'gm'), '')
+
+          RAW_LOGS.push({
+            level,
+            fullMessage,
+            titleMessage,
+            title,
+            message,
+          })
+
+          logs.push(fullMessage)
+        } else {
+          outputErrors.push(str.replace(/\n$/, ''))
         }
-        return acc
-      }, {}),
-      ...otherMocks['proc-log'],
+      },
+    },
+    stdout: {
+      write: (str) => {
+        outputs.push(str.replace(/\n$/, ''))
+      },
     },
   }
 
-  return { logs, logMocks }
+  return {
+    streams,
+    logs: {
+      outputs,
+      joinedOutput: () => outputs.map(o => o.trimEnd()).join('\n').trimEnd(),
+      clearOutput: () => {
+        outputs.length = 0
+      },
+      outputErrors,
+      joinedOutputError: () => outputErrors.map(o => o.trimEnd()).join('\n').trimEnd(),
+      logs,
+      clearLogs: () => {
+        RAW_LOGS.length = 0
+        logs.length = 0
+      },
+    },
+  }
 }
-
-module.exports = mockLogs

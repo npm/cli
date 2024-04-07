@@ -1,19 +1,13 @@
 const t = require('tap')
-const log = require('../../../lib/utils/log-shim')
-const mockLogs = require('../../fixtures/mock-logs')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('../../fixtures/tmock')
 const util = require('util')
 
 const mockDisplay = (t, mocks) => {
-  const { logs, logMocks } = mockLogs(mocks)
-  const Display = tmock(t, '{LIB}/utils/display', {
-    ...mocks,
-    ...logMocks,
-  })
+  const Display = tmock(t, '{LIB}/utils/display', mocks)
   const display = new Display()
   t.teardown(() => display.off())
-  return { display, logs }
+  return { display }
 }
 
 t.test('setup', async (t) => {

@@ -7,9 +7,11 @@
 'use strict'
 exports[`test/lib/commands/config.js TAP config list --json > output matches snapshot 1`] = `
 {
-  "prefix": "{LOCALPREFIX}",
-  "userconfig": "{HOME}/.npmrc",
-  "cache": "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list---json-sandbox/cache",
+  "fetch-retries": 0,
+  "cache": "{CWD}/cache",
+  "loglevel": "silly",
+  "color": false,
+  "timing": true,
   "json": true,
   "projectloaded": "yes",
   "userloaded": "yes",
@@ -31,7 +33,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "call": "",
   "cert": null,
   "cidr": null,
-  "color": true,
   "commit-hooks": true,
   "cpu": null,
   "depth": null,
@@ -46,7 +47,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "diff-text": false,
   "diff-unified": 3,
   "dry-run": false,
-  "editor": "{EDITOR}",
+  "editor": "code -r -w",
   "engine-strict": false,
   "expect-result-count": null,
   "expect-results": null,
@@ -62,7 +63,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "git": "git",
   "git-tag-version": true,
   "global": false,
-  "globalconfig": "{GLOBALPREFIX}/npmrc",
+  "globalconfig": "{CWD}/global/etc/npmrc",
   "global-style": false,
   "heading": "npm",
   "https-proxy": null,
@@ -75,13 +76,13 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "init-author-name": "",
   "init-author-url": "",
   "init-license": "ISC",
-  "init-module": "{HOME}/.npm-init.js",
+  "init-module": "{CWD}/home/.npm-init.js",
   "init-version": "1.0.0",
   "init.author.email": "",
   "init.author.name": "",
   "init.author.url": "",
   "init.license": "ISC",
-  "init.module": "{HOME}/.npm-init.js",
+  "init.module": "{CWD}/home/.npm-init.js",
   "init.version": "1.0.0",
   "install-links": false,
   "install-strategy": "hoisted",
@@ -93,7 +94,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "local-address": null,
   "location": "user",
   "lockfile-version": null,
-  "loglevel": "notice",
   "logs-dir": null,
   "logs-max": 10,
   "long": false,
@@ -118,6 +118,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "prefer-dedupe": false,
   "prefer-offline": false,
   "prefer-online": false,
+  "prefix": "{CWD}/global",
   "preid": "",
   "production": null,
   "progress": true,
@@ -144,7 +145,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "searchlimit": 20,
   "searchopts": "",
   "searchstaleness": 900,
-  "shell": "{SHELL}",
+  "shell": "/opt/homebrew/bin/zsh",
   "shrinkwrap": true,
   "sign-git-commit": false,
   "sign-git-tag": false,
@@ -152,21 +153,21 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "strict-ssl": true,
   "tag": "latest",
   "tag-version-prefix": "v",
-  "timing": false,
   "umask": 0,
   "unicode": false,
   "update-notifier": true,
   "usage": false,
   "user-agent": "npm/{npm-version} node/{node-version} {platform} {arch} workspaces/{workspaces} {ci}",
+  "userconfig": "{CWD}/home/.npmrc",
   "version": false,
   "versions": false,
-  "viewer": "{VIEWER}",
+  "viewer": "man",
   "which": null,
   "workspace": [],
   "workspaces": null,
   "workspaces-update": true,
   "yes": null,
-  "npm-version": "{NPM-VERSION}"
+  "npm-version": "10.5.1"
 }
 `
 
@@ -185,14 +186,14 @@ before = null
 bin-links = true 
 browser = null 
 ca = null 
-; cache = "{CACHE}" ; overridden by cli
+; cache = "{CWD}/home/.npm" ; overridden by cli
 cache-max = null 
 cache-min = 0 
 cafile = null 
 call = "" 
 cert = null 
 cidr = null 
-color = true 
+; color = true ; overridden by cli
 commit-hooks = true 
 cpu = null 
 depth = null 
@@ -207,11 +208,11 @@ diff-src-prefix = "a/"
 diff-text = false 
 diff-unified = 3 
 dry-run = false 
-editor = "{EDITOR}" 
+editor = "code -r -w" 
 engine-strict = false 
 expect-result-count = null 
 expect-results = null 
-fetch-retries = 2 
+; fetch-retries = 2 ; overridden by cli
 fetch-retry-factor = 10 
 fetch-retry-maxtimeout = 60000 
 fetch-retry-mintimeout = 10000 
@@ -224,7 +225,7 @@ git = "git"
 git-tag-version = true 
 global = false 
 global-style = false 
-globalconfig = "{GLOBALPREFIX}/npmrc" 
+globalconfig = "{CWD}/global/etc/npmrc" 
 heading = "npm" 
 https-proxy = null 
 if-present = false 
@@ -236,13 +237,13 @@ init-author-email = ""
 init-author-name = "" 
 init-author-url = "" 
 init-license = "ISC" 
-init-module = "{HOME}/.npm-init.js" 
+init-module = "{CWD}/home/.npm-init.js" 
 init-version = "1.0.0" 
 init.author.email = "" 
 init.author.name = "" 
 init.author.url = "" 
 init.license = "ISC" 
-init.module = "{HOME}/.npm-init.js" 
+init.module = "{CWD}/home/.npm-init.js" 
 init.version = "1.0.0" 
 install-links = false 
 install-strategy = "hoisted" 
@@ -255,7 +256,7 @@ link = false
 local-address = null 
 location = "user" 
 lockfile-version = null 
-loglevel = "notice" 
+; loglevel = "notice" ; overridden by cli
 logs-dir = null 
 logs-max = 10 
 ; long = false ; overridden by cli
@@ -263,7 +264,7 @@ maxsockets = 15
 message = "%s" 
 node-options = null 
 noproxy = [""] 
-npm-version = "{NPM-VERSION}" 
+npm-version = "10.5.1" 
 offline = false 
 omit = [] 
 omit-lockfile-registry-resolved = false 
@@ -279,7 +280,7 @@ parseable = false
 prefer-dedupe = false 
 prefer-offline = false 
 prefer-online = false 
-; prefix = "{REALGLOBALREFIX}" ; overridden by cli
+prefix = "{CWD}/global" 
 preid = "" 
 production = null 
 progress = true 
@@ -306,7 +307,7 @@ searchexclude = ""
 searchlimit = 20 
 searchopts = "" 
 searchstaleness = 900 
-shell = "{SHELL}" 
+shell = "/opt/homebrew/bin/zsh" 
 shrinkwrap = true 
 sign-git-commit = false 
 sign-git-tag = false 
@@ -314,114 +315,113 @@ strict-peer-deps = false
 strict-ssl = true 
 tag = "latest" 
 tag-version-prefix = "v" 
-timing = false 
+; timing = false ; overridden by cli
 umask = 0 
 unicode = false 
 update-notifier = true 
 usage = false 
 user-agent = "npm/{npm-version} node/{node-version} {platform} {arch} workspaces/{workspaces} {ci}" 
-; userconfig = "{HOME}/.npmrc" ; overridden by cli
+userconfig = "{CWD}/home/.npmrc" 
 version = false 
 versions = false 
-viewer = "{VIEWER}" 
+viewer = "man" 
 which = null 
 workspace = [] 
 workspaces = null 
 workspaces-update = true 
 yes = null 
 
-; "global" config from {GLOBALPREFIX}/npmrc
+; "global" config from {CWD}/global/etc/npmrc
 
 globalloaded = "yes" 
 
-; "user" config from {HOME}/.npmrc
+; "user" config from {CWD}/home/.npmrc
 
 userloaded = "yes" 
 
-; "project" config from {LOCALPREFIX}/.npmrc
+; "project" config from {CWD}/prefix/.npmrc
 
 projectloaded = "yes" 
 
 ; "cli" config from command line options
 
-cache = "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list---long-sandbox/cache" 
+cache = "{CWD}/cache" 
+color = false 
+fetch-retries = 0 
+loglevel = "silly" 
 long = true 
-prefix = "{LOCALPREFIX}" 
-userconfig = "{HOME}/.npmrc"
+timing = true
 `
 
 exports[`test/lib/commands/config.js TAP config list > output matches snapshot 1`] = `
-; "global" config from {GLOBALPREFIX}/npmrc
+; "global" config from {CWD}/global/etc/npmrc
 
 globalloaded = "yes" 
 
-; "user" config from {HOME}/.npmrc
+; "user" config from {CWD}/home/.npmrc
 
 userloaded = "yes" 
 
-; "project" config from {LOCALPREFIX}/.npmrc
+; "project" config from {CWD}/prefix/.npmrc
 
 projectloaded = "yes" 
 
 ; "cli" config from command line options
 
-cache = "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list-sandbox/cache" 
-prefix = "{LOCALPREFIX}" 
-userconfig = "{HOME}/.npmrc" 
+cache = "{CWD}/cache" 
+color = false 
+fetch-retries = 0 
+loglevel = "silly" 
+timing = true 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
-; npm local prefix = {LOCALPREFIX}
+; npm local prefix = {CWD}/prefix
 ; npm version = {NPM-VERSION}
-; cwd = {NPMDIR}
-; HOME = {HOME}
+; cwd = {CWD}/prefix
+; HOME = {CWD}/home
 ; Run \`npm config ls -l\` to show all defaults.
 `
 
-exports[`test/lib/commands/config.js TAP config list with publishConfig > output matches snapshot 1`] = `
+exports[`test/lib/commands/config.js TAP config list with publishConfig global > output matches snapshot 1`] = `
 ; "cli" config from command line options
 
-cache = "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list-with-publishConfig-sandbox/cache" 
-prefix = "{LOCALPREFIX}" 
-userconfig = "{HOME}/.npmrc" 
+cache = "{CWD}/cache" 
+color = false 
+fetch-retries = 0 
+global = true 
+loglevel = "silly" 
+timing = true 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
-; npm local prefix = {LOCALPREFIX}
+; npm local prefix = {CWD}/prefix
 ; npm version = {NPM-VERSION}
-; cwd = {NPMDIR}
-; HOME = {HOME}
+; cwd = {CWD}/prefix
+; HOME = {CWD}/home
+; Run \`npm config ls -l\` to show all defaults.
+`
+
+exports[`test/lib/commands/config.js TAP config list with publishConfig local > output matches snapshot 1`] = `
+; "cli" config from command line options
+
+cache = "{CWD}/cache" 
+color = false 
+fetch-retries = 0 
+loglevel = "silly" 
+timing = true 
+
+; node bin location = {EXECPATH}
+; node version = {NODE-VERSION}
+; npm local prefix = {CWD}/prefix
+; npm version = {NPM-VERSION}
+; cwd = {CWD}/prefix
+; HOME = {CWD}/home
 ; Run \`npm config ls -l\` to show all defaults.
 
-; "publishConfig" from {LOCALPREFIX}/package.json
+; "publishConfig" from {CWD}/prefix/package.json
 ; This set of config values will be used at publish-time.
 
 _authToken = (protected)
 registry = "https://some.registry"
-; "env" config from environment
-
-; cache = "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list-with-publishConfig-sandbox/cache" ; overridden by cli
-global-prefix = "{LOCALPREFIX}" 
-globalconfig = "{GLOBALPREFIX}/npmrc" 
-init-module = "{HOME}/.npm-init.js" 
-local-prefix = "{LOCALPREFIX}" 
-npm-version = "{NPM-VERSION}" 
-; prefix = "{LOCALPREFIX}" ; overridden by cli
-user-agent = "npm/{NPM-VERSION} node/{NODE-VERSION} {PLATFORM} {ARCH} workspaces/false" 
-; userconfig = "{HOME}/.npmrc" ; overridden by cli
-
-; "cli" config from command line options
-
-cache = "{NPMDIR}/test/lib/commands/tap-testdir-config-config-list-with-publishConfig-sandbox/cache" 
-global = true 
-prefix = "{LOCALPREFIX}" 
-userconfig = "{HOME}/.npmrc" 
-
-; node bin location = {EXECPATH}
-; node version = {NODE-VERSION}
-; npm local prefix = {LOCALPREFIX}
-; npm version = {NPM-VERSION}
-; cwd = {NPMDIR}
-; HOME = {HOME}
-; Run \`npm config ls -l\` to show all defaults.
 `

@@ -72,8 +72,8 @@ t.test('load each command', async t => {
       // usage
       t.match(impl.usage, cmd, 'usage contains the command')
       await npm.exec(cmd, [])
-      t.match(outputs[0][0], impl.usage, 'usage is what is output')
-      t.match(outputs[0][0], ctor.describeUsage, 'usage is what is output')
+      t.match(outputs[0], impl.usage, 'usage is what is output')
+      t.match(outputs[0], ctor.describeUsage, 'usage is what is output')
       t.notOk(impl.describeUsage, 'describe usage is only static')
     })
   }

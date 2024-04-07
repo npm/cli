@@ -157,7 +157,7 @@ t.test('token list parseable output', async t => {
     },
   ]
 
-  const { token, joinedOutput } = await mockToken(t, {
+  const { token, outputs } = await mockToken(t, {
     config: { registry: 'https://registry.npmjs.org', parseable: true },
     getCredentialsByURI: uri => {
       t.equal(uri, 'https://registry.npmjs.org/', 'requests correct registry')
@@ -177,22 +177,20 @@ t.test('token list parseable output', async t => {
 
   await token.exec(['list'])
 
-  const lines = joinedOutput().split(/\r?\n/)
-
   t.equal(
-    lines[0],
+    outputs[0],
     ['key', 'token', 'created', 'readonly', 'CIDR whitelist'].join('\t'),
     'prints header'
   )
 
   t.equal(
-    lines[1],
+    outputs[1],
     [tokens[0].key, tokens[0].token, tokens[0].created, tokens[0].readonly, ''].join('\t'),
     'prints token info'
   )
 
   t.equal(
-    lines[2],
+    outputs[2],
     [
       tokens[1].key,
       tokens[1].token,
@@ -470,7 +468,7 @@ t.test('token create parseable output', async t => {
   t.match(spec[0], 'token\tefgh5678', 'prints the token')
   t.match(spec[1], `created\t${now}`, 'prints the created timestamp')
   t.match(spec[2], 'readonly\tfalse', 'prints the readonly flag')
-  t.match(spec[3], 'cidr_whitelist\t', 'prints the cidr whitelist')
+  t.match(spec[3], 'cidr_whitelist', 'prints the cidr whitelist')
 })
 
 t.test('token create ipv6 cidr', async t => {

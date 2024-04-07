@@ -17,8 +17,8 @@ t.test('should pack current directory with no arguments', async t => {
   })
   await npm.exec('pack', [])
   const filename = 'test-package-1.0.0.tgz'
-  t.strictSame(outputs, [[filename]])
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.strictSame(outputs, [filename])
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.ok(fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -35,7 +35,7 @@ t.test('follows pack-destination config', async t => {
   })
   await npm.exec('pack', [])
   const filename = 'test-package-1.0.0.tgz'
-  t.strictSame(outputs, [[filename]])
+  t.strictSame(outputs, [filename])
   t.ok(fs.statSync(path.resolve(npm.prefix, 'tar-destination', filename)))
 })
 
@@ -50,7 +50,7 @@ t.test('should pack given directory for scoped package', async t => {
   })
   await npm.exec('pack', [])
   const filename = 'npm-test-package-1.0.0.tgz'
-  t.strictSame(outputs, [[filename]])
+  t.strictSame(outputs, [filename])
   t.ok(fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -67,7 +67,7 @@ t.test('should log output as valid json', async t => {
   await npm.exec('pack', [])
   const filename = 'test-package-1.0.0.tgz'
   t.matchSnapshot(outputs.map(JSON.parse), 'outputs as json')
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.ok(fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -84,7 +84,7 @@ t.test('should log scoped package output as valid json', async t => {
   await npm.exec('pack', [])
   const filename = 'myscope-test-package-1.0.0.tgz'
   t.matchSnapshot(outputs.map(JSON.parse), 'outputs as json')
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.ok(fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -100,8 +100,8 @@ t.test('dry run', async t => {
   })
   await npm.exec('pack', [])
   const filename = 'test-package-1.0.0.tgz'
-  t.strictSame(outputs, [[filename]])
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.strictSame(outputs, [filename])
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.throws(() => fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -142,8 +142,8 @@ t.test('foreground-scripts defaults to true', async t => {
       ['\n> test-fg-scripts@0.0.0 postpack\n> echo postpack!\n'],
     ],
     'prepack and postpack log to stdout')
-  t.strictSame(outputs, [[filename]])
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.strictSame(outputs, [filename])
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.throws(() => fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -181,8 +181,8 @@ t.test('foreground-scripts can still be set to false', async t => {
     caughtLogs,
     [],
     'prepack and postpack do not log to stdout')
-  t.strictSame(outputs, [[filename]])
-  t.matchSnapshot(logs.notice.map(([, m]) => m), 'logs pack contents')
+  t.strictSame(outputs, [filename])
+  t.matchSnapshot(logs.notice, 'logs pack contents')
   t.throws(() => fs.statSync(path.resolve(npm.prefix, filename)))
 })
 
@@ -235,24 +235,24 @@ t.test('workspaces', async t => {
   t.test('all workspaces', async t => {
     const { npm, outputs } = await loadWorkspaces(t)
     await npm.exec('pack', [])
-    t.strictSame(outputs, [['workspace-a-1.0.0.tgz'], ['workspace-b-1.0.0.tgz']])
+    t.strictSame(outputs, ['workspace-a-1.0.0.tgz', 'workspace-b-1.0.0.tgz'])
   })
 
   t.test('all workspaces, `.` first arg', async t => {
     const { npm, outputs } = await loadWorkspaces(t)
     await npm.exec('pack', ['.'])
-    t.strictSame(outputs, [['workspace-a-1.0.0.tgz'], ['workspace-b-1.0.0.tgz']])
+    t.strictSame(outputs, ['workspace-a-1.0.0.tgz', 'workspace-b-1.0.0.tgz'])
   })
 
   t.test('one workspace', async t => {
     const { npm, outputs } = await loadWorkspaces(t)
     await npm.exec('pack', ['workspace-a'])
-    t.strictSame(outputs, [['workspace-a-1.0.0.tgz']])
+    t.strictSame(outputs, ['workspace-a-1.0.0.tgz'])
   })
 
   t.test('specific package', async t => {
     const { npm, outputs } = await loadWorkspaces(t)
     await npm.exec('pack', [npm.prefix])
-    t.strictSame(outputs, [['workspaces-test-1.0.0.tgz']])
+    t.strictSame(outputs, ['workspaces-test-1.0.0.tgz'])
   })
 })

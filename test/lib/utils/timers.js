@@ -1,24 +1,24 @@
 const t = require('tap')
 const { resolve, join } = require('path')
 const fs = require('graceful-fs')
-const mockLogs = require('../../fixtures/mock-logs')
+const { format } = require('util')
 const tmock = require('../../fixtures/tmock')
 
 const mockTimers = (t, options) => {
-  const { logs, logMocks } = mockLogs()
+  const logs = {
+    warn: [],
+    silly: [],
+  }
   const Timers = tmock(t, '{LIB}/utils/timers', {
-    ...logMocks,
+    'proc-log': {
+      warn: (...args) => logs.warn.push(args.map((a) => format(a)).join(' ')),
+      silly: (...args) => logs.silly.push(args.map((a) => format(a)).join(' ')),
+    },
   })
   const timers = new Timers(options)
   t.teardown(() => timers.off())
   return { timers, logs }
 }
-
-t.test('getters', async (t) => {
-  const { timers } = mockTimers(t)
-  t.match(timers.unfinished, new Map())
-  t.match(timers.finished, {})
-})
 
 t.test('listens/stops on process', async (t) => {
   const { timers } = mockTimers(t)
@@ -65,7 +65,7 @@ t.test('initial listener', async (t) => {
 t.test('finish unstarted timer', async (t) => {
   const { logs } = mockTimers(t)
   process.emit('timeEnd', 'foo')
-  t.match(logs.silly, [['timing', /^Tried to end timer/, 'foo']])
+  t.match(logs.silly, ["timing Tried to end timer that doesn't exist: foo"])
 })
 
 t.test('writes file', async (t) => {
@@ -92,7 +92,7 @@ t.test('fails to write file', async (t) => {
   timers.load({ path: join(dir, 'does', 'not', 'exist') })
   timers.writeFile()
 
-  t.match(logs.warn, [['timing', 'could not write timing file']])
+  t.match(logs.warn, ['timing could not write timing file:'])
   t.equal(timers.file, null)
 })
 
@@ -102,6 +102,7 @@ t.test('no dir and no file', async (t) => {
   timers.load()
   timers.writeFile()
 
-  t.strictSame(logs, [])
+  t.strictSame(logs.warn, [])
+  t.strictSame(logs.silly, [])
   t.equal(timers.file, null)
 })

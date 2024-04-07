@@ -140,7 +140,7 @@ t.test('empty search results --json', async t => {
   registry.search({ results: [] })
 
   await npm.exec('search', ['foo'])
-  t.equal(joinedOutput(), '\n[]\n', 'should have expected empty square brackets')
+  t.equal(joinedOutput(), '\n[]', 'should have expected empty square brackets')
 })
 
 t.test('search api response error', async t => {
