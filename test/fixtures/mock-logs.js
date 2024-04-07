@@ -19,23 +19,6 @@ const mockLogs = (otherMocks = {}) => {
     }, {})
   )
 
-  // the above logs array is anything logged and it not filtered by level.
-  // this display array is filtered and will not include items that
-  // would not be shown in the terminal
-  const display = Object.defineProperties(
-    [],
-    ['timing', ...LEVELS].reduce((acc, level) => {
-      acc[level] = {
-        get () {
-          return this
-            .filter(([l]) => level === l)
-            .map(([l, ...args]) => args)
-        },
-      }
-      return acc
-    }, {})
-  )
-
   // This returns an object with mocked versions of all necessary
   // logging modules. It mocks them with methods that add logs
   // to an array which it also returns. The reason it also returns
@@ -62,7 +45,7 @@ const mockLogs = (otherMocks = {}) => {
     },
   }
 
-  return { logs, logMocks, display }
+  return { logs, logMocks }
 }
 
 module.exports = mockLogs

@@ -513,9 +513,9 @@ t.test('timings', async t => {
   for (const [config, expectedDisplay, expectedTiming] of timingDisplay) {
     const msg = `${JSON.stringify(config)}, display:${expectedDisplay}, timing:${expectedTiming}`
     await t.test(`timing display: ${msg}`, async t => {
-      const { display } = await loadMockNpm(t, { config })
-      t.equal(!!display.length, expectedDisplay, 'display')
-      t.equal(!!display.timing.length, expectedTiming, 'timing display')
+      const { logs } = await loadMockNpm(t, { config })
+      t.equal(!!logs.length, expectedDisplay, 'display')
+      t.equal(!!logs.timing.length, expectedTiming, 'timing display')
     })
   }
 })
