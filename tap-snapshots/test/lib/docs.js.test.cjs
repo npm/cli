@@ -49,6 +49,7 @@ Object {
   "hlep": "help",
   "home": "docs",
   "i": "install",
+  "I": "install",
   "ic": "ci",
   "in": "install",
   "info": "view",
@@ -3281,14 +3282,14 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
-aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
+aliases: add, i, I, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 
 Run "npm help install" for more info
 
 \`\`\`bash
 npm install [<package-spec> ...]
 
-aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
+aliases: add, i, I, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 \`\`\`
 
 #### \`save\`
