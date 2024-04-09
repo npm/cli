@@ -9,7 +9,7 @@
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
     "snap": "tap",
-    "test": "tap",
+    "test": "tap test/npm-replace-global.js -g \"fail when updating with lazy require\"",
     "posttest": "npm run lint"
   },
   "repository": {
