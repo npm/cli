@@ -162,3 +162,46 @@ t.test('publish and replace global self', async t => {
 
   t.strictSame(await npmInstall(npmPath), paths)
 })
+
+t.test('fail when updating with lazy require', async t => {
+  const {
+    npm,
+    npmLocalTarball,
+    npmPath,
+    paths,
+  } = await setupNpmGlobal(t, {
+    testdir: {
+      project: {
+        'package.json': {
+          name: 'npm',
+          version: '999.999.999',
+          bin: {
+            npm: './npm.js',
+          },
+        },
+        'npm.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
+      },
+    },
+  })
+
+  await npm('install', await npmLocalTarball(), '--global')
+  await npmPath('pack')
+
+  // exit-handler is the last thing called in the code
+  // so an uncached lazy require within the exit handler will always throw
+  await fs.writeFile(
+    join(paths.globalNodeModules, 'npm/lib/utils/exit-handler.js'),
+    `module.exports = () => require('./LAZY_REQUIRE_CANARY')
+     module.exports.setNpm = () => {}
+    `,
+    'utf-8'
+  )
+
+  await t.rejects(npmPath('install', 'npm-999.999.999.tgz', '--global'), {
+    stderr: `Error: Cannot find module './LAZY_REQUIRE_CANARY'`,
+  }, 'command fails with lazy require')
+
+  await t.resolveMatch(npmPath(), {
+    stdout: 'This worked!',
+  }, 'bin placement still works')
+})
