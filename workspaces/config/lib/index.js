@@ -2,7 +2,6 @@
 const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
-const mapWorkspaces = require('@npmcli/map-workspaces')
 const rpj = require('read-package-json-fast')
 const log = require('proc-log')
 
@@ -704,6 +703,7 @@ class Config {
           continue
         }
 
+        const mapWorkspaces = require('@npmcli/map-workspaces')
         const workspaces = await mapWorkspaces({ cwd: p, pkg })
         for (const w of workspaces.values()) {
           if (w === this.localPrefix) {
