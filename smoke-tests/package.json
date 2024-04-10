@@ -9,7 +9,7 @@
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
     "snap": "tap",
-    "test": "tap test/npm-replace-global.js -g \"fail when updating with lazy require\"",
+    "test": "tap",
     "posttest": "npm run lint"
   },
   "repository": {
@@ -36,7 +36,7 @@
   },
   "tap": {
     "no-coverage": true,
-    "timeout": 600,
+    "timeout": 1800,
     "jobs": 1,
     "test-ignore": "fixtures/*",
     "nyc-arg": [
