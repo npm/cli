@@ -1,5 +1,11 @@
 # Changelog
 
+## [7.4.2](https://github.com/npm/cli/compare/arborist-v7.4.1...arborist-v7.4.2) (2024-04-10)
+
+### Bug Fixes
+
+* [`ef381b1`](https://github.com/npm/cli/commit/ef381b1449c99e174437665aa767e7a9b60edf22) [#7363](https://github.com/npm/cli/pull/7363) use @npmcli/redact for url cleaning (#7363) (@lukekarrys)
+
 ## [7.4.1](https://github.com/npm/cli/compare/arborist-v7.4.0...arborist-v7.4.1) (2024-04-03)
 
 ### Bug Fixes

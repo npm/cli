@@ -1,5 +1,47 @@
 # Changelog
 
+## [10.5.2](https://github.com/npm/cli/compare/v10.5.1...v10.5.2) (2024-04-10)
+
+### Bug Fixes
+
+* [`ef381b1`](https://github.com/npm/cli/commit/ef381b1449c99e174437665aa767e7a9b60edf22) [#7363](https://github.com/npm/cli/pull/7363) use @npmcli/redact for url cleaning (#7363) (@lukekarrys)
+* [`3760dd2`](https://github.com/npm/cli/commit/3760dd275aaa53cd2cee92e6a7b90aaf62f663cf) [#7361](https://github.com/npm/cli/pull/7361) perf: do less work loading config (#7361) (@wraithgar)
+* [`64bcf4c`](https://github.com/npm/cli/commit/64bcf4cf09e284ca18988615ab8696b55d27d829) [#7360](https://github.com/npm/cli/pull/7360) perf: only initialize workpaces when we are inside a workspace (#7360) (@H4ad)
+* [`5a28a29`](https://github.com/npm/cli/commit/5a28a29799aac2c89b4e7a3d5c1d1d880346b743) [#7352](https://github.com/npm/cli/pull/7352) perf: lazy load workspace dependency (#7352) (@H4ad)
+* [`5fc0f9d`](https://github.com/npm/cli/commit/5fc0f9dfdac3f95fd2eb6855beb2020941b2a361) [#7347](https://github.com/npm/cli/pull/7347) lazy load validate npm package name on error message (#7347) (@H4ad)
+* [`c929ed1`](https://github.com/npm/cli/commit/c929ed180b3d3361d1541737a4c3c9932cd480c6) [#7321](https://github.com/npm/cli/pull/7321) prioritize CLI flags over publishConfig settings (#7321) (@roni-berlin)
+* [`70497cb`](https://github.com/npm/cli/commit/70497cbcd4e6b32948253b644ccd7a3f0ee29270) [#7346](https://github.com/npm/cli/pull/7346) perf: avoid importing the entire semver package for update-notifier (#7346) (@H4ad)
+
+### Documentation
+
+* [`90ba1c9`](https://github.com/npm/cli/commit/90ba1c9fd6c1ea89173ed7712cf1da205732b164) [#7340](https://github.com/npm/cli/pull/7340) fix incorrect ISO 8601 reference (#7340) (@emmanuel-ferdman)
+
+### Dependencies
+
+* [`699a1de`](https://github.com/npm/cli/commit/699a1de9d22e6c552141f87e468f5b37ed825206) [#7362](https://github.com/npm/cli/pull/7362) `@npmcli/map-workspaces@3.0.6`
+* [`49fb9b7`](https://github.com/npm/cli/commit/49fb9b7cc22a348f608ab443c6953d950955c9e2) [#7362](https://github.com/npm/cli/pull/7362) `socks@2.8.3`
+* [`f69052e`](https://github.com/npm/cli/commit/f69052e16c21ce87c3f8f53a3769cc42ae68db63) [#7362](https://github.com/npm/cli/pull/7362) `@npmcli/package-json@5.0.2`
+* [`c18a0ad`](https://github.com/npm/cli/commit/c18a0ade8c4e7f6e35ffa937aa7afe06351b4b60) [#7357](https://github.com/npm/cli/pull/7357) `sigstore@2.3.0`
+* [`fd4153b`](https://github.com/npm/cli/commit/fd4153b3ccbc8d49b3aff90fed5e853f35fd6beb) [#7357](https://github.com/npm/cli/pull/7357) `socks@2.8.2`
+* [`d6b705a`](https://github.com/npm/cli/commit/d6b705a474a39b83b3d75516a95e34af92793034) [#7357](https://github.com/npm/cli/pull/7357) `postcss-selector-parser@6.0.16`
+* [`248c177`](https://github.com/npm/cli/commit/248c1771b8b406337ec96cffc6b8bc8f9b3b55b4) [#7357](https://github.com/npm/cli/pull/7357) `hasown@2.0.2`
+* [`4af9e86`](https://github.com/npm/cli/commit/4af9e863d1a3ad4a934315113745bad4f3c29bb0) [#7357](https://github.com/npm/cli/pull/7357) `builtins@5.1.0`
+* [`7546b56`](https://github.com/npm/cli/commit/7546b5608d86fdefc5d2f080cd9c0223150ab2f7) [#7357](https://github.com/npm/cli/pull/7357) `@npmcli/agent@2.2.2`
+* [`d38fd4f`](https://github.com/npm/cli/commit/d38fd4f6035a6ec9fbd366079d6761cf9c25b471) [#7357](https://github.com/npm/cli/pull/7357) `spdx-expression-parse@4.0.0`
+* [`913b326`](https://github.com/npm/cli/commit/913b326f62319c95df3b576dd71cdbb04be26782) [#7357](https://github.com/npm/cli/pull/7357) `is-cidr@5.0.5`
+* [`84bbbd4`](https://github.com/npm/cli/commit/84bbbd4b61be12025cfa952c9d2a522a1b996245) [#7357](https://github.com/npm/cli/pull/7357) `@npmcli/package-json@5.0.1`
+* [`a0f5048`](https://github.com/npm/cli/commit/a0f504808b81af7442f47343366724eea1bc8623) [#7357](https://github.com/npm/cli/pull/7357) `@npmcli/git@5.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.4.2): `@npmcli/arborist@7.4.2`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v8.2.2): `@npmcli/config@8.2.2`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.0.9): `libnpmdiff@6.0.9`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v7.0.10): `libnpmexec@7.0.10`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.7): `libnpmfund@5.0.7`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v6.0.9): `libnpmpack@6.0.9`
+
+### Chores
+
+* [`81be28d`](https://github.com/npm/cli/commit/81be28de88fb5f3951e782a474548214f61eef70) [#7357](https://github.com/npm/cli/pull/7357) dev dependency updates (@wraithgar)
+
 ## [10.5.1](https://github.com/npm/cli/compare/v10.5.0...v10.5.1) (2024-04-03)
 
 ### Bug Fixes
