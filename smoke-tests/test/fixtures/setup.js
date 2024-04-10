@@ -158,7 +158,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     log(`${spawnCmd} ${spawnArgs.join(' ')}`)
     log('-'.repeat(40))
 
-    const spawnPromise = spawn(spawnCmd, spawnArgs, {
+    const { stderr, stdout } = await spawn(spawnCmd, spawnArgs, {
       cwd,
       env: {
         ...getEnvPath(),
@@ -169,24 +169,12 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
       ...opts,
     })
 
-    const proc = spawnPromise.process
+    log(stderr)
+    log('-'.repeat(40))
+    log(stdout)
+    log('='.repeat(40))
 
-    if (proc.stdout) {
-      proc.stdout.on('data', c => log(c))
-    }
-
-    if (proc.stderr) {
-      proc.stderr.on('data', c => log(c))
-    }
-
-    const { stderr, stdout } = await spawnPromise
-
-    // log(stderr)
-    // log('-'.repeat(40))
-    // log(stdout)
-    // log('='.repeat(40))
-
-    return { stderr, stdout }
+    return { stdout, stderr }
   }
 
   const baseNpm = async (...a) => {
