@@ -11,6 +11,15 @@ const isWin = (t, isWindows) => {
   mockGlobals(t, { 'process.platform': isWindows ? 'win32' : 'not-windows' })
 }
 
+t.test('all exported definitions seem like definitions', t => {
+  const definitions = mockDefs()
+  for (const def in definitions) {
+    t.ok(definitions[def].validate, `${def} has a validate function`)
+    t.ok(definitions[def].key, `${def} has a key`)
+  }
+  t.end()
+})
+
 t.test('basic flattening function camelCases from css-case', t => {
   const flat = {}
   const obj = { 'prefer-online': true }
