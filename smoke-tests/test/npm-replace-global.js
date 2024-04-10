@@ -51,7 +51,8 @@ t.test('pack and replace global self', async t => {
     },
   })
 
-  await npm('install', await npmLocalTarball(), '--global')
+  const tarball = await npmLocalTarball()
+  await npm('install', tarball, '--global')
 
   t.equal(
     await fs.realpath(join(globalBin, 'npm')),
@@ -182,7 +183,8 @@ t.test('fail when updating with lazy require', async t => {
     },
   })
 
-  await npm('install', await npmLocalTarball(), '--global')
+  const tarball = await npmLocalTarball()
+  await npm('install', tarball, '--global')
   await npmPath('pack')
 
   // exit-handler is the last thing called in the code
