@@ -25,10 +25,10 @@ const setupNpmGlobal = async (t, opts) => {
 
       return {
         npmRoot: await mock.npmPath('help').then(setup.getNpmRoot),
-        pathNpm: await which('npm', { path: mock.getPath(), nothrow: true }),
-        globalNpm: await which('npm', { nothrow: true }),
-        pathNpx: await which('npx', { path: mock.getPath(), nothrow: true }),
-        globalNpx: await which('npx', { nothrow: true }),
+        pathNpm: await which('npm', { path: mock.getPath() }),
+        globalNpm: await which('npm'),
+        pathNpx: await which('npx', { path: mock.getPath() }),
+        globalNpx: await which('npx'),
         binContents,
         nodeModulesContents,
       }
@@ -191,17 +191,20 @@ t.test('fail when updating with lazy require', async t => {
   // so an uncached lazy require within the exit handler will always throw
   await fs.writeFile(
     join(paths.globalNodeModules, 'npm/lib/utils/exit-handler.js'),
-    `module.exports = () => require('./LAZY_REQUIRE_CANARY')
-     module.exports.setNpm = () => {}
-    `,
+    `module.exports = () => require('./LAZY_REQUIRE_CANARY');module.exports.setNpm = () => {}`,
     'utf-8'
   )
 
-  await t.rejects(npmPath('install', 'npm-999.999.999.tgz', '--global'), {
-    stderr: `Error: Cannot find module './LAZY_REQUIRE_CANARY'`,
-  }, 'command fails with lazy require')
+  let installErr
+  try {
+    await npmPath('install', 'npm-999.999.999.tgz', '--global')
+  } catch (err) {
+    installErr = err
+  }
 
-  await t.resolveMatch(npmPath(), {
-    stdout: 'This worked!',
-  }, 'bin placement still works')
+  console.error(installErr.stderr)
+
+  t.match(installErr.stderr, `Error: Cannot find module './LAZY_REQUIRE_CANARY'`)
+
+  await t.resolveMatch(npmPath(), { stdout: 'This worked!' }, 'bin placement still works')
 })
