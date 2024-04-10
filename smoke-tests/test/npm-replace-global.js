@@ -185,8 +185,8 @@ t.test('fail when updating with lazy require', async t => {
   })
 
   await npm('install', await npmLocalTarball(), '--global')
-  console.error(npmPath())
-  console.error(npmPath('help'))
+  console.error(await npmPath())
+  console.error(await npmPath('help'))
   await npmPath('pack')
 
   // exit-handler is the last thing called in the code
