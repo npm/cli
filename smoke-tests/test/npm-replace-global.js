@@ -51,9 +51,7 @@ t.test('pack and replace global self', async t => {
     },
   })
 
-  const tarball = await npmLocalTarball()
-
-  await npm('install', tarball, '--global')
+  await npm('install', await npmLocalTarball(), '--global')
 
   t.equal(
     await fs.realpath(join(globalBin, 'npm')),
@@ -175,11 +173,11 @@ t.test('fail when updating with lazy require', async t => {
         'package.json': {
           name: 'npm',
           version: '999.999.999',
-          bin: {
-            npm: './npm.js',
-          },
+          // bin: {
+          //   npm: './npm.js',
+          // },
         },
-        'npm.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
+        // 'npm.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
       },
     },
   })
