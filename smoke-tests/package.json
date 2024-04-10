@@ -9,7 +9,7 @@
     "template-oss-apply": "template-oss-apply --force",
     "lintfix": "npm run lint -- --fix",
     "snap": "tap",
-    "test": "tap test/npm-replace-global.js",
+    "test": "tap",
     "posttest": "npm run lint"
   },
   "repository": {
