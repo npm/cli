@@ -173,17 +173,16 @@ t.test('fail when updating with lazy require', async t => {
         'package.json': {
           name: 'npm',
           version: '999.999.999',
-          // bin: {
-          //   npm: './npm.js',
-          // },
+          bin: {
+            npm: './my-new-npm-bin.js',
+          },
         },
-        // 'npm.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
+        'my-new-npm-bin.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
       },
     },
   })
 
   await npm('install', await npmLocalTarball(), '--global')
-  console.error(await npmPath('help'))
   await npmPath('pack')
 
   // exit-handler is the last thing called in the code
