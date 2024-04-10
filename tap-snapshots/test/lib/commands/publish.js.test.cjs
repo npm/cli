@@ -350,6 +350,10 @@ Array [
 ]
 `
 
+exports[`test/lib/commands/publish.js TAP prioritize CLI flags over publishConfig > new package version 1`] = `
++ test-package@1.0.0
+`
+
 exports[`test/lib/commands/publish.js TAP public access > must match snapshot 1`] = `
 Array [
   Array [
@@ -450,10 +454,6 @@ Array [
 
 exports[`test/lib/commands/publish.js TAP restricted access > new package version 1`] = `
 + @npm/test-package@1.0.0
-`
-
-exports[`test/lib/commands/publish.js TAP prioritize CLI flags over publishConfig > new package version 1`] = `
-+ test-package@1.0.0
 `
 
 exports[`test/lib/commands/publish.js TAP scoped _auth config scoped registry > new package version 1`] = `

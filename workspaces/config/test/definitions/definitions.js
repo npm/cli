@@ -11,6 +11,18 @@ const isWin = (t, isWindows) => {
   mockGlobals(t, { 'process.platform': isWindows ? 'win32' : 'not-windows' })
 }
 
+t.test('all exported definitions seem like definitions and are sorted', t => {
+  const definitions = mockDefs()
+  const keys = Object.keys(definitions)
+  const sortedKeys = keys.sort((a, b) => a.localeCompare(b, 'en'))
+  for (const def of keys) {
+    t.ok(definitions[def].validate, `${def} has a validate function`)
+    t.ok(definitions[def].key, `${def} has a key`)
+  }
+  t.strictSame(keys, sortedKeys, 'definitions are sorted by key')
+  t.end()
+})
+
 t.test('basic flattening function camelCases from css-case', t => {
   const flat = {}
   const obj = { 'prefer-online': true }
