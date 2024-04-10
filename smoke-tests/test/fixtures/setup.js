@@ -174,7 +174,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     log(stdout)
     log('='.repeat(40))
 
-    return { stdout, stderr }
+    return { stderr, stdout }
   }
 
   const baseNpm = async (...a) => {
