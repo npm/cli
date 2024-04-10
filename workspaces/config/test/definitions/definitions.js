@@ -11,12 +11,15 @@ const isWin = (t, isWindows) => {
   mockGlobals(t, { 'process.platform': isWindows ? 'win32' : 'not-windows' })
 }
 
-t.test('all exported definitions seem like definitions', t => {
+t.test('all exported definitions seem like definitions and are sorted', t => {
   const definitions = mockDefs()
-  for (const def in definitions) {
+  const keys = Object.keys(definitions)
+  const sortedKeys = keys.sort((a, b) => a.localeCompare(b, 'en'))
+  for (const def of keys) {
     t.ok(definitions[def].validate, `${def} has a validate function`)
     t.ok(definitions[def].key, `${def} has a key`)
   }
+  t.strictSame(keys, sortedKeys, 'definitions are sorted by key')
   t.end()
 })
 
