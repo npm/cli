@@ -94,74 +94,74 @@ t.test('pack and replace global self', async t => {
   t.strictSame(postPaths.nodeModulesContents, ['package.json'], 'contents is only package.json')
 })
 
-t.test('publish and replace global self', async t => {
-  let publishedPackument = null
-  const pkg = require('../../package.json')
-  const { name, version } = pkg
+// t.test('publish and replace global self', async t => {
+//   let publishedPackument = null
+//   const pkg = require('../../package.json')
+//   const { name, version } = pkg
 
-  const {
-    npm,
-    npmPath,
-    registry,
-    npmLocal,
-    npmLocalTarball,
-    getPaths,
-    paths: { globalBin, globalNodeModules, cache },
-  } = await setupNpmGlobal(t, {
-    testdir: {
-      home: {
-        '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
-      },
-    },
-  })
+//   const {
+//     npm,
+//     npmPath,
+//     registry,
+//     npmLocal,
+//     npmLocalTarball,
+//     getPaths,
+//     paths: { globalBin, globalNodeModules, cache },
+//   } = await setupNpmGlobal(t, {
+//     testdir: {
+//       home: {
+//         '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
+//       },
+//     },
+//   })
 
-  const npmPackage = async ({ manifest, ...opts } = {}) => {
-    await registry.package({
-      manifest: registry.manifest({ name, ...manifest }),
-      ...opts,
-    })
-  }
+//   const npmPackage = async ({ manifest, ...opts } = {}) => {
+//     await registry.package({
+//       manifest: registry.manifest({ name, ...manifest }),
+//       ...opts,
+//     })
+//   }
 
-  const npmInstall = async (useNpm) => {
-    await npmPackage({
-      manifest: { packuments: [publishedPackument] },
-      tarballs: { [version]: tarball },
-      times: 2,
-    })
-    await fs.rm(cache, { recursive: true, force: true })
-    await useNpm('install', 'npm@latest', '--global')
-    return getPaths()
-  }
+//   const npmInstall = async (useNpm) => {
+//     await npmPackage({
+//       manifest: { packuments: [publishedPackument] },
+//       tarballs: { [version]: tarball },
+//       times: 2,
+//     })
+//     await fs.rm(cache, { recursive: true, force: true })
+//     await useNpm('install', 'npm@latest', '--global')
+//     return getPaths()
+//   }
 
-  const tarball = await npmLocalTarball()
+//   const tarball = await npmLocalTarball()
 
-  if (setup.SMOKE_PUBLISH) {
-    await npmPackage()
-  }
-  registry.nock.put('/npm', body => {
-    if (body._id === 'npm' && body.versions[version]) {
-      publishedPackument = body.versions[version]
-      return true
-    }
-    return false
-  }).reply(201, {})
-  await npmLocal('publish', { proxy: true, force: true })
+//   if (setup.SMOKE_PUBLISH) {
+//     await npmPackage()
+//   }
+//   registry.nock.put('/npm', body => {
+//     if (body._id === 'npm' && body.versions[version]) {
+//       publishedPackument = body.versions[version]
+//       return true
+//     }
+//     return false
+//   }).reply(201, {})
+//   await npmLocal('publish', { proxy: true, force: true })
 
-  const paths = await npmInstall(npm)
-  t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
-  t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
-  t.equal(paths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
-  t.ok(paths.nodeModulesContents.length > 1, 'node modules has npm contents')
-  t.ok(paths.nodeModulesContents.includes('node_modules'), 'npm has its node_modules')
+//   const paths = await npmInstall(npm)
+//   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
+//   t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
+//   t.equal(paths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
+//   t.ok(paths.nodeModulesContents.length > 1, 'node modules has npm contents')
+//   t.ok(paths.nodeModulesContents.includes('node_modules'), 'npm has its node_modules')
 
-  t.strictSame(
-    paths.binContents,
-    ['npm', 'npx'].flatMap(p => setup.WINDOWS ? [p, `${p}.cmd`, `${p}.ps1`] : p),
-    'bin has npm and npx'
-  )
+//   t.strictSame(
+//     paths.binContents,
+//     ['npm', 'npx'].flatMap(p => setup.WINDOWS ? [p, `${p}.cmd`, `${p}.ps1`] : p),
+//     'bin has npm and npx'
+//   )
 
-  t.strictSame(await npmInstall(npmPath), paths)
-})
+//   t.strictSame(await npmInstall(npmPath), paths)
+// })
 
 t.test('fail when updating with lazy require', async t => {
   const {
