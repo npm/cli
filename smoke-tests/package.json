@@ -36,7 +36,7 @@
   },
   "tap": {
     "no-coverage": true,
-    "timeout": 1800,
+    "timeout": 600,
     "jobs": 1,
     "test-ignore": "fixtures/*",
     "nyc-arg": [
