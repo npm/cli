@@ -160,7 +160,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "userconfig": "{CWD}/home/.npmrc",
   "version": false,
   "versions": false,
-  "viewer": "man",
+  "viewer": {VIEWER}
   "which": null,
   "workspace": [],
   "workspaces": null,
@@ -323,7 +323,7 @@ user-agent = "npm/{npm-version} node/{node-version} {platform} {arch} workspaces
 userconfig = "{CWD}/home/.npmrc" 
 version = false 
 versions = false 
-viewer = "man" 
+viewer = {VIEWER}
 which = null 
 workspace = [] 
 workspaces = null 
