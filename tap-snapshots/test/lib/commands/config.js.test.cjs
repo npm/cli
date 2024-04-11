@@ -7,10 +7,7 @@
 'use strict'
 exports[`test/lib/commands/config.js TAP config list --json > output matches snapshot 1`] = `
 {
-  "fetch-retries": 0,
   "cache": "{CWD}/cache",
-  "loglevel": "silly",
-  "color": false,
   "json": true,
   "projectloaded": "yes",
   "userloaded": "yes",
@@ -32,6 +29,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "call": "",
   "cert": null,
   "cidr": null,
+  "color": true,
   "commit-hooks": true,
   "cpu": null,
   "depth": null,
@@ -46,7 +44,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "diff-text": false,
   "diff-unified": 3,
   "dry-run": false,
-  "editor": "code -r -w",
+  "editor": "{EDITOR}",
   "engine-strict": false,
   "expect-result-count": null,
   "expect-results": null,
@@ -93,6 +91,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "local-address": null,
   "location": "user",
   "lockfile-version": null,
+  "loglevel": "notice",
   "logs-dir": null,
   "logs-max": 10,
   "long": false,
@@ -144,7 +143,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "searchlimit": 20,
   "searchopts": "",
   "searchstaleness": 900,
-  "shell": "/opt/homebrew/bin/zsh",
+  "shell": "{SHELL}",
   "shrinkwrap": true,
   "sign-git-commit": false,
   "sign-git-tag": false,
@@ -167,7 +166,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "workspaces": null,
   "workspaces-update": true,
   "yes": null,
-  "npm-version": "10.5.1"
+  "npm-version": "{NPM-VERSION}"
 }
 `
 
@@ -193,7 +192,7 @@ cafile = null
 call = "" 
 cert = null 
 cidr = null 
-; color = true ; overridden by cli
+color = true 
 commit-hooks = true 
 cpu = null 
 depth = null 
@@ -208,11 +207,11 @@ diff-src-prefix = "a/"
 diff-text = false 
 diff-unified = 3 
 dry-run = false 
-editor = "code -r -w" 
+editor = "{EDITOR}" 
 engine-strict = false 
 expect-result-count = null 
 expect-results = null 
-; fetch-retries = 2 ; overridden by cli
+fetch-retries = 2 
 fetch-retry-factor = 10 
 fetch-retry-maxtimeout = 60000 
 fetch-retry-mintimeout = 10000 
@@ -256,7 +255,7 @@ link = false
 local-address = null 
 location = "user" 
 lockfile-version = null 
-; loglevel = "notice" ; overridden by cli
+loglevel = "notice" 
 logs-dir = null 
 logs-max = 10 
 ; long = false ; overridden by cli
@@ -264,7 +263,7 @@ maxsockets = 15
 message = "%s" 
 node-options = null 
 noproxy = [""] 
-npm-version = "10.5.1" 
+npm-version = "{NPM-VERSION}" 
 offline = false 
 omit = [] 
 omit-lockfile-registry-resolved = false 
@@ -307,7 +306,7 @@ searchexclude = ""
 searchlimit = 20 
 searchopts = "" 
 searchstaleness = 900 
-shell = "/opt/homebrew/bin/zsh" 
+shell = "{SHELL}" 
 shrinkwrap = true 
 sign-git-commit = false 
 sign-git-tag = false 
@@ -346,9 +345,6 @@ projectloaded = "yes"
 ; "cli" config from command line options
 
 cache = "{CWD}/cache" 
-color = false 
-fetch-retries = 0 
-loglevel = "silly" 
 long = true
 `
 
@@ -368,9 +364,6 @@ projectloaded = "yes"
 ; "cli" config from command line options
 
 cache = "{CWD}/cache" 
-color = false 
-fetch-retries = 0 
-loglevel = "silly" 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
@@ -385,10 +378,7 @@ exports[`test/lib/commands/config.js TAP config list with publishConfig global >
 ; "cli" config from command line options
 
 cache = "{CWD}/cache" 
-color = false 
-fetch-retries = 0 
 global = true 
-loglevel = "silly" 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
@@ -403,9 +393,6 @@ exports[`test/lib/commands/config.js TAP config list with publishConfig local > 
 ; "cli" config from command line options
 
 cache = "{CWD}/cache" 
-color = false 
-fetch-retries = 0 
-loglevel = "silly" 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}

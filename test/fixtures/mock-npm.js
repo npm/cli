@@ -208,11 +208,13 @@ const setupMockNpm = async (t, {
       // and quoted with `"` so mock globals will ignore that it contains dots
       if (key.startsWith('//')) {
         acc.env[`process.env."npm_config_${key}"`] = value
-      } else {
+      } else if (value !== undefined) {
         const values = [].concat(value)
         acc.argv.push(...values.flatMap(v => `--${key}=${v.toString()}`))
       }
-      acc.config[key] = value
+      if (value !== undefined) {
+        acc.config[key] = value
+      }
       return acc
     }, { argv: [...rawArgv], env: {}, config: {} })
 

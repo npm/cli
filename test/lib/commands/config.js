@@ -3,7 +3,7 @@ const fs = require('fs/promises')
 const ini = require('ini')
 const tspawk = require('../../fixtures/tspawk')
 const t = require('tap')
-const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
 const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 const { version: npmVersion } = require('../../../package.json')
 
@@ -14,6 +14,19 @@ t.cleanSnapshot = (s) => cleanCwd(s)
   .replace(new RegExp(`(version = "?)${npmVersion}`, 'g'), '$1{NPM-VERSION}')
   .replace(new RegExp(`(version": ")${npmVersion}`, 'g'), '$1{NPM-VERSION}')
   .replace(new RegExp(process.execPath, 'g'), '{EXECPATH}')
+  .replaceAll(process.env.EDITOR, '{EDITOR}')
+  .replaceAll(process.env.SHELL, '{SHELL}')
+
+const loadMockNpm = (t, opts = {}) => _loadMockNpm(t, {
+  ...opts,
+  config: {
+    ...opts.config,
+    // Reset configs that mock npm sets by default
+    'fetch-retries': undefined,
+    loglevel: undefined,
+    color: undefined,
+  },
+})
 
 t.test('config no args', async t => {
   const { npm } = await loadMockNpm(t)
