@@ -470,7 +470,7 @@ t.test('token create parseable output', async t => {
   t.match(spec[0], 'token\tefgh5678', 'prints the token')
   t.match(spec[1], `created\t${now}`, 'prints the created timestamp')
   t.match(spec[2], 'readonly\tfalse', 'prints the readonly flag')
-  t.match(spec[3], 'cidr_whitelist', 'prints the cidr whitelist')
+  t.match(spec[3], 'cidr_whitelist\t', 'prints the cidr whitelist')
 })
 
 t.test('token create ipv6 cidr', async t => {
