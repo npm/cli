@@ -23,12 +23,12 @@ t.test('with details', async t => {
     tap: t,
     registry: npm.config.get('registry'),
   })
-  registry.ping({ body: { test: true } })
+  registry.ping({ body: { test: true, test2: true } })
   await npm.exec('ping', [])
   t.match(logs.notice, [
     `PING https://registry.npmjs.org/`,
     /PONG [0-9]+ms/,
-    `PONG {\nPONG   "a": 1,\nPONG   "b": 2\nPONG }`,
+    `PONG {\nPONG   "test": true,\nPONG   "test2": true\nPONG }`,
   ])
   t.match(joinedOutput(), '')
 })
