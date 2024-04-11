@@ -25,10 +25,10 @@ const setupNpmGlobal = async (t, opts) => {
 
       return {
         npmRoot: await mock.npmPath('help').then(setup.getNpmRoot),
-        pathNpm: await which('npm', { path: mock.getPath(), nothrow: true }),
-        globalNpm: await which('npm', { nothrow: true }),
-        pathNpx: await which('npx', { path: mock.getPath(), nothrow: true }),
-        globalNpx: await which('npx', { nothrow: true }),
+        pathNpm: await which('npm', { path: mock.getPath() }),
+        globalNpm: await which('npm'),
+        pathNpx: await which('npx', { path: mock.getPath() }),
+        globalNpx: await which('npx'),
         binContents,
         nodeModulesContents,
       }
@@ -52,7 +52,6 @@ t.test('pack and replace global self', async t => {
   })
 
   const tarball = await npmLocalTarball()
-
   await npm('install', tarball, '--global')
 
   t.equal(
@@ -161,4 +160,44 @@ t.test('publish and replace global self', async t => {
   )
 
   t.strictSame(await npmInstall(npmPath), paths)
+})
+
+t.test('fail when updating with lazy require', async t => {
+  const {
+    npm,
+    npmLocalTarball,
+    npmPath,
+    paths,
+  } = await setupNpmGlobal(t, {
+    testdir: {
+      project: {
+        'package.json': {
+          name: 'npm',
+          version: '999.999.999',
+          bin: {
+            npm: './my-new-npm-bin.js',
+          },
+        },
+        'my-new-npm-bin.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
+      },
+    },
+  })
+
+  const tarball = await npmLocalTarball()
+  await npm('install', tarball, '--global')
+  await npmPath('pack')
+
+  // exit-handler is the last thing called in the code
+  // so an uncached lazy require within the exit handler will always throw
+  await fs.writeFile(
+    join(paths.globalNodeModules, 'npm/lib/utils/exit-handler.js'),
+    `module.exports = () => require('./LAZY_REQUIRE_CANARY');module.exports.setNpm = () => {}`,
+    'utf-8'
+  )
+
+  await t.rejects(npmPath('install', 'npm-999.999.999.tgz', '--global'), {
+    stderr: `Error: Cannot find module './LAZY_REQUIRE_CANARY'`,
+  }, 'install command fails with lazy require error')
+
+  await t.resolveMatch(npmPath(), { stdout: 'This worked!' }, 'bin placement still works')
 })
