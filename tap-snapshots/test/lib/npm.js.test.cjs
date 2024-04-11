@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/npm.js --color false --workspaces true TAP npm.load workspace-aware configs and commands > should exec workspaces version of commands 1`] = `
+exports[`test/lib/npm.js TAP npm.load workspace-aware configs and commands > should exec workspaces version of commands 1`] = `
 Lifecycle scripts included in a@1.0.0:
   test
     echo test a

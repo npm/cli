@@ -3,7 +3,7 @@ const tmock = require('../../fixtures/tmock')
 const mockLogs = require('../../fixtures/mock-logs')
 const { inspect } = require('util')
 
-const mockDisplay = async (t, mocks) => {
+const mockDisplay = async (t, { mocks, load } = {}) => {
   const { Chalk } = await import('chalk')
   const log = require('proc-log')
   const logs = mockLogs()
@@ -13,6 +13,7 @@ const mockDisplay = async (t, mocks) => {
     loglevel: 'silly',
     chalk: new Chalk({ level: 0 }),
     heading: 'npm',
+    ...load,
   })
   t.teardown(() => display.off())
   return {
@@ -25,10 +26,12 @@ const mockDisplay = async (t, mocks) => {
 t.test('can log cleanly', async (t) => {
   const explains = []
   const { log, logs } = await mockDisplay(t, {
-    '{LIB}/utils/explain-eresolve.js': {
-      explain: (...args) => {
-        explains.push(args)
-        return 'explanation'
+    mocks: {
+      '{LIB}/utils/explain-eresolve.js': {
+        explain: (...args) => {
+          explains.push(args)
+          return 'explanation'
+        },
       },
     },
   })
@@ -41,11 +44,21 @@ t.test('can log cleanly', async (t) => {
   t.match(explains, [[{ some: 'object' }, Function, 2]])
 })
 
+t.test('can initialize progress', async (t) => {
+  t.ok(await mockDisplay(t, {
+    load: {
+      progress: true,
+    },
+  }))
+})
+
 t.test('handles log throwing', async (t) => {
   const { log, logs } = await mockDisplay(t, {
-    '{LIB}/utils/explain-eresolve.js': {
-      explain: () => {
-        throw new Error('explain')
+    mocks: {
+      '{LIB}/utils/explain-eresolve.js': {
+        explain: () => {
+          throw new Error('explain')
+        },
       },
     },
   })

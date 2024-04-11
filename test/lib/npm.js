@@ -113,8 +113,8 @@ t.test('npm.load', async t => {
 
   await t.test('forceful loading', async t => {
     const { logs } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [...process.argv, '--force', '--color', 'always'],
+      config: {
+        force: true,
       },
     })
     t.match(logs.warn, [
@@ -130,22 +130,25 @@ t.test('npm.load', async t => {
       },
       config: {
         timing: true,
+        usage: '',
+        scope: 'foo',
       },
+      argv: [
+        'token',
+        'revoke',
+        'blergggg',
+      ],
       globals: (dirs) => ({
         'process.env.PATH': resolve(dirs.prefix, 'bin'),
         'process.argv': [
           node,
           process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          'blergggg',
         ],
       }),
     })
 
     t.equal(npm.config.get('scope'), '@foo', 'added the @ sign to scope')
+
     t.match([
       ...logs.timing.filter((p) => p.startsWith('npm:load:whichnode')),
       ...logs.verbose,
@@ -154,7 +157,7 @@ t.test('npm.load', async t => {
       /npm:load:whichnode Completed in [0-9.]+ms/,
       new RegExp(`node symlink ${resolve(prefix, 'bin', node)}`),
       /title npm token revoke blergggg/,
-      /argv "--usage" "--scope" "foo" "token" "revoke" "blergggg"/,
+      /argv "token" "revoke" "blergggg".*"--usage" "--scope" "foo"/,
       /logfile logs-max:\d+ dir:.*/,
       /logfile .*-debug-0.log/,
       /npm:load:.* Completed in [0-9.]+ms/,
@@ -205,14 +208,9 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color', 'false',
-          '--workspaces', 'false',
-          '--workspace', 'a',
-        ],
+      config: {
+        workspaces: false,
+        workspace: 'a',
       },
     })
     await t.rejects(
@@ -246,13 +244,8 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color', 'false',
-          '--workspaces', 'true',
-        ],
+      config: {
+        workspaces: true,
       },
     })
 
@@ -288,16 +281,9 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color',
-          'false',
-          '--workspaces',
-          '--global',
-          'true',
-        ],
+      config: {
+        workspaces: true,
+        global: true,
       },
     })
 
@@ -311,15 +297,11 @@ t.test('npm.load', async t => {
 t.test('set process.title', async t => {
   t.test('basic title setting', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'ls',
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['ls'],
     })
     t.equal(npm.title, 'npm ls')
     t.equal(process.title, 'npm ls')
@@ -327,17 +309,11 @@ t.test('set process.title', async t => {
 
   t.test('do not expose token being revoked', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          `npm_${'a'.repeat(36)}`,
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['token', 'revoke', `npm_${'a'.repeat(36)}`],
     })
     t.equal(npm.title, 'npm token revoke npm_***')
     t.equal(process.title, 'npm token revoke npm_***')
@@ -345,17 +321,11 @@ t.test('set process.title', async t => {
 
   t.test('do show *** unless a token is actually being revoked', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          'notatoken',
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['token', 'revoke', 'notatoken'],
     })
     t.equal(npm.title, 'npm token revoke notatoken')
     t.equal(process.title, 'npm token revoke notatoken')
@@ -544,13 +514,8 @@ t.test('explicit workspace rejection', async t => {
         workspaces: ['./packages/a'],
       }),
     },
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-        '--workspace', './packages/a',
-      ],
+    config: {
+      workspace: './packages/a',
     },
   })
   await t.rejects(
@@ -578,13 +543,8 @@ t.test('implicit workspace rejection', async t => {
       }),
     },
     chdir: ({ prefix }) => join(prefix, 'packages', 'a'),
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-        '--workspace', './packages/a',
-      ],
+    config: {
+      workspace: './packages/a',
     },
   })
   await t.rejects(
@@ -612,13 +572,6 @@ t.test('implicit workspace accept', async t => {
       }),
     },
     chdir: ({ prefix }) => join(prefix, 'packages', 'a'),
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-      ],
-    },
   })
   await t.rejects(mock.npm.exec('org', []), /.*Usage/)
 })
