@@ -19,7 +19,7 @@ t.test('token logout - user config', async t => {
   await npm.exec('logout', [])
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing token for https://registry.npmjs.org/',
+    'logout clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
   const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
@@ -46,7 +46,7 @@ t.test('token scoped logout - user config', async t => {
   await npm.exec('logout', [])
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing token for https://diff-registry.npmjs.com/',
+    'logout clearing token for https://diff-registry.npmjs.com/',
     'should log message with correct registry'
   )
 
@@ -68,7 +68,7 @@ t.test('user/pass logout - user config', async t => {
   await npm.exec('logout', [])
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing user credentials for https://registry.npmjs.org/',
+    'logout clearing user credentials for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
 
@@ -107,7 +107,7 @@ t.test('ignore invalid scoped registry config', async t => {
 
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing token for https://registry.npmjs.org/',
+    'logout clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
   const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
@@ -136,7 +136,7 @@ t.test('token logout - project config', async t => {
 
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing token for https://registry.npmjs.org/',
+    'logout clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
   const userRc = await fs.readFile(join(home, '.npmrc'), 'utf-8')
@@ -146,7 +146,7 @@ t.test('token logout - project config', async t => {
   ].join('\n'), 'leaves user config alone')
   t.equal(
     logs.verbose.byTitle('logout')[0],
-    'clearing token for https://registry.npmjs.org/',
+    'logout clearing token for https://registry.npmjs.org/',
     'should log message with correct registry'
   )
   const projectRc = await fs.readFile(join(prefix, '.npmrc'), 'utf-8')

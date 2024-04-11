@@ -19,7 +19,7 @@ Array [
     unpacked size: 41 B                                    
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
 ]
 `
@@ -38,7 +38,7 @@ Array [
     unpacked size: 110 B                                   
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
 ]
 `
@@ -57,7 +57,7 @@ Array [
     unpacked size: 110 B                                   
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
 ]
 `
@@ -136,7 +136,7 @@ Array [
     unpacked size: 41 B                                    
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
 ]
 `

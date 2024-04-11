@@ -31,33 +31,33 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP all clear > output 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP all clear in color > everything is ok in color 1`] = `
 [4mCheck[24m                               [4mValue[24m   [4mRecommendation/Notes[24m
-npm ping                            [32mok[39m
+npm ping                            [32mok[39m       
 npm -v                              [32mok[39m      current: v1.0.0, latest: v1.0.0
 node -v                             [32mok[39m      current: v1.0.0, recommended: v1.0.0
 npm config get registry             [32mok[39m      using default registry (https://registry.npmjs.org/)
 git executable in PATH              [32mok[39m      /path/to/git
 global bin folder in PATH           [32mok[39m      {CWD}/global/bin
-Perms check on cached files         [32mok[39m
-Perms check on local node_modules   [32mok[39m
-Perms check on global node_modules  [32mok[39m
-Perms check on local bin folder     [32mok[39m
-Perms check on global bin folder    [32mok[39m
+Perms check on cached files         [32mok[39m       
+Perms check on local node_modules   [32mok[39m       
+Perms check on global node_modules  [32mok[39m       
+Perms check on local bin folder     [32mok[39m       
+Perms check on global bin folder    [32mok[39m       
 Verify cache contents               [32mok[39m      verified 0 tarballs
 `
 
@@ -101,27 +101,27 @@ node -v                             not ok  Error: Invalid protocol \`ssh:\` con
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache badContent > corrupted cache content 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 2 tarballs
 `
 
@@ -181,33 +181,33 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP cacache missingContent > missing content 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 2 tarballs
 `
 
 exports[`test/lib/commands/doctor.js TAP cacache reclaimedCount > content garbage collected 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 2 tarballs
 `
 
@@ -259,7 +259,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks cache > output 1`] = `
 Check                        Value   Recommendation/Notes
-Perms check on cached files  ok
+Perms check on cached files  ok       
 Verify cache contents        ok      verified 0 tarballs
 `
 
@@ -307,11 +307,11 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windows > output 1`] = `
 Check                               Value   Recommendation/Notes
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 `
 
 exports[`test/lib/commands/doctor.js TAP discrete checks permissions - windows > logs 1`] = `
@@ -341,7 +341,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks ping > output 1`] = `
 Check     Value   Recommendation/Notes
-npm ping  ok
+npm ping  ok       
 `
 
 exports[`test/lib/commands/doctor.js TAP discrete checks registry > logs 1`] = `
@@ -357,7 +357,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP discrete checks registry > output 1`] = `
 Check                    Value   Recommendation/Notes
-npm ping                 ok
+npm ping                 ok       
 npm config get registry  ok      using default registry (https://registry.npmjs.org/)
 `
 
@@ -411,7 +411,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP error reading directory > readdir error 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
@@ -427,17 +427,17 @@ Verify cache contents               ok      verified 0 tarballs
 
 exports[`test/lib/commands/doctor.js TAP incorrect owner > incorrect owner 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
 Perms check on cached files         not ok  Check the permissions of files in {CWD}/cache (should be owned by current user)
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -469,7 +469,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP incorrect permissions > incorrect owner 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
@@ -548,17 +548,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing git > missing git 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              not ok  Error: Install git and ensure it's in your PATH.
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -591,16 +591,16 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing global directories > missing global directories 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
 Perms check on global node_modules  not ok  Check the permissions of files in {CWD}/global/node_modules
-Perms check on local bin folder     ok
+Perms check on local bin folder     ok       
 Perms check on global bin folder    not ok  Check the permissions of files in {CWD}/global/bin
 Verify cache contents               ok      verified 0 tarballs
 `
@@ -631,17 +631,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP missing local node_modules > missing local node_modules 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -671,17 +671,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP node out of date - current > node is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             not ok  Use node v2.0.1 (current: v2.0.0)
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -711,17 +711,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP node out of date - lts > node is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             not ok  Use node v1.0.0 (current: v0.0.1)
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -751,17 +751,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP non-default registry > non default registry 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              ok      current: v1.0.0, latest: v1.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             not ok  Try \`npm config set registry=https://registry.npmjs.org/\`
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -791,17 +791,17 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP npm out of date > npm is out of date 1`] = `
 Check                               Value   Recommendation/Notes
-npm ping                            ok
+npm ping                            ok       
 npm -v                              not ok  Use npm v2.0.0
 node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -837,11 +837,11 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -861,11 +861,11 @@ node -v                             [32mok[39m      current: v1.0.0, recommend
 npm config get registry             [32mok[39m      using default registry (https://registry.npmjs.org/)
 git executable in PATH              [32mok[39m      /path/to/git
 global bin folder in PATH           [32mok[39m      {CWD}/global/bin
-Perms check on cached files         [32mok[39m
-Perms check on local node_modules   [32mok[39m
-Perms check on global node_modules  [32mok[39m
-Perms check on local bin folder     [32mok[39m
-Perms check on global bin folder    [32mok[39m
+Perms check on cached files         [32mok[39m       
+Perms check on local node_modules   [32mok[39m       
+Perms check on global node_modules  [32mok[39m       
+Perms check on local bin folder     [32mok[39m       
+Perms check on global bin folder    [32mok[39m       
 Verify cache contents               [32mok[39m      verified 0 tarballs
 `
 
@@ -901,11 +901,11 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -941,11 +941,11 @@ node -v                             ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry             ok      using default registry (https://registry.npmjs.org/)
 git executable in PATH              ok      /path/to/git
 global bin folder in PATH           ok      {CWD}/global/bin
-Perms check on cached files         ok
-Perms check on local node_modules   ok
-Perms check on global node_modules  ok
-Perms check on local bin folder     ok
-Perms check on global bin folder    ok
+Perms check on cached files         ok       
+Perms check on local node_modules   ok       
+Perms check on global node_modules  ok       
+Perms check on local bin folder     ok       
+Perms check on global bin folder    ok       
 Verify cache contents               ok      verified 0 tarballs
 `
 
@@ -990,7 +990,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP windows skips permissions checks > no permissions checks 1`] = `
 Check                      Value   Recommendation/Notes
-npm ping                   ok
+npm ping                   ok       
 npm -v                     ok      current: v1.0.0, latest: v1.0.0
 node -v                    ok      current: v1.0.0, recommended: v1.0.0
 npm config get registry    ok      using default registry (https://registry.npmjs.org/)

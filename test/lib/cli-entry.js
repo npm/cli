@@ -34,9 +34,9 @@ t.test('print the version, and treat npm_g as npm -g', async t => {
   await cli(process)
 
   t.strictSame(process.argv, ['node', 'npm', '-g', '-v'], 'system process.argv was rewritten')
-  t.strictSame(logs.verbose.byTitle('cli'), ['node npm'])
-  t.strictSame(logs.verbose.byTitle('title'), ['npm'])
-  t.match(logs.verbose.byTitle('argv'), ['"--global" "--version"'])
+  t.strictSame(logs.verbose.byTitle('cli'), ['cli node npm'])
+  t.strictSame(logs.verbose.byTitle('title'), ['title npm'])
+  t.match(logs.verbose.byTitle('argv'), ['argv "--global" "--version"'])
   t.strictSame(logs.info, [
     `using npm@${Npm.version}`,
     `using node@${process.version}`,
@@ -55,9 +55,9 @@ t.test('calling with --versions calls npm version with no args', async t => {
   await cli(process)
 
   t.equal(process.title, 'npm install or whatever')
-  t.strictSame(logs.verbose.byTitle('cli'), ['node npm'])
-  t.strictSame(logs.verbose.byTitle('title'), ['npm install or whatever'])
-  t.match(logs.verbose.byTitle('argv'), ['"install" "or" "whatever" "--versions"'])
+  t.strictSame(logs.verbose.byTitle('cli'), ['cli node npm'])
+  t.strictSame(logs.verbose.byTitle('title'), ['title npm install or whatever'])
+  t.match(logs.verbose.byTitle('argv'), ['argv "install" "or" "whatever" "--versions"'])
   t.equal(outputs.length, 1)
   t.match(JSON.parse(outputs[0]), { npm: String, node: String, v8: String })
   t.strictSame(exitHandlerCalled(), [])
@@ -78,10 +78,10 @@ t.test('logged argv is sanitized', async t => {
 
   await cli(process)
   t.equal(process.title, 'npm version')
-  t.strictSame(logs.verbose.byTitle('cli'), ['node npm'])
-  t.strictSame(logs.verbose.byTitle('title'), ['npm version'])
+  t.strictSame(logs.verbose.byTitle('cli'), ['cli node npm'])
+  t.strictSame(logs.verbose.byTitle('title'), ['title npm version'])
   t.match(logs.verbose.byTitle('argv'),
-    ['"version" "--registry" "https://u:***@npmjs.org/password"'])
+    ['argv "version" "--registry" "https://u:***@npmjs.org/password"'])
 })
 
 t.test('logged argv is sanitized with equals', async t => {
@@ -97,7 +97,7 @@ t.test('logged argv is sanitized with equals', async t => {
   })
   await cli(process)
 
-  t.match(logs.verbose.byTitle('argv'), ['"version" "--registry" "https://u:***@npmjs.org/"'])
+  t.match(logs.verbose.byTitle('argv'), ['argv "version" "--registry" "https://u:***@npmjs.org/"'])
 })
 
 t.test('print usage if no params provided', async t => {

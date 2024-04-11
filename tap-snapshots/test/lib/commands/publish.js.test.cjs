@@ -27,7 +27,7 @@ Array [
     unpacked size: 87 B                                    
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
@@ -47,7 +47,7 @@ Array [
     unpacked size: 110 B                                   
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
@@ -67,7 +67,7 @@ Array [
     unpacked size: 110 B                                   
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
@@ -287,7 +287,7 @@ Array [
     unpacked size: 55 B                                    
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and public access",
 ]
@@ -319,7 +319,7 @@ Array [
     unpacked size: 55 B                                    
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   1
+    total files:   1                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and restricted access",
 ]
@@ -350,7 +350,7 @@ Array [
     unpacked size: 124 B                                   
     shasum:        {sha}
     integrity:     {integrity}
-    total files:   2
+    total files:   2                                       
   ),
   "Publishing to https://registry.npmjs.org/ with tag latest and default access",
 ]

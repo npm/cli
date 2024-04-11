@@ -11,20 +11,17 @@ const LABELS = new Map([
 const LOG_PREFIX = new RegExp(`^npm (${LEVELS.map(l => LABELS.get(l) ?? l).join('|')}) `, 'm')
 const GLOBAL_LOG_PREFIX = new RegExp(LOG_PREFIX.source, 'gm')
 
-function longestCommonPrefix (words) {
-  // check border cases size 1 array and empty first word)
-  if (words.length === 1) {
-    return words[0].split(' ')[0]
-  }
+// We only strip trailing newlines since some output will
+// have significant tabs and spaces
+const trimTrailingNewline = (str) => str.replace(/\n$/, '')
 
-  let i = 0
-  // while all words have the same character at position i, increment i
-  while (words[0][i] && words.every(w => w[i] === words[0][i])) {
-    i++
-  }
+const joinAndTrimTrailingNewlines = (arr) =>
+  trimTrailingNewline(arr.map(trimTrailingNewline).join('\n'))
 
-  // prefix is the substring from the beginning to the last successfully checked i
-  return words[0].substr(0, i)
+const logsByTitle = (logs) => (title) => {
+  return logs
+    .filter((l) => l.messageNoLevel.startsWith(title + ' '))
+    .map((l) => l.messageNoLevel)
 }
 
 module.exports = () => {
@@ -33,34 +30,23 @@ module.exports = () => {
 
   const RAW_LOGS = []
 
-  const logs = Object.defineProperties(
-    [],
-    LEVELS.reduce((acc, level) => {
+  const logs = Object.defineProperties([], {
+    byTitle: {
+      value: logsByTitle(RAW_LOGS),
+    },
+    ...LEVELS.reduce((acc, level) => {
       acc[level] = {
         get () {
           const byLevel = RAW_LOGS.filter((l) => l.level === level)
-          return Object.defineProperty(
-            byLevel.map((l) => l.titleMessage),
-            'byTitle',
-            {
-              value: (title) => byLevel
-                .filter((l) => l.titleMessage.startsWith(title))
-                .map((l) => l.titleMessage.replace(new RegExp(`^${title} `, 'gm'), '')),
-            }
-          )
+          const messagesForLevel = byLevel.map((l) => l.messageNoLevel)
+          return Object.defineProperty(messagesForLevel, 'byTitle', {
+            value: logsByTitle(byLevel),
+          })
         },
       }
       return acc
-    }, {
-      byTitle: {
-        value: (title) => {
-          return RAW_LOGS
-            .filter((l) => l.titleMessage.startsWith(title))
-            .map((l) => l.titleMessage.replace(new RegExp(`^${title} `, 'gm'), ''))
-        },
-      },
-    })
-  )
+    }, {}),
+  })
 
   const streams = {
     stderr: {
@@ -72,31 +58,33 @@ module.exports = () => {
         // in the future if/when we refactor what logs look like.
         const logMatch = str.match(LOG_PREFIX)
         if (logMatch) {
-          str = str.trimEnd()
+          // This is the message including the `npm` heading on each line.
+          // This is not really used in tests since we know every single
+          // line will have this prefix and it makes it a pain to assert
+          // stuff about each log line.
+          const fullMessage = trimTrailingNewline(str)
           const [, label] = logMatch
           const level = LABELS.get(label) ?? label
-          const fullMessage = str.replace(GLOBAL_LOG_PREFIX, `${level} `)
-          const titleMessage = str.replace(GLOBAL_LOG_PREFIX, '')
-          const title = longestCommonPrefix(titleMessage.split('\n'))
-          const message = titleMessage.replace(new RegExp(`^${title} `, 'gm'), '')
+          const messageNoHeading = fullMessage.replace(GLOBAL_LOG_PREFIX, `${level} `)
+          const messageNoLevel = fullMessage.replace(GLOBAL_LOG_PREFIX, '')
 
           RAW_LOGS.push({
             level,
             fullMessage,
-            titleMessage,
-            title,
-            message,
+            messageNoHeading,
+            messageNoLevel,
           })
 
-          logs.push(fullMessage)
+          // The message without the heading is what is used throughout the tests
+          logs.push(messageNoHeading)
         } else {
-          outputErrors.push(str.replace(/\n$/, ''))
+          outputErrors.push(trimTrailingNewline(str))
         }
       },
     },
     stdout: {
       write: (str) => {
-        outputs.push(str.replace(/\n$/, ''))
+        outputs.push(trimTrailingNewline(str))
       },
     },
   }
@@ -105,12 +93,13 @@ module.exports = () => {
     streams,
     logs: {
       outputs,
-      joinedOutput: () => outputs.map(o => o.trimEnd()).join('\n').trimEnd(),
+      joinedOutput: () => joinAndTrimTrailingNewlines(outputs),
       clearOutput: () => {
         outputs.length = 0
+        outputErrors.length = 0
       },
       outputErrors,
-      joinedOutputError: () => outputErrors.map(o => o.trimEnd()).join('\n').trimEnd(),
+      joinedOutputError: () => joinAndTrimTrailingNewlines(outputs),
       logs,
       clearLogs: () => {
         RAW_LOGS.length = 0

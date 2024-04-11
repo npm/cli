@@ -123,7 +123,7 @@ t.test('owner ls fails to retrieve packument', async t => {
   })
   registry.nock.get(`/${spec.escapedName}`).reply(404)
   await t.rejects(npm.exec('owner', ['ls']))
-  t.match(logs.error.byTitle('owner ls'), [`Couldn't get owner data @npmcli/test-package`])
+  t.match(logs.error.byTitle('owner ls'), [`owner ls Couldn't get owner data @npmcli/test-package`])
 })
 
 t.test('owner ls <pkg>', async t => {

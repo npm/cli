@@ -78,7 +78,7 @@ t.test('error, audit command, not json', async t => {
 
   t.ok(error, 'throws error')
   t.match(output, 'body error text', 'some output')
-  t.strictSame(logs, ['message'], 'some warnings')
+  t.strictSame(logs, ['audit message'], 'some warnings')
 })
 
 t.test('error, audit command, json', async t => {
@@ -115,5 +115,5 @@ t.test('error, audit command, json', async t => {
       '  }\n' +
       '}'
     , 'some output')
-  t.strictSame(logs, ['message'], 'some warnings')
+  t.strictSame(logs, ['audit message'], 'some warnings')
 })

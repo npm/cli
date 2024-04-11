@@ -87,7 +87,7 @@ t.test('unauthorized request', async t => {
 
   t.strictSame(
     logs(),
-    ['auth is required to look up your username'],
+    ['stars auth is required to look up your username'],
     'should warn auth required msg'
   )
 
@@ -121,7 +121,7 @@ t.test('no pkg starred', async t => {
 
   t.strictSame(
     logs(),
-    ['user has not starred any packages'],
+    ['stars user has not starred any packages'],
     'should warn no starred packages msg'
   )
 })
