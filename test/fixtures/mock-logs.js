@@ -1,15 +1,15 @@
 const { LEVELS: PROC_LOC_LEVELS } = require('proc-log')
+const { stripVTControlCharacters: stripAnsi } = require('util')
 
-const LEVELS = ['timing', ...PROC_LOC_LEVELS]
-const LABELS = new Map([
+const levels = ['timing', ...PROC_LOC_LEVELS]
+const labels = new Map([
   ['error', 'ERR!'],
   ['warn', 'WARN'],
   ['verbose', 'verb'],
   ['silly', 'sill'],
 ].reduce((acc, v) => acc.concat([v, v.slice(0).reverse()]), []))
-
-const LOG_PREFIX = new RegExp(`^npm (${LEVELS.map(l => LABELS.get(l) ?? l).join('|')}) `, 'm')
-const GLOBAL_LOG_PREFIX = new RegExp(LOG_PREFIX.source, 'gm')
+const logPrefix = new RegExp(`^npm (${levels.map(l => labels.get(l) ?? l).join('|')}) `)
+const isLog = (str) => logPrefix.test(stripAnsi(str))
 
 // We only strip trailing newlines since some output will
 // have significant tabs and spaces
@@ -18,30 +18,28 @@ const trimTrailingNewline = (str) => str.replace(/\n$/, '')
 const joinAndTrimTrailingNewlines = (arr) =>
   trimTrailingNewline(arr.map(trimTrailingNewline).join('\n'))
 
-const logsByTitle = (logs) => (title) => {
-  return logs
-    .filter((l) => l.messageNoLevel.startsWith(title + ' '))
-    .map((l) => l.messageNoLevel)
-}
+const logsByTitle = (logs) => ({
+  byTitle: {
+    value: (title) => {
+      return logs
+        .filter((l) => stripAnsi(l.message).startsWith(`${title} `))
+        .map((l) => l.message)
+    },
+  },
+})
 
 module.exports = () => {
   const outputs = []
   const outputErrors = []
 
-  const RAW_LOGS = []
-
+  const levelLogs = []
   const logs = Object.defineProperties([], {
-    byTitle: {
-      value: logsByTitle(RAW_LOGS),
-    },
-    ...LEVELS.reduce((acc, level) => {
+    ...logsByTitle(levelLogs),
+    ...levels.reduce((acc, level) => {
       acc[level] = {
         get () {
-          const byLevel = RAW_LOGS.filter((l) => l.level === level)
-          const messagesForLevel = byLevel.map((l) => l.messageNoLevel)
-          return Object.defineProperty(messagesForLevel, 'byTitle', {
-            value: logsByTitle(byLevel),
-          })
+          const byLevel = levelLogs.filter((l) => l.level === level)
+          return Object.defineProperties(byLevel.map((l) => l.message), logsByTitle(byLevel))
         },
       }
       return acc
@@ -51,35 +49,33 @@ module.exports = () => {
   const streams = {
     stderr: {
       write: (str) => {
+        str = trimTrailingNewline(str)
+
         // Use the beginning of each line to determine if its a log
         // or an output error since we write both of those to stderr.
         // This couples logging format to this test but we only need
         // to do it in a single place so hopefully its easy to change
         // in the future if/when we refactor what logs look like.
-        const logMatch = str.match(LOG_PREFIX)
-        if (logMatch) {
-          // This is the message including the `npm` heading on each line.
-          // This is not really used in tests since we know every single
-          // line will have this prefix and it makes it a pain to assert
-          // stuff about each log line.
-          const fullMessage = trimTrailingNewline(str)
-          const [, label] = logMatch
-          const level = LABELS.get(label) ?? label
-          const messageNoHeading = fullMessage.replace(GLOBAL_LOG_PREFIX, `${level} `)
-          const messageNoLevel = fullMessage.replace(GLOBAL_LOG_PREFIX, '')
-
-          RAW_LOGS.push({
-            level,
-            fullMessage,
-            messageNoHeading,
-            messageNoLevel,
-          })
-
-          // The message without the heading is what is used throughout the tests
-          logs.push(messageNoHeading)
-        } else {
-          outputErrors.push(trimTrailingNewline(str))
+        if (!isLog(str)) {
+          outputErrors.push(str)
+          return
         }
+
+        // Split on spaces for the heading and level/label. We know that
+        // none of those have spaces but could be colorized so there's no
+        // other good way to get each of those including control chars
+        const [rawHeading, rawLabel] = str.split(' ')
+        const rawPrefix = `${rawHeading} ${rawLabel} `
+        // If message is colorized we can just replaceAll with the string since
+        // it will be unique due to control chars. Otherwise we create a regex
+        // that will only match the beginning of each line.
+        const prefix = stripAnsi(str) !== str ? rawPrefix : new RegExp(`^${rawPrefix}`, 'gm')
+
+        // The level needs color stripped always because we use it to filter logs
+        const level = labels.get(stripAnsi(rawLabel)) ?? stripAnsi(rawLabel)
+
+        logs.push(str.replaceAll(prefix, `${level} `))
+        levelLogs.push({ level, message: str.replaceAll(prefix, '') })
       },
     },
     stdout: {
@@ -102,7 +98,7 @@ module.exports = () => {
       joinedOutputError: () => joinAndTrimTrailingNewlines(outputs),
       logs,
       clearLogs: () => {
-        RAW_LOGS.length = 0
+        levelLogs.length = 0
         logs.length = 0
       },
     },

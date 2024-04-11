@@ -367,7 +367,32 @@ exports[`test/lib/commands/publish.js TAP workspaces all workspaces - color > al
 `
 
 exports[`test/lib/commands/publish.js TAP workspaces all workspaces - color > warns about skipped private workspace in color 1`] = `
-Array []
+Array [
+  "\\u001b[35mpublish\\u001b[39m npm auto-corrected some errors in your package.json when publishing.  Please run \\"npm pkg fix\\" to address these errors.",
+  String(
+    \\u001b[35mpublish\\u001b[39m errors corrected:
+    \\u001b[35mpublish\\u001b[39m Removed invalid "scripts"
+    \\u001b[35mpublish\\u001b[39m "repository" was changed from a string to an object
+  ),
+  "\\u001b[35mpublish\\u001b[39m npm auto-corrected some errors in your package.json when publishing.  Please run \\"npm pkg fix\\" to address these errors.",
+  String(
+    \\u001b[35mpublish\\u001b[39m errors corrected:
+    \\u001b[35mpublish\\u001b[39m Removed invalid "scripts"
+    \\u001b[35mpublish\\u001b[39m "repository" was changed from a string to an object
+    \\u001b[35mpublish\\u001b[39m "repository.url" was normalized to "git+https://github.com/npm/workspace-b.git"
+  ),
+  "\\u001b[35mpublish\\u001b[39m npm auto-corrected some errors in your package.json when publishing.  Please run \\"npm pkg fix\\" to address these errors.",
+  String(
+    \\u001b[35mpublish\\u001b[39m errors corrected:
+    \\u001b[35mpublish\\u001b[39m Removed invalid "scripts"
+  ),
+  "\\u001b[35mpublish\\u001b[39m npm auto-corrected some errors in your package.json when publishing.  Please run \\"npm pkg fix\\" to address these errors.",
+  String(
+    \\u001b[35mpublish\\u001b[39m errors corrected:
+    \\u001b[35mpublish\\u001b[39m Removed invalid "scripts"
+  ),
+  "\\u001b[35mpublish\\u001b[39m Skipping workspace \\u001b[32mworkspace-p\\u001b[39m, marked as \\u001b[1mprivate\\u001b[22m",
+]
 `
 
 exports[`test/lib/commands/publish.js TAP workspaces all workspaces - no color > all public workspaces 1`] = `
