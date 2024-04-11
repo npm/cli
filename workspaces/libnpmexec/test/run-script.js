@@ -141,3 +141,41 @@ t.test('ci env', async t => {
 
   await runScript()
 })
+
+t.test('stdio value', t => {
+  t.test('stdio default value', async t => {
+    const runScript = await mockRunScript(t, {
+      '@npmcli/run-script': (opt) => {
+        t.equal(opt.stdio, 'inherit', 'should use expected stdio value')
+      },
+      npmlog: {
+        disableProgress () {
+          t.ok('should disable progress')
+        },
+        enableProgress () {
+          t.ok('should enable progress')
+        },
+      },
+    })
+    await runScript({ args: [], runPath: t.testDirName })
+  })
+
+  t.test('stdio custom value', async t => {
+    const runScript = await mockRunScript(t, {
+      '@npmcli/run-script': (opt) => {
+        t.equal(opt.stdio, 'pipe', 'should use expected stdio value')
+      },
+      npmlog: {
+        disableProgress () {
+          t.ok('should disable progress')
+        },
+        enableProgress () {
+          t.fail('should not enable progress')
+        },
+      },
+    })
+    await runScript({ args: [], stdio: 'pipe', runPath: t.testDirName })
+  })
+
+  t.end()
+})
