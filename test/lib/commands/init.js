@@ -334,7 +334,7 @@ t.test('workspaces', async t => {
       'should exit with missing package.json file error'
     )
 
-    t.equal(logs.warn[0], 'Missing package.json. Try with `--include-workspace-root`.')
+    t.equal(logs.warn[0], 'init Missing package.json. Try with `--include-workspace-root`.')
   })
 
   await t.test('bad package.json when settting workspace', async t => {
