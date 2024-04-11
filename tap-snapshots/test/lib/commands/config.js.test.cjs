@@ -11,7 +11,6 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "cache": "{CWD}/cache",
   "loglevel": "silly",
   "color": false,
-  "timing": true,
   "json": true,
   "projectloaded": "yes",
   "userloaded": "yes",
@@ -153,6 +152,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "strict-ssl": true,
   "tag": "latest",
   "tag-version-prefix": "v",
+  "timing": false,
   "umask": 0,
   "unicode": false,
   "update-notifier": true,
@@ -315,7 +315,7 @@ strict-peer-deps = false
 strict-ssl = true 
 tag = "latest" 
 tag-version-prefix = "v" 
-; timing = false ; overridden by cli
+timing = false 
 umask = 0 
 unicode = false 
 update-notifier = true 
@@ -349,8 +349,7 @@ cache = "{CWD}/cache"
 color = false 
 fetch-retries = 0 
 loglevel = "silly" 
-long = true 
-timing = true
+long = true
 `
 
 exports[`test/lib/commands/config.js TAP config list > output matches snapshot 1`] = `
@@ -372,7 +371,6 @@ cache = "{CWD}/cache"
 color = false 
 fetch-retries = 0 
 loglevel = "silly" 
-timing = true 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
@@ -391,7 +389,6 @@ color = false
 fetch-retries = 0 
 global = true 
 loglevel = "silly" 
-timing = true 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
@@ -409,7 +406,6 @@ cache = "{CWD}/cache"
 color = false 
 fetch-retries = 0 
 loglevel = "silly" 
-timing = true 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}

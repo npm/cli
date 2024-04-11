@@ -129,7 +129,7 @@ const err = (message = '', options = {}, noStack = false) => {
 
 t.test('handles unknown error with logs and debug file', async (t) => {
   const { exitHandler, debugFile, logs } = await mockExitHandler(t, {
-    config: { loglevel: 'silly' },
+    config: { loglevel: 'silly', timing: true },
   })
 
   await exitHandler(err('Unknown error', 'ECODE'))
@@ -416,9 +416,7 @@ t.test('files from error message', async (t) => {
   const errorFileName = logFiles.find(f => f.endsWith('error-file.txt'))
   const errorFile = fs.readFileSync(join(cache, '_logs', errorFileName)).toString()
 
-  const reportLog = logs[logs.length - 3]
-
-  t.match(reportLog, /For a full report see:\n.*-error-file\.txt/)
+  t.match(logs[2], /For a full report see:\n.*-error-file\.txt/)
   t.match(errorFile, '# error file content')
   t.match(errorFile, 'Log files:')
 })

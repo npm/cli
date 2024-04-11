@@ -200,7 +200,6 @@ const setupMockNpm = async (t, {
     // with my passing in configs if they need to test other forms of output.
     loglevel: 'silly',
     color: false,
-    timing: true,
   }
 
   const { argv, env, config } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })

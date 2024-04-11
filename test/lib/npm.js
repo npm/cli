@@ -52,6 +52,9 @@ t.test('npm.load', async t => {
       otherDirs: {
         newCache: {},
       },
+      config: {
+        timing: true,
+      },
     })
 
     t.equal(npm.loaded, true)
@@ -124,6 +127,9 @@ t.test('npm.load', async t => {
     const { Npm, npm, logs, outputs, prefix } = await loadMockNpm(t, {
       prefixDir: {
         bin: t.fixture('symlink', dirname(process.execPath)),
+      },
+      config: {
+        timing: true,
       },
       globals: (dirs) => ({
         'process.env.PATH': resolve(dirs.prefix, 'bin'),
@@ -417,7 +423,11 @@ t.test('cache dir', async t => {
 
 t.test('timings', async t => {
   t.test('gets/sets timers', async t => {
-    const { npm, logs } = await loadMockNpm(t)
+    const { npm, logs } = await loadMockNpm(t, {
+      config: {
+        timing: true,
+      },
+    })
     process.emit('time', 'foo')
     process.emit('time', 'bar')
     t.match(npm.unfinishedTimers.get('foo'), Number, 'foo timer is a number')
@@ -481,7 +491,7 @@ t.test('timings', async t => {
   })
 
   const timingDisplay = [
-    [{ loglevel: 'silly', timing: false }, true, false],
+    [{ loglevel: 'silly' }, true, false],
     [{ loglevel: 'silly', timing: true }, true, true],
     [{ loglevel: 'silent', timing: true }, false, false],
   ]

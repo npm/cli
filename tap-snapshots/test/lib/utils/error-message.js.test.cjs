@@ -520,7 +520,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"loaded":true,"cachePath":false,"cacheDest":false} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
@@ -548,7 +548,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"loaded":true,"cachePath":false,"cacheDest":true} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
@@ -577,7 +577,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"loaded":true,"cachePath":true,"cacheDest":false} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
@@ -606,7 +606,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"loaded":true,"cachePath":true,"cacheDest":true} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
@@ -782,7 +782,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loaded":true,"cachePath":false,"cacheDest":false} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
@@ -821,7 +821,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loaded":true,"cachePath":false,"cacheDest":true} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
@@ -860,7 +860,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loaded":true,"cachePath":true,"cacheDest":false} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
@@ -899,7 +899,7 @@ Object {
 exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loaded":true,"cachePath":true,"cacheDest":true} > must match snapshot 2`] = `
 Array [
   "title npm",
-  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/" /"--timing/" /"true/"",
+  "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
   "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
   "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]

@@ -8,7 +8,7 @@ const labels = new Map([
   ['verbose', 'verb'],
   ['silly', 'sill'],
 ].reduce((acc, v) => acc.concat([v, v.slice(0).reverse()]), []))
-const logPrefix = new RegExp(`^npm (${levels.map(l => labels.get(l) ?? l).join('|')}) `)
+const logPrefix = new RegExp(`^npm (${levels.map(l => labels.get(l) ?? l).join('|')})\\s`)
 const isLog = (str) => logPrefix.test(stripAnsi(str))
 
 // We only strip trailing newlines since some output will
