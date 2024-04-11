@@ -24,9 +24,8 @@ t.formatSnapshot = obj =>
 // Run shrinkwrap against a specified prefixDir with config items
 // and make some assertions that should always be true. Sets
 // the results on t.context for use in child tests
-const shrinkwrap = async (t, prefixDir = {}, config = {}, mocks = {}) => {
+const shrinkwrap = async (t, prefixDir = {}, config = {}) => {
   const { npm, logs } = await loadMockNpm(t, {
-    mocks,
     config,
     prefixDir,
   })
@@ -37,7 +36,7 @@ const shrinkwrap = async (t, prefixDir = {}, config = {}, mocks = {}) => {
   const oldFile = resolve(npm.prefix, 'package-lock.json')
 
   t.notOk(fs.existsSync(oldFile), 'package-lock is always deleted')
-  // t.same(logs.warn, [], 'no warnings')
+  t.same(logs.warn, [], 'no warnings')
   t.teardown(() => delete t.context)
   t.context = {
     localPrefix: prefixDir,
