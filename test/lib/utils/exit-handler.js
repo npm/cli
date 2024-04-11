@@ -448,7 +448,7 @@ t.test('files from error message with error', async (t) => {
 
 t.test('timing with no error', async (t) => {
   const { exitHandler, timingFile, npm, logs } = await mockExitHandler(t, {
-    config: { timing: true },
+    config: { timing: true, loglevel: 'info' },
   })
 
   await exitHandler()
@@ -456,7 +456,7 @@ t.test('timing with no error', async (t) => {
 
   t.equal(process.exitCode, 0)
 
-  const msg = logs.notice[0]
+  const msg = logs.info[1]
   t.match(msg, /A complete log of this run can be found in:/)
   t.match(msg, /Timing info written to:/)
 
@@ -478,6 +478,18 @@ t.test('timing with no error', async (t) => {
       npm: Number,
     },
   })
+})
+
+t.test('timing message hidden by loglevel', async (t) => {
+  const { exitHandler, logs } = await mockExitHandler(t, {
+    config: { timing: true, loglevel: 'notice' },
+  })
+
+  await exitHandler()
+
+  t.equal(process.exitCode, 0)
+
+  t.strictSame(logs.info, [], 'no log message')
 })
 
 t.test('unfinished timers', async (t) => {
