@@ -11,7 +11,8 @@ const spawk = tspawk(t)
 
 t.cleanSnapshot = (s) => cleanCwd(s)
   .replace(new RegExp(`(version = )${process.version}`, 'g'), '$1{NODE-VERSION}')
-  .replace(new RegExp(`(version = )${npmVersion}`, 'g'), '$1{NPM-VERSION}')
+  .replace(new RegExp(`(version = "?)${npmVersion}`, 'g'), '$1{NPM-VERSION}')
+  .replace(new RegExp(`(version": ")${npmVersion}`, 'g'), '$1{NPM-VERSION}')
   .replace(new RegExp(process.execPath, 'g'), '{EXECPATH}')
 
 t.test('config no args', async t => {
