@@ -44,16 +44,16 @@ npm {NPM}
 
 exports[`test/index.js TAP basic npm ci > should throw mismatch deps in lock file error 1`] = `
 npm ERR! code EUSAGE
-npm ERR! 
+npm ERR!
 npm ERR! \`npm ci\` can only install packages when your package.json and package-lock.json or npm-shrinkwrap.json are in sync. Please update your lock file with \`npm install\` before continuing.
-npm ERR! 
+npm ERR!
 npm ERR! Invalid: lock file's abbrev@1.0.4 does not satisfy abbrev@1.1.1
-npm ERR! 
+npm ERR!
 npm ERR! Clean install a project
-npm ERR! 
+npm ERR!
 npm ERR! Usage:
 npm ERR! npm ci
-npm ERR! 
+npm ERR!
 npm ERR! Options:
 npm ERR! [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
 npm ERR! [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
@@ -62,9 +62,9 @@ npm ERR! [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-au
 npm ERR! [--no-bin-links] [--no-fund] [--dry-run]
 npm ERR! [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm ERR! [-ws|--workspaces] [--include-workspace-root] [--install-links]
-npm ERR! 
+npm ERR!
 npm ERR! aliases: clean-install, ic, install-clean, isntall-clean
-npm ERR! 
+npm ERR!
 npm ERR! Run "npm help ci" for more info
 
 npm ERR! A complete log of this run can be found in: {NPM}/{TESTDIR}/cache/_logs/{LOG}
