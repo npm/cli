@@ -49,7 +49,6 @@ const run = async ({
   return runScript({
     ...flatOptions,
     pkg,
-    banner: false,
     // we always run in cwd, not --prefix
     path: runPath,
     binPaths,
