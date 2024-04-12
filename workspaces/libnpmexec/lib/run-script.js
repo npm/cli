@@ -1,7 +1,7 @@
 const ciInfo = require('ci-info')
 const runScript = require('@npmcli/run-script')
 const readPackageJson = require('read-package-json-fast')
-const { log } = require('proc-log')
+const { log, output } = require('proc-log')
 const noTTY = require('./no-tty.js')
 
 const run = async ({
@@ -9,7 +9,6 @@ const run = async ({
   call,
   flatOptions,
   locationMsg,
-  output = () => {},
   path,
   binPaths,
   runPath,
@@ -37,7 +36,7 @@ const run = async ({
 
       const { chalk } = flatOptions
 
-      output(`${
+      output.standard(`${
         chalk.reset('\nEntering npm script environment')
       }${
         chalk.reset(locationMsg || ` at location:\n${chalk.dim(runPath)}`)
