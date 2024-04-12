@@ -1,5 +1,4 @@
 const t = require('tap')
-const os = require('os')
 const fs = require('fs')
 const fsMiniPass = require('fs-minipass')
 const { join, resolve } = require('path')
@@ -146,7 +145,7 @@ t.test('handles unknown error with logs and debug file', async (t) => {
 
   let skippedLogs = 0
   logs.forEach((logItem, i) => {
-    const logLines = logItem.split(os.EOL).map(l => `${i} ${l}`)
+    const logLines = logItem.split('\n').map(l => `${i} ${l}`)
     for (const line of logLines) {
       if (line.includes('logfile') && line.includes('cleaning')) {
         skippedLogs++
