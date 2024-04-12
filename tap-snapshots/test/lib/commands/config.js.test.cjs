@@ -29,7 +29,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "call": "",
   "cert": null,
   "cidr": null,
-  "color": true,
+  "color": {COLOR},
   "commit-hooks": true,
   "cpu": null,
   "depth": null,
@@ -119,7 +119,7 @@ exports[`test/lib/commands/config.js TAP config list --json > output matches sna
   "prefix": "{CWD}/global",
   "preid": "",
   "production": null,
-  "progress": true,
+  "progress": {PROGRESS},
   "provenance": false,
   "provenance-file": null,
   "proxy": null,
@@ -192,7 +192,7 @@ cafile = null
 call = "" 
 cert = null 
 cidr = null 
-color = true 
+color = {COLOR}
 commit-hooks = true 
 cpu = null 
 depth = null 
@@ -282,7 +282,7 @@ prefer-online = false
 prefix = "{CWD}/global" 
 preid = "" 
 production = null 
-progress = true 
+progress = {PROGRESS}
 provenance = false 
 provenance-file = null 
 proxy = null 
