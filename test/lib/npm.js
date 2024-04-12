@@ -476,15 +476,6 @@ t.test('timings', async t => {
   }
 })
 
-t.test('outputs cleaned messages', async t => {
-  const { outputs, outputErrors, npm } = await loadMockNpm(t)
-  npm.output('hello\x00world')
-  npm.outputError('error\x00world')
-
-  t.match(outputs, ['hello^@world'])
-  t.match(outputErrors, ['error^@world'])
-})
-
 t.test('aliases and typos', async t => {
   const { Npm } = await loadMockNpm(t, { init: false })
   t.throws(() => Npm.cmd('thisisnotacommand'), { code: 'EUNKNOWNCOMMAND' })

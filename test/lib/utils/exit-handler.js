@@ -3,6 +3,7 @@ const fs = require('fs')
 const fsMiniPass = require('fs-minipass')
 const { join, resolve } = require('path')
 const EventEmitter = require('events')
+const { output } = require('proc-log')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('@npmcli/mock-globals')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
@@ -102,7 +103,10 @@ const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
 
   return {
     ...rest,
-    errors,
+    errors: () => [
+      ...rest.outputErrors,
+      ...errors,
+    ],
     npm,
     // Make it async to make testing ergonomics a little easier so we dont need
     // to t.plan() every test to make sure we get process.exit called.
@@ -174,7 +178,7 @@ t.test('exit handler never called - loglevel silent', async (t) => {
   })
   process.emit('exit', 1)
   t.strictSame(logs.error, [])
-  t.strictSame(errors, [''], 'logs one empty string to console.error')
+  t.strictSame(errors(), [''], 'one empty string')
 })
 
 t.test('exit handler never called - loglevel notice', async (t) => {
@@ -185,7 +189,7 @@ t.test('exit handler never called - loglevel notice', async (t) => {
     'Exit handler never called!',
     /error with npm itself/,
   ])
-  t.strictSame(errors, ['', ''], 'logs two empty strings to console.error')
+  t.strictSame(errors(), ['', ''], 'two empty string on output')
 })
 
 t.test('exit handler never called - no npm', async (t) => {
@@ -193,31 +197,34 @@ t.test('exit handler never called - no npm', async (t) => {
   process.emit('exit', 1)
   t.equal(process.exitCode, 1)
   t.strictSame(logs.error, [])
-  t.strictSame(errors, [''], 'logs one empty string to console.error')
+  t.strictSame(errors(), [''], 'one empty string')
 })
 
 t.test('exit handler called - no npm', async (t) => {
   const { exitHandler, errors } = await mockExitHandler(t, { init: false })
   await exitHandler()
   t.equal(process.exitCode, 1)
-  t.match(errors, [/Error: Exit prior to setting npm in exit handler/])
+  t.equal(errors().length, 1)
+  t.match(errors(), [/Error: Exit prior to setting npm in exit handler/])
 })
 
 t.test('exit handler called - no npm with error', async (t) => {
   const { exitHandler, errors } = await mockExitHandler(t, { init: false })
   await exitHandler(err('something happened'))
   t.equal(process.exitCode, 1)
-  t.match(errors, [/Error: something happened/])
+  t.equal(errors().length, 1)
+  t.match(errors(), [/Error: something happened/])
 })
 
 t.test('exit handler called - no npm with error without stack', async (t) => {
   const { exitHandler, errors } = await mockExitHandler(t, { init: false })
   await exitHandler(err('something happened', {}, true))
   t.equal(process.exitCode, 1)
-  t.match(errors, [/something happened/])
+  t.equal(errors().length, 1)
+  t.match(errors(), [/something happened/])
 })
 
-t.test('console.log output using --json', async (t) => {
+t.test('standard output using --json', async (t) => {
   const { exitHandler, outputs } = await mockExitHandler(t, {
     config: { json: true },
   })
@@ -239,13 +246,13 @@ t.test('console.log output using --json', async (t) => {
 })
 
 t.test('merges output buffers errors with --json', async (t) => {
-  const { exitHandler, outputs, npm } = await mockExitHandler(t, {
+  const { exitHandler, outputs } = await mockExitHandler(t, {
     config: { json: true },
   })
 
-  npm.outputBuffer({ output_data: 1 })
-  npm.outputBuffer(JSON.stringify({ more_data: 2 }))
-  npm.outputBuffer('not json, will be ignored')
+  output.buffer({ output_data: 1 })
+  output.buffer(JSON.stringify({ more_data: 2 }))
+  output.buffer('not json, will be ignored')
 
   await exitHandler(err('Error: EBADTHING Something happened'))
 
@@ -266,10 +273,10 @@ t.test('merges output buffers errors with --json', async (t) => {
 })
 
 t.test('output buffer without json', async (t) => {
-  const { exitHandler, outputs, npm, logs } = await mockExitHandler(t)
+  const { exitHandler, outputs, logs } = await mockExitHandler(t)
 
-  npm.outputBuffer('output_data')
-  npm.outputBuffer('more_data')
+  output.buffer('output_data')
+  output.buffer('more_data')
 
   await exitHandler(err('Error: EBADTHING Something happened'))
 
@@ -307,8 +314,10 @@ t.test('throw a string error', async (t) => {
   ])
 })
 
-t.test('update notification', async (t) => {
-  const { exitHandler, logs, npm } = await mockExitHandler(t)
+t.test('update notification - shows even with loglevel error', async (t) => {
+  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+    config: { loglevel: 'error' },
+  })
   npm.updateNotification = 'you should update npm!'
 
   await exitHandler()
@@ -316,6 +325,17 @@ t.test('update notification', async (t) => {
   t.match(logs.notice, [
     'you should update npm!',
   ])
+})
+
+t.test('update notification - hidden with silent', async (t) => {
+  const { exitHandler, logs, npm } = await mockExitHandler(t, {
+    config: { loglevel: 'silent' },
+  })
+  npm.updateNotification = 'you should update npm!'
+
+  await exitHandler()
+
+  t.strictSame(logs.notice, [])
 })
 
 t.test('npm.config not ready', async (t) => {
@@ -326,7 +346,8 @@ t.test('npm.config not ready', async (t) => {
   await exitHandler()
 
   t.equal(process.exitCode, 1)
-  t.match(errors, [
+  t.equal(errors().length, 1)
+  t.match(errors(), [
     /Error: Exit prior to config file resolving./,
   ], 'should exit with config error msg')
   t.strictSame(logs, [], 'no logs if it doesnt load')
@@ -584,7 +605,7 @@ t.test('defaults to log error msg if stack is missing when unloaded', async (t) 
 
   await exitHandler(err('Error with no stack', { code: 'ENOSTACK', errno: 127 }, true))
   t.equal(process.exitCode, 127)
-  t.same(errors, ['Error with no stack'], 'should use error msg')
+  t.strictSame(errors(), ['Error with no stack'], 'should use error msg')
   t.strictSame(logs.error, [])
 })
 
@@ -608,25 +629,28 @@ t.test('do no fancy handling for shellouts', async t => {
   })
 
   t.test('shellout with a numeric error code', async t => {
-    const { exitHandler, logs } = await mockShelloutExit(t)
+    const { exitHandler, logs, errors } = await mockShelloutExit(t)
     await exitHandler(err('', 5))
     t.equal(process.exitCode, 5, 'got expected exit code')
     t.strictSame(logs.error, [], 'no noisy warnings')
     t.strictSame(logs.warn, [], 'no noisy warnings')
+    t.strictSame(errors(), [])
   })
 
   t.test('shellout without a numeric error code (something in npm)', async t => {
-    const { exitHandler, logs } = await mockShelloutExit(t)
+    const { exitHandler, logs, errors } = await mockShelloutExit(t)
     await exitHandler(err('', 'banana stand'))
     t.equal(process.exitCode, 1, 'got expected exit code')
     // should log some warnings and errors, because something weird happened
     t.strictNotSame(logs.error, [], 'bring the noise')
+    t.strictSame(errors(), [''])
   })
 
   t.test('shellout with code=0 (extra weird?)', async t => {
-    const { exitHandler, logs } = await mockShelloutExit(t)
+    const { exitHandler, logs, errors } = await mockShelloutExit(t)
     await exitHandler(Object.assign(new Error(), { code: 0 }))
     t.equal(process.exitCode, 1, 'got expected exit code')
     t.strictNotSame(logs.error, [], 'bring the noise')
+    t.strictSame(errors(), [''])
   })
 })
