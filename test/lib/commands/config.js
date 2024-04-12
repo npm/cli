@@ -8,14 +8,21 @@ const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
 
 const spawk = tspawk(t)
 
+const replaceJsonOrIni = (key) => [
+  new RegExp(`(\\s(?:${key} = |"${key}": )"?)[^"\\n,]+`, 'g'),
+  `$1{${key.toUpperCase()}}`,
+]
+
 t.cleanSnapshot = (s) => cleanCwd(s)
   .replaceAll(process.execPath, '{EXECPATH}')
-  .replaceAll(/(; npm version = )(.*)/g, '$1{NPM-VERSION}')
-  .replaceAll(/(; node version = )(.*)/g, '$1{NODE-VERSION}')
-  .replaceAll(/(npm-version = |"npm-version": )(").*(",?)/g, '$1$2{NPM-VERSION}$3')
-  .replaceAll(/(viewer = |"viewer": )(").*(",?)/g, '$1$2{VIEWER}$3')
-  .replaceAll(/(shell = |"shell": )(").*(",?)/g, '$1$2{SHELL}$3')
-  .replaceAll(/(editor = |"editor": )(").*(",?)/g, '$1$2{EDITOR}$3')
+  .replaceAll(/(; node version = ).*/g, '$1{NODE-VERSION}')
+  .replaceAll(/(; npm version = ).*/g, '$1{NPM-VERSION}')
+  .replaceAll(...replaceJsonOrIni('npm-version'))
+  .replaceAll(...replaceJsonOrIni('viewer'))
+  .replaceAll(...replaceJsonOrIni('shell'))
+  .replaceAll(...replaceJsonOrIni('editor'))
+  .replaceAll(...replaceJsonOrIni('progress'))
+  .replaceAll(...replaceJsonOrIni('color'))
 
 const loadMockNpm = (t, opts = {}) => _loadMockNpm(t, {
   ...opts,
