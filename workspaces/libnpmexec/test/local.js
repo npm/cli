@@ -1,4 +1,4 @@
-const log = require('proc-log')
+const { log } = require('proc-log')
 const { resolve } = require('path')
 const t = require('tap')
 const fs = require('fs/promises')
@@ -283,9 +283,11 @@ t.test('local file system path', async t => {
     mocks: {
       'ci-info': { isCI: true },
       'proc-log': {
-        ...log,
-        warn () {
-          t.fail('should not warn about local file package install')
+        log: {
+          ...log,
+          warn () {
+            t.fail('should not warn about local file package install')
+          },
         },
       },
     },

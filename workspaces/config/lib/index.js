@@ -2,7 +2,7 @@
 const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
-const log = require('proc-log')
+const { log } = require('proc-log')
 
 const { resolve, dirname, join } = require('node:path')
 const { homedir } = require('node:os')

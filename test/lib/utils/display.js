@@ -5,7 +5,7 @@ const { inspect } = require('util')
 
 const mockDisplay = async (t, { mocks, load } = {}) => {
   const { Chalk } = await import('chalk')
-  const log = require('proc-log')
+  const { log } = require('proc-log')
   const logs = mockLogs()
   const Display = tmock(t, '{LIB}/utils/display', mocks)
   const display = new Display(logs.streams)

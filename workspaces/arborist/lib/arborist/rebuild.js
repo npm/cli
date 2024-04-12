@@ -13,7 +13,7 @@ const {
   isNodeGypPackage,
   defaultGypInstallScript,
 } = require('@npmcli/node-gyp')
-const log = require('proc-log')
+const { log } = require('proc-log')
 
 const boolEnv = b => b ? '1' : ''
 const sortNodes = (a, b) =>

@@ -30,7 +30,7 @@ const { resolve } = require('path')
 const { homedir } = require('os')
 const { depth } = require('treeverse')
 const mapWorkspaces = require('@npmcli/map-workspaces')
-const log = require('proc-log')
+const { log } = require('proc-log')
 
 const { saveTypeMap } = require('../add-rm-pkg-deps.js')
 const AuditReport = require('../audit-report.js')

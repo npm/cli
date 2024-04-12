@@ -385,7 +385,7 @@ t.test('publish existing package with provenance in gha', async t => {
   const log = []
   const { publish } = t.mock('..', {
     'ci-info': t.mock('ci-info'),
-    'proc-log': { notice: (...msg) => log.push(['notice', ...msg]) },
+    'proc-log': { log: { notice: (...msg) => log.push(['notice', ...msg]) } },
   })
   const registry = new MockRegistry({
     tap: t,
@@ -944,7 +944,7 @@ t.test('publish existing package with provenance in gitlab', async t => {
   const log = []
   const { publish } = t.mock('..', {
     'ci-info': t.mock('ci-info'),
-    'proc-log': { notice: (...msg) => log.push(['notice', ...msg]) },
+    'proc-log': { log: { notice: (...msg) => log.push(['notice', ...msg]) } },
   })
   const registry = new MockRegistry({
     tap: t,

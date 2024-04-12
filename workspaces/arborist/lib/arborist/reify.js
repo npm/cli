@@ -7,7 +7,7 @@ const npa = require('npm-package-arg')
 const semver = require('semver')
 const debug = require('../debug.js')
 const { walkUp } = require('walk-up-path')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const hgi = require('hosted-git-info')
 const rpj = require('read-package-json-fast')
 

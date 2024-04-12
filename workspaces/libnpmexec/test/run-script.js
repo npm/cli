@@ -101,13 +101,15 @@ t.test('ci env', async t => {
     },
     '../lib/no-tty.js': () => false,
     'proc-log': {
-      warn (title, msg) {
-        t.equal(title, 'exec', 'should have expected title')
-        t.equal(
-          msg,
-          'Interactive mode disabled in CI environment',
-          'should have expected ci environment message'
-        )
+      log: {
+        warn (title, msg) {
+          t.equal(title, 'exec', 'should have expected title')
+          t.equal(
+            msg,
+            'Interactive mode disabled in CI environment',
+            'should have expected ci environment message'
+          )
+        },
       },
     },
   })

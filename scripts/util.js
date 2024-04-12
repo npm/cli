@@ -1,7 +1,7 @@
 const fsp = require('fs/promises')
 const { resolve, join, relative } = require('path')
 const { formatWithOptions } = require('util')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const nopt = require('nopt')
 const npmGit = require('@npmcli/git')
 const promiseSpawn = require('@npmcli/promise-spawn')
