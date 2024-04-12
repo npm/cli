@@ -83,7 +83,6 @@ const exec = async (opts) => {
     locationMsg = undefined,
     globalBin = '',
     globalPath,
-    output,
     // dereference values because we manipulate it later
     packages: [...packages] = [],
     path = '.',
@@ -98,7 +97,6 @@ const exec = async (opts) => {
     call,
     flatOptions,
     locationMsg,
-    output,
     path,
     binPaths,
     runPath,
