@@ -62,7 +62,7 @@
     "@npmcli/arborist": "^7.2.1",
     "@npmcli/run-script": "^7.0.2",
     "ci-info": "^4.0.0",
-    "npm-package-arg": "^11.0.1",
+    "npm-package-arg": "^11.0.2",
     "pacote": "^17.0.4",
     "proc-log": "^3.0.0",
     "read": "^3.0.1",
