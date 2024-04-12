@@ -1,47 +1,75 @@
 const t = require('tap')
 const tmock = require('../../fixtures/tmock')
 const mockLogs = require('../../fixtures/mock-logs')
+const mockGlobals = require('@npmcli/mock-globals')
 const { inspect } = require('util')
 
 const mockDisplay = async (t, { mocks, load } = {}) => {
   const { Chalk } = await import('chalk')
-  const { log } = require('proc-log')
+  const { log, output } = require('proc-log')
+
   const logs = mockLogs()
+
   const Display = tmock(t, '{LIB}/utils/display', mocks)
   const display = new Display(logs.streams)
-  display.load({
+  const displayLoad = (opts) => display.load({
     loglevel: 'silly',
-    chalk: new Chalk({ level: 0 }),
+    stderrChalk: new Chalk({ level: 0 }),
+    stderrColor: false,
     heading: 'npm',
-    ...load,
+    ...opts,
   })
+
+  if (load !== false) {
+    displayLoad(load)
+  }
+
   t.teardown(() => display.off())
   return {
     display,
+    output,
     log,
+    displayLoad,
     ...logs.logs,
   }
 }
 
 t.test('can log cleanly', async (t) => {
+  const { log, logs } = await mockDisplay(t)
+
+  log.error('', 'test\x00message')
+  t.match(logs.error, ['test^@message'])
+})
+
+t.test('can handle special eresolves', async (t) => {
   const explains = []
   const { log, logs } = await mockDisplay(t, {
     mocks: {
       '{LIB}/utils/explain-eresolve.js': {
         explain: (...args) => {
           explains.push(args)
-          return 'explanation'
+          return 'EXPLAIN'
         },
       },
     },
   })
 
-  log.error('', 'test\x00message')
-  t.match(logs.error, ['test^@message'])
-
   log.warn('ERESOLVE', 'hello', { some: 'object' })
-  t.match(logs.warn, ['ERESOLVE hello'])
+  t.strictSame(logs.warn, ['ERESOLVE hello', 'EXPLAIN'])
   t.match(explains, [[{ some: 'object' }, Function, 2]])
+})
+
+t.test('can buffer output when paused', async t => {
+  const { displayLoad, outputs, output } = await mockDisplay(t, {
+    load: false,
+  })
+
+  output.buffer('Message 1')
+  output.standard('Message 2')
+
+  t.strictSame(outputs, [])
+  displayLoad()
+  t.strictSame(outputs, ['Message 1', 'Message 2'])
 })
 
 t.test('can do progress', async (t) => {
@@ -58,24 +86,38 @@ t.test('can do progress', async (t) => {
 })
 
 t.test('handles log throwing', async (t) => {
-  const { log, logs } = await mockDisplay(t, {
-    mocks: {
-      '{LIB}/utils/explain-eresolve.js': {
-        explain: () => {
-          throw new Error('explain')
-        },
-      },
-    },
-  })
+  class ThrowInspect {
+    #crashes = 0;
 
-  log.warn('ERESOLVE', 'hello', { some: 'object' })
+    [inspect.custom] () {
+      throw new Error(`Crashed ${++this.#crashes}`)
+    }
+  }
 
-  t.match(logs.verbose[0],
-    `attempt to log crashed ERESOLVE hello { some: 'object' } Error: explain`)
+  const errors = []
+  mockGlobals(t, { 'console.error': (...msg) => errors.push(msg) })
+
+  const { log, logs } = await mockDisplay(t)
+
+  log.error('woah', new ThrowInspect())
+
+  t.strictSame(logs.error, [])
+  t.equal(errors.length, 1)
+  t.match(errors[0], [
+    'attempt to log crashed',
+    new Error('Crashed 1'),
+    new Error('Crashed 2'),
+  ])
+})
+
+t.test('incorrect levels', async t => {
+  const { outputs } = await mockDisplay(t)
+  process.emit('output', 'not a real level')
+  t.strictSame(outputs, [], 'output is ignored')
 })
 
 t.test('Display.clean', async (t) => {
-  const { display, outputs, clearOutput } = await mockDisplay(t)
+  const { output, outputs, clearOutput } = await mockDisplay(t)
 
   class CustomObj {
     #inspected
@@ -136,7 +178,7 @@ t.test('Display.clean', async (t) => {
   ]
 
   for (const [dirty, clean] of tests) {
-    display.output(dirty)
+    output.standard(dirty)
     t.equal(outputs[0], clean)
     clearOutput()
   }

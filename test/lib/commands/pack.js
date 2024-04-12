@@ -121,28 +121,17 @@ t.test('foreground-scripts defaults to true', async t => {
     config: { 'dry-run': true },
   })
 
-  /* eslint no-console: 0 */
-  // TODO: replace this with `const results = t.intercept(console, 'log')`
-  const log = console.log
-  t.teardown(() => {
-    console.log = log
-  })
-  const caughtLogs = []
-  console.log = (...args) => {
-    caughtLogs.push(args)
-  }
-  // end TODO
-
   await npm.exec('pack', [])
   const filename = 'test-fg-scripts-0.0.0.tgz'
-  t.same(
-    caughtLogs,
+  t.strictSame(
+    outputs,
     [
-      ['\n> test-fg-scripts@0.0.0 prepack\n> echo prepack!\n'],
-      ['\n> test-fg-scripts@0.0.0 postpack\n> echo postpack!\n'],
+      '\n> test-fg-scripts@0.0.0 prepack\n> echo prepack!\n',
+      '\n> test-fg-scripts@0.0.0 postpack\n> echo postpack!\n',
+      filename,
     ],
-    'prepack and postpack log to stdout')
-  t.strictSame(outputs, [filename])
+    'prepack and postpack log to stdout'
+  )
   t.matchSnapshot(logs.notice, 'logs pack contents')
   t.throws(() => fs.statSync(path.resolve(npm.prefix, filename)))
 })
@@ -163,25 +152,10 @@ t.test('foreground-scripts can still be set to false', async t => {
     config: { 'dry-run': true, 'foreground-scripts': false },
   })
 
-  /* eslint no-console: 0 */
-  // TODO: replace this with `const results = t.intercept(console, 'log')`
-  const log = console.log
-  t.teardown(() => {
-    console.log = log
-  })
-  const caughtLogs = []
-  console.log = (...args) => {
-    caughtLogs.push(args)
-  }
-  // end TODO
-
   await npm.exec('pack', [])
   const filename = 'test-fg-scripts-0.0.0.tgz'
-  t.same(
-    caughtLogs,
-    [],
-    'prepack and postpack do not log to stdout')
-  t.strictSame(outputs, [filename])
+
+  t.strictSame(outputs, [filename], 'prepack and postpack do not log to stdout')
   t.matchSnapshot(logs.notice, 'logs pack contents')
   t.throws(() => fs.statSync(path.resolve(npm.prefix, filename)))
 })
