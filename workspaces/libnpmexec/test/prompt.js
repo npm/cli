@@ -1,4 +1,4 @@
-const log = require('proc-log')
+const { log } = require('proc-log')
 const { resolve } = require('path')
 const t = require('tap')
 const fs = require('fs/promises')
@@ -146,18 +146,20 @@ t.test('no prompt if CI, multiple packages', async t => {
     mocks: {
       'ci-info': { isCI: true },
       'proc-log': {
-        ...log,
-        warn (title, msg) {
-          t.equal(title, 'exec', 'should warn exec title')
-          // this message is nondeterministic as it queries manifests so we just
-          // test the constituent parts
-          t.match(
-            msg,
-            'The following packages were not found and will be installed:',
-            'should warn installing packages'
-          )
-          t.match(msg, '@npmcli/create-index@1.0.0', 'includes package being installed')
-          t.match(msg, '@npmcli/create-test@1.0.0', 'includes package being installed')
+        log: {
+          ...log,
+          warn (title, msg) {
+            t.equal(title, 'exec', 'should warn exec title')
+            // this message is nondeterministic as it queries manifests so we just
+            // test the constituent parts
+            t.match(
+              msg,
+              'The following packages were not found and will be installed:',
+              'should warn installing packages'
+            )
+            t.match(msg, '@npmcli/create-index@1.0.0', 'includes package being installed')
+            t.match(msg, '@npmcli/create-test@1.0.0', 'includes package being installed')
+          },
         },
       },
     },

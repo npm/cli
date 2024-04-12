@@ -1,7 +1,7 @@
 const ciInfo = require('ci-info')
 const runScript = require('@npmcli/run-script')
 const readPackageJson = require('read-package-json-fast')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const noTTY = require('./no-tty.js')
 
 const run = async ({

@@ -1,22 +1,24 @@
 const t = require('tap')
 const { resolve, join } = require('path')
 const fs = require('graceful-fs')
-const { format } = require('util')
+const { log } = require('proc-log')
 const tmock = require('../../fixtures/tmock')
 
 const mockTimers = (t, options) => {
-  const logs = {
-    warn: [],
-    silly: [],
+  const logs = log.LEVELS.reduce((acc, l) => {
+    acc[l] = []
+    return acc
+  }, {})
+  const logHandler = (level, ...args) => {
+    logs[level].push(args.join(' '))
   }
-  const Timers = tmock(t, '{LIB}/utils/timers', {
-    'proc-log': {
-      warn: (...args) => logs.warn.push(args.map((a) => format(a)).join(' ')),
-      silly: (...args) => logs.silly.push(args.map((a) => format(a)).join(' ')),
-    },
-  })
+  process.on('log', logHandler)
+  const Timers = tmock(t, '{LIB}/utils/timers')
   const timers = new Timers(options)
-  t.teardown(() => timers.off())
+  t.teardown(() => {
+    timers.off()
+    process.off('log', logHandler)
+  })
   return { timers, logs }
 }
 
@@ -43,23 +45,23 @@ t.test('convenience time method', async (t) => {
   t.match(timers.finished, { later: Number, sync: Number, async: Number })
 })
 
-t.test('initial timer', async (t) => {
-  const { timers } = mockTimers(t, { start: 'foo' })
-  process.emit('timeEnd', 'foo')
-  t.match(timers.finished, { foo: Number })
+t.test('initial timer is named npm', async (t) => {
+  const { timers } = mockTimers(t)
+  process.emit('timeEnd', 'npm')
+  t.match(timers.finished, { npm: Number })
 })
 
-t.test('initial listener', async (t) => {
+t.test('logs timing events', async (t) => {
   const events = []
   const listener = (...args) => events.push(args)
-  const { timers } = mockTimers(t, { listener })
+  const { timers, logs } = mockTimers(t, { listener })
   process.emit('time', 'foo')
   process.emit('time', 'bar')
   process.emit('timeEnd', 'bar')
   timers.off(listener)
   process.emit('timeEnd', 'foo')
-  t.equal(events.length, 1)
-  t.match(events, [['bar', Number]])
+  t.equal(logs.timing.length, 1)
+  t.match(logs.timing[0], /^bar Completed in [0-9]ms/)
 })
 
 t.test('finish unstarted timer', async (t) => {

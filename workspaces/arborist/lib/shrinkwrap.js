@@ -33,7 +33,7 @@ const mismatch = (a, b) => a && b && a !== b
 // After calling this.commit(), any nodes not present in the tree will have
 // been removed from the shrinkwrap data as well.
 
-const log = require('proc-log')
+const { log } = require('proc-log')
 const YarnLock = require('./yarn-lock.js')
 const {
   readFile,

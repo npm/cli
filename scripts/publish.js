@@ -1,5 +1,5 @@
 const semver = require('semver')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const pacote = require('pacote')
 const { read } = require('read')
 const Table = require('cli-table3')

@@ -11,7 +11,7 @@ const treeCheck = require('../tree-check.js')
 const { readdirScoped } = require('@npmcli/fs')
 const { lstat, readlink } = require('fs/promises')
 const { depth } = require('treeverse')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const { redact } = require('@npmcli/redact')
 
 const {

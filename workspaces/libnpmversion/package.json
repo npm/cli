@@ -40,7 +40,7 @@
     "@npmcli/git": "^5.0.6",
     "@npmcli/run-script": "^7.0.2",
     "json-parse-even-better-errors": "^3.0.0",
-    "proc-log": "^3.0.0",
+    "proc-log": "^4.0.0",
     "semver": "^7.3.7"
   },
   "engines": {

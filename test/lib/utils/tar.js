@@ -9,7 +9,9 @@ t.cleanSnapshot = data => cleanZlib(data)
 
 const mockTar = ({ notice }) => tmock(t, '{LIB}/utils/tar.js', {
   'proc-log': {
-    notice,
+    log: {
+      notice,
+    },
   },
 })
 

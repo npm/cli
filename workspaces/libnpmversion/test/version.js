@@ -23,7 +23,9 @@ const version = requireInject('../lib/version.js', {
   '@npmcli/git': gitMock,
   '@npmcli/run-script': async opt => actionLog.push(['run-script', opt.event, opt.env, opt]),
   'proc-log': {
-    verbose: (...msg) => actionLog.push(['verbose', ...msg]),
+    log: {
+      verbose: (...msg) => actionLog.push(['verbose', ...msg]),
+    },
   },
 })
 

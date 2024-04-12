@@ -8,7 +8,7 @@ const readJson = require('./read-json.js')
 const git = require('@npmcli/git')
 const commit = require('./commit.js')
 const tag = require('./tag.js')
-const log = require('proc-log')
+const { log } = require('proc-log')
 
 const runScript = require('@npmcli/run-script')
 

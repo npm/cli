@@ -16,7 +16,7 @@ const enforceClean = requireInject('../lib/enforce-clean.js', {
       }
     },
   },
-  'proc-log': { warn: (...msg) => warnings.push(msg) },
+  'proc-log': { log: { warn: (...msg) => warnings.push(msg) } },
 })
 
 const warnings = []
