@@ -31,7 +31,7 @@ module.exports = cls => class Tracker extends cls {
     } else if (!hasTracker && subsection !== null) {
       // 2. no parent tracker and subsection
       this.#onError(`Parent tracker "${section}" does not exist`)
-    } else if (hasTracker || !hasSubtracker) {
+    } else if (!hasTracker || !hasSubtracker) {
       // 3. existing parent tracker, no subsection tracker
       // Create a new subtracker and update parents
       const parentTracker = this.#progress.get(section)
