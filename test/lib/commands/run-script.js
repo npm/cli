@@ -347,7 +347,6 @@ t.test('skip pre/post hooks when using ignoreScripts', async t => {
           env: 'env',
         },
       },
-      banner: true,
       event: 'env',
     },
   ])
@@ -388,7 +387,6 @@ t.test('run silent', async t => {
         },
       },
       event: 'env',
-      banner: false,
     },
     {
       event: 'postenv',

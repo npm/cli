@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "@npmcli/git": "^5.0.6",
-    "@npmcli/run-script": "^7.0.2",
+    "@npmcli/run-script": "^8.0.0",
     "json-parse-even-better-errors": "^3.0.0",
     "proc-log": "^4.0.0",
     "semver": "^7.3.7"

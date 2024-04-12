@@ -65,7 +65,6 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'preversion',
-      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,
@@ -101,7 +100,6 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'version',
-      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,
@@ -128,7 +126,6 @@ module.exports = async (newversion, opts) => {
       pkg,
       stdio: 'inherit',
       event: 'postversion',
-      banner: !silent,
       env: {
         npm_old_version: current,
         npm_new_version: newV,
