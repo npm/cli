@@ -20,7 +20,6 @@ module.exports = async (newversion, opts) => {
     ignoreScripts,
     preid,
     pkg,
-    silent,
   } = opts
 
   const { valid, clean, inc } = semver
