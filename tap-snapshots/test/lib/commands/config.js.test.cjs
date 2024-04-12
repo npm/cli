@@ -7,7 +7,7 @@
 'use strict'
 exports[`test/lib/commands/config.js TAP config list --json > output matches snapshot 1`] = `
 {
-  "cache": "{CWD}/cache",
+  "cache": "{CACHE}",
   "json": true,
   "projectloaded": "yes",
   "userloaded": "yes",
@@ -185,7 +185,7 @@ before = null
 bin-links = true 
 browser = null 
 ca = null 
-; cache = "{CWD}/home/.npm" ; overridden by cli
+; cache = "{CACHE}" ; overridden by cli
 cache-max = null 
 cache-min = 0 
 cafile = null 
@@ -344,7 +344,7 @@ projectloaded = "yes"
 
 ; "cli" config from command line options
 
-cache = "{CWD}/cache" 
+cache = "{CACHE}" 
 long = true
 `
 
@@ -363,7 +363,7 @@ projectloaded = "yes"
 
 ; "cli" config from command line options
 
-cache = "{CWD}/cache" 
+cache = "{CACHE}" 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}
@@ -377,7 +377,7 @@ cache = "{CWD}/cache"
 exports[`test/lib/commands/config.js TAP config list with publishConfig global > output matches snapshot 1`] = `
 ; "cli" config from command line options
 
-cache = "{CWD}/cache" 
+cache = "{CACHE}" 
 global = true 
 
 ; node bin location = {EXECPATH}
@@ -392,7 +392,7 @@ global = true
 exports[`test/lib/commands/config.js TAP config list with publishConfig local > output matches snapshot 1`] = `
 ; "cli" config from command line options
 
-cache = "{CWD}/cache" 
+cache = "{CACHE}" 
 
 ; node bin location = {EXECPATH}
 ; node version = {NODE-VERSION}

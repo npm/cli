@@ -23,6 +23,7 @@ t.cleanSnapshot = (s) => cleanCwd(s)
   .replaceAll(...replaceJsonOrIni('editor'))
   .replaceAll(...replaceJsonOrIni('progress'))
   .replaceAll(...replaceJsonOrIni('color'))
+  .replaceAll(...replaceJsonOrIni('cache'))
 
 const loadMockNpm = (t, opts = {}) => _loadMockNpm(t, {
   ...opts,
