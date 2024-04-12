@@ -365,7 +365,7 @@ projectloaded = "yes"
 
 cache = "{CACHE}" 
 
-; node bin location = {EXECPATH}
+; node bin location = {NODE-BIN-LOCATION}
 ; node version = {NODE-VERSION}
 ; npm local prefix = {CWD}/prefix
 ; npm version = {NPM-VERSION}
@@ -380,7 +380,7 @@ exports[`test/lib/commands/config.js TAP config list with publishConfig global >
 cache = "{CACHE}" 
 global = true 
 
-; node bin location = {EXECPATH}
+; node bin location = {NODE-BIN-LOCATION}
 ; node version = {NODE-VERSION}
 ; npm local prefix = {CWD}/prefix
 ; npm version = {NPM-VERSION}
@@ -394,7 +394,7 @@ exports[`test/lib/commands/config.js TAP config list with publishConfig local > 
 
 cache = "{CACHE}" 
 
-; node bin location = {EXECPATH}
+; node bin location = {NODE-BIN-LOCATION}
 ; node version = {NODE-VERSION}
 ; npm local prefix = {CWD}/prefix
 ; npm version = {NPM-VERSION}
