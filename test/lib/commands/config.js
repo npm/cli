@@ -5,17 +5,17 @@ const tspawk = require('../../fixtures/tspawk')
 const t = require('tap')
 const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
 const { cleanCwd } = require('../../fixtures/clean-snapshot.js')
-const { version: npmVersion } = require('../../../package.json')
 
 const spawk = tspawk(t)
 
 t.cleanSnapshot = (s) => cleanCwd(s)
-  .replace(new RegExp(`(version = )${process.version}`, 'g'), '$1{NODE-VERSION}')
-  .replace(new RegExp(`(version(":| =) "?)${npmVersion}`, 'g'), '$1{NPM-VERSION}')
   .replaceAll(process.execPath, '{EXECPATH}')
-  .replaceAll(process.env.EDITOR, '{EDITOR}')
-  .replaceAll(process.env.SHELL, '{SHELL}')
-  .replaceAll(/(viewer = |"viewer": )".*/g, '$1{VIEWER}')
+  .replaceAll(/(; npm version = )(.*)/g, '$1{NPM-VERSION}')
+  .replaceAll(/(; node version = )(.*)/g, '$1{NODE-VERSION}')
+  .replaceAll(/(npm-version = |"npm-version": )(").*(",?)/g, '$1$2{NPM-VERSION}$3')
+  .replaceAll(/(viewer = |"viewer": )(").*(",?)/g, '$1$2{VIEWER}$3')
+  .replaceAll(/(shell = |"shell": )(").*(",?)/g, '$1$2{SHELL}$3')
+  .replaceAll(/(editor = |"editor": )(").*(",?)/g, '$1$2{EDITOR}$3')
 
 const loadMockNpm = (t, opts = {}) => _loadMockNpm(t, {
   ...opts,
