@@ -1861,7 +1861,7 @@ const definitions = {
     },
   }),
   'script-shell': new Definition('script-shell', {
-    default: null,
+    default: shell,
     defaultDescription: `
       '/bin/sh' on POSIX systems, 'cmd.exe' on Windows
     `,
