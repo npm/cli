@@ -44,12 +44,17 @@ t.test('can log cleanly', async (t) => {
   t.match(explains, [[{ some: 'object' }, Function, 2]])
 })
 
-t.test('can initialize progress', async (t) => {
-  t.ok(await mockDisplay(t, {
+t.test('can do progress', async (t) => {
+  const { log, logs } = await mockDisplay(t, {
     load: {
       progress: true,
+      loglevel: 'error',
     },
-  }))
+  })
+
+  log.silly('', 'this would go to progress')
+
+  t.strictSame(logs, [], 'no logs were shown normally')
 })
 
 t.test('handles log throwing', async (t) => {
