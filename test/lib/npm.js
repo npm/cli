@@ -52,6 +52,9 @@ t.test('npm.load', async t => {
       otherDirs: {
         newCache: {},
       },
+      config: {
+        timing: true,
+      },
     })
 
     t.equal(npm.loaded, true)
@@ -62,8 +65,9 @@ t.test('npm.load', async t => {
     t.match(npm, {
       flatOptions: {},
     })
-    t.match(logs.timing.filter(([p]) => p === 'npm:load'), [
-      ['npm:load', /Completed in [0-9.]+ms/],
+
+    t.match(logs.timing.filter((p) => /^npm:load/.test(p)), [
+      /npm:load.* Completed in [0-9.]+ms/,
     ])
 
     mockGlobals(t, { process: { platform: 'posix' } })
@@ -109,15 +113,12 @@ t.test('npm.load', async t => {
 
   await t.test('forceful loading', async t => {
     const { logs } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [...process.argv, '--force', '--color', 'always'],
+      config: {
+        force: true,
       },
     })
     t.match(logs.warn, [
-      [
-        'using --force',
-        'Recommended protections disabled.',
-      ],
+      'using --force Recommended protections disabled.',
     ])
   })
 
@@ -127,33 +128,39 @@ t.test('npm.load', async t => {
       prefixDir: {
         bin: t.fixture('symlink', dirname(process.execPath)),
       },
+      config: {
+        timing: true,
+        usage: '',
+        scope: 'foo',
+      },
+      argv: [
+        'token',
+        'revoke',
+        'blergggg',
+      ],
       globals: (dirs) => ({
         'process.env.PATH': resolve(dirs.prefix, 'bin'),
         'process.argv': [
           node,
           process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          'blergggg',
         ],
       }),
     })
 
     t.equal(npm.config.get('scope'), '@foo', 'added the @ sign to scope')
+
     t.match([
-      ...logs.timing.filter(([p]) => p === 'npm:load:whichnode'),
+      ...logs.timing.filter((p) => p.startsWith('npm:load:whichnode')),
       ...logs.verbose,
-      ...logs.timing.filter(([p]) => p === 'npm:load'),
+      ...logs.timing.filter((p) => p.startsWith('npm:load')),
     ], [
-      ['npm:load:whichnode', /Completed in [0-9.]+ms/],
-      ['node symlink', resolve(prefix, 'bin', node)],
-      ['title', 'npm token revoke blergggg'],
-      ['argv', '"--usage" "--scope" "foo" "token" "revoke" "blergggg"'],
-      ['logfile', /logs-max:\d+ dir:.*/],
-      ['logfile', /.*-debug-0.log/],
-      ['npm:load', /Completed in [0-9.]+ms/],
+      /npm:load:whichnode Completed in [0-9.]+ms/,
+      `node symlink ${resolve(prefix, 'bin', node)}`,
+      /title npm token revoke blergggg/,
+      /argv "token" "revoke" "blergggg".*"--usage" "--scope" "foo"/,
+      /logfile logs-max:\d+ dir:.*/,
+      /logfile .*-debug-0.log/,
+      /npm:load:.* Completed in [0-9.]+ms/,
     ])
     t.equal(process.execPath, resolve(prefix, 'bin', node))
 
@@ -165,7 +172,7 @@ t.test('npm.load', async t => {
     t.equal(npm.flatOptions.npmCommand, 'll', 'npmCommand flatOption set')
 
     const ll = Npm.cmd('ll')
-    t.same(outputs, [[ll.describeUsage]], 'print usage')
+    t.same(outputs, [ll.describeUsage], 'print usage')
     npm.config.set('usage', false)
 
     outputs.length = 0
@@ -176,24 +183,11 @@ t.test('npm.load', async t => {
       'does not change npm.command when another command is called')
 
     t.match(logs, [
-      [
-        'error',
-        'arg',
-        'Argument starts with non-ascii dash, this is probably invalid:',
-        '\u2010not-a-dash',
-      ],
-      [
-        'timing',
-        'command:config',
-        /Completed in [0-9.]+ms/,
-      ],
-      [
-        'timing',
-        'command:get',
-        /Completed in [0-9.]+ms/,
-      ],
+      'error arg Argument starts with non-ascii dash, this is probably invalid: \u2010not-a-dash',
+      /timing command:config Completed in [0-9.]+ms/,
+      /timing command:get Completed in [0-9.]+ms/,
     ])
-    t.same(outputs, [['scope=@foo\n\u2010not-a-dash=undefined']])
+    t.same(outputs, ['scope=@foo\n\u2010not-a-dash=undefined'])
   })
 
   await t.test('--no-workspaces with --workspace', async t => {
@@ -214,14 +208,9 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color', 'false',
-          '--workspaces', 'false',
-          '--workspace', 'a',
-        ],
+      config: {
+        workspaces: false,
+        workspace: 'a',
       },
     })
     await t.rejects(
@@ -231,7 +220,7 @@ t.test('npm.load', async t => {
   })
 
   await t.test('workspace-aware configs and commands', async t => {
-    const { npm, outputs } = await loadMockNpm(t, {
+    const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: {
         packages: {
           a: {
@@ -255,13 +244,8 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color', 'false',
-          '--workspaces', 'true',
-        ],
+      config: {
+        workspaces: true,
       },
     })
 
@@ -269,18 +253,7 @@ t.test('npm.load', async t => {
 
     t.equal(npm.command, 'run-script', 'npm.command set to canonical name')
 
-    t.match(
-      outputs,
-      [
-        ['Lifecycle scripts included in a@1.0.0:'],
-        ['  test\n    echo test a'],
-        [''],
-        ['Lifecycle scripts included in b@1.0.0:'],
-        ['  test\n    echo test b'],
-        [''],
-      ],
-      'should exec workspaces version of commands'
-    )
+    t.matchSnapshot(joinedOutput(), 'should exec workspaces version of commands')
   })
 
   await t.test('workspaces in global mode', async t => {
@@ -308,16 +281,9 @@ t.test('npm.load', async t => {
           workspaces: ['./packages/*'],
         }),
       },
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--color',
-          'false',
-          '--workspaces',
-          '--global',
-          'true',
-        ],
+      config: {
+        workspaces: true,
+        global: true,
       },
     })
 
@@ -331,15 +297,11 @@ t.test('npm.load', async t => {
 t.test('set process.title', async t => {
   t.test('basic title setting', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'ls',
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['ls'],
     })
     t.equal(npm.title, 'npm ls')
     t.equal(process.title, 'npm ls')
@@ -347,17 +309,11 @@ t.test('set process.title', async t => {
 
   t.test('do not expose token being revoked', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          `npm_${'a'.repeat(36)}`,
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['token', 'revoke', `npm_${'a'.repeat(36)}`],
     })
     t.equal(npm.title, 'npm token revoke npm_***')
     t.equal(process.title, 'npm token revoke npm_***')
@@ -365,17 +321,11 @@ t.test('set process.title', async t => {
 
   t.test('do show *** unless a token is actually being revoked', async t => {
     const { npm } = await loadMockNpm(t, {
-      globals: {
-        'process.argv': [
-          process.execPath,
-          process.argv[1],
-          '--usage',
-          '--scope=foo',
-          'token',
-          'revoke',
-          'notatoken',
-        ],
+      config: {
+        usage: true,
+        scope: 'foo',
       },
+      argv: ['token', 'revoke', 'notatoken'],
     })
     t.equal(npm.title, 'npm token revoke notatoken')
     t.equal(process.title, 'npm token revoke notatoken')
@@ -443,7 +393,11 @@ t.test('cache dir', async t => {
 
 t.test('timings', async t => {
   t.test('gets/sets timers', async t => {
-    const { npm, logs } = await loadMockNpm(t, { load: false })
+    const { npm, logs } = await loadMockNpm(t, {
+      config: {
+        timing: true,
+      },
+    })
     process.emit('time', 'foo')
     process.emit('time', 'bar')
     t.match(npm.unfinishedTimers.get('foo'), Number, 'foo timer is a number')
@@ -453,16 +407,18 @@ t.test('timings', async t => {
     process.emit('timeEnd', 'baz')
     // npm timer is started by default
     process.emit('timeEnd', 'npm')
-    t.match(logs.timing, [
-      ['foo', /Completed in [0-9]+ms/],
-      ['bar', /Completed in [0-9]+ms/],
-      ['npm', /Completed in [0-9]+ms/],
+    t.match(logs.timing.byTitle('foo'), [
+      /Completed in [0-9]+ms/,
     ])
-    t.match(logs.silly, [[
-      'timing',
-      "Tried to end timer that doesn't exist:",
-      'baz',
-    ]])
+    t.match(logs.timing.byTitle('bar'), [
+      /Completed in [0-9]+ms/,
+    ])
+    t.match(logs.timing.byTitle('npm'), [
+      /Completed in [0-9]+ms/,
+    ])
+    t.match(logs.silly, [
+      `timing Tried to end timer that doesn't exist: baz`,
+    ])
     t.notOk(npm.unfinishedTimers.has('foo'), 'foo timer is gone')
     t.notOk(npm.unfinishedTimers.has('bar'), 'bar timer is gone')
     t.match(npm.finishedTimers, { foo: Number, bar: Number, npm: Number })
@@ -513,42 +469,20 @@ t.test('timings', async t => {
   for (const [config, expectedDisplay, expectedTiming] of timingDisplay) {
     const msg = `${JSON.stringify(config)}, display:${expectedDisplay}, timing:${expectedTiming}`
     await t.test(`timing display: ${msg}`, async t => {
-      const { display } = await loadMockNpm(t, { config })
-      t.equal(!!display.length, expectedDisplay, 'display')
-      t.equal(!!display.timing.length, expectedTiming, 'timing display')
+      const { logs } = await loadMockNpm(t, { config })
+      t.equal(!!logs.length, expectedDisplay, 'display')
+      t.equal(!!logs.timing.length, expectedTiming, 'timing display')
     })
   }
 })
 
-t.test('output clears progress and console.logs cleaned messages', async t => {
-  t.plan(4)
-  let showingProgress = true
-  const logs = []
-  const errors = []
-  const { npm } = await loadMockNpm(t, {
-    load: false,
-    mocks: {
-      npmlog: {
-        clearProgress: () => showingProgress = false,
-        showProgress: () => showingProgress = true,
-      },
-    },
-    globals: {
-      'console.log': (...args) => {
-        t.equal(showingProgress, false, 'should not be showing progress right now')
-        logs.push(args)
-      },
-      'console.error': (...args) => {
-        t.equal(showingProgress, false, 'should not be showing progress right now')
-        errors.push(args)
-      },
-    },
-  })
-  npm.originalOutput('hello\x00world')
-  npm.originalOutputError('error\x00world')
+t.test('outputs cleaned messages', async t => {
+  const { outputs, outputErrors, npm } = await loadMockNpm(t)
+  npm.output('hello\x00world')
+  npm.outputError('error\x00world')
 
-  t.match(logs, [['hello^@world']])
-  t.match(errors, [['error^@world']])
+  t.match(outputs, ['hello^@world'])
+  t.match(outputErrors, ['error^@world'])
 })
 
 t.test('aliases and typos', async t => {
@@ -580,13 +514,8 @@ t.test('explicit workspace rejection', async t => {
         workspaces: ['./packages/a'],
       }),
     },
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-        '--workspace', './packages/a',
-      ],
+    config: {
+      workspace: './packages/a',
     },
   })
   await t.rejects(
@@ -614,13 +543,8 @@ t.test('implicit workspace rejection', async t => {
       }),
     },
     chdir: ({ prefix }) => join(prefix, 'packages', 'a'),
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-        '--workspace', './packages/a',
-      ],
+    config: {
+      workspace: './packages/a',
     },
   })
   await t.rejects(
@@ -648,13 +572,6 @@ t.test('implicit workspace accept', async t => {
       }),
     },
     chdir: ({ prefix }) => join(prefix, 'packages', 'a'),
-    globals: {
-      'process.argv': [
-        process.execPath,
-        process.argv[1],
-        '--color', 'false',
-      ],
-    },
   })
   await t.rejects(mock.npm.exec('org', []), /.*Usage/)
 })

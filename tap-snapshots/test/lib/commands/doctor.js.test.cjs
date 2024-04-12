@@ -9,44 +9,21 @@ exports[`test/lib/commands/doctor.js TAP all clear > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -88,44 +65,21 @@ exports[`test/lib/commands/doctor.js TAP all clear in color > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "/u001b[35mdoctor/u001b[39m Running checkup",
+    "/u001b[35mdoctor/u001b[39m Pinging registry",
+    "/u001b[35mdoctor/u001b[39m Getting npm package information",
+    "/u001b[35mdoctor/u001b[39m Getting Node.js release information",
+    "/u001b[35mdoctor/u001b[39m Finding git in your PATH",
+    "/u001b[35mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
+    "/u001b[35mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
+    String(
+      /u001b[35mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
+      /u001b[35mdoctor/u001b[39m   "badContentCount": 0,
+      /u001b[35mdoctor/u001b[39m   "reclaimedCount": 0,
+      /u001b[35mdoctor/u001b[39m   "missingContent": 0,
+      /u001b[35mdoctor/u001b[39m   "verifiedContent": 0
+      /u001b[35mdoctor/u001b[39m }
+    ),
   ],
   "warn": Array [],
 }
@@ -135,44 +89,21 @@ exports[`test/lib/commands/doctor.js TAP bad proxy > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -214,54 +145,25 @@ exports[`test/lib/commands/doctor.js TAP cacache badContent > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 1,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 2
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 1,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 2
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "verifyCachedFiles",
-      "Corrupted content removed: 1",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
-    ],
+    "doctor verifyCachedFiles Corrupted content removed: 1",
+    "doctor verifyCachedFiles Cache issues have been fixed",
   ],
 }
 `
@@ -270,54 +172,25 @@ exports[`test/lib/commands/doctor.js TAP cacache missingContent > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 1,
-          "verifiedContent": 2
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 1,
+      doctor   "verifiedContent": 2
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "verifyCachedFiles",
-      "Missing content: 1",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
-    ],
+    "doctor verifyCachedFiles Missing content: 1",
+    "doctor verifyCachedFiles Cache issues have been fixed",
   ],
 }
 `
@@ -358,54 +231,25 @@ exports[`test/lib/commands/doctor.js TAP cacache reclaimedCount > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 1,
-          "missingContent": 0,
-          "verifiedContent": 2
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 1,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 2
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "verifyCachedFiles",
-      "Content garbage-collected: 1 (undefined bytes)",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Cache issues have been fixed",
-    ],
+    "doctor verifyCachedFiles Content garbage-collected: 1 (undefined bytes)",
+    "doctor verifyCachedFiles Cache issues have been fixed",
   ],
 }
 `
@@ -414,24 +258,16 @@ exports[`test/lib/commands/doctor.js TAP discrete checks cache > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -447,9 +283,7 @@ exports[`test/lib/commands/doctor.js TAP discrete checks git > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
+    "doctor Running checkup",
   ],
   "warn": Array [],
 }
@@ -463,17 +297,9 @@ exports[`test/lib/commands/doctor.js TAP discrete checks invalid environment > l
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
+    "doctor Running checkup",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
   ],
   "warn": Array [],
 }
@@ -489,9 +315,7 @@ exports[`test/lib/commands/doctor.js TAP discrete checks permissions - not windo
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
+    "doctor Running checkup",
   ],
   "warn": Array [],
 }
@@ -510,9 +334,7 @@ exports[`test/lib/commands/doctor.js TAP discrete checks permissions - windows >
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
+    "doctor Running checkup",
   ],
   "warn": Array [],
 }
@@ -526,13 +348,8 @@ exports[`test/lib/commands/doctor.js TAP discrete checks ping > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
   ],
   "warn": Array [],
 }
@@ -547,13 +364,8 @@ exports[`test/lib/commands/doctor.js TAP discrete checks registry > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
   ],
   "warn": Array [],
 }
@@ -569,17 +381,9 @@ exports[`test/lib/commands/doctor.js TAP discrete checks versions > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
+    "doctor Running checkup",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
   ],
   "warn": Array [],
 }
@@ -595,66 +399,28 @@ exports[`test/lib/commands/doctor.js TAP error reading directory > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/cache",
-    ],
-    Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/prefix/node_modules",
-    ],
-    Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/global/node_modules",
-    ],
-    Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/prefix/node_modules/.bin",
-    ],
-    Array [
-      "checkFilesPermission",
-      "error reading directory {CWD}/global/bin",
-    ],
+    "doctor checkFilesPermission error reading directory {CWD}/cache",
+    "doctor checkFilesPermission error reading directory {CWD}/prefix/node_modules",
+    "doctor checkFilesPermission error reading directory {CWD}/global/node_modules",
+    "doctor checkFilesPermission error reading directory {CWD}/prefix/node_modules/.bin",
+    "doctor checkFilesPermission error reading directory {CWD}/global/bin",
   ],
 }
 `
@@ -695,50 +461,24 @@ exports[`test/lib/commands/doctor.js TAP incorrect owner > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "checkFilesPermission",
-      "should be owner of {CWD}/cache/_cacache",
-    ],
+    "doctor checkFilesPermission should be owner of {CWD}/cache/_cacache",
   ],
 }
 `
@@ -762,66 +502,28 @@ Verify cache contents               ok      verified 0 tarballs
 exports[`test/lib/commands/doctor.js TAP incorrect permissions > logs 1`] = `
 Object {
   "error": Array [
-    Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/cache (expect: readable)",
-    ],
-    Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/prefix/node_modules (expect: readable, writable)",
-    ],
-    Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/global/node_modules (expect: readable)",
-    ],
-    Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/prefix/node_modules/.bin (expect: readable, writable, executable)",
-    ],
-    Array [
-      "checkFilesPermission",
-      "Missing permissions on {CWD}/global/bin (expect: executable)",
-    ],
+    "doctor checkFilesPermission Missing permissions on {CWD}/cache (expect: readable)",
+    "doctor checkFilesPermission Missing permissions on {CWD}/prefix/node_modules (expect: readable, writable)",
+    "doctor checkFilesPermission Missing permissions on {CWD}/global/node_modules (expect: readable)",
+    "doctor checkFilesPermission Missing permissions on {CWD}/prefix/node_modules/.bin (expect: readable, writable, executable)",
+    "doctor checkFilesPermission Missing permissions on {CWD}/global/bin (expect: executable)",
   ],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -831,49 +533,31 @@ exports[`test/lib/commands/doctor.js TAP missing git > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      Error: test error,
-    ],
+    String(
+      doctor getGitPath Error: test error
+      doctor     at which ({CWD}/{TESTDIR}/doctor.js:313:15)
+      doctor     at Doctor.getGitPath ({CWD}/lib/commands/doctor.js:300:18)
+      doctor     at Doctor.exec ({CWD}/lib/commands/doctor.js:130:40)
+      doctor     at processTicksAndRejections (node:internal/process/task_queues:95:5)
+      doctor     at MockNpm.exec ({CWD}/test/fixtures/mock-npm.js:80:26)
+    ),
   ],
 }
 `
@@ -898,54 +582,25 @@ exports[`test/lib/commands/doctor.js TAP missing global directories > logs 1`] =
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [
-    Array [
-      "checkFilesPermission",
-      "error getting info for {CWD}/global/node_modules",
-    ],
-    Array [
-      "checkFilesPermission",
-      "error getting info for {CWD}/global/bin",
-    ],
+    "doctor checkFilesPermission error getting info for {CWD}/global/node_modules",
+    "doctor checkFilesPermission error getting info for {CWD}/global/bin",
   ],
 }
 `
@@ -970,44 +625,21 @@ exports[`test/lib/commands/doctor.js TAP missing local node_modules > logs 1`] =
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1033,44 +665,21 @@ exports[`test/lib/commands/doctor.js TAP node out of date - current > logs 1`] =
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1096,44 +705,21 @@ exports[`test/lib/commands/doctor.js TAP node out of date - lts > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1159,44 +745,21 @@ exports[`test/lib/commands/doctor.js TAP non-default registry > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1222,44 +785,21 @@ exports[`test/lib/commands/doctor.js TAP npm out of date > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1285,44 +825,21 @@ exports[`test/lib/commands/doctor.js TAP ping 404 > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1348,44 +865,21 @@ exports[`test/lib/commands/doctor.js TAP ping 404 in color > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "/u001b[35mdoctor/u001b[39m Running checkup",
+    "/u001b[35mdoctor/u001b[39m Pinging registry",
+    "/u001b[35mdoctor/u001b[39m Getting npm package information",
+    "/u001b[35mdoctor/u001b[39m Getting Node.js release information",
+    "/u001b[35mdoctor/u001b[39m Finding git in your PATH",
+    "/u001b[35mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
+    "/u001b[35mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
+    String(
+      /u001b[35mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
+      /u001b[35mdoctor/u001b[39m   "badContentCount": 0,
+      /u001b[35mdoctor/u001b[39m   "reclaimedCount": 0,
+      /u001b[35mdoctor/u001b[39m   "missingContent": 0,
+      /u001b[35mdoctor/u001b[39m   "verifiedContent": 0
+      /u001b[35mdoctor/u001b[39m }
+    ),
   ],
   "warn": Array [],
 }
@@ -1411,44 +905,21 @@ exports[`test/lib/commands/doctor.js TAP ping exception with code > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1474,44 +945,21 @@ exports[`test/lib/commands/doctor.js TAP ping exception without code > logs 1`] 
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
+    "doctor verifyCachedFiles Verifying the npm cache",
+    String(
+      doctor verifyCachedFiles Verification complete. Stats: {
+      doctor   "badContentCount": 0,
+      doctor   "reclaimedCount": 0,
+      doctor   "missingContent": 0,
+      doctor   "verifiedContent": 0
+      doctor }
+    ),
   ],
   "warn": Array [],
 }
@@ -1536,15 +984,7 @@ Verify cache contents               ok      verified 0 tarballs
 exports[`test/lib/commands/doctor.js TAP silent errors > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -1556,46 +996,7 @@ exports[`test/lib/commands/doctor.js TAP silent errors > output 1`] = `
 exports[`test/lib/commands/doctor.js TAP silent success > logs 1`] = `
 Object {
   "error": Array [],
-  "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
-    Array [
-      "verifyCachedFiles",
-      "Verifying the npm cache",
-    ],
-    Array [
-      "verifyCachedFiles",
-      String(
-        Verification complete. Stats: {
-          "badContentCount": 0,
-          "reclaimedCount": 0,
-          "missingContent": 0,
-          "verifiedContent": 0
-        }
-      ),
-    ],
-  ],
+  "info": Array [],
   "warn": Array [],
 }
 `
@@ -1608,29 +1009,12 @@ exports[`test/lib/commands/doctor.js TAP windows skips permissions checks > logs
 Object {
   "error": Array [],
   "info": Array [
-    Array [
-      "Running checkup",
-    ],
-    Array [
-      "checkPing",
-      "Pinging registry",
-    ],
-    Array [
-      "getLatestNpmVersion",
-      "Getting npm package information",
-    ],
-    Array [
-      "getLatestNodejsVersion",
-      "Getting Node.js release information",
-    ],
-    Array [
-      "getGitPath",
-      "Finding git in your PATH",
-    ],
-    Array [
-      "getBinPath",
-      "Finding npm global bin in your PATH",
-    ],
+    "doctor Running checkup",
+    "doctor Pinging registry",
+    "doctor Getting npm package information",
+    "doctor Getting Node.js release information",
+    "doctor Finding git in your PATH",
+    "doctor getBinPath Finding npm global bin in your PATH",
   ],
   "warn": Array [],
 }

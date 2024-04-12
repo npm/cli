@@ -16,33 +16,6 @@ const mockRunScript = async (t, mocks, { level = 0 } = {}) => {
   })
 }
 
-t.test('disable, enable log progress', async t => {
-  t.plan(3)
-
-  const path = t.testdir({
-    'package.json': JSON.stringify({
-      name: 'pkg',
-    }),
-  })
-  const runScript = await mockRunScript(t, {
-    'ci-info': { isCI: false },
-    '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
-    },
-    '../lib/no-tty.js': () => false,
-    npmlog: {
-      disableProgress () {
-        t.ok('should disable progress')
-      },
-      enableProgress () {
-        t.ok('should enable progress')
-      },
-    },
-  })
-
-  await runScript({ path })
-})
-
 t.test('no package.json', async t => {
   t.plan(1)
 

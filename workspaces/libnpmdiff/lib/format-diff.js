@@ -1,5 +1,3 @@
-const EOL = '\n'
-
 const colorizeDiff = require('@npmcli/disparity-colors')
 const jsDiff = require('diff')
 
@@ -35,7 +33,7 @@ const formatDiff = ({ files, opts = {}, refs, versions }) => {
     }
 
     if (opts.diffNameOnly) {
-      res += `${filename}${EOL}`
+      res += `${filename}\n`
       continue
     }
 
@@ -43,7 +41,7 @@ const formatDiff = ({ files, opts = {}, refs, versions }) => {
     let headerLength = 0
     const header = str => {
       headerLength++
-      patch += `${str}${EOL}`
+      patch += `${str}\n`
     }
 
     // manually build a git diff-compatible header

@@ -7,11 +7,10 @@
 'use strict'
 exports[`test/lib/commands/pack.js TAP dry run > logs pack contents 1`] = `
 Array [
-  undefined,
   "package: test-package@1.0.0",
-  undefined,
+  "=== Tarball Contents ===",
   "41B package.json",
-  undefined,
+  "=== Tarball Details ===",
   String(
     name:          test-package                            
     version:       1.0.0                                   
@@ -22,17 +21,15 @@ Array [
     integrity:     {integrity}
     total files:   1                                       
   ),
-  "",
 ]
 `
 
 exports[`test/lib/commands/pack.js TAP foreground-scripts can still be set to false > logs pack contents 1`] = `
 Array [
-  undefined,
   "package: test-fg-scripts@0.0.0",
-  undefined,
+  "=== Tarball Contents ===",
   "110B package.json",
-  undefined,
+  "=== Tarball Details ===",
   String(
     name:          test-fg-scripts                         
     version:       0.0.0                                   
@@ -43,17 +40,15 @@ Array [
     integrity:     {integrity}
     total files:   1                                       
   ),
-  "",
 ]
 `
 
 exports[`test/lib/commands/pack.js TAP foreground-scripts defaults to true > logs pack contents 1`] = `
 Array [
-  undefined,
   "package: test-fg-scripts@0.0.0",
-  undefined,
+  "=== Tarball Contents ===",
   "110B package.json",
-  undefined,
+  "=== Tarball Details ===",
   String(
     name:          test-fg-scripts                         
     version:       0.0.0                                   
@@ -64,7 +59,6 @@ Array [
     integrity:     {integrity}
     total files:   1                                       
   ),
-  "",
 ]
 `
 
@@ -130,11 +124,10 @@ Array [
 
 exports[`test/lib/commands/pack.js TAP should pack current directory with no arguments > logs pack contents 1`] = `
 Array [
-  undefined,
   "package: test-package@1.0.0",
-  undefined,
+  "=== Tarball Contents ===",
   "41B package.json",
-  undefined,
+  "=== Tarball Details ===",
   String(
     name:          test-package                            
     version:       1.0.0                                   
@@ -145,6 +138,5 @@ Array [
     integrity:     {integrity}
     total files:   1                                       
   ),
-  "",
 ]
 `

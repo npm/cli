@@ -3,7 +3,7 @@ const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
 const errorMessage = require('../../lib/utils/error-message')
-const mockLogs = require('./mock-logs')
+const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
 const defExitCode = process.exitCode
@@ -63,14 +63,19 @@ const buildMocks = (t, mocks) => {
 }
 
 const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
-  const { logMocks, logs, display } = mockLogs(mocks)
-  const allMocks = buildMocks(t, { ...mocks, ...logMocks })
+  const { streams, logs } = mockLogs()
+  const allMocks = buildMocks(t, mocks)
   const Npm = tmock(t, '{LIB}/npm.js', allMocks)
 
-  const outputs = []
-  const outputErrors = []
-
   class MockNpm extends Npm {
+    constructor (opts) {
+      super({
+        ...opts,
+        ...streams,
+        ...npmOpts,
+      })
+    }
+
     async exec (...args) {
       const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
       // This mimics how the exit handler flushes output for commands that have
@@ -84,26 +89,9 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       }
       return res
     }
-
-    // lib/npm.js tests needs this to actually test the function!
-    originalOutput (...args) {
-      super.output(...args)
-    }
-
-    originalOutputError (...args) {
-      super.outputError(...args)
-    }
-
-    output (...args) {
-      outputs.push(args)
-    }
-
-    outputError (...args) {
-      outputErrors.push(args)
-    }
   }
 
-  const npm = init ? new MockNpm(npmOpts) : null
+  const npm = init ? new MockNpm() : null
   if (npm && load) {
     await npm.load()
   }
@@ -111,12 +99,7 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
   return {
     Npm: MockNpm,
     npm,
-    outputs,
-    outputErrors,
-    joinedOutput: () => outputs.map(o => o.join(' ')).join('\n'),
-    logMocks,
-    logs,
-    display,
+    ...logs,
   }
 }
 
@@ -142,7 +125,6 @@ const setupMockNpm = async (t, {
   globals = {},
   npm: npmOpts = {},
   argv: rawArgv = [],
-  ...r
 } = {}) => {
   // easy to accidentally forget to pass in tap
   if (!(t instanceof tap.Test)) {
@@ -213,6 +195,11 @@ const setupMockNpm = async (t, {
     // explicitly set in a test.
     'fetch-retries': 0,
     cache: dirs.cache,
+    // This will give us all the loglevels including timing in a non-colorized way
+    // so we can easily assert their contents. Individual tests can overwrite these
+    // with my passing in configs if they need to test other forms of output.
+    loglevel: 'silly',
+    color: false,
   }
 
   const { argv, env, config } = Object.entries({ ...defaultConfigs, ...withDirs(_config) })
@@ -221,11 +208,13 @@ const setupMockNpm = async (t, {
       // and quoted with `"` so mock globals will ignore that it contains dots
       if (key.startsWith('//')) {
         acc.env[`process.env."npm_config_${key}"`] = value
-      } else {
+      } else if (value !== undefined) {
         const values = [].concat(value)
-        acc.argv.push(...values.flatMap(v => `--${key}=${v.toString()}`))
+        acc.argv.push(...values.flatMap(v => v === '' ? `--${key}` : `--${key}=${v.toString()}`))
       }
-      acc.config[key] = value
+      if (value !== undefined) {
+        acc.config[key] = value
+      }
       return acc
     }, { argv: [...rawArgv], env: {}, config: {} })
 
