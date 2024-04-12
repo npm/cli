@@ -155,7 +155,7 @@ t.test('npm.load', async t => {
       ...logs.timing.filter((p) => p.startsWith('npm:load')),
     ], [
       /npm:load:whichnode Completed in [0-9.]+ms/,
-      new RegExp(`node symlink ${resolve(prefix, 'bin', node)}`),
+      `node symlink ${resolve(prefix, 'bin', node)}`,
       /title npm token revoke blergggg/,
       /argv "token" "revoke" "blergggg".*"--usage" "--scope" "foo"/,
       /logfile logs-max:\d+ dir:.*/,
