@@ -1145,18 +1145,20 @@ class Shrinkwrap {
       throw new Error('run load() before saving data')
     }
 
+    // This must be called before the lockfile conversion check below since it sets properties as part of `commit()`
+    const json = this.toString(options)
     if (
       !this.hiddenLockfile
       && this.originalLockfileVersion !== undefined
       && this.originalLockfileVersion !== this.lockfileVersion
     ) {
       log.warn(
-        `Converting lock file (${relative(process.cwd(), this.filename)}) from v${this.originalLockfileVersion} -> v${this.lockfileVersion}`
+      `Converting lock file (${relative(process.cwd(), this.filename)}) from v${this.originalLockfileVersion} -> v${this.lockfileVersion}`
       )
     }
 
     return Promise.all([
-      writeFile(this.filename, this.toString(options)).catch(er => {
+      writeFile(this.filename, json).catch(er => {
         if (this.hiddenLockfile) {
           // well, we did our best.
           // if we reify, and there's nothing there, then it might be lacking

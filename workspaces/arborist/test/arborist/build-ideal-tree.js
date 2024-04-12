@@ -26,7 +26,10 @@ const cache = t.testdir()
 // the listener and provides the list of what it saw.
 const warningTracker = () => {
   const list = []
-  const onlog = (...msg) => msg[0] === 'warn' && list.push(msg)
+  const onlog = (...msg) => {
+    console.log(msg)
+    msg[0] === 'warn' && list.push(msg)
+  }
   process.on('log', onlog)
   return () => {
     process.removeListener('log', onlog)
