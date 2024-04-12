@@ -13,10 +13,15 @@ const replaceJsonOrIni = (key) => [
   `$1{${key.toUpperCase()}}`,
 ]
 
+const replaceIniComment = (key) => [
+  new RegExp(`(; ${key} = ).*`, 'g'),
+  `$1{${key.replaceAll(' ', '-').toUpperCase()}}`,
+]
+
 t.cleanSnapshot = (s) => cleanCwd(s)
-  .replaceAll(/(; node version = ).*/g, '$1{NODE-VERSION}')
-  .replaceAll(/(; npm version = ).*/g, '$1{NPM-VERSION}')
-  .replaceAll(/(; node bin location = ).*/g, '$1{EXECPATH}')
+  .replaceAll(...replaceIniComment('node version'))
+  .replaceAll(...replaceIniComment('npm version'))
+  .replaceAll(...replaceIniComment('node bin location'))
   .replaceAll(...replaceJsonOrIni('npm-version'))
   .replaceAll(...replaceJsonOrIni('viewer'))
   .replaceAll(...replaceJsonOrIni('shell'))
