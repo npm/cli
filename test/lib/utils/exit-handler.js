@@ -1,8 +1,8 @@
+const fs = require('node:fs')
+const { join, resolve } = require('node:path')
+const EventEmitter = require('node:events')
 const t = require('tap')
-const fs = require('fs')
 const fsMiniPass = require('fs-minipass')
-const { join, resolve } = require('path')
-const EventEmitter = require('events')
 const { output, time } = require('proc-log')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -85,7 +85,7 @@ const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
         },
       },
     }),
-    os: {
+    'node:os': {
       type: () => 'Foo',
       release: () => '1.0.0',
     },
@@ -367,7 +367,7 @@ t.test('no logs dir', async (t) => {
 t.test('timers fail to write', async (t) => {
   // we want the fs.writeFileSync in the Timers class to fail
   const mockTimers = tmock(t, '{LIB}/utils/timers.js', {
-    fs: {
+    'node:fs': {
       ...fs,
       writeFileSync: (file, ...rest) => {
         if (file.includes('LOGS_DIR')) {
@@ -450,7 +450,7 @@ t.test('files from error message with error', async (t) => {
       ['error-file.txt', '# error file content'],
     ],
     mocks: {
-      fs: {
+      'node:fs': {
         ...fs,
         writeFileSync: (dir) => {
           if (dir.includes('LOGS_DIR') && dir.endsWith('error-file.txt')) {
