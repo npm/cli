@@ -15,10 +15,6 @@ async function pack (spec = 'file:.', opts = {}) {
 
   const manifest = await pacote.manifest(spec, opts)
 
-  // Default to true if no log options passed, set to false if we're in silent
-  // mode
-  const banner = !opts.silent
-
   const stdio = opts.foregroundScripts ? 'inherit' : 'pipe'
 
   if (spec.type === 'directory' && !opts.ignoreScripts) {
@@ -29,7 +25,6 @@ async function pack (spec = 'file:.', opts = {}) {
       path: spec.fetchSpec,
       stdio,
       pkg: manifest,
-      banner,
     })
   }
 
@@ -56,7 +51,6 @@ async function pack (spec = 'file:.', opts = {}) {
       path: spec.fetchSpec,
       stdio,
       pkg: manifest,
-      banner,
       env: {
         npm_package_from: tarball.from,
         npm_package_resolved: tarball.resolved,
