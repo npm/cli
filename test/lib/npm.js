@@ -1,6 +1,7 @@
 const t = require('tap')
 const { resolve, dirname, join } = require('path')
 const fs = require('fs')
+const { time } = require('proc-log')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const { commands } = require('../../lib/utils/cmd-list.js')
@@ -398,15 +399,15 @@ t.test('timings', async t => {
         timing: true,
       },
     })
-    process.emit('time', 'foo')
-    process.emit('time', 'bar')
+    time.start('foo')
+    time.start('bar')
     t.match(npm.unfinishedTimers.get('foo'), Number, 'foo timer is a number')
     t.match(npm.unfinishedTimers.get('bar'), Number, 'foo timer is a number')
-    process.emit('timeEnd', 'foo')
-    process.emit('timeEnd', 'bar')
-    process.emit('timeEnd', 'baz')
+    time.end('foo')
+    time.end('bar')
+    time.end('baz')
     // npm timer is started by default
-    process.emit('timeEnd', 'npm')
+    time.end('npm')
     t.match(logs.timing.byTitle('foo'), [
       /Completed in [0-9]+ms/,
     ])
@@ -428,9 +429,9 @@ t.test('timings', async t => {
     const { npm, cache, timingFile } = await loadMockNpm(t, {
       config: { timing: true },
     })
-    process.emit('time', 'foo')
-    process.emit('timeEnd', 'foo')
-    process.emit('time', 'bar')
+    time.start('foo')
+    time.end('foo')
+    time.start('bar')
     npm.writeTimingFile()
     t.match(npm.timingFile, cache)
     t.match(npm.timingFile, /-timing.json$/)
