@@ -320,10 +320,10 @@ npm-broken-resolved-field-test@1.0.0 {CWD}/prefix
 
 exports[`test/lib/commands/ls.js TAP ls colored output > should output tree containing color info 1`] = `
 [0mtest-npm-ls@1.0.0 {CWD}/prefix[0m
-[0m+-- chai@1.0.0 [32m[40mextraneous[49m[39m[0m
-[0m+-- foo@1.0.0 [31m[40minvalid: "^2.0.0" from the root project[49m[39m[0m
+[0m+-- chai@1.0.0 [31mextraneous[39m[0m
+[0m+-- foo@1.0.0 [31minvalid: "^2.0.0" from the root project[39m[0m
 [0m| \`-- dog@1.0.0[0m
-[0m\`-- [31m[40mUNMET DEPENDENCY[49m[39m ipsum@^1.0.0[0m
+[0m\`-- [31mUNMET DEPENDENCY[39m ipsum@^1.0.0[0m
 [0m[0m
 `
 
@@ -336,9 +336,9 @@ test-npm-ls@1.0.0 {CWD}/prefix
 
 exports[`test/lib/commands/ls.js TAP ls cycle deps with filter args > should print tree output containing deduped ref 1`] = `
 [0mtest-npm-ls@1.0.0 {CWD}/prefix[0m
-[0m\`-- [33m[40ma@1.0.0[49m[39m[0m
+[0m\`-- [33ma@1.0.0[39m[0m
 [0m  \`-- b@1.0.0[0m
-[0m    \`-- [33m[40ma@1.0.0[49m[39m [90mdeduped[39m[0m
+[0m    \`-- [33ma@1.0.0[39m [2mdeduped[22m[0m
 [0m[0m
 `
 
@@ -408,8 +408,8 @@ exports[`test/lib/commands/ls.js TAP ls global > should print tree and not mark 
 exports[`test/lib/commands/ls.js TAP ls invalid deduped dep > should output tree signaling mismatching peer dep in problems 1`] = `
 [0minvalid-deduped-dep@1.0.0 {CWD}/prefix[0m
 [0m+-- a@1.0.0[0m
-[0m| \`-- b@1.0.0 [90mdeduped[39m [31m[40minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[49m[39m[0m
-[0m\`-- b@1.0.0 [31m[40minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[49m[39m[0m
+[0m| \`-- b@1.0.0 [2mdeduped[22m [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
+[0m\`-- b@1.0.0 [31minvalid: "^2.0.0" from the root project, "^2.0.0" from node_modules/a[39m[0m
 [0m[0m
 `
 
@@ -492,15 +492,15 @@ workspaces-tree@1.0.0 {CWD}/prefix
 
 exports[`test/lib/commands/ls.js TAP ls loading a tree containing workspaces should list workspaces properly with default configs > output 1`] = `
 [0mworkspaces-tree@1.0.0 {CWD}/prefix[0m
-[0m+-- [32ma@1.0.0[39m -> ./a[0m
+[0m+-- [94ma@1.0.0[39m -> ./a[0m
 [0m| +-- baz@1.0.0[0m
 [0m| +-- c@1.0.0[0m
-[0m| \`-- d@1.0.0 [90mdeduped[39m -> ./d[0m
-[0m+-- [32mb@1.0.0[39m -> ./b[0m
-[0m+-- [32md@1.0.0[39m -> ./d[0m
+[0m| \`-- d@1.0.0 [2mdeduped[22m -> ./d[0m
+[0m+-- [94mb@1.0.0[39m -> ./b[0m
+[0m+-- [94md@1.0.0[39m -> ./d[0m
 [0m| \`-- foo@1.1.1[0m
-[0m+-- [32me@1.0.0[39m -> ./group/e[0m
-[0m+-- [32mf@1.0.0[39m -> ./group/f[0m
+[0m+-- [94me@1.0.0[39m -> ./group/e[0m
+[0m+-- [94mf@1.0.0[39m -> ./group/f[0m
 [0m\`-- pacote@1.0.0[0m
 [0m[0m
 `
@@ -550,7 +550,7 @@ test-overridden@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls overridden dep w/ color > should contain overridden outout 1`] = `
 [0mtest-overridden@1.0.0 {CWD}/prefix[0m
 [0m\`-- foo@1.0.0[0m
-[0m  \`-- bar@1.0.0 [90moverridden[39m[0m
+[0m  \`-- bar@1.0.0 [2moverridden[22m[0m
 [0m[0m
 `
 
@@ -572,8 +572,8 @@ exports[`test/lib/commands/ls.js TAP ls unmet optional dep > should output tree 
 [0m+-- dev-dep@1.0.0[0m
 [0m| \`-- foo@1.0.0[0m
 [0m|   \`-- dog@1.0.0[0m
-[0m+-- [33m[40mUNMET OPTIONAL DEPENDENCY[49m[39m missing-optional-dep@^1.0.0[0m
-[0m+-- optional-dep@1.0.0 [31m[40minvalid: "^2.0.0" from the root project[49m[39m[0m
+[0m+-- [33mUNMET OPTIONAL DEPENDENCY[39m missing-optional-dep@^1.0.0[0m
+[0m+-- optional-dep@1.0.0 [31minvalid: "^2.0.0" from the root project[39m[0m
 [0m+-- peer-dep@1.0.0[0m
 [0m\`-- prod-dep@1.0.0[0m
 [0m  \`-- dog@2.0.0[0m
@@ -593,10 +593,10 @@ test-npm-ls@1.0.0 {CWD}/prefix
 exports[`test/lib/commands/ls.js TAP ls with args and dedupe entries > should print tree output containing deduped ref 1`] = `
 [0mdedupe-entries@1.0.0 {CWD}/prefix[0m
 [0m+-- @npmcli/a@1.0.0[0m
-[0m| \`-- [33m[40m@npmcli/b@1.1.2[49m[39m [90mdeduped[39m[0m
-[0m+-- [33m[40m@npmcli/b@1.1.2[49m[39m[0m
+[0m| \`-- [33m@npmcli/b@1.1.2[39m [2mdeduped[22m[0m
+[0m+-- [33m@npmcli/b@1.1.2[39m[0m
 [0m\`-- @npmcli/c@1.0.0[0m
-[0m  \`-- [33m[40m@npmcli/b@1.1.2[49m[39m [90mdeduped[39m[0m
+[0m  \`-- [33m@npmcli/b@1.1.2[39m [2mdeduped[22m[0m
 [0m[0m
 `
 
@@ -616,7 +616,7 @@ test-npm-ls@1.0.0 {CWD}/prefix
 
 exports[`test/lib/commands/ls.js TAP ls with filter arg > should output tree contaning only occurrences of filtered by package and colored output 1`] = `
 [0mtest-npm-ls@1.0.0 {CWD}/prefix[0m
-[0m\`-- [33m[40mchai@1.0.0[49m[39m[0m
+[0m\`-- [33mchai@1.0.0[39m[0m
 [0m[0m
 `
 

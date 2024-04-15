@@ -48,9 +48,7 @@ const packument = (nv, opts) => {
           dist: {
             shasum: '123',
             tarball: 'http://hm.blue.com/1.0.0.tgz',
-            integrity: '---',
             fileCount: 1,
-            unpackedSize: 1,
           },
         },
         '1.0.1': {
