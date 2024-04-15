@@ -64,7 +64,7 @@
     "ci-info": "^4.0.0",
     "npm-package-arg": "^11.0.2",
     "pacote": "^18.0.0",
-    "proc-log": "^4.0.0",
+    "proc-log": "^4.1.0",
     "read": "^3.0.1",
     "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.7",
