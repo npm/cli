@@ -246,17 +246,17 @@ t.test('omit peer deps', t => {
   // in this one we also snapshot the timers, mostly just as a smoke test
   const timers = {}
   const finishedTimers = []
-  const onTime = name => {
-    t.notOk(timers[name], 'should not have duplicated timers started')
-    timers[name] = true
-  }
-  const onTimeEnd = name => {
-    t.ok(timers[name], 'should not end unstarted timer')
-    delete timers[name]
-    finishedTimers.push(name)
+  const onTime = (level, name) => {
+    if (level === 'start') {
+      t.notOk(timers[name], 'should not have duplicated timers started')
+      timers[name] = true
+    } else if (level === 'end') {
+      t.ok(timers[name], 'should not end unstarted timer')
+      delete timers[name]
+      finishedTimers.push(name)
+    }
   }
   process.on('time', onTime)
-  process.on('timeEnd', onTimeEnd)
 
   return reify(path, { omit: ['peer'] })
     .then(tree => {
@@ -277,7 +277,6 @@ t.test('omit peer deps', t => {
   // eslint-disable-next-line promise/always-return
     .then(() => {
       process.removeListener('time', onTime)
-      process.removeListener('timeEnd', onTimeEnd)
       finishedTimers.sort(localeCompare)
       t.matchSnapshot(finishedTimers, 'finished timers')
       t.strictSame(timers, {}, 'should have no timers in progress now')

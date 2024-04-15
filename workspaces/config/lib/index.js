@@ -2,7 +2,7 @@
 const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
-const { log } = require('proc-log')
+const { log, time } = require('proc-log')
 
 const { resolve, dirname, join } = require('node:path')
 const { homedir } = require('node:os')
@@ -201,7 +201,7 @@ class Config {
     }
 
     // create the object for flat options passed to deps
-    process.emit('time', 'config:load:flatten')
+    const timeEnd = time.start('config:load:flatten')
     this.#flatOptions = {}
     // walk from least priority to highest
     for (const { data } of this.data.values()) {
@@ -209,7 +209,7 @@ class Config {
     }
     this.#flatOptions.nodeBin = this.execPath
     this.#flatOptions.npmBin = this.npmBin
-    process.emit('timeEnd', 'config:load:flatten')
+    timeEnd()
 
     return this.#flatOptions
   }
@@ -233,37 +233,27 @@ class Config {
       throw new Error('attempting to load npm config multiple times')
     }
 
-    process.emit('time', 'config:load')
+    const timeEnd = time.start('config:load')
+
     // first load the defaults, which sets the global prefix
-    process.emit('time', 'config:load:defaults')
-    this.loadDefaults()
-    process.emit('timeEnd', 'config:load:defaults')
+    time.start('config:load:defaults', () => this.loadDefaults())
 
     // next load the builtin config, as this sets new effective defaults
-    process.emit('time', 'config:load:builtin')
-    await this.loadBuiltinConfig()
-    process.emit('timeEnd', 'config:load:builtin')
+    await time.start('config:load:builtin', () => this.loadBuiltinConfig())
 
     // cli and env are not async, and can set the prefix, relevant to project
-    process.emit('time', 'config:load:cli')
-    this.loadCLI()
-    process.emit('timeEnd', 'config:load:cli')
-    process.emit('time', 'config:load:env')
-    this.loadEnv()
-    process.emit('timeEnd', 'config:load:env')
+    time.start('config:load:cli', () => this.loadCLI())
+
+    time.start('config:load:env', () => this.loadEnv())
 
     // next project config, which can affect userconfig location
-    process.emit('time', 'config:load:project')
-    await this.loadProjectConfig()
-    process.emit('timeEnd', 'config:load:project')
+    await time.start('config:load:project', () => this.loadProjectConfig())
+
     // then user config, which can affect globalconfig location
-    process.emit('time', 'config:load:user')
-    await this.loadUserConfig()
-    process.emit('timeEnd', 'config:load:user')
+    await time.start('config:load:user', () => this.loadUserConfig())
+
     // last but not least, global config file
-    process.emit('time', 'config:load:global')
-    await this.loadGlobalConfig()
-    process.emit('timeEnd', 'config:load:global')
+    await time.start('config:load:global', () => this.loadGlobalConfig())
 
     // set this before calling setEnvs, so that we don't have to share
     // private attributes, as that module also does a bunch of get operations
@@ -272,11 +262,9 @@ class Config {
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
-    process.emit('time', 'config:load:setEnvs')
-    this.setEnvs()
-    process.emit('timeEnd', 'config:load:setEnvs')
+    time.start('config:load:setEnvs', () => this.setEnvs())
 
-    process.emit('timeEnd', 'config:load')
+    timeEnd()
   }
 
   loadDefaults () {
@@ -601,9 +589,8 @@ class Config {
   }
 
   async #loadFile (file, type) {
-    process.emit('time', 'config:load:file:' + file)
     // only catch the error from readFile, not from the loadObject call
-    await readFile(file, 'utf8').then(
+    await time.start(`config:load:file:${file}`, () => readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
         if (type === 'project' && parsedConfig.prefix) {
@@ -614,8 +601,7 @@ class Config {
         return this.#loadObject(parsedConfig, type, file)
       },
       er => this.#loadObject(null, type, file, er)
-    )
-    process.emit('timeEnd', 'config:load:file:' + file)
+    ))
   }
 
   loadBuiltinConfig () {

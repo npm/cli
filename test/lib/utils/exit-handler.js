@@ -3,7 +3,7 @@ const fs = require('fs')
 const fsMiniPass = require('fs-minipass')
 const { join, resolve } = require('path')
 const EventEmitter = require('events')
-const { output } = require('proc-log')
+const { output, time } = require('proc-log')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('@npmcli/mock-globals')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
@@ -517,8 +517,8 @@ t.test('unfinished timers', async (t) => {
     config: { timing: true },
   })
 
-  process.emit('time', 'foo')
-  process.emit('time', 'bar')
+  time.start('foo')
+  time.start('bar')
 
   await exitHandler()
   const timingFileData = await timingFile()
