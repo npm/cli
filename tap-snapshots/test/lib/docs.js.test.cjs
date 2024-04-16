@@ -2958,7 +2958,7 @@ exports[`test/lib/docs.js TAP usage doctor > must match snapshot 1`] = `
 Check the health of your npm environment
 
 Usage:
-npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
+npm doctor [connection] [registry] [versions] [environment] [permissions] [cache]
 
 Options:
 [--registry <registry>]
@@ -2966,7 +2966,7 @@ Options:
 Run "npm help doctor" for more info
 
 \`\`\`bash
-npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
+npm doctor [connection] [registry] [versions] [environment] [permissions] [cache]
 \`\`\`
 
 Note: This command is unaware of workspaces.

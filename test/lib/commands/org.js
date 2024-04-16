@@ -1,6 +1,5 @@
 const t = require('tap')
 const mockNpm = require('../../fixtures/mock-npm')
-const { stripVTControlCharacters } = require('node:util')
 
 const mockOrg = async (t, { orgSize = 1, orgList = {}, ...npmOpts } = {}) => {
   let setArgs = null
@@ -427,10 +426,11 @@ t.test('npm org ls', async t => {
     },
     'receieved the correct args'
   )
-  const out = stripVTControlCharacters(outputs[0])
-  t.match(out, /one.*developer/, 'contains the developer member')
-  t.match(out, /two.*admin/, 'contains the admin member')
-  t.match(out, /three.*owner/, 'contains the owner member')
+  t.strictSame(outputs, [
+    'one - developer',
+    'three - owner',
+    'two - admin',
+  ])
 })
 
 t.test('npm org ls - user filter', async t => {
@@ -452,9 +452,9 @@ t.test('npm org ls - user filter', async t => {
     },
     'receieved the correct args'
   )
-  const out = stripVTControlCharacters(outputs[0])
-  t.match(out, /username.*admin/, 'contains the filtered member')
-  t.notMatch(out, /missing.*admin/, 'does not contain other members')
+  t.strictSame(outputs, [
+    'username - admin',
+  ])
 })
 
 t.test('npm org ls - user filter, missing user', async t => {
@@ -475,9 +475,7 @@ t.test('npm org ls - user filter, missing user', async t => {
     },
     'receieved the correct args'
   )
-  const out = stripVTControlCharacters(outputs[0][0])
-  t.notMatch(out, /username/, 'does not contain the requested member')
-  t.notMatch(out, /missing.*admin/, 'does not contain other members')
+  t.strictSame(outputs, [])
 })
 
 t.test('npm org ls - no org', async t => {

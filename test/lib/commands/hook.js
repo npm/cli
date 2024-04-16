@@ -1,6 +1,5 @@
 const t = require('tap')
 const mockNpm = require('../../fixtures/mock-npm')
-const { stripVTControlCharacters } = require('node:util')
 
 const mockHook = async (t, { hookResponse, ...npmOpts } = {}) => {
   const now = Date.now()
@@ -31,6 +30,7 @@ const mockHook = async (t, { hookResponse, ...npmOpts } = {}) => {
         type: pkgTypes[name],
         endpoint: 'https://google.com',
         last_delivery: id % 2 === 0 ? now : undefined,
+        response_code: 200,
       }))
     },
     rm: async (id, opts) => {
@@ -243,11 +243,18 @@ t.test('npm hook ls', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0], 'You have 3 hooks configured.', 'prints the correct header')
-  const out = stripVTControlCharacters(outputs[1])
-  t.match(out, /semver.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints package hook')
-  t.match(out, /@npmcli.*https:\/\/google.com.*\n.*\n.*triggered just now/, 'prints scope hook')
-  t.match(out, /~npm.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints owner hook')
+  t.strictSame(outputs, [
+    'You have 3 hooks configured.',
+    'Hook 1: semver',
+    'Endpoint: https://google.com',
+    'Never triggered\n',
+    'Hook 2: @npmcli',
+    'Endpoint: https://google.com',
+    'Triggered just now, response code was "200"\n',
+    'Hook 3: ~npm',
+    'Endpoint: https://google.com',
+    'Never triggered\n',
+  ])
 })
 
 t.test('npm hook ls, no results', async t => {
@@ -266,7 +273,7 @@ t.test('npm hook ls, no results', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0], "You don't have any hooks configured yet.", 'prints the correct result')
+  t.strictSame(outputs, [`You don't have any hooks configured yet.`])
 })
 
 t.test('npm hook ls, single result', async t => {
@@ -292,9 +299,12 @@ t.test('npm hook ls, single result', async t => {
     },
     'received the correct arguments'
   )
-  t.equal(outputs[0], 'You have one hook configured.', 'prints the correct header')
-  const out = stripVTControlCharacters(outputs[1])
-  t.match(out, /semver.*https:\/\/google.com.*\n.*\n.*never triggered/, 'prints package hook')
+  t.strictSame(outputs, [
+    'You have 1 hook configured.',
+    'Hook 1: semver',
+    'Endpoint: https://google.com',
+    'Never triggered\n',
+  ])
 })
 
 t.test('npm hook ls - json output', async t => {
@@ -363,10 +373,10 @@ t.test('npm hook ls - parseable output', async t => {
   t.strictSame(
     outputs.map(line => line.split(/\t/)),
     [
-      ['id', 'name', 'type', 'endpoint', 'last_delivery'],
-      ['1', 'semver', 'package', 'https://google.com', ''],
-      ['2', '@npmcli', 'scope', 'https://google.com', `${now}`],
-      ['3', 'npm', 'owner', 'https://google.com', ''],
+      ['id', 'name', 'type', 'endpoint', 'last_delivery', 'response_code'],
+      ['1', 'semver', 'package', 'https://google.com', '', '200'],
+      ['2', '@npmcli', 'scope', 'https://google.com', `${now}`, '200'],
+      ['3', 'npm', 'owner', 'https://google.com', '', '200'],
     ],
     'prints the correct result'
   )
