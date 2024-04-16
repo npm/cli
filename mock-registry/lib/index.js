@@ -334,6 +334,31 @@ class MockRegistry {
     this.nock = nock
   }
 
+  getTokens (tokens) {
+    return this.nock.get('/-/npm/v1/tokens')
+      .reply(200, {
+        objects: tokens,
+        urls: {},
+        total: tokens.length,
+        userHasOldFormatToken: false,
+      })
+  }
+
+  createToken ({ password, readonly = false, cidr = [] }) {
+    return this.nock.post('/-/npm/v1/tokens', {
+      password,
+      readonly,
+      cidr_whitelist: cidr,
+    }).reply(200, {
+      key: 'n3wk3y',
+      token: 'n3wt0k3n',
+      created: new Date(),
+      updated: new Date(),
+      readonly,
+      cidr_whitelist: cidr,
+    })
+  }
+
   async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     const spec = npa(manifest.name)
