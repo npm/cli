@@ -12,16 +12,15 @@ Run \`npm fund [<package-spec>] --which=1\`, for example, to open the first fund
 `
 
 exports[`test/lib/commands/fund.js TAP fund colors > should print output with color info 1`] = `
-[0mtest-fund-colors@1.0.0[0m
-[0m+-- [40m[37mhttp://example.com/a[39m[49m[0m
-[0m|   \`-- a@1.0.0[0m
-[0m\`-- [40m[37mhttp://example.com/b[39m[49m[0m
-[0m  | \`-- b@1.0.0, c@1.0.0[0m
-[0m  +-- [40m[37mhttp://example.com/d[39m[49m[0m
-[0m  |   \`-- d@1.0.0[0m
-[0m  \`-- [40m[37mhttp://example.com/e[39m[49m[0m
-[0m      \`-- e@1.0.0[0m
-[0m[0m
+test-fund-colors@1.0.0
++-- [34mhttp://example.com/a[39m
+|   \`-- a@1.0.0
+\`-- [34mhttp://example.com/b[39m
+  | \`-- b@1.0.0[2m,[22m c@1.0.0
+  +-- [34mhttp://example.com/d[39m
+  |   \`-- d@1.0.0
+  \`-- [34mhttp://example.com/e[39m
+      \`-- e@1.0.0
 `
 
 exports[`test/lib/commands/fund.js TAP fund containing multi-level nested deps with no funding > should omit dependencies with no funding declared 1`] = `

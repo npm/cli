@@ -222,10 +222,10 @@ kms-demo@1.0.0 (https://registry.npmjs.org/)
 Someone might have tampered with this package since it was published on the registry!
 `
 
-exports[`test/lib/commands/audit.js TAP audit signatures with invalid signtaures and color output enabled > must match snapshot 1`] = `
+exports[`test/lib/commands/audit.js TAP audit signatures with invalid signatures and color output enabled > must match snapshot 1`] = `
 audited 1 package in xxx
 
-1 package has an [1m[31minvalid[39m[22m registry signature:
+1 package has an [91minvalid[39m registry signature:
 
 [31mkms-demo@1.0.0[39m (https://registry.npmjs.org/)
 

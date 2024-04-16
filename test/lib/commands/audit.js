@@ -1860,7 +1860,7 @@ t.test('audit signatures', async t => {
     )
   })
 
-  t.test('with invalid signtaures and color output enabled', async t => {
+  t.test('with invalid signatures and color output enabled', async t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       prefixDir: installWithValidSigs,
       config: { color: 'always' },
@@ -1875,7 +1875,7 @@ t.test('audit signatures', async t => {
     t.match(
       joinedOutput(),
       // eslint-disable-next-line no-control-regex
-      /\u001b\[1m\u001b\[31minvalid\u001b\[39m\u001b\[22m registry signature/
+      /\u001b\[91minvalid\u001b\[39m registry signature/
     )
     t.matchSnapshot(joinedOutput())
   })

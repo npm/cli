@@ -65,20 +65,20 @@ exports[`test/lib/commands/doctor.js TAP all clear in color > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    "/u001b[35mdoctor/u001b[39m Running checkup",
-    "/u001b[35mdoctor/u001b[39m Pinging registry",
-    "/u001b[35mdoctor/u001b[39m Getting npm package information",
-    "/u001b[35mdoctor/u001b[39m Getting Node.js release information",
-    "/u001b[35mdoctor/u001b[39m Finding git in your PATH",
-    "/u001b[35mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
-    "/u001b[35mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
+    "/u001b[94mdoctor/u001b[39m Running checkup",
+    "/u001b[94mdoctor/u001b[39m Pinging registry",
+    "/u001b[94mdoctor/u001b[39m Getting npm package information",
+    "/u001b[94mdoctor/u001b[39m Getting Node.js release information",
+    "/u001b[94mdoctor/u001b[39m Finding git in your PATH",
+    "/u001b[94mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
+    "/u001b[94mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
     String(
-      /u001b[35mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
-      /u001b[35mdoctor/u001b[39m   "badContentCount": 0,
-      /u001b[35mdoctor/u001b[39m   "reclaimedCount": 0,
-      /u001b[35mdoctor/u001b[39m   "missingContent": 0,
-      /u001b[35mdoctor/u001b[39m   "verifiedContent": 0
-      /u001b[35mdoctor/u001b[39m }
+      /u001b[94mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
+      /u001b[94mdoctor/u001b[39m   "badContentCount": 0,
+      /u001b[94mdoctor/u001b[39m   "reclaimedCount": 0,
+      /u001b[94mdoctor/u001b[39m   "missingContent": 0,
+      /u001b[94mdoctor/u001b[39m   "verifiedContent": 0
+      /u001b[94mdoctor/u001b[39m }
     ),
   ],
   "warn": Array [],
@@ -865,20 +865,20 @@ exports[`test/lib/commands/doctor.js TAP ping 404 in color > logs 1`] = `
 Object {
   "error": Array [],
   "info": Array [
-    "/u001b[35mdoctor/u001b[39m Running checkup",
-    "/u001b[35mdoctor/u001b[39m Pinging registry",
-    "/u001b[35mdoctor/u001b[39m Getting npm package information",
-    "/u001b[35mdoctor/u001b[39m Getting Node.js release information",
-    "/u001b[35mdoctor/u001b[39m Finding git in your PATH",
-    "/u001b[35mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
-    "/u001b[35mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
+    "/u001b[94mdoctor/u001b[39m Running checkup",
+    "/u001b[94mdoctor/u001b[39m Pinging registry",
+    "/u001b[94mdoctor/u001b[39m Getting npm package information",
+    "/u001b[94mdoctor/u001b[39m Getting Node.js release information",
+    "/u001b[94mdoctor/u001b[39m Finding git in your PATH",
+    "/u001b[94mdoctor/u001b[39m getBinPath Finding npm global bin in your PATH",
+    "/u001b[94mdoctor/u001b[39m verifyCachedFiles Verifying the npm cache",
     String(
-      /u001b[35mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
-      /u001b[35mdoctor/u001b[39m   "badContentCount": 0,
-      /u001b[35mdoctor/u001b[39m   "reclaimedCount": 0,
-      /u001b[35mdoctor/u001b[39m   "missingContent": 0,
-      /u001b[35mdoctor/u001b[39m   "verifiedContent": 0
-      /u001b[35mdoctor/u001b[39m }
+      /u001b[94mdoctor/u001b[39m verifyCachedFiles Verification complete. Stats: {
+      /u001b[94mdoctor/u001b[39m   "badContentCount": 0,
+      /u001b[94mdoctor/u001b[39m   "reclaimedCount": 0,
+      /u001b[94mdoctor/u001b[39m   "missingContent": 0,
+      /u001b[94mdoctor/u001b[39m   "verifiedContent": 0
+      /u001b[94mdoctor/u001b[39m }
     ),
   ],
   "warn": Array [],
@@ -887,7 +887,7 @@ Object {
 
 exports[`test/lib/commands/doctor.js TAP ping 404 in color > ping 404 in color 1`] = `
 [4mCheck[24m                               [4mValue[24m   [4mRecommendation/Notes[24m
-[31mnpm ping[39m                            [31mnot ok[39m  [35m404 404 Not Found - GET https://registry.npmjs.org/-/ping?write=true[39m
+[31mnpm ping[39m                            [31mnot ok[39m  [36m404 404 Not Found - GET https://registry.npmjs.org/-/ping?write=true[39m
 npm -v                              [32mok[39m      current: v1.0.0, latest: v1.0.0
 node -v                             [32mok[39m      current: v1.0.0, recommended: v1.0.0
 npm config get registry             [32mok[39m      using default registry (https://registry.npmjs.org/)
