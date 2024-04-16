@@ -14,25 +14,20 @@ XX timing npm:load:mkdirplogs Completed in {TIME}ms
 XX verbose title npm
 XX verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "silly" "--color" "false" "--timing" "true"
 XX timing npm:load:setTitle Completed in {TIME}ms
-XX timing npm:load:display Completed in {TIME}ms
-XX verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
-XX verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
-XX timing npm:load:logFile Completed in {TIME}ms
-XX timing npm:load:timers Completed in {TIME}ms
-XX timing npm:load:configScope Completed in {TIME}ms
+XX silly logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
+XX silly logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 XX timing npm:load Completed in {TIME}ms
+XX timing npm Completed in {TIME}ms
+XX info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 XX verbose stack Error: Unknown error
 XX verbose cwd {CWD}/prefix
 XX verbose {OS}
 XX verbose {NODE-VERSION}
 XX verbose npm  {NPM-VERSION}
 XX error code ECODE
-XX error ERR SUMMARY Unknown error
-XX error ERR DETAIL Unknown error
+XX error Unknown error
 XX verbose exit 1
-XX timing npm Completed in {TIME}ms
 XX verbose code 1
-XX error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
 
@@ -45,24 +40,19 @@ timing npm:load:mkdirplogs Completed in {TIME}ms
 verbose title npm
 verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "silly" "--color" "false" "--timing" "true"
 timing npm:load:setTitle Completed in {TIME}ms
-timing npm:load:display Completed in {TIME}ms
-verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
-verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
-timing npm:load:logFile Completed in {TIME}ms
-timing npm:load:timers Completed in {TIME}ms
-timing npm:load:configScope Completed in {TIME}ms
+silly logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
+silly logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 timing npm:load Completed in {TIME}ms
+timing npm Completed in {TIME}ms
+info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 verbose stack Error: Unknown error
 verbose cwd {CWD}/prefix
 verbose {OS}
 verbose {NODE-VERSION}
 verbose npm  {NPM-VERSION}
 error code ECODE
-error ERR SUMMARY Unknown error
-error ERR DETAIL Unknown error
+error Unknown error
 verbose exit 1
-timing npm Completed in {TIME}ms
 verbose code 1
-error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `

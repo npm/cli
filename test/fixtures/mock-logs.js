@@ -47,7 +47,7 @@ module.exports = () => {
 
   const streams = {
     stderr: {
-      write: (str) => {
+      write: (str, cb = () => {}) => {
         str = trimTrailingNewline(str)
 
         // Use the beginning of each line to determine if its a log
@@ -56,7 +56,10 @@ module.exports = () => {
         // to do it in a single place so hopefully its easy to change
         // in the future if/when we refactor what logs look like.
         if (!isLog(str)) {
-          outputErrors.push(str)
+          if (str !== '') {
+            outputErrors.push(str)
+          }
+          cb()
           return
         }
 
@@ -75,11 +78,16 @@ module.exports = () => {
 
         logs.push(str.replaceAll(prefix, `${level} `))
         levelLogs.push({ level, message: str.replaceAll(prefix, '') })
+
+        cb()
       },
     },
     stdout: {
-      write: (str) => {
-        outputs.push(trimTrailingNewline(str))
+      write: (str, cb = () => {}) => {
+        if (str !== '') {
+          outputs.push(trimTrailingNewline(str))
+        }
+        cb()
       },
     },
   }

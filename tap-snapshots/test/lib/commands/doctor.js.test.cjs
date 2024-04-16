@@ -556,7 +556,7 @@ Object {
       doctor     at Doctor.getGitPath ({CWD}/lib/commands/doctor.js:300:18)
       doctor     at Doctor.exec ({CWD}/lib/commands/doctor.js:130:40)
       doctor     at processTicksAndRejections (node:internal/process/task_queues:95:5)
-      doctor     at MockNpm.exec ({CWD}/test/fixtures/mock-npm.js:80:26)
+      doctor     at MockNpm.exec ({CWD}/test/fixtures/mock-npm.js:93:26)
     ),
   ],
 }

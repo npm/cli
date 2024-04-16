@@ -15,6 +15,7 @@ t.formatSnapshot = (p) => {
   }
   return p
 }
+
 t.cleanSnapshot = p => cleanDate(cleanCwd(p))
 
 mockGlobals(t, {

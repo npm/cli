@@ -2,6 +2,7 @@ const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
+const { output, META } = require('proc-log')
 const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -76,6 +77,16 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       })
     }
 
+    // In tests always wait for npm to finish all of its work
+    // This includes promises like update notifier and log file cleaning
+    // which are run on a best-effort basis in reality but they create
+    // weird edge cases in testing that make some snapshots etc unreliable
+    async load () {
+      const p = await super.load()
+      await Promise.all(this.unrefPromises)
+      return p
+    }
+
     async exec (...args) {
       const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
       // This mimics how the exit handler flushes output for commands that have
@@ -83,7 +94,10 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       // error message fn. This is necessary for commands with buffered output
       // to read the output after exec is called. This is not *exactly* how it
       // works in practice, but it is close enough for now.
-      this.flushOutput(err ? errorMessage(err, this).json : null)
+      output.flush({
+        [META]: true,
+        jsonError: err ? errorMessage(err, this).json : null,
+      })
       if (err) {
         throw err
       }
@@ -297,7 +311,7 @@ const setupMockNpm = async (t, {
         .join('\n')
     },
     timingFile: async () => {
-      const data = await fs.readFile(npm.timingFile, 'utf8')
+      const data = await fs.readFile(npm.logPath + 'timing.json', 'utf8')
       return JSON.parse(data)
     },
   }

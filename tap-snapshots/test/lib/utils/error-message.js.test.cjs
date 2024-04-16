@@ -521,8 +521,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"load
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
 `
 
@@ -549,8 +547,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"load
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
 ]
 `
@@ -578,8 +574,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"load
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
 ]
 `
@@ -607,8 +601,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":false,"load
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
   "dummy stack trace",
 ]
 `
@@ -783,8 +775,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loade
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
 `
 
@@ -822,8 +812,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loade
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
 `
 
@@ -861,8 +849,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loade
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
 `
 
@@ -900,8 +886,6 @@ exports[`test/lib/utils/error-message.js TAP eacces/eperm {"windows":true,"loade
 Array [
   "title npm",
   "argv /"--fetch-retries/" /"0/" /"--cache/" /"{CWD}/cache/" /"--loglevel/" /"silly/" /"--color/" /"false/"",
-  "logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-",
-  "logfile {CWD}/cache/_logs/{DATE}-debug-0.log",
 ]
 `
 
@@ -1093,11 +1077,26 @@ Object {
       "",
       "explanation",
     ],
+    Array [
+      "",
+      String(
+        
+        
+        For a full report see:
+        {CWD}/cache/_logs/{DATE}-eresolve-report.txt
+      ),
+    ],
   ],
   "files": Array [
     Array [
-      "eresolve-report.txt",
-      "report",
+      "{CWD}/cache/_logs/{DATE}-eresolve-report.txt",
+      String(
+        'Log files:
+        {CWD}/cache/_logs/{DATE}-debug-0.log
+        
+        report
+        
+      ),
     ],
   ],
   "summary": Array [

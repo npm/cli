@@ -35,7 +35,6 @@ t.test('npm.load', async t => {
       /load error/
     )
 
-    t.equal(npm.loadErr, loadError)
     npm.config.load = async () => {
       throw new Error('different error')
     }
@@ -44,7 +43,6 @@ t.test('npm.load', async t => {
       /load error/,
       'loading again returns the original error'
     )
-    t.equal(npm.loadErr, loadError)
   })
 
   await t.test('basic loading', async t => {
@@ -159,8 +157,6 @@ t.test('npm.load', async t => {
       `node symlink ${resolve(prefix, 'bin', node)}`,
       /title npm token revoke blergggg/,
       /argv "token" "revoke" "blergggg".*"--usage" "--scope" "foo"/,
-      /logfile logs-max:\d+ dir:.*/,
-      /logfile .*-debug-0.log/,
       /npm:load:.* Completed in [0-9.]+ms/,
     ])
     t.equal(process.execPath, resolve(prefix, 'bin', node))
@@ -393,48 +389,14 @@ t.test('cache dir', async t => {
 })
 
 t.test('timings', async t => {
-  t.test('gets/sets timers', async t => {
-    const { npm, logs } = await loadMockNpm(t, {
-      config: {
-        timing: true,
-      },
-    })
-    time.start('foo')
-    time.start('bar')
-    t.match(npm.unfinishedTimers.get('foo'), Number, 'foo timer is a number')
-    t.match(npm.unfinishedTimers.get('bar'), Number, 'foo timer is a number')
-    time.end('foo')
-    time.end('bar')
-    time.end('baz')
-    // npm timer is started by default
-    time.end('npm')
-    t.match(logs.timing.byTitle('foo'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.timing.byTitle('bar'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.timing.byTitle('npm'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.silly, [
-      `timing Tried to end timer that doesn't exist: baz`,
-    ])
-    t.notOk(npm.unfinishedTimers.has('foo'), 'foo timer is gone')
-    t.notOk(npm.unfinishedTimers.has('bar'), 'bar timer is gone')
-    t.match(npm.finishedTimers, { foo: Number, bar: Number, npm: Number })
-  })
-
   t.test('writes timings file', async t => {
-    const { npm, cache, timingFile } = await loadMockNpm(t, {
+    const { npm, timingFile } = await loadMockNpm(t, {
       config: { timing: true },
     })
     time.start('foo')
     time.end('foo')
     time.start('bar')
-    npm.writeTimingFile()
-    t.match(npm.timingFile, cache)
-    t.match(npm.timingFile, /-timing.json$/)
+    npm.finishTimers()
     const timings = await timingFile()
     t.match(timings, {
       metadata: {
@@ -444,11 +406,11 @@ t.test('timings', async t => {
       },
       unfinishedTimers: {
         bar: [Number, Number],
-        npm: [Number, Number],
       },
       timers: {
         foo: Number,
         'npm:load': Number,
+        npm: Number,
       },
     })
   })
@@ -457,7 +419,7 @@ t.test('timings', async t => {
     const { npm, timingFile } = await loadMockNpm(t, {
       config: { timing: false },
     })
-    npm.writeTimingFile()
+    npm.finishTimers()
     await t.rejects(() => timingFile())
   })
 
