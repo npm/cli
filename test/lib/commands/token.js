@@ -77,7 +77,7 @@ t.test('token list', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: conf => {
+      listTokens: async conf => {
         t.same(conf.auth, { token: 'thisisnotarealtoken', otp: '123456' })
         return tokens
       },
@@ -118,7 +118,7 @@ t.test('token list json output', async t => {
       return { username: 'foo', password: 'bar' }
     },
     profile: {
-      listTokens: conf => {
+      listTokens: async conf => {
         t.same(
           conf.auth,
           { basic: { username: 'foo', password: 'bar' } },
@@ -164,7 +164,7 @@ t.test('token list parseable output', async t => {
       return { auth: Buffer.from('foo:bar').toString('base64') }
     },
     profile: {
-      listTokens: conf => {
+      listTokens: async conf => {
         t.same(
           conf.auth,
           { basic: { username: 'foo', password: 'bar' } },
@@ -212,11 +212,11 @@ t.test('token revoke', async t => {
       return {}
     },
     profile: {
-      listTokens: conf => {
+      listTokens: async conf => {
         t.same(conf.auth, {}, 'passes the correct empty auth')
         return Promise.resolve([{ key: 'abcd1234' }])
       },
-      removeToken: key => {
+      removeToken: async key => {
         t.equal(key, 'abcd1234', 'deletes the correct token')
       },
     },
@@ -235,8 +235,8 @@ t.test('token revoke multiple tokens', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234' }, { key: 'efgh5678' }]),
-      removeToken: key => {
+      listTokens: async () => ([{ key: 'abcd1234' }, { key: 'efgh5678' }]),
+      removeToken: async key => {
         // this will run twice
         t.ok(['abcd1234', 'efgh5678'].includes(key), 'deletes the correct token')
       },
@@ -256,8 +256,8 @@ t.test('token revoke json output', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234' }]),
-      removeToken: key => {
+      listTokens: async () => ([{ key: 'abcd1234' }]),
+      removeToken: async key => {
         t.equal(key, 'abcd1234', 'deletes the correct token')
       },
     },
@@ -278,8 +278,8 @@ t.test('token revoke parseable output', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234' }]),
-      removeToken: key => {
+      listTokens: async () => ([{ key: 'abcd1234' }]),
+      removeToken: async key => {
         t.equal(key, 'abcd1234', 'deletes the correct token')
       },
     },
@@ -298,8 +298,8 @@ t.test('token revoke by token', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234', token: 'efgh5678' }]),
-      removeToken: key => {
+      listTokens: async () => ([{ key: 'abcd1234', token: 'efgh5678' }]),
+      removeToken: async key => {
         t.equal(key, 'efgh5678', 'passes through user input')
       },
     },
@@ -323,7 +323,7 @@ t.test('token revoke ambiguous id errors', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234' }, { key: 'abcd5678' }]),
+      listTokens: async () => ([{ key: 'abcd1234' }, { key: 'abcd5678' }]),
     },
   })
 
@@ -338,7 +338,7 @@ t.test('token revoke unknown id errors', async t => {
       return { token: 'thisisnotarealtoken' }
     },
     profile: {
-      listTokens: () => Promise.resolve([{ key: 'abcd1234' }]),
+      listTokens: async () => ([{ key: 'abcd1234' }]),
     },
   })
 
@@ -362,7 +362,7 @@ t.test('token create', async t => {
       password: () => Promise.resolve(password),
     },
     profile: {
-      createToken: (pw, readonly, cidr) => {
+      createToken: async (pw, readonly, cidr) => {
         t.equal(pw, password)
         t.equal(readonly, false)
         t.same(cidr, ['10.0.0.0/8', '192.168.1.0/24'], 'defaults to empty array')
@@ -405,7 +405,7 @@ t.test('token create json output', async t => {
       password: () => Promise.resolve(password),
     },
     profile: {
-      createToken: (pw, readonly, cidr) => {
+      createToken: async (pw, readonly, cidr) => {
         t.equal(pw, password)
         t.equal(readonly, false)
         t.same(cidr, [], 'defaults to empty array')
@@ -447,7 +447,7 @@ t.test('token create parseable output', async t => {
       password: () => Promise.resolve(password),
     },
     profile: {
-      createToken: (pw, readonly, cidr) => {
+      createToken: async (pw, readonly, cidr) => {
         t.equal(pw, password)
         t.equal(readonly, false)
         t.same(cidr, [], 'defaults to empty array')
