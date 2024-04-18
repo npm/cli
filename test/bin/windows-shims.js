@@ -101,10 +101,6 @@ t.test('run shims', t => {
     },
   })
 
-  for (const shim of Object.keys(SHIMS)) {
-    chmodSync(join(path, shim), 0o755)
-  }
-
   // The removal of this fixture causes this test for fail when done with
   // the default tap removal. Using rimraf's `moveRemove` seems to make this
   // work reliably. Don't remove this line in the future without making sure
@@ -154,6 +150,10 @@ t.test('run shims', t => {
     } catch {
       return defaultVersion
     }
+  }
+
+  for (const shim of Object.keys(SHIMS)) {
+    chmodSync(join(path, shim), 0o755)
   }
 
   const { ProgramFiles = '/', SystemRoot = '/', NYC_CONFIG, WINDOWS_SHIMS_TEST } = process.env
