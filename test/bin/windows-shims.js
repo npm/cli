@@ -1,7 +1,7 @@
 const t = require('tap')
 const { spawnSync } = require('child_process')
-const { resolve, join, extname, basename, sep } = require('path')
-const { copyFileSync, readFileSync, chmodSync, readdirSync, rmSync, statSync } = require('fs')
+const { resolve, join, extname, basename } = require('path')
+const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
 const Diff = require('diff')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
@@ -19,12 +19,6 @@ const BIN = join(ROOT, 'bin')
 const SHIMS = readNonJsFiles(BIN)
 const NODE_GYP = readNonJsFiles(join(BIN, 'node-gyp-bin'))
 const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
-
-// windows requires each segment of a command path to be quoted when using shell: true
-const quotePath = (cmd) => cmd
-  .split(sep)
-  .map(p => p.includes(' ') ? `"${p}"` : p)
-  .join(sep)
 
 t.test('shim contents', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -82,6 +76,7 @@ t.test('node-gyp', t => {
 t.test('run shims', t => {
   const path = t.testdir({
     ...SHIMS,
+    'node.exe': readFileSync(process.execPath),
     // simulate the state where one version of npm is installed
     // with node, but we should load the globally installed one
     'global-prefix': {
@@ -105,26 +100,17 @@ t.test('run shims', t => {
     },
   })
 
-  // hacky fix to decrease flakes of this test from `NOTEMPTY: directory not empty, rmdir`
-  // this should get better in tap@18 and we can try removing it then
-  copyFileSync(process.execPath, join(path, 'node.exe'))
-  t.teardown(async () => {
-    rmSync(join(path, 'node.exe'))
-    await new Promise(res => setTimeout(res, 100))
-    // this is superstition
-    rmSync(join(path, 'node.exe'), { force: true })
-  })
-
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    const result = spawnSync(cmd, args, {
+    const result = spawnSync(`"${cmd}"`, args, {
       // don't hit the registry for the update check
       env: { PATH: path, npm_config_update_notifier: 'false' },
       cwd: path,
       windowsHide: true,
+      shell: true,
       ...opts,
     })
     if (stdioString) {
@@ -235,9 +221,7 @@ t.test('run shims', t => {
         args.push(bin)
         break
       case 'pwsh.exe':
-        cmd = quotePath(cmd)
         args.push(`${bin}.ps1`)
-        opts.shell = true
         break
       default:
         throw new Error('unknown shell')

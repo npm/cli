@@ -214,6 +214,7 @@
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
     "remark-github": "^11.2.4",
+    "rimraf": "^5.0.5",
     "spawk": "^1.7.1",
     "tap": "^16.3.9"
   },
@@ -254,7 +255,8 @@
       "--exclude",
       "tap-snapshots/**"
     ],
-    "test-ignore": "^(docs|smoke-tests|mock-globals|mock-registry|workspaces)/"
+    "test-ignore": "^(docs|smoke-tests|mock-globals|mock-registry|workspaces)/",
+    "libtap-settings": "./libtap-settings.js"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

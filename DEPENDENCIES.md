@@ -548,6 +548,7 @@ graph LR;
   npm-->remark-gfm;
   npm-->remark-github;
   npm-->remark;
+  npm-->rimraf;
   npm-->semver;
   npm-->sigstore-tuf["@sigstore/tuf"];
   npm-->spawk;

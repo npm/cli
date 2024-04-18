@@ -27,6 +27,7 @@ tap-testdir*/
 !/docs/
 !/index.js
 !/lib/
+!/libtap-settings.js
 !/LICENSE*
 !/map.js
 !/node_modules/

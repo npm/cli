@@ -66,6 +66,7 @@ module.exports = {
     '/.mailmap',
     '/.licensee.json',
     '/.gitattributes',
+    '/libtap-settings.js',
   ],
   ignorePaths: [
     '/node_modules/.bin/',
