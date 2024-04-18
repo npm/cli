@@ -34,7 +34,6 @@ t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
   .replace(/(Completed in )\d+(ms)/g, '$1{TIME}$2')
   .replace(/(removing )\d+( files)/g, '$1${NUM}2')
   .replaceAll(`node ${process.version}`, '{NODE-VERSION}')
-  .replaceAll(`node ${process.version}`, '{NODE-VERSION}')
   .replaceAll(`${os.type()} ${os.release()}`, '{OS}')
   .replaceAll(`v${NPM_VERSION}`, '{NPM-VERSION}')
 
