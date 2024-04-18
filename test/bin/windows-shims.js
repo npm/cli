@@ -106,7 +106,7 @@ t.test('run shims', t => {
   }
 
   t.teardown(async () => {
-    // try again
+    // try again again
     await moveRemove(join(path, 'node.exe'))
   })
 
