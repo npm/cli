@@ -360,28 +360,25 @@ t.test('no logs dir', async (t) => {
 })
 
 t.test('timers fail to write', async (t) => {
-  // we want the fs.writeFileSync in the Timers class to fail
-  const mockTimers = tmock(t, '{LIB}/utils/timers.js', {
-    'node:fs': {
-      ...fs,
-      writeFileSync: (file, ...rest) => {
-        if (file.includes('LOGS_DIR')) {
-          throw new Error('err')
-        }
-
-        return fs.writeFileSync(file, ...rest)
-      },
-    },
-  })
-
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: (dirs) => ({
       'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
       timing: true,
     }),
     mocks: {
-      // note, this is relative to test/fixtures/mock-npm.js not this file
-      '{LIB}/utils/timers.js': mockTimers,
+      // we want the fs.writeFileSync in the Timers class to fail
+      '{LIB}/utils/timers.js': tmock(t, '{LIB}/utils/timers.js', {
+        'node:fs': {
+          ...fs,
+          writeFileSync: (file, ...rest) => {
+            if (file.includes('LOGS_DIR')) {
+              throw new Error('err')
+            }
+
+            return fs.writeFileSync(file, ...rest)
+          },
+        },
+      }),
     },
   })
 
@@ -391,25 +388,22 @@ t.test('timers fail to write', async (t) => {
 })
 
 t.test('log files fail to write', async (t) => {
-  // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
-  const mockLogFile = tmock(t, '{LIB}/utils/log-file.js', {
-    'fs-minipass': {
-      ...fsMiniPass,
-      WriteStreamSync: (file, ...rest) => {
-        if (file.includes('LOGS_DIR')) {
-          throw new Error('err')
-        }
-      },
-    },
-  })
-
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: (dirs) => ({
       'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
     }),
     mocks: {
-      // note, this is relative to test/fixtures/mock-npm.js not this file
-      '{LIB}/utils/log-file.js': mockLogFile,
+      // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
+      '{LIB}/utils/log-file.js': tmock(t, '{LIB}/utils/log-file.js', {
+        'fs-minipass': {
+          ...fsMiniPass,
+          WriteStreamSync: (file, ...rest) => {
+            if (file.includes('LOGS_DIR')) {
+              throw new Error('err')
+            }
+          },
+        },
+      }),
     },
   })
 
