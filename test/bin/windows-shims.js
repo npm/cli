@@ -19,27 +19,19 @@ const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
 
 const rimrafWindowsForever = async (t, p, tries = 0) => {
   try {
-    t.comment(`rimraf ${tries} ${p}`)
     await rimrafWindows(p, { force: true })
-    t.comment(`rimraf:complete`)
-
-    const access = await fsp.access(p).then(() => true).catch(err => err)
-    t.comment(`access ${access}`)
-
-    if (access === true) {
-      throw new Error('access=true')
-    } else if (access.code === 'EPERM') {
-      throw new Error('access=EPERM, try again')
+    const access = await fsp.access(p).then(() => ({ code: true })).catch(err => err)
+    if (access.code === true || access.code === 'EPERM') {
+      throw new Error(`access=${access.code}, try again`)
+    } else {
+      return { result: 'success', tries }
     }
   } catch (err) {
-    t.comment(`rimraf:error ${err}`)
-
     if (tries >= 1000) {
-      return
+      return { result: 'error', tries }
     }
-
-    await timers.setImmediate()
-    return rimrafWindowsForever(t, p, tries++)
+    await timers.setTimeout(10)
+    return rimrafWindowsForever(t, p, ++tries)
   }
 }
 
@@ -134,7 +126,8 @@ t.test('run shims', t => {
   }
 
   t.teardown(async () => {
-    await rimrafWindowsForever(t, join(path, 'node.exe'))
+    const res = await rimrafWindowsForever(t, join(path, 'node.exe'))
+    t.comment(`${res.status} rimraf node.exe in ${res.tries}`)
   })
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
