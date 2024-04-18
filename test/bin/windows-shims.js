@@ -3,7 +3,7 @@ const timers = require('timers/promises')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename } = require('path')
 const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
-const { access } = require('fs/promises')
+const fsp = require('fs/promises')
 const Diff = require('diff')
 const { windows: rimrafWindows } = require('rimraf')
 const { sync: which } = require('which')
@@ -21,15 +21,14 @@ const rimrafWindowsForever = async (t, p, tries = 0) => {
   try {
     t.comment(`rimraf ${p}`)
     await rimrafWindows(p, { force: true })
-    t.comment(`rimraf:complete ${p}`)
+    t.comment(`rimraf:complete`)
 
-    const hasAccess = await access(p).then(() => ({ err: false })).catch(err => ({ err }))
-    if (hasAccess.err) {
-      t.comment(`access ${hasAccess.err}`)
-      return
+    const access = await fsp.access(p).then(() => true).catch(err => err)
+    if (access === true) {
+      throw new Error('access=true')
     }
 
-    throw new Error('Still has access')
+    t.comment(`access ${access}`)
   } catch (err) {
     t.comment(`rimraf:error ${err}`)
     if (tries >= 100) {
