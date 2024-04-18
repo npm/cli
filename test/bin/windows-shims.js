@@ -1,7 +1,9 @@
 const t = require('tap')
+const timers = require('timers/promises')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename } = require('path')
 const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
+const { access } = require('fs/promises')
 const Diff = require('diff')
 const { windows: rimrafWindows } = require('rimraf')
 const { sync: which } = require('which')
@@ -15,11 +17,26 @@ const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
   return acc
 }, {})
 
-const rimrafWindowsForever = async (p) => {
+const rimrafWindowsForever = async (t, p, tries = 0) => {
   try {
-    return await rimrafWindows(p, { force: true })
-  } catch {
-    return rimrafWindowsForever(p)
+    t.comment(`rimraf ${p}`)
+    await rimrafWindows(p, { force: true })
+    t.comment(`rimraf:complete ${p}`)
+
+    const hasAccess = await access(p).then(() => ({ err: false })).catch(err => ({ err }))
+    if (hasAccess.err) {
+      t.comment(`access ${hasAccess.err}`)
+      return
+    }
+
+    throw new Error('Still has access')
+  } catch (err) {
+    t.comment(`rimraf:error ${err}`)
+    if (tries >= 100) {
+      throw err
+    }
+    await timers.setImmediate()
+    return rimrafWindowsForever(t, p, tries++)
   }
 }
 
@@ -118,7 +135,7 @@ t.test('run shims', t => {
   t.teardown(async () => {
     // this runs before taps testdir teardown so we run forever until
     // this file is successfully deleted
-    await rimrafWindowsForever(join(path, 'node.exe'))
+    await rimrafWindowsForever(t, join(path, 'node.exe'))
   })
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
