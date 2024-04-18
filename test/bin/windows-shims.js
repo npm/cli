@@ -1,11 +1,9 @@
 const t = require('tap')
-const timers = require('timers/promises')
 const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename } = require('path')
 const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
-const fsp = require('fs/promises')
 const Diff = require('diff')
-const { windows: rimrafWindows } = require('rimraf')
+const { moveRemove } = require('rimraf')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
 
@@ -16,25 +14,6 @@ const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
   }
   return acc
 }, {})
-
-const rimrafWindowsForever = async (t, p, tries = 1) => {
-  let status
-  try {
-    await rimrafWindows(p, { force: true })
-    const access = await fsp.access(p).then(() => ({ code: true })).catch(err => err)
-    if (access.code === true || access.code === 'EPERM') {
-      throw new Error(`access=${access.code}, try again`)
-    }
-    status = 'success'
-  } catch {
-    if (tries <= 1000) {
-      await timers.setTimeout(10)
-      return rimrafWindowsForever(t, p, ++tries)
-    }
-    status = 'error'
-  }
-  t.comment(`rimraf ${p} ${status} ${tries}`)
-}
 
 const ROOT = resolve(__dirname, '../..')
 const BIN = join(ROOT, 'bin')
@@ -127,7 +106,7 @@ t.test('run shims', t => {
   }
 
   t.teardown(async () => {
-    await rimrafWindowsForever(t, join(path, 'node.exe'))
+    await moveRemove(join(path, 'node.exe'))
   })
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
