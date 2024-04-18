@@ -101,6 +101,7 @@ t.test('run shims', t => {
   })
 
   // make sure to chmod node too
+  // you are seeing this comment because i need to make sure this works
   for (const shim of ['node.exe', ...Object.keys(SHIMS)]) {
     chmodSync(join(path, shim), 0o755)
   }
