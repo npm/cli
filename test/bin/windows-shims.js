@@ -3,6 +3,7 @@ const { spawnSync } = require('child_process')
 const { resolve, join, extname, basename } = require('path')
 const { readFileSync, chmodSync, readdirSync, statSync } = require('fs')
 const Diff = require('diff')
+const { windows: rimrafWindows } = require('rimraf')
 const { sync: which } = require('which')
 const { version } = require('../../package.json')
 
@@ -13,6 +14,14 @@ const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
   }
   return acc
 }, {})
+
+const rimrafWindowsForever = async (p) => {
+  try {
+    return await rimrafWindows(p, { force: true })
+  } catch {
+    return rimrafWindowsForever(p)
+  }
+}
 
 const ROOT = resolve(__dirname, '../..')
 const BIN = join(ROOT, 'bin')
@@ -105,6 +114,12 @@ t.test('run shims', t => {
   for (const shim of ['node.exe', ...Object.keys(SHIMS)]) {
     chmodSync(join(path, shim), 0o755)
   }
+
+  t.teardown(async () => {
+    // this runs before taps testdir teardown so we run forever until
+    // this file is successfully deleted
+    await rimrafWindowsForever(join(path, 'node.exe'))
+  })
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
