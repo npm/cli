@@ -34,7 +34,7 @@ const rimrafWindowsForever = async (t, p, tries = 0) => {
   } catch (err) {
     t.comment(`rimraf:error ${err}`)
 
-    if (tries >= 100) {
+    if (tries >= 1000) {
       return
     }
 
