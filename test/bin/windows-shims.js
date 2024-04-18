@@ -19,21 +19,25 @@ const readNonJsFiles = (dir) => readdirSync(dir).reduce((acc, shim) => {
 
 const rimrafWindowsForever = async (t, p, tries = 0) => {
   try {
-    t.comment(`rimraf ${p}`)
+    t.comment(`rimraf ${tries} ${p}`)
     await rimrafWindows(p, { force: true })
     t.comment(`rimraf:complete`)
 
     const access = await fsp.access(p).then(() => true).catch(err => err)
+    t.comment(`access ${access}`)
+
     if (access === true) {
       throw new Error('access=true')
+    } else if (access.code === 'EPERM') {
+      throw new Error('access=EPERM, try again')
     }
-
-    t.comment(`access ${access}`)
   } catch (err) {
     t.comment(`rimraf:error ${err}`)
+
     if (tries >= 100) {
-      throw err
+      return
     }
+
     await timers.setImmediate()
     return rimrafWindowsForever(t, p, tries++)
   }
@@ -125,15 +129,11 @@ t.test('run shims', t => {
     },
   })
 
-  // make sure to chmod node too
-  // you are seeing this comment because i need to make sure this works
-  for (const shim of ['node.exe', ...Object.keys(SHIMS)]) {
+  for (const shim of Object.keys(SHIMS)) {
     chmodSync(join(path, shim), 0o755)
   }
 
   t.teardown(async () => {
-    // this runs before taps testdir teardown so we run forever until
-    // this file is successfully deleted
     await rimrafWindowsForever(t, join(path, 'node.exe'))
   })
 
