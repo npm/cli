@@ -255,8 +255,7 @@
       "--exclude",
       "tap-snapshots/**"
     ],
-    "test-ignore": "^(docs|smoke-tests|mock-globals|mock-registry|workspaces)/",
-    "libtap-settings": "./libtap-settings.js"
+    "test-ignore": "^(docs|smoke-tests|mock-globals|mock-registry|workspaces)/"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

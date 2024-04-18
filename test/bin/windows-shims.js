@@ -105,10 +105,11 @@ t.test('run shims', t => {
     chmodSync(join(path, shim), 0o755)
   }
 
-  t.teardown(async () => {
-    // try again again
-    await moveRemove(join(path, 'node.exe'))
-  })
+  // The removal of this fixture causes this test for fail when done with
+  // the default tap removal. Using rimraf's `moveRemove` seems to make this
+  // work reliably. Don't remove this line in the future without making sure
+  // this test passes the full windows suite at least 3 consecutive times.
+  t.teardown(() => moveRemove(join(path, 'node.exe')))
 
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
