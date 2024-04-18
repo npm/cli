@@ -100,6 +100,10 @@ t.test('run shims', t => {
     },
   })
 
+  for (const shim of ['node.exe', ...Object.keys(SHIMS)]) {
+    chmodSync(join(path, shim), 0o755)
+  }
+
   const spawnPath = (cmd, args, { log, stdioString = true, ...opts } = {}) => {
     if (cmd.endsWith('bash.exe')) {
       // only cygwin *requires* the -l, but the others are ok with it
@@ -143,10 +147,6 @@ t.test('run shims', t => {
     } catch {
       return defaultVersion
     }
-  }
-
-  for (const shim of Object.keys(SHIMS)) {
-    chmodSync(join(path, shim), 0o755)
   }
 
   const { ProgramFiles = '/', SystemRoot = '/', NYC_CONFIG, WINDOWS_SHIMS_TEST } = process.env
