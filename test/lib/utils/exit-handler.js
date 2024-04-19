@@ -1,6 +1,7 @@
 const fs = require('node:fs')
 const { join, resolve } = require('node:path')
 const EventEmitter = require('node:events')
+const os = require('node:os')
 const t = require('tap')
 const fsMiniPass = require('fs-minipass')
 const { output, time } = require('proc-log')
@@ -8,6 +9,7 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm')
 const mockGlobals = require('@npmcli/mock-globals')
 const { cleanCwd, cleanDate } = require('../../fixtures/clean-snapshot')
 const tmock = require('../../fixtures/tmock')
+const { version: NPM_VERSION } = require('../../../package.json')
 
 const pick = (obj, ...keys) => keys.reduce((acc, key) => {
   acc[key] = obj[key]
@@ -31,6 +33,9 @@ t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
   .replace(/.*silly logfile.*cleaning.*\n/gm, '')
   .replace(/(Completed in )\d+(ms)/g, '$1{TIME}$2')
   .replace(/(removing )\d+( files)/g, '$1${NUM}2')
+  .replaceAll(`node ${process.version}`, '{NODE-VERSION}')
+  .replaceAll(`${os.type()} ${os.release()}`, '{OS}')
+  .replaceAll(`v${NPM_VERSION}`, '{NPM-VERSION}')
 
 // cut off process from script so that it won't quit the test runner
 // while trying to run through the myriad of cases.  need to make it
@@ -39,9 +44,9 @@ t.cleanSnapshot = (path) => cleanDate(cleanCwd(path))
 mockGlobals(t, {
   process: Object.assign(new EventEmitter(), {
     // these are process properties that are needed in the running code and tests
-    ...pick(process, 'execPath', 'stdout', 'stderr', 'stdin', 'cwd', 'chdir', 'env', 'umask'),
+    // eslint-disable-next-line max-len
+    ...pick(process, 'version', 'execPath', 'stdout', 'stderr', 'stdin', 'cwd', 'chdir', 'env', 'umask'),
     argv: ['/node', ...process.argv.slice(1)],
-    version: 'v1.0.0',
     kill: () => {},
     reallyExit: (code) => process.exit(code),
     pid: 123456,
@@ -55,14 +60,9 @@ mockGlobals(t, {
 const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
   const errors = []
 
-  const { npm, logMocks, ...rest } = await loadMockNpm(t, {
+  const { npm, ...rest } = await loadMockNpm(t, {
     ...opts,
-    mocks: {
-      '{ROOT}/package.json': {
-        version: '1.0.0',
-      },
-      ...mocks,
-    },
+    mocks,
     config: (dirs) => ({
       loglevel: 'notice',
       ...(typeof config === 'function' ? config(dirs) : config),
@@ -85,11 +85,6 @@ const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
         },
       },
     }),
-    'node:os': {
-      type: () => 'Foo',
-      release: () => '1.0.0',
-    },
-    ...logMocks,
     ...mocks,
   })
 
@@ -365,28 +360,25 @@ t.test('no logs dir', async (t) => {
 })
 
 t.test('timers fail to write', async (t) => {
-  // we want the fs.writeFileSync in the Timers class to fail
-  const mockTimers = tmock(t, '{LIB}/utils/timers.js', {
-    'node:fs': {
-      ...fs,
-      writeFileSync: (file, ...rest) => {
-        if (file.includes('LOGS_DIR')) {
-          throw new Error('err')
-        }
-
-        return fs.writeFileSync(file, ...rest)
-      },
-    },
-  })
-
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: (dirs) => ({
       'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
       timing: true,
     }),
     mocks: {
-      // note, this is relative to test/fixtures/mock-npm.js not this file
-      '{LIB}/utils/timers.js': mockTimers,
+      // we want the fs.writeFileSync in the Timers class to fail
+      '{LIB}/utils/timers.js': tmock(t, '{LIB}/utils/timers.js', {
+        'node:fs': {
+          ...fs,
+          writeFileSync: (file, ...rest) => {
+            if (file.includes('LOGS_DIR')) {
+              throw new Error('err')
+            }
+
+            return fs.writeFileSync(file, ...rest)
+          },
+        },
+      }),
     },
   })
 
@@ -396,25 +388,22 @@ t.test('timers fail to write', async (t) => {
 })
 
 t.test('log files fail to write', async (t) => {
-  // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
-  const mockLogFile = tmock(t, '{LIB}/utils/log-file.js', {
-    'fs-minipass': {
-      ...fsMiniPass,
-      WriteStreamSync: (file, ...rest) => {
-        if (file.includes('LOGS_DIR')) {
-          throw new Error('err')
-        }
-      },
-    },
-  })
-
   const { exitHandler, logs } = await mockExitHandler(t, {
     config: (dirs) => ({
       'logs-dir': resolve(dirs.prefix, 'LOGS_DIR'),
     }),
     mocks: {
-      // note, this is relative to test/fixtures/mock-npm.js not this file
-      '{LIB}/utils/log-file.js': mockLogFile,
+      // we want the fsMiniPass.WriteStreamSync in the LogFile class to fail
+      '{LIB}/utils/log-file.js': tmock(t, '{LIB}/utils/log-file.js', {
+        'fs-minipass': {
+          ...fsMiniPass,
+          WriteStreamSync: (file, ...rest) => {
+            if (file.includes('LOGS_DIR')) {
+              throw new Error('err')
+            }
+          },
+        },
+      }),
     },
   })
 
@@ -491,7 +480,7 @@ t.test('timing with no error', async (t) => {
   t.match(timingFileData, {
     metadata: {
       command: [],
-      version: '1.0.0',
+      version: npm.version,
       logfiles: [String],
     },
     timers: {
@@ -528,7 +517,7 @@ t.test('unfinished timers', async (t) => {
   t.match(timingFileData, {
     metadata: {
       command: [],
-      version: '1.0.0',
+      version: npm.version,
       logfiles: [String],
     },
     timers: {

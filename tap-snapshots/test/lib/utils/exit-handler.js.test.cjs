@@ -23,9 +23,9 @@ XX timing npm:load:configScope Completed in {TIME}ms
 XX timing npm:load Completed in {TIME}ms
 XX verbose stack Error: Unknown error
 XX verbose cwd {CWD}/prefix
-XX verbose Foo 1.0.0
-XX verbose node v1.0.0
-XX verbose npm  v1.0.0
+XX verbose {OS}
+XX verbose {NODE-VERSION}
+XX verbose npm  {NPM-VERSION}
 XX error code ECODE
 XX error ERR SUMMARY Unknown error
 XX error ERR DETAIL Unknown error
@@ -54,9 +54,9 @@ timing npm:load:configScope Completed in {TIME}ms
 timing npm:load Completed in {TIME}ms
 verbose stack Error: Unknown error
 verbose cwd {CWD}/prefix
-verbose Foo 1.0.0
-verbose node v1.0.0
-verbose npm  v1.0.0
+verbose {OS}
+verbose {NODE-VERSION}
+verbose npm  {NPM-VERSION}
 error code ECODE
 error ERR SUMMARY Unknown error
 error ERR DETAIL Unknown error
