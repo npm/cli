@@ -23,10 +23,10 @@ module.exports = {
     'no-console': 'error',
   },
   overrides: es6Files({
-    'index.js': ['lib/cli.js'],
+    'index.js': ['lib/cli/index.js'],
     'bin/npm-cli.js': ['lib/cli.js'],
-    'lib/cli.js': ['lib/es6/validate-engines.js'],
-    'lib/es6/validate-engines.js': ['package.json'],
+    'lib/cli.js': ['lib/cli/validate-engines.js'],
+    'lib/cli/validate-engines.js': ['package.json'],
     // TODO: This file should also have its requires restricted as well since it
     // is an entry point but it currently pulls in config definitions which have
     // a large require graph, so that is not currently feasible. A future config

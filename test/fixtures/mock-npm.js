@@ -1,9 +1,7 @@
-const os = require('os')
-const fs = require('fs').promises
-const path = require('path')
+const os = require('node:os')
+const fs = require('node:fs/promises')
+const path = require('node:path')
 const tap = require('tap')
-const { output, META } = require('proc-log')
-const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
@@ -53,6 +51,7 @@ const buildMocks = (t, mocks) => {
     '{LIB}/utils/update-notifier.js': async () => {},
     ...mocks,
   }
+
   // The definitions must be mocked since they are a singleton that reads from
   // process and environs to build defaults in order to break the requiure
   // cache. We also need to mock them with any mocks that were passed in for the
@@ -85,23 +84,6 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       const p = await super.load()
       await Promise.all(this.unrefPromises)
       return p
-    }
-
-    async exec (...args) {
-      const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
-      // This mimics how the exit handler flushes output for commands that have
-      // buffered output. It also uses the same json error processing from the
-      // error message fn. This is necessary for commands with buffered output
-      // to read the output after exec is called. This is not *exactly* how it
-      // works in practice, but it is close enough for now.
-      output.flush({
-        [META]: true,
-        jsonError: err ? errorMessage(err, this).json : null,
-      })
-      if (err) {
-        throw err
-      }
-      return res
     }
   }
 
