@@ -288,8 +288,6 @@ graph LR;
   cidr-regex-->ip-regex;
   cli-columns-->string-width;
   cli-columns-->strip-ansi;
-  cli-table3-->colors-colors["@colors/colors"];
-  cli-table3-->string-width;
   color-convert-->color-name;
   columnify-->strip-ansi;
   columnify-->wcwidth;
