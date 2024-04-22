@@ -127,7 +127,7 @@ t.test('arborist-cmd', async t => {
 t.test('handle getWorkspaces raising an error', async t => {
   const { cmd } = await mockArboristCmd(t, null, 'a', {
     mocks: {
-      '{LIB}/workspaces/get-workspaces.js': async () => {
+      '{LIB}/utils/get-workspaces.js': async () => {
         throw new Error('oopsie')
       },
     },

@@ -1,6 +1,6 @@
 const { resolve } = require('path')
 const t = require('tap')
-const getWorkspaces = require('../../../lib/workspaces/get-workspaces.js')
+const getWorkspaces = require('../../../lib/utils/get-workspaces.js')
 
 const normalizePath = p => p
   .replace(/\\+/g, '/')
