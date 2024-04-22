@@ -1,4 +1,5 @@
 const t = require('tap')
+const { readdirSync } = require('fs')
 const { dirname } = require('path')
 const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const tmock = require('../../fixtures/tmock.js')
@@ -169,4 +170,15 @@ t.test('non-ascii dash', async t => {
     logs.error[0],
     'arg Argument starts with non-ascii dash, this is probably invalid: \u2010not-a-dash'
   )
+})
+
+t.test('exit early for --version', async t => {
+  const { cli, outputs, Npm, cache } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', '-v'],
+    },
+  })
+  await cli(process)
+  t.strictSame(readdirSync(cache), [], 'nothing created in cache')
+  t.equal(outputs[0], Npm.version)
 })
