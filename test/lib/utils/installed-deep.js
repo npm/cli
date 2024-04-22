@@ -1,5 +1,5 @@
 const t = require('tap')
-const installedDeep = require('../../../../lib/utils/completion/installed-deep.js')
+const installedDeep = require('../../../lib/utils/installed-deep.js')
 const mockNpm = require('../../../fixtures/mock-npm')
 
 const fixture = {
