@@ -5,23 +5,22 @@ const mockGlobals = require('@npmcli/mock-globals')
 const { inspect } = require('util')
 
 const mockDisplay = async (t, { mocks, load } = {}) => {
-  const { Chalk } = await import('chalk')
   const { log, output } = require('proc-log')
 
   const logs = mockLogs()
 
   const Display = tmock(t, '{LIB}/utils/display', mocks)
   const display = new Display(logs.streams)
-  const displayLoad = (opts) => display.load({
+  const displayLoad = async (opts) => display.load({
     loglevel: 'silly',
-    stderrChalk: new Chalk({ level: 0 }),
     stderrColor: false,
+    stdoutColot: false,
     heading: 'npm',
     ...opts,
   })
 
   if (load !== false) {
-    displayLoad(load)
+    await displayLoad(load)
   }
 
   t.teardown(() => display.off())
@@ -68,7 +67,7 @@ t.test('can buffer output when paused', async t => {
   output.standard('Message 2')
 
   t.strictSame(outputs, [])
-  displayLoad()
+  await displayLoad()
   t.strictSame(outputs, ['Message 1', 'Message 2'])
 })
 
