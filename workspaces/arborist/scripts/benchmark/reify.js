@@ -1,8 +1,7 @@
 const Arborist = require('../..')
 const { resolve, basename } = require('path')
-const { writeFileSync } = require('fs')
+const { writeFileSync, rmSync } = require('fs')
 const { mkdir } = require('fs/promises')
-const { rmSync } = require('fs')
 const dir = resolve(__dirname, basename(__filename, '.js'))
 
 // these are not arbitrary, the empty/full and no-* bits matter
