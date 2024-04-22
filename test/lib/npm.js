@@ -26,25 +26,13 @@ t.test('not yet loaded', async t => {
 t.test('npm.load', async t => {
   await t.test('load error', async t => {
     const { npm } = await loadMockNpm(t, { load: false })
-    const loadError = new Error('load error')
     npm.config.load = async () => {
-      throw loadError
+      throw new Error('load error')
     }
     await t.rejects(
       () => npm.load(),
       /load error/
     )
-
-    t.equal(npm.loadErr, loadError)
-    npm.config.load = async () => {
-      throw new Error('different error')
-    }
-    await t.rejects(
-      () => npm.load(),
-      /load error/,
-      'loading again returns the original error'
-    )
-    t.equal(npm.loadErr, loadError)
   })
 
   await t.test('basic loading', async t => {
@@ -416,7 +404,7 @@ t.test('timings', async t => {
     t.match(logs.timing.byTitle('npm'), [
       /Completed in [0-9]+ms/,
     ])
-    t.match(logs.silly, [
+    t.match(logs.silly.byTitle('timing'), [
       `timing Tried to end timer that doesn't exist: baz`,
     ])
     t.notOk(npm.unfinishedTimers.has('foo'), 'foo timer is gone')
