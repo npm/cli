@@ -72,7 +72,7 @@ const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
     },
   })
 
-  const exitHandler = tmock(t, '{LIB}/utils/exit-handler.js', {
+  const exitHandler = tmock(t, '{LIB}/cli/exit-handler.js', {
     '{LIB}/utils/error-message.js': (err) => ({
       summary: [['ERR SUMMARY', err.message]],
       detail: [['ERR DETAIL', err.message]],

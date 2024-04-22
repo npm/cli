@@ -1,6 +1,6 @@
 const t = require('tap')
 const installedDeep = require('../../../lib/utils/installed-deep.js')
-const mockNpm = require('../../../fixtures/mock-npm')
+const mockNpm = require('../../fixtures/mock-npm')
 
 const fixture = {
   'package.json': JSON.stringify({
