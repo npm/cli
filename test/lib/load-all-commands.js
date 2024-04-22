@@ -6,7 +6,7 @@ const t = require('tap')
 const util = require('util')
 const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
 const { commands } = require('../../lib/utils/cmd-list.js')
-const BaseCommand = require('../../lib/base-command.js')
+const BaseCommand = require('../../lib/base-cmd.js')
 
 const isAsyncFn = (v) => typeof v === 'function' && /^\[AsyncFunction:/.test(util.inspect(v))
 
