@@ -1892,7 +1892,7 @@ t.test('audit signatures', async t => {
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
     await manifestWithValidAttestations({ registry })
     const fixture = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-sigstore-attestations.json'),
+      path.resolve(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
       'utf8'
     )
     registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture)
@@ -1918,11 +1918,11 @@ t.test('audit signatures', async t => {
     await manifestWithValidAttestations({ registry })
     await manifestWithMultipleValidAttestations({ registry })
     const fixture1 = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-sigstore-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
       'utf8'
     )
     const fixture2 = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-tuf-js-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-tuf-js-attestations.json'),
       'utf8'
     )
     registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture1)
@@ -1951,7 +1951,7 @@ t.test('audit signatures', async t => {
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
     await manifestWithValidAttestations({ registry })
     const fixture = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-sigstore-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
       'utf8'
     )
     registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture)
@@ -1986,7 +1986,7 @@ t.test('audit signatures', async t => {
     const registry = new MockRegistry({ tap: t, registry: npm.config.get('registry') })
     await manifestWithValidAttestations({ registry })
     const fixture = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-sigstore-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
       'utf8'
     )
     registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture)
@@ -2016,11 +2016,11 @@ t.test('audit signatures', async t => {
     await manifestWithValidAttestations({ registry })
     await manifestWithMultipleValidAttestations({ registry })
     const fixture1 = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-sigstore-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-sigstore-attestations.json'),
       'utf8'
     )
     const fixture2 = fs.readFileSync(
-      path.join(__dirname, '..', 'fixtures', 'sigstore/valid-tuf-js-attestations.json'),
+      path.join(__dirname, '../../fixtures/sigstore/valid-tuf-js-attestations.json'),
       'utf8'
     )
     registry.nock.get('/-/npm/v1/attestations/sigstore@1.0.0').reply(200, fixture1)
