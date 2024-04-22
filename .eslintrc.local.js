@@ -23,7 +23,7 @@ module.exports = {
     'no-console': 'error',
   },
   overrides: es6Files({
-    'index.js': ['lib/cli/index.js'],
+    'index.js': ['lib/cli.js'],
     'bin/npm-cli.js': ['lib/cli.js'],
     'lib/cli.js': ['lib/cli/validate-engines.js'],
     'lib/cli/validate-engines.js': ['package.json'],

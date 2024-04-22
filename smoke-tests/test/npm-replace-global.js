@@ -190,8 +190,8 @@ t.test('fail when updating with lazy require', async t => {
   // exit-handler is the last thing called in the code
   // so an uncached lazy require within the exit handler will always throw
   await fs.writeFile(
-    join(paths.globalNodeModules, 'npm/lib/utils/exit-handler.js'),
-    `module.exports = () => require('./LAZY_REQUIRE_CANARY');module.exports.setNpm = () => {}`,
+    join(paths.globalNodeModules, 'npm/lib/cli/exit-handler.js'),
+    `module.exports = class { exit() { require('./LAZY_REQUIRE_CANARY') }`,
     'utf-8'
   )
 

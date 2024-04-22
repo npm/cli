@@ -34,15 +34,6 @@ t.test('npm.load', async t => {
       () => npm.load(),
       /load error/
     )
-
-    npm.config.load = async () => {
-      throw new Error('different error')
-    }
-    await t.rejects(
-      () => npm.load(),
-      /load error/,
-      'loading again returns the original error'
-    )
   })
 
   await t.test('basic loading', async t => {
@@ -174,17 +165,16 @@ t.test('npm.load', async t => {
 
     outputs.length = 0
     logs.length = 0
-    await npm.exec('get', ['scope', '\u2010not-a-dash'])
+    await npm.exec('get', ['scope'])
 
     t.strictSame([npm.command, npm.flatOptions.npmCommand], ['ll', 'll'],
       'does not change npm.command when another command is called')
 
     t.match(logs, [
-      'error arg Argument starts with non-ascii dash, this is probably invalid: \u2010not-a-dash',
       /timing command:config Completed in [0-9.]+ms/,
       /timing command:get Completed in [0-9.]+ms/,
     ])
-    t.same(outputs, ['scope=@foo\n\u2010not-a-dash=undefined'])
+    t.same(outputs, ['@foo'])
   })
 
   await t.test('--no-workspaces with --workspace', async t => {
@@ -396,7 +386,7 @@ t.test('timings', async t => {
     time.start('foo')
     time.end('foo')
     time.start('bar')
-    npm.finishTimers()
+    await npm.exec('get', [])
     const timings = await timingFile()
     t.match(timings, {
       metadata: {
@@ -419,7 +409,7 @@ t.test('timings', async t => {
     const { npm, timingFile } = await loadMockNpm(t, {
       config: { timing: false },
     })
-    npm.finishTimers()
+    await npm.exec('get', [])
     await t.rejects(() => timingFile())
   })
 

@@ -5,6 +5,11 @@ const mockGlobals = require('@npmcli/mock-globals')
 class MockProcess extends EventEmitter {
   version = process.version
 
+  constructor (opts) {
+    super()
+    Object.assign(this, opts)
+  }
+
   cwd () {
     return process.cwd()
   }
@@ -21,7 +26,7 @@ const mockExit = (t, { mocks } = {}) => {
     'console.error': (err) => consoleErrors.push(err),
   })
 
-  const ExitHandler = tmock(t, '{LIB}/utils/exit-handler.js', {
+  const ExitHandler = tmock(t, '{LIB}/cli/exit-handler.js', {
     os: {
       type: () => 'Foo',
       release: () => '1.0.0',

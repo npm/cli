@@ -3,7 +3,7 @@ const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('../../fixtures/tmock')
 
 const mockValidateEngines = (t) => {
-  const validateEngines = tmock(t, '{LIB}/es6/validate-engines.js', {
+  const validateEngines = tmock(t, '{LIB}/cli/validate-engines.js', {
     '{ROOT}/package.json': { version: '1.2.3', engines: { node: '>=0' } },
   })
   mockGlobals(t, { 'process.version': 'v4.5.6' })

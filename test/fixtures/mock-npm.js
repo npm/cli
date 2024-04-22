@@ -47,10 +47,7 @@ const setGlobalNodeModules = (globalDir) => {
 }
 
 const buildMocks = (t, mocks) => {
-  const allMocks = {
-    '{LIB}/utils/update-notifier.js': async () => {},
-    ...mocks,
-  }
+  const allMocks = { ...mocks }
 
   // The definitions must be mocked since they are a singleton that reads from
   // process and environs to build defaults in order to break the requiure
