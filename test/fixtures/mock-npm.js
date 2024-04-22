@@ -2,6 +2,7 @@ const os = require('os')
 const fs = require('fs').promises
 const path = require('path')
 const tap = require('tap')
+const { output, META } = require('proc-log')
 const errorMessage = require('../../lib/utils/error-message')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -79,7 +80,8 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       // error message fn. This is necessary for commands with buffered output
       // to read the output after exec is called. This is not *exactly* how it
       // works in practice, but it is close enough for now.
-      this.flushOutput(err ? errorMessage(err, this).json : null)
+      const jsonError = err && errorMessage(err, this).json
+      output.flush({ [META]: true, jsonError })
       if (err) {
         throw err
       }
