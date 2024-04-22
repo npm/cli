@@ -48,17 +48,13 @@ const setGlobalNodeModules = (globalDir) => {
 }
 
 const buildMocks = (t, mocks) => {
-  const allMocks = {
-    '{LIB}/utils/update-notifier.js': async () => {},
-    ...mocks,
-  }
+  const allMocks = { ...mocks }
   // The definitions must be mocked since they are a singleton that reads from
   // process and environs to build defaults in order to break the requiure
   // cache. We also need to mock them with any mocks that were passed in for the
   // test in case those mocks are for things like ci-info which is used there.
   const definitions = '@npmcli/config/lib/definitions'
   allMocks[definitions] = tmock(t, definitions, allMocks)
-
   return allMocks
 }
 

@@ -1,6 +1,6 @@
 const t = require('tap')
 const installed = require('../../../lib/utils/installed-shallow.js')
-const mockNpm = require('../../../fixtures/mock-npm')
+const mockNpm = require('../../fixtures/mock-npm')
 
 const mockShallow = async (t, config) => {
   const res = await mockNpm(t, {

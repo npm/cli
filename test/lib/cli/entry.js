@@ -1,7 +1,7 @@
 const t = require('tap')
-const { load: loadMockNpm } = require('../fixtures/mock-npm.js')
-const tmock = require('../fixtures/tmock.js')
-const validateEngines = require('../../lib/es6/validate-engines.js')
+const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
+const tmock = require('../../fixtures/tmock.js')
+const validateEngines = require('../../../lib/cli/validate-engines.js')
 
 const cliMock = async (t, opts) => {
   let exitHandlerArgs = null
@@ -13,9 +13,9 @@ const cliMock = async (t, opts) => {
   exitHandlerMock.setNpm = _npm => npm = _npm
 
   const { Npm, ...mock } = await loadMockNpm(t, { ...opts, init: false })
-  const cli = tmock(t, '{LIB}/cli-entry.js', {
+  const cli = tmock(t, '{LIB}/cli/entry.js', {
     '{LIB}/npm.js': Npm,
-    '{LIB}/utils/exit-handler.js': exitHandlerMock,
+    '{LIB}/cli/exit-handler.js': exitHandlerMock,
   })
 
   return {
@@ -157,5 +157,18 @@ t.test('unsupported node version', async t => {
   t.match(
     logs.warn[0],
     /npm v.* does not support Node\.js 12\.6\.0\./
+  )
+})
+
+t.test('non-ascii dash', async t => {
+  const { cli, logs } = await cliMock(t, {
+    globals: {
+      'process.argv': ['node', 'npm', 'scope', '\u2010not-a-dash'],
+    },
+  })
+  await cli(process)
+  t.equal(
+    logs.error[0],
+    'arg Argument starts with non-ascii dash, this is probably invalid: \u2010not-a-dash'
   )
 })
