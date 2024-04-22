@@ -233,27 +233,24 @@ class Config {
       throw new Error('attempting to load npm config multiple times')
     }
 
-    const timeEnd = time.start('config:load')
-
     // first load the defaults, which sets the global prefix
-    time.start('config:load:defaults', () => this.loadDefaults())
+    this.loadDefaults()
 
     // next load the builtin config, as this sets new effective defaults
-    await time.start('config:load:builtin', () => this.loadBuiltinConfig())
+    await this.loadBuiltinConfig()
 
     // cli and env are not async, and can set the prefix, relevant to project
-    time.start('config:load:cli', () => this.loadCLI())
-
-    time.start('config:load:env', () => this.loadEnv())
+    this.loadCLI()
+    this.loadEnv()
 
     // next project config, which can affect userconfig location
-    await time.start('config:load:project', () => this.loadProjectConfig())
+    await this.loadProjectConfig()
 
     // then user config, which can affect globalconfig location
-    await time.start('config:load:user', () => this.loadUserConfig())
+    await this.loadUserConfig()
 
     // last but not least, global config file
-    await time.start('config:load:global', () => this.loadGlobalConfig())
+    await this.loadGlobalConfig()
 
     // set this before calling setEnvs, so that we don't have to share
     // private attributes, as that module also does a bunch of get operations
@@ -262,9 +259,7 @@ class Config {
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
-    time.start('config:load:setEnvs', () => this.setEnvs())
-
-    timeEnd()
+    this.setEnvs()
   }
 
   loadDefaults () {
@@ -590,7 +585,8 @@ class Config {
 
   async #loadFile (file, type) {
     // only catch the error from readFile, not from the loadObject call
-    await time.start(`config:load:file:${file}`, () => readFile(file, 'utf8').then(
+    log.silly(`config:load:file:${file}`)
+    await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
         if (type === 'project' && parsedConfig.prefix) {
@@ -601,7 +597,7 @@ class Config {
         return this.#loadObject(parsedConfig, type, file)
       },
       er => this.#loadObject(null, type, file, er)
-    ))
+    )
   }
 
   loadBuiltinConfig () {
