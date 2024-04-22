@@ -78,11 +78,9 @@ const mockExitHandler = async (t, { config, mocks, files, ...opts } = {}) => {
       detail: [['ERR DETAIL', err.message]],
       ...(files ? { files } : {}),
       json: {
-        error: {
-          code: err.code,
-          summary: err.message,
-          detail: err.message,
-        },
+        code: err.code,
+        summary: err.message,
+        detail: err.message,
       },
     }),
     ...mocks,
