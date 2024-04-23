@@ -380,48 +380,14 @@ t.test('cache dir', async t => {
 })
 
 t.test('timings', async t => {
-  t.test('gets/sets timers', async t => {
-    const { npm, logs } = await loadMockNpm(t, {
-      config: {
-        timing: true,
-      },
-    })
-    time.start('foo')
-    time.start('bar')
-    t.match(npm.unfinishedTimers.get('foo'), Number, 'foo timer is a number')
-    t.match(npm.unfinishedTimers.get('bar'), Number, 'foo timer is a number')
-    time.end('foo')
-    time.end('bar')
-    time.end('baz')
-    // npm timer is started by default
-    time.end('npm')
-    t.match(logs.timing.byTitle('foo'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.timing.byTitle('bar'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.timing.byTitle('npm'), [
-      /Completed in [0-9]+ms/,
-    ])
-    t.match(logs.silly.byTitle('timing'), [
-      `timing Tried to end timer that doesn't exist: baz`,
-    ])
-    t.notOk(npm.unfinishedTimers.has('foo'), 'foo timer is gone')
-    t.notOk(npm.unfinishedTimers.has('bar'), 'bar timer is gone')
-    t.match(npm.finishedTimers, { foo: Number, bar: Number, npm: Number })
-  })
-
   t.test('writes timings file', async t => {
-    const { npm, cache, timingFile } = await loadMockNpm(t, {
+    const { npm, timingFile } = await loadMockNpm(t, {
       config: { timing: true },
     })
     time.start('foo')
     time.end('foo')
     time.start('bar')
-    npm.writeTimingFile()
-    t.match(npm.timingFile, cache)
-    t.match(npm.timingFile, /-timing.json$/)
+    npm.finish()
     const timings = await timingFile()
     t.match(timings, {
       metadata: {
@@ -431,7 +397,6 @@ t.test('timings', async t => {
       },
       unfinishedTimers: {
         bar: [Number, Number],
-        npm: [Number, Number],
       },
       timers: {
         foo: Number,
@@ -444,7 +409,7 @@ t.test('timings', async t => {
     const { npm, timingFile } = await loadMockNpm(t, {
       config: { timing: false },
     })
-    npm.writeTimingFile()
+    npm.finish()
     await t.rejects(() => timingFile())
   })
 
