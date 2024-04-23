@@ -16,19 +16,17 @@ exports[`test/lib/commands/publish.js TAP bare _auth and registry config > new p
 exports[`test/lib/commands/publish.js TAP dry-run > must match snapshot 1`] = `
 Array [
   "package: test-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "87B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-package                            
-    version:       1.0.0                                   
-    filename:      test-package-1.0.0.tgz                  
-    package size:  {size}
-    unpacked size: 87 B                                    
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-package",
+  "version: 1.0.0",
+  "filename: test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 87 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
 `
@@ -36,19 +34,17 @@ Array [
 exports[`test/lib/commands/publish.js TAP foreground-scripts can still be set to false > must match snapshot 1`] = `
 Array [
   "package: test-fg-scripts@0.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "110B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-fg-scripts                         
-    version:       0.0.0                                   
-    filename:      test-fg-scripts-0.0.0.tgz               
-    package size:  {size}
-    unpacked size: 110 B                                   
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-fg-scripts",
+  "version: 0.0.0",
+  "filename: test-fg-scripts-0.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 110 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
 `
@@ -56,19 +52,17 @@ Array [
 exports[`test/lib/commands/publish.js TAP foreground-scripts defaults to true > must match snapshot 1`] = `
 Array [
   "package: test-fg-scripts@0.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "110B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-fg-scripts                         
-    version:       0.0.0                                   
-    filename:      test-fg-scripts-0.0.0.tgz               
-    package size:  {size}
-    unpacked size: 110 B                                   
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-fg-scripts",
+  "version: 0.0.0",
+  "filename: test-fg-scripts-0.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 110 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
   "Publishing to https://registry.npmjs.org/ with tag latest and default access (dry-run)",
 ]
 `
@@ -276,19 +270,17 @@ exports[`test/lib/commands/publish.js TAP prioritize CLI flags over publishConfi
 exports[`test/lib/commands/publish.js TAP public access > must match snapshot 1`] = `
 Array [
   "package: @npm/test-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "55B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          @npm/test-package                       
-    version:       1.0.0                                   
-    filename:      npm-test-package-1.0.0.tgz              
-    package size:  {size}
-    unpacked size: 55 B                                    
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: @npm/test-package",
+  "version: 1.0.0",
+  "filename: npm-test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 55 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
   "Publishing to https://registry.npmjs.org/ with tag latest and public access",
 ]
 `
@@ -308,19 +300,17 @@ exports[`test/lib/commands/publish.js TAP respects publishConfig.registry, runs 
 exports[`test/lib/commands/publish.js TAP restricted access > must match snapshot 1`] = `
 Array [
   "package: @npm/test-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "55B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          @npm/test-package                       
-    version:       1.0.0                                   
-    filename:      npm-test-package-1.0.0.tgz              
-    package size:  {size}
-    unpacked size: 55 B                                    
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: @npm/test-package",
+  "version: 1.0.0",
+  "filename: npm-test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 55 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
   "Publishing to https://registry.npmjs.org/ with tag latest and restricted access",
 ]
 `
@@ -336,22 +326,20 @@ exports[`test/lib/commands/publish.js TAP scoped _auth config scoped registry > 
 exports[`test/lib/commands/publish.js TAP tarball > must match snapshot 1`] = `
 Array [
   "package: test-tar-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   String(
-    26B index.js    
+    26B index.js
     98B package.json
   ),
-  "=== Tarball Details ===",
-  String(
-    name:          test-tar-package                        
-    version:       1.0.0                                   
-    filename:      test-tar-package-1.0.0.tgz              
-    package size:  {size}
-    unpacked size: 124 B                                   
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   2                                       
-  ),
+  "Tarball Details",
+  "name: test-tar-package",
+  "version: 1.0.0",
+  "filename: test-tar-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 124 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 2",
   "Publishing to https://registry.npmjs.org/ with tag latest and default access",
 ]
 `

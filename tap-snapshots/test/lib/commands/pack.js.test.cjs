@@ -8,57 +8,51 @@
 exports[`test/lib/commands/pack.js TAP dry run > logs pack contents 1`] = `
 Array [
   "package: test-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "41B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-package                            
-    version:       1.0.0                                   
-    filename:      test-package-1.0.0.tgz                  
-    package size:  {size}
-    unpacked size: 41 B                                    
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-package",
+  "version: 1.0.0",
+  "filename: test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 41 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
 ]
 `
 
 exports[`test/lib/commands/pack.js TAP foreground-scripts can still be set to false > logs pack contents 1`] = `
 Array [
   "package: test-fg-scripts@0.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "110B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-fg-scripts                         
-    version:       0.0.0                                   
-    filename:      test-fg-scripts-0.0.0.tgz               
-    package size:  {size}
-    unpacked size: 110 B                                   
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-fg-scripts",
+  "version: 0.0.0",
+  "filename: test-fg-scripts-0.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 110 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
 ]
 `
 
 exports[`test/lib/commands/pack.js TAP foreground-scripts defaults to true > logs pack contents 1`] = `
 Array [
   "package: test-fg-scripts@0.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "110B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-fg-scripts                         
-    version:       0.0.0                                   
-    filename:      test-fg-scripts-0.0.0.tgz               
-    package size:  {size}
-    unpacked size: 110 B                                   
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-fg-scripts",
+  "version: 0.0.0",
+  "filename: test-fg-scripts-0.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 110 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
 ]
 `
 
@@ -125,18 +119,16 @@ Array [
 exports[`test/lib/commands/pack.js TAP should pack current directory with no arguments > logs pack contents 1`] = `
 Array [
   "package: test-package@1.0.0",
-  "=== Tarball Contents ===",
+  "Tarball Contents",
   "41B package.json",
-  "=== Tarball Details ===",
-  String(
-    name:          test-package                            
-    version:       1.0.0                                   
-    filename:      test-package-1.0.0.tgz                  
-    package size:  {size}
-    unpacked size: 41 B                                    
-    shasum:        {sha}
-    integrity:     {integrity}
-    total files:   1                                       
-  ),
+  "Tarball Details",
+  "name: test-package",
+  "version: 1.0.0",
+  "filename: test-package-1.0.0.tgz",
+  "package size: {size}",
+  "unpacked size: 41 B",
+  "shasum: {sha}",
+  "integrity: {integrity}
+  "total files: 1",
 ]
 `
