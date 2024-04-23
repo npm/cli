@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@npmcli/arborist": "^7.2.1",
-    "@npmcli/installed-package-contents": "^2.0.2",
+    "@npmcli/installed-package-contents": "^2.1.0",
     "binary-extensions": "^2.3.0",
     "diff": "^5.1.0",
     "minimatch": "^9.0.4",
