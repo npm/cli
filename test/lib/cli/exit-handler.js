@@ -382,7 +382,7 @@ t.test('timers fail to write', async (t) => {
 
   await exitHandler(new Error())
 
-  t.match(logs.error[2], `error writing to the directory`)
+  t.match(logs.warn[0], `timing could not write timing file: Error: err`)
 })
 
 t.test('log files fail to write', async (t) => {
@@ -455,7 +455,7 @@ t.test('files from error message with error', async (t) => {
 
 t.test('timing with no error', async (t) => {
   const { exitHandler, timingFile, npm, logs } = await mockExitHandler(t, {
-    config: { timing: true, loglevel: 'info' },
+    config: { timing: true, loglevel: 'silly' },
   })
 
   await exitHandler()
@@ -463,18 +463,9 @@ t.test('timing with no error', async (t) => {
 
   t.equal(process.exitCode, 0)
 
-  const msg = logs.info[1]
-  t.match(msg, /A complete log of this run can be found in:/)
+  const msg = logs.info.byTitle('timing')[0]
   t.match(msg, /Timing info written to:/)
 
-  t.match(
-    timingFileData.timers,
-    Object.keys(npm.finishedTimers).reduce((acc, k) => {
-      acc[k] = Number
-      return acc
-    }, {})
-  )
-  t.strictSame(npm.unfinishedTimers, new Map())
   t.match(timingFileData, {
     metadata: {
       command: [],
@@ -482,6 +473,7 @@ t.test('timing with no error', async (t) => {
       logfiles: [String],
     },
     timers: {
+      'npm:load': Number,
       npm: Number,
     },
   })
@@ -511,7 +503,6 @@ t.test('unfinished timers', async (t) => {
   const timingFileData = await timingFile()
 
   t.equal(process.exitCode, 0)
-  t.match(npm.unfinishedTimers, new Map([['foo', Number], ['bar', Number]]))
   t.match(timingFileData, {
     metadata: {
       command: [],

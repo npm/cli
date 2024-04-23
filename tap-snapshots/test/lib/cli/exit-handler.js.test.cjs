@@ -29,9 +29,9 @@ XX error code ECODE
 XX error ERR SUMMARY Unknown error
 XX error ERR DETAIL Unknown error
 XX verbose exit 1
-XX timing npm Completed in {TIME}ms
 XX verbose code 1
-XX error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
+XX timing npm Completed in {TIME}ms
+XX info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
 
@@ -59,8 +59,8 @@ error code ECODE
 error ERR SUMMARY Unknown error
 error ERR DETAIL Unknown error
 verbose exit 1
-timing npm Completed in {TIME}ms
 verbose code 1
-error Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
+timing npm Completed in {TIME}ms
+info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
 error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
