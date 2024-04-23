@@ -242,18 +242,14 @@ graph LR;
   pacote-->npm-registry-fetch;
   pacote-->npmcli-git["@npmcli/git"];
   pacote-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
+  pacote-->npmcli-package-json["@npmcli/package-json"];
   pacote-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   pacote-->npmcli-run-script["@npmcli/run-script"];
   pacote-->proc-log;
-  pacote-->read-package-json-fast;
-  pacote-->read-package-json;
   pacote-->ssri;
   parse-conflict-json-->json-parse-even-better-errors;
   promzard-->read;
   read-->mute-stream;
-  read-package-json-->json-parse-even-better-errors;
-  read-package-json-->normalize-package-data;
-  read-package-json-->npm-normalize-package-bin;
   read-package-json-fast-->json-parse-even-better-errors;
   read-package-json-fast-->npm-normalize-package-bin;
   unique-filename-->unique-slug;
@@ -713,12 +709,11 @@ graph LR;
   pacote-->npm-registry-fetch;
   pacote-->npmcli-git["@npmcli/git"];
   pacote-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
+  pacote-->npmcli-package-json["@npmcli/package-json"];
   pacote-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   pacote-->npmcli-run-script["@npmcli/run-script"];
   pacote-->proc-log;
   pacote-->promise-retry;
-  pacote-->read-package-json-fast;
-  pacote-->read-package-json;
   pacote-->sigstore;
   pacote-->ssri;
   pacote-->tar;
@@ -733,10 +728,6 @@ graph LR;
   promise-retry-->retry;
   promzard-->read;
   read-->mute-stream;
-  read-package-json-->glob;
-  read-package-json-->json-parse-even-better-errors;
-  read-package-json-->normalize-package-data;
-  read-package-json-->npm-normalize-package-bin;
   read-package-json-fast-->json-parse-even-better-errors;
   read-package-json-fast-->npm-normalize-package-bin;
   semver-->lru-cache;
@@ -811,6 +802,6 @@ packages higher up the chain.
  - @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen, @npmcli/config
- - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, read-package-json, promzard
+ - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, normalize-package-data, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, ini, mute-stream, npm-audit-report, npm-user-validate

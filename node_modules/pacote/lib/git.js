@@ -156,11 +156,11 @@ class GitFetcher extends Fetcher {
   [_resolvedFromClone] () {
     // do a full or shallow clone, then look at the HEAD
     // kind of wasteful, but no other option, really
-    return this[_clone](dir => this.resolved)
+    return this[_clone](() => this.resolved)
   }
 
   [_prepareDir] (dir) {
-    return this[_readPackageJson](dir + '/package.json').then(mani => {
+    return this[_readPackageJson](dir).then(mani => {
       // no need if we aren't going to do any preparation.
       const scripts = mani.scripts
       if (!mani.workspaces && (!scripts || !(
@@ -312,7 +312,7 @@ class GitFetcher extends Fetcher {
     return this.spec.hosted && this.resolved
       ? FileFetcher.prototype.manifest.apply(this)
       : this[_clone](dir =>
-        this[_readPackageJson](dir + '/package.json')
+        this[_readPackageJson](dir)
           .then(mani => this.package = {
             ...mani,
             _resolved: this.resolved,
