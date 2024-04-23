@@ -295,7 +295,7 @@ const setupMockNpm = async (t, {
         .join('\n')
     },
     timingFile: async () => {
-      const data = await fs.readFile(npm.timingFile, 'utf8')
+      const data = await fs.readFile(npm.logPath + 'timing.json', 'utf8')
       return JSON.parse(data)
     },
   }
