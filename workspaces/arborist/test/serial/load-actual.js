@@ -8,7 +8,7 @@ const fs = require('fs')
 const { fixtures, roots, setup } = require('../fixtures/index.js')
 const { normalizePath, printTree } = require('../fixtures/utils.js')
 
-setup(t)
+// setup(t)
 t.snapshotFile = resolve(__dirname, '../../tap-snapshots/test/arborist/load-actual.js.test.cjs')
 
 // strip the fixtures path off of the trees in snapshots
@@ -56,10 +56,36 @@ t.formatSnapshot = tree => format(defixture(printTree(tree)), { sort: true })
 const loadActual = (path, opts) =>
   new Arborist({ path, ...opts }).loadActual(opts)
 
+const walk = (dir, res = []) => {
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      entry.type = 'directory'
+      res.push(entry)
+      walk(resolve(dir, entry.name), res)
+    } else {
+      entry.type = entry.isSymbolicLink() ? 'symlink' : 'file'
+      res.push(entry)
+    }
+  }
+  return res
+}
+
 roots.forEach(path => {
   const dir = resolve(fixtures, path)
-  t.test(path, t => loadActual(dir).then(tree =>
-    t.matchSnapshot(tree, 'loaded tree')))
+
+  t.test(path, async t => {
+    t.comment(dir)
+    t.comment(JSON.stringify(walk(dir), null, 2))
+
+    const tree = await loadActual(dir)
+
+    t.comment(dir)
+    t.comment(JSON.stringify(walk(dir), null, 2))
+
+    t.comment(format(defixture(printTree(tree)), { sort: true }))
+
+    t.matchSnapshot(tree, 'loaded tree')
+  })
 })
 
 t.test('look for missing deps by default', t => {
@@ -75,14 +101,14 @@ t.test('look for missing deps by default', t => {
   }
 })
 
-t.test('already loaded', t => new Arborist({
+t.test('already loaded', async t => new Arborist({
   path: resolve(fixtures, 'selflink'),
 }).loadActual({ ignoreMissing: true }).then(actualTree => new Arborist({
   path: resolve(fixtures, 'selflink'),
   actualTree,
 }).loadActual().then(tree2 => t.equal(tree2, actualTree))))
 
-t.test('already loading', t => {
+t.test('already loading', async t => {
   const arb = new Arborist({
     path: resolve(fixtures, 'selflink'),
   })
@@ -154,7 +180,7 @@ t.test('load a tree rooted on a different node', async t => {
   t.equal(transpFilter.children.get('c').realpath, resolve(other, 'packages/c'))
 })
 
-t.test('looking outside of cwd', t => {
+t.test('looking outside of cwd', async t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
   process.chdir(resolve(fixtures, 'selflink'))
@@ -171,7 +197,7 @@ t.test('cwd is default root', t => {
     t.matchSnapshot(tree, 'loaded tree'))
 })
 
-t.test('shake out Link target timing issue', t => {
+t.test('shake out Link target timing issue', async t => {
   process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '1'
   t.teardown(() => process.env._TEST_ARBORIST_SLOW_LINK_TARGET_ = '')
   const dir = resolve(fixtures, 'selflink')

@@ -221,10 +221,15 @@ module.exports = {
   symlinks,
   fixtures,
   setup: (t) => {
-    cleanup()
-    setup()
     if (t) {
+      t.before(() => {
+        cleanup()
+        setup()
+      })
       t.teardown(() => cleanup())
+    } else {
+      cleanup()
+      setup()
     }
   },
   cleanup,

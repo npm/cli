@@ -1181,10 +1181,10 @@ t.test('a yarn.lock with no entries', async t => {
 
 // basically just reproduce the loadActual and loadVirtual tests with
 // a closer eye on the shrinkwrap results.
-t.test('loadActual tests', t => {
+t.test('loadActual tests', async t => {
   for (const root of [...roots, 'tap-with-yarn-lock']) {
     const path = resolve(fixtures, root)
-    t.test(root, async t => {
+    await t.test(root, async t => {
       const tree = await new Arborist({ path }).loadActual()
       const shrinkwrap = tree.meta.commit()
       t.matchSnapshot(shrinkwrap, 'shrinkwrap data')
@@ -1194,7 +1194,6 @@ t.test('loadActual tests', t => {
       }
     })
   }
-  t.end()
 })
 
 t.test('set integrity because location and resolved match', async t => {
