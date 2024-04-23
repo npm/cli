@@ -129,8 +129,6 @@ t.test('handles unknown error with logs and debug file', async (t) => {
   })
 
   await exitHandler(err('Unknown error', 'ECODE'))
-  // force logfile cleaning logs to happen since those are purposefully not awaited
-  await require('timers/promises').setTimeout(200)
 
   const fileLogs = await debugFile()
   const fileLines = fileLogs.split('\n')
@@ -140,19 +138,14 @@ t.test('handles unknown error with logs and debug file', async (t) => {
 
   t.equal(process.exitCode, 1)
 
-  let skippedLogs = 0
   logs.forEach((logItem, i) => {
     const logLines = logItem.split('\n').map(l => `${i} ${l}`)
     for (const line of logLines) {
-      if (line.includes('logfile') && line.includes('cleaning')) {
-        skippedLogs++
-        continue
-      }
       t.match(fileLogs.trim(), line, 'log appears in debug file')
     }
   })
 
-  t.equal(logs.length - skippedLogs, parseInt(lastLog) + 1)
+  t.equal(logs.length, parseInt(lastLog) + 1)
   t.match(logs.error, [
     'code ECODE',
     'ERR SUMMARY Unknown error',

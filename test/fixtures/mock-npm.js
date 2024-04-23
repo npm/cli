@@ -73,6 +73,17 @@ const getMockNpm = async (t, { mocks, init, load, npm: npmOpts }) => {
       })
     }
 
+    async load () {
+      const res = await super.load()
+      // Wait for any promises (currently only log file cleaning) to be
+      // done before returning from load in tests. This helps create more
+      // deterministic testing behavior because in reality that promise
+      // is left hanging on purpose as a best-effort and the process gets
+      // closed regardless of if it has finished or not.
+      await Promise.all(this.unrefPromises)
+      return res
+    }
+
     async exec (...args) {
       const [res, err] = await super.exec(...args).then((r) => [r]).catch(e => [null, e])
       // This mimics how the exit handler flushes output for commands that have
