@@ -1,10 +1,10 @@
 const t = require('tap')
-
 const Edge = require('../../lib/edge.js')
 const Node = require('../../lib/node.js')
 const Link = require('../../lib/link.js')
-
 const Arborist = require('../../lib/arborist/index.js')
+const { fixtures } = require('../fixtures/index.js')
+
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 
 const a = new Arborist({ path: '/some/kind/of/path' })
@@ -28,7 +28,7 @@ t.throws(() => {
 
 t.test('workspace nodes and deps', async t => {
   const { resolve } = require('path')
-  const fixture = resolve(__dirname, '../fixtures/workspaces-shared-deps-virtual')
+  const fixture = resolve(fixtures, 'workspaces-shared-deps-virtual')
   const arb = new Arborist({ path: fixture })
   const tree = await arb.loadVirtual()
   const wsNodes = arb.workspaceNodes(tree, ['b'])

@@ -1,6 +1,6 @@
 ### BEGIN IGNORED SYMLINKS ###
 ### this list is generated automatically, do not edit directly
-### update it by running `node test/fixtures/index.js`
+### update it by running `node test/fixtures/index.js setup`
 /badlink/node_modules/bar
 /badlink/node_modules/foo
 /cli-750/node_modules/app

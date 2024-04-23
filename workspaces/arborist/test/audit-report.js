@@ -4,6 +4,8 @@ const AuditReport = require('../lib/audit-report.js')
 const { auditToBulk } = AuditReport
 const Node = require('../lib/node.js')
 const Arborist = require('../')
+const { resolve } = require('path')
+const { fixtures } = require('./fixtures/index.js')
 
 const {
   start,
@@ -15,9 +17,6 @@ const {
 } = require('./fixtures/server.js')
 t.before(start)
 t.teardown(stop)
-
-const { resolve } = require('path')
-const fixtures = resolve(__dirname, 'fixtures')
 
 const cache = t.testdir()
 const newArb = (path, opts = {}) =>

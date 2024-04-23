@@ -76,6 +76,7 @@
     "arborist": "bin/index.js"
   },
   "tap": {
+    "before": "test/fixtures/setup.js",
     "after": "test/fixtures/cleanup.js",
     "test-env": [
       "LC_ALL=sk"

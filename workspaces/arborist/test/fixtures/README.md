@@ -18,17 +18,26 @@ Several of these are in fact published to the npm registry under the
 `@isaacs/...` scope, but when used in tests, they should always be fetched
 from the mock registry.
 
+Any test running `test/fixtures/` should be placed in `test/serial/` to ensure
+it is not run in parallel since in `test/fixtures/` are directories that will
+have `new Arborist({ path: fixturePath })` run on them. If two tests are
+operating on the same fixture it can create race conditions and flaky tests.
+
+In the future `test/fixtures/` could be setup to copy the fixture to `t.testdir`
+and run it from there and then it would be safe to run all tests in parallel.
+
 ### Symbolic Links
 
 Several of these project folder examples involve symbolic links.  The
-symlinks are created the first time `test/fixtures/index.js` is loaded, and
-are all ignored in the `.gitignore` file.
+symlinks are created by running `require('./fixtures/index.js').setup(t)`
+which will setup the fixtures and tear them down when the `t` tap test
+is finished. The symlinks all ignored in the `.gitignore` file.
 
 To create all the symlinks and add them to the `.gitignore` file
 automatically:
 
 ```
-node test/fixtures/index.js
+node test/fixtures/index.js setup
 ```
 
 To remove them all:

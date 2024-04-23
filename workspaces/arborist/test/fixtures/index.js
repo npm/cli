@@ -1,8 +1,32 @@
 const { mkdirSync } = require('fs')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('fs')
+const { unlinkSync, symlinkSync, readFileSync, writeFileSync, readdirSync, lstatSync } = require('fs')
 const { relative, resolve, dirname } = require('path')
+
 const mkdirp = (p) => mkdirSync(p, { recursive: true })
+
+// now make sure it actually did clean up everything
+const readdir = (path, opt) => {
+  const ents = readdirSync(path, opt)
+  if (typeof ents[0] === 'string') {
+    return ents.map(ent => {
+      return Object.assign(lstatSync(path + '/' + ent), { name: ent })
+    })
+  }
+  return ents
+}
+
+const walk = dir => {
+  for (const entry of readdir(dir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      walk(resolve(dir, entry.name))
+    } else if (entry.isSymbolicLink()) {
+      throw Object.assign(new Error('symlink left in fixtures dir'), {
+        path: resolve(dir, entry.name),
+      })
+    }
+  }
+}
 
 const fixtures = __dirname
 
@@ -139,21 +163,24 @@ const symlinks = {
   'testing-bundledeps-link': './testing-bundledeps-2',
 }
 
-const cleanup = () => Object.keys(symlinks).forEach(s => {
-  try {
-    unlinkSync(resolve(__dirname, s))
-  } catch {
+const cleanup = () => {
+  Object.keys(symlinks).forEach(s => {
+    try {
+      unlinkSync(resolve(fixtures, s))
+    } catch {
     // ok if cleanup fails
-  }
-})
+    }
+  })
+  walk(fixtures)
+}
 
 const setup = () => {
   const links = []
   let didSomething = false
   Object.keys(symlinks).forEach(s => {
-    const p = resolve(__dirname, s)
+    const p = resolve(fixtures, s)
     mkdirp(dirname(p))
-    const rel = relative(resolve(__dirname), p)
+    const rel = relative(resolve(fixtures), p)
     links.push('/' + rel.replace(/\\/g, '/'))
 
     try {
@@ -167,12 +194,12 @@ const setup = () => {
   if (didSomething) {
     const start = '### BEGIN IGNORED SYMLINKS ###'
     const end = '### END IGNORED SYMLINKS ###'
-    const gifile = resolve(__dirname, './.gitignore')
+    const gifile = resolve(fixtures, './.gitignore')
     const gitignore = readFileSync(gifile, 'utf8')
       .replace(new RegExp(`${start}[\\s\\S]*${end}`), [
         start,
         '### this list is generated automatically, do not edit directly',
-        '### update it by running `node test/fixtures/index.js`',
+        '### update it by running `node test/fixtures/index.js setup`',
         ...links.sort(localeCompare),
         end,
       ].join('\n'))
@@ -180,17 +207,25 @@ const setup = () => {
   }
 }
 
-const doCleanup = process.argv[2] === 'cleanup' && require.main === module ||
-  process.env.ARBORIST_FIXTURE_CLEANUP === '1'
-
-if (doCleanup) {
-  cleanup()
-} else {
-  setup()
+// Run directly from node so run either cleanup or setup
+if (require.main === module && process.argv[2]) {
+  if (process.argv[2] === 'cleanup') {
+    cleanup()
+  } else if (process.argv[2] === 'setup') {
+    setup()
+  }
 }
 
 module.exports = {
   roots,
   symlinks,
   fixtures,
+  setup: (t) => {
+    cleanup()
+    setup()
+    if (t) {
+      t.teardown(() => cleanup())
+    }
+  },
+  cleanup,
 }

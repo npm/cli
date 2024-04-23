@@ -1,18 +1,20 @@
 const Arborist = require('../../lib/arborist')
 const t = require('tap')
 const { resolve } = require('path')
-const fixture = resolve(__dirname, '../fixtures/install-types')
-const swonlyfixture = resolve(__dirname, '../fixtures/install-types-sw-only')
-const badfixture = resolve(__dirname, '../fixtures/root')
-const pnpmFixture = resolve(__dirname, '../fixtures/pnpm')
-const depTypesFixture = resolve(__dirname, '../fixtures/dev-deps')
-const bundleFixture = resolve(__dirname, '../fixtures/two-bundled-deps')
-const emptyFixture = resolve(__dirname, '../fixtures/empty-with-shrinkwrap')
-const emptyFixtureNoPJ = resolve(__dirname, '../fixtures/empty-with-shrinkwrap-no-pj')
-const linkedMeta = resolve(__dirname, '../fixtures/cli-750')
-const oldMeta = resolve(__dirname, '../fixtures/old-package-lock')
-const tapAndFlow = resolve(__dirname, '../fixtures/tap-and-flow')
-const editFixture = resolve(__dirname, '../fixtures/edit-package-json')
+const { fixtures } = require('../fixtures/index.js')
+
+const fixture = resolve(fixtures, 'install-types')
+const swonlyfixture = resolve(fixtures, 'install-types-sw-only')
+const badfixture = resolve(fixtures, 'root')
+const pnpmFixture = resolve(fixtures, 'pnpm')
+const depTypesFixture = resolve(fixtures, 'dev-deps')
+const bundleFixture = resolve(fixtures, 'two-bundled-deps')
+const emptyFixture = resolve(fixtures, 'empty-with-shrinkwrap')
+const emptyFixtureNoPJ = resolve(fixtures, 'empty-with-shrinkwrap-no-pj')
+const linkedMeta = resolve(fixtures, 'cli-750')
+const oldMeta = resolve(fixtures, 'old-package-lock')
+const tapAndFlow = resolve(fixtures, 'tap-and-flow')
+const editFixture = resolve(fixtures, 'edit-package-json')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
 const Node = require('../../lib/node.js')
 
@@ -118,7 +120,7 @@ t.test('load a tree where package.json edited', async t => {
   const removed = resolve(editFixture, 'removed')
   const changed = resolve(editFixture, 'changed')
   const wsChanged = resolve(editFixture, 'workspaces-changed')
-  const ws = resolve(__dirname, '../fixtures/workspaces-simple-virtual')
+  const ws = resolve(fixtures, 'workspaces-simple-virtual')
   const kFlagsSuspect = Symbol.for('flagsSuspect')
 
   const okArb = new Arborist({ path: ok })
@@ -158,49 +160,49 @@ t.test('load a tree where package.json edited', async t => {
 t.test('workspaces', t => {
   t.test('load a simple example', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-simple-virtual')
+      resolve(fixtures, 'workspaces-simple-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree with multiple bundles')))
 
   t.test('load shared dependencies example', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-shared-deps-virtual')
+      resolve(fixtures, 'workspaces-shared-deps-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree with shared dependencies')))
 
   t.test('load conflicting dep versions example', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-conflicting-versions-virtual')
+      resolve(fixtures, 'workspaces-conflicting-versions-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree with resolved conflicting dependencies')))
 
   t.test('load prefer linking nested workspaces', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-prefer-linking-virtual')
+      resolve(fixtures, 'workspaces-prefer-linking-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree linking to local workspaces')))
 
   t.test('load installed from registry on version not satisfied', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-version-unsatisfied-virtual')
+      resolve(fixtures, 'workspaces-version-unsatisfied-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree with deduped dep')))
 
   t.test('load linked top level nested workspaces', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-top-level-link-virtual')
+      resolve(fixtures, 'workspaces-top-level-link-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree top level dep')))
 
   t.test('load installed workspace with transitive dependencies', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-transitive-deps-virtual')
+      resolve(fixtures, 'workspaces-transitive-deps-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree with transitive deps')))
 
   t.test('load installed tree with ignored nested node_modules folders', t =>
     loadVirtual(
-      resolve(__dirname, '../fixtures/workspaces-ignore-nm-virtual')
+      resolve(fixtures, 'workspaces-ignore-nm-virtual')
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree ignoring nested node_modules')))
 
@@ -208,7 +210,7 @@ t.test('workspaces', t => {
 })
 
 t.test('do not reset flags on supplied root option', async t => {
-  const path = resolve(__dirname, '../fixtures/test-package-with-shrinkwrap')
+  const path = resolve(fixtures, 'test-package-with-shrinkwrap')
   const root = new Node({
     path,
     pkg: require(path + '/package.json'),
@@ -225,7 +227,7 @@ t.test('do not reset flags on supplied root option', async t => {
 })
 
 t.test('do not bundle the entire universe', async t => {
-  const path = resolve(__dirname, '../fixtures/tap-old-lockfile')
+  const path = resolve(fixtures, 'tap-old-lockfile')
   const tree = await loadVirtual(path)
   t.same(tree.children.get('tap').package.bundleDependencies.sort(), [
     'ink',

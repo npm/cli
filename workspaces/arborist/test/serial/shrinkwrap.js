@@ -1,26 +1,30 @@
-const Shrinkwrap = require('../lib/shrinkwrap.js')
-const Node = require('../lib/node.js')
-const Link = require('../lib/link.js')
-const calcDepFlags = require('../lib/calc-dep-flags.js')
+const Shrinkwrap = require('../../lib/shrinkwrap.js')
+const Node = require('../../lib/node.js')
+const Link = require('../../lib/link.js')
+const calcDepFlags = require('../../lib/calc-dep-flags.js')
 const fs = require('fs')
-const Arborist = require('../lib/arborist/index.js')
-
+const Arborist = require('../../lib/arborist/index.js')
+const YarnLock = require('../../lib/yarn-lock.js')
+const { resolve } = require('path')
+const { fixtures, roots, setup } = require('../fixtures/index.js')
 const t = require('tap')
 
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 t.cleanSnapshot = s => s.split(process.cwd()).join('{CWD}')
 
-const { resolve } = require('path')
-const fixture = resolve(__dirname, 'fixtures/install-types')
-const swonlyFixture = resolve(__dirname, 'fixtures/install-types-sw-only')
-const YarnLock = require('../lib/yarn-lock.js')
-const yarnFixture = resolve(__dirname, 'fixtures/yarn-stuff')
-const emptyFixture = resolve(__dirname, 'fixtures/empty')
-const depTypesFixture = resolve(__dirname, 'fixtures/dev-deps')
-const badJsonFixture = resolve(__dirname, 'fixtures/testing-peer-deps-bad-sw')
-const hiddenLockfileFixture = resolve(__dirname, 'fixtures/hidden-lockfile')
+const fixture = resolve(fixtures, 'install-types')
+const swonlyFixture = resolve(fixtures, 'install-types-sw-only')
+const yarnFixture = resolve(fixtures, 'yarn-stuff')
+const emptyFixture = resolve(fixtures, 'empty')
+const depTypesFixture = resolve(fixtures, 'dev-deps')
+const badJsonFixture = resolve(fixtures, 'testing-peer-deps-bad-sw')
+const hiddenLockfileFixture = resolve(fixtures, 'hidden-lockfile')
+const saxFixture = resolve(fixtures, 'sax')
+
 const hidden = 'node_modules/.package-lock.json'
-const saxFixture = resolve(__dirname, 'fixtures/sax')
+
+setup(t)
+t.snapshotFile = resolve(__dirname, '../../tap-snapshots/test/shrinkwrap.js.test.cjs')
 
 // start out with the file being fresh
 const later = Date.now() + 10000
@@ -1178,14 +1182,7 @@ t.test('a yarn.lock with no entries', async t => {
 // basically just reproduce the loadActual and loadVirtual tests with
 // a closer eye on the shrinkwrap results.
 t.test('loadActual tests', t => {
-  const {
-    fixtures,
-    roots,
-  } = require('./fixtures/index.js')
-
-  roots.push('tap-with-yarn-lock')
-
-  for (const root of roots) {
+  for (const root of [...roots, 'tap-with-yarn-lock']) {
     const path = resolve(fixtures, root)
     t.test(root, async t => {
       const tree = await new Arborist({ path }).loadActual()

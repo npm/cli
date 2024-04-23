@@ -1,20 +1,34 @@
 const t = require('tap')
 const { format } = require('tcompare')
 const Arborist = require('../../lib/arborist')
-
 const { resolve } = require('path')
 const Node = require('../../lib/node.js')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
 const fs = require('fs')
+const { fixtures, roots, setup } = require('../fixtures/index.js')
+const { normalizePath, printTree } = require('../fixtures/utils.js')
 
-const {
-  fixtures,
-  roots,
-} = require('../fixtures/index.js')
+setup(t)
+t.snapshotFile = resolve(__dirname, '../../tap-snapshots/test/arborist/load-actual.js.test.cjs')
 
 // strip the fixtures path off of the trees in snapshots
-const pp = path => path &&
-  normalizePath(path).slice(normalizePath(fixtures).length + 1)
+const stripPaths = [
+  normalizePath(fixtures),
+  normalizePath(fixtures).replace(/[a-z]/gi, 'X'),
+  normalizePath(__dirname),
+]
+const pp = path => {
+  if (!path) {
+    return
+  }
+  for (const p of stripPaths) {
+    if (path.startsWith(p)) {
+      return path.slice(p.length + 1)
+    }
+  }
+  return path
+}
+
 const defixture = obj => {
   if (obj instanceof Set) {
     return new Set([...obj].map(defixture))
@@ -33,11 +47,6 @@ const defixture = obj => {
   }
   return obj
 }
-
-const {
-  normalizePath,
-  printTree,
-} = require('../fixtures/utils.js')
 
 const cwd = normalizePath(process.cwd())
 t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
@@ -58,7 +67,7 @@ t.test('look for missing deps by default', t => {
   t.plan(paths.length)
   for (const p of paths) {
     t.test(p, async t => {
-      const path = resolve(__dirname, '../fixtures', p)
+      const path = resolve(fixtures, p)
       const arb = new Arborist({ path })
       const tree = await arb.loadActual()
       t.matchSnapshot(tree, '"dep" should have missing deps, "link" should not')
@@ -67,15 +76,15 @@ t.test('look for missing deps by default', t => {
 })
 
 t.test('already loaded', t => new Arborist({
-  path: resolve(__dirname, '../fixtures/selflink'),
+  path: resolve(fixtures, 'selflink'),
 }).loadActual({ ignoreMissing: true }).then(actualTree => new Arborist({
-  path: resolve(__dirname, '../fixtures/selflink'),
+  path: resolve(fixtures, 'selflink'),
   actualTree,
 }).loadActual().then(tree2 => t.equal(tree2, actualTree))))
 
 t.test('already loading', t => {
   const arb = new Arborist({
-    path: resolve(__dirname, '../fixtures/selflink'),
+    path: resolve(fixtures, 'selflink'),
   })
   // try repeatedly to get at the actual tree, but it's not there until
   // the end of the process and the promise resolves
@@ -148,7 +157,7 @@ t.test('load a tree rooted on a different node', async t => {
 t.test('looking outside of cwd', t => {
   const cwd = process.cwd()
   t.teardown(() => process.chdir(cwd))
-  process.chdir(resolve(__dirname, '../fixtures/selflink'))
+  process.chdir(resolve(fixtures, 'selflink'))
   const dir = '../root'
   return loadActual(dir).then(tree =>
     t.matchSnapshot(tree, 'loaded tree'))

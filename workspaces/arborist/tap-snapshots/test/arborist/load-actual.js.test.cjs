@@ -5,7 +5,7 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/arborist/load-actual.js TAP bundle > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP bundle > loaded tree 1`] = `
 ArboristNode {
   "bundleDependencies": Array [
     "dep",
@@ -41,7 +41,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP cwd is default root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP cwd is default root > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/x" => ArboristNode {
@@ -369,7 +369,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP deepmixedloop > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP deepmixedloop > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -623,7 +623,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP deeproot/root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP deeproot/root > loaded tree 1`] = `
 ArboristLink {
   "isProjectRoot": true,
   "location": "../deeproot/root",
@@ -960,7 +960,7 @@ ArboristLink {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP devloop > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP devloop > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -1084,7 +1084,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP do not load from a hidden lockfile when forceActual is set > must match snapshot 1`] = `
+exports[`test/serial/load-actual.js TAP do not load from a hidden lockfile when forceActual is set > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {
@@ -1117,7 +1117,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP external-dep/root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP external-dep/root > loaded tree 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "dep" => EdgeOut {
@@ -1136,7 +1136,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP external-link-cached-dummy-dep/root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP external-link-cached-dummy-dep/root > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "x" => ArboristLink {
@@ -1229,7 +1229,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP external-link/root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP external-link/root > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "j" => ArboristLink {
@@ -1411,7 +1411,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP install-types > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP install-types > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {
@@ -2080,7 +2080,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP link-dep-cycle > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP link-dep-cycle > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -2209,7 +2209,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP link-dep-nested > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP link-dep-nested > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "foo" => ArboristLink {
@@ -2314,7 +2314,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP link-dep-nested/root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP link-dep-nested/root > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "bork" => ArboristLink {
@@ -2452,7 +2452,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP linkedroot > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP linkedroot > loaded tree 1`] = `
 ArboristLink {
   "isProjectRoot": true,
   "location": "../linkedroot",
@@ -2790,7 +2790,7 @@ ArboristLink {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP links-all-over > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP links-all-over > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "link-deep" => ArboristLink {
@@ -3106,7 +3106,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load a global space > expect resolving Promise 1`] = `
+exports[`test/serial/load-actual.js TAP load a global space > expect resolving Promise 1`] = `
 ArboristNode {
   "children": Map {
     "rimraf" => ArboristNode {
@@ -3441,7 +3441,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load a global space symlink > expect resolving Promise 1`] = `
+exports[`test/serial/load-actual.js TAP load a global space symlink > expect resolving Promise 1`] = `
 ArboristLink {
   "isProjectRoot": true,
   "location": "../lib-link",
@@ -3784,7 +3784,7 @@ ArboristLink {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load a global space with a filter > expect resolving Promise 1`] = `
+exports[`test/serial/load-actual.js TAP load a global space with a filter > expect resolving Promise 1`] = `
 ArboristNode {
   "isProjectRoot": true,
   "location": "",
@@ -3793,7 +3793,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load from a hidden lockfile > must match snapshot 1`] = `
+exports[`test/serial/load-actual.js TAP load from a hidden lockfile > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {
@@ -3827,27 +3827,27 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load workspace targets, even if links not present > must match snapshot 1`] = `
+exports[`test/serial/load-actual.js TAP load workspace targets, even if links not present > must match snapshot 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "a" => EdgeOut {
       "error": "MISSING",
       "name": "a",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/a",
+      "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/a",
       "to": null,
       "type": "workspace",
     },
     "b" => EdgeOut {
       "error": "MISSING",
       "name": "b",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/b",
+      "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/b",
       "to": null,
       "type": "workspace",
     },
     "c" => EdgeOut {
       "error": "MISSING",
       "name": "c",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/c",
+      "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspace-targets-even-if-links-not-present/packages/c",
       "to": null,
       "type": "workspace",
     },
@@ -3903,7 +3903,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP load workspaces when loading from hidding lockfile > actual tree 1`] = `
+exports[`test/serial/load-actual.js TAP load workspaces when loading from hidding lockfile > actual tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -3911,7 +3911,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "a",
-          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+          "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
           "type": "workspace",
         },
       },
@@ -3931,7 +3931,7 @@ ArboristNode {
         EdgeIn {
           "from": "",
           "name": "b",
-          "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+          "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
           "type": "workspace",
         },
       },
@@ -3950,13 +3950,13 @@ ArboristNode {
   "edgesOut": Map {
     "a" => EdgeOut {
       "name": "a",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
+      "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/a",
       "to": "node_modules/a",
       "type": "workspace",
     },
     "b" => EdgeOut {
       "name": "b",
-      "spec": "file:{CWD}/test/arborist/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
+      "spec": "file:{CWD}/test/serial/tap-testdir-load-actual-load-workspaces-when-loading-from-hidding-lockfile/packages/b",
       "to": "node_modules/b",
       "type": "workspace",
     },
@@ -3988,7 +3988,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP look for missing deps by default external-dep/root > "dep" should have missing deps, "link" should not 1`] = `
+exports[`test/serial/load-actual.js TAP look for missing deps by default external-dep/root > "dep" should have missing deps, "link" should not 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "dep" => EdgeOut {
@@ -4007,7 +4007,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP look for missing deps by default external-link/root > "dep" should have missing deps, "link" should not 1`] = `
+exports[`test/serial/load-actual.js TAP look for missing deps by default external-link/root > "dep" should have missing deps, "link" should not 1`] = `
 ArboristNode {
   "children": Map {
     "j" => ArboristLink {
@@ -4189,7 +4189,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP looking outside of cwd > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP looking outside of cwd > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/x" => ArboristNode {
@@ -4517,7 +4517,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP mixedloop > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP mixedloop > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -4656,7 +4656,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP mixedmidway > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP mixedmidway > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -5037,7 +5037,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP noname > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP noname > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "foo" => ArboristNode {
@@ -5069,7 +5069,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP optionalloop > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP optionalloop > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -5193,7 +5193,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP optofdev > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP optofdev > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristNode {
@@ -5328,7 +5328,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP other > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP other > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "glob" => ArboristLink {
@@ -5531,7 +5531,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP pnpm > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP pnpm > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/x" => ArboristLink {
@@ -5833,7 +5833,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP root > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP root > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/x" => ArboristNode {
@@ -6161,7 +6161,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP selflink > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP selflink > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/y" => ArboristNode {
@@ -6392,7 +6392,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP shake out Link target timing issue > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP shake out Link target timing issue > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "@scope/y" => ArboristNode {
@@ -6623,7 +6623,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP symlinked-node-modules/example > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP symlinked-node-modules/example > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "bar" => ArboristLink {
@@ -6679,7 +6679,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP transplant workspace targets, even if links not present > do not transplant node named "a" 1`] = `
+exports[`test/serial/load-actual.js TAP transplant workspace targets, even if links not present > do not transplant node named "a" 1`] = `
 ArboristNode {
   "dev": true,
   "edgesOut": Map {
@@ -6732,7 +6732,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP transplant workspace targets, even if links not present > transplant everything 1`] = `
+exports[`test/serial/load-actual.js TAP transplant workspace targets, even if links not present > transplant everything 1`] = `
 ArboristNode {
   "dev": true,
   "edgesOut": Map {
@@ -6785,7 +6785,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP workspace > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP workspace > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -7043,7 +7043,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP workspace2 > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP workspace2 > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "b" => ArboristNode {
@@ -7212,7 +7212,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP workspace3 > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP workspace3 > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -7551,7 +7551,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP workspaces load a simple install tree containing workspaces > expect resolving Promise 1`] = `
+exports[`test/serial/load-actual.js TAP workspaces load a simple install tree containing workspaces > expect resolving Promise 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -7651,7 +7651,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP workspaces-simple > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP workspaces-simple > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "a" => ArboristLink {
@@ -7751,7 +7751,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/load-actual.js TAP yarn-lock-mkdirp-file-dep > loaded tree 1`] = `
+exports[`test/serial/load-actual.js TAP yarn-lock-mkdirp-file-dep > loaded tree 1`] = `
 ArboristNode {
   "children": Map {
     "mkdirp" => ArboristNode {

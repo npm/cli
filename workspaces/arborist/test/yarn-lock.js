@@ -1,12 +1,13 @@
 const YarnLock = require('../lib/yarn-lock.js')
 const Arborist = require('../lib/arborist')
 const Node = require('../lib/node.js')
+const { fixtures: fixturesPath } = require('./fixtures/index.js')
 
 const t = require('tap')
 const { resolve, basename } = require('path')
 const fixtures = [
-  resolve(__dirname, 'fixtures/tap-with-yarn-lock'),
-  resolve(__dirname, 'fixtures/yarn-stuff'),
+  resolve(fixturesPath, 'tap-with-yarn-lock'),
+  resolve(fixturesPath, 'yarn-stuff'),
 ]
 const { readFileSync } = require('fs')
 
@@ -80,11 +81,9 @@ t.test('exports YarnLockEntry class', t => {
 })
 
 t.test('load a yarn lock from an actual tree', t => {
-  // make sure the symlinks are loaded
-  require('./fixtures/index.js')
   const fixtures = [
-    resolve(__dirname, 'fixtures/install-types'),
-    resolve(__dirname, 'fixtures/links-all-over'),
+    resolve(fixturesPath, 'install-types'),
+    resolve(fixturesPath, 'links-all-over'),
   ]
   for (const fixture of fixtures) {
     t.test(basename(fixture), async t => {

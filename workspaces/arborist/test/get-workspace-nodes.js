@@ -1,7 +1,8 @@
 const t = require('tap')
 const Arborist = require('../lib/arborist/index.js')
 const { resolve } = require('path')
-const path = resolve(__dirname, './fixtures/workspaces-shared-deps-virtual')
+const { fixtures } = require('./fixtures/index.js')
+const path = resolve(fixtures, 'workspaces-shared-deps-virtual')
 const arb = new Arborist({ path })
 
 const warningTracker = () => {

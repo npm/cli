@@ -3,8 +3,8 @@ const { resolve } = require('path')
 const Arborist = require('../../lib/arborist/index.js')
 const { normalizePath, printTree } = require('../fixtures/utils.js')
 const { auditResponse, advisoryBulkResponse, ...mockRegistry } = require('../fixtures/server.js')
+const { fixtures } = require('../fixtures/index.js')
 
-const fixtures = resolve(__dirname, '../fixtures')
 const fixture = (t, p) => require(fixtures + '/reify-cases/' + p)(t)
 
 t.before(mockRegistry.start)

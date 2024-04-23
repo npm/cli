@@ -6,6 +6,7 @@ const tnock = require('../fixtures/tnock')
 const fs = require('fs')
 const fsp = require('fs/promises')
 const npmFs = require('@npmcli/fs')
+const { fixtures } = require('../fixtures/index.js')
 
 let failRm = false
 let failRename = null
@@ -1361,7 +1362,7 @@ t.test('add a dep present in the tree, with v1 shrinkwrap', async t => {
 t.test('store files with a custom indenting', async t => {
   const tabIndentedPackageJson =
     fs.readFileSync(
-      resolve(__dirname, '../fixtures/tab-indented-package-json/package.json'),
+      resolve(fixtures, 'tab-indented-package-json/package.json'),
       'utf8'
     ).replace(/\r\n/g, '\n')
   const path = t.testdir({
@@ -1421,7 +1422,7 @@ t.test('add a new pkg to a prefix that needs to be mkdirpd', async t => {
 
 t.test('do not delete root-bundled deps in global update', async t => {
   const path = t.testdir()
-  const file = resolve(__dirname, '../fixtures/bundle.tgz')
+  const file = resolve(fixtures, 'bundle.tgz')
   await reify(path, { global: true, add: [`file:${file}`] })
   const depPJ = resolve(path, 'node_modules/bundle/node_modules/dep/package.json')
   t.matchSnapshot(fs.readFileSync(depPJ, 'utf8'), 'after first install')
@@ -2159,7 +2160,7 @@ t.test('add deps to workspaces', async t => {
 })
 
 t.test('reify audit only workspace deps when reifying workspace', async t => {
-  const auditFile = resolve(__dirname, '../fixtures/audit-nyc-mkdirp/advisory-bulk.json')
+  const auditFile = resolve(fixtures, 'audit-nyc-mkdirp/advisory-bulk.json')
   t.teardown(advisoryBulkResponse(auditFile))
   const path = t.testdir({
     'package.json': JSON.stringify({

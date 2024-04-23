@@ -8,9 +8,7 @@ const { basename, resolve, relative } = require('path')
 const pacote = require('pacote')
 const t = require('tap')
 const Arborist = require('../..')
-const fixtures = resolve(__dirname, '../fixtures')
-// load the symbolic links that we depend on
-require(fixtures)
+const { fixtures } = require('../fixtures/index.js')
 const { start, stop, registry, auditResponse } = require('../fixtures/server.js')
 const npa = require('npm-package-arg')
 const fs = require('fs')
@@ -762,68 +760,68 @@ t.test('no fix available, linked top package', async t => {
 
 t.test('workspaces', t => {
   t.test('should install a simple example', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-simple')
+    const path = resolve(fixtures, 'workspaces-simple')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should update a simple example', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-simple')
+    const path = resolve(fixtures, 'workspaces-simple')
     return t.resolveMatchSnapshot(printIdeal(path, { update: { all: true } }))
   })
 
   t.test('should install a simple scoped pkg example', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-scoped-pkg')
+    const path = resolve(fixtures, 'workspaces-scoped-pkg')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should not work with duplicate names', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-duplicate')
+    const path = resolve(fixtures, 'workspaces-duplicate')
     return t.rejects(printIdeal(path), { code: 'EDUPLICATEWORKSPACE' }, 'throws EDUPLICATEWORKSPACE error')
   })
 
   t.test('should install shared dependencies into root folder', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-shared-deps')
+    const path = resolve(fixtures, 'workspaces-shared-deps')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should install conflicting dep versions', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-conflicting-versions')
+    const path = resolve(fixtures, 'workspaces-conflicting-versions')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should prefer linking nested workspaces', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-prefer-linking')
+    const path = resolve(fixtures, 'workspaces-prefer-linking')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should install from registry on version not satisfied', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-version-unsatisfied')
+    const path = resolve(fixtures, 'workspaces-version-unsatisfied')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should link top level nested workspaces', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-top-level-link')
+    const path = resolve(fixtures, 'workspaces-top-level-link')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should install workspace transitive dependencies', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-transitive-deps')
+    const path = resolve(fixtures, 'workspaces-transitive-deps')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should ignore nested node_modules folders', t => {
     // packages/a/node_modules/nested-workspaces should not be installed
-    const path = resolve(__dirname, '../fixtures/workspaces-ignore-nm')
+    const path = resolve(fixtures, 'workspaces-ignore-nm')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should work with files spec', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-with-files-spec')
+    const path = resolve(fixtures, 'workspaces-with-files-spec')
     return t.resolveMatchSnapshot(printIdeal(path))
   })
 
   t.test('should handle conflicting peer deps ranges', t => {
-    const path = resolve(__dirname, '../fixtures/workspaces-peer-ranges')
+    const path = resolve(fixtures, 'workspaces-peer-ranges')
     return t.rejects(
       printIdeal(path),
       {
@@ -1039,7 +1037,7 @@ t.test('adding tarball to global prefix that is a symlink at a different path de
     ...OPT,
   })
 
-  const tarballpath = resolve(__dirname, '../fixtures/registry-mocks/content/mkdirp/-/mkdirp-1.0.2.tgz')
+  const tarballpath = resolve(fixtures, 'registry-mocks/content/mkdirp/-/mkdirp-1.0.2.tgz')
   const tree = await arb.buildIdealTree({
     path,
     global: true,
@@ -2694,7 +2692,7 @@ t.test('cannot do workspaces in global mode', t => {
 })
 
 t.test('add packages to workspaces, not root', async t => {
-  const path = resolve(__dirname, '../fixtures/workspaces-not-root')
+  const path = resolve(fixtures, 'workspaces-not-root')
 
   const addTree = await buildIdeal(path, {
     add: ['wrappy@1.0.1'],
@@ -2721,7 +2719,7 @@ t.test('add packages to workspaces, not root', async t => {
 })
 
 t.test('add one workspace to another', async t => {
-  const path = resolve(__dirname, '../fixtures/workspaces-not-root')
+  const path = resolve(fixtures, 'workspaces-not-root')
   const packageA = resolve(path, 'packages/a')
 
   const addTree = await buildIdeal(path, {
@@ -3970,7 +3968,7 @@ t.test('overrides', t => {
 t.test('store files with a custom indenting', async t => {
   const tabIndentedPackageJson =
     fs.readFileSync(
-      resolve(__dirname, '../fixtures/tab-indented-package-json/package.json'),
+      resolve(fixtures, 'tab-indented-package-json/package.json'),
       'utf8'
     ).replace(/\r\n/g, '\n')
   const path = t.testdir({

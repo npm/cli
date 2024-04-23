@@ -4,7 +4,7 @@ const Arborist = require('../../lib/arborist/index.js')
 const { resolve, dirname } = require('path')
 const os = require('os')
 const fs = require('fs')
-const fixtures = resolve(__dirname, '../fixtures')
+const { fixtures } = require('../fixtures/index.js')
 const relpath = require('../../lib/relpath.js')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 
