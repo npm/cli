@@ -24,7 +24,6 @@ graph LR;
   libnpmaccess-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmdiff-->npm-package-arg;
   libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
-  libnpmdiff-->npmcli-disparity-colors["@npmcli/disparity-colors"];
   libnpmdiff-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmdiff-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   libnpmdiff-->npmcli-template-oss["@npmcli/template-oss"];
@@ -266,7 +265,6 @@ graph LR;
   agent-base-->debug;
   aggregate-error-->clean-stack;
   aggregate-error-->indent-string;
-  ansi-styles-->color-convert;
   bin-links-->cmd-shim;
   bin-links-->npm-normalize-package-bin;
   bin-links-->read-cmd-shim;
@@ -288,7 +286,6 @@ graph LR;
   cidr-regex-->ip-regex;
   cli-columns-->string-width;
   cli-columns-->strip-ansi;
-  color-convert-->color-name;
   cross-spawn-->path-key;
   cross-spawn-->shebang-command;
   cross-spawn-->which;
@@ -341,7 +338,6 @@ graph LR;
   libnpmdiff-->minimatch;
   libnpmdiff-->npm-package-arg;
   libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
-  libnpmdiff-->npmcli-disparity-colors["@npmcli/disparity-colors"];
   libnpmdiff-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmdiff-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   libnpmdiff-->npmcli-template-oss["@npmcli/template-oss"];
@@ -638,7 +634,6 @@ graph LR;
   npmcli-config-->semver;
   npmcli-config-->tap;
   npmcli-config-->walk-up-path;
-  npmcli-disparity-colors-->ansi-styles;
   npmcli-docs-->front-matter;
   npmcli-docs-->ignore-walk;
   npmcli-docs-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
@@ -818,4 +813,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen, @npmcli/config
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, read-package-json, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, normalize-package-data, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, ini, @npmcli/disparity-colors, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, ini, mute-stream, npm-audit-report, npm-user-validate
