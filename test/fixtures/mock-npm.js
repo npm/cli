@@ -120,7 +120,6 @@ const setupMockNpm = async (t, {
   // preload a command
   command = null, // string name of the command
   exec = null, // optionally exec the command before returning
-  setCmd = false,
   // test dirs
   prefixDir = {},
   homeDir = {},
@@ -267,16 +266,6 @@ const setupMockNpm = async (t, {
   const mockCommand = {}
   if (command) {
     const Cmd = mockNpm.Npm.cmd(command)
-    if (setCmd) {
-      // XXX(hack): This is a hack to allow fake-ish tests to set the currently
-      // running npm command without running exec. Generally, we should rely on
-      // actually exec-ing the command to asserting the state of the world
-      // through what is printed/on disk/etc. This is a stop-gap to allow tests
-      // that are time intensive to convert to continue setting the npm command
-      // this way. TODO: remove setCmd from all tests and remove the setCmd
-      // method from `lib/npm.js`
-      npm.setCmd(command)
-    }
     mockCommand.cmd = new Cmd(npm)
     mockCommand[command] = {
       usage: Cmd.describeUsage,
