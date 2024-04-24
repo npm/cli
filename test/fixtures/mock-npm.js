@@ -241,7 +241,11 @@ const setupMockNpm = async (t, {
     init,
     load,
     mocks: withDirs(mocks),
-    npm: { argv, excludeNpmCwd: true, ...withDirs(npmOpts) },
+    npm: {
+      argv: command ? [command, ...argv] : argv,
+      excludeNpmCwd: true,
+      ...withDirs(npmOpts),
+    },
   })
 
   if (config.omit?.includes('prod')) {
