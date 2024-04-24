@@ -1,13 +1,7 @@
 const { log: { LEVELS } } = require('proc-log')
 const { stripVTControlCharacters: stripAnsi } = require('util')
 
-const labels = new Map([
-  ['error', 'ERR!'],
-  ['warn', 'WARN'],
-  ['verbose', 'verb'],
-  ['silly', 'sill'],
-].reduce((acc, v) => acc.concat([v, v.slice(0).reverse()]), []))
-const logPrefix = new RegExp(`^npm (${LEVELS.map(l => labels.get(l) ?? l).join('|')})\\s`)
+const logPrefix = new RegExp(`^npm (${LEVELS.join('|')})\\s`)
 const isLog = (str) => logPrefix.test(stripAnsi(str))
 
 // We only strip trailing newlines since some output will
@@ -63,15 +57,15 @@ module.exports = () => {
         // Split on spaces for the heading and level/label. We know that
         // none of those have spaces but could be colorized so there's no
         // other good way to get each of those including control chars
-        const [rawHeading, rawLabel] = str.split(' ')
-        const rawPrefix = `${rawHeading} ${rawLabel} `
+        const [rawHeading, rawLevel] = str.split(' ')
+        const rawPrefix = `${rawHeading} ${rawLevel} `
         // If message is colorized we can just replaceAll with the string since
         // it will be unique due to control chars. Otherwise we create a regex
         // that will only match the beginning of each line.
         const prefix = stripAnsi(str) !== str ? rawPrefix : new RegExp(`^${rawPrefix}`, 'gm')
 
         // The level needs color stripped always because we use it to filter logs
-        const level = labels.get(stripAnsi(rawLabel)) ?? stripAnsi(rawLabel)
+        const level = stripAnsi(rawLevel)
 
         logs.push(str.replaceAll(prefix, `${level} `))
         levelLogs.push({ level, message: str.replaceAll(prefix, '') })
