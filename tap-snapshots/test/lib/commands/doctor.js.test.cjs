@@ -731,11 +731,11 @@ Object {
   "warn": Array [
     String(
       doctor getGitPath Error: test error
-      doctor     at which ({CWD}/{TESTDIR}/doctor.js:313:15)
-      doctor     at Doctor.getGitPath ({CWD}/lib/commands/doctor.js:286:18)
-      doctor     at Doctor.exec ({CWD}/lib/commands/doctor.js:125:33)
-      doctor     at processTicksAndRejections (node:internal/process/task_queues:95:5)
-      doctor     at MockNpm.exec ({CWD}/test/fixtures/mock-npm.js:80:26)
+      doctor     at which {STACK}
+      doctor     at Doctor.getGitPath {STACK}
+      doctor     at Doctor.exec {STACK}
+      doctor     at processTicksAndRejections {STACK}
+      doctor     at MockNpm.exec {STACK}
     ),
   ],
 }

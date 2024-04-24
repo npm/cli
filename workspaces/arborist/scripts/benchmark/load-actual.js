@@ -1,10 +1,8 @@
 const Arborist = require('../..')
 const { resolve, basename } = require('path')
 const { writeFileSync } = require('fs')
-const {
-  mkdir,
-  rm,
-} = require('fs/promises')
+const { mkdir, rm } = require('fs/promises')
+
 const dir = resolve(__dirname, basename(__filename, '.js'))
 
 const suite = async (suite, { registry, cache }) => {
