@@ -1,5 +1,24 @@
 # Changelog
 
+## [6.1.0](https://github.com/npm/cli/compare/libnpmdiff-v6.0.9...libnpmdiff-v6.1.0) (2024-04-25)
+
+### Features
+
+* [`9622597`](https://github.com/npm/cli/commit/9622597399ec93224fddf90a9209a98dbcfd6b2f) [#7339](https://github.com/npm/cli/pull/7339) refactor terminal display (#7339) (@lukekarrys)
+
+### Bug Fixes
+
+* [`03958c3`](https://github.com/npm/cli/commit/03958c375cd8fa9ec6d84ad35b7cc5cf5e9136f6) [#7409](https://github.com/npm/cli/pull/7409) inline color selector in libnpmdiff (@wraithgar)
+
+### Dependencies
+
+* [`36adff3`](https://github.com/npm/cli/commit/36adff36c41f56315fe582e1e4dda29060f7fdf7) [#7408](https://github.com/npm/cli/pull/7408) `pacote@18.0.2`
+* [`486d46c`](https://github.com/npm/cli/commit/486d46cd5b5678ad1ab6c23ee12cf7559477805a) [#7408](https://github.com/npm/cli/pull/7408) `@npmcli/installed-package-contents@2.1.0`
+* [`b0ca163`](https://github.com/npm/cli/commit/b0ca16310d9db944dd13f80ecce534c65eea42c5) [#7409](https://github.com/npm/cli/pull/7409) remove @npmcli/disparity-colors
+* [`9027266`](https://github.com/npm/cli/commit/90272661b16d861a5926af8ec394d32ec0f307fd) [#7373](https://github.com/npm/cli/pull/7373) `pacote@18.0.0`
+* [`ac98fd3`](https://github.com/npm/cli/commit/ac98fd3a8514f2552555d2b8af74a52e64888797) [#7373](https://github.com/npm/cli/pull/7373) `npm-package-arg@11.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.0): `@npmcli/arborist@7.5.0`
+
 ## [6.0.9](https://github.com/npm/cli/compare/libnpmdiff-v6.0.8...libnpmdiff-v6.0.9) (2024-04-10)
 
 ### Dependencies

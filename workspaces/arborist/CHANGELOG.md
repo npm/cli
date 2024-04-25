@@ -1,5 +1,37 @@
 # Changelog
 
+## [7.5.0](https://github.com/npm/cli/compare/arborist-v7.4.2...arborist-v7.5.0) (2024-04-25)
+
+### Features
+
+* [`9123de4`](https://github.com/npm/cli/commit/9123de4d282bfd19ea17ad613f5a2acab0e0e162) [#7373](https://github.com/npm/cli/pull/7373) do all ouput over proc-log events (@lukekarrys)
+* [`9622597`](https://github.com/npm/cli/commit/9622597399ec93224fddf90a9209a98dbcfd6b2f) [#7339](https://github.com/npm/cli/pull/7339) refactor terminal display (#7339) (@lukekarrys)
+
+### Bug Fixes
+
+* [`78447d7`](https://github.com/npm/cli/commit/78447d7a35fab870456ba66eee408b2baddca23e) [#7399](https://github.com/npm/cli/pull/7399) prefer fs/promises over promisify (#7399) (@lukekarrys)
+* [`6512112`](https://github.com/npm/cli/commit/65121122d99855541f63aa787f8ee8bb4eea4a3f) [#7378](https://github.com/npm/cli/pull/7378) use proc-log for all timers (@lukekarrys)
+
+### Dependencies
+
+* [`36adff3`](https://github.com/npm/cli/commit/36adff36c41f56315fe582e1e4dda29060f7fdf7) [#7408](https://github.com/npm/cli/pull/7408) `pacote@18.0.2`
+* [`486d46c`](https://github.com/npm/cli/commit/486d46cd5b5678ad1ab6c23ee12cf7559477805a) [#7408](https://github.com/npm/cli/pull/7408) `@npmcli/installed-package-contents@2.1.0`
+* [`157d0ae`](https://github.com/npm/cli/commit/157d0aebfe5710880d0c91bddee970316b8a6612) [#7408](https://github.com/npm/cli/pull/7408) `@npmcli/package-json@5.1.0`
+* [`fc6e291`](https://github.com/npm/cli/commit/fc6e291e9c2154c2e76636cb7ebf0a17be307585) [#7392](https://github.com/npm/cli/pull/7392) `proc-log@4.2.0` (#7392)
+* [`38ed048`](https://github.com/npm/cli/commit/38ed048ac0d7a36785dbff0eeca3618cb7f084c5) [#7378](https://github.com/npm/cli/pull/7378) `@npmcli/metavuln-calculator@7.1.0`
+* [`7678a3d`](https://github.com/npm/cli/commit/7678a3d92835457bb402c82e4ca7ea3fa734d23b) [#7378](https://github.com/npm/cli/pull/7378) `proc-log@4.1.0`
+* [`87f6c09`](https://github.com/npm/cli/commit/87f6c094ac47f4e6eb5d5d6a03a0ad97711b51e9) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/metavuln-calculator@7.0.1`
+* [`b8f8b41`](https://github.com/npm/cli/commit/b8f8b414d8ad9635e3efedc6e491c8c6e3df0973) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/run-script@8.0.0`
+* [`79f79c7`](https://github.com/npm/cli/commit/79f79c7460be8a74f2b77c647100bcefd89b2efa) [#7373](https://github.com/npm/cli/pull/7373) `proc-log@4.0.0`
+* [`9027266`](https://github.com/npm/cli/commit/90272661b16d861a5926af8ec394d32ec0f307fd) [#7373](https://github.com/npm/cli/pull/7373) `pacote@18.0.0`
+* [`ee4b3e0`](https://github.com/npm/cli/commit/ee4b3e0e741545045dc03741c7147560961d867d) [#7373](https://github.com/npm/cli/pull/7373) `npm-registry-fetch@16.2.1`
+* [`ac98fd3`](https://github.com/npm/cli/commit/ac98fd3a8514f2552555d2b8af74a52e64888797) [#7373](https://github.com/npm/cli/pull/7373) `npm-package-arg@11.0.2`
+* [`9351570`](https://github.com/npm/cli/commit/93515700efbb2147a6e929cf117da9e6e87c0aca) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/package-json@5.0.3`
+
+### Chores
+
+* [`dd39de7`](https://github.com/npm/cli/commit/dd39de7d1da743cbd33b671fa96f66667109b451) [#7411](https://github.com/npm/cli/pull/7411) disable selflink test on apple silicon (#7411) (@lukekarrys)
+
 ## [7.4.2](https://github.com/npm/cli/compare/arborist-v7.4.1...arborist-v7.4.2) (2024-04-10)
 
 ### Bug Fixes

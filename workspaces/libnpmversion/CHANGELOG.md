@@ -1,5 +1,27 @@
 # Changelog
 
+## [6.0.0](https://github.com/npm/cli/compare/libnpmversion-v5.0.2...libnpmversion-v6.0.0) (2024-04-25)
+
+### ⚠️ BREAKING CHANGES
+
+* libnpmversion no longer takes a `silent` option to suppress output from `@npmcli/run-script`. That output is now emitted via an `output` event on `process`.
+
+### Features
+
+* [`60faa90`](https://github.com/npm/cli/commit/60faa9052a74d7a6ac8db59dae2d7017542310d7) [#7373](https://github.com/npm/cli/pull/7373) libnpmversion: remove silent option (@lukekarrys)
+
+### Bug Fixes
+
+* [`78447d7`](https://github.com/npm/cli/commit/78447d7a35fab870456ba66eee408b2baddca23e) [#7399](https://github.com/npm/cli/pull/7399) prefer fs/promises over promisify (#7399) (@lukekarrys)
+
+### Dependencies
+
+* [`fc6e291`](https://github.com/npm/cli/commit/fc6e291e9c2154c2e76636cb7ebf0a17be307585) [#7392](https://github.com/npm/cli/pull/7392) `proc-log@4.2.0` (#7392)
+* [`7678a3d`](https://github.com/npm/cli/commit/7678a3d92835457bb402c82e4ca7ea3fa734d23b) [#7378](https://github.com/npm/cli/pull/7378) `proc-log@4.1.0`
+* [`b8f8b41`](https://github.com/npm/cli/commit/b8f8b414d8ad9635e3efedc6e491c8c6e3df0973) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/run-script@8.0.0`
+* [`79f79c7`](https://github.com/npm/cli/commit/79f79c7460be8a74f2b77c647100bcefd89b2efa) [#7373](https://github.com/npm/cli/pull/7373) `proc-log@4.0.0`
+* [`d3a0cfa`](https://github.com/npm/cli/commit/d3a0cfad06ddffe6a3d4968257b7993aea68fc7c) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/git@5.0.6`
+
 ## [5.0.2](https://github.com/npm/cli/compare/libnpmversion-v5.0.1...libnpmversion-v5.0.2) (2023-12-06)
 
 ### Chores
