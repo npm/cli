@@ -74,7 +74,7 @@ t.test('basic usage', async t => {
   // are generated in the following test
   const { npm } = await loadMockNpm(t, {
     mocks: {
-      '{LIB}/utils/cmd-list.js': { commands: [] },
+      '{LIB}/utils/cmd-list.js': { ...cmdList, commands: [] },
     },
     config: { userconfig: '/some/config/file/.npmrc' },
     globals: { process: { platform: 'posix' } },
