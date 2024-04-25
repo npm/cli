@@ -1,5 +1,27 @@
 # Changelog
 
+## [7.0.0](https://github.com/npm/cli/compare/libnpmpack-v6.0.9...libnpmpack-v7.0.0) (2024-04-25)
+
+### ⚠️ BREAKING CHANGES
+
+* libnpmpack no longer takes a `silent` option to suppress output from `@npmcli/run-script`. That output is now emitted via an `output` event on `process`.
+
+### Features
+
+* [`ee9bf6e`](https://github.com/npm/cli/commit/ee9bf6eded4c339366bb76af3cb5adab3305d5f3) [#7373](https://github.com/npm/cli/pull/7373) libnpmpack: remove silent option (@lukekarrys)
+
+### Bug Fixes
+
+* [`78447d7`](https://github.com/npm/cli/commit/78447d7a35fab870456ba66eee408b2baddca23e) [#7399](https://github.com/npm/cli/pull/7399) prefer fs/promises over promisify (#7399) (@lukekarrys)
+
+### Dependencies
+
+* [`36adff3`](https://github.com/npm/cli/commit/36adff36c41f56315fe582e1e4dda29060f7fdf7) [#7408](https://github.com/npm/cli/pull/7408) `pacote@18.0.2`
+* [`b8f8b41`](https://github.com/npm/cli/commit/b8f8b414d8ad9635e3efedc6e491c8c6e3df0973) [#7373](https://github.com/npm/cli/pull/7373) `@npmcli/run-script@8.0.0`
+* [`9027266`](https://github.com/npm/cli/commit/90272661b16d861a5926af8ec394d32ec0f307fd) [#7373](https://github.com/npm/cli/pull/7373) `pacote@18.0.0`
+* [`ac98fd3`](https://github.com/npm/cli/commit/ac98fd3a8514f2552555d2b8af74a52e64888797) [#7373](https://github.com/npm/cli/pull/7373) `npm-package-arg@11.0.2`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.0): `@npmcli/arborist@7.5.0`
+
 ## [6.0.9](https://github.com/npm/cli/compare/libnpmpack-v6.0.8...libnpmpack-v6.0.9) (2024-04-10)
 
 ### Dependencies
