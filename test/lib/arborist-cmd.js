@@ -117,7 +117,8 @@ t.test('arborist-cmd', async t => {
       chdir: (dirs) => dirs.testdir,
     })
 
-    npm.localPrefix = prefix
+    // TODO there has to be a better way to do this
+    npm.config.localPrefix = prefix
     await cmd.execWorkspaces([])
 
     t.same(cmd.workspaceNames, ['a', 'c'], 'should set array with single ws name')
