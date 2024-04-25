@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "workspaces/libnpmaccess"
   },
   "bugs": "https://github.com/npm/libnpmaccess/issues",

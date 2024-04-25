@@ -9,7 +9,7 @@
   "description": "library to do the things that 'npm version' does",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "workspaces/libnpmversion"
   },
   "author": "GitHub Inc.",

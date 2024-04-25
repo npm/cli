@@ -4,7 +4,7 @@
   "description": "The registry diff",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "workspaces/libnpmdiff"
   },
   "main": "lib/index.js",

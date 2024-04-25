@@ -9,7 +9,7 @@
   "description": "Configuration management for the npm cli",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "workspaces/config"
   },
   "author": "GitHub Inc.",

@@ -27,7 +27,7 @@
   "author": "GitHub Inc.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git"
+    "url": "git+https://github.com/npm/cli.git"
   },
   "bugs": {
     "url": "https://github.com/npm/cli/issues"
