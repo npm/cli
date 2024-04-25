@@ -1,35 +1,25 @@
 #!/usr/bin/env pwsh
-$basedir=Split-Path $MyInvocation.MyCommand.Definition -Parent
 
-$exe=""
-if ($PSVersionTable.PSVersion -lt "6.0" -or $IsWindows) {
-  # Fix case when both the Windows and Linux builds of Node
-  # are installed in the same directory
-  $exe=".exe"
-}
-$ret=0
+$RET=0
 
-$nodeexe = "node$exe"
-$nodebin = $(Get-Command $nodeexe -ErrorAction SilentlyContinue -ErrorVariable F).Source
-if ($nodebin -eq $null) {
-  Write-Host "$nodeexe not found."
-  exit 1
+$NODE_EXE="$PSScriptRoot/node.exe"
+if (-not (Test-Path $NODE_EXE)) {
+  $NODE_EXE="$PSScriptRoot/node"
 }
-$nodedir = $(New-Object -ComObject Scripting.FileSystemObject).GetFile("$nodebin").ParentFolder.Path
+if (-not (Test-Path $NODE_EXE)) {
+  $NODE_EXE="node"
+}
 
-$npmprefixjs="$nodedir/node_modules/npm/bin/npm-prefix.js"
-$npmprefix=(& $nodeexe $npmprefixjs)
-if ($LASTEXITCODE -ne 0) {
-  Write-Host "Could not determine Node.js install directory"
-  exit 1
-}
-$npmprefixclijs="$npmprefix/node_modules/npm/bin/npm-cli.js"
+$NPM_PREFIX_JS="$PSScriptRoot/node_modules/npm/bin/npm-prefix.js"
+$NPM_PREFIX=(& $NODE_EXE $NPM_PREFIX_JS)
+$NPM_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npm-cli.js"
 
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & $nodeexe $npmprefixclijs $args
+  $input | & $NODE_EXE $NPM_CLI_JS $args
 } else {
-  & $nodeexe $npmprefixclijs $args
+  & $NODE_EXE $NPM_CLI_JS $args
 }
-$ret=$LASTEXITCODE
-exit $ret
+
+$RET=$LASTEXITCODE
+exit $RET
