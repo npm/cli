@@ -16,13 +16,13 @@ if ($LASTEXITCODE -ne 0) {
   exit 1
 }
 
-$NPX_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npm-cli.js"
+$NPM_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npm-cli.js"
 
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & $NODE_EXE $NPX_CLI_JS $args
+  $input | & $NODE_EXE $NPM_CLI_JS $args
 } else {
-  & $NODE_EXE $NPX_CLI_JS $args
+  & $NODE_EXE $NPM_CLI_JS $args
 }
 
 exit $LASTEXITCODE
