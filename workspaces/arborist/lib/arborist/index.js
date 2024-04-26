@@ -74,20 +74,26 @@ class Arborist extends Base {
       Arborist: this.constructor,
       binLinks: 'binLinks' in options ? !!options.binLinks : true,
       cache: options.cache || `${homedir()}/.npm/_cacache`,
+      dryRun: !!options.dryRun,
+      formatPackageLock: 'formatPackageLock' in options ? !!options.formatPackageLock : true,
       force: !!options.force,
       global: !!options.global,
       ignoreScripts: !!options.ignoreScripts,
       installStrategy: options.global ? 'shallow' : (options.installStrategy ? options.installStrategy : 'hoisted'),
       lockfileVersion: lockfileVersion(options.lockfileVersion),
+      packageLockOnly: !!options.packageLockOnly,
       packumentCache: options.packumentCache || new Map(),
       path: options.path || '.',
       rebuildBundle: 'rebuildBundle' in options ? !!options.rebuildBundle : true,
       replaceRegistryHost: options.replaceRegistryHost,
+      savePrefix: 'savePrefix' in options ? options.savePrefix : '^',
       scriptShell: options.scriptShell,
       workspaces: options.workspaces || [],
       workspacesEnabled: options.workspacesEnabled !== false,
     }
-    // TODO is this even used? If not is that a bug?
+    // TODO we only ever look at this.options.replaceRegistryHost, not
+    // this.replaceRegistryHost.  Defaulting needs to be written back to
+    // this.options to work properly
     this.replaceRegistryHost = this.options.replaceRegistryHost =
       (!this.options.replaceRegistryHost || this.options.replaceRegistryHost === 'npmjs') ?
         'registry.npmjs.org' : this.options.replaceRegistryHost
@@ -96,6 +102,7 @@ class Arborist extends Base {
       throw new Error(`Invalid saveType ${options.saveType}`)
     }
     this.cache = resolve(this.options.cache)
+    this.diff = null
     this.path = resolve(this.options.path)
     timeEnd()
   }
@@ -249,6 +256,24 @@ class Arborist extends Base {
     timeEnd()
     this.finishTracker('audit')
     return ret
+  }
+
+  async dedupe (options = {}) {
+    // allow the user to set options on the ctor as well.
+    // XXX: deprecate separate method options objects.
+    options = { ...this.options, ...options }
+    const tree = await this.loadVirtual().catch(() => this.loadActual())
+    const names = []
+    for (const name of tree.inventory.query('name')) {
+      if (tree.inventory.query('name', name).size > 1) {
+        names.push(name)
+      }
+    }
+    return this.reify({
+      ...options,
+      preferDedupe: true,
+      update: { names },
+    })
   }
 }
 
