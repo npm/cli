@@ -41,6 +41,8 @@ module.exports = () => {
 
   const streams = {
     stderr: {
+      cursorTo: () => {},
+      clearLine: () => {},
       write: (str) => {
         str = trimTrailingNewline(str)
 

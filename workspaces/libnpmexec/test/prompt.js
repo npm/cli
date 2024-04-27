@@ -1,4 +1,4 @@
-const { log } = require('proc-log')
+const procLog = require('proc-log')
 const { resolve } = require('path')
 const t = require('tap')
 const fs = require('fs/promises')
@@ -15,6 +15,13 @@ t.test('prompt, accepts', async t => {
       'ci-info': { isCI: false },
       '../../lib/no-tty.js': () => false,
       read: { read: async () => 'y' },
+      'proc-log': {
+        ...procLog,
+        input: {
+          ...procLog.input,
+          read: (fn) => fn(),
+        },
+      },
     },
   })
 
@@ -39,6 +46,13 @@ t.test('prompt, refuses', async t => {
     mocks: {
       'ci-info': { isCI: false },
       read: { read: async () => 'n' },
+      'proc-log': {
+        ...procLog,
+        input: {
+          ...procLog.input,
+          read: (fn) => fn(),
+        },
+      },
       '../../lib/no-tty.js': () => false,
     },
   })
@@ -146,8 +160,9 @@ t.test('no prompt if CI, multiple packages', async t => {
     mocks: {
       'ci-info': { isCI: true },
       'proc-log': {
+        ...procLog,
         log: {
-          ...log,
+          ...procLog.log,
           warn (title, msg) {
             t.equal(title, 'exec', 'should warn exec title')
             // this message is nondeterministic as it queries manifests so we just

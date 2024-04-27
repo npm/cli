@@ -4,18 +4,16 @@ const { mkdir } = require('fs/promises')
 const Arborist = require('@npmcli/arborist')
 const ciInfo = require('ci-info')
 const crypto = require('crypto')
-const { log } = require('proc-log')
+const { log, input } = require('proc-log')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
 const { read } = require('read')
 const semver = require('semver')
-
 const { fileExists, localFileExists } = require('./file-exists.js')
 const getBinFromManifest = require('./get-bin-from-manifest.js')
 const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
-
 const { dirname, resolve } = require('path')
 
 const binPaths = []
@@ -242,26 +240,24 @@ const exec = async (opts) => {
 
     if (add.length) {
       if (!yes) {
-        const missingPackages = add.map(a => `${a.replace(/@$/, '')}`)
+        const addList = add.map(a => `${a.replace(/@$/, '')}`)
+
         // set -n to always say no
         if (yes === false) {
           // Error message lists missing package(s) when process is canceled
           /* eslint-disable-next-line max-len */
-          throw new Error(`npx canceled due to missing packages and no YES option: ${JSON.stringify(missingPackages)}`)
+          throw new Error(`npx canceled due to missing packages and no YES option: ${JSON.stringify(addList)}`)
         }
 
         if (noTTY() || ciInfo.isCI) {
-          log.warn('exec', `The following package${
-            add.length === 1 ? ' was' : 's were'
-          } not found and will be installed: ${
-            add.map((pkg) => pkg.replace(/@$/, '')).join(', ')
-          }`)
+          /* eslint-disable-next-line max-len */
+          log.warn('exec', `The following package${add.length === 1 ? ' was' : 's were'} not found and will be installed: ${addList.join(', ')}`)
         } else {
-          const addList = missingPackages.join('\n') + '\n'
-          const prompt = `Need to install the following packages:\n${
-          addList
-        }Ok to proceed? `
-          const confirm = await read({ prompt, default: 'y' })
+          const confirm = await input.read(() => read({
+            /* eslint-disable-next-line max-len */
+            prompt: `Need to install the following packages:\n${addList.join('\n')}\nOk to proceed? `,
+            default: 'y',
+          }))
           if (confirm.trim().toLowerCase().charAt(0) !== 'y') {
             throw new Error('canceled')
           }
