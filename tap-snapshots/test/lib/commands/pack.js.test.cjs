@@ -109,10 +109,21 @@ Array [
       "name": "@myscope/test-package",
       "shasum": "{sha}",
       "size": "{size}",
-      "unpackedSize": 50,
+      "unpackedSize": 88,
       "version": "1.0.0",
     },
   ],
+]
+`
+
+exports[`test/lib/commands/pack.js TAP should log scoped package output as valid json > stderr has banners 1`] = `
+Array [
+  String(
+    
+    > @myscope/test-package@1.0.0 prepack
+    > echo prepack!
+    
+  ),
 ]
 `
 

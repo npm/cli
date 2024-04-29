@@ -72,11 +72,14 @@ t.test('should log output as valid json', async t => {
 })
 
 t.test('should log scoped package output as valid json', async t => {
-  const { npm, outputs, logs } = await loadMockNpm(t, {
+  const { npm, outputs, outputErrors, logs } = await loadMockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
         name: '@myscope/test-package',
         version: '1.0.0',
+        scripts: {
+          prepack: 'echo prepack!',
+        },
       }),
     },
     config: { json: true },
@@ -84,6 +87,7 @@ t.test('should log scoped package output as valid json', async t => {
   await npm.exec('pack', [])
   const filename = 'myscope-test-package-1.0.0.tgz'
   t.matchSnapshot(outputs.map(JSON.parse), 'outputs as json')
+  t.matchSnapshot(outputErrors, 'stderr has banners')
   t.matchSnapshot(logs.notice, 'logs pack contents')
   t.ok(fs.statSync(path.resolve(npm.prefix, filename)))
 })
