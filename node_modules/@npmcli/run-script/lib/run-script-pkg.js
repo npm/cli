@@ -44,6 +44,7 @@ const runScriptPkg = async options => {
     return { code: 0, signal: null }
   }
 
+  let inputEnd = () => {}
   if (stdio === 'inherit') {
     let banner
     if (pkg._id) {
@@ -56,8 +57,9 @@ const runScriptPkg = async options => {
       banner += ` ${args.join(' ')}`
     }
     banner += '\n'
-    const { output } = require('proc-log')
+    const { output, input } = require('proc-log')
     output.standard(banner)
+    inputEnd = input.start()
   }
 
   const [spawnShell, spawnArgs, spawnOpts] = makeSpawnArgs({
@@ -104,7 +106,7 @@ const runScriptPkg = async options => {
     } else {
       throw er
     }
-  })
+  }).finally(inputEnd)
 }
 
 module.exports = runScriptPkg
