@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.9](https://github.com/npm/cli/compare/libnpmfund-v5.0.8...libnpmfund-v5.0.9) (2024-04-30)
+
+### Bug Fixes
+
+* [`3ec86a0`](https://github.com/npm/cli/commit/3ec86a0e258b1d5f5182f0093adf43c54e82578e) [#7456](https://github.com/npm/cli/pull/7456) linting: no-unused-vars (#7456) (@wraithgar)
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.1): `@npmcli/arborist@7.5.1`
+
 ## [5.0.8](https://github.com/npm/cli/compare/libnpmfund-v5.0.7...libnpmfund-v5.0.8) (2024-04-25)
 
 ### Dependencies

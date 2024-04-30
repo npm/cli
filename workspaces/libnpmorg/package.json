@@ -1,6 +1,6 @@
 {
   "name": "libnpmorg",
-  "version": "6.0.4",
+  "version": "6.0.5",
   "description": "Programmatic api for `npm org` commands",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
