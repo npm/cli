@@ -5,10 +5,6 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
-exports[`test/lib/commands/search.js TAP empty search results > should have expected search results 1`] = `
-No matches found for "foo"
-`
-
 exports[`test/lib/commands/search.js TAP search /<name>/--color > should have expected search results with color 1`] = `
 [34mlibnpm[39m
 Collection of programmatic APIs for the npm CLI
@@ -189,6 +185,10 @@ foo
 Version 1.0.0 published prehistoric by foo
 Maintainers: foo
 https://npm.im/foo
+custom-registry
+Version 1.0.0 published prehistoric by ???
+Maintainers: foo
+https://npm.im/custom-registry
 libnpmversion
 Version 1.0.0 published prehistoric by foo
 Maintainers: foo
@@ -272,6 +272,10 @@ pkg-no-desc
 Version 1.0.0 published 2019-09-26 by lukekarrys
 Maintainers: lukekarrys
 https://npm.im/pkg-no-desc
+`
+
+exports[`test/lib/commands/search.js TAP search empty search results > should have expected search results 1`] = `
+No matches found for "foo"
 `
 
 exports[`test/lib/commands/search.js TAP search exclude forward slash > results should not have libnpmversion 1`] = `
@@ -1008,4 +1012,15 @@ pkg-no-desc
 Version 1.0.0 published 2019-09-26 by lukekarrys
 Maintainers: lukekarrys
 https://npm.im/pkg-no-desc
+`
+
+exports[`test/lib/commands/search.js TAP search no publisher > should have filtered expected search results 1`] = `
+custom-registry
+Version 1.0.0 published prehistoric by ???
+Maintainers: foo
+https://npm.im/custom-registry
+libnpmversion
+Version 1.0.0 published prehistoric by foo
+Maintainers: foo
+https://npm.im/libnpmversion
 `
