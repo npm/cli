@@ -571,7 +571,7 @@ class Config {
     }
   }
 
-  #checkDeprecated (key, where, obj, kv) {
+  #checkDeprecated (key) {
     // XXX(npm9+) make this throw an error
     if (this.deprecated[key]) {
       log.warn('config', key, this.deprecated[key])
@@ -739,7 +739,7 @@ class Config {
     const iniData = ini.stringify(conf.raw).trim() + '\n'
     if (!iniData.trim()) {
       // ignore the unlink error (eg, if file doesn't exist)
-      await unlink(conf.source).catch(er => {})
+      await unlink(conf.source).catch(() => {})
       return
     }
     const dir = dirname(conf.source)
@@ -778,6 +778,7 @@ class Config {
     const nerfed = nerfDart(uri)
 
     // email is either provided, a top level key, or nothing
+    // eslint-disable-next-line no-unused-vars -- this might be a bug?
     email = email || this.get('email', 'user')
 
     // field that hasn't been used as documented for a LONG time,
