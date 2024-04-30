@@ -4065,11 +4065,11 @@ exports[`test/lib/docs.js TAP usage search > must match snapshot 1`] = `
 Search for packages
 
 Usage:
-npm search [search terms ...]
+npm search <search term> [<search term> ...]
 
 Options:
-[-l|--long] [--json] [--color|--no-color|--color always] [-p|--parseable]
-[--no-description] [--searchlimit <number>] [--searchopts <searchopts>]
+[--json] [--color|--no-color|--color always] [-p|--parseable] [--no-description]
+[--searchlimit <number>] [--searchopts <searchopts>]
 [--searchexclude <searchexclude>] [--registry <registry>] [--prefer-online]
 [--prefer-offline] [--offline]
 
@@ -4078,14 +4078,13 @@ aliases: find, s, se
 Run "npm help search" for more info
 
 \`\`\`bash
-npm search [search terms ...]
+npm search <search term> [<search term> ...]
 
 aliases: find, s, se
 \`\`\`
 
 Note: This command is unaware of workspaces.
 
-#### \`long\`
 #### \`json\`
 #### \`color\`
 #### \`parseable\`
