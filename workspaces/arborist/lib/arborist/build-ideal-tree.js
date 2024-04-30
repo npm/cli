@@ -463,7 +463,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
           }
           const dir = resolve(nm, name)
           const st = await lstat(dir)
-            .catch(/* istanbul ignore next */ er => null)
+            .catch(/* istanbul ignore next */ () => null)
           if (st && st.isSymbolicLink()) {
             const target = await readlink(dir)
             const real = resolve(dirname(dir), target).replace(/#/g, '%23')
@@ -1024,7 +1024,7 @@ This is a one-time fix-up, please be patient...
           for (const e of this.#problemEdges(placed)) {
             promises.push(() =>
               this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)))
-                .catch(er => null)
+                .catch(() => null)
             )
           }
         },
@@ -1273,7 +1273,7 @@ This is a one-time fix-up, please be patient...
       })
   }
 
-  #linkFromSpec (name, spec, parent, edge) {
+  #linkFromSpec (name, spec, parent) {
     const realpath = spec.fetchSpec
     const { installLinks, legacyPeerDeps } = this
     return rpj(realpath + '/package.json').catch(() => ({})).then(pkg => {

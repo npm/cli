@@ -212,7 +212,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     return { edges, nodes }
   }
 
-  async [_createIsolatedTree] (idealTree) {
+  async [_createIsolatedTree] () {
     await this[_makeIdealGraph](this.options)
 
     const proxiedIdealTree = this.idealGraph

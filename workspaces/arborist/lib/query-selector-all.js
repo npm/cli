@@ -650,27 +650,27 @@ class Results {
 // operators for attribute selectors
 const attributeOperators = {
   // attribute value is equivalent
-  '=' ({ attr, value, insensitive }) {
+  '=' ({ attr, value }) {
     return attr === value
   },
   // attribute value contains word
-  '~=' ({ attr, value, insensitive }) {
+  '~=' ({ attr, value }) {
     return (attr.match(/\w+/g) || []).includes(value)
   },
   // attribute value contains string
-  '*=' ({ attr, value, insensitive }) {
+  '*=' ({ attr, value }) {
     return attr.includes(value)
   },
   // attribute value is equal or starts with
-  '|=' ({ attr, value, insensitive }) {
+  '|=' ({ attr, value }) {
     return attr.startsWith(`${value}-`)
   },
   // attribute value starts with
-  '^=' ({ attr, value, insensitive }) {
+  '^=' ({ attr, value }) {
     return attr.startsWith(value)
   },
   // attribute value ends with
-  '$=' ({ attr, value, insensitive }) {
+  '$=' ({ attr, value }) {
     return attr.endsWith(value)
   },
 }

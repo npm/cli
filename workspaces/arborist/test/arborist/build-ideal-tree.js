@@ -136,7 +136,7 @@ t.test('fail on malformed package.json', t => {
   )
 })
 
-t.test('ignore mismatched engine for optional dependencies', async t => {
+t.test('ignore mismatched engine for optional dependencies', async () => {
   const path = resolve(fixtures, 'optional-engine-specification')
   await buildIdeal(path, {
     ...OPT,
