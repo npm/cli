@@ -1,5 +1,56 @@
 # Changelog
 
+## [10.7.0](https://github.com/npm/cli/compare/v10.6.0...v10.7.0) (2024-04-30)
+
+### Features
+
+* [`7e349f4`](https://github.com/npm/cli/commit/7e349f45363bb8dbe1cc803f8b48befc01aae7fd) [#7432](https://github.com/npm/cli/pull/7432) add spinner (#7432) (@lukekarrys)
+
+### Bug Fixes
+
+* [`d679ce8`](https://github.com/npm/cli/commit/d679ce80fd9b761b2323777ec5cd84ebc5c164fe) [#7449](https://github.com/npm/cli/pull/7449) linting: no-unused-vars (@wraithgar)
+* [`2558283`](https://github.com/npm/cli/commit/25582837b0ebb8c2de2932c04224332b11d0e1d5) [#7450](https://github.com/npm/cli/pull/7450) powershell: fallback to script root if globalPrefix does not exist (#7450) (@lukekarrys)
+* [`bc4c342`](https://github.com/npm/cli/commit/bc4c3426c35201baff7230c2b3beee2cf5936296) [#7448](https://github.com/npm/cli/pull/7448) account for registries with no publisher in search (#7448) (@wraithgar)
+* [`bcc781a`](https://github.com/npm/cli/commit/bcc781abf10b46aa5b04da996fc4602524be9b0e) [#7439](https://github.com/npm/cli/pull/7439) move run-script banners to stderr when in json mode (#7439) (@lukekarrys)
+* [`104fcb5`](https://github.com/npm/cli/commit/104fcb53282653a1c5610a6590afecc207920a6b) [#7438](https://github.com/npm/cli/pull/7438) remove doctor log for each file permission check (#7438) (@lukekarrys)
+* [`5230647`](https://github.com/npm/cli/commit/52306473da03123ef5623e9e152e10285c8097f3) [#7422](https://github.com/npm/cli/pull/7422) rewrite powershell scripts to use PSScriptRoot (#7422) (@lukekarrys)
+* [`71cbd91`](https://github.com/npm/cli/commit/71cbd91b6f01875a99eeae989ea67489bdd0178d) [#7421](https://github.com/npm/cli/pull/7421) hide banner for exec and explore (#7421) (@lukekarrys)
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Documentation
+
+* [`1674136`](https://github.com/npm/cli/commit/1674136bc14b0f708bb01f75d65474346c863bd9) [#7441](https://github.com/npm/cli/pull/7441) correct search help output (#7441) (@wraithgar)
+
+### Dependencies
+
+* [`80eec03`](https://github.com/npm/cli/commit/80eec03462e5747cb4434d43aff25939826b7850) [#7453](https://github.com/npm/cli/pull/7453) `@npmcli/redact@2.0.0`
+* [`a7145d4`](https://github.com/npm/cli/commit/a7145d422485fcbcb9427efa775c15180c7ee1c2) [#7453](https://github.com/npm/cli/pull/7453) `npm-registry-fetch@17.0.0`
+* [`a785766`](https://github.com/npm/cli/commit/a785766325141335cde39d43eb631062e32d6605) [#7453](https://github.com/npm/cli/pull/7453) `pacote@18.0.3`
+* [`65d76db`](https://github.com/npm/cli/commit/65d76dbd2fb11c83141302500ec4a3f5128ff12f) [#7453](https://github.com/npm/cli/pull/7453) `npm-profile@9.0.2`
+* [`cadc0f0`](https://github.com/npm/cli/commit/cadc0f0cad8909755ae8ac72f2dd5802a0d34943) [#7449](https://github.com/npm/cli/pull/7449) hoist production copy of sprintf-js
+* [`2cffdfe`](https://github.com/npm/cli/commit/2cffdfef45b9a13d189f5059cc69fc7319620fda) [#7449](https://github.com/npm/cli/pull/7449) `lru-cache@10.2.2`
+* [`432efb5`](https://github.com/npm/cli/commit/432efb5ee313ac5bd08642a9cef2b7c52da23ea9) [#7449](https://github.com/npm/cli/pull/7449) `make-fetch-happen@13.0.1`
+* [`9da5738`](https://github.com/npm/cli/commit/9da57388ebd5c643c2a95bbf63abc745cad45ccc) [#7437](https://github.com/npm/cli/pull/7437) `@npmcli/run-script@8.1.0` (#7437)
+* [`762888a`](https://github.com/npm/cli/commit/762888a3b603704c7c53a94a704b8a7f3edea918) [#7429](https://github.com/npm/cli/pull/7429) update dependencies for workspaces (#7429)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.1): `@npmcli/arborist@7.5.1`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v8.3.1): `@npmcli/config@8.3.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v8.0.5): `libnpmaccess@8.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v6.1.1): `libnpmdiff@6.1.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v8.1.0): `libnpmexec@8.1.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v5.0.9): `libnpmfund@5.0.9`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v10.0.4): `libnpmhook@10.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v6.0.5): `libnpmorg@6.0.5`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v7.0.1): `libnpmpack@7.0.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v9.0.7): `libnpmpublish@9.0.7`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v7.0.4): `libnpmsearch@7.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v6.0.4): `libnpmteam@6.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v6.0.1): `libnpmversion@6.0.1`
+
+### Chores
+
+* [`356c374`](https://github.com/npm/cli/commit/356c374817711845719902184547e1e0ac359b22) [#7453](https://github.com/npm/cli/pull/7453) fix test fixture for new redact behavior (@wraithgar)
+* [`2fba4b7`](https://github.com/npm/cli/commit/2fba4b7b6218900fd895daf5218682edeb4253a4) [#7449](https://github.com/npm/cli/pull/7449) update devDependencies in lockfile (@wraithgar)
+
 ## [10.6.0](https://github.com/npm/cli/compare/v10.5.2...v10.6.0) (2024-04-25)
 
 ### Features

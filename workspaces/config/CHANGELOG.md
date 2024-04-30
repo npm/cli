@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.3.1](https://github.com/npm/cli/compare/config-v8.3.0...config-v8.3.1) (2024-04-30)
+
+### Bug Fixes
+
+* [`3ec86a0`](https://github.com/npm/cli/commit/3ec86a0e258b1d5f5182f0093adf43c54e82578e) [#7456](https://github.com/npm/cli/pull/7456) linting: no-unused-vars (#7456) (@wraithgar)
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
 ## [8.3.0](https://github.com/npm/cli/compare/config-v8.2.2...config-v8.3.0) (2024-04-25)
 
 ### Features

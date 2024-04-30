@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.0.1](https://github.com/npm/cli/compare/libnpmversion-v6.0.0...libnpmversion-v6.0.1) (2024-04-30)
+
+### Bug Fixes
+
+* [`3ec86a0`](https://github.com/npm/cli/commit/3ec86a0e258b1d5f5182f0093adf43c54e82578e) [#7456](https://github.com/npm/cli/pull/7456) linting: no-unused-vars (#7456) (@wraithgar)
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Dependencies
+
+* [`9da5738`](https://github.com/npm/cli/commit/9da57388ebd5c643c2a95bbf63abc745cad45ccc) [#7437](https://github.com/npm/cli/pull/7437) `@npmcli/run-script@8.1.0` (#7437)
+
 ## [6.0.0](https://github.com/npm/cli/compare/libnpmversion-v5.0.2...libnpmversion-v6.0.0) (2024-04-25)
 
 ### ⚠️ BREAKING CHANGES

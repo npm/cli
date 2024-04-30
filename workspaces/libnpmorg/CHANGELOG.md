@@ -1,5 +1,15 @@
 # Changelog
 
+## [6.0.5](https://github.com/npm/cli/compare/libnpmorg-v6.0.4...libnpmorg-v6.0.5) (2024-04-30)
+
+### Bug Fixes
+
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Dependencies
+
+* [`a7145d4`](https://github.com/npm/cli/commit/a7145d422485fcbcb9427efa775c15180c7ee1c2) [#7453](https://github.com/npm/cli/pull/7453) `npm-registry-fetch@17.0.0`
+
 ## [6.0.4](https://github.com/npm/cli/compare/libnpmorg-v6.0.3...libnpmorg-v6.0.4) (2024-04-25)
 
 ### Dependencies

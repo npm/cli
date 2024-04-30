@@ -1,5 +1,19 @@
 # Changelog
 
+## [7.5.1](https://github.com/npm/cli/compare/arborist-v7.5.0...arborist-v7.5.1) (2024-04-30)
+
+### Bug Fixes
+
+* [`a1b95eb`](https://github.com/npm/cli/commit/a1b95ebeaf7bf32cf0c16605ad836e74370e2e24) [#7453](https://github.com/npm/cli/pull/7453) linting: no-unused-vars (@wraithgar)
+* [`abcbc54`](https://github.com/npm/cli/commit/abcbc545ca226dfc39821200f2a0c9e122b400dd) [#7430](https://github.com/npm/cli/pull/7430) reify: cleanup of Symbols (#7430) (@wraithgar)
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Dependencies
+
+* [`80eec03`](https://github.com/npm/cli/commit/80eec03462e5747cb4434d43aff25939826b7850) [#7453](https://github.com/npm/cli/pull/7453) `@npmcli/redact@2.0.0`
+* [`a7145d4`](https://github.com/npm/cli/commit/a7145d422485fcbcb9427efa775c15180c7ee1c2) [#7453](https://github.com/npm/cli/pull/7453) `npm-registry-fetch@17.0.0`
+* [`9da5738`](https://github.com/npm/cli/commit/9da57388ebd5c643c2a95bbf63abc745cad45ccc) [#7437](https://github.com/npm/cli/pull/7437) `@npmcli/run-script@8.1.0` (#7437)
+
 ## [7.5.0](https://github.com/npm/cli/compare/arborist-v7.4.2...arborist-v7.5.0) (2024-04-25)
 
 ### Features
