@@ -96,7 +96,7 @@ t.test('logged argv is sanitized with equals', async t => {
   })
   await cli(process)
 
-  t.match(logs.verbose.byTitle('argv'), ['argv "version" "--registry" "https://u:***@npmjs.org/"'])
+  t.match(logs.verbose.byTitle('argv'), ['argv "version" "--registry" "https://u:***@npmjs.org"'])
 })
 
 t.test('print usage if no params provided', async t => {
