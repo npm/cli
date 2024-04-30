@@ -9,6 +9,7 @@ if (-not (Test-Path $NODE_EXE)) {
 }
 
 $NPM_PREFIX_JS="$PSScriptRoot/node_modules/npm/bin/npm-prefix.js"
+$NPX_CLI_JS="$PSScriptRoot/node_modules/npm/bin/npx-cli.js"
 $NPM_PREFIX=(& $NODE_EXE $NPM_PREFIX_JS)
 
 if ($LASTEXITCODE -ne 0) {
@@ -16,7 +17,10 @@ if ($LASTEXITCODE -ne 0) {
   exit 1
 }
 
-$NPX_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npx-cli.js"
+$NPM_PREFIX_NPX_CLI_JS="$NPM_PREFIX/node_modules/npm/bin/npx-cli.js"
+if (Test-Path $NPM_PREFIX_NPX_CLI_JS) {
+  $NPX_CLI_JS=$NPM_PREFIX_NPX_CLI_JS
+}
 
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
