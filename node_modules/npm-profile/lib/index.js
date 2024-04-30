@@ -276,8 +276,7 @@ class WebLoginNotSupported extends HttpErrorBase {
   }
 }
 
-const sleep = (ms) =>
-  new Promise((resolve, reject) => setTimeout(resolve, ms))
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 module.exports = {
   adduserCouch,
