@@ -225,7 +225,7 @@ class MockRegistry {
     })
   }
 
-  webadduser ({ username, password, token = 'npm_default-test-token' }) {
+  webadduser ({ token = 'npm_default-test-token' }) {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
     const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock

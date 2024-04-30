@@ -167,7 +167,7 @@ t.test('initial stream error', async t => {
     mocks: {
       'fs-minipass': {
         WriteStreamSync: class {
-          constructor (...args) {
+          constructor () {
             throw new Error('no stream')
           }
         },

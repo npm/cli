@@ -388,7 +388,7 @@ t.test('log files fail to write', async (t) => {
       '{LIB}/utils/log-file.js': tmock(t, '{LIB}/utils/log-file.js', {
         'fs-minipass': {
           ...fsMiniPass,
-          WriteStreamSync: (file, ...rest) => {
+          WriteStreamSync: (file) => {
             if (file.includes('LOGS_DIR')) {
               throw new Error('err')
             }

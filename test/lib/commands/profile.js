@@ -540,7 +540,7 @@ t.test('enable-2fa', async t => {
 
   t.test('from basic username/password auth', async t => {
     const npmProfile = {
-      async createToken (pass) {
+      async createToken () {
         return {}
       },
     }
@@ -587,7 +587,7 @@ t.test('enable-2fa', async t => {
       async get () {
         return userProfile
       },
-      async set (newProfile, conf) {
+      async set (newProfile) {
         t.match(
           newProfile,
           {
@@ -659,7 +659,7 @@ t.test('enable-2fa', async t => {
           },
         }
       },
-      async set (newProfile, conf) {
+      async set (newProfile) {
         setCount++
 
         // when profile response shows that 2fa is pending the
@@ -747,7 +747,7 @@ t.test('enable-2fa', async t => {
           },
         }
       },
-      async set (newProfile, conf) {
+      async set () {
         return {
           ...userProfile,
           tfa: 'http://foo?secret=1234',
@@ -759,7 +759,7 @@ t.test('enable-2fa', async t => {
       async password () {
         return 'password1234'
       },
-      async otp (label) {
+      async otp () {
         return '123456'
       },
     }
@@ -786,7 +786,7 @@ t.test('enable-2fa', async t => {
       async get () {
         return userProfile
       },
-      async set (newProfile, conf) {
+      async set () {
         return {
           ...userProfile,
           tfa: null,
@@ -809,7 +809,7 @@ t.test('enable-2fa', async t => {
       config: { otp: '123456' },
     })
 
-    npm.config.getCredentialsByURI = reg => {
+    npm.config.getCredentialsByURI = () => {
       return { token: 'token' }
     }
 
@@ -830,7 +830,7 @@ t.test('enable-2fa', async t => {
           tfa: undefined,
         }
       },
-      async set (newProfile, conf) {
+      async set () {
         return {
           ...userProfile,
           tfa: null,
@@ -852,7 +852,7 @@ t.test('enable-2fa', async t => {
       readUserInfo,
     })
 
-    npm.config.getCredentialsByURI = reg => {
+    npm.config.getCredentialsByURI = () => {
       return { token: 'token' }
     }
 
@@ -873,7 +873,7 @@ t.test('enable-2fa', async t => {
           tfa: undefined,
         }
       },
-      async set (newProfile, conf) {
+      async set () {
         return {
           ...userProfile,
           tfa: null,
@@ -895,7 +895,7 @@ t.test('enable-2fa', async t => {
       readUserInfo,
     })
 
-    npm.config.getCredentialsByURI = reg => {
+    npm.config.getCredentialsByURI = () => {
       return { token: 'token' }
     }
 
@@ -933,7 +933,7 @@ t.test('disable-2fa', async t => {
       async get () {
         return userProfile
       },
-      async set (newProfile, conf) {
+      async set (newProfile) {
         t.same(
           newProfile,
           {
@@ -1014,7 +1014,7 @@ t.test('disable-2fa', async t => {
       async get () {
         return userProfile
       },
-      async set (newProfile, conf) {
+      async set (newProfile) {
         t.same(
           newProfile,
           {
@@ -1032,7 +1032,7 @@ t.test('disable-2fa', async t => {
       async password () {
         return 'password1234'
       },
-      async otp (label) {
+      async otp () {
         throw new Error('should not ask for otp')
       },
     }

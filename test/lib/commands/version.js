@@ -339,7 +339,7 @@ t.test('empty versions', async t => {
           },
         },
         mocks: {
-          libnpmversion: (arg, opts) => {
+          libnpmversion: () => {
             return '2.0.0'
           },
         },
