@@ -557,7 +557,7 @@ class Config {
         const k = envReplace(key, this.env)
         const v = this.parseField(value, k)
         if (where !== 'default') {
-          this.#checkDeprecated(k, where, obj, [key, value])
+          this.#checkDeprecated(k)
           if (this.definitions[key]?.exclusive) {
             for (const exclusive of this.definitions[key].exclusive) {
               if (!this.isDefault(exclusive)) {
@@ -571,7 +571,7 @@ class Config {
     }
   }
 
-  #checkDeprecated (key, where, obj, kv) {
+  #checkDeprecated (key) {
     // XXX(npm9+) make this throw an error
     if (this.deprecated[key]) {
       log.warn('config', key, this.deprecated[key])
@@ -739,7 +739,7 @@ class Config {
     const iniData = ini.stringify(conf.raw).trim() + '\n'
     if (!iniData.trim()) {
       // ignore the unlink error (eg, if file doesn't exist)
-      await unlink(conf.source).catch(er => {})
+      await unlink(conf.source).catch(() => {})
       return
     }
     const dir = dirname(conf.source)
@@ -774,11 +774,8 @@ class Config {
     this.delete(`${nerfed}:keyfile`, level)
   }
 
-  setCredentialsByURI (uri, { token, username, password, email, certfile, keyfile }) {
+  setCredentialsByURI (uri, { token, username, password, certfile, keyfile }) {
     const nerfed = nerfDart(uri)
-
-    // email is either provided, a top level key, or nothing
-    email = email || this.get('email', 'user')
 
     // field that hasn't been used as documented for a LONG time,
     // and as of npm 7.10.0, isn't used at all.  We just always
