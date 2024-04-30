@@ -2,7 +2,7 @@ const rpj = require('read-package-json-fast')
 const t = require('tap')
 const rpjMock = Object.assign((...args) => rpj(...args), {
   ...rpj,
-  normalize: (...args) => {
+  normalize: () => {
     throw new Error('boom')
   },
 })

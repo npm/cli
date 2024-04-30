@@ -136,7 +136,7 @@ module.exports = cls => class Reifier extends cls {
       // this is currently technical debt which will be resolved in a refactor
       // of Node/Link trees
       log.warn('reify', 'The "linked" install strategy is EXPERIMENTAL and may contain bugs.')
-      this.idealTree = await this[_createIsolatedTree](this.idealTree)
+      this.idealTree = await this[_createIsolatedTree]()
     }
     await this[_diffTrees]()
     await this[_reifyPackages]()
@@ -540,7 +540,7 @@ module.exports = cls => class Reifier extends cls {
       .map(([from, to]) => this[_renamePath](to, from))
     return promiseAllRejectLate(movePromises)
       // ignore subsequent rollback errors
-      .catch(er => {})
+      .catch(() => {})
       .then(timeEnd)
       .then(() => {
         throw er
@@ -608,7 +608,7 @@ module.exports = cls => class Reifier extends cls {
           continue
         }
         dirsChecked.add(d)
-        const st = await lstat(d).catch(er => null)
+        const st = await lstat(d).catch(() => null)
         // this can happen if we have a link to a package with a name
         // that the filesystem treats as if it is the same thing.
         // would be nice to have conditional istanbul ignores here...
@@ -779,7 +779,7 @@ module.exports = cls => class Reifier extends cls {
         return
       }
       await debug(async () => {
-        const st = await lstat(node.path).catch(e => null)
+        const st = await lstat(node.path).catch(() => null)
         if (st && !st.isDirectory()) {
           debug.log('unpacking into a non-directory', node)
           throw Object.assign(new Error('ENOTDIR: not a directory'), {
@@ -815,7 +815,7 @@ module.exports = cls => class Reifier extends cls {
   // if the node is optional, then the failure of the promise is nonfatal
   // just add it and its optional set to the trash list.
   [_handleOptionalFailure] (node, p) {
-    return (node.optional ? p.catch(er => {
+    return (node.optional ? p.catch(() => {
       const set = optionalSet(node)
       for (node of set) {
         log.verbose('reify', 'failed optional dependency', node.path)

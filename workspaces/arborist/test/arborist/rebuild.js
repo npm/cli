@@ -438,7 +438,7 @@ t.test('rebuild node-gyp dependencies lacking both preinstall and install script
 t.test('do not rebuild node-gyp dependencies with gypfile:false', async t => {
   // use require-inject so we don't need an actual massive binary dep fixture
   const Arborist = t.mock('../../lib/arborist/index.js', {
-    '@npmcli/run-script': async opts => {
+    '@npmcli/run-script': async () => {
       throw new Error('should not run any scripts')
     },
   })

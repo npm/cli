@@ -791,7 +791,7 @@ t.test('rollbacks', { buffered: false }, t => {
     const check = warningTracker()
     return t.rejects(a.reify({
       update: ['@isaacs/testing-bundledeps-parent'],
-    }).then(tree => 'it worked'), new Error('poop'))
+    }).then(() => 'it worked'), new Error('poop'))
     // eslint-disable-next-line promise/always-return
       .then(() => {
         const warnings = check()
@@ -843,7 +843,7 @@ t.test('rollbacks', { buffered: false }, t => {
     a[kLoadBundles] = (depth, bundlesByDepth) => {
       const kRN = Symbol.for('reifyNode')
       const reifyNode = a[kRN]
-      a[kRN] = node => {
+      a[kRN] = () => {
         a[kRN] = reifyNode
         return Promise.reject(new Error('poop'))
       }
@@ -861,7 +861,7 @@ t.test('rollbacks', { buffered: false }, t => {
     a[kUnpack] = () => {
       const kReify = Symbol.for('reifyNode')
       const reifyNode = a[kReify]
-      a[kReify] = node => {
+      a[kReify] = () => {
         a[kReify] = reifyNode
         return Promise.reject(new Error('poop'))
       }
