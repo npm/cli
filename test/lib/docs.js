@@ -22,7 +22,7 @@ t.test('shorthands', async t => {
 
 t.test('config', async t => {
   const keys = Object.keys(definitions)
-  const flat = Object.entries(definitions).filter(([_, d]) => d.flatten).map(([k]) => k)
+  const flat = Object.entries(definitions).filter(([, d]) => d.flatten).map(([k]) => k)
   const notFlat = keys.filter(k => !flat.includes(k))
   t.matchSnapshot(keys, 'all keys')
   t.matchSnapshot(flat, 'keys that are flattened')
