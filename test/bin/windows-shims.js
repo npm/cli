@@ -53,7 +53,7 @@ t.test('shim contents', t => {
 
   t.test('pwsh', t => {
     const { diff, letters } = diffFiles(SHIMS['npm.ps1'], SHIMS['npx.ps1'])
-    t.strictSame(diff, [])
+    t.strictSame(diff, ['-- ', '-- '], 'only npm powershell uses -- for verbatim args')
     t.strictSame([...letters], ['M', 'X'], 'all other changes are m->x')
     t.end()
   })

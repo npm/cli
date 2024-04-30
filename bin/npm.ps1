@@ -24,9 +24,9 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
 
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & $NODE_EXE $NPM_CLI_JS $args
+  $input | & $NODE_EXE $NPM_CLI_JS -- $args
 } else {
-  & $NODE_EXE $NPM_CLI_JS $args
+  & $NODE_EXE $NPM_CLI_JS -- $args
 }
 
 exit $LASTEXITCODE
