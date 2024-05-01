@@ -820,7 +820,7 @@ to express this. If you depend on features introduced in 1.5.2, use
 
 The `peerDependenciesMeta` field serves to provide npm more information on how
 your peer dependencies are to be used. Specifically, it allows peer
-dependencies to be marked as optional. Npm would not automatically install
+dependencies to be marked as optional. Npm will not automatically install
 optional peer dependencies. This allows you to
 integrate and interact with a variety of host packages without requiring
 all of them to be installed.
