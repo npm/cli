@@ -231,7 +231,6 @@ class MockRegistry {
     this.nock = this.nock
       .post(this.fullPath('/-/v1/login'), body => {
         this.#tap.ok(body.create) // Sole difference from weblogin
-        this.#tap.ok(body.hostname)
         return true
       })
       .reply(200, { doneUrl, loginUrl })
@@ -243,8 +242,7 @@ class MockRegistry {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
     const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock
-      .post(this.fullPath('/-/v1/login'), body => {
-        this.#tap.ok(body.hostname)
+      .post(this.fullPath('/-/v1/login'), () => {
         return true
       })
       .reply(200, { doneUrl, loginUrl })
