@@ -41,7 +41,7 @@
     "ci-info": "^4.0.0",
     "normalize-package-data": "^6.0.0",
     "npm-package-arg": "^11.0.2",
-    "npm-registry-fetch": "^17.0.0",
+    "npm-registry-fetch": "^17.0.1",
     "proc-log": "^4.2.0",
     "semver": "^7.3.7",
     "sigstore": "^2.2.0",
