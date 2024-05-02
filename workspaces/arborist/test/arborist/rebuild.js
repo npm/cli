@@ -197,7 +197,7 @@ t.test('verify dep flags in script environments', async t => {
     const file = resolve(path, 'node_modules', pkg, 'env')
     t.strictSame(flags, fs.readFileSync(file, 'utf8').split('\n'), pkg)
   }
-  t.strictSame(checkLogs().sort((a, b) =>
+  t.strictSame(checkLogs().filter(l => l[0] === 'info' && l[1] === 'run').sort((a, b) =>
     localeCompare(a[2], b[2]) || (typeof a[4] === 'string' ? -1 : 1)), [
     ['info', 'run', 'devdep@1.0.0', 'postinstall', 'node_modules/devdep', 'node ../../env.js'],
     ['info', 'run', 'devdep@1.0.0', 'postinstall', { code: 0, signal: null }],

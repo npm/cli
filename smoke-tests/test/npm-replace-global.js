@@ -125,7 +125,7 @@ t.test('publish and replace global self', async t => {
     await npmPackage({
       manifest: { packuments: [publishedPackument] },
       tarballs: { [version]: tarball },
-      times: 2,
+      times: 3,
     })
     await fs.rm(cache, { recursive: true, force: true })
     await useNpm('install', 'npm@latest', '--global')

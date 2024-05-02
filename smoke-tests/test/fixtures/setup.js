@@ -74,7 +74,7 @@ const getCleanPaths = async () => {
 }
 
 module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
-  const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
+  const debugLog = debug || CI ? (...a) => t.comment(...a) : () => {}
   const cleanPaths = await getCleanPaths()
 
   // setup fixtures
@@ -158,7 +158,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     log(`${spawnCmd} ${spawnArgs.join(' ')}`)
     log('-'.repeat(40))
 
-    const { stderr, stdout } = await spawn(spawnCmd, spawnArgs, {
+    const p = spawn(spawnCmd, spawnArgs, {
       cwd,
       env: {
         ...getEnvPath(),
@@ -169,10 +169,20 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
       ...opts,
     })
 
-    log(stderr)
-    log('-'.repeat(40))
-    log(stdout)
-    log('='.repeat(40))
+    // In debug mode, stream stdout and stderr to console so we can debug hanging processes
+    if (debug) {
+      p.process.stdout.on('data', (c) => log('STDOUT: ' + c.toString().trim()))
+      p.process.stderr.on('data', (c) => log('STDERR: ' + c.toString().trim()))
+    }
+
+    const { stdout, stderr } = await p
+    // If not in debug mode, print full stderr and stdout contents separately
+    if (!debug) {
+      log(stderr)
+      log('-'.repeat(40))
+      log(stdout)
+      log('='.repeat(40))
+    }
 
     return { stderr, stdout }
   }
