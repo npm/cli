@@ -582,6 +582,7 @@ graph LR;
   npmcli-arborist-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
   npmcli-arborist-->json-parse-even-better-errors;
   npmcli-arborist-->json-stringify-nice;
+  npmcli-arborist-->lru-cache;
   npmcli-arborist-->minify-registry-metadata;
   npmcli-arborist-->minimatch;
   npmcli-arborist-->nock;
