@@ -40,7 +40,7 @@ const loadMockNpm = async (t, { errorMocks, ...opts } = {}) => {
   })
   return {
     ...res,
-    errorMessage: (er) => mockError(er, res.npm),
+    errorMessage: (er) => mockError.errorMessage(er, res.npm),
   }
 }
 

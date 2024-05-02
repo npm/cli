@@ -66,7 +66,6 @@ npm error
 npm error aliases: clean-install, ic, install-clean, isntall-clean
 npm error
 npm error Run "npm help ci" for more info
-
 npm error A complete log of this run can be found in: {NPM}/{TESTDIR}/cache/_logs/{LOG}
 `
 
