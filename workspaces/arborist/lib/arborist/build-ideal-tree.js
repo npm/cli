@@ -1211,21 +1211,16 @@ This is a one-time fix-up, please be patient...
 
     if (this.#manifests.has(spec.raw)) {
       return this.#manifests.get(spec.raw)
-    } else {
-      const cleanRawSpec = redact(spec.rawSpec)
-      log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, cleanRawSpec))
-      const o = {
-        ...options,
-        fullMetadata: true,
-      }
-      const p = pacote.manifest(spec, o)
-        .then(({ license, ...mani }) => {
-          this.#manifests.set(spec.raw, mani)
-          return mani
-        })
-      this.#manifests.set(spec.raw, p)
-      return p
     }
+    const cleanRawSpec = redact(spec.rawSpec)
+    log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, cleanRawSpec))
+    const o = {
+      ...options,
+      fullMetadata: true,
+    }
+    const mani = await pacote.manifest(spec, o)
+    this.#manifests.set(spec.raw, mani)
+    return mani
   }
 
   #nodeFromSpec (name, spec, parent, edge) {
