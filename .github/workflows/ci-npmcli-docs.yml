@@ -27,17 +27,17 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         id: node
         with:
-          node-version: 20.x
-          check-latest: contains('20.x', '.x')
+          node-version: 22.x
+          check-latest: contains('22.x', '.x')
           cache: npm
       - name: Install Latest npm
         uses: ./.github/actions/install-latest-npm
@@ -65,24 +65,30 @@ jobs:
           - name: macOS
             os: macos-latest
             shell: bash
+          - name: macOS
+            os: macos-13
+            shell: bash
           - name: Windows
             os: windows-latest
             shell: cmd
         node-version:
-          - 20.x
+          - 22.x
+        exclude:
+          - platform: { name: macOS, os: macos-13, shell: bash }
+            node-version: 22.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
         shell: ${{ matrix.platform.shell }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Git User
         run: |
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         id: node
         with:
           node-version: ${{ matrix.node-version }}
@@ -112,7 +118,7 @@ jobs:
         shell: bash
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Setup Git User
@@ -120,11 +126,11 @@ jobs:
           git config --global user.email "npm-cli+bot@github.com"
           git config --global user.name "npm CLI robot"
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         id: node
         with:
-          node-version: 20.x
-          check-latest: contains('20.x', '.x')
+          node-version: 22.x
+          check-latest: contains('22.x', '.x')
           cache: npm
       - name: Install Latest npm
         uses: ./.github/actions/install-latest-npm
