@@ -196,7 +196,7 @@
     "@npmcli/git": "^5.0.6",
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/template-oss": "4.21.3",
+    "@npmcli/template-oss": "4.22.0",
     "@tufjs/repo-mock": "^2.0.0",
     "ajv": "^8.12.0",
     "ajv-formats": "^2.1.1",

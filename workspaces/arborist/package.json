@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.21.3",
+    "@npmcli/template-oss": "4.22.0",
     "benchmark": "^2.1.4",
     "minify-registry-metadata": "^3.0.0",
     "nock": "^13.3.3",
