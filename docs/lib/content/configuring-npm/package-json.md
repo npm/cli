@@ -497,7 +497,7 @@ walking the folder.
 ### repository
 
 Specify the place where your code lives. This is helpful for people who
-want to contribute.  If the git repo is on GitHub, then the `npm docs`
+want to contribute.  If the git repo is on GitHub, then the `npm repo`
 command will be able to find you.
 
 Do it like this:
