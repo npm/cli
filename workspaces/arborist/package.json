@@ -21,7 +21,7 @@
     "json-parse-even-better-errors": "^3.0.2",
     "json-stringify-nice": "^1.1.4",
     "minimatch": "^9.0.4",
-    "nopt": "^7.0.0",
+    "nopt": "^7.2.1",
     "npm-install-checks": "^6.2.0",
     "npm-package-arg": "^11.0.2",
     "npm-pick-manifest": "^9.0.0",
