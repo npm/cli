@@ -20,18 +20,18 @@ XX timing npm:load:setTitle Completed in {TIME}ms
 XX verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
 XX verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 XX timing npm:load Completed in {TIME}ms
+XX timing command:root Completed in {TIME}ms
 XX verbose stack Error: Unknown error
-XX verbose cwd {CWD}/prefix
-XX verbose {OS}
-XX verbose {NODE-VERSION}
-XX verbose npm  {NPM-VERSION}
 XX error code ECODE
-XX error ERR SUMMARY Unknown error
-XX error ERR DETAIL Unknown error
-XX verbose exit 1
-XX verbose code 1
+XX error Unknown error
 XX timing npm Completed in {TIME}ms
 XX info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
+XX verbose cwd {CWD}/prefix
+XX verbose os {OS}
+XX verbose {NODE-VERSION}
+XX verbose npm  {NPM-VERSION}
+XX verbose exit 1
+XX verbose code 1
 XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
 
@@ -50,17 +50,17 @@ timing npm:load:setTitle Completed in {TIME}ms
 verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
 verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
 timing npm:load Completed in {TIME}ms
+timing command:root Completed in {TIME}ms
 verbose stack Error: Unknown error
-verbose cwd {CWD}/prefix
-verbose {OS}
-verbose {NODE-VERSION}
-verbose npm  {NPM-VERSION}
 error code ECODE
-error ERR SUMMARY Unknown error
-error ERR DETAIL Unknown error
-verbose exit 1
-verbose code 1
+error Unknown error
 timing npm Completed in {TIME}ms
 info timing Timing info written to: {CWD}/cache/_logs/{DATE}-timing.json
+verbose cwd {CWD}/prefix
+verbose os {OS}
+verbose {NODE-VERSION}
+verbose npm  {NPM-VERSION}
+verbose exit 1
+verbose code 1
 error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-debug-0.log
 `
