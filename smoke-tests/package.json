@@ -20,7 +20,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/promise-spawn": "^7.0.0",
+    "@npmcli/promise-spawn": "^7.0.2",
     "@npmcli/template-oss": "4.22.0",
     "proxy": "^2.1.1",
     "semver": "^7.5.4",
