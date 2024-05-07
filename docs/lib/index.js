@@ -157,7 +157,7 @@ const replaceHelpLinks = (src) => {
 
 const transformMan = (src, { data, unified, remarkParse, remarkMan }) => unified()
   .use(remarkParse)
-  .use(remarkMan)
+  .use(remarkMan, { version })
   .processSync(`# ${data.title}(${data.section}) - ${data.description}\n\n${src}`)
   .toString()
 
