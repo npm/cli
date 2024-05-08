@@ -1022,6 +1022,10 @@ This is a one-time fix-up, please be patient...
           // may well be an optional dep that has gone missing.  it'll
           // fail later anyway.
           for (const e of this.#problemEdges(placed)) {
+            // XXX This is somehow load bearing.  This makes tests that print
+            // the ideal tree of a tree with tarball dependencies fail. This
+            // can't be changed or removed till we figure out why
+            // The test is named "tarball deps with transitive tarball deps"
             promises.push(() =>
               this.#fetchManifest(npa.resolve(e.name, e.spec, fromPath(placed, e)))
                 .catch(() => null)
@@ -1204,6 +1208,7 @@ This is a one-time fix-up, please be patient...
     const options = {
       ...this.options,
       avoid: this.#avoidRange(spec.name),
+      fullMetadata: true,
     }
     // get the intended spec and stored metadata from yarn.lock file,
     // if available and valid.
@@ -1212,19 +1217,10 @@ This is a one-time fix-up, please be patient...
     if (this.#manifests.has(spec.raw)) {
       return this.#manifests.get(spec.raw)
     } else {
-      const cleanRawSpec = redact(spec.rawSpec)
-      log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, cleanRawSpec))
-      const o = {
-        ...options,
-        fullMetadata: true,
-      }
-      const p = pacote.manifest(spec, o)
-        .then((mani) => {
-          this.#manifests.set(spec.raw, mani)
-          return mani
-        })
-      this.#manifests.set(spec.raw, p)
-      return p
+      log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, redact(spec.rawSpec)))
+      const mani = await pacote.manifest(spec, options)
+      this.#manifests.set(spec.raw, mani)
+      return mani
     }
   }
 
