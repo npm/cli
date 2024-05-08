@@ -94,7 +94,6 @@ t.test('pack and replace global self', async t => {
 })
 
 t.test('publish and replace global self', async t => {
-  let publishedPackument = null
   const pkg = require('../../package.json')
   const { name, version } = pkg
 
@@ -114,39 +113,42 @@ t.test('publish and replace global self', async t => {
     },
   })
 
-  const npmPackage = async ({ manifest, ...opts } = {}) => {
+  const mockNpmPackage = async ({ manifest, ...opts } = {}) => {
     await registry.package({
       manifest: registry.manifest({ name, ...manifest }),
       ...opts,
     })
+    await fs.rm(cache, { recursive: true, force: true })
   }
 
-  const npmInstall = async (useNpm) => {
-    await npmPackage({
-      manifest: { packuments: [publishedPackument] },
-      tarballs: { [version]: tarball },
-      times: 3,
-    })
-    await fs.rm(cache, { recursive: true, force: true })
-    await useNpm('install', 'npm@latest', '--global')
-    return getPaths()
-  }
+  const mockPublish = (() => {
+    let publishedPackument = null
+    registry.nock.put('/npm', body => {
+      if (body._id === 'npm' && body.versions[version]) {
+        publishedPackument = body.versions[version]
+        return true
+      }
+      return false
+    }).reply(201, {})
+    return {
+      get packument () {
+        return publishedPackument
+      },
+    }
+  })()
+  await mockNpmPackage()
+  await npmLocal('publish', { proxy: true, force: true })
 
   const tarball = await npmLocalTarball()
 
-  if (setup.SMOKE_PUBLISH) {
-    await npmPackage()
-  }
-  registry.nock.put('/npm', body => {
-    if (body._id === 'npm' && body.versions[version]) {
-      publishedPackument = body.versions[version]
-      return true
-    }
-    return false
-  }).reply(201, {})
-  await npmLocal('publish', { proxy: true, force: true })
+  await mockNpmPackage({
+    manifest: { packuments: [mockPublish.packument] },
+    tarballs: { [version]: tarball },
+    times: 3,
+  })
+  await npm('install', 'npm@latest', '--global')
+  const paths = await getPaths()
 
-  const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
   t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
   t.equal(paths.pathNpx, join(globalBin, 'npx'), 'npx bin is in the testdir')
@@ -159,7 +161,13 @@ t.test('publish and replace global self', async t => {
     'bin has npm and npx'
   )
 
-  t.strictSame(await npmInstall(npmPath), paths)
+  await mockNpmPackage({
+    manifest: { packuments: [mockPublish.packument] },
+    tarballs: { [version]: tarball },
+    times: 3,
+  })
+  await npmPath('install', 'npm@latest', '--global')
+  t.strictSame(await getPaths(), paths)
 })
 
 t.test('fail when updating with lazy require', async t => {

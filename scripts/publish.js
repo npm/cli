@@ -72,8 +72,9 @@ const getPublishes = async ({ force }) => {
 }
 
 const main = async (opts) => {
-  const packOnly = opts.pack || opts.packDestination
-  const publishes = await getPublishes({ force: packOnly })
+  const { isLocal, smokePublish, packDestination } = opts
+  const isPack = !!packDestination
+  const publishes = await getPublishes({ force: isPack })
 
   if (!publishes.length) {
     throw new Error(
@@ -88,12 +89,12 @@ const main = async (opts) => {
   }
 
   const confirmMessage = [
-    `Ready to ${packOnly ? 'pack' : 'publish'} the following packages:`,
+    `Ready to ${isPack ? 'pack' : 'publish'} the following packages:`,
     table.toString(),
-    packOnly ? null : 'Ok to proceed? ',
+    isPack ? null : 'Ok to proceed? ',
   ].filter(Boolean).join('\n')
 
-  if (packOnly) {
+  if (isPack) {
     log.info(confirmMessage)
   } else {
     const confirm = await read({ prompt: confirmMessage, default: 'y' })
@@ -116,21 +117,26 @@ const main = async (opts) => {
 
   await npm('prune', '--omit=dev', '--no-save', '--no-audit', '--no-fund')
   await npm('install', '-w', 'docs', '--ignore-scripts', '--no-audit', '--no-fund')
-  await git.dirty()
+  if (isLocal && smokePublish) {
+    log.info(`Skipping git dirty check due to local smoke publish test being run`)
+  } else {
+    await git.dirty()
+  }
 
   for (const publish of publishes) {
     const workspace = publish.workspace && `--workspace=${publish.name}`
-    if (packOnly) {
+    const publishPkg = (...args) => npm('publish', workspace, `--tag=${publish.tag}`, ...args)
+    if (isPack) {
       await npm(
         'pack',
         workspace,
         opts.packDestination && `--pack-destination=${opts.packDestination}`
       )
+      if (smokePublish) {
+        await publishPkg('--dry-run')
+      }
     } else {
-      await npm(
-        'publish',
-        workspace,
-        `--tag=${publish.tag}`,
+      await publishPkg(
         opts.dryRun && '--dry-run',
         opts.otp && `--otp=${opts.otp === 'op' ? await op() : opts.otp}`
       )

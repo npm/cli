@@ -4,6 +4,17 @@ const npa = require('npm-package-arg')
 const Nock = require('nock')
 const stringify = require('json-stringify-safe')
 
+const logReq = (req, ...keys) => {
+  const obj = JSON.parse(stringify(req))
+  const res = {}
+  for (const [k, v] of Object.entries(obj)) {
+    if (!keys.includes(k)) {
+      res[k] = v
+    }
+  }
+  return stringify(res, null, 2)
+}
+
 class MockRegistry {
   #tap
   #nock
@@ -40,7 +51,8 @@ class MockRegistry {
         // mocked with a 404, 500, etc.
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
-        t.fail(`Unmatched request: ${stringify(req, null, 2)}`)
+        t.comment(logReq(req, 'interceptors', 'socket', 'response', '_events'))
+        t.fail(`Unmatched request: ${req.method} ${req.path}`)
       }
     }
 
@@ -357,7 +369,7 @@ class MockRegistry {
     })
   }
 
-  async package ({ manifest, times = 1, query, tarballs }) {
+  async package ({ manifest, times = 1, query, tarballs, tarballTimes = 1 }) {
     let nock = this.nock
     const spec = npa(manifest.name)
     nock = nock.get(this.fullPath(`/${spec.escapedName}`)).times(times)
@@ -368,17 +380,17 @@ class MockRegistry {
     if (tarballs) {
       for (const [version, tarball] of Object.entries(tarballs)) {
         const m = manifest.versions[version]
-        nock = await this.tarball({ manifest: m, tarball })
+        nock = await this.tarball({ manifest: m, tarball, times: tarballTimes })
       }
     }
     this.nock = nock
   }
 
-  async tarball ({ manifest, tarball }) {
+  async tarball ({ manifest, tarball, times = 1 }) {
     const nock = this.nock
     const dist = new URL(manifest.dist.tarball)
     const tar = await pacote.tarball(tarball, { Arborist })
-    nock.get(this.fullPath(dist.pathname)).reply(200, tar)
+    nock.get(this.fullPath(dist.pathname)).times(times).reply(200, tar)
     return nock
   }
 
