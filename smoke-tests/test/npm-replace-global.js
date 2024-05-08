@@ -133,9 +133,9 @@ t.test('publish and replace global self', async t => {
 
   const tarball = await npmLocalTarball()
 
-  if (setup.SMOKE_PUBLISH) {
-    await npmPackage()
-  }
+  // if (setup.SMOKE_PUBLISH) {
+  //   await npmPackage()
+  // }
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]
@@ -145,9 +145,9 @@ t.test('publish and replace global self', async t => {
   }).reply(201, {})
   await npmLocal('publish', { proxy: true, force: true })
 
-  if (setup.SMOKE_PUBLISH) {
-    await npmPackage({ tarballTimes: 2 })
-  }
+  // if (setup.SMOKE_PUBLISH) {
+  //   await npmPackage({ tarballTimes: 2 })
+  // }
   const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
   t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
