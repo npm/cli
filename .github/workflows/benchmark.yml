@@ -71,7 +71,7 @@ jobs:
             const targetSpec = matchesRelease ? matchesRelease[1] : 'latest'
             core.info(`Target spec: ${targetSpec}`)
 
-            const eventType = `"${eventName} ${owner}/${repo}#${pullRequest.number}"`
+            const eventType = `${eventName} ${owner}/${repo}#${pullRequest.number}`
             core.info(`Event type: ${eventType}`)
           
             await github.rest.repos.createDispatchEvent({
