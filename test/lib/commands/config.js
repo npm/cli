@@ -37,7 +37,7 @@ const loadMockNpm = (t, opts = {}) => _loadMockNpm(t, {
     // Reset configs that mock npm sets by default
     'fetch-retries': undefined,
     loglevel: undefined,
-    color: undefined,
+    color: false,
   },
 })
 
