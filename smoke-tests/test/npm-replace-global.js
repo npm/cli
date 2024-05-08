@@ -134,6 +134,9 @@ t.test('publish and replace global self', async t => {
 
   const tarball = await npmLocalTarball()
 
+  if (setup.SMOKE_PUBLISH) {
+    await npmPackage()
+  }
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]
