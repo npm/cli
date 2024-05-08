@@ -145,6 +145,9 @@ t.test('publish and replace global self', async t => {
   }).reply(201, {})
   await npmLocal('publish', { proxy: true, force: true })
 
+  if (setup.SMOKE_PUBLISH) {
+    await npmPackage()
+  }
   const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
   t.equal(paths.pathNpm, join(globalBin, 'npm'), 'npm bin is in the testdir')
