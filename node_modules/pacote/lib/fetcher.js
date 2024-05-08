@@ -3,22 +3,22 @@
 // It handles the unpacking and retry logic that is shared among
 // all of the other Fetcher types.
 
-const npa = require('npm-package-arg')
-const ssri = require('ssri')
-const { basename, dirname } = require('path')
-const tar = require('tar')
-const { log } = require('proc-log')
-const retry = require('promise-retry')
-const fs = require('fs/promises')
-const fsm = require('fs-minipass')
+const { basename, dirname } = require('node:path')
+const { rm, mkdir } = require('node:fs/promises')
+const PackageJson = require('@npmcli/package-json')
 const cacache = require('cacache')
+const fsm = require('fs-minipass')
+const getContents = require('@npmcli/installed-package-contents')
+const npa = require('npm-package-arg')
+const retry = require('promise-retry')
+const ssri = require('ssri')
+const tar = require('tar')
+const { Minipass } = require('minipass')
+const { log } = require('proc-log')
+const _ = require('./util/protected.js')
+const cacheDir = require('./util/cache-dir.js')
 const isPackageBin = require('./util/is-package-bin.js')
 const removeTrailingSlashes = require('./util/trailing-slashes.js')
-const getContents = require('@npmcli/installed-package-contents')
-const PackageJson = require('@npmcli/package-json')
-const { Minipass } = require('minipass')
-const cacheDir = require('./util/cache-dir.js')
-const _ = require('./util/protected.js')
 
 // Pacote is only concerned with the package.json contents
 const packageJsonPrepare = (p) => PackageJson.prepare(p).then(pkg => pkg.content)
@@ -337,12 +337,12 @@ class FetcherBase {
 
   #empty (path) {
     return getContents({ path, depth: 1 }).then(contents => Promise.all(
-      contents.map(entry => fs.rm(entry, { recursive: true, force: true }))))
+      contents.map(entry => rm(entry, { recursive: true, force: true }))))
   }
 
   async #mkdir (dest) {
     await this.#empty(dest)
-    return await fs.mkdir(dest, { recursive: true })
+    return await mkdir(dest, { recursive: true })
   }
 
   // extraction is always the same.  the only difference is where
@@ -369,7 +369,7 @@ class FetcherBase {
   // don't use this.#mkdir because we don't want to rimraf anything
   async tarballFile (dest) {
     const dir = dirname(dest)
-    await fs.mkdir(dir, { recursive: true })
+    await mkdir(dir, { recursive: true })
     return this.#toFile(dest)
   }
 

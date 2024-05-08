@@ -1,12 +1,12 @@
+const { resolve } = require('node:path')
+const packlist = require('npm-packlist')
+const runScript = require('@npmcli/run-script')
+const tar = require('tar')
+const { Minipass } = require('minipass')
 const Fetcher = require('./fetcher.js')
 const FileFetcher = require('./file.js')
-const { Minipass } = require('minipass')
-const tarCreateOptions = require('./util/tar-create-options.js')
-const packlist = require('npm-packlist')
-const tar = require('tar')
-const { resolve } = require('path')
-const runScript = require('@npmcli/run-script')
 const _ = require('./util/protected.js')
+const tarCreateOptions = require('./util/tar-create-options.js')
 
 class DirFetcher extends Fetcher {
   constructor (spec, opts) {
@@ -27,7 +27,7 @@ class DirFetcher extends Fetcher {
     return ['directory']
   }
 
-  [_.prepareDir] () {
+  #prepareDir () {
     return this.manifest().then(mani => {
       if (!mani.scripts || !mani.scripts.prepare) {
         return
@@ -65,7 +65,7 @@ class DirFetcher extends Fetcher {
 
     // run the prepare script, get the list of files, and tar it up
     // pipe to the stream, and proxy errors the chain.
-    this[_.prepareDir]()
+    this.#prepareDir()
       .then(async () => {
         if (!this.tree) {
           const arb = new this.Arborist({ path: this.resolved })

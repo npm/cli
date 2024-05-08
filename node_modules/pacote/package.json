@@ -1,6 +1,6 @@
 {
   "name": "pacote",
-  "version": "18.0.5",
+  "version": "18.0.6",
   "description": "JavaScript package downloader",
   "author": "GitHub Inc.",
   "bin": {
