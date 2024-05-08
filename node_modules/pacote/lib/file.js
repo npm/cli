@@ -1,7 +1,7 @@
-const fsm = require('fs-minipass')
+const { resolve } = require('node:path')
+const { stat, chmod } = require('node:fs/promises')
 const cacache = require('cacache')
-const { resolve } = require('path')
-const { stat, chmod } = require('fs/promises')
+const fsm = require('fs-minipass')
 const Fetcher = require('./fetcher.js')
 const _ = require('./util/protected.js')
 

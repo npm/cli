@@ -1,9 +1,9 @@
-const Fetcher = require('./fetcher.js')
-const FileFetcher = require('./file.js')
-const pacoteVersion = require('../package.json').version
 const fetch = require('npm-registry-fetch')
 const { Minipass } = require('minipass')
+const Fetcher = require('./fetcher.js')
+const FileFetcher = require('./file.js')
 const _ = require('./util/protected.js')
+const pacoteVersion = require('../package.json').version
 
 class RemoteFetcher extends Fetcher {
   constructor (spec, opts) {
