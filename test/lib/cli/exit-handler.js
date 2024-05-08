@@ -652,6 +652,7 @@ t.test('do no fancy handling for shellouts', async t => {
     argv: ['-c', 'exit'],
     config: {
       timing: false,
+      progress: false,
       ...opts.config,
     },
     ...opts,
