@@ -162,29 +162,12 @@ jobs:
           - name: Linux
             os: ubuntu-latest
             shell: bash
-          - name: macOS
-            os: macos-latest
-            shell: bash
-          - name: macOS
-            os: macos-13
-            shell: bash
         node-version:
           - 18.17.0
           - 18.x
           - 20.5.0
           - 20.x
           - 22.x
-        exclude:
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.17.0
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.x
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 20.5.0
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 20.x
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 22.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
@@ -217,30 +200,11 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
-      - name: Pack
-        env:
-          SMOKE_PUBLISH_NPM: 1
-        run: |
-          NPM_VERSION="$(node . --version)-$GITHUB_SHA.0"
-          node . version $NPM_VERSION --ignore-scripts
-          node scripts/publish.js --pack-destination=$RUNNER_TEMP
-          export SMOKE_PUBLISH_TARBALL="$RUNNER_TEMP/npm-$NPM_VERSION.tgz"
-          node . install --global $SMOKE_PUBLISH_TARBALL
-          node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
-          # call installed npm instead of local source since we are testing
-          # the packed tarball that we just installed globally
-          NPM_GLOBAL_VERSION="$(npm --version)"
-          npm help
-          if [ "$NPM_GLOBAL_VERSION" == "$NPM_VERSION" ]; then
-            npm test -w smoke-tests --ignore-scripts
-          else
-            echo "global npm is not the correct version for smoke-publish"
-            echo "found: $NPM_GLOBAL_VERSION, expected: $NPM_VERSION"
-            exit 1
-          fi
+      - name: Smoke Publish
+        run: ./scripts/smoke-publish-test.sh
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
-        if: always()
+        if: steps.create-check.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}

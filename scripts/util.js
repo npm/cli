@@ -132,7 +132,7 @@ git.dirty = () => npmGit.isClean({ cwd: CWD }).then(async r => {
     return 'git clean'
   }
   await git('status', '--porcelain=v1', '-uno')
-  await git('diff')
+  await git('--no-pager', 'diff')
   throw new Error('git dirty')
 })
 

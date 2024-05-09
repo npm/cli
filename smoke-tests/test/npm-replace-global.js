@@ -94,10 +94,6 @@ t.test('pack and replace global self', async t => {
 })
 
 t.test('publish and replace global self', async t => {
-  let publishedPackument = null
-  const pkg = require('../../package.json')
-  const { name, version } = pkg
-
   const {
     npm,
     npmPath,
@@ -113,6 +109,9 @@ t.test('publish and replace global self', async t => {
       },
     },
   })
+
+  let publishedPackument = null
+  const { name, version } = require('../../package.json')
 
   const npmPackage = async ({ manifest, ...opts } = {}) => {
     await registry.package({
@@ -145,6 +144,8 @@ t.test('publish and replace global self', async t => {
     return false
   }).reply(201, {})
   await npmLocal('publish', { proxy: true, force: true })
+
+  t.comment(JSON.stringify(publishedPackument, null, 2))
 
   const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')

@@ -7,7 +7,7 @@ const MockRegistry = require('@npmcli/mock-registry')
 const http = require('http')
 const { createProxy } = require('proxy')
 
-const { SMOKE_PUBLISH_NPM, SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
+const { SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
 
 const DEFAULT_REGISTRY = new URL('https://registry.npmjs.org/')
 const MOCK_REGISTRY = new URL('http://smoke-test-registry.club/')
@@ -75,6 +75,8 @@ const getCleanPaths = async () => {
 
 module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
   const debugLog = debug || CI ? (...a) => t.comment(...a) : () => {}
+  debugLog({ SMOKE_PUBLISH_TARBALL, CI })
+
   const cleanPaths = await getCleanPaths()
 
   // setup fixtures
@@ -170,19 +172,11 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     })
 
     // In debug mode, stream stdout and stderr to console so we can debug hanging processes
-    if (debug) {
-      p.process.stdout.on('data', (c) => log('STDOUT: ' + c.toString().trim()))
-      p.process.stderr.on('data', (c) => log('STDERR: ' + c.toString().trim()))
-    }
+    p.process.stdout.on('data', (c) => log(c.toString().trim()))
+    p.process.stderr.on('data', (c) => log(c.toString().trim()))
 
     const { stdout, stderr } = await p
-    // If not in debug mode, print full stderr and stdout contents separately
-    if (!debug) {
-      log(stderr)
-      log('-'.repeat(40))
-      log(stdout)
-      log('='.repeat(40))
-    }
+    log('='.repeat(40))
 
     return { stderr, stdout }
   }
@@ -225,7 +219,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
 
   const npmLocal = async (...args) => {
     const [{ force = false }] = getOpts(...args)
-    if (SMOKE_PUBLISH_NPM && !force) {
+    if (SMOKE_PUBLISH_TARBALL && !force) {
       throw new Error('npmLocal cannot be called during smoke-publish')
     }
     return baseNpm({
@@ -257,7 +251,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
   return {
     npmPath,
     npmLocal,
-    npm: SMOKE_PUBLISH_NPM ? npmPath : npm,
+    npm: SMOKE_PUBLISH_TARBALL ? npmPath : npm,
     spawn: baseSpawn,
     readFile,
     getPath,
@@ -275,6 +269,6 @@ module.exports.testdir = testdirHelper
 module.exports.getNpmRoot = getNpmRoot
 module.exports.CLI_ROOT = CLI_ROOT
 module.exports.WINDOWS = WINDOWS
-module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_NPM
+module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_TARBALL
 module.exports.SMOKE_PUBLISH_TARBALL = SMOKE_PUBLISH_TARBALL
 module.exports.MOCK_REGISTRY = MOCK_REGISTRY

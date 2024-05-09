@@ -4,6 +4,17 @@ const npa = require('npm-package-arg')
 const Nock = require('nock')
 const stringify = require('json-stringify-safe')
 
+const logReq = (req, ...keys) => {
+  const obj = JSON.parse(stringify(req))
+  const res = {}
+  for (const [k, v] of Object.entries(obj)) {
+    if (!keys.includes(k)) {
+      res[k] = v
+    }
+  }
+  return stringify(res, null, 2)
+}
+
 class MockRegistry {
   #tap
   #nock
@@ -40,7 +51,8 @@ class MockRegistry {
         // mocked with a 404, 500, etc.
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
-        t.fail(`Unmatched request: ${stringify(req, null, 2)}`)
+        t.comment(logReq(req, 'interceptors', 'socket', 'response', '_events'))
+        t.fail(`Unmatched request: ${req.method} ${req.path}`)
       }
     }
 
