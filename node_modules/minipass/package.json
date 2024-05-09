@@ -1,6 +1,6 @@
 {
   "name": "minipass",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "description": "minimal implementation of a PassThrough stream",
   "main": "./dist/commonjs/index.js",
   "types": "./dist/commonjs/index.d.ts",
