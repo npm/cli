@@ -369,7 +369,7 @@ class MockRegistry {
     })
   }
 
-  async package ({ manifest, times = 1, query, tarballs, tarballTimes = 1 }) {
+  async package ({ manifest, times = 1, query, tarballs }) {
     let nock = this.nock
     const spec = npa(manifest.name)
     nock = nock.get(this.fullPath(`/${spec.escapedName}`)).times(times)
@@ -380,17 +380,17 @@ class MockRegistry {
     if (tarballs) {
       for (const [version, tarball] of Object.entries(tarballs)) {
         const m = manifest.versions[version]
-        nock = await this.tarball({ manifest: m, tarball, times: tarballTimes })
+        nock = await this.tarball({ manifest: m, tarball })
       }
     }
     this.nock = nock
   }
 
-  async tarball ({ manifest, tarball, times = 1 }) {
+  async tarball ({ manifest, tarball }) {
     const nock = this.nock
     const dist = new URL(manifest.dist.tarball)
     const tar = await pacote.tarball(tarball, { Arborist })
-    nock.get(this.fullPath(dist.pathname)).times(times).reply(200, tar)
+    nock.get(this.fullPath(dist.pathname)).reply(200, tar)
     return nock
   }
 

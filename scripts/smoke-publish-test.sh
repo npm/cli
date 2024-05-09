@@ -86,7 +86,7 @@ node . install -w smoke-tests --ignore-scripts --no-audit --no-fund
 # debugging locally when we want to pass args to the smoke-tests to limit the
 # files being run or grep a test, etc. Also now set CI=true so we get more
 # debug output in our tap tests
-CI="true" SMOKE_PUBLISH_NPM="1" SMOKE_PUBLISH_TARBALL="$NPM_TARBALL" npm test \
+CI="true" SMOKE_PUBLISH_TARBALL="$NPM_TARBALL" npm test \
   -w smoke-tests \
   --ignore-scripts \
-  -- -Rtap "$@"
+  -- "$@"

@@ -120,12 +120,11 @@ t.test('publish and replace global self', async t => {
     })
   }
 
-  const npmInstall = async (useNpm, opts) => {
+  const npmInstall = async (useNpm) => {
     await npmPackage({
       manifest: { packuments: [publishedPackument] },
       tarballs: { [version]: tarball },
       times: 3,
-      ...opts,
     })
     await fs.rm(cache, { recursive: true, force: true })
     await useNpm('install', 'npm@latest', '--global')

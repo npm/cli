@@ -162,29 +162,12 @@ jobs:
           - name: Linux
             os: ubuntu-latest
             shell: bash
-          - name: macOS
-            os: macos-latest
-            shell: bash
-          - name: macOS
-            os: macos-13
-            shell: bash
         node-version:
           - 18.17.0
           - 18.x
           - 20.5.0
           - 20.x
           - 22.x
-        exclude:
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.17.0
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.x
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 20.5.0
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 20.x
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 22.x
     runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
@@ -221,7 +204,7 @@ jobs:
         run: ./scripts/smoke-publish-test.sh
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
-        if: always()
+        if: steps.create-check.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}

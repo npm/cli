@@ -10,12 +10,13 @@
       jobCheckout=(obj ref="${{ inputs.ref }}")
       jobCreateCheck=(obj sha="${{ inputs.check-sha }}")
       windowsCI=false
+      macCI=false
     }}
       - name: Smoke Publish
         run: ./scripts/smoke-publish-test.sh
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
-        if: always()
+        if: steps.create-check.outputs.check-id && always()
         with:
           token: $\{{ secrets.GITHUB_TOKEN }}
           conclusion: $\{{ job.status }}
