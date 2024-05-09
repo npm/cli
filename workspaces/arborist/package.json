@@ -4,7 +4,7 @@
   "description": "Manage node_modules trees",
   "dependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
-    "@npmcli/fs": "^3.1.0",
+    "@npmcli/fs": "^3.1.1",
     "@npmcli/installed-package-contents": "^2.1.0",
     "@npmcli/map-workspaces": "^3.0.2",
     "@npmcli/metavuln-calculator": "^7.1.1",
