@@ -28,8 +28,7 @@ const pAll = async (obj) => {
   }, {})
 }
 
-const run = async (params) => {
-  const { content, template, nav, man, html, md } = params
+const run = async ({ content, template, nav, man, html, md }) => {
   await rmAll(man, html, md)
   const [contentPaths, navFile, options] = await Promise.all([
     readDocs(content),
@@ -92,37 +91,47 @@ const run = async (params) => {
       ...(fullName === 'using-npm/config'
         ? [transform.shorthands, transform.config]
         : []),
-    ]);
+    ])
 
-    ['man', 'html', 'md'].forEach((type) => {
-      const isMan = type === 'man'
-      const DUPLICATED_FOLDER_PATH = 'configuring-npm/'
-      const FOLDER_PREFIX = isMan ? '' : DUPLICATED_FOLDER_PATH
-      const trs = [transform[type]]
+    const aliases = [
+      fullName === 'configuring-npm/package-json' && 'configuring-npm/npm-json',
+      fullName === 'configuring-npm/folders' && 'configuring-npm/npm-global',
+    ].filter(Boolean)
 
-      let paths = [
-        isMan ? name : fullName,
-        fullName === `${DUPLICATED_FOLDER_PATH}package-json` && `${FOLDER_PREFIX}npm-json`,
-        fullName === `${DUPLICATED_FOLDER_PATH}folders` && `${FOLDER_PREFIX}npm-global`,
-      ].filter(Boolean)
-
-      if (isMan && data.section) {
-        paths = paths.map(p => applyTransforms(p, [transform.manPath]))
-        trs.unshift(transform.helpLinks)
-        const manSrc = applyTransforms(transformedSrc, trs)
-        acc.man.push(...paths.map((manPath) => ({
+    if (data.section) {
+      const manSource = applyTransforms(transformedSrc, [
+        transform.helpLinks,
+        transform.man,
+      ])
+      // Man page aliases are only the basename since the man pages have no hierarchy
+      acc.man.push(...[name, ...aliases.map(a => basename(a))]
+        .map((p) => applyTransforms(p, [transform.manPath]))
+        .map((manPath) => ({
           path: manPath,
           fullPath: join(man, manPath),
-          src: manSrc,
-        })))
-      } else {
-        acc[type].push(...paths.map((path) => ({
-          path: `${path}.${type}`,
-          fullPath: join(params[type], `${path}.${type}`),
-          src: applyTransforms(transformedSrc, trs),
-        })))
-      }
+          src: manSource,
+        }))
+      )
+    }
+
+    // html docs are used for npm help on Windows
+    const htmlSource = applyTransforms(transformedSrc, [transform.html])
+    acc.html.push(...[fullName, ...aliases].map((htmlPath) => ({
+      path: `${htmlPath}.html`,
+      fullPath: join(html, `${htmlPath}.html`),
+      src: htmlSource,
+    })))
+
+    // Markdown pages don't get aliases here. These are used to build the website so any redirects
+    // for these pages are applied in npm/documentation. Not ideal but there are also many more
+    // redirects that we would never apply to man or html docs pages
+    const mdSource = applyTransforms(transformedSrc, [transform.md])
+    acc.md.push({
+      path: childPath,
+      fullPath: join(md, childPath),
+      src: mdSource,
     })
+
     return acc
   }, { man: [], html: [], md: [] })
 

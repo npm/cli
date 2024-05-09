@@ -215,9 +215,6 @@
   - title: Folders
     url: /configuring-npm/folders
     description: Folder structures used by npm
-  - title: Folders
-    url: /configuring-npm/npm-global
-    description: Folder structures used by npm
   - title: .npmrc
     url: /configuring-npm/npmrc
     description: The npm config files
@@ -226,9 +223,6 @@
     description: A publishable lockfile
   - title: package.json
     url: /configuring-npm/package-json
-    description: Specifics of npm's package.json handling
-  - title: package.json
-    url: /configuring-npm/npm-json
     description: Specifics of npm's package.json handling
   - title: package-lock.json
     url: /configuring-npm/package-lock-json
