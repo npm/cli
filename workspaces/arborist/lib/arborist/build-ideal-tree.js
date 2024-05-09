@@ -53,48 +53,26 @@ const _addNodeToTrashList = Symbol.for('addNodeToTrashList')
 // they'll affect things deeper in, then alphabetical for consistency between
 // installs
 class DepsQueue {
-  // [{ sorted, items }] indexed by depth
   #deps = []
   #sorted = true
-  #minDepth = 0
-  #length = 0
 
   get length () {
-    return this.#length
+    return this.#deps.length
   }
 
   push (item) {
-    if (!this.#deps[item.depth]) {
-      this.#length++
-      this.#deps[item.depth] = { sorted: true, items: [item] }
-      // no minDepth check needed, this branch is only reached when we are in
-      // the middle of a shallower depth and creating a new one
-      return
-    }
-    if (!this.#deps[item.depth].items.includes(item)) {
-      this.#length++
-      this.#deps[item.depth].sorted = false
-      this.#deps[item.depth].items.push(item)
-      if (item.depth < this.#minDepth) {
-        this.#minDepth = item.depth
-      }
+    if (!this.#deps.includes(item)) {
+      this.#sorted = false
+      this.#deps.push(item)
     }
   }
 
   pop () {
-    let depth
-    while (!depth?.items.length) {
-      depth = this.#deps[this.#minDepth]
-      if (!depth?.items.length) {
-        this.#minDepth++
-      }
+    if (!this.#sorted) {
+      this.#deps.sort((a, b) => (a.depth - b.depth) || localeCompare(a.path, b.path))
+      this.#sorted = true
     }
-    if (!depth.sorted) {
-      depth.items.sort((a, b) => localeCompare(a.path, b.path))
-      depth.sorted = true
-    }
-    this.#length--
-    return depth.items.shift()
+    return this.#deps.shift()
   }
 }
 
