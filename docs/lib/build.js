@@ -28,7 +28,8 @@ const pAll = async (obj) => {
   }, {})
 }
 
-const run = async ({ content, template, nav, man, html, md }) => {
+const run = async (params) => {
+  const { content, template, nav, man, html, md } = params
   await rmAll(man, html, md)
   const [contentPaths, navFile, options] = await Promise.all([
     readDocs(content),
@@ -91,36 +92,36 @@ const run = async ({ content, template, nav, man, html, md }) => {
       ...(fullName === 'using-npm/config'
         ? [transform.shorthands, transform.config]
         : []),
-    ])
+    ]);
 
-    if (data.section) {
-      const manSrc = applyTransforms(transformedSrc, [
-        transform.helpLinks,
-        transform.man,
-      ])
-      const manPaths = [
-        name,
-        fullName === 'configuring-npm/package-json' && 'npm-json',
-        fullName === 'configuring-npm/folders' && 'npm-global',
-      ].filter(Boolean).map(p => applyTransforms(p, [transform.manPath]))
+    ['man', 'html', 'md'].forEach((type) => {
+      const isMan = type === 'man'
+      const DUPLICATED_FOLDER_PATH = 'configuring-npm/'
+      const FOLDER_PREFIX = isMan ? '' : DUPLICATED_FOLDER_PATH
+      const trs = [transform[type]]
 
-      acc.man.push(...manPaths.map((manPath) => ({
-        path: manPath,
-        fullPath: join(man, manPath),
-        src: manSrc,
-      })))
-    }
+      let paths = [
+        isMan ? name : fullName,
+        fullName === `${DUPLICATED_FOLDER_PATH}package-json` && `${FOLDER_PREFIX}npm-json`,
+        fullName === `${DUPLICATED_FOLDER_PATH}folders` && `${FOLDER_PREFIX}npm-global`,
+      ].filter(Boolean)
 
-    acc.html.push({
-      path: `${fullName}.html`,
-      fullPath: join(html, `${fullName}.html`),
-      src: applyTransforms(transformedSrc, [transform.html]),
-    })
-
-    acc.md.push({
-      path: childPath,
-      fullPath: join(md, childPath),
-      src: applyTransforms(transformedSrc, [transform.md]),
+      if (isMan && data.section) {
+        paths = paths.map(p => applyTransforms(p, [transform.manPath]))
+        trs.unshift(transform.helpLinks)
+        const manSrc = applyTransforms(transformedSrc, trs)
+        acc.man.push(...paths.map((manPath) => ({
+          path: manPath,
+          fullPath: join(man, manPath),
+          src: manSrc,
+        })))
+      } else {
+        acc[type].push(...paths.map((path) => ({
+          path: `${path}.${type}`,
+          fullPath: join(params[type], `${path}.${type}`),
+          src: applyTransforms(transformedSrc, trs),
+        })))
+      }
     })
     return acc
   }, { man: [], html: [], md: [] })
