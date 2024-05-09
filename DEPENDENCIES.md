@@ -737,6 +737,8 @@ graph LR;
   sigstore-->sigstore-verify["@sigstore/verify"];
   sigstore-bundle-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   sigstore-sign-->make-fetch-happen;
+  sigstore-sign-->proc-log;
+  sigstore-sign-->promise-retry;
   sigstore-sign-->sigstore-bundle["@sigstore/bundle"];
   sigstore-sign-->sigstore-core["@sigstore/core"];
   sigstore-sign-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
