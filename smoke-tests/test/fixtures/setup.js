@@ -172,19 +172,11 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     })
 
     // In debug mode, stream stdout and stderr to console so we can debug hanging processes
-    if (debug) {
-      p.process.stdout.on('data', (c) => log('STDOUT: ' + c.toString().trim()))
-      p.process.stderr.on('data', (c) => log('STDERR: ' + c.toString().trim()))
-    }
+    p.process.stdout.on('data', (c) => log(c.toString().trim()))
+    p.process.stderr.on('data', (c) => log(c.toString().trim()))
 
     const { stdout, stderr } = await p
-    // If not in debug mode, print full stderr and stdout contents separately
-    if (!debug) {
-      log(stderr)
-      log('-'.repeat(40))
-      log(stdout)
-      log('='.repeat(40))
-    }
+    log('='.repeat(40))
 
     return { stderr, stdout }
   }
