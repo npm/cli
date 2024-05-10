@@ -53,7 +53,7 @@ jobs:
               await github.rest.reactions.createForIssueComment({
                 owner,
                 repo,
-                comment_id: payload.comment.node_id,
+                comment_id: payload.comment.id,
                 content: 'rocket',
               })
             }
