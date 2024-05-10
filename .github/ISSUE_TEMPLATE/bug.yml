@@ -1,7 +1,7 @@
-name: 🐞 Bug v10
-description: File a bug/issue against v10.x
+name: 🐞 Bug
+description: File a bug/issue against the latest version of npm
 title: "[BUG] <title>"
-labels: [Bug, Needs Triage, Release 10.x]
+labels: [Bug, Needs Triage]
 body:
 - type: checkboxes
   attributes:
