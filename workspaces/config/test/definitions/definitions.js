@@ -396,6 +396,7 @@ t.test('color', t => {
 t.test('progress', t => {
   const setEnv = ({ tty, term } = {}) => mockGlobals(t, {
     'process.stderr.isTTY': tty,
+    'process.stdout.isTTY': tty,
     'process.env.TERM': term,
   })
 
