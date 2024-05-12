@@ -7,7 +7,10 @@ const { cleanCwd } = require('../../fixtures/clean-snapshot')
 t.cleanSnapshot = (str) => cleanCwd(str)
 
 const mockNpm = async (t, { ...opts } = {}) => {
-  const res = await _mockNpm(t, opts)
+  const res = await _mockNpm(t, {
+    ...opts,
+    command: 'pkg',
+  })
 
   const readPackageJson = (dir = '') =>
     JSON.parse(readFileSync(resolve(res.prefix, dir, 'package.json'), 'utf8'))
@@ -663,7 +666,7 @@ t.test('workspaces', async t => {
 })
 
 t.test('single workspace', async t => {
-  const { pkg, OUTPUT } = await mockNpm(t, {
+  const mockWorkspace = (t) => mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
         name: 'root',
@@ -690,13 +693,27 @@ t.test('single workspace', async t => {
     config: { workspace: ['packages/a'] },
   })
 
-  await pkg('get', 'name', 'version')
+  t.test('multiple args', async t => {
+    const { pkg, OUTPUT } = await mockWorkspace(t)
+    await pkg('get', 'name', 'version')
 
-  t.strictSame(
-    JSON.parse(OUTPUT()),
-    { a: { name: 'a', version: '1.0.0' } },
-    'should only return info for one workspace'
-  )
+    t.strictSame(
+      JSON.parse(OUTPUT()),
+      { a: { name: 'a', version: '1.0.0' } },
+      'should only return info for one workspace'
+    )
+  })
+
+  t.test('single arg', async t => {
+    const { pkg, OUTPUT } = await mockWorkspace(t)
+    await pkg('get', 'version')
+
+    t.strictSame(
+      JSON.parse(OUTPUT()),
+      { a: '1.0.0' },
+      'should only return info for one workspace'
+    )
+  })
 })
 
 t.test('fix', async t => {
