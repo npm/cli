@@ -1021,11 +1021,11 @@ Object {
         authentication token or enable two-factor authentication then
         that means you likely typed your password in incorrectly.
         Please try again, or recover your password at:
-            https://www.npmjs.com/forgot
+          https://www.npmjs.com/forgot
         
         If you were doing some other operation then your saved credentials are
         probably out of date. To correct this please try logging in again with:
-            npm login
+          npm login
       ),
     ],
   ],
@@ -1045,7 +1045,7 @@ Object {
       "",
       String(
         To correct this please try logging in again with:
-            npm login
+          npm login
       ),
     ],
   ],
@@ -1283,7 +1283,7 @@ Object {
       "typeerror",
       String(
         This is an error with npm itself. Please report this error at:
-            https://github.com/npm/cli/issues
+          https://github.com/npm/cli/issues
       ),
     ],
   ],
@@ -1303,7 +1303,7 @@ Object {
       "typeerror",
       String(
         This is an error with npm itself. Please report this error at:
-            https://github.com/npm/cli/issues
+          https://github.com/npm/cli/issues
       ),
     ],
   ],
@@ -1323,7 +1323,7 @@ Object {
       "typeerror",
       String(
         This is an error with npm itself. Please report this error at:
-            https://github.com/npm/cli/issues
+          https://github.com/npm/cli/issues
       ),
     ],
   ],
@@ -1364,7 +1364,7 @@ Object {
       "typeerror",
       String(
         This is an error with npm itself. Please report this error at:
-            https://github.com/npm/cli/issues
+          https://github.com/npm/cli/issues
       ),
     ],
   ],
@@ -1505,7 +1505,7 @@ Object {
     ],
     Array [
       "publish fail",
-      "    npm help version",
+      "  npm help version",
     ],
   ],
   "summary": Array [
@@ -1535,7 +1535,7 @@ Object {
     ],
     Array [
       "git",
-      "    /some/path",
+      "  /some/path",
     ],
   ],
 }
