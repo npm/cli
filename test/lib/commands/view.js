@@ -271,13 +271,24 @@ const packument = (nv, opts) => {
       },
     },
   }
+
   if (nv.type === 'git') {
     return mocks[nv.hosted.project]
   }
+
   if (nv.raw === './blue') {
     return mocks.blue
   }
-  return mocks[nv.name]
+
+  if (mocks[nv.name]) {
+    return mocks[nv.name]
+  }
+
+  if (nv.name === 'unknown-error') {
+    throw new Error('Unknown error')
+  }
+
+  throw Object.assign(new Error('404'), { code: 'E404' })
 }
 
 const loadMockNpm = async function (t, opts = {}) {
@@ -543,6 +554,24 @@ t.test('workspaces', async t => {
     },
   }
 
+  const prefixDir404 = {
+    'test-workspace-b': {
+      'package.json': JSON.stringify({
+        name: 'missing-package',
+        version: '1.2.3',
+      }),
+    },
+  }
+
+  const prefixDirError = {
+    'test-workspace-b': {
+      'package.json': JSON.stringify({
+        name: 'unknown-error',
+        version: '1.2.3',
+      }),
+    },
+  }
+
   t.test('all workspaces', async t => {
     const { view, joinedOutput } = await loadMockNpm(t, {
       prefixDir,
@@ -623,6 +652,46 @@ t.test('workspaces', async t => {
     await view.exec(['pink'])
     t.matchSnapshot(joinedOutput())
     t.matchSnapshot(logs.warn, 'should have warning of ignoring workspaces')
+  })
+
+  t.test('404 workspaces', async t => {
+    t.test('basic', async t => {
+      const { view, joinedFullOutput } = await loadMockNpm(t, {
+        prefixDir: { ...prefixDir, ...prefixDir404 },
+        config: { workspaces: true, loglevel: 'error' },
+      })
+      await view.exec([])
+      t.matchSnapshot(joinedFullOutput())
+      t.equal(process.exitCode, 1)
+    })
+
+    t.test('json', async t => {
+      const { view, joinedFullOutput } = await loadMockNpm(t, {
+        prefixDir: { ...prefixDir, ...prefixDir404 },
+        config: { workspaces: true, json: true, loglevel: 'error' },
+      })
+      await view.exec([])
+      t.matchSnapshot(joinedFullOutput())
+      t.equal(process.exitCode, 1)
+    })
+
+    t.test('non-404 error rejects', async t => {
+      const { view, joinedFullOutput } = await loadMockNpm(t, {
+        prefixDir: { ...prefixDir, ...prefixDirError },
+        config: { workspaces: true, loglevel: 'error' },
+      })
+      await t.rejects(view.exec([]))
+      t.matchSnapshot(joinedFullOutput())
+    })
+
+    t.test('non-404 error rejects with single arg', async t => {
+      const { view, joinedFullOutput } = await loadMockNpm(t, {
+        prefixDir: { ...prefixDir, ...prefixDirError },
+        config: { workspaces: true, loglevel: 'error' },
+      })
+      await t.rejects(view.exec(['.', 'version']))
+      t.matchSnapshot(joinedFullOutput())
+    })
   })
 })
 
