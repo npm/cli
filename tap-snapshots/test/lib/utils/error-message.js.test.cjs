@@ -28,10 +28,11 @@ Object {
     ],
     Array [
       "404",
-      String(
-        
-        Note that you can also install from a
-      ),
+      "",
+    ],
+    Array [
+      "404",
+      "Note that you can also install from a",
     ],
     Array [
       "404",
@@ -70,10 +71,11 @@ Object {
     ],
     Array [
       "404",
-      String(
-        
-        Note that you can also install from a
-      ),
+      "",
+    ],
+    Array [
+      "404",
+      "Note that you can also install from a",
     ],
     Array [
       "404",
@@ -112,10 +114,11 @@ Object {
     ],
     Array [
       "404",
-      String(
-        
-        Note that you can also install from a
-      ),
+      "",
+    ],
+    Array [
+      "404",
+      "Note that you can also install from a",
     ],
     Array [
       "404",
@@ -157,10 +160,11 @@ Object {
     ],
     Array [
       "404",
-      String(
-        
-        Note that you can also install from a
-      ),
+      "",
+    ],
+    Array [
+      "404",
+      "Note that you can also install from a",
     ],
     Array [
       "404",
