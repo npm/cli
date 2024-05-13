@@ -503,6 +503,20 @@ t.test('config get private key', async t => {
     /_password option is protected/,
     'rejects with protected string'
   )
+
+  await npm.exec('config', ['set', 'proxy', 'https://proxy.npmjs.org'])
+
+  await t.resolves(
+    npm.exec('config', ['get', 'proxy']),
+    'https://proxy.npmjs.org'
+  )
+
+  await npm.exec('config', ['set', 'proxy', 'https://username:password@proxy.npmjs.org'])
+
+  await t.rejects(
+    npm.exec('config', ['get', 'proxy']),
+    /proxy option is protected/
+  )
 })
 
 t.test('config edit', async t => {
