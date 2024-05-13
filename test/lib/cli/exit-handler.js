@@ -74,6 +74,10 @@ const mockExitHandler = async (t, {
       ...errorMessage.errorMessage(err),
       ...(files ? { files } : {}),
     }),
+    getError: (...args) => ({
+      ...errorMessage.getError(...args),
+      ...(files ? { files } : {}),
+    }),
   }
 
   if (error) {
