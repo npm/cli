@@ -505,6 +505,25 @@ t.test('config get private key', async t => {
   )
 })
 
+t.test('config redacted values', async t => {
+  const { npm, joinedOutput, clearOutput } = await loadMockNpm(t)
+
+  await npm.exec('config', ['set', 'proxy', 'https://proxy.npmjs.org/'])
+  await npm.exec('config', ['get', 'proxy'])
+
+  t.equal(joinedOutput(), 'https://proxy.npmjs.org/')
+  clearOutput()
+
+  await npm.exec('config', ['set', 'proxy', 'https://u:password@proxy.npmjs.org/'])
+
+  await t.rejects(npm.exec('config', ['get', 'proxy']), /proxy option is protected/)
+
+  await npm.exec('config', ['ls'])
+
+  t.match(joinedOutput(), 'proxy = "https://u:***@proxy.npmjs.org/"')
+  clearOutput()
+})
+
 t.test('config edit', async t => {
   const EDITOR = 'vim'
   const editor = spawk.spawn(EDITOR).exit(0)
