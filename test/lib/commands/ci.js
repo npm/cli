@@ -267,7 +267,6 @@ t.test('should remove node_modules within workspaces', async t => {
           '': {
             name: 'workspace-test-3',
             version: '1.0.0',
-            license: 'ISC',
             workspaces: [
               'workspace-a',
               'workspace-b',
