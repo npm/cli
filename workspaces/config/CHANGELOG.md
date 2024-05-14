@@ -1,5 +1,20 @@
 # Changelog
 
+## [8.3.2](https://github.com/npm/cli/compare/config-v8.3.1...config-v8.3.2) (2024-05-14)
+
+### Bug Fixes
+
+* [`6f64148`](https://github.com/npm/cli/commit/6f6414829fd82704233fbb56375b167495a0aaf5) require stdout to be a TTY for progress (#7507) (@lukekarrys)
+
+### Dependencies
+
+* [`e71f541`](https://github.com/npm/cli/commit/e71f541b020de7940faccffab68d0255c4079e1a) [#7480](https://github.com/npm/cli/pull/7480) `nopt@7.2.1`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [8.3.1](https://github.com/npm/cli/compare/config-v8.3.0...config-v8.3.1) (2024-04-30)
 
 ### Bug Fixes

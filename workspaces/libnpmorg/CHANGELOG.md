@@ -1,5 +1,18 @@
 # Changelog
 
+## [6.0.6](https://github.com/npm/cli/compare/libnpmorg-v6.0.5...libnpmorg-v6.0.6) (2024-05-14)
+
+### Dependencies
+
+* [`c2b28f9`](https://github.com/npm/cli/commit/c2b28f9d6cba12e88f849e5b4a82607e2c218a16) [#7498](https://github.com/npm/cli/pull/7498) `minipass@7.1.1`
+* [`dade2c8`](https://github.com/npm/cli/commit/dade2c88d23289d57351d614feaa876d9e1e17f4) [#7480](https://github.com/npm/cli/pull/7480) `minipass@7.1.0`
+* [`63ef498`](https://github.com/npm/cli/commit/63ef498bf2916a882a92c0b9fe6de6728584694a) [#7457](https://github.com/npm/cli/pull/7457) `npm-registry-fetch@17.0.1`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [6.0.5](https://github.com/npm/cli/compare/libnpmorg-v6.0.4...libnpmorg-v6.0.5) (2024-04-30)
 
 ### Bug Fixes

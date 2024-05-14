@@ -1,5 +1,30 @@
 # Changelog
 
+## [8.1.1](https://github.com/npm/cli/compare/libnpmexec-v8.1.0...libnpmexec-v8.1.1) (2024-05-14)
+
+### Dependencies
+
+* [`ea0b07d`](https://github.com/npm/cli/commit/ea0b07da149767265f11d5d77d2156e2c9f43e63) [#7482](https://github.com/npm/cli/pull/7482) `pacote@18.0.6`
+* [`a9a6dcd`](https://github.com/npm/cli/commit/a9a6dcd4427ec82e491a2cad5672d8183e12180f) [#7480](https://github.com/npm/cli/pull/7480) `pacote@18.0.5`
+* [`43331e4`](https://github.com/npm/cli/commit/43331e4d0647c3af4cc2aa3db8b47d797584a6d8) [#7480](https://github.com/npm/cli/pull/7480) `bin-links@4.0.4`
+## [8.1.1](https://github.com/npm/cli/compare/libnpmexec-v8.1.0...libnpmexec-v8.1.1) (2024-05-14)
+
+### Dependencies
+
+* [`ea0b07d`](https://github.com/npm/cli/commit/ea0b07da149767265f11d5d77d2156e2c9f43e63) [#7482](https://github.com/npm/cli/pull/7482) `pacote@18.0.6`
+* [`a9a6dcd`](https://github.com/npm/cli/commit/a9a6dcd4427ec82e491a2cad5672d8183e12180f) [#7480](https://github.com/npm/cli/pull/7480) `pacote@18.0.5`
+* [`43331e4`](https://github.com/npm/cli/commit/43331e4d0647c3af4cc2aa3db8b47d797584a6d8) [#7480](https://github.com/npm/cli/pull/7480) `bin-links@4.0.4`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [8.1.0](https://github.com/npm/cli/compare/libnpmexec-v8.0.0...libnpmexec-v8.1.0) (2024-04-30)
 
 ### Features

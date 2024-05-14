@@ -1,5 +1,35 @@
 # Changelog
 
+## [7.5.2](https://github.com/npm/cli/compare/arborist-v7.5.1...arborist-v7.5.2) (2024-05-14)
+
+### Bug Fixes
+
+* [`e290352`](https://github.com/npm/cli/commit/e290352c6b9fd3bc7fa4b8ea2cc2000fb20fdec7) [#7499](https://github.com/npm/cli/pull/7499) revert DepsQueue to re-sort on pop() (#7499) (@lukekarrys)
+* [`56a27fa`](https://github.com/npm/cli/commit/56a27fa400f157fb9a56182900278c41efc6aba1) [#7494](https://github.com/npm/cli/pull/7494) avoid caching manifests as promises (@wraithgar)
+* [`722c0fa`](https://github.com/npm/cli/commit/722c0faa387ae6e35886f08eefb238c03ae85db1) [#7463](https://github.com/npm/cli/pull/7463) limit packument cache size based on heap size (@wraithgar)
+* [`effe910`](https://github.com/npm/cli/commit/effe9109d6bc7828bf916c4dee49b2a53c72f39d) [#7475](https://github.com/npm/cli/pull/7475) dont omit license from stored manifests (#7475) (@lukekarrys)
+
+### Dependencies
+
+* [`fd42986`](https://github.com/npm/cli/commit/fd429866c79cc001979135857c019d7d2873f291) [#7498](https://github.com/npm/cli/pull/7498) `@npmcli/fs@3.1.1`
+* [`ea0b07d`](https://github.com/npm/cli/commit/ea0b07da149767265f11d5d77d2156e2c9f43e63) [#7482](https://github.com/npm/cli/pull/7482) `pacote@18.0.6`
+* [`5b2317b`](https://github.com/npm/cli/commit/5b2317b472342428c6521d7b0d550d0fcc9bb202) [#7463](https://github.com/npm/cli/pull/7463) add lru-cache
+* [`7e15b6d`](https://github.com/npm/cli/commit/7e15b6d56abbf47456c12fa2d5688d5d187a0ae7) [#7480](https://github.com/npm/cli/pull/7480) `@npmcli/metavuln-calculator@7.1.1`
+* [`8b20f8c`](https://github.com/npm/cli/commit/8b20f8c8ba70e43ad222538fc396dedb071b1680) [#7480](https://github.com/npm/cli/pull/7480) `ssri@10.0.6`
+* [`a9a6dcd`](https://github.com/npm/cli/commit/a9a6dcd4427ec82e491a2cad5672d8183e12180f) [#7480](https://github.com/npm/cli/pull/7480) `pacote@18.0.5`
+* [`e2fdb65`](https://github.com/npm/cli/commit/e2fdb651cda9ec603f009f5713a5a2b489d49e15) [#7480](https://github.com/npm/cli/pull/7480) `npm-pick-manifest@9.0.1`
+* [`e71f541`](https://github.com/npm/cli/commit/e71f541b020de7940faccffab68d0255c4079e1a) [#7480](https://github.com/npm/cli/pull/7480) `nopt@7.2.1`
+* [`18c3b40`](https://github.com/npm/cli/commit/18c3b4058c7f721ff585de2f2766e53da897e16e) [#7480](https://github.com/npm/cli/pull/7480) `json-parse-even-better-errors@3.0.2`
+* [`714e3e1`](https://github.com/npm/cli/commit/714e3e1e1ce014cba71db41c2d6c02d9dd53fcd3) [#7480](https://github.com/npm/cli/pull/7480) `hosted-git-info@7.0.2`
+* [`f94d672`](https://github.com/npm/cli/commit/f94d6726a6ca96cad0da88ea499fa22f35b7c4c0) [#7480](https://github.com/npm/cli/pull/7480) `cacache@18.0.3`
+* [`43331e4`](https://github.com/npm/cli/commit/43331e4d0647c3af4cc2aa3db8b47d797584a6d8) [#7480](https://github.com/npm/cli/pull/7480) `bin-links@4.0.4`
+* [`63ef498`](https://github.com/npm/cli/commit/63ef498bf2916a882a92c0b9fe6de6728584694a) [#7457](https://github.com/npm/cli/pull/7457) `npm-registry-fetch@17.0.1`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [7.5.1](https://github.com/npm/cli/compare/arborist-v7.5.0...arborist-v7.5.1) (2024-04-30)
 
 ### Bug Fixes

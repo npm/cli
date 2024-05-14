@@ -1,5 +1,17 @@
 # Changelog
 
+## [6.0.2](https://github.com/npm/cli/compare/libnpmversion-v6.0.1...libnpmversion-v6.0.2) (2024-05-14)
+
+### Dependencies
+
+* [`18c3b40`](https://github.com/npm/cli/commit/18c3b4058c7f721ff585de2f2766e53da897e16e) [#7480](https://github.com/npm/cli/pull/7480) `json-parse-even-better-errors@3.0.2`
+* [`6dfaebb`](https://github.com/npm/cli/commit/6dfaebb8f08acf992ac36faf4db8b650e8e55eae) [#7480](https://github.com/npm/cli/pull/7480) `@npmcli/git@5.0.7`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [6.0.1](https://github.com/npm/cli/compare/libnpmversion-v6.0.0...libnpmversion-v6.0.1) (2024-04-30)
 
 ### Bug Fixes
