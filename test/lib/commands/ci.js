@@ -286,7 +286,6 @@ t.test('should remove node_modules within workspaces', async t => {
           },
           'workspace-a': {
             version: '1.0.0',
-            license: 'ISC',
             dependencies: {
               abbrev: '1.1.0',
             },
