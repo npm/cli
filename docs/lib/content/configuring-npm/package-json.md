@@ -368,7 +368,7 @@ For example, myapp could have this:
 ```json
 {
   "bin": {
-    "myapp": "./cli.js"
+    "myapp": "bin/cli.js"
   }
 }
 ```
