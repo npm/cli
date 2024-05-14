@@ -503,20 +503,25 @@ t.test('config get private key', async t => {
     /_password option is protected/,
     'rejects with protected string'
   )
+})
 
-  await npm.exec('config', ['set', 'proxy', 'https://proxy.npmjs.org'])
+t.test('config redacted values', async t => {
+  const { npm, joinedOutput, clearOutput } = await loadMockNpm(t)
 
-  await t.resolves(
-    npm.exec('config', ['get', 'proxy']),
-    'https://proxy.npmjs.org'
-  )
+  await npm.exec('config', ['set', 'proxy', 'https://proxy.npmjs.org/'])
+  await npm.exec('config', ['get', 'proxy'])
 
-  await npm.exec('config', ['set', 'proxy', 'https://username:password@proxy.npmjs.org'])
+  t.equal(joinedOutput(), 'https://proxy.npmjs.org/')
+  clearOutput()
 
-  await t.rejects(
-    npm.exec('config', ['get', 'proxy']),
-    /proxy option is protected/
-  )
+  await npm.exec('config', ['set', 'proxy', 'https://u:password@proxy.npmjs.org/'])
+
+  await t.rejects(npm.exec('config', ['get', 'proxy']), /proxy option is protected/)
+
+  await npm.exec('config', ['ls'])
+
+  t.match(joinedOutput(), 'proxy = "https://u:***@proxy.npmjs.org/"')
+  clearOutput()
 })
 
 t.test('config edit', async t => {
