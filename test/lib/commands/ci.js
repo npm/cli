@@ -12,6 +12,7 @@ const loadMockNpm = async (t, opts) => {
   const registry = new MockRegistry({
     tap: t,
     registry: mock.npm.config.get('registry'),
+    strict: true,
   })
   return { registry, ...mock }
 }
@@ -113,6 +114,11 @@ t.test('reifies, audits, removes node_modules on repeat run', async t => {
     manifest: manifest.versions['1.0.0'],
     tarball: path.join(npm.prefix, 'abbrev'),
   })
+  await registry.tarball({
+    manifest: manifest.versions['1.0.0'],
+    tarball: path.join(npm.prefix, 'abbrev'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
   await npm.exec('ci', [])
@@ -141,9 +147,6 @@ t.test('--no-audit and --ignore-scripts', async t => {
       }),
       'package-lock.json': JSON.stringify(packageLock),
     },
-  })
-  require('nock').emitter.on('no match', () => {
-    t.fail('Should not audit')
   })
   const manifest = registry.manifest({ name: 'abbrev' })
   await registry.tarball({
@@ -229,4 +232,145 @@ t.test('should throw error when ideal inventory mismatches virtual', async t => 
   )
   const nmTestFile = path.join(npm.prefix, 'node_modules', 'test-file')
   t.equal(fs.existsSync(nmTestFile), true, 'does not remove node_modules')
+})
+
+t.test('should remove node_modules within workspaces', async t => {
+  const { npm, registry } = await loadMockNpm(t, {
+    prefixDir: {
+      tarballs: {
+        oneOneZero: {
+          'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
+          'index.js': 'module.exports = "hello world"',
+        },
+        oneOneOne: {
+          'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.1' }),
+          'index.js': 'module.exports = "hello world"',
+        },
+      },
+      node_modules: {
+        abbrev: {
+          'foo.txt': '',
+          'package.json': JSON.stringify({
+            name: 'abbrev',
+            version: '1.1.0',
+          }),
+        },
+        'workspace-a': t.fixture('symlink', '../workspace-a'),
+        'workspace-b': t.fixture('symlink', '../workspace-b'),
+      },
+      'package-lock.json': JSON.stringify({
+        name: 'workspace-test-3',
+        version: '1.0.0',
+        lockfileVersion: 3,
+        requires: true,
+        packages: {
+          '': {
+            name: 'workspace-test-3',
+            version: '1.0.0',
+            license: 'ISC',
+            workspaces: [
+              'workspace-a',
+              'workspace-b',
+            ],
+          },
+          'node_modules/abbrev': {
+            version: '1.1.0',
+            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
+          },
+          'node_modules/workspace-a': {
+            resolved: 'workspace-a',
+            link: true,
+          },
+          'node_modules/workspace-b': {
+            resolved: 'workspace-b',
+            link: true,
+          },
+          'workspace-a': {
+            version: '1.0.0',
+            license: 'ISC',
+            dependencies: {
+              abbrev: '1.1.0',
+            },
+          },
+          'workspace-b': {
+            version: '1.0.0',
+            dependencies: {
+              abbrev: '1.1.1',
+            },
+            devDependencies: {},
+          },
+          'workspace-b/node_modules/abbrev': {
+            version: '1.1.1',
+            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      }),
+      'package.json': JSON.stringify({
+        name: 'workspace-test-3',
+        version: '1.0.0',
+        workspaces: [
+          'workspace-a',
+          'workspace-b',
+        ],
+      }),
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: 'workspace-a',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.0',
+          },
+        }),
+      },
+      'workspace-b': {
+        node_modules: {
+          abbrev: {
+            'bar.txt': '',
+            'package.json': JSON.stringify({
+              name: 'abbrev',
+              version: '1.1.1',
+            }),
+          },
+        },
+        'package.json': JSON.stringify({
+          name: 'workspace-b',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    },
+  })
+
+  const manifest = registry.manifest({
+    name: 'abbrev',
+    versions: ['1.1.0', '1.1.1'],
+  })
+
+  await registry.tarball({
+    manifest: manifest.versions['1.1.0'],
+    tarball: path.join(npm.prefix, 'tarballs/oneOneZero'),
+  })
+
+  await registry.tarball({
+    manifest: manifest.versions['1.1.1'],
+    tarball: path.join(npm.prefix, 'tarballs/oneOneOne'),
+  })
+
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+
+  await npm.exec('ci', [])
+
+  const rmFooTest = path.join(npm.prefix, 'node_modules/abbrev/foo.txt')
+  t.equal(fs.existsSync(rmFooTest), false, 'existing node_modules is removed')
+
+  const rmBarTest = path.join(npm.prefix, 'workspace-b/node_modules/abbrev/bar.txt')
+  t.equal(fs.existsSync(rmBarTest), false, 'existing ws node_modules is removed')
+
+  const checkNmAbbrev = path.join(npm.prefix, 'node_modules/abbrev')
+  t.equal(fs.existsSync(checkNmAbbrev), true, 'installs abbrev')
+
+  const checkWsAbbrev = path.join(npm.prefix, 'workspace-b/node_modules/abbrev')
+  t.equal(fs.existsSync(checkWsAbbrev), true, 'installs abbrev')
 })
