@@ -385,7 +385,7 @@ package, then you can just supply it as a string.  For example:
 {
   "name": "my-program",
   "version": "1.2.5",
-  "bin": "./path/to/program"
+  "bin": "path/to/program"
 }
 ```
 
@@ -396,7 +396,7 @@ would be the same as this:
   "name": "my-program",
   "version": "1.2.5",
   "bin": {
-    "my-program": "./path/to/program"
+    "my-program": "path/to/program"
   }
 }
 ```
