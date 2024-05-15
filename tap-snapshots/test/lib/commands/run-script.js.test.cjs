@@ -127,15 +127,15 @@ Lifecycle scripts included in e:
 `
 
 exports[`test/lib/commands/run-script.js TAP workspaces list all scripts with colors > must match snapshot 1`] = `
-[0m[1mScripts[22m[0m available in [32ma@1.0.0[39m via \`[34mnpm run-script[39m\`:
+[0m[1mScripts[22m[0m available in [36ma@1.0.0[39m via \`[34mnpm run-script[39m\`:
   glorp
     [2mecho a doing the glerp glop[22m
 
-[0m[1mScripts[22m[0m available in [32mb@2.0.0[39m via \`[34mnpm run-script[39m\`:
+[0m[1mScripts[22m[0m available in [36mb@2.0.0[39m via \`[34mnpm run-script[39m\`:
   glorp
     [2mecho b doing the glerp glop[22m
 
-[0m[1mLifecycle scripts[22m[0m included in [32mc@1.0.0[39m:
+[0m[1mLifecycle scripts[22m[0m included in [36mc@1.0.0[39m:
   test
     [2mexit 0[22m
   posttest
@@ -144,13 +144,13 @@ available via \`[34mnpm run-script[39m\`:
   lorem
     [2mecho c lorem[22m
 
-[0m[1mLifecycle scripts[22m[0m included in [32md@1.0.0[39m:
+[0m[1mLifecycle scripts[22m[0m included in [36md@1.0.0[39m:
   test
     [2mexit 0[22m
   posttest
     [2mecho posttest[22m
 
-[0m[1mLifecycle scripts[22m[0m included in [32me[39m:
+[0m[1mLifecycle scripts[22m[0m included in [36me[39m:
   test
     [2mexit 0[22m
   start
