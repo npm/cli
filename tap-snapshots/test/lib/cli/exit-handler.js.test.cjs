@@ -7,10 +7,10 @@
 'use strict'
 exports[`test/lib/cli/exit-handler.js TAP handles unknown error with logs and debug file > debug file contents 1`] = `
 XX timing npm:load:whichnode Completed in {TIME}ms
-XX silly config:load:file:{CWD}/npmrc
-XX silly config:load:file:{CWD}/prefix/.npmrc
-XX silly config:load:file:{CWD}/home/.npmrc
-XX silly config:load:file:{CWD}/global/etc/npmrc
+XX silly config load:file:{CWD}/npmrc
+XX silly config load:file:{CWD}/prefix/.npmrc
+XX silly config load:file:{CWD}/home/.npmrc
+XX silly config load:file:{CWD}/global/etc/npmrc
 XX timing npm:load:configload Completed in {TIME}ms
 XX timing npm:load:mkdirpcache Completed in {TIME}ms
 XX timing npm:load:mkdirplogs Completed in {TIME}ms
@@ -37,10 +37,10 @@ XX error A complete log of this run can be found in: {CWD}/cache/_logs/{DATE}-de
 
 exports[`test/lib/cli/exit-handler.js TAP handles unknown error with logs and debug file > logs 1`] = `
 timing npm:load:whichnode Completed in {TIME}ms
-silly config:load:file:{CWD}/npmrc
-silly config:load:file:{CWD}/prefix/.npmrc
-silly config:load:file:{CWD}/home/.npmrc
-silly config:load:file:{CWD}/global/etc/npmrc
+silly config load:file:{CWD}/npmrc
+silly config load:file:{CWD}/prefix/.npmrc
+silly config load:file:{CWD}/home/.npmrc
+silly config load:file:{CWD}/global/etc/npmrc
 timing npm:load:configload Completed in {TIME}ms
 timing npm:load:mkdirpcache Completed in {TIME}ms
 timing npm:load:mkdirplogs Completed in {TIME}ms
