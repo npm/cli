@@ -578,7 +578,7 @@ t.test('delete nested field', async t => {
 })
 
 t.test('workspaces', async t => {
-  const { pkg, OUTPUT, readPackageJson } = await mockNpm(t, {
+  const mockWorkspaces = (t) => mockNpm(t, {
     prefixDir: {
       'package.json': JSON.stringify({
         name: 'root',
@@ -605,64 +605,70 @@ t.test('workspaces', async t => {
     config: { workspaces: true },
   })
 
-  await pkg('get', 'name', 'version')
+  t.test('get', async t => {
+    const { pkg, OUTPUT } = await mockWorkspaces(t)
+    await pkg('get', 'name', 'version')
+    t.strictSame(
+      JSON.parse(OUTPUT()),
+      {
+        a: {
+          name: 'a',
+          version: '1.0.0',
+        },
+        b: {
+          name: 'b',
+          version: '1.2.3',
+        },
+      },
+      'should return expected result for configured workspaces'
+    )
+  })
 
-  t.strictSame(
-    JSON.parse(OUTPUT()),
-    {
-      a: {
+  t.test('set', async t => {
+    const { pkg, readPackageJson } = await mockWorkspaces(t)
+
+    await pkg('set', 'funding=http://example.com')
+
+    t.strictSame(
+      readPackageJson('packages/a'),
+      {
         name: 'a',
         version: '1.0.0',
+        funding: 'http://example.com',
       },
-      b: {
+      'should add field to workspace a'
+    )
+
+    t.strictSame(
+      readPackageJson('packages/b'),
+      {
         name: 'b',
         version: '1.2.3',
+        funding: 'http://example.com',
       },
-    },
-    'should return expected result for configured workspaces'
-  )
+      'should add field to workspace b'
+    )
 
-  await pkg('set', 'funding=http://example.com')
+    await pkg('delete', 'version')
 
-  t.strictSame(
-    readPackageJson('packages/a'),
-    {
-      name: 'a',
-      version: '1.0.0',
-      funding: 'http://example.com',
-    },
-    'should add field to workspace a'
-  )
+    t.strictSame(
+      readPackageJson('packages/a'),
+      {
+        name: 'a',
+        funding: 'http://example.com',
+      },
+      'should delete version field from workspace a'
+    )
 
-  t.strictSame(
-    readPackageJson('packages/b'),
-    {
-      name: 'b',
-      version: '1.2.3',
-      funding: 'http://example.com',
-    },
-    'should add field to workspace b'
-  )
-
-  await pkg('delete', 'version')
-
-  t.strictSame(
-    readPackageJson('packages/a'),
-    {
-      name: 'a',
-      funding: 'http://example.com',
-    },
-    'should delete version field from workspace a'
-  )
-
-  t.strictSame(
-    readPackageJson('packages/b'),
-    {
-      name: 'b',
-      funding: 'http://example.com',
-    },
-    'should delete version field from workspace b'
-  )
+    t.strictSame(
+      readPackageJson('packages/b'),
+      {
+        name: 'b',
+        funding: 'http://example.com',
+      },
+      'should delete version field from workspace b'
+    )
+  })
 })
 
 t.test('single workspace', async t => {
