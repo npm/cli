@@ -276,7 +276,7 @@ t.test('merges output buffers errors with --json', async (t) => {
   })
 
   output.buffer({ output_data: 1 })
-  output.buffer(JSON.stringify({ more_data: 2 }))
+  output.buffer({ more_data: 2 })
   output.buffer('not json, will be ignored')
 
   await exitHandler()
