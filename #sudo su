@@ -1,3 +1,4 @@
+#sudo su 
 # npm - a JavaScript package manager
 
 [![npm version](https://img.shields.io/npm/v/npm.svg)](https://npm.im/npm)
