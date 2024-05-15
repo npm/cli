@@ -1185,7 +1185,8 @@ t.test('workspaces', async (t) => {
     t.same(config.get('workspace'), [join(path, 'workspaces', 'one')], 'set the workspace')
     const info = logs.filter(l => l[0] === 'info')
     t.equal(info.length, 1, 'got one log message')
-    t.match(info[0], ['info', /^found workspace root at/], 'logged info about workspace root')
+    t.match(info[0],
+      ['info', 'config', /^found workspace root at/], 'logged info about workspace root')
   })
 
   t.test('finds other workspace parent', async (t) => {
@@ -1207,7 +1208,8 @@ t.test('workspaces', async (t) => {
     t.same(config.get('workspace'), ['../two'], 'kept the specified workspace')
     const info = logs.filter(l => l[0] === 'info')
     t.equal(info.length, 1, 'got one log message')
-    t.match(info[0], ['info', /^found workspace root at/], 'logged info about workspace root')
+    t.match(info[0],
+      ['info', 'config', /^found workspace root at/], 'logged info about workspace root')
   })
 
   t.test('warns when workspace has .npmrc', async (t) => {
@@ -1229,8 +1231,10 @@ t.test('workspaces', async (t) => {
     t.same(config.get('workspace'), [join(path, 'workspaces', 'three')], 'kept the workspace')
     const filtered = logs.filter(l => l[0] === 'info' || l[0] === 'warn')
     t.equal(filtered.length, 2, 'got two log messages')
-    t.match(filtered[0], ['warn', /^ignoring workspace config/], 'warned about ignored config')
-    t.match(filtered[1], ['info', /^found workspace root at/], 'logged info about workspace root')
+    t.match(filtered[0],
+      ['warn', 'config', /^ignoring workspace config/], 'warned about ignored config')
+    t.match(filtered[1],
+      ['info', 'config', /^found workspace root at/], 'logged info about workspace root')
   })
 
   t.test('prefix skips auto detect', async (t) => {
@@ -1364,7 +1368,8 @@ t.test('workspaces', async (t) => {
     t.same(config.get('workspace'), [join(path, 'workspaces', 'one')], 'set the workspace')
     const filtered = logs.filter(l => l[0] !== 'silly')
     t.equal(filtered.length, 1, 'got one log message')
-    t.match(filtered[0], ['info', /^found workspace root at/], 'logged info about workspace root')
+    t.match(filtered[0],
+      ['info', 'config', /^found workspace root at/], 'logged info about workspace root')
   })
 })
 
