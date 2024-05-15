@@ -1,0 +1,5 @@
+#sudo su pip install ai {
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+  }
+}
