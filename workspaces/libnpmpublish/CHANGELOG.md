@@ -1,5 +1,18 @@
 # Changelog
 
+## [9.0.8](https://github.com/npm/cli/compare/libnpmpublish-v9.0.7...libnpmpublish-v9.0.8) (2024-05-15)
+
+### Dependencies
+
+* [`8b20f8c`](https://github.com/npm/cli/commit/8b20f8c8ba70e43ad222538fc396dedb071b1680) [#7480](https://github.com/npm/cli/pull/7480) `ssri@10.0.6`
+* [`310a7a5`](https://github.com/npm/cli/commit/310a7a5583d14da761d38b7421ebb6cee65600b6) [#7480](https://github.com/npm/cli/pull/7480) `normalize-package-data@6.0.1`
+* [`63ef498`](https://github.com/npm/cli/commit/63ef498bf2916a882a92c0b9fe6de6728584694a) [#7457](https://github.com/npm/cli/pull/7457) `npm-registry-fetch@17.0.1`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
 ## [9.0.7](https://github.com/npm/cli/compare/libnpmpublish-v9.0.6...libnpmpublish-v9.0.7) (2024-04-30)
 
 ### Bug Fixes
