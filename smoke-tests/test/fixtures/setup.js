@@ -74,7 +74,8 @@ const getCleanPaths = async () => {
 }
 
 module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
-  const debugLog = debug || CI ? (...a) => t.comment(...a) : () => {}
+  const shouldLog = debug || CI
+  const debugLog = shouldLog ? (...a) => t.comment(...a) : () => {}
   debugLog({ SMOKE_PUBLISH_TARBALL, CI })
 
   const cleanPaths = await getCleanPaths()
@@ -175,7 +176,17 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     p.process.stdout.on('data', (c) => log(c.toString().trim()))
     p.process.stderr.on('data', (c) => log(c.toString().trim()))
 
-    const { stdout, stderr } = await p
+    const { stdout, stderr } = await p.catch(err => {
+      // If we are already streaming the output from stdout and stderr then
+      // throwing this error will make a lot more noise since tap will print
+      // the whole thing. So we only do that if we haven't logged anything.
+      if (shouldLog) {
+        delete err.stdout
+        delete err.stderr
+      }
+      throw err
+    })
+
     log('='.repeat(40))
 
     return { stderr, stdout }
