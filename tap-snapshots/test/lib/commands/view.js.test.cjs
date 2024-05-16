@@ -460,6 +460,19 @@ exports[`test/lib/commands/view.js TAP workspaces 404 workspaces json > must mat
 }
 `
 
+exports[`test/lib/commands/view.js TAP workspaces 404 workspaces json with package named error > must match snapshot 1`] = `
+warn overwriting existing error on json output
+{
+  "error": {
+    "missing-package": {
+      "code": "E404",
+      "summary": "404",
+      "detail": ""
+    }
+  }
+}
+`
+
 exports[`test/lib/commands/view.js TAP workspaces 404 workspaces non-404 error rejects > must match snapshot 1`] = `
 
 [4m[36mgreen@1.0.0[39m[24m | [32mACME[39m | deps: [36m2[39m | versions: [36m2[39m

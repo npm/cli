@@ -270,6 +270,26 @@ const packument = (nv, opts) => {
         },
       },
     },
+    // this is a packaged named error which will conflict with
+    // the error key in json output
+    error: {
+      _id: 'error',
+      name: 'error',
+      'dist-tags': {
+        latest: '1.0.0',
+      },
+      versions: {
+        '1.0.0': {
+          name: 'error',
+          version: '1.0.0',
+          dist: {
+            shasum: '123',
+            tarball: 'http://hm.error.com/1.0.0.tgz',
+            fileCount: 1,
+          },
+        },
+      },
+    },
   }
 
   if (nv.type === 'git') {
@@ -572,6 +592,15 @@ t.test('workspaces', async t => {
     },
   }
 
+  const prefixPackageNamedError = {
+    'test-workspace-a': {
+      'package.json': JSON.stringify({
+        name: 'error',
+        version: '1.2.3',
+      }),
+    },
+  }
+
   t.test('all workspaces', async t => {
     const { view, joinedOutput } = await loadMockNpm(t, {
       prefixDir,
@@ -669,6 +698,16 @@ t.test('workspaces', async t => {
       const { view, joinedFullOutput } = await loadMockNpm(t, {
         prefixDir: { ...prefixDir, ...prefixDir404 },
         config: { workspaces: true, json: true, loglevel: 'error' },
+      })
+      await view.exec([])
+      t.matchSnapshot(joinedFullOutput())
+      t.equal(process.exitCode, 1)
+    })
+
+    t.test('json with package named error', async t => {
+      const { view, joinedFullOutput } = await loadMockNpm(t, {
+        prefixDir: { ...prefixDir, ...prefixDir404, ...prefixPackageNamedError },
+        config: { workspaces: true, json: true, loglevel: 'warn' },
       })
       await view.exec([])
       t.matchSnapshot(joinedFullOutput())
