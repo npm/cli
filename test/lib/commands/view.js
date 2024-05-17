@@ -406,6 +406,12 @@ t.test('package with --json and no versions', async t => {
   t.equal(joinedOutput(), '', 'no info to display')
 })
 
+t.test('package with --json and single string arg', async t => {
+  const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
+  await view.exec(['blue', 'dist-tags.latest'])
+  t.equal(JSON.parse(joinedOutput()), '1.0.0', 'no info to display')
+})
+
 t.test('package with single version', async t => {
   t.test('full json', async t => {
     const { view, joinedOutput } = await loadMockNpm(t, { config: { json: true } })
