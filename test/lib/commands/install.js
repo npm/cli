@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 const tspawk = require('../../fixtures/tspawk')
 
 const path = require('path')
