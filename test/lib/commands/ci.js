@@ -1,21 +1,13 @@
-const t = require('tap')
-const { load: _loadMockNpm } = require('../../fixtures/mock-npm')
-const MockRegistry = require('@npmcli/mock-registry')
-
-const path = require('path')
 const fs = require('fs')
+const path = require('path')
+const t = require('tap')
+
+const {
+  loadNpmWithRegistry: loadMockNpm,
+  workspaceMock,
+} = require('../../fixtures/mock-npm')
 
 // t.cleanSnapshot = str => str.replace(/ in [0-9ms]+/g, ' in {TIME}')
-
-const loadMockNpm = async (t, opts) => {
-  const mock = await _loadMockNpm(t, opts)
-  const registry = new MockRegistry({
-    tap: t,
-    registry: mock.npm.config.get('registry'),
-    strict: true,
-  })
-  return { registry, ...mock }
-}
 
 const packageJson = {
   name: 'test-package',
@@ -111,6 +103,7 @@ t.test('reifies, audits, removes node_modules on repeat run', async t => {
   })
   const manifest = registry.manifest({ name: 'abbrev' })
   await registry.tarball({
+    times: 2,
     manifest: manifest.versions['1.0.0'],
     tarball: path.join(npm.prefix, 'abbrev'),
   })
@@ -234,141 +227,89 @@ t.test('should throw error when ideal inventory mismatches virtual', async t => 
   t.equal(fs.existsSync(nmTestFile), true, 'does not remove node_modules')
 })
 
-t.test('should remove node_modules within workspaces', async t => {
-  const { npm, registry } = await loadMockNpm(t, {
-    prefixDir: {
-      tarballs: {
-        oneOneZero: {
-          'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
-          'index.js': 'module.exports = "hello world"',
+t.test('should remove dirty node_modules with unhoisted workspace module', async t => {
+  const { npm, registry, assert } = await loadMockNpm(t, {
+    prefixDir: workspaceMock(t, {
+      clean: false,
+      workspaces: {
+        'workspace-a': {
+          'abbrev@1.1.0': { hoist: true },
         },
-        oneOneOne: {
-          'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.1' }),
-          'index.js': 'module.exports = "hello world"',
+        'workspace-b': {
+          'abbrev@1.1.1': { hoist: false },
         },
       },
-      node_modules: {
-        abbrev: {
-          'foo.txt': '',
-          'package.json': JSON.stringify({
-            name: 'abbrev',
-            version: '1.1.0',
-          }),
-        },
-        'workspace-a': t.fixture('symlink', '../workspace-a'),
-        'workspace-b': t.fixture('symlink', '../workspace-b'),
-      },
-      'package-lock.json': JSON.stringify({
-        name: 'workspace-test-3',
-        version: '1.0.0',
-        lockfileVersion: 3,
-        requires: true,
-        packages: {
-          '': {
-            name: 'workspace-test-3',
-            version: '1.0.0',
-            workspaces: [
-              'workspace-a',
-              'workspace-b',
-            ],
-          },
-          'node_modules/abbrev': {
-            version: '1.1.0',
-            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
-          },
-          'node_modules/workspace-a': {
-            resolved: 'workspace-a',
-            link: true,
-          },
-          'node_modules/workspace-b': {
-            resolved: 'workspace-b',
-            link: true,
-          },
-          'workspace-a': {
-            version: '1.0.0',
-            dependencies: {
-              abbrev: '1.1.0',
-            },
-          },
-          'workspace-b': {
-            version: '1.0.0',
-            dependencies: {
-              abbrev: '1.1.1',
-            },
-            devDependencies: {},
-          },
-          'workspace-b/node_modules/abbrev': {
-            version: '1.1.1',
-            resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-          },
-        },
-      }),
-      'package.json': JSON.stringify({
-        name: 'workspace-test-3',
-        version: '1.0.0',
-        workspaces: [
-          'workspace-a',
-          'workspace-b',
-        ],
-      }),
-      'workspace-a': {
-        'package.json': JSON.stringify({
-          name: 'workspace-a',
-          version: '1.0.0',
-          dependencies: {
-            abbrev: '1.1.0',
-          },
-        }),
-      },
-      'workspace-b': {
-        node_modules: {
-          abbrev: {
-            'bar.txt': '',
-            'package.json': JSON.stringify({
-              name: 'abbrev',
-              version: '1.1.1',
-            }),
-          },
-        },
-        'package.json': JSON.stringify({
-          name: 'workspace-b',
-          version: '1.0.0',
-          dependencies: {
-            abbrev: '1.1.1',
-          },
-        }),
-      },
-    },
+    }),
   })
-
-  const manifest = registry.manifest({
-    name: 'abbrev',
-    versions: ['1.1.0', '1.1.1'],
+  await registry.setup({
+    'abbrev@1.1.0': path.join(npm.prefix, 'tarballs/abbrev@1.1.0'),
+    'abbrev@1.1.1': path.join(npm.prefix, 'tarballs/abbrev@1.1.1'),
   })
-
-  await registry.tarball({
-    manifest: manifest.versions['1.1.0'],
-    tarball: path.join(npm.prefix, 'tarballs/oneOneZero'),
-  })
-
-  await registry.tarball({
-    manifest: manifest.versions['1.1.1'],
-    tarball: path.join(npm.prefix, 'tarballs/oneOneOne'),
-  })
-
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
-
   await npm.exec('ci', [])
+  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
+  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
+  assert.fileShouldExist('node_modules/abbrev/index.js')
+  assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
+  assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
+  assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
+})
 
-  const rmFooTest = path.join(npm.prefix, 'node_modules/abbrev/foo.txt')
-  t.equal(fs.existsSync(rmFooTest), false, 'existing node_modules is removed')
+t.test('should remove dirty node_modules with hoisted workspace modules', async t => {
+  const { npm, registry, assert } = await loadMockNpm(t, {
+    prefixDir: workspaceMock(t, {
+      clean: false,
+      workspaces: {
+        'workspace-a': {
+          'abbrev@1.1.0': { hoist: true },
+        },
+        'workspace-b': {
+          'lodash@1.1.1': { hoist: true },
+        },
+      },
+    }),
+  })
+  await registry.setup({
+    'abbrev@1.1.0': path.join(npm.prefix, 'tarballs/abbrev@1.1.0'),
+    'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  await npm.exec('ci', [])
+  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
+  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
+  assert.fileShouldExist('node_modules/abbrev/index.js')
+  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
+  assert.fileShouldExist('node_modules/lodash/index.js')
+})
 
-  const rmBarTest = path.join(npm.prefix, 'workspace-b/node_modules/abbrev/bar.txt')
-  t.equal(fs.existsSync(rmBarTest), false, 'existing ws node_modules is removed')
-
-  const checkNmAbbrev = path.join(npm.prefix, 'node_modules/abbrev')
-  t.equal(fs.existsSync(checkNmAbbrev), true, 'installs abbrev')
-
-  const checkWsAbbrev = path.join(npm.prefix, 'workspace-b/node_modules/abbrev')
-  t.equal(fs.existsSync(checkWsAbbrev), true, 'installs abbrev')
+t.test('should ignore --workspace flag', async t => {
+  const { npm, registry, assert } = await loadMockNpm(t, {
+    config: {
+      workspace: 'workspace-a',
+    },
+    prefixDir: workspaceMock(t, {
+      clean: false,
+      workspaces: {
+        'workspace-a': {
+          'abbrev@1.1.0': { hoist: true },
+        },
+        'workspace-b': {
+          'lodash@1.1.1': { hoist: true },
+        },
+      },
+    }),
+  })
+  await registry.setup({
+    'abbrev@1.1.0': path.join(npm.prefix, 'tarballs/abbrev@1.1.0'),
+    'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  await npm.exec('ci', [])
+  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
+  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
+  assert.fileShouldExist('node_modules/abbrev/index.js')
+  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
+  assert.fileShouldExist('node_modules/lodash/index.js')
 })

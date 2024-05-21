@@ -2710,9 +2710,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-[--no-bin-links] [--no-fund] [--dry-run]
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--no-bin-links] [--no-fund] [--dry-run] [--install-links]
 
 aliases: clean-install, ic, install-clean, isntall-clean
 
@@ -2736,9 +2734,6 @@ aliases: clean-install, ic, install-clean, isntall-clean
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
-#### \`workspace\`
-#### \`workspaces\`
-#### \`include-workspace-root\`
 #### \`install-links\`
 `
 
@@ -3329,9 +3324,7 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-[--no-bin-links] [--no-fund] [--dry-run]
-[-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--no-bin-links] [--no-fund] [--dry-run] [--install-links]
 
 aliases: cit, clean-install-test, sit
 
@@ -3355,9 +3348,6 @@ aliases: cit, clean-install-test, sit
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
-#### \`workspace\`
-#### \`workspaces\`
-#### \`include-workspace-root\`
 #### \`install-links\`
 `
 

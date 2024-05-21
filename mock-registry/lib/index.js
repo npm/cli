@@ -439,6 +439,50 @@ class MockRegistry {
       ...packument,
     }
   }
+
+  /**
+   * this is a simpler convience method for creating mockable registry with
+   * tarballs for specific versions
+   */
+  async setup (packages) {
+    const format = Object.keys(packages).map(v => {
+      const [name, version] = v.split('@')
+      return { name, version }
+    }).reduce((acc, inc) => {
+      const exists = acc.find(pkg => pkg.name === inc.name)
+      if (exists) {
+        exists.tarballs = {
+          ...exists.tarballs,
+          [inc.version]: packages[`${inc.name}@${inc.version}`],
+        }
+      } else {
+        acc.push({ name: inc.name,
+          tarballs: {
+            [inc.version]: packages[`${inc.name}@${inc.version}`],
+          },
+        })
+      }
+      return acc
+    }, [])
+    const registry = this
+    for (const pkg of format) {
+      const { name, tarballs } = pkg
+      const versions = Object.keys(tarballs)
+      const manifest = await registry.manifest({ name, versions })
+
+      for (const version of versions) {
+        const tarballPath = pkg.tarballs[version]
+        if (!tarballPath) {
+          throw new Error(`Tarball path not provided for version ${version}`)
+        }
+
+        await registry.tarball({
+          manifest: manifest.versions[version],
+          tarball: tarballPath,
+        })
+      }
+    }
+  }
 }
 
 module.exports = MockRegistry

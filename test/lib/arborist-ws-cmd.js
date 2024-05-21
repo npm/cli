@@ -4,7 +4,7 @@ const { load: loadMockNpm } = require('../fixtures/mock-npm')
 const tmock = require('../fixtures/tmock')
 
 const mockArboristCmd = async (t, exec, workspace, { mocks = {}, ...opts } = {}) => {
-  const ArboristCmd = tmock(t, '{LIB}/arborist-cmd.js', mocks)
+  const ArboristCmd = tmock(t, '{LIB}/arborist-ws-cmd.js', mocks)
 
   const config = (typeof workspace === 'function')
     ? (dirs) => ({ workspace: workspace(dirs) })

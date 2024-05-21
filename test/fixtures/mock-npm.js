@@ -1,10 +1,12 @@
 const os = require('os')
 const fs = require('fs').promises
+const fsSync = require('fs')
 const path = require('path')
 const tap = require('tap')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const tmock = require('./tmock')
+const MockRegistry = require('@npmcli/mock-registry')
 const defExitCode = process.exitCode
 
 const changeDir = (dir) => {
@@ -288,6 +290,397 @@ const setupMockNpm = async (t, {
   }
 }
 
+function workspaceFolderStructureNoHoist (t, opts) {
+  const { clean } = { cleacleannStart: true, ...opts }
+  return {
+    tarballs: {
+      oneOneZero: {
+        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
+        'index.js': 'module.exports = "hello world"',
+      },
+      oneOneOne: {
+        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.1' }),
+        'index.js': 'module.exports = "hello world"',
+      },
+    },
+    node_modules: clean ? {} : {
+      abbrev: {
+        'foo.txt': '',
+        'package.json': JSON.stringify({
+          name: 'abbrev',
+          version: '1.1.0',
+        }),
+      },
+      'workspace-a': t.fixture('symlink', '../workspace-a'),
+      'workspace-b': t.fixture('symlink', '../workspace-b'),
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'workspace-test-3',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'workspace-test-3',
+          version: '1.0.0',
+          workspaces: [
+            'workspace-a',
+            'workspace-b',
+          ],
+        },
+        'node_modules/abbrev': {
+          version: '1.1.0',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
+        },
+        'node_modules/workspace-a': {
+          resolved: 'workspace-a',
+          link: true,
+        },
+        'node_modules/workspace-b': {
+          resolved: 'workspace-b',
+          link: true,
+        },
+        'workspace-a': {
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.0',
+          },
+        },
+        'workspace-b': {
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+          devDependencies: {},
+        },
+        'workspace-b/node_modules/abbrev': {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+        },
+      },
+    }),
+    'package.json': JSON.stringify({
+      name: 'workspace-test-3',
+      version: '1.0.0',
+      workspaces: [
+        'workspace-a',
+        'workspace-b',
+      ],
+    }),
+    'workspace-a': {
+      'package.json': JSON.stringify({
+        name: 'workspace-a',
+        version: '1.0.0',
+        dependencies: {
+          abbrev: '1.1.0',
+        },
+      }),
+    },
+    'workspace-b': {
+      node_modules: clean ? {} : {
+        abbrev: {
+          'bar.txt': '',
+          'package.json': JSON.stringify({
+            name: 'abbrev',
+            version: '1.1.1',
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'workspace-b',
+        version: '1.0.0',
+        dependencies: {
+          abbrev: '1.1.1',
+        },
+      }),
+    },
+  }
+}
+
+function workspaceFolderStructureHoist (t, opts) {
+  const { clean } = { clean: true, ...opts }
+  return {
+    tarballs: {
+      oneOneZero: {
+        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
+        'index.js': 'module.exports = "hello world"',
+      },
+      oneOneOne: {
+        'package.json': JSON.stringify({ name: 'lodash', version: '1.1.1' }),
+        'index.js': 'module.exports = "hello world"',
+      },
+    },
+    node_modules: clean ? {} : {
+      abbrev: {
+        'foo.txt': '',
+        'package.json': JSON.stringify({
+          name: 'abbrev',
+          version: '1.1.0',
+        }),
+      },
+      'workspace-a': t.fixture('symlink', '../workspace-a'),
+      'workspace-b': t.fixture('symlink', '../workspace-b'),
+    },
+    'package-lock.json': JSON.stringify({
+      name: 'workspace-test-3',
+      version: '1.0.0',
+      lockfileVersion: 3,
+      requires: true,
+      packages: {
+        '': {
+          name: 'workspace-test-3',
+          version: '1.0.0',
+          workspaces: [
+            'workspace-a',
+            'workspace-b',
+          ],
+        },
+        'node_modules/abbrev': {
+          version: '1.1.0',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
+        },
+        'node_modules/workspace-a': {
+          resolved: 'workspace-a',
+          link: true,
+        },
+        'node_modules/workspace-b': {
+          resolved: 'workspace-b',
+          link: true,
+        },
+        'workspace-a': {
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.0',
+          },
+        },
+        'workspace-b': {
+          version: '1.0.0',
+          dependencies: {
+            lodash: '1.1.1',
+          },
+          devDependencies: {},
+        },
+        'node_modules/lodash': {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/lodash/-/lodash-1.1.1.tgz',
+        },
+      },
+    }),
+    'package.json': JSON.stringify({
+      name: 'workspace-test-3',
+      version: '1.0.0',
+      workspaces: [
+        'workspace-a',
+        'workspace-b',
+      ],
+    }),
+    'workspace-a': {
+      'package.json': JSON.stringify({
+        name: 'workspace-a',
+        version: '1.0.0',
+        dependencies: {
+          abbrev: '1.1.0',
+        },
+      }),
+    },
+    'workspace-b': {
+      node_modules: clean ? {} : {
+        lodash: {
+          'bar.txt': '',
+          'package.json': JSON.stringify({
+            name: 'lodash',
+            version: '1.1.1',
+          }),
+        },
+      },
+      'package.json': JSON.stringify({
+        name: 'workspace-b',
+        version: '1.0.0',
+        dependencies: {
+          lodash: '1.1.1',
+        },
+      }),
+    },
+  }
+}
+
+const loadNpmWithRegistry = async (t, opts) => {
+  const mock = await setupMockNpm(t, opts)
+  const registry = new MockRegistry({
+    tap: t,
+    registry: mock.npm.config.get('registry'),
+    strict: true,
+  })
+
+  const fileShouldExist = (filePath) => {
+    t.equal(
+      fsSync.existsSync(path.join(mock.npm.prefix, filePath)), true, `${filePath} should exist`
+    )
+  }
+
+  const fileShouldNotExist = (filePath) => {
+    t.equal(
+      fsSync.existsSync(path.join(mock.npm.prefix, filePath)), false, `${filePath} should not exist`
+    )
+  }
+
+  const packageVersionMatches = (filePath, version) => {
+    t.equal(
+      JSON.parse(fsSync.readFileSync(path.join(mock.npm.prefix, filePath), 'utf8')).version, version
+    )
+  }
+
+  const assert = { fileShouldExist, fileShouldNotExist, packageVersionMatches }
+
+  return { registry, assert, ...mock }
+}
+
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
+module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.setGlobalNodeModules = setGlobalNodeModules
+module.exports.workspaceFolderStructureHoist = workspaceFolderStructureHoist
+module.exports.workspaceFolderStructureNoHoist = workspaceFolderStructureNoHoist
+module.exports.workspaceMock = workspaceMock
+
+function dep (spec, opt) {
+  const [name, version = '1.0.0'] = spec.split('@')
+  const lockPath = !opt.hoist && opt.parent ? `${opt.parent}/` : ''
+  const { definition } = opt
+
+  const depsMap = definition ? Object.entries(definition).map(([s, o]) => {
+    return dep(s, { ...o, parent: name })
+  }) : []
+  const dependencies = Object.assign({}, ...depsMap.map(d => d.asDependency))
+
+  const asPackageJSON = JSON.stringify({
+    name, version, ...(Object.keys(dependencies).length ? { dependencies } : {}),
+  })
+
+  const asDependency = {
+    [name]: version,
+  }
+
+  const asPackageLock = {
+    [`${lockPath}node_modules/${name}`]: {
+      version,
+      resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`,
+    },
+  }
+  const asPackage = {
+    'package.json': asPackageJSON,
+    'index.js': 'module.exports = "hello world"',
+  }
+
+  const asTarball = [`${name}@${version}`, asPackage]
+
+  const asDirtyModule = {
+    [name]: {
+      [`${name}@${version}.txt`]: '',
+      'package.json': asPackageJSON,
+    },
+  }
+
+  const asLockLink = {
+    [`node_modules/${name}`]: {
+      resolved: `${name}`,
+      link: true,
+    },
+  }
+
+  const asDepLock = depsMap.map(d => d.asPackageLock)
+  const asLocalLockEntry = { [name]: { version, dependencies } }
+
+  const asModule = {
+    [name]: {
+      node_modules: Object.assign({}, ...depsMap.map(d => d.hoist ? {} : d.asDirtyModule)),
+      ...asPackage,
+    },
+  }
+
+  const asLocalizedDirty = lockPath ? {
+    ...asDirtyModule,
+  } : {}
+
+  return {
+    ...opt,
+    name,
+    version,
+    asTarball,
+    asPackage,
+    asLocalizedDirty,
+    asDirtyModule,
+    asPackageJSON,
+    asPackageLock,
+    asDependency,
+    asModule,
+    depsMap,
+    asLockLink,
+    asDepLock,
+    asLocalLockEntry,
+  }
+}
+
+function workspaceMock (t, opts) {
+  /* eslint-disable max-len */
+  const { clean, workspaces } = { clean: true, ...opts }
+
+  const root = 'workspace-root'
+  const version = '1.0.0'
+  const names = Object.keys(workspaces)
+  const ws = Object.entries(workspaces).map(([name, definition]) => dep(name, { definition }))
+  const deps = ws.map(w => w.depsMap).flat()
+  const tarballs = Object.fromEntries(deps.map(flatDep => flatDep.asTarball))
+  const symlinks = Object.fromEntries(names.map((name) => [name, t.fixture('symlink', `../${name}`)]))
+  const hoisted = Object.assign({}, ...deps.filter(d => d.hoist).map(d => d.asDirtyModule))
+  const workspaceFolders = Object.assign({}, ...ws.map(w => w.asModule))
+  const packageJSON = { name: root, version, workspaces: names }
+  const packageLockJSON = ({
+    name: root,
+    version,
+    lockfileVersion: 3,
+    requires: true,
+    packages: {
+      '': { name: root, version, workspaces: names },
+      ...Object.assign({}, ...ws.map(d => d.asLockLink).flat()),
+      ...Object.assign({}, ...ws.map(d => d.asDepLock).flat()),
+      ...Object.assign({}, ...ws.map(d => d.asLocalLockEntry).flat()),
+    },
+  })
+
+  return {
+    tarballs,
+    node_modules: clean ? {} : {
+      ...hoisted,
+      ...symlinks,
+    },
+    'package-lock.json': JSON.stringify(packageLockJSON),
+    'package.json': JSON.stringify(packageJSON),
+    ...Object.fromEntries(Object.entries(workspaceFolders).map(([_key, value]) => {
+      return [_key, Object.fromEntries(Object.entries(value).map(([key, valueTwo]) => {
+        if (key === 'node_modules' && clean) {
+          return [key, {}]
+        }
+        return [key, valueTwo]
+      }))]
+    })),
+  }
+}
+
+// const t = require('tap')
+
+// const v = workspaceMock(t, {
+//   clean: false,
+//   workspaces: {
+//     'workspace-a': {
+//       'abbrev@1.1.0': { hoist: true },
+//     },
+//     'workspace-b': {
+//       'abbrev@1.1.1': { hoist: false },
+//     },
+//   },
+// })
+
+// // const v = workspaceFolderStructureNoHoist(t, { clean: false })
+
+// console.log(JSON.stringify(v, null, 2))
