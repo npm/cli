@@ -290,220 +290,6 @@ const setupMockNpm = async (t, {
   }
 }
 
-function workspaceFolderStructureNoHoist (t, opts) {
-  const { clean } = { cleacleannStart: true, ...opts }
-  return {
-    tarballs: {
-      oneOneZero: {
-        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
-        'index.js': 'module.exports = "hello world"',
-      },
-      oneOneOne: {
-        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.1' }),
-        'index.js': 'module.exports = "hello world"',
-      },
-    },
-    node_modules: clean ? {} : {
-      abbrev: {
-        'foo.txt': '',
-        'package.json': JSON.stringify({
-          name: 'abbrev',
-          version: '1.1.0',
-        }),
-      },
-      'workspace-a': t.fixture('symlink', '../workspace-a'),
-      'workspace-b': t.fixture('symlink', '../workspace-b'),
-    },
-    'package-lock.json': JSON.stringify({
-      name: 'workspace-test-3',
-      version: '1.0.0',
-      lockfileVersion: 3,
-      requires: true,
-      packages: {
-        '': {
-          name: 'workspace-test-3',
-          version: '1.0.0',
-          workspaces: [
-            'workspace-a',
-            'workspace-b',
-          ],
-        },
-        'node_modules/abbrev': {
-          version: '1.1.0',
-          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
-        },
-        'node_modules/workspace-a': {
-          resolved: 'workspace-a',
-          link: true,
-        },
-        'node_modules/workspace-b': {
-          resolved: 'workspace-b',
-          link: true,
-        },
-        'workspace-a': {
-          version: '1.0.0',
-          dependencies: {
-            abbrev: '1.1.0',
-          },
-        },
-        'workspace-b': {
-          version: '1.0.0',
-          dependencies: {
-            abbrev: '1.1.1',
-          },
-          devDependencies: {},
-        },
-        'workspace-b/node_modules/abbrev': {
-          version: '1.1.1',
-          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
-        },
-      },
-    }),
-    'package.json': JSON.stringify({
-      name: 'workspace-test-3',
-      version: '1.0.0',
-      workspaces: [
-        'workspace-a',
-        'workspace-b',
-      ],
-    }),
-    'workspace-a': {
-      'package.json': JSON.stringify({
-        name: 'workspace-a',
-        version: '1.0.0',
-        dependencies: {
-          abbrev: '1.1.0',
-        },
-      }),
-    },
-    'workspace-b': {
-      node_modules: clean ? {} : {
-        abbrev: {
-          'bar.txt': '',
-          'package.json': JSON.stringify({
-            name: 'abbrev',
-            version: '1.1.1',
-          }),
-        },
-      },
-      'package.json': JSON.stringify({
-        name: 'workspace-b',
-        version: '1.0.0',
-        dependencies: {
-          abbrev: '1.1.1',
-        },
-      }),
-    },
-  }
-}
-
-function workspaceFolderStructureHoist (t, opts) {
-  const { clean } = { clean: true, ...opts }
-  return {
-    tarballs: {
-      oneOneZero: {
-        'package.json': JSON.stringify({ name: 'abbrev', version: '1.1.0' }),
-        'index.js': 'module.exports = "hello world"',
-      },
-      oneOneOne: {
-        'package.json': JSON.stringify({ name: 'lodash', version: '1.1.1' }),
-        'index.js': 'module.exports = "hello world"',
-      },
-    },
-    node_modules: clean ? {} : {
-      abbrev: {
-        'foo.txt': '',
-        'package.json': JSON.stringify({
-          name: 'abbrev',
-          version: '1.1.0',
-        }),
-      },
-      'workspace-a': t.fixture('symlink', '../workspace-a'),
-      'workspace-b': t.fixture('symlink', '../workspace-b'),
-    },
-    'package-lock.json': JSON.stringify({
-      name: 'workspace-test-3',
-      version: '1.0.0',
-      lockfileVersion: 3,
-      requires: true,
-      packages: {
-        '': {
-          name: 'workspace-test-3',
-          version: '1.0.0',
-          workspaces: [
-            'workspace-a',
-            'workspace-b',
-          ],
-        },
-        'node_modules/abbrev': {
-          version: '1.1.0',
-          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.0.tgz',
-        },
-        'node_modules/workspace-a': {
-          resolved: 'workspace-a',
-          link: true,
-        },
-        'node_modules/workspace-b': {
-          resolved: 'workspace-b',
-          link: true,
-        },
-        'workspace-a': {
-          version: '1.0.0',
-          dependencies: {
-            abbrev: '1.1.0',
-          },
-        },
-        'workspace-b': {
-          version: '1.0.0',
-          dependencies: {
-            lodash: '1.1.1',
-          },
-          devDependencies: {},
-        },
-        'node_modules/lodash': {
-          version: '1.1.1',
-          resolved: 'https://registry.npmjs.org/lodash/-/lodash-1.1.1.tgz',
-        },
-      },
-    }),
-    'package.json': JSON.stringify({
-      name: 'workspace-test-3',
-      version: '1.0.0',
-      workspaces: [
-        'workspace-a',
-        'workspace-b',
-      ],
-    }),
-    'workspace-a': {
-      'package.json': JSON.stringify({
-        name: 'workspace-a',
-        version: '1.0.0',
-        dependencies: {
-          abbrev: '1.1.0',
-        },
-      }),
-    },
-    'workspace-b': {
-      node_modules: clean ? {} : {
-        lodash: {
-          'bar.txt': '',
-          'package.json': JSON.stringify({
-            name: 'lodash',
-            version: '1.1.1',
-          }),
-        },
-      },
-      'package.json': JSON.stringify({
-        name: 'workspace-b',
-        version: '1.0.0',
-        dependencies: {
-          lodash: '1.1.1',
-        },
-      }),
-    },
-  }
-}
-
 const loadNpmWithRegistry = async (t, opts) => {
   const mock = await setupMockNpm(t, opts)
   const registry = new MockRegistry({
@@ -535,14 +321,7 @@ const loadNpmWithRegistry = async (t, opts) => {
   return { registry, assert, ...mock }
 }
 
-module.exports = setupMockNpm
-module.exports.load = setupMockNpm
-module.exports.loadNpmWithRegistry = loadNpmWithRegistry
-module.exports.setGlobalNodeModules = setGlobalNodeModules
-module.exports.workspaceFolderStructureHoist = workspaceFolderStructureHoist
-module.exports.workspaceFolderStructureNoHoist = workspaceFolderStructureNoHoist
-module.exports.workspaceMock = workspaceMock
-
+/** breaks down a spec "abbrev@1.1.1" into different parts for mocking */
 function dep (spec, opt) {
   const [name, version = '1.0.0'] = spec.split('@')
   const lockPath = !opt.hoist && opt.parent ? `${opt.parent}/` : ''
@@ -622,7 +401,6 @@ function dep (spec, opt) {
 }
 
 function workspaceMock (t, opts) {
-  /* eslint-disable max-len */
   const { clean, workspaces } = { clean: true, ...opts }
 
   const root = 'workspace-root'
@@ -631,7 +409,9 @@ function workspaceMock (t, opts) {
   const ws = Object.entries(workspaces).map(([name, definition]) => dep(name, { definition }))
   const deps = ws.map(w => w.depsMap).flat()
   const tarballs = Object.fromEntries(deps.map(flatDep => flatDep.asTarball))
-  const symlinks = Object.fromEntries(names.map((name) => [name, t.fixture('symlink', `../${name}`)]))
+  const symlinks = Object.fromEntries(names.map((name) => {
+    return [name, t.fixture('symlink', `../${name}`)]
+  }))
   const hoisted = Object.assign({}, ...deps.filter(d => d.hoist).map(d => d.asDirtyModule))
   const workspaceFolders = Object.assign({}, ...ws.map(w => w.asModule))
   const packageJSON = { name: root, version, workspaces: names }
@@ -667,20 +447,8 @@ function workspaceMock (t, opts) {
   }
 }
 
-// const t = require('tap')
-
-// const v = workspaceMock(t, {
-//   clean: false,
-//   workspaces: {
-//     'workspace-a': {
-//       'abbrev@1.1.0': { hoist: true },
-//     },
-//     'workspace-b': {
-//       'abbrev@1.1.1': { hoist: false },
-//     },
-//   },
-// })
-
-// // const v = workspaceFolderStructureNoHoist(t, { clean: false })
-
-// console.log(JSON.stringify(v, null, 2))
+module.exports = setupMockNpm
+module.exports.load = setupMockNpm
+module.exports.loadNpmWithRegistry = loadNpmWithRegistry
+module.exports.setGlobalNodeModules = setGlobalNodeModules
+module.exports.workspaceMock = workspaceMock
