@@ -278,15 +278,16 @@ t.test('should remove dirty node_modules with hoisted workspace modules', async 
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
-  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
 })
 
-t.test('should ignore --workspace flag', async t => {
+/** this behaves the same way as install but will remove all workspace node_modules */
+t.test('should use --workspace flag', async t => {
   const { npm, registry, assert } = await loadMockNpm(t, {
     config: {
-      workspace: 'workspace-a',
+      workspace: 'workspace-b',
     },
     prefixDir: workspaceMock(t, {
       clean: false,
@@ -301,15 +302,14 @@ t.test('should ignore --workspace flag', async t => {
     }),
   })
   await registry.setup({
-    'abbrev@1.1.0': path.join(npm.prefix, 'tarballs/abbrev@1.1.0'),
     'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
-  assert.fileShouldExist('node_modules/abbrev/index.js')
-  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.fileShouldNotExist('node_modules/abbrev/package.json')
+  assert.fileShouldNotExist('node_modules/abbrev/index.js')
+  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
 })

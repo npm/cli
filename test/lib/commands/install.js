@@ -317,7 +317,7 @@ t.test('should install in workspace with hoisted modules', async t => {
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
-  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
 })
@@ -378,8 +378,7 @@ t.test('should install hoisted module with --workspace flag', async t => {
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.fileShouldNotExist('node_modules/abbrev/package.json')
   assert.fileShouldNotExist('node_modules/abbrev/index.js')
-
-  assert.fileShouldNotExist('node_modules/lodash/abbrev@1.1.1.txt')
+  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
 })

@@ -59,7 +59,9 @@ npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundlin
 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
-npm error [--no-bin-links] [--no-fund] [--dry-run] [--install-links]
+npm error [--no-bin-links] [--no-fund] [--dry-run]
+npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
 npm error
 npm error aliases: clean-install, ic, install-clean, isntall-clean
 npm error
