@@ -287,9 +287,11 @@ t.test('should install in workspace with unhoisted module', async t => {
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('install', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
+  // for abbrev@1.1.1
   assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
   assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
   assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
@@ -314,9 +316,11 @@ t.test('should install in workspace with hoisted modules', async t => {
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('install', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
+  // for lodash@1.1.1
   assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
@@ -344,10 +348,11 @@ t.test('should install unhoisted module with --workspace flag', async t => {
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('install', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.fileShouldNotExist('node_modules/abbrev/package.json')
   assert.fileShouldNotExist('node_modules/abbrev/index.js')
-
+  // for abbrev@1.1.1
   assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
   assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
   assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
@@ -375,9 +380,11 @@ t.test('should install hoisted module with --workspace flag', async t => {
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('install', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.fileShouldNotExist('node_modules/abbrev/package.json')
   assert.fileShouldNotExist('node_modules/abbrev/index.js')
+  // for lodash@1.1.1
   assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')

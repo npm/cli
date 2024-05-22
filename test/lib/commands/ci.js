@@ -247,9 +247,11 @@ t.test('should remove dirty node_modules with unhoisted workspace module', async
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
+  // for abbrev@1.1.1
   assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
   assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
   assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
@@ -275,9 +277,11 @@ t.test('should remove dirty node_modules with hoisted workspace modules', async 
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
   assert.fileShouldExist('node_modules/abbrev/index.js')
+  // for lodash@1.1.1
   assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
@@ -306,9 +310,11 @@ t.test('should use --workspace flag', async t => {
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
   await npm.exec('ci', [])
+  // for abbrev@1.1.0
   assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
   assert.fileShouldNotExist('node_modules/abbrev/package.json')
   assert.fileShouldNotExist('node_modules/abbrev/index.js')
+  // for lodash@1.1.1
   assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
   assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
   assert.fileShouldExist('node_modules/lodash/index.js')
