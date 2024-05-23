@@ -451,6 +451,6 @@ function workspaceMock (t, opts) {
 
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
-module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.setGlobalNodeModules = setGlobalNodeModules
+module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.workspaceMock = workspaceMock
