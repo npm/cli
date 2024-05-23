@@ -233,7 +233,7 @@ t.test('should remove dirty node_modules with unhoisted workspace module', async
       clean: false,
       workspaces: {
         'workspace-a': {
-          'abbrev@1.1.0': { hoist: true },
+          'abbrev@1.1.0': { },
         },
         'workspace-b': {
           'abbrev@1.1.1': { hoist: false },
@@ -246,15 +246,11 @@ t.test('should remove dirty node_modules with unhoisted workspace module', async
     'abbrev@1.1.1': path.join(npm.prefix, 'tarballs/abbrev@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageDirty('node_modules/abbrev@1.1.0')
+  assert.packageDirty('workspace-b/node_modules/abbrev@1.1.1')
   await npm.exec('ci', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
-  assert.fileShouldExist('node_modules/abbrev/index.js')
-  // for abbrev@1.1.1
-  assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
-  assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
-  assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
+  assert.packageInstalled('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('workspace-b/node_modules/abbrev@1.1.1')
 })
 
 t.test('should remove dirty node_modules with hoisted workspace modules', async t => {
@@ -263,10 +259,10 @@ t.test('should remove dirty node_modules with hoisted workspace modules', async 
       clean: false,
       workspaces: {
         'workspace-a': {
-          'abbrev@1.1.0': { hoist: true },
+          'abbrev@1.1.0': { },
         },
         'workspace-b': {
-          'lodash@1.1.1': { hoist: true },
+          'lodash@1.1.1': { },
         },
       },
     }),
@@ -276,19 +272,16 @@ t.test('should remove dirty node_modules with hoisted workspace modules', async 
     'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageDirty('node_modules/abbrev@1.1.0')
+  assert.packageDirty('node_modules/lodash@1.1.1')
   await npm.exec('ci', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
-  assert.fileShouldExist('node_modules/abbrev/index.js')
-  // for lodash@1.1.1
-  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
-  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
-  assert.fileShouldExist('node_modules/lodash/index.js')
+  assert.packageInstalled('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('node_modules/lodash@1.1.1')
 })
 
 /** this behaves the same way as install but will remove all workspace node_modules */
 t.test('should use --workspace flag', async t => {
+  t.saveFixture = true
   const { npm, registry, assert } = await loadMockNpm(t, {
     config: {
       workspace: 'workspace-b',
@@ -297,10 +290,10 @@ t.test('should use --workspace flag', async t => {
       clean: false,
       workspaces: {
         'workspace-a': {
-          'abbrev@1.1.0': { hoist: true },
+          'abbrev@1.1.0': { },
         },
         'workspace-b': {
-          'lodash@1.1.1': { hoist: true },
+          'lodash@1.1.1': { },
         },
       },
     }),
@@ -309,13 +302,9 @@ t.test('should use --workspace flag', async t => {
     'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageDirty('node_modules/abbrev@1.1.0')
+  assert.packageDirty('node_modules/lodash@1.1.1')
   await npm.exec('ci', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.fileShouldNotExist('node_modules/abbrev/package.json')
-  assert.fileShouldNotExist('node_modules/abbrev/index.js')
-  // for lodash@1.1.1
-  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
-  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
-  assert.fileShouldExist('node_modules/lodash/index.js')
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('node_modules/lodash@1.1.1')
 })

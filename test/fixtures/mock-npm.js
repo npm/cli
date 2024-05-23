@@ -316,104 +316,112 @@ const loadNpmWithRegistry = async (t, opts) => {
     )
   }
 
-  const assert = { fileShouldExist, fileShouldNotExist, packageVersionMatches }
+  const packageInstalled = (target) => {
+    const spec = path.basename(target)
+    const dirname = path.dirname(target)
+    const [name, version = '1.0.0'] = spec.split('@')
+    assert.fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
+    assert.packageVersionMatches(`${dirname}/${name}/package.json`, version)
+    assert.fileShouldExist(`${dirname}/${name}/index.js`)
+  }
+
+  const packageMissing = (target) => {
+    const spec = path.basename(target)
+    const dirname = path.dirname(target)
+    const [name, version = '1.0.0'] = spec.split('@')
+    assert.fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
+    assert.fileShouldNotExist(`${dirname}/${name}/package.json`)
+    assert.fileShouldNotExist(`${dirname}/${name}/index.js`)
+  }
+
+  const packageDirty = (target) => {
+    const spec = path.basename(target)
+    const dirname = path.dirname(target)
+    const [name, version = '1.0.0'] = spec.split('@')
+    assert.fileShouldExist(`${dirname}/${name}/${name}@${version}.txt`)
+    assert.packageVersionMatches(`${dirname}/${name}/package.json`, version)
+    assert.fileShouldNotExist(`${dirname}/${name}/index.js`)
+  }
+
+  const assert = {
+    fileShouldExist,
+    fileShouldNotExist,
+    packageVersionMatches,
+    packageInstalled,
+    packageMissing,
+    packageDirty,
+  }
 
   return { registry, assert, ...mock }
 }
 
 /** breaks down a spec "abbrev@1.1.1" into different parts for mocking */
-function dep (spec, opt) {
+function dependencyDetails (spec, opt = {}) {
   const [name, version = '1.0.0'] = spec.split('@')
-  const lockPath = !opt.hoist && opt.parent ? `${opt.parent}/` : ''
-  const { definition } = opt
-
-  const depsMap = definition ? Object.entries(definition).map(([s, o]) => {
-    return dep(s, { ...o, parent: name })
-  }) : []
-  const dependencies = Object.assign({}, ...depsMap.map(d => d.asDependency))
-
-  const asPackageJSON = JSON.stringify({
-    name, version, ...(Object.keys(dependencies).length ? { dependencies } : {}),
-  })
-
-  const asDependency = {
-    [name]: version,
-  }
-
-  const asPackageLock = {
-    [`${lockPath}node_modules/${name}`]: {
-      version,
-      resolved: `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`,
-    },
-  }
-  const asPackage = {
-    'package.json': asPackageJSON,
-    'index.js': 'module.exports = "hello world"',
-  }
-
-  const asTarball = [`${name}@${version}`, asPackage]
-
-  const asDirtyModule = {
-    [name]: {
-      [`${name}@${version}.txt`]: '',
-      'package.json': asPackageJSON,
-    },
-  }
-
-  const asLockLink = {
-    [`node_modules/${name}`]: {
-      resolved: `${name}`,
-      link: true,
-    },
-  }
-
-  const asDepLock = depsMap.map(d => d.asPackageLock)
-  const asLocalLockEntry = { [name]: { version, dependencies } }
-
-  const asModule = {
-    [name]: {
-      node_modules: Object.assign({}, ...depsMap.map(d => d.hoist ? {} : d.asDirtyModule)),
-      ...asPackage,
-    },
-  }
-
-  const asLocalizedDirty = lockPath ? {
-    ...asDirtyModule,
-  } : {}
+  const { parent, hoist = true, ws, clean = true } = opt
+  const modulePathPrefix = !hoist && parent ? `${parent}/` : ''
+  const modulePath = `${modulePathPrefix}node_modules/${name}`
+  const resolved = `https://registry.npmjs.org/${name}/-/${name}-${version}.tgz`
+  // deps
+  const wsEntries = Object.entries({ ...ws })
+  const depsMap = wsEntries.map(([s, o]) => dependencyDetails(s, { ...o, parent: name }))
+  const dependencies = Object.assign({}, ...depsMap.map(d => d.packageDependency))
+  const spreadDependencies = depsMap.length ? { dependencies } : {}
+  // package and lock objects
+  const packageDependency = { [name]: version }
+  const packageLockEntry = { [modulePath]: { version, resolved } }
+  const packageLockLink = { [modulePath]: { resolved: name, link: true } }
+  const packageLockLocal = { [name]: { version, dependencies } }
+  // build package.js
+  const packageJSON = { name, version, ...spreadDependencies }
+  const packageJSONString = JSON.stringify(packageJSON)
+  const packageJSONFile = { 'package.json': packageJSONString }
+  // build index.js
+  const indexJSString = 'module.exports = "hello world"'
+  const indexJSFile = { 'index.js': indexJSString }
+  // tarball
+  const packageFiles = { ...packageJSONFile, ...indexJSFile }
+  const nodeModules = Object.assign({}, ...depsMap.map(d => d.hoist ? {} : d.dirtyOrCleanDir))
+  const nodeModulesDir = { node_modules: nodeModules }
+  const packageDir = { [name]: { ...packageFiles, ...nodeModulesDir } }
+  const tarballDir = { [`${name}@${version}`]: packageFiles }
+  // dirty files
+  const dirtyFile = { [`${name}@${version}.txt`]: 'dirty file' }
+  const dirtyFiles = { ...packageJSONFile, ...dirtyFile }
+  const dirtyDir = { [name]: dirtyFiles }
+  const dirtyOrCleanDir = clean ? {} : dirtyDir
 
   return {
-    ...opt,
-    name,
-    version,
-    asTarball,
-    asPackage,
-    asLocalizedDirty,
-    asDirtyModule,
-    asPackageJSON,
-    asPackageLock,
-    asDependency,
-    asModule,
+    packageDependency,
+    hoist,
     depsMap,
-    asLockLink,
-    asDepLock,
-    asLocalLockEntry,
+    dirtyOrCleanDir,
+    tarballDir,
+    packageDir,
+    packageLockEntry,
+    packageLockLink,
+    packageLockLocal,
   }
 }
 
 function workspaceMock (t, opts) {
-  const { clean, workspaces } = { clean: true, ...opts }
-
+  const toObject = [(a, c) => ({ ...a, ...c }), {}]
+  const { workspaces: workspacesDef, ...rest } = { clean: true, ...opts }
+  const workspaces = Object.fromEntries(Object.entries(workspacesDef).map(([name, ws]) => {
+    return [name, Object.fromEntries(Object.entries(ws).map(([wsPackageDep, wsPackageDepOpts]) => {
+      return [wsPackageDep, { ...rest, ...wsPackageDepOpts }]
+    }))]
+  }))
   const root = 'workspace-root'
   const version = '1.0.0'
   const names = Object.keys(workspaces)
-  const ws = Object.entries(workspaces).map(([name, definition]) => dep(name, { definition }))
-  const deps = ws.map(w => w.depsMap).flat()
-  const tarballs = Object.fromEntries(deps.map(flatDep => flatDep.asTarball))
-  const symlinks = Object.fromEntries(names.map((name) => {
-    return [name, t.fixture('symlink', `../${name}`)]
-  }))
-  const hoisted = Object.assign({}, ...deps.filter(d => d.hoist).map(d => d.asDirtyModule))
-  const workspaceFolders = Object.assign({}, ...ws.map(w => w.asModule))
+  const ws = Object.entries(workspaces).map(([name, _ws]) => dependencyDetails(name, { ws: _ws }))
+  const deps = ws.map(({ depsMap }) => depsMap).flat()
+  const tarballs = deps.map(w => w.tarballDir).reduce(...toObject)
+  const symlinks = names
+    .map((name) => ({ [name]: t.fixture('symlink', `../${name}`) })).reduce(...toObject)
+  const hoisted = deps.filter(d => d.hoist).map(w => w.dirtyOrCleanDir).reduce(...toObject)
+  const workspaceFolders = ws.map(w => w.packageDir).reduce(...toObject)
   const packageJSON = { name: root, version, workspaces: names }
   const packageLockJSON = ({
     name: root,
@@ -422,28 +430,22 @@ function workspaceMock (t, opts) {
     requires: true,
     packages: {
       '': { name: root, version, workspaces: names },
-      ...Object.assign({}, ...ws.map(d => d.asLockLink).flat()),
-      ...Object.assign({}, ...ws.map(d => d.asDepLock).flat()),
-      ...Object.assign({}, ...ws.map(d => d.asLocalLockEntry).flat()),
+      ...deps.filter(d => d.hoist).map(d => d.packageLockEntry).reduce(...toObject),
+      ...ws.map(d => d.packageLockEntry).flat().reduce(...toObject),
+      ...ws.map(d => d.packageLockLink).flat().reduce(...toObject),
+      ...ws.map(d => d.packageLockLocal).flat().reduce(...toObject),
+      ...deps.filter(d => !d.hoist).map(d => d.packageLockEntry).reduce(...toObject),
     },
   })
-
   return {
     tarballs,
-    node_modules: clean ? {} : {
+    node_modules: {
       ...hoisted,
       ...symlinks,
     },
     'package-lock.json': JSON.stringify(packageLockJSON),
     'package.json': JSON.stringify(packageJSON),
-    ...Object.fromEntries(Object.entries(workspaceFolders).map(([_key, value]) => {
-      return [_key, Object.fromEntries(Object.entries(value).map(([key, valueTwo]) => {
-        if (key === 'node_modules' && clean) {
-          return [key, {}]
-        }
-        return [key, valueTwo]
-      }))]
-    })),
+    ...workspaceFolders,
   }
 }
 

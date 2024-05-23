@@ -286,15 +286,11 @@ t.test('should install in workspace with unhoisted module', async t => {
     'abbrev@1.1.1': path.join(npm.prefix, 'tarballs/abbrev@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageMissing('workspace-b/node_modules/abbrev@1.1.1')
   await npm.exec('install', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
-  assert.fileShouldExist('node_modules/abbrev/index.js')
-  // for abbrev@1.1.1
-  assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
-  assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
-  assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
+  assert.packageInstalled('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('workspace-b/node_modules/abbrev@1.1.1')
 })
 
 t.test('should install in workspace with hoisted modules', async t => {
@@ -315,15 +311,11 @@ t.test('should install in workspace with hoisted modules', async t => {
     'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageMissing('node_modules/lodash@1.1.1')
   await npm.exec('install', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.packageVersionMatches('node_modules/abbrev/package.json', '1.1.0')
-  assert.fileShouldExist('node_modules/abbrev/index.js')
-  // for lodash@1.1.1
-  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
-  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
-  assert.fileShouldExist('node_modules/lodash/index.js')
+  assert.packageInstalled('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('node_modules/lodash@1.1.1')
 })
 
 t.test('should install unhoisted module with --workspace flag', async t => {
@@ -347,15 +339,11 @@ t.test('should install unhoisted module with --workspace flag', async t => {
     'abbrev@1.1.1': path.join(npm.prefix, 'tarballs/abbrev@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageMissing('workspace-b/node_modules/abbrev@1.1.1')
   await npm.exec('install', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.fileShouldNotExist('node_modules/abbrev/package.json')
-  assert.fileShouldNotExist('node_modules/abbrev/index.js')
-  // for abbrev@1.1.1
-  assert.fileShouldNotExist('workspace-b/node_modules/abbrev/abbrev@1.1.1.txt')
-  assert.packageVersionMatches('workspace-b/node_modules/abbrev/package.json', '1.1.1')
-  assert.fileShouldExist('workspace-b/node_modules/abbrev/index.js')
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('workspace-b/node_modules/abbrev@1.1.1')
 })
 
 t.test('should install hoisted module with --workspace flag', async t => {
@@ -379,13 +367,36 @@ t.test('should install hoisted module with --workspace flag', async t => {
     'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
   })
   registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageMissing('node_modules/lodash@1.1.1')
   await npm.exec('install', [])
-  // for abbrev@1.1.0
-  assert.fileShouldNotExist('node_modules/abbrev/abbrev@1.1.0.txt')
-  assert.fileShouldNotExist('node_modules/abbrev/package.json')
-  assert.fileShouldNotExist('node_modules/abbrev/index.js')
-  // for lodash@1.1.1
-  assert.fileShouldNotExist('node_modules/lodash/lodash@1.1.1.txt')
-  assert.packageVersionMatches('node_modules/lodash/package.json', '1.1.1')
-  assert.fileShouldExist('node_modules/lodash/index.js')
+  assert.packageMissing('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('node_modules/lodash@1.1.1')
+})
+
+t.test('should show install keeps dirty --workspace flag', async t => {
+  const { npm, registry, assert } = await loadMockNpm(t, {
+    config: {
+      workspace: 'workspace-b',
+    },
+    prefixDir: workspaceMock(t, {
+      workspaces: {
+        'workspace-a': {
+          'abbrev@1.1.0': { clean: false, hoist: true },
+        },
+        'workspace-b': {
+          'lodash@1.1.1': { clean: true, hoist: true },
+        },
+      },
+    }),
+  })
+  await registry.setup({
+    'lodash@1.1.1': path.join(npm.prefix, 'tarballs/lodash@1.1.1'),
+  })
+  registry.nock.post('/-/npm/v1/security/advisories/bulk').reply(200, {})
+  assert.packageDirty('node_modules/abbrev@1.1.0')
+  assert.packageMissing('node_modules/lodash@1.1.1')
+  await npm.exec('install', [])
+  assert.packageDirty('node_modules/abbrev@1.1.0')
+  assert.packageInstalled('node_modules/lodash@1.1.1')
 })
