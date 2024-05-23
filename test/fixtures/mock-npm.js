@@ -320,27 +320,27 @@ const loadNpmWithRegistry = async (t, opts) => {
     const spec = path.basename(target)
     const dirname = path.dirname(target)
     const [name, version = '1.0.0'] = spec.split('@')
-    assert.fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
-    assert.packageVersionMatches(`${dirname}/${name}/package.json`, version)
-    assert.fileShouldExist(`${dirname}/${name}/index.js`)
+    fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
+    packageVersionMatches(`${dirname}/${name}/package.json`, version)
+    fileShouldExist(`${dirname}/${name}/index.js`)
   }
 
   const packageMissing = (target) => {
     const spec = path.basename(target)
     const dirname = path.dirname(target)
     const [name, version = '1.0.0'] = spec.split('@')
-    assert.fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
-    assert.fileShouldNotExist(`${dirname}/${name}/package.json`)
-    assert.fileShouldNotExist(`${dirname}/${name}/index.js`)
+    fileShouldNotExist(`${dirname}/${name}/${name}@${version}.txt`)
+    fileShouldNotExist(`${dirname}/${name}/package.json`)
+    fileShouldNotExist(`${dirname}/${name}/index.js`)
   }
 
   const packageDirty = (target) => {
     const spec = path.basename(target)
     const dirname = path.dirname(target)
     const [name, version = '1.0.0'] = spec.split('@')
-    assert.fileShouldExist(`${dirname}/${name}/${name}@${version}.txt`)
-    assert.packageVersionMatches(`${dirname}/${name}/package.json`, version)
-    assert.fileShouldNotExist(`${dirname}/${name}/index.js`)
+    fileShouldExist(`${dirname}/${name}/${name}@${version}.txt`)
+    packageVersionMatches(`${dirname}/${name}/package.json`, version)
+    fileShouldNotExist(`${dirname}/${name}/index.js`)
   }
 
   const assert = {
