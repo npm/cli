@@ -1,7 +1,7 @@
 const t = require('tap')
-const path = require('path')
+const path = require('node:path')
 const writeJson = require('../lib/write-json.js')
-const { readFile } = require('fs/promises')
+const { readFile } = require('node:fs/promises')
 
 const kIndent = Symbol.for('indent')
 const kNewline = Symbol.for('newline')
