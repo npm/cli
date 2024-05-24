@@ -1,7 +1,7 @@
 const { log } = require('proc-log')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
-const fs = require('fs/promises')
+const fs = require('node:fs/promises')
 const { resetSeen: resetSeenLinks } = require('bin-links')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 

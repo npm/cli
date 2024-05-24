@@ -1,7 +1,7 @@
 const procLog = require('proc-log')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
-const fs = require('fs/promises')
+const fs = require('node:fs/promises')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 
 t.test('prompt, accepts', async t => {
