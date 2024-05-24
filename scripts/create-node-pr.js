@@ -1,5 +1,5 @@
-const { join, basename } = require('path')
-const fsp = require('fs/promises')
+const { join, basename } = require('node:path')
+const fsp = require('node:fs/promises')
 const hgi = require('hosted-git-info')
 const semver = require('semver')
 const pacote = require('pacote')

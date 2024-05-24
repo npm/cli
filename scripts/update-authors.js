@@ -1,4 +1,4 @@
-const { join } = require('path')
+const { join } = require('node:path')
 const { CWD, run, git, fs, EOL } = require('./util.js')
 
 const main = async () => {

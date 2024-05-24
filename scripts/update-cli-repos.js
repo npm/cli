@@ -1,4 +1,4 @@
-const { join } = require('path')
+const { join } = require('node:path')
 const { fs, gh, run } = require('./util.js')
 
 const query = `

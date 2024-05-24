@@ -1,6 +1,6 @@
 const Arborist = require('@npmcli/arborist')
 const packlist = require('npm-packlist')
-const { join, relative } = require('path')
+const { join, relative } = require('node:path')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const PackageJson = require('@npmcli/package-json')
 const { run, CWD, git, fs, pkg: rootPkg, EOL } = require('./util')

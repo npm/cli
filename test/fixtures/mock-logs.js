@@ -1,5 +1,5 @@
 const { log: { LEVELS } } = require('proc-log')
-const { stripVTControlCharacters: stripAnsi } = require('util')
+const { stripVTControlCharacters: stripAnsi } = require('node:util')
 
 const logPrefix = new RegExp(`^npm (${LEVELS.join('|')})\\s`)
 const isLog = (str) => logPrefix.test(stripAnsi(str))

@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const fs = require('fs/promises')
-const { resolve } = require('path')
+const fs = require('node:fs/promises')
+const { resolve } = require('node:path')
 
 const { commands, aliases } = require('../lib/utils/cmd-list.js')
 const { definitions } = require('@npmcli/config/lib/definitions')

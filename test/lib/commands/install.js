@@ -1,6 +1,6 @@
 const tspawk = require('../../fixtures/tspawk')
 
-const path = require('path')
+const path = require('node:path')
 const t = require('tap')
 
 const {
