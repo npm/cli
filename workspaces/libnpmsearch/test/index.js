@@ -1,6 +1,6 @@
 'use strict'
 
-const qs = require('querystring')
+const qs = require('node:querystring')
 const test = require('tap').test
 const tnock = require('./fixtures/tnock.js')
 
