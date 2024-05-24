@@ -1,7 +1,7 @@
 
 const t = require('tap')
-const { join, dirname, basename, extname } = require('path')
-const fs = require('fs/promises')
+const { join, dirname, basename, extname } = require('node:path')
+const fs = require('node:fs/promises')
 const _which = require('which')
 const setup = require('./fixtures/setup.js')
 

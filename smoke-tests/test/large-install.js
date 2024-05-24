@@ -1,5 +1,5 @@
 const t = require('tap')
-const path = require('path')
+const path = require('node:path')
 const setup = require('./fixtures/setup.js')
 
 const getFixture = (p) => require(

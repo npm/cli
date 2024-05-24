@@ -1,4 +1,4 @@
-const { join } = require('path')
+const { join } = require('node:path')
 const t = require('tap')
 const setup = require('./fixtures/setup.js')
 

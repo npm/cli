@@ -1,10 +1,10 @@
-const fs = require('fs/promises')
-const { existsSync } = require('fs')
-const { join, resolve, sep, extname, relative, delimiter } = require('path')
+const fs = require('node:fs/promises')
+const { existsSync } = require('node:fs')
+const { join, resolve, sep, extname, relative, delimiter } = require('node:path')
 const which = require('which')
 const spawn = require('@npmcli/promise-spawn')
 const MockRegistry = require('@npmcli/mock-registry')
-const http = require('http')
+const http = require('node:http')
 const { createProxy } = require('proxy')
 
 const { SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
