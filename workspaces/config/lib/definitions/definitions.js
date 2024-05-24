@@ -7,7 +7,7 @@ const { join } = require('node:path')
 const isWindows = process.platform === 'win32'
 
 // used by cafile flattening to flatOptions.ca
-const { readFileSync } = require('fs')
+const { readFileSync } = require('node:fs')
 const maybeReadFile = file => {
   try {
     return readFileSync(file, 'utf8')
@@ -61,7 +61,7 @@ const editor = process.env.EDITOR ||
 const shell = isWindows ? process.env.ComSpec || 'cmd'
   : process.env.SHELL || 'sh'
 
-const { networkInterfaces } = require('os')
+const { networkInterfaces } = require('node:os')
 const getLocalAddresses = () => {
   try {
     return Object.values(networkInterfaces()).map(

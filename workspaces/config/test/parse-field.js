@@ -1,6 +1,6 @@
 const parseField = require('../lib/parse-field.js')
 const t = require('tap')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 const defs = require('../lib/definitions/definitions.js')
 const types = Object.entries(defs).map(([k, v]) => [k, v.type])
