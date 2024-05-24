@@ -5,8 +5,8 @@ const t = require('tap')
 const tspawk = require('./fixtures/tspawk.js')
 const spawk = tspawk(t)
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 const pack = require('../lib/index.js')
 const tnock = require('./fixtures/tnock.js')
 
