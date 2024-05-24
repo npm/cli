@@ -6,7 +6,7 @@ const Link = require('../lib/link.js')
 const Node = require('../lib/node.js')
 const Shrinkwrap = require('../lib/shrinkwrap.js')
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const normalizePath = path => path.replace(/^[A-Z]:/, '').replace(/\\/g, '/')
 const normalizePaths = obj => {
   obj.path = obj.path && normalizePath(obj.path)

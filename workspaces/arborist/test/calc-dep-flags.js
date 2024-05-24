@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
 const calcDepFlags = require('../lib/calc-dep-flags.js')
 const Node = require('../lib/node.js')

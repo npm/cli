@@ -4,7 +4,7 @@ if (process.platform === 'win32') {
   process.env.ARBORIST_DEBUG = 0
 }
 
-const { basename, resolve, relative } = require('path')
+const { basename, resolve, relative } = require('node:path')
 const pacote = require('pacote')
 const t = require('tap')
 const Arborist = require('../..')
@@ -13,7 +13,7 @@ const fixtures = resolve(__dirname, '../fixtures')
 require(fixtures)
 const { start, stop, registry, auditResponse } = require('../fixtures/server.js')
 const npa = require('npm-package-arg')
-const fs = require('fs')
+const fs = require('node:fs')
 const nock = require('nock')
 const semver = require('semver')
 

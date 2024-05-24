@@ -3,7 +3,7 @@ const Node = require('../lib/node.js')
 const Link = require('../lib/link.js')
 const Edge = require('../lib/edge.js')
 const printable = require('../lib/printable.js')
-const util = require('util')
+const util = require('node:util')
 
 t.cleanSnapshot = str => str
   // normalize paths

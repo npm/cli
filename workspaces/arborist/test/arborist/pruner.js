@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 const t = require('tap')
 const Arborist = require('../../lib/arborist/index.js')
@@ -80,8 +80,8 @@ t.test('prune with lockfile omit dev', async t => {
 })
 
 t.test('prune omit dev with bins', async t => {
-  const { readdir } = require('fs/promises')
-  const { statSync, lstatSync } = require('fs')
+  const { readdir } = require('node:fs/promises')
+  const { statSync, lstatSync } = require('node:fs')
   const path = fixture(t, 'prune-dev-bins')
 
   // should have bin files
@@ -113,8 +113,8 @@ t.test('prune omit dev with bins', async t => {
 })
 
 t.test('prune workspaces', async t => {
-  const fs = require('fs')
-  const { join } = require('path')
+  const fs = require('node:fs')
+  const { join } = require('node:path')
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'prune-workspaces',

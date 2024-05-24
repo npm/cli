@@ -1,7 +1,7 @@
 const t = require('tap')
 
 // verify that we get \ converted to / by forcing win32 path mode
-const path = require('path')
+const path = require('node:path')
 const { win32 } = path
 path.relative = win32.relative
 

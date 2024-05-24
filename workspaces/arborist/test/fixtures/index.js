@@ -1,7 +1,7 @@
-const { mkdirSync } = require('fs')
+const { mkdirSync } = require('node:fs')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('fs')
-const { relative, resolve, dirname } = require('path')
+const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('node:fs')
+const { relative, resolve, dirname } = require('node:path')
 const mkdirp = (p) => mkdirSync(p, { recursive: true })
 
 const fixtures = __dirname

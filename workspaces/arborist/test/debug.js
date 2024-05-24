@@ -1,5 +1,5 @@
 const t = require('tap')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 // start from clean slate
 delete process.env.ARBORIST_DEBUG

@@ -1,8 +1,8 @@
 // fetch all the deps and tarballs in a v2 lockfile
 const pacote = require('pacote')
-const url = require('url')
-const { dirname, resolve } = require('path')
-const fs = require('fs/promises')
+const url = require('node:url')
+const { dirname, resolve } = require('node:path')
+const fs = require('node:fs/promises')
 const Arborist = require('./index.js')
 
 const dir = resolve(__dirname, 'registry-mocks', 'content')

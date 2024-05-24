@@ -16,7 +16,7 @@ const {
 t.before(start)
 t.teardown(stop)
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const fixtures = resolve(__dirname, 'fixtures')
 
 const cache = t.testdir()

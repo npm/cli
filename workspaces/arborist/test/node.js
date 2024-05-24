@@ -1,10 +1,10 @@
-const util = require('util')
+const util = require('node:util')
 const t = require('tap')
 const Node = require('../lib/node.js')
 const OverrideSet = require('../lib/override-set.js')
 const Link = require('../lib/link.js')
 const Shrinkwrap = require('../lib/shrinkwrap.js')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const treeCheck = require('../lib/tree-check.js')
 
 const { normalizePath, normalizePaths } = require('./fixtures/utils.js')
@@ -1072,7 +1072,7 @@ t.test('bin paths', t => {
     realpath: root.path + '/d/e/f',
   })
 
-  const { resolve: r } = require('path')
+  const { resolve: r } = require('node:path')
 
   t.strictSame(root.binPaths, [])
   t.strictSame(link.binPaths, [
@@ -1131,7 +1131,7 @@ t.test('binPaths, but global', t => {
     realpath: root.path + '/d/e/f',
   })
 
-  const { resolve: r } = require('path')
+  const { resolve: r } = require('node:path')
 
   t.strictSame(root.binPaths, [])
   t.strictSame(link.binPaths, process.platform === 'win32'

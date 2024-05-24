@@ -1,10 +1,10 @@
-const { join, resolve, basename } = require('path')
+const { join, resolve, basename } = require('node:path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const tnock = require('../fixtures/tnock')
-const fs = require('fs')
-const fsp = require('fs/promises')
+const fs = require('node:fs')
+const fsp = require('node:fs/promises')
 const npmFs = require('@npmcli/fs')
 
 let failRm = false
@@ -71,9 +71,10 @@ const fspMock = {
   },
 }
 // need this to be injected so that it doesn't pull from main cache
-const { moveFile } = t.mock('@npmcli/fs', { 'fs/promises': fspMock })
+const { moveFile } = t.mock('@npmcli/fs', { 'node:fs/promises': fspMock, 'fs/promises': fspMock })
 const mocks = {
   fs: fsMock,
+  'node:fs/promises': fspMock,
   'fs/promises': fspMock,
   '@npmcli/fs': { ...npmFs, moveFile },
 }
@@ -1503,7 +1504,7 @@ t.test('rollback if process is terminated during reify process', async t => {
   const onExit = require('../../lib/signal-handling.js')
   // mock the process so we don't have to kill this test
   // copy-pasta from signal-handling test
-  const EE = require('events')
+  const EE = require('node:events')
   const proc = onExit.process = new class MockProcess extends EE {
     constructor () {
       super()

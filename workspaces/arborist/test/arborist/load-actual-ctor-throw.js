@@ -10,7 +10,7 @@ const Arborist = t.mock('../../lib/arborist', {
   'read-package-json-fast': rpjMock,
 })
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const { fixtures } = require('../fixtures/index.js')
 
 t.test('blow up and catch error if Node ctor blows up', t => {
