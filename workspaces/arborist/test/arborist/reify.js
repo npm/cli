@@ -15,7 +15,6 @@ let failMkdir = null
 const fspMock = {
   ...fsp,
   mkdir: async (...args) => {
-    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.mkdir\n')
     if (failMkdir) {
       throw failMkdir
     }
@@ -23,7 +22,6 @@ const fspMock = {
     return fsp.mkdir(...args)
   },
   rename: async (...args) => {
-    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.rename\n')
     if (failRename) {
       throw failRename
     } else if (failRenameOnce) {
@@ -35,7 +33,6 @@ const fspMock = {
     }
   },
   rm: async (...args) => {
-    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.rm\n')
     if (failRm) {
       throw new Error('rm fail')
     }
