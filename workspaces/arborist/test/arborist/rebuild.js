@@ -17,10 +17,11 @@ const server = require('node:http').createServer(() => {
   throw new Error('rebuild should not hit the registry')
 })
 t.before(() => new Promise(res => {
-  server.listen(PORT, res)
+  server.listen(PORT, () => {
+    t.teardown(() => server.close())
+    res()
+  })
 }))
-
-t.teardown(() => server.close())
 
 const registry = `http://localhost:${PORT}`
 const newArb = opt => new Arborist({ ...opt, registry })

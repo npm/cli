@@ -11,40 +11,11 @@ let failRm = false
 let failRename = null
 let failRenameOnce = null
 let failMkdir = null
-const { rename: realRename, rm: realRm, mkdir: realMkdir } = fs
-const fsMock = {
-  ...fs,
-  mkdir (...args) {
-    if (failMkdir) {
-      process.nextTick(() => args.pop()(failMkdir))
-      return
-    }
 
-    return realMkdir(...args)
-  },
-  rename (...args) {
-    if (failRename) {
-      process.nextTick(() => args.pop()(failRename))
-    } else if (failRenameOnce) {
-      const er = failRenameOnce
-      failRenameOnce = null
-      process.nextTick(() => args.pop()(er))
-    } else {
-      return realRename(...args)
-    }
-  },
-  rm (...args) {
-    if (failRm) {
-      process.nextTick(() => args.pop()(new Error('rm fail')))
-      return
-    }
-
-    realRm(...args)
-  },
-}
 const fspMock = {
   ...fsp,
   mkdir: async (...args) => {
+    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.mkdir\n')
     if (failMkdir) {
       throw failMkdir
     }
@@ -52,6 +23,7 @@ const fspMock = {
     return fsp.mkdir(...args)
   },
   rename: async (...args) => {
+    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.rename\n')
     if (failRename) {
       throw failRename
     } else if (failRenameOnce) {
@@ -63,6 +35,7 @@ const fspMock = {
     }
   },
   rm: async (...args) => {
+    fs.appendFileSync('reggi-log.txt', 'fspNodeMock.rm\n')
     if (failRm) {
       throw new Error('rm fail')
     }
@@ -70,12 +43,11 @@ const fspMock = {
     return fsp.rm(...args)
   },
 }
+
 // need this to be injected so that it doesn't pull from main cache
-const { moveFile } = t.mock('@npmcli/fs', { 'node:fs/promises': fspMock, 'fs/promises': fspMock })
+const { moveFile } = t.mock('@npmcli/fs', { 'fs/promises': fspMock })
 const mocks = {
-  fs: fsMock,
   'node:fs/promises': fspMock,
-  'fs/promises': fspMock,
   '@npmcli/fs': { ...npmFs, moveFile },
 }
 
