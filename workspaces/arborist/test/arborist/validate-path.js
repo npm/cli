@@ -20,7 +20,7 @@ process.env.__TESTING_MKDIRP_INFER_OWNER_PLATFORM__ = 'posix'
 
 const Arborist = t.mock('../../lib/arborist/index.js', { chownr })
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 t.test('reify a folder that does not exist', async t => {
   const path = resolve(t.testdir({}), 'does-not-exist-yet')
   const arb = new Arborist({ path })

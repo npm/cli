@@ -1,9 +1,9 @@
 'use strict'
 
-const { mkdir } = require('fs/promises')
+const { mkdir } = require('node:fs/promises')
 const Arborist = require('@npmcli/arborist')
 const ciInfo = require('ci-info')
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 const { log, input } = require('proc-log')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
@@ -14,7 +14,7 @@ const getBinFromManifest = require('./get-bin-from-manifest.js')
 const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
-const { dirname, resolve } = require('path')
+const { dirname, resolve } = require('node:path')
 
 const binPaths = []
 

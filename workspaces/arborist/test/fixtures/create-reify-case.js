@@ -8,9 +8,9 @@ const {
   readFileSync,
   readlinkSync,
   writeFileSync,
-} = require('fs')
+} = require('node:fs')
 
-const { resolve, relative, basename } = require('path')
+const { resolve, relative, basename } = require('node:path')
 
 if (!process.argv[2]) {
   console.error('pass in a folder as an argument')
@@ -27,7 +27,7 @@ const symlinks = new Map()
 const jsonFiles = new Map()
 const longFiles = new Map()
 const buffers = new Map()
-const crypto = require('crypto')
+const crypto = require('node:crypto')
 const token = p => p + crypto.randomBytes(8).toString('base64')
 const hiddenLocks = []
 

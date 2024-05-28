@@ -4,8 +4,8 @@ const { cleanZlib } = require('../../fixtures/clean-snapshot')
 const MockRegistry = require('@npmcli/mock-registry')
 const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
-const path = require('path')
-const fs = require('fs')
+const path = require('node:path')
+const fs = require('node:fs')
 const npa = require('npm-package-arg')
 
 const pkg = 'test-package'

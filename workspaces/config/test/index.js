@@ -1,6 +1,6 @@
 const t = require('tap')
 
-const fs = require('fs')
+const fs = require('node:fs')
 const { readFileSync } = fs
 
 // when running with `npm test` it adds environment variables that
@@ -16,29 +16,33 @@ const createDef = (key, value) => ({ [key]: new Definition(key, { key, ...value 
 
 const typeDefs = require('../lib/type-defs.js')
 
-const { resolve, join, dirname } = require('path')
+const { resolve, join, dirname } = require('node:path')
+
+const mockFs = {
+  ...fs,
+  readFileSync: (path, ...args) => {
+    if (path.includes('WEIRD-ERROR')) {
+      throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
+    }
+
+    return fs.readFileSync(path, ...args)
+  },
+}
+
+const mockFsPromises = {
+  ...fs.promises,
+  readFile: async (path, ...args) => {
+    if (path.includes('WEIRD-ERROR')) {
+      throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
+    }
+
+    return fs.promises.readFile(path, ...args)
+  },
+}
 
 const fsMocks = {
-  'fs/promises': {
-    ...fs.promises,
-    readFile: async (path, ...args) => {
-      if (path.includes('WEIRD-ERROR')) {
-        throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
-      }
-
-      return fs.promises.readFile(path, ...args)
-    },
-  },
-  fs: {
-    ...fs,
-    readFileSync: (path, ...args) => {
-      if (path.includes('WEIRD-ERROR')) {
-        throw Object.assign(new Error('weird error'), { code: 'EWEIRD' })
-      }
-
-      return fs.readFileSync(path, ...args)
-    },
-  },
+  'node:fs/promises': mockFsPromises,
+  'node:fs': mockFs,
 }
 
 const { definitions, shorthands, flatten } = t.mock('../lib/definitions/index.js', fsMocks)

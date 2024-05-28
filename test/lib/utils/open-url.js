@@ -1,7 +1,7 @@
 const t = require('tap')
 const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
-const EventEmitter = require('events')
+const EventEmitter = require('node:events')
 
 const mockOpenUrl = async (t, args, { openerResult, ...config } = {}) => {
   let openerUrl = null

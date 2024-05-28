@@ -1,6 +1,6 @@
 const t = require('tap')
 const Arborist = require('../lib/arborist/index.js')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const path = resolve(__dirname, './fixtures/workspaces-shared-deps-virtual')
 const arb = new Arborist({ path })
 

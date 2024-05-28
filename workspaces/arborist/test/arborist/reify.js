@@ -1,47 +1,17 @@
-const { join, resolve, basename } = require('path')
+const { join, resolve, basename } = require('node:path')
 const t = require('tap')
 const runScript = require('@npmcli/run-script')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
 const tnock = require('../fixtures/tnock')
-const fs = require('fs')
-const fsp = require('fs/promises')
+const fs = require('node:fs')
+const fsp = require('node:fs/promises')
 const npmFs = require('@npmcli/fs')
 
 let failRm = false
 let failRename = null
 let failRenameOnce = null
 let failMkdir = null
-const { rename: realRename, rm: realRm, mkdir: realMkdir } = fs
-const fsMock = {
-  ...fs,
-  mkdir (...args) {
-    if (failMkdir) {
-      process.nextTick(() => args.pop()(failMkdir))
-      return
-    }
 
-    return realMkdir(...args)
-  },
-  rename (...args) {
-    if (failRename) {
-      process.nextTick(() => args.pop()(failRename))
-    } else if (failRenameOnce) {
-      const er = failRenameOnce
-      failRenameOnce = null
-      process.nextTick(() => args.pop()(er))
-    } else {
-      return realRename(...args)
-    }
-  },
-  rm (...args) {
-    if (failRm) {
-      process.nextTick(() => args.pop()(new Error('rm fail')))
-      return
-    }
-
-    realRm(...args)
-  },
-}
 const fspMock = {
   ...fsp,
   mkdir: async (...args) => {
@@ -70,11 +40,11 @@ const fspMock = {
     return fsp.rm(...args)
   },
 }
+
 // need this to be injected so that it doesn't pull from main cache
 const { moveFile } = t.mock('@npmcli/fs', { 'fs/promises': fspMock })
 const mocks = {
-  fs: fsMock,
-  'fs/promises': fspMock,
+  'node:fs/promises': fspMock,
   '@npmcli/fs': { ...npmFs, moveFile },
 }
 
@@ -1503,7 +1473,7 @@ t.test('rollback if process is terminated during reify process', async t => {
   const onExit = require('../../lib/signal-handling.js')
   // mock the process so we don't have to kill this test
   // copy-pasta from signal-handling test
-  const EE = require('events')
+  const EE = require('node:events')
   const proc = onExit.process = new class MockProcess extends EE {
     constructor () {
       super()

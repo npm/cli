@@ -1,7 +1,7 @@
 const Arborist = require('../..')
-const { resolve, basename } = require('path')
-const { writeFileSync } = require('fs')
-const { mkdir, rm } = require('fs/promises')
+const { resolve, basename } = require('node:path')
+const { writeFileSync } = require('node:fs')
+const { mkdir, rm } = require('node:fs/promises')
 
 const dir = resolve(__dirname, basename(__filename, '.js'))
 

@@ -1,7 +1,7 @@
 'use strict'
 
-const crypto = require('crypto')
-const fs = require('fs')
+const crypto = require('node:crypto')
+const fs = require('node:fs')
 const npa = require('npm-package-arg')
 const ssri = require('ssri')
 const t = require('tap')

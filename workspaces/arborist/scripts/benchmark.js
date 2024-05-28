@@ -1,10 +1,10 @@
 process.env.ARBORIST_DEBUG = '0'
 
 const { Suite } = require('benchmark')
-const { relative, resolve } = require('path')
-const { mkdir, rm } = require('fs/promises')
-const { execSync } = require('child_process')
-const { linkSync, writeFileSync, readdirSync } = require('fs')
+const { relative, resolve } = require('node:path')
+const { mkdir, rm } = require('node:fs/promises')
+const { execSync } = require('node:child_process')
+const { linkSync, writeFileSync, readdirSync } = require('node:fs')
 const registryServer = require('../test/fixtures/server.js')
 
 const shaCmd = 'git show --no-patch --pretty=%H HEAD'

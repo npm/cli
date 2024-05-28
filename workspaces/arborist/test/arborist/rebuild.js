@@ -1,9 +1,9 @@
 const t = require('tap')
 const _trashList = Symbol.for('trashList')
 const Arborist = require('../../lib/arborist/index.js')
-const { resolve, dirname } = require('path')
-const os = require('os')
-const fs = require('fs')
+const { resolve, dirname } = require('node:path')
+const os = require('node:os')
+const fs = require('node:fs')
 const fixtures = resolve(__dirname, '../fixtures')
 const relpath = require('../../lib/relpath.js')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
@@ -13,7 +13,7 @@ const fixture = (t, p) => require(`${fixtures}/reify-cases/${p}`)(t)
 const isWindows = process.platform === 'win32'
 const PORT = 12345 + (+process.env.TAP_CHILD_ID || 0)
 
-const server = require('http').createServer(() => {
+const server = require('node:http').createServer(() => {
   throw new Error('rebuild should not hit the registry')
 })
 t.before(() => new Promise(res => {

@@ -1,5 +1,5 @@
 const t = require('tap')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const Arborist = require('../../lib/arborist/index.js')
 const { normalizePath, printTree } = require('../fixtures/utils.js')
 const { auditResponse, advisoryBulkResponse, ...mockRegistry } = require('../fixtures/server.js')

@@ -1,5 +1,5 @@
-const { join } = require('path')
-const { symlink } = require('fs/promises')
+const { join } = require('node:path')
+const { symlink } = require('node:fs/promises')
 const { CWD, run, pkg, fs, git, npm } = require('./util.js')
 
 const cleanup = async () => {

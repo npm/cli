@@ -1,5 +1,5 @@
 const t = require('tap')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const mockGlobals = require('@npmcli/mock-globals')
 
 // have to fake the node version, or else it'll only pass on this one
@@ -95,7 +95,7 @@ t.test('local-address allowed types', t => {
         eth69: [{ address: 'no place like home' }],
       }),
     }
-    const defs = mockDefs({ os })
+    const defs = mockDefs({ 'node:os': os })
     t.same(defs['local-address'].type, [
       null,
       '127.0.0.1',
@@ -110,7 +110,7 @@ t.test('local-address allowed types', t => {
         throw new Error('no network interfaces for some reason')
       },
     }
-    const defs = mockDefs({ os })
+    const defs = mockDefs({ 'node:os': os })
     t.same(defs['local-address'].type, [null])
     t.end()
   })
@@ -158,7 +158,7 @@ t.test('cache', t => {
 
   const flat = {}
   defsNix.cache.flatten('cache', { cache: '/some/cache/value' }, flat)
-  const { join } = require('path')
+  const { join } = require('node:path')
   t.equal(flat.cache, join('/some/cache/value', '_cacache'))
   t.equal(flat.npxCache, join('/some/cache/value', '_npx'))
 
@@ -729,8 +729,8 @@ YYYY\r
   t.test('error other than ENOENT gets thrown', t => {
     const poo = new Error('poo')
     const defnReadFileThrows = mockDefs({
-      fs: {
-        ...require('fs'),
+      'node:fs': {
+        ...require('node:fs'),
         readFileSync: () => {
           throw poo
         },

@@ -3,8 +3,8 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const MockRegistry = require('@npmcli/mock-registry')
 
 const cacache = require('cacache')
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 
 const pkg = 'test-package'
 
