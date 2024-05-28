@@ -418,6 +418,10 @@ Array [
 ]
 `
 
+exports[`test/lib/commands/publish.js TAP workspaces all workspaces - some marked private > one marked private 1`] = `
++ workspace-a@1.2.3-a
+`
+
 exports[`test/lib/commands/publish.js TAP workspaces json > all workspaces in json 1`] = `
 {
   "workspace-a": {
