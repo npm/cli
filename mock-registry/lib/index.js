@@ -43,6 +43,7 @@ class MockRegistry {
   static tnock (t, host, opts, { debug = false, strict = false } = {}) {
     const noMatch = (req) => {
       if (debug) {
+        /* eslint-disable-next-line no-console */
         console.error('NO MATCH', t.name, req.options ? req.options : req.path)
       }
       if (strict) {
