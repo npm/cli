@@ -1,5 +1,16 @@
 # Changelog
 
+## [6.1.3](https://github.com/npm/cli/compare/libnpmdiff-v6.1.2...libnpmdiff-v6.1.3) (2024-05-29)
+
+### Bug Fixes
+
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.3): `@npmcli/arborist@7.5.3`
+
 ## [6.1.2](https://github.com/npm/cli/compare/libnpmdiff-v6.1.1...libnpmdiff-v6.1.2) (2024-05-15)
 
 ### Dependencies

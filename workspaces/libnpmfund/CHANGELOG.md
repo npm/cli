@@ -4,6 +4,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.2): `@npmcli/arborist@7.5.2`
 
+## [5.0.11](https://github.com/npm/cli/compare/libnpmfund-v5.0.10...libnpmfund-v5.0.11) (2024-05-29)
+
+### Bug Fixes
+
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.3): `@npmcli/arborist@7.5.3`
+
 ## [5.0.9](https://github.com/npm/cli/compare/libnpmfund-v5.0.8...libnpmfund-v5.0.9) (2024-04-30)
 
 ### Bug Fixes

@@ -1,5 +1,15 @@
 # Changelog
 
+## [7.5.3](https://github.com/npm/cli/compare/arborist-v7.5.2...arborist-v7.5.3) (2024-05-29)
+
+### Bug Fixes
+
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+
+### Chores
+
+* [`4a36d78`](https://github.com/npm/cli/commit/4a36d78f6474835df1d3cd358145e74e38e3ea7a) [#7568](https://github.com/npm/cli/pull/7568) fix linting in arborist debugger (@wraithgar)
+
 ## [7.5.2](https://github.com/npm/cli/compare/arborist-v7.5.1...arborist-v7.5.2) (2024-05-15)
 
 ### Bug Fixes
