@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.1.2](https://github.com/npm/cli/compare/libnpmexec-v8.1.1...libnpmexec-v8.1.2) (2024-05-29)
+
+### Bug Fixes
+
+* [`6b55646`](https://github.com/npm/cli/commit/6b556468f9d6ed62c681954bfe6ad012315e3b53) [#7569](https://github.com/npm/cli/pull/7569) exec: look in workspace and root for bin entries (#7569) (@wraithgar)
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.3): `@npmcli/arborist@7.5.3`
+
 ## [8.1.1](https://github.com/npm/cli/compare/libnpmexec-v8.1.0...libnpmexec-v8.1.1) (2024-05-15)
 
 ### Dependencies

@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.3.3](https://github.com/npm/cli/compare/config-v8.3.2...config-v8.3.3) (2024-05-29)
+
+### Bug Fixes
+
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+
+### Documentation
+
+* [`fd6479f`](https://github.com/npm/cli/commit/fd6479f85b9cf14a23cb4f9a049e0ea68632d8e9) [#7560](https://github.com/npm/cli/pull/7560) update publish docs: dist-tag + publish case (#7560) (@davidlj95)
+
 ## [8.3.2](https://github.com/npm/cli/compare/config-v8.3.1...config-v8.3.2) (2024-05-15)
 
 ### Bug Fixes

@@ -1,5 +1,80 @@
 # Changelog
 
+## [10.8.1](https://github.com/npm/cli/compare/v10.8.0...v10.8.1) (2024-05-29)
+
+### Bug Fixes
+
+* [`6b55646`](https://github.com/npm/cli/commit/6b556468f9d6ed62c681954bfe6ad012315e3b53) [#7569](https://github.com/npm/cli/pull/7569) exec: look in workspace and root for bin entries (#7569) (@wraithgar)
+* [`e4c7a41`](https://github.com/npm/cli/commit/e4c7a410f590e5c9c81f6410f600181a4deef005) [#7564](https://github.com/npm/cli/pull/7564) publish: skip workspace packages marked private on publish (#7564) (@milaninfy)
+* [`8f94ae8`](https://github.com/npm/cli/commit/8f94ae8c4d36cd397c53e8dc9f54d4332bf1b847) [#7556](https://github.com/npm/cli/pull/7556) utils/tar: index access while match is null (#7555) (#7556) (@NormanPerrin)
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+* [`7d89b55`](https://github.com/npm/cli/commit/7d89b55341160459e0fcd3374c3720d758b16339) [#7490](https://github.com/npm/cli/pull/7490) ci: rm workspace node_modules (#7490) (@reggi)
+* [`9122fb6`](https://github.com/npm/cli/commit/9122fb65ac05d793a69f4fdcbd03b59595adf937) [#7516](https://github.com/npm/cli/pull/7516) cache: add both full and minified packument to cache (#7516) (@milaninfy)
+* [`9e6686b`](https://github.com/npm/cli/commit/9e6686bb965fa6843ea483cb802f14282eabf3e5) [#7545](https://github.com/npm/cli/pull/7545) send proper otp token on web auth (#7545) (@wraithgar)
+* [`b1db070`](https://github.com/npm/cli/commit/b1db070cb4a497fd91fd61cf197d28b5d47274bb) [#7534](https://github.com/npm/cli/pull/7534) refactor: use output.buffer and set explicit json mode in query (#7534) (@lukekarrys)
+* [`53cda32`](https://github.com/npm/cli/commit/53cda32aa35f3a592fb0ddf37e43c028f93ef613) [#7542](https://github.com/npm/cli/pull/7542) refactor ls to use output.buffer for json (#7542) (@lukekarrys)
+* [`61d5771`](https://github.com/npm/cli/commit/61d57719e6443978c5e9a91ca7a63397be3065fa) [#7541](https://github.com/npm/cli/pull/7541) remove json.stringify from all commands (#7541) (@lukekarrys)
+* [`4dfc7d2`](https://github.com/npm/cli/commit/4dfc7d20b58eaa3d231ef5dc86b9802e1c0d0e68) [#7540](https://github.com/npm/cli/pull/7540) pass strings to JSON.stringify in --json mode (#7540) (@lukekarrys)
+* [`3cefdf6`](https://github.com/npm/cli/commit/3cefdf6eaab5bfb4371149f674dc95e9b9c54853) [#7538](https://github.com/npm/cli/pull/7538) outdated: return array for outdated deps from multiple workspaces (@lukekarrys)
+* [`ef4c975`](https://github.com/npm/cli/commit/ef4c975f2784f70ab86a3e7e6e40c99279e5a3e3) [#7508](https://github.com/npm/cli/pull/7508) view: dont immediately exit on first workspace 404 (#7508) (@lukekarrys)
+
+### Documentation
+
+* [`fd6479f`](https://github.com/npm/cli/commit/fd6479f85b9cf14a23cb4f9a049e0ea68632d8e9) [#7560](https://github.com/npm/cli/pull/7560) update publish docs: dist-tag + publish case (#7560) (@davidlj95)
+
+### Dependencies
+
+* [`e3f0fd4`](https://github.com/npm/cli/commit/e3f0fd45d97569a0d6c2a67e179e4a5f13eb9442) [#7568](https://github.com/npm/cli/pull/7568) `@npmcli/package-json@5.1.1`
+* [`447a8d7`](https://github.com/npm/cli/commit/447a8d7f3124bf9f69453098ce31b56bad20efd7) [#7566](https://github.com/npm/cli/pull/7566) `spdx-license-ids@3.0.18`
+* [`83fed2e`](https://github.com/npm/cli/commit/83fed2e8ec253051d60babdf2b10e2f2c64df318) [#7566](https://github.com/npm/cli/pull/7566) `sigstore@2.3.1`
+* [`41291ba`](https://github.com/npm/cli/commit/41291bab34d3f7351c94e97e89ac1f85b0950188) [#7566](https://github.com/npm/cli/pull/7566) `@sigstore/tuf@2.3.4`
+* [`18b42a4`](https://github.com/npm/cli/commit/18b42a46abdbc26a28f2e16ea74a1812d8de4c4d) [#7566](https://github.com/npm/cli/pull/7566) `glob@10.4.1`
+* [`5c6759d`](https://github.com/npm/cli/commit/5c6759decb00dfbe377c0ad41f85a3222f79a36a) [#7566](https://github.com/npm/cli/pull/7566) `postcss-selector-parser@6.1.0`
+* [`2508a83`](https://github.com/npm/cli/commit/2508a83e6d2936d15c210b9dee41098131ed6aff) [#7566](https://github.com/npm/cli/pull/7566) `is-cidr@5.1.0`
+* [`6278fe4`](https://github.com/npm/cli/commit/6278fe430bb7c3ecfae730f9ea084501e57c0e2c) [#7566](https://github.com/npm/cli/pull/7566) `ini@4.1.3`
+## [10.8.1](https://github.com/npm/cli/compare/v10.8.0...v10.8.1) (2024-05-29)
+
+### Bug Fixes
+
+* [`6b55646`](https://github.com/npm/cli/commit/6b556468f9d6ed62c681954bfe6ad012315e3b53) [#7569](https://github.com/npm/cli/pull/7569) exec: look in workspace and root for bin entries (#7569) (@wraithgar)
+* [`e4c7a41`](https://github.com/npm/cli/commit/e4c7a410f590e5c9c81f6410f600181a4deef005) [#7564](https://github.com/npm/cli/pull/7564) publish: skip workspace packages marked private on publish (#7564) (@milaninfy)
+* [`8f94ae8`](https://github.com/npm/cli/commit/8f94ae8c4d36cd397c53e8dc9f54d4332bf1b847) [#7556](https://github.com/npm/cli/pull/7556) utils/tar: index access while match is null (#7555) (#7556) (@NormanPerrin)
+* [`2d1d8d0`](https://github.com/npm/cli/commit/2d1d8d0ef18a10ac7938380884745f1d3c3cb078) [#7559](https://github.com/npm/cli/pull/7559) adds `node:` specifier to all native node modules (#7559) (@reggi)
+* [`7d89b55`](https://github.com/npm/cli/commit/7d89b55341160459e0fcd3374c3720d758b16339) [#7490](https://github.com/npm/cli/pull/7490) ci: rm workspace node_modules (#7490) (@reggi)
+* [`9122fb6`](https://github.com/npm/cli/commit/9122fb65ac05d793a69f4fdcbd03b59595adf937) [#7516](https://github.com/npm/cli/pull/7516) cache: add both full and minified packument to cache (#7516) (@milaninfy)
+* [`9e6686b`](https://github.com/npm/cli/commit/9e6686bb965fa6843ea483cb802f14282eabf3e5) [#7545](https://github.com/npm/cli/pull/7545) send proper otp token on web auth (#7545) (@wraithgar)
+* [`b1db070`](https://github.com/npm/cli/commit/b1db070cb4a497fd91fd61cf197d28b5d47274bb) [#7534](https://github.com/npm/cli/pull/7534) refactor: use output.buffer and set explicit json mode in query (#7534) (@lukekarrys)
+* [`53cda32`](https://github.com/npm/cli/commit/53cda32aa35f3a592fb0ddf37e43c028f93ef613) [#7542](https://github.com/npm/cli/pull/7542) refactor ls to use output.buffer for json (#7542) (@lukekarrys)
+* [`61d5771`](https://github.com/npm/cli/commit/61d57719e6443978c5e9a91ca7a63397be3065fa) [#7541](https://github.com/npm/cli/pull/7541) remove json.stringify from all commands (#7541) (@lukekarrys)
+* [`4dfc7d2`](https://github.com/npm/cli/commit/4dfc7d20b58eaa3d231ef5dc86b9802e1c0d0e68) [#7540](https://github.com/npm/cli/pull/7540) pass strings to JSON.stringify in --json mode (#7540) (@lukekarrys)
+* [`3cefdf6`](https://github.com/npm/cli/commit/3cefdf6eaab5bfb4371149f674dc95e9b9c54853) [#7538](https://github.com/npm/cli/pull/7538) outdated: return array for outdated deps from multiple workspaces (@lukekarrys)
+* [`ef4c975`](https://github.com/npm/cli/commit/ef4c975f2784f70ab86a3e7e6e40c99279e5a3e3) [#7508](https://github.com/npm/cli/pull/7508) view: dont immediately exit on first workspace 404 (#7508) (@lukekarrys)
+
+### Documentation
+
+* [`fd6479f`](https://github.com/npm/cli/commit/fd6479f85b9cf14a23cb4f9a049e0ea68632d8e9) [#7560](https://github.com/npm/cli/pull/7560) update publish docs: dist-tag + publish case (#7560) (@davidlj95)
+
+### Dependencies
+
+* [`e3f0fd4`](https://github.com/npm/cli/commit/e3f0fd45d97569a0d6c2a67e179e4a5f13eb9442) [#7568](https://github.com/npm/cli/pull/7568) `@npmcli/package-json@5.1.1`
+* [`447a8d7`](https://github.com/npm/cli/commit/447a8d7f3124bf9f69453098ce31b56bad20efd7) [#7566](https://github.com/npm/cli/pull/7566) `spdx-license-ids@3.0.18`
+* [`83fed2e`](https://github.com/npm/cli/commit/83fed2e8ec253051d60babdf2b10e2f2c64df318) [#7566](https://github.com/npm/cli/pull/7566) `sigstore@2.3.1`
+* [`41291ba`](https://github.com/npm/cli/commit/41291bab34d3f7351c94e97e89ac1f85b0950188) [#7566](https://github.com/npm/cli/pull/7566) `@sigstore/tuf@2.3.4`
+* [`18b42a4`](https://github.com/npm/cli/commit/18b42a46abdbc26a28f2e16ea74a1812d8de4c4d) [#7566](https://github.com/npm/cli/pull/7566) `glob@10.4.1`
+* [`5c6759d`](https://github.com/npm/cli/commit/5c6759decb00dfbe377c0ad41f85a3222f79a36a) [#7566](https://github.com/npm/cli/pull/7566) `postcss-selector-parser@6.1.0`
+* [`2508a83`](https://github.com/npm/cli/commit/2508a83e6d2936d15c210b9dee41098131ed6aff) [#7566](https://github.com/npm/cli/pull/7566) `is-cidr@5.1.0`
+* [`6278fe4`](https://github.com/npm/cli/commit/6278fe430bb7c3ecfae730f9ea084501e57c0e2c) [#7566](https://github.com/npm/cli/pull/7566) `ini@4.1.3`
+
+### Chores
+
+* [`2d84091`](https://github.com/npm/cli/commit/2d840917bbeff6a1eb5accc10a5ec1c2280b9470) [#7568](https://github.com/npm/cli/pull/7568) fix snapshots for updated @npmcli/package-json (@wraithgar)
+* [`6574dc9`](https://github.com/npm/cli/commit/6574dc98705cf0a88ea6fe41a57d0d0adfcea439) [#7566](https://github.com/npm/cli/pull/7566) dev dependency updates (@wraithgar)
+
+### Chores
+
+* [`2d84091`](https://github.com/npm/cli/commit/2d840917bbeff6a1eb5accc10a5ec1c2280b9470) [#7568](https://github.com/npm/cli/pull/7568) fix snapshots for updated @npmcli/package-json (@wraithgar)
+* [`6574dc9`](https://github.com/npm/cli/commit/6574dc98705cf0a88ea6fe41a57d0d0adfcea439) [#7566](https://github.com/npm/cli/pull/7566) dev dependency updates (@wraithgar)
+
 ## [10.8.0](https://github.com/npm/cli/compare/v10.7.0...v10.8.0) (2024-05-15)
 
 ### Features
