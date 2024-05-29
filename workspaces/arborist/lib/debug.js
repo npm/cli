@@ -27,5 +27,6 @@ module.exports.log = (...msg) => module.exports(() => {
   const { format } = require('node:util')
   const prefix = `\n${process.pid} ${red(format(msg.shift()))} `
   msg = (prefix + format(...msg).trim().split('\n').join(prefix)).trim()
+  /* eslint-disable-next-line no-console */
   console.error(msg)
 })
