@@ -4,7 +4,7 @@ contact_links:
     url: https://github.community/c/software-development/47
     about: Find/file tickets with the community
   - name: ⭐️ Feature Request
-    url: https://github.com/npm/feedback
+    url: https://github.com/orgs/community/discussions/categories/npm
     about: Add your request or discuss the project w/ the community
   - name: 📃 RFC
     url: https://github.com/npm/rfcs
