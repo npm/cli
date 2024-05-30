@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@npmcli/map-workspaces": "^3.0.2",
+    "@npmcli/package-json": "^5.1.1",
     "ci-info": "^4.0.0",
     "ini": "^4.1.2",
     "nopt": "^7.2.1",

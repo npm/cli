@@ -190,6 +190,7 @@ graph LR;
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-config-->npmcli-mock-globals["@npmcli/mock-globals"];
+  npmcli-config-->npmcli-package-json["@npmcli/package-json"];
   npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-config-->proc-log;
   npmcli-config-->semver;
@@ -621,6 +622,7 @@ graph LR;
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-config-->npmcli-mock-globals["@npmcli/mock-globals"];
+  npmcli-config-->npmcli-package-json["@npmcli/package-json"];
   npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-config-->proc-log;
   npmcli-config-->semver;
@@ -795,9 +797,9 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, libnpmversion
- - @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/run-script, @npmcli/config, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
- - @npmcli/git, make-fetch-happen, @npmcli/config
+ - @npmcli/git, make-fetch-happen
  - @npmcli/installed-package-contents, @npmcli/map-workspaces, cacache, npm-pick-manifest, promzard
  - @npmcli/docs, @npmcli/fs, npm-bundled, read-package-json-fast, unique-filename, npm-install-checks, npm-package-arg, normalize-package-data, npm-packlist, bin-links, nopt, parse-conflict-json, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/promise-spawn, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, ini, mute-stream, npm-audit-report, npm-user-validate
