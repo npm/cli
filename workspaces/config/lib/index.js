@@ -674,7 +674,7 @@ class Config {
         // then we need to see if `p` is a workspace root by reading its package.json
         // however, if reading it fails then we should just move on
         const { content: pkg } = await pkgJson.normalize(p).catch(() => ({ content: {} }))
-        if (!pkg) {
+        if (!pkg?.workspaces) {
           continue
         }
 
