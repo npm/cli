@@ -226,7 +226,7 @@ npm also sets a top-level "maintainers" field with your npm user info.
 
 You can specify an object containing a URL that provides up-to-date
 information about ways to help fund development of your package, a
-string URL, or an array of objects and strings:
+string URL, or an array of objects and string URLs:
 
 ```json
 {
@@ -270,7 +270,7 @@ string URL, or an array of objects and strings:
 
 Users can use the `npm fund` subcommand to list the `funding` URLs of all
 dependencies of their project, direct and indirect. A shortcut to visit
-each funding url is also available when providing the project name such as:
+each funding URL is also available when providing the project name such as:
 `npm fund <projectname>` (when there are multiple URLs, the first one will
 be visited)
 
