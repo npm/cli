@@ -225,23 +225,35 @@ npm also sets a top-level "maintainers" field with your npm user info.
 ### funding
 
 You can specify an object containing a URL that provides up-to-date
-information about ways to help fund development of your package, or a
-string URL, or an array of these:
+information about ways to help fund development of your package, a
+string URL, or an array of objects and string URLs:
 
 ```json
 {
   "funding": {
     "type" : "individual",
     "url" : "http://example.com/donate"
-  },
+  }
+}
+```
 
+```json
+{
   "funding": {
     "type" : "patreon",
     "url" : "https://www.patreon.com/my-account"
-  },
+  }
+}
+```
 
-  "funding": "http://example.com/donate",
+```json
+{
+  "funding": "http://example.com/donate"
+}
+```
 
+```json
+{
   "funding": [
     {
       "type" : "individual",
@@ -258,7 +270,7 @@ string URL, or an array of these:
 
 Users can use the `npm fund` subcommand to list the `funding` URLs of all
 dependencies of their project, direct and indirect. A shortcut to visit
-each funding url is also available when providing the project name such as:
+each funding URL is also available when providing the project name such as:
 `npm fund <projectname>` (when there are multiple URLs, the first one will
 be visited)
 
