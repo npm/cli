@@ -225,23 +225,35 @@ npm also sets a top-level "maintainers" field with your npm user info.
 ### funding
 
 You can specify an object containing a URL that provides up-to-date
-information about ways to help fund development of your package, or a
-string URL, or an array of these:
+information about ways to help fund development of your package, a
+string URL, or an array of objects and strings:
 
 ```json
 {
   "funding": {
     "type" : "individual",
     "url" : "http://example.com/donate"
-  },
+  }
+}
+```
 
+```json
+{
   "funding": {
     "type" : "patreon",
     "url" : "https://www.patreon.com/my-account"
-  },
+  }
+}
+```
 
-  "funding": "http://example.com/donate",
+```json
+{
+  "funding": "http://example.com/donate"
+}
+```
 
+```json
+{
   "funding": [
     {
       "type" : "individual",
