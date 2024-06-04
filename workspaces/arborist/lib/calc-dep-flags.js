@@ -101,13 +101,13 @@ const unsetFlag = (node, flag) => {
       tree: node,
       visit: node => {
         node.extraneous = node[flag] = false
-        if (node.isLink) {
+        if (node.isLink && node.target) {
           node.target.extraneous = node.target[flag] = false
         }
       },
       getChildren: node => {
         const children = []
-        const targetNode = node.isLink ? node.target : node
+        const targetNode = node.isLink && node.target ? node.target : node;
         for (const edge of targetNode.edgesOut.values()) {
           if (
             edge.to &&
