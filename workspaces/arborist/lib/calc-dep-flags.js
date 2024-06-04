@@ -31,10 +31,6 @@ const calcDepFlagsStep = (node) => {
 
   // for links, map their hierarchy appropriately
   if (node.isLink) {
-    // node.target can be null, we check to ensure it's not null before proceeding
-    if (node.target == null) {
-      return node
-    }
     node.target.dev = node.dev
     node.target.optional = node.optional
     node.target.devOptional = node.devOptional
@@ -102,28 +98,14 @@ const unsetFlag = (node, flag) => {
       visit: node => {
         node.extraneous = node[flag] = false
         if (node.isLink) {
-          // node.target can be null, we check to ensure it's not null before proceeding
-          if (node.target == null) {
-            return []
-          } else {
-            node.target.extraneous = node.target[flag] = false
-          }
+          node.target.extraneous = node.target[flag] = false
         }
       },
       getChildren: node => {
-        if (node.isLink && node.target == null) {
-          return []
-        }
         const children = []
-        const targetNode = node.isLink ? node.target : node
-        if (targetNode == null) {
-          return []
-        }
-        for (const edge of targetNode.edgesOut.values()) {
-          if (
-            edge.to &&
-            edge.to[flag] &&
-            ((flag !== 'peer' && edge.type === 'peer') || edge.type === 'prod')
+        for (const edge of node.target.edgesOut.values()) {
+          if (edge.to && edge.to[flag] &&
+            (flag !== 'peer' && edge.type === 'peer' || edge.type === 'prod')
           ) {
             children.push(edge.to)
           }

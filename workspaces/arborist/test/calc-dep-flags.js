@@ -266,6 +266,7 @@ t.test('set parents to not extraneous when visiting', t => {
 })
 
 t.test('check null target in link', async t => {
+
   const root = new Link({
     path: '/some/path',
     realpath: '/some/path',
@@ -273,33 +274,6 @@ t.test('check null target in link', async t => {
       dependencies: { foo: '' },
     },
   });
-
-  if (root.target == null) {
-    t.equal(root.target, null, 'root.target should be null');
-    t.equal(root, root, 'should return the node itself if target is null');
-  } else {
-    root.target.peer = true;
-  }
-
-  const nonNullTarget = new Node({
-    name: "notNull",
-    path: '/some/path/node',
-  })
-
-  const rootWithNonNullTarget = new Link({
-    name: "notNull",
-    path: '/some/path/non/null',
-    pkg: {
-      dependencies: { foo: '' },
-    },
-    target: nonNullTarget
-  });
-  if (rootWithNonNullTarget.target == null) {
-    t.equal(rootWithNonNullTarget.target, null, 'rootWithNonNullTarget.target should be null');
-    t.equal(rootWithNonNullTarget, rootWithNonNullTarget, 'should return the node itself if target is null');
-  } else {
-    rootWithNonNullTarget.target.peer = true;
-    t.equal(rootWithNonNullTarget.target.peer, true, 'rootWithNonNullTarget.target.peer should be true');
-  }
+  t.doesNotThrow(()=> calcDepFlags(root))
   t.end();
 });
