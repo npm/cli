@@ -265,8 +265,7 @@ t.test('set parents to not extraneous when visiting', t => {
   t.end()
 })
 
-t.test('check null target in link', async t => {
-
+t.test('check null target in link', async t => {  
   const root = new Link({
     path: '/some/path',
     realpath: '/some/path',
@@ -274,6 +273,7 @@ t.test('check null target in link', async t => {
       dependencies: { foo: '' },
     },
   });
-  t.doesNotThrow(()=> calcDepFlags(root))
+  t.doesNotThrow(() => calcDepFlags(root))
+  t.doesNotThrow(() => calcDepFlags(root, false))
   t.end();
 });
