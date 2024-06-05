@@ -107,7 +107,7 @@ const unsetFlag = (node, flag) => {
       },
       getChildren: node => {
         const children = []
-        const targetNode = node.isLink && node.target ? node.target : node;
+        const targetNode = node.isLink && node.target ? node.target : node
         for (const edge of targetNode.edgesOut.values()) {
           if (
             edge.to &&
