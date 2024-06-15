@@ -400,3 +400,59 @@ t.test('should show install keeps dirty --workspace flag', async t => {
   assert.packageDirty('node_modules/abbrev@1.1.0')
   assert.packageInstalled('node_modules/lodash@1.1.1')
 })
+
+t.test('Unix - throw error on package install in root directory', async t => {
+  if (process.platform === 'win32') {
+    return t.skip('Throw on non-Windows root directory install - test not relevant on platform')
+  }
+
+  let npmError = null
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      prefix: '/',
+      'dry-run': true,
+    },
+  })
+
+  try {
+    await npm.exec('install', ['fizzbuzz'])
+  } catch (error) {
+    npmError = error.message
+  }
+
+  const expectedMessage =
+    'The current working directory is the root directory of the filesystem.\n' +
+    'Package installs in root directories are not allowed.\n' +
+    'Please create a new folder and install your packages in there.\n'
+
+  t.strictSame(npmError, expectedMessage)
+})
+
+t.test('Windows - throw error on package install in root directory', async t => {
+  if (process.platform !== 'win32') {
+    return t.skip('Throw on Windows root directory install - test not relevant on platform')
+  }
+
+  let npmError = null
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      prefix: 'C:\\',
+      'dry-run': true,
+    },
+  })
+
+  try {
+    await npm.exec('install', ['fizzbuzz'])
+  } catch (error) {
+    npmError = error.message
+  }
+
+  const expectedMessage =
+    'The current working directory is the root directory of the filesystem.\n' +
+    'Package installs in root directories are not allowed.\n' +
+    'Please create a new folder and install your packages in there.\n'
+
+  t.strictSame(npmError, expectedMessage)
+})
