@@ -8,6 +8,7 @@ const { resolve } = require('node:path')
 const treeCheck = require('../lib/tree-check.js')
 
 const { normalizePath, normalizePaths } = require('./fixtures/utils.js')
+const { realpath } = require('node:fs')
 
 t.cleanSnapshot = str =>
   str.split(process.cwd()).join('{CWD}')
@@ -1547,6 +1548,13 @@ t.test('detect that two nodes are the same thing', async t => {
     const a = new Node({ parent: root, pkg: pkga })
     const b = new Node({ parent: a, pkg: pkgb })
     check(a, b, false, 'name/version mismatch, if no resolved/integrity')
+  }
+
+  {
+    const root = new Node({ path: '/x' })
+    const a = new Link({ root, path: '/a', realpath: '/a', target: null })
+    const b = new Link({ root, path: '/b', realpath: '/b', target: null })
+    check(a, b, false, 'links does not match if target to null')
   }
 })
 
