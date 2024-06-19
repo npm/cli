@@ -331,7 +331,7 @@ t.test('construct metadata from node and package data', t => {
   const root = new Node({
     pkg: {
       name: 'root',
-      dependencies: { a: '', link: '', link2: '' },
+      dependencies: { a: '', link: '', link2: '', link3: '' },
       devDependencies: { d: '', e: 'https://foo.com/e.tgz', devit: '' },
       optionalDependencies: { optin: '' },
       peerDependencies: { peer: '' },
@@ -430,6 +430,31 @@ t.test('construct metadata from node and package data', t => {
       },
     }),
   })
+  // special case when link alias is the same as target package name
+  const link3 = new Link({
+    name: 'link3',
+    path: '/home/user/projects/root/node_modules/link3',
+    realpath: '/home/user/projects/root/realPkg',
+    parent: root,
+    pkg: {
+      name: 'link3',
+      version: '1.2.3',
+      funding: 'https://example.com/payme',
+      _resolved: 'github:isaacs/foobarbaz#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    },
+    target: new Node({
+      name: 'link3',
+      realpath: '/home/user/projects/root/realPkg',
+      path: '/home/user/projects/root/realPkg',
+      root,
+      pkg: {
+        name: 'link3',
+        version: '1.2.3',
+        funding: 'https://example.com/payme',
+        _resolved: 'github:isaacs/foobarbaz#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      },
+    }),
+  })
 
   const a = new Node({
     resolved: 'https://example.com/a.tgz',
@@ -520,6 +545,10 @@ t.test('construct metadata from node and package data', t => {
     'metadata for tarball file pkg with _resolved value')
   t.matchSnapshot(meta.get(link.path), 'link metadata')
   t.matchSnapshot(meta.get(link.target.path), 'link target metadata')
+
+  t.matchSnapshot(meta.get(link3.path), 'link metadata with same pkg name as link target')
+  t.matchSnapshot(meta.get(link3.target.path), 'link target metadata with same pkg name as link target')
+
   t.matchSnapshot(meta.get(a.location), 'dep a metadata')
   t.matchSnapshot(meta.get(d.location), 'dep d metadata')
   t.matchSnapshot(meta.get(e.location), 'dep e metadata')
