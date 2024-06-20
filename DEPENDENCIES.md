@@ -293,6 +293,7 @@ graph LR;
   glob-->jackspeak;
   glob-->minimatch;
   glob-->minipass;
+  glob-->package-json-from-dist;
   glob-->path-scurry;
   hasown-->function-bind;
   hosted-git-info-->lru-cache;
