@@ -69,7 +69,7 @@
     "cli-columns": "^4.0.0",
     "fastest-levenshtein": "^1.0.16",
     "fs-minipass": "^3.0.3",
-    "glob": "^10.4.1",
+    "glob": "^10.4.2",
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^7.0.2",
     "ini": "^4.1.3",
