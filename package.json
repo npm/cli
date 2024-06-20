@@ -58,7 +58,7 @@
     "@npmcli/map-workspaces": "^3.0.6",
     "@npmcli/package-json": "^5.2.0",
     "@npmcli/promise-spawn": "^7.0.2",
-    "@npmcli/redact": "^2.0.0",
+    "@npmcli/redact": "^2.0.1",
     "@npmcli/run-script": "^8.1.0",
     "@sigstore/tuf": "^2.3.4",
     "abbrev": "^2.0.0",
