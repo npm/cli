@@ -4,6 +4,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.2): `@npmcli/arborist@7.5.2`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
+
 ## [5.0.11](https://github.com/npm/cli/compare/libnpmfund-v5.0.10...libnpmfund-v5.0.11) (2024-05-29)
 
 ### Bug Fixes

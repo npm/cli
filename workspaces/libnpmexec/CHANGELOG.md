@@ -1,5 +1,16 @@
 # Changelog
 
+## [8.1.3](https://github.com/npm/cli/compare/libnpmexec-v8.1.2...libnpmexec-v8.1.3) (2024-07-09)
+
+### Bug Fixes
+
+* [`71c6848`](https://github.com/npm/cli/commit/71c6848acd97f00c84b07ee1a80d92a053d405b5) [#7587](https://github.com/npm/cli/pull/7587) exec: npx to run specified version if multiple version exist globally  (#7587) (@milaninfy)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
+
 ## [8.1.2](https://github.com/npm/cli/compare/libnpmexec-v8.1.1...libnpmexec-v8.1.2) (2024-05-29)
 
 ### Bug Fixes
