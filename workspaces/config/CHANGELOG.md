@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.3.4](https://github.com/npm/cli/compare/config-v8.3.3...config-v8.3.4) (2024-07-09)
+
+### Bug Fixes
+
+* [`15be6dd`](https://github.com/npm/cli/commit/15be6dd33bfab8bdfaf8c3dece435d7139c1bf6d) [#7574](https://github.com/npm/cli/pull/7574) don't try parsing workspaces if none exist (@wraithgar)
+* [`d185c9b`](https://github.com/npm/cli/commit/d185c9bdcab7dd2a8a485cd167b9a7c5c1f43ad0) [#7574](https://github.com/npm/cli/pull/7574) use @npmcli/package-json to parse local package (@wraithgar)
+
+### Dependencies
+
+* [`04d6910`](https://github.com/npm/cli/commit/04d6910e474003762b4606837960b4eb10d7bcd9) [#7574](https://github.com/npm/cli/pull/7574) `@npmcli/package-json@5.1.1`
+* [`4ef4830`](https://github.com/npm/cli/commit/4ef4830dd792c2f23d3ffc7a10f797fc4ac8e5cb) [#7574](https://github.com/npm/cli/pull/7574) remove read-package-json-fast
+
 ## [8.3.3](https://github.com/npm/cli/compare/config-v8.3.2...config-v8.3.3) (2024-05-29)
 
 ### Bug Fixes

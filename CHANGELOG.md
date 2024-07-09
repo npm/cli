@@ -1,5 +1,80 @@
 # Changelog
 
+## [10.8.2](https://github.com/npm/cli/compare/v10.8.1...v10.8.2) (2024-07-09)
+
+### Bug Fixes
+
+* [`3101a40`](https://github.com/npm/cli/commit/3101a4045bd7030f232d6cb2ae61339214968321) [#7631](https://github.com/npm/cli/pull/7631) limit concurrent open files during 'npm cache verify' (#7631) (@oikumene)
+* [`2273183`](https://github.com/npm/cli/commit/22731831e22011e32fa0ca12178e242c2ee2b33d) [#7595](https://github.com/npm/cli/pull/7595) outdated: fixed wanted range for alias with version range (#7595) (@milaninfy)
+* [`15be6dd`](https://github.com/npm/cli/commit/15be6dd33bfab8bdfaf8c3dece435d7139c1bf6d) [#7574](https://github.com/npm/cli/pull/7574) don't try parsing workspaces if none exist (@wraithgar)
+
+### Documentation
+
+* [`ac937d4`](https://github.com/npm/cli/commit/ac937d4f29b27fb877f79f33034ee1144c7202c4) [#7616](https://github.com/npm/cli/pull/7616) install: add save-peer flag (#7616) (@drew4237)
+* [`55639ef`](https://github.com/npm/cli/commit/55639efd2d3094ca0931ddf9276c93f6880cd6e6) [#7615](https://github.com/npm/cli/pull/7615) use git+https in package.com url examples (#7615) (@MikeMcC399)
+* [`93883bb`](https://github.com/npm/cli/commit/93883bb6459208a916584cad8c6c72a315cf32af) [#7582](https://github.com/npm/cli/pull/7582) Improve manpage section for `package.json` `funding` properties (#7582) (@kemitchell)
+* [`92e71e6`](https://github.com/npm/cli/commit/92e71e6b0c7889e243e6b54ef8b4eb9656de95f8) [#7576](https://github.com/npm/cli/pull/7576) fix links to community discussions (#7576) (@leobalter)
+
+### Dependencies
+
+* [`1c1adae`](https://github.com/npm/cli/commit/1c1adaeeb59401db32d3d1ac4074654c87cd6f25) [#7636](https://github.com/npm/cli/pull/7636) `npm-pick-manifest@9.1.0`
+* [`5e4fa18`](https://github.com/npm/cli/commit/5e4fa18dc02cd6b99df51e220661d82b2db12c3d) [#7636](https://github.com/npm/cli/pull/7636) `socks-proxy-agent@8.0.4`
+* [`d8fa116`](https://github.com/npm/cli/commit/d8fa116f142044d3774439cf64dd51e8acb5bcff) [#7636](https://github.com/npm/cli/pull/7636) `https-proxy-agent@7.0.5`
+* [`76dab91`](https://github.com/npm/cli/commit/76dab917eb22f5079cbb8bc052ec7c5bb07e9389) [#7636](https://github.com/npm/cli/pull/7636) `normalize-package-data@6.0.2`
+* [`094c4ea`](https://github.com/npm/cli/commit/094c4ea17398d092a8b2c631564209c10183d417) [#7636](https://github.com/npm/cli/pull/7636) `minimatch@9.0.5`
+* [`1c8d41d`](https://github.com/npm/cli/commit/1c8d41ddafc5810511d54fd227ce964c503464e0) [#7636](https://github.com/npm/cli/pull/7636) `@npmcli/git@5.0.8`
+* [`e5451e1`](https://github.com/npm/cli/commit/e5451e1e91d7a71546f21daca604fb956c1cac3f) [#7605](https://github.com/npm/cli/pull/7605) `jackspeak@3.4.0`
+* [`7b584d3`](https://github.com/npm/cli/commit/7b584d3b60ff118fd04f3ee5693816d9e948ff1b) [#7605](https://github.com/npm/cli/pull/7605) `foreground-child@3.2.1`
+* [`941d0d7`](https://github.com/npm/cli/commit/941d0d7b596ec4cc2d21f86fb03876e2c6360987) [#7605](https://github.com/npm/cli/pull/7605) `debug@4.3.5`
+* [`8b8ce7a`](https://github.com/npm/cli/commit/8b8ce7a23543a4d28c850fa27cd411de68a74cfd) [#7605](https://github.com/npm/cli/pull/7605) `glob@10.4.2`
+* [`4646768`](https://github.com/npm/cli/commit/46467680d0e75c95406e46b5e2f754d2b7df1f7b) [#7605](https://github.com/npm/cli/pull/7605) `npm-registry-fetch@17.1.0`
+* [`6f0d7ce`](https://github.com/npm/cli/commit/6f0d7cec260993d269294e05e18eacf23935b78a) [#7605](https://github.com/npm/cli/pull/7605) `@npmcli/redact@2.0.1`
+* [`29204c8`](https://github.com/npm/cli/commit/29204c8ad4be0a1ffbca6f40393b00278bb34b3e) [#7605](https://github.com/npm/cli/pull/7605) `@npmcli/package-json@5.2.0`
+* [`04d6910`](https://github.com/npm/cli/commit/04d6910e474003762b4606837960b4eb10d7bcd9) [#7574](https://github.com/npm/cli/pull/7574) `@npmcli/package-json@5.1.1`
+* [`4ef4830`](https://github.com/npm/cli/commit/4ef4830dd792c2f23d3ffc7a10f797fc4ac8e5cb) [#7574](https://github.com/npm/cli/pull/7574) remove read-package-json-fast
+## [10.8.2](https://github.com/npm/cli/compare/v10.8.1...v10.8.2) (2024-07-09)
+
+### Bug Fixes
+
+* [`3101a40`](https://github.com/npm/cli/commit/3101a4045bd7030f232d6cb2ae61339214968321) [#7631](https://github.com/npm/cli/pull/7631) limit concurrent open files during 'npm cache verify' (#7631) (@oikumene)
+* [`2273183`](https://github.com/npm/cli/commit/22731831e22011e32fa0ca12178e242c2ee2b33d) [#7595](https://github.com/npm/cli/pull/7595) outdated: fixed wanted range for alias with version range (#7595) (@milaninfy)
+* [`15be6dd`](https://github.com/npm/cli/commit/15be6dd33bfab8bdfaf8c3dece435d7139c1bf6d) [#7574](https://github.com/npm/cli/pull/7574) don't try parsing workspaces if none exist (@wraithgar)
+
+### Documentation
+
+* [`ac937d4`](https://github.com/npm/cli/commit/ac937d4f29b27fb877f79f33034ee1144c7202c4) [#7616](https://github.com/npm/cli/pull/7616) install: add save-peer flag (#7616) (@drew4237)
+* [`55639ef`](https://github.com/npm/cli/commit/55639efd2d3094ca0931ddf9276c93f6880cd6e6) [#7615](https://github.com/npm/cli/pull/7615) use git+https in package.com url examples (#7615) (@MikeMcC399)
+* [`93883bb`](https://github.com/npm/cli/commit/93883bb6459208a916584cad8c6c72a315cf32af) [#7582](https://github.com/npm/cli/pull/7582) Improve manpage section for `package.json` `funding` properties (#7582) (@kemitchell)
+* [`92e71e6`](https://github.com/npm/cli/commit/92e71e6b0c7889e243e6b54ef8b4eb9656de95f8) [#7576](https://github.com/npm/cli/pull/7576) fix links to community discussions (#7576) (@leobalter)
+
+### Dependencies
+
+* [`1c1adae`](https://github.com/npm/cli/commit/1c1adaeeb59401db32d3d1ac4074654c87cd6f25) [#7636](https://github.com/npm/cli/pull/7636) `npm-pick-manifest@9.1.0`
+* [`5e4fa18`](https://github.com/npm/cli/commit/5e4fa18dc02cd6b99df51e220661d82b2db12c3d) [#7636](https://github.com/npm/cli/pull/7636) `socks-proxy-agent@8.0.4`
+* [`d8fa116`](https://github.com/npm/cli/commit/d8fa116f142044d3774439cf64dd51e8acb5bcff) [#7636](https://github.com/npm/cli/pull/7636) `https-proxy-agent@7.0.5`
+* [`76dab91`](https://github.com/npm/cli/commit/76dab917eb22f5079cbb8bc052ec7c5bb07e9389) [#7636](https://github.com/npm/cli/pull/7636) `normalize-package-data@6.0.2`
+* [`094c4ea`](https://github.com/npm/cli/commit/094c4ea17398d092a8b2c631564209c10183d417) [#7636](https://github.com/npm/cli/pull/7636) `minimatch@9.0.5`
+* [`1c8d41d`](https://github.com/npm/cli/commit/1c8d41ddafc5810511d54fd227ce964c503464e0) [#7636](https://github.com/npm/cli/pull/7636) `@npmcli/git@5.0.8`
+* [`e5451e1`](https://github.com/npm/cli/commit/e5451e1e91d7a71546f21daca604fb956c1cac3f) [#7605](https://github.com/npm/cli/pull/7605) `jackspeak@3.4.0`
+* [`7b584d3`](https://github.com/npm/cli/commit/7b584d3b60ff118fd04f3ee5693816d9e948ff1b) [#7605](https://github.com/npm/cli/pull/7605) `foreground-child@3.2.1`
+* [`941d0d7`](https://github.com/npm/cli/commit/941d0d7b596ec4cc2d21f86fb03876e2c6360987) [#7605](https://github.com/npm/cli/pull/7605) `debug@4.3.5`
+* [`8b8ce7a`](https://github.com/npm/cli/commit/8b8ce7a23543a4d28c850fa27cd411de68a74cfd) [#7605](https://github.com/npm/cli/pull/7605) `glob@10.4.2`
+* [`4646768`](https://github.com/npm/cli/commit/46467680d0e75c95406e46b5e2f754d2b7df1f7b) [#7605](https://github.com/npm/cli/pull/7605) `npm-registry-fetch@17.1.0`
+* [`6f0d7ce`](https://github.com/npm/cli/commit/6f0d7cec260993d269294e05e18eacf23935b78a) [#7605](https://github.com/npm/cli/pull/7605) `@npmcli/redact@2.0.1`
+* [`29204c8`](https://github.com/npm/cli/commit/29204c8ad4be0a1ffbca6f40393b00278bb34b3e) [#7605](https://github.com/npm/cli/pull/7605) `@npmcli/package-json@5.2.0`
+* [`04d6910`](https://github.com/npm/cli/commit/04d6910e474003762b4606837960b4eb10d7bcd9) [#7574](https://github.com/npm/cli/pull/7574) `@npmcli/package-json@5.1.1`
+* [`4ef4830`](https://github.com/npm/cli/commit/4ef4830dd792c2f23d3ffc7a10f797fc4ac8e5cb) [#7574](https://github.com/npm/cli/pull/7574) remove read-package-json-fast
+
+### Chores
+
+* [`2490b49`](https://github.com/npm/cli/commit/2490b492cc8d9a351841d2c643b13a47a3254f41) [#7621](https://github.com/npm/cli/pull/7621) remove .github/workflows/benchmark.yml (#7621) (@wraithgar)
+* [`3b8b111`](https://github.com/npm/cli/commit/3b8b11161ee2f88817dcc19b4770040d5bc73261) [#7605](https://github.com/npm/cli/pull/7605) update devDependencies in lockfile (@wraithgar)
+
+### Chores
+
+* [`2490b49`](https://github.com/npm/cli/commit/2490b492cc8d9a351841d2c643b13a47a3254f41) [#7621](https://github.com/npm/cli/pull/7621) remove .github/workflows/benchmark.yml (#7621) (@wraithgar)
+* [`3b8b111`](https://github.com/npm/cli/commit/3b8b11161ee2f88817dcc19b4770040d5bc73261) [#7605](https://github.com/npm/cli/pull/7605) update devDependencies in lockfile (@wraithgar)
+
 ## [10.8.1](https://github.com/npm/cli/compare/v10.8.0...v10.8.1) (2024-05-29)
 
 ### Bug Fixes

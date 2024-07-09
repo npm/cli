@@ -1,5 +1,12 @@
 # Changelog
 
+## [7.5.4](https://github.com/npm/cli/compare/arborist-v7.5.3...arborist-v7.5.4) (2024-07-09)
+
+### Bug Fixes
+
+* [`6f33d74`](https://github.com/npm/cli/commit/6f33d74f310fa27aad30fd00d58d8e4404ef8cb2) [#7579](https://github.com/npm/cli/pull/7579) arborist: safeguard against null node.target in flag calculation (#7579) (@AmirSa12)
+* [`a8e666e`](https://github.com/npm/cli/commit/a8e666e05d18b2e309787eb80b85f0006521b302) [#7602](https://github.com/npm/cli/pull/7602) arborist: condition to include name field in package-lock fixed (#7602) (@milaninfy)
+
 ## [7.5.3](https://github.com/npm/cli/compare/arborist-v7.5.2...arborist-v7.5.3) (2024-05-29)
 
 ### Bug Fixes
