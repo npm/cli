@@ -226,3 +226,22 @@ t.test('packages with different versions in the global tree', async t => {
     created: 'global/node_modules/@npmcli/A/bin-file.js',
   })
 })
+
+t.test('run from registry - non existant global path', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: fixtures,
+  })
+
+  await package({ registry, path })
+
+  await exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'non-existant'),
+  })
+
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.0',
+  })
+})
