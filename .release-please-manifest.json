@@ -1,9 +1,9 @@
 {
-  ".": "10.8.2",
+  ".": "10.8.3",
   "workspaces/arborist": "7.5.4",
   "workspaces/libnpmaccess": "8.0.6",
   "workspaces/libnpmdiff": "6.1.4",
-  "workspaces/libnpmexec": "8.1.3",
+  "workspaces/libnpmexec": "8.1.4",
   "workspaces/libnpmfund": "5.0.12",
   "workspaces/libnpmhook": "10.0.5",
   "workspaces/libnpmorg": "6.0.6",
