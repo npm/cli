@@ -3,6 +3,71 @@ const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
 const EventEmitter = require('node:events')
 
+function setup (t, cb) {
+  return mockNpm(t).then(mock => {
+    let spawnCalled = false
+    let spawnArgs = null
+
+    const spawn = (command, args) => {
+      spawnCalled = true
+      spawnArgs = { command, args }
+      return {
+        on: (event, callback) => {
+          if (event === 'error') {
+            setTimeout(() => callback(new Error('Simulated spawn error')), 0)
+          } else if (event === 'close') {
+            setTimeout(() => callback(null, 0), 0)
+          }
+          return { on: () => {} }
+        },
+      }
+    }
+
+    const exec = (cmd, callback) => {
+      callback(null, { stdout: 'Microsoft' })
+    }
+
+    const { openUrl } = tmock(t, '{LIB}/utils/open-url.js', {
+      '@npmcli/promise-spawn': {
+        open: async () => {
+          return new Promise((resolve, reject) => {
+            const child = spawn()
+            child.on('error', reject)
+            child.on('close', (code) => {
+              if (code === 0) {
+                resolve()
+              } else {
+                reject(new Error(`Child process exiited with code ${code}`))
+              }
+            })
+          })
+        },
+      },
+      'node:child_process': { spawn, exec },
+      'node:util': {
+        promisify: (fn) => async (...args) => {
+          return new Promise((resolve, reject) => fn(...args, (err, result) => {
+            if (err) {
+              reject(err)
+            } else {
+              resolve(result)
+            }
+          }))
+        },
+      },
+    })
+    return cb(null, {
+      npm: mock.npm,
+      openUrl,
+      spawnCalled: () => spawnCalled,
+      spawnArgs: () => spawnArgs,
+    })
+  }).catch(err => {
+    cb(err)
+    throw err
+  })
+}
+
 const mockOpenUrl = async (t, args, { openerResult, ...config } = {}) => {
   let openerUrl = null
   let openerOpts = null
@@ -114,6 +179,57 @@ const mockOpenUrlPrompt = async (t, {
     abortController,
   }
 }
+
+t.test('openUrl in WSL environment - success case', (t) => {
+  setup(t, (err, context) => {
+    if (err) {
+      t.error(err)
+      return t.end()
+    }
+    return context.openUrl(context.npm, 'https://www.npmjs.com', 'npm home')
+      .then(() => {
+        t.fail('openUrl should have rejected')
+        throw new Error('openurl should have rejected')
+      })
+      .catch(error => {
+        t.match(error.message, /Simulated spawn error/, 'openUrl rejects with spawn error')
+        t.ok(context.spawnCalled(), 'spawn was called for WSL env')
+        t.equal(context.spawnArgs().command, 'powershell.exe', 'powershell.exe was called')
+        t.same(context.spawnArgs().args, ['-Command', `Start-Process 'https://www.npmjs.com'`],
+          'correct arg passed to powershell')
+      })
+      .finally(() => {
+        t.end()
+      })
+  })
+})
+
+t.test('openUrl in WSL environment - erro case', (t) => {
+  setup(t, (err, context) => {
+    if (err) {
+      t.error(err)
+      return t.end()
+    }
+    tmock(t, '{LIB}/utils/open-url.js', {
+      '@npmcli/promise-spawn': {
+        open: async () => {
+          throw new Error('Simulated spawn error')
+        },
+      },
+    })
+    return context.openUrl(context.npm, 'https://www.npmjs.com', 'npm home')
+      .then(() => {
+        t.fail('openUrl should have rejected')
+        throw new Error('openUrl should have rejected')
+      })
+      .catch(error => {
+        t.match(error.message, /Simulated spawn error/, 'openUrl rejects spawn error')
+      })
+      .finally(() => {
+        t.end()
+      })
+  })
+})
 
 t.test('open url prompt', async t => {
   t.test('does not open a url in non-interactive environments', async t => {
