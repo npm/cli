@@ -1,4 +1,6 @@
----
+{
+  "workspaces": [ "packages/b", "packages/a" ]
+}---
 title: workspaces
 section: 7
 description: Working with workspaces
