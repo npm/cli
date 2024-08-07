@@ -275,31 +275,35 @@ t.test('openUrl handles error when checking for WSL', async (t) => {
 })
 
 t.test('createOpener function', async t => {
-  const mock = await mockNpm(t)
-  const title = 'Test'
-  const prompt = 'Test prompt'
-  const url = 'https://www.npmjs.com'
-  const opts = { singal: null }
+  const openerSetup = async () => {
+    const mock = await mockNpm(t)
+    const title = 'Test'
+    const prompt = 'Test prompt'
+    const url = 'https://www.npmjs.com'
+    const opts = { singal: null }
 
-  // create opener function
-  const opener = createOpener(mock.npm, title, prompt)
+    const opener = createOpener(mock.npm, title, prompt)
 
-  // mock openUrlPropmt
-  tmock(t, '{LIB}/utils/open-url.js', {
-    '../../../../lib/utils/open-url.js': {
-      openUrlPrompt: async (npm, u, t, p, o) => {
-        t.equal(npm, mock.npm, 'npm instance matches')
-        t.equal(u, url, 'URL matches')
-        t.equal(t, title, 'Title matches')
-        t.equal(p, prompt, 'Prompt matches')
-        t.same(o, opts, 'Options match')
+    return { mock, title, prompt, url, opts, opener }
+  }
+
+  await t.test('calls openUrlPrompt with correct arguments', async t => {
+    const { mock, title, prompt, url, opts, opener } = await openerSetup()
+
+    // mock openUrlPropmt
+    tmock(t, '{LIB}/utils/open-url.js', {
+      '../../../../lib/utils/open-url.js': {
+        openUrlPrompt: async (npm, u, t, p, o) => {
+          t.equal(npm, mock.npm, 'npm instance matches')
+          t.equal(u, url, 'URL matches')
+          t.equal(t, title, 'Title matches')
+          t.equal(p, prompt, 'Prompt matches')
+          t.same(o, opts, 'Options match')
+        },
       },
-    },
+    })
+    await opener(url, opts)
   })
-
-  await opener(url, opts)
-
-  t.end()
 })
 
 t.test('open url prompt', async t => {
