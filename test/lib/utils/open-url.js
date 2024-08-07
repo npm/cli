@@ -2,6 +2,7 @@ const t = require('tap')
 const tmock = require('../../fixtures/tmock')
 const mockNpm = require('../../fixtures/mock-npm')
 const EventEmitter = require('node:events')
+const { createOpener } = require('../../../lib/utils/open-url.js')
 
 function setup (t, cb) {
   return mockNpm(t).then(mock => {
@@ -229,6 +230,76 @@ t.test('openUrl in WSL environment - erro case', (t) => {
         t.end()
       })
   })
+})
+
+t.test('openUrl handles error when checking for WSL', async (t) => {
+  let openCalled = false
+  let spawnCalled = false
+  const mockExec = async () => {
+    throw new Error('Simulated exec error')
+  }
+
+  const mockOpen = async () => {
+    openCalled = true
+  }
+
+  const mockSpawn = () => {
+    spawnCalled = true
+    return {
+      on: () => {},
+    }
+  }
+
+  const { openUrl } = tmock(t, '{LIB}/utils/open-url.js', {
+    'node:util': {
+      promisify: () => mockExec,
+    },
+    '@npmcli/promise-spawn': {
+      open: mockOpen,
+    },
+    'node:child_process': {
+      spawn: mockSpawn,
+    },
+  })
+
+  const mock = await mockNpm(t, {
+    config: {
+      browser: true,
+    },
+  })
+
+  await openUrl(mock.npm, 'https://www.npmjs.com', 'test')
+
+  t.ok(openCalled, 'open was called (non wsl method)')
+  t.notOk(spawnCalled, 'spawn was not called (wsl method)')
+})
+
+t.test('createOpener function', async t => {
+  const mock = await mockNpm(t)
+  const title = 'Test'
+  const prompt = 'Test prompt'
+  const url = 'https://www.npmjs.com'
+  const opts = { singal: null }
+
+  // create opener function
+  const opener = createOpener(mock.npm, title, prompt)
+
+  // mock openUrlPropmt
+  tmock(t, '{LIB}/utils/open-url.js', {
+    '../../../../lib/utils/open-url.js': {
+      openUrlPrompt: async (npm, u, t, p, o) => {
+        t.equal(npm, mock.npm, 'npm instance matches')
+        t.equal(u, url, 'URL matches')
+        t.equal(t, title, 'Title matches')
+        t.equal(p, prompt, 'Prompt matches')
+        t.same(o, opts, 'Options match')
+      },
+    },
+  })
+
+  await opener(url, opts)
+
+  t.end()
 })
 
 t.test('open url prompt', async t => {
