@@ -63,7 +63,7 @@ npm error [--no-bin-links] [--no-fund] [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
 npm error
-npm error aliases: clean-install, ic, install-clean, isntall-clean
+npm error aliases: clean-install, ic, install-clean, install-clean
 npm error
 npm error Run "npm help ci" for more info
 npm error A complete log of this run can be found in: {NPM}/{TESTDIR}/cache/_logs/{LOG}
