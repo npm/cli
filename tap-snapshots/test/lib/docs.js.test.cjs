@@ -58,11 +58,11 @@ Object {
   "insta": "install",
   "instal": "install",
   "install-clean": "ci",
-  "isnt": "install",
-  "isnta": "install",
-  "isntal": "install",
-  "isntall": "install",
-  "isntall-clean": "ci",
+  "inst": "install",
+  "insta": "install",
+  "instal": "install",
+  "install": "install",
+  "install-clean": "ci",
   "issues": "bugs",
   "it": "install-test",
   "la": "ll",
@@ -2717,14 +2717,14 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
-aliases: clean-install, ic, install-clean, isntall-clean
+aliases: clean-install, ic, install-clean, install-clean
 
 Run "npm help ci" for more info
 
 \`\`\`bash
 npm ci
 
-aliases: clean-install, ic, install-clean, isntall-clean
+aliases: clean-install, ic, install-clean, install-clean
 \`\`\`
 
 #### \`install-strategy\`
@@ -3284,14 +3284,14 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [-ws|--workspaces] [--include-workspace-root] [--install-links]
 
-aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
+aliases: add, i, in, ins, inst, insta, instal, inst, insta, instal, install
 
 Run "npm help install" for more info
 
 \`\`\`bash
 npm install [<package-spec> ...]
 
-aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
+aliases: add, i, in, ins, inst, insta, instal, inst, insta, instal, install
 \`\`\`
 
 #### \`save\`

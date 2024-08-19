@@ -149,12 +149,12 @@ Array [
     inst
     insta
     instal
-    isnt
-    isnta
-    isntal
-    isntall
+    inst
+    insta
+    instal
+    install
     install-clean
-    isntall-clean
+    install-clean
     hlep
     dist-tags
     upgrade
