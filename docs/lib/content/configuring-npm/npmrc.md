@@ -29,7 +29,7 @@ Environment variables can be replaced using `${VARIABLE_NAME}`. For
 example:
 
 ```bash
-prefix = ${HOME}/.npm-packages
+cache = ${HOME}/.npm-packages
 ```
 
 Each of these files is loaded, and config options are resolved in priority
