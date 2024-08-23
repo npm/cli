@@ -1,6 +1,6 @@
 {
   "_id": "path-is-absolute",
-  "_rev": "15-bcd735b95a35c1b7d573cade377c141a",
+  "_rev": "20-b9459a9b5842089934ad41abdfae9c10",
   "name": "path-is-absolute",
   "description": "Node.js 0.12 path.isAbsolute() ponyfill",
   "dist-tags": {
@@ -71,7 +71,14 @@
       ],
       "dist": {
         "shasum": "263dada66ab3f2fb10bf7f9d24dd8f3e570ef912",
-        "tarball": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.0.tgz",
+        "integrity": "sha512-hUUTsB/vByumPhn43R+Azhsx4TQPvyQqW+XyCR6UA8ae+FGIjf5Oygj6o/FYK4ZdwnrXth2eIBKk4YlrUU0ElQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQC3slCzr6EUUZwJRmq/IEE1e9rdUSsUqeybaawfyJa4AwIgRMX3BeEWLk4zqpIaf33dH3gVApsUSe44/5VcLe952x0="
+          }
+        ]
       },
       "directories": {}
     },
@@ -136,7 +143,14 @@
       },
       "dist": {
         "shasum": "174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f",
-        "tarball": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz"
+        "tarball": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz",
+        "integrity": "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIGG8/PrDi1CnM1BTf+tIetYTz6QlYdNw06Fzr6TcBTg9AiEAyCc6F5oylqXtNFO3j0Qdrd6R467hz7U4Uotv/nyjv9M="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -210,7 +224,13 @@
         "tarball": "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-2.0.0.tgz",
         "fileCount": 4,
         "unpackedSize": 3699,
-        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb5BgZCRA9TVsSAnZWagAAjzEP/3lJ7zhj0TKOtNrPBVj8\n9Ypn5Ru29IWn/UTy6iv48fODPWvDH/gbzi+lb99wYBVOrEhwkXRRthQnyE6H\nOMfDamSFZ0M5N9g/2QafpbdIKIyAHmwNPLdY1BxlNE18CGUopx8wBxZcf725\nTmSa/6ld2gIhTbAaNklO7U6G1jFx5rZmbh2sQlz3/ezYY6ll69x4lNUG36Vv\nK3Qyo0zYKhXIZaDoD+ERcQWDVMjsCJ+7EJiSci1dg+Wn2ERebkRYYTNNvAjz\nCGw5QNW2vO5EvvCbHfts9VH1yPSrKrp/qCNByFVVkKV/FUVJqZshK6bSAb8p\nfr6i3y4dOKNYBnLScz2a+yDkhiNFpTSrCh7fPAuZECN3o1l3luseHIg44Dfp\nYph+YsGNJPEe/eq5h6KN18vtCMEs/1xTC0Pffo/pWv3AK5nCuZFzblsNIkLH\nO5McLriRI8BHc1VxRcPAWWRR7yNinqpQqZ3vp6qEWISqLeVKohYLixETiIz9\nZcnKsBKouejDx2AfeMakb1vLYj1B7dWQdcZZFQrqGjnMF+vdvOMI7VY9PJgV\nggQAcQyDcKOyTq1xW6rLy2X6906kU5VsLnjQbKr+kQ06hXRubgwfqfB/7WWu\nDSvRzAG9lUHjWNI8HSZhvEWewLetHIBeuj/P5OQIjFCFQ9fj0UE3chw8Q3u6\nPlls\r\n=MOl8\r\n-----END PGP SIGNATURE-----\r\n"
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJb5BgZCRA9TVsSAnZWagAAjzEP/3lJ7zhj0TKOtNrPBVj8\n9Ypn5Ru29IWn/UTy6iv48fODPWvDH/gbzi+lb99wYBVOrEhwkXRRthQnyE6H\nOMfDamSFZ0M5N9g/2QafpbdIKIyAHmwNPLdY1BxlNE18CGUopx8wBxZcf725\nTmSa/6ld2gIhTbAaNklO7U6G1jFx5rZmbh2sQlz3/ezYY6ll69x4lNUG36Vv\nK3Qyo0zYKhXIZaDoD+ERcQWDVMjsCJ+7EJiSci1dg+Wn2ERebkRYYTNNvAjz\nCGw5QNW2vO5EvvCbHfts9VH1yPSrKrp/qCNByFVVkKV/FUVJqZshK6bSAb8p\nfr6i3y4dOKNYBnLScz2a+yDkhiNFpTSrCh7fPAuZECN3o1l3luseHIg44Dfp\nYph+YsGNJPEe/eq5h6KN18vtCMEs/1xTC0Pffo/pWv3AK5nCuZFzblsNIkLH\nO5McLriRI8BHc1VxRcPAWWRR7yNinqpQqZ3vp6qEWISqLeVKohYLixETiIz9\nZcnKsBKouejDx2AfeMakb1vLYj1B7dWQdcZZFQrqGjnMF+vdvOMI7VY9PJgV\nggQAcQyDcKOyTq1xW6rLy2X6906kU5VsLnjQbKr+kQ06hXRubgwfqfB/7WWu\nDSvRzAG9lUHjWNI8HSZhvEWewLetHIBeuj/P5OQIjFCFQ9fj0UE3chw8Q3u6\nPlls\r\n=MOl8\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIC+hMRFGosk6SttRi4d7MoM5APpnCTfuq+PoXljAK3EhAiEAlT98Cyayl7tSTalWknq9TZ3vhxEasQq30yva3sKWBj0="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -235,7 +255,7 @@
     }
   ],
   "time": {
-    "modified": "2019-01-05T02:56:56.679Z",
+    "modified": "2023-07-21T15:52:30.855Z",
     "created": "2015-02-17T03:11:44.044Z",
     "1.0.0": "2015-02-17T03:11:44.044Z",
     "1.0.1": "2016-09-30T04:42:03.803Z",
@@ -282,7 +302,7 @@
     "youstrive": true,
     "artemigos": true,
     "mojaray2k": true,
-    "shuoshubao": true,
-    "stone_breaker": true
+    "stone_breaker": true,
+    "flumpus-dev": true
   }
 }

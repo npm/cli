@@ -1,6 +1,6 @@
 {
   "_id": "object-assign",
-  "_rev": "125-cd0b9262db639c6d1ba5c1183d0ca04e",
+  "_rev": "128-1fe88d2536fb756ef14b0df43b02c0e7",
   "name": "object-assign",
   "description": "ES2015 `Object.assign()` ponyfill",
   "dist-tags": {
@@ -54,7 +54,14 @@
       "_id": "object-assign@0.1.0",
       "dist": {
         "shasum": "d10994e1618922b563524299a272de5602f04ca0",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.0.tgz",
+        "integrity": "sha512-60VOGyo5lPaua1bxHeCrhKvcH3FcWP9Tvi2zrcyASFH12gzBsHaOcF+xuGDIb3y9LKKOwd4Y1eiqSJH1UtUrrA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQCIvBhIIxindpuyJFyXhes+agXcvy1h2Q40db3awZHkRAIhAP9bUU/txtdrvzL28uVxuuzbE+oEhYZqxak7CWjCDRiW"
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.3.25",
@@ -118,7 +125,14 @@
       "_id": "object-assign@0.1.1",
       "dist": {
         "shasum": "0eb570293ca87b272a0f3a62b50adb9a5f0a8f1a",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.1.tgz",
+        "integrity": "sha512-+j27a/+Pal2/Q2gdNvo/qtrQtASikOLmv3GmfrDRIyWjmm9z+ZbH+UOmYnUg8KmBwfE9NmPlhWtmSSSNcgfKJg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIH2aKk+bbDDOXDqdy6OR65yxMafoBdIVbo4L2df0/opzAiEA0e/atA096Evpl2sGwgyrZM5kz67gVn9WCqCQtKOlk2Q="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.3.25",
@@ -182,7 +196,14 @@
       "_id": "object-assign@0.1.2",
       "dist": {
         "shasum": "036992f073aff7b2db83d06b3fb3155a5ccac37f",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.2.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.1.2.tgz",
+        "integrity": "sha512-tBiEbE5Yeu7sxExjNe2bceZsgGKJtrgUWtC2PqJsUdRAoPgrHRhd1R2pJ1Y/g3H1dxuaNqd6U6WV/vzS2wa14A==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIEf+rbzzNRIPcIkiP8TN/6STyd0972/UdkUHaTwL10RwAiA/lLG14cbpUecjGo3343T8W3m3jAElKV+CFrkwRvEjGQ=="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.3.25",
@@ -246,7 +267,14 @@
       "_id": "object-assign@0.2.0",
       "dist": {
         "shasum": "ab5833b3c86fb5b286c91fedc772e7939fc7b30c",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.0.tgz",
+        "integrity": "sha512-cUklMd++52CmDhrrBPrWSgv8Qk21OP7fe34zEpnHPLAgx9lxbnUpejcSfQgkFE+zLz4RtqogezUabLzQfjKXFg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIC7mLjmZDfKSBLFa9hadc04GSkQ2yaTju2GCsZVj+oYwAiAzoF29VHYHiMCiKkNar48c2jclOEqI11/GC10XOynS7g=="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.4.2",
@@ -310,7 +338,14 @@
       "_id": "object-assign@0.2.1",
       "dist": {
         "shasum": "bd4dd0bab7fa495408d9781e8a9a2180d2bdae52",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.1.tgz",
+        "integrity": "sha512-PgJQLmEIuEhyTHIGns0jYUGb9qDUTKYqfLOjSYte4zb6xzhYQ+VsluuAShEABkh2Xz2An79SGf4/ksxjfqa4lA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDTvKfscPD8tKhbz3hlsXhXSxnrdGJi9reJBcBJGnNSGwIgAJogJeJHDAGT8A9WmuEXAa9UnXFrTgw819p94/JtCb4="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.4.4",
@@ -374,7 +409,14 @@
       "_id": "object-assign@0.2.2",
       "dist": {
         "shasum": "e0a78bc56af9c092051167f6b8f23249e7dde1a6",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.2.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.2.2.tgz",
+        "integrity": "sha512-GBw66O/X6uqIpuonDvRD0mOCr54BalNuUxwrsyvbOeO+PxR3jAir1ETnJEgIwnGJjnrRjZtUeJd8NfyfnzfDaA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQD30lcuIqTWdJcNEmyb/9OwZmfyedYSal5mAO+ibVe4vwIgA2fMSn1FVQy7o4q02iXKmz8a5IKCX+BhPPnYEDeF520="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.4.6",
@@ -438,7 +480,14 @@
       "_id": "object-assign@0.3.0",
       "dist": {
         "shasum": "22f8550b76bf86679efd2117c568081ab302ac4d",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.3.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.3.0.tgz",
+        "integrity": "sha512-uZGJfRFgToFrGGbFNryV2lenyGK11ffP8NgdxcFxqS0eXNIgwfMEPVxR2gRE1FZj9AXMvlwp9YkCuOhhtixJzQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCCEmiYoRrtDhEq4TKXlRDAHioMTeomPQU2rJRIsUR1RgIgT0Eu3IPiFDUwA+0Zn8UNR/LIUDO5jBXD7+EbJ7jgV5g="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.4.6",
@@ -502,7 +551,14 @@
       "_id": "object-assign@0.3.1",
       "dist": {
         "shasum": "060e2a2a27d7c0d77ec77b78f11aa47fd88008d2",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.3.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.3.1.tgz",
+        "integrity": "sha512-4gWmwoU6o9UImLLzq+8R+kzWT0ABYdKXuvSp08JpYzhibFvdUirMfE9nE5yYHcG1k9ClcVueR4TolZpRvwg5og==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIFslubk15SfJM1L55QZjrh8+IBplY10elL8h/zAeoBOIAiBR/JlDtmone70dzMXYPP8Bogs5PO9o+i1FGiI834AnHQ=="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.4.6",
@@ -580,7 +636,14 @@
       ],
       "dist": {
         "shasum": "e9ee69b52192780b4d062a3a86ac2fa2adc58951",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.4.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-0.4.0.tgz",
+        "integrity": "sha512-tIZc30wg3KE13fsd1vp6iyc4fzS+NM6TDxB3YaOOQBeiUqgjoS6mX5DyU0MRCPQVXVhEcqupOoD4TZGBkKXH3w==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDXfctuwt/5c6Oz+u49uyfqvsdzxvEYgUPJuw2MA5FypgIgbMbHqzVagHuE8SiP9/Xykjz+lA2OzCNWqDGCTjgy6Ls="
+          }
+        ]
       },
       "directories": {}
     },
@@ -645,7 +708,14 @@
       ],
       "dist": {
         "shasum": "e65dc8766d3b47b4b8307465c8311da030b070a6",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-1.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-1.0.0.tgz",
+        "integrity": "sha512-LpUkixU1BUMQ6bwUHbOue4IGGbdRbxi+IEZw7zHniw78erlxrKGHbhfLbHIsI35LGbGqys6QOrjVmLnD2ie+1A==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQDBuO0C6dqYjAOz2bII4Em2f2aVwGM3C8vo3PfIqRfZHgIhAMsL3jj/zenm014zsBYuxSjYiqsboLloro35/mY2lZ8Z"
+          }
+        ]
       },
       "directories": {}
     },
@@ -711,7 +781,14 @@
       ],
       "dist": {
         "shasum": "f8309b09083b01261ece3ef7373f2b57b8dd7042",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz",
+        "integrity": "sha512-TTVfbeUpQoCNyoOddbCTlMYnK8LsIpLD72jtE6SjwYL2JRr7lskqbMghqdTFp9wHWrZAlDWYUJ1unzPnWWPWQA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQD3rlhjIeZKrIMk88ZHUQVyZubeLCHQrrxI3eXbPM5IOQIhAIO8+33TKZMC1hjFc2AXTEa87YSW3YKVCHdSrT3prOFD"
+          }
+        ]
       },
       "directories": {}
     },
@@ -771,7 +848,14 @@
       },
       "dist": {
         "shasum": "9bedd5ca0897949bca47e7ff408062d549f587f2",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-3.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-3.0.0.tgz",
+        "integrity": "sha512-jHP15vXVGeVh1HuaA2wY6lxk+whK/x4KBG88VXeRma7CCun7iGD5qPc4eYykQ9sdQvg8jkwFKsSxHln2ybW3xQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQD94E/hWr5qdRxtTI4BU98p4b21RmdtJd7Jer1VURsJQwIhAMAMGiXeXY81FFBbKv4JOed6//Ia2B9ki7GDVdnEd3+9"
+          }
+        ]
       },
       "maintainers": [
         {
@@ -837,7 +921,14 @@
       },
       "dist": {
         "shasum": "43c36e5d569ff8e4816c4efa8be02d26967c18aa",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-2.1.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-2.1.1.tgz",
+        "integrity": "sha512-CdsOUYIh5wIiozhJ3rLQgmUTgcyzFwZZrqhkKhODMoGtPKM+wt0h0CNIoauJWMsS9822EdzPsF/6mb4nLvPN5g==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIBeYRIlcnvZjXN5YJkydgaGFumdUVQMB40esEKP0OU8vAiEAt12irKPoxwdYtyD1Dlr+QoqL1hwX16deO39LhB4peAQ="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -906,7 +997,14 @@
       },
       "dist": {
         "shasum": "1e876669ea263a6d4f37e9504dc859fefc7b4506",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.0.0.tgz",
+        "integrity": "sha512-Iejvk7ZL9eGjp6QU+Ep0deFdLnCJUKeMitmape/YRAYFNK3vI48uF3ckyWLbmHom4V7MOgPTH9lhubQYiC9D6w==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIHDNWKwM5ffWNRlOptRoCqSDzitIvqjwoF+UHzNQh36LAiAXmkf2c0OVLnJL+W1RUbd8Nkb/EUwaws0MCdAf3xKefQ=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -982,7 +1080,14 @@
       },
       "dist": {
         "shasum": "99504456c3598b5cad4fc59c26e8a9bb107fe0bd",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.0.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.0.1.tgz",
+        "integrity": "sha512-c6legOHWepAbWnp3j5SRUMpxCXBKI4rD7A5Osn9IzZ8w4O/KccXdW0lqdkQKbpk0eHGjNgKihgzY6WuEq99Tfw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCtF2mzGk7iSB40J0hQYY7tqnnRcPqx9v/Nv2xK6i2hsgIgV8ZJdKb6C8S7Lir3GWQCjwGSOO70xBHBT2WWl1bvTd0="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -1062,7 +1167,14 @@
       ],
       "dist": {
         "shasum": "7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.0.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.0.tgz",
+        "integrity": "sha512-Lbc7GfN7XFaK30bzUN3cDYLOkT0dH05S0ax1QikylHUD9+Z9PRF3G1iYwX3kcz+6AlzTFGkUgMxz6l3aUwbwTA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIAdHzM+IBxnCrzJoK8aw+wyKouk+/vxiTwpv8zhyfA/aAiEA5DbQgAihrv724K9MtfFIxMZrmYwJRLF+r221JmqHYjc="
+          }
+        ]
       },
       "_npmOperationalInternal": {
         "host": "packages-16-east.internal.npmjs.com",
@@ -1130,7 +1242,14 @@
       },
       "dist": {
         "shasum": "2109adc7965887cfc05cbbd442cac8bfbb360863",
-        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz"
+        "tarball": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
+        "integrity": "sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCJxQuZmlAryzqc1NiNMWyTZ26Y+FO6f+HVICCm5oJBWgIgc1i0sdNz1TWpRbRY3fXQLpopoXsesTKr/RbLRT2QuqE="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -1169,7 +1288,7 @@
     }
   ],
   "time": {
-    "modified": "2018-03-21T04:39:35.600Z",
+    "modified": "2023-06-16T22:41:16.375Z",
     "created": "2014-02-02T15:47:58.857Z",
     "0.1.0": "2014-02-02T15:47:58.857Z",
     "0.1.1": "2014-02-04T20:02:13.757Z",
@@ -1291,7 +1410,7 @@
     "sinsaints76": true,
     "belcour": true,
     "tzq1011": true,
-    "jjj201200": true
-  },
-  "_attachments": {}
+    "jjj201200": true,
+    "flumpus-dev": true
+  }
 }

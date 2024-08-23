@@ -1,10 +1,10 @@
 {
   "_id": "array-uniq",
-  "_rev": "21-35045e9794649a0b063c7db55e568bab",
+  "_rev": "26-d6de3322bac70d04879785a9a963c7e6",
   "name": "array-uniq",
   "description": "Create an array without duplicates",
   "dist-tags": {
-    "latest": "2.1.0"
+    "latest": "3.0.0"
   },
   "versions": {
     "0.1.0": {
@@ -64,7 +64,14 @@
       ],
       "dist": {
         "shasum": "dc39af2405e05f814062e9cc88f563ec1213b24a",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.0.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.0.tgz",
+        "integrity": "sha512-1oS58ztStBzlweSGJq3vxypDxVDFHQgSCZ5FgOX69ixg7BQ0KGhVKNbE/R2LZEsrQNbKqAuXrqohNXSHPKDiHQ==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQDHcUnewelDLImbZNGaebtlVrUxM5pF+bnVfPW8UIK18gIgBAB84cds7+2NXUJcbBIOsIbPUz0Cne0EA6NrEODGlMc="
+          }
+        ]
       },
       "directories": {}
     },
@@ -125,7 +132,14 @@
       ],
       "dist": {
         "shasum": "5861f3ed4e4bb6175597a4e078e8aa78ebe958c7",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.1.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-0.1.1.tgz",
+        "integrity": "sha512-f2yZoxGtRdrmvV142WQ8ALxpA/nQihGiO0kWVkA4O1dmUbCFn3HjYu6wnKzs/gBhB/gJiEKhk66DtSTEVZM5ag==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQD7qXVtq3yuK4nPOel/P2zG6Bfa+aMlbDwPIk03tCUglwIhALdQKzm8BuM6giT85JtY1FgDdPN3wKd/C2GV2Bwo56Wf"
+          }
+        ]
       },
       "directories": {}
     },
@@ -188,7 +202,14 @@
       ],
       "dist": {
         "shasum": "bc8cb48a6ff5c63e86e330736e5de5eccb2e2b9a",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.0.tgz",
+        "integrity": "sha512-mf0qqlMDRVh8t5H5hhuQWIOkDg/C+hmWtbHi70LieIe966nKX9th/BDXadDSVLX3+/r/GPclVt0Op0NQ2V82Pw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIH6CzvxkYRo5qwLoZeFKYbjRJj0sALlC26uAA8RfFiqnAiBqOiMKGuVCTT+tR6HcBT9qVgtIRP8OVVdeOFO4HkQprw=="
+          }
+        ]
       },
       "directories": {}
     },
@@ -252,7 +273,14 @@
       ],
       "dist": {
         "shasum": "25e1d96853d7f6f77cecf693f86cac4052046790",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.1.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.1.tgz",
+        "integrity": "sha512-T8Eobqo1QCneu91CDwAD6PkYrrZU2T97+2Yu7NGbn4aNuCPnx5JahNn1vu6rHiHUeofYrCvdZ2A5LThPzvFTaA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQCSD+n92eGpJa8VmCnJufQNj6GiuKGpR3KpHSG4xkTWRAIhAIVB9JE4STon3O30kTsT+AXEPQRtyfGdI9K/aNfKxhny"
+          }
+        ]
       },
       "directories": {}
     },
@@ -316,7 +344,14 @@
       ],
       "dist": {
         "shasum": "5fcc373920775723cfd64d65c64bef53bf9eba6d",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.2.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.2.tgz",
+        "integrity": "sha512-GVYjmpL05al4dNlKJm53mKE4w9OOLiuVHWorsIA3YVz+Hu0hcn6PtE3Ydl0EqU7v+7ABC4mjjWsnLUxbpno+CA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIHNy4UlsFbz4UWPq/rGsx0IFXLK0rtr7E9uYtHaMhDVpAiEAkvMexHs9eMnkfStalOmoZaakGF0cC+m4+HeZNm1uByI="
+          }
+        ]
       },
       "directories": {}
     },
@@ -375,7 +410,14 @@
       },
       "dist": {
         "shasum": "af6ac877a25cc7f74e058894753858dfdb24fdb6",
-        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz"
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz",
+        "integrity": "sha512-MNha4BWQ6JbwhFhj03YK552f7cb3AzoE8SzeljgChvL1dl3IcvggXVz1DilzySZkCja+CXuZbdW7yATchWn8/Q==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIEKHuxEZSPVVuGckSbnrCpN2pHz0VPXYZCRR0xpUvIOFAiBdU9nXts15cyU+flwECPGJJ9SsvvYC/s6SiZdfXpL8Hg=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -442,7 +484,13 @@
         "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-2.0.0.tgz",
         "fileCount": 4,
         "unpackedSize": 2135,
-        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7HEnCRA9TVsSAnZWagAAPnQQAKKpJ2B1O+MgMZ2qEwfm\nEKMaNTtZbiQnP2Eip52l9IYstfVbWex9eHvJ+nd9R2KcVVnVFun8dcgAKNUT\n0RLaYCWpEZSe11rG4Us5nVV6Aph2kK7OJCX48Tys2ZIqnG9VKXpa9p2hY//i\ntqxSoflyiepD5PbR+GzsRQIWEHetOiqvMalt8MC3u+p7vrYLlRbCyrhC6YKZ\n86/nQuBTOP/UYAcQFuwyD4W6HHUlu5RpMC3TO3vfuhHSwjkXgEQlBku3rpTb\nEzMW9YyGH8RVlJrFTXpRAjHNGED5Zo76/wbnuzNEFRZCnsh0ydGpIuLMCDEq\nrjzCGeuNWFBIQV27pfXP47SPluIwaE/dhg/k3rySXK7biu0FpU50QTYdbiPL\no3RISimUSr/K/39f5GRWzIgp7E6kCGz752LLPy/c2etgjDQ3R59d/G9n6KAf\nsL3zhjpQG+LbmXSAceygENKF11TIqzsFaMBlXZp8GpTvgP72GeusbnS2wVbU\n+WA2lUG4e25jBILN2RokNwpJdHs5zjOJttmb98cYLWsD61+dyXMmgAlQrZ8o\nA3UbGac+x4NZFyH8vR1CZOC4Ihc00/TE/rNrh0eIubLTI3wpObaVCI8YWV/y\nn6Vu6a655ELmJED8v9/liQ8uzanByKsFvNoq35sRhbL4FtbDaHPDsssKROWI\n6OQj\r\n=eZtW\r\n-----END PGP SIGNATURE-----\r\n"
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJa7HEnCRA9TVsSAnZWagAAPnQQAKKpJ2B1O+MgMZ2qEwfm\nEKMaNTtZbiQnP2Eip52l9IYstfVbWex9eHvJ+nd9R2KcVVnVFun8dcgAKNUT\n0RLaYCWpEZSe11rG4Us5nVV6Aph2kK7OJCX48Tys2ZIqnG9VKXpa9p2hY//i\ntqxSoflyiepD5PbR+GzsRQIWEHetOiqvMalt8MC3u+p7vrYLlRbCyrhC6YKZ\n86/nQuBTOP/UYAcQFuwyD4W6HHUlu5RpMC3TO3vfuhHSwjkXgEQlBku3rpTb\nEzMW9YyGH8RVlJrFTXpRAjHNGED5Zo76/wbnuzNEFRZCnsh0ydGpIuLMCDEq\nrjzCGeuNWFBIQV27pfXP47SPluIwaE/dhg/k3rySXK7biu0FpU50QTYdbiPL\no3RISimUSr/K/39f5GRWzIgp7E6kCGz752LLPy/c2etgjDQ3R59d/G9n6KAf\nsL3zhjpQG+LbmXSAceygENKF11TIqzsFaMBlXZp8GpTvgP72GeusbnS2wVbU\n+WA2lUG4e25jBILN2RokNwpJdHs5zjOJttmb98cYLWsD61+dyXMmgAlQrZ8o\nA3UbGac+x4NZFyH8vR1CZOC4Ihc00/TE/rNrh0eIubLTI3wpObaVCI8YWV/y\nn6Vu6a655ELmJED8v9/liQ8uzanByKsFvNoq35sRhbL4FtbDaHPDsssKROWI\n6OQj\r\n=eZtW\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQCfyWmU1p2m8PfUbI9MKYfPQ2P9ILentXAF1n3P26e3DQIhAK7uruEh5MzkqPzMN+zaXiOyxFf5oezt5CiKlsCUrnxy"
+          }
+        ]
       },
       "maintainers": [
         {
@@ -508,7 +556,13 @@
         "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-2.1.0.tgz",
         "fileCount": 5,
         "unpackedSize": 2598,
-        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpulSCRA9TVsSAnZWagAAxeYP+gJh+m9/BzNJbkIg1pnD\nHP3xajQ0VukzTBTt8Y/0Y7ugT9r6DqRpOqCaklfeCL1smpImET8FHS5ruLu3\ng0dggZPbSjjURAspiodN0SjPfa9lvtfM+buBcFC4rUJ3gnDLCyZVzpaIt4RS\nfGxovsh+6jf07vZuc+CqlGTC6oFQUC3tFqV6LhEySqMvPvDvLvZLxazNniym\nzNw61RnEv60hYbKqlvKwormmZgxSGdsb3x/TyNyp6lXdFDgfaScfbpjDqPyI\nnbvEgxV8MTgylMmIWIkjvgJqK+FoNwV69Gin1LBm2NeD9JPP25RB5OLnRMuG\n6znF1vroe87Y0CY+mIEh7ujvJ4k9Xmwtx7LLlXetszT/OIHTH6RKCJSW1Ham\nDW96RlArnyZ4ekPB5a0BtG5Zb/Ih1IRLvNgyzG6Y1/yLrHARefiNgtnLtWcF\njFlvH1VUEHQhd/DvKZVEAOxisw2AmxRytrUwe5qJPPdSLP0qd4QqRoDMFOja\nmNzUZLS3cJXLXaYDpx+yJIOkBOkJBSlISkk+Js3lcLxBNzpWN2wGNey7vM8S\nIgh5/0kGO1JWcmTjyKIoGoNunf87oE6sjtOuPWwWNb5Hv4cCSNTGpJMyh9kv\n3OjyPJRX6X43TwpKwLVR2H1juH/MU1Rv/3lPdcpMbkvCjv4i9+eQJ5Hd1cpv\nEVoJ\r\n=FQyG\r\n-----END PGP SIGNATURE-----\r\n"
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJcpulSCRA9TVsSAnZWagAAxeYP+gJh+m9/BzNJbkIg1pnD\nHP3xajQ0VukzTBTt8Y/0Y7ugT9r6DqRpOqCaklfeCL1smpImET8FHS5ruLu3\ng0dggZPbSjjURAspiodN0SjPfa9lvtfM+buBcFC4rUJ3gnDLCyZVzpaIt4RS\nfGxovsh+6jf07vZuc+CqlGTC6oFQUC3tFqV6LhEySqMvPvDvLvZLxazNniym\nzNw61RnEv60hYbKqlvKwormmZgxSGdsb3x/TyNyp6lXdFDgfaScfbpjDqPyI\nnbvEgxV8MTgylMmIWIkjvgJqK+FoNwV69Gin1LBm2NeD9JPP25RB5OLnRMuG\n6znF1vroe87Y0CY+mIEh7ujvJ4k9Xmwtx7LLlXetszT/OIHTH6RKCJSW1Ham\nDW96RlArnyZ4ekPB5a0BtG5Zb/Ih1IRLvNgyzG6Y1/yLrHARefiNgtnLtWcF\njFlvH1VUEHQhd/DvKZVEAOxisw2AmxRytrUwe5qJPPdSLP0qd4QqRoDMFOja\nmNzUZLS3cJXLXaYDpx+yJIOkBOkJBSlISkk+Js3lcLxBNzpWN2wGNey7vM8S\nIgh5/0kGO1JWcmTjyKIoGoNunf87oE6sjtOuPWwWNb5Hv4cCSNTGpJMyh9kv\n3OjyPJRX6X43TwpKwLVR2H1juH/MU1Rv/3lPdcpMbkvCjv4i9+eQJ5Hd1cpv\nEVoJ\r\n=FQyG\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIG/rF3ah7a6Pl/XD+4pIMYQwdMm79iV5jfT/x656BHM0AiEAmqQuHN6w+d639MNKDyDz5HcA8e1RULK6gyZvyzU2p1Y="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -522,9 +576,84 @@
         "tmp": "tmp/array-uniq_2.1.0_1554442577266_0.6197074744361011"
       },
       "_hasShrinkwrap": false
+    },
+    "3.0.0": {
+      "name": "array-uniq",
+      "version": "3.0.0",
+      "description": "Create an array without duplicates",
+      "license": "MIT",
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sindresorhus/array-uniq.git"
+      },
+      "funding": "https://github.com/sponsors/sindresorhus",
+      "author": {
+        "name": "Sindre Sorhus",
+        "email": "sindresorhus@gmail.com",
+        "url": "https://sindresorhus.com"
+      },
+      "type": "module",
+      "exports": "./index.js",
+      "engines": {
+        "node": ">=12"
+      },
+      "scripts": {
+        "test": "xo && ava && tsd"
+      },
+      "keywords": [
+        "array",
+        "set",
+        "uniq",
+        "unique",
+        "duplicate",
+        "remove"
+      ],
+      "devDependencies": {
+        "ava": "^3.15.0",
+        "tsd": "^0.14.0",
+        "xo": "^0.39.1"
+      },
+      "gitHead": "42335f573218c511c18551a22ab5605056e1fb97",
+      "bugs": {
+        "url": "https://github.com/sindresorhus/array-uniq/issues"
+      },
+      "homepage": "https://github.com/sindresorhus/array-uniq#readme",
+      "_id": "array-uniq@3.0.0",
+      "_nodeVersion": "16.0.0",
+      "_npmVersion": "7.10.0",
+      "dist": {
+        "integrity": "sha512-T/3qyw9JTDHjj+aIo4uQyHCAoG1DkFqFViq0e6uPzkXwT74MEPsmQ30rxx8x9+yjBQ3KJ2bXOb2bBKC1FwEjdw==",
+        "shasum": "78e5b7d36375ba570e26aebcb8640aced9be5090",
+        "tarball": "https://registry.npmjs.org/array-uniq/-/array-uniq-3.0.0.tgz",
+        "fileCount": 5,
+        "unpackedSize": 2911,
+        "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJgj+ErCRA9TVsSAnZWagAAjA8P/iZTICTn8C3y7a0fduBK\ndZjOlUoY5ekVhMaj/Uhhz5XjaCbHHg+fN9qM6wUY95QmswOUAKJu5j1W0HD5\naWypLPPNzKUWOlcDh57AzVS9NDS9G9csfji0brXolKMgtCqIPhxKc7/HlFQ5\ny/czDhbojTVdkh6I8Dw0Xp1m9DfZMooZ47GaMBXioBze2EG+aJ3mZXNIisA9\n/3rgWPMQ0jAHP7GY+2bbKUQ9WGFZsn60FNtydvTLL0Tm675kr86yoJywYfay\nHHPACjp8p9i6gyco+CAxJWSzzk0BrAzkkIuztF4w9KwqH8oAAOLb1mqVmegV\nP50DlU9zB++ZO0bNh6F6mvozoBlY7mzWtIGr5fQ4fYvMPGwLkvn+8HAPMxbe\nxa0JftCZxPzhEsH4t6UderdqI5XMIGWSv+yXZ4UW0LpNI2h1PK2fuQYca3I6\nG1zt1W5YT4oe7J8njrL83ZhhtTneHOUnf1a1QAUmB9dvPciW9qa5xTwJ+KUT\nAZyal2i0lK3QBKJSO2fVKPffda6BacxqyrZuzxzSvxY8diNInr2Oqb1uI0Nk\nD+3YswZnqZcxfesoEV3c3Gx8sGAvJnHw3+vv9I3SufOLeuQAzYGFlAMiDY6S\nlbi8m4/6WfCvQtUEdhpGkPnyKK2VwGN3msqULURZkB56EXg16rskdaXeoUgj\nyLz3\r\n=kZ9c\r\n-----END PGP SIGNATURE-----\r\n",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCARqTVgTtvoG/jyrIHCQECQWDchEF12/rq/SynRRE6vQIgRo37JoLWyYkIAVV4MvoaSub0XNyiTp1wzX/gBnCgffo="
+          }
+        ]
+      },
+      "_npmUser": {
+        "name": "sindresorhus",
+        "email": "sindresorhus@gmail.com"
+      },
+      "directories": {},
+      "maintainers": [
+        {
+          "name": "sindresorhus",
+          "email": "sindresorhus@gmail.com"
+        }
+      ],
+      "_npmOperationalInternal": {
+        "host": "s3://npm-registry-packages",
+        "tmp": "tmp/array-uniq_3.0.0_1620042026552_0.6447172657423639"
+      },
+      "_hasShrinkwrap": false
     }
   },
-  "readme": "# array-uniq [![Build Status](https://travis-ci.org/sindresorhus/array-uniq.svg?branch=master)](https://travis-ci.org/sindresorhus/array-uniq)\n\n> Create an array without duplicates\n\n\n## Install\n\n```\n$ npm install array-uniq\n```\n\n\n## Usage\n\n```js\nconst arrayUniq = require('array-uniq');\n\narrayUniq([1, 1, 2, 3, 3]);\n//=> [1, 2, 3]\n\narrayUniq(['foo', 'foo', 'bar', 'foo']);\n//=> ['foo', 'bar']\n```\n\n\n## License\n\nMIT © [Sindre Sorhus](https://sindresorhus.com)\n",
+  "readme": "# array-uniq\n\n> Create an array without duplicates\n\n## Install\n\n```\n$ npm install array-uniq\n```\n\n## Usage\n\n```js\nimport arrayUniq from 'array-uniq';\n\narrayUniq([1, 1, 2, 3, 3]);\n//=> [1, 2, 3]\n\narrayUniq(['foo', 'foo', 'bar', 'foo']);\n//=> ['foo', 'bar']\n```\n\n---\n\n<div align=\"center\">\n\t<b>\n\t\t<a href=\"https://tidelift.com/subscription/pkg/npm-array-uniq?utm_source=npm-array-uniq&utm_medium=referral&utm_campaign=readme\">Get professional support for this package with a Tidelift subscription</a>\n\t</b>\n\t<br>\n\t<sub>\n\t\tTidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.\n\t</sub>\n</div>\n",
   "maintainers": [
     {
       "name": "sindresorhus",
@@ -532,7 +661,7 @@
     }
   ],
   "time": {
-    "modified": "2019-04-05T05:36:20.033Z",
+    "modified": "2023-06-16T22:39:12.420Z",
     "created": "2014-06-13T18:33:32.947Z",
     "0.1.0": "2014-06-13T18:33:32.947Z",
     "0.1.1": "2014-07-15T00:19:17.899Z",
@@ -541,7 +670,8 @@
     "1.0.2": "2014-12-11T05:33:57.502Z",
     "1.0.3": "2016-06-16T12:21:59.429Z",
     "2.0.0": "2018-05-04T14:41:41.958Z",
-    "2.1.0": "2019-04-05T05:36:17.432Z"
+    "2.1.0": "2019-04-05T05:36:17.432Z",
+    "3.0.0": "2021-05-03T11:40:26.681Z"
   },
   "homepage": "https://github.com/sindresorhus/array-uniq#readme",
   "keywords": [
@@ -559,7 +689,7 @@
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
-    "url": "sindresorhus.com"
+    "url": "https://sindresorhus.com"
   },
   "bugs": {
     "url": "https://github.com/sindresorhus/array-uniq/issues"
@@ -574,6 +704,7 @@
     "mrzmmr": true,
     "rocket0191": true,
     "ninozhang": true,
-    "gzg1500521074": true
+    "gzg1500521074": true,
+    "flumpus-dev": true
   }
 }

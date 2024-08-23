@@ -1,0 +1,9 @@
+{
+  "name": "lockfile-with-missing-parent",
+  "version": "1.0.0",
+  "dependencies": {
+    "glob": "7.1.6",
+    "globby": "1.2.0",
+    "minimatch": "3.0.3"
+  }
+}
