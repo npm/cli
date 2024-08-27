@@ -2,13 +2,11 @@
 
 # ignore everything in the root
 /*
-# transient test directories
-tap-testdir*/
 
-# keep these
 !**/.gitignore
 !/.eslintrc.js
 !/.eslintrc.local.*
+!/.git-blame-ignore-revs
 !/.gitignore
 !/bin/
 !/CHANGELOG*
@@ -21,3 +19,4 @@ tap-testdir*/
 !/scripts/
 !/tap-snapshots/
 !/test/
+tap-testdir*/

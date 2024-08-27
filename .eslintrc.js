@@ -12,6 +12,8 @@ module.exports = {
   root: true,
   ignorePatterns: [
     'tap-testdir*/',
+    '/node_modules/.bin/',
+    '/node_modules/.cache/',
     'docs/**',
     'smoke-tests/**',
     'mock-globals/**',

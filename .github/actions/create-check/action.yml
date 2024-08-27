@@ -25,7 +25,7 @@ runs:
       with:
         result-encoding: string
         script: |
-          const { repo: { owner, repo}, runId, serverUrl } = context          
+          const { repo: { owner, repo}, runId, serverUrl } = context
           const { JOB_NAME, SHA } = process.env
 
           const job = await github.rest.actions.listJobsForWorkflowRun({

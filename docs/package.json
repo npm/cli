@@ -5,14 +5,15 @@
   "private": true,
   "main": "lib/index.js",
   "scripts": {
-    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+    "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "npm run eslint -- --fix",
     "snap": "tap",
     "test": "tap",
     "posttest": "npm run lint",
-    "build": "node bin/build.js"
+    "build": "node bin/build.js",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,7 @@
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/eslint-config": "^4.0.0",
-    "@npmcli/template-oss": "4.22.0",
+    "@npmcli/template-oss": "4.23.3",
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.5",
     "jsdom": "^24.0.0",
@@ -55,7 +56,7 @@
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "ciVersions": "latest",
-    "version": "4.22.0",
+    "version": "4.23.3",
     "content": "../scripts/template-oss/index.js",
     "workspaceRepo": {
       "add": {

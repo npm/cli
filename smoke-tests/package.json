@@ -4,13 +4,14 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+    "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "npm run eslint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,7 @@
     "@npmcli/eslint-config": "^4.0.0",
     "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/promise-spawn": "^7.0.2",
-    "@npmcli/template-oss": "4.22.0",
+    "@npmcli/template-oss": "4.23.3",
     "proxy": "^2.1.1",
     "semver": "^7.5.4",
     "tap": "^16.3.8",
@@ -31,7 +32,7 @@
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.22.0",
+    "version": "4.23.3",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {

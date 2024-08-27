@@ -60,7 +60,7 @@ jobs:
         run: node . run postlint --ignore-scripts -ws -iwr --if-present
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
-        if: always()
+        if: steps.create-check.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
@@ -142,7 +142,7 @@ jobs:
         run: node scripts/git-dirty.js
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
-        if: always()
+        if: steps.create-check.outputs.check-id && always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           conclusion: ${{ job.status }}
