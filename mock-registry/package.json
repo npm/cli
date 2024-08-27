@@ -6,12 +6,13 @@
   "private": true,
   "scripts": {
     "test": "tap",
-    "lint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\"",
+    "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "npm run lint -- --fix",
+    "lintfix": "npm run eslint -- --fix",
     "snap": "tap",
-    "posttest": "npm run lint"
+    "posttest": "npm run lint",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
@@ -34,7 +35,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.22.0",
+    "version": "4.23.3",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
@@ -47,7 +48,7 @@
   "devDependencies": {
     "@npmcli/arborist": "^7.1.0",
     "@npmcli/eslint-config": "^4.0.1",
-    "@npmcli/template-oss": "4.22.0",
+    "@npmcli/template-oss": "4.23.3",
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
     "npm-package-arg": "^11.0.2",

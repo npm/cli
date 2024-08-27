@@ -44,7 +44,7 @@ runs:
             MATCH=$SPEC
             echo "Found compatible version: npm@$MATCH"
             break
-          fi  
+          fi
         done
 
         if [ -z $MATCH ]; then
