@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.1.4](https://github.com/npm/cli/compare/libnpmexec-v8.1.3...libnpmexec-v8.1.4) (2024-08-28)
+### Bug Fixes
+* [`9214be9`](https://github.com/npm/cli/commit/9214be9ed8779493e00d193e36a930918a30be64) [#7640](https://github.com/npm/cli/pull/7640) gracefully handle nonexistent global installation directory (#7640) (@milaninfy)
+### Chores
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [8.1.3](https://github.com/npm/cli/compare/libnpmexec-v8.1.2...libnpmexec-v8.1.3) (2024-07-09)
 
 ### Bug Fixes
