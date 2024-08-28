@@ -1,5 +1,33 @@
 # Changelog
 
+## [10.8.3](https://github.com/npm/cli/compare/v10.8.2...v10.8.3) (2024-08-28)
+### Bug Fixes
+* [`7e61151`](https://github.com/npm/cli/commit/7e61151b9ab4f62a83e9ea8bcfa15ece11b6a1fd) [#7759](https://github.com/npm/cli/pull/7759) docs: init usage description corrected (#7759) (@milaninfy)
+* [`2404c7e`](https://github.com/npm/cli/commit/2404c7e991e1a4962608a1e6b2453a7ccee4e0a5) [#7738](https://github.com/npm/cli/pull/7738) publish: consider package-spec when inside workspace dir (#7738) (@milaninfy)
+* [`91e46a3`](https://github.com/npm/cli/commit/91e46a34b685ebbf134d573209731868cae304d0) [#7721](https://github.com/npm/cli/pull/7721) init: use locally installed version of given package (#7721) (@milaninfy)
+* [`4e81a6a`](https://github.com/npm/cli/commit/4e81a6a4106e4e125b0eefda042b75cfae0a5f23) [#7674](https://github.com/npm/cli/pull/7674) always set exit code if exiting uncleanly (#7674) (@wraithgar, @hashtagchris)
+* [`a947f25`](https://github.com/npm/cli/commit/a947f25bd4576f7ef70fe6b1226e72252fa7a571) [#7679](https://github.com/npm/cli/pull/7679) update lifecycle script list in run-script (#7679) (@sonsurim)
+### Documentation
+* [`e674987`](https://github.com/npm/cli/commit/e674987c8dc5634c3b2a8a4d0f024d15041ba23c) [#7743](https://github.com/npm/cli/pull/7743) update docs for npmrc and package-json  (#7743) (@milaninfy)
+* [`24d5350`](https://github.com/npm/cli/commit/24d53505491195b5c853c05db322f19c5ea091e0) [#7742](https://github.com/npm/cli/pull/7742) fix and update scoped configuration example (#7742) (@demedos)
+### Dependencies
+* [`3fd7a48`](https://github.com/npm/cli/commit/3fd7a48a26e1839580780fe969a89f71c6932064) [#7737](https://github.com/npm/cli/pull/7737) `lru-cache@10.4.3`
+* [`d7e462b`](https://github.com/npm/cli/commit/d7e462b28c4e9380b96f7a683fdcc02a0915a826) [#7737](https://github.com/npm/cli/pull/7737) `jackspeak@3.4.3`
+* [`df58b0c`](https://github.com/npm/cli/commit/df58b0c756d5279b219c684e0768b279d2607eab) [#7737](https://github.com/npm/cli/pull/7737) `glob@10.4.5`
+* [`7342c24`](https://github.com/npm/cli/commit/7342c2460a38bfc16783b927f7454ddc353592c7) [#7737](https://github.com/npm/cli/pull/7737) `foreground-child@3.3.0`
+* [`2986f4e`](https://github.com/npm/cli/commit/2986f4e5e08ea9d606012ee609a0b722a76b4252) [#7737](https://github.com/npm/cli/pull/7737) `cacache@18.0.4`
+* [`a44ab26`](https://github.com/npm/cli/commit/a44ab26326d04e3eb0d48e7749b41e1e0f30c5ca) [#7737](https://github.com/npm/cli/pull/7737) `postcss-selector-parser@6.1.2`
+* [`4e965ad`](https://github.com/npm/cli/commit/4e965ad4c990f501481c569bf28e543625cbd7ff) [#7737](https://github.com/npm/cli/pull/7737) `semver@7.6.3`
+* [`12587fa`](https://github.com/npm/cli/commit/12587fa8e926b63b13ff0443e474ec4eea0b1d5a) [#7737](https://github.com/npm/cli/pull/7737) `npm-package-arg@11.0.3`
+* [`1a9ac86`](https://github.com/npm/cli/commit/1a9ac861fcb5113e661239c54ae7a6aaa96bf88b) [#7737](https://github.com/npm/cli/pull/7737) `debug@4.3.6`
+* [`a303ddd`](https://github.com/npm/cli/commit/a303dddaf1b853cc351cc9aadb47741cf5c3f998) [#7737](https://github.com/npm/cli/pull/7737) `node-gyp@10.2.0`
+### Chores
+* [`1772276`](https://github.com/npm/cli/commit/1772276c881911277efed4cdc386901d9c19d65b) [#7756](https://github.com/npm/cli/pull/7756) fix duplicate changelog entries (@wraithgar)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+* [`ed4add1`](https://github.com/npm/cli/commit/ed4add1e2791180a19f0fe1ebfa08a0837d3fe1a) [#7737](https://github.com/npm/cli/pull/7737) dev dependency updates (@wraithgar)
+* [`86b05fc`](https://github.com/npm/cli/commit/86b05fc8f110cadc67fcf7417bc0646289919000) [#7683](https://github.com/npm/cli/pull/7683) allow for longer timer values (#7683) (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v8.1.4): `libnpmexec@8.1.4`
+
 ## [10.8.2](https://github.com/npm/cli/compare/v10.8.1...v10.8.2) (2024-07-09)
 
 ### Bug Fixes
