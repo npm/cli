@@ -28,7 +28,7 @@ const realpathCached = (path, rpcache, stcache, depth) => {
   }
 
   // if it's the root, then we know it's real
-  if (!base || dir == path) {
+  if (!base || dir === path) {
     rpcache.set(dir, dir)
     return Promise.resolve(dir)
   }
