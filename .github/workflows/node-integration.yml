@@ -156,7 +156,7 @@ jobs:
         with:
           override_cache_key: nodejs-${{ inputs.nodeVersion }}
       - name: download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nodejs-${{ needs.build-nodejs.outputs.nodeVersion }}
       - name: test nodejs
@@ -173,7 +173,7 @@ jobs:
       - build-nodejs
     steps:
       - name: download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nodejs-${{ needs.build-nodejs.outputs.nodeVersion }}
           path: ${{ runner.temp }}
@@ -361,7 +361,7 @@ jobs:
         include: ${{ fromJson(needs.generate-matrix.outputs.matrix) }}
     steps:
       - name: download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: nodejs-${{ needs.build-nodejs.outputs.nodeVersion }}
           path: ${{ runner.temp }}
