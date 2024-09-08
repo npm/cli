@@ -1861,7 +1861,7 @@ t.test('delete from prod, if optional dep is added', async t => {
   // add to existing optional dep in lockfile
   const pathNoSaveType = t.testdir({
     'package.json': JSON.stringify({
-      optionalDependencies: { abbrev: '*' }
+      optionalDependencies: { abbrev: '*' },
     }),
   })
   const arbNoSaveType = newArb({ path: pathNoSaveType })
@@ -1877,7 +1877,6 @@ t.test('delete from prod, if optional dep is added', async t => {
   // both lockfiles should be the same
   t.same(resultNoSaveType, resultSaveType)
   t.matchSnapshot(resultNoSaveType)
-
 })
 
 t.test('keep in prod, if optional dep fails install', async t => {

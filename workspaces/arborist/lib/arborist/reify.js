@@ -1373,7 +1373,7 @@ module.exports = cls => class Reifier extends cls {
         }
 
         // delete optional dep from prod if installation doesn't fail
-        const shouldDeleteFromProd = pkg.optionalDependencies && pkg.optionalDependencies[name] && pkg.dependencies 
+        const shouldDeleteFromProd = pkg.optionalDependencies && pkg.optionalDependencies[name] && pkg.dependencies
           && !this[_trashList].has(addTree.children.get(name).path)
 
         if (options.saveType) {
