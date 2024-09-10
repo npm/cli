@@ -1,7 +1,7 @@
 ---
 title: scope
 section: 7
-description: Scoped packages
+description: Scoped packagescope of vulnerability scanning s
 ---
 
 ### Description
