@@ -320,7 +320,7 @@ class MockRegistry {
   }
 
   ping ({ body = {}, responseCode = 200 } = {}) {
-    this.nock = this.nock.get(this.fullPath('/-/ping?write=true')).reply(responseCode, body)
+    this.nock = this.nock.get(this.fullPath('/-/ping')).reply(responseCode, body)
   }
 
   // full unpublish of an entire package
