@@ -400,3 +400,27 @@ t.test('should show install keeps dirty --workspace flag', async t => {
   assert.packageDirty('node_modules/abbrev@1.1.0')
   assert.packageInstalled('node_modules/lodash@1.1.1')
 })
+
+t.test('throw error on package install in root directory', async t => {
+  let npmError = null
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      prefix: path.parse(process.cwd()).root,
+      'dry-run': true,
+    },
+  })
+
+  try {
+    await npm.exec('install', ['fizzbuzz'])
+  } catch (error) {
+    npmError = error.message
+  }
+
+  const expectedMessage =
+    'The current working directory is the root directory of the filesystem.\n' +
+    'Package installs in root directories are not allowed.\n' +
+    'Please create a new folder and install your packages in there.\n'
+
+  t.strictSame(npmError, expectedMessage)
+})
