@@ -337,6 +337,10 @@ the `files` globs.  Exceptions to this are:
 
 These can not be included.
 
+### exports
+
+The "exports" provides a modern alternative to "main" allowing multiple entry points to be defined, conditional entry resolution support between environments, and preventing any other entry points besides those defined in "exports". This encapsulation allows module authors to clearly define the public interface for their package. For more details see the [node.js documentation on package entry points](https://nodejs.org/api/packages.html#package-entry-points)
+
 ### main
 
 The main field is a module ID that is the primary entry point to your
