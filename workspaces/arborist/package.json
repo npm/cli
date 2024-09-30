@@ -9,7 +9,7 @@
     "@npmcli/map-workspaces": "^4.0.0",
     "@npmcli/metavuln-calculator": "^7.1.1",
     "@npmcli/name-from-folder": "^3.0.0",
-    "@npmcli/node-gyp": "^3.0.0",
+    "@npmcli/node-gyp": "^4.0.0",
     "@npmcli/package-json": "^6.0.0",
     "@npmcli/query": "^3.1.0",
     "@npmcli/redact": "^3.0.0",
