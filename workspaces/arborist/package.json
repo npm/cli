@@ -6,7 +6,7 @@
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/fs": "^4.0.0",
     "@npmcli/installed-package-contents": "^2.1.0",
-    "@npmcli/map-workspaces": "^3.0.2",
+    "@npmcli/map-workspaces": "^4.0.0",
     "@npmcli/metavuln-calculator": "^7.1.1",
     "@npmcli/name-from-folder": "^2.0.0",
     "@npmcli/node-gyp": "^3.0.0",
