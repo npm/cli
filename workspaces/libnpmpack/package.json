@@ -23,7 +23,7 @@
     "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.0",
     "@npmcli/template-oss": "4.23.3",
     "nock": "^13.3.3",
     "spawk": "^1.7.1",

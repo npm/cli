@@ -31,7 +31,7 @@
     ]
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.0",
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/template-oss": "4.23.3",
     "tap": "^16.3.8"

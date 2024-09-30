@@ -35,7 +35,7 @@
     "npm-registry-fetch": "^18.0.0"
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.0",
     "@npmcli/template-oss": "4.23.3",
     "nock": "^13.3.3",
     "tap": "^16.3.8"
