@@ -35,7 +35,7 @@
     "promise-call-limit": "^3.0.1",
     "read-package-json-fast": "^3.0.2",
     "semver": "^7.3.7",
-    "ssri": "^10.0.6",
+    "ssri": "^12.0.0",
     "treeverse": "^3.0.0",
     "walk-up-path": "^3.0.1"
   },
