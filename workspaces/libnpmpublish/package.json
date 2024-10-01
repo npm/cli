@@ -43,7 +43,7 @@
     "normalize-package-data": "^7.0.0",
     "npm-package-arg": "^12.0.0",
     "npm-registry-fetch": "^18.0.0",
-    "proc-log": "^4.2.0",
+    "proc-log": "^5.0.0",
     "semver": "^7.3.7",
     "sigstore": "^2.2.0",
     "ssri": "^10.0.6"
