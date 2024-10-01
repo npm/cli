@@ -100,7 +100,7 @@
     "npm-package-arg": "^12.0.0",
     "npm-pick-manifest": "^10.0.0",
     "npm-profile": "^10.0.0",
-    "npm-registry-fetch": "^17.1.0",
+    "npm-registry-fetch": "^18.0.0",
     "npm-user-validate": "^2.0.1",
     "p-map": "^4.0.0",
     "pacote": "^18.0.6",
