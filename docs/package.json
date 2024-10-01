@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.0",
     "@npmcli/template-oss": "4.23.3",
     "front-matter": "^4.0.2",
     "ignore-walk": "^6.0.5",
