@@ -22,7 +22,7 @@
     "json-stringify-nice": "^1.1.4",
     "lru-cache": "^10.2.2",
     "minimatch": "^9.0.4",
-    "nopt": "^7.2.1",
+    "nopt": "^8.0.0",
     "npm-install-checks": "^6.2.0",
     "npm-package-arg": "^11.0.2",
     "npm-pick-manifest": "^9.0.1",
