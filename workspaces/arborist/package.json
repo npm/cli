@@ -18,7 +18,7 @@
     "cacache": "^19.0.1",
     "common-ancestor-path": "^1.0.1",
     "hosted-git-info": "^8.0.0",
-    "json-parse-even-better-errors": "^3.0.2",
+    "json-parse-even-better-errors": "^4.0.0",
     "json-stringify-nice": "^1.1.4",
     "lru-cache": "^10.2.2",
     "minimatch": "^9.0.4",
