@@ -28,7 +28,7 @@
     "npm-pick-manifest": "^10.0.0",
     "npm-registry-fetch": "^18.0.0",
     "pacote": "^19.0.0",
-    "parse-conflict-json": "^3.0.0",
+    "parse-conflict-json": "^4.0.0",
     "proc-log": "^4.2.0",
     "proggy": "^2.0.0",
     "promise-all-reject-late": "^1.0.0",
