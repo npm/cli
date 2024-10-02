@@ -5,6 +5,7 @@
 graph LR;
   bin-links-->cmd-shim;
   bin-links-->npm-normalize-package-bin;
+  bin-links-->proc-log;
   bin-links-->read-cmd-shim;
   bin-links-->write-file-atomic;
   cacache-->fs-minipass;
@@ -264,6 +265,7 @@ graph LR;
   aggregate-error-->indent-string;
   bin-links-->cmd-shim;
   bin-links-->npm-normalize-package-bin;
+  bin-links-->proc-log;
   bin-links-->read-cmd-shim;
   bin-links-->write-file-atomic;
   brace-expansion-->balanced-match;
