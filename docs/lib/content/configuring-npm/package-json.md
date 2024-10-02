@@ -1129,6 +1129,32 @@ Like the `os` option, you can also block architectures:
 
 The host architecture is determined by `process.arch`
 
+### devEngines
+
+The `devEngines` field aids engineers working on a codebase to all be using the same tooling.
+
+You can specify a `devEngines` property in your `package.json` which will run before `install`, `ci`, and `run` commands. 
+
+> Note: `engines` and `devEngines` differ in object shape. They also function very differently. `engines` is designed to alert the user when a dependency uses a differening npm or node version that the project it's being used in, whereas `devEngines` is used to alert people interacting with the source code of a project.
+
+The supported keys under the `devEngines` property are `cpu`, `os`, `libc`, `runtime`, and `packageManager`. Each property can be an object or an array of objects. Objects must contain `name`, and optionally can specify `version`, and `onFail`. `onFail` can be `warn`, `error`, or `ignore`, and if left undefined is of the same value as `error`. `npm` will assume that you're running with `node`.
+Here's an example of a project that will fail if the environment is not `node` and `npm`. If you set `runtime.name` or `packageManager.name` to any other string, it will fail within the npm CLI.
+
+```json
+{
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "onFail": "error"
+    }
+  }
+}
+```
+
 ### private
 
 If you set `"private": true` in your package.json, then npm will refuse to

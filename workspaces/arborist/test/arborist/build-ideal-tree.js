@@ -3979,3 +3979,18 @@ t.test('store files with a custom indenting', async t => {
   const tree = await buildIdeal(path)
   t.matchSnapshot(String(tree.meta))
 })
+
+t.test('should take devEngines in account', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'empty-update',
+      devEngines: {
+        runtime: {
+          name: 'node',
+        },
+      },
+    }),
+  })
+  const tree = await buildIdeal(path)
+  t.matchSnapshot(String(tree.meta))
+})
