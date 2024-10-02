@@ -63,7 +63,7 @@
     "@sigstore/tuf": "^2.3.4",
     "abbrev": "^3.0.0",
     "archy": "~1.0.0",
-    "cacache": "^18.0.4",
+    "cacache": "^19.0.1",
     "chalk": "^5.3.0",
     "ci-info": "^4.0.0",
     "cli-columns": "^4.0.0",
