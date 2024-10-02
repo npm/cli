@@ -192,7 +192,7 @@
   ],
   "devDependencies": {
     "@npmcli/docs": "^1.0.0",
-    "@npmcli/eslint-config": "^4.0.2",
+    "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/git": "^6.0.1",
     "@npmcli/mock-globals": "^1.0.0",
     "@npmcli/mock-registry": "^1.0.0",
