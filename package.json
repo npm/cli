@@ -75,7 +75,7 @@
     "ini": "^5.0.0",
     "init-package-json": "^7.0.1",
     "is-cidr": "^5.1.0",
-    "json-parse-even-better-errors": "^3.0.2",
+    "json-parse-even-better-errors": "^4.0.0",
     "libnpmaccess": "^8.0.6",
     "libnpmdiff": "^6.1.4",
     "libnpmexec": "^8.1.4",
