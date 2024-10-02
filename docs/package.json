@@ -25,7 +25,7 @@
     "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/template-oss": "4.23.3",
     "front-matter": "^4.0.2",
-    "ignore-walk": "^6.0.5",
+    "ignore-walk": "^7.0.0",
     "jsdom": "^24.0.0",
     "rehype-stringify": "^9.0.3",
     "remark-gfm": "^3.0.1",
