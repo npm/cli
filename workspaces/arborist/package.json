@@ -33,7 +33,7 @@
     "proggy": "^2.0.0",
     "promise-all-reject-late": "^1.0.0",
     "promise-call-limit": "^3.0.1",
-    "read-package-json-fast": "^3.0.2",
+    "read-package-json-fast": "^4.0.0",
     "semver": "^7.3.7",
     "ssri": "^12.0.0",
     "treeverse": "^3.0.0",
