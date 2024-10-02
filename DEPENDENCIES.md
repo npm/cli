@@ -726,6 +726,7 @@ graph LR;
   read-->mute-stream;
   read-package-json-fast-->json-parse-even-better-errors;
   read-package-json-fast-->npm-normalize-package-bin;
+  rimraf-->glob;
   shebang-command-->shebang-regex;
   sigstore-->sigstore-bundle["@sigstore/bundle"];
   sigstore-->sigstore-core["@sigstore/core"];
