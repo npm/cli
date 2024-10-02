@@ -40,7 +40,7 @@
     "walk-up-path": "^3.0.1"
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/template-oss": "4.23.3",
     "benchmark": "^2.1.4",
     "minify-registry-metadata": "^3.0.0",
