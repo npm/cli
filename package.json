@@ -73,7 +73,7 @@
     "graceful-fs": "^4.2.11",
     "hosted-git-info": "^8.0.0",
     "ini": "^5.0.0",
-    "init-package-json": "^6.0.3",
+    "init-package-json": "^7.0.1",
     "is-cidr": "^5.1.0",
     "json-parse-even-better-errors": "^3.0.2",
     "libnpmaccess": "^8.0.6",
