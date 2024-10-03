@@ -5,6 +5,24 @@
  * Make sure to inspect the output below.  Do not ignore changes!
  */
 'use strict'
+exports[`test/lib/commands/install.js TAP devEngines should not utilize devEngines if global install > must match snapshot 1`] = `
+silly config load:file:{CWD}/npmrc
+silly config load:file:{CWD}/home/.npmrc
+silly config load:file:{CWD}/global/etc/npmrc
+verbose title npm
+verbose argv "--fetch-retries" "0" "--cache" "{CWD}/cache" "--loglevel" "silly" "--color" "false" "--global" "true"
+verbose logfile logs-max:10 dir:{CWD}/cache/_logs/{DATE}-
+verbose logfile {CWD}/cache/_logs/{DATE}-debug-0.log
+silly logfile done cleaning log files
+silly packumentCache heap:{heap} maxSize:{maxSize} maxEntrySize:{maxEntrySize}
+silly idealTree buildDeps
+silly placeDep ROOT alpha@ OK for:  want: file:../../prefix
+silly reify moves {}
+silly ADD node_modules/alpha
+
+added 1 package in {TIME}
+`
+
 exports[`test/lib/commands/install.js TAP devEngines should not utilize engines in root if devEngines is provided > must match snapshot 1`] = `
 silly config load:file:{CWD}/npmrc
 silly config load:file:{CWD}/prefix/.npmrc

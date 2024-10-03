@@ -687,4 +687,33 @@ t.test('devEngines', async t => {
     t.ok(output.includes('EBADENGINE'))
     t.ok(!output.includes('EBADDEVENGINES'))
   })
+
+  t.test('should not utilize devEngines if global install', async t => {
+    const { npm, joinedFullOutput } = await loadMockNpm(t, {
+      ...mockArguments,
+      config: {
+        global: true,
+      },
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: 'alpha',
+          bin: {
+            alpha: 'index.js',
+          },
+          devEngines: {
+            runtime: {
+              name: 'node',
+              version: '0.0.1',
+            },
+          },
+        }),
+        'index.js': 'console.log("this is alpha index")',
+      },
+    })
+    await npm.exec('install', ['.'])
+    const output = joinedFullOutput()
+    t.matchSnapshot(output)
+    t.ok(!output.includes('EBADENGINE'))
+    t.ok(!output.includes('EBADDEVENGINES'))
+  })
 })
