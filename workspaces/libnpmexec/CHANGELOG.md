@@ -1,5 +1,22 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/libnpmexec-v8.1.4...libnpmexec-v9.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmexec` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`a2c8016`](https://github.com/npm/cli/commit/a2c80166e02a79402fb7bbb629f8ecc14ff8b546) [#7803](https://github.com/npm/cli/pull/7803) align libnpmexec to npm 10 node engine range (@reggi)
+### Dependencies
+* [`99ccae3`](https://github.com/npm/cli/commit/99ccae3ded6f7013b26ed268a208c24473cdeb8f) [#7803](https://github.com/npm/cli/pull/7803) update `bin-links@5.0.0`
+* [`9cd6603`](https://github.com/npm/cli/commit/9cd66031ebd2e9a0d6fdee3a7b4d7779694306ff) [#7803](https://github.com/npm/cli/pull/7803) update `read-package-json-fast@4.0.0`
+* [`8b7dbc8`](https://github.com/npm/cli/commit/8b7dbc8234914352b2649f56c6a11765f1904e30) [#7803](https://github.com/npm/cli/pull/7803) update `read@4.0.0`
+* [`f6909a0`](https://github.com/npm/cli/commit/f6909a022c9373c85d980c96a30f47a3a65aa4a9) [#7803](https://github.com/npm/cli/pull/7803) update `proc-log@5.0.0`
+* [`e7ab206`](https://github.com/npm/cli/commit/e7ab206370e5fc62fefe6916e5dcc40b3e577d22) [#7803](https://github.com/npm/cli/pull/7803) update `pacote@19.0.0`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+* [`538a4cc`](https://github.com/npm/cli/commit/538a4cc1dd731a3643ab4477fe545db39997bcdf) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/run-script@9.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.0): `@npmcli/arborist@8.0.0`
+
 ## [8.1.4](https://github.com/npm/cli/compare/libnpmexec-v8.1.3...libnpmexec-v8.1.4) (2024-08-28)
 ### Bug Fixes
 * [`9214be9`](https://github.com/npm/cli/commit/9214be9ed8779493e00d193e36a930918a30be64) [#7640](https://github.com/npm/cli/pull/7640) gracefully handle nonexistent global installation directory (#7640) (@milaninfy)

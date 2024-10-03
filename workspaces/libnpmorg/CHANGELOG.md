@@ -1,5 +1,16 @@
 # Changelog
 
+## [7.0.0](https://github.com/npm/cli/compare/libnpmorg-v6.0.6...libnpmorg-v7.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmorg` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`47f6f76`](https://github.com/npm/cli/commit/47f6f764235fd9a268afc504b03038b22e97537d) [#7803](https://github.com/npm/cli/pull/7803) align libnpmorg to npm 10 node engine range (@reggi)
+### Dependencies
+* [`d13a20b`](https://github.com/npm/cli/commit/d13a20bebef1b9932f86c44741ea6d214ad6842b) [#7803](https://github.com/npm/cli/pull/7803) update `npm-registry-fetch@18.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [6.0.6](https://github.com/npm/cli/compare/libnpmorg-v6.0.5...libnpmorg-v6.0.6) (2024-05-15)
 
 ### Dependencies

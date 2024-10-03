@@ -1,5 +1,17 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/libnpmaccess-v8.0.6...libnpmaccess-v9.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmaccess` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`73068d6`](https://github.com/npm/cli/commit/73068d60ded17de3ff6a3d38ff2b83b136316ffc) [#7803](https://github.com/npm/cli/pull/7803) align libnpmaccess to npm 10 node engine range (@reggi)
+### Dependencies
+* [`d13a20b`](https://github.com/npm/cli/commit/d13a20bebef1b9932f86c44741ea6d214ad6842b) [#7803](https://github.com/npm/cli/pull/7803) update `npm-registry-fetch@18.0.1`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [8.0.6](https://github.com/npm/cli/compare/libnpmaccess-v8.0.5...libnpmaccess-v8.0.6) (2024-05-15)
 
 ### Dependencies
