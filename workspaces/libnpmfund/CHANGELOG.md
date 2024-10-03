@@ -8,6 +8,20 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [6.0.0](https://github.com/npm/cli/compare/libnpmfund-v5.0.12...libnpmfund-v6.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmfund` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`e7298de`](https://github.com/npm/cli/commit/e7298de7026b960ad163cc2a137e27739b91876c) [#7803](https://github.com/npm/cli/pull/7803) align libnpmfund to npm 10 node engine range (@reggi)
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.0): `@npmcli/arborist@8.0.0`
+
 ## [5.0.11](https://github.com/npm/cli/compare/libnpmfund-v5.0.10...libnpmfund-v5.0.11) (2024-05-29)
 
 ### Bug Fixes

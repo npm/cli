@@ -321,7 +321,6 @@ graph LR;
   isaacs-cliui-->strip-ansi;
   isaacs-cliui-->wrap-ansi-cjs;
   isaacs-cliui-->wrap-ansi;
-  isaacs-fs-minipass-->minipass;
   jackspeak-->isaacs-cliui["@isaacs/cliui"];
   jackspeak-->pkgjs-parseargs["@pkgjs/parseargs"];
   libnpmaccess-->nock;
@@ -767,7 +766,6 @@ graph LR;
   strip-ansi-->ansi-regex;
   tar-->chownr;
   tar-->fs-minipass;
-  tar-->isaacs-fs-minipass["@isaacs/fs-minipass"];
   tar-->minipass;
   tar-->minizlib;
   tar-->mkdirp;
@@ -801,9 +799,9 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, @npmcli/config, libnpmversion
- - @npmcli/map-workspaces, @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/run-script, @npmcli/map-workspaces, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
- - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, @npmcli/promise-spawn, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
+ - npm-pick-manifest, @npmcli/installed-package-contents, cacache, promzard
+ - @npmcli/docs, npm-package-arg, npm-install-checks, npm-bundled, normalize-package-data, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/promise-spawn, ini, npm-normalize-package-bin, json-parse-even-better-errors, @npmcli/node-gyp, fs-minipass, ssri, unique-slug, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/name-from-folder, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

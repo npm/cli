@@ -4,6 +4,20 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [8.0.0](https://github.com/npm/cli/compare/libnpmpack-v7.0.4...libnpmpack-v8.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmpack` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`1b61379`](https://github.com/npm/cli/commit/1b61379137f9253de76662bf0f9404c2ae5d033f) [#7803](https://github.com/npm/cli/pull/7803) align libnpmpack to npm 10 node engine range (@reggi)
+### Dependencies
+* [`e7ab206`](https://github.com/npm/cli/commit/e7ab206370e5fc62fefe6916e5dcc40b3e577d22) [#7803](https://github.com/npm/cli/pull/7803) update `pacote@19.0.0`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+* [`538a4cc`](https://github.com/npm/cli/commit/538a4cc1dd731a3643ab4477fe545db39997bcdf) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/run-script@9.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.0): `@npmcli/arborist@8.0.0`
+
 ## [7.0.3](https://github.com/npm/cli/compare/libnpmpack-v7.0.2...libnpmpack-v7.0.3) (2024-05-29)
 
 ### Bug Fixes
