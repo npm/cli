@@ -688,12 +688,9 @@ t.test('devEngines', async t => {
     t.ok(!output.includes('EBADDEVENGINES'))
   })
 
-  t.test('should not utilize devEngines if global install', async t => {
+  t.test('should show devEngines has no effect on global package install', async t => {
     const { npm, joinedFullOutput } = await loadMockNpm(t, {
       ...mockArguments,
-      config: {
-        global: true,
-      },
       prefixDir: {
         'package.json': JSON.stringify({
           name: 'alpha',
@@ -708,6 +705,9 @@ t.test('devEngines', async t => {
           },
         }),
         'index.js': 'console.log("this is alpha index")',
+      },
+      config: {
+        global: true,
       },
     })
     await npm.exec('install', ['.'])
