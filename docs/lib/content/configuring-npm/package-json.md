@@ -1129,6 +1129,18 @@ Like the `os` option, you can also block architectures:
 
 The host architecture is determined by `process.arch`
 
+### libc
+
+If your code only runs or builds in certain versions of libc, you can
+specify which ones.  This field only applies if `os` is `linux`.
+
+```json
+{
+  "os": "linux",
+  "libc": "glibc"
+}
+```
+
 ### devEngines
 
 The `devEngines` field aids engineers working on a codebase to all be using the same tooling.
