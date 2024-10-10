@@ -4,6 +4,20 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [7.0.0](https://github.com/npm/cli/compare/libnpmdiff-v6.1.4...libnpmdiff-v7.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmdiff` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`340a330`](https://github.com/npm/cli/commit/340a330a312ec784c100637fb3ff064a3fd68c56) [#7803](https://github.com/npm/cli/pull/7803) align libnpmdiff to npm 10 node engine range (@reggi)
+### Dependencies
+* [`820e983`](https://github.com/npm/cli/commit/820e983b1d5a82d6c9c10895487c2e43b423d6ef) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/installed-package-contents@3.0.0`
+* [`e7ab206`](https://github.com/npm/cli/commit/e7ab206370e5fc62fefe6916e5dcc40b3e577d22) [#7803](https://github.com/npm/cli/pull/7803) update `pacote@19.0.0`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.0): `@npmcli/arborist@8.0.0`
+
 ## [6.1.3](https://github.com/npm/cli/compare/libnpmdiff-v6.1.2...libnpmdiff-v6.1.3) (2024-05-29)
 
 ### Bug Fixes

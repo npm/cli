@@ -1,5 +1,20 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/config-v8.3.4...config-v9.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `@npmcli/config` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`f846ad3`](https://github.com/npm/cli/commit/f846ad3e5e2a930c89cc8c4daa7752ba6fd52598) [#7803](https://github.com/npm/cli/pull/7803) align @npmcli/config to npm 10 node engine range (@reggi)
+### Dependencies
+* [`f6909a0`](https://github.com/npm/cli/commit/f6909a022c9373c85d980c96a30f47a3a65aa4a9) [#7803](https://github.com/npm/cli/pull/7803) update `proc-log@5.0.0`
+* [`105fa2b`](https://github.com/npm/cli/commit/105fa2bdb2bbb0502bb8e0c5ccec3dadcff3c2d6) [#7803](https://github.com/npm/cli/pull/7803) update `nopt@8.0.0`
+* [`f54b155`](https://github.com/npm/cli/commit/f54b155d0cbc251c7159cc42ba3b6154563f9e49) [#7803](https://github.com/npm/cli/pull/7803) update `ini@5.0.0`
+* [`2076368`](https://github.com/npm/cli/commit/207636897aa5544ec28cad5b75fe2e685028dafd) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/package-json@6.0.1`
+* [`feac87c`](https://github.com/npm/cli/commit/feac87c7ed6113665bc144ee677017bc66138b70) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/map-workspaces@4.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [8.3.4](https://github.com/npm/cli/compare/config-v8.3.3...config-v8.3.4) (2024-07-09)
 
 ### Bug Fixes

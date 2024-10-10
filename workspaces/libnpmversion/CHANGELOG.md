@@ -1,5 +1,19 @@
 # Changelog
 
+## [7.0.0](https://github.com/npm/cli/compare/libnpmversion-v6.0.3...libnpmversion-v7.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmversion` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`d3c0b1e`](https://github.com/npm/cli/commit/d3c0b1efca1431ee3dae24fdec96f7251b347614) [#7803](https://github.com/npm/cli/pull/7803) align libnpmversion to npm 10 node engine range (@reggi)
+### Dependencies
+* [`b84d907`](https://github.com/npm/cli/commit/b84d9079feaf9582763356e538c7247383b00e9f) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/git@6.0.1`
+* [`f6909a0`](https://github.com/npm/cli/commit/f6909a022c9373c85d980c96a30f47a3a65aa4a9) [#7803](https://github.com/npm/cli/pull/7803) update `proc-log@5.0.0`
+* [`7214149`](https://github.com/npm/cli/commit/72141496fbc7e5f0e0824d584b82690eeee45bb5) [#7803](https://github.com/npm/cli/pull/7803) update `json-parse-even-better-errors@4.0.0`
+* [`538a4cc`](https://github.com/npm/cli/commit/538a4cc1dd731a3643ab4477fe545db39997bcdf) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/run-script@9.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [6.0.3](https://github.com/npm/cli/compare/libnpmversion-v6.0.2...libnpmversion-v6.0.3) (2024-05-29)
 
 ### Bug Fixes

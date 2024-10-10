@@ -37,7 +37,8 @@
         "smoke-tests",
         "mock-globals",
         "mock-registry",
-        "workspaces"
+        "workspaces",
+        ".github"
       ]
     },
     "workspaces/arborist": {},

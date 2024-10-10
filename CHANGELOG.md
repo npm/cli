@@ -1,5 +1,77 @@
 # Changelog
 
+## [10.9.0](https://github.com/npm/cli/compare/v10.8.3...v10.9.0) (2024-10-03)
+### Features
+* [`4d57928`](https://github.com/npm/cli/commit/4d57928ea20c1672864dc0c8ebaff5d877e61c9c) [#7766](https://github.com/npm/cli/pull/7766) devEngines (#7766) (@reggi)
+### Bug Fixes
+* [`6ca609e`](https://github.com/npm/cli/commit/6ca609e20b68fb2e5ef8177db116b84a339461fd) [#7789](https://github.com/npm/cli/pull/7789) ping and doctor commands fix for checking if registry is online (#7789) (@milaninfy)
+### Documentation
+* [`63d6a73`](https://github.com/npm/cli/commit/63d6a732c3c0e9c19fd4d147eaa5cc27c29b168d) [#7783](https://github.com/npm/cli/pull/7783) package.json: add brief section on exports, link to Node.js docs (#7783) (@wheresrhys)
+* [`366c07e`](https://github.com/npm/cli/commit/366c07e2f3cb9d1c6ddbd03e624a4d73fbd2676e) [#7776](https://github.com/npm/cli/pull/7776) remove incorrect note about npm install (#7776) (@wraithgar)
+### Dependencies
+* [`60a7ee5`](https://github.com/npm/cli/commit/60a7ee5b7a71c1a46cee4026d7e06f8785a0786b) [#7803](https://github.com/npm/cli/pull/7803) hoist npm-normalize-package-bin
+* [`20dd44f`](https://github.com/npm/cli/commit/20dd44ff7deedd594f996fcfe48615fd93498db3) [#7803](https://github.com/npm/cli/pull/7803) hoist minipass-fetch
+* [`5795987`](https://github.com/npm/cli/commit/5795987605af9bb163ad3a689a0854b99cd39cbe) [#7803](https://github.com/npm/cli/pull/7803) update `proggy@3.0.0`
+* [`99ccae3`](https://github.com/npm/cli/commit/99ccae3ded6f7013b26ed268a208c24473cdeb8f) [#7803](https://github.com/npm/cli/pull/7803) update `bin-links@5.0.0`
+* [`75786ad`](https://github.com/npm/cli/commit/75786adb86f763d781f840feea4afb8d01953b99) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/query@4.0.0`
+* [`1c25a1d`](https://github.com/npm/cli/commit/1c25a1d74c26364742b59f9d57b9a07bb4f8726f) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/node-gyp@4.0.0`
+* [`2d7fc3d`](https://github.com/npm/cli/commit/2d7fc3d320b92a8447e7282df14e2b99047cc426) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/name-from-folder@3.0.0`
+* [`1e09334`](https://github.com/npm/cli/commit/1e093347e3723c77bb4dc9214e111a3ec78fbbea) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/metavuln-calculator@8.0.0`
+* [`820e983`](https://github.com/npm/cli/commit/820e983b1d5a82d6c9c10895487c2e43b423d6ef) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/installed-package-contents@3.0.0`
+* [`9cd6603`](https://github.com/npm/cli/commit/9cd66031ebd2e9a0d6fdee3a7b4d7779694306ff) [#7803](https://github.com/npm/cli/pull/7803) update `read-package-json-fast@4.0.0`
+* [`b84d907`](https://github.com/npm/cli/commit/b84d9079feaf9582763356e538c7247383b00e9f) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/git@6.0.1`
+* [`53ed632`](https://github.com/npm/cli/commit/53ed632561cc0336f4194524de6e236f50d67212) [#7803](https://github.com/npm/cli/pull/7803) update `write-file-atomic@6.0.0`
+* [`ab40dab`](https://github.com/npm/cli/commit/ab40dab333bd24ab255f7c63798e86e1a7f66374) [#7803](https://github.com/npm/cli/pull/7803) update `which@5.0.0`
+* [`b1c4770`](https://github.com/npm/cli/commit/b1c477084d5e2bcd7335610587091ca1189ebaf8) [#7803](https://github.com/npm/cli/pull/7803) update `validate-npm-package-name@6.0.0`
+* [`8206c4f`](https://github.com/npm/cli/commit/8206c4f675937e855b60164946c086eb64d7ecb6) [#7803](https://github.com/npm/cli/pull/7803) update `ssri@12.0.0`
+* [`8b7dbc8`](https://github.com/npm/cli/commit/8b7dbc8234914352b2649f56c6a11765f1904e30) [#7803](https://github.com/npm/cli/pull/7803) update `read@4.0.0`
+* [`f6909a0`](https://github.com/npm/cli/commit/f6909a022c9373c85d980c96a30f47a3a65aa4a9) [#7803](https://github.com/npm/cli/pull/7803) update `proc-log@5.0.0`
+* [`f9b2e18`](https://github.com/npm/cli/commit/f9b2e1884fbfe2a2c41e3fcaa4be722209141aed) [#7803](https://github.com/npm/cli/pull/7803) update `parse-conflict-json@4.0.0`
+* [`e7ab206`](https://github.com/npm/cli/commit/e7ab206370e5fc62fefe6916e5dcc40b3e577d22) [#7803](https://github.com/npm/cli/pull/7803) update `pacote@19.0.0`
+* [`b28dbb1`](https://github.com/npm/cli/commit/b28dbb10b382f51f2c80fa5719e804074655ed67) [#7803](https://github.com/npm/cli/pull/7803) update `npm-user-validate@3.0.0`
+* [`d13a20b`](https://github.com/npm/cli/commit/d13a20bebef1b9932f86c44741ea6d214ad6842b) [#7803](https://github.com/npm/cli/pull/7803) update `npm-registry-fetch@18.0.1`
+* [`5208f74`](https://github.com/npm/cli/commit/5208f7404c656a91cfb34671cf8533e147f5944f) [#7803](https://github.com/npm/cli/pull/7803) update `npm-profile@11.0.1`
+* [`092f41f`](https://github.com/npm/cli/commit/092f41fec40f418468605557fcb4f4e1babd9d45) [#7803](https://github.com/npm/cli/pull/7803) update `npm-pick-manifest@10.0.0`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+* [`591130d`](https://github.com/npm/cli/commit/591130d0aaaa032f484504287e993d38b6f04d4f) [#7803](https://github.com/npm/cli/pull/7803) update `npm-install-checks@7.1.0`
+* [`be6ae96`](https://github.com/npm/cli/commit/be6ae96bab5265a89090388f49be8311dc012a68) [#7803](https://github.com/npm/cli/pull/7803) update `npm-audit-report@6.0.0`
+* [`8d4060a`](https://github.com/npm/cli/commit/8d4060a661db50dc4d4a2f30cc57346f1d242599) [#7803](https://github.com/npm/cli/pull/7803) update `normalize-package-data@7.0.0`
+* [`105fa2b`](https://github.com/npm/cli/commit/105fa2bdb2bbb0502bb8e0c5ccec3dadcff3c2d6) [#7803](https://github.com/npm/cli/pull/7803) update `nopt@8.0.0`
+* [`eae4f57`](https://github.com/npm/cli/commit/eae4f577b40732dbcad6c959a2a479258247f399) [#7803](https://github.com/npm/cli/pull/7803) update `make-fetch-happen@14.0.1`
+* [`7214149`](https://github.com/npm/cli/commit/72141496fbc7e5f0e0824d584b82690eeee45bb5) [#7803](https://github.com/npm/cli/pull/7803) update `json-parse-even-better-errors@4.0.0`
+* [`c4bed31`](https://github.com/npm/cli/commit/c4bed312966bbdd70e457543c6a95c827a1e6b59) [#7803](https://github.com/npm/cli/pull/7803) update `init-package-json@7.0.1`
+* [`f54b155`](https://github.com/npm/cli/commit/f54b155d0cbc251c7159cc42ba3b6154563f9e49) [#7803](https://github.com/npm/cli/pull/7803) update `ini@5.0.0`
+* [`6deae9e`](https://github.com/npm/cli/commit/6deae9e5d989ac30208fbcbca13ec827c6f2b588) [#7803](https://github.com/npm/cli/pull/7803) update `hosted-git-info@8.0.0`
+* [`034c729`](https://github.com/npm/cli/commit/034c7297568d328bcaf79bd2c7226d3593e21810) [#7803](https://github.com/npm/cli/pull/7803) update `cacache@19.0.1`
+* [`ddb8be0`](https://github.com/npm/cli/commit/ddb8be0af2f2967f011d012d3634b78197000b80) [#7803](https://github.com/npm/cli/pull/7803) update `abbrev@3.0.0`
+* [`538a4cc`](https://github.com/npm/cli/commit/538a4cc1dd731a3643ab4477fe545db39997bcdf) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/run-script@9.0.1`
+* [`b80d048`](https://github.com/npm/cli/commit/b80d0482cb52fc00275fef9548d86e17eaf28f50) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/redact@3.0.0`
+* [`81137fc`](https://github.com/npm/cli/commit/81137fc3dab75f7bea5c2a78e10b050284fc11b0) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/promise-spawn@8.0.1`
+* [`2076368`](https://github.com/npm/cli/commit/207636897aa5544ec28cad5b75fe2e685028dafd) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/package-json@6.0.1`
+* [`feac87c`](https://github.com/npm/cli/commit/feac87c7ed6113665bc144ee677017bc66138b70) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/map-workspaces@4.0.1`
+* [`dd90f9e`](https://github.com/npm/cli/commit/dd90f9ee7882dbeec073604638b98e68f9873371) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/fs@4.0.0`
+### Chores
+* [`95e2cb1`](https://github.com/npm/cli/commit/95e2cb105f1c80362a2355801917425be84e6097) [#7810](https://github.com/npm/cli/pull/7810) ignore .github folder in release-please (@reggi)
+* [`be1e6da`](https://github.com/npm/cli/commit/be1e6da91380d7a10edb1767dd433ca296b96771) [#7803](https://github.com/npm/cli/pull/7803) update `minify-registry-metadata@4.0.0` (@reggi)
+* [`43f2374`](https://github.com/npm/cli/commit/43f2374bf5abe825be6068cdfb991f02ba08eac3) [#7803](https://github.com/npm/cli/pull/7803) update `ignore-walk@7.0.0` (@reggi)
+* [`bb03036`](https://github.com/npm/cli/commit/bb03036ba8f7d7f1497ecac17b5e2f3e2951e214) [#7803](https://github.com/npm/cli/pull/7803) update `npm-packlist@9.0.0` (@reggi)
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`949d8f8`](https://github.com/npm/cli/commit/949d8f872d341590d17613203bb57b95084b390d) [#7803](https://github.com/npm/cli/pull/7803) engine ^18.17.0 || >=20.5.0 in package template (@reggi)
+* [`fefd509`](https://github.com/npm/cli/commit/fefd509992a05c2dfddbe7bc46931c42f1da69d7) [#7764](https://github.com/npm/cli/pull/7764) deps: bump actions/download-artifact from 3 to 4 in /.github/workflows (#7764) (@dependabot[bot], @wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v8.0.0): `@npmcli/arborist@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v9.0.0): `@npmcli/config@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v9.0.0): `libnpmaccess@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v7.0.0): `libnpmdiff@7.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v9.0.0): `libnpmexec@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v6.0.0): `libnpmfund@6.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmhook-v11.0.0): `libnpmhook@11.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v7.0.0): `libnpmorg@7.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v8.0.0): `libnpmpack@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v10.0.0): `libnpmpublish@10.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v8.0.0): `libnpmsearch@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v7.0.0): `libnpmteam@7.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v7.0.0): `libnpmversion@7.0.0`
+
 ## [10.8.3](https://github.com/npm/cli/compare/v10.8.2...v10.8.3) (2024-08-28)
 ### Bug Fixes
 * [`7e61151`](https://github.com/npm/cli/commit/7e61151b9ab4f62a83e9ea8bcfa15ece11b6a1fd) [#7759](https://github.com/npm/cli/pull/7759) docs: init usage description corrected (#7759) (@milaninfy)

@@ -1,5 +1,20 @@
 # Changelog
 
+## [10.0.0](https://github.com/npm/cli/compare/libnpmpublish-v9.0.9...libnpmpublish-v10.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmpublish` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`96f4e4e`](https://github.com/npm/cli/commit/96f4e4e134364ad69b7abb1fa164aee3c0f602ee) [#7803](https://github.com/npm/cli/pull/7803) align libnpmpublish to npm 10 node engine range (@reggi)
+### Dependencies
+* [`8206c4f`](https://github.com/npm/cli/commit/8206c4f675937e855b60164946c086eb64d7ecb6) [#7803](https://github.com/npm/cli/pull/7803) update `ssri@12.0.0`
+* [`f6909a0`](https://github.com/npm/cli/commit/f6909a022c9373c85d980c96a30f47a3a65aa4a9) [#7803](https://github.com/npm/cli/pull/7803) update `proc-log@5.0.0`
+* [`d13a20b`](https://github.com/npm/cli/commit/d13a20bebef1b9932f86c44741ea6d214ad6842b) [#7803](https://github.com/npm/cli/pull/7803) update `npm-registry-fetch@18.0.1`
+* [`50a7bc8`](https://github.com/npm/cli/commit/50a7bc8737bb4e0a8fbc5f00b8f580512153a5bc) [#7803](https://github.com/npm/cli/pull/7803) update `npm-package-arg@12.0.0`
+* [`8d4060a`](https://github.com/npm/cli/commit/8d4060a661db50dc4d4a2f30cc57346f1d242599) [#7803](https://github.com/npm/cli/pull/7803) update `normalize-package-data@7.0.0`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
 ## [9.0.9](https://github.com/npm/cli/compare/libnpmpublish-v9.0.8...libnpmpublish-v9.0.9) (2024-05-29)
 
 ### Bug Fixes

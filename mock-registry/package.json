@@ -47,12 +47,12 @@
   },
   "devDependencies": {
     "@npmcli/arborist": "^7.1.0",
-    "@npmcli/eslint-config": "^4.0.1",
+    "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/template-oss": "4.23.3",
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
-    "npm-package-arg": "^11.0.2",
-    "pacote": "^18.0.6",
+    "npm-package-arg": "^12.0.0",
+    "pacote": "^19.0.0",
     "tap": "^16.3.8"
   }
 }
