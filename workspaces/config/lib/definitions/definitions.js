@@ -221,7 +221,7 @@ const definitions = {
   }),
   'auth-type': new Definition('auth-type', {
     default: 'web',
-    type: ['legacy', 'web'],
+    type: ['legacy', 'web', 'azureauth'],
     description: `
       What authentication strategy to use with \`login\`.
       Note that if an \`otp\` config is given, this value will always be set to \`legacy\`.
