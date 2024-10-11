@@ -51,6 +51,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
+    "@azure/identity": "^4.4.1",
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/arborist": "^8.0.0",
     "@npmcli/config": "^9.0.0",
@@ -121,6 +122,7 @@
     "write-file-atomic": "^6.0.0"
   },
   "bundleDependencies": [
+    "@azure/identity",
     "@isaacs/string-locale-compare",
     "@npmcli/arborist",
     "@npmcli/config",

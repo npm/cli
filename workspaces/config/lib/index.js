@@ -15,6 +15,8 @@ const {
   mkdir,
 } = require('node:fs/promises')
 
+const { DefaultAzureCredential } = require('@azure/identity')
+
 const fileExists = (...p) => stat(resolve(...p))
   .then((st) => st.isFile())
   .catch(() => false)
@@ -808,6 +810,19 @@ class Config {
     } else if (!certfile || !keyfile) {
       throw new Error('No credentials to set.')
     }
+  }
+
+  async getCredentialsByAzureAuth (uri) {
+    // TODO: enable webInteractiveLogin
+    const credential = new DefaultAzureCredential();
+
+    const tokenResponse = await credential.getToken("499b84ac-1321-427f-aa17-267ca6975798/.default");
+    const token = tokenResponse.token;
+    
+
+    const nerfed = nerfDart(uri);
+    this.set(`${nerfed}:_authToken`, token, 'user');
+    return true;
   }
 
   // this has to be a bit more complicated to support legacy data of all forms

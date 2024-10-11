@@ -61,3 +61,5 @@ tap-testdir*/
 !/workspaces/libnpmsearch/
 !/workspaces/libnpmteam/
 !/workspaces/libnpmversion/
+
+node_modules/
