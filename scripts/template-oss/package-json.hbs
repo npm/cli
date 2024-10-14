@@ -3,12 +3,12 @@
     "node":
       {{! Set the CLI and private workspaces to the same version }}
       {{~#if isRoot~}}
-      "^18.17.0 || >=20.5.0"
+      "^20.17.0 || >=22.9.0"
       {{~else~}}{{~#if isPrivate~}}
-      "^18.17.0 || >=20.5.0"
+      "^20.17.0 || >=22.9.0"
       {{~else~}}
       {{! All public workspaces get this version }}
-      "^18.17.0 || >=20.5.0"
+      "^20.17.0 || >=22.9.0"
       {{~/if~}}{{~/if~}}
   }
 }
