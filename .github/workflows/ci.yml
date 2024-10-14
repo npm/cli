@@ -76,20 +76,17 @@ jobs:
             os: windows-latest
             shell: cmd
         node-version:
-          - 18.17.0
-          - 18.x
-          - 20.5.0
+          - 20.17.0
           - 20.x
+          - 22.9.0
           - 22.x
         exclude:
           - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.17.0
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 18.x
-          - platform: { name: macOS, os: macos-13, shell: bash }
-            node-version: 20.5.0
+            node-version: 20.17.0
           - platform: { name: macOS, os: macos-13, shell: bash }
             node-version: 20.x
+          - platform: { name: macOS, os: macos-13, shell: bash }
+            node-version: 22.9.0
           - platform: { name: macOS, os: macos-13, shell: bash }
             node-version: 22.x
     runs-on: ${{ matrix.platform.os }}
