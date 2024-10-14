@@ -60,6 +60,7 @@ module.exports = {
     '/node_modules/',
     '/index.js',
     '/DEPENDENCIES.md',
+    '/DEPENDENCIES.json',
     '/CONTRIBUTING.md',
     '/configure',
     '/AUTHORS',

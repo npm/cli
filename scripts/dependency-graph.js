@@ -114,6 +114,10 @@ const main = async function () {
     ` - ${hierarchyOurs.reverse().join(`${EOL} - `)}`,
   ]
 
+  fs.writeFile(join(CWD, 'DEPENDENCIES.json'),
+    JSON.stringify(hierarchyOurs.map(v => v.split(', ')), null, 2)
+  )
+
   return fs.writeFile(join(CWD, 'DEPENDENCIES.md'), out.join(EOL))
 }
 
