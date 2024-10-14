@@ -1,4 +1,4 @@
-# npm - a JavaScript package manager
+430fa1ac538735efbe203e9f6b304be89bef2860# npm - a JavaScript package manager
 
 [![npm version](https://img.shields.io/npm/v/npm.svg)](https://npm.im/npm)
 [![license](https://img.shields.io/npm/l/npm.svg)](https://npm.im/npm)
