@@ -7,7 +7,7 @@
   ],
   "main": "lib/index.js",
   "engines": {
-    "node": "^18.17.0 || >=20.5.0"
+    "node": "^20.17.0 || >=22.9.0"
   },
   "description": "npm exec (npx) programmatic API",
   "repository": {
