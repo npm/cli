@@ -121,6 +121,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     this.idealTree = idealTree
     this.installLinks = installLinks
     this.legacyPeerDeps = legacyPeerDeps
+    this.originalLockfileVersionOld = false
 
     this[_usePackageLock] = packageLock
     this.#installStrategy = global ? 'shallow' : installStrategy
@@ -678,6 +679,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
     const heading = ancient ? 'ancient lockfile' : 'old lockfile'
     if (ancient || !this.options.lockfileVersion ||
         this.options.lockfileVersion >= defaultLockfileVersion) {
+      this.originalLockfileVersionOld = true
       log.warn(heading,
         `
 The ${meta.type} file was created with an old version of npm,
