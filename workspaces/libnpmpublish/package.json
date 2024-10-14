@@ -45,7 +45,7 @@
     "npm-registry-fetch": "^18.0.1",
     "proc-log": "^5.0.0",
     "semver": "^7.3.7",
-    "sigstore": "^2.2.0",
+    "sigstore": "^3.0.0",
     "ssri": "^12.0.0"
   },
   "engines": {
