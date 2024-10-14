@@ -207,6 +207,12 @@ class Config {
     for (const { data } of this.data.values()) {
       this.#flatten(data, this.#flatOptions)
     }
+
+    // Only set 'save' to true if a saveType has been specified
+    // and if 'save' is false due to non-default config
+    if (!this.isDefault('save') && this.#flatOptions.saveType) {
+      this.#flatOptions.save = true
+    }
     this.#flatOptions.nodeBin = this.execPath
     this.#flatOptions.npmBin = this.npmBin
     timeEnd()
