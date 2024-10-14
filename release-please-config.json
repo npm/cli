@@ -37,8 +37,7 @@
         "smoke-tests",
         "mock-globals",
         "mock-registry",
-        "workspaces",
-        ".github"
+        "workspaces"
       ]
     },
     "workspaces/arborist": {},
@@ -55,7 +54,7 @@
     "workspaces/libnpmteam": {},
     "workspaces/libnpmversion": {}
   },
-  "prerelease": false,
+  "prerelease": true,
   "group-pull-request-title-pattern": "chore: release ${version}",
   "pull-request-title-pattern": "chore: release${component} ${version}",
   "prerelease-type": "pre"
