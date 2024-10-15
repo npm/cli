@@ -46,7 +46,6 @@
     "workspaces/libnpmdiff": {},
     "workspaces/libnpmexec": {},
     "workspaces/libnpmfund": {},
-    "workspaces/libnpmhook": {},
     "workspaces/libnpmorg": {},
     "workspaces/libnpmpack": {},
     "workspaces/libnpmpublish": {},
