@@ -3708,7 +3708,7 @@ npm pack <package-spec>
 Options:
 [--dry-run] [--json] [--pack-destination <pack-destination>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[-ws|--workspaces] [--include-workspace-root] [--ignore-scripts]
 
 Run "npm help pack" for more info
 
@@ -3722,6 +3722,7 @@ npm pack <package-spec>
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
+#### \`ignore-scripts\`
 `
 
 exports[`test/lib/docs.js TAP usage ping > must match snapshot 1`] = `
