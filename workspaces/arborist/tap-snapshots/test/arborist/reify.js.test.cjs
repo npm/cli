@@ -33088,6 +33088,55 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
 exports[`test/arborist/reify.js TAP save-prod, with optional > must match snapshot 1`] = `
 {"dependencies":{"abbrev":"^1.1.1"}}
 `
+exports[`test/arborist/reify.js TAP delete from prod, if optional dep is added > must match snapshot 1`] = `
+{
+  "name": "tap-testdir-reify-delete-from-prod-if-optional-dep-is-added",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "optionalDependencies": {
+        "abbrev": "^1.1.1"
+      }
+    },
+    "node_modules/abbrev": {
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC",
+      "optional": true
+    }
+  }
+}
+
+`
+
+exports[`test/arborist/reify.js TAP keep in prod, if optional dep fails install > must match snapshot 1`] = `
+{
+  "name": "tap-testdir-reify-keep-in-prod-if-optional-dep-fails-install",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "dependencies": {
+        "@isaacs/testing-fail-install": "*"
+      },
+      "optionalDependencies": {
+        "@isaacs/testing-fail-install": "^1.0.0"
+      }
+    },
+    "node_modules/@isaacs/testing-fail-install": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+      "integrity": "sha512-MlK05L4wasrk2/fQqgCeR8s+1KE8LEfMI3ZzaGfR5Dyvgi4R8vQY0fvwYcvKh6cqrmMX7wORvGKi5YJn8LZ9bg==",
+      "hasInstallScript": true,
+      "license": "ISC",
+      "optional": true
+    }
+  }
+}
+
+`
 
 exports[`test/arborist/reify.js TAP saveBundle > must match snapshot 1`] = `
 {"dependencies":{"abbrev":"^1.1.1"},"bundleDependencies":["abbrev"]}
