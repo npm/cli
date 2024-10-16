@@ -28,7 +28,6 @@
   [
     "@npmcli/map-workspaces",
     "@npmcli/run-script",
-    "libnpmhook",
     "libnpmorg",
     "libnpmsearch",
     "libnpmteam",

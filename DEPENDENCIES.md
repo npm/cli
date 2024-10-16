@@ -44,9 +44,6 @@ graph LR;
   libnpmfund-->npmcli-arborist["@npmcli/arborist"];
   libnpmfund-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmfund-->npmcli-template-oss["@npmcli/template-oss"];
-  libnpmhook-->npm-registry-fetch;
-  libnpmhook-->npmcli-eslint-config["@npmcli/eslint-config"];
-  libnpmhook-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmorg-->npm-registry-fetch;
   libnpmorg-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmorg-->npmcli-template-oss["@npmcli/template-oss"];
@@ -98,7 +95,6 @@ graph LR;
   npm-->libnpmdiff;
   npm-->libnpmexec;
   npm-->libnpmfund;
-  npm-->libnpmhook;
   npm-->libnpmorg;
   npm-->libnpmpack;
   npm-->libnpmpublish;
@@ -364,12 +360,6 @@ graph LR;
   libnpmfund-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmfund-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmfund-->tap;
-  libnpmhook-->aproba;
-  libnpmhook-->nock;
-  libnpmhook-->npm-registry-fetch;
-  libnpmhook-->npmcli-eslint-config["@npmcli/eslint-config"];
-  libnpmhook-->npmcli-template-oss["@npmcli/template-oss"];
-  libnpmhook-->tap;
   libnpmorg-->aproba;
   libnpmorg-->minipass;
   libnpmorg-->nock;
@@ -484,7 +474,6 @@ graph LR;
   npm-->libnpmdiff;
   npm-->libnpmexec;
   npm-->libnpmfund;
-  npm-->libnpmhook;
   npm-->libnpmorg;
   npm-->libnpmpack;
   npm-->libnpmpublish;
@@ -801,7 +790,7 @@ packages higher up the chain.
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, @npmcli/config, libnpmversion
- - @npmcli/map-workspaces, @npmcli/run-script, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/map-workspaces, @npmcli/run-script, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
