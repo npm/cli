@@ -817,3 +817,38 @@ t.test('no workspaces', async t => {
     },
   ])
 })
+
+t.test('do not run lifecycle scripts of linked deps twice', async t => {
+  const testdir = t.testdir({
+    project: {
+      'package.json': JSON.stringify({
+        name: 'my-project',
+        version: '1.0.0',
+        dependencies: {
+          foo: 'file:../foo',
+        },
+      }),
+      node_modules: {
+        foo: t.fixture('symlink', '../../foo'),
+      },
+    },
+    foo: {
+      'package.json': JSON.stringify({
+        name: 'foo',
+        version: '1.0.0',
+        scripts: {
+          postinstall: 'echo "ok"',
+        },
+      }),
+    },
+  })
+
+  const path = resolve(testdir, 'project')
+  const Arborist = t.mock('../../lib/arborist/index.js', {
+    '@npmcli/run-script': () => {
+      throw new Error('should not run any scripts')
+    },
+  })
+  const arb = new Arborist({ path, registry, ignoreScripts: true })
+  await arb.rebuild()
+})
