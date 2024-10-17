@@ -22,11 +22,14 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
+$NPM_ARGS = $MyInvocation.Line.Substring($MyInvocation.InvocationName.Length).Trim()
+$INVOKE_NPM = "$($NODE_EXE -Replace ' ', '` ') $($NPM_CLI_JS -Replace ' ', '` ') $NPM_ARGS".Trim()
+
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & $NODE_EXE $NPM_CLI_JS $args
+  $input | Invoke-Expression $INVOKE_NPM
 } else {
-  & $NODE_EXE $NPM_CLI_JS $args
+  Invoke-Expression $INVOKE_NPM
 }
 
 exit $LASTEXITCODE
