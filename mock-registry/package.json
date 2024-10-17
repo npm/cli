@@ -52,7 +52,7 @@
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
     "npm-package-arg": "^12.0.0",
-    "pacote": "^19.0.0",
+    "pacote": "^20.0.0",
     "tap": "^16.3.8"
   }
 }
