@@ -52,6 +52,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "b" => Edge {
@@ -69,6 +70,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -91,6 +93,7 @@ Edge {
     "root": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -122,6 +125,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -139,6 +143,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -173,6 +178,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "b" => Edge {
@@ -190,6 +196,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -212,6 +219,7 @@ Edge {
     "root": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -243,6 +251,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -260,6 +269,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -294,6 +304,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "missing" => Edge {
@@ -334,6 +345,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "aa" => Edge {
@@ -351,6 +363,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "b" => Edge {
@@ -368,6 +381,7 @@ Edge {
       "parent": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -390,6 +404,7 @@ Edge {
       "root": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -424,6 +439,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -441,6 +457,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "b" => Edge {
@@ -458,6 +475,7 @@ Edge {
       "parent": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -480,6 +498,7 @@ Edge {
       "root": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -516,6 +535,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "aa" => Edge {
@@ -533,6 +553,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -576,6 +597,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "aa" => Edge {
@@ -593,6 +615,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {
         Edge {
           "peerConflicted": false,
@@ -610,6 +633,7 @@ Edge {
       "parent": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -645,6 +669,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -662,6 +687,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "b" => Edge {
@@ -679,6 +705,7 @@ Edge {
       "parent": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -701,6 +728,7 @@ Edge {
       "root": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -737,6 +765,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "a" => Edge {
@@ -766,6 +795,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -783,6 +813,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "a" => Edge {
@@ -805,6 +836,7 @@ Edge {
     "root": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "a" => Edge {
@@ -838,6 +870,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "aa" => Edge {
@@ -855,6 +888,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -877,6 +911,7 @@ Edge {
     "root": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -908,6 +943,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -925,6 +961,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "aa" => Edge {
@@ -942,6 +979,7 @@ Edge {
       "parent": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -964,6 +1002,7 @@ Edge {
       "root": Object {
         "addEdgeIn": Function addEdgeIn(edge),
         "addEdgeOut": Function addEdgeOut(edge),
+        "deleteEdgeIn": Function deleteEdgeIn(edge),
         "edgesIn": Set {},
         "edgesOut": Map {
           "missing" => Edge {
@@ -1000,6 +1039,7 @@ Edge {
   "from": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {},
     "edgesOut": Map {
       "b" => Edge {
@@ -1017,6 +1057,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -1039,6 +1080,7 @@ Edge {
     "root": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
@@ -1070,6 +1112,7 @@ Edge {
   "to": Object {
     "addEdgeIn": Function addEdgeIn(edge),
     "addEdgeOut": Function addEdgeOut(edge),
+    "deleteEdgeIn": Function deleteEdgeIn(edge),
     "edgesIn": Set {
       Edge {
         "peerConflicted": false,
@@ -1087,6 +1130,7 @@ Edge {
     "parent": Object {
       "addEdgeIn": Function addEdgeIn(edge),
       "addEdgeOut": Function addEdgeOut(edge),
+      "deleteEdgeIn": Function deleteEdgeIn(edge),
       "edgesIn": Set {},
       "edgesOut": Map {
         "missing" => Edge {
