@@ -936,7 +936,7 @@ const definitions = {
     `,
   }),
   'init-license': new Definition('init-license', {
-    default: 'ISC',
+    default: 'UNLICENSED',
     hint: '<license>',
     type: String,
     description: `
@@ -995,7 +995,7 @@ const definitions = {
     `,
   }),
   'init.license': new Definition('init.license', {
-    default: 'ISC',
+    default: 'UNLICENSED',
     type: String,
     deprecated: `
       Use \`--init-license\` instead.
