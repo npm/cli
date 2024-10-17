@@ -13,6 +13,7 @@ const { lstat, readlink } = require('node:fs/promises')
 const { depth } = require('treeverse')
 const { log, time } = require('proc-log')
 const { redact } = require('@npmcli/redact')
+const semver = require('semver')
 
 const {
   OK,
@@ -1185,23 +1186,64 @@ This is a one-time fix-up, please be patient...
     return problems
   }
 
-  async #fetchManifest (spec) {
+  async #fetchManifest(spec) {
     const options = {
       ...this.options,
       avoid: this.#avoidRange(spec.name),
-      fullMetadata: true,
+      fullMetadata: true, // Ensure full metadata is fetched
     }
-    // get the intended spec and stored metadata from yarn.lock file,
-    // if available and valid.
+  
+    // Check for stored metadata from yarn.lock if available and valid
     spec = this.idealTree.meta.checkYarnLock(spec, options)
-
+  
     if (this.#manifests.has(spec.raw)) {
       return this.#manifests.get(spec.raw)
     } else {
       log.silly('fetch manifest', spec.raw.replace(spec.rawSpec, redact(spec.rawSpec)))
-      const mani = await pacote.manifest(spec, options)
-      this.#manifests.set(spec.raw, mani)
-      return mani
+  
+      if (this.options.engineStrict) {
+        // Fetch the packument (all versions' metadata)
+        const packument = await pacote.packument(spec, options)
+  
+        // Get the list of available versions
+        let versions = Object.keys(packument.versions)
+  
+        // Filter versions based on `engines.node`
+        versions = versions.filter(version => {
+          const pkg = packument.versions[version]
+          const nodeEngine = pkg.engines && pkg.engines.node
+          if (!nodeEngine) {
+            return true // No `engines.node` means compatible
+          }
+          return semver.satisfies(process.version, nodeEngine)
+        })
+  
+        // Determine the best version that satisfies the spec
+        const range = spec.fetchSpec || '*'
+        const maxSatisfyingVersion = semver.maxSatisfying(versions, range)
+  
+        if (!maxSatisfyingVersion) {
+          throw new Error(
+            `No compatible version found for ${spec.name}@${spec.rawSpec} with current Node.js version ${process.version}`
+          )
+        }
+  
+        // Get the manifest of the selected version
+        const mani = packument.versions[maxSatisfyingVersion]
+        this.#manifests.set(spec.raw, mani)
+        return mani
+      } else {
+        // engine-strict not enabled, proceed as usual
+        try {
+          const mani = await pacote.manifest(spec, options)
+          this.#manifests.set(spec.raw, mani)
+          return mani
+        } catch (error) {
+          // Handle errors
+          error.requiredBy = spec.from || '.'
+          throw error
+        }
+      }
     }
   }
 
