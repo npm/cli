@@ -1,6 +1,6 @@
 {
   "_id": "once",
-  "_rev": "63-a48eeb93fd608223f718b1cfccab7802",
+  "_rev": "66-24622b86e5ff3cacb541ddb2060a6d09",
   "name": "once",
   "description": "Run a function exactly one time",
   "dist-tags": {
@@ -41,7 +41,14 @@
       "_id": "once@1.1.1",
       "dist": {
         "shasum": "9db574933ccb08c3a7614d154032c09ea6f339e7",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.1.1.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.1.1.tgz",
+        "integrity": "sha512-frdJr++QKEg4+JylTX+NNLgSoO6M2pDNYOOXe4WGIYKKBADBI9nU3oa06y4D4FpAJ3obAsjExeBOnscYJB9Blw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIQCieyV970jTTntKimuhh/o7Az1lX0tdw5DuM56P5qFKUwIgXLJvOJdZVbbHBrPyEPESrpG4Goe/BNQ5+1B4SLk+pbk="
+          }
+        ]
       },
       "_npmVersion": "1.1.48",
       "_npmUser": {
@@ -92,7 +99,14 @@
       "_id": "once@1.2.0",
       "dist": {
         "shasum": "de1905c636af874a8fba862d9aabddd1f920461c",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.2.0.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.2.0.tgz",
+        "integrity": "sha512-WBd9yDi3JRrEsysh0s4px+jinLuW/DGRydS+ZGPTHVKu4JrIBmKj3uDC9LfnwEbXHFVLieUuZvunY74wln6arg==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIGOBig6W3FyMp9sh0K4QLICwV9qESYWylncRMBchsK9YAiA2QpvinLj0PKj4dclj/TyLxNF0uGp4Z8gWiG8xDWgQNQ=="
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.3.7",
@@ -144,7 +158,14 @@
       "_id": "once@1.3.0",
       "dist": {
         "shasum": "151af86bfc1f08c4b9f07d06ab250ffcbeb56581",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.3.0.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.3.0.tgz",
+        "integrity": "sha512-A31oqbdEQnnhkjIXJ6QKcgO9eN8Xe+dVAQqlFLAmri0Y5s11pUadCihT2popU2WLd5CbbnD2ZVkbEJsR/8JHvA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEYCIQD8RXfVUBPi+ZxXJoQ8mgRZBFokEux5o51yaiVmFl8NmgIhAIh5XtdYRWuYFWt8HGLWQuxA/zNZD+qewa7atQMU6F9o"
+          }
+        ]
       },
       "_from": ".",
       "_npmVersion": "1.3.11",
@@ -214,7 +235,14 @@
       ],
       "dist": {
         "shasum": "f3f3e4da5b7d27b5c732969ee3e67e729457b31f",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.3.1.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.3.1.tgz",
+        "integrity": "sha512-NzfbaaoQvz2JC/D/Yj3GZi0FJG1w9i3K9Bp99Ws3p0xriPynC/YfRcpo2zoVuIduvH4b8+6up4ogGxnqajSKhA==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCICjEN6vmHO9gyWeVXNZBqftltDNnhMMes7qlk1utWC9tAiAIA5xUJDAr9juUnlIDgNi8ynVRYjOBLFx8BMOjvra2mQ=="
+          }
+        ]
       }
     },
     "1.3.2": {
@@ -266,7 +294,14 @@
       },
       "dist": {
         "shasum": "d8feeca93b039ec1dcdee7741c92bdac5e28081b",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.3.2.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.3.2.tgz",
+        "integrity": "sha512-tPQxpk4nBjTgu+eHijWhgX2d+tE6HQyMPVnzY5b1qenTUFsxBaKlzEFUF+XVfbToFuVFm8hX+PzV9u3PewDZ4Q==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIE7IuyMTX7DKRwCdMuhBqt7Y2ievtgM3ro3BtNeG8MH/AiA2VLezEPQWs3rkaSNsZ7Q6Llli+kcR4pOg+EcIKlvMhQ=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -327,7 +362,14 @@
       },
       "dist": {
         "shasum": "b2e261557ce4c314ec8304f3fa82663e4297ca20",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.3.3.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.3.3.tgz",
+        "integrity": "sha512-6vaNInhu+CHxtONf3zw3vq4SP2DOQhjBvIa3rNcG0+P7eKWlYH6Peu7rHizSloRU2EwMz6GraLieis9Ac9+p1w==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEUCIFtJMdkUTYhzUE/ucuz0mZ/hhlHxaRAquKjl6xtrpaLOAiEAjs078yGtzBdWWy8vRBGJZ0gtaY9xvIY3abBMujoXl4E="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -388,7 +430,14 @@
       },
       "dist": {
         "shasum": "583b1aa775961d4b113ac17d9c50baef9dd76bd1",
-        "tarball": "https://registry.npmjs.org/once/-/once-1.4.0.tgz"
+        "tarball": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
+        "integrity": "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIBoG/U/tJpr0WZlTEuYKTiY+IHcJ8q7ltkuQPJlL9q4ZAiB6nAD2IwFhsf3OOMThg/wNPiKveaMutTIScY9fya/n1g=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -410,7 +459,7 @@
     }
   ],
   "time": {
-    "modified": "2018-03-11T12:37:07.947Z",
+    "modified": "2023-06-22T16:33:12.734Z",
     "created": "2012-08-14T07:25:56.929Z",
     "1.1.1": "2012-08-14T07:25:58.262Z",
     "1.2.0": "2013-08-12T02:55:21.962Z",
@@ -470,7 +519,8 @@
     "rocket0191": true,
     "detj": true,
     "morogasper": true,
-    "knksmith57": true
+    "knksmith57": true,
+    "flumpus-dev": true
   },
   "homepage": "https://github.com/isaacs/once#readme",
   "keywords": [
@@ -483,6 +533,5 @@
     "url": "https://github.com/isaacs/once/issues"
   },
   "license": "ISC",
-  "readmeFilename": "README.md",
-  "_attachments": {}
+  "readmeFilename": "README.md"
 }

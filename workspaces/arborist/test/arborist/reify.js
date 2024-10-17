@@ -539,6 +539,15 @@ t.test('update a node without updating a child that has bundle deps', t => {
   }))
 })
 
+t.test('restore missing parent while preserving child node', async t => {
+  const path = fixture(t, 'lockfile-with-missing-parent')
+  await reify(path)
+  const parentPath = `${path}/node_modules/globby`
+  t.equal(fs.statSync(`${parentPath}/package.json`).isFile(), true, 'parent has package.json')
+  const childPath = `${path}/node_modules/globby/node_modules/minimatch`
+  t.equal(fs.statSync(`${childPath}/package.json`).isFile(), true, 'child has package.json')
+})
+
 t.test('optional dependency failures', t => {
   const cases = [
     'optional-dep-tgz-missing',
