@@ -261,7 +261,7 @@ exported into the `node_modules/.bin` directory on `npm install`.
 
 #### Environment variables from `package.json`
 
-Three fields of the `package.json` file are converted into environment variables prefixed with `npm_package_`. For example, if your `package.json` contains this:
+Several fields of the `package.json` file are converted into environment variables prefixed with `npm_package_`. For example, if your `package.json` contains this:
 ```bash
 {
     "name": "foo",
