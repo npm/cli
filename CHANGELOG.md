@@ -1,5 +1,45 @@
 # Changelog
 
+## [11.0.0-pre](https://github.com/npm/cli/compare/v10.9.0...v11.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* npm will no longer switch to global mode if aliased to "npmg" or "npm-g" etc.
+* The `npm hook` command has been removed
+* Attestations made by this package will no longer validate in npm versions prior to 10.6.0
+* npm now supports node `^20.17.0 || >=22.9.0`
+* @npmcli/docs now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`780afc5`](https://github.com/npm/cli/commit/780afc50e3a345feb1871a28e33fa48235bc3bd5) [#7855](https://github.com/npm/cli/pull/7855) pkg: display if any of multiple attributes exist (#7855) (@Sanderovich)
+* [`ecd2d23`](https://github.com/npm/cli/commit/ecd2d23d429b2fee833e534e679cce97e4190b1b) [#7842](https://github.com/npm/cli/pull/7842) don't go into global mode if aliased to npmg (#7842) (@wraithgar)
+* [`62c71e5`](https://github.com/npm/cli/commit/62c71e5128a01283f97bd62da30ddc673bddda0b) [#7835](https://github.com/npm/cli/pull/7835) removes `npm hook` command (@reggi)
+* [`7f541e8`](https://github.com/npm/cli/commit/7f541e82a0b2908cc0cfef9a36b714eeab40c029) [#7815](https://github.com/npm/cli/pull/7815) make pack and exec work with git hash refs (#7815) (@milaninfy)
+* [`3162620`](https://github.com/npm/cli/commit/316262004747e04dfdcf2628abbc45cd366c86b8) [#7831](https://github.com/npm/cli/pull/7831) sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+* [`4c8ba0a`](https://github.com/npm/cli/commit/4c8ba0aa678b532146200e4cc082f151983b0d82) [#7831](https://github.com/npm/cli/pull/7831) for @npmcli/docs sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+* [`70cd88d`](https://github.com/npm/cli/commit/70cd88d95aa06ac96154c14ee262076704af807f) [#7808](https://github.com/npm/cli/pull/7808) view: sort and truncate dist-tags (#7808) (@wraithgar)
+* [`534ad77`](https://github.com/npm/cli/commit/534ad7789e5c61f579f44d782bdd18ea3ff1ee20) [#7795](https://github.com/npm/cli/pull/7795) remove unused parameters catch statements (#7795) (@btea)
+### Documentation
+* [`feb54f7`](https://github.com/npm/cli/commit/feb54f7e9a39bd52519221bae4fafc8bc70f235e) [#7822](https://github.com/npm/cli/pull/7822) package.json: add libc field (#7822) (@wraithgar)
+### Dependencies
+* [`f36dc59`](https://github.com/npm/cli/commit/f36dc593ecbfe77439a1d0e31afb5a45de3b8d14) [#7833](https://github.com/npm/cli/pull/7833) `pacote@19.0.1`
+* [`7ee15bb`](https://github.com/npm/cli/commit/7ee15bbdc1da0ed85297f47952b66089f29ed3fd) [#7833](https://github.com/npm/cli/pull/7833) bump sigstore from 2.x to 3.0.0 (@bdehamer)
+### Chores
+* [`720b4d8`](https://github.com/npm/cli/commit/720b4d807bd2e214a045a9ffa9c56435823a7a05) [#7833](https://github.com/npm/cli/pull/7833) bump @npmcli/arborist to 8.0.0 (@wraithgar)
+* [`286739c`](https://github.com/npm/cli/commit/286739c0224bad88c4a38927bafd61973f71098c) [#7824](https://github.com/npm/cli/pull/7824) add creation of a DEPENDENCIES.json file (#7824) (@reggi)
+* [`852dd8b`](https://github.com/npm/cli/commit/852dd8bdcb958439d343bcd9fb27fb4f07e95991) [#7831](https://github.com/npm/cli/pull/7831) sets npm 11 to prerelase (@reggi)
+* [`95d009e`](https://github.com/npm/cli/commit/95d009e606b187b9e148f4f1119b8a19e5beb7f0) [#7831](https://github.com/npm/cli/pull/7831) update engine `^20.17.0 || >=22.9.0` in actions (@reggi)
+* [`5a74478`](https://github.com/npm/cli/commit/5a744782af53d6655669e49d911468934ea5e027) [#7831](https://github.com/npm/cli/pull/7831) update engines `^20.17.0 || >=22.9.0` in package template (@reggi)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre): `@npmcli/arborist@9.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.0.0-pre): `@npmcli/config@10.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v10.0.0-pre): `libnpmaccess@10.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.0.0-pre): `libnpmdiff@8.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.0.0-pre): `libnpmexec@10.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.0-pre): `libnpmfund@7.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v8.0.0-pre): `libnpmorg@8.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.0.0-pre): `libnpmpack@9.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v11.0.0-pre): `libnpmpublish@11.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v9.0.0-pre): `libnpmsearch@9.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v8.0.0-pre): `libnpmteam@8.0.0-pre`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v8.0.0-pre): `libnpmversion@8.0.0-pre`
+
 ## [10.9.0](https://github.com/npm/cli/compare/v10.8.3...v10.9.0) (2024-10-03)
 ### Features
 * [`4d57928`](https://github.com/npm/cli/commit/4d57928ea20c1672864dc0c8ebaff5d877e61c9c) [#7766](https://github.com/npm/cli/pull/7766) devEngines (#7766) (@reggi)

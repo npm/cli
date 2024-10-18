@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.0-pre](https://github.com/npm/cli/compare/libnpmaccess-v9.0.0...libnpmaccess-v10.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* libnpmaccess now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`687cfaf`](https://github.com/npm/cli/commit/687cfafa91af13048037c5f544c15c00cf52921e) [#7831](https://github.com/npm/cli/pull/7831) for libnpmaccess sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
 ## [9.0.0](https://github.com/npm/cli/compare/libnpmaccess-v8.0.6...libnpmaccess-v9.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmaccess` now supports node `^18.17.0 || >=20.5.0`

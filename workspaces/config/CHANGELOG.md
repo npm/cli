@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.0-pre](https://github.com/npm/cli/compare/config-v9.0.0...config-v10.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* @npmcli/config now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`6e11eb2`](https://github.com/npm/cli/commit/6e11eb2cf663b6566f4fcf10b2b9d4fbce615b5d) [#7831](https://github.com/npm/cli/pull/7831) for @npmcli/config sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
 ## [9.0.0](https://github.com/npm/cli/compare/config-v8.3.4...config-v9.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `@npmcli/config` now supports node `^18.17.0 || >=20.5.0`

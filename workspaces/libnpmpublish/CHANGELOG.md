@@ -1,5 +1,15 @@
 # Changelog
 
+## [11.0.0-pre](https://github.com/npm/cli/compare/libnpmpublish-v10.0.0...libnpmpublish-v11.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* Attestations made by this package will no longer validate in npm versions prior to 10.6.0
+* libnpmpublish now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`f75da94`](https://github.com/npm/cli/commit/f75da94f3bed6c0b637044e88098ec354cf302b0) [#7833](https://github.com/npm/cli/pull/7833) update libnpmpublish tests for sigstore 3.0.0 (@bdehamer)
+* [`a2f8af0`](https://github.com/npm/cli/commit/a2f8af0437a7d5a1219c3b01f0120ca45fae607d) [#7831](https://github.com/npm/cli/pull/7831) for libnpmpublish sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Dependencies
+* [`7ee15bb`](https://github.com/npm/cli/commit/7ee15bbdc1da0ed85297f47952b66089f29ed3fd) [#7833](https://github.com/npm/cli/pull/7833) bump sigstore from 2.x to 3.0.0 (@bdehamer)
+
 ## [10.0.0](https://github.com/npm/cli/compare/libnpmpublish-v9.0.9...libnpmpublish-v10.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmpublish` now supports node `^18.17.0 || >=20.5.0`
