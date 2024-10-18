@@ -259,32 +259,61 @@ executing the scripts.  So, if your package.json has this:
 then you could run `npm start` to execute the `bar` script, which is
 exported into the `node_modules/.bin` directory on `npm install`.
 
-#### package.json vars
+#### Environment variables from `package.json`
 
-The package.json fields are tacked onto the `npm_package_` prefix. So,
-for instance, if you had `{"name":"foo", "version":"1.2.5"}` in your
-package.json file, then your package scripts would have the
-`npm_package_name` environment variable set to "foo", and the
-`npm_package_version` set to "1.2.5".  You can access these variables
-in your code with `process.env.npm_package_name` and
-`process.env.npm_package_version`, and so on for other fields.
-
-See [`package.json`](/configuring-npm/package-json) for more on package configs.
-
-#### current lifecycle event
-
-Lastly, the `npm_lifecycle_event` environment variable is set to
-whichever stage of the cycle is being executed. So, you could have a
-single script used for different parts of the process which switches
-based on what's currently happening.
-
-Objects are flattened following this format, so if you had
-`{"scripts":{"install":"foo.js"}}` in your package.json, then you'd
-see this in the script:
-
+Three fields of the `package.json` file are converted into environment variables prefixed with `npm_package_`. For example, if your `package.json` contains this:
 ```bash
-process.env.npm_package_scripts_install === "foo.js"
+{
+    "name": "foo",
+    "version": "1.2.5",
+    "engines": {
+        "node": ">20"
+    }
+}
 ```
+then these fields can be accessed in your code like so:
+```js
+console.log(process.env.npm_package_name) // prints "foo"
+console.log(process.env.npm_package_version) // prints "1.2.5"
+console.log(process.env.npm_package_engines_node) // prints ">20"
+```
+Note that the keys in a nested field (such as the node engine) are flattened using `_` as a separator.
+
+#### Environment variables from `npm`
+
+The current state of npm is propagated to environment variables via:
+- `npm_command`: the npm command being run. E.g. `run-script` when run using `npm run <name-of-script>`.
+- `npm_lifecycle_script`: the current script being executed.
+- `npm_lifecycle_event`: the name of the script being executed.
+- `npm_execpath`: the path to the npm cli file running this script.
+- `npm_node_execpath`: the path to the node executable running this script.
+- `npm_package_json`: the path to the `package.json` file containing this script.
+
+For example if your `package.json` is
+```bash
+{
+    "scripts": {
+        "start": "node index.js"
+    }
+}
+```
+then these fields can be accessed in your code like so:
+```js
+console.log(process.env.npm_lifecycle_event) // prints "start"
+console.log(process.env.npm_lifecycle_script) // prints "node index.js"
+```
+
+#### Environment variables from `.npmrc`
+
+Variables from the [`.npmrc` file](/cli/v10/using-npm/config#npmrc-files) (if used) are populated with the prefix `npm_config_`. For example, if your `.npmrc` file contains this:
+```bash
+script-shell="/bin/bash"
+```
+then these variables can be accessed in your code like so:
+```js
+console.log(process.env.npm_config_script_shell) // prints "/bin/bash"
+```
+Note that `-` is converted to `_` in the environment variable names.
 
 ### Examples
 
