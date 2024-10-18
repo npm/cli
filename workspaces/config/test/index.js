@@ -912,6 +912,45 @@ t.test('finding the global prefix', t => {
   t.end()
 })
 
+t.test('manages the save flag when flat is retrieved', t => {
+  const npmPath = __dirname
+  const buildConfig = async (args = [], envSave = false) => {
+    const c = new Config({
+      argv: [process.execPath, __filename, ...args],
+      shorthands,
+      definitions,
+      npmPath,
+      flatten,
+      env: {
+        save: envSave,
+      },
+    })
+    await c.load()
+    // Ensure test runner environment's npm settings do not change test outcomes
+    c.set('save', envSave, 'user')
+    c.set('save', envSave, 'global')
+    c.set('save', envSave, 'project')
+    return c
+  }
+  t.test('does not override save to true if a save flag is not passed', async t => {
+    const c = await buildConfig([], false)
+    t.equal(c.flat.save, false)
+  })
+  t.test('does not override save to true if a negative save flag is passed', async t => {
+    const c = await buildConfig(['--save-dev=false'], false)
+    t.equal(c.flat.save, false)
+  })
+  t.test('overrides save to true if a save flag is passed', async t => {
+    const c = await buildConfig(['--save-prod'], false)
+    t.equal(c.flat.save, true)
+  })
+  t.test('does not overwrite save if --no-save is present', async t => {
+    const c = await buildConfig(['--no-save'], true)
+    t.equal(c.flat.save, false)
+  })
+  t.end()
+})
+
 t.test('finding the local prefix', t => {
   const path = t.testdir({
     hasNM: {
