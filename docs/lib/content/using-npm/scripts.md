@@ -268,6 +268,12 @@ Three fields of the `package.json` file are converted into environment variables
     "version": "1.2.5",
     "engines": {
         "node": ">20"
+    },
+    "config": {
+        "port": "3000"
+    },
+    "bin": {
+        "cli": "path/to/cli"
     }
 }
 ```
@@ -276,8 +282,10 @@ then these fields can be accessed in your code like so:
 console.log(process.env.npm_package_name) // prints "foo"
 console.log(process.env.npm_package_version) // prints "1.2.5"
 console.log(process.env.npm_package_engines_node) // prints ">20"
+console.log(process.env.npm_package_config_port) // prints "3000"
+console.log(process.env.npm_package_bin_cli) // prints "path/to/cli"
 ```
-Note that the keys in a nested field (such as the node engine) are flattened using `_` as a separator.
+Note that the keys in a nested field (such as `engines`, `bin` or `config`) are flattened using `_` as a separator.
 
 #### Environment variables from `npm`
 
