@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.0.0-pre](https://github.com/npm/cli/compare/libnpmsearch-v8.0.0...libnpmsearch-v9.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* libnpmsearch now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`2f2ee15`](https://github.com/npm/cli/commit/2f2ee1541db6c9c24582ce8a24dfb4702d22b759) [#7831](https://github.com/npm/cli/pull/7831) for libnpmsearch sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
 ## [8.0.0](https://github.com/npm/cli/compare/libnpmsearch-v7.0.6...libnpmsearch-v8.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmsearch` now supports node `^18.17.0 || >=20.5.0`

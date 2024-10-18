@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.0.0-pre](https://github.com/npm/cli/compare/libnpmexec-v9.0.0...libnpmexec-v10.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* libnpmexec now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`7f541e8`](https://github.com/npm/cli/commit/7f541e82a0b2908cc0cfef9a36b714eeab40c029) [#7815](https://github.com/npm/cli/pull/7815) make pack and exec work with git hash refs (#7815) (@milaninfy)
+* [`2902d4c`](https://github.com/npm/cli/commit/2902d4cfd363eac1dd011e90bd9a1b156852155c) [#7831](https://github.com/npm/cli/pull/7831) for libnpmexec sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre): `@npmcli/arborist@9.0.0-pre`
+
 ## [9.0.0](https://github.com/npm/cli/compare/libnpmexec-v8.1.4...libnpmexec-v9.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmexec` now supports node `^18.17.0 || >=20.5.0`

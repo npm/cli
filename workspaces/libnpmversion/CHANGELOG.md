@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.0-pre](https://github.com/npm/cli/compare/libnpmversion-v7.0.0...libnpmversion-v8.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* libnpmversion now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`57eef8d`](https://github.com/npm/cli/commit/57eef8df822885ebc57096a591191bdbb3f0c95b) [#7831](https://github.com/npm/cli/pull/7831) for libnpmversion sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
 ## [7.0.0](https://github.com/npm/cli/compare/libnpmversion-v6.0.3...libnpmversion-v7.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmversion` now supports node `^18.17.0 || >=20.5.0`

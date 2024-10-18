@@ -1,5 +1,11 @@
 # Changelog
 
+## [8.0.0-pre](https://github.com/npm/cli/compare/libnpmteam-v7.0.0...libnpmteam-v8.0.0-pre) (2024-10-18)
+### ⚠️ BREAKING CHANGES
+* libnpmteam now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`9561fa7`](https://github.com/npm/cli/commit/9561fa7fde679bd7bd8b2da40ed40959a9680b2d) [#7831](https://github.com/npm/cli/pull/7831) for libnpmteam sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+
 ## [7.0.0](https://github.com/npm/cli/compare/libnpmteam-v6.0.5...libnpmteam-v7.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmteam` now supports node `^18.17.0 || >=20.5.0`
