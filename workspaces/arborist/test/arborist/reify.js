@@ -1857,6 +1857,36 @@ t.test('save-prod, with optional', async t => {
   t.matchSnapshot(fs.readFileSync(path + '/package.json', 'utf8'))
 })
 
+t.test('delete from prod, if optional dep is added', async t => {
+  // add to existing optional dep in lockfile
+  const pathNoSaveType = t.testdir({
+    'package.json': JSON.stringify({
+      optionalDependencies: { abbrev: '*' },
+    }),
+  })
+  const arbNoSaveType = newArb({ path: pathNoSaveType })
+  await arbNoSaveType.reify({ add: ['abbrev'] })
+  const resultNoSaveType = fs.readFileSync(pathNoSaveType + '/package-lock.json', 'utf8')
+
+  // add to empty lockfile using optional saveType
+  const pathSaveType = t.testdir({ 'package.json': '{}' })
+  const arbSaveType = newArb({ path: pathSaveType })
+  await arbSaveType.reify({ add: ['abbrev'], saveType: 'optional' })
+  const resultSaveType = fs.readFileSync(pathSaveType + '/package-lock.json', 'utf8')
+
+  // both lockfiles should be the same
+  t.same(resultNoSaveType, resultSaveType)
+  t.matchSnapshot(resultNoSaveType)
+})
+
+t.test('keep in prod, if optional dep fails install', async t => {
+  const path = t.testdir({ 'package.json': '{}' })
+  const arb = newArb({ path })
+
+  await arb.reify({ add: ['@isaacs/testing-fail-install'], saveType: 'optional' })
+  t.matchSnapshot(fs.readFileSync(path + '/package-lock.json', 'utf8'))
+})
+
 t.test('saveBundle', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
