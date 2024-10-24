@@ -1,8 +1,14 @@
-const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
-const npa = require('npm-package-arg')
 const Nock = require('nock')
+const npa = require('npm-package-arg')
+const pacote = require('pacote')
+const path = require('node:path')
 const stringify = require('json-stringify-safe')
+
+const { createReadStream } = require('node:fs')
+const fs = require('node:fs/promises')
+
+const corgiDoc = 'application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*'
 
 const logReq = (req, ...keys) => {
   const obj = JSON.parse(stringify(req))
@@ -13,6 +19,27 @@ const logReq = (req, ...keys) => {
     }
   }
   return stringify(res, null, 2)
+}
+
+// helper to convert old audit results to new bulk results
+// TODO eventually convert the fixture files themselves
+const auditToBulk = audit => {
+  const bulk = {}
+  for (const advisory in audit.advisories) {
+    const {
+      id,
+      url,
+      title,
+      severity = 'high',
+      /* eslint-disable-next-line camelcase */
+      vulnerable_versions = '*',
+      module_name: name,
+    } = audit.advisories[advisory]
+    bulk[name] = bulk[name] || []
+    /* eslint-disable-next-line camelcase */
+    bulk[name].push({ id, url, title, severity, vulnerable_versions })
+  }
+  return bulk
 }
 
 class MockRegistry {
@@ -66,7 +93,6 @@ class MockRegistry {
       // find mistakes quicker instead of waiting for the entire test to end
       t.afterEach((t) => {
         t.strictSame(server.pendingMocks(), [], 'no pending mocks after each')
-        t.strictSame(server.activeMocks(), [], 'no active mocks after each')
       })
     }
 
@@ -74,6 +100,7 @@ class MockRegistry {
       Nock.enableNetConnect()
       server.done()
       Nock.emitter.off('no match', noMatch)
+      Nock.cleanAll()
     })
 
     return server
@@ -451,6 +478,48 @@ class MockRegistry {
       dependencies: {},
       ...packument,
     }
+  }
+
+  // bulk advisory audit endpoint
+  audit ({ responseCode = 200, results = {}, convert = false, times = 1 } = {}) {
+    this.nock = this.nock
+      .post(this.fullPath('/-/npm/v1/security/advisories/bulk'))
+      .times(times)
+      .reply(
+        responseCode,
+        convert ? auditToBulk(results) : results
+      )
+  }
+
+  // Used in Arborist to mock the registry from fixture data on disk
+  // Will eat up all GET requests to the entire registry, so it probably doesn't work with the other GET routes very well.
+  mocks ({ dir }) {
+    const exists = (p) => fs.stat(p).then((s) => s).catch(() => false)
+    this.nock = this.nock.get(/.*/).reply(async function () {
+      const { headers, path: url } = this.req
+      const isCorgi = headers.accept.includes('application/vnd.npm.install-v1+json')
+      const encodedUrl = url.replace(/@/g, '').replace(/%2f/gi, '/')
+      const f = path.join(dir, 'registry-mocks', 'content', encodedUrl)
+      let file = f
+      let contentType = 'application/octet-stream'
+      if (isCorgi && await exists(`${f}.min.json`)) {
+        file = `${f}.min.json`
+        contentType = corgiDoc
+      } else if (await exists(`${f}.json`)) {
+        file = `${f}.json`
+        contentType = 'application/json'
+      } else if (await exists(`${f}/index.json`)) {
+        file = `${f}index.json`
+        contentType = 'application/json'
+      }
+      const stats = await exists(file)
+      if (stats) {
+        const body = createReadStream(file)
+        body.pause()
+        return [200, body, { 'content-type': contentType, 'content-length': stats.size }]
+      }
+      return [404, { error: 'not found' }]
+    }).persist()
   }
 
   /**

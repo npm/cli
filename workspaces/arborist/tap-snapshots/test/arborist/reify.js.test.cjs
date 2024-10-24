@@ -169,7 +169,7 @@ exports[`test/arborist/reify.js TAP add a dep present in the tree, with v1 shrin
 {"dependencies":{"once":"^1.4.0","wrappy":"^1.0.2"}}
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should output a successful tree in mkdirp folder 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should output a successful tree in mkdirp folder 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {
@@ -183,7 +183,7 @@ ArboristNode {
       },
       "location": "node_modules/abbrev",
       "name": "abbrev",
-      "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd/missing/path/to/root/node_modules/abbrev",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd-not-dry-run/missing/path/to/root/node_modules/abbrev",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
@@ -199,11 +199,11 @@ ArboristNode {
   "isProjectRoot": true,
   "location": "",
   "name": "root",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd/missing/path/to/root",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd-not-dry-run/missing/path/to/root",
 }
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should place expected lockfile file into place 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should place expected lockfile file into place 1`] = `
 {
   "name": "root",
   "lockfileVersion": 3,
@@ -225,7 +225,7 @@ exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be m
 
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should place expected package.json file into place 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should place expected package.json file into place 1`] = `
 {
   "dependencies": {
     "abbrev": "^1.1.1"
@@ -17900,6 +17900,7 @@ Object {
         "ruy": "bin/index.js",
       },
       "integrity": "sha512-VYppDTCM6INWUMKlWiKws4nVMuCNU5h+xjF6lj/0y90rLq017/m8aEpNy4zQSZFV2qz66U/hRZwwlSLJ5l5JMQ==",
+      "license": "ISC",
       "resolved": "https://registry.npmjs.org/ruy/-/ruy-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -33046,6 +33047,7 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
+      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },
@@ -33073,6 +33075,7 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
+      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },

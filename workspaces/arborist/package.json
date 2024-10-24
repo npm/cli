@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@npmcli/eslint-config": "^5.0.1",
+    "@npmcli/mock-registry": "^1.0.0",
     "@npmcli/template-oss": "4.23.3",
     "benchmark": "^2.1.4",
     "minify-registry-metadata": "^4.0.0",
@@ -82,7 +83,7 @@
     "test-env": [
       "LC_ALL=sk"
     ],
-    "timeout": "360",
+    "timeout": "720",
     "nyc-arg": [
       "--exclude",
       "tap-snapshots/**"

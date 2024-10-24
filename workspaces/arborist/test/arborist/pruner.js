@@ -1,12 +1,9 @@
-const { resolve } = require('node:path')
+const { resolve, join } = require('node:path')
+const fs = require('node:fs')
 
 const t = require('tap')
-const Arborist = require('../../lib/arborist/index.js')
-
-const { start, stop, registry } = require('../fixtures/server.js')
-
-t.before(start)
-t.teardown(stop)
+const Arborist = require('../..')
+const MockRegistry = require('@npmcli/mock-registry')
 
 const {
   normalizePath,
@@ -15,13 +12,15 @@ const {
 
 const cwd = normalizePath(process.cwd())
 t.cleanSnapshot = s => s.split(cwd).join('{CWD}')
-  .split(registry).join('https://registry.npmjs.org/')
 
 const fixture = (t, p) => require('../fixtures/reify-cases/' + p)(t)
+const registry = new MockRegistry({
+  strict: true,
+  tap: t,
+  registry: 'https://registry.npmjs.org',
+})
 
-const cache = t.testdir()
-const pruneTree = (path, opt) =>
-  new Arborist({ registry, path, cache, ...(opt || {}) }).prune(opt)
+const pruneTree = (path, opt) => new Arborist({ path, ...(opt || {}) }).prune(opt)
 
 t.test('prune with actual tree', async t => {
   const path = fixture(t, 'prune-actual')
@@ -103,7 +102,7 @@ t.test('prune omit dev with bins', async t => {
   const devDep = tree.children.get('yes')
   t.notOk(devDep, 'all listed dev deps pruned from tree')
 
-  // should also remove ./bin/* files
+  // should also remove ./bin[> files
   const bin = resolve(path, 'node_modules/.bin/yes')
   if (process.platform === 'win32') {
     t.throws(() => statSync(bin + '.cmd').isFile(), /ENOENT/, 'should not have shim')
@@ -113,8 +112,7 @@ t.test('prune omit dev with bins', async t => {
 })
 
 t.test('prune workspaces', async t => {
-  const fs = require('node:fs')
-  const { join } = require('node:path')
+  registry.audit({})
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'prune-workspaces',
