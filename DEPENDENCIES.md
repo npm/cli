@@ -754,6 +754,7 @@ graph LR;
   string-width-->is-fullwidth-code-point;
   string-width-->strip-ansi;
   strip-ansi-->ansi-regex;
+  supports-color-->has-flag;
   tar-->chownr;
   tar-->fs-minipass;
   tar-->isaacs-fs-minipass["@isaacs/fs-minipass"];
