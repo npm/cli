@@ -61,3 +61,22 @@ npm <command>
 #### Is "npm" an acronym for "Node Package Manager"?
 
 Contrary to popular belief, **`npm`** **is not** in fact an acronym for "Node Package Manager"; It is a recursive bacronymic abbreviation for **"npm is not an acronym"** (if the project was named "ninaa", then it would be an acronym). The precursor to **`npm`** was actually a bash utility named **"pm"**, which was the shortform name of **"pkgmakeinst"** - a bash function that installed various things on various platforms. If **`npm`** were to ever have been considered an acronym, it would be as "node pm" or, potentially "new pm".
+# Algorithms and Hardness for Learning Linear Thresholds from Label Proportions
+
+Author: Rishi Saket
+
+To Appear in NeurIPS'22.
+
+# Instructions
+
+Install cvxpy, python, numpy, pandas, cvxopt and scs in a conda environment with versions as given in requirements.txt
+
+Activate the conda environment.
+
+Let q = bag size (3 or 4)
+
+In the folder bag_size_q run:
+
+python large_margin_q-sized_LLP_LTF.py , python small_margin_q-sized_LLP_LTF.py , python processing_results_q_sized.py
+
+Results available in tex files in the same folder.
