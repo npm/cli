@@ -521,6 +521,7 @@ t.test('workspaces', t => {
   t.test('all workspaces - no color', async t => {
     const { npm, joinedOutput, logs } = await loadMockNpm(t, {
       config: {
+        tag: 'latest',
         color: false,
         ...auth,
         workspaces: true,
@@ -551,6 +552,7 @@ t.test('workspaces', t => {
     const { npm, joinedOutput, logs } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         color: 'always',
         workspaces: true,
       },
@@ -580,6 +582,7 @@ t.test('workspaces', t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         workspace: ['workspace-a'],
       },
       prefixDir: dir,
@@ -601,6 +604,7 @@ t.test('workspaces', t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         workspace: ['workspace-a'],
       },
       prefixDir: dir,
@@ -642,6 +646,7 @@ t.test('workspaces', t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         workspaces: true,
       },
       prefixDir: testDir,
@@ -663,6 +668,7 @@ t.test('workspaces', t => {
     const { npm } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         workspace: ['workspace-x'],
       },
       prefixDir: dir,
@@ -677,6 +683,7 @@ t.test('workspaces', t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
         workspaces: true,
         json: true,
       },
@@ -725,6 +732,7 @@ t.test('workspaces', t => {
     const { npm, joinedOutput } = await loadMockNpm(t, {
       config: {
         ...auth,
+        tag: 'latest',
       },
       prefixDir: testDir,
       chdir: ({ prefix }) => path.resolve(prefix, './workspace-a'),
@@ -987,4 +995,76 @@ t.test('manifest', async t => {
   manifest.man.sort()
 
   t.matchSnapshot(manifest, 'manifest')
+})
+
+t.test('aborts when prerelease and no tag', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        version: '1.0.0-0',
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+  })
+
+  await t.rejects(async () => {
+    await npm.exec('publish', [])
+  }, new Error('You must specify a tag using --tag when publishing a prerelease version'))
+})
+
+t.test('does not abort when prerelease and authored tag latest', async t => {
+  const prereleasePkg = {
+    ...pkgJson,
+    version: '1.0.0-0',
+  }
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      tag: 'latest',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...prereleasePkg,
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    authorization: 'test-other-token',
+  })
+  registry.nock.put(`/${pkg}`, body => {
+    return t.match(body, {
+      _id: pkg,
+      name: pkg,
+      'dist-tags': { latest: prereleasePkg.version },
+      access: null,
+      versions: {
+        [prereleasePkg.version]: {
+          name: pkg,
+          version: prereleasePkg.version,
+          _id: `${pkg}@${prereleasePkg.version}`,
+          dist: {
+            shasum: /\.*/,
+            // eslint-disable-next-line max-len
+            tarball: `http:${alternateRegistry.slice(6)}/test-package/-/test-package-${prereleasePkg.version}.tgz`,
+          },
+          publishConfig: {
+            registry: alternateRegistry,
+          },
+        },
+      },
+      _attachments: {
+        [`${pkg}-${prereleasePkg.version}.tgz`]: {},
+      },
+    })
+  }).reply(200, {})
+  await npm.exec('publish', [])
 })
