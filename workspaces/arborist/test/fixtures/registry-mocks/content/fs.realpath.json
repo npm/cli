@@ -1,6 +1,6 @@
 {
   "_id": "fs.realpath",
-  "_rev": "4-d3017f8ed051ae38fe0d33e4bfbefbfb",
+  "_rev": "7-7da7f670d6d64e1fadaf3d4f78662b2c",
   "name": "fs.realpath",
   "description": "Use node's fs.realpath, but fall back to the JS implementation if the native one fails",
   "dist-tags": {
@@ -52,7 +52,14 @@
       },
       "dist": {
         "shasum": "ee31b09e1272a8c6e58714abcacded5bd7cf7c6d",
-        "tarball": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-0.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-0.0.0.tgz",
+        "integrity": "sha512-mQ7DpI54Eq1EtmaGFFZJ38KOMYOjihJV9Cwt+G5ji451VEU2ElaSsX3KmrQb4scwfBKRvGg9uW0A/tPBJY5Q6g==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIE6SaHY9E2pv9d6iOIeUV2An5SB5FGEWLapyMcFGxAvSAiBOQ/VJuz20k/vshJjqEeAaUPnTFllGhI3OvT/bSsnXWw=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -111,7 +118,14 @@
       },
       "dist": {
         "shasum": "1504ad2523158caa40db4a2787cb01411994ea4f",
-        "tarball": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
+        "tarball": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+        "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==",
+        "signatures": [
+          {
+            "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+            "sig": "MEQCIAYne0uqca6r1qObnwja+Mei2NoRfwQZeId/mz7to93EAiBGlPursDIknfkmCLPo9Kxo6SCxl81JRfeLNZDCtRf4Lg=="
+          }
+        ]
       },
       "maintainers": [
         {
@@ -134,7 +148,7 @@
     }
   ],
   "time": {
-    "modified": "2016-11-01T17:25:20.989Z",
+    "modified": "2023-06-22T16:32:05.628Z",
     "created": "2016-06-15T18:38:49.471Z",
     "0.0.0": "2016-06-15T18:38:49.471Z",
     "1.0.0": "2016-06-15T18:39:05.978Z"
@@ -161,7 +175,7 @@
   "readmeFilename": "README.md",
   "users": {
     "scottfreecode": true,
-    "mojaray2k": true
-  },
-  "_attachments": {}
+    "mojaray2k": true,
+    "flumpus-dev": true
+  }
 }

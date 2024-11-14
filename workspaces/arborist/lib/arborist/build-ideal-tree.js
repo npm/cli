@@ -991,8 +991,12 @@ This is a one-time fix-up, please be patient...
           }
 
           // lastly, also check for the missing deps of the node we placed,
+          // as well as any missing deps of the new node's children,
           // and any holes created by pruning out conflicted peer sets.
           this.#depsQueue.push(placed)
+          for (const child of placed.children.values()) {
+            this.#depsQueue.push(child)
+          }
           for (const dep of pd.needEvaluation) {
             this.#depsSeen.delete(dep)
             this.#depsQueue.push(dep)
