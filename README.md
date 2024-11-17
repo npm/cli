@@ -1,4 +1,4 @@
-# npm - a JavaScript package manager
+CD CD DJ# npm - a JavaScript package manager
 
 [![npm version](https://img.shields.io/npm/v/npm.svg)](https://npm.im/npm)
 [![license](https://img.shields.io/npm/l/npm.svg)](https://npm.im/npm)
