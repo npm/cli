@@ -3,14 +3,9 @@
     "npm"
   ],
   [
-    "@npmcli/smoke-tests",
-    "libnpmaccess",
-    "libnpmexec",
-    "libnpmpublish"
-  ],
-  [
     "@npmcli/mock-registry",
     "libnpmdiff",
+    "libnpmexec",
     "libnpmfund",
     "libnpmpack"
   ],
@@ -28,7 +23,9 @@
   [
     "@npmcli/map-workspaces",
     "@npmcli/run-script",
+    "libnpmaccess",
     "libnpmorg",
+    "libnpmpublish",
     "libnpmsearch",
     "libnpmteam",
     "init-package-json",
@@ -50,6 +47,7 @@
   ],
   [
     "@npmcli/docs",
+    "@npmcli/smoke-tests",
     "@npmcli/fs",
     "npm-bundled",
     "npm-install-checks",

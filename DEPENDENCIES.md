@@ -168,6 +168,7 @@ graph LR;
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
+  npmcli-arborist-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -585,6 +586,7 @@ graph LR;
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
+  npmcli-arborist-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -785,14 +787,13 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - @npmcli/smoke-tests, libnpmaccess, libnpmexec, libnpmpublish
- - @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
+ - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, @npmcli/config, libnpmversion
- - @npmcli/map-workspaces, @npmcli/run-script, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/map-workspaces, @npmcli/run-script, libnpmaccess, libnpmorg, libnpmpublish, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/fs, npm-bundled, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
+ - @npmcli/docs, @npmcli/smoke-tests, @npmcli/fs, npm-bundled, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, @npmcli/promise-spawn, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
