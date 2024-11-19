@@ -132,6 +132,7 @@ graph LR;
   npm-->semver;
   npm-->ssri;
   npm-->validate-npm-package-name;
+  npm-->which;
   npm-bundled-->npm-normalize-package-bin;
   npm-install-checks-->semver;
   npm-package-arg-->hosted-git-info;
@@ -198,6 +199,7 @@ graph LR;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-git-->proc-log;
   npmcli-git-->semver;
+  npmcli-git-->which;
   npmcli-installed-package-contents-->npm-bundled;
   npmcli-installed-package-contents-->npm-normalize-package-bin;
   npmcli-map-workspaces-->npmcli-name-from-folder["@npmcli/name-from-folder"];
@@ -220,14 +222,17 @@ graph LR;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
   npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
+  npmcli-promise-spawn-->which;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-package-json["@npmcli/package-json"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->proc-log;
+  npmcli-run-script-->which;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-smoke-tests-->which;
   pacote-->cacache;
   pacote-->npm-package-arg;
   pacote-->npm-packlist;
@@ -783,6 +788,6 @@ packages higher up the chain.
  - @npmcli/map-workspaces, @npmcli/run-script, libnpmaccess, libnpmorg, libnpmpublish, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
- - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
- - @npmcli/docs, @npmcli/smoke-tests, @npmcli/fs, npm-bundled, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, @npmcli/promise-spawn, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/smoke-tests, @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
+ - @npmcli/docs, @npmcli/fs, npm-bundled, @npmcli/promise-spawn, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, which, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

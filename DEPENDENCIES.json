@@ -40,6 +40,7 @@
     "make-fetch-happen"
   ],
   [
+    "@npmcli/smoke-tests",
     "@npmcli/installed-package-contents",
     "npm-pick-manifest",
     "cacache",
@@ -47,9 +48,9 @@
   ],
   [
     "@npmcli/docs",
-    "@npmcli/smoke-tests",
     "@npmcli/fs",
     "npm-bundled",
+    "@npmcli/promise-spawn",
     "npm-install-checks",
     "npm-package-arg",
     "normalize-package-data",
@@ -69,7 +70,7 @@
     "semver",
     "npm-normalize-package-bin",
     "@npmcli/name-from-folder",
-    "@npmcli/promise-spawn",
+    "which",
     "ini",
     "hosted-git-info",
     "proc-log",

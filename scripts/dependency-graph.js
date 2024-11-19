@@ -38,8 +38,9 @@ function difference (set1, set2) {
 
 // these have a different package name than the repo name, and are ours.
 const aliases = {
-  semver: 'node-semver',
   abbrev: 'abbrev-js',
+  semver: 'node-semver',
+  which: 'node-which',
 }
 
 // These are entries in npm-cli-repos.txt that correlate to namespaced repos.
