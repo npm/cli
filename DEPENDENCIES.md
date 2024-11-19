@@ -8,7 +8,6 @@ graph LR;
   bin-links-->proc-log;
   bin-links-->read-cmd-shim;
   bin-links-->write-file-atomic;
-  cacache-->fs-minipass;
   cacache-->npmcli-fs["@npmcli/fs"];
   cacache-->ssri;
   cacache-->unique-filename;
@@ -86,7 +85,6 @@ graph LR;
   normalize-package-data-->semver;
   npm-->abbrev;
   npm-->cacache;
-  npm-->fs-minipass;
   npm-->hosted-git-info;
   npm-->ini;
   npm-->init-package-json;
@@ -231,7 +229,6 @@ graph LR;
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   pacote-->cacache;
-  pacote-->fs-minipass;
   pacote-->npm-package-arg;
   pacote-->npm-packlist;
   pacote-->npm-pick-manifest;
@@ -788,4 +785,4 @@ packages higher up the chain.
  - @npmcli/git, make-fetch-happen
  - @npmcli/installed-package-contents, npm-pick-manifest, cacache, promzard
  - @npmcli/docs, @npmcli/smoke-tests, @npmcli/fs, npm-bundled, npm-install-checks, npm-package-arg, normalize-package-data, unique-filename, npm-packlist, bin-links, nopt, parse-conflict-json, read-package-json-fast, @npmcli/mock-globals, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, @npmcli/promise-spawn, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, fs-minipass, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, npm-normalize-package-bin, @npmcli/name-from-folder, @npmcli/promise-spawn, ini, hosted-git-info, proc-log, validate-npm-package-name, json-parse-even-better-errors, ssri, unique-slug, @npmcli/node-gyp, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

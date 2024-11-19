@@ -75,7 +75,6 @@
     "proc-log",
     "validate-npm-package-name",
     "json-parse-even-better-errors",
-    "fs-minipass",
     "ssri",
     "unique-slug",
     "@npmcli/node-gyp",
