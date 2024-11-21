@@ -1,5 +1,15 @@
 # Changelog
 
+## [9.9.4](https://github.com/npm/cli/compare/v9.9.3...v9.9.4) (2024-11-21)
+
+### Dependencies
+
+* [`080e201`](https://github.com/npm/cli/commit/080e20107fb5882afc5132b25a1a3195cdf17cfc) [#7930](https://github.com/npm/cli/pull/7930) `hosted-git-info@6.1.3` (#7930)
+* [`401bb86`](https://github.com/npm/cli/commit/401bb86a0377f9460db304c61bf9803680746dbf) [#7928](https://github.com/npm/cli/pull/7928) `tar@6.2.1`
+* [`cfb3b77`](https://github.com/npm/cli/commit/cfb3b77f738b05b8603e91d29a72da195a98a941) [#7928](https://github.com/npm/cli/pull/7928) `cross-spawn@7.0.6`
+* [`6a5f8a8`](https://github.com/npm/cli/commit/6a5f8a875739706a70209400e041eeac4637c26d) [#7928](https://github.com/npm/cli/pull/7928) `debug@4.3.7`
+* [`72df313`](https://github.com/npm/cli/commit/72df313d1ade770eb58efcdf62ee74db2c5d88a2) [#7928](https://github.com/npm/cli/pull/7928) `hosted-git-info@6.1.2`
+
 ## [9.9.3](https://github.com/npm/cli/compare/v9.9.2...v9.9.3) (2024-02-26)
 
 ### Bug Fixes
