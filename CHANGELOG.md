@@ -1,5 +1,30 @@
 # Changelog
 
+## [10.9.1](https://github.com/npm/cli/compare/v10.9.0...v10.9.1) (2024-11-21)
+### Bug Fixes
+* [`c7fe0db`](https://github.com/npm/cli/commit/c7fe0db8c99233f8709c5e7a90578db6828353fd) [#7924](https://github.com/npm/cli/pull/7924) perf: enable compile cache if present (#7924) (@H4ad)
+### Dependencies
+* [`a221db7`](https://github.com/npm/cli/commit/a221db75b60d801b66089e915ed648c71d7799fd) [#7931](https://github.com/npm/cli/pull/7931) `npm-install-checks@7.1.1`
+* [`fbad17a`](https://github.com/npm/cli/commit/fbad17aa990d78642836bd97faed71d3e0ca8eab) [#7931](https://github.com/npm/cli/pull/7931) `hosted-git-info@8.0.2`
+* [`65d2a86`](https://github.com/npm/cli/commit/65d2a86a372d9e814f56f1c0d9ce8d73ca392696) [#7922](https://github.com/npm/cli/pull/7922) `@sigstore/tuf@3.0.0`
+* [`be45963`](https://github.com/npm/cli/commit/be45963ecf9f7c3dac85dc19696b82646c28a18e) [#7922](https://github.com/npm/cli/pull/7922) `sigstore@3.0.0`
+* [`fb0bfbd`](https://github.com/npm/cli/commit/fb0bfbd2647cf07081582b462fba869f39018c36) [#7922](https://github.com/npm/cli/pull/7922) `spdx-license-ids@3.0.20`
+* [`ccadf2a`](https://github.com/npm/cli/commit/ccadf2aa519e5de5d6b9ff62be5d2d25985b7c0f) [#7922](https://github.com/npm/cli/pull/7922) `promise-call-limit@3.0.2`
+* [`b25712e`](https://github.com/npm/cli/commit/b25712e1888d829393b9a708835ee69ec8ea1e70) [#7922](https://github.com/npm/cli/pull/7922) `package-json-from-dist@1.0.1`
+* [`1c9e96f`](https://github.com/npm/cli/commit/1c9e96fb9db044ff4cfb4bb5db9b8fc4d4073e13) [#7922](https://github.com/npm/cli/pull/7922) `negotiator@0.6.4`
+* [`f13bc9c`](https://github.com/npm/cli/commit/f13bc9c22a35fe97ba81e38d87f61c287d7ee0a9) [#7922](https://github.com/npm/cli/pull/7922) `debug@4.3.7`
+* [`029060c`](https://github.com/npm/cli/commit/029060c5e16aee4d8345635862c5fb0612f58162) [#7922](https://github.com/npm/cli/pull/7922) `cross-spawn@7.0.6`
+* [`9350950`](https://github.com/npm/cli/commit/93509509b01e8c9a1cedfb991e48e3cf0e8cbad2) [#7922](https://github.com/npm/cli/pull/7922) `@npmcli/metavuln-calculator@8.0.1`
+* [`c003827`](https://github.com/npm/cli/commit/c003827e3f5c20ec2b9a4c1631fd1dfbb5b6fb27) [#7922](https://github.com/npm/cli/pull/7922) `ansi-regex@6.1.0`
+* [`d6194f5`](https://github.com/npm/cli/commit/d6194f5774d037f474339ed47713e2809c39e735) [#7922](https://github.com/npm/cli/pull/7922) `pacote@19.0.1`
+* [`4ff29f6`](https://github.com/npm/cli/commit/4ff29f6a7ee052649d41a4084f1940d957f7959d) [#7922](https://github.com/npm/cli/pull/7922) `npm-registry-fetch@18.0.2`
+* [`fd6f4fb`](https://github.com/npm/cli/commit/fd6f4fb08f62ed5e8442528c7d532d7d064df1aa) [#7922](https://github.com/npm/cli/pull/7922) `make-fetch-happen@14.0.3`
+* [`b3f3004`](https://github.com/npm/cli/commit/b3f3004f1769d212240b40f1122d67f213073aec) [#7922](https://github.com/npm/cli/pull/7922) `ci-info@4.1.0`
+* [`a1f9d48`](https://github.com/npm/cli/commit/a1f9d482f567336d0fb802b7b67da1e71120ddd8) [#7922](https://github.com/npm/cli/pull/7922) `promise-spawn@8.0.2`
+### Chores
+* [`3ace1c1`](https://github.com/npm/cli/commit/3ace1c103d7cf769acd86e1c23b39c96cec2f763) [#7922](https://github.com/npm/cli/pull/7922) update arborist in mock-registry (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v10.0.1): `libnpmpublish@10.0.1`
+
 ## [10.9.0](https://github.com/npm/cli/compare/v10.8.3...v10.9.0) (2024-10-03)
 ### Features
 * [`4d57928`](https://github.com/npm/cli/commit/4d57928ea20c1672864dc0c8ebaff5d877e61c9c) [#7766](https://github.com/npm/cli/pull/7766) devEngines (#7766) (@reggi)

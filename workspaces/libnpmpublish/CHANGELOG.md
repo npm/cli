@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.1](https://github.com/npm/cli/compare/libnpmpublish-v10.0.0...libnpmpublish-v10.0.1) (2024-11-21)
+### Dependencies
+* [`be45963`](https://github.com/npm/cli/commit/be45963ecf9f7c3dac85dc19696b82646c28a18e) [#7922](https://github.com/npm/cli/pull/7922) `sigstore@3.0.0`
+
 ## [10.0.0](https://github.com/npm/cli/compare/libnpmpublish-v9.0.9...libnpmpublish-v10.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmpublish` now supports node `^18.17.0 || >=20.5.0`

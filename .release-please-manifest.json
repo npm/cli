@@ -1,5 +1,5 @@
 {
-  ".": "10.9.0",
+  ".": "10.9.1",
   "workspaces/arborist": "8.0.0",
   "workspaces/libnpmaccess": "9.0.0",
   "workspaces/libnpmdiff": "7.0.0",
@@ -8,7 +8,7 @@
   "workspaces/libnpmhook": "11.0.0",
   "workspaces/libnpmorg": "7.0.0",
   "workspaces/libnpmpack": "8.0.0",
-  "workspaces/libnpmpublish": "10.0.0",
+  "workspaces/libnpmpublish": "10.0.1",
   "workspaces/libnpmsearch": "8.0.0",
   "workspaces/libnpmteam": "7.0.0",
   "workspaces/libnpmversion": "7.0.0",
