@@ -6,7 +6,7 @@ const maybeJoin = (...args) => args.every(arg => arg) ? args.join('') : ''
 const maybeEncode = (arg) => arg ? encodeURIComponent(arg) : ''
 const formatHashFragment = (f) => f.toLowerCase()
   .replace(/^\W+/g, '') // strip leading non-characters
-  .replace(/\W+$/g, '') // strip trailing non-characters
+  .replace(/(?<!\W)\W+$/, '') // strip trailing non-characters
   .replace(/\//g, '') // strip all slashes
   .replace(/\W+/g, '-') // replace remaining non-characters with '-'
 
