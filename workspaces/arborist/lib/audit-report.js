@@ -15,7 +15,7 @@ const _init = Symbol('init')
 const _omit = Symbol('omit')
 const { log, time } = require('proc-log')
 
-const fetch = require('npm-registry-fetch')
+const npmFetch = require('npm-registry-fetch')
 
 class AuditReport extends Map {
   static load (tree, opts) {
@@ -291,7 +291,7 @@ class AuditReport extends Map {
         return null
       }
 
-      const res = await fetch('/-/npm/v1/security/advisories/bulk', {
+      const res = await npmFetch('/-/npm/v1/security/advisories/bulk', {
         ...this.options,
         registry: this.options.auditRegistry || this.options.registry,
         method: 'POST',
