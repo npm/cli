@@ -35,7 +35,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.23.3",
+    "version": "4.23.5",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
@@ -48,7 +48,7 @@
   "devDependencies": {
     "@npmcli/arborist": "^8.0.0",
     "@npmcli/eslint-config": "^5.0.1",
-    "@npmcli/template-oss": "4.23.3",
+    "@npmcli/template-oss": "4.23.5",
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
     "npm-package-arg": "^12.0.0",

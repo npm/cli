@@ -23,7 +23,7 @@
   "devDependencies": {
     "@isaacs/string-locale-compare": "^1.1.0",
     "@npmcli/eslint-config": "^5.0.1",
-    "@npmcli/template-oss": "4.23.3",
+    "@npmcli/template-oss": "4.23.5",
     "front-matter": "^4.0.2",
     "ignore-walk": "^7.0.0",
     "jsdom": "^24.0.0",
@@ -56,7 +56,7 @@
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
     "ciVersions": "latest",
-    "version": "4.23.3",
+    "version": "4.23.5",
     "content": "../scripts/template-oss/index.js",
     "workspaceRepo": {
       "add": {

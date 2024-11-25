@@ -52,7 +52,7 @@
   "devDependencies": {
     "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/template-oss": "4.23.3",
+    "@npmcli/template-oss": "4.23.5",
     "bin-links": "^5.0.0",
     "chalk": "^5.2.0",
     "just-extend": "^6.2.0",
@@ -73,7 +73,7 @@
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.23.3",
+    "version": "4.23.5",
     "content": "../../scripts/template-oss/index.js"
   }
 }
