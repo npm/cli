@@ -71,7 +71,7 @@
     "fs-minipass": "^3.0.3",
     "glob": "^10.4.5",
     "graceful-fs": "^4.2.11",
-    "hosted-git-info": "^8.0.0",
+    "hosted-git-info": "^8.0.2",
     "ini": "^5.0.0",
     "init-package-json": "^7.0.1",
     "is-cidr": "^5.1.0",
