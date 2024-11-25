@@ -2,6 +2,7 @@ const os = require('node:os')
 const fs = require('node:fs').promises
 const fsSync = require('node:fs')
 const path = require('node:path')
+const npmFetch = require('npm-registry-fetch')
 const tap = require('tap')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -449,8 +450,34 @@ function workspaceMock (t, opts) {
   }
 }
 
+const mockNpmRegistryFetch = (tags) => {
+  const fetchOpts = {}
+  const getRequest = async (url, opts) => {
+    if (fetchOpts[url]) {
+      fetchOpts[url].push(opts)
+    } else {
+      fetchOpts[url] = [opts]
+    }
+    const find = ({ ...tags })[url]
+    if (typeof find === 'function') {
+      return find()
+    }
+    return find
+  }
+  const nrf = async (url, opts) => {
+    return {
+      json: getRequest(url, opts),
+    }
+  }
+  const mock = Object.assign(nrf, npmFetch, { json: getRequest })
+  const mocks = { 'npm-registry-fetch': mock }
+  const getOpts = (url) => fetchOpts[url]
+  return { mocks, mock, fetchOpts, getOpts }
+}
+
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
 module.exports.setGlobalNodeModules = setGlobalNodeModules
 module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.workspaceMock = workspaceMock
+module.exports.mockNpmRegistryFetch = mockNpmRegistryFetch
