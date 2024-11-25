@@ -55,7 +55,7 @@
     "@npmcli/arborist": "^8.0.0",
     "@npmcli/config": "^9.0.0",
     "@npmcli/fs": "^4.0.0",
-    "@npmcli/map-workspaces": "^4.0.1",
+    "@npmcli/map-workspaces": "^4.0.2",
     "@npmcli/package-json": "^6.0.1",
     "@npmcli/promise-spawn": "^8.0.1",
     "@npmcli/redact": "^3.0.0",
