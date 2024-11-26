@@ -962,6 +962,7 @@ t.test('manifest', async t => {
   const { npm } = await loadMockNpm(t, {
     config: {
       ...auth,
+      tag: 'latest',
       'foreground-scripts': false,
     },
     chdir: () => root,
