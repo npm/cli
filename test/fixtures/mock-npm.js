@@ -459,6 +459,9 @@ const mockNpmRegistryFetch = (tags) => {
       fetchOpts[url] = [opts]
     }
     const find = ({ ...tags })[url]
+    if (!find) {
+      throw new Error(`no npm-registry-fetch mock for ${url}`)
+    }
     if (typeof find === 'function') {
       return find()
     }
@@ -466,7 +469,7 @@ const mockNpmRegistryFetch = (tags) => {
   }
   const nrf = async (url, opts) => {
     return {
-      json: getRequest(url, opts),
+      json: () => getRequest(url, opts),
     }
   }
   const mock = Object.assign(nrf, npmFetch, { json: getRequest })
@@ -475,9 +478,34 @@ const mockNpmRegistryFetch = (tags) => {
   return { mocks, mock, fetchOpts, getOpts }
 }
 
+const putPackagePayload = ({ pkg, alternateRegistry, version }) => ({
+  _id: pkg,
+  name: pkg,
+  'dist-tags': { latest: version },
+  access: null,
+  versions: {
+    [version]: {
+      name: pkg,
+      version: version,
+      _id: `${pkg}@${version}`,
+      dist: {
+        shasum: /\.*/,
+        tarball: `http:${alternateRegistry.slice(6)}/test-package/-/test-package-${version}.tgz`,
+      },
+      publishConfig: {
+        registry: alternateRegistry,
+      },
+    },
+  },
+  _attachments: {
+    [`${pkg}-${version}.tgz`]: {},
+  },
+})
+
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
 module.exports.setGlobalNodeModules = setGlobalNodeModules
 module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.workspaceMock = workspaceMock
 module.exports.mockNpmRegistryFetch = mockNpmRegistryFetch
+module.exports.putPackagePayload = putPackagePayload

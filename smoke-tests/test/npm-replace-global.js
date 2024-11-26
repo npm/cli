@@ -136,6 +136,7 @@ t.test('publish and replace global self', async t => {
   if (setup.SMOKE_PUBLISH) {
     await npmPackage()
   }
+  registry.nock.get('/-/package/npm/dist-tags').reply(404, 'not found')
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]

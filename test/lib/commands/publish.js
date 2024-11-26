@@ -1,5 +1,8 @@
 const t = require('tap')
-const { load: loadMockNpm } = require('../../fixtures/mock-npm')
+const {
+  load: originalLoadMockNpm,
+  mockNpmRegistryFetch,
+  putPackagePayload } = require('../../fixtures/mock-npm')
 const { cleanZlib } = require('../../fixtures/clean-snapshot')
 const MockRegistry = require('@npmcli/mock-registry')
 const pacote = require('pacote')
@@ -21,6 +24,20 @@ const pkgJson = {
 }
 
 t.cleanSnapshot = data => cleanZlib(data)
+
+function loadMockNpm (test, args) {
+  return originalLoadMockNpm(test, {
+    ...args,
+    mocks: {
+      ...mockNpmRegistryFetch({
+        [`/-/package/${pkg}/dist-tags`]: () => {
+          throw new Error('not found')
+        },
+      }).mocks,
+      ...args.mocks,
+    },
+  })
+}
 
 t.test('respects publishConfig.registry, runs appropriate scripts', async t => {
   const { npm, joinedOutput, prefix } = await loadMockNpm(t, {
@@ -1066,6 +1083,108 @@ t.test('does not abort when prerelease and authored tag latest', async t => {
         [`${pkg}-${prereleasePkg.version}.tgz`]: {},
       },
     })
+  }).reply(200, {})
+  await npm.exec('publish', [])
+})
+
+t.test('PREVENTS publish when latest dist-tag is HIGHER than publishing version', async t => {
+  const latest = '100.0.0'
+  const version = '50.0.0'
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        version,
+        scripts: {
+          prepublishOnly: 'touch scripts-prepublishonly',
+          prepublish: 'touch scripts-prepublish', // should NOT run this one
+          publish: 'touch scripts-publish',
+          postpublish: 'touch scripts-postpublish',
+        },
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+    mocks: {
+      ...mockNpmRegistryFetch({
+        [`/-/package/${pkg}/dist-tags`]: { latest },
+      }).mocks,
+    },
+  })
+  await t.rejects(async () => {
+    await npm.exec('publish', [])
+  }, new Error('Cannot publish a lower version without an explicit dist tag.'))
+})
+
+t.test('ALLOWS publish when latest dist-tag is LOWER than publishing version', async t => {
+  const version = '100.0.0'
+  const latest = '50.0.0'
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        version,
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+    mocks: {
+      ...mockNpmRegistryFetch({
+        [`/-/package/${pkg}/dist-tags`]: { latest },
+      }).mocks,
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    authorization: 'test-other-token',
+  })
+  registry.nock.put(`/${pkg}`, body => {
+    return t.match(body, putPackagePayload({
+      pkg, alternateRegistry, version,
+    }))
+  }).reply(200, {})
+  await npm.exec('publish', [])
+})
+
+t.test('ALLOWS publish when latest dist-tag is missing from response', async t => {
+  const version = '100.0.0'
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        version,
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+    mocks: {
+      ...mockNpmRegistryFetch({
+        [`/-/package/${pkg}/dist-tags`]: { },
+      }).mocks,
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    authorization: 'test-other-token',
+  })
+  registry.nock.put(`/${pkg}`, body => {
+    return t.match(body, putPackagePayload({
+      pkg, alternateRegistry, version,
+    }))
   }).reply(200, {})
   await npm.exec('publish', [])
 })
