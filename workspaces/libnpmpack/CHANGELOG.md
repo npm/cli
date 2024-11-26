@@ -4,6 +4,18 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [9.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpack-v8.0.0...libnpmpack-v9.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* libnpmpack now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`7f541e8`](https://github.com/npm/cli/commit/7f541e82a0b2908cc0cfef9a36b714eeab40c029) [#7815](https://github.com/npm/cli/pull/7815) make pack and exec work with git hash refs (#7815) (@milaninfy)
+* [`f7b41a3`](https://github.com/npm/cli/commit/f7b41a3ea257bf4a34e141802d7b0beaccd16f04) [#7831](https://github.com/npm/cli/pull/7831) for libnpmpack sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Dependencies
+* [`7dbef6f`](https://github.com/npm/cli/commit/7dbef6f3a3ead089b1b8b9fe6b2fa25e24309000) [#7850](https://github.com/npm/cli/pull/7850) `pacote@20.0.0`
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.0): `@npmcli/arborist@9.0.0-pre.0`
+
 ## [8.0.0](https://github.com/npm/cli/compare/libnpmpack-v7.0.4...libnpmpack-v8.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmpack` now supports node `^18.17.0 || >=20.5.0`

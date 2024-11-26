@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.0.0-pre.0](https://github.com/npm/cli/compare/arborist-v8.0.0...arborist-v9.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* `--ignore-scripts` now applies to all lifecycle scripts, include `prepare`
+* npm will no longer fall back to the old audit endpoint if the bulk advisory request fails.
+* @npmcli/arborist now supports node `^20.17.0 || >=22.9.0`
+### Features
+* [`6995303`](https://github.com/npm/cli/commit/6995303687ab59541b727bf611f73624d1829b6c) [#7850](https://github.com/npm/cli/pull/7850) adds `--ignore-scripts` flag to `pack` (@reggi)
+### Bug Fixes
+* [`080a0f2`](https://github.com/npm/cli/commit/080a0f2d3f09a81f0a5b2992431e0bc7feb8d701) [#7911](https://github.com/npm/cli/pull/7911) remove old audit fallback request (@wraithgar)
+* [`3ffc08b`](https://github.com/npm/cli/commit/3ffc08bc848ed262ab95e37593c8c058fd633caa) [#7831](https://github.com/npm/cli/pull/7831) for @npmcli/arborist sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Dependencies
+* [`7dbef6f`](https://github.com/npm/cli/commit/7dbef6f3a3ead089b1b8b9fe6b2fa25e24309000) [#7850](https://github.com/npm/cli/pull/7850) `pacote@20.0.0`
+* [`75a3f12`](https://github.com/npm/cli/commit/75a3f1228865f426d8790be27f1258e501f2c450) [#7859](https://github.com/npm/cli/pull/7859) remove unused deps (#7859)
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+
 ## [8.0.0](https://github.com/npm/cli/compare/arborist-v7.5.4...arborist-v8.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `@npmcli/arborist` now supports node `^18.17.0 || >=20.5.0`

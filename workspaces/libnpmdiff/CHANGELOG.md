@@ -4,6 +4,17 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [8.0.0-pre.0](https://github.com/npm/cli/compare/libnpmdiff-v7.0.0...libnpmdiff-v8.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* libnpmdiff now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`dab3042`](https://github.com/npm/cli/commit/dab304274805ac64a0cb063eb21fa7d26fb5c1ce) [#7831](https://github.com/npm/cli/pull/7831) for libnpmdiff sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Dependencies
+* [`7dbef6f`](https://github.com/npm/cli/commit/7dbef6f3a3ead089b1b8b9fe6b2fa25e24309000) [#7850](https://github.com/npm/cli/pull/7850) `pacote@20.0.0`
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.0): `@npmcli/arborist@9.0.0-pre.0`
+
 ## [7.0.0](https://github.com/npm/cli/compare/libnpmdiff-v6.1.4...libnpmdiff-v7.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmdiff` now supports node `^18.17.0 || >=20.5.0`

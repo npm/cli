@@ -1,5 +1,13 @@
 # Changelog
 
+## [8.0.0-pre.0](https://github.com/npm/cli/compare/libnpmorg-v7.0.0...libnpmorg-v8.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* libnpmorg now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`62c4604`](https://github.com/npm/cli/commit/62c4604c9c1fcdb511f922d40edb1aecb6f9943d) [#7831](https://github.com/npm/cli/pull/7831) for libnpmorg sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+
 ## [7.0.0](https://github.com/npm/cli/compare/libnpmorg-v6.0.6...libnpmorg-v7.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `libnpmorg` now supports node `^18.17.0 || >=20.5.0`
