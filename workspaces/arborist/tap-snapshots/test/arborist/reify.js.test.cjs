@@ -2007,6 +2007,140 @@ ArboristNode {
 }
 `
 
+exports[`test/arborist/reify.js TAP bundled file dep with same name as other dep > must match snapshot 1`] = `
+ArboristNode {
+  "children": Map {
+    "@fixtures/has-package-exports" => ArboristLink {
+      "bundleDependencies": Array [
+        "abbrev",
+      ],
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@fixtures/has-package-exports",
+          "spec": "file:fixtures-has-package-exports",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@fixtures/has-package-exports",
+      "name": "@fixtures/has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/@fixtures/has-package-exports",
+      "realpath": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+      "resolved": "file:../../fixtures-has-package-exports",
+      "target": ArboristNode {
+        "location": "fixtures-has-package-exports",
+      },
+    },
+    "@ljharb/has-package-exports-patterns" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/has-package-exports",
+          "name": "@ljharb/has-package-exports-patterns",
+          "spec": "^0.0.2",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@ljharb/has-package-exports-patterns",
+      "name": "@ljharb/has-package-exports-patterns",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/@ljharb/has-package-exports-patterns",
+      "resolved": "https://registry.npmjs.org/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.2.tgz",
+      "version": "0.0.2",
+    },
+    "has-package-exports" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "has-package-exports",
+          "spec": "^1.3.0",
+          "type": "prod",
+        },
+      },
+      "edgesOut": Map {
+        "@ljharb/has-package-exports-patterns" => EdgeOut {
+          "name": "@ljharb/has-package-exports-patterns",
+          "spec": "^0.0.2",
+          "to": "node_modules/@ljharb/has-package-exports-patterns",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/has-package-exports",
+      "name": "has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/has-package-exports",
+      "resolved": "https://registry.npmjs.org/has-package-exports/-/has-package-exports-1.3.0.tgz",
+      "version": "1.3.0",
+    },
+  },
+  "edgesOut": Map {
+    "@fixtures/has-package-exports" => EdgeOut {
+      "name": "@fixtures/has-package-exports",
+      "spec": "file:fixtures-has-package-exports",
+      "to": "node_modules/@fixtures/has-package-exports",
+      "type": "prod",
+    },
+    "has-package-exports" => EdgeOut {
+      "name": "has-package-exports",
+      "spec": "^1.3.0",
+      "to": "node_modules/has-package-exports",
+      "type": "prod",
+    },
+  },
+  "fsChildren": Set {
+    ArboristNode {
+      "bundleDependencies": Array [
+        "abbrev",
+      ],
+      "children": Map {
+        "has-package-exports" => ArboristLink {
+          "bundleDependencies": Array [
+            "abbrev",
+          ],
+          "dev": true,
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "fixtures-has-package-exports",
+              "name": "has-package-exports",
+              "spec": "file:.",
+              "type": "dev",
+            },
+          },
+          "location": "fixtures-has-package-exports/node_modules/has-package-exports",
+          "name": "has-package-exports",
+          "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports/node_modules/has-package-exports",
+          "realpath": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+          "resolved": "file:..",
+          "target": ArboristNode {
+            "location": "fixtures-has-package-exports",
+          },
+        },
+      },
+      "dev": true,
+      "edgesOut": Map {
+        "abbrev" => EdgeOut {
+          "error": "MISSING",
+          "name": "abbrev",
+          "spec": "1.1.1",
+          "to": null,
+          "type": "prod",
+        },
+        "has-package-exports" => EdgeOut {
+          "name": "has-package-exports",
+          "spec": "file:.",
+          "to": "fixtures-has-package-exports/node_modules/has-package-exports",
+          "type": "dev",
+        },
+      },
+      "location": "fixtures-has-package-exports",
+      "name": "@fixtures/has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep",
+}
+`
+
 exports[`test/arborist/reify.js TAP collide case-variant dep names > tree 1 1`] = `
 ArboristNode {
   "children": Map {
