@@ -101,7 +101,7 @@
     "npm-profile": "^11.0.1",
     "npm-registry-fetch": "^18.0.2",
     "npm-user-validate": "^3.0.0",
-    "p-map": "^4.0.0",
+    "p-map": "^7.0.2",
     "pacote": "^21.0.0",
     "parse-conflict-json": "^4.0.0",
     "proc-log": "^5.0.0",
