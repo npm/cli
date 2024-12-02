@@ -69,7 +69,7 @@
     "read": "^4.0.0",
     "read-package-json-fast": "^4.0.0",
     "semver": "^7.3.7",
-    "walk-up-path": "^3.0.1"
+    "walk-up-path": "^4.0.0"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",

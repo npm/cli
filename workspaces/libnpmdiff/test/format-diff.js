@@ -8,7 +8,7 @@ const normalizeWin = (str) => str
 
 t.cleanSnapshot = (str) => normalizeWin(str)
 
-t.test('format simple diff', t => {
+t.test('format simple diff', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -27,7 +27,7 @@ t.test('format simple diff', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -35,10 +35,9 @@ t.test('format simple diff', t => {
     }),
     'should output expected diff result'
   )
-  t.end()
 })
 
-t.test('nothing to diff', t => {
+t.test('nothing to diff', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -57,7 +56,7 @@ t.test('nothing to diff', t => {
     b: '1.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -65,10 +64,9 @@ t.test('nothing to diff', t => {
     }),
     'should output empty result'
   )
-  t.end()
 })
 
-t.test('format removed file', t => {
+t.test('format removed file', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -83,7 +81,7 @@ t.test('format removed file', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -91,10 +89,9 @@ t.test('format removed file', t => {
     }),
     'should output expected removed file diff result'
   )
-  t.end()
 })
 
-t.test('changed file mode', t => {
+t.test('changed file mode', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -113,7 +110,7 @@ t.test('changed file mode', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -121,10 +118,9 @@ t.test('changed file mode', t => {
     }),
     'should output expected changed file mode diff result'
   )
-  t.end()
 })
 
-t.test('added file', t => {
+t.test('added file', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -139,7 +135,7 @@ t.test('added file', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -147,10 +143,9 @@ t.test('added file', t => {
     }),
     'should output expected added file diff result'
   )
-  t.end()
 })
 
-t.test('binary file', t => {
+t.test('binary file', async t => {
   const files = new Set([
     'foo.jpg',
   ])
@@ -169,7 +164,7 @@ t.test('binary file', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -177,10 +172,9 @@ t.test('binary file', t => {
     }),
     'should output expected bin file diff result'
   )
-  t.end()
 })
 
-t.test('nothing to compare', t => {
+t.test('nothing to compare', async t => {
   const files = new Set([
     'foo.jpg',
   ])
@@ -193,7 +187,7 @@ t.test('nothing to compare', t => {
     b: '2.0.0',
   }
 
-  t.equal(
+  await t.resolveMatch(
     formatDiff({
       files,
       refs,
@@ -202,10 +196,9 @@ t.test('nothing to compare', t => {
     '',
     'should have no output'
   )
-  t.end()
 })
 
-t.test('colored output', t => {
+t.test('colored output', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -224,7 +217,7 @@ t.test('colored output', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -235,10 +228,9 @@ t.test('colored output', t => {
     }),
     'should output expected colored diff result'
   )
-  t.end()
 })
 
-t.test('using --name-only option', t => {
+t.test('using --name-only option', async t => {
   const files = new Set([
     'foo.js',
     'lib/bar.js',
@@ -277,7 +269,7 @@ t.test('using --name-only option', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -288,10 +280,9 @@ t.test('using --name-only option', t => {
     }),
     'should output expected diff result'
   )
-  t.end()
 })
 
-t.test('respect --tag-version-prefix option', t => {
+t.test('respect --tag-version-prefix option', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -310,7 +301,7 @@ t.test('respect --tag-version-prefix option', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -321,10 +312,9 @@ t.test('respect --tag-version-prefix option', t => {
     }),
     'should output expected diff result'
   )
-  t.end()
 })
 
-t.test('diff options', t => {
+t.test('diff options', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -346,7 +336,7 @@ t.test('diff options', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -360,10 +350,9 @@ t.test('diff options', t => {
     }),
     'should output expected diff result'
   )
-  t.end()
 })
 
-t.test('diffUnified=0', t => {
+t.test('diffUnified=0', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -385,7 +374,7 @@ t.test('diffUnified=0', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -396,10 +385,9 @@ t.test('diffUnified=0', t => {
     }),
     'should output no context lines in output'
   )
-  t.end()
 })
 
-t.test('noPrefix', t => {
+t.test('noPrefix', async t => {
   const files = new Set([
     'foo.js',
   ])
@@ -418,7 +406,7 @@ t.test('noPrefix', t => {
     b: '2.0.0',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -429,10 +417,9 @@ t.test('noPrefix', t => {
     }),
     'should output result with no prefixes'
   )
-  t.end()
 })
 
-t.test('format multiple files patch', t => {
+t.test('format multiple files patch', async t => {
   const files = new Set([
     'foo.js',
     'lib/bar.js',
@@ -471,7 +458,7 @@ t.test('format multiple files patch', t => {
     b: '1.1.1',
   }
 
-  t.matchSnapshot(
+  await t.resolveMatchSnapshot(
     formatDiff({
       files,
       refs,
@@ -479,5 +466,4 @@ t.test('format multiple files patch', t => {
     }),
     'should output expected result for multiple files'
   )
-  t.end()
 })
