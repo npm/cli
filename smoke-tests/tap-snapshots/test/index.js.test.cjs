@@ -116,6 +116,7 @@ Wrote to {NPM}/{TESTDIR}/project/package.json:
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "description": ""
 }
 `
@@ -171,6 +172,7 @@ Object {
   "scripts": Object {
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -223,6 +225,7 @@ Object {
   "scripts": Object {
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -253,6 +256,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -277,6 +281,7 @@ Object {
       "LC_ALL=sk",
     ],
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -305,6 +310,7 @@ exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "description": "",
   "dependencies": {
     "abbrev": "^1.0.4"
@@ -335,6 +341,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -392,6 +399,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -452,6 +460,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
