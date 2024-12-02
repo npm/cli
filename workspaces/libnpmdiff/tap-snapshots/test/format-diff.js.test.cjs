@@ -49,8 +49,8 @@ index v1.0.0..v2.0.0 100644
 --- before/foo.js
 +++ after/foo.js
 @@ -4,4 +4,6 @@
- const c = "c"
-+const d = "d"
+   const c = "c"
++  const d = "d"
  module.exports = () => a+
  b+
 -c
@@ -105,7 +105,6 @@ index v1.0.0..v2.0.0
 @@ -1,2 +0,0 @@
 -"use strict"
 -module.exports = "foo"
-/ No newline at end of file
 `
 
 exports[`test/format-diff.js TAP format simple diff > should output expected diff result 1`] = `
