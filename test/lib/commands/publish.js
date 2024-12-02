@@ -30,7 +30,7 @@ function loadMockNpm (test, args) {
     ...args,
     mocks: {
       ...mockNpmRegistryFetch({
-        [`/-/package/${pkg}/dist-tags`]: () => {
+        [`/${pkg}`]: () => {
           throw new Error('not found')
         },
       }).mocks,
@@ -1088,7 +1088,6 @@ t.test('does not abort when prerelease and authored tag latest', async t => {
 })
 
 t.test('PREVENTS publish when latest dist-tag is HIGHER than publishing version', async t => {
-  const latest = '100.0.0'
   const version = '50.0.0'
 
   const { npm } = await loadMockNpm(t, {
@@ -1111,7 +1110,7 @@ t.test('PREVENTS publish when latest dist-tag is HIGHER than publishing version'
     },
     mocks: {
       ...mockNpmRegistryFetch({
-        [`/-/package/${pkg}/dist-tags`]: { latest },
+        [`/${pkg}`]: { versions: { '50.0.0': {}, '99.0.0': {}, '100.0.0': {}, '101.0.0-pre': {} } },
       }).mocks,
     },
   })
@@ -1120,9 +1119,8 @@ t.test('PREVENTS publish when latest dist-tag is HIGHER than publishing version'
   }, new Error('Cannot publish a lower version without an explicit dist tag.'))
 })
 
-t.test('ALLOWS publish when latest dist-tag is LOWER than publishing version', async t => {
+t.test('ALLOWS publish when latest versions are LOWER than publishing version', async t => {
   const version = '100.0.0'
-  const latest = '50.0.0'
 
   const { npm } = await loadMockNpm(t, {
     config: {
@@ -1138,7 +1136,7 @@ t.test('ALLOWS publish when latest dist-tag is LOWER than publishing version', a
     },
     mocks: {
       ...mockNpmRegistryFetch({
-        [`/-/package/${pkg}/dist-tags`]: { latest },
+        [`/${pkg}`]: { versions: { '50.0.0': {}, '99.0.0': {}, '101.0.0-pre': {} } },
       }).mocks,
     },
   })
@@ -1155,7 +1153,7 @@ t.test('ALLOWS publish when latest dist-tag is LOWER than publishing version', a
   await npm.exec('publish', [])
 })
 
-t.test('ALLOWS publish when latest dist-tag is missing from response', async t => {
+t.test('ALLOWS publish when not published yet', async t => {
   const version = '100.0.0'
 
   const { npm } = await loadMockNpm(t, {
@@ -1172,7 +1170,7 @@ t.test('ALLOWS publish when latest dist-tag is missing from response', async t =
     },
     mocks: {
       ...mockNpmRegistryFetch({
-        [`/-/package/${pkg}/dist-tags`]: { },
+        [`/${pkg}`]: { },
       }).mocks,
     },
   })
