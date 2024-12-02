@@ -1186,3 +1186,37 @@ t.test('ALLOWS publish when not published yet', async t => {
   }).reply(200, {})
   await npm.exec('publish', [])
 })
+
+t.test('ALLOWS publish when not published yet (no versions)', async t => {
+  const version = '100.0.0'
+
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      loglevel: 'silent',
+      [`${alternateRegistry.slice(6)}/:_authToken`]: 'test-other-token',
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        ...pkgJson,
+        version,
+        publishConfig: { registry: alternateRegistry },
+      }, null, 2),
+    },
+    mocks: {
+      ...mockNpmRegistryFetch({
+        [`/${pkg}`]: { versions: {} },
+      }).mocks,
+    },
+  })
+  const registry = new MockRegistry({
+    tap: t,
+    registry: alternateRegistry,
+    authorization: 'test-other-token',
+  })
+  registry.nock.put(`/${pkg}`, body => {
+    return t.match(body, putPackagePayload({
+      pkg, alternateRegistry, version,
+    }))
+  }).reply(200, {})
+  await npm.exec('publish', [])
+})
