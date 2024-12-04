@@ -904,6 +904,8 @@ t.test('latest dist tag', (t) => {
   })
 
   const packuments = [
+    // this needs more than one item in it to cover the sort logic
+    { version: '50.0.0' },
     { version: '100.0.0' },
     { version: '105.0.0-pre' },
   ]
