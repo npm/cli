@@ -1,5 +1,14 @@
 # Changelog
 
+## [10.9.2](https://github.com/npm/cli/compare/v10.9.1...v10.9.2) (2024-12-04)
+### Dependencies
+* [`ae9345e`](https://github.com/npm/cli/commit/ae9345e352a30151c5326889d7a23b7289894e99) [#7959](https://github.com/npm/cli/pull/7959) `@npmcli/run-script@9.0.2`
+* [`39a19b3`](https://github.com/npm/cli/commit/39a19b3e03991ea255d0242af176ef710dd2a1d4) [#7959](https://github.com/npm/cli/pull/7959) `node-gyp@11.0.0`
+* [`93e2186`](https://github.com/npm/cli/commit/93e2186c321c3c43031af9cb3b3fb9ff97ee04eb) [#7956](https://github.com/npm/cli/pull/7956) `@npmcli/map-workspaces@4.0.2`
+* [`bf0ea00`](https://github.com/npm/cli/commit/bf0ea0064931dc84c1ff92f85b78500cb586b593) [#7956](https://github.com/npm/cli/pull/7956) `@npmcli/package-json@6.1.0`
+* [`c84baa3`](https://github.com/npm/cli/commit/c84baa37c65e8bf1f730c585361d4a0bf8c9c67d) [#7956](https://github.com/npm/cli/pull/7956) `init-package-json@7.0.2`
+* [`e642099`](https://github.com/npm/cli/commit/e642099003f92c7247833f513782654c7f9f77c4) [#7956](https://github.com/npm/cli/pull/7956) `node-gyp@10.3.1`
+
 ## [10.9.1](https://github.com/npm/cli/compare/v10.9.0...v10.9.1) (2024-11-21)
 ### Bug Fixes
 * [`c7fe0db`](https://github.com/npm/cli/commit/c7fe0db8c99233f8709c5e7a90578db6828353fd) [#7924](https://github.com/npm/cli/pull/7924) perf: enable compile cache if present (#7924) (@H4ad)

@@ -1,5 +1,5 @@
 {
-  "version": "10.9.1",
+  "version": "10.9.2",
   "name": "npm",
   "description": "a package manager for JavaScript",
   "workspaces": [
