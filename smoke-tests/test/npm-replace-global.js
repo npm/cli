@@ -137,6 +137,7 @@ t.test('publish and replace global self', async t => {
     await npmPackage()
   }
   registry.nock.get('/npm').reply(404, 'not found')
+  registry.nock.get('/npm').reply(404, 'not found')
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]
