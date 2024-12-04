@@ -293,12 +293,26 @@ const setupMockNpm = async (t, {
 
 const loadNpmWithRegistry = async (t, opts) => {
   const mock = await setupMockNpm(t, opts)
+  return {
+    ...mock,
+    ...loadRegistry(t, mock, opts),
+    ...loadFsAssertions(t, mock),
+  }
+}
+
+const loadRegistry = (t, mock, opts) => {
   const registry = new MockRegistry({
     tap: t,
-    registry: mock.npm.config.get('registry'),
-    strict: true,
+    registry: opts.registry ?? mock.npm.config.get('registry'),
+    authorization: opts.authorization,
+    basic: opts.basic,
+    debug: opts.debugRegistry ?? false,
+    strict: opts.strictRegistryNock ?? true,
   })
+  return { registry }
+}
 
+const loadFsAssertions = (t, mock) => {
   const fileShouldExist = (filePath) => {
     t.equal(
       fsSync.existsSync(path.join(mock.npm.prefix, filePath)), true, `${filePath} should exist`
@@ -353,7 +367,7 @@ const loadNpmWithRegistry = async (t, opts) => {
     packageDirty,
   }
 
-  return { registry, assert, ...mock }
+  return { assert }
 }
 
 /** breaks down a spec "abbrev@1.1.1" into different parts for mocking */
@@ -478,29 +492,41 @@ const mockNpmRegistryFetch = (tags) => {
   return { mocks, mock, fetchOpts, getOpts }
 }
 
-const putPackagePayload = ({ pkg, alternateRegistry, version }) => ({
-  _id: pkg,
-  name: pkg,
-  'dist-tags': { latest: version },
-  access: null,
-  versions: {
-    [version]: {
-      name: pkg,
-      version: version,
-      _id: `${pkg}@${version}`,
-      dist: {
-        shasum: /\.*/,
-        tarball: `http:${alternateRegistry.slice(6)}/test-package/-/test-package-${version}.tgz`,
-      },
-      publishConfig: {
-        registry: alternateRegistry,
+const putPackagePayload = (opts) => {
+  const package = opts.packageJson
+  const name = opts.name || package?.name
+  const registry = opts.registry || package?.publishConfig?.registry || 'https://registry.npmjs.org'
+  const access = opts.access || null
+
+  const nameProperties = !name ? {} : {
+    _id: name,
+    name: name,
+  }
+
+  const packageProperties = !package ? {} : {
+    'dist-tags': { latest: package.version },
+    versions: {
+      [package.version]: {
+        _id: `${package.name}@${package.version}`,
+        dist: {
+          shasum: /\.*/,
+          tarball:
+  `http://${new URL(registry).host}/${package.name}/-/${package.name}-${package.version}.tgz`,
+        },
+        ...package,
       },
     },
-  },
-  _attachments: {
-    [`${pkg}-${version}.tgz`]: {},
-  },
-})
+    _attachments: {
+      [`${package.name}-${package.version}.tgz`]: {},
+    },
+  }
+
+  return {
+    access,
+    ...nameProperties,
+    ...packageProperties,
+  }
+}
 
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
