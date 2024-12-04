@@ -19,7 +19,7 @@ const pkgJson = {
   version: '1.0.0',
 }
 
-const packageNock = (t, registry, name, {
+const assertPublishNock = (t, registry, name, {
   packageJson, access, noPut, putStatus, manifest,
 } = {}) => {
   const spec = npa(name)
@@ -36,8 +36,6 @@ const packageNock = (t, registry, name, {
   }
   return registry.nock
 }
-
-const assertPublishNock = packageNock
 
 t.cleanSnapshot = data => cleanZlib(data)
 
