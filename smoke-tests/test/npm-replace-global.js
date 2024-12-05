@@ -103,6 +103,7 @@ t.test('publish and replace global self', async t => {
     getPaths,
     paths: { globalBin, globalNodeModules, cache },
   } = await setupNpmGlobal(t, {
+    strictRegistryNock: false,
     testdir: {
       home: {
         '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
@@ -136,8 +137,6 @@ t.test('publish and replace global self', async t => {
   if (setup.SMOKE_PUBLISH) {
     await npmPackage()
   }
-  registry.nock.get('/npm').reply(404, 'not found')
-  registry.nock.get('/npm').reply(404, 'not found')
   registry.nock.put('/npm', body => {
     if (body._id === 'npm' && body.versions[version]) {
       publishedPackument = body.versions[version]
