@@ -227,7 +227,7 @@ t.test('throws when invalid tag is semver', async t => {
 })
 
 t.test('throws when invalid tag when not url encodable', async t => {
-  const { npm, registry } = await loadNpmWithRegistry(t, {
+  const { npm } = await loadNpmWithRegistry(t, {
     config: {
       tag: '@test',
     },
@@ -235,8 +235,6 @@ t.test('throws when invalid tag when not url encodable', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  registry.publish(pkg, { noPut: true })
-
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -272,12 +270,11 @@ t.test('tarball', async t => {
 })
 
 t.test('no auth default registry', async t => {
-  const { npm, registry } = await loadNpmWithRegistry(t, {
+  const { npm } = await loadNpmWithRegistry(t, {
     prefixDir: {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  registry.publish(pkg, { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -303,7 +300,7 @@ t.test('no auth dry-run', async t => {
 })
 
 t.test('no auth for configured registry', async t => {
-  const { npm, registry } = await loadNpmWithRegistry(t, {
+  const { npm } = await loadNpmWithRegistry(t, {
     config: {
       registry: alternateRegistry,
       ...auth,
@@ -312,7 +309,6 @@ t.test('no auth for configured registry', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  registry.publish(pkg, { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -323,7 +319,7 @@ t.test('no auth for configured registry', async t => {
 })
 
 t.test('no auth for scope configured registry', async t => {
-  const { npm, registry } = await loadNpmWithRegistry(t, {
+  const { npm } = await loadNpmWithRegistry(t, {
     config: {
       scope: '@npm',
       registry: alternateRegistry,
@@ -336,7 +332,6 @@ t.test('no auth for scope configured registry', async t => {
       }, null, 2),
     },
   })
-  registry.publish('@npm/test-package', { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -435,7 +430,6 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
       registry.publish(name)
     })
@@ -455,7 +449,6 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
       registry.publish(name)
     })
@@ -526,7 +519,6 @@ t.test('workspaces', t => {
       prefixDir: testDir,
       authorization: token,
     })
-    registry.publish('@scoped/workspace-p', { noPut: true })
     registry.publish('workspace-a')
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'one marked private')
@@ -558,7 +550,6 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
       registry.publish(name)
     })
@@ -684,7 +675,7 @@ t.test('bare _auth and registry config', async t => {
 })
 
 t.test('bare _auth config scoped registry', async t => {
-  const { npm, registry } = await loadNpmWithRegistry(t, {
+  const { npm } = await loadNpmWithRegistry(t, {
     config: {
       scope: '@npm',
       registry: alternateRegistry,
@@ -697,7 +688,6 @@ t.test('bare _auth config scoped registry', async t => {
       }, null, 2),
     },
   })
-  registry.publish('@npm/test-package', { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     { message: `This command requires you to be logged in to ${alternateRegistry}` }
@@ -895,7 +885,7 @@ t.test('latest dist tag', (t) => {
     registry.publish(pkg, { noPut: true, packuments })
     await t.rejects(async () => {
       await npm.exec('publish', [])
-    }, new Error('Cannot publish a lower version without an explicit dist tag.'))
+    }, new Error('Cannot publish a lower version without an explicit tag.'))
   })
 
   t.test('ALLOWS publish when latest is HIGHER than publishing version and flag', async t => {
