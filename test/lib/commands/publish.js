@@ -1,11 +1,10 @@
 const t = require('tap')
-const { loadNpmWithRegistry, putPackagePayload } = require('../../fixtures/mock-npm')
+const { loadNpmWithRegistry } = require('../../fixtures/mock-npm')
 const { cleanZlib } = require('../../fixtures/clean-snapshot')
 const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const npa = require('npm-package-arg')
 
 const pkg = 'test-package'
 const token = 'test-auth-token'
@@ -17,24 +16,6 @@ const pkgJson = {
   name: pkg,
   description: 'npm test package',
   version: '1.0.0',
-}
-
-const assertPublishNock = (t, registry, name, {
-  packageJson, access, noPut, putStatus, manifest,
-} = {}) => {
-  const spec = npa(name)
-  if (!manifest) {
-    registry.nock.get(`/${spec.escapedName}`).reply(404, 'not found')
-    registry.nock.get(`/${spec.escapedName}`).reply(404, 'not found')
-  } else {
-    registry.nock.get(`/${spec.escapedName}`).reply(200, manifest)
-  }
-  if (!noPut) {
-    registry.nock.put(`/${spec.escapedName}`, body => {
-      return t.match(body, putPackagePayload({ name, packageJson, access }))
-    }).reply(putStatus ?? 200, {})
-  }
-  return registry.nock
 }
 
 t.cleanSnapshot = data => cleanZlib(data)
@@ -61,7 +42,7 @@ t.test('respects publishConfig.registry, runs appropriate scripts', async t => {
     registry: alternateRegistry,
     authorization: 'test-other-token',
   })
-  assertPublishNock(t, registry, pkg, { packageJson })
+  registry.publish(pkg, { packageJson })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
   t.equal(fs.existsSync(path.join(prefix, 'scripts-prepublishonly')), true, 'ran prepublishOnly')
@@ -94,7 +75,7 @@ t.test('re-loads publishConfig.registry if added during script process', async t
     registry: alternateRegistry,
     authorization: 'test-other-token',
   })
-  assertPublishNock(t, registry, pkg, { packageJson })
+  registry.publish(pkg, { packageJson })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -124,7 +105,7 @@ t.test('prioritize CLI flags over publishConfig', async t => {
     registryUrl: alternateRegistry,
     authorization: 'test-other-token',
   })
-  assertPublishNock(t, registry, pkg, { packageJson })
+  registry.publish(pkg, { packageJson })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -140,7 +121,7 @@ t.test('json', async t => {
     },
     authorization: token,
   })
-  assertPublishNock(t, registry, pkg)
+  registry.publish(pkg)
   await npm.exec('publish', [])
   t.matchSnapshot(logs.notice)
   t.matchSnapshot(joinedOutput(), 'new package json')
@@ -157,7 +138,7 @@ t.test('dry-run', async t => {
     },
     authorization: token,
   })
-  assertPublishNock(t, registry, pkg, { noPut: true })
+  registry.publish(pkg, { noPut: true })
   await npm.exec('publish', [])
   t.equal(joinedOutput(), `+ ${pkg}@1.0.0`)
   t.matchSnapshot(logs.notice)
@@ -181,7 +162,7 @@ t.test('foreground-scripts defaults to true', async t => {
       ),
     },
   })
-  assertPublishNock(t, registry, 'test-fg-scripts', { noPut: true })
+  registry.publish('test-fg-scripts', { noPut: true })
   await npm.exec('publish', [])
   t.matchSnapshot(logs.notice)
   t.strictSame(
@@ -214,7 +195,7 @@ t.test('foreground-scripts can still be set to false', async t => {
     },
   })
 
-  assertPublishNock(t, registry, 'test-fg-scripts', { noPut: true })
+  registry.publish('test-fg-scripts', { noPut: true })
   await npm.exec('publish', [])
 
   t.matchSnapshot(logs.notice)
@@ -254,7 +235,7 @@ t.test('throws when invalid tag when not url encodable', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  assertPublishNock(t, registry, pkg, { noPut: true })
+  registry.publish(pkg, { noPut: true })
 
   await t.rejects(
     npm.exec('publish', []),
@@ -284,7 +265,7 @@ t.test('tarball', async t => {
   const tarball = await pacote.tarball(home, { Arborist })
   const tarFilename = path.join(home, 'tarball.tgz')
   fs.writeFileSync(tarFilename, tarball)
-  assertPublishNock(t, registry, 'test-tar-package')
+  registry.publish('test-tar-package')
   await npm.exec('publish', [tarFilename])
   t.matchSnapshot(logs.notice)
   t.matchSnapshot(joinedOutput(), 'new package json')
@@ -296,7 +277,7 @@ t.test('no auth default registry', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  assertPublishNock(t, registry, pkg, { noPut: true })
+  registry.publish(pkg, { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -315,7 +296,7 @@ t.test('no auth dry-run', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  assertPublishNock(t, registry, pkg, { noPut: true })
+  registry.publish(pkg, { noPut: true })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput())
   t.matchSnapshot(logs.warn, 'warns about auth being needed')
@@ -331,7 +312,7 @@ t.test('no auth for configured registry', async t => {
       'package.json': JSON.stringify(pkgJson, null, 2),
     },
   })
-  assertPublishNock(t, registry, pkg, { noPut: true })
+  registry.publish(pkg, { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -355,7 +336,7 @@ t.test('no auth for scope configured registry', async t => {
       }, null, 2),
     },
   })
-  assertPublishNock(t, registry, '@npm/test-package', { noPut: true })
+  registry.publish('@npm/test-package', { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     {
@@ -381,7 +362,7 @@ t.test('has token auth for scope configured registry', async t => {
     registry: alternateRegistry,
     authorization: 'test-scope-token',
   })
-  assertPublishNock(t, registry, '@npm/test-package')
+  registry.publish('@npm/test-package')
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -402,7 +383,7 @@ t.test('has mTLS auth for scope configured registry', async t => {
     },
     registry: alternateRegistry,
   })
-  assertPublishNock(t, registry, '@npm/test-package')
+  registry.publish('@npm/test-package')
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -454,9 +435,9 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    assertPublishNock(t, registry, 'workspace-p', { noPut: true })
+    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
-      assertPublishNock(t, registry, name)
+      registry.publish(name)
     })
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'all public workspaces')
@@ -474,9 +455,9 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    assertPublishNock(t, registry, 'workspace-p', { noPut: true })
+    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
-      assertPublishNock(t, registry, name)
+      registry.publish(name)
     })
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'all public workspaces')
@@ -494,7 +475,7 @@ t.test('workspaces', t => {
       authorization: token,
     })
     ;['workspace-a'].forEach(name => {
-      assertPublishNock(t, registry, name)
+      registry.publish(name)
     })
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'single workspace')
@@ -510,9 +491,7 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-
-    assertPublishNock(t, registry, 'workspace-a', { putStatus: 404 })
-
+    registry.publish('workspace-a', { putCode: 404 })
     await t.rejects(npm.exec('publish', []), { code: 'E404' })
   })
 
@@ -547,8 +526,8 @@ t.test('workspaces', t => {
       prefixDir: testDir,
       authorization: token,
     })
-    assertPublishNock(t, registry, '@scoped/workspace-p', { noPut: true })
-    assertPublishNock(t, registry, 'workspace-a')
+    registry.publish('@scoped/workspace-p', { noPut: true })
+    registry.publish('workspace-a')
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'one marked private')
   })
@@ -579,9 +558,9 @@ t.test('workspaces', t => {
       prefixDir: dir,
       authorization: token,
     })
-    assertPublishNock(t, registry, 'workspace-p', { noPut: true })
+    registry.publish('workspace-p', { noPut: true })
     ;['workspace-a', 'workspace-b', 'workspace-n'].forEach(name => {
-      assertPublishNock(t, registry, name)
+      registry.publish(name)
     })
     await npm.exec('publish', [])
     t.matchSnapshot(joinedOutput(), 'all workspaces in json')
@@ -617,7 +596,7 @@ t.test('workspaces', t => {
       chdir: ({ prefix }) => path.resolve(prefix, './workspace-a'),
       authorization: token,
     })
-    assertPublishNock(t, registry, 'pkg')
+    registry.publish('pkg')
     await npm.exec('publish', ['../dir/pkg'])
     t.matchSnapshot(joinedOutput(), 'publish different package spec')
   })
@@ -644,7 +623,7 @@ t.test('ignore-scripts', async t => {
     },
     authorization: token,
   })
-  assertPublishNock(t, registry, pkg)
+  registry.publish(pkg)
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
   t.equal(
@@ -679,7 +658,7 @@ t.test('_auth config default registry', async t => {
     },
     basic,
   })
-  assertPublishNock(t, registry, pkg)
+  registry.publish(pkg)
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -699,7 +678,7 @@ t.test('bare _auth and registry config', async t => {
     registry: alternateRegistry,
     basic,
   })
-  assertPublishNock(t, registry, '@npm/test-package')
+  registry.publish('@npm/test-package')
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -718,7 +697,7 @@ t.test('bare _auth config scoped registry', async t => {
       }, null, 2),
     },
   })
-  assertPublishNock(t, registry, '@npm/test-package', { noPut: true })
+  registry.publish('@npm/test-package', { noPut: true })
   await t.rejects(
     npm.exec('publish', []),
     { message: `This command requires you to be logged in to ${alternateRegistry}` }
@@ -741,7 +720,7 @@ t.test('scoped _auth config scoped registry', async t => {
     registry: alternateRegistry,
     basic,
   })
-  assertPublishNock(t, registry, '@npm/test-package')
+  registry.publish('@npm/test-package')
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
 })
@@ -761,7 +740,7 @@ t.test('restricted access', async t => {
     },
     authorization: token,
   })
-  assertPublishNock(t, registry, '@npm/test-package', { packageJson, access: 'restricted' })
+  registry.publish('@npm/test-package', { packageJson, access: 'restricted' })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
   t.matchSnapshot(logs.notice)
@@ -781,7 +760,7 @@ t.test('public access', async t => {
     },
     authorization: token,
   })
-  assertPublishNock(t, registry, '@npm/test-package', { access: 'public' })
+  registry.publish('@npm/test-package', { access: 'public' })
   await npm.exec('publish', [])
   t.matchSnapshot(joinedOutput(), 'new package version')
   t.matchSnapshot(logs.notice)
@@ -815,7 +794,7 @@ t.test('manifest', async t => {
     },
   })
 
-  assertPublishNock(t, registry, 'npm', { noPut: true })
+  registry.publish('npm', { noPut: true })
 
   await npm.exec('publish', [])
 
@@ -881,7 +860,7 @@ t.test('prerelease dist tag', (t) => {
       registry: alternateRegistry,
       authorization: 'test-other-token',
     })
-    assertPublishNock(t, registry, pkg, { packageJson })
+    registry.publish(pkg, { packageJson })
     await npm.exec('publish', [])
   })
 
@@ -913,8 +892,7 @@ t.test('latest dist tag', (t) => {
   t.test('PREVENTS publish when latest version is HIGHER than publishing version', async t => {
     const version = '99.0.0'
     const { npm, registry } = await loadNpmWithRegistry(t, init(version))
-    const manifest = registry.manifest({ name: pkg, packuments })
-    assertPublishNock(t, registry, pkg, { noPut: true, manifest })
+    registry.publish(pkg, { noPut: true, packuments })
     await t.rejects(async () => {
       await npm.exec('publish', [])
     }, new Error('Cannot publish a lower version without an explicit dist tag.'))
@@ -926,30 +904,28 @@ t.test('latest dist tag', (t) => {
       ...init(version),
       argv: ['--tag', 'latest'],
     })
-    const manifest = registry.manifest({ name: pkg, packuments })
-    assertPublishNock(t, registry, pkg, { manifest })
+    registry.publish(pkg, { packuments })
     await npm.exec('publish', [])
   })
 
   t.test('ALLOWS publish when latest versions are LOWER than publishing version', async t => {
     const version = '101.0.0'
     const { npm, registry } = await loadNpmWithRegistry(t, init(version))
-    const manifest = registry.manifest({ name: pkg, packuments })
-    assertPublishNock(t, registry, pkg, { manifest })
+    registry.publish(pkg, { packuments })
     await npm.exec('publish', [])
   })
 
   t.test('ALLOWS publish when packument has empty versions (for coverage)', async t => {
     const version = '1.0.0'
     const { npm, registry } = await loadNpmWithRegistry(t, init(version))
-    assertPublishNock(t, registry, pkg, { manifest: { versions: { } } })
+    registry.publish(pkg, { manifest: { versions: { } } })
     await npm.exec('publish', [])
   })
 
   t.test('ALLOWS publish when packument has empty manifest (for coverage)', async t => {
     const version = '1.0.0'
     const { npm, registry } = await loadNpmWithRegistry(t, init(version))
-    assertPublishNock(t, registry, pkg, { manifest: { } })
+    registry.publish(pkg, { manifest: {} })
     await npm.exec('publish', [])
   })
 

@@ -2,7 +2,6 @@ const os = require('node:os')
 const fs = require('node:fs').promises
 const fsSync = require('node:fs')
 const path = require('node:path')
-const npmFetch = require('npm-registry-fetch')
 const tap = require('tap')
 const mockLogs = require('./mock-logs.js')
 const mockGlobals = require('@npmcli/mock-globals')
@@ -464,74 +463,8 @@ function workspaceMock (t, opts) {
   }
 }
 
-const mockNpmRegistryFetch = (tags) => {
-  const fetchOpts = {}
-  const getRequest = async (url, opts) => {
-    if (fetchOpts[url]) {
-      fetchOpts[url].push(opts)
-    } else {
-      fetchOpts[url] = [opts]
-    }
-    const find = ({ ...tags })[url]
-    if (!find) {
-      throw new Error(`no npm-registry-fetch mock for ${url}`)
-    }
-    if (typeof find === 'function') {
-      return find()
-    }
-    return find
-  }
-  const nrf = async (url, opts) => {
-    return {
-      json: () => getRequest(url, opts),
-    }
-  }
-  const mock = Object.assign(nrf, npmFetch, { json: getRequest })
-  const mocks = { 'npm-registry-fetch': mock }
-  const getOpts = (url) => fetchOpts[url]
-  return { mocks, mock, fetchOpts, getOpts }
-}
-
-const putPackagePayload = (opts) => {
-  const package = opts.packageJson
-  const name = opts.name || package?.name
-  const registry = opts.registry || package?.publishConfig?.registry || 'https://registry.npmjs.org'
-  const access = opts.access || null
-
-  const nameProperties = !name ? {} : {
-    _id: name,
-    name: name,
-  }
-
-  const packageProperties = !package ? {} : {
-    'dist-tags': { latest: package.version },
-    versions: {
-      [package.version]: {
-        _id: `${package.name}@${package.version}`,
-        dist: {
-          shasum: /\.*/,
-          tarball:
-  `http://${new URL(registry).host}/${package.name}/-/${package.name}-${package.version}.tgz`,
-        },
-        ...package,
-      },
-    },
-    _attachments: {
-      [`${package.name}-${package.version}.tgz`]: {},
-    },
-  }
-
-  return {
-    access,
-    ...nameProperties,
-    ...packageProperties,
-  }
-}
-
 module.exports = setupMockNpm
 module.exports.load = setupMockNpm
 module.exports.setGlobalNodeModules = setGlobalNodeModules
 module.exports.loadNpmWithRegistry = loadNpmWithRegistry
 module.exports.workspaceMock = workspaceMock
-module.exports.mockNpmRegistryFetch = mockNpmRegistryFetch
-module.exports.putPackagePayload = putPackagePayload

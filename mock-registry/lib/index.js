@@ -351,11 +351,28 @@ class MockRegistry {
   }
 
   // full unpublish of an entire package
-  async unpublish ({ manifest }) {
+  unpublish ({ manifest }) {
     let nock = this.nock
     const spec = npa(manifest.name)
     nock = nock.delete(this.fullPath(`/${spec.escapedName}/-rev/${manifest._rev}`)).reply(201)
     return nock
+  }
+
+  publish (name, {
+    packageJson, access, noPut, putCode, manifest, packuments,
+  } = {}) {
+    // this getPackage call is used to get the latest semver version before publish
+    if (manifest) {
+      this.getPackage(name, { code: 200, resp: manifest })
+    } else if (packuments) {
+      this.getPackage(name, { code: 200, resp: this.manifest({ name, packuments }) })
+    } else {
+      // assumes the package does not exist yet and will 404 x2 from pacote.manifest
+      this.getPackage(name, { times: 2, code: 404 })
+    }
+    if (!noPut) {
+      this.putPackage(name, { code: putCode, packageJson, access })
+    }
   }
 
   getPackage (name, { times = 1, code = 200, query, resp = {} }) {
@@ -370,6 +387,48 @@ class MockRegistry {
       nock = nock.reply(code, resp)
     }
     this.nock = nock
+  }
+
+  putPackage (name, { code = 200, resp = {}, ...putPackagePayload }) {
+    this.nock.put(`/${npa(name).escapedName}`, body => {
+      return this.#tap.match(body, this.putPackagePayload({ name, ...putPackagePayload }))
+    }).reply(code, resp)
+  }
+
+  putPackagePayload (opts) {
+    const pkg = opts.packageJson
+    const name = opts.name || pkg?.name
+    const registry = opts.registry || pkg?.publishConfig?.registry || 'https://registry.npmjs.org'
+    const access = opts.access || null
+
+    const nameProperties = !name ? {} : {
+      _id: name,
+      name: name,
+    }
+
+    const packageProperties = !pkg ? {} : {
+      'dist-tags': { latest: pkg.version },
+      versions: {
+        [pkg.version]: {
+          _id: `${pkg.name}@${pkg.version}`,
+          dist: {
+            shasum: /\.*/,
+            tarball:
+    `http://${new URL(registry).host}/${pkg.name}/-/${pkg.name}-${pkg.version}.tgz`,
+          },
+          ...pkg,
+        },
+      },
+      _attachments: {
+        [`${pkg.name}-${pkg.version}.tgz`]: {},
+      },
+    }
+
+    return {
+      access,
+      ...nameProperties,
+      ...packageProperties,
+    }
   }
 
   getTokens (tokens) {
