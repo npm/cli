@@ -69,7 +69,6 @@
     "proc-log": "^5.0.0",
     "promise-retry": "^2.0.1",
     "read": "^4.0.0",
-    "read-package-json-fast": "^4.0.0",
     "semver": "^7.3.7",
     "signal-exit": "^4.1.0",
     "walk-up-path": "^4.0.0"
