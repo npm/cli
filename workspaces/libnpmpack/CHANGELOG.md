@@ -4,6 +4,13 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+## [9.0.0-pre.1](https://github.com/npm/cli/compare/libnpmpack-v9.0.0-pre.0...libnpmpack-v9.0.0-pre.1) (2024-12-06)
+### ⚠️ BREAKING CHANGES
+* `bun.lockb` files are now included in the strict ignore list during packing
+### Dependencies
+* [`ca84b22`](https://github.com/npm/cli/commit/ca84b22a18806495c37ef6ee2aecd42a1c7bb7f6) [#7945](https://github.com/npm/cli/pull/7945) `pacote@21.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.1): `@npmcli/arborist@9.0.0-pre.1`
+
 ## [9.0.0-pre.0](https://github.com/npm/cli/compare/libnpmpack-v8.0.0...libnpmpack-v9.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * libnpmpack now supports node `^20.17.0 || >=22.9.0`

@@ -8,6 +8,10 @@
 
 * [workspace](https://github.com/npm/cli/releases/tag/arborist-v7.5.4): `@npmcli/arborist@7.5.4`
 
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.1): `@npmcli/arborist@9.0.0-pre.1`
+
 ## [7.0.0-pre.0](https://github.com/npm/cli/compare/libnpmfund-v6.0.0...libnpmfund-v7.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * libnpmfund now supports node `^20.17.0 || >=22.9.0`

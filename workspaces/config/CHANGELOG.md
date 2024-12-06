@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.0-pre.1](https://github.com/npm/cli/compare/config-v10.0.0-pre.0...config-v10.0.0-pre.1) (2024-12-06)
+### Documentation
+* [`2af31dd`](https://github.com/npm/cli/commit/2af31dd30f4c226f43ce7295cd0b5fbb3f3cb2a6) [#7947](https://github.com/npm/cli/pull/7947) change certfile to cafile (#7947) (@wraithgar)
+### Dependencies
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+
 ## [10.0.0-pre.0](https://github.com/npm/cli/compare/config-v9.0.0...config-v10.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * @npmcli/config now supports node `^20.17.0 || >=22.9.0`

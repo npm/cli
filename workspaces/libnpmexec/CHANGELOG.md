@@ -1,5 +1,13 @@
 # Changelog
 
+## [10.0.0-pre.1](https://github.com/npm/cli/compare/libnpmexec-v10.0.0-pre.0...libnpmexec-v10.0.0-pre.1) (2024-12-06)
+### ⚠️ BREAKING CHANGES
+* `bun.lockb` files are now included in the strict ignore list during packing
+### Dependencies
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+* [`ca84b22`](https://github.com/npm/cli/commit/ca84b22a18806495c37ef6ee2aecd42a1c7bb7f6) [#7945](https://github.com/npm/cli/pull/7945) `pacote@21.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.1): `@npmcli/arborist@9.0.0-pre.1`
+
 ## [10.0.0-pre.0](https://github.com/npm/cli/compare/libnpmexec-v9.0.0...libnpmexec-v10.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * libnpmexec now supports node `^20.17.0 || >=22.9.0`

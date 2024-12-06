@@ -1,5 +1,38 @@
 # Changelog
 
+## [11.0.0-pre.1](https://github.com/npm/cli/compare/v11.0.0-pre.0...v11.0.0-pre.1) (2024-12-06)
+### ⚠️ BREAKING CHANGES
+* Upon publishing, in order to apply a default "latest" dist tag, the command now retrieves all prior versions of the package. It will require that the version you're trying to publish is above the latest semver version in the registry, not including pre-release tags.
+* `npm init` now has a `type` prompt, and sorts the entries the created packages differently
+* `bun.lockb` files are now included in the strict ignore list during packing
+### Features
+* [`f3ac7b7`](https://github.com/npm/cli/commit/f3ac7b7460e1d9e1f9d3d8056317e36bb9813d5d) [#7939](https://github.com/npm/cli/pull/7939) no implicit latest tag on publish when latest > version (#7939) (@reggi, @ljharb)
+### Bug Fixes
+* [`e362c6d`](https://github.com/npm/cli/commit/e362c6d3a6c8bc0221b8c8a6c3dd623da9e6ae04) [#7944](https://github.com/npm/cli/pull/7944) prefix: remove duplicate -g from usage output (#7944) (@wraithgar)
+### Documentation
+* [`2af31dd`](https://github.com/npm/cli/commit/2af31dd30f4c226f43ce7295cd0b5fbb3f3cb2a6) [#7947](https://github.com/npm/cli/pull/7947) change certfile to cafile (#7947) (@wraithgar)
+* [`1be8e95`](https://github.com/npm/cli/commit/1be8e9500826e7aef041976fd908658f473caf23) [#7945](https://github.com/npm/cli/pull/7945) update ignore rules (@wraithgar)
+### Dependencies
+* [`bc9b14d`](https://github.com/npm/cli/commit/bc9b14dc35378262c36ef5f59f96455b21a430cc) [#7955](https://github.com/npm/cli/pull/7955) `@npmcli/run-script@9.0.2`
+* [`fecfcf4`](https://github.com/npm/cli/commit/fecfcf4987e30cc5ed04b0b77ccc9eb30c2b5c8f) [#7955](https://github.com/npm/cli/pull/7955) `node-gyp@11.0.0`
+* [`8905037`](https://github.com/npm/cli/commit/890503767c733a1eacfdd562b01eb37ac253906c) [#7955](https://github.com/npm/cli/pull/7955) `p-map@7.0.2`
+* [`ac8eb39`](https://github.com/npm/cli/commit/ac8eb390b0e0a21346fcdc5476ee0b884278b3a9) [#7955](https://github.com/npm/cli/pull/7955) `diff@7.0.0`
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+* [`d463a6f`](https://github.com/npm/cli/commit/d463a6f071da79b7a2151eeeea8a6f6cceea182f) [#7955](https://github.com/npm/cli/pull/7955) `init-package-json@8.0.0`
+* [`b87ba24`](https://github.com/npm/cli/commit/b87ba2402ab86532d54b7b4e09b38582c0f11a5e) [#7945](https://github.com/npm/cli/pull/7945) `@npmcli/package-json@6.1.0`
+* [`4bf1901`](https://github.com/npm/cli/commit/4bf1901f6dc57748d851ebe82262e9bef85a4ba7) [#7945](https://github.com/npm/cli/pull/7945) `@npmcli/metavuln-calculator@9.0.0`
+* [`ca84b22`](https://github.com/npm/cli/commit/ca84b22a18806495c37ef6ee2aecd42a1c7bb7f6) [#7945](https://github.com/npm/cli/pull/7945) `pacote@21.0.0`
+* [`4906f3d`](https://github.com/npm/cli/commit/4906f3ddf05c97f6e9832617a22c7ae228b46985) [#7945](https://github.com/npm/cli/pull/7945) `npm-packlist@10.0.0`
+### Chores
+* [`cfdf214`](https://github.com/npm/cli/commit/cfdf2147b5bfd80c7478486d07cb085de6fb8c4c) [#7943](https://github.com/npm/cli/pull/7943) fork changelog (#7943) (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0-pre.1): `@npmcli/arborist@9.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.0.0-pre.1): `@npmcli/config@10.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.0.0-pre.1): `libnpmdiff@8.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.0.0-pre.1): `libnpmexec@10.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.0-pre.1): `libnpmfund@7.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v8.0.0-pre.1): `libnpmorg@8.0.0-pre.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.0.0-pre.1): `libnpmpack@9.0.0-pre.1`
+
 ## [11.0.0-pre.0](https://github.com/npm/cli/compare/v10.9.0...v11.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * When publishing a package with a pre-release version, you must explicitly specify a tag.

@@ -1,5 +1,16 @@
 # Changelog
 
+## [9.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v9.0.0-pre.0...arborist-v9.0.0-pre.1) (2024-12-06)
+### ⚠️ BREAKING CHANGES
+* Upon publishing, in order to apply a default "latest" dist tag, the command now retrieves all prior versions of the package. It will require that the version you're trying to publish is above the latest semver version in the registry, not including pre-release tags.
+* `bun.lockb` files are now included in the strict ignore list during packing
+### Features
+* [`f3ac7b7`](https://github.com/npm/cli/commit/f3ac7b7460e1d9e1f9d3d8056317e36bb9813d5d) [#7939](https://github.com/npm/cli/pull/7939) no implicit latest tag on publish when latest > version (#7939) (@reggi, @ljharb)
+### Dependencies
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+* [`4bf1901`](https://github.com/npm/cli/commit/4bf1901f6dc57748d851ebe82262e9bef85a4ba7) [#7945](https://github.com/npm/cli/pull/7945) `@npmcli/metavuln-calculator@9.0.0`
+* [`ca84b22`](https://github.com/npm/cli/commit/ca84b22a18806495c37ef6ee2aecd42a1c7bb7f6) [#7945](https://github.com/npm/cli/pull/7945) `pacote@21.0.0`
+
 ## [9.0.0-pre.0](https://github.com/npm/cli/compare/arborist-v8.0.0...arborist-v9.0.0-pre.0) (2024-11-26)
 ### ⚠️ BREAKING CHANGES
 * `--ignore-scripts` now applies to all lifecycle scripts, include `prepare`
