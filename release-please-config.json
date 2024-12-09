@@ -55,6 +55,5 @@
   },
   "prerelease": false,
   "group-pull-request-title-pattern": "chore: release ${version}",
-  "pull-request-title-pattern": "chore: release${component} ${version}",
-  "prerelease-type": "pre.0"
+  "pull-request-title-pattern": "chore: release${component} ${version}"
 }
