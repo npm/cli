@@ -1,5 +1,33 @@
 # Changelog
 
+## [11.0.0](https://github.com/npm/cli/compare/v11.0.0-pre.1...v11.0.0) (2024-12-16)
+### Documentation
+* [`8a911da`](https://github.com/npm/cli/commit/8a911da452b9785bcd051778570beeb2d8b27421) [#7963](https://github.com/npm/cli/pull/7963) ls: removed design change pending section note (#7963) (@milaninfy)
+### Dependencies
+* [`5319e48`](https://github.com/npm/cli/commit/5319e48a5a91768dccdfe728392dc2040e7ce27e) [#7973](https://github.com/npm/cli/pull/7973) remove unnecessary sprintf-js files in node_modules (#7973)
+* [`d369c77`](https://github.com/npm/cli/commit/d369c7716d753580da708723a2a4f8b3be767cb1) [#7976](https://github.com/npm/cli/pull/7976) `socks-proxy-agent@8.0.5`
+* [`3b2951a`](https://github.com/npm/cli/commit/3b2951a3ba1521b9866d9b33960aa3307d4f31dd) [#7976](https://github.com/npm/cli/pull/7976) `https-proxy-agent@7.0.6`
+* [`a598b7b`](https://github.com/npm/cli/commit/a598b7bd3de2b02bd14a3fa2f49c14a5ca50a43e) [#7976](https://github.com/npm/cli/pull/7976) `agent-base@7.1.3`
+* [`52bcaf6`](https://github.com/npm/cli/commit/52bcaf6464f44b30137ee3d3fe79322c1b1646ef) [#7976](https://github.com/npm/cli/pull/7976) `debug@4.4.0`
+* [`aabf345`](https://github.com/npm/cli/commit/aabf345a524f8aba7e0f45c0d4b8c86d5160d0cc) [#7976](https://github.com/npm/cli/pull/7976) `p-map@7.0.3`
+* [`28e8761`](https://github.com/npm/cli/commit/28e876135411cd9a93dbdd74906869c54286d7bc) [#7976](https://github.com/npm/cli/pull/7976) `npm-package-arg@12.0.1`
+### Chores
+* [`ecd7190`](https://github.com/npm/cli/commit/ecd719026860d464557223b212acec4347477128) [#7976](https://github.com/npm/cli/pull/7976) dev dependency updates (@wraithgar)
+* [`a07f4e0`](https://github.com/npm/cli/commit/a07f4e0d921f640be6aa87736debd550ec478f89) [#7976](https://github.com/npm/cli/pull/7976) `@npmcli/template-oss@4.23.6` (@wraithgar)
+* [`687ab12`](https://github.com/npm/cli/commit/687ab12eb5ea0ee1017101f3a83d42fd76299627) [#7970](https://github.com/npm/cli/pull/7970) remove pre-release mode from npm 11 and workspaces (#7970) (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.0): `@npmcli/arborist@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.0.0): `@npmcli/config@10.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmaccess-v10.0.0): `libnpmaccess@10.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.0.0): `libnpmdiff@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.0.0): `libnpmexec@10.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.0): `libnpmfund@7.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmorg-v8.0.0): `libnpmorg@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.0.0): `libnpmpack@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpublish-v11.0.0): `libnpmpublish@11.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmsearch-v9.0.0): `libnpmsearch@9.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmteam-v8.0.0): `libnpmteam@8.0.0`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmversion-v8.0.0): `libnpmversion@8.0.0`
+
 ## [11.0.0-pre.1](https://github.com/npm/cli/compare/v11.0.0-pre.0...v11.0.0-pre.1) (2024-12-06)
 ### ⚠️ BREAKING CHANGES
 * Upon publishing, in order to apply a default "latest" dist tag, the command now retrieves all prior versions of the package. It will require that the version you're trying to publish is above the latest semver version in the registry, not including pre-release tags.

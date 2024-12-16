@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.0.0](https://github.com/npm/cli/compare/config-v10.0.0-pre.1...config-v10.0.0) (2024-12-16)
+### Features
+* [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
+### Chores
+* [`a07f4e0`](https://github.com/npm/cli/commit/a07f4e0d921f640be6aa87736debd550ec478f89) [#7976](https://github.com/npm/cli/pull/7976) `@npmcli/template-oss@4.23.6` (@wraithgar)
+
 ## [10.0.0-pre.1](https://github.com/npm/cli/compare/config-v10.0.0-pre.0...config-v10.0.0-pre.1) (2024-12-06)
 ### Documentation
 * [`2af31dd`](https://github.com/npm/cli/commit/2af31dd30f4c226f43ce7295cd0b5fbb3f3cb2a6) [#7947](https://github.com/npm/cli/pull/7947) change certfile to cafile (#7947) (@wraithgar)
