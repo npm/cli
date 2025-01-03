@@ -208,6 +208,7 @@ Object {
     "man/man1/npm-team.1",
     "man/man1/npm-test.1",
     "man/man1/npm-token.1",
+    "man/man1/npm-undeprecate.1",
     "man/man1/npm-uninstall.1",
     "man/man1/npm-unpublish.1",
     "man/man1/npm-unstar.1",

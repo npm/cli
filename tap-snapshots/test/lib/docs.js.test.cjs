@@ -155,6 +155,7 @@ Array [
   "team",
   "test",
   "token",
+  "undeprecate",
   "uninstall",
   "unpublish",
   "unstar",
@@ -2850,7 +2851,7 @@ Usage:
 npm deprecate <package-spec> <message>
 
 Options:
-[--registry <registry>] [--otp <otp>]
+[--registry <registry>] [--otp <otp>] [--dry-run]
 
 Run "npm help deprecate" for more info
 
@@ -2862,6 +2863,7 @@ Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`otp\`
+#### \`dry-run\`
 `
 
 exports[`test/lib/docs.js TAP usage diff > must match snapshot 1`] = `
@@ -4272,6 +4274,28 @@ Note: This command is unaware of workspaces.
 #### \`cidr\`
 #### \`registry\`
 #### \`otp\`
+`
+
+exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `
+Undeprecate a version of a package
+
+Usage:
+npm undeprecate <package-spec>
+
+Options:
+[--registry <registry>] [--otp <otp>] [--dry-run]
+
+Run "npm help undeprecate" for more info
+
+\`\`\`bash
+npm undeprecate <package-spec>
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`registry\`
+#### \`otp\`
+#### \`dry-run\`
 `
 
 exports[`test/lib/docs.js TAP usage uninstall > must match snapshot 1`] = `

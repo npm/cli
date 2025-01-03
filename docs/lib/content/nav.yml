@@ -177,6 +177,9 @@
   - title: npm token
     url: /commands/npm-token
     description: Manage your authentication tokens
+  - title: npm undeprecate
+    url: /commands/npm-undeprecate
+    description: Undeprecate a version of a package
   - title: npm uninstall
     url: /commands/npm-uninstall
     description: Remove a package
