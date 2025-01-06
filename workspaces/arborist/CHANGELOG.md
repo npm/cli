@@ -1,5 +1,38 @@
 # Changelog
 
+## [9.0.0](https://github.com/npm/cli/compare/arborist-v9.0.0-pre.1...arborist-v9.0.0) (2024-12-16)
+### Features
+* [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
+### Chores
+* [`a07f4e0`](https://github.com/npm/cli/commit/a07f4e0d921f640be6aa87736debd550ec478f89) [#7976](https://github.com/npm/cli/pull/7976) `@npmcli/template-oss@4.23.6` (@wraithgar)
+
+## [9.0.0-pre.1](https://github.com/npm/cli/compare/arborist-v9.0.0-pre.0...arborist-v9.0.0-pre.1) (2024-12-06)
+### ⚠️ BREAKING CHANGES
+* Upon publishing, in order to apply a default "latest" dist tag, the command now retrieves all prior versions of the package. It will require that the version you're trying to publish is above the latest semver version in the registry, not including pre-release tags.
+* `bun.lockb` files are now included in the strict ignore list during packing
+### Features
+* [`f3ac7b7`](https://github.com/npm/cli/commit/f3ac7b7460e1d9e1f9d3d8056317e36bb9813d5d) [#7939](https://github.com/npm/cli/pull/7939) no implicit latest tag on publish when latest > version (#7939) (@reggi, @ljharb)
+### Dependencies
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+* [`4bf1901`](https://github.com/npm/cli/commit/4bf1901f6dc57748d851ebe82262e9bef85a4ba7) [#7945](https://github.com/npm/cli/pull/7945) `@npmcli/metavuln-calculator@9.0.0`
+* [`ca84b22`](https://github.com/npm/cli/commit/ca84b22a18806495c37ef6ee2aecd42a1c7bb7f6) [#7945](https://github.com/npm/cli/pull/7945) `pacote@21.0.0`
+
+## [9.0.0-pre.0](https://github.com/npm/cli/compare/arborist-v8.0.0...arborist-v9.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* `--ignore-scripts` now applies to all lifecycle scripts, include `prepare`
+* npm will no longer fall back to the old audit endpoint if the bulk advisory request fails.
+* @npmcli/arborist now supports node `^20.17.0 || >=22.9.0`
+### Features
+* [`6995303`](https://github.com/npm/cli/commit/6995303687ab59541b727bf611f73624d1829b6c) [#7850](https://github.com/npm/cli/pull/7850) adds `--ignore-scripts` flag to `pack` (@reggi)
+### Bug Fixes
+* [`080a0f2`](https://github.com/npm/cli/commit/080a0f2d3f09a81f0a5b2992431e0bc7feb8d701) [#7911](https://github.com/npm/cli/pull/7911) remove old audit fallback request (@wraithgar)
+* [`3ffc08b`](https://github.com/npm/cli/commit/3ffc08bc848ed262ab95e37593c8c058fd633caa) [#7831](https://github.com/npm/cli/pull/7831) for @npmcli/arborist sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Dependencies
+* [`7dbef6f`](https://github.com/npm/cli/commit/7dbef6f3a3ead089b1b8b9fe6b2fa25e24309000) [#7850](https://github.com/npm/cli/pull/7850) `pacote@20.0.0`
+* [`75a3f12`](https://github.com/npm/cli/commit/75a3f1228865f426d8790be27f1258e501f2c450) [#7859](https://github.com/npm/cli/pull/7859) remove unused deps (#7859)
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+
 ## [8.0.0](https://github.com/npm/cli/compare/arborist-v7.5.4...arborist-v8.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `@npmcli/arborist` now supports node `^18.17.0 || >=20.5.0`

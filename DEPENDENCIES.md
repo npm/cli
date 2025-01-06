@@ -8,7 +8,6 @@ graph LR;
   bin-links-->proc-log;
   bin-links-->read-cmd-shim;
   bin-links-->write-file-atomic;
-  cacache-->fs-minipass;
   cacache-->npmcli-fs["@npmcli/fs"];
   cacache-->ssri;
   cacache-->unique-filename;
@@ -44,9 +43,6 @@ graph LR;
   libnpmfund-->npmcli-arborist["@npmcli/arborist"];
   libnpmfund-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmfund-->npmcli-template-oss["@npmcli/template-oss"];
-  libnpmhook-->npm-registry-fetch;
-  libnpmhook-->npmcli-eslint-config["@npmcli/eslint-config"];
-  libnpmhook-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmorg-->npm-registry-fetch;
   libnpmorg-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmorg-->npmcli-template-oss["@npmcli/template-oss"];
@@ -89,7 +85,6 @@ graph LR;
   normalize-package-data-->semver;
   npm-->abbrev;
   npm-->cacache;
-  npm-->fs-minipass;
   npm-->hosted-git-info;
   npm-->ini;
   npm-->init-package-json;
@@ -98,7 +93,6 @@ graph LR;
   npm-->libnpmdiff;
   npm-->libnpmexec;
   npm-->libnpmfund;
-  npm-->libnpmhook;
   npm-->libnpmorg;
   npm-->libnpmpack;
   npm-->libnpmpublish;
@@ -138,7 +132,7 @@ graph LR;
   npm-->semver;
   npm-->ssri;
   npm-->validate-npm-package-name;
-  npm-->write-file-atomic;
+  npm-->which;
   npm-bundled-->npm-normalize-package-bin;
   npm-install-checks-->semver;
   npm-package-arg-->hosted-git-info;
@@ -160,7 +154,6 @@ graph LR;
   npmcli-arborist-->bin-links;
   npmcli-arborist-->cacache;
   npmcli-arborist-->hosted-git-info;
-  npmcli-arborist-->json-parse-even-better-errors;
   npmcli-arborist-->minify-registry-metadata;
   npmcli-arborist-->nopt;
   npmcli-arborist-->npm-install-checks;
@@ -172,6 +165,7 @@ graph LR;
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
+  npmcli-arborist-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -205,6 +199,7 @@ graph LR;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-git-->proc-log;
   npmcli-git-->semver;
+  npmcli-git-->which;
   npmcli-installed-package-contents-->npm-bundled;
   npmcli-installed-package-contents-->npm-normalize-package-bin;
   npmcli-map-workspaces-->npmcli-name-from-folder["@npmcli/name-from-folder"];
@@ -227,17 +222,18 @@ graph LR;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
   npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
+  npmcli-promise-spawn-->which;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-package-json["@npmcli/package-json"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-run-script-->proc-log;
+  npmcli-run-script-->which;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
-  npmcli-smoke-tests-->semver;
+  npmcli-smoke-tests-->which;
   pacote-->cacache;
-  pacote-->fs-minipass;
   pacote-->npm-package-arg;
   pacote-->npm-packlist;
   pacote-->npm-pick-manifest;
@@ -260,9 +256,6 @@ graph LR;
 ## all dependencies
 ```mermaid
 graph LR;
-  agent-base-->debug;
-  aggregate-error-->clean-stack;
-  aggregate-error-->indent-string;
   bin-links-->cmd-shim;
   bin-links-->npm-normalize-package-bin;
   bin-links-->proc-log;
@@ -321,9 +314,9 @@ graph LR;
   isaacs-cliui-->strip-ansi;
   isaacs-cliui-->wrap-ansi-cjs;
   isaacs-cliui-->wrap-ansi;
+  isaacs-fs-minipass-->minipass;
   jackspeak-->isaacs-cliui["@isaacs/cliui"];
   jackspeak-->pkgjs-parseargs["@pkgjs/parseargs"];
-  libnpmaccess-->nock;
   libnpmaccess-->npm-package-arg;
   libnpmaccess-->npm-registry-fetch;
   libnpmaccess-->npmcli-eslint-config["@npmcli/eslint-config"];
@@ -363,12 +356,6 @@ graph LR;
   libnpmfund-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmfund-->npmcli-template-oss["@npmcli/template-oss"];
   libnpmfund-->tap;
-  libnpmhook-->aproba;
-  libnpmhook-->nock;
-  libnpmhook-->npm-registry-fetch;
-  libnpmhook-->npmcli-eslint-config["@npmcli/eslint-config"];
-  libnpmhook-->npmcli-template-oss["@npmcli/template-oss"];
-  libnpmhook-->tap;
   libnpmorg-->aproba;
   libnpmorg-->minipass;
   libnpmorg-->nock;
@@ -386,7 +373,6 @@ graph LR;
   libnpmpack-->spawk;
   libnpmpack-->tap;
   libnpmpublish-->ci-info;
-  libnpmpublish-->nock;
   libnpmpublish-->normalize-package-data;
   libnpmpublish-->npm-package-arg;
   libnpmpublish-->npm-registry-fetch;
@@ -421,7 +407,6 @@ graph LR;
   libnpmversion-->tap;
   make-fetch-happen-->cacache;
   make-fetch-happen-->http-cache-semantics;
-  make-fetch-happen-->is-lambda;
   make-fetch-happen-->minipass-fetch;
   make-fetch-happen-->minipass-flush;
   make-fetch-happen-->minipass-pipeline;
@@ -443,7 +428,6 @@ graph LR;
   minipass-sized-->minipass;
   minizlib-->minipass;
   minizlib-->rimraf;
-  minizlib-->yallist;
   node-gyp-->env-paths;
   node-gyp-->exponential-backoff;
   node-gyp-->glob;
@@ -483,7 +467,6 @@ graph LR;
   npm-->libnpmdiff;
   npm-->libnpmexec;
   npm-->libnpmfund;
-  npm-->libnpmhook;
   npm-->libnpmorg;
   npm-->libnpmpack;
   npm-->libnpmpublish;
@@ -546,7 +529,6 @@ graph LR;
   npm-->tufjs-repo-mock["@tufjs/repo-mock"];
   npm-->validate-npm-package-name;
   npm-->which;
-  npm-->write-file-atomic;
   npm-bundled-->npm-normalize-package-bin;
   npm-install-checks-->semver;
   npm-package-arg-->hosted-git-info;
@@ -579,7 +561,6 @@ graph LR;
   npmcli-arborist-->common-ancestor-path;
   npmcli-arborist-->hosted-git-info;
   npmcli-arborist-->isaacs-string-locale-compare["@isaacs/string-locale-compare"];
-  npmcli-arborist-->json-parse-even-better-errors;
   npmcli-arborist-->json-stringify-nice;
   npmcli-arborist-->lru-cache;
   npmcli-arborist-->minify-registry-metadata;
@@ -595,6 +576,7 @@ graph LR;
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   npmcli-arborist-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-arborist-->npmcli-metavuln-calculator["@npmcli/metavuln-calculator"];
+  npmcli-arborist-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-arborist-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-arborist-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-arborist-->npmcli-package-json["@npmcli/package-json"];
@@ -695,10 +677,8 @@ graph LR;
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-smoke-tests-->proxy;
-  npmcli-smoke-tests-->semver;
   npmcli-smoke-tests-->tap;
   npmcli-smoke-tests-->which;
-  p-map-->aggregate-error;
   pacote-->cacache;
   pacote-->fs-minipass;
   pacote-->minipass;
@@ -766,6 +746,7 @@ graph LR;
   strip-ansi-->ansi-regex;
   tar-->chownr;
   tar-->fs-minipass;
+  tar-->isaacs-fs-minipass["@isaacs/fs-minipass"];
   tar-->minipass;
   tar-->minizlib;
   tar-->mkdirp;
@@ -794,14 +775,13 @@ Each group depends on packages lower down the chain, nothing depends on
 packages higher up the chain.
 
  - npm
- - @npmcli/smoke-tests, libnpmaccess, libnpmexec, libnpmpublish
- - @npmcli/mock-registry, libnpmdiff, libnpmfund, libnpmpack
+ - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
  - @npmcli/arborist
  - @npmcli/metavuln-calculator
  - pacote, @npmcli/config, libnpmversion
- - @npmcli/run-script, @npmcli/map-workspaces, libnpmhook, libnpmorg, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/run-script, @npmcli/map-workspaces, libnpmaccess, libnpmorg, libnpmpublish, libnpmsearch, libnpmteam, init-package-json, npm-profile
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
- - npm-pick-manifest, @npmcli/installed-package-contents, cacache, promzard
- - @npmcli/docs, npm-package-arg, npm-install-checks, npm-bundled, normalize-package-data, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read
- - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, hosted-git-info, proc-log, validate-npm-package-name, @npmcli/promise-spawn, ini, npm-normalize-package-bin, json-parse-even-better-errors, @npmcli/node-gyp, fs-minipass, ssri, unique-slug, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/name-from-folder, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
+ - @npmcli/smoke-tests, npm-pick-manifest, @npmcli/installed-package-contents, cacache, promzard
+ - @npmcli/docs, npm-package-arg, @npmcli/promise-spawn, npm-install-checks, npm-bundled, normalize-package-data, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, hosted-git-info, proc-log, validate-npm-package-name, which, ini, npm-normalize-package-bin, json-parse-even-better-errors, @npmcli/node-gyp, ssri, unique-slug, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/name-from-folder, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

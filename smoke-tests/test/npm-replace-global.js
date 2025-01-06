@@ -103,6 +103,7 @@ t.test('publish and replace global self', async t => {
     getPaths,
     paths: { globalBin, globalNodeModules, cache },
   } = await setupNpmGlobal(t, {
+    strictRegistryNock: false,
     testdir: {
       home: {
         '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
@@ -143,7 +144,7 @@ t.test('publish and replace global self', async t => {
     }
     return false
   }).reply(201, {})
-  await npmLocal('publish', { proxy: true, force: true })
+  await npmLocal('publish', '--tag=smoke-test', { proxy: true, force: true })
 
   t.comment(JSON.stringify(publishedPackument, null, 2))
 

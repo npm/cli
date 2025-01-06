@@ -324,6 +324,7 @@ Some files are always ignored by default:
   if you wish it to be published)
 * `pnpm-lock.yaml`
 * `yarn.lock`
+* `bun.lockb`
 
 Most of these ignored files can be included specifically if included in
 the `files` globs.  Exceptions to this are:
@@ -334,6 +335,7 @@ the `files` globs.  Exceptions to this are:
 * `package-lock.json`
 * `pnpm-lock.yaml`
 * `yarn.lock`
+* `bun.lockb`
 
 These can not be included.
 

@@ -233,6 +233,18 @@ t.test('node - with deps', t => {
   t.end()
 })
 
+t.test('node - with duplicate deps', t => {
+  const node = {
+    ...root,
+    edgesOut: [
+      { to: dep1 },
+    ],
+  }
+  const res = cyclonedxOutput({ npm, nodes: [node, dep1, dep1] })
+  t.matchSnapshot(JSON.stringify(res))
+  t.end()
+})
+
 // Check that all of the generated test snapshots validate against the CycloneDX schema
 t.test('schema validation', t => {
   // Load schemas

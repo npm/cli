@@ -73,7 +73,9 @@ const getCleanPaths = async () => {
   })
 }
 
-module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
+module.exports = async (t, {
+  testdir = {}, debug, mockRegistry = true, strictRegistryNock = true, useProxy = false,
+} = {}) => {
   const debugLog = debug || CI ? (...a) => t.comment(...a) : () => {}
   debugLog({ SMOKE_PUBLISH_TARBALL, CI })
 
@@ -103,7 +105,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     tap: t,
     registry: MOCK_REGISTRY,
     debug,
-    strict: true,
+    strict: strictRegistryNock,
   })
 
   const proxyEnv = {}

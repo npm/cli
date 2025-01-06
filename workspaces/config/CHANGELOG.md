@@ -1,5 +1,25 @@
 # Changelog
 
+## [10.0.0](https://github.com/npm/cli/compare/config-v10.0.0-pre.1...config-v10.0.0) (2024-12-16)
+### Features
+* [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
+### Chores
+* [`a07f4e0`](https://github.com/npm/cli/commit/a07f4e0d921f640be6aa87736debd550ec478f89) [#7976](https://github.com/npm/cli/pull/7976) `@npmcli/template-oss@4.23.6` (@wraithgar)
+
+## [10.0.0-pre.1](https://github.com/npm/cli/compare/config-v10.0.0-pre.0...config-v10.0.0-pre.1) (2024-12-06)
+### Documentation
+* [`2af31dd`](https://github.com/npm/cli/commit/2af31dd30f4c226f43ce7295cd0b5fbb3f3cb2a6) [#7947](https://github.com/npm/cli/pull/7947) change certfile to cafile (#7947) (@wraithgar)
+### Dependencies
+* [`c0bcc2a`](https://github.com/npm/cli/commit/c0bcc2a860fec5c86234dec44f5474364c25aefc) [#7955](https://github.com/npm/cli/pull/7955) `walk-up-path@4.0.0`
+
+## [10.0.0-pre.0](https://github.com/npm/cli/compare/config-v9.0.0...config-v10.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* @npmcli/config now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`6e11eb2`](https://github.com/npm/cli/commit/6e11eb2cf663b6566f4fcf10b2b9d4fbce615b5d) [#7831](https://github.com/npm/cli/pull/7831) for @npmcli/config sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+
 ## [9.0.0](https://github.com/npm/cli/compare/config-v8.3.4...config-v9.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `@npmcli/config` now supports node `^18.17.0 || >=20.5.0`

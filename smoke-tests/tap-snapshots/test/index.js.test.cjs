@@ -24,13 +24,12 @@ All commands:
     access, adduser, audit, bugs, cache, ci, completion,
     config, dedupe, deprecate, diff, dist-tag, docs, doctor,
     edit, exec, explain, explore, find-dupes, fund, get, help,
-    help-search, hook, init, install, install-ci-test,
-    install-test, link, ll, login, logout, ls, org, outdated,
-    owner, pack, ping, pkg, prefix, profile, prune, publish,
-    query, rebuild, repo, restart, root, run-script, sbom,
-    search, set, shrinkwrap, star, stars, start, stop, team,
-    test, token, uninstall, unpublish, unstar, update, version,
-    view, whoami
+    help-search, init, install, install-ci-test, install-test,
+    link, ll, login, logout, ls, org, outdated, owner, pack,
+    ping, pkg, prefix, profile, prune, publish, query, rebuild,
+    repo, restart, root, run-script, sbom, search, set,
+    shrinkwrap, star, stars, start, stop, team, test, token,
+    uninstall, unpublish, unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -117,6 +116,7 @@ Wrote to {NPM}/{TESTDIR}/project/package.json:
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "description": ""
 }
 `
@@ -172,6 +172,7 @@ Object {
   "scripts": Object {
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -224,6 +225,7 @@ Object {
   "scripts": Object {
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -254,6 +256,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -278,6 +281,7 @@ Object {
       "LC_ALL=sk",
     ],
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -306,6 +310,7 @@ exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "commonjs",
   "description": "",
   "dependencies": {
     "abbrev": "^1.0.4"
@@ -336,6 +341,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -393,6 +399,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `
@@ -453,6 +460,7 @@ Object {
     "hello": "echo Hello",
     "test": "echo /"Error: no test specified/" && exit 1",
   },
+  "type": "commonjs",
   "version": "1.0.0",
 }
 `

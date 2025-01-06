@@ -159887,6 +159887,7 @@ ArboristNode {
       "location": "node_modules/foo",
       "name": "foo",
       "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-workspaces-should-allow-cyclic-peer-dependencies-between-workspaces-and-packages-from-a-repository/node_modules/foo",
+      "resolved": "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
       "version": "1.0.0",
     },
     "workspace-a" => ArboristLink {
