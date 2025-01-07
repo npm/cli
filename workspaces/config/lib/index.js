@@ -274,6 +274,7 @@ class Config {
     }
 
     try {
+      // This does not have an actual definition
       defaultsObject['npm-version'] = require(join(this.npmPath, 'package.json')).version
     } catch {
       // in some weird state where the passed in npmPath does not have a package.json
@@ -568,7 +569,24 @@ class Config {
             }
           }
         }
+        // Some defaults like npm-version are not user-definable and thus don't have definitions
+        if (where !== 'default') {
+          this.#checkUnknown(where, key)
+        }
         conf.data[k] = v
+      }
+    }
+  }
+
+  #checkUnknown (where, key) {
+    if (!this.definitions[key]) {
+      if (!key.includes(':')) {
+        log.warn(`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`)
+        return
+      }
+      const baseKey = key.split(':').pop()
+      if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
+        log.warn(`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`)
       }
     }
   }
