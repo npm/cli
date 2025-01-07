@@ -61,6 +61,7 @@ class Config {
     definitions,
     shorthands,
     flatten,
+    nerfDarts = [],
     npmPath,
 
     // options just to override in tests, mostly
@@ -71,8 +72,9 @@ class Config {
     cwd = process.cwd(),
     excludeNpmCwd = false,
   }) {
-    // turn the definitions into nopt's weirdo syntax
+    this.nerfDarts = nerfDarts
     this.definitions = definitions
+    // turn the definitions into nopt's weirdo syntax
     const types = {}
     const defaults = {}
     this.deprecated = {}
@@ -572,7 +574,6 @@ class Config {
   }
 
   #checkDeprecated (key) {
-    // XXX(npm9+) make this throw an error
     if (this.deprecated[key]) {
       log.warn('config', key, this.deprecated[key])
     }
