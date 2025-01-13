@@ -52,13 +52,13 @@ into a tarball (b).
     By default, `npm install` will install all modules listed as
     dependencies in [`package.json`](/configuring-npm/package-json).
 
-    With the `--production` flag (or when the `NODE_ENV` environment
+    With the `--omit=dev` flag (or if the `NODE_ENV` environment
     variable is set to `production`), npm will not install modules listed
     in `devDependencies`. To install all modules listed in both
     `dependencies` and `devDependencies` when `NODE_ENV` environment
-    variable is set to `production`, you can use `--production=false`.
+    variable is set to `production`, you can use `--include=dev`.
 
-    > NOTE: The `--production` flag has no particular meaning when adding a
+    > NOTE: The `--omit=dev` flag has no particular meaning when adding a
     dependency to a project.
 
 * `npm install <folder>`:
