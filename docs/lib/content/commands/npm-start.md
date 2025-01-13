@@ -1,4 +1,4 @@
----
+$ npm install---
 title: npm-start
 section: 1
 description: Start a package
