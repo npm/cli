@@ -80,7 +80,7 @@ The URL to the project homepage.
 Example:
 
 ```json
-"homepage": "https://github.com/npm/semver#readme"
+"homepage": "https://github.com/npm/example#readme"
 ```
 
 ### bugs
@@ -94,8 +94,8 @@ It should look like this:
 ```json
 {
   "bugs": {
-    "url": "https://github.com/npm/semver/issues",
-    "email": "team@npmjs.com"
+    "url": "https://github.com/npm/example/issues",
+    "email": "example@npmjs.com"
   }
 }
 ```
@@ -259,7 +259,7 @@ string URL, or an array of objects and string URLs:
       "type" : "individual",
       "url" : "http://npmjs.com/donate"
     },
-    "http://npmjs.com/donateAlso",
+    "http://npmjs.com/donate-also",
     {
       "type" : "patreon",
       "url" : "https://www.patreon.com/user"
@@ -539,9 +539,9 @@ same shortcut syntax you use for `npm install`:
 
 ```json
 {
-  "repository": "npm/semver",
+  "repository": "npm/example",
 
-  "repository": "github:npm/semver",
+  "repository": "github:npm/example",
 
   "repository": "gist:11081aaa281",
 
@@ -635,7 +635,7 @@ For example, these are all valid:
     "baz": ">1.0.2 <=2.3.4",
     "boo": "2.0.1",
     "qux": "<1.0.0 || >=2.3.1 <2.4.5 || >=2.5.2 <3.0.0",
-    "asd": "http://npmjs.com/asdf.tar.gz",
+    "asd": "http://npmjs.com/example.tar.gz",
     "til": "~1.2",
     "elf": "~1.2.3",
     "two": "2.x",
@@ -714,7 +714,7 @@ included.  For example:
   "dependencies": {
     "express": "expressjs/express",
     "mocha": "mochajs/mocha#4727d357ea",
-    "module": "npm/repo#feature\/branch"
+    "module": "npm/example-github-repo#feature\/branch"
   }
 }
 ```
