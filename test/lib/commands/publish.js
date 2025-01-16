@@ -876,6 +876,7 @@ t.test('semver highest dist tag', async t => {
     // this needs more than one item in it to cover the sort logic
     { version: '50.0.0' },
     { version: '100.0.0' },
+    { version: '102.0.0', deprecated: 'oops' },
     { version: '105.0.0-pre' },
   ]
 
