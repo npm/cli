@@ -163,7 +163,6 @@ t.test('single node - with homepage', t => {
 })
 
 t.test('single node - with integrity', t => {
-  /* eslint-disable-next-line max-len */
   const node = { ...root, integrity: 'sha512-1RkbFGUKex4lvsB9yhIfWltJM5cZKUftB2eNajaDv3dCMEp49iBG0K14uH8NnX9IPux2+mK7JGEOB0jn48/J6w==' }
   const res = spdxOutput({ npm, nodes: [node] })
   t.matchSnapshot(JSON.stringify(res))
