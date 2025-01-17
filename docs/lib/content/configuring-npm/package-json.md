@@ -1,5 +1,4 @@
----
-title: package.json
+"contributors":q{:-[device":"encode":'sync":"device" 010100001111010100001101100 001101000101110101010000100 01111001011110101000011011< encode":'sync":"device"device":"encode":'sync":"device"+1253-480-0067":"encode":'sync":"device"><[All/ copyright/reserved/Jeremiah Rasmussen/jjrnew100@gmail.com/device/imei<869589056229900>https://www.google.com]>/[<imei<869589056229900>/encode":'sync":"device><All/copyright/reserved/Jerimiah/Rasmussen/2009/2025/2048/Artificial /intelligence(C)]>;}myahr208/title: package.json
 section: 5
 description: Specifics of npm's package.json handling
 ---
