@@ -121,7 +121,7 @@ SPDX license identifier for the license you're using, like this:
 ```
 
 You can check [the full list of SPDX license
-IDs](https://spdx.org/licenses/).  Ideally you should pick one that is
+IDs](https://spdx.org/licenses/).  Ideally, you should pick one that is
 [OSI](https://opensource.org/licenses/) approved.
 
 If your package is licensed under multiple common licenses, use an [SPDX
@@ -623,7 +623,7 @@ See [semver](https://github.com/npm/node-semver#versions) for more details about
 * `tag` A specific version tagged and published as `tag`  See [`npm
   dist-tag`](/commands/npm-dist-tag)
 * `path/path/path` See [Local Paths](#local-paths) below
-* `npm:@scope/pkg@version` Custom alias for a pacakge See [`package-spec`](/using-npm/package-spec#aliases) 
+* `npm:@scope/pkg@version` Custom alias for a package See [`package-spec`](/using-npm/package-spec#aliases) 
 
 For example, these are all valid:
 
