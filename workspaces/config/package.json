@@ -41,7 +41,7 @@
     "@npmcli/package-json": "^6.0.1",
     "ci-info": "^4.0.0",
     "ini": "^5.0.0",
-    "nopt": "^8.0.0",
+    "nopt": "^8.1.0",
     "proc-log": "^5.0.0",
     "semver": "^7.3.5",
     "walk-up-path": "^4.0.0"
