@@ -359,16 +359,18 @@ class MockRegistry {
   }
 
   publish (name, {
-    packageJson, access, noPut, putCode, manifest, packuments,
+    packageJson, access, noGet, noPut, putCode, manifest, packuments,
   } = {}) {
-    // this getPackage call is used to get the latest semver version before publish
-    if (manifest) {
-      this.getPackage(name, { code: 200, resp: manifest })
-    } else if (packuments) {
-      this.getPackage(name, { code: 200, resp: this.manifest({ name, packuments }) })
-    } else {
-      // assumes the package does not exist yet and will 404 x2 from pacote.manifest
-      this.getPackage(name, { times: 2, code: 404 })
+    if (!noGet) {
+      // this getPackage call is used to get the latest semver version before publish
+      if (manifest) {
+        this.getPackage(name, { code: 200, resp: manifest })
+      } else if (packuments) {
+        this.getPackage(name, { code: 200, resp: this.manifest({ name, packuments }) })
+      } else {
+        // assumes the package does not exist yet and will 404 x2 from pacote.manifest
+        this.getPackage(name, { times: 2, code: 404 })
+      }
     }
     if (!noPut) {
       this.putPackage(name, { code: putCode, packageJson, access })
