@@ -80,7 +80,7 @@ jobs:
 
           echo "::group::extracting source from $nodeUrl"
           mkdir -p "$sourceDir"
-          curl -sSL "$nodeUrl" | tar xz -C "$sourceDir" --strip=1 
+          curl -sSL "$nodeUrl" | tar xz -C "$sourceDir" --strip=1
           echo "::endgroup::"
 
           echo "::group::cloning npm"

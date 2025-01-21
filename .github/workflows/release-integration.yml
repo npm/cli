@@ -22,8 +22,8 @@ jobs:
       fail-fast: false
       matrix:
         nodeVersion:
-          - 18
-          - 20
+          - 22
+          - 24
           - nightly
     uses: ./.github/workflows/node-integration.yml
     with:
