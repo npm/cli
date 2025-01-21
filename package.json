@@ -56,7 +56,7 @@
     "@npmcli/config": "^10.0.0",
     "@npmcli/fs": "^4.0.0",
     "@npmcli/map-workspaces": "^4.0.2",
-    "@npmcli/package-json": "^6.1.0",
+    "@npmcli/package-json": "^6.1.1",
     "@npmcli/promise-spawn": "^8.0.2",
     "@npmcli/redact": "^3.0.0",
     "@npmcli/run-script": "^9.0.1",

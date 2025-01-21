@@ -52,7 +52,6 @@
     "@npmcli/promise-spawn",
     "npm-install-checks",
     "npm-bundled",
-    "normalize-package-data",
     "@npmcli/fs",
     "unique-filename",
     "npm-packlist",
@@ -61,7 +60,8 @@
     "nopt",
     "parse-conflict-json",
     "read-package-json-fast",
-    "read"
+    "read",
+    "normalize-package-data"
   ],
   [
     "@npmcli/eslint-config",

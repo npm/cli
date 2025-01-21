@@ -218,7 +218,6 @@ graph LR;
   npmcli-mock-registry-->pacote;
   npmcli-package-json-->hosted-git-info;
   npmcli-package-json-->json-parse-even-better-errors;
-  npmcli-package-json-->normalize-package-data;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
   npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
@@ -660,10 +659,10 @@ graph LR;
   npmcli-package-json-->glob;
   npmcli-package-json-->hosted-git-info;
   npmcli-package-json-->json-parse-even-better-errors;
-  npmcli-package-json-->normalize-package-data;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
   npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
+  npmcli-package-json-->validate-npm-package-license;
   npmcli-promise-spawn-->which;
   npmcli-query-->postcss-selector-parser;
   npmcli-run-script-->node-gyp;
@@ -783,5 +782,5 @@ packages higher up the chain.
  - @npmcli/package-json, npm-registry-fetch
  - @npmcli/git, make-fetch-happen
  - @npmcli/smoke-tests, npm-pick-manifest, @npmcli/installed-package-contents, cacache, promzard
- - @npmcli/docs, npm-package-arg, @npmcli/promise-spawn, npm-install-checks, npm-bundled, normalize-package-data, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read
+ - @npmcli/docs, npm-package-arg, @npmcli/promise-spawn, npm-install-checks, npm-bundled, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read, normalize-package-data
  - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, hosted-git-info, proc-log, validate-npm-package-name, which, ini, npm-normalize-package-bin, json-parse-even-better-errors, @npmcli/node-gyp, ssri, unique-slug, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/name-from-folder, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate
