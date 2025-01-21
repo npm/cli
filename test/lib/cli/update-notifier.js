@@ -61,7 +61,7 @@ const runUpdateNotifier = async (t, {
       if (PACOTE_ERROR) {
         throw PACOTE_ERROR
       }
-      const manifestV = spec === 'npm@latest' ? CURRENT_VERSION
+      const manifestV = spec === 'npm@*' ? CURRENT_VERSION
         : /-/.test(spec) ? CURRENT_BETA : NEXT_VERSION
       return { version: manifestV }
     },
@@ -127,7 +127,7 @@ t.test('situations in which we do not notify', t => {
     const { wroteFile, result, MANIFEST_REQUEST } = await runUpdateNotifier(t, {
       command: 'install',
       prefixDir: { 'package.json': `{"name":"${t.testName}"}` },
-      argv: ['npm@latest'],
+      argv: ['npm@*'],
       global: true,
     })
     t.equal(wroteFile, false)
@@ -139,28 +139,28 @@ t.test('situations in which we do not notify', t => {
     const { wroteFile, result, MANIFEST_REQUEST } = await runUpdateNotifier(t)
     t.equal(wroteFile, true)
     t.equal(result, null)
-    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+    t.strictSame(MANIFEST_REQUEST, ['npm@*'], 'requested latest version')
   })
   t.test('check if stat errors (here for coverage)', async t => {
     const STAT_ERROR = new Error('blorg')
     const { wroteFile, result, MANIFEST_REQUEST } = await runUpdateNotifier(t, { STAT_ERROR })
     t.equal(wroteFile, true)
     t.equal(result, null)
-    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+    t.strictSame(MANIFEST_REQUEST, ['npm@*'], 'requested latest version')
   })
   t.test('ok if write errors (here for coverage)', async t => {
     const WRITE_ERROR = new Error('grolb')
     const { wroteFile, result, MANIFEST_REQUEST } = await runUpdateNotifier(t, { WRITE_ERROR })
     t.equal(wroteFile, true)
     t.equal(result, null)
-    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+    t.strictSame(MANIFEST_REQUEST, ['npm@*'], 'requested latest version')
   })
   t.test('ignore pacote failures (here for coverage)', async t => {
     const PACOTE_ERROR = new Error('pah-KO-tchay')
     const { wroteFile, result, MANIFEST_REQUEST } = await runUpdateNotifier(t, { PACOTE_ERROR })
     t.equal(result, null)
     t.equal(wroteFile, true)
-    t.strictSame(MANIFEST_REQUEST, ['npm@latest'], 'requested latest version')
+    t.strictSame(MANIFEST_REQUEST, ['npm@*'], 'requested latest version')
   })
   t.test('do not update if newer than latest, but same as next', async t => {
     const {
@@ -170,7 +170,7 @@ t.test('situations in which we do not notify', t => {
     } = await runUpdateNotifier(t, { version: NEXT_VERSION })
     t.equal(result, null)
     t.equal(wroteFile, true)
-    const reqs = ['npm@latest', `npm@^${NEXT_VERSION}`]
+    const reqs = ['npm@*', `npm@^${NEXT_VERSION}`]
     t.strictSame(MANIFEST_REQUEST, reqs, 'requested latest and next versions')
   })
   t.test('do not update if on the latest beta', async t => {
@@ -222,11 +222,11 @@ t.test('situations in which we do not notify', t => {
 t.test('notification situations', async t => {
   const cases = {
     [HAVE_BETA]: [`^{V}`],
-    [NEXT_PATCH]: [`latest`, `^{V}`],
-    [NEXT_MINOR]: [`latest`, `^{V}`],
-    [CURRENT_PATCH]: ['latest'],
-    [CURRENT_MINOR]: ['latest'],
-    [CURRENT_MAJOR]: ['latest'],
+    [NEXT_PATCH]: [`*`, `^{V}`],
+    [NEXT_MINOR]: [`*`, `^{V}`],
+    [CURRENT_PATCH]: ['*'],
+    [CURRENT_MINOR]: ['*'],
+    [CURRENT_MAJOR]: ['*'],
   }
 
   for (const [version, reqs] of Object.entries(cases)) {
