@@ -127,7 +127,7 @@ const main = async (opts) => {
     const workspace = publish.workspace && `--workspace=${publish.name}`
     const publishPkg = (...args) => npm('publish', workspace, `--tag=${publish.tag}`, ...args)
 
-    await npm('version prerelease', workspace, '--preid=smoke')
+    await npm('version', 'prerelease', workspace, '--preid=smoke')
     if (isPack) {
       await npm(
         'pack',
