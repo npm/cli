@@ -71,17 +71,8 @@ const getPublishes = async ({ force }) => {
   return publishPackages
 }
 
-const getVersion = async (workspace) => {
-  const value = await npm('pkg', 'get', 'version', workspace, { out: true })
-  return Object.values(JSON.parse(value))[0]
-}
-
-const setVersion = async (workspace, version) => {
-  await npm('pkg', 'set', `version=${version}`, workspace)
-}
-
 const main = async (opts) => {
-  const { otp, dryRun, smokePublish, packDestination } = opts
+  const { test, otp, dryRun, smokePublish, packDestination } = opts
 
   const hasPackDest = !!packDestination
   const publishes = await getPublishes({ force: smokePublish })
@@ -121,7 +112,7 @@ const main = async (opts) => {
   await npm('rm', '--global', '--force', 'npm')
   await npm('link', '--force', '--ignore-scripts')
 
-  if (opts.test) {
+  if (test) {
     await npm('run', 'lint-all', '--ignore-scripts')
     await npm('run', 'postlint', '--ignore-scripts')
     await npm('run', 'test-all', '--ignore-scripts')
@@ -152,10 +143,8 @@ const main = async (opts) => {
 
     if (smokePublish) {
       // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
-      const version = await getVersion(workspace)
       await npm('version', 'prerelease', workspace, '--preid=smoke', '--ignore-scripts', '--no-git-tag-version')
       await publishPkg('--dry-run', '--ignore-scripts')
-      await setVersion(workspace, version)
     } else {
       await publishPkg(
         dryRun && '--dry-run',
@@ -163,23 +152,6 @@ const main = async (opts) => {
       )
     }
   }
-
-  // this is done to make sure package-lock.json is in a good state
-  await npm('prune', '--omit=dev', '--no-save', '--no-audit', '--no-fund')
-  await npm('install', '-w', 'docs', '--ignore-scripts', '--no-audit', '--no-fund')
 }
 
-run(main)
-
-// const caughtMain = async (opts) => {
-//   const { smokePublish } = opts
-//   try {
-//     await main(opts)
-//   } catch (err) {
-//     if (!smokePublish) {
-//       await resetdeps()
-//     }
-//   }
-// }
-
-// run(caughtMain)
+run(main).then(resetdeps)
