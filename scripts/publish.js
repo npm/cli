@@ -153,9 +153,11 @@ const main = async (opts) => {
     if (smokePublish) {
       // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
       const version = await getVersion(workspace)
-      await npm('version', 'prerelease', workspace, '--preid=smoke')
-      await publishPkg('--dry-run')
+      await npm('version', 'prerelease', workspace, '--preid=smoke', '--ignore-scripts')
+      await publishPkg('--dry-run', '--ignore-scripts')
       await setVersion(workspace, version)
+      // undo the package lock changes
+      await npm('install', '--ignore-scripts', '--no-audit', '--no-fund')
     } else {
       await publishPkg(
         dryRun && '--dry-run',
@@ -169,15 +171,17 @@ const main = async (opts) => {
   await npm('install', '-w', 'docs', '--ignore-scripts', '--no-audit', '--no-fund')
 }
 
-const caughtMain = async (opts) => {
-  const { smokePublish } = opts
-  try {
-    await main(opts)
-  } catch (err) {
-    if (!smokePublish) {
-      await resetdeps()
-    }
-  }
-}
+run(main)
 
-run(caughtMain)
+// const caughtMain = async (opts) => {
+//   const { smokePublish } = opts
+//   try {
+//     await main(opts)
+//   } catch (err) {
+//     if (!smokePublish) {
+//       await resetdeps()
+//     }
+//   }
+// }
+
+// run(caughtMain)
