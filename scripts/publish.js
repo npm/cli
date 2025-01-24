@@ -154,4 +154,4 @@ const main = async (opts) => {
   }
 }
 
-run(main).then(resetdeps)
+run(main).catch(resetdeps)
