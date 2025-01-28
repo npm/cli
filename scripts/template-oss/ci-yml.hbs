@@ -10,7 +10,7 @@
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    {{> jobMatrixYml	
+    {{> jobYml	
       jobName="Smoke Publish"	
       jobCheckout=(obj ref="${{ inputs.ref }}")	
       jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
@@ -32,7 +32,7 @@
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    {{> jobMatrixYml	
+    {{> jobYml	
       jobName="Smoke Publish"	
       jobCheckout=(obj ref="${{ inputs.ref }}")	
       jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
@@ -40,7 +40,7 @@
       macCI=false	
     }}	
       - name: Publish Dry-Run	
-        run: ./scripts/publish-dryrun.sh	
+        run: node ./publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true 
       - name: Conclude Check	
         uses: LouisBrunner/checks-action@v1.6.0	
         if: steps.create-check.outputs.check-id && always()	
