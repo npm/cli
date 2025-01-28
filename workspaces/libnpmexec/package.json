@@ -1,6 +1,6 @@
 {
   "name": "libnpmexec",
-  "version": "10.0.1-smoke.0",
+  "version": "10.0.0",
   "files": [
     "bin/",
     "lib/"
