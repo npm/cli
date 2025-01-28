@@ -40,7 +40,7 @@
       macCI=false	
     }}	
       - name: Publish Dry-Run	
-        run: node ./publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true 
+        run: node ./scripts/publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true 
       - name: Conclude Check	
         uses: LouisBrunner/checks-action@v1.6.0	
         if: steps.create-check.outputs.check-id && always()	
