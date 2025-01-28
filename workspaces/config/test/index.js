@@ -45,7 +45,7 @@ const fsMocks = {
   'node:fs': mockFs,
 }
 
-const { definitions, shorthands, flatten } = t.mock('../lib/definitions/index.js', fsMocks)
+const { definitions, shorthands, nerfDarts, flatten } = t.mock('../lib/definitions/index.js', fsMocks)
 const Config = t.mock('../', fsMocks)
 
 // because we used t.mock above, the require cache gets blown and we lose our direct equality
@@ -381,6 +381,8 @@ loglevel = yolo
     // warn logs are emitted as a side effect of validate
     config.validate()
     t.strictSame(logs.filter(l => l[0] === 'warn'), [
+      ['warn', 'Unknown builtin config "builtin-config". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown builtin config "foo". This will stop working in the next major version of npm.'],
       ['warn', 'invalid config', 'registry="hello"', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'full url with "http://"'],
       ['warn', 'invalid config', 'proxy="hello"', 'set in command line options'],
@@ -397,6 +399,13 @@ loglevel = yolo
       ['warn', 'invalid config', 'prefix=true', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'valid filesystem path'],
       ['warn', 'config', 'also', 'Please use --include=dev instead.'],
+      ['warn', 'Unknown env config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown project config "project-config". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown project config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown user config "user-config-from-builtin". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown user config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown global config "global-config". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown global config "foo". This will stop working in the next major version of npm.'],
       ['warn', 'invalid config', 'loglevel="yolo"', `set in ${resolve(path, 'project/.npmrc')}`],
       ['warn', 'invalid config', 'Must be one of:',
         ['silent', 'error', 'warn', 'notice', 'http', 'info', 'verbose', 'silly'].join(', '),
@@ -591,6 +600,12 @@ loglevel = yolo
       ['warn', 'invalid config', 'prefix=true', 'set in command line options'],
       ['warn', 'invalid config', 'Must be', 'valid filesystem path'],
       ['warn', 'config', 'also', 'Please use --include=dev instead.'],
+      ['warn', 'Unknown env config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown user config "default-user-config-in-home". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown user config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown global config "global-config". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown global config "foo". This will stop working in the next major version of npm.'],
+      ['warn', 'Unknown global config "asdf". This will stop working in the next major version of npm.'],
     ])
     logs.length = 0
   })
@@ -1228,6 +1243,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/three`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1253,6 +1269,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1274,6 +1291,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1295,6 +1313,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1316,6 +1335,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1337,6 +1357,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
       excludeNpmCwd: true,
     })
 
@@ -1365,6 +1386,7 @@ t.test('workspaces', async (t) => {
       cwd: join(`${path}/workspaces/one`),
       shorthands,
       definitions,
+      nerfDarts,
     })
 
     await config.load()
@@ -1480,7 +1502,7 @@ t.test('catch project config prefix error', async t => {
   })
   const config = new Config({
     npmPath: `${path}/npm`,
-    argv: [process.execPath, __filename, '--projectconfig', `${path}/project/.npmrc`],
+    argv: [process.execPath, __filename],
     cwd: join(`${path}/project`),
     shorthands,
     definitions,
@@ -1492,7 +1514,7 @@ t.test('catch project config prefix error', async t => {
   logs.length = 0
   // config.load() triggers the error to be logged
   await config.load()
-  const filtered = logs.filter(l => l[0] !== 'silly')
+  const filtered = logs.filter(l => l[0] === 'error')
   t.match(filtered, [[
     'error', 'config', `prefix cannot be changed from project config: ${path}`,
   ]], 'Expected error logged')

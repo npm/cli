@@ -61,7 +61,7 @@ npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer
 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 npm error [--no-bin-links] [--no-fund] [--dry-run]
 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+npm error [--workspaces] [--include-workspace-root] [--install-links]
 npm error
 npm error aliases: clean-install, ic, install-clean, isntall-clean
 npm error
