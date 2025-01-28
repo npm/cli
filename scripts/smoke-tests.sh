@@ -66,7 +66,7 @@ fi
 # were publishing it to the registry. The only difference is in the
 # publish.js script which will only pack and not publish
 node . version $NPM_VERSION --ignore-scripts --git-tag-version="$IS_CI"
-node scripts/publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true
+node . pack . --pack-destination "$RUNNER_TEMP"
 NPM_TARBALL="$RUNNER_TEMP/npm-$NPM_VERSION.tgz"
 node . install --global $NPM_TARBALL
 
