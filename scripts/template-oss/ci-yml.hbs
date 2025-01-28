@@ -11,7 +11,7 @@
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
     {{> jobYml	
-      jobName="Smoke Publish"	
+      jobName="Smoke Tests"	
       jobCheckout=(obj ref="${{ inputs.ref }}")	
       jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
       windowsCI=false	
@@ -33,7 +33,7 @@
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
     {{> jobYml	
-      jobName="Smoke Publish"	
+      jobName="Publish Dry-Run"	
       jobCheckout=(obj ref="${{ inputs.ref }}")	
       jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
       windowsCI=false	

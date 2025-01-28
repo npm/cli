@@ -150,12 +150,24 @@ jobs:
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    name: Smoke Publish
+    name: Smoke Tests - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
     if: github.repository_owner == 'npm'
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+        node-version:
+          - 20.17.0
+          - 20.x
+          - 22.9.0
+          - 22.x
+    runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
-        shell: bash
+        shell: ${{ matrix.platform.shell }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -170,15 +182,15 @@ jobs:
         if: ${{ inputs.check-sha }}
         uses: ./.github/actions/create-check
         with:
-          name: "Smoke Publish"
+          name: "Smoke Tests - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
@@ -199,12 +211,24 @@ jobs:
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    name: Smoke Publish
+    name: Publish Dry-Run - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
     if: github.repository_owner == 'npm'
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - name: Linux
+            os: ubuntu-latest
+            shell: bash
+        node-version:
+          - 20.17.0
+          - 20.x
+          - 22.9.0
+          - 22.x
+    runs-on: ${{ matrix.platform.os }}
     defaults:
       run:
-        shell: bash
+        shell: ${{ matrix.platform.shell }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -219,22 +243,22 @@ jobs:
         if: ${{ inputs.check-sha }}
         uses: ./.github/actions/create-check
         with:
-          name: "Smoke Publish"
+          name: "Publish Dry-Run - ${{ matrix.platform.name }} - ${{ matrix.node-version }}"
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
         uses: actions/setup-node@v4
         id: node
         with:
-          node-version: 22.x
-          check-latest: contains('22.x', '.x')
+          node-version: ${{ matrix.node-version }}
+          check-latest: contains(matrix.node-version, '.x')
           cache: npm
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Publish Dry-Run
-        run: node ./publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true
+        run: node ./scripts/publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
         if: steps.create-check.outputs.check-id && always()

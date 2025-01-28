@@ -151,7 +151,7 @@ jobs:
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    name: Smoke Publish
+    name: Smoke Tests
     if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     defaults:
@@ -171,7 +171,7 @@ jobs:
         if: ${{ inputs.check-sha }}
         uses: ./.github/actions/create-check
         with:
-          name: "Smoke Publish"
+          name: "Smoke Tests"
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
@@ -200,7 +200,7 @@ jobs:
     # checks in symlinks which are not supported there. This should be	
     # fixed somehow, because this means some forms of local development	
     # are likely broken on Windows as well.	
-    name: Smoke Publish
+    name: Publish Dry-Run
     if: github.repository_owner == 'npm'
     runs-on: ubuntu-latest
     defaults:
@@ -220,7 +220,7 @@ jobs:
         if: ${{ inputs.check-sha }}
         uses: ./.github/actions/create-check
         with:
-          name: "Smoke Publish"
+          name: "Publish Dry-Run"
           token: ${{ secrets.GITHUB_TOKEN }}
           sha: ${{ inputs.check-sha }}
       - name: Setup Node
@@ -235,7 +235,7 @@ jobs:
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Publish Dry-Run
-        run: node ./publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true
+        run: node ./scripts/publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
         if: steps.create-check.outputs.check-id && always()
