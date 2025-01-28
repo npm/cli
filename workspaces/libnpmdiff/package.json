@@ -1,6 +1,6 @@
 {
   "name": "libnpmdiff",
-  "version": "8.0.0",
+  "version": "8.0.1-smoke.0",
   "description": "The registry diff",
   "repository": {
     "type": "git",

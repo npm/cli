@@ -1,6 +1,6 @@
 {
   "name": "libnpmpack",
-  "version": "9.0.0",
+  "version": "9.0.1-smoke.0",
   "description": "Programmatic API for the bits behind npm pack",
   "author": "GitHub Inc.",
   "main": "lib/index.js",
