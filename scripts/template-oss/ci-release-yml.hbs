@@ -1,23 +1,45 @@
-{{> ciReleaseYml }}
+{{> ciReleaseYml }}	
 
-  smoke-publish:
-    # This cant be tested on Windows because our node_modules directory
-    # checks in symlinks which are not supported there. This should be
-    # fixed somehow, because this means some forms of local development
-    # are likely broken on Windows as well.
-    {{> jobMatrixYml
-      jobName="Smoke Publish"
-      jobCheckout=(obj ref="${{ inputs.ref }}")
-      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")
-      windowsCI=false
-      macCI=false
-    }}
-      - name: Smoke Publish
-        run: ./scripts/smoke-publish-test.sh
-      - name: Conclude Check
-        uses: LouisBrunner/checks-action@v1.6.0
-        if: steps.create-check.outputs.check-id && always()
-        with:
-          token: $\{{ secrets.GITHUB_TOKEN }}
-          conclusion: $\{{ job.status }}
+  smoke-tests:	
+    # This cant be tested on Windows because our node_modules directory	
+    # checks in symlinks which are not supported there. This should be	
+    # fixed somehow, because this means some forms of local development	
+    # are likely broken on Windows as well.	
+    {{> jobMatrixYml	
+      jobName="Smoke Publish"	
+      jobCheckout=(obj ref="${{ inputs.ref }}")	
+      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
+      windowsCI=false	
+      macCI=false	
+    }}	
+      - name: Smoke Tests	
+        run: ./scripts/smoke-tests.sh	
+      - name: Conclude Check	
+        uses: LouisBrunner/checks-action@v1.6.0	
+        if: steps.create-check.outputs.check-id && always()	
+        with:	
+          token: $\{{ secrets.GITHUB_TOKEN }}	
+          conclusion: $\{{ job.status }}	
+          check_id: $\{{ steps.create-check.outputs.check-id }}	
+
+  publish-dryrun:	
+    # This cant be tested on Windows because our node_modules directory	
+    # checks in symlinks which are not supported there. This should be	
+    # fixed somehow, because this means some forms of local development	
+    # are likely broken on Windows as well.	
+    {{> jobMatrixYml	
+      jobName="Smoke Publish"	
+      jobCheckout=(obj ref="${{ inputs.ref }}")	
+      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
+      windowsCI=false	
+      macCI=false	
+    }}	
+      - name: Publish Dry-Run	
+        run: ./scripts/publish-dryrun.sh	
+      - name: Conclude Check	
+        uses: LouisBrunner/checks-action@v1.6.0	
+        if: steps.create-check.outputs.check-id && always()	
+        with:	
+          token: $\{{ secrets.GITHUB_TOKEN }}	
+          conclusion: $\{{ job.status }}	
           check_id: $\{{ steps.create-check.outputs.check-id }}
