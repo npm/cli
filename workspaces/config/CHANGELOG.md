@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.1](https://github.com/npm/cli/compare/config-v10.0.0...config-v10.0.1) (2025-01-29)
+### Documentation
+* [`e90c6fe`](https://github.com/npm/cli/commit/e90c6feeacdf9ad010d4d73b65d7dd7d3b86efe2) [#8051](https://github.com/npm/cli/pull/8051) depth flag default value (#8051) (@milaninfy)
+
 ## [10.0.0](https://github.com/npm/cli/compare/config-v10.0.0-pre.1...config-v10.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)

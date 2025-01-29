@@ -1,5 +1,36 @@
 # Changelog
 
+## [11.1.0](https://github.com/npm/cli/compare/v11.0.0...v11.1.0) (2025-01-29)
+### Features
+* [`7f6c997`](https://github.com/npm/cli/commit/7f6c9973dc9a4dfebd76e52e060a9d8496b8bd98) [#8009](https://github.com/npm/cli/pull/8009) add dry-run to deprecate/undeprecate commands (@wraithgar)
+* [`1764a37`](https://github.com/npm/cli/commit/1764a37f1913b6a0811a85d89e029fc1dc79da54) [#8009](https://github.com/npm/cli/pull/8009) add npm undeprecate command (@wraithgar)
+### Bug Fixes
+* [`31455b2`](https://github.com/npm/cli/commit/31455b2e177b721292f3382726e3f5f3f2963b1d) [#8054](https://github.com/npm/cli/pull/8054) publish: honor force for no dist tag and registry version check (#8054) (@reggi)
+* [`dc31c1b`](https://github.com/npm/cli/commit/dc31c1bdc6658ab69554adcf2988ee99a615c409) [#8038](https://github.com/npm/cli/pull/8038) remove max-len linting bypasses (@wraithgar)
+* [`8a911ff`](https://github.com/npm/cli/commit/8a911ff895967678aa786595db3418fc28e6966a) [#8038](https://github.com/npm/cli/pull/8038) publish: disregard deprecated versions when calculating highest version (@wraithgar)
+* [`7f72944`](https://github.com/npm/cli/commit/7f72944e43f009cf4d55ff4fe24c459e07f588fd) [#8038](https://github.com/npm/cli/pull/8038) publish: accept publishConfig.tag to override highes semver check (@wraithgar)
+* [`ab9ddc0`](https://github.com/npm/cli/commit/ab9ddc0413374fbf4879da535f82e03bc4e62cf3) [#7992](https://github.com/npm/cli/pull/7992) sbom: deduplicate sbom dependencies (#7992) (@bdehamer)
+* [`f7da341`](https://github.com/npm/cli/commit/f7da341322c2f860156e8144b208583596504479) [#7980](https://github.com/npm/cli/pull/7980) search: properly display multiple search terms (#7980) (@wraithgar)
+### Documentation
+* [`3644e79`](https://github.com/npm/cli/commit/3644e79a73e511bc54d857bc2026b071fe18a6fe) [#8055](https://github.com/npm/cli/pull/8055) update readme for Node.js versions, remove badges (#8055) (@wraithgar)
+* [`f1af61f`](https://github.com/npm/cli/commit/f1af61f917e58a0a45d2b15d1e5600988b2c824f) [#8041](https://github.com/npm/cli/pull/8041) fix typos in "package-json" (#8041) (@maxkoryukov)
+* [`e90c6fe`](https://github.com/npm/cli/commit/e90c6feeacdf9ad010d4d73b65d7dd7d3b86efe2) [#8051](https://github.com/npm/cli/pull/8051) depth flag default value (#8051) (@milaninfy)
+* [`866b5ee`](https://github.com/npm/cli/commit/866b5ee3ae5ed508ecbe832d01f5ebd6b00f6789) [#8030](https://github.com/npm/cli/pull/8030) safer documentation urls, repos, packages (#8030) (@reggi)
+### Dependencies
+* [`7ddfbad`](https://github.com/npm/cli/commit/7ddfbadd1d51d07e68afbe1b91a36106d98c7bea) [#8053](https://github.com/npm/cli/pull/8053) `@npmcli/package-json@6.1.1`
+* [`9473a86`](https://github.com/npm/cli/commit/9473a8638257297c420136009de567c131d2f299) [#8053](https://github.com/npm/cli/pull/8053) `spdx-license-ids@3.0.21`
+* [`a65e5ce`](https://github.com/npm/cli/commit/a65e5ceb15c4aad6bde1ffdbee7da6f685caf81e) [#8053](https://github.com/npm/cli/pull/8053) `@sigstore/protobuf-specs@0.3.3`
+* [`215ebe4`](https://github.com/npm/cli/commit/215ebe4d8f6c7f30d4b6a68fa11a3372c132929e) [#8053](https://github.com/npm/cli/pull/8053) `chalk@5.4.1`
+### Chores
+* [`61f00e3`](https://github.com/npm/cli/commit/61f00e3c23211d37c7980ebd6d1cf8d1dac49f18) [#8069](https://github.com/npm/cli/pull/8069) splits out smoke-tests from publish-dryrun tests (#8069) (@reggi)
+* [`6d0f46e`](https://github.com/npm/cli/commit/6d0f46e67e9673e8a2dc6edb92144a73f853950c) [#8058](https://github.com/npm/cli/pull/8058) stop publish smoke from check git clean (#8058) (@reggi)
+* [`9281ebf`](https://github.com/npm/cli/commit/9281ebf8e428d40450ad75ba61bc6f040b3bf896) [#8057](https://github.com/npm/cli/pull/8057) fix smoke tests prerelease needs separate string args (#8057) (@reggi)
+* [`aa202e9`](https://github.com/npm/cli/commit/aa202e9dac2f927bedcaaed4db0eef7b3415fc68) [#8056](https://github.com/npm/cli/pull/8056) smoke tests using a preid (#8056) (@reggi)
+* [`18e0449`](https://github.com/npm/cli/commit/18e0449ae41703a7980cee73bae69521db6fa53e) [#8053](https://github.com/npm/cli/pull/8053) dev dependency updates (@wraithgar)
+* [`859a71c`](https://github.com/npm/cli/commit/859a71c59ea5f91f21a8410db46585a2fc0a8126) [#8052](https://github.com/npm/cli/pull/8052) update node versions for release integration tests (#8052) (@wraithgar)
+* [`7e7961d`](https://github.com/npm/cli/commit/7e7961d8936e277f3dbc8e44f9e7b07daaeb36ca) [#8038](https://github.com/npm/cli/pull/8038) bump @npmcli/eslint-config to 5.1.0 (@wraithgar)
+* [workspace](https://github.com/npm/cli/releases/tag/config-v10.0.1): `@npmcli/config@10.0.1`
+
 ## [11.0.0](https://github.com/npm/cli/compare/v11.0.0-pre.1...v11.0.0) (2024-12-16)
 ### Documentation
 * [`8a911da`](https://github.com/npm/cli/commit/8a911da452b9785bcd051778570beeb2d8b27421) [#7963](https://github.com/npm/cli/pull/7963) ls: removed design change pending section note (#7963) (@milaninfy)
