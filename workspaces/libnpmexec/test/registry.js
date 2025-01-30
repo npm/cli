@@ -1,6 +1,7 @@
 const { resolve } = require('node:path')
 const t = require('tap')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
+const crypto = require('node:crypto')
 
 t.test('run from registry - no local packages', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
@@ -243,5 +244,56 @@ t.test('run from registry - non existant global path', async t => {
 
   t.match(await readOutput('@npmcli-create-index'), {
     value: 'packages-2.0.0',
+  })
+})
+
+t.test('npx tree triggers manifest fetch when local version does satisfy range using real npx cache inventory', async t => {
+  // The local installation is version 1.0.0, which does NOT satisfy the spec ^2.0.0.
+  const pkgData = createPkg({
+    localVersion: '1.0.0',
+    versions: ['1.0.0', '2.0.0', '2.0.1'],
+    name: '@npmcli/create-index',
+  })
+  const { fixtures, package: pkg } = pkgData
+
+  const hash = crypto.createHash('sha512')
+    .update('@npmcli/create-index@^2.0.0')
+    .digest('hex')
+    .slice(0, 16)
+
+  const npxCacheFixture = {
+    [hash]: {
+      'package.json': {
+        name: '@npmcli/create-index',
+        version: '2.0.0',
+      },
+    },
+  }
+
+  const { exec: execFn, path, registry, readOutput, binLinks } = setup(t, {
+    pkg: [pkg],
+    testdir: {
+      ...fixtures,
+      npxCache: npxCacheFixture,
+    },
+  })
+
+  // Set up the registry package so that a manifest fetch returns version 2.0.1.
+  await pkg({
+    registry,
+    path,
+    tarballs: ['2.0.1'],
+  })
+  await binLinks()
+
+  // Execute in NPX mode with the spec ^2.0.0.
+  // The local tree (version 1.0.0) does not satisfy ^2.0.0, so the system will find the cached package (version 2.0.0) in npxCache and then update from the registry to 2.0.1.
+  await execFn({
+    args: ['create-index'],
+    packages: ['@npmcli/create-index@^2.0.0'],
+  })
+
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.1',
   })
 })

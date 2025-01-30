@@ -38,6 +38,7 @@ const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow }) 
   //  - In local or global mode go with anything in the tree that matches
   //  - If looking in the npx cache check if a newer version is available
   const npxByNameOnly = isNpxTree && spec.name === spec.raw
+  // If they gave a range and not a tag we still need to check if it's outdated.
   if (spec.registry && spec.type !== 'tag' && !npxByNameOnly) {
     // registry spec that is not a specific tag.
     const nodesBySpec = tree.inventory.query('packageName', spec.name)
@@ -54,7 +55,8 @@ const missingFromTree = async ({ spec, tree, flatOptions, isNpxTree, shallow }) 
         return { node }
       }
       // package requested by version range, only remaining registry type
-      if (semver.satisfies(node.package.version, spec.rawSpec)) {
+      // the npx tree shouldn't be ok w/ an outdated version
+      if (!isNpxTree && semver.satisfies(node.package.version, spec.rawSpec)) {
         return { node }
       }
     }
