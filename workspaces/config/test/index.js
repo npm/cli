@@ -1519,3 +1519,26 @@ t.test('catch project config prefix error', async t => {
     'error', 'config', `prefix cannot be changed from project config: ${path}`,
   ]], 'Expected error logged')
 })
+
+t.test('invalid single hyphen warnings', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '-ws', '-iwr'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+  await config.load()
+  const filtered = logs.filter(l => l[0] === 'warn')
+  t.match(filtered, [
+    ['warn', '-iwr is not a valid single-hyphen cli flag and will be removed in the future'],
+    ['warn', '-ws is not a valid single-hyphen cli flag and will be removed in the future'],
+  ], 'Warns about single hyphen configs')
+})

@@ -2547,6 +2547,7 @@ exports[`test/lib/docs.js TAP shorthands > docs 1`] = `
 * \`--help\`: \`--usage\`
 * \`-v\`: \`--version\`
 * \`-w\`: \`--workspace\`
+* \`--ws\`: \`--workspaces\`
 * \`-y\`: \`--yes\`
 `
 

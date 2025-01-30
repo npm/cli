@@ -15,6 +15,14 @@ const {
   mkdir,
 } = require('node:fs/promises')
 
+// TODO these need to be either be ignored when parsing env, formalized as config, or not exported to the env in the first place. For now this list is just to suppress warnings till we can pay off this tech debt.
+const internalEnv = [
+  'global-prefix',
+  'local-prefix',
+  'npm-version',
+  'node-gyp',
+]
+
 const fileExists = (...p) => stat(resolve(...p))
   .then((st) => st.isFile())
   .catch(() => false)
@@ -349,6 +357,11 @@ class Config {
   }
 
   loadCLI () {
+    for (const s of Object.keys(this.shorthands)) {
+      if (s.length > 1 && this.argv.includes(`-${s}`)) {
+        log.warn(`-${s} is not a valid single-hyphen cli flag and will be removed in the future`)
+      }
+    }
     nopt.invalidHandler = (k, val, type) =>
       this.invalidHandler(k, val, type, 'command line options', 'cli')
     const conf = nopt(this.types, this.shorthands, this.argv)
@@ -580,6 +593,9 @@ class Config {
 
   #checkUnknown (where, key) {
     if (!this.definitions[key]) {
+      if (internalEnv.includes(key)) {
+        return
+      }
       if (!key.includes(':')) {
         log.warn(`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`)
         return

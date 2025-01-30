@@ -55,6 +55,7 @@ const shorthands = {
   readonly: ['--read-only'],
   reg: ['--registry'],
   iwr: ['--include-workspace-root'],
+  ws: ['--workspaces'],
   ...definitionProps.shorthands,
 }
 
