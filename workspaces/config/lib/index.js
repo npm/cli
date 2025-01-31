@@ -584,14 +584,14 @@ class Config {
         }
         // Some defaults like npm-version are not user-definable and thus don't have definitions
         if (where !== 'default') {
-          this.#checkUnknown(where, key)
+          this.checkUnknown(where, key)
         }
         conf.data[k] = v
       }
     }
   }
 
-  #checkUnknown (where, key) {
+  checkUnknown (where, key) {
     if (!this.definitions[key]) {
       if (internalEnv.includes(key)) {
         return

@@ -413,6 +413,13 @@ color = {COLOR}
 ; "publishConfig" from {CWD}/prefix/package.json
 ; This set of config values will be used at publish-time.
 
-_authToken = (protected)
+//some.registry:_authToken = (protected)
+other = "not defined"
 registry = "https://some.registry"
+`
+
+exports[`test/lib/commands/config.js TAP config list with publishConfig local > warns about unknown config 1`] = `
+Array [
+  "Unknown publishConfig config /"other/". This will stop working in the next major version of npm.",
+]
 `
