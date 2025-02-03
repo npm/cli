@@ -854,6 +854,16 @@ more information, or [npm init](/commands/npm-init).
 
 
 
+#### \`init-type\`
+
+* Default: "commonjs"
+* Type: String
+
+The value that \`npm init\` should use by default for the package.json type
+field.
+
+
+
 #### \`init-version\`
 
 * Default: "1.0.0"
@@ -2123,6 +2133,7 @@ Array [
   "init-author-url",
   "init-license",
   "init-module",
+  "init-type",
   "init-version",
   "init.author.email",
   "init.author.name",
@@ -2357,6 +2368,7 @@ Array [
   "init-author-url",
   "init-license",
   "init-module",
+  "init-type",
   "init-version",
   "init.author.email",
   "init.author.name",
@@ -3210,8 +3222,8 @@ npm init <@scope> (same as \`npx <@scope>/create\`)
 
 Options:
 [--init-author-name <name>] [--init-author-url <url>] [--init-license <license>]
-[--init-module <module>] [--init-version <version>] [-y|--yes] [-f|--force]
-[--scope <@scope>]
+[--init-module <module>] [--init-type <type>] [--init-version <version>]
+[-y|--yes] [-f|--force] [--scope <@scope>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
@@ -3230,6 +3242,7 @@ aliases: create, innit
 #### \`init-author-url\`
 #### \`init-license\`
 #### \`init-module\`
+#### \`init-type\`
 #### \`init-version\`
 #### \`yes\`
 #### \`force\`

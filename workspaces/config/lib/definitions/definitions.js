@@ -954,6 +954,14 @@ const definitions = {
       more information, or [npm init](/commands/npm-init).
     `,
   }),
+  'init-type': new Definition('init-type', {
+    default: 'commonjs',
+    type: String,
+    hint: '<type>',
+    description: `
+      The value that \`npm init\` should use by default for the package.json type field.
+    `,
+  }),
   'init-version': new Definition('init-version', {
     default: '1.0.0',
     type: Semver,
