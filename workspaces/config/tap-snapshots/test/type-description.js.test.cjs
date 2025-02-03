@@ -231,6 +231,9 @@ Object {
   "init-module": Array [
     "valid filesystem path",
   ],
+  "init-type": Array [
+    Function String(),
+  ],
   "init-version": Array [
     "full valid SemVer string",
   ],
