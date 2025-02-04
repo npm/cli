@@ -1113,8 +1113,12 @@ class Node {
     }
 
     // if they're links, they match if the targets match
-    if (this.isLink) {
-      return node.isLink && this.target.matches(node.target)
+    if (node.isLink) {
+      // Linked to nothing, cannot matches
+      if (!this.target || !node.target) {
+        return false;
+      }
+      return this.target.matches(node.target);
     }
 
     // if they're two project root nodes, they're different if the paths differ
