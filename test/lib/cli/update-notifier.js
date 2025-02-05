@@ -19,7 +19,7 @@ const NEXT_PATCH = '123.421.69'
 const CURRENT_BETA = '124.0.0-beta.99999'
 const HAVE_BETA = '124.0.0-beta.0'
 
-const pacumentResponse = {
+const packumentResponse = {
   _id: 'npm',
   name: 'npm',
   'dist-tags': {
@@ -126,7 +126,7 @@ const runUpdateNotifier = async (t, {
   })
 
   if (PACOTE_MOCK_REQ_COUNT > 0) {
-    registry.nock.get('/npm').times(PACOTE_MOCK_REQ_COUNT).reply(200, pacumentResponse)
+    registry.nock.get('/npm').times(PACOTE_MOCK_REQ_COUNT).reply(200, packumentResponse)
   }
 
   const updateNotifier = tmock(t, '{LIB}/cli/update-notifier.js', mocks)
