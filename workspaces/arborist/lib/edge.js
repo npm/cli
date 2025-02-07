@@ -311,7 +311,8 @@ class Edge {
       if (this.#to) {
         this.#to.addEdgeIn(this)
       }
-    } else if (hard) {
+    } 
+    else if (hard) {
       this.#error = null
     }
     else if (needToUpdateOverrideSet) {
