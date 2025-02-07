@@ -94,7 +94,8 @@ class OverrideSet {
       }
 
       // We need to use the rawSpec here, because the spec has the overrides applied to it already.
-      let spec = npa(`${edge.name}@${edge.rawSpec}`)
+      // rawSpec can be undefined, so we need to use the fallback value of spec if it is.
+      let spec = npa(`${edge.name}@${edge.rawSpec || edge.spec}`)
       if (spec.type === 'alias') {
         spec = spec.subSpec
       }
