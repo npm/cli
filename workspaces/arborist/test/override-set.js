@@ -344,6 +344,7 @@ t.test('constructor', async (t) => {
         bat: '2.0.0',
       },
     })
+    overrides6.parent = overrides5
     const overrides7 = new OverrideSet({
       overrides: {
         bat: '2.0.0',
