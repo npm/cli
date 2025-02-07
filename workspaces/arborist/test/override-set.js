@@ -1,5 +1,5 @@
 const t = require('tap')
-const log = require('../lib/log')
+const log = require('proc-log')
 
 log.silly = () => {}
 
