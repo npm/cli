@@ -1,4 +1,7 @@
 const t = require('tap')
+const log = require('../lib/log')
+
+log.silly = () => {}
 
 const OverrideSet = require('../lib/override-set.js')
 
