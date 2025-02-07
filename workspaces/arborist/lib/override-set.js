@@ -197,7 +197,7 @@ class OverrideSet {
     // The override sets are incomparable. Neither one contains the other.
     log.silly('Conflicting override sets', first, second)
   }
-  
+
   static doOverrideSetsConflict (first, second) {
     // If override sets contain one another then we can try to use the more specific one.
     // If neither one is more specific, then we consider them to be in conflict.
