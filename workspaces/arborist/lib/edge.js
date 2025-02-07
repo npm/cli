@@ -311,11 +311,9 @@ class Edge {
       if (this.#to) {
         this.#to.addEdgeIn(this)
       }
-    } 
-    else if (hard) {
+    } else if (hard) {
       this.#error = null
-    }
-    else if (needToUpdateOverrideSet) {
+    } else if (needToUpdateOverrideSet) {
       // Propagate the new override set to the target node.
       this.#to.updateOverridesEdgeInRemoved(oldOverrideSet)
       this.#to.updateOverridesEdgeInAdded(newOverrideSet)
