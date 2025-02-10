@@ -110,13 +110,17 @@ _authToken=MYTOKEN
 ; good config
 @myorg:registry=https://somewhere-else.com/myorg
 @another:registry=https://somewhere-else.com/another
-//registry.npmjs.org/:_authToken=MYTOKEN
-; would apply to both @myorg and @another
+@anotherorg:registry=https:///somewhere-else.com/another/anotherorg
+; would apply to any registry at https://registry.npmjs.org/ but not to any sub-path (see @anotherorg)
+//registry.npmjs.org/:_authToken=MYTOKEN 
+; would apply to both @myorg and @another but noth @anotherorg
 ; //somewhere-else.com/:_authToken=MYTOKEN
 ; would apply only to @myorg
 //somewhere-else.com/myorg/:_authToken=MYTOKEN1
 ; would apply only to @another
 //somewhere-else.com/another/:_authToken=MYTOKEN2
+; would apply only to @anotherorg
+//somewhere-else.com/another/anotherorg:_authToken=MYTOKEN3
 ```
 
 ### See also
