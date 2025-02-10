@@ -2882,18 +2882,17 @@ t.test('overrides', (t) => {
     t.notOk(root.edgesOut.get('foo').valid, 'foo edge is not valid')
     t.notOk(foo.edgesOut.get('bar').valid, 'bar edge is not valid')
 
-    // we add bar to the root first, this is deliberate so that we don't have a simple
-    // linear inheritance. we'll add foo later and make sure that both edges and nodes
-    // become valid after that
-
+    // Attach bar to root. This does not trigger override propagation because
+    // bar is not connected via a dependency edge.
     bar.root = root
-    t.ok(bar.overrides, 'bar now has overrides')
+    t.notOk(bar.overrides, 'bar still does not have overrides until connected by a dependency edge')
     t.notOk(foo.edgesOut.get('bar').valid, 'bar edge is not valid yet')
 
+    // Now attach foo to root so that it is connected as a dependency.
     foo.root = root
     t.ok(foo.overrides, 'foo now has overrides')
     t.ok(root.edgesOut.get('foo').valid, 'foo edge is now valid')
-    t.ok(bar.overrides, 'bar still has overrides')
+    t.ok(bar.overrides, 'bar now has overrides after foo is attached')
     t.ok(foo.edgesOut.get('bar').valid, 'bar edge is now valid')
   })
 
