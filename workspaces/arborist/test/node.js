@@ -6,6 +6,8 @@ const Link = require('../lib/link.js')
 const Shrinkwrap = require('../lib/shrinkwrap.js')
 const { resolve } = require('node:path')
 const treeCheck = require('../lib/tree-check.js')
+const log = require('proc-log')
+log.silly = () => { }
 
 const { normalizePath, normalizePaths } = require('./fixtures/utils.js')
 

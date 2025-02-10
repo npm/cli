@@ -1,5 +1,7 @@
 const t = require('tap')
 const OverrideSet = require('../lib/override-set.js')
+const log = require('proc-log')
+log.silly = () => { }
 
 t.test('constructor', async (t) => {
   t.test('throws when adding a child rule with no name', async (t) => {
@@ -386,16 +388,48 @@ t.test('constructor', async (t) => {
     t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides8), 'override sets are incomparable due to version')
     t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides9), 'override sets are incomparable due to version and range')
     t.ok(OverrideSet.doOverrideSetsConflict(overrides8, overrides9), 'override sets are incomparable due to range')
-
-    // Additional tests to cover the parent's equality check in isEqual
-    const parentA = new OverrideSet({ overrides: { '.': 'root' } })
-    const parentB = new OverrideSet({ overrides: { '.': 'root' } })
-    const childA = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: parentA })
-    const childB = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: parentB })
-    t.ok(childA.isEqual(childB), 'child override sets are equal when their parents are equal')
-
-    const diffParent = new OverrideSet({ overrides: { '.': 'different-root' } })
-    const childC = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: diffParent })
-    t.not(childA.isEqual(childC), 'child override sets are not equal when their parents differ')
   })
+})
+
+t.test('coverage for final line in isEqual (parent != null)', async t => {
+  // Both parents have the SAME config -> parent.isEqual(...) will return TRUE
+  const parentA = new OverrideSet({ overrides: { foo: '1.0.0' } })
+  const parentB = new OverrideSet({ overrides: { foo: '1.0.0' } })
+
+  // Child override sets with the same parent config => should be equal
+  const childA = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentA,
+  })
+  const childB = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentB,
+  })
+
+  // This specifically covers the code path where parent != null
+  // AND parent.isEqual(...) returns true
+  t.ok(childA.isEqual(childB), 'two children with equivalent parents are equal')
+
+  // Different parent configs -> parent.isEqual(...) will return FALSE
+  const parentC = new OverrideSet({ overrides: { foo: '1.0.0' } })
+  const parentD = new OverrideSet({ overrides: { foo: '1.0.1' } })
+
+  const childC = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentC,
+  })
+  const childD = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentD,
+  })
+
+  // This specifically covers the code path where parent != null
+  // AND parent.isEqual(...) returns false
+  t.notOk(childC.isEqual(childD), 'two children with different parents are not equal')
+
+  t.end()
 })
