@@ -390,5 +390,16 @@ t.test('constructor', async (t) => {
     t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides8), 'override sets are incomparable due to version')
     t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides9), 'override sets are incomparable due to version and range')
     t.ok(OverrideSet.doOverrideSetsConflict(overrides8, overrides9), 'override sets are incomparable due to range')
+
+    // Additional tests to cover the parent's equality check in isEqual
+    const parentA = new OverrideSet({ overrides: { '.': 'root' } })
+    const parentB = new OverrideSet({ overrides: { '.': 'root' } })
+    const childA = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: parentA })
+    const childB = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: parentB })
+    t.ok(childA.isEqual(childB), 'child override sets are equal when their parents are equal')
+
+    const diffParent = new OverrideSet({ overrides: { '.': 'different-root' } })
+    const childC = new OverrideSet({ overrides: { '.': 'child' }, key: 'child', parent: diffParent })
+    t.not(childA.isEqual(childC), 'child override sets are not equal when their parents differ')
   })
 })
