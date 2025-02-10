@@ -2774,6 +2774,41 @@ t.test('overrides', (t) => {
     t.not(buzz.overridden, 'buzz was not overridden')
   })
 
+  t.test('node.overridden returns false when an incoming edge override equals its source override', t => {
+    const baseOverride = new OverrideSet({
+      overrides: {
+        foo: 'bar',
+      },
+    })
+    baseOverride.name = 'test-package'
+    baseOverride.value = '1.0.0'
+
+    const node = new Node({
+      pkg: { name: 'test-package', version: '1.0.0' },
+      path: '/some/path/test-package',
+      realpath: '/some/path/test-package',
+      overrides: baseOverride,
+    })
+
+    const equalOverride = new OverrideSet({
+      overrides: {
+        foo: 'bar',
+      },
+    })
+    equalOverride.name = 'test-package'
+    equalOverride.value = '1.0.0'
+
+    const fakeEdge = {
+      overrides: equalOverride,
+      from: { overrides: baseOverride },
+    }
+
+    node.edgesIn.add(fakeEdge)
+
+    t.equal(node.overridden, false, 'node.overridden returns false when edge.override equals edge.from.override')
+    t.end()
+  })
+
   t.test('assertRootOverrides throws when a dependency and override conflict', async (t) => {
     const conflictingTree = new Node({
       loadOverrides: true,
@@ -2979,4 +3014,147 @@ t.test('node with only registry edges in a registry dep', async t => {
   new Node({ pkg: { name: 'registry', dependencies: { node: '^1.0.0' } }, parent: root })
 
   t.equal(node.isRegistryDependency, true)
+})
+
+t.test('canReplaceWith returns false when overrides differ', t => {
+  // Create two different override sets
+  const override1 = new OverrideSet({
+    overrides: { foo: '1.0.0' },
+  })
+  const override2 = new OverrideSet({
+    overrides: { foo: '2.0.0' },
+  })
+
+  // Create two nodes with a dependency to force creation of an outgoing edge
+  const node1 = new Node({
+    pkg: { name: 'foo', dependencies: { bar: '^1' } },
+    path: '/some/path/foo',
+    realpath: '/some/path/foo',
+    overrides: override1,
+  })
+  const node2 = new Node({
+    pkg: { name: 'foo', dependencies: { bar: '^1' } },
+    path: '/some/path/foo',
+    realpath: '/some/path/foo',
+    overrides: override2,
+  })
+
+  t.ok(node1.edgesOut.size > 0, 'node1 has outgoing edges')
+  t.equal(node1.canReplaceWith(node2, new Set()), false, 'cannot replace when overrides differ')
+  t.end()
+})
+
+t.test('updateOverridesEdgeInRemoved uses findSpecificOverrideSet for multiple edgesIn', t => {
+  const commonOverrides = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+    },
+  })
+  const specificOverrides = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+      bar: '2.0.0',
+    },
+  })
+  // Create a node with initial overrides set to commonOverrides
+  const node = new Node({
+    pkg: { name: 'nodeA' },
+    path: '/some/path/nodeA',
+    realpath: '/some/path/nodeA',
+    overrides: commonOverrides,
+  })
+  // Simulate incoming edges with overrides
+  node.edgesIn.add({
+    overrides: commonOverrides,
+  })
+  node.edgesIn.add({
+    overrides: specificOverrides,
+  })
+  // Call updateOverridesEdgeInRemoved passing an override set equal to node.overrides
+  const result = node.updateOverridesEdgeInRemoved(commonOverrides)
+  t.equal(result, true, 'updateOverridesEdgeInRemoved returns true when newOverrideSet differs')
+  t.notOk(commonOverrides.isEqual(node.overrides), 'node.overrides is updated to a more specific override set')
+  t.end()
+})
+
+t.test('updateOverridesEdgeInAdded logs conflict on conflicting override set', t => {
+  const overrides8 = new OverrideSet({
+    overrides: {
+      bat: '1.2.0',
+    },
+  })
+  const overrides9 = new OverrideSet({
+    overrides: {
+      'bat@3.0.0': '1.2.0',
+    },
+  })
+
+  // Create a node with an existing override set (overrides8)
+  const node = new Node({
+    pkg: { name: 'conflict-node' },
+    path: '/some/path/conflict-node',
+    realpath: '/some/path/conflict-node',
+    overrides: overrides8,
+  })
+
+  // Prepare a flag to check that the log.silly call was made
+  let conflictLogged = false
+
+  // Override log.silly to capture the conflict log
+  const log = require('proc-log')
+  const origLogSilly = log.silly
+  log.silly = (msg, name) => {
+    if (msg === 'Conflicting override sets' && name === node.name) {
+      conflictLogged = true
+    }
+  }
+
+  // Call updateOverridesEdgeInAdded with a conflicting override set (overrides9)
+  const result = node.updateOverridesEdgeInAdded(overrides9)
+  t.equal(result, undefined, 'returns undefined on conflict')
+  t.ok(conflictLogged, 'logged conflicting override sets')
+
+  // Restore the original log.silly function
+  log.silly = origLogSilly
+  t.end()
+})
+
+t.test('updateOverridesEdgeInRemoved calls recalculateOutEdgesOverrides when new override set exists', t => {
+  const originalOverrides = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+    },
+  })
+  const specificOverrides = new OverrideSet({
+    overrides: {
+      foo: '1.0.0',
+      bar: '2.0.0',
+    },
+  })
+
+  // Create a node with original overrides and simulate an incoming edge
+  // whose override is more specific, so that the computed newOverrideSet
+  // differs from the original, triggering recalculateOutEdgesOverrides
+  const node = new Node({
+    pkg: { name: 'test-node' },
+    path: '/some/path/test-node',
+    realpath: '/some/path/test-node',
+    overrides: originalOverrides,
+  })
+
+  node.edgesIn.add({
+    overrides: specificOverrides,
+  })
+
+  // Spy on recalculateOutEdgesOverrides to verify it's called
+  let recalcCalled = false
+  node.recalculateOutEdgesOverrides = () => {
+    recalcCalled = true
+  }
+
+  const result = node.updateOverridesEdgeInRemoved(originalOverrides)
+  t.equal(result, true, 'returns true when override set changes')
+  t.ok(recalcCalled, 'recalculateOutEdgesOverrides was called')
+  t.ok(specificOverrides.isEqual(node.overrides), 'node.overrides updated to the specific override set')
+  t.end()
 })

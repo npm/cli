@@ -1,8 +1,4 @@
 const t = require('tap')
-const log = require('proc-log')
-
-log.silly = () => {}
-
 const OverrideSet = require('../lib/override-set.js')
 
 t.test('constructor', async (t) => {
