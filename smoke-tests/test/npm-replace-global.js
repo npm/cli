@@ -1,7 +1,7 @@
 
 const t = require('tap')
-const { join, dirname, basename, extname } = require('path')
-const fs = require('fs/promises')
+const { join, dirname, basename, extname } = require('node:path')
+const fs = require('node:fs/promises')
 const _which = require('which')
 const setup = require('./fixtures/setup.js')
 
@@ -25,10 +25,10 @@ const setupNpmGlobal = async (t, opts) => {
 
       return {
         npmRoot: await mock.npmPath('help').then(setup.getNpmRoot),
-        pathNpm: await which('npm', { path: mock.getPath(), nothrow: true }),
-        globalNpm: await which('npm', { nothrow: true }),
-        pathNpx: await which('npx', { path: mock.getPath(), nothrow: true }),
-        globalNpx: await which('npx', { nothrow: true }),
+        pathNpm: await which('npm', { path: mock.getPath() }),
+        globalNpm: await which('npm'),
+        pathNpx: await which('npx', { path: mock.getPath() }),
+        globalNpx: await which('npx'),
         binContents,
         nodeModulesContents,
       }
@@ -52,7 +52,6 @@ t.test('pack and replace global self', async t => {
   })
 
   const tarball = await npmLocalTarball()
-
   await npm('install', tarball, '--global')
 
   t.equal(
@@ -95,10 +94,6 @@ t.test('pack and replace global self', async t => {
 })
 
 t.test('publish and replace global self', async t => {
-  let publishedPackument = null
-  const pkg = require('../../package.json')
-  const { name, version } = pkg
-
   const {
     npm,
     npmPath,
@@ -108,12 +103,16 @@ t.test('publish and replace global self', async t => {
     getPaths,
     paths: { globalBin, globalNodeModules, cache },
   } = await setupNpmGlobal(t, {
+    strictRegistryNock: false,
     testdir: {
       home: {
         '.npmrc': `//${setup.MOCK_REGISTRY.host}/:_authToken = test-token`,
       },
     },
   })
+
+  let publishedPackument = null
+  const { name, version } = require('../../package.json')
 
   const npmPackage = async ({ manifest, ...opts } = {}) => {
     await registry.package({
@@ -126,7 +125,7 @@ t.test('publish and replace global self', async t => {
     await npmPackage({
       manifest: { packuments: [publishedPackument] },
       tarballs: { [version]: tarball },
-      times: 2,
+      times: 3,
     })
     await fs.rm(cache, { recursive: true, force: true })
     await useNpm('install', 'npm@latest', '--global')
@@ -145,7 +144,9 @@ t.test('publish and replace global self', async t => {
     }
     return false
   }).reply(201, {})
-  await npmLocal('publish', { proxy: true, force: true })
+  await npmLocal('publish', '--tag=smoke-test', { proxy: true, force: true })
+
+  t.comment(JSON.stringify(publishedPackument, null, 2))
 
   const paths = await npmInstall(npm)
   t.equal(paths.npmRoot, join(globalNodeModules, 'npm'), 'npm root is in the testdir')
@@ -161,4 +162,48 @@ t.test('publish and replace global self', async t => {
   )
 
   t.strictSame(await npmInstall(npmPath), paths)
+})
+
+t.test('fail when updating with lazy require', async t => {
+  const {
+    npm,
+    npmLocalTarball,
+    npmPath,
+    paths,
+  } = await setupNpmGlobal(t, {
+    testdir: {
+      project: {
+        'package.json': {
+          name: 'npm',
+          version: '999.999.999',
+          bin: {
+            npm: './my-new-npm-bin.js',
+          },
+        },
+        'my-new-npm-bin.js': `#!/usr/bin/env node\nconsole.log('This worked!')`,
+      },
+    },
+  })
+
+  const tarball = await npmLocalTarball()
+  await npm('install', tarball, '--global')
+  await npmPath('pack')
+
+  // exit-handler is the last thing called in the code
+  // so an uncached lazy require within the exit handler will always throw
+  await fs.writeFile(
+    join(paths.globalNodeModules, 'npm/lib/cli/exit-handler.js'),
+    `module.exports = class {
+      setNpm(){}
+      registerUncaughtHandlers(){}
+      exit() { require('./LAZY_REQUIRE_CANARY') }
+    }`,
+    'utf-8'
+  )
+
+  await t.rejects(npmPath('install', 'npm-999.999.999.tgz', '--global'), {
+    stderr: `Error: Cannot find module './LAZY_REQUIRE_CANARY'`,
+  }, 'install command fails with lazy require error')
+
+  await t.resolveMatch(npmPath(), { stdout: 'This worked!' }, 'bin placement still works')
 })

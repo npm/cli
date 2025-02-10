@@ -1,7 +1,7 @@
-const fsp = require('fs/promises')
-const { resolve, join, relative } = require('path')
-const { formatWithOptions } = require('util')
-const log = require('proc-log')
+const fsp = require('node:fs/promises')
+const { resolve, join, relative } = require('node:path')
+const { formatWithOptions } = require('node:util')
+const { log } = require('proc-log')
 const nopt = require('nopt')
 const npmGit = require('@npmcli/git')
 const promiseSpawn = require('@npmcli/promise-spawn')
@@ -132,7 +132,7 @@ git.dirty = () => npmGit.isClean({ cwd: CWD }).then(async r => {
     return 'git clean'
   }
   await git('status', '--porcelain=v1', '-uno')
-  await git('diff')
+  await git('--no-pager', 'diff')
   throw new Error('git dirty')
 })
 

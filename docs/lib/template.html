@@ -115,6 +115,11 @@ header.title > .description {
     line-height: 1;
 }
 
+header.title .version {
+    font-size: 0.8em;
+    color: #666666;
+}
+
 footer#edit {
     border-top: solid 1px #e1e4e8;
     margin: 3em 0 4em 0;
@@ -138,7 +143,10 @@ npm command-line interface
 
 <section id="content">
 <header class="title">
-<h1>{{ title }}</h1>
+<h1>
+    <span>{{ title }}</span>
+    <span class="version">@{{ version }}</span>
+</h1>
 <span class="description">{{ description }}</span>
 </header>
 

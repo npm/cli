@@ -29,17 +29,17 @@ function ensureNavigationComplete (nav, fsPaths, ext) {
   const errors = []
 
   if (missingNav.length) {
-    errors.push('The following path(s) exist on disk but are not present in nav.yml:')
+    errors.push('The following path(s) exist on disk but are not present in /lib/content/nav.yml:')
     errors.push(...missingNav.map(n => `  ${n}`))
   }
 
   if (missingFs.length) {
-    errors.push('The following path(s) exist in nav.yml but are not present on disk:')
+    errors.push('The following path(s) exist in lib/content/nav.yml but are not present on disk:')
     errors.push(...missingFs.map(n => `  ${n}`))
   }
 
   if (errors.length) {
-    errors.unshift('Documentation navigation (nav.yml) does not match filesystem.')
+    errors.unshift('Documentation navigation (lib/content/nav.yml) does not match filesystem.')
     errors.push('Update nav.yml to ensure that all files are listed in the appropriate place.')
     throw new Error(errors.join('\n'))
   }

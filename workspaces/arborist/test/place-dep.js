@@ -127,7 +127,7 @@ t.test('placement tests', t => {
       try {
         pd = place()
       } catch (er) {
-        console.error(require('util').inspect(er, { depth: Infinity }))
+        console.error(require('node:util').inspect(er, { depth: Infinity }))
         throw er
       }
       process.removeListener('log', onwarn)

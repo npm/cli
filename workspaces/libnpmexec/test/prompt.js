@@ -1,140 +1,78 @@
-const log = require('proc-log')
-const { resolve } = require('path')
+const procLog = require('proc-log')
+const { resolve } = require('node:path')
 const t = require('tap')
-const fs = require('fs/promises')
+const fs = require('node:fs/promises')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 
 t.test('prompt, accepts', async t => {
-  t.test('with clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        '../../lib/no-tty.js': () => false,
-        npmlog: {
-          clearProgress () {
-            t.ok(true, 'should call clearProgress function')
-          },
-          disableProgress () {},
-          enableProgress () {},
+  const { pkg, package, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    version: '1.0.0',
+  })
+  const { exec, path, registry } = setup(t, {
+    testdir: fixtures,
+    mocks: {
+      'ci-info': { isCI: false },
+      '../../lib/no-tty.js': () => false,
+      read: { read: async () => 'y' },
+      'proc-log': {
+        ...procLog,
+        input: {
+          ...procLog.input,
+          read: (fn) => fn(),
         },
-        read: async () => 'y',
       },
-    })
-
-    await package({ registry, path })
-
-    await exec({
-      args: ['@npmcli/create-index'],
-      yes: undefined,
-    })
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
+    },
   })
 
-  t.test('without clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        '../../lib/no-tty.js': () => false,
-        read: async () => 'y',
-      },
-    })
+  await package({ registry, path })
 
-    await package({ registry, path })
-
-    await exec({
-      args: ['@npmcli/create-index'],
-      yes: undefined,
-    })
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
+  await exec({
+    args: ['@npmcli/create-index'],
+    yes: undefined,
   })
+
+  const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
+  t.ok(await fs.stat(resolve(path, installedDir)).then(f => f.isFile()))
 })
 
 t.test('prompt, refuses', async t => {
-  t.test('with clearProgress function', async t => {
-    t.plan(3)
-
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        npmlog: {
-          clearProgress () {
-            t.ok(true, 'should call clearProgress function')
-          },
-          disableProgess () {},
+  const { pkg, package, fixtures } = createPkg({
+    name: '@npmcli/create-index',
+    version: '1.0.0',
+  })
+  const { exec, path, registry } = setup(t, {
+    testdir: fixtures,
+    mocks: {
+      'ci-info': { isCI: false },
+      read: { read: async () => 'n' },
+      'proc-log': {
+        ...procLog,
+        input: {
+          ...procLog.input,
+          read: (fn) => fn(),
         },
-        read: async () => 'n',
-        '../../lib/no-tty.js': () => false,
       },
-    })
-
-    await package({ registry, path, times: 1, tarballs: [] })
-
-    await t.rejects(
-      exec({
-        args: ['@npmcli/create-index'],
-        yes: undefined,
-      }),
-      /canceled/,
-      'should throw with canceled error'
-    )
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.rejects(
-      () => fs.stat(resolve(path, installedDir)),
-      { code: 'ENOENT' }
-    )
+      '../../lib/no-tty.js': () => false,
+    },
   })
 
-  t.test('without clearProgress function', async t => {
-    const { pkg, package, fixtures } = createPkg({
-      name: '@npmcli/create-index',
-      version: '1.0.0',
-    })
-    const { exec, path, registry } = setup(t, {
-      testdir: fixtures,
-      mocks: {
-        'ci-info': { isCI: false },
-        read: async () => 'n',
-        '../../lib/no-tty.js': () => false,
-      },
-    })
+  await package({ registry, path, times: 1, tarballs: [] })
 
-    await package({ registry, path, times: 1, tarballs: [] })
+  await t.rejects(
+    exec({
+      args: ['@npmcli/create-index'],
+      yes: undefined,
+    }),
+    /canceled/,
+    'should throw with canceled error'
+  )
 
-    await t.rejects(
-      exec({
-        args: ['@npmcli/create-index'],
-        yes: undefined,
-      }),
-      /canceled/,
-      'should throw with canceled error'
-    )
-
-    const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
-    t.rejects(
-      () => fs.stat(resolve(path, installedDir)),
-      { code: 'ENOENT' }
-    )
-  })
+  const installedDir = `npxCache/e7ce50d8d2d8ec11/node_modules/${pkg.name}/package.json`
+  t.rejects(
+    () => fs.stat(resolve(path, installedDir)),
+    { code: 'ENOENT' }
+  )
 })
 
 t.test('prompt, -n', async t => {
@@ -222,18 +160,21 @@ t.test('no prompt if CI, multiple packages', async t => {
     mocks: {
       'ci-info': { isCI: true },
       'proc-log': {
-        ...log,
-        warn (title, msg) {
-          t.equal(title, 'exec', 'should warn exec title')
-          // this message is nondeterministic as it queries manifests so we just
-          // test the constituent parts
-          t.match(
-            msg,
-            'The following packages were not found and will be installed:',
-            'should warn installing packages'
-          )
-          t.match(msg, '@npmcli/create-index@1.0.0', 'includes package being installed')
-          t.match(msg, '@npmcli/create-test@1.0.0', 'includes package being installed')
+        ...procLog,
+        log: {
+          ...procLog.log,
+          warn (title, msg) {
+            t.equal(title, 'exec', 'should warn exec title')
+            // this message is nondeterministic as it queries manifests so we just
+            // test the constituent parts
+            t.match(
+              msg,
+              'The following packages were not found and will be installed:',
+              'should warn installing packages'
+            )
+            t.match(msg, '@npmcli/create-index@1.0.0', 'includes package being installed')
+            t.match(msg, '@npmcli/create-test@1.0.0', 'includes package being installed')
+          },
         },
       },
     },

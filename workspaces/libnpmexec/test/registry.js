@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 
@@ -161,6 +161,87 @@ t.test('run multiple from registry', async t => {
     value: 'packages-2.0.0',
   })
   t.match(await readOutput('@npmcli-create-test'), {
+    value: 'packages-2.0.0',
+  })
+})
+t.test('packages with different versions in the global tree', async t => {
+  const pkgA1 = createPkg({
+    localVersion: '1.0.0',
+    versions: ['1.0.0', '2.0.0'],
+    name: '@npmcli/A',
+  })
+
+  const pkgA2 = createPkg({
+    localVersion: '2.0.0',
+    name: '@npmcli/A',
+    versions: ['1.0.0', '2.0.0'],
+  })
+
+  const pkgB = createPkg({
+    localVersion: '1.0.0',
+    name: '@npmcli/B',
+  })
+
+  const pkgBfix = merge(pkgB.fixtures, {
+    node_modules: {
+      '@npmcli': { B: {
+        node_modules: {
+          '@npmcli': {
+            A: pkgA2.fixtures.packages['@npmcli-A-2.0.0'],
+          } },
+        'package.json': { dependencies: { '@npmcli/A': '2.0.0' } },
+      },
+      },
+    } })
+
+  const { chmod, exec, readOutput, binLinks, registry, path } = setup(t, {
+    pkg: [pkgA2.pkg, pkgA1.pkg, pkgB.pkg],
+    global: true,
+    testdir: merge(pkgA1.fixtures, pkgBfix),
+  })
+
+  await chmod()
+  await binLinks()
+
+  await pkgA2.package({ registry, path, times: 2, tarballs: ['2.0.0'] })
+  await pkgA1.package({ registry, path, times: 1, tarballs: [] })
+
+  await exec({
+    args: ['@npmcli/A@2.0.0'],
+  })
+
+  t.match(await readOutput('@npmcli-A'), {
+    value: 'packages-2.0.0',
+    args: [],
+    created: 'packages/@npmcli-A-2.0.0/bin-file.js',
+  })
+
+  await exec({
+    args: ['@npmcli/A@1.0.0'],
+  })
+
+  t.match(await readOutput('@npmcli-A'), {
+    value: 'local-1.0.0',
+    args: [],
+    created: 'global/node_modules/@npmcli/A/bin-file.js',
+  })
+})
+
+t.test('run from registry - non existant global path', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: fixtures,
+  })
+
+  await package({ registry, path })
+
+  await exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'non-existant'),
+  })
+
+  t.match(await readOutput('@npmcli-create-index'), {
     value: 'packages-2.0.0',
   })
 })

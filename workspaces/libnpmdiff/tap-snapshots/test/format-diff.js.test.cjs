@@ -33,11 +33,11 @@ index v1.0.0..v2.0.0
 `
 
 exports[`test/format-diff.js TAP colored output > should output expected colored diff result 1`] = `
-[33mdiff --git a/foo.js b/foo.js[39m
-[33mindex v1.0.0..v2.0.0 100644[39m
-[33m--- a/foo.js[39m
-[33m+++ b/foo.js[39m
-[35m@@ -1,2 +1,2 @@[39m
+[34mdiff --git a/foo.js b/foo.js[39m
+[34mindex v1.0.0..v2.0.0 100644[39m
+[34m--- a/foo.js[39m
+[34m+++ b/foo.js[39m
+[36m@@ -1,2 +1,2 @@[39m
  "use strict"
 [31m-module.exports = "foo"[39m
 [32m+module.exports = "foobar"[39m
@@ -49,8 +49,8 @@ index v1.0.0..v2.0.0 100644
 --- before/foo.js
 +++ after/foo.js
 @@ -4,4 +4,6 @@
- const c = "c"
-+const d = "d"
+   const c = "c"
++  const d = "d"
  module.exports = () => a+
  b+
 -c
@@ -105,7 +105,6 @@ index v1.0.0..v2.0.0
 @@ -1,2 +0,0 @@
 -"use strict"
 -module.exports = "foo"
-/ No newline at end of file
 `
 
 exports[`test/format-diff.js TAP format simple diff > should output expected diff result 1`] = `

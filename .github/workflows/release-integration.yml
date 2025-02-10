@@ -1,0 +1,31 @@
+# This file is automatically added by @npmcli/template-oss. Do not edit.
+
+name: Release Integration
+
+on:
+  workflow_dispatch:
+    inputs:
+      releases:
+        required: true
+        type: string
+        description: 'A json array of releases. Required fields: publish: tagName, publishTag. publish check: pkgName, version'
+  workflow_call:
+    inputs:
+      releases:
+        required: true
+        type: string
+        description: 'A json array of releases. Required fields: publish: tagName, publishTag. publish check: pkgName, version'
+
+jobs:
+  publish:
+    strategy:
+      fail-fast: false
+      matrix:
+        nodeVersion:
+          - 22
+          - 24
+          - nightly
+    uses: ./.github/workflows/node-integration.yml
+    with:
+      nodeVersion: ${{ matrix.nodeVersion }}
+      npmVersion: ${{ fromJSON(inputs.releases)[0].version }}

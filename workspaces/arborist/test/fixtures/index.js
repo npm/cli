@@ -1,7 +1,7 @@
-const { mkdirSync } = require('fs')
+const { mkdirSync } = require('node:fs')
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('fs')
-const { relative, resolve, dirname } = require('path')
+const { unlinkSync, symlinkSync, readFileSync, writeFileSync } = require('node:fs')
+const { relative, resolve, dirname } = require('node:path')
 const mkdirp = (p) => mkdirSync(p, { recursive: true })
 
 const fixtures = __dirname
@@ -20,7 +20,11 @@ const roots = [
   'optofdev',
   'other',
   'root',
-  'selflink',
+  // This test flakes out on Apple Silicon
+  // https://github.com/npm/cli/pull/7411
+  process.platform === 'darwin' && process.arch === 'arm64'
+    ? null
+    : 'selflink',
   'symlinked-node-modules/example',
   'workspace',
   'workspace2',
@@ -35,7 +39,7 @@ const roots = [
   'link-dep-nested',
   'link-dep-nested/root',
   'external-link-cached-dummy-dep/root',
-]
+].filter(Boolean)
 
 const symlinks = {
   'selflink/node_modules/@scope/z/node_modules/glob':

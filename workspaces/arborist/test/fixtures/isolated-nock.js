@@ -1,9 +1,9 @@
 const nock = require('nock')
 const tar = require('tar-stream')
-const Stream = require('stream')
-const fs = require('fs')
-const path = require('path')
-const os = require('os')
+const Stream = require('node:stream')
+const fs = require('node:fs')
+const path = require('node:path')
+const os = require('node:os')
 
 /* Utility to extract a buffer out of a stream */
 class StreamToBuffer extends Stream.Writable {

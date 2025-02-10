@@ -280,6 +280,7 @@ Object {
         "a": "",
         "link": "",
         "link2": "",
+        "link3": "",
       },
       "devDependencies": Object {
         "d": "",
@@ -349,6 +350,10 @@ Object {
       "link": true,
       "resolved": "target",
     },
+    "node_modules/link3": Object {
+      "link": true,
+      "resolved": "realPkg",
+    },
     "node_modules/nopkg": Object {
       "extraneous": true,
     },
@@ -399,6 +404,14 @@ Object {
       },
       "integrity": "sha512-tarball/package/resolved/integrity",
       "resolved": "file:archives/tarball-pkg-resolved.tgz",
+      "version": "1.2.3",
+    },
+    "realPkg": Object {
+      "funding": Object {
+        "url": "https://example.com/payme",
+      },
+      "name": "link3",
+      "resolved": "git+ssh://git@github.com/isaacs/foobarbaz.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
       "version": "1.2.3",
     },
     "target": Object {
@@ -466,12 +479,30 @@ Object {
 }
 `
 
+exports[`test/shrinkwrap.js TAP construct metadata from node and package data > link metadata with same pkg name as link target 1`] = `
+Object {
+  "link": true,
+  "resolved": "realPkg",
+}
+`
+
 exports[`test/shrinkwrap.js TAP construct metadata from node and package data > link target metadata 1`] = `
 Object {
   "funding": Object {
     "url": "https://example.com/payme",
   },
   "name": "link",
+  "resolved": "git+ssh://git@github.com/isaacs/foobarbaz.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "version": "1.2.3",
+}
+`
+
+exports[`test/shrinkwrap.js TAP construct metadata from node and package data > link target metadata with same pkg name as link target 1`] = `
+Object {
+  "funding": Object {
+    "url": "https://example.com/payme",
+  },
+  "name": "link3",
   "resolved": "git+ssh://git@github.com/isaacs/foobarbaz.git#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   "version": "1.2.3",
 }
@@ -549,6 +580,7 @@ Object {
     "a": "",
     "link": "",
     "link2": "",
+    "link3": "",
   },
   "devDependencies": Object {
     "d": "",
@@ -572,6 +604,7 @@ Object {
     "a": "",
     "link": "",
     "link2": "",
+    "link3": "",
   },
   "devDependencies": Object {
     "d": "",

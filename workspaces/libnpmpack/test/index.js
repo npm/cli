@@ -5,8 +5,9 @@ const t = require('tap')
 const tspawk = require('./fixtures/tspawk.js')
 const spawk = tspawk(t)
 
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
+const { resolve } = require('node:path')
 const pack = require('../lib/index.js')
 const tnock = require('./fixtures/tnock.js')
 
@@ -128,6 +129,19 @@ t.test('packs from registry spec', async t => {
   const srv = tnock(t, REG)
   srv.get('/my-cool-pkg').reply(200, packument)
   srv.get('/my-cool-pkg/-/my-cool-pkg-1.0.0.tgz').reply(200, '')
+
+  const tarball = await pack(spec, { ...OPTS })
+  t.ok(tarball)
+})
+
+t.test('packs from git spec', async t => {
+  const spec = 'test/test#111111aaaaaaaabbbbbbbbccccccdddddddeeeee'
+  const pkgPath = resolve(__dirname, 'fixtures/git-test.tgz')
+
+  const srv = tnock(t, 'https://codeload.github.com')
+  srv.get('/test/test/tar.gz/111111aaaaaaaabbbbbbbbccccccdddddddeeeee')
+    .times(2)
+    .reply(200, fs.readFileSync(pkgPath))
 
   const tarball = await pack(spec, { ...OPTS })
   t.ok(tarball)

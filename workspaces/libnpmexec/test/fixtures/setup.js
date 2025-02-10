@@ -1,7 +1,7 @@
 
-const fs = require('fs/promises')
-const { existsSync } = require('fs')
-const { resolve, extname, join } = require('path')
+const fs = require('node:fs/promises')
+const { existsSync } = require('node:fs')
+const { resolve, extname, join } = require('node:path')
 const binLinks = require('bin-links')
 const MockRegistry = require('@npmcli/mock-registry')
 const justExtend = require('just-extend')

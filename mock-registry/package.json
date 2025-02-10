@@ -6,16 +6,17 @@
   "private": true,
   "scripts": {
     "test": "tap",
-    "lint": "eslint \"**/*.js\"",
+    "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "node .. run lint -- --fix",
+    "lintfix": "npm run eslint -- --fix",
     "snap": "tap",
-    "posttest": "node .. run lint"
+    "posttest": "npm run lint",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "mock-registry"
   },
   "keywords": [],
@@ -30,11 +31,11 @@
     "lib/"
   ],
   "engines": {
-    "node": "^18.17.0 || >=20.5.0"
+    "node": "^20.17.0 || >=22.9.0"
   },
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
+    "version": "4.23.6",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
@@ -45,13 +46,13 @@
     ]
   },
   "devDependencies": {
-    "@npmcli/arborist": "^7.1.0",
-    "@npmcli/eslint-config": "^4.0.1",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/arborist": "^8.0.0",
+    "@npmcli/eslint-config": "^5.0.1",
+    "@npmcli/template-oss": "4.23.6",
     "json-stringify-safe": "^5.0.1",
     "nock": "^13.3.3",
-    "npm-package-arg": "^11.0.1",
-    "pacote": "^17.0.4",
+    "npm-package-arg": "^12.0.0",
+    "pacote": "^21.0.0",
     "tap": "^16.3.8"
   }
 }

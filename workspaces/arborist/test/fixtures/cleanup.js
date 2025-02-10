@@ -1,5 +1,5 @@
-const { resolve } = require('path')
-const { readdirSync, lstatSync } = require('fs')
+const { resolve } = require('node:path')
+const { readdirSync, lstatSync } = require('node:fs')
 
 process.env.ARBORIST_FIXTURE_CLEANUP = '1'
 require('./index.js')

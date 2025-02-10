@@ -1,6 +1,6 @@
 const Arborist = require('../../lib/arborist')
 const t = require('tap')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const fixture = resolve(__dirname, '../fixtures/install-types')
 const swonlyfixture = resolve(__dirname, '../fixtures/install-types-sw-only')
 const badfixture = resolve(__dirname, '../fixtures/root')

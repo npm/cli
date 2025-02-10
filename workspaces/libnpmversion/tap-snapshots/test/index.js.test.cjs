@@ -24,7 +24,6 @@ Array [
     "scriptShell": undefined,
     "signGitCommit": false,
     "signGitTag": false,
-    "silent": undefined,
     "tagVersionPrefix": "v",
   },
 ]
@@ -49,7 +48,6 @@ Array [
     "scriptShell": "/bin/bash",
     "signGitCommit": true,
     "signGitTag": true,
-    "silent": undefined,
     "tagVersionPrefix": "=",
   },
 ]

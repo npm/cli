@@ -1,0 +1,63 @@
+name: 🐞 Bug
+description: File a bug/issue against the latest version of npm
+title: "[BUG] <title>"
+labels: [Bug, Needs Triage]
+body:
+- type: checkboxes
+  attributes:
+    label: Is there an existing issue for this?
+    description: Please [search here](https://github.com/npm/cli/issues) to see if an issue already exists for your problem.
+    options:
+    - label: I have searched the existing issues
+      required: true
+- type: checkboxes
+  attributes:
+    label: This issue exists in the latest npm version
+    description: Please make sure you have installed the latest npm and verified it is still an issue.
+    options:
+    - label: I am using the latest npm
+      required: true
+- type: textarea
+  attributes:
+    label: Current Behavior
+    description: A clear & concise description of what you're experiencing.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Expected Behavior
+    description: A clear & concise description of what you expected to happen.
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Steps To Reproduce
+    description: Steps to reproduce the behavior.
+    value: |
+      1. In this environment...
+      2. With this config...
+      3. Run '...'
+      4. See error...
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Environment
+    description: |
+      examples:
+        - **`npm -v`**: **npm**: 10.0.0
+        - **`node -v`**: **Node.js**: 18.0.0
+        - **OS Name**: Ubuntu 20.04
+        - **System Model Name**: Macbook Pro
+        - **`npm config ls`**: `; "user" config from ...`
+    value: |
+        - npm:
+        - Node.js:
+        - OS Name:
+        - System Model Name:
+        - npm config:
+        ```ini
+        ; copy and paste output from `npm config ls` here
+        ```
+  validations:
+    required: false

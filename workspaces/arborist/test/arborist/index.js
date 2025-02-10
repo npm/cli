@@ -27,7 +27,7 @@ t.throws(() => {
 }, /saveType/, 'rejects invalid saveType')
 
 t.test('workspace nodes and deps', async t => {
-  const { resolve } = require('path')
+  const { resolve } = require('node:path')
   const fixture = resolve(__dirname, '../fixtures/workspaces-shared-deps-virtual')
   const arb = new Arborist({ path: fixture })
   const tree = await arb.loadVirtual()

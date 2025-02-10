@@ -1,8 +1,46 @@
-const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
-const npa = require('npm-package-arg')
 const Nock = require('nock')
+const npa = require('npm-package-arg')
+const pacote = require('pacote')
+const path = require('node:path')
 const stringify = require('json-stringify-safe')
+
+const { createReadStream } = require('node:fs')
+const fs = require('node:fs/promises')
+
+const corgiDoc = 'application/vnd.npm.install-v1+json; q=1.0, application/json; q=0.8, */*'
+
+const logReq = (req, ...keys) => {
+  const obj = JSON.parse(stringify(req))
+  const res = {}
+  for (const [k, v] of Object.entries(obj)) {
+    if (!keys.includes(k)) {
+      res[k] = v
+    }
+  }
+  return stringify(res, null, 2)
+}
+
+// helper to convert old audit results to new bulk results
+// TODO eventually convert the fixture files themselves
+const auditToBulk = audit => {
+  const bulk = {}
+  for (const advisory in audit.advisories) {
+    const {
+      id,
+      url,
+      title,
+      severity = 'high',
+      /* eslint-disable-next-line camelcase */
+      vulnerable_versions = '*',
+      module_name: name,
+    } = audit.advisories[advisory]
+    bulk[name] = bulk[name] || []
+    /* eslint-disable-next-line camelcase */
+    bulk[name].push({ id, url, title, severity, vulnerable_versions })
+  }
+  return bulk
+}
 
 class MockRegistry {
   #tap
@@ -32,6 +70,7 @@ class MockRegistry {
   static tnock (t, host, opts, { debug = false, strict = false } = {}) {
     const noMatch = (req) => {
       if (debug) {
+        /* eslint-disable-next-line no-console */
         console.error('NO MATCH', t.name, req.options ? req.options : req.path)
       }
       if (strict) {
@@ -40,7 +79,8 @@ class MockRegistry {
         // mocked with a 404, 500, etc.
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
-        t.fail(`Unmatched request: ${stringify(req, null, 2)}`)
+        t.comment(logReq(req, 'interceptors', 'socket', 'response', '_events'))
+        t.fail(`Unmatched request: ${req.method} ${req.path}`)
       }
     }
 
@@ -53,7 +93,6 @@ class MockRegistry {
       // find mistakes quicker instead of waiting for the entire test to end
       t.afterEach((t) => {
         t.strictSame(server.pendingMocks(), [], 'no pending mocks after each')
-        t.strictSame(server.activeMocks(), [], 'no active mocks after each')
       })
     }
 
@@ -61,6 +100,7 @@ class MockRegistry {
       Nock.enableNetConnect()
       server.done()
       Nock.emitter.off('no match', noMatch)
+      Nock.cleanAll()
     })
 
     return server
@@ -225,13 +265,12 @@ class MockRegistry {
     })
   }
 
-  webadduser ({ username, password, token = 'npm_default-test-token' }) {
+  webadduser ({ token = 'npm_default-test-token' }) {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
     const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock
       .post(this.fullPath('/-/v1/login'), body => {
         this.#tap.ok(body.create) // Sole difference from weblogin
-        this.#tap.ok(body.hostname)
         return true
       })
       .reply(200, { doneUrl, loginUrl })
@@ -243,8 +282,7 @@ class MockRegistry {
     const doneUrl = new URL('/npm-cli-test/done', this.origin).href
     const loginUrl = new URL('/npm-cli-test/login', this.origin).href
     this.nock = this.nock
-      .post(this.fullPath('/-/v1/login'), body => {
-        this.#tap.ok(body.hostname)
+      .post(this.fullPath('/-/v1/login'), () => {
         return true
       })
       .reply(200, { doneUrl, loginUrl })
@@ -309,15 +347,34 @@ class MockRegistry {
   }
 
   ping ({ body = {}, responseCode = 200 } = {}) {
-    this.nock = this.nock.get(this.fullPath('/-/ping?write=true')).reply(responseCode, body)
+    this.nock = this.nock.get(this.fullPath('/-/ping')).reply(responseCode, body)
   }
 
   // full unpublish of an entire package
-  async unpublish ({ manifest }) {
+  unpublish ({ manifest }) {
     let nock = this.nock
     const spec = npa(manifest.name)
     nock = nock.delete(this.fullPath(`/${spec.escapedName}/-rev/${manifest._rev}`)).reply(201)
     return nock
+  }
+
+  publish (name, {
+    packageJson, access, noGet, noPut, putCode, manifest, packuments,
+  } = {}) {
+    if (!noGet) {
+      // this getPackage call is used to get the latest semver version before publish
+      if (manifest) {
+        this.getPackage(name, { code: 200, resp: manifest })
+      } else if (packuments) {
+        this.getPackage(name, { code: 200, resp: this.manifest({ name, packuments }) })
+      } else {
+        // assumes the package does not exist yet and will 404 x2 from pacote.manifest
+        this.getPackage(name, { times: 2, code: 404 })
+      }
+    }
+    if (!noPut) {
+      this.putPackage(name, { code: putCode, packageJson, access })
+    }
   }
 
   getPackage (name, { times = 1, code = 200, query, resp = {} }) {
@@ -332,6 +389,73 @@ class MockRegistry {
       nock = nock.reply(code, resp)
     }
     this.nock = nock
+  }
+
+  putPackage (name, { code = 200, resp = {}, ...putPackagePayload }) {
+    this.nock.put(`/${npa(name).escapedName}`, body => {
+      return this.#tap.match(body, this.putPackagePayload({ name, ...putPackagePayload }))
+    }).reply(code, resp)
+  }
+
+  putPackagePayload (opts) {
+    const pkg = opts.packageJson
+    const name = opts.name || pkg?.name
+    const registry = opts.registry || pkg?.publishConfig?.registry || 'https://registry.npmjs.org'
+    const access = opts.access || null
+
+    const nameProperties = !name ? {} : {
+      _id: name,
+      name: name,
+    }
+
+    const packageProperties = !pkg ? {} : {
+      'dist-tags': { latest: pkg.version },
+      versions: {
+        [pkg.version]: {
+          _id: `${pkg.name}@${pkg.version}`,
+          dist: {
+            shasum: /\.*/,
+            tarball:
+    `http://${new URL(registry).host}/${pkg.name}/-/${pkg.name}-${pkg.version}.tgz`,
+          },
+          ...pkg,
+        },
+      },
+      _attachments: {
+        [`${pkg.name}-${pkg.version}.tgz`]: {},
+      },
+    }
+
+    return {
+      access,
+      ...nameProperties,
+      ...packageProperties,
+    }
+  }
+
+  getTokens (tokens) {
+    return this.nock.get('/-/npm/v1/tokens')
+      .reply(200, {
+        objects: tokens,
+        urls: {},
+        total: tokens.length,
+        userHasOldFormatToken: false,
+      })
+  }
+
+  createToken ({ password, readonly = false, cidr = [] }) {
+    return this.nock.post('/-/npm/v1/tokens', {
+      password,
+      readonly,
+      cidr_whitelist: cidr,
+    }).reply(200, {
+      key: 'n3wk3y',
+      token: 'n3wt0k3n',
+      created: new Date(),
+      updated: new Date(),
+      readonly,
+      cidr_whitelist: cidr,
+    })
   }
 
   async package ({ manifest, times = 1, query, tarballs }) {
@@ -414,6 +538,92 @@ class MockRegistry {
       description: 'mocked test package',
       dependencies: {},
       ...packument,
+    }
+  }
+
+  // bulk advisory audit endpoint
+  audit ({ responseCode = 200, results = {}, convert = false, times = 1 } = {}) {
+    this.nock = this.nock
+      .post(this.fullPath('/-/npm/v1/security/advisories/bulk'))
+      .times(times)
+      .reply(
+        responseCode,
+        convert ? auditToBulk(results) : results
+      )
+  }
+
+  // Used in Arborist to mock the registry from fixture data on disk
+  // Will eat up all GET requests to the entire registry, so it probably doesn't work with the other GET routes very well.
+  mocks ({ dir }) {
+    const exists = (p) => fs.stat(p).then((s) => s).catch(() => false)
+    this.nock = this.nock.get(/.*/).reply(async function () {
+      const { headers, path: url } = this.req
+      const isCorgi = headers.accept.includes('application/vnd.npm.install-v1+json')
+      const encodedUrl = url.replace(/@/g, '').replace(/%2f/gi, '/')
+      const f = path.join(dir, 'registry-mocks', 'content', encodedUrl)
+      let file = f
+      let contentType = 'application/octet-stream'
+      if (isCorgi && await exists(`${f}.min.json`)) {
+        file = `${f}.min.json`
+        contentType = corgiDoc
+      } else if (await exists(`${f}.json`)) {
+        file = `${f}.json`
+        contentType = 'application/json'
+      } else if (await exists(`${f}/index.json`)) {
+        file = `${f}index.json`
+        contentType = 'application/json'
+      }
+      const stats = await exists(file)
+      if (stats) {
+        const body = createReadStream(file)
+        body.pause()
+        return [200, body, { 'content-type': contentType, 'content-length': stats.size }]
+      }
+      return [404, { error: 'not found' }]
+    }).persist()
+  }
+
+  /**
+   * this is a simpler convience method for creating mockable registry with
+   * tarballs for specific versions
+   */
+  async setup (packages) {
+    const format = Object.keys(packages).map(v => {
+      const [name, version] = v.split('@')
+      return { name, version }
+    }).reduce((acc, inc) => {
+      const exists = acc.find(pkg => pkg.name === inc.name)
+      if (exists) {
+        exists.tarballs = {
+          ...exists.tarballs,
+          [inc.version]: packages[`${inc.name}@${inc.version}`],
+        }
+      } else {
+        acc.push({ name: inc.name,
+          tarballs: {
+            [inc.version]: packages[`${inc.name}@${inc.version}`],
+          },
+        })
+      }
+      return acc
+    }, [])
+    const registry = this
+    for (const pkg of format) {
+      const { name, tarballs } = pkg
+      const versions = Object.keys(tarballs)
+      const manifest = await registry.manifest({ name, versions })
+
+      for (const version of versions) {
+        const tarballPath = pkg.tarballs[version]
+        if (!tarballPath) {
+          throw new Error(`Tarball path not provided for version ${version}`)
+        }
+
+        await registry.tarball({
+          manifest: manifest.versions[version],
+          tarball: tarballPath,
+        })
+      }
     }
   }
 }

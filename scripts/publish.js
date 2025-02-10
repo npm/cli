@@ -1,7 +1,7 @@
 const semver = require('semver')
-const log = require('proc-log')
+const { log } = require('proc-log')
 const pacote = require('pacote')
-const read = require('read')
+const { read } = require('read')
 const Table = require('cli-table3')
 const { run, git, npm, pkg: cli, spawn } = require('./util.js')
 
@@ -72,8 +72,10 @@ const getPublishes = async ({ force }) => {
 }
 
 const main = async (opts) => {
-  const packOnly = opts.pack || opts.packDestination
-  const publishes = await getPublishes({ force: packOnly })
+  const { test, otp, dryRun, smokePublish, packDestination } = opts
+
+  const hasPackDest = !!packDestination
+  const publishes = await getPublishes({ force: smokePublish })
 
   if (!publishes.length) {
     throw new Error(
@@ -87,13 +89,15 @@ const main = async (opts) => {
     table.push([publish.name, publish.version, publish.tag])
   }
 
+  const preformOperations = hasPackDest ? ['publish', 'pack'] : ['publish']
+
   const confirmMessage = [
-    `Ready to ${packOnly ? 'pack' : 'publish'} the following packages:`,
+    `Ready to ${preformOperations.join(',')} the following packages:`,
     table.toString(),
-    packOnly ? null : 'Ok to proceed? ',
+    smokePublish ? null : 'Ok to proceed? ',
   ].filter(Boolean).join('\n')
 
-  if (packOnly) {
+  if (smokePublish) {
     log.info(confirmMessage)
   } else {
     const confirm = await read({ prompt: confirmMessage, default: 'y' })
@@ -108,7 +112,7 @@ const main = async (opts) => {
   await npm('rm', '--global', '--force', 'npm')
   await npm('link', '--force', '--ignore-scripts')
 
-  if (opts.test) {
+  if (test) {
     await npm('run', 'lint-all', '--ignore-scripts')
     await npm('run', 'postlint', '--ignore-scripts')
     await npm('run', 'test-all', '--ignore-scripts')
@@ -116,23 +120,35 @@ const main = async (opts) => {
 
   await npm('prune', '--omit=dev', '--no-save', '--no-audit', '--no-fund')
   await npm('install', '-w', 'docs', '--ignore-scripts', '--no-audit', '--no-fund')
-  await git.dirty()
 
+  if (smokePublish) {
+    log.info(`Skipping git dirty check due to local smoke publish test being run`)
+  } else {
+    await git.dirty()
+  }
+
+  let count = -1
   for (const publish of publishes) {
+    log.info(`Publishing ${publish.name}@${publish.version} to ${publish.tag} ${count++}/${publishes.length}`)
     const workspace = publish.workspace && `--workspace=${publish.name}`
-    if (packOnly) {
+    const publishPkg = (...args) => npm('publish', workspace, `--tag=${publish.tag}`, ...args)
+
+    if (hasPackDest) {
       await npm(
         'pack',
         workspace,
-        opts.packDestination && `--pack-destination=${opts.packDestination}`
+        packDestination && `--pack-destination=${packDestination}`
       )
+    }
+
+    if (smokePublish) {
+      // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
+      await npm('version', 'prerelease', workspace, '--preid=smoke', '--ignore-scripts', '--no-git-tag-version')
+      await publishPkg('--dry-run', '--ignore-scripts')
     } else {
-      await npm(
-        'publish',
-        workspace,
-        `--tag=${publish.tag}`,
-        opts.dryRun && '--dry-run',
-        opts.otp && `--otp=${opts.otp === 'op' ? await op() : opts.otp}`
+      await publishPkg(
+        dryRun && '--dry-run',
+        otp && `--otp=${otp === 'op' ? await op() : otp}`
       )
     }
   }

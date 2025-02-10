@@ -8,7 +8,7 @@ const {
     validate: validatePath,
   },
 } = typeDefs
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 const d = { semver: 'foobar', somePath: true }
 t.equal(validateSemver(d, 'semver', 'foobar'), false)

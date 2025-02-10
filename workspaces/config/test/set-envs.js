@@ -1,7 +1,7 @@
 const setEnvs = require('../lib/set-envs.js')
 const mockGlobals = require('@npmcli/mock-globals')
 
-const { join } = require('path')
+const { join } = require('node:path')
 const t = require('tap')
 const { execPath } = process
 const cwd = process.cwd()

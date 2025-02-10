@@ -1,5 +1,73 @@
 # Changelog
 
+## [8.0.0](https://github.com/npm/cli/compare/libnpmteam-v8.0.0-pre.0...libnpmteam-v8.0.0) (2024-12-16)
+### Features
+* [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
+### Chores
+* [`a07f4e0`](https://github.com/npm/cli/commit/a07f4e0d921f640be6aa87736debd550ec478f89) [#7976](https://github.com/npm/cli/pull/7976) `@npmcli/template-oss@4.23.6` (@wraithgar)
+
+## [8.0.0-pre.0](https://github.com/npm/cli/compare/libnpmteam-v7.0.0...libnpmteam-v8.0.0-pre.0) (2024-11-26)
+### ⚠️ BREAKING CHANGES
+* libnpmteam now supports node `^20.17.0 || >=22.9.0`
+### Bug Fixes
+* [`9561fa7`](https://github.com/npm/cli/commit/9561fa7fde679bd7bd8b2da40ed40959a9680b2d) [#7831](https://github.com/npm/cli/pull/7831) for libnpmteam sets node engine range to `^20.17.0 || >=22.9.0` (@reggi)
+### Chores
+* [`6edfe2f`](https://github.com/npm/cli/commit/6edfe2f3a45169b6d194ccd8d366bb8d0e09b4a5) [#7937](https://github.com/npm/cli/pull/7937) `@npmcli/template-oss@4.23.5` (@wraithgar)
+
+## [7.0.0](https://github.com/npm/cli/compare/libnpmteam-v6.0.5...libnpmteam-v7.0.0) (2024-10-03)
+### ⚠️ BREAKING CHANGES
+* `libnpmteam` now supports node `^18.17.0 || >=20.5.0`
+### Bug Fixes
+* [`61d9a90`](https://github.com/npm/cli/commit/61d9a901b7a7bc2a91d42ccd03e9c26c7fd98b6b) [#7803](https://github.com/npm/cli/pull/7803) align libnpmteam to npm 10 node engine range (@reggi)
+### Dependencies
+* [`d13a20b`](https://github.com/npm/cli/commit/d13a20bebef1b9932f86c44741ea6d214ad6842b) [#7803](https://github.com/npm/cli/pull/7803) update `npm-registry-fetch@18.0.1`
+### Chores
+* [`2072705`](https://github.com/npm/cli/commit/2072705aa80d009dc077639adc305692f4a6c0b9) [#7803](https://github.com/npm/cli/pull/7803) update `@npmcli/eslint-config@5.0.1` (@reggi)
+* [`8035725`](https://github.com/npm/cli/commit/80357253ecd8483463cd66c783c4464c330d72df) [#7756](https://github.com/npm/cli/pull/7756) `@npmcli/template-oss@4.23.3` (@wraithgar)
+
+## [6.0.5](https://github.com/npm/cli/compare/libnpmteam-v6.0.4...libnpmteam-v6.0.5) (2024-05-15)
+
+### Dependencies
+
+* [`63ef498`](https://github.com/npm/cli/commit/63ef498bf2916a882a92c0b9fe6de6728584694a) [#7457](https://github.com/npm/cli/pull/7457) `npm-registry-fetch@17.0.1`
+
+### Chores
+
+* [`9c4d3c4`](https://github.com/npm/cli/commit/9c4d3c402c77bd7aaa514ee9e02d7fd87223343e) [#7467](https://github.com/npm/cli/pull/7467) template-oss-apply (@lukekarrys)
+* [`2b7ec54`](https://github.com/npm/cli/commit/2b7ec54f52f9e8aee568ccb4e34ce4a5733af21a) [#7467](https://github.com/npm/cli/pull/7467) `template-oss@4.22.0` (@lukekarrys)
+
+## [6.0.4](https://github.com/npm/cli/compare/libnpmteam-v6.0.3...libnpmteam-v6.0.4) (2024-04-30)
+
+### Bug Fixes
+
+* [`57ebebf`](https://github.com/npm/cli/commit/57ebebf03d55d4eda2b6439149a97b595a191aaf) [#7418](https://github.com/npm/cli/pull/7418) update repository.url in package.json (#7418) (@wraithgar)
+
+### Dependencies
+
+* [`a7145d4`](https://github.com/npm/cli/commit/a7145d422485fcbcb9427efa775c15180c7ee1c2) [#7453](https://github.com/npm/cli/pull/7453) `npm-registry-fetch@17.0.0`
+
+## [6.0.3](https://github.com/npm/cli/compare/libnpmteam-v6.0.2...libnpmteam-v6.0.3) (2024-04-25)
+
+### Dependencies
+
+* [`ee4b3e0`](https://github.com/npm/cli/commit/ee4b3e0e741545045dc03741c7147560961d867d) [#7373](https://github.com/npm/cli/pull/7373) `npm-registry-fetch@16.2.1`
+
+## [6.0.2](https://github.com/npm/cli/compare/libnpmteam-v6.0.1...libnpmteam-v6.0.2) (2024-04-03)
+
+### Dependencies
+
+* [`87a61fc`](https://github.com/npm/cli/commit/87a61fc8bb65c950cda389ab3d14ae250ab2345d) [#7334](https://github.com/npm/cli/pull/7334) `npm-registry-fetch@16.2.0`
+
+## [6.0.1](https://github.com/npm/cli/compare/libnpmteam-v6.0.0...libnpmteam-v6.0.1) (2023-12-06)
+
+### Chores
+
+* [`f656b66`](https://github.com/npm/cli/commit/f656b669e549286844f2071b9b62cf23f7958034) [#7062](https://github.com/npm/cli/pull/7062) `@npmcli/template-oss@4.21.3` (#7062) (@lukekarrys)
+* [`9754b17`](https://github.com/npm/cli/commit/9754b173de26f3173e7f41eab34733fe9ba50f1d) [#7051](https://github.com/npm/cli/pull/7051) use global npm for workspace tests (@lukekarrys)
+* [`3891757`](https://github.com/npm/cli/commit/3891757f54d6d960cbf5f0d93d183d6424e8bed6) [#7051](https://github.com/npm/cli/pull/7051) `@npmcli/template-oss@4.21.2` (@lukekarrys)
+* [`0270a7d`](https://github.com/npm/cli/commit/0270a7d42984210fd388f3d9a70aaa01887d29f6) [#6807](https://github.com/npm/cli/pull/6807) set workspace engines (@lukekarrys)
+* [`fec08ad`](https://github.com/npm/cli/commit/fec08ade0fed990b838b781867adf03253907e91) [#6807](https://github.com/npm/cli/pull/6807) `@npmcli/template-oss@4.19.0` (@lukekarrys)
+
 ## [6.0.0](https://github.com/npm/cli/compare/libnpmteam-v6.0.0-pre.0...libnpmteam-v6.0.0) (2023-08-31)
 
 ### Features

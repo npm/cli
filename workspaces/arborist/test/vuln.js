@@ -3,7 +3,7 @@ const Vuln = require('../lib/vuln.js')
 const Node = require('../lib/node.js')
 const Link = require('../lib/link.js')
 const Edge = require('../lib/edge.js')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 const semver = require('semver')
 const semverOpt = { includePrerelease: true, loose: true }

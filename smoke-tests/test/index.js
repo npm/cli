@@ -1,4 +1,4 @@
-const { join } = require('path')
+const { join } = require('node:path')
 const t = require('tap')
 const setup = require('./fixtures/setup.js')
 
@@ -37,7 +37,7 @@ t.test('basic', async t => {
   await t.test('npm init', async t => {
     const cmdRes = await npm('init', '-y')
 
-    t.matchSnapshot(cmdRes, 'should have successful npm init result')
+    t.matchSnapshot(cmdRes.stdout, 'should have successful npm init result')
     const pkg = await readFile('package.json')
     t.equal(pkg.name, 'project', 'should have expected generated name')
     t.equal(pkg.version, '1.0.0', 'should have expected generated version')
@@ -66,12 +66,12 @@ t.test('basic', async t => {
   })
 
   await t.test('npm --version', async t => {
-    const v = await npm('--version')
+    const v = await npm('--version').then(r => r.stdout.trim())
 
     if (setup.SMOKE_PUBLISH) {
-      t.match(v.trim(), /-[0-9a-f]{40}\.\d$/, 'must have a git version')
+      t.match(v, /-[0-9a-f]{40}\.\d$/, 'must have a git version')
     } else {
-      t.match(v.trim(), /^\d+\.\d+\.\d+/, 'has a version')
+      t.match(v, /^\d+\.\d+\.\d+/, 'has a version')
     }
   })
 
@@ -92,7 +92,7 @@ t.test('basic', async t => {
 
     const cmdRes = await npm('install', 'abbrev@1.0.4')
 
-    t.matchSnapshot(cmdRes, 'should have expected install reify output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected install reify output')
     t.resolveMatchSnapshot(readFile('package.json'), 'should have expected package.json result')
     t.resolveMatchSnapshot(readFile('package-lock.json'), 'should have expected lockfile result')
   })
@@ -109,7 +109,7 @@ t.test('basic', async t => {
 
     const cmdRes = await npm('install', 'promise-all-reject-late', '-D')
 
-    t.matchSnapshot(cmdRes, 'should have expected dev dep added reify output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected dev dep added reify output')
     t.resolveMatchSnapshot(
       readFile('package.json'),
       'should have expected dev dep added package.json result'
@@ -123,19 +123,19 @@ t.test('basic', async t => {
   await t.test('npm ls', async t => {
     const cmdRes = await npm('ls')
 
-    t.matchSnapshot(cmdRes, 'should have expected ls output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected ls output')
   })
 
   await t.test('npm fund', async t => {
     const cmdRes = await npm('fund')
 
-    t.matchSnapshot(cmdRes, 'should have expected fund output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected fund output')
   })
 
   await t.test('npm explain', async t => {
     const cmdRes = await npm('explain', 'abbrev')
 
-    t.matchSnapshot(cmdRes, 'should have expected explain output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected explain output')
   })
 
   await t.test('npm diff', async t => {
@@ -151,7 +151,7 @@ t.test('basic', async t => {
 
     const cmdRes = await npm('diff', '--diff=abbrev@1.0.4', '--diff=abbrev@1.1.1')
 
-    t.matchSnapshot(cmdRes, 'should have expected diff output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected diff output')
   })
 
   await t.test('npm outdated', async t => {
@@ -175,7 +175,7 @@ t.test('basic', async t => {
   await t.test('npm pkg set scripts', async t => {
     const cmdRes = await npm('pkg', 'set', 'scripts.hello=echo Hello')
 
-    t.matchSnapshot(cmdRes, 'should have expected set-script output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected set-script output')
     t.resolveMatchSnapshot(
       readFile('package.json'),
       'should have expected script added package.json result'
@@ -185,13 +185,13 @@ t.test('basic', async t => {
   await t.test('npm run-script', async t => {
     const cmdRes = await npm('run', 'hello')
 
-    t.matchSnapshot(cmdRes, 'should have expected run-script output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected run-script output')
   })
 
   await t.test('npm prefix', async t => {
     const cmdRes = await npm('prefix')
 
-    t.matchSnapshot(cmdRes, 'should have expected prefix output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected prefix output')
   })
 
   await t.test('npm view', async t => {
@@ -200,7 +200,7 @@ t.test('basic', async t => {
     })
     const cmdRes = await npm('view', 'abbrev@1.0.4')
 
-    t.matchSnapshot(cmdRes, 'should have expected view output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected view output')
   })
 
   await t.test('npm update dep', async t => {
@@ -214,7 +214,7 @@ t.test('basic', async t => {
 
     const cmdRes = await npm('update', 'abbrev')
 
-    t.matchSnapshot(cmdRes, 'should have expected update reify output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected update reify output')
     t.resolveMatchSnapshot(readFile('package.json'),
       'should have expected update package.json result')
     t.resolveMatchSnapshot(readFile('package-lock.json'),
@@ -224,7 +224,7 @@ t.test('basic', async t => {
   await t.test('npm uninstall', async t => {
     const cmdRes = await npm('uninstall', 'promise-all-reject-late')
 
-    t.matchSnapshot(cmdRes, 'should have expected uninstall reify output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected uninstall reify output')
     t.resolveMatchSnapshot(readFile('package.json'),
       'should have expected uninstall package.json result')
     t.resolveMatchSnapshot(readFile('package-lock.json'),
@@ -233,10 +233,10 @@ t.test('basic', async t => {
 
   await t.test('npm pkg', async t => {
     let cmdRes = await npm('pkg', 'get', 'license')
-    t.matchSnapshot(cmdRes, 'should have expected pkg get output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected pkg get output')
 
     cmdRes = await npm('pkg', 'set', 'tap[test-env][0]=LC_ALL=sk')
-    t.matchSnapshot(cmdRes, 'should have expected pkg set output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected pkg set output')
 
     t.resolveMatchSnapshot(
       readFile('package.json'),
@@ -244,10 +244,10 @@ t.test('basic', async t => {
     )
 
     cmdRes = await npm('pkg', 'get')
-    t.matchSnapshot(cmdRes, 'should print package.json contents')
+    t.matchSnapshot(cmdRes.stdout, 'should print package.json contents')
 
     cmdRes = await npm('pkg', 'delete', 'tap')
-    t.matchSnapshot(cmdRes, 'should have expected pkg delete output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected pkg delete output')
 
     t.resolveMatchSnapshot(
       readFile('package.json'),
@@ -385,7 +385,7 @@ t.test('basic', async t => {
       })
 
       const o = await npm('exec', 'exec-test')
-      t.match(o.trim(), '1.0.0')
+      t.match(o.stdout.trim(), '1.0.0')
     }
     // Second run finds newer version
     {
@@ -401,7 +401,7 @@ t.test('basic', async t => {
         },
       })
       const o = await npm('exec', 'exec-test')
-      t.match(o.trim(), '1.0.1')
+      t.match(o.stdout.trim(), '1.0.1')
     }
   })
 })

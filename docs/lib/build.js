@@ -93,35 +93,45 @@ const run = async ({ content, template, nav, man, html, md }) => {
         : []),
     ])
 
+    const aliases = [
+      fullName === 'configuring-npm/package-json' && 'configuring-npm/npm-json',
+      fullName === 'configuring-npm/folders' && 'configuring-npm/npm-global',
+    ].filter(Boolean)
+
     if (data.section) {
-      const manSrc = applyTransforms(transformedSrc, [
+      const manSource = applyTransforms(transformedSrc, [
         transform.helpLinks,
         transform.man,
       ])
-      const manPaths = [
-        name,
-        fullName === 'configuring-npm/package-json' && 'npm-json',
-        fullName === 'configuring-npm/folders' && 'npm-global',
-      ].filter(Boolean).map(p => applyTransforms(p, [transform.manPath]))
-
-      acc.man.push(...manPaths.map((manPath) => ({
-        path: manPath,
-        fullPath: join(man, manPath),
-        src: manSrc,
-      })))
+      // Man page aliases are only the basename since the man pages have no hierarchy
+      acc.man.push(...[name, ...aliases.map(a => basename(a))]
+        .map((p) => applyTransforms(p, [transform.manPath]))
+        .map((manPath) => ({
+          path: manPath,
+          fullPath: join(man, manPath),
+          src: manSource,
+        }))
+      )
     }
 
-    acc.html.push({
-      path: `${fullName}.html`,
-      fullPath: join(html, `${fullName}.html`),
-      src: applyTransforms(transformedSrc, [transform.html]),
-    })
+    // html docs are used for npm help on Windows
+    const htmlSource = applyTransforms(transformedSrc, [transform.html])
+    acc.html.push(...[fullName, ...aliases].map((htmlPath) => ({
+      path: `${htmlPath}.html`,
+      fullPath: join(html, `${htmlPath}.html`),
+      src: htmlSource,
+    })))
 
+    // Markdown pages don't get aliases here. These are used to build the website so any redirects
+    // for these pages are applied in npm/documentation. Not ideal but there are also many more
+    // redirects that we would never apply to man or html docs pages
+    const mdSource = applyTransforms(transformedSrc, [transform.md])
     acc.md.push({
       path: childPath,
       fullPath: join(md, childPath),
-      src: applyTransforms(transformedSrc, [transform.md]),
+      src: mdSource,
     })
+
     return acc
   }, { man: [], html: [], md: [] })
 

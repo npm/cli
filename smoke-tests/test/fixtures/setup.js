@@ -1,13 +1,13 @@
-const fs = require('fs/promises')
-const { existsSync } = require('fs')
-const { join, resolve, sep, extname, relative, delimiter } = require('path')
+const fs = require('node:fs/promises')
+const { existsSync } = require('node:fs')
+const { join, resolve, sep, extname, relative, delimiter } = require('node:path')
 const which = require('which')
 const spawn = require('@npmcli/promise-spawn')
 const MockRegistry = require('@npmcli/mock-registry')
-const http = require('http')
+const http = require('node:http')
 const { createProxy } = require('proxy')
 
-const { SMOKE_PUBLISH_NPM, SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
+const { SMOKE_PUBLISH_TARBALL, CI, PATH, Path } = process.env
 
 const DEFAULT_REGISTRY = new URL('https://registry.npmjs.org/')
 const MOCK_REGISTRY = new URL('http://smoke-test-registry.club/')
@@ -44,8 +44,8 @@ const testdirHelper = (obj) => {
   return obj
 }
 
-const getNpmRoot = (helpText) => {
-  return helpText
+const getNpmRoot = (r) => {
+  return r.stdout
     .split('\n')
     .slice(-1)[0]
     .match(/^npm@.*?\s(.*)$/)
@@ -73,8 +73,12 @@ const getCleanPaths = async () => {
   })
 }
 
-module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy = false } = {}) => {
-  const debugLog = debug || CI ? (...a) => console.error(...a) : () => {}
+module.exports = async (t, {
+  testdir = {}, debug, mockRegistry = true, strictRegistryNock = true, useProxy = false,
+} = {}) => {
+  const debugLog = debug || CI ? (...a) => t.comment(...a) : () => {}
+  debugLog({ SMOKE_PUBLISH_TARBALL, CI })
+
   const cleanPaths = await getCleanPaths()
 
   // setup fixtures
@@ -101,7 +105,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
     tap: t,
     registry: MOCK_REGISTRY,
     debug,
-    strict: true,
+    strict: strictRegistryNock,
   })
 
   const proxyEnv = {}
@@ -152,14 +156,13 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
   const baseSpawn = async (spawnCmd, spawnArgs, {
     cwd = paths.project,
     env,
-    stderr: _stderr,
     ...opts } = {}
   ) => {
     log(`CWD: ${cwd}`)
     log(`${spawnCmd} ${spawnArgs.join(' ')}`)
     log('-'.repeat(40))
 
-    const { stderr, stdout } = await spawn(spawnCmd, spawnArgs, {
+    const p = spawn(spawnCmd, spawnArgs, {
       cwd,
       env: {
         ...getEnvPath(),
@@ -170,12 +173,14 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
       ...opts,
     })
 
-    log(stderr)
-    log('-'.repeat(40))
-    log(stdout)
+    // In debug mode, stream stdout and stderr to console so we can debug hanging processes
+    p.process.stdout.on('data', (c) => log(c.toString().trim()))
+    p.process.stderr.on('data', (c) => log(c.toString().trim()))
+
+    const { stdout, stderr } = await p
     log('='.repeat(40))
 
-    return _stderr ? { stderr, stdout } : stdout
+    return { stderr, stdout }
   }
 
   const baseNpm = async (...a) => {
@@ -216,7 +221,7 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
 
   const npmLocal = async (...args) => {
     const [{ force = false }] = getOpts(...args)
-    if (SMOKE_PUBLISH_NPM && !force) {
+    if (SMOKE_PUBLISH_TARBALL && !force) {
       throw new Error('npmLocal cannot be called during smoke-publish')
     }
     return baseNpm({
@@ -248,14 +253,17 @@ module.exports = async (t, { testdir = {}, debug, mockRegistry = true, useProxy 
   return {
     npmPath,
     npmLocal,
-    npm: SMOKE_PUBLISH_NPM ? npmPath : npm,
+    npm: SMOKE_PUBLISH_TARBALL ? npmPath : npm,
     spawn: baseSpawn,
     readFile,
     getPath,
     paths,
     registry,
     npmLocalTarball: async () => SMOKE_PUBLISH_TARBALL ??
-      npmLocal('pack', `--pack-destination=${root}`).then(r => join(root, r)),
+      npmLocal('pack', `--pack-destination=${root}`).then(r => {
+        const output = r.stdout.trim().split('\n')
+        return join(root, output[output.length - 1])
+      }),
   }
 }
 
@@ -263,6 +271,6 @@ module.exports.testdir = testdirHelper
 module.exports.getNpmRoot = getNpmRoot
 module.exports.CLI_ROOT = CLI_ROOT
 module.exports.WINDOWS = WINDOWS
-module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_NPM
+module.exports.SMOKE_PUBLISH = !!SMOKE_PUBLISH_TARBALL
 module.exports.SMOKE_PUBLISH_TARBALL = SMOKE_PUBLISH_TARBALL
 module.exports.MOCK_REGISTRY = MOCK_REGISTRY

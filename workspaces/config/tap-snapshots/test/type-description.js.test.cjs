@@ -139,6 +139,14 @@ Object {
   "engine-strict": Array [
     "boolean value (true or false)",
   ],
+  "expect-result-count": Array [
+    null,
+    "numeric value",
+  ],
+  "expect-results": Array [
+    null,
+    "boolean value (true or false)",
+  ],
   "fetch-retries": Array [
     "numeric value",
   ],
@@ -223,6 +231,9 @@ Object {
   "init-module": Array [
     "valid filesystem path",
   ],
+  "init-type": Array [
+    Function String(),
+  ],
   "init-version": Array [
     "full valid SemVer string",
   ],
@@ -266,6 +277,10 @@ Object {
   ],
   "legacy-peer-deps": Array [
     "boolean value (true or false)",
+  ],
+  "libc": Array [
+    null,
+    Function String(),
   ],
   "link": Array [
     "boolean value (true or false)",

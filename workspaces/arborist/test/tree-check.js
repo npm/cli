@@ -5,7 +5,7 @@ const treeCheck = t.mock('../lib/tree-check.js', {
   '../lib/debug.js': fn => fn(),
 })
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 const Node = require('../lib/node.js')
 const Link = require('../lib/link.js')

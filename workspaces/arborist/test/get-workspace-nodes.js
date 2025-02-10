@@ -1,8 +1,8 @@
 const t = require('tap')
-const getWorkspaceNodes = require('../lib/get-workspace-nodes.js')
 const Arborist = require('../lib/arborist/index.js')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const path = resolve(__dirname, './fixtures/workspaces-shared-deps-virtual')
+const arb = new Arborist({ path })
 
 const warningTracker = () => {
   const list = []
@@ -16,12 +16,12 @@ const warningTracker = () => {
 
 let tree
 t.before(async () => {
-  tree = await new Arborist({ path }).loadVirtual()
+  tree = await arb.loadVirtual()
 })
 
 t.test('basic behavior', t => {
   const getLogs = warningTracker()
-  const wsNodes = getWorkspaceNodes(tree, ['a'])
+  const wsNodes = arb.workspaceNodes(tree, ['a'])
   t.equal(wsNodes.length, 1)
   t.equal(wsNodes[0], tree.children.get('a').target)
   t.same(getLogs(), [])
@@ -30,7 +30,7 @@ t.test('basic behavior', t => {
 
 t.test('filter set, but no workspaces present', t => {
   const getLogs = warningTracker()
-  const wsNodes = getWorkspaceNodes(tree.children.get('b').target, ['xyz'])
+  const wsNodes = arb.workspaceNodes(tree.children.get('b').target, ['xyz'])
   t.same(wsNodes, [])
   t.same(getLogs(), [
     ['warn', 'workspaces', 'filter set, but no workspaces present'],
@@ -40,7 +40,7 @@ t.test('filter set, but no workspaces present', t => {
 
 t.test('name in filter set, but not in workspaces', t => {
   const getLogs = warningTracker()
-  const wsNodes = getWorkspaceNodes(tree, ['xyz'])
+  const wsNodes = arb.workspaceNodes(tree, ['xyz'])
   t.same(wsNodes, [])
   t.same(getLogs(), [
     ['warn', 'workspaces', 'xyz in filter set, but not in workspaces'],
@@ -55,7 +55,7 @@ t.test('name in filter set, but no workspace folder present', t => {
   // but if we start moving things around and make a mistake, it's
   // possible to get there.
   tree.children.get('c').target.root = null
-  const wsNodes = getWorkspaceNodes(tree, ['c'])
+  const wsNodes = arb.workspaceNodes(tree, ['c'])
   t.same(wsNodes, [])
   t.same(getLogs(), [
     ['warn', 'workspaces', 'c in filter set, but no workspace folder present'],

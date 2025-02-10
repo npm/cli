@@ -119,7 +119,6 @@ Array [
   "get",
   "help",
   "help-search",
-  "hook",
   "init",
   "install",
   "install-ci-test",
@@ -156,6 +155,7 @@ Array [
   "team",
   "test",
   "token",
+  "undeprecate",
   "uninstall",
   "unpublish",
   "unstar",
@@ -405,7 +405,7 @@ are same as \`cpu\` field of package.json, which comes from \`process.arch\`.
 
 #### \`depth\`
 
-* Default: \`Infinity\` if \`--all\` is set, otherwise \`1\`
+* Default: \`Infinity\` if \`--all\` is set, otherwise \`0\`
 * Type: null or Number
 
 The depth to go when recursing packages for \`npm ls\`.
@@ -537,6 +537,25 @@ This can be overridden by setting the \`--force\` flag.
 
 
 
+#### \`expect-result-count\`
+
+* Default: null
+* Type: null or Number
+
+Tells to expect a specific number of results from the command.
+
+This config can not be used with: \`expect-results\`
+
+#### \`expect-results\`
+
+* Default: null
+* Type: null or Boolean
+
+Tells npm whether or not to expect results from the command. Can be either
+true (expect some results) or false (expect no results).
+
+This config can not be used with: \`expect-result-count\`
+
 #### \`fetch-retries\`
 
 * Default: 2
@@ -618,7 +637,8 @@ recommended that you do not use this option!
 
 #### \`foreground-scripts\`
 
-* Default: false
+* Default: \`false\` unless when using \`npm pack\` or \`npm publish\` where it
+  defaults to \`true\`
 * Type: Boolean
 
 Run all build scripts (ie, \`preinstall\`, \`install\`, and \`postinstall\`)
@@ -834,6 +854,16 @@ more information, or [npm init](/commands/npm-init).
 
 
 
+#### \`init-type\`
+
+* Default: "commonjs"
+* Type: String
+
+The value that \`npm init\` should use by default for the package.json type
+field.
+
+
+
 #### \`init-version\`
 
 * Default: "1.0.0"
@@ -900,6 +930,16 @@ This differs from \`--omit=peer\`, in that \`--omit=peer\` will avoid unpacking
 
 Use of \`legacy-peer-deps\` is not recommended, as it will not enforce the
 \`peerDependencies\` contract that meta-dependencies may rely on.
+
+
+
+#### \`libc\`
+
+* Default: null
+* Type: null or String
+
+Override libc of native modules to install. Acceptable values are same as
+\`libc\` field of package.json
 
 
 
@@ -1232,7 +1272,7 @@ a semver. Like the \`rc\` in \`1.2.0-rc.8\`.
 * Type: Boolean
 
 When set to \`true\`, npm will display a progress bar during time intensive
-operations, if \`process.stderr\` is a TTY.
+operations, if \`process.stderr\` and \`process.stdout\` are a TTY.
 
 Set to \`false\` to suppress the progress bar.
 
@@ -1421,7 +1461,7 @@ SBOM format to use when generating SBOMs.
 * Type: "library", "application", or "framework"
 
 The type of package described by the generated SBOM. For SPDX, this is the
-value for the \`primaryPackagePurpose\` fieled. For CycloneDX, this is the
+value for the \`primaryPackagePurpose\` field. For CycloneDX, this is the
 value for the \`type\` field.
 
 
@@ -1582,11 +1622,14 @@ See also the \`ca\` config.
 If you ask npm to install a package and don't tell it a specific version,
 then it will install the specified tag.
 
-Also the tag that is added to the package@version specified by the \`npm tag\`
-command, if no explicit tag is given.
+It is the tag added to the package@version specified in the \`npm dist-tag
+add\` command, if no explicit tag is given.
 
 When used by the \`npm diff\` command, this is the tag used to fetch the
 tarball that will be compared with the local files by default.
+
+If used in the \`npm publish\` command, this is the tag that will be added to
+the package submitted to the registry.
 
 
 
@@ -1845,9 +1888,9 @@ When set to \`dev\` or \`development\`, this is an alias for \`--include=dev\`.
 * Default: null
 * Type: null or String
 * DEPRECATED: \`key\` and \`cert\` are no longer used for most registry
-  operations. Use registry scoped \`keyfile\` and \`certfile\` instead. Example:
+  operations. Use registry scoped \`keyfile\` and \`cafile\` instead. Example:
   //other-registry.tld/:keyfile=/path/to/key.pem
-  //other-registry.tld/:certfile=/path/to/cert.crt
+  //other-registry.tld/:cafile=/path/to/cert.crt
 
 A client certificate to pass when accessing the registry. Values should be
 in PEM format (Windows calls it "Base-64 encoded X.509 (.CER)") with
@@ -1858,8 +1901,8 @@ cert="-----BEGIN CERTIFICATE-----\\nXXXX\\nXXXX\\n-----END CERTIFICATE-----"
 \`\`\`
 
 It is _not_ the path to a certificate file, though you can set a
-registry-scoped "certfile" path like
-"//other-registry.tld/:certfile=/path/to/cert.pem".
+registry-scoped "cafile" path like
+"//other-registry.tld/:cafile=/path/to/cert.pem".
 
 
 
@@ -1950,9 +1993,9 @@ Alias for \`--init-version\`
 * Default: null
 * Type: null or String
 * DEPRECATED: \`key\` and \`cert\` are no longer used for most registry
-  operations. Use registry scoped \`keyfile\` and \`certfile\` instead. Example:
+  operations. Use registry scoped \`keyfile\` and \`cafile\` instead. Example:
   //other-registry.tld/:keyfile=/path/to/key.pem
-  //other-registry.tld/:certfile=/path/to/cert.crt
+  //other-registry.tld/:cafile=/path/to/cert.crt
 
 A client key to pass when accessing the registry. Values should be in PEM
 format with newlines replaced by the string "\\n". For example:
@@ -2048,7 +2091,6 @@ Array [
   "color",
   "commit-hooks",
   "cpu",
-  "os",
   "depth",
   "description",
   "dev",
@@ -2063,6 +2105,8 @@ Array [
   "dry-run",
   "editor",
   "engine-strict",
+  "expect-result-count",
+  "expect-results",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2089,6 +2133,7 @@ Array [
   "init-author-url",
   "init-license",
   "init-module",
+  "init-type",
   "init-version",
   "init.author.email",
   "init.author.name",
@@ -2102,10 +2147,9 @@ Array [
   "key",
   "legacy-bundling",
   "legacy-peer-deps",
+  "libc",
   "link",
   "local-address",
-  "sbom-format",
-  "sbom-type",
   "location",
   "lockfile-version",
   "loglevel",
@@ -2121,6 +2165,7 @@ Array [
   "omit-lockfile-registry-resolved",
   "only",
   "optional",
+  "os",
   "otp",
   "package",
   "package-lock",
@@ -2149,6 +2194,8 @@ Array [
   "save-peer",
   "save-prefix",
   "save-prod",
+  "sbom-format",
+  "sbom-type",
   "scope",
   "script-shell",
   "searchexclude",
@@ -2205,7 +2252,6 @@ Array [
   "color",
   "commit-hooks",
   "cpu",
-  "os",
   "depth",
   "description",
   "dev",
@@ -2247,9 +2293,8 @@ Array [
   "key",
   "legacy-bundling",
   "legacy-peer-deps",
+  "libc",
   "local-address",
-  "sbom-format",
-  "sbom-type",
   "location",
   "lockfile-version",
   "loglevel",
@@ -2261,6 +2306,7 @@ Array [
   "omit-lockfile-registry-resolved",
   "only",
   "optional",
+  "os",
   "otp",
   "package",
   "package-lock",
@@ -2288,6 +2334,8 @@ Array [
   "save-peer",
   "save-prefix",
   "save-prod",
+  "sbom-format",
+  "sbom-type",
   "scope",
   "script-shell",
   "searchexclude",
@@ -2313,11 +2361,14 @@ Array [
 
 exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
+  "expect-result-count",
+  "expect-results",
   "init-author-email",
   "init-author-name",
   "init-author-url",
   "init-license",
   "init-module",
+  "init-type",
   "init-version",
   "init.author.email",
   "init.author.name",
@@ -2395,6 +2446,7 @@ Object {
   "json": false,
   "key": null,
   "legacyPeerDeps": false,
+  "libc": null,
   "localAddress": null,
   "location": "user",
   "lockfileVersion": null,
@@ -2515,7 +2567,7 @@ exports[`test/lib/docs.js TAP usage access > must match snapshot 1`] = `
 Set access level on published packages
 
 Usage:
-npm access list packages [<user>|<scope>|<scope:team> [<package>]
+npm access list packages [<user>|<scope>|<scope:team>] [<package>]
 npm access list collaborators [<package> [<user>]]
 npm access get status [<package>]
 npm access set status=public|private [<package>]
@@ -2529,7 +2581,7 @@ Options:
 Run "npm help access" for more info
 
 \`\`\`bash
-npm access list packages [<user>|<scope>|<scope:team> [<package>]
+npm access list packages [<user>|<scope>|<scope:team>] [<package>]
 npm access list collaborators [<package> [<user>]]
 npm access get status [<package>]
 npm access set status=public|private [<package>]
@@ -2584,7 +2636,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 Run "npm help audit" for more info
 
@@ -2617,7 +2669,7 @@ npm bugs [<pkgname> [<pkgname> ...]]
 Options:
 [--no-browser|--browser <browser>] [--registry <registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 alias: issues
 
@@ -2675,7 +2727,7 @@ Options:
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 aliases: clean-install, ic, install-clean, isntall-clean
 
@@ -2774,7 +2826,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: ddp
 
@@ -2811,7 +2863,7 @@ Usage:
 npm deprecate <package-spec> <message>
 
 Options:
-[--registry <registry>] [--otp <otp>]
+[--registry <registry>] [--otp <otp>] [--dry-run]
 
 Run "npm help deprecate" for more info
 
@@ -2823,6 +2875,7 @@ Note: This command is unaware of workspaces.
 
 #### \`registry\`
 #### \`otp\`
+#### \`dry-run\`
 `
 
 exports[`test/lib/docs.js TAP usage diff > must match snapshot 1`] = `
@@ -2837,7 +2890,7 @@ Options:
 [--diff-src-prefix <path>] [--diff-dst-prefix <path>] [--diff-text] [-g|--global]
 [--tag <tag>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 Run "npm help diff" for more info
 
@@ -2870,7 +2923,7 @@ npm dist-tag ls [<package-spec>]
 
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 alias: dist-tags
 
@@ -2898,7 +2951,7 @@ npm docs [<pkgname> [<pkgname> ...]]
 Options:
 [--no-browser|--browser <browser>] [--registry <registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 alias: home
 
@@ -2921,7 +2974,7 @@ exports[`test/lib/docs.js TAP usage doctor > must match snapshot 1`] = `
 Check the health of your npm environment
 
 Usage:
-npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
+npm doctor [connection] [registry] [versions] [environment] [permissions] [cache]
 
 Options:
 [--registry <registry>]
@@ -2929,7 +2982,7 @@ Options:
 Run "npm help doctor" for more info
 
 \`\`\`bash
-npm doctor [ping] [registry] [versions] [environment] [permissions] [cache]
+npm doctor [connection] [registry] [versions] [environment] [permissions] [cache]
 \`\`\`
 
 Note: This command is unaware of workspaces.
@@ -2969,7 +3022,7 @@ npm exec --package=foo -c '<cmd> [args...]'
 Options:
 [--package <package-spec> [--package <package-spec> ...]] [-c|--call <call>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 alias: x
 
@@ -3047,7 +3100,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 Run "npm help find-dupes" for more info
 
@@ -3160,53 +3213,26 @@ Note: This command is unaware of workspaces.
 #### \`long\`
 `
 
-exports[`test/lib/docs.js TAP usage hook > must match snapshot 1`] = `
-Manage registry hooks
-
-Usage:
-npm hook add <pkg> <url> <secret> [--type=<type>]
-npm hook ls [pkg]
-npm hook rm <id>
-npm hook update <id> <url> <secret>
-
-Options:
-[--registry <registry>] [--otp <otp>]
-
-Run "npm help hook" for more info
-
-\`\`\`bash
-npm hook add <pkg> <url> <secret> [--type=<type>]
-npm hook ls [pkg]
-npm hook rm <id>
-npm hook update <id> <url> <secret>
-\`\`\`
-
-Note: This command is unaware of workspaces.
-
-#### \`registry\`
-#### \`otp\`
-`
-
 exports[`test/lib/docs.js TAP usage init > must match snapshot 1`] = `
 Create a package.json file
 
 Usage:
-npm init <package-spec> (same as \`npx <package-spec>\`)
+npm init <package-spec> (same as \`npx create-<package-spec>\`)
 npm init <@scope> (same as \`npx <@scope>/create\`)
 
 Options:
 [--init-author-name <name>] [--init-author-url <url>] [--init-license <license>]
-[--init-module <module>] [--init-version <version>] [-y|--yes] [-f|--force]
-[--scope <@scope>]
+[--init-module <module>] [--init-type <type>] [--init-version <version>]
+[-y|--yes] [-f|--force] [--scope <@scope>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
+[--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
 aliases: create, innit
 
 Run "npm help init" for more info
 
 \`\`\`bash
-npm init <package-spec> (same as \`npx <package-spec>\`)
+npm init <package-spec> (same as \`npx create-<package-spec>\`)
 npm init <@scope> (same as \`npx <@scope>/create\`)
 
 aliases: create, innit
@@ -3216,6 +3242,7 @@ aliases: create, innit
 #### \`init-author-url\`
 #### \`init-license\`
 #### \`init-module\`
+#### \`init-type\`
 #### \`init-version\`
 #### \`yes\`
 #### \`force\`
@@ -3240,9 +3267,9 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 
@@ -3274,6 +3301,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`dry-run\`
 #### \`cpu\`
 #### \`os\`
+#### \`libc\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -3293,7 +3321,7 @@ Options:
 [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
 [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 aliases: cit, clean-install-test, sit
 
@@ -3337,9 +3365,9 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
 [--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: it
 
@@ -3371,6 +3399,7 @@ alias: it
 #### \`dry-run\`
 #### \`cpu\`
 #### \`os\`
+#### \`libc\`
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
@@ -3392,7 +3421,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: ln
 
@@ -3437,7 +3466,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--link] [--package-lock-only] [--unicode]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: la
 
@@ -3521,7 +3550,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--link] [--package-lock-only] [--unicode]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: list
 
@@ -3637,7 +3666,7 @@ npm owner ls <package-spec>
 Options:
 [--registry <registry>] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[--workspaces]
 
 alias: author
 
@@ -3666,7 +3695,7 @@ npm pack <package-spec>
 Options:
 [--dry-run] [--json] [--pack-destination <pack-destination>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root] [--ignore-scripts]
 
 Run "npm help pack" for more info
 
@@ -3680,6 +3709,7 @@ npm pack <package-spec>
 #### \`workspace\`
 #### \`workspaces\`
 #### \`include-workspace-root\`
+#### \`ignore-scripts\`
 `
 
 exports[`test/lib/docs.js TAP usage ping > must match snapshot 1`] = `
@@ -3716,7 +3746,7 @@ npm pkg fix
 Options:
 [-f|--force] [--json]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[--workspaces]
 
 Run "npm help pkg" for more info
 
@@ -3739,7 +3769,7 @@ exports[`test/lib/docs.js TAP usage prefix > must match snapshot 1`] = `
 Display prefix
 
 Usage:
-npm prefix [-g]
+npm prefix
 
 Options:
 [-g|--global]
@@ -3747,7 +3777,7 @@ Options:
 Run "npm help prefix" for more info
 
 \`\`\`bash
-npm prefix [-g]
+npm prefix
 \`\`\`
 
 Note: This command is unaware of workspaces.
@@ -3795,7 +3825,7 @@ Options:
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--dry-run] [--json] [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 Run "npm help prune" for more info
 
@@ -3824,8 +3854,7 @@ npm publish <package-spec>
 Options:
 [--tag <tag>] [--access <restricted|public>] [--dry-run] [--otp <otp>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
-[--provenance|--provenance-file <file>]
+[--workspaces] [--include-workspace-root] [--provenance|--provenance-file <file>]
 
 Run "npm help publish" for more info
 
@@ -3853,7 +3882,8 @@ npm query <selector>
 Options:
 [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--package-lock-only]
+[--workspaces] [--include-workspace-root] [--package-lock-only]
+[--expect-results|--expect-result-count <count>]
 
 Run "npm help query" for more info
 
@@ -3866,6 +3896,8 @@ npm query <selector>
 #### \`workspaces\`
 #### \`include-workspace-root\`
 #### \`package-lock-only\`
+#### \`expect-results\`
+#### \`expect-result-count\`
 `
 
 exports[`test/lib/docs.js TAP usage rebuild > must match snapshot 1`] = `
@@ -3877,7 +3909,7 @@ npm rebuild [<package-spec>] ...]
 Options:
 [-g|--global] [--no-bin-links] [--foreground-scripts] [--ignore-scripts]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 alias: rb
 
@@ -3908,7 +3940,7 @@ npm repo [<pkgname> [<pkgname> ...]]
 Options:
 [--no-browser|--browser <browser>] [--registry <registry>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 Run "npm help repo" for more info
 
@@ -3970,7 +4002,7 @@ npm run-script <command> [-- <args>]
 
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
+[--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
 [--foreground-scripts] [--script-shell <script-shell>]
 
 aliases: run, rum, urn
@@ -4003,7 +4035,7 @@ Options:
 [--package-lock-only] [--sbom-format <cyclonedx|spdx>]
 [--sbom-type <library|application|framework>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[--workspaces]
 
 Run "npm help sbom" for more info
 
@@ -4023,30 +4055,31 @@ exports[`test/lib/docs.js TAP usage search > must match snapshot 1`] = `
 Search for packages
 
 Usage:
-npm search [search terms ...]
+npm search <search term> [<search term> ...]
 
 Options:
-[-l|--long] [--json] [--color|--no-color|--color always] [-p|--parseable]
-[--no-description] [--searchopts <searchopts>] [--searchexclude <searchexclude>]
-[--registry <registry>] [--prefer-online] [--prefer-offline] [--offline]
+[--json] [--color|--no-color|--color always] [-p|--parseable] [--no-description]
+[--searchlimit <number>] [--searchopts <searchopts>]
+[--searchexclude <searchexclude>] [--registry <registry>] [--prefer-online]
+[--prefer-offline] [--offline]
 
 aliases: find, s, se
 
 Run "npm help search" for more info
 
 \`\`\`bash
-npm search [search terms ...]
+npm search <search term> [<search term> ...]
 
 aliases: find, s, se
 \`\`\`
 
 Note: This command is unaware of workspaces.
 
-#### \`long\`
 #### \`json\`
 #### \`color\`
 #### \`parseable\`
 #### \`description\`
+#### \`searchlimit\`
 #### \`searchopts\`
 #### \`searchexclude\`
 #### \`registry\`
@@ -4255,6 +4288,28 @@ Note: This command is unaware of workspaces.
 #### \`otp\`
 `
 
+exports[`test/lib/docs.js TAP usage undeprecate > must match snapshot 1`] = `
+Undeprecate a version of a package
+
+Usage:
+npm undeprecate <package-spec>
+
+Options:
+[--registry <registry>] [--otp <otp>] [--dry-run]
+
+Run "npm help undeprecate" for more info
+
+\`\`\`bash
+npm undeprecate <package-spec>
+\`\`\`
+
+Note: This command is unaware of workspaces.
+
+#### \`registry\`
+#### \`otp\`
+#### \`dry-run\`
+`
+
 exports[`test/lib/docs.js TAP usage uninstall > must match snapshot 1`] = `
 Remove a package
 
@@ -4265,7 +4320,7 @@ Options:
 [-S|--save|--no-save|--save-prod|--save-dev|--save-optional|--save-peer|--save-bundle]
 [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 aliases: unlink, remove, rm, r, un
 
@@ -4294,7 +4349,7 @@ npm unpublish [<package-spec>]
 Options:
 [--dry-run] [-f|--force]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces]
+[--workspaces]
 
 Run "npm help unpublish" for more info
 
@@ -4345,7 +4400,7 @@ Options:
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
 [--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root] [--install-links]
+[--workspaces] [--include-workspace-root] [--install-links]
 
 aliases: up, upgrade, udpate
 
@@ -4388,7 +4443,7 @@ Options:
 [--allow-same-version] [--no-commit-hooks] [--no-git-tag-version] [--json]
 [--preid prerelease-id] [--sign-git-tag]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--no-workspaces-update] [--include-workspace-root]
+[--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
 alias: verison
 
@@ -4420,7 +4475,7 @@ npm view [<package-spec>] [<field>[.subfield]...]
 
 Options:
 [--json] [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
-[-ws|--workspaces] [--include-workspace-root]
+[--workspaces] [--include-workspace-root]
 
 aliases: info, show, v
 

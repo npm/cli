@@ -6,6 +6,9 @@ description: More than you probably want to know about npm configuration
 
 ### Description
 
+This article details npm configuration in general. To learn about the `config` command, 
+see [`npm config`](/commands/npm-config).
+
 npm gets its configuration values from the following sources, sorted by priority:
 
 #### Command Line Flags

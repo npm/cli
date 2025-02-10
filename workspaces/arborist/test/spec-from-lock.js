@@ -1,7 +1,7 @@
 const sfl = require('../lib/spec-from-lock.js')
 const t = require('tap')
 const cwd = process.cwd()
-const dirname = require('path').dirname(cwd)
+const dirname = require('node:path').dirname(cwd)
 
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 const isHGIFn = (key, val) =>

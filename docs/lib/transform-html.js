@@ -1,4 +1,5 @@
 const jsdom = require('jsdom')
+const { version } = require('../../package.json')
 
 function transformHTML (
   src,
@@ -35,6 +36,9 @@ function transformHTML (
       case 'config.github_branch':
       case 'config.github_path':
         return data[key.replace(/^config\./, '')]
+
+      case 'version':
+        return version
 
       default:
         throw new Error(`warning: unknown token '${token}' in ${path}`)

@@ -1,0 +1,11 @@
+strategy:
+  fail-fast: false
+  matrix:
+    nodeVersion:
+      - 22
+      - 24
+      - nightly
+uses: ./.github/workflows/node-integration.yml
+with:
+  nodeVersion: $\{{ matrix.nodeVersion }}
+  npmVersion: $\{{ fromJSON(inputs.releases)[0].version }}

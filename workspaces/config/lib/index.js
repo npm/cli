@@ -2,12 +2,10 @@
 const { walkUp } = require('walk-up-path')
 const ini = require('ini')
 const nopt = require('nopt')
-const mapWorkspaces = require('@npmcli/map-workspaces')
-const rpj = require('read-package-json-fast')
-const log = require('proc-log')
+const { log, time } = require('proc-log')
 
-const { resolve, dirname, join } = require('path')
-const { homedir } = require('os')
+const { resolve, dirname, join } = require('node:path')
+const { homedir } = require('node:os')
 const {
   readFile,
   writeFile,
@@ -15,7 +13,15 @@ const {
   unlink,
   stat,
   mkdir,
-} = require('fs/promises')
+} = require('node:fs/promises')
+
+// TODO these need to be either be ignored when parsing env, formalized as config, or not exported to the env in the first place. For now this list is just to suppress warnings till we can pay off this tech debt.
+const internalEnv = [
+  'global-prefix',
+  'local-prefix',
+  'npm-version',
+  'node-gyp',
+]
 
 const fileExists = (...p) => stat(resolve(...p))
   .then((st) => st.isFile())
@@ -28,34 +34,11 @@ const dirExists = (...p) => stat(resolve(...p))
 const hasOwnProperty = (obj, key) =>
   Object.prototype.hasOwnProperty.call(obj, key)
 
-// define a custom getter, but turn into a normal prop
-// if we set it.  otherwise it can't be set on child objects
-const settableGetter = (obj, key, get) => {
-  Object.defineProperty(obj, key, {
-    get,
-    set (value) {
-      Object.defineProperty(obj, key, {
-        value,
-        configurable: true,
-        writable: true,
-        enumerable: true,
-      })
-    },
-    configurable: true,
-    enumerable: true,
-  })
-}
-
 const typeDefs = require('./type-defs.js')
 const nerfDart = require('./nerf-dart.js')
 const envReplace = require('./env-replace.js')
 const parseField = require('./parse-field.js')
-const typeDescription = require('./type-description.js')
 const setEnvs = require('./set-envs.js')
-
-const {
-  ErrInvalidAuth,
-} = require('./errors.js')
 
 // types that can be saved back to
 const confFileTypes = new Set([
@@ -86,6 +69,7 @@ class Config {
     definitions,
     shorthands,
     flatten,
+    nerfDarts = [],
     npmPath,
 
     // options just to override in tests, mostly
@@ -96,8 +80,9 @@ class Config {
     cwd = process.cwd(),
     excludeNpmCwd = false,
   }) {
-    // turn the definitions into nopt's weirdo syntax
+    this.nerfDarts = nerfDarts
     this.definitions = definitions
+    // turn the definitions into nopt's weirdo syntax
     const types = {}
     const defaults = {}
     this.deprecated = {}
@@ -226,7 +211,7 @@ class Config {
     }
 
     // create the object for flat options passed to deps
-    process.emit('time', 'config:load:flatten')
+    const timeEnd = time.start('config:load:flatten')
     this.#flatOptions = {}
     // walk from least priority to highest
     for (const { data } of this.data.values()) {
@@ -234,7 +219,7 @@ class Config {
     }
     this.#flatOptions.nodeBin = this.execPath
     this.#flatOptions.npmBin = this.npmBin
-    process.emit('timeEnd', 'config:load:flatten')
+    timeEnd()
 
     return this.#flatOptions
   }
@@ -258,37 +243,24 @@ class Config {
       throw new Error('attempting to load npm config multiple times')
     }
 
-    process.emit('time', 'config:load')
     // first load the defaults, which sets the global prefix
-    process.emit('time', 'config:load:defaults')
     this.loadDefaults()
-    process.emit('timeEnd', 'config:load:defaults')
 
     // next load the builtin config, as this sets new effective defaults
-    process.emit('time', 'config:load:builtin')
     await this.loadBuiltinConfig()
-    process.emit('timeEnd', 'config:load:builtin')
 
     // cli and env are not async, and can set the prefix, relevant to project
-    process.emit('time', 'config:load:cli')
     this.loadCLI()
-    process.emit('timeEnd', 'config:load:cli')
-    process.emit('time', 'config:load:env')
     this.loadEnv()
-    process.emit('timeEnd', 'config:load:env')
 
     // next project config, which can affect userconfig location
-    process.emit('time', 'config:load:project')
     await this.loadProjectConfig()
-    process.emit('timeEnd', 'config:load:project')
+
     // then user config, which can affect globalconfig location
-    process.emit('time', 'config:load:user')
     await this.loadUserConfig()
-    process.emit('timeEnd', 'config:load:user')
+
     // last but not least, global config file
-    process.emit('time', 'config:load:global')
     await this.loadGlobalConfig()
-    process.emit('timeEnd', 'config:load:global')
 
     // set this before calling setEnvs, so that we don't have to share
     // private attributes, as that module also does a bunch of get operations
@@ -297,11 +269,7 @@ class Config {
     // set proper globalPrefix now that everything is loaded
     this.globalPrefix = this.get('prefix')
 
-    process.emit('time', 'config:load:setEnvs')
     this.setEnvs()
-    process.emit('timeEnd', 'config:load:setEnvs')
-
-    process.emit('timeEnd', 'config:load')
   }
 
   loadDefaults () {
@@ -314,6 +282,7 @@ class Config {
     }
 
     try {
+      // This does not have an actual definition
       defaultsObject['npm-version'] = require(join(this.npmPath, 'package.json')).version
     } catch {
       // in some weird state where the passed in npmPath does not have a package.json
@@ -329,7 +298,21 @@ class Config {
     // default the globalconfig file to that location, instead of the default
     // global prefix.  It's weird that `npm get globalconfig --prefix=/foo`
     // returns `/foo/etc/npmrc`, but better to not change it at this point.
-    settableGetter(data, 'globalconfig', () => resolve(this.#get('prefix'), 'etc/npmrc'))
+    // define a custom getter, but turn into a normal prop
+    // if we set it.  otherwise it can't be set on child objects
+    Object.defineProperty(data, 'globalconfig', {
+      get: () => resolve(this.#get('prefix'), 'etc/npmrc'),
+      set (value) {
+        Object.defineProperty(data, 'globalconfig', {
+          value,
+          configurable: true,
+          writable: true,
+          enumerable: true,
+        })
+      },
+      configurable: true,
+      enumerable: true,
+    })
   }
 
   loadHome () {
@@ -374,6 +357,11 @@ class Config {
   }
 
   loadCLI () {
+    for (const s of Object.keys(this.shorthands)) {
+      if (s.length > 1 && this.argv.includes(`-${s}`)) {
+        log.warn(`-${s} is not a valid single-hyphen cli flag and will be removed in the future`)
+      }
+    }
     nopt.invalidHandler = (k, val, type) =>
       this.invalidHandler(k, val, type, 'command line options', 'cli')
     const conf = nopt(this.types, this.shorthands, this.argv)
@@ -444,6 +432,7 @@ class Config {
       }
 
       if (authProblems.length) {
+        const { ErrInvalidAuth } = require('./errors.js')
         throw new ErrInvalidAuth(authProblems)
       }
 
@@ -512,6 +501,7 @@ class Config {
   }
 
   invalidHandler (k, val, type, source, where) {
+    const typeDescription = require('./type-description.js')
     log.warn(
       'invalid config',
       k + '=' + JSON.stringify(val),
@@ -583,7 +573,7 @@ class Config {
         const k = envReplace(key, this.env)
         const v = this.parseField(value, k)
         if (where !== 'default') {
-          this.#checkDeprecated(k, where, obj, [key, value])
+          this.#checkDeprecated(k)
           if (this.definitions[key]?.exclusive) {
             for (const exclusive of this.definitions[key].exclusive) {
               if (!this.isDefault(exclusive)) {
@@ -592,13 +582,32 @@ class Config {
             }
           }
         }
+        // Some defaults like npm-version are not user-definable and thus don't have definitions
+        if (where !== 'default') {
+          this.checkUnknown(where, key)
+        }
         conf.data[k] = v
       }
     }
   }
 
-  #checkDeprecated (key, where, obj, kv) {
-    // XXX(npm9+) make this throw an error
+  checkUnknown (where, key) {
+    if (!this.definitions[key]) {
+      if (internalEnv.includes(key)) {
+        return
+      }
+      if (!key.includes(':')) {
+        log.warn(`Unknown ${where} config "${where === 'cli' ? '--' : ''}${key}". This will stop working in the next major version of npm.`)
+        return
+      }
+      const baseKey = key.split(':').pop()
+      if (!this.definitions[baseKey] && !this.nerfDarts.includes(baseKey)) {
+        log.warn(`Unknown ${where} config "${baseKey}" (${key}). This will stop working in the next major version of npm.`)
+      }
+    }
+  }
+
+  #checkDeprecated (key) {
     if (this.deprecated[key]) {
       log.warn('config', key, this.deprecated[key])
     }
@@ -610,8 +619,8 @@ class Config {
   }
 
   async #loadFile (file, type) {
-    process.emit('time', 'config:load:file:' + file)
     // only catch the error from readFile, not from the loadObject call
+    log.silly('config', `load:file:${file}`)
     await readFile(file, 'utf8').then(
       data => {
         const parsedConfig = ini.parse(data)
@@ -624,7 +633,6 @@ class Config {
       },
       er => this.#loadObject(null, type, file, er)
     )
-    process.emit('timeEnd', 'config:load:file:' + file)
   }
 
   loadBuiltinConfig () {
@@ -696,20 +704,22 @@ class Config {
       }
 
       if (this.localPrefix && hasPackageJson) {
+        const pkgJson = require('@npmcli/package-json')
         // if we already set localPrefix but this dir has a package.json
         // then we need to see if `p` is a workspace root by reading its package.json
         // however, if reading it fails then we should just move on
-        const pkg = await rpj(resolve(p, 'package.json')).catch(() => false)
-        if (!pkg) {
+        const { content: pkg } = await pkgJson.normalize(p).catch(() => ({ content: {} }))
+        if (!pkg?.workspaces) {
           continue
         }
 
+        const mapWorkspaces = require('@npmcli/map-workspaces')
         const workspaces = await mapWorkspaces({ cwd: p, pkg })
         for (const w of workspaces.values()) {
           if (w === this.localPrefix) {
             // see if there's a .npmrc file in the workspace, if so log a warning
             if (await fileExists(this.localPrefix, '.npmrc')) {
-              log.warn(`ignoring workspace config at ${this.localPrefix}/.npmrc`)
+              log.warn('config', `ignoring workspace config at ${this.localPrefix}/.npmrc`)
             }
 
             // set the workspace in the default layer, which allows it to be overridden easily
@@ -717,7 +727,7 @@ class Config {
             data.workspace = [this.localPrefix]
             this.localPrefix = p
             this.localPackage = hasPackageJson
-            log.info(`found workspace root at ${this.localPrefix}`)
+            log.info('config', `found workspace root at ${this.localPrefix}`)
             // we found a root, so we return now
             return
           }
@@ -764,7 +774,7 @@ class Config {
     const iniData = ini.stringify(conf.raw).trim() + '\n'
     if (!iniData.trim()) {
       // ignore the unlink error (eg, if file doesn't exist)
-      await unlink(conf.source).catch(er => {})
+      await unlink(conf.source).catch(() => {})
       return
     }
     const dir = dirname(conf.source)
@@ -799,11 +809,8 @@ class Config {
     this.delete(`${nerfed}:keyfile`, level)
   }
 
-  setCredentialsByURI (uri, { token, username, password, email, certfile, keyfile }) {
+  setCredentialsByURI (uri, { token, username, password, certfile, keyfile }) {
     const nerfed = nerfDart(uri)
-
-    // email is either provided, a top level key, or nothing
-    email = email || this.get('email', 'user')
 
     // field that hasn't been used as documented for a LONG time,
     // and as of npm 7.10.0, isn't used at all.  We just always

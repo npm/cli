@@ -4,34 +4,34 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "lint": "eslint \"**/*.js\"",
+    "lint": "npm run eslint",
     "postlint": "template-oss-check",
     "template-oss-apply": "template-oss-apply --force",
-    "lintfix": "node .. run lint -- --fix",
+    "lintfix": "npm run eslint -- --fix",
     "snap": "tap",
     "test": "tap",
-    "posttest": "node .. run lint"
+    "posttest": "npm run lint",
+    "eslint": "eslint \"**/*.{js,cjs,ts,mjs,jsx,tsx}\""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/cli.git",
+    "url": "git+https://github.com/npm/cli.git",
     "directory": "smoke-tests"
   },
   "devDependencies": {
-    "@npmcli/eslint-config": "^4.0.0",
+    "@npmcli/eslint-config": "^5.0.1",
     "@npmcli/mock-registry": "^1.0.0",
-    "@npmcli/promise-spawn": "^7.0.0",
-    "@npmcli/template-oss": "4.19.0",
+    "@npmcli/promise-spawn": "^8.0.1",
+    "@npmcli/template-oss": "4.23.6",
     "proxy": "^2.1.1",
-    "semver": "^7.5.4",
     "tap": "^16.3.8",
-    "which": "^4.0.0"
+    "which": "^5.0.0"
   },
   "author": "GitHub Inc.",
   "license": "ISC",
   "templateOSS": {
     "//@npmcli/template-oss": "This file is partially managed by @npmcli/template-oss. Edits may be overwritten.",
-    "version": "4.19.0",
+    "version": "4.23.6",
     "content": "../scripts/template-oss/index.js"
   },
   "tap": {
@@ -49,6 +49,6 @@
     "lib/"
   ],
   "engines": {
-    "node": "^18.17.0 || >=20.5.0"
+    "node": "^20.17.0 || >=22.9.0"
   }
 }

@@ -2,7 +2,7 @@ const t = require('tap')
 const depValid = require('../lib/dep-valid.js')
 const npa = require('npm-package-arg')
 const { normalizePaths } = require('./fixtures/utils.js')
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 
 // dep-valid reads from requestor.edgesOut so we use this instead of {} in these tests
 const emptyRequestor = {

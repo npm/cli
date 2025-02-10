@@ -20,7 +20,7 @@ scope-configured registry (see
 
 
 A `package` is interpreted the same way as other commands (like
-`npm install` and can be:
+`npm install`) and can be:
 
 * a) a folder containing a program described by a
   [`package.json`](/configuring-npm/package-json) file
@@ -82,6 +82,9 @@ files are included by default, with the following exceptions:
 See [`developers`](/using-npm/developers) for full details on what's
 included in the published package, as well as details on how the package is
 built.
+
+See [`package.json`](/configuring-npm/package-json) for more info on
+what can and can't be ignored.
 
 ### Configuration
 

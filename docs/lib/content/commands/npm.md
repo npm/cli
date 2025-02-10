@@ -154,7 +154,7 @@ Please be sure to follow the template and bug reporting guidelines.
 
 Discuss new feature ideas on our discussion forum:
 
-* <https://github.com/npm/feedback>
+* <https://github.com/orgs/community/discussions/categories/npm>
 
 Or suggest formal RFC proposals:
 

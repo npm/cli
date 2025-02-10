@@ -169,7 +169,7 @@ exports[`test/arborist/reify.js TAP add a dep present in the tree, with v1 shrin
 {"dependencies":{"once":"^1.4.0","wrappy":"^1.0.2"}}
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should output a successful tree in mkdirp folder 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should output a successful tree in mkdirp folder 1`] = `
 ArboristNode {
   "children": Map {
     "abbrev" => ArboristNode {
@@ -183,7 +183,7 @@ ArboristNode {
       },
       "location": "node_modules/abbrev",
       "name": "abbrev",
-      "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd/missing/path/to/root/node_modules/abbrev",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd-not-dry-run/missing/path/to/root/node_modules/abbrev",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
@@ -199,11 +199,11 @@ ArboristNode {
   "isProjectRoot": true,
   "location": "",
   "name": "root",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd/missing/path/to/root",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-add-a-new-pkg-to-a-prefix-that-needs-to-be-mkdirpd-not-dry-run/missing/path/to/root",
 }
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should place expected lockfile file into place 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should place expected lockfile file into place 1`] = `
 {
   "name": "root",
   "lockfileVersion": 3,
@@ -217,14 +217,15 @@ exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be m
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   }
 }
 
 `
 
-exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd > should place expected package.json file into place 1`] = `
+exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should place expected package.json file into place 1`] = `
 {
   "dependencies": {
     "abbrev": "^1.1.1"
@@ -257,6 +258,7 @@ Object {
     },
     "node_modules/minimist": Object {
       "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
       "version": "1.2.5",
     },
@@ -268,6 +270,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -285,6 +288,7 @@ Object {
         "minimist": "^1.2.5",
       },
       "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
       "version": "0.5.5",
     },
@@ -485,6 +489,7 @@ Object {
     },
     "node_modules/minimist": Object {
       "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
       "version": "1.2.5",
     },
@@ -496,6 +501,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -513,6 +519,7 @@ Object {
         "minimist": "^1.2.5",
       },
       "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
       "version": "0.5.5",
     },
@@ -524,6 +531,7 @@ Object {
     },
     "packages/b/node_modules/minimist": Object {
       "integrity": "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
       "version": "0.0.8",
     },
@@ -536,6 +544,7 @@ Object {
       },
       "deprecated": "Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)",
       "integrity": "sha1-HXMHam35hs2TROFecfzAWkyavxI=",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
       "version": "0.5.0",
     },
@@ -779,6 +788,7 @@ Object {
     },
     "node_modules/minimist": Object {
       "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
       "version": "1.2.5",
     },
@@ -790,6 +800,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -807,6 +818,7 @@ Object {
         "minimist": "^1.2.5",
       },
       "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
       "version": "0.5.5",
     },
@@ -818,6 +830,7 @@ Object {
     },
     "packages/b/node_modules/minimist": Object {
       "integrity": "sha1-hX/Kv8M5fSYluCKCYuhqp6ARsF0=",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz",
       "version": "0.0.8",
     },
@@ -830,6 +843,7 @@ Object {
       },
       "deprecated": "Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)",
       "integrity": "sha1-HXMHam35hs2TROFecfzAWkyavxI=",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.0.tgz",
       "version": "0.5.0",
     },
@@ -985,6 +999,7 @@ Object {
     },
     "node_modules/minimist": Object {
       "integrity": "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz",
       "version": "1.2.5",
     },
@@ -996,6 +1011,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -1013,6 +1029,7 @@ Object {
         "minimist": "^1.2.5",
       },
       "integrity": "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz",
       "version": "0.5.5",
     },
@@ -1207,6 +1224,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -1363,6 +1381,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -1479,6 +1498,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -1655,6 +1675,7 @@ Object {
         "node": ">=10",
       },
       "integrity": "sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==",
+      "license": "MIT",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.4.tgz",
       "version": "1.0.4",
     },
@@ -2004,6 +2025,140 @@ ArboristNode {
   "packageName": "@isaacs/testing-peer-deps",
   "path": "{CWD}/test/arborist/tap-testdir-reify-bad-shrinkwrap-file",
   "version": "2.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP bundled file dep with same name as other dep > must match snapshot 1`] = `
+ArboristNode {
+  "children": Map {
+    "@fixtures/has-package-exports" => ArboristLink {
+      "bundleDependencies": Array [
+        "abbrev",
+      ],
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@fixtures/has-package-exports",
+          "spec": "file:fixtures-has-package-exports",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@fixtures/has-package-exports",
+      "name": "@fixtures/has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/@fixtures/has-package-exports",
+      "realpath": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+      "resolved": "file:../../fixtures-has-package-exports",
+      "target": ArboristNode {
+        "location": "fixtures-has-package-exports",
+      },
+    },
+    "@ljharb/has-package-exports-patterns" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/has-package-exports",
+          "name": "@ljharb/has-package-exports-patterns",
+          "spec": "^0.0.2",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@ljharb/has-package-exports-patterns",
+      "name": "@ljharb/has-package-exports-patterns",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/@ljharb/has-package-exports-patterns",
+      "resolved": "https://registry.npmjs.org/@ljharb/has-package-exports-patterns/-/has-package-exports-patterns-0.0.2.tgz",
+      "version": "0.0.2",
+    },
+    "has-package-exports" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "has-package-exports",
+          "spec": "^1.3.0",
+          "type": "prod",
+        },
+      },
+      "edgesOut": Map {
+        "@ljharb/has-package-exports-patterns" => EdgeOut {
+          "name": "@ljharb/has-package-exports-patterns",
+          "spec": "^0.0.2",
+          "to": "node_modules/@ljharb/has-package-exports-patterns",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/has-package-exports",
+      "name": "has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/node_modules/has-package-exports",
+      "resolved": "https://registry.npmjs.org/has-package-exports/-/has-package-exports-1.3.0.tgz",
+      "version": "1.3.0",
+    },
+  },
+  "edgesOut": Map {
+    "@fixtures/has-package-exports" => EdgeOut {
+      "name": "@fixtures/has-package-exports",
+      "spec": "file:fixtures-has-package-exports",
+      "to": "node_modules/@fixtures/has-package-exports",
+      "type": "prod",
+    },
+    "has-package-exports" => EdgeOut {
+      "name": "has-package-exports",
+      "spec": "^1.3.0",
+      "to": "node_modules/has-package-exports",
+      "type": "prod",
+    },
+  },
+  "fsChildren": Set {
+    ArboristNode {
+      "bundleDependencies": Array [
+        "abbrev",
+      ],
+      "children": Map {
+        "has-package-exports" => ArboristLink {
+          "bundleDependencies": Array [
+            "abbrev",
+          ],
+          "dev": true,
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "fixtures-has-package-exports",
+              "name": "has-package-exports",
+              "spec": "file:.",
+              "type": "dev",
+            },
+          },
+          "location": "fixtures-has-package-exports/node_modules/has-package-exports",
+          "name": "has-package-exports",
+          "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports/node_modules/has-package-exports",
+          "realpath": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+          "resolved": "file:..",
+          "target": ArboristNode {
+            "location": "fixtures-has-package-exports",
+          },
+        },
+      },
+      "dev": true,
+      "edgesOut": Map {
+        "abbrev" => EdgeOut {
+          "error": "MISSING",
+          "name": "abbrev",
+          "spec": "1.1.1",
+          "to": null,
+          "type": "prod",
+        },
+        "has-package-exports" => EdgeOut {
+          "name": "has-package-exports",
+          "spec": "file:.",
+          "to": "fixtures-has-package-exports/node_modules/has-package-exports",
+          "type": "dev",
+        },
+      },
+      "location": "fixtures-has-package-exports",
+      "name": "@fixtures/has-package-exports",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep/fixtures-has-package-exports",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-bundled-file-dep-with-same-name-as-other-dep",
 }
 `
 
@@ -2458,7 +2613,8 @@ exports[`test/arborist/reify.js TAP do not excessively duplicate bundled metadep
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   }
 }
@@ -2516,7 +2672,8 @@ exports[`test/arborist/reify.js TAP do not excessively duplicate bundled metadep
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   }
 }
@@ -3161,7 +3318,7 @@ ArboristNode {
 }
 `
 
-exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
@@ -3173,14 +3330,14 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
 
-exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
@@ -3192,9 +3349,28 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
+ArboristNode {
+  "edgesOut": Map {
+    "platform-specifying-test-package" => EdgeOut {
+      "name": "platform-specifying-test-package",
+      "spec": "1.0.0",
+      "to": null,
+      "type": "optional",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options",
+  "packageName": "platform-test",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
@@ -3356,7 +3532,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "node_modules/wrappy": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz",
-      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4="
+      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4=",
+      "license": "ISC"
     },
     "packages/c": {
       "version": "1.2.3",
@@ -3385,7 +3562,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "node_modules/wrappy": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz",
-      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4="
+      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4=",
+      "license": "ISC"
     },
     "node_modules/x": {
       "resolved": "apps/x",
@@ -3418,7 +3596,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "node_modules/wrappy": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz",
-      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4="
+      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4=",
+      "license": "ISC"
     },
     "node_modules/x": {
       "resolved": "apps/x",
@@ -3456,6 +3635,7 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
       "version": "1.4.0",
       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "license": "ISC",
       "dependencies": {
         "wrappy": "1"
       }
@@ -3463,7 +3643,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "node_modules/wrappy": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz",
-      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4="
+      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4=",
+      "license": "ISC"
     },
     "node_modules/x": {
       "resolved": "apps/x",
@@ -3479,7 +3660,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "packages/a/node_modules/wrappy": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",
+      "license": "ISC"
     },
     "packages/c": {
       "version": "1.2.3",
@@ -3516,7 +3698,8 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
     "node_modules/wrappy": {
       "version": "1.0.0",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.0.tgz",
-      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4="
+      "integrity": "sha1-iq5PxrTNa+MqRVOYW88ys+4THk4=",
+      "license": "ISC"
     },
     "node_modules/x": {
       "resolved": "apps/x",
@@ -4399,6 +4582,7 @@ exports[`test/arborist/reify.js TAP just the shrinkwrap yarn-lock-mkdirp > must 
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-1.0.2.tgz",
       "integrity": "sha512-N2REVrJ/X/jGPfit2d7zea2J1pf7EAR5chIUcfHffAZ7gmlam5U65sAm76+o4ntQbSRdTjYf7qZz3chuHlwXEA==",
+      "license": "MIT",
       "bin": {
         "mkdirp": "bin/cmd.js"
       },
@@ -17541,7 +17725,8 @@ exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match sn
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   }
 }
@@ -17715,6 +17900,7 @@ Object {
         "ruy": "bin/index.js",
       },
       "integrity": "sha512-VYppDTCM6INWUMKlWiKws4nVMuCNU5h+xjF6lj/0y90rLq017/m8aEpNy4zQSZFV2qz66U/hRZwwlSLJ5l5JMQ==",
+      "license": "ISC",
       "resolved": "https://registry.npmjs.org/ruy/-/ruy-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -32455,7 +32641,8 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
     "node_modules/abbrev": {
       "version": "1.0.4",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.0.4.tgz",
-      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0="
+      "integrity": "sha1-vVWuXkE7oXIu5Mq6H26hBBSlns0=",
+      "license": "MIT"
     }
   }
 }
@@ -32479,7 +32666,8 @@ exports[`test/arborist/reify.js TAP save complete lockfile on update-all > shoul
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   }
 }
@@ -32575,7 +32763,8 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     },
     "node_modules/b": {
       "resolved": "b",
@@ -32585,6 +32774,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
       "version": "1.4.0",
       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "license": "ISC",
       "dependencies": {
         "wrappy": "1"
       }
@@ -32592,7 +32782,8 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
     "node_modules/wrappy": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",
+      "license": "ISC"
     }
   }
 }
@@ -32632,7 +32823,8 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     },
     "node_modules/b": {
       "resolved": "b",
@@ -32642,6 +32834,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
       "version": "1.4.0",
       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "license": "ISC",
       "dependencies": {
         "wrappy": "1"
       }
@@ -32649,7 +32842,8 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
     "node_modules/wrappy": {
       "version": "1.0.2",
       "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
-      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8="
+      "integrity": "sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=",
+      "license": "ISC"
     }
   }
 }
@@ -32689,7 +32883,8 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     },
     "node_modules/b": {
       "resolved": "b",
@@ -32789,6 +32984,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
       "version": "1.4.0",
       "resolved": "https://registry.npmjs.org/once/-/once-1.4.0.tgz",
       "integrity": "sha1-WDsap3WWHUsROsF9nFC6753Xa9E=",
+      "license": "ISC",
       "dependencies": {
         "wrappy": "1"
       }
@@ -32851,6 +33047,7 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
+      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },
@@ -32878,6 +33075,7 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
       "version": "7.3.2",
       "resolved": "https://registry.npmjs.org/semver/-/semver-7.3.2.tgz",
       "integrity": "sha512-OrOb32TeeambH6UrhtShmF7CRDqhL6/5XpPNp2DuRH6+9QLw/orhp72j87v8Qa1ScDkvrrBNpZcDejAirJmfXQ==",
+      "license": "ISC",
       "bin": {
         "semver": "bin/semver.js"
       },
@@ -33024,14 +33222,15 @@ exports[`test/arborist/reify.js TAP store files with a custom indenting > must m
 		"node_modules/abbrev": {
 			"version": "1.1.1",
 			"resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+			"license": "ISC"
 		}
 	}
 }
 
 `
 
-exports[`test/arborist/reify.js TAP success to install optional deps with matched platform specifications with os and cpu options > expect resolving Promise 1`] = `
+exports[`test/arborist/reify.js TAP success to install optional deps with matched platform specifications with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
   "children": Map {
     "platform-specifying-test-package" => ArboristNode {
@@ -33046,7 +33245,7 @@ ArboristNode {
       "location": "node_modules/platform-specifying-test-package",
       "name": "platform-specifying-test-package",
       "optional": true,
-      "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options/node_modules/platform-specifying-test-package",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
       "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
       "version": "1.0.0",
     },
@@ -33061,9 +33260,9 @@ ArboristNode {
   },
   "isProjectRoot": true,
   "location": "",
-  "name": "tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options",
+  "name": "tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options",
   "packageName": "platform-test",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-options",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-success-to-install-optional-deps-with-matched-platform-specifications-with-os-and-cpu-and-libc-options",
   "version": "1.0.0",
 }
 `
@@ -46585,7 +46784,8 @@ exports[`test/arborist/reify.js TAP warn and correct if damaged data in lockfile
     "node_modules/abbrev": {
       "version": "1.1.1",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+      "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC"
     }
   },
   "dependencies": {
@@ -52949,6 +53149,7 @@ Object {
     },
     "node_modules/abbrev": Object {
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },
@@ -53325,6 +53526,7 @@ Object {
     },
     "node_modules/abbrev": Object {
       "integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+      "license": "ISC",
       "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
       "version": "1.1.1",
     },

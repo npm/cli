@@ -16,6 +16,7 @@
 /node_modules/.gitignore text eol=lf
 /workspaces/arborist/test/fixtures/.gitignore text eol=lf
 /DEPENDENCIES.md text eol=lf
+/DEPENDENCIES.json text eol=lf
 /AUTHORS text eol=lf
 
 # fixture tarballs should be treated as binary

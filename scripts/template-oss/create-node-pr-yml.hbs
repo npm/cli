@@ -1,0 +1,32 @@
+name: "Create Node PR"
+
+on:
+  workflow_dispatch:
+    inputs:
+      spec:
+        description: "The npm spec to create the PR from"
+        required: true
+        default: 'latest'
+      branch:
+        description: "The major node version to serve as the base of the PR. Should be `main` or a number like `18`, `19`, etc."
+        required: true
+        default: 'main'
+      dryRun:
+        description: "Setting this to anything will run all the steps except opening the PR"
+
+jobs:
+  create-pull-request:
+    {{> jobYml jobName="Create Node PR" jobCheckout=(obj fetch-depth=0) }}
+      - name: Checkout Node
+        uses: actions/checkout@v3
+        with:
+          token: $\{{ secrets.NODE_PULL_REQUEST_TOKEN }}
+          repository: nodejs/node
+          fetch-depth: 0
+          path: node
+      - name: Create Node Pull Request
+        env:
+          GITHUB_TOKEN: $\{{ secrets.NODE_PULL_REQUEST_TOKEN }}
+        run: |
+          DRY_RUN=$([ -z "$\{{ inputs.dryRun }}" ] && echo "" || echo "--dry-run")
+          node scripts/create-node-pr.js $\{{ inputs.spec }} $\{{ inputs.branch }} "$DRY_RUN"

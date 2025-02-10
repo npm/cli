@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
 const calcDepFlags = require('../lib/calc-dep-flags.js')
 const Node = require('../lib/node.js')
@@ -262,5 +262,18 @@ t.test('set parents to not extraneous when visiting', t => {
   t.equal(foo.devOptional, false, 'foo not devOptional')
   t.equal(fooLink.devOptional, false, 'foolink not devOptional')
   t.equal(bazLink.devOptional, false, 'bazlink not devOptional')
+  t.end()
+})
+
+t.test('check null target in link', async t => {
+  const root = new Link({
+    path: '/some/path',
+    realpath: '/some/path',
+    pkg: {
+      dependencies: { foo: '' },
+    },
+  })
+  t.doesNotThrow(() => calcDepFlags(root))
+  t.doesNotThrow(() => calcDepFlags(root, false))
   t.end()
 })

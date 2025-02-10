@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const t = require('tap')
 const pacote = require('pacote')
 const untar = require('../lib/untar.js')

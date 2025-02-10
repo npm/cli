@@ -97921,6 +97921,20 @@ ArboristNode {
 }
 `
 
+exports[`test/arborist/build-ideal-tree.js TAP should take devEngines in account > must match snapshot 1`] = `
+{
+  "name": "empty-update",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "empty-update"
+    }
+  }
+}
+
+`
+
 exports[`test/arborist/build-ideal-tree.js TAP store files with a custom indenting > must match snapshot 1`] = `
 {
 	"name": "tab-indented-package-json",
@@ -97938,7 +97952,8 @@ exports[`test/arborist/build-ideal-tree.js TAP store files with a custom indenti
 		"node_modules/abbrev": {
 			"version": "1.1.1",
 			"resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
+			"integrity": "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==",
+			"license": "ISC"
 		}
 	}
 }
@@ -159872,6 +159887,7 @@ ArboristNode {
       "location": "node_modules/foo",
       "name": "foo",
       "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-workspaces-should-allow-cyclic-peer-dependencies-between-workspaces-and-packages-from-a-repository/node_modules/foo",
+      "resolved": "https://registry.npmjs.org/foo/-/foo-1.0.0.tgz",
       "version": "1.0.0",
     },
     "workspace-a" => ArboristLink {

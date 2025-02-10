@@ -7,7 +7,7 @@ const {
   normalizeFunding,
   isValidFunding,
 } = require('../lib/index.js')
-const { join } = require('path')
+const { join } = require('node:path')
 
 t.test('symlink tree', async (t) => {
   const path = t.testdir({

@@ -1,0 +1,71 @@
+{{> ciYml }}
+
+  licenses:
+    {{> jobYml jobName="Check Licenses" }}
+      - name: Check Licenses
+        run: {{rootNpmPath}} run licenses
+
+  smoke-tests:	
+    # This cant be tested on Windows because our node_modules directory	
+    # checks in symlinks which are not supported there. This should be	
+    # fixed somehow, because this means some forms of local development	
+    # are likely broken on Windows as well.	
+    {{> jobYml	
+      jobName="Smoke Tests"	
+      jobCheckout=(obj ref="${{ inputs.ref }}")	
+      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
+      windowsCI=false	
+      macCI=false	
+    }}	
+      - name: Smoke Tests	
+        run: ./scripts/smoke-tests.sh	
+      - name: Conclude Check	
+        uses: LouisBrunner/checks-action@v1.6.0	
+        if: steps.create-check.outputs.check-id && always()	
+        with:	
+          token: $\{{ secrets.GITHUB_TOKEN }}	
+          conclusion: $\{{ job.status }}	
+          check_id: $\{{ steps.create-check.outputs.check-id }}	
+
+  publish-dryrun:	
+    # This cant be tested on Windows because our node_modules directory	
+    # checks in symlinks which are not supported there. This should be	
+    # fixed somehow, because this means some forms of local development	
+    # are likely broken on Windows as well.	
+    {{> jobYml	
+      jobName="Publish Dry-Run"	
+      jobCheckout=(obj ref="${{ inputs.ref }}")	
+      jobCreateCheck=(obj sha="${{ inputs.check-sha }}")	
+      windowsCI=false	
+      macCI=false	
+    }}	
+      - name: Publish Dry-Run	
+        run: node ./scripts/publish.js --pack-destination=$RUNNER_TEMP --smoke-publish=true 
+      - name: Conclude Check	
+        uses: LouisBrunner/checks-action@v1.6.0	
+        if: steps.create-check.outputs.check-id && always()	
+        with:	
+          token: $\{{ secrets.GITHUB_TOKEN }}	
+          conclusion: $\{{ job.status }}	
+          check_id: $\{{ steps.create-check.outputs.check-id }}
+
+  windows-shims:
+    name: Windows Shims Tests
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: cmd
+    steps:
+      {{> stepsSetupYml }}
+      - name: Setup WSL
+        uses: Vampire/setup-wsl@v2.0.1
+      - name: Setup Cygwin
+        uses: egor-tensin/setup-cygwin@v4.0.1
+        with:
+          install-dir: C:\cygwin64
+      - name: Run Windows Shims Tests
+        run: {{rootNpmPath}} test --ignore-scripts -- test/bin/windows-shims.js --no-coverage
+        env:
+          WINDOWS_SHIMS_TEST: true
+      - name: Check Git Status
+        run: node scripts/git-dirty.js

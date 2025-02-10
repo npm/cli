@@ -23,7 +23,9 @@ const version = requireInject('../lib/version.js', {
   '@npmcli/git': gitMock,
   '@npmcli/run-script': async opt => actionLog.push(['run-script', opt.event, opt.env, opt]),
   'proc-log': {
-    verbose: (...msg) => actionLog.push(['verbose', ...msg]),
+    log: {
+      verbose: (...msg) => actionLog.push(['verbose', ...msg]),
+    },
   },
 })
 
@@ -331,14 +333,14 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('=v3.2.1', { path, pkg, allowSameVersion: true }), '3.2.1')
       t.match(actionLog, [
         ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: true }],
+          {}],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: true }],
+          {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: true }],
+          {}],
       ])
       t.equal(pkg.version, '3.2.1')
     })
@@ -347,14 +349,14 @@ t.test('test out bumping the version in all the ways', async t => {
         { path, silent: true, pkg, allowSameVersion: true }), '3.2.1')
       t.match(actionLog, [
         ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: false }],
+          {}],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
         ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: false }],
+          {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
         ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
-          { banner: false }],
+          {}],
       ])
       t.equal(pkg.version, '3.2.1')
     })

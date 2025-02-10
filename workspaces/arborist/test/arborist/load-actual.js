@@ -2,10 +2,10 @@ const t = require('tap')
 const { format } = require('tcompare')
 const Arborist = require('../../lib/arborist')
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const Node = require('../../lib/node.js')
 const Shrinkwrap = require('../../lib/shrinkwrap.js')
-const fs = require('fs')
+const fs = require('node:fs')
 
 const {
   fixtures,

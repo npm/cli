@@ -3,12 +3,12 @@ const Arborist = require('../lib/arborist')
 const Node = require('../lib/node.js')
 
 const t = require('tap')
-const { resolve, basename } = require('path')
+const { resolve, basename } = require('node:path')
 const fixtures = [
   resolve(__dirname, 'fixtures/tap-with-yarn-lock'),
   resolve(__dirname, 'fixtures/yarn-stuff'),
 ]
-const { readFileSync } = require('fs')
+const { readFileSync } = require('node:fs')
 
 fixtures.forEach(f => t.test(basename(f), t => {
   const lockdata = readFileSync(f + '/yarn.lock')

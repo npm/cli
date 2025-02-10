@@ -4,7 +4,7 @@ const onExit = require('../lib/signal-handling.js')
 t.equal(onExit.process, process, 'uses the real process by default')
 
 // ok, from here on out, use our mock
-const EE = require('events')
+const EE = require('node:events')
 const proc = onExit.process = new class MockProcess extends EE {
   constructor () {
     super()

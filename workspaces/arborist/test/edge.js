@@ -1,4 +1,4 @@
-const util = require('util')
+const util = require('node:util')
 const Edge = require('../lib/edge.js')
 const OverrideSet = require('../lib/override-set.js')
 const t = require('tap')

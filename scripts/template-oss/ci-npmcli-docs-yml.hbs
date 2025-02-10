@@ -1,0 +1,26 @@
+{{> ciYml }}
+
+  compare-docs:
+    {{> jobYml
+      jobName="Compare Docs"
+      jobCheckout=(obj fetch-depth=0)
+      jobIf="github.event_name == 'pull_request'"
+    }}
+      - name: Build Docs
+        run: |
+          node . run build -w docs
+          mv man/ man-update/
+          mv docs/output/ docs/output-update/
+          mv docs/content/ docs/content-update/
+      - name: Get Current Docs
+        run: |
+          git clean -fd
+          git checkout $\{{ github.event.pull_request.base.ref }}
+          node scripts/resetdeps.js
+          node . run build -w docs
+      - name: Diff Man
+        run: diff -r --color=always man/ man-update/ || true
+      - name: Diff HTML
+        run: diff -r --color=always docs/output/ docs/output-update/ || true
+      - name: Diff Markdown
+        run: diff -r --color=always docs/content/ docs/content-update/ || true

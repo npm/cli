@@ -1,8 +1,8 @@
 const Arborist = require('@npmcli/arborist')
-const os = require('os')
-const { readFileSync } = require('fs')
-const { join } = require('path')
-const log = require('proc-log')
+const os = require('node:os')
+const { readFileSync } = require('node:fs')
+const { join } = require('node:path')
+const { log } = require('proc-log')
 const { run, CWD, pkg, fs, EOL } = require('./util.js')
 
 // Generates our dependency graph documents in DEPENDENCIES.md.
@@ -11,10 +11,36 @@ const { run, CWD, pkg, fs, EOL } = require('./util.js')
 // npx -p @npmcli/stafftools gh repos --json | json -a name | sort > scripts/npm-cli-repos.txt
 const repos = readFileSync(join(CWD, 'scripts', 'npm-cli-repos.txt'), 'utf-8').trim().split(os.EOL)
 
+// Packages with known circular dependencies.  This is typically something with arborist as a dependency which is also in arborist's dev dependencies.  Not a problem if they're workspaces so we ignore repeats
+const circular = new Set(['@npmcli/mock-registry'])
+
+// TODO Set.intersection/difference was added in node 22.11.0, once we're above that line we can use the builtin
+// https://node.green/#ES2025-features-Set-methods-Set-prototype-intersection--
+function intersection (set1, set2) {
+  const result = new Set()
+  for (const item of set1) {
+    if (set2.has(item)) {
+      result.add(item)
+    }
+  }
+  return result
+}
+
+function difference (set1, set2) {
+  const result = new Set()
+  for (const item of set1) {
+    if (!set2.has(item)) {
+      result.add(item)
+    }
+  }
+  return result
+}
+
 // these have a different package name than the repo name, and are ours.
 const aliases = {
-  semver: 'node-semver',
   abbrev: 'abbrev-js',
+  semver: 'node-semver',
+  which: 'node-which',
 }
 
 // These are entries in npm-cli-repos.txt that correlate to namespaced repos.
@@ -29,6 +55,7 @@ const namespaced = [
   'git',
   'installed-package-contents',
   'lint',
+  'mock-registry',
   'map-workspaces',
   'metavuln-calculator',
   'move-file',
@@ -114,6 +141,10 @@ const main = async function () {
     ` - ${hierarchyOurs.reverse().join(`${EOL} - `)}`,
   ]
 
+  fs.writeFile(join(CWD, 'DEPENDENCIES.json'),
+    JSON.stringify(hierarchyOurs.map(v => v.split(', ')), null, 2)
+  )
+
   return fs.writeFile(join(CWD, 'DEPENDENCIES.md'), out.join(EOL))
 }
 
@@ -136,7 +167,11 @@ const walk = function (tree, onlyOurs) {
         log.silly(dep, '::', [...dependedBy[dep]].join(', '))
         log.silly('-'.repeat(80))
 
-        if (!dependedBy[dep].size) {
+        // things that depend on us that are at the same level
+        const both = intersection(allDeps, dependedBy[dep])
+        // ... minus the known circular dependencies
+        const neither = difference(both, circular)
+        if (!dependedBy[dep].size || !neither.size) {
           level.push(dep)
           foundDeps.add(dep)
         }
@@ -173,9 +208,7 @@ const iterate = function (node, dependedBy, annotations, onlyOurs) {
     dependedBy[node.packageName] = new Set()
   }
   for (const [name, edge] of node.edgesOut) {
-    if (
-      (!onlyOurs || isOurs(name)) && !node.dev
-    ) {
+    if ((!onlyOurs || isOurs(name)) && !node.dev) {
       if (!dependedBy[node.packageName].has(edge.name)) {
         dependedBy[node.packageName].add(edge.name)
         annotations.push(`  ${stripName(node.packageName)}-->${escapeName(edge.name)};`)

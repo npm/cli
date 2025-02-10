@@ -2,7 +2,7 @@ const Shrinkwrap = require('../lib/shrinkwrap.js')
 const Node = require('../lib/node.js')
 const Link = require('../lib/link.js')
 const calcDepFlags = require('../lib/calc-dep-flags.js')
-const fs = require('fs')
+const fs = require('node:fs')
 const Arborist = require('../lib/arborist/index.js')
 
 const t = require('tap')
@@ -10,7 +10,7 @@ const t = require('tap')
 const normalizePath = path => path.replace(/[A-Z]:/, '').replace(/\\/g, '/')
 t.cleanSnapshot = s => s.split(process.cwd()).join('{CWD}')
 
-const { resolve } = require('path')
+const { resolve } = require('node:path')
 const fixture = resolve(__dirname, 'fixtures/install-types')
 const swonlyFixture = resolve(__dirname, 'fixtures/install-types-sw-only')
 const YarnLock = require('../lib/yarn-lock.js')
@@ -331,7 +331,7 @@ t.test('construct metadata from node and package data', t => {
   const root = new Node({
     pkg: {
       name: 'root',
-      dependencies: { a: '', link: '', link2: '' },
+      dependencies: { a: '', link: '', link2: '', link3: '' },
       devDependencies: { d: '', e: 'https://foo.com/e.tgz', devit: '' },
       optionalDependencies: { optin: '' },
       peerDependencies: { peer: '' },
@@ -430,6 +430,31 @@ t.test('construct metadata from node and package data', t => {
       },
     }),
   })
+  // special case when link alias is the same as target package name
+  const link3 = new Link({
+    name: 'link3',
+    path: '/home/user/projects/root/node_modules/link3',
+    realpath: '/home/user/projects/root/realPkg',
+    parent: root,
+    pkg: {
+      name: 'link3',
+      version: '1.2.3',
+      funding: 'https://example.com/payme',
+      _resolved: 'github:isaacs/foobarbaz#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    },
+    target: new Node({
+      name: 'link3',
+      realpath: '/home/user/projects/root/realPkg',
+      path: '/home/user/projects/root/realPkg',
+      root,
+      pkg: {
+        name: 'link3',
+        version: '1.2.3',
+        funding: 'https://example.com/payme',
+        _resolved: 'github:isaacs/foobarbaz#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      },
+    }),
+  })
 
   const a = new Node({
     resolved: 'https://example.com/a.tgz',
@@ -520,6 +545,10 @@ t.test('construct metadata from node and package data', t => {
     'metadata for tarball file pkg with _resolved value')
   t.matchSnapshot(meta.get(link.path), 'link metadata')
   t.matchSnapshot(meta.get(link.target.path), 'link target metadata')
+
+  t.matchSnapshot(meta.get(link3.path), 'link metadata with same pkg name as link target')
+  t.matchSnapshot(meta.get(link3.target.path), 'link target metadata with same pkg name as link target')
+
   t.matchSnapshot(meta.get(a.location), 'dep a metadata')
   t.matchSnapshot(meta.get(d.location), 'dep d metadata')
   t.matchSnapshot(meta.get(e.location), 'dep e metadata')
@@ -878,7 +907,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), time, time)
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load from disk, updated nm')
-    t.equal(s.loadingError, 'out of date, updated: node_modules')
+    t.equal(s.loadingError.message, 'out of date, updated: node_modules')
   }
 
   // make the lockfile newer, but that new entry is still a problem
@@ -887,7 +916,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), new Date(later), new Date(later))
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load, new entry')
-    t.equal(s.loadingError, 'missing from lockfile: node_modules/xyz')
+    t.equal(s.loadingError.message, 'missing from lockfile: node_modules/xyz')
   }
 
   // make the lockfile newer, but missing a folder from node_modules
@@ -898,7 +927,7 @@ t.test('hidden lockfile only used if up to date', async t => {
     fs.utimesSync(resolve(path, hidden), new Date(later), new Date(later))
     const s = await Shrinkwrap.load({ path, hiddenLockfile: true })
     t.equal(s.loadedFromDisk, false, 'did not load, missing entry')
-    t.equal(s.loadingError, 'missing from node_modules: node_modules/abbrev')
+    t.equal(s.loadingError.message, 'missing from node_modules: node_modules/abbrev')
   }
 })
 

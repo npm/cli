@@ -1,5 +1,5 @@
-const { join } = require('path')
-const { symlink } = require('fs/promises')
+const { join } = require('node:path')
+const { symlink } = require('node:fs/promises')
 const { CWD, run, pkg, fs, git, npm } = require('./util.js')
 
 const cleanup = async () => {
@@ -12,6 +12,7 @@ const cleanup = async () => {
 }
 
 const main = async ({ packageLock }) => {
+  await git('status') // run ANY @npmcli/git command to instantiate its lazy loading
   await fs.rimraf(join(CWD, 'node_modules'))
   for (const { path } of await pkg.mapWorkspaces()) {
     await fs.rimraf(join(path, 'node_modules'))

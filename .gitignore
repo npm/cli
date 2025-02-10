@@ -3,17 +3,19 @@
 # ignore everything in the root
 /*
 
-# keep these
 !**/.gitignore
 !/.commitlintrc.js
 !/.eslintrc.js
 !/.eslintrc.local.*
+!/.git-blame-ignore-revs
 !/.gitattributes
 !/.github/
 !/.gitignore
 !/.licensee.json
 !/.mailmap
 !/.npmrc
+!/.prettierignore
+!/.prettierrc.js
 !/.release-please-manifest.json
 !/AUTHORS
 !/bin/
@@ -21,6 +23,7 @@
 !/CODE_OF_CONDUCT.md
 !/configure
 !/CONTRIBUTING.md
+!/DEPENDENCIES.json
 !/DEPENDENCIES.md
 !/docs/
 !/index.js
@@ -38,6 +41,8 @@
 !/SECURITY.md
 !/tap-snapshots/
 !/test/
+!/tsconfig.json
+tap-testdir*/
 !/docs/
 !/smoke-tests/
 !/mock-globals/
@@ -50,7 +55,6 @@
 !/workspaces/libnpmdiff/
 !/workspaces/libnpmexec/
 !/workspaces/libnpmfund/
-!/workspaces/libnpmhook/
 !/workspaces/libnpmorg/
 !/workspaces/libnpmpack/
 !/workspaces/libnpmpublish/

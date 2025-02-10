@@ -1,0 +1,14 @@
+{
+  "packages": {
+    "{{ pkgPath }}": {
+      {{#if isRoot}}
+      "exclude-paths": [
+        "smoke-tests",
+        "mock-globals",
+        "mock-registry",
+        "workspaces"
+      ]
+      {{/if}}
+    }
+  }
+}
