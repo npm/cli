@@ -156,7 +156,7 @@ module.exports = cls => class IsolatedReifier extends cls {
     ]
     result.root = this.rootNode
     result.id = this.counter++
-    result.name = node.name
+    result.name = node.packageName || node.name
     result.package = { ...node.package }
     result.package.bundleDependencies = undefined
     result.hasInstallScript = node.hasInstallScript
