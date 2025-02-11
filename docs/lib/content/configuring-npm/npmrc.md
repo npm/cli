@@ -112,23 +112,30 @@ the scope may look like `//registry.npmjs.org/:`. If it must be scoped to a
 specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
 
-```
+```ini
 ; bad config
 _authToken=MYTOKEN
 
 ; good config
-@myorg:registry=https://somewhere-else.com/myorg
-@another:registry=https://somewhere-else.com/another
+@myorg:registry=https://somewhere-else.npmjs.org/myorg
+@another:registry=https://somewhere-else.npmjs.org/another
+@anotherorg:registry=https:///registry.npmjs.org/path/anotherorg
+
+; Applies to any registry at https://registry.npmjs.org/ but not to any sub-path (see @anotherorg)
 //registry.npmjs.org/:_authToken=MYTOKEN
 
-; would apply to both @myorg and @another
-//somewhere-else.com/:_authToken=MYTOKEN
+; Applies to both @myorg and @another but noth @anotherorg
+//somewhere-else.npmjs.org/:_authToken=MYTOKEN
 
-; would apply only to @myorg
-//somewhere-else.com/myorg/:_authToken=MYTOKEN1
+; Only applies to @myorg
+//somewhere-else.npmjs.org/myorg/:_authToken=MYTOKEN1
 
-; would apply only to @another
-//somewhere-else.com/another/:_authToken=MYTOKEN2
+; Only applies to @another
+//somewhere-else.npmjs.org/another/:_authToken=MYTOKEN2
+
+; Only applies to @anotherorg
+//registry.npmjs.org/path/anotherorg:_authToken=MYTOKEN3
+
 ```
 
 ### See also
