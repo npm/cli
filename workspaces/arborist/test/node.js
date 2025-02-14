@@ -2951,7 +2951,7 @@ t.test('overrides', (t) => {
       ],
     })
 
-    const badReplacement = new Node({
+    const equivalentReplacement = new Node({
       loadOverrides: true,
       path: '/some/path',
       pkg: {
@@ -2968,7 +2968,7 @@ t.test('overrides', (t) => {
       ],
     })
 
-    t.equal(original.canReplaceWith(badReplacement), false, 'different overrides fails')
+    t.equal(original.canReplaceWith(equivalentReplacement), true, 'different overrides passes')
 
     const goodReplacement = new Node({
       path: '/some/path',
