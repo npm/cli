@@ -53497,6 +53497,39 @@ Object {
 }
 `
 
+exports[`test/arborist/reify.js TAP workspaces reify workspaces with overrides > should retain override version (4.1.3) 1`] = `
+Object {
+  "lockfileVersion": 3,
+  "name": "workspace-with-overrides",
+  "packages": Object {
+    "": Object {
+      "name": "workspace-with-overrides",
+      "workspaces": Array [
+        "ws",
+      ],
+    },
+    "node_modules/a": Object {
+      "link": true,
+      "resolved": "ws",
+    },
+    "ws": Object {
+      "dependencies": Object {
+        "arg": "4.1.2",
+      },
+      "name": "a",
+      "version": "1.0.0",
+    },
+    "ws/node_modules/arg": Object {
+      "integrity": "sha512-+ytCkGcBtHZ3V2r2Z06AncYO8jz46UEamcspGoU8lHcEbpn6J77QK0vdWvChsclg/tM5XIJC5tnjmPp7Eq6Obg==",
+      "license": "MIT",
+      "resolved": "https://registry.npmjs.org/arg/-/arg-4.1.2.tgz",
+      "version": "4.1.2",
+    },
+  },
+  "requires": true,
+}
+`
+
 exports[`test/arborist/reify.js TAP workspaces root as-a-workspace > should produce expected package-lock file 1`] = `
 Object {
   "lockfileVersion": 3,
