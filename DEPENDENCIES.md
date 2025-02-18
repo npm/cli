@@ -515,6 +515,7 @@ graph LR;
   npm-->remark;
   npm-->rimraf;
   npm-->semver;
+  npm-->sigstore-protobuf-specs["@sigstore/protobuf-specs"];
   npm-->sigstore-tuf["@sigstore/tuf"];
   npm-->spawk;
   npm-->spdx-expression-parse;
