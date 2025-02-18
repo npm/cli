@@ -630,7 +630,6 @@ graph LR;
   npmcli-git-->npm-pick-manifest;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-git-->proc-log;
-  npmcli-git-->promise-inflight;
   npmcli-git-->promise-retry;
   npmcli-git-->semver;
   npmcli-git-->which;
