@@ -1348,6 +1348,13 @@ t.test('workspaces', async t => {
     t.matchSnapshot(require(path + '/package-lock.json'), 'should lock workspaces config')
   })
 
+  await t.test('reify workspaces with overrides', async t => {
+    const path = fixture(t, 'workspaces-with-overrides')
+    createRegistry(t, true)
+    await reify(path, { workspacesEnabled: true, workspaces: ['ws'] })
+    t.matchSnapshot(require(path + '/package-lock.json'), 'should retain override version (4.1.3)')
+  })
+
   await t.test('reify workspaces bin files', t => {
     const path = fixture(t, 'workspaces-link-bin')
     createRegistry(t, false)

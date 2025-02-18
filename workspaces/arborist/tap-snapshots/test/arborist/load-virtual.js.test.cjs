@@ -16375,6 +16375,89 @@ ArboristNode {
 }
 `
 
+exports[`test/arborist/load-virtual.js TAP workspaces load installed workspace with dependency overrides > virtual tree with overrides 1`] = `
+ArboristNode {
+  "children": Map {
+    "arg" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "error": "INVALID",
+          "from": "ws",
+          "name": "arg",
+          "spec": "4.1.2",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/arg",
+      "name": "arg",
+      "path": "{CWD}/test/fixtures/workspaces-with-overrides/node_modules/arg",
+      "resolved": "https://registry.npmjs.org/arg/-/arg-4.1.3.tgz",
+      "version": "4.1.3",
+    },
+    "ws" => ArboristLink {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "ws",
+          "spec": "file:{CWD}/test/fixtures/workspaces-with-overrides/ws",
+          "type": "workspace",
+        },
+      },
+      "isWorkspace": true,
+      "location": "node_modules/ws",
+      "name": "ws",
+      "overrides": Map {
+        "arg" => "4.1.3",
+      },
+      "path": "{CWD}/test/fixtures/workspaces-with-overrides/node_modules/ws",
+      "realpath": "{CWD}/test/fixtures/workspaces-with-overrides/ws",
+      "resolved": "file:../ws",
+      "target": ArboristNode {
+        "location": "ws",
+      },
+      "version": "1.0.0",
+    },
+  },
+  "edgesOut": Map {
+    "ws" => EdgeOut {
+      "name": "ws",
+      "spec": "file:{CWD}/test/fixtures/workspaces-with-overrides/ws",
+      "to": "node_modules/ws",
+      "type": "workspace",
+    },
+  },
+  "fsChildren": Set {
+    ArboristNode {
+      "edgesOut": Map {
+        "arg" => EdgeOut {
+          "error": "INVALID",
+          "name": "arg",
+          "spec": "4.1.2",
+          "to": "node_modules/arg",
+          "type": "prod",
+        },
+      },
+      "isWorkspace": true,
+      "location": "ws",
+      "name": "ws",
+      "path": "{CWD}/test/fixtures/workspaces-with-overrides/ws",
+      "version": "1.0.0",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "workspaces-with-overrides",
+  "overrides": Map {
+    "arg" => "4.1.3",
+  },
+  "packageName": "workspace-with-overrides",
+  "path": "{CWD}/test/fixtures/workspaces-with-overrides",
+  "workspaces": Map {
+    "ws" => "ws",
+  },
+}
+`
+
 exports[`test/arborist/load-virtual.js TAP workspaces load installed workspace with transitive dependencies > virtual tree with transitive deps 1`] = `
 ArboristNode {
   "children": Map {

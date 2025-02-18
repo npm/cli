@@ -204,6 +204,12 @@ t.test('workspaces', t => {
     ).then(tree =>
       t.matchSnapshot(printTree(tree), 'virtual tree ignoring nested node_modules')))
 
+  t.test('load installed workspace with dependency overrides', t =>
+    loadVirtual(
+      resolve(__dirname, '../fixtures/workspaces-with-overrides')
+    ).then(tree =>
+      t.matchSnapshot(printTree(tree), 'virtual tree with overrides')))
+
   t.end()
 })
 
