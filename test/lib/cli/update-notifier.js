@@ -264,13 +264,13 @@ t.test('notification situations', async t => {
     [CURRENT_MAJOR]: 1,
   }
 
-  for (const [version, noOfRequests] of Object.entries(cases)) {
+  for (const [version, requestCount] of Object.entries(cases)) {
     for (const color of [false, 'always']) {
       await t.test(`${version} - color=${color}`, async t => {
         const {
           wroteFile,
           result,
-        } = await runUpdateNotifier(t, { version, color, PACOTE_MOCK_REQ_COUNT: noOfRequests })
+        } = await runUpdateNotifier(t, { version, color, PACOTE_MOCK_REQ_COUNT: requestCount })
         t.matchSnapshot(result)
         t.equal(wroteFile, true)
       })
