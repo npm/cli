@@ -2755,6 +2755,7 @@ t.test('overrides', (t) => {
           name: 'baz',
           version: '1.0.0',
           pkg: {
+            version: '1.0.0',
             dependencies: {
               buzz: '1.0.0',
             },
@@ -2772,6 +2773,55 @@ t.test('overrides', (t) => {
     t.not(bar.overridden, 'bar was not overridden')
     const baz = bar.edgesOut.get('baz').to
     t.ok(baz.overridden, 'baz was overridden')
+    const buzz = baz.edgesOut.get('buzz').to
+    t.not(buzz.overridden, 'buzz was not overridden')
+  })
+
+  t.test('node.overridden is false when an override does not match the node version', async (t) => {
+    const tree = new Node({
+      loadOverrides: true,
+      path: '/some/path',
+      pkg: {
+        name: 'foo',
+        dependencies: {
+          bar: '^1',
+        },
+        overrides: {
+          baz: '1.0.0', // Override specifies "1.0.0"
+        },
+      },
+      children: [{
+        name: 'bar',
+        version: '1.0.0',
+        pkg: {
+          dependencies: {
+            baz: '2.0.0',
+          },
+        },
+        children: [{
+          name: 'baz',
+          version: '3.0.0',
+          pkg: {
+            version: '3.0.0', // This does NOT match the override!
+            dependencies: {
+              buzz: '1.0.0',
+            },
+          },
+          children: [{
+            name: 'buzz',
+            version: '1.0.0',
+            pkg: {},
+          }],
+        }],
+      }],
+    })
+
+    const bar = tree.edgesOut.get('bar').to
+    t.not(bar.overridden, 'bar was not overridden')
+
+    const baz = bar.edgesOut.get('baz').to
+    t.not(baz.overridden, 'baz was not overridden because version mismatch') // This should now correctly fail if logic is broken
+
     const buzz = baz.edgesOut.get('buzz').to
     t.not(buzz.overridden, 'buzz was not overridden')
   })
