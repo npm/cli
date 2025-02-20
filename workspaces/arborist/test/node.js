@@ -3210,3 +3210,102 @@ t.test('updateOverridesEdgeInRemoved calls recalculateOutEdgesOverrides when new
   t.ok(specificOverrides.isEqual(node.overrides), 'node.overrides updated to the specific override set')
   t.end()
 })
+
+t.test('should propagate the new override set to the target node', t => {
+  const tree = new Node({
+    loadOverrides: true,
+    path: '/root',
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        mockDep: '1.x',
+      },
+      overrides: {
+        mockDep: '2.x', // Root overrides mockDep to 2.x
+      },
+    },
+    children: [{
+      name: 'mockDep',
+      version: '2.0.0',
+      pkg: {
+        dependencies: {
+          subDep: '1.0.0',
+        },
+      },
+      children: [{
+        name: 'subDep',
+        version: '1.0.0',
+        pkg: {},
+      }],
+    }],
+  })
+
+  // Force edge.override to a conflicting object so that it will differ from
+  // the computed override coming from the parent's override set.
+  const conflictingOverride = new OverrideSet({
+    overrides: { mockDep: '1.x' },
+  })
+  const edge = tree.edgesOut.get('mockDep')
+  edge.overrides = conflictingOverride
+
+  // Calls updateOverridesEdgeInRemoved and updateOverridesEdgeInAdded
+  edge.reload()
+
+  // Validate that edge.overrides (an OverrideSet) equals parent's override set
+  const expected = new OverrideSet({
+    overrides: { mockDep: '2.x' },
+  })
+  t.ok(
+    edge.overrides.isEqual(expected),
+    'Edge override propagates the correct override set from the parent'
+  )
+
+  t.end()
+})
+
+t.test('should find inconsistency between the edge\'s override set and the target\'s override set', t => {
+  const tree = new Node({
+    loadOverrides: true,
+    path: '/root',
+    pkg: {
+      name: 'root',
+      version: '1.0.0',
+      dependencies: {
+        mockDep: '1.x',
+      },
+      overrides: {
+        mockDep: '2.x', // Root overrides mockDep to 2.x
+      },
+    },
+    children: [{
+      name: 'mockDep',
+      version: '2.0.0',
+      pkg: {
+        dependencies: {
+          subDep: '1.0.0',
+        },
+      },
+      children: [{
+        name: 'subDep',
+        version: '1.0.0',
+        pkg: {},
+      }],
+    }],
+  })
+
+  // Force edge.override to a conflicting object so that it will differ from
+  // the computed override coming from the parent's override set.
+  const conflictingOverride = new OverrideSet({
+    overrides: { mockDep: '1.x' },
+  })
+  const edge = tree.edgesOut.get('mockDep')
+  edge.overrides = conflictingOverride
+
+  // Override satisfiedBy so it returns true, ensuring the conflict branch is reached
+  edge.satisfiedBy = () => true
+
+  t.equal(tree.edgesOut.get('mockDep').error, 'INVALID', 'Edge should be marked INVALID due to conflicting overrides')
+
+  t.end()
+})
