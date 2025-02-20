@@ -2820,7 +2820,7 @@ t.test('overrides', (t) => {
     t.not(bar.overridden, 'bar was not overridden')
 
     const baz = bar.edgesOut.get('baz').to
-    t.not(baz.overridden, 'baz was not overridden because version mismatch') // This should now correctly fail if logic is broken
+    t.not(baz.overridden, 'baz was not overridden because version mismatch')
 
     const buzz = baz.edgesOut.get('buzz').to
     t.not(buzz.overridden, 'buzz was not overridden')
@@ -3069,7 +3069,6 @@ t.test('node with only registry edges in a registry dep', async t => {
 })
 
 t.test('canReplaceWith returns false when overrides differ', t => {
-  // Create two different override sets
   const override1 = new OverrideSet({
     overrides: { foo: '1.0.0' },
   })
@@ -3141,7 +3140,7 @@ t.test('updateOverridesEdgeInAdded logs conflict on conflicting override set', t
     },
   })
 
-  // Create a node with an existing override set (overrides8)
+  // Create a node with an existing override set
   const node = new Node({
     pkg: { name: 'conflict-node' },
     path: '/some/path/conflict-node',
@@ -3161,7 +3160,7 @@ t.test('updateOverridesEdgeInAdded logs conflict on conflicting override set', t
     }
   }
 
-  // Call updateOverridesEdgeInAdded with a conflicting override set (overrides9)
+  // Call updateOverridesEdgeInAdded with a conflicting override set
   const result = node.updateOverridesEdgeInAdded(overrides9)
   t.equal(result, undefined, 'returns undefined on conflict')
   t.ok(conflictLogged, 'logged conflicting override sets')
@@ -3222,7 +3221,7 @@ t.test('should propagate the new override set to the target node', t => {
         mockDep: '1.x',
       },
       overrides: {
-        mockDep: '2.x', // Root overrides mockDep to 2.x
+        mockDep: '2.x',
       },
     },
     children: [{
@@ -3269,7 +3268,7 @@ t.test('should find inconsistency between the edge\'s override set and the targe
         mockDep: '1.x',
       },
       overrides: {
-        mockDep: '2.x', // Root overrides mockDep to 2.x
+        mockDep: '2.x',
       },
     },
     children: [{
