@@ -131,11 +131,6 @@ class OverrideSet {
         continue
       }
 
-      // If the node is already part of a cycle, force the override to apply
-      if (node.edgesIn && node.edgesIn.has(rule) && semver.satisfies(rule.value, node.version)) {
-        return rule
-      }
-
       if (semver.satisfies(node.version, rule.keySpec) ||
         semver.satisfies(node.version, rule.value)) {
         return rule

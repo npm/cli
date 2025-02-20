@@ -364,11 +364,6 @@ class Node {
         if (!edge.overrides.isEqual(edge.from.overrides)) {
           return true
         }
-
-        // Ensure cycles respect overrides
-        if (edge.from.edgesOut && edge.from.edgesOut.has(this.name) && semver.satisfies(this.version, edge.overrides.value)) {
-          return true
-        }
       }
     }
 
