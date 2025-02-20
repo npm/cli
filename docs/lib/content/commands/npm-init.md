@@ -49,7 +49,7 @@ it:
 Any additional options will be passed directly to the command, so `npm init
 foo -- --hello` will map to `npm exec -- create-foo --hello`.
 
-To better illustrate how options are forwarded, here's a more evolved
+To better illustrate how options are forwarded, here's a more involved
 example showing options passed to both the **npm cli** and a create package,
 both following commands are equivalent:
 
