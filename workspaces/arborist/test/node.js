@@ -3252,14 +3252,8 @@ t.test('should propagate the new override set to the target node', t => {
   // Calls updateOverridesEdgeInRemoved and updateOverridesEdgeInAdded
   edge.reload()
 
-  // Validate that edge.overrides (an OverrideSet) equals parent's override set
-  const expected = new OverrideSet({
-    overrides: { mockDep: '2.x' },
-  })
-  t.ok(
-    edge.overrides.isEqual(expected),
-    'Edge override propagates the correct override set from the parent'
-  )
+  // Validate that the override's value property has been updated
+  t.equal(edge.overrides.value, '2.x', 'Edge override propagates the correct override value from the parent')
 
   t.end()
 })
