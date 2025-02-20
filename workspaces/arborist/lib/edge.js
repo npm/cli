@@ -204,15 +204,8 @@ class Edge {
 
   get spec () {
     if (this.overrides?.value && this.overrides.value !== '*' && this.overrides.name === this.#name) {
-      // If this edge has the same overrides field as the source, then we're not applying an override for this edge.
-      if (this.overrides === this.#from?.overrides) {
-        return this.#spec
-      }
-
       if (this.overrides.value.startsWith('$')) {
         const ref = this.overrides.value.slice(1)
-        // we may be a virtual root, if we are we want to resolve reference overrides
-        // from the real root, not the virtual one
         const pkg = this.#from?.sourceReference
           ? this.#from?.sourceReference.root.package
           : this.#from?.root?.package
