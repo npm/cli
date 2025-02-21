@@ -1,6 +1,6 @@
 const npa = require('npm-package-arg')
 const semver = require('semver')
-const log = require('proc-log')
+const { log } = require('proc-log')
 
 class OverrideSet {
   constructor ({ overrides, key, parent }) {

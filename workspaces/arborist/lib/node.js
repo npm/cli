@@ -40,6 +40,7 @@ const debug = require('./debug.js')
 const gatherDepSet = require('./gather-dep-set.js')
 const treeCheck = require('./tree-check.js')
 const { walkUp } = require('walk-up-path')
+const { log } = require('proc-log')
 
 const { resolve, relative, dirname, basename } = require('node:path')
 const util = require('node:util')
@@ -64,8 +65,6 @@ const printableTree = require('./printable.js')
 const CaseInsensitiveMap = require('./case-insensitive-map.js')
 
 const querySelectorAll = require('./query-selector-all.js')
-
-const log = require('proc-log')
 
 class Node {
   #global

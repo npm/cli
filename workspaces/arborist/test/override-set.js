@@ -1,7 +1,5 @@
 const t = require('tap')
 const OverrideSet = require('../lib/override-set.js')
-const log = require('proc-log')
-log.silly = () => { }
 
 t.test('constructor', async (t) => {
   t.test('throws when adding a child rule with no name', async (t) => {

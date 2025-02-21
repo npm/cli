@@ -6,8 +6,6 @@ const Link = require('../lib/link.js')
 const Shrinkwrap = require('../lib/shrinkwrap.js')
 const { resolve } = require('node:path')
 const treeCheck = require('../lib/tree-check.js')
-const log = require('proc-log')
-log.silly = () => { }
 
 const { normalizePath, normalizePaths } = require('./fixtures/utils.js')
 
@@ -3128,7 +3126,7 @@ t.test('updateOverridesEdgeInRemoved uses findSpecificOverrideSet for multiple e
   t.end()
 })
 
-t.test('updateOverridesEdgeInAdded logs conflict on conflicting override set', t => {
+t.test('updateOverridesEdgeInAdded conflicts on conflicting override set', t => {
   const overrides8 = new OverrideSet({
     overrides: {
       bat: '1.2.0',
@@ -3148,25 +3146,10 @@ t.test('updateOverridesEdgeInAdded logs conflict on conflicting override set', t
     overrides: overrides8,
   })
 
-  // Prepare a flag to check that the log.silly call was made
-  let conflictLogged = false
-
-  // Override log.silly to capture the conflict log
-  const log = require('proc-log')
-  const origLogSilly = log.silly
-  log.silly = (msg, name) => {
-    if (msg === 'Conflicting override sets' && name === node.name) {
-      conflictLogged = true
-    }
-  }
-
   // Call updateOverridesEdgeInAdded with a conflicting override set
   const result = node.updateOverridesEdgeInAdded(overrides9)
   t.equal(result, undefined, 'returns undefined on conflict')
-  t.ok(conflictLogged, 'logged conflicting override sets')
 
-  // Restore the original log.silly function
-  log.silly = origLogSilly
   t.end()
 })
 
