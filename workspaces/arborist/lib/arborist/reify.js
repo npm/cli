@@ -816,13 +816,13 @@ module.exports = cls => class Reifier extends cls {
   // just add it and its optional set to the trash list.
   [_handleOptionalFailure] (node, p) {
     return (node.optional ? p.catch((e) => {
+      // Optional dependencies that fail to install due to an incompatible platform
+      // should not be added to the trash list to prevent rebuild issues when the lockfile is not present.
+      // This does cause optional dependencies to be present on all platforms in the node_modules directory,
+      // even though these aren't really used
+      const trashOptionalDependency = e?.code !== 'EBADPLATFORM'
       const set = optionalSet(node)
       for (node of set) {
-        // Optional dependencies that fail to install due to an incompatible platform
-        // should not be added to the trash list to prevent rebuild issues when the lockfile is not present.
-        // This does cause optional dependencies to be present on all platforms in the node_modules directory,
-        // even though these aren't really used
-        const trashOptionalDependency = e?.code !== 'EBADPLATFORM'
         log.verbose('reify', 'failed optional dependency', node.path, trashOptionalDependency)
         if (trashOptionalDependency) {
           this[_addNodeToTrashList](node)
