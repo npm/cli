@@ -1489,6 +1489,13 @@ This is a one-time fix-up, please be patient...
         throw node.errors[0]
       }
 
+      // Optional dependencies that fail to install due to an incompatible platform
+      // should not be pruned to prevent rebuild issues when the lockfile is not present.
+      const pruneOptionalDependency = node.errors[0]?.code !== 'EBADPLATFORM'
+      if (!pruneOptionalDependency) {
+        log.verbose('build-ideal-tree', `skip pruning optional dependency due to platform mismatch`, node.path)
+        continue
+      }
       const set = optionalSet(node)
       for (const node of set) {
         node.parent = null
