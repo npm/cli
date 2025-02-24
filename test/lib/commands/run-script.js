@@ -347,6 +347,7 @@ t.test('skip pre/post hooks when using ignoreScripts', async t => {
           env: 'env',
         },
       },
+      nodeGyp: npm.config.get('node-gyp'),
       event: 'env',
     },
   ])
@@ -483,6 +484,25 @@ t.test('list scripts, only non-commands', async t => {
 
   await runScript.exec([])
   t.matchSnapshot(joinedOutput())
+})
+
+t.test('node-gyp config', async t => {
+  const { runScript, RUN_SCRIPTS, npm } = await mockRs(t, {
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: 'x',
+        version: '1.2.3',
+      }),
+    },
+    config: { 'node-gyp': '/test/node-gyp.js' },
+  })
+
+  await runScript.exec(['env'])
+  t.match(RUN_SCRIPTS(), [
+    {
+      nodeGyp: npm.config.get('node-gyp'),
+    },
+  ])
 })
 
 t.test('workspaces', async t => {

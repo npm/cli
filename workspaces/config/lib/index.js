@@ -15,12 +15,11 @@ const {
   mkdir,
 } = require('node:fs/promises')
 
-// TODO these need to be either be ignored when parsing env, formalized as config, or not exported to the env in the first place. For now this list is just to suppress warnings till we can pay off this tech debt.
+// TODO global-prefix and local-prefix are set by lib/set-envs.js.  This may not be the best way to persist those, if we even want to persist them (see set-envs.js)
 const internalEnv = [
+  'npm-version',
   'global-prefix',
   'local-prefix',
-  'npm-version',
-  'node-gyp',
 ]
 
 const fileExists = (...p) => stat(resolve(...p))
@@ -282,7 +281,7 @@ class Config {
     }
 
     try {
-      // This does not have an actual definition
+      // This does not have an actual definition because this is not user defineable
       defaultsObject['npm-version'] = require(join(this.npmPath, 'package.json')).version
     } catch {
       // in some weird state where the passed in npmPath does not have a package.json

@@ -11,6 +11,7 @@ const NODE = execPath
 
 const npmPath = '{path}'
 const npmBin = join(npmPath, 'bin/npm-cli.js')
+const nodeGypPath = require.resolve('node-gyp/bin/node-gyp.js')
 
 const mockDefinitions = (t) => {
   mockGlobals(t, { 'process.env': { EDITOR: 'vim' } })
@@ -27,6 +28,8 @@ t.test('set envs that are not defaults and not already in env', t => {
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
+    npm_config_node_gyp: nodeGypPath,
+    npm_config_npm_version: 'unknown',
     npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
@@ -80,6 +83,8 @@ t.test('set envs that are not defaults and not already in env, array style', t =
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
+    npm_config_node_gyp: nodeGypPath,
+    npm_config_npm_version: 'unknown',
     npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
@@ -130,6 +135,8 @@ t.test('set envs that are not defaults and not already in env, boolean edition',
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
+    npm_config_node_gyp: nodeGypPath,
+    npm_config_npm_version: 'unknown',
     npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,
@@ -207,6 +214,8 @@ t.test('dont set configs marked as envExport:false', t => {
     INIT_CWD: cwd,
     EDITOR: 'vim',
     HOME: undefined,
+    npm_config_node_gyp: nodeGypPath,
+    npm_config_npm_version: 'unknown',
     npm_execpath: npmBin,
     npm_node_execpath: execPath,
     npm_config_global_prefix: globalPrefix,

@@ -325,6 +325,9 @@ Object {
   "message": Array [
     Function String(),
   ],
+  "node-gyp": Array [
+    "valid filesystem path",
+  ],
   "node-options": Array [
     null,
     Function String(),
