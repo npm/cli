@@ -823,7 +823,7 @@ module.exports = cls => class Reifier extends cls {
       const trashOptionalDependency = e?.code !== 'EBADPLATFORM'
       const set = optionalSet(node)
       for (node of set) {
-        log.verbose('reify', `failed optional dependency (trash: ${trashOptionalDependency}`, node.path)
+        log.verbose('reify', `failed optional dependency (trash: ${trashOptionalDependency})`, node.path)
         if (trashOptionalDependency) {
           this[_addNodeToTrashList](node)
         }
