@@ -821,12 +821,14 @@ module.exports = cls => class Reifier extends cls {
       // This does cause optional dependencies to be present on all platforms in the node_modules directory,
       // even though these aren't really used
       const trashOptionalDependency = e?.code !== 'EBADPLATFORM'
+      if (!trashOptionalDependency) {
+        log.verbose('reify', `skip trashing optional dependency due to platform mismatch`, node.path)
+        return
+      }
       const set = optionalSet(node)
       for (node of set) {
-        log.verbose('reify', `failed optional dependency (trash: ${trashOptionalDependency})`, node.path)
-        if (trashOptionalDependency) {
-          this[_addNodeToTrashList](node)
-        }
+        log.verbose('reify', 'failed optional dependency', node.path)
+        this[_addNodeToTrashList](node)
       }
     }) : p).then(() => node)
   }
