@@ -2842,11 +2842,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP do not install optional deps with mismatched platform specifications > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-do-not-install-optional-deps-with-mismatched-platform-specifications/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3320,11 +3338,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3339,11 +3375,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3358,11 +3412,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -33177,11 +33249,29 @@ exports[`test/arborist/reify.js TAP scoped registries > should preserve original
 
 exports[`test/arborist/reify.js TAP still do not install optional deps with mismatched platform specifications even when forced > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-still-do-not-install-optional-deps-with-mismatched-platform-specifications-even-when-forced/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },

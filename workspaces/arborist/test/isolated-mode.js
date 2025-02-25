@@ -552,9 +552,10 @@ tap.test('failing optional deps are not installed', async t => {
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ installStrategy: 'linked' })
 
-  t.notOk(setupRequire(dir)('which'), 'Failing optional deps should not be installed')
+  t.ok(setupRequire(dir)('which'), 'Failing optional deps should not be installed, but the empty directory is there')
 
-  t.notOk(fs.existsSync(path.join(dir, 'node_modules', '.bin', 'which')))
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', 'which')))
+  t.ok(isEmptyDir(t, path.join(dir, 'node_modules', 'which')))
 })
 
 tap.test('Optional deps are installed when possible', async t => {
@@ -1319,7 +1320,12 @@ tap.test('failing optional peer deps are not installed', async t => {
   const arborist = new Arborist({ path: dir, registry, packumentCache: new Map(), cache })
   await arborist.reify({ installStrategy: 'linked' })
 
-  t.notOk(setupRequire(dir)('bar', 'which'), 'Failing optional peer deps should not be installed')
+  t.ok(setupRequire(dir)('bar', 'which'), 'Failing optional peer deps should not be installed, but an empty directory is there')
+
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', 'which')))
+  t.ok(isEmptyDir(t, path.join(dir, 'node_modules', 'which')))
+  t.ok(fs.existsSync(path.join(dir, 'node_modules', 'bar')))
+  t.ok(isEmptyDir(t, path.join(dir, 'node_modules', 'bar')))
 })
 
 // Virtual packages are 2 packages that have the same version but are
@@ -1449,6 +1455,23 @@ function setupRequire (cwd) {
       }
       return resolvePackage(name, path)
     }, cwd)
+  }
+}
+
+/**
+ * Determine whether the given `path` points to an empty directory.
+ * @param {String} path
+ * @returns {boolean}
+ */
+async function isEmptyDir (path) {
+  try {
+    const directory = await fs.opendir(path)
+    const entry = await directory.read()
+    await directory.close()
+
+    return entry === null
+  } catch (error) {
+    return false
   }
 }
 
