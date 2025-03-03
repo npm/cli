@@ -582,8 +582,7 @@ class Config {
             }
           }
         }
-        // Some defaults like npm-version are not user-definable and thus don't have definitions
-        if (where !== 'default') {
+        if (where !== 'default' || key === 'npm-version') {
           this.checkUnknown(where, key)
         }
         conf.data[k] = v
