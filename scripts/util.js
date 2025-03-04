@@ -12,17 +12,19 @@ const mapWorkspaces = require('@npmcli/map-workspaces')
 const EOL = '\n'
 const CWD = resolve(__dirname, '..')
 
+const rootPkgPath = join(CWD, 'package.json')
 const pkg = require(join(CWD, 'package.json'))
 pkg.mapWorkspaces = async ({ public = false } = {}) => {
   const ws = []
   for (const [name, path] of await mapWorkspaces({ pkg })) {
-    const pkgJson = require(join(path, 'package.json'))
+    const pkgPath = join(path, 'package.json')
+    const pkgJson = require(pkgPath)
 
     if (public && pkgJson.private) {
       continue
     }
 
-    ws.push({ name, path, pkg: pkgJson })
+    ws.push({ name, path, pkgPath, pkg: pkgJson })
   }
   return ws
 }
@@ -205,6 +207,7 @@ const run = async (main, { redact } = {}) => {
 module.exports = {
   CWD,
   pkg,
+  pkgPath: rootPkgPath,
   run,
   fs,
   spawn,
