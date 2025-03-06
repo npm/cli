@@ -364,8 +364,11 @@ class Config {
     }
     nopt.invalidHandler = (k, val, type) =>
       this.invalidHandler(k, val, type, 'command line options', 'cli')
+    nopt.unknownHandler = this.unknownHandler
+    nopt.abbrevHandler = this.abbrevHandler
     const conf = nopt(this.types, this.shorthands, this.argv)
     nopt.invalidHandler = null
+    nopt.unknownHandler = null
     this.parsedArgv = conf.argv
     delete conf.argv
     this.#loadObject(conf, 'cli', 'command line options')
@@ -529,6 +532,16 @@ class Config {
     const desc = mustBe.length === 1 ? mustBe[0]
       : [...new Set(mustBe.map(n => typeof n === 'string' ? n : JSON.stringify(n)))].join(', ')
     log.warn('invalid config', msg, desc)
+  }
+
+  abbrevHandler (short, long) {
+    log.warn(`Expanding --${short} to --${long}. This will stop working in the next major version of npm.`)
+  }
+
+  unknownHandler (key, next) {
+    if (next) {
+      log.warn(`"${next}" is being parsed as a normal command line argument.`)
+    }
   }
 
   #getOneOfKeywords (mustBe, typeDesc) {

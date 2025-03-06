@@ -1542,3 +1542,48 @@ t.test('invalid single hyphen warnings', async t => {
     ['warn', '-ws is not a valid single-hyphen cli flag and will be removed in the future'],
   ], 'Warns about single hyphen configs')
 })
+
+t.test('positional arg warnings', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--something', 'extra'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+  await config.load()
+  const filtered = logs.filter(l => l[0] === 'warn')
+  t.match(filtered, [
+    ['warn', '"extra" is being parsed as a normal command line argument.'],
+    ['warn', 'Unknown cli config "--something". This will stop working in the next major version of npm.'],
+  ], 'Warns about positional cli arg')
+})
+
+t.test('abbreviation expansion warnings', async t => {
+  const path = t.testdir()
+  const logs = []
+  const logHandler = (...args) => logs.push(args)
+  process.on('log', logHandler)
+  t.teardown(() => process.off('log', logHandler))
+  const config = new Config({
+    npmPath: `${path}/npm`,
+    env: {},
+    argv: [process.execPath, __filename, '--bef', '2020-01-01'],
+    cwd: path,
+    shorthands,
+    definitions,
+    nerfDarts,
+  })
+  await config.load()
+  const filtered = logs.filter(l => l[0] === 'warn')
+  t.match(filtered, [
+    ['warn', 'Expanding --bef to --before. This will stop working in the next major version of npm'],
+  ], 'Warns about expanded abbreviations')
+})
