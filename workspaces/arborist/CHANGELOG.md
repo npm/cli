@@ -1,5 +1,11 @@
 # Changelog
 
+## [9.0.1](https://github.com/npm/cli/compare/arborist-v9.0.0...arborist-v9.0.1) (2025-03-05)
+### Bug Fixes
+* [`b9225e5`](https://github.com/npm/cli/commit/b9225e524074239bd8db9a27f3e9ab72f2b5c09e) [#8089](https://github.com/npm/cli/pull/8089) resolve override conflicts and apply correct versions (#8089) (@owlstronaut)
+* [`d586f3b`](https://github.com/npm/cli/commit/d586f3b6da5cf864254e894efd3105ad52266599) [#8117](https://github.com/npm/cli/pull/8117) remove duplicate var (#8117) (@TrevorBurnham)
+* [`811ca29`](https://github.com/npm/cli/commit/811ca2927eed733c8fabf308bf9d467e7c959163) [#8115](https://github.com/npm/cli/pull/8115) stop working around bug fixed in `npm-package-arg@12.0.2` (@TrevorBurnham)
+
 ## [9.0.0](https://github.com/npm/cli/compare/arborist-v9.0.0-pre.1...arborist-v9.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)

@@ -1,5 +1,14 @@
 # Changelog
 
+## [10.1.0](https://github.com/npm/cli/compare/libnpmexec-v10.0.0...libnpmexec-v10.1.0) (2025-03-05)
+### Features
+* [`d18d422`](https://github.com/npm/cli/commit/d18d422e081fbf33a0671cbd83a64531c485f940) [#8100](https://github.com/npm/cli/pull/8100) add context to npx cache package.json (@wraithgar)
+### Bug Fixes
+* [`8461186`](https://github.com/npm/cli/commit/846118686849f821b084775f7891038013f7ba97) [#8100](https://github.com/npm/cli/pull/8100) update npx cache if possible when spec is a range (@wraithgar)
+### Dependencies
+* [`3d8b257`](https://github.com/npm/cli/commit/3d8b257bd667e76e74236c756aaa2dceaa6d6e5e) [#8100](https://github.com/npm/cli/pull/8100) `@npmcli/package-json@6.1.1`
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.1): `@npmcli/arborist@9.0.1`
+
 ## [10.0.0](https://github.com/npm/cli/compare/libnpmexec-v10.0.0-pre.1...libnpmexec-v10.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)

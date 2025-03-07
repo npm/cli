@@ -2689,13 +2689,16 @@ alias: issues
 `
 
 exports[`test/lib/docs.js TAP usage cache > must match snapshot 1`] = `
-Manipulates packages cache
+Manipulates packages and npx cache
 
 Usage:
 npm cache add <package-spec>
 npm cache clean [<key>]
 npm cache ls [<name>@<version>]
 npm cache verify
+npm cache npx ls
+npm cache npx rm [<key>...]
+npm cache npx info <key>...
 
 Options:
 [--cache <cache>]
@@ -2707,6 +2710,9 @@ npm cache add <package-spec>
 npm cache clean [<key>]
 npm cache ls [<name>@<version>]
 npm cache verify
+npm cache npx ls
+npm cache npx rm [<key>...]
+npm cache npx info <key>...
 \`\`\`
 
 Note: This command is unaware of workspaces.

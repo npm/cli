@@ -3,7 +3,8 @@ const { log } = require('proc-log')
 const pacote = require('pacote')
 const { read } = require('read')
 const Table = require('cli-table3')
-const { run, git, npm, pkg: cli, spawn } = require('./util.js')
+const { run, git, npm, pkgPath: cliPath, pkg: cli, spawn } = require('./util.js')
+const fs = require('fs').promises
 
 const resetdeps = () => npm('run', 'resetdeps')
 
@@ -49,22 +50,40 @@ const versionNotExists = async ({ name, version }) => {
 const getPublishes = async ({ force }) => {
   const publishPackages = []
 
-  for (const { pkg } of await cli.mapWorkspaces({ public: true })) {
+  for (const { pkg, pkgPath } of await cli.mapWorkspaces({ public: true })) {
+    const updatePkg = async (cb) => {
+      const data = JSON.parse(await fs.readFile(pkgPath, 'utf8'))
+      const result = cb(data)
+      await fs.writeFile(pkgPath, JSON.stringify(result, null, 2))
+      return result
+    }
+
     if (force || await versionNotExists(pkg)) {
       publishPackages.push({
-        workspace: true,
+        workspace: `--workspace=${pkg.name}`,
         name: pkg.name,
         version: pkg.version,
+        dependencies: pkg.dependencies,
+        devDependencies: pkg.devDependencies,
         tag: await getWorkspaceTag(pkg),
+        updatePkg,
       })
     }
   }
 
   if (force || await versionNotExists(cli)) {
     publishPackages.push({
+      workspace: '',
       name: cli.name,
       version: cli.version,
       tag: `next-${semver.major(cli.version)}`,
+      dependencies: cli.dependencies,
+      devDependencies: cli.devDependencies,
+      updatePkg: async (cb) => {
+        const result = cb(cli)
+        await fs.writeFile(cliPath, JSON.stringify(result, null, 2))
+        return result
+      },
     })
   }
 
@@ -128,6 +147,36 @@ const main = async (opts) => {
   }
 
   let count = -1
+
+  if (smokePublish) {
+    // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
+    // this is the equivlent of running `npm version prerelease`, but ensureing all internally used workflows are bumped
+    for (const publish of publishes) {
+      const { version } = await publish.updatePkg((pkg) => ({ ...pkg, version: `${pkg.version}-smoke.0` }))
+      for (const ipublish of publishes) {
+        if (ipublish.dependencies?.[publish.name]) {
+          await ipublish.updatePkg((pkg) => ({
+            ...pkg,
+            dependencies: {
+              ...pkg.dependencies,
+              [publish.name]: version,
+            },
+          }))
+        }
+        if (ipublish.devDependencies?.[publish.name]) {
+          await ipublish.updatePkg((pkg) => ({
+            ...pkg,
+            devDependencies: {
+              ...pkg.devDependencies,
+              [publish.name]: version,
+            },
+          }))
+        }
+      }
+    }
+    await npm('install')
+  }
+
   for (const publish of publishes) {
     log.info(`Publishing ${publish.name}@${publish.version} to ${publish.tag} ${count++}/${publishes.length}`)
     const workspace = publish.workspace && `--workspace=${publish.name}`
@@ -142,8 +191,6 @@ const main = async (opts) => {
     }
 
     if (smokePublish) {
-      // when we have a smoke test run we'd want to bump the version or else npm will throw an error even with dry-run
-      await npm('version', 'prerelease', workspace, '--preid=smoke', '--ignore-scripts', '--no-git-tag-version')
       await publishPkg('--dry-run', '--ignore-scripts')
     } else {
       await publishPkg(

@@ -1,5 +1,4 @@
 const t = require('tap')
-
 const OverrideSet = require('../lib/override-set.js')
 
 t.test('constructor', async (t) => {
@@ -271,4 +270,164 @@ t.test('constructor', async (t) => {
     const outOfRangeRule = bazEdgeRule.getEdgeRule({ name: 'buzz', spec: 'github:baz/buzz#semver:^2.0.0' })
     t.equal(outOfRangeRule.name, 'baz', 'no match - returned parent')
   })
+
+  t.test('isequal and findspecificoverrideset tests', async (t) => {
+    const overrides1 = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: {
+            '.': '2.0.0',
+            baz: '3.0.0',
+          },
+          baz: '2.0.0',
+        },
+        bar: '1.0.0',
+        baz: '1.0.0',
+      },
+    })
+    const overrides2 = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: {
+            '.': '2.0.0',
+            baz: '3.0.0',
+          },
+          baz: '2.0.0',
+        },
+        bar: '1.0.0',
+        baz: '1.0.0',
+      },
+    })
+    const overrides3 = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: {
+            '.': '2.0.0',
+            baz: '3.1.0',
+          },
+          baz: '2.0.0',
+        },
+        bar: '1.0.0',
+        baz: '1.0.0',
+      },
+    })
+    const overrides4 = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: {
+            '.': '2.0.0',
+          },
+          baz: '2.0.0',
+        },
+        bar: '1.0.0',
+        baz: '1.0.0',
+      },
+    })
+    const overrides5 = new OverrideSet({
+      overrides: {
+        foo: {
+          bar: {
+            '.': '2.0.0',
+          },
+          bat: '2.0.0',
+        },
+        bar: '1.0.0',
+        baz: '1.0.0',
+      },
+    })
+    const overrides6 = new OverrideSet({
+      overrides: {
+        bar: {
+          '.': '2.0.0',
+        },
+        bat: '2.0.0',
+      },
+    })
+    overrides6.parent = overrides5
+    const overrides7 = new OverrideSet({
+      overrides: {
+        bat: '2.0.0',
+      },
+    })
+    const overrides8 = new OverrideSet({
+      overrides: {
+        bat: '1.2.0',
+      },
+    })
+    const overrides9 = new OverrideSet({
+      overrides: {
+        'bat@3.0.0': '1.2.0',
+      },
+    })
+
+    t.ok(overrides1.isEqual(overrides1), 'override set is equal to itself')
+    t.ok(overrides1.isEqual(overrides2), 'two identical override sets are equal')
+    t.ok(!overrides1.isEqual(overrides3), 'two different override sets are not equal')
+    t.ok(!overrides2.isEqual(overrides3), 'two different override sets are not equal')
+    t.ok(!overrides3.isEqual(overrides1), 'two different override sets are not equal')
+    t.ok(!overrides3.isEqual(overrides2), 'two different override sets are not equal')
+    t.ok(!overrides4.isEqual(overrides1), 'two different override sets are not equal')
+    t.ok(!overrides4.isEqual(overrides2), 'two different override sets are not equal')
+    t.ok(!overrides4.isEqual(overrides3), 'two different override sets are not equal')
+    t.ok(!overrides4.isEqual(overrides5), 'two override sets that differ only by package name are not equal')
+    t.ok(!overrides5.isEqual(overrides4), 'two override sets that differ only by package name are not equal')
+    t.equal(OverrideSet.findSpecificOverrideSet(overrides5, overrides5), overrides5, 'find more specific override set when the sets are identical')
+    t.equal(OverrideSet.findSpecificOverrideSet(overrides5, overrides6), overrides6, "find more specific override set when it's the second")
+    t.equal(OverrideSet.findSpecificOverrideSet(overrides6, overrides5), overrides6, "find more specific override set when it's the first")
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides1, overrides2), 'override sets are equal')
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides5, overrides5), 'override sets are the same object')
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides5, overrides6), 'one override set is the specific version of the other')
+    t.ok(!OverrideSet.doOverrideSetsConflict(overrides6, overrides5), 'one override set is the specific version of the other')
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides5, overrides7), 'no override set is the specific version of the other')
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides5), 'no override set is the specific version of the other')
+    t.ok(!overrides7.isEqual(overrides8), 'two override sets that differ in the version are not equal')
+    t.ok(!overrides8.isEqual(overrides9), 'two override sets that differ in the range are not equal')
+    t.ok(!overrides7.isEqual(overrides9), 'two override sets that differ in both version and range are not equal')
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides8), 'override sets are incomparable due to version')
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides7, overrides9), 'override sets are incomparable due to version and range')
+    t.ok(OverrideSet.doOverrideSetsConflict(overrides8, overrides9), 'override sets are incomparable due to range')
+  })
+})
+
+t.test('coverage for final line in isEqual (parent != null)', async t => {
+  // Both parents have the SAME config -> parent.isEqual(...) will return TRUE
+  const parentA = new OverrideSet({ overrides: { foo: '1.0.0' } })
+  const parentB = new OverrideSet({ overrides: { foo: '1.0.0' } })
+
+  // Child override sets with the same parent config => should be equal
+  const childA = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentA,
+  })
+  const childB = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentB,
+  })
+
+  // This specifically covers the code path where parent != null
+  // AND parent.isEqual(...) returns true
+  t.ok(childA.isEqual(childB), 'two children with equivalent parents are equal')
+
+  // Different parent configs -> parent.isEqual(...) will return FALSE
+  const parentC = new OverrideSet({ overrides: { foo: '1.0.0' } })
+  const parentD = new OverrideSet({ overrides: { foo: '1.0.1' } })
+
+  const childC = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentC,
+  })
+  const childD = new OverrideSet({
+    overrides: { bar: '2.0.0' },
+    key: 'bar',
+    parent: parentD,
+  })
+
+  // This specifically covers the code path where parent != null
+  // AND parent.isEqual(...) returns false
+  t.notOk(childC.isEqual(childD), 'two children with different parents are not equal')
+
+  t.end()
 })
