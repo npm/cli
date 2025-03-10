@@ -297,3 +297,25 @@ t.test('npx tree triggers manifest fetch when local version does satisfy range u
     value: 'packages-2.0.1',
   })
 })
+
+t.test('override save to true when installing to npx cache', async t => {
+  const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
+
+  const { exec, path, registry, readOutput } = setup(t, {
+    testdir: merge(fixtures, {
+      global: {},
+    }),
+  })
+
+  await package({ registry, path })
+
+  await exec({
+    args: ['@npmcli/create-index'],
+    globalPath: resolve(path, 'global'),
+    save: false,
+  })
+
+  t.match(await readOutput('@npmcli-create-index'), {
+    value: 'packages-2.0.0',
+  })
+})
