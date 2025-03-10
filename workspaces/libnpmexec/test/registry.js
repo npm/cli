@@ -2,6 +2,7 @@ const { resolve } = require('node:path')
 const t = require('tap')
 const { setup, createPkg, merge } = require('./fixtures/setup.js')
 const crypto = require('node:crypto')
+const { existsSync } = require('node:fs')
 
 t.test('run from registry - no local packages', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
@@ -301,6 +302,11 @@ t.test('npx tree triggers manifest fetch when local version does satisfy range u
 t.test('override save to true when installing to npx cache', async t => {
   const { fixtures, package } = createPkg({ versions: ['2.0.0'] })
 
+  const hash = crypto.createHash('sha512')
+    .update('@npmcli/create-index')
+    .digest('hex')
+    .slice(0, 16)
+
   const { exec, path, registry, readOutput } = setup(t, {
     testdir: merge(fixtures, {
       global: {},
@@ -314,6 +320,9 @@ t.test('override save to true when installing to npx cache', async t => {
     globalPath: resolve(path, 'global'),
     save: false,
   })
+
+  const packageJsonPath = resolve(path, 'npxCache', hash, 'package.json')
+  t.ok(existsSync(packageJsonPath), 'package.json should exist at npmCache')
 
   t.match(await readOutput('@npmcli-create-index'), {
     value: 'packages-2.0.0',
