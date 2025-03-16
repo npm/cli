@@ -94,7 +94,7 @@ to override default configs in a standard and consistent manner.
 ### Auth related configuration
 
 The settings `_auth`, `_authToken`, `username` and `_password` must all be
-scoped to a specific registry. This ensures that `npm` will never send
+scoped to a specific `registry`. This ensures that `npm` will never send
 credentials to the wrong host.
 
 The full list is:
@@ -111,6 +111,30 @@ If the credential is meant for any request to a registry on a single host,
 the scope may look like `//registry.npmjs.org/:`. If it must be scoped to a
 specific path on the host that path may also be provided, such as
 `//my-custom-registry.org/unique/path:`.
+
+#### How NPM matches Registry URL with auth configuration
+
+Let's say you have:
+
+```ini
+@myorg:registry=https://registry.npmjs.org/myorg
+```
+
+npm will look for:
+
+```ini
+//registry.npmjs.org/myorg/:_authToken=...
+```
+
+If instead you put:
+
+```ini
+//registry.npmjs.org/:_authToken=...
+```
+
+That won’t be used, because it **doesn’t match** what npm looks for from the registry URL you defined.
+
+#### Extended configuration example
 
 ```ini
 ; bad config
