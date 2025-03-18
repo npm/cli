@@ -2522,6 +2522,43 @@ t.test('canDedupe()', t => {
   t.end()
 })
 
+t.test('canDedupe returns true when explicitRequest is true regardless of other conditions', t => {
+  // Create a minimal tree with a valid resolveParent
+  const root = new Node({
+    pkg: { name: 'root', version: '1.0.0' },
+    path: '/root',
+    realpath: '/root',
+  })
+
+  // Create a duplicate candidate node in the tree
+  const duplicate = new Node({
+    pkg: { name: 'dup', version: '1.0.0' },
+    parent: root,
+  })
+
+  // Create a node with the same name but a higher version so that normally dedupe would not occur
+  const node = new Node({
+    pkg: { name: 'dup', version: '2.0.0' },
+    parent: duplicate,
+  })
+
+  // Manually add an incoming edge so that node.edgesIn is non-empty
+  node.edgesIn.add({
+    from: duplicate,
+    satisfiedBy () {
+      return true
+    },
+  })
+
+  const preferDedupe = false
+  let explicitRequest = false
+  t.notOk(node.canDedupe(preferDedupe, explicitRequest), 'without explicit request, dedupe is not allowed')
+
+  explicitRequest = true
+  t.ok(node.canDedupe(preferDedupe, explicitRequest), 'explicit request forces dedupe to return true')
+  t.end()
+})
+
 t.test('packageName getter', t => {
   const node = new Node({
     pkg: { name: 'foo' },

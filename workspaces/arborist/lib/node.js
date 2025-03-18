@@ -1074,7 +1074,7 @@ class Node {
   // return true if it's safe to remove this node, because anything that
   // is depending on it would be fine with the thing that they would resolve
   // to if it was removed, or nothing is depending on it in the first place.
-  canDedupe (preferDedupe = false) {
+  canDedupe (preferDedupe = false, explicitRequest = false) {
     // not allowed to mess with shrinkwraps or bundles
     if (this.inDepBundle || this.inShrinkwrap) {
       return false
@@ -1114,6 +1114,11 @@ class Node {
 
     // if our current version isn't the result of an override, then prefer to take the greater version
     if (!this.overridden && semver.gt(other.version, this.version)) {
+      return true
+    }
+
+    // if the other version was an explicit request, then prefer to take the other version
+    if (explicitRequest) {
       return true
     }
 

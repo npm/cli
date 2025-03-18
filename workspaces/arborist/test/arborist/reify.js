@@ -3427,3 +3427,83 @@ t.test('install stategy linked', async (t) => {
     t.ok(abbrev.isSymbolicLink(), 'abbrev got installed')
   })
 })
+
+t.test('workspace installs retain existing versions with newer package specs', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      workspaces: [
+        'packages/*',
+      ],
+      overrides: {
+        'doesnt-matter-can-be-anything': '1.2.3',
+      },
+    }),
+    packages: {
+      'my-cool-package': {
+        'package.json': JSON.stringify({}),
+      },
+      'another-cool-package': {
+        'package.json': JSON.stringify({}),
+      },
+    },
+  })
+
+  createRegistry(t, true)
+
+  // Step 1: Install abbrev@1.0.4 in my-cool-package
+  await reify(path, {
+    add: ['abbrev@1.0.4'],
+    // setting savePrefix to '' is exactly what the --save-exact flag does in definitions.js
+    savePrefix: '',
+    workspaces: ['my-cool-package'],
+  })
+
+  // Verify hoisted installation
+  const rootNodeModules = resolve(path, 'node_modules/abbrev/package.json')
+  t.ok(fs.existsSync(rootNodeModules), 'abbrev should be hoisted to root node_modules')
+
+  const hoistedPkg = JSON.parse(fs.readFileSync(rootNodeModules, 'utf8'))
+  t.equal(hoistedPkg.version, '1.0.4', 'hoisted version should be 1.0.4')
+
+  // Check my-cool-package package.json
+  const myPackageJson = JSON.parse(fs.readFileSync(
+    resolve(path, 'packages/my-cool-package/package.json'), 'utf8'))
+  t.same(myPackageJson.dependencies, { abbrev: '1.0.4' },
+    'my-cool-package should have abbrev@1.0.4 in dependencies')
+
+  // Step 2: Install abbrev@1.1.1 in another-cool-package
+  await reify(path, {
+    add: ['abbrev@1.1.1'],
+    savePrefix: '',
+    workspaces: ['another-cool-package'],
+  })
+
+  // Verify un-hoisted installation
+  const anotherNodeModules = resolve(path, 'packages/another-cool-package/node_modules/abbrev/package.json')
+  t.ok(fs.existsSync(anotherNodeModules), 'abbrev@1.1.1 should be installed in another-cool-package/node_modules')
+
+  const unhoistedPkg = JSON.parse(fs.readFileSync(anotherNodeModules, 'utf8'))
+  t.equal(unhoistedPkg.version, '1.1.1', 'unhoisted version should be 1.1.1')
+
+  // Check another-cool-package package.json
+  const anotherPackageJson = JSON.parse(fs.readFileSync(
+    resolve(path, 'packages/another-cool-package/package.json'), 'utf8'))
+  t.same(anotherPackageJson.dependencies, { abbrev: '1.1.1' },
+    'another-cool-package should have abbrev@1.1.1 in dependencies')
+
+  // Step 3: Install abbrev@1.0.4 in another-cool-package
+  await reify(path, {
+    add: ['abbrev@1.0.4'],
+    savePrefix: '',
+    workspaces: ['another-cool-package'],
+  })
+
+  t.ok(fs.existsSync(rootNodeModules), 'abbrev@1.0.4 should still be hoisted to root node_modules')
+  t.notOk(fs.existsSync(anotherNodeModules), 'abbrev@1.1.1 should be removed from another-cool-package/node_modules')
+
+  // Check another-cool-package package.json - should now be updated to 1.0.4
+  const updatedPackageJson = JSON.parse(fs.readFileSync(
+    resolve(path, 'packages/another-cool-package/package.json'), 'utf8'))
+  t.same(updatedPackageJson.dependencies, { abbrev: '1.0.4' },
+    'another-cool-package package.json should be updated to abbrev@1.0.4')
+})
