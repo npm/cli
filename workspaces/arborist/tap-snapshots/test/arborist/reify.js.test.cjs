@@ -1857,13 +1857,97 @@ exports[`test/arborist/reify.js TAP add spec * with semver prefix range gets upd
 
 `
 
-exports[`test/arborist/reify.js TAP adding an unresolvable optional dep is OK > must match snapshot 1`] = `
+exports[`test/arborist/reify.js TAP adding an unresolvable optional dep is OK - maintains inertness > must match snapshot 1`] = `
 ArboristNode {
+  "children": Map {
+    "abbrev" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "error": "INVALID",
+          "from": "",
+          "name": "abbrev",
+          "spec": "npm:null@999999",
+          "type": "optional",
+        },
+      },
+      "errors": Array [
+        Object {
+          "code": "E404",
+        },
+      ],
+      "location": "node_modules/abbrev",
+      "name": "abbrev",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-adding-an-unresolvable-optional-dep-is-OK---maintains-inertness/node_modules/abbrev",
+    },
+    "wrappy" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "wrappy",
+          "spec": "1.0.2",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/wrappy",
+      "name": "wrappy",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-adding-an-unresolvable-optional-dep-is-OK---maintains-inertness/node_modules/wrappy",
+      "resolved": "https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz",
+      "version": "1.0.2",
+    },
+  },
   "edgesOut": Map {
     "abbrev" => EdgeOut {
+      "error": "INVALID",
       "name": "abbrev",
-      "spec": "999999",
-      "to": null,
+      "spec": "npm:null@999999",
+      "to": "node_modules/abbrev",
+      "type": "optional",
+    },
+    "wrappy" => EdgeOut {
+      "name": "wrappy",
+      "spec": "1.0.2",
+      "to": "node_modules/wrappy",
+      "type": "prod",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-adding-an-unresolvable-optional-dep-is-OK---maintains-inertness",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-adding-an-unresolvable-optional-dep-is-OK---maintains-inertness",
+}
+`
+
+exports[`test/arborist/reify.js TAP adding an unresolvable optional dep is OK > must match snapshot 1`] = `
+ArboristNode {
+  "children": Map {
+    "abbrev" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "error": "INVALID",
+          "from": "",
+          "name": "abbrev",
+          "spec": "npm:null@999999",
+          "type": "optional",
+        },
+      },
+      "errors": Array [
+        Object {
+          "code": "ETARGET",
+        },
+      ],
+      "location": "node_modules/abbrev",
+      "name": "abbrev",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-adding-an-unresolvable-optional-dep-is-OK/node_modules/abbrev",
+    },
+  },
+  "edgesOut": Map {
+    "abbrev" => EdgeOut {
+      "error": "INVALID",
+      "name": "abbrev",
+      "spec": "npm:null@999999",
+      "to": "node_modules/abbrev",
       "type": "optional",
     },
   },
@@ -2842,11 +2926,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP do not install optional deps with mismatched platform specifications > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-do-not-install-optional-deps-with-mismatched-platform-specifications/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3320,11 +3422,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and matched cpu and mismatched libc with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-matched-cpu-and-mismatched-libc-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3339,11 +3459,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with matched os and mismatched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-matched-os-and-mismatched-cpu-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -3358,11 +3496,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP fail to install optional deps with mismatched os and matched cpu with os and cpu and libc options > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-fail-to-install-optional-deps-with-mismatched-os-and-matched-cpu-with-os-and-cpu-and-libc-options/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -17288,11 +17444,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-allinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-allinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-allinstall",
+      "name": "@isaacs/testing-fail-allinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-false/node_modules/@isaacs/testing-fail-allinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-allinstall/-/testing-fail-allinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-allinstall" => EdgeOut {
       "name": "@isaacs/testing-fail-allinstall",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-allinstall",
       "type": "optional",
     },
   },
@@ -17307,11 +17481,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-allinstall-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-allinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-allinstall",
+      "name": "@isaacs/testing-fail-allinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-allinstall-fail-save-true/node_modules/@isaacs/testing-fail-allinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-allinstall/-/testing-fail-allinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-allinstall" => EdgeOut {
       "name": "@isaacs/testing-fail-allinstall",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-allinstall",
       "type": "optional",
     },
   },
@@ -17326,11 +17518,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-install-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-install" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-install",
+      "name": "@isaacs/testing-fail-install",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-false/node_modules/@isaacs/testing-fail-install",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-install" => EdgeOut {
       "name": "@isaacs/testing-fail-install",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-install",
       "type": "optional",
     },
   },
@@ -17345,11 +17555,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-install-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-install" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-install",
+      "name": "@isaacs/testing-fail-install",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-install-fail-save-true/node_modules/@isaacs/testing-fail-install",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-install" => EdgeOut {
       "name": "@isaacs/testing-fail-install",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-install",
       "type": "optional",
     },
   },
@@ -17438,11 +17666,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-preinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-preinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-preinstall",
+      "name": "@isaacs/testing-fail-preinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-false/node_modules/@isaacs/testing-fail-preinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-preinstall/-/testing-fail-preinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-preinstall" => EdgeOut {
       "name": "@isaacs/testing-fail-preinstall",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-preinstall",
       "type": "optional",
     },
   },
@@ -17457,11 +17703,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-preinstall-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-preinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-preinstall",
+      "name": "@isaacs/testing-fail-preinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-preinstall-fail-save-true/node_modules/@isaacs/testing-fail-preinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-preinstall/-/testing-fail-preinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-fail-preinstall" => EdgeOut {
       "name": "@isaacs/testing-fail-preinstall",
       "spec": "^1.0.0",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-fail-preinstall",
       "type": "optional",
     },
   },
@@ -17476,11 +17740,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-tgz-missing save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-missing-tgz" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-missing-tgz",
+      "name": "@isaacs/testing-missing-tgz",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-false/node_modules/@isaacs/testing-missing-tgz",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-missing-tgz/-/testing-missing-tgz-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-missing-tgz" => EdgeOut {
       "name": "@isaacs/testing-missing-tgz",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-missing-tgz",
       "type": "optional",
     },
   },
@@ -17495,11 +17777,29 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-dep-tgz-missing save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-missing-tgz" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-missing-tgz",
+      "name": "@isaacs/testing-missing-tgz",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-dep-tgz-missing-save-true/node_modules/@isaacs/testing-missing-tgz",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-missing-tgz/-/testing-missing-tgz-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-missing-tgz" => EdgeOut {
       "name": "@isaacs/testing-missing-tgz",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-missing-tgz",
       "type": "optional",
     },
   },
@@ -17514,11 +17814,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-allinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-allinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-allinstall",
+      "name": "@isaacs/testing-fail-allinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-false/node_modules/@isaacs/testing-fail-allinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-allinstall/-/testing-fail-allinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-allinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-allinstall-fail",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-allinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-allinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+      "name": "@isaacs/testing-prod-dep-allinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-false/node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-allinstall-fail/-/testing-prod-dep-allinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-allinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-allinstall-fail",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
       "type": "optional",
     },
   },
@@ -17533,11 +17875,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-allinstall-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-allinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-allinstall",
+      "name": "@isaacs/testing-fail-allinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-true/node_modules/@isaacs/testing-fail-allinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-allinstall/-/testing-fail-allinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-allinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-allinstall-fail",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-allinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-allinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-allinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+      "name": "@isaacs/testing-prod-dep-allinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-allinstall-fail-save-true/node_modules/@isaacs/testing-prod-dep-allinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-allinstall-fail/-/testing-prod-dep-allinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-allinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-allinstall-fail",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-allinstall-fail",
       "type": "optional",
     },
   },
@@ -17552,11 +17936,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-install-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-install" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-install-fail",
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-install",
+      "name": "@isaacs/testing-fail-install",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-false/node_modules/@isaacs/testing-fail-install",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-install-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-install-fail",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-install" => EdgeOut {
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-install",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-install-fail",
+      "name": "@isaacs/testing-prod-dep-install-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-false/node_modules/@isaacs/testing-prod-dep-install-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-install-fail/-/testing-prod-dep-install-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-install-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-install-fail",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-install-fail",
       "type": "optional",
     },
   },
@@ -17571,11 +17997,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-install-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-install" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-install-fail",
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-install",
+      "name": "@isaacs/testing-fail-install",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-true/node_modules/@isaacs/testing-fail-install",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-install/-/testing-fail-install-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-install-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-install-fail",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-install" => EdgeOut {
+          "name": "@isaacs/testing-fail-install",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-install",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-install-fail",
+      "name": "@isaacs/testing-prod-dep-install-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-install-fail-save-true/node_modules/@isaacs/testing-prod-dep-install-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-install-fail/-/testing-prod-dep-install-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-install-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-install-fail",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-install-fail",
       "type": "optional",
     },
   },
@@ -17590,11 +18058,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-postinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-postinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+          "name": "@isaacs/testing-fail-postinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-postinstall",
+      "name": "@isaacs/testing-fail-postinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-false/node_modules/@isaacs/testing-fail-postinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-postinstall/-/testing-fail-postinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-postinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-postinstall-fail",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-postinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-postinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-postinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+      "name": "@isaacs/testing-prod-dep-postinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-false/node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-postinstall-fail/-/testing-prod-dep-postinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-postinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-postinstall-fail",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
       "type": "optional",
     },
   },
@@ -17609,11 +18119,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-postinstall-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-postinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+          "name": "@isaacs/testing-fail-postinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-postinstall",
+      "name": "@isaacs/testing-fail-postinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-true/node_modules/@isaacs/testing-fail-postinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-postinstall/-/testing-fail-postinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-postinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-postinstall-fail",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-postinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-postinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-postinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+      "name": "@isaacs/testing-prod-dep-postinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-postinstall-fail-save-true/node_modules/@isaacs/testing-prod-dep-postinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-postinstall-fail/-/testing-prod-dep-postinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-postinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-postinstall-fail",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-postinstall-fail",
       "type": "optional",
     },
   },
@@ -17628,11 +18180,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-preinstall-fail save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-preinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-preinstall",
+      "name": "@isaacs/testing-fail-preinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-false/node_modules/@isaacs/testing-fail-preinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-preinstall/-/testing-fail-preinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-preinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-preinstall-fail",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-preinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-preinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+      "name": "@isaacs/testing-prod-dep-preinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-false/node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-preinstall-fail/-/testing-prod-dep-preinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-preinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-preinstall-fail",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
       "type": "optional",
     },
   },
@@ -17647,11 +18241,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-preinstall-fail save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-fail-preinstall" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-fail-preinstall",
+      "name": "@isaacs/testing-fail-preinstall",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-true/node_modules/@isaacs/testing-fail-preinstall",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-fail-preinstall/-/testing-fail-preinstall-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+    "@isaacs/testing-prod-dep-preinstall-fail" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-preinstall-fail",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-fail-preinstall" => EdgeOut {
+          "name": "@isaacs/testing-fail-preinstall",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-fail-preinstall",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+      "name": "@isaacs/testing-prod-dep-preinstall-fail",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-preinstall-fail-save-true/node_modules/@isaacs/testing-prod-dep-preinstall-fail",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-preinstall-fail/-/testing-prod-dep-preinstall-fail-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-preinstall-fail" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-preinstall-fail",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-preinstall-fail",
       "type": "optional",
     },
   },
@@ -17666,11 +18302,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-tgz-missing save=false > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-missing-tgz" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "*",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-missing-tgz",
+      "name": "@isaacs/testing-missing-tgz",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-false/node_modules/@isaacs/testing-missing-tgz",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-missing-tgz/-/testing-missing-tgz-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+    "@isaacs/testing-prod-dep-tgz-missing" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-tgz-missing",
+          "spec": "*",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-missing-tgz" => EdgeOut {
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "*",
+          "to": "node_modules/@isaacs/testing-missing-tgz",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
+      "name": "@isaacs/testing-prod-dep-tgz-missing",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-false/node_modules/@isaacs/testing-prod-dep-tgz-missing",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-tgz-missing/-/testing-prod-dep-tgz-missing-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-tgz-missing" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-tgz-missing",
       "spec": "*",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
       "type": "optional",
     },
   },
@@ -17685,11 +18363,53 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP optional dependency failures optional-metadep-tgz-missing save=true > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "@isaacs/testing-missing-tgz" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "*",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-missing-tgz",
+      "name": "@isaacs/testing-missing-tgz",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-true/node_modules/@isaacs/testing-missing-tgz",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-missing-tgz/-/testing-missing-tgz-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+    "@isaacs/testing-prod-dep-tgz-missing" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-prod-dep-tgz-missing",
+          "spec": "^1.0.1",
+          "type": "optional",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-missing-tgz" => EdgeOut {
+          "name": "@isaacs/testing-missing-tgz",
+          "spec": "*",
+          "to": "node_modules/@isaacs/testing-missing-tgz",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
+      "name": "@isaacs/testing-prod-dep-tgz-missing",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-optional-dependency-failures-optional-metadep-tgz-missing-save-true/node_modules/@isaacs/testing-prod-dep-tgz-missing",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-prod-dep-tgz-missing/-/testing-prod-dep-tgz-missing-1.0.1.tgz",
+      "version": "1.0.1",
+    },
+  },
   "edgesOut": Map {
     "@isaacs/testing-prod-dep-tgz-missing" => EdgeOut {
       "name": "@isaacs/testing-prod-dep-tgz-missing",
       "spec": "^1.0.1",
-      "to": null,
+      "to": "node_modules/@isaacs/testing-prod-dep-tgz-missing",
       "type": "optional",
     },
   },
@@ -33177,11 +33897,29 @@ exports[`test/arborist/reify.js TAP scoped registries > should preserve original
 
 exports[`test/arborist/reify.js TAP still do not install optional deps with mismatched platform specifications even when forced > expect resolving Promise 1`] = `
 ArboristNode {
+  "children": Map {
+    "platform-specifying-test-package" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "platform-specifying-test-package",
+          "spec": "1.0.0",
+          "type": "optional",
+        },
+      },
+      "location": "node_modules/platform-specifying-test-package",
+      "name": "platform-specifying-test-package",
+      "optional": true,
+      "path": "{CWD}/test/arborist/tap-testdir-reify-still-do-not-install-optional-deps-with-mismatched-platform-specifications-even-when-forced/node_modules/platform-specifying-test-package",
+      "resolved": "https://registry.npmjs.org/platform-specifying-test-package/-/platform-specifying-test-package-1.0.0.tgz",
+      "version": "1.0.0",
+    },
+  },
   "edgesOut": Map {
     "platform-specifying-test-package" => EdgeOut {
       "name": "platform-specifying-test-package",
       "spec": "1.0.0",
-      "to": null,
+      "to": "node_modules/platform-specifying-test-package",
       "type": "optional",
     },
   },
@@ -46619,6 +47357,157 @@ ArboristNode {
   "name": "tap-testdir-reify-update-a-node-without-updating-a-child-that-has-bundle-deps",
   "packageName": "testing-bundledeps-3",
   "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-a-child-that-has-bundle-deps",
+  "version": "1.0.0",
+}
+`
+
+exports[`test/arborist/reify.js TAP update a node without updating an inert child bundle deps > expect resolving Promise 1`] = `
+ArboristNode {
+  "children": Map {
+    "@isaacs/testing-bundledeps-parent" => ArboristNode {
+      "children": Map {
+        "@isaacs/testing-bundledeps" => ArboristNode {
+          "bundleDependencies": Array [
+            "@isaacs/testing-bundledeps-a",
+          ],
+          "children": Map {
+            "@isaacs/testing-bundledeps-a" => ArboristNode {
+              "bundled": true,
+              "bundler": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+              "edgesIn": Set {
+                EdgeIn {
+                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+                  "name": "@isaacs/testing-bundledeps-a",
+                  "spec": "*",
+                  "type": "prod",
+                },
+              },
+              "edgesOut": Map {
+                "@isaacs/testing-bundledeps-b" => EdgeOut {
+                  "name": "@isaacs/testing-bundledeps-b",
+                  "spec": "*",
+                  "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+                  "type": "prod",
+                },
+              },
+              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+              "name": "@isaacs/testing-bundledeps-a",
+              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-a/-/testing-bundledeps-a-1.0.0.tgz",
+              "version": "1.0.0",
+            },
+            "@isaacs/testing-bundledeps-b" => ArboristNode {
+              "bundled": true,
+              "bundler": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+              "edgesIn": Set {
+                EdgeIn {
+                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+                  "name": "@isaacs/testing-bundledeps-b",
+                  "spec": "*",
+                  "type": "prod",
+                },
+                EdgeIn {
+                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
+                  "name": "@isaacs/testing-bundledeps-b",
+                  "spec": "*",
+                  "type": "prod",
+                },
+              },
+              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+              "name": "@isaacs/testing-bundledeps-b",
+              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-b/-/testing-bundledeps-b-1.0.0.tgz",
+              "version": "1.0.0",
+            },
+            "@isaacs/testing-bundledeps-c" => ArboristNode {
+              "edgesIn": Set {
+                EdgeIn {
+                  "from": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+                  "name": "@isaacs/testing-bundledeps-c",
+                  "spec": "*",
+                  "type": "prod",
+                },
+              },
+              "edgesOut": Map {
+                "@isaacs/testing-bundledeps-b" => EdgeOut {
+                  "name": "@isaacs/testing-bundledeps-b",
+                  "spec": "*",
+                  "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-b",
+                  "type": "prod",
+                },
+              },
+              "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
+              "name": "@isaacs/testing-bundledeps-c",
+              "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
+              "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-c/-/testing-bundledeps-c-2.0.0.tgz",
+              "version": "2.0.0",
+            },
+          },
+          "edgesIn": Set {
+            EdgeIn {
+              "from": "node_modules/@isaacs/testing-bundledeps-parent",
+              "name": "@isaacs/testing-bundledeps",
+              "spec": "^1.0.0",
+              "type": "prod",
+            },
+          },
+          "edgesOut": Map {
+            "@isaacs/testing-bundledeps-a" => EdgeOut {
+              "name": "@isaacs/testing-bundledeps-a",
+              "spec": "*",
+              "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-a",
+              "type": "prod",
+            },
+            "@isaacs/testing-bundledeps-c" => EdgeOut {
+              "name": "@isaacs/testing-bundledeps-c",
+              "spec": "*",
+              "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps/node_modules/@isaacs/testing-bundledeps-c",
+              "type": "prod",
+            },
+          },
+          "location": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+          "name": "@isaacs/testing-bundledeps",
+          "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+          "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps/-/testing-bundledeps-1.0.0.tgz",
+          "version": "1.0.0",
+        },
+      },
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@isaacs/testing-bundledeps-parent",
+          "spec": "*",
+          "type": "prod",
+        },
+      },
+      "edgesOut": Map {
+        "@isaacs/testing-bundledeps" => EdgeOut {
+          "name": "@isaacs/testing-bundledeps",
+          "spec": "^1.0.0",
+          "to": "node_modules/@isaacs/testing-bundledeps-parent/node_modules/@isaacs/testing-bundledeps",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/@isaacs/testing-bundledeps-parent",
+      "name": "@isaacs/testing-bundledeps-parent",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps/node_modules/@isaacs/testing-bundledeps-parent",
+      "resolved": "https://registry.npmjs.org/@isaacs/testing-bundledeps-parent/-/testing-bundledeps-parent-2.0.0.tgz",
+      "version": "2.0.0",
+    },
+  },
+  "edgesOut": Map {
+    "@isaacs/testing-bundledeps-parent" => EdgeOut {
+      "name": "@isaacs/testing-bundledeps-parent",
+      "spec": "*",
+      "to": "node_modules/@isaacs/testing-bundledeps-parent",
+      "type": "prod",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps",
+  "packageName": "testing-bundledeps-3",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-update-a-node-without-updating-an-inert-child-bundle-deps",
   "version": "1.0.0",
 }
 `

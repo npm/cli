@@ -596,6 +596,15 @@ t.test('update a child of a node with bundled deps', async t => {
   }))
 })
 
+t.test('update a node without updating an inert child bundle deps', async t => {
+  const path = fixture(t, 'testing-bundledeps-4')
+  createRegistry(t, true)
+  await t.resolveMatchSnapshot(printReified(path, {
+    update: ['@isaacs/testing-bundledeps-parent'],
+    save: false,
+  }))
+})
+
 t.test('update a node without updating a child that has bundle deps', async t => {
   const path = fixture(t, 'testing-bundledeps-3')
   createRegistry(t, true)
@@ -2592,7 +2601,31 @@ t.test('adding an unresolvable optional dep is OK', async t => {
   })
   createRegistry(t, true)
   const tree = await reify(path, { add: ['abbrev'] })
-  t.strictSame([...tree.children.values()], [], 'nothing actually added')
+  const children = [...tree.children.values()]
+  t.equal(children.length, 1, 'optional unresolved dep node added')
+  t.ok(children[0].ideallyInert, 'node is ideally inert')
+  t.throws(() => fs.statSync(path + '/node_modules/abbrev'), { code: 'ENOENT' }, 'optional dependency should not exist on disk')
+  t.matchSnapshot(printTree(tree))
+})
+
+t.test('adding an unresolvable optional dep is OK - maintains inertness', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        wrappy: '1.0.2',
+      },
+      optionalDependencies: {
+        abbrev: '999999',
+      },
+    }),
+  })
+  createRegistry(t, true)
+  let tree = await reify(path, { add: ['abbrev'] })
+  const children = [...tree.children.values()]
+  t.equal(children.length, 2, 'optional unresolved dep node added')
+  t.ok(children[0].ideallyInert, 'node is ideally inert')
+  t.throws(() => fs.statSync(path + '/node_modules/abbrev'), { code: 'ENOENT' }, 'optional dependency should not exist on disk')
+  tree = await reify(path, { add: ['abbrev'] })
   t.matchSnapshot(printTree(tree))
 })
 
@@ -3559,4 +3592,159 @@ t.test('workspace installs retain existing versions with newer package specs', a
     resolve(path, 'packages/another-cool-package/package.json'), 'utf8'))
   t.same(updatedPackageJson.dependencies, { abbrev: '1.0.4' },
     'another-cool-package package.json should be updated to abbrev@1.0.4')
+})
+
+t.test('externalProxy returns early for ideally inert node with installStrategy linked', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      dependencies: {
+        abbrev: '1.1.1',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': {
+          devDependencies: {
+            abbrev: '1.1.1',
+          },
+        },
+        'node_modules/abbrev': {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          dev: true,
+          ideallyInert: true,
+        },
+      },
+      dependencies: {
+        abbrev: {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          dev: true,
+        },
+      },
+    }),
+  })
+
+  const arb = new Arborist({
+    path,
+    registry: 'https://registry.npmjs.org',
+    cache: resolve(path, 'cache'),
+    installStrategy: 'linked',
+  })
+  await arb.reify({ installStrategy: 'linked' })
+
+  // Since the node is ideally inert, it should not be installed in node_modules
+  t.throws(
+    () => fs.lstatSync(resolve(path, 'node_modules', 'abbrev')),
+    { code: 'ENOENT' },
+    'ideally inert node should not be installed'
+  )
+  t.end()
+})
+
+t.test('externalOptionalDependencies excludes ideally inert optional node with installStrategy linked', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      optionalDependencies: {
+        abbrev: '1.1.1',
+      },
+    }),
+    'package-lock.json': JSON.stringify({
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': {
+          optionalDependencies: {
+            abbrev: '1.1.1',
+          },
+        },
+        'node_modules/abbrev': {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          dev: true,
+          ideallyInert: true,
+        },
+      },
+      optionalDependencies: {
+        abbrev: {
+          version: '1.1.1',
+          resolved: 'https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz',
+          integrity: 'sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==',
+          dev: true,
+          ideallyInert: true,
+        },
+      },
+    }),
+  })
+
+  const arb = new Arborist({
+    path: testDir,
+    registry: 'https://registry.npmjs.org',
+    cache: resolve(testDir, 'cache'),
+    installStrategy: 'linked',
+  })
+  await arb.reify({ installStrategy: 'linked' })
+
+  // Assert that the optional inert node does not appear in externalOptionalDependencies
+  t.notOk(
+    arb.idealGraph.externalOptionalDependencies &&
+    arb.idealGraph.externalOptionalDependencies.some(n => n && n.name === 'abbrev'),
+    'ideally inert optional dependency should not appear in externalOptionalDependencies'
+  )
+
+  // And verify that it is not installed on disk
+  t.throws(
+    () => fs.lstatSync(resolve(testDir, 'node_modules', 'abbrev')),
+    { code: 'ENOENT' },
+    'ideally inert optional node should not be installed'
+  )
+
+  t.end()
+})
+
+t.test('ideally inert due to platform mismatch using optional dependency', async t => {
+  const testDir = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'platform-test',
+      version: '1.0.0',
+      optionalDependencies: {
+        'platform-specifying-test-package': 'file:platform-specifying-test-package',
+      },
+    }, null, 2),
+    'platform-specifying-test-package': {
+      'package.json': JSON.stringify({
+        name: 'platform-specifying-test-package',
+        version: '1.0.0',
+        // Declare an OS that doesn't match current platform
+        os: ['woo'],
+      }, null, 2),
+    },
+  })
+
+  const arb = new Arborist({
+    audit: false,
+    path: testDir,
+    os: process.platform,
+  })
+
+  // The platform check will fail for the optional dependency, and the optional failure handler should mark the node as ideally inert.
+  const tree = await arb.reify()
+  await arb.reify()
+
+  // In the ideal tree, the dependency should be present and marked as ideally inert.
+  const dep = tree.children.get('platform-specifying-test-package')
+  t.ok(dep, 'platform-specifying-test-package node exists in the ideal tree')
+  t.ok(dep.ideallyInert, 'node is marked as ideally inert due to platform mismatch')
+
+  // Verify that the dependency is not installed on disk.
+  t.throws(
+    () => fs.statSync(join(testDir, 'node_modules', 'platform-specifying-test-package')),
+    { code: 'ENOENT' },
+    'platform-specifying-test-package is not installed on disk'
+  )
 })

@@ -103,6 +103,7 @@ class Node {
       global = false,
       dummy = false,
       sourceReference = null,
+      ideallyInert = false,
     } = options
     // this object gives querySelectorAll somewhere to stash context about a node
     // while processing a query
@@ -196,6 +197,8 @@ class Node {
       this.peer = false
       this.extraneous = false
     }
+
+    this.ideallyInert = ideallyInert
 
     this.edgesIn = new Set()
     this.edgesOut = new CaseInsensitiveMap()
