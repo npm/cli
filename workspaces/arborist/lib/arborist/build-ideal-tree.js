@@ -809,7 +809,8 @@ This is a one-time fix-up, please be patient...
     const crackOpen = this.#complete &&
       node !== this.idealTree &&
       node.resolved &&
-      (hasBundle || hasShrinkwrap)
+      (hasBundle || hasShrinkwrap) &&
+      !node.ideallyInert
     if (crackOpen) {
       const Arborist = this.constructor
       const opt = { ...this.options }
@@ -1527,7 +1528,7 @@ This is a one-time fix-up, please be patient...
 
       const set = optionalSet(node)
       for (const node of set) {
-        node.parent = null
+        node.ideallyInert = true
       }
     }
   }
@@ -1548,6 +1549,7 @@ This is a one-time fix-up, please be patient...
           node.parent !== null
           && !node.isProjectRoot
           && !excludeNodes.has(node)
+          && !node.ideallyInert
         ) {
           this[_addNodeToTrashList](node)
         }

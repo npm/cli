@@ -149,7 +149,7 @@ module.exports = cls => class Reifier extends cls {
     for (const path of this[_trashList]) {
       const loc = relpath(this.idealTree.realpath, path)
       const node = this.idealTree.inventory.get(loc)
-      if (node && node.root === this.idealTree) {
+      if (node && node.root === this.idealTree && !node.ideallyInert) {
         node.parent = null
       }
     }
@@ -236,6 +236,18 @@ module.exports = cls => class Reifier extends cls {
       this.idealTree.realpath + '/node_modules/.package-lock.json'
     this.idealTree.meta.hiddenLockfile = true
     this.idealTree.meta.lockfileVersion = defaultLockfileVersion
+
+    // Preserve inertness for failed stuff.
+    if (this.actualTree) {
+      for (const [loc, actual] of this.actualTree.inventory.entries()) {
+        if (actual.ideallyInert) {
+          const ideal = this.idealTree.inventory.get(loc)
+          if (ideal) {
+            ideal.ideallyInert = true
+          }
+        }
+      }
+    }
 
     this.actualTree = this.idealTree
     this.idealTree = null
@@ -599,6 +611,9 @@ module.exports = cls => class Reifier extends cls {
     // retire the same path at the same time.
     const dirsChecked = new Set()
     return promiseAllRejectLate(leaves.map(async node => {
+      if (node.ideallyInert) {
+        return
+      }
       for (const d of walkUp(node.path)) {
         if (d === node.top.path) {
           break
@@ -743,6 +758,10 @@ module.exports = cls => class Reifier extends cls {
   }
 
   async #extractOrLink (node) {
+    if (node.ideallyInert) {
+      return
+    }
+
     const nm = resolve(node.parent.path, 'node_modules')
     await this.#validateNodeModules(nm)
 
@@ -818,6 +837,7 @@ module.exports = cls => class Reifier extends cls {
       const set = optionalSet(node)
       for (node of set) {
         log.verbose('reify', 'failed optional dependency', node.path)
+        node.ideallyInert = true
         this[_addNodeToTrashList](node)
       }
     }) : p).then(() => node)
@@ -1152,6 +1172,9 @@ module.exports = cls => class Reifier extends cls {
 
       this.#retiredUnchanged[retireFolder] = []
       return promiseAllRejectLate(diff.unchanged.map(node => {
+        if (node.ideallyInert) {
+          return
+        }
         // no need to roll back links, since we'll just delete them anyway
         if (node.isLink) {
           return mkdir(dirname(node.path), { recursive: true, force: true })
@@ -1231,7 +1254,7 @@ module.exports = cls => class Reifier extends cls {
       // skip links that only live within node_modules as they are most
       // likely managed by packages we installed, we only want to rebuild
       // unchanged links we directly manage
-      const linkedFromRoot = node.parent === tree || node.target.fsTop === tree
+      const linkedFromRoot = (node.parent === tree && !node.ideallyInert) || node.target.fsTop === tree
       if (node.isLink && linkedFromRoot) {
         nodes.push(node)
       }
