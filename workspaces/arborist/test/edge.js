@@ -1195,3 +1195,52 @@ t.test('overrideset comparison logic', (t) => {
   t.ok(!overrides7.isEqual(overrides1), 'overridesets are different')
   t.end()
 })
+
+t.test('override fallback to local when root missing dependency with from.overrides set', t => {
+  const localFrom = {
+    package: {
+      devDependencies: {
+        foo: '^1.2.3',
+      },
+    },
+    root: {
+      package: {
+        // no 'foo' defined here
+      },
+    },
+    edgesOut: new Map(),
+    edgesIn: new Set(),
+    // dummy overrides object that returns an override with isEqual defined
+    overrides: {
+      getEdgeRule (edge) {
+        return {
+          value: edge.overrides.value,
+          name: edge.overrides.name,
+          isEqual (other) {
+            return other && this.value === other.value && this.name === other.name
+          },
+        }
+      },
+    },
+    addEdgeOut (edge) {
+      this.edgesOut.set(edge.name, edge)
+    },
+    resolve () {
+      return null
+    },
+  }
+
+  const edge = new Edge({
+    from: localFrom,
+    type: 'prod',
+    name: 'foo',
+    spec: '1.x',
+    overrides: {
+      value: '$foo',
+      name: 'foo',
+    },
+  })
+
+  t.equal(edge.spec, '^1.2.3', 'should fallback to local package version from devDependencies')
+  t.end()
+})
