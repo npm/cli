@@ -979,7 +979,7 @@ also `1.0.0`:
 ```
 
 To only override `@npm/foo` to be `1.0.0` when it's a child (or grandchild, or great
-grandchild, etc) of the package `bar`:
+grandchild, etc) of the package `@npm/bar`:
 
 ```json
 {
