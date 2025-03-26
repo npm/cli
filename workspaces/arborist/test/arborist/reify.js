@@ -2592,7 +2592,10 @@ t.test('adding an unresolvable optional dep is OK', async t => {
   })
   createRegistry(t, true)
   const tree = await reify(path, { add: ['abbrev'] })
-  t.strictSame([...tree.children.values()], [], 'nothing actually added')
+  const children = [...tree.children.values()]
+  t.equal(children.length, 1, 'optional unresolved dep node added')
+  t.ok(children[0].ideallyInert, 'node is ideally inert')
+  t.throws(() => fs.statSync(path + '/node_modules/abbrev'), { code: 'ENOENT' }, 'optional dependency should not exist on disk')
   t.matchSnapshot(printTree(tree))
 })
 
