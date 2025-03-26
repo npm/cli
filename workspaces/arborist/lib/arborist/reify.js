@@ -847,7 +847,7 @@ module.exports = cls => class Reifier extends cls {
     } catch (e) {
       // if we could not parse the url at all then returning nothing
       // here means it will get removed from the tree in the next step
-      return
+      return undefined
     }
   }
 
