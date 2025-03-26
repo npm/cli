@@ -3171,7 +3171,7 @@ t.test('installLinks', (t) => {
   t.end()
 })
 
-t.only('should preserve exact ranges, missing actual tree', async (t) => {
+t.test('should preserve exact ranges, missing actual tree', async (t) => {
   const Pacote = require('pacote')
   const Arborist = t.mock('../../lib/arborist', {
     pacote: {
@@ -3256,7 +3256,7 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     },
   })
 
-  t.only('host should not be replaced replaceRegistryHost=never', async (t) => {
+  t.test('host should not be replaced replaceRegistryHost=never', async (t) => {
     const testdir = t.testdir({
       project: {
         'package.json': JSON.stringify({
@@ -3296,7 +3296,7 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     await arb.reify()
   })
 
-  t.only('host should be replaced replaceRegistryHost=npmjs', async (t) => {
+  t.test('host should be replaced replaceRegistryHost=npmjs', async (t) => {
     const testdir = t.testdir({
       project: {
         'package.json': JSON.stringify({
@@ -3336,7 +3336,7 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     await arb.reify()
   })
 
-  t.only('host should be always replaceRegistryHost=always', async (t) => {
+  t.test('host should be always replaceRegistryHost=always', async (t) => {
     const testdir = t.testdir({
       project: {
         'package.json': JSON.stringify({
@@ -3370,6 +3370,52 @@ t.only('should preserve exact ranges, missing actual tree', async (t) => {
     const arb = new Arborist({
       path: resolve(testdir, 'project'),
       registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'always',
+    })
+    await arb.reify()
+  })
+
+  t.test('registry with path should only swap hostname', async (t) => {
+    const abbrevPackument3 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            tarball: 'https://artifactory.example.com/api/npm/npm-all/abbrev/-/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://new-host.artifactory.example.com')
+      .get('/api/npm/npm-all/abbrev')
+      .reply(200, abbrevPackument3)
+
+    tnock(t, 'https://new-host.artifactory.example.com')
+      .get('/api/npm/npm-all/abbrev/-/abbrev-1.1.1.tgz')
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://new-host.artifactory.example.com/api/npm/npm-all',
       cache: resolve(testdir, 'cache'),
       replaceRegistryHost: 'always',
     })
