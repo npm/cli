@@ -8,7 +8,6 @@ const semver = require('semver')
 const debug = require('../debug.js')
 const { walkUp } = require('walk-up-path')
 const { log, time } = require('proc-log')
-const hgi = require('hosted-git-info')
 const rpj = require('read-package-json-fast')
 
 const { dirname, resolve, relative, join } = require('node:path')
@@ -833,21 +832,23 @@ module.exports = cls => class Reifier extends cls {
     // ${REGISTRY} or something.  This has to be threaded through the
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
-    const resolvedURL = hgi.parseUrl(resolved)
+    try {
+      const resolvedURL = new URL(resolved)
 
-    if (!resolvedURL) {
+      if ((this.options.replaceRegistryHost === resolvedURL.hostname) ||
+           this.options.replaceRegistryHost === 'always') {
+        const registryURL = new URL(this.registry)
+        // Replace the host with the registry host while keeping the path intact
+        resolvedURL.hostname = registryURL.hostname
+        resolvedURL.port = registryURL.port
+        return resolvedURL.toString()
+      }
+      return resolved
+    } catch (e) {
       // if we could not parse the url at all then returning nothing
       // here means it will get removed from the tree in the next step
       return
     }
-
-    if ((this.options.replaceRegistryHost === resolvedURL.hostname)
-      || this.options.replaceRegistryHost === 'always') {
-      // this.registry always has a trailing slash
-      return `${this.registry.slice(0, -1)}${resolvedURL.pathname}${resolvedURL.searchParams}`
-    }
-
-    return resolved
   }
 
   // bundles are *sort of* like shrinkwraps, in that the branch is defined
