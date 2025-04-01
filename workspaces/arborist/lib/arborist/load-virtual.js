@@ -200,6 +200,12 @@ module.exports = cls => class VirtualLoader extends cls {
       const targetPath = resolve(this.path, meta.resolved)
       const targetLoc = relpath(this.path, targetPath)
       const target = nodes.get(targetLoc)
+      // Skip loading the target if it doesn't exist
+      // This can happen if the edge to it has error MISSING
+      // For example, where a workspace has a broken link dependency
+      if (!target) {
+        continue
+      }
       const link = this.#loadLink(location, targetLoc, target, meta)
       nodes.set(location, link)
       nodes.set(targetLoc, link.target)
