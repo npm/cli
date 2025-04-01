@@ -807,8 +807,14 @@ module.exports = cls => class Reifier extends cls {
     const dir = dirname(node.path)
     const target = node.realpath
     const rel = relative(dir, target)
-    await mkdir(dir, { recursive: true })
-    return symlink(rel, node.path, 'junction')
+    if (await lstat(target).catch(() => false)) {
+      await mkdir(dir, { recursive: true })
+      return symlink(rel, node.path, 'junction')
+    } else {
+      const er = new Error(`Target for link to ${node.name} (from ${[...node.edgesIn].map(e => e.from.name).join(', ')}) not found`)
+      er.code = 'ENOLINK'
+      throw er
+    }
   }
 
   // if the node is optional, then the failure of the promise is nonfatal
