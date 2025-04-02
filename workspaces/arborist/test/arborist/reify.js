@@ -8,6 +8,7 @@ const fs = require('node:fs')
 const fsp = require('node:fs/promises')
 const npmFs = require('@npmcli/fs')
 const MockRegistry = require('@npmcli/mock-registry')
+const { dirname, relative } = require('node:path')
 
 let failRm = false
 let failRename = null
@@ -3202,6 +3203,57 @@ t.test('installLinks', (t) => {
   })
 
   t.end()
+})
+
+t.test('root overrides with file: paths are visible to workspaces', async t => {
+  const path = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'root',
+      workspaces: ['hello'],
+      dependencies: {},
+      overrides: {
+        print: 'file:./print',
+      },
+    }),
+    hello: {
+      'package.json': JSON.stringify({
+        name: 'hello',
+        version: '1.0.0',
+        dependencies: {
+          print: '../print',
+        },
+      }),
+    },
+    print: {
+      'package.json': JSON.stringify({
+        name: 'print',
+        version: '1.0.0',
+        main: 'index.js',
+      }),
+    },
+  })
+
+  createRegistry(t, false)
+  await reify(path)
+
+  const printSymlink = fs.readlinkSync(resolve(path, 'node_modules/print'))
+
+  // Create a platform-agnostic way to compare symlink targets
+  const normalizeLinkTarget = target => {
+    if (process.platform === 'win32') {
+      // For Windows: convert absolute paths to relative and normalize slashes
+      const linkDir = dirname(resolve(path, 'node_modules/print'))
+      return relative(linkDir, target).replace(/\\/g, '/')
+    }
+    // For Unix: already a relative path
+    return target
+  }
+
+  t.equal(
+    normalizeLinkTarget(printSymlink),
+    '../print',
+    'print symlink points to ../print (normalized for platform)'
+  )
 })
 
 t.test('should preserve exact ranges, missing actual tree', async (t) => {

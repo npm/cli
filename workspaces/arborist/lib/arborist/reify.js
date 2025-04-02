@@ -825,7 +825,14 @@ module.exports = cls => class Reifier extends cls {
     // symlink
     const dir = dirname(node.path)
     const target = node.realpath
-    const rel = relative(dir, target)
+
+    let rel
+    if (node.resolved?.startsWith('file:')) {
+      rel = this.#calculateRelativePath(node, dir, target, nm)
+    } else {
+      rel = relative(dir, target)
+    }
+
     await mkdir(dir, { recursive: true })
     return symlink(rel, node.path, 'junction')
   }
@@ -841,6 +848,36 @@ module.exports = cls => class Reifier extends cls {
         this[_addNodeToTrashList](node)
       }
     }) : p).then(() => node)
+  }
+
+  #calculateRelativePath (node, dir, target) {
+    // Check if the node is affected by a root override
+    let hasRootOverride = [...node.edgesIn].some(edge => edge.from.isRoot && edge.overrides)
+    // If not set via edges, see if the root package.json explicitly lists an override
+    if (!hasRootOverride && node.root) {
+      const rootPackage = node.root.target
+      hasRootOverride = !!(rootPackage &&
+        rootPackage.package.overrides &&
+        rootPackage.package.overrides[node.name])
+    }
+    if (!hasRootOverride) {
+      return relative(dir, target)
+    }
+    // If an override is detected, attempt to retrieve the override spec from the root package.json
+    const overrideSpec = node.root?.target?.package?.overrides?.[node.name]
+    if (typeof overrideSpec === 'string' && overrideSpec.startsWith('file:')) {
+      const overridePath = overrideSpec.replace(/^file:/, '')
+      const rootDir = node.root.target.path
+      return relative(dir, resolve(rootDir, overridePath))
+    }
+
+    // Fallback: derive the package name from node.resolved in a platform-agnostic way
+    const filePath = node.resolved.replace(/^file:/, '')
+    // A node.package.name could be different than the folder name
+    const pathParts = filePath.split(/[\\/]/)
+    const packageName = pathParts[pathParts.length - 1]
+
+    return join('..', packageName)
   }
 
   #registryResolved (resolved) {
