@@ -1,5 +1,14 @@
 # Changelog
 
+## [10.1.1](https://github.com/npm/cli/compare/libnpmexec-v10.1.0...libnpmexec-v10.1.1) (2025-04-08)
+### Bug Fixes
+* [`386f328`](https://github.com/npm/cli/commit/386f32898067d8ae17a160271bf1bc1832e6ebb4) [#8154](https://github.com/npm/cli/pull/8154) npx: always save true when installing to npx cache (#8154) (@milaninfy)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.0.2): `@npmcli/arborist@9.0.2`
+
 ## [10.1.0](https://github.com/npm/cli/compare/libnpmexec-v10.0.0...libnpmexec-v10.1.0) (2025-03-05)
 ### Features
 * [`d18d422`](https://github.com/npm/cli/commit/d18d422e081fbf33a0671cbd83a64531c485f940) [#8100](https://github.com/npm/cli/pull/8100) add context to npx cache package.json (@wraithgar)

@@ -1,5 +1,15 @@
 # Changelog
 
+## [9.0.2](https://github.com/npm/cli/compare/arborist-v9.0.1...arborist-v9.0.2) (2025-04-08)
+### Bug Fixes
+* [`a96d8f6`](https://github.com/npm/cli/commit/a96d8f6295886c219076178460718837d2fe45d6) [#8184](https://github.com/npm/cli/pull/8184) arborist: omit failed optional dependencies from installed deps (#8184) (@owlstronaut, @zkat)
+* [`04f53ce`](https://github.com/npm/cli/commit/04f53ce13201b460123067d7153f1681342548e1) [#8180](https://github.com/npm/cli/pull/8180) arborist: safely fallback on unresolved $ dependency references (#8180) (@owlstronaut)
+* [`885accd`](https://github.com/npm/cli/commit/885accdc750dd45fc9e4b5faf11bcc81292e17ad) [#8185](https://github.com/npm/cli/pull/8185) arborist: only replace hostname for resolved URL (#8185) (@billy-briggs-dev)
+* [`8b7bb12`](https://github.com/npm/cli/commit/8b7bb12617e80f3e5061c96d06dd723331fffa2d) [#8168](https://github.com/npm/cli/pull/8168) arborist: Allow downgrades to hoisted version dedupe workspace i… (#8168) (@owlstronaut)
+* [`1642556`](https://github.com/npm/cli/commit/1642556fe47d837ab7d0800d96bd2eebd0c908fd) [#8160](https://github.com/npm/cli/pull/8160) arborist: workspaces respect overrides on subsequent installs (#8160) (@owlstronaut)
+### Chores
+* [`88a7b52`](https://github.com/npm/cli/commit/88a7b52a69ba6a4f44216220d09000bf8468cae1) [#8174](https://github.com/npm/cli/pull/8174) add load-virtual and reify tests for workspace override test coverage (#8174) (@owlstronaut, @TrevorBurnham)
+
 ## [9.0.1](https://github.com/npm/cli/compare/arborist-v9.0.0...arborist-v9.0.1) (2025-03-05)
 ### Bug Fixes
 * [`b9225e5`](https://github.com/npm/cli/commit/b9225e524074239bd8db9a27f3e9ab72f2b5c09e) [#8089](https://github.com/npm/cli/pull/8089) resolve override conflicts and apply correct versions (#8089) (@owlstronaut)

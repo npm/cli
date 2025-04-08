@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.2.0](https://github.com/npm/cli/compare/config-v10.1.0...config-v10.2.0) (2025-04-08)
+### Features
+* [`b306d25`](https://github.com/npm/cli/commit/b306d25df2f2e6ae75fd4f6657e0858b6dd71c43) [#8129](https://github.com/npm/cli/pull/8129) add `node-gyp` as actual config (@wraithgar)
+### Bug Fixes
+* [`9e73338`](https://github.com/npm/cli/commit/9e733383ba8183da0ee18ae1d6694a679168e18b) [#8129](https://github.com/npm/cli/pull/8129) warn on non-default npm-version (@wraithgar)
+* [`1814b45`](https://github.com/npm/cli/commit/1814b451d4b14c04cd8cb61f934277fa4d0d4723) [#8145](https://github.com/npm/cli/pull/8145) re-add positional arg and abbrev warnings (#8145) (@wraithgar)
+
 ## [10.1.0](https://github.com/npm/cli/compare/config-v10.0.1...config-v10.1.0) (2025-03-05)
 ### Features
 * [`3a80a7b`](https://github.com/npm/cli/commit/3a80a7b7d168c23b5e297cba7b47ba5b9875934d) [#8081](https://github.com/npm/cli/pull/8081) add --init-type flag (#8081) (@reggi)
