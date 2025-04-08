@@ -16,6 +16,9 @@ on:
       dryRun:
         description: "Setting this to anything will run all the steps except opening the PR"
 
+permissions:
+  contents: write
+
 jobs:
   create-pull-request:
     name: Create Node PR

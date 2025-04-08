@@ -14,6 +14,9 @@ on:
       dryRun:
         description: "Setting this to anything will run all the steps except opening the PR"
 
+permissions:
+  contents: write
+
 jobs:
   create-pull-request:
     {{> jobYml jobName="Create Node PR" jobCheckout=(obj fetch-depth=0) }}
