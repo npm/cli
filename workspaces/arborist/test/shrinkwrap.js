@@ -152,7 +152,6 @@ t.test('loading in empty dir gets empty lockfile', async t => {
   root.extraneous = false
   sw.add(root)
   t.strictSame(sw.commit(), {
-    name: 'empty',
     lockfileVersion: 3,
     requires: true,
     packages: {},

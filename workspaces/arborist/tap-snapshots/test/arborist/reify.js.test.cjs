@@ -205,7 +205,6 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be mkdirpd not dry run > should place expected lockfile file into place 1`] = `
 {
-  "name": "root",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -237,7 +236,6 @@ exports[`test/arborist/reify.js TAP add a new pkg to a prefix that needs to be m
 exports[`test/arborist/reify.js TAP add deps to workspaces add a to root > lockfile added workspace as dep 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-add-a-to-root",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -469,7 +467,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-add-mkdirp-0.5.0-to-b",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -768,7 +765,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces add mkdirp 0.5.0 to b, empty start > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-add-mkdirp-0.5.0-to-b-empty-start",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -979,7 +975,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces no args > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-no-args",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -1198,7 +1193,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces remove mkdirp from a > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-remove-mkdirp-from-a",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -1355,7 +1349,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces remove mkdirp from a, empty start > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-remove-mkdirp-from-a-empty-start",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -1472,7 +1465,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-upgrade-mkdirp-in-a-dedupe-on-root",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -1649,7 +1641,6 @@ ArboristNode {
 exports[`test/arborist/reify.js TAP add deps to workspaces upgrade mkdirp in a, dedupe on root, empty start > lockfile 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-add-deps-to-workspaces-upgrade-mkdirp-in-a-dedupe-on-root-empty-start",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -3677,7 +3668,6 @@ ArboristNode {
 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c 1`] = `
 {
-  "name": "tap-testdir-reify-filtered-reification-in-workspaces",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -3704,7 +3694,6 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, old x, removed a 1`] = `
 {
-  "name": "tap-testdir-reify-filtered-reification-in-workspaces",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -3738,7 +3727,6 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, x 1`] = `
 {
-  "name": "tap-testdir-reify-filtered-reification-in-workspaces",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -3772,7 +3760,6 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - c, x, a 1`] = `
 {
-  "name": "tap-testdir-reify-filtered-reification-in-workspaces",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -3832,7 +3819,6 @@ exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden 
 
 exports[`test/arborist/reify.js TAP filtered reification in workspaces > hidden lockfile - foo/x linked, c, old x, removed a 1`] = `
 {
-  "name": "tap-testdir-reify-filtered-reification-in-workspaces",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -4725,7 +4711,6 @@ exports[`test/arborist/reify.js TAP just the shrinkwrap cli-750-fresh > must mat
 
 exports[`test/arborist/reify.js TAP just the shrinkwrap yarn-lock-mkdirp > must match snapshot 1`] = `
 {
-  "name": "tap-testdir-reify-just-the-shrinkwrap-yarn-lock-mkdirp",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -5139,40 +5124,6 @@ exports[`test/arborist/reify.js TAP modules bundled by the root should be instal
   "version": "1.2.3"
 }
 
-`
-
-exports[`test/arborist/reify.js TAP move aside symlink clutter > must match snapshot 1`] = `
-ArboristNode {
-  "children": Map {
-    "abbrev" => ArboristNode {
-      "edgesIn": Set {
-        EdgeIn {
-          "from": "",
-          "name": "abbrev",
-          "spec": "latest",
-          "type": "prod",
-        },
-      },
-      "location": "node_modules/abbrev",
-      "name": "abbrev",
-      "path": "{CWD}/test/arborist/tap-testdir-reify-move-aside-symlink-clutter/node_modules/abbrev",
-      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
-      "version": "1.1.1",
-    },
-  },
-  "edgesOut": Map {
-    "abbrev" => EdgeOut {
-      "name": "abbrev",
-      "spec": "latest",
-      "to": "node_modules/abbrev",
-      "type": "prod",
-    },
-  },
-  "isProjectRoot": true,
-  "location": "",
-  "name": "tap-testdir-reify-move-aside-symlink-clutter",
-  "path": "{CWD}/test/arborist/tap-testdir-reify-move-aside-symlink-clutter",
-}
 `
 
 exports[`test/arborist/reify.js TAP multiple bundles at the same level > must match snapshot 1`] = `
@@ -18433,7 +18384,6 @@ exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match sn
 
 exports[`test/arborist/reify.js TAP packageLockOnly can add deps > must match snapshot 2`] = `
 {
-  "name": "tap-testdir-reify-packageLockOnly-can-add-deps",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -33452,7 +33402,6 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
 
 exports[`test/arborist/reify.js TAP save package.json on update should not save many deps in multiple package.json when using save=false > should update lockfile with many deps updated package.json save=false 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-not-save-many-deps-in-multiple-package.json-when-using-save-false",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -33512,7 +33461,6 @@ exports[`test/arborist/reify.js TAP save package.json on update should not save 
 
 exports[`test/arborist/reify.js TAP save package.json on update should save many deps in multiple package.json when using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-save-many-deps-in-multiple-package.json-when-using-save-true",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -33572,7 +33520,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should save many
 
 exports[`test/arborist/reify.js TAP save package.json on update should update named dep across multiple package.json using save=true > should update lockfile with many deps updated package.json save=true 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-update-named-dep-across-multiple-package.json-using-save-true",
+  "name": "workspaces-need-update",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
@@ -33663,7 +33611,7 @@ exports[`test/arborist/reify.js TAP save package.json on update should update na
 
 exports[`test/arborist/reify.js TAP save package.json on update should update single named dep across multiple package.json using save=true > should update lockfile with single dep updated package.json save=true 1`] = `
 {
-  "name": "tap-testdir-reify-save-package.json-on-update-should-update-single-named-dep-across-multiple-package.json-using-save-true",
+  "name": "workspaces-need-update",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
@@ -33754,7 +33702,6 @@ exports[`test/arborist/reify.js TAP save package.json on update should update si
 
 exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgrading lockfile complete=false > should upgrade, with bins in place 1`] = `
 {
-  "name": "tap-testdir-reify-save-proper-lockfile-with-bins-when-upgrading-lockfile-complete-false",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -33782,7 +33729,6 @@ exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgradin
 
 exports[`test/arborist/reify.js TAP save proper lockfile with bins when upgrading lockfile complete=true > should upgrade, with bins in place 1`] = `
 {
-  "name": "tap-testdir-reify-save-proper-lockfile-with-bins-when-upgrading-lockfile-complete-true",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
@@ -33819,7 +33765,6 @@ exports[`test/arborist/reify.js TAP saveBundle > must match snapshot 1`] = `
 exports[`test/arborist/reify.js TAP saving the ideal tree save some stuff > lock after save 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "tap-testdir-reify-saving-the-ideal-tree-save-some-stuff",
   "packages": Object {
     "": Object {
       "bundleDependencies": Array [
@@ -47645,7 +47590,7 @@ mkdirp@^1.0.2:
 
 exports[`test/arborist/reify.js TAP warn and correct if damaged data in lockfile first pass logs > "fixed" lockfile 1`] = `
 {
-  "name": "tap-testdir-reify-warn-and-correct-if-damaged-data-in-lockfile",
+  "name": "garbage-in-reify-tree",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {
@@ -47661,7 +47606,7 @@ exports[`test/arborist/reify.js TAP warn and correct if damaged data in lockfile
 
 exports[`test/arborist/reify.js TAP warn and correct if damaged data in lockfile second pass just does the right thing > actually fixed lockfile 1`] = `
 {
-  "name": "tap-testdir-reify-warn-and-correct-if-damaged-data-in-lockfile",
+  "name": "garbage-in-reify-tree",
   "lockfileVersion": 2,
   "requires": true,
   "packages": {

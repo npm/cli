@@ -1865,7 +1865,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests link-dep-cycle > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "link-dep-cycle",
   "packages": Object {
     "": Object {
       "dependencies": Object {
@@ -2319,7 +2318,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests noname > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "noname",
   "packages": Object {
     "node_modules/foo": Object {
       "extraneous": true,
@@ -2422,7 +2420,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests other > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "other",
   "packages": Object {
     "../root/node_modules/@scope/x/node_modules/glob": Object {
       "dependencies": Object {
@@ -2668,81 +2665,6 @@ Object {
 `
 
 exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 1`] = `
-Object {
-  "lockfileVersion": 3,
-  "name": "selflink",
-  "packages": Object {
-    "": Object {
-      "dependencies": Object {
-        "@scope/x": "",
-        "@scope/y": "",
-        "foo": "",
-      },
-      "name": "selflink",
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/y": Object {
-      "dependencies": Object {
-        "foo": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z": Object {
-      "dependencies": Object {
-        "glob": "4",
-      },
-      "extraneous": true,
-      "version": "1.2.3",
-    },
-    "node_modules/@scope/z/node_modules/glob": Object {
-      "link": true,
-      "resolved": "node_modules/foo/node_modules/glob",
-    },
-    "node_modules/foo": Object {
-      "dependencies": Object {
-        "glob": "4",
-        "selflink": "*",
-      },
-      "version": "1.2.3",
-    },
-    "node_modules/foo/node_modules/glob": Object {
-      "version": "4.0.5",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/graceful-fs": Object {
-      "extraneous": true,
-      "version": "3.0.2",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/inherits": Object {
-      "extraneous": true,
-      "version": "2.0.1",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/lru-cache": Object {
-      "extraneous": true,
-      "version": "2.5.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/minimatch/node_modules/sigmund": Object {
-      "extraneous": true,
-      "version": "1.0.0",
-    },
-    "node_modules/foo/node_modules/glob/node_modules/once": Object {
-      "extraneous": true,
-      "version": "1.3.0",
-    },
-    "node_modules/foo/node_modules/selflink": Object {
-      "link": true,
-      "resolved": "",
-    },
-  },
-  "requires": true,
-  "version": "1.2.3",
-}
-`
-
-exports[`test/shrinkwrap.js TAP loadActual tests selflink > shrinkwrap data 2`] = `
 Object {
   "lockfileVersion": 3,
   "name": "selflink",
@@ -9958,7 +9880,6 @@ Object {
 exports[`test/shrinkwrap.js TAP loadActual tests yarn-lock-mkdirp-file-dep > shrinkwrap data 1`] = `
 Object {
   "lockfileVersion": 3,
-  "name": "yarn-lock-mkdirp-file-dep",
   "packages": Object {
     "": Object {
       "dependencies": Object {

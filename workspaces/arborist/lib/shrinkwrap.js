@@ -985,7 +985,9 @@ class Shrinkwrap {
   #buildLegacyLockfile (node, lock, path = []) {
     if (node === this.tree) {
       // the root node
-      lock.name = node.packageName || node.name
+      if (node.packageName) {
+        lock.name = node.packageName
+      }
       if (node.version) {
         lock.version = node.version
       }

@@ -16,7 +16,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with hidden lockfile ancient > must
   },
   "config": {},
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 1,
     "requires": true
   },
@@ -40,7 +39,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with hidden lockfile ancient upgrad
     "lockfile-version": 3
   },
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 3,
     "requires": true,
     "packages": {}
@@ -65,7 +63,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with hidden lockfile existing > mus
   },
   "config": {},
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 2,
     "requires": true,
     "packages": {}
@@ -90,7 +87,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with hidden lockfile existing downg
     "lockfile-version": 1
   },
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 1,
     "requires": true
   },
@@ -116,7 +112,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with hidden lockfile existing upgra
     "lockfile-version": 3
   },
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 3,
     "requires": true,
     "packages": {}
@@ -135,7 +130,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with nothing ancient > must match s
   "localPrefix": {},
   "config": {},
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 3,
     "requires": true,
     "packages": {}
@@ -154,7 +148,6 @@ exports[`test/lib/commands/shrinkwrap.js TAP with nothing ancient upgrade > must
     "lockfile-version": 3
   },
   "shrinkwrap": {
-    "name": "prefix",
     "lockfileVersion": 3,
     "requires": true,
     "packages": {}
