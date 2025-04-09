@@ -5126,6 +5126,40 @@ exports[`test/arborist/reify.js TAP modules bundled by the root should be instal
 
 `
 
+exports[`test/arborist/reify.js TAP move aside symlink clutter > must match snapshot 1`] = `
+ArboristNode {
+  "children": Map {
+    "abbrev" => ArboristNode {
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "abbrev",
+          "spec": "latest",
+          "type": "prod",
+        },
+      },
+      "location": "node_modules/abbrev",
+      "name": "abbrev",
+      "path": "{CWD}/test/arborist/tap-testdir-reify-move-aside-symlink-clutter/node_modules/abbrev",
+      "resolved": "https://registry.npmjs.org/abbrev/-/abbrev-1.1.1.tgz",
+      "version": "1.1.1",
+    },
+  },
+  "edgesOut": Map {
+    "abbrev" => EdgeOut {
+      "name": "abbrev",
+      "spec": "latest",
+      "to": "node_modules/abbrev",
+      "type": "prod",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-reify-move-aside-symlink-clutter",
+  "path": "{CWD}/test/arborist/tap-testdir-reify-move-aside-symlink-clutter",
+}
+`
+
 exports[`test/arborist/reify.js TAP multiple bundles at the same level > must match snapshot 1`] = `
 ArboristNode {
   "children": Map {
