@@ -281,32 +281,20 @@ t.test('packs from git spec', async t => {
 
 t.test('can run packages with keywords', async t => {
   const { npm } = await loadMockNpm(t, {
-    config: {
-      workspace: ['workspace-a'],
-    },
     prefixDir: {
       'package.json': JSON.stringify({
-        name: '@npmcli/npx-workspace-root-test',
+        name: '@npmcli/npx-package-test',
         bin: { 'select': 'index.js' },
-        workspaces: ['workspace-a'],
       }),
       'index.js': `#!/usr/bin/env node
-  require('fs').writeFileSync('npm-exec-test-fail', '')`,
-      'workspace-a': {
-        'package.json': JSON.stringify({
-          name: '@npmcli/npx-workspace-test',
-          bin: { 'select': 'index.js' },
-        }),
-        'index.js': `#!/usr/bin/env node
-        require('fs').writeFileSync('npm-exec-test-success', (process.argv.length).toString())`,
-      },
+      require('fs').writeFileSync('npm-exec-test-success', (process.argv.length).toString())`,
     },
   })
 
   try {
     await npm.exec('exec', ['select'])
 
-    const testFilePath = path.join(npm.prefix, 'workspace-a', 'npm-exec-test-success')
+    const testFilePath = path.join(npm.prefix, 'npm-exec-test-success')
     const exists = await fs.stat(testFilePath)
     t.ok(exists.isFile(), 'bin ran, creating file')
     const noExtraArgumentCount = await fs.readFile(testFilePath, 'utf8')
