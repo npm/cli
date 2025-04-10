@@ -278,3 +278,45 @@ t.test('packs from git spec', async t => {
     t.fail(err, "shouldn't throw")
   }
 })
+
+t.test('can run packages with keywords', async t => {
+  const { npm } = await loadMockNpm(t, {
+    config: {
+      workspace: ['workspace-a'],
+    },
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: '@npmcli/npx-workspace-root-test',
+        bin: { 'select': 'index.js' },
+        workspaces: ['workspace-a'],
+      }),
+      'index.js': `#!/usr/bin/env node
+  require('fs').writeFileSync('npm-exec-test-fail', '')`,
+      'workspace-a': {
+        'package.json': JSON.stringify({
+          name: '@npmcli/npx-workspace-test',
+          bin: { 'select': 'index.js' },
+        }),
+        'index.js': `#!/usr/bin/env node
+        require('fs').writeFileSync('npm-exec-test-success', (process.argv.length).toString())`,
+      },
+    },
+  })
+
+  try {
+    await npm.exec('exec', ['select'])
+
+    const testFilePath = path.join(npm.prefix, 'workspace-a', 'npm-exec-test-success')
+    const exists = await fs.stat(testFilePath)
+    t.ok(exists.isFile(), 'bin ran, creating file')
+    const noExtraArgumentCount = await fs.readFile(testFilePath, 'utf8')
+    t.equal(+noExtraArgumentCount, 2, "should have no extra arguments")
+
+    await npm.exec('exec', ['select', 'select'])
+
+    const extraArgumentCount = await fs.readFile(testFilePath, 'utf8')
+    t.equal(+extraArgumentCount, 3, "should have one extra argument")
+  } catch (err) {
+    t.fail(err, "shouldn't throw")
+  }
+})
