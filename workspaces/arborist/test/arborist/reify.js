@@ -3506,6 +3506,61 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     })
     await arb.reify()
   })
+
+  t.test('registry path prepending', async t => {
+    // A registry path is prepended to resolved URLs that don't already have it
+    const abbrevPackument4 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            // Note: This URL has no path component that matches our registry path
+            tarball: 'https://external-registry.example.com/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    // Set up the registry with a deep path
+    const registryHost = 'https://registry.example.com'
+    const registryPath = '/custom/deep/path/registry'
+    const registry = `${registryHost}${registryPath}`
+
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev`)
+      .reply(200, abbrevPackument4)
+
+    // This is the critical test - the tarball URL in the packument doesn't have our registry path, but when replaceRegistryHost is 'always', we should get a request to this URL which includes the registry path
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev-1.1.1.tgz`)
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry,
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'always',
+    })
+
+    await t.resolves(arb.reify(), 'reify should complete successfully')
+  })
 })
 
 t.test('install stategy linked', async (t) => {

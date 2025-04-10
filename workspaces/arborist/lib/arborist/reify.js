@@ -895,9 +895,19 @@ module.exports = cls => class Reifier extends cls {
       if ((this.options.replaceRegistryHost === resolvedURL.hostname) ||
            this.options.replaceRegistryHost === 'always') {
         const registryURL = new URL(this.registry)
+
         // Replace the host with the registry host while keeping the path intact
         resolvedURL.hostname = registryURL.hostname
         resolvedURL.port = registryURL.port
+
+        // Make sure we don't double-include the path if it's already there
+        const registryPath = registryURL.pathname.replace(/\/$/, '')
+
+        if (registryPath && registryPath !== '/' && !resolvedURL.pathname.startsWith(registryPath)) {
+          // Since hostname is changed, we need to ensure the registry path is included
+          resolvedURL.pathname = registryPath + resolvedURL.pathname
+        }
+
         return resolvedURL.toString()
       }
       return resolved
