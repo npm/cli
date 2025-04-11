@@ -15,10 +15,10 @@ const run = async ({
   runPath,
   scriptShell,
 }) => {
-  // escape args, if there are any (necessary for preventing bash/cmd keywords from overriding packages)
+  // escape executing progrma, if there are any (necessary for preventing bash/cmd keywords from overriding packages)
   if (!isWindowsShell) {
-    for (let i = 0; i < args.length; i++) {
-      args[i] = '"' + args[i] + '"'
+    if (args.length > 0) {
+      args[0] = '"' + args[0] + '"'
     }
   }
 

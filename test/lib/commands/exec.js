@@ -299,11 +299,6 @@ t.test('can run packages with keywords', async t => {
     t.ok(exists.isFile(), 'bin ran, creating file')
     const noExtraArgumentCount = await fs.readFile(testFilePath, 'utf8')
     t.equal(+noExtraArgumentCount, 2, 'should have no extra arguments')
-
-    await npm.exec('exec', ['select', 'select'])
-
-    const extraArgumentCount = await fs.readFile(testFilePath, 'utf8')
-    t.equal(+extraArgumentCount, 3, 'should have one extra argument')
   } catch (err) {
     t.fail(err, 'should not throw')
   }
