@@ -125,7 +125,7 @@ t.test('isWindows', async t => {
     '../lib/is-windows.js': true,
   })
 
-  await runScript()
+  await runScript({ args: ['test'] })
 })
 
 t.test('isNotWindows', async t => {
@@ -137,5 +137,5 @@ t.test('isNotWindows', async t => {
     '../lib/is-windows.js': false,
   })
 
-  await runScript()
+  await runScript({ args: ['test'] })
 })
