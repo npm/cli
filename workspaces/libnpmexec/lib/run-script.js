@@ -3,6 +3,7 @@ const runScript = require('@npmcli/run-script')
 const readPackageJson = require('read-package-json-fast')
 const { log, output } = require('proc-log')
 const noTTY = require('./no-tty.js')
+const isWindowsShell = require('./is-windows.js')
 
 const run = async ({
   args,
@@ -16,8 +17,10 @@ const run = async ({
 }) => {
 
   // escape args, if there are any (necessary for preventing bash/cmd keywords from overriding packages)
-  for (let i = 0; i < args.length; i++) {
-    args[i] = '\"' + args[i] + '\"'
+  if (!isWindowsShell) {
+    for (let i = 0; i < args.length; i++) {
+      args[i] = '\"' + args[i] + '\"'
+    }
   }
 
   // turn list of args into command string
