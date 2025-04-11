@@ -15,7 +15,8 @@ const run = async ({
   runPath,
   scriptShell,
 }) => {
-  // escape executing progrma, if there are any (necessary for preventing bash/cmd keywords from overriding packages)
+  // escape executable path
+  // necessary for preventing bash/cmd keywords from overriding
   if (!isWindowsShell) {
     if (args.length > 0) {
       args[0] = '"' + args[0] + '"'
