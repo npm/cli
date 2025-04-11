@@ -115,3 +115,27 @@ t.test('ci env', async t => {
 
   t.equal(logs[0], 'warn exec Interactive mode disabled in CI environment')
 })
+
+t.test('isWindows', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      t.ok('should call run-script')
+    },
+    '../lib/is-windows.js': true,
+  })
+
+  await runScript()
+})
+
+t.test('isNotWindows', async t => {
+  const { runScript } = await mockRunScript(t, {
+    'ci-info': { isCI: true },
+    '@npmcli/run-script': async () => {
+      t.ok('should call run-script')
+    },
+    '../lib/is-windows.js': false,
+  })
+
+  await runScript()
+})
