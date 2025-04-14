@@ -126,6 +126,8 @@ t.test('isWindows', async t => {
   })
 
   await runScript({ args: ['test'] })
+  // need both arguments and no arguments for code coverage 
+  await runScript()
 })
 
 t.test('isNotWindows', async t => {
@@ -138,4 +140,6 @@ t.test('isNotWindows', async t => {
   })
 
   await runScript({ args: ['test'] })
+  // need both arguments and no arguments for code coverage 
+  await runScript()
 })
