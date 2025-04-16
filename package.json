@@ -63,7 +63,7 @@
     "@npmcli/run-script": "^9.1.0",
     "@sigstore/protobuf-specs": "^0.4.1",
     "@sigstore/tuf": "^3.0.0",
-    "abbrev": "^3.0.0",
+    "abbrev": "^3.0.1",
     "archy": "~1.0.0",
     "cacache": "^19.0.1",
     "chalk": "^5.4.1",
