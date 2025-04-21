@@ -1695,6 +1695,7 @@ const definitions = {
     default: false,
     type: Boolean,
     short: 'D',
+    exclusive: ['save-optional', 'save-peer', 'save-prod'],
     description: `
       Save installed packages to a package.json file as \`devDependencies\`.
     `,
@@ -1726,6 +1727,7 @@ const definitions = {
     default: false,
     type: Boolean,
     short: 'O',
+    exclusive: ['save-dev', 'save-peer', 'save-prod'],
     description: `
       Save installed packages to a package.json file as
       \`optionalDependencies\`.
@@ -1754,6 +1756,7 @@ const definitions = {
   'save-peer': new Definition('save-peer', {
     default: false,
     type: Boolean,
+    exclusive: ['save-dev', 'save-optional', 'save-prod'],
     description: `
       Save installed packages to a package.json file as \`peerDependencies\`
     `,
@@ -1799,6 +1802,7 @@ const definitions = {
     default: false,
     type: Boolean,
     short: 'P',
+    exclusive: ['save-dev', 'save-optional', 'save-peer'],
     description: `
       Save installed packages into \`dependencies\` specifically. This is
       useful if a package already exists in \`devDependencies\` or
