@@ -231,6 +231,9 @@ Object {
   "init-module": Array [
     "valid filesystem path",
   ],
+  "init-private": Array [
+    "boolean value (true or false)",
+  ],
   "init-type": Array [
     Function String(),
   ],

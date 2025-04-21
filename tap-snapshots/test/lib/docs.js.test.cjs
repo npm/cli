@@ -854,6 +854,15 @@ more information, or [npm init](/commands/npm-init).
 
 
 
+#### \`init-private\`
+
+* Default: false
+* Type: Boolean
+
+The value \`npm init\` should use by default for the package's private flag.
+
+
+
 #### \`init-type\`
 
 * Default: "commonjs"
@@ -2148,6 +2157,7 @@ Array [
   "init-module",
   "init-type",
   "init-version",
+  "init-private",
   "init.author.email",
   "init.author.name",
   "init.author.url",
@@ -2301,6 +2311,7 @@ Array [
   "include",
   "include-staged",
   "include-workspace-root",
+  "init-private",
   "install-links",
   "install-strategy",
   "json",
@@ -2456,6 +2467,7 @@ Object {
   "ignoreScripts": false,
   "includeStaged": false,
   "includeWorkspaceRoot": false,
+  "initPrivate": false,
   "installLinks": false,
   "installStrategy": "hoisted",
   "json": false,
@@ -3245,7 +3257,7 @@ npm init <@scope> (same as \`npx <@scope>/create\`)
 Options:
 [--init-author-name <name>] [--init-author-url <url>] [--init-license <license>]
 [--init-module <module>] [--init-type <type>] [--init-version <version>]
-[-y|--yes] [-f|--force] [--scope <@scope>]
+[--init-private] [-y|--yes] [-f|--force] [--scope <@scope>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--no-workspaces-update] [--include-workspace-root]
 
@@ -3266,6 +3278,7 @@ aliases: create, innit
 #### \`init-module\`
 #### \`init-type\`
 #### \`init-version\`
+#### \`init-private\`
 #### \`yes\`
 #### \`force\`
 #### \`scope\`
