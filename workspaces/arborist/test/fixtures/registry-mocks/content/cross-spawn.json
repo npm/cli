@@ -4,7 +4,7 @@
   "name": "cross-spawn",
   "description": "Cross platform child_process#spawn and child_process#spawnSync",
   "dist-tags": {
-    "latest": "7.0.3"
+    "latest": "^7.0.5"
   },
   "versions": {
     "0.1.0": {
