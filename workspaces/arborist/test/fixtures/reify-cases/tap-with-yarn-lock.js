@@ -5773,7 +5773,7 @@ module.exports = t => {
           }
         ],
         "scripts": {
-          "test": "npm run-script lint && npm run-script unit-test",
+          "test": "npm run lint && npm run unit-test",
           "lint": "jshint lib/*.js",
           "unit-test": "mocha --compilers coffee:coffee-script -R spec",
           "generate-regex": "node tools/generate-identifier-regex.js"

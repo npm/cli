@@ -63,7 +63,7 @@ const namespaced = [
   'node-gyp',
   'package-json',
   'promise-spawn',
-  'run-script',
+  'run',
   'template-oss',
 ]
 

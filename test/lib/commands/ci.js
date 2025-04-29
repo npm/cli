@@ -159,7 +159,7 @@ t.test('lifecycle scripts', async t => {
       'package-lock.json': JSON.stringify(packageLock),
     },
     mocks: {
-      '@npmcli/run-script': (opts) => {
+      '@npmcli/run': (opts) => {
         scripts.push(opts.event)
       },
     },

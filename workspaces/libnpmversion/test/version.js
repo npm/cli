@@ -21,7 +21,7 @@ const version = requireInject('../lib/version.js', {
     return '1.2.3'
   },
   '@npmcli/git': gitMock,
-  '@npmcli/run-script': async opt => actionLog.push(['run-script', opt.event, opt.env, opt]),
+  '@npmcli/run-script': async opt => actionLog.push(['run', opt.event, opt.env, opt]),
   'proc-log': {
     log: {
       verbose: (...msg) => actionLog.push(['verbose', ...msg]),
@@ -73,14 +73,14 @@ t.test('test out bumping the version in all the ways', async t => {
       }
       t.equal(await version('major', { path, pkg, gitTagVersion: true }), '2.0.0')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'preversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'version', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['commit', '2.0.0', { path, pkg }],
         ['tag', '2.0.0', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'postversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
       ])
       t.equal(pkg.version, '2.0.0')
     })
@@ -100,30 +100,30 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('patch', async t => {
       t.equal(await version('patch', { path, pkg, gitTagVersion: true }), '2.1.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'preversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'version', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '2.1.1', { path, pkg }],
         ['tag', '2.1.1', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'postversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
       ])
       t.equal(pkg.version, '2.1.1')
     })
     await t.test('pre', async t => {
       t.equal(await version('pre', { path, pkg, gitTagVersion: true }), '2.1.1-0')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'preversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'version', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '2.1.1-0', { path, pkg }],
         ['tag', '2.1.1-0', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'postversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
       ])
       t.equal(pkg.version, '2.1.1-0')
     })
@@ -131,16 +131,16 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('pre', { path, preid: 'alpha', pkg, gitTagVersion: true }),
         '2.1.1-alpha.0')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.1.1-0',
+        ['run', 'preversion', { npm_old_version: '2.1.1-0',
           npm_new_version: '2.1.1-alpha.0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
+        ['run', 'version', { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '2.1.1-alpha.0', { path, pkg }],
         ['tag', '2.1.1-alpha.0', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '2.1.1-0',
+        ['run', 'postversion', { npm_old_version: '2.1.1-0',
           npm_new_version: '2.1.1-alpha.0' }],
       ])
       t.equal(pkg.version, '2.1.1-alpha.0')
@@ -158,15 +158,15 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('explicit version', async t => {
       t.equal(await version('=v3.2.1', { path, pkg, gitTagVersion: true }), '3.2.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
+        ['run', 'preversion', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
+        ['run', 'version', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '3.2.1', { path, pkg }],
         ['tag', '3.2.1', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
+        ['run', 'postversion', { npm_old_version: '2.2.0', npm_new_version: '3.2.1' }],
       ])
       t.equal(pkg.version, '3.2.1')
     })
@@ -189,15 +189,15 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('=v3.2.1',
         { path, pkg, allowSameVersion: true, gitTagVersion: true }), '3.2.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
+        ['run', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
+        ['run', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg, allowSameVersion: true }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg, allowSameVersion: true }],
         ['commit', '3.2.1', { path, pkg, allowSameVersion: true }],
         ['tag', '3.2.1', { path, pkg, allowSameVersion: true }],
-        ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
+        ['run', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' }],
       ])
       t.equal(pkg.version, '3.2.1')
     })
@@ -205,15 +205,15 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('from-git', { path, pkg, gitTagVersion: true }), '1.2.3')
       t.match(actionLog, [
         ['retrieve-tag', { path, pkg }],
-        ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
+        ['run', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
+        ['run', 'version', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '1.2.3', { path, pkg }],
         ['tag', '1.2.3', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
+        ['run', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '1.2.3' }],
       ])
       t.equal(pkg.version, '1.2.3')
     })
@@ -221,15 +221,15 @@ t.test('test out bumping the version in all the ways', async t => {
       delete pkg.version
       t.equal(await version('2.3.4', { path, pkg, gitTagVersion: true }), '2.3.4')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
+        ['run', 'preversion', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/package-lock.json', pkg],
-        ['run-script', 'version', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
+        ['run', 'version', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
         ['spawn', ['add', path + '/package.json'], { path, pkg }],
         ['spawn', ['add', path + '/package-lock.json'], { path, pkg }],
         ['commit', '2.3.4', { path, pkg }],
         ['tag', '2.3.4', { path, pkg }],
-        ['run-script', 'postversion', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
+        ['run', 'postversion', { npm_old_version: '0.0.0', npm_new_version: '2.3.4' }],
       ])
       t.equal(pkg.version, '2.3.4')
     })
@@ -244,12 +244,12 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('major', async t => {
       t.equal(await version('major', { path, pkg }), '2.0.0')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'preversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'version', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
+        ['run', 'postversion', { npm_old_version: '1.2.0', npm_new_version: '2.0.0' }],
       ])
       t.equal(pkg.version, '2.0.0')
     })
@@ -265,37 +265,37 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('patch', async t => {
       t.equal(await version('patch', { path, pkg }), '2.1.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'preversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'version', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
+        ['run', 'postversion', { npm_old_version: '2.1.0', npm_new_version: '2.1.1' }],
       ])
       t.equal(pkg.version, '2.1.1')
     })
     await t.test('pre', async t => {
       t.equal(await version('pre', { path, pkg }), '2.1.1-0')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'preversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'version', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
+        ['run', 'postversion', { npm_old_version: '2.1.1', npm_new_version: '2.1.1-0' }],
       ])
       t.equal(pkg.version, '2.1.1-0')
     })
     await t.test('pre with preid', async t => {
       t.equal(await version('pre', { path, preid: 'alpha', pkg }), '2.1.1-alpha.0')
       t.match(actionLog, [
-        ['run-script', 'preversion',
+        ['run', 'preversion',
           { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
+        ['run', 'version', { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion',
+        ['run', 'postversion',
           { npm_old_version: '2.1.1-0', npm_new_version: '2.1.1-alpha.0' }],
       ])
       t.equal(pkg.version, '2.1.1-alpha.0')
@@ -303,13 +303,13 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('explicit version', async t => {
       t.equal(await version('=v3.2.1', { path, pkg }), '3.2.1')
       t.match(actionLog, [
-        ['run-script', 'preversion',
+        ['run', 'preversion',
           { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
+        ['run', 'version', { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion',
+        ['run', 'postversion',
           { npm_old_version: '2.1.1-alpha.0', npm_new_version: '3.2.1' }],
       ])
       t.equal(pkg.version, '3.2.1')
@@ -332,14 +332,14 @@ t.test('test out bumping the version in all the ways', async t => {
     await t.test('same version, is allowed', async t => {
       t.equal(await version('=v3.2.1', { path, pkg, allowSameVersion: true }), '3.2.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
       ])
       t.equal(pkg.version, '3.2.1')
@@ -348,14 +348,14 @@ t.test('test out bumping the version in all the ways', async t => {
       t.equal(await version('=v3.2.1',
         { path, silent: true, pkg, allowSameVersion: true }), '3.2.1')
       t.match(actionLog, [
-        ['run-script', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'preversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['write-json', path + '/package.json', pkg],
         ['write-json', path + '/npm-shrinkwrap.json', pkg],
-        ['run-script', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'version', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
         ['verbose', 'version', 'Not tagging: not in a git repo or no git cmd'],
-        ['run-script', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
+        ['run', 'postversion', { npm_old_version: '3.2.1', npm_new_version: '3.2.1' },
           {}],
       ])
       t.equal(pkg.version, '3.2.1')

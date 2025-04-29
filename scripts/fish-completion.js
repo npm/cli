@@ -22,7 +22,7 @@ async function main () {
     console.log(`# ${cmd}`)
     const { aliases: cmdAliases, description, params = [] } = cmds[cmd]
     // If npm completion could return all commands in a fish friendly manner
-    // like we do w/ run-script these wouldn't be needed.
+    // like we do w/ run these wouldn't be needed.
     /* eslint-disable-next-line max-len */
     console.log(`complete -x -c npm -n __fish_npm_needs_command -a '${cmdAliases.join(' ')}' -d '${description}'`)
     const shorts = params.map(p => {

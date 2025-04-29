@@ -7,7 +7,7 @@ t.test('no args', async t => {
   const { exec } = setup(t, {
     mocks: {
       '../../lib/run-script': ({ args }) => {
-        t.ok(args.length === 0, 'should call run-script with no args')
+        t.ok(args.length === 0, 'should call run with no args')
       },
     },
   })

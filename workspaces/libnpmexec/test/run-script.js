@@ -45,7 +45,7 @@ t.test('no package.json', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/no-tty.js': () => false,
   })
@@ -59,7 +59,7 @@ t.test('colorized interactive mode msg', async t => {
   const { runScript, outputs } = await mockRunScript(t, {
     'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/no-tty.js': () => false,
   }, { level: 3 })
@@ -76,7 +76,7 @@ t.test('no color interactive mode msg', async t => {
   const { runScript, outputs } = await mockRunScript(t, {
     'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/no-tty.js': () => false,
   })
@@ -93,7 +93,7 @@ t.test('no tty', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: false },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/no-tty.js': () => true,
   })
@@ -105,7 +105,7 @@ t.test('ci env', async t => {
   const { runScript, logs } = await mockRunScript(t, {
     'ci-info': { isCI: true },
     '@npmcli/run-script': async () => {
-      throw new Error('should not call run-script')
+      throw new Error('should not call run')
     },
     '../lib/no-tty.js': () => false,
 
@@ -120,7 +120,7 @@ t.test('isWindows', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: true },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/is-windows.js': true,
   })
@@ -134,7 +134,7 @@ t.test('isNotWindows', async t => {
   const { runScript } = await mockRunScript(t, {
     'ci-info': { isCI: true },
     '@npmcli/run-script': async () => {
-      t.ok('should call run-script')
+      t.ok('should call run')
     },
     '../lib/is-windows.js': false,
   })

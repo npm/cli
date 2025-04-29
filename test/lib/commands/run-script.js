@@ -12,7 +12,7 @@ const mockRs = async (t, { windows = false, runScript, ...opts } = {}) => {
 
   const mock = await mockNpm(t, {
     ...opts,
-    command: 'run-script',
+    command: 'run',
     mocks: {
       '@npmcli/run-script': Object.assign(
         async rs => {
