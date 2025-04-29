@@ -20,7 +20,7 @@ design and purpose of package locks in npm, see
 ### See Also
 
 * [npm install](/commands/npm-install)
-* [npm run-script](/commands/npm-run-script)
+* [npm run](/commands/npm-run)
 * [npm scripts](/using-npm/scripts)
 * [package.json](/configuring-npm/package-json)
 * [package-lock.json](/configuring-npm/package-lock-json)
