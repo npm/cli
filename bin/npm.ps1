@@ -36,7 +36,7 @@ function Normalize {
     return """$Path"""
 }
 
-$NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
+$NPM_ARGS = $MyInvocation.Line.Substring($MyInvocation.InvocationName.Length).Trim()
 $INVOKE_NPM = "& $(Normalize $NODE_EXE) $(Normalize $NPM_CLI_JS) $NPM_ARGS"
                                            
 # Support pipeline input
