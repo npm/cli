@@ -22,11 +22,28 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
+function Normalize {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true, Position=0)]
+        [string]$Path
+    )
+
+    $Path = [System.IO.Path]::GetFullPath($Path)
+    # remove trailing " or ' quotes (if any) and put back " quotes around the path
+    $Path = $Path -replace '^\s*"\s*(.*?)\s*"\s*$', '$1'
+    $Path = $Path -replace "^\s*'\s*(.*?)\s*'\s*$", "$1"
+    return """$Path"""
+}
+
+$NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
+$INVOKE_NPM = "& $(Normalize $NODE_EXE) $(Normalize $NPM_CLI_JS) $NPM_ARGS"
+                                           
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | & $NODE_EXE $NPM_CLI_JS $args
+  $input | Invoke-Expression $INVOKE_NPM
 } else {
-  & $NODE_EXE $NPM_CLI_JS $args
+  Invoke-Expression $INVOKE_NPM
 }
 
 exit $LASTEXITCODE
