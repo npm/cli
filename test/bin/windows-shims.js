@@ -20,6 +20,9 @@ const BIN = join(ROOT, 'bin')
 const SHIMS = readNonJsFiles(BIN)
 const NODE_GYP = readNonJsFiles(join(BIN, 'node-gyp-bin'))
 const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
+const PACKAGE_NAME = 'test'
+const PACKAGE_VERSION = '1.0.0'
+const SCRIPT_NAME = 'args.js'
 
 t.test('shim contents', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -99,6 +102,17 @@ t.test('run shims', t => {
         },
       },
     },
+    // test script returning all command line arguments
+    [SCRIPT_NAME]: `process.argv.slice(2).forEach((arg) => console.log(arg))`,
+    // package.json for the test script
+    'package.json': `
+      {
+        "name": "${PACKAGE_NAME}",
+        "version": "${PACKAGE_VERSION}",
+        "scripts": {
+          "test": "node ${SCRIPT_NAME}"
+        }
+      }`,
   })
 
   // The removal of this fixture causes this test to fail when done with
@@ -216,7 +230,7 @@ t.test('run shims', t => {
     }
   })
 
-  const matchCmd = (t, cmd, bin, match) => {
+  const matchCmd = (t, cmd, bin, match, params, expected) => {
     const args = []
     const opts = {}
 
@@ -234,17 +248,33 @@ t.test('run shims', t => {
         throw new Error('unknown shell')
     }
 
-    const isNpm = bin === 'npm'
-    const result = spawnPath(cmd, [...args, isNpm ? 'help' : '--version'], opts)
+    const result = spawnPath(cmd, [...args, ...params], opts)
+
+    // skip the first 3 lines of "npm test" to get the actual script output
+    if (params[0].startsWith('test')) {
+      result.stdout = result.stdout.split('\n').slice(3).join('\n').trim()
+    }
 
     t.match(result, {
       status: 0,
       signal: null,
       stderr: '',
-      stdout: isNpm ? `npm@${version} ${ROOT}` : version,
+      stdout: expected,
       ...match,
-    }, `${cmd} ${bin}`)
+    }, `${cmd} ${bin} ${params[0]}`)
   }
+
+  // Array with command line parameters and expected output
+  const tests = [
+    { bin: 'npm', params: ['help'], expected: `npm@${version} ${ROOT}` },
+    { bin: 'npx', params: ['--version'], expected: version },
+    { bin: 'npm', params: ['test'], expected: '' },
+    { bin: 'npm', params: ['test -- hello world'], expected: `hello\nworld` },
+    { bin: 'npm', params: ['test -- -p hello'], expected: `-p\nhello` },
+    { bin: 'npm', params: ['test -- -p "hello world"'], expected: `-p\nhello world` },
+    { bin: 'npm', params: ['test -- --param=hello'], expected: `--param=hello` },
+    { bin: 'npm', params: ['test -- --param="hello world"'], expected: `--param=hello world` },
+  ]
 
   // ensure that all tests are either run or skipped
   t.plan(shells.length)
@@ -259,9 +289,10 @@ t.test('run shims', t => {
         }
         return t.end()
       }
-      t.plan(2)
-      matchCmd(t, cmd, 'npm', match)
-      matchCmd(t, cmd, 'npx', match)
+      t.plan(tests.length)
+      for (const { bin, params, expected } of tests) {
+        matchCmd(t, cmd, bin, match, params, expected)
+      }
     })
   }
 })
