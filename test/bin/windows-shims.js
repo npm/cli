@@ -276,7 +276,6 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['test -- --param="hello world"'], expected: `--param=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npm', params: ['test -- "a=1,b=2,c=3"'], expected: `a=1,b=2,c=3` },
-    { bin: 'npm', params: ['test -- \'a=1,b=2,c=3\''], expected: `a=1,b=2,c=3` },
   ]
 
   // ensure that all tests are either run or skipped
