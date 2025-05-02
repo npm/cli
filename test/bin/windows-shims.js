@@ -108,11 +108,11 @@ t.test('run shims', t => {
     'package.json': `
       {
         "name": "${PACKAGE_NAME}",
-        "bin": "${SCRIPT_NAME}",
         "version": "${PACKAGE_VERSION}",
         "scripts": {
           "test": "node ${SCRIPT_NAME}"
-        }
+        },
+        "bin": "${SCRIPT_NAME}"
       }`,
   })
 
