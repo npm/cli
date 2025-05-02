@@ -103,11 +103,12 @@ t.test('run shims', t => {
       },
     },
     // test script returning all command line arguments
-    [SCRIPT_NAME]: `process.argv.slice(2).forEach((arg) => console.log(arg))`,
+    [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
     // package.json for the test script
     'package.json': `
       {
         "name": "${PACKAGE_NAME}",
+        "bin": "${SCRIPT_NAME}",
         "version": "${PACKAGE_VERSION}",
         "scripts": {
           "test": "node ${SCRIPT_NAME}"
@@ -276,6 +277,8 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['test -- --param="hello world"'], expected: `--param=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npm', params: ['test -- "a=1,b=2,c=3"'], expected: `a=1,b=2,c=3` },
+    { bin: 'npx', params: ['. a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
+    { bin: 'npx', params: ['. "a=1,b=2,c=3"'], expected: `a=1,b=2,c=3` },
   ]
 
   // ensure that all tests are either run or skipped
