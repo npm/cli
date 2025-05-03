@@ -257,7 +257,7 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['help a=1,b=2,c=3'], expected: `No matches in help for: a=1,b=2,c=3` },
     { bin: 'npm', params: ['help "a=1,b=2,c=3"'], expected: `No matches in help for: a=1,b=2,c=3` },
     { bin: 'npx', params: ['glob -v a=1,b=2,c=3'], expected: `[ 'a=1,b=2,c=3' ]` },
-    { bin: 'npx', params: ['glob -v a=1,b=2,c=3'], expected: `[ 'a=1,b=2,c=3' ]` },
+    { bin: 'npx', params: ['glob -v "a=1,b=2,c=3"'], expected: `[ 'a=1,b=2,c=3' ]` },
   ]
 
   // ensure that all tests are either run or skipped
