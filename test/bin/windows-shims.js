@@ -127,6 +127,10 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
+    if (cmd.toLowerCase().endsWith('pwsh.exe')) {
+      // powershell requires escaping the double-quote for this test
+      args = args.map(elem => elem.replaceAll('"', '\\"'))
+    }
     const result = spawnSync(`"${cmd}"`, args, {
       // don't hit the registry for the update check
       env: { PATH: path, npm_config_update_notifier: 'false' },
