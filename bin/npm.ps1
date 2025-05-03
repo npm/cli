@@ -36,7 +36,6 @@ function Normalize {
     return """$Path"""
 }
 
-
 $NPM_PositionMessage = $MyInvocation.PositionMessage -split "`r?`n"
 $firstIndex = $NPM_PositionMessage[2].IndexOf("~")
 $lastIndex = $NPM_PositionMessage[2].LastIndexOf("~")
