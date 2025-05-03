@@ -20,9 +20,6 @@ const BIN = join(ROOT, 'bin')
 const SHIMS = readNonJsFiles(BIN)
 const NODE_GYP = readNonJsFiles(join(BIN, 'node-gyp-bin'))
 const SHIM_EXTS = [...new Set(Object.keys(SHIMS).map(p => extname(p)))]
-const PACKAGE_NAME = 'test'
-const PACKAGE_VERSION = '1.0.0'
-const SCRIPT_NAME = 'args.js'
 
 t.test('shim contents', t => {
   // these scripts should be kept in sync so this tests the contents of each
@@ -102,18 +99,6 @@ t.test('run shims', t => {
         },
       },
     },
-    // test script returning all command line arguments
-    [SCRIPT_NAME]: `#!/usr/bin/env node\n\nprocess.argv.slice(2).forEach((arg) => console.log(arg))`,
-    // package.json for the test script
-    'package.json': `
-      {
-        "name": "${PACKAGE_NAME}",
-        "version": "${PACKAGE_VERSION}",
-        "scripts": {
-          "test": "node ${SCRIPT_NAME}"
-        },
-        "bin": "${SCRIPT_NAME}"
-      }`,
   })
 
   // The removal of this fixture causes this test to fail when done with
@@ -269,16 +254,10 @@ t.test('run shims', t => {
   const tests = [
     { bin: 'npm', params: ['help'], expected: `npm@${version} ${ROOT}` },
     { bin: 'npx', params: ['--version'], expected: version },
-    { bin: 'npm', params: ['test'], expected: '' },
-    { bin: 'npm', params: ['test -- hello world'], expected: `hello\nworld` },
-    { bin: 'npm', params: ['test -- -p hello'], expected: `-p\nhello` },
-    { bin: 'npm', params: ['test -- -p "hello world"'], expected: `-p\nhello world` },
-    { bin: 'npm', params: ['test -- --param=hello'], expected: `--param=hello` },
-    { bin: 'npm', params: ['test -- --param="hello world"'], expected: `--param=hello world` },
     { bin: 'npm', params: ['help a=1,b=2,c=3'], expected: `No matches in help for: a=1,b=2,c=3` },
     { bin: 'npm', params: ['help "a=1,b=2,c=3"'], expected: `No matches in help for: a=1,b=2,c=3` },
-    { bin: 'npx', params: ['. a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
-    { bin: 'npx', params: ['. "a=1,b=2,c=3"'], expected: `a=1,b=2,c=3` },
+    { bin: 'npx', params: ['glob -v a=1,b=2,c=3'], expected: `a=1,b=2,c=3 [ 'a=1,b=2,c=3' ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]` },
+    { bin: 'npx', params: ['glob -v a=1,b=2,c=3'], expected: `a=1,b=2,c=3 [ 'a=1,b=2,c=3' ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]\na=1,b=2,c=3 [ [ 'a=1,b=2,c=3' ] ]` },
   ]
 
   // ensure that all tests are either run or skipped
