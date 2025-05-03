@@ -37,9 +37,9 @@ function Normalize {
 }
 
 $NPX_PositionMessage = $MyInvocation.PositionMessage -split "`r?`n"
-$firstIndex = $NPM_PositionMessage[2].IndexOf("~")
-$lastIndex = $NPM_PositionMessage[2].LastIndexOf("~")
-$NPX_OG_COMMAND = $NPM_PositionMessage[1].Substring($firstIndex, $lastIndex - $firstIndex + 1)
+$firstIndex = $NPX_PositionMessage[2].IndexOf("~")
+$lastIndex = $NPX_PositionMessage[2].LastIndexOf("~")
+$NPX_OG_COMMAND = $NPX_PositionMessage[1].Substring($firstIndex, $lastIndex - $firstIndex + 1)
 
 $NPX_ARGS = $NPX_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
 $INVOKE_NPX = "& $(Normalize $NODE_EXE) $(Normalize $NPX_CLI_JS) $NPX_ARGS"
