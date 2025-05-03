@@ -128,7 +128,7 @@ t.test('run shims', t => {
       args.unshift('-l')
     }
     if (cmd.toLowerCase().endsWith('pwsh.exe')) {
-      // powershell requires escaping the double-quote for this test
+      // powershell requires escaping the double-quotes for this test
       args = args.map(elem => elem.replaceAll('"', '\\"'))
     }
     const result = spawnSync(`"${cmd}"`, args, {
