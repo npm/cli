@@ -253,7 +253,7 @@ t.test('run shims', t => {
 
     // skip the first 3 lines of "npm test" to get the actual script output
     if (params[0].startsWith('test')) {
-      result.stdout = result.stdout.split('\n').slice(3).join('\n').trim()
+      result.stdout = result.stdout?.toString().split('\n').slice(3).join('\n').trim()
     }
 
     t.match(result, {
