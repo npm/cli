@@ -36,7 +36,13 @@ function Normalize {
     return """$Path"""
 }
 
-$NPM_ARGS = $MyInvocation.Line.Substring($MyInvocation.InvocationName.Length).Trim()
+
+$NPM_PositionMessage = $MyInvocation.PositionMessage -split "`r?`n"
+$firstIndex = $NPM_PositionMessage[2].IndexOf("~")
+$lastIndex = $NPM_PositionMessage[2].LastIndexOf("~")
+$NPM_OG_COMMAND = $NPM_PositionMessage[1].Substring($firstIndex, $lastIndex - $firstIndex + 1)
+
+$NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
 $INVOKE_NPM = "& $(Normalize $NODE_EXE) $(Normalize $NPM_CLI_JS) $NPM_ARGS"
                                            
 # Support pipeline input
