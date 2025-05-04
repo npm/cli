@@ -300,7 +300,14 @@ t.test('run shims', t => {
       }
       t.plan(tests.length)
       for (const { bin, params, expected } of tests) {
-        matchCmd(t, cmd, bin, match, params, expected)
+        if (name === 'cygwin bash' && (
+          (bin === 'npm' && params[0].startsWith('test')) ||
+          (bin === 'npx' && params[0].startsWith('.'))
+        )) {
+          t.skip("`cygwin bash` doesn't respect option `{ cwd: path }` when calling `spawnSync`")
+        } else {
+          matchCmd(t, cmd, bin, match, params, expected)
+        }
       }
     })
   }
