@@ -31,7 +31,7 @@ function Normalize {
 
     $Path = [System.IO.Path]::GetFullPath($Path)
     # remove trailing " or ' quotes (if any) and put back " quotes around the path
-    $Path = $Path -replace '^\s*"\s*(.*?)\s*"\s*$', "$1"
+    $Path = $Path -replace '^\s*"\s*(.*?)\s*"\s*$', '$1'
     $Path = $Path -replace "^\s*'\s*(.*?)\s*'\s*$", "$1"
     return """$Path"""
 }
