@@ -127,7 +127,7 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    if (cmd.toLowerCase().endsWith('pwsh.exe')) {
+    if (cmd.toLowerCase().endsWith('pwsh.exe') || cmd.toLowerCase().endsWith('powershell.exe')) {
       // powershell requires escaping the double-quotes for this test
       args = args.map(elem => elem.replaceAll('"', '\\"'))
     }
