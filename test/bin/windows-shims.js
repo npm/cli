@@ -127,9 +127,30 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    if (cmd.toLowerCase().endsWith('pwsh.exe') || cmd.toLowerCase().endsWith('powershell.exe')) {
-      // powershell requires escaping the double-quotes for this test
+    if (cmd.toLowerCase().endsWith('powershell.exe')) {
+      // Windows PowerShell requires escaping the double-quotes for this test
       args = args.map(elem => elem.replaceAll('"', '\\"'))
+    }
+    if (cmd.toLowerCase().endsWith('pwsh.exe')) {
+      process.env.PATH = path
+      // don't hit the registry for the update check
+      process.env.npm_config_update_notifier = 'false'
+      const result = spawnSync(args.join(' '), [], {
+        cwd: path,
+        windowsHide: true,
+        shell: cmd,
+        ...opts,
+      })
+      if (stdioString) {
+        result.stdout = result.stdout?.toString()?.trim()
+        result.stderr = result.stderr?.toString()?.trim()
+      }
+      return {
+        status: result.status,
+        signal: result.signal,
+        stdout: result.stdout,
+        stderr: result.stderr,
+      }
     }
     const result = spawnSync(`"${cmd}"`, args, {
       // don't hit the registry for the update check
