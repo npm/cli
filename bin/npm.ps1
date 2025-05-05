@@ -36,10 +36,17 @@ function Normalize {
     return """$Path"""
 }
 
-$NPM_PositionMessage = $MyInvocation.PositionMessage -split "`r?`n"
-$firstIndex = $NPM_PositionMessage[2].IndexOf("~")
-$lastIndex = $NPM_PositionMessage[2].LastIndexOf("~")
-$NPM_OG_COMMAND = $NPM_PositionMessage[1].Substring($firstIndex, $lastIndex - $firstIndex + 1)
+$firstPartOfString = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1)
+
+$splitStringArray = $firstPartOfString -split "``;"
+for ($i = 0; $i -lt $splitStringArray.Length; $i++) {
+	$splitString = $splitStringArray[$i]
+        if ($splitString.IndexOf(";") -ne -1) {
+		$splitStringArray[$i] = $splitString.Substring(0, $splitString.IndexOf(";"))
+	}
+}
+
+$NPM_OG_COMMAND = $splitStringArray[0..$i] -join "``;"
 
 $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
 $INVOKE_NPM = "& $(Normalize $NODE_EXE) $(Normalize $NPM_CLI_JS) $NPM_ARGS"
