@@ -38,7 +38,7 @@ function Normalize {
 
 $firstPartOfString = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1)
 
-$splitStringArray = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1) -split "``;"
+$splitStringArray = $firstPartOfString -split "``;"
 for ($i = 0; $i -lt $splitStringArray.Length; $i++) {
 	$splitString = $splitStringArray[$i]
         if ($splitString.IndexOf(";") -ne -1) {
