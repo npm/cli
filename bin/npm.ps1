@@ -35,15 +35,20 @@ if ($MyInvocation.OffsetInLine -gt 0) {
   $NPM_OG_COMMAND = $splitStringArray[0..$i] -join "``;"
 
   $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
+
+  # Support pipeline input
+  if ($MyInvocation.ExpectingInput) {
+    $input | Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
+  } else {
+    Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
+  }
 } else {
-  $NPM_ARGS = $args
-}
-                                           
-# Support pipeline input
-if ($MyInvocation.ExpectingInput) {
-  $input | Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
-} else {
-  Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
+  # Support pipeline input
+  if ($MyInvocation.ExpectingInput) {
+    $input | & $NODE_EXE $NPM_CLI_JS $args
+  } else {
+    & $NODE_EXE $NPM_CLI_JS $args
+  }
 }
 
 exit $LASTEXITCODE
