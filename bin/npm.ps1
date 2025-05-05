@@ -22,23 +22,9 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
-function Normalize {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory=$true, ValueFromPipeline=$true, Position=0)]
-        [string]$Path
-    )
+$firstPartOfCommand = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1)
 
-    $Path = [System.IO.Path]::GetFullPath($Path)
-    # remove trailing " or ' quotes (if any) and put back " quotes around the path
-    $Path = $Path -replace '^\s*"\s*(.*?)\s*"\s*$', "$1"
-    $Path = $Path -replace "^\s*'\s*(.*?)\s*'\s*$", "$1"
-    return """$Path"""
-}
-
-$firstPartOfString = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1)
-
-$splitStringArray = $firstPartOfString -split "``;"
+$splitStringArray = $firstPartOfCommand -split "``;"
 for ($i = 0; $i -lt $splitStringArray.Length; $i++) {
 	$splitString = $splitStringArray[$i]
         if ($splitString.IndexOf(";") -ne -1) {
@@ -48,13 +34,12 @@ for ($i = 0; $i -lt $splitStringArray.Length; $i++) {
 $NPM_OG_COMMAND = $splitStringArray[0..$i] -join "``;"
 
 $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
-$INVOKE_NPM = "& $(Normalize $NODE_EXE) $(Normalize $NPM_CLI_JS) $NPM_ARGS"
                                            
 # Support pipeline input
 if ($MyInvocation.ExpectingInput) {
-  $input | Invoke-Expression $INVOKE_NPM
+  $input | Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
 } else {
-  Invoke-Expression $INVOKE_NPM
+  Invoke-Expression "& $NODE_EXE $NPM_CLI_JS $NPM_ARGS"
 }
 
 exit $LASTEXITCODE
