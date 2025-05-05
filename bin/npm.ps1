@@ -45,7 +45,6 @@ for ($i = 0; $i -lt $splitStringArray.Length; $i++) {
 		$splitStringArray[$i] = $splitString.Substring(0, $splitString.IndexOf(";"))
 	}
 }
-
 $NPM_OG_COMMAND = $splitStringArray[0..$i] -join "``;"
 
 $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
