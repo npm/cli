@@ -31,9 +31,9 @@ if ($MyInvocation.OffsetInLine -gt 0) {
   
     # Support pipeline input
     if ($MyInvocation.ExpectingInput) {
-      $input | Invoke-Expression "& $NODE_EXE $NPX_CLI_JS $NPX_ARGS"
+      $input | Invoke-Expression "& `"$NODE_EXE`" `"$NPX_CLI_JS`" $NPX_ARGS"
     } else {
-      Invoke-Expression "& $NODE_EXE $NPX_CLI_JS $NPX_ARGS"
+      Invoke-Expression "& `"$NODE_EXE`" `"$NPX_CLI_JS`" $NPX_ARGS"
     }
   
     exit $LASTEXITCODE
