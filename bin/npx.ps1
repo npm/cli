@@ -1,23 +1,5 @@
 #!/usr/bin/env pwsh
 
-if (-not $MyInvocation.Statement -and -not $MyInvocation._NPX_FULL_COMMAND_) {
-  $updateTypeDataSplat = @{
-    MemberType = 'ScriptProperty'
-    TypeName   = 'System.Management.Automation.InvocationInfo'
-    MemberName = '_NPX_FULL_COMMAND_'
-  }
-
-  Update-TypeData @updateTypeDataSplat -Value {
-    if (-not $script:_NPX_ScriptPosition_) {
-      # cache the PropertyInfo
-      $script:_NPX_ScriptPosition_ = [System.Management.Automation.InvocationInfo].
-        GetProperty('ScriptPosition', [System.Reflection.BindingFlags] 'Instance, NonPublic')
-    }
-
-    $script:_NPX_ScriptPosition_.GetValue($this).Text
-  }
-}
-
 $NODE_EXE="$PSScriptRoot/node.exe"
 if (-not (Test-Path $NODE_EXE)) {
   $NODE_EXE="$PSScriptRoot/node"
@@ -44,7 +26,10 @@ if ($MyInvocation.OffsetInLine -gt 0) {
   if ($MyInvocation.Statement) {
     $NPX_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
   } else {
-    $NPX_ARGS = $MyInvocation._NPX_FULL_COMMAND_.Substring($MyInvocation.InvocationName.Length).Trim()
+    $NPX_OG_COMMAND = (
+      [System.Management.Automation.InvocationInfo].GetProperty('ScriptPosition', [System.Reflection.BindingFlags] 'Instance, NonPublic')
+    ).GetValue($MyInvocation).Text
+    $NPX_ARGS = $NPX_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
 
   # Support pipeline input
