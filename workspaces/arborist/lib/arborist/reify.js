@@ -571,7 +571,7 @@ module.exports = cls => class Reifier extends cls {
       const { top } = node
 
       // if the top is not the root or workspace then we do not want to omit it
-      if (!top.isProjectRoot && !top.isWorkspace) {
+      if (top && !top.isProjectRoot && !top.isWorkspace) {
         continue
       }
 
