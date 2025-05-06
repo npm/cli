@@ -1,12 +1,12 @@
 #!/usr/bin/env pwsh
 
-$updateTypeDataSplat = @{
-  MemberType = 'ScriptProperty'
-  TypeName   = 'System.Management.Automation.InvocationInfo'
-  MemberName = '_NPM_FULL_COMMAND_'
-}
+if (-not $MyInvocation.Statement -and -not $MyInvocation._NPM_FULL_COMMAND_) {
+  $updateTypeDataSplat = @{
+    MemberType = 'ScriptProperty'
+    TypeName   = 'System.Management.Automation.InvocationInfo'
+    MemberName = '_NPM_FULL_COMMAND_'
+  }
 
-if (-not $MyInvocation._NPM_FULL_COMMAND_) {
   Update-TypeData @updateTypeDataSplat -Value {
     if (-not $script:_NPM_ScriptPosition_) {
       # cache the PropertyInfo
@@ -41,7 +41,11 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
 }
 
 if ($MyInvocation.OffsetInLine -gt 0) {
-  $NPM_ARGS = $MyInvocation._NPM_FULL_COMMAND_.Substring($MyInvocation.InvocationName.Length).Trim()
+  if ($MyInvocation.Statement) {
+    $NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
+  } else {
+    $NPM_ARGS = $MyInvocation._NPM_FULL_COMMAND_.Substring($MyInvocation.InvocationName.Length).Trim()
+  }
 
   # Support pipeline input
   if ($MyInvocation.ExpectingInput) {
