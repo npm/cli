@@ -25,7 +25,7 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
 if ($MyInvocation.OffsetInLine -gt 0) {
   $firstPartOfCommand = $MyInvocation.Line.Substring($MyInvocation.OffsetInLine - 1, $MyInvocation.Line.length - $MyInvocation.OffsetInLine + 1)
 
-  if (!$firstPartOfCommand.Contains("``")) 
+  if (!$firstPartOfCommand.Contains("``")) {
     $NPM_OG_COMMAND = ($firstPartOfCommand -split ";")[0]
     $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   
