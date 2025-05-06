@@ -276,7 +276,7 @@ t.test('run shims', t => {
     { bin: 'npm', params: ['help'], expected: `npm@${version} ${ROOT}` },
     { bin: 'npx', params: ['--version'], expected: version },
     { bin: 'npm', params: ['test'], expected: '' },
-    { bin: 'npm', params: ['test -- hello world -p hello -g "hello world" --param1=hello world --param2="hello world"'], expected: `hello\nworld\n-p\nhello\n-g\nhello world\n--param1=hello\nworld\n--param1=hello world` },
+    { bin: 'npm', params: ['test -- hello world -p hello -g "hello world" --param1=hello world --param2="hello world"'], expected: `hello\nworld\n-p\nhello\n-g\nhello world\n--param1=hello\nworld\n--param2=hello world` },
     { bin: 'npm', params: ['test -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
     { bin: 'npx', params: ['. -- a=1,b=2,c=3'], expected: `a=1,b=2,c=3` },
   ]
