@@ -22,7 +22,7 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
-if ($MyInvocation.OffsetInLine -gt 0) {
+if ($MyInvocation.Line) { # used "-Command" argument
   if ($MyInvocation.Statement) {
     $NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
   } else {
@@ -38,7 +38,7 @@ if ($MyInvocation.OffsetInLine -gt 0) {
   } else {
     Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
   }
-} else {
+} else { # used "-File" argument
   # Support pipeline input
   if ($MyInvocation.ExpectingInput) {
     $input | & $NODE_EXE $NPM_CLI_JS $args
