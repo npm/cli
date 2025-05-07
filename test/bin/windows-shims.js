@@ -127,8 +127,10 @@ t.test('run shims', t => {
       // only cygwin *requires* the -l, but the others are ok with it
       args.unshift('-l')
     }
-    if (cmd.toLowerCase().endsWith('powershell.exe')) {
-      // Windows PowerShell requires escaping the double-quotes for this test
+    if (cmd.toLowerCase().endsWith('powershell.exe') || cmd.toLowerCase().endsWith('pwsh.exe')) {
+      // pwsh *requires* the -Command, Windows PowerShell defaults to it
+      args.unshift('-Command')
+      // powershell requires escaping double-quotes for this test
       args = args.map(elem => elem.replaceAll('"', '\\"'))
     }
     const result = spawnSync(`"${cmd}"`, args, {
