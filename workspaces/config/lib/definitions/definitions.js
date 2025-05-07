@@ -847,7 +847,7 @@ const definitions = {
     type: Boolean,
     envExport: false,
     description: `
-      If true, npm will not exit with an error code when \`run-script\` is
+      If true, npm will not exit with an error code when \`run\` is
       invoked for a script that isn't defined in the \`scripts\` section of
       \`package.json\`. This option can be used when it's desirable to
       optionally run a script when it's present and fail if the script fails.
@@ -864,7 +864,7 @@ const definitions = {
 
       Note that commands explicitly intended to run a particular script, such
       as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm
-      run-script\` will still run their intended script if \`ignore-scripts\` is
+      run\` will still run their intended script if \`ignore-scripts\` is
       set, but they will *not* run any pre- or post-scripts.
     `,
     flatten,

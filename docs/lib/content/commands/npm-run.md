@@ -1,5 +1,5 @@
 ---
-title: npm-run-script
+title: npm-run
 section: 1
 description: Run arbitrary package scripts
 ---
