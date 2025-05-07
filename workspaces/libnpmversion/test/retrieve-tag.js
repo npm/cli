@@ -18,3 +18,8 @@ t.test('yes a valid semver tag', async t => {
   tag = 'this is a version tho: Release-1.2.3 candidate'
   t.equal(await retrieveTag(), '1.2.3')
 })
+
+t.test('yes a valid semver pre-release tag', async t => {
+  tag = 'this is a prerelease version tho: Release-1.2.3-pre.1 candidate'
+  t.equal(await retrieveTag(), '1.2.3-pre.1')
+})
