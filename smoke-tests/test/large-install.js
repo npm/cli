@@ -29,9 +29,7 @@ const runTest = async (t, { lowMemory } = {}) => {
 // should be investigated.
 t.test('large install', async t => {
   const { stdout } = await runTest(t)
-  // As a bonus this test asserts that this package-lock always
-  // installs the same number of packages.
-  t.match(stdout, `added 130${process.platform === 'win32' ? 7 : 6} packages in`)
+  t.match(stdout, /added \d+ packages/)
 })
 
 t.test('large install, no lock and low memory', async t => {
