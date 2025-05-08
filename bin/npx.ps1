@@ -32,6 +32,9 @@ if ($MyInvocation.Line) { # used "-Command" argument
     $NPX_ARGS = $NPX_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
 
+  $NODE_EXE = $NODE_EXE.Replace("``", "````")
+  $NPX_CLI_JS = $NPX_CLI_JS.Replace("``", "````")
+
   # Support pipeline input
   if ($MyInvocation.ExpectingInput) {
     $input | Invoke-Expression "& `"$NODE_EXE`" `"$NPX_CLI_JS`" $NPX_ARGS"
