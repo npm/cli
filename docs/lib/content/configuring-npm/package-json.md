@@ -951,7 +951,7 @@ resolution. Published packages may dictate their resolutions by pinning
 dependencies or using an
 [`npm-shrinkwrap.json`](/configuring-npm/npm-shrinkwrap-json) file.
 
-To make sure the package `foo` is always installed as version `1.0.0` no matter
+To make sure the package `@npm/foo` is always installed as version `1.0.0` no matter
 what version your dependencies rely on:
 
 ```json
