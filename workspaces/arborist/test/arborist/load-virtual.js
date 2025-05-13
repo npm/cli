@@ -245,3 +245,37 @@ t.test('do not bundle the entire universe', async t => {
     'yaml',
   ].sort())
 })
+
+t.test('load-virtual does not fail if a link target does not exist', async t => {
+  // Create a mock Shrinkwrap with a link to a non-existent target
+  const mockPath = t.testdir({
+    'package.json': JSON.stringify({
+      name: 'test-package',
+      version: '1.0.0',
+    }),
+    'package-lock.json': JSON.stringify({
+      name: 'test-package',
+      version: '1.0.0',
+      lockfileVersion: 2,
+      requires: true,
+      packages: {
+        '': {
+          name: 'test-package',
+          version: '1.0.0',
+          dependencies: {
+            'missing-pkg': 'file:./missing-pkg',
+          },
+        },
+        'node_modules/missing-pkg': {
+          link: true,
+          resolved: './missing-pkg',
+        },
+      },
+    }),
+  })
+
+  // This should not throw an error because the #resolveLinks method
+  // should skip loading the target if it doesn't exist
+  const tree = await loadVirtual(mockPath)
+  t.ok(tree, 'tree loaded successfully despite missing target')
+})
