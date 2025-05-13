@@ -267,18 +267,18 @@ are updated by arborist when necessary whenever the tree is modified in
 such a way that the dependency graph can change, and are relevant when
 pruning nodes from the tree.
 
-| extraneous | peer | dev | optional | devOptional      | meaning                                                                                          | prune?                                             |
-|:----------:|:----:|:---:|:--------:|:----------------:|:-------------------------------------------------------------------------------------------------|:---------------------------------------------------|
-|            |      |     |          |                  | production dep                                                                                   | never                                              |
-|   X        | N/A  | N/A |   N/A    |     N/A          | nothing depends on this, it is trash                                                             | always                                             |
-|            |      |  X  |          | X<br>not in lock | devDependency, or only depended<br>on by devDependencies                                         | if pruning dev deps                                |
-|            |      |     |    X     | X<br>not in lock | optionalDependency, or only depended<br>on by optionalDeps                                       | if pruning optional deps                           |
-|            |      |  X  |    X     | X<br>not in lock | Optional dependency of dep(s) in the<br>dev hierarchy                                            | if pruning EITHER<br>dev OR optional deps          |
-|            |      |     |          | X<br>in lock     | BOTH a non-optional  dep within the<br>dev hierarchy, AND a dep within<br>the optional hierarchy | if pruning BOTH<br>dev AND optional deps           |
-|            |  X   |     |          |                  | peer dependency, or only depended<br>on by peer dependencies                                     | if pruning peer deps                               |
-|            |  X   |  X  |          | X<br>not in lock | peer dependency of dev node hierarchy                                                            | if pruning peer OR<br>dev deps                     |
-|            |  X   |     |    X     | X<br>not in lock | peer dependency of optional nodes, or<br>peerOptional dep                                        | if pruning peer OR<br>optional deps                |
-|            |  X   |  X  |    X     | X<br>not in lock | peer optional deps of the dev dep hierarchy                                                      | if pruning peer OR<br>optional OR dev deps         |
+| extraneous | peer | dev | optional | devOptional      | meaning                                                                                          | prune?                                                 |
+|:----------:|:----:|:---:|:--------:|:----------------:|:-------------------------------------------------------------------------------------------------|:-------------------------------------------------------|
+|            |      |     |          |                  | production dep                                                                                   | never                                                  |
+|   X        | N/A  | N/A |   N/A    |     N/A          | nothing depends on this, it is trash                                                             | always                                                 |
+|            |      |  X  |          | X<br>not in lock | devDependency, or only depended<br>on by devDependencies                                         | if pruning dev                                         |
+|            |      |     |    X     | X<br>not in lock | optionalDependency, or only depended<br>on by optionalDeps                                       | if pruning optional                                    |
+|            |      |  X  |    X     | X<br>not in lock | Optional dependency of dep(s) in the<br>dev hierarchy                                            | if pruning EITHER<br>dev OR optional                   |
+|            |      |     |          | X<br>in lock     | BOTH a non-optional  dep within the<br>dev hierarchy, AND a dep within<br>the optional hierarchy | if pruning BOTH<br>dev AND optional                    |
+|            |  X   |     |          |                  | peer dependency, or only depended<br>on by peer dependencies                                     | if pruning peers                                       |
+|            |  X   |  X  |          | X<br>not in lock | peer dependency of dev node hierarchy                                                            | if pruning peer OR<br>dev deps                         |
+|            |  X   |     |    X     | X<br>not in lock | peer dependency of optional nodes, or<br>peerOptional dep                                        | if pruning peer OR<br>optional deps                    |
+|            |  X   |  X  |    X     | X<br>not in lock | peer optional deps of the dev dep hierarchy                                                      | if pruning peer OR<br>optional OR dev                  |
 |            |  X   |     |          | X<br>in lock     | BOTH a non-optional peer dep within the<br>dev hierarchy, AND a peer optional dep                | if pruning peer deps OR:<br>BOTH optional AND dev deps |
 
 * If none of these flags are set, then the node is required by the
