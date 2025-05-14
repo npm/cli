@@ -77,7 +77,7 @@ const run = async ({ content, template, nav, man, html, md }) => {
         ...data,
         github_repo: 'npm/cli',
         github_branch: 'latest',
-        github_path: 'docs/content',
+        github_path: 'docs/lib/content',
       },
       frontmatter,
       ...options,
