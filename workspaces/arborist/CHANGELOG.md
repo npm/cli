@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.1.0](https://github.com/npm/cli/compare/arborist-v9.0.2...arborist-v9.1.0) (2025-05-15)
+### Features
+* [`57aa89f`](https://github.com/npm/cli/commit/57aa89ff70e0c6186a43888b944b5799b25c7bc8) [#8265](https://github.com/npm/cli/pull/8265) use run by default and run-script as the alias (#8265) (@owlstronaut)
+### Bug Fixes
+* [`d5bcf38`](https://github.com/npm/cli/commit/d5bcf38764dfd05c7677602ae1c22b3a7bfdb486) [#8268](https://github.com/npm/cli/pull/8268) arborist: Add better error message when lockfile is malformed (#8268) (@owlstronaut)
+* [`5e1fed9`](https://github.com/npm/cli/commit/5e1fed9f5e8d0ae05e67a3fe644d6e87d0559b7a) [#8290](https://github.com/npm/cli/pull/8290) arborist: improve README markdown (#8290) (@mbtools)
+* [`0886e7a`](https://github.com/npm/cli/commit/0886e7abced0d8bdfd564a3b254817ecbdc14857) [#8222](https://github.com/npm/cli/pull/8222) preserve registry path when replacing a host (@owlstronaut)
+* [`815311b`](https://github.com/npm/cli/commit/815311b9b8848585f8944f1f2684f10282525cf2) [#8206](https://github.com/npm/cli/pull/8206) arborist: workspaces correctly path to file: packages from overrides (@owlstronaut)
+
 ## [9.0.2](https://github.com/npm/cli/compare/arborist-v9.0.1...arborist-v9.0.2) (2025-04-08)
 ### Bug Fixes
 * [`a96d8f6`](https://github.com/npm/cli/commit/a96d8f6295886c219076178460718837d2fe45d6) [#8184](https://github.com/npm/cli/pull/8184) arborist: omit failed optional dependencies from installed deps (#8184) (@owlstronaut, @zkat)

@@ -1,5 +1,9 @@
 # Changelog
 
+## [8.0.1](https://github.com/npm/cli/compare/libnpmteam-v8.0.0...libnpmteam-v8.0.1) (2025-05-15)
+### Bug Fixes
+* [`b734099`](https://github.com/npm/cli/commit/b7340990db22e89c1e9c4571835b3c738bec8742) [#8291](https://github.com/npm/cli/pull/8291) libnpmteam: update README (#8291) (@mbtools)
+
 ## [8.0.0](https://github.com/npm/cli/compare/libnpmteam-v8.0.0-pre.0...libnpmteam-v8.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)
