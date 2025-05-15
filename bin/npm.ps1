@@ -37,7 +37,7 @@ if ($MyInvocation.Line) { # used "-Command" argument
 
   # Support pipeline input
   if ($MyInvocation.ExpectingInput) {
-    $input = (@($input) -join "`n").Replace("``", "````")
+    $input = (@($input) -join "`n").Replace("``", "````").Replace("`"", "```"")
 
     Invoke-Expression "Write-Output `"$input`" | & `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
   } else {
