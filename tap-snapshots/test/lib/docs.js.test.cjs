@@ -888,7 +888,7 @@ number, if not already set in package.json.
 * Default: false
 * Type: Boolean
 
-When set file: protocol dependencies will be packed and installed as regular
+When set, file: protocol dependencies will be packed and installed as regular
 dependencies instead of creating a symlink. This option has no effect on
 workspaces.
 

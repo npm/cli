@@ -1044,7 +1044,7 @@ const definitions = {
     default: false,
     type: Boolean,
     description: `
-      When set file: protocol dependencies will be packed and installed as
+      When set, file: protocol dependencies will be packed and installed as
       regular dependencies instead of creating a symlink. This option has
       no effect on workspaces.
     `,
