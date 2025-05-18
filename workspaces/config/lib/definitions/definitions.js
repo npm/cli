@@ -1047,6 +1047,8 @@ const definitions = {
       When set to true, file: protocol dependencies will be packed and installed as
       regular dependencies instead of creating a symlink. This option has
       no effect on workspaces.
+
+      Set to true when \`--install-links\` is not explicitly set.
     `,
     flatten,
   }),
