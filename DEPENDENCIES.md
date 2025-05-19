@@ -3,44 +3,93 @@
 ## `github.com/npm/` only
 ```mermaid
 graph LR;
+  bin-links-->cmd-shim;
+  bin-links-->npm-normalize-package-bin;
+  bin-links-->proc-log;
+  bin-links-->read-cmd-shim;
+  bin-links-->write-file-atomic;
+  cacache-->npmcli-fs["@npmcli/fs"];
+  cacache-->ssri;
+  cacache-->unique-filename;
+  init-package-json-->npm-package-arg;
+  init-package-json-->npmcli-package-json["@npmcli/package-json"];
+  init-package-json-->promzard;
+  init-package-json-->read;
+  init-package-json-->semver;
+  init-package-json-->validate-npm-package-name;
+  libnpmaccess-->npm-package-arg;
+  libnpmaccess-->npm-registry-fetch;
   libnpmaccess-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmaccess-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmaccess-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmdiff-->npm-package-arg;
   libnpmdiff-->npmcli-arborist["@npmcli/arborist"];
   libnpmdiff-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmdiff-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
   libnpmdiff-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmdiff-->pacote;
+  libnpmexec-->bin-links;
+  libnpmexec-->npm-package-arg;
   libnpmexec-->npmcli-arborist["@npmcli/arborist"];
   libnpmexec-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmexec-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmexec-->npmcli-package-json["@npmcli/package-json"];
   libnpmexec-->npmcli-run-script["@npmcli/run-script"];
   libnpmexec-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmexec-->pacote;
+  libnpmexec-->proc-log;
+  libnpmexec-->read-package-json-fast;
+  libnpmexec-->read;
   libnpmexec-->semver;
   libnpmfund-->npmcli-arborist["@npmcli/arborist"];
   libnpmfund-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmfund-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmorg-->npm-registry-fetch;
   libnpmorg-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmorg-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmpack-->npm-package-arg;
   libnpmpack-->npmcli-arborist["@npmcli/arborist"];
   libnpmpack-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmpack-->npmcli-run-script["@npmcli/run-script"];
   libnpmpack-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmpack-->pacote;
+  libnpmpublish-->normalize-package-data;
+  libnpmpublish-->npm-package-arg;
+  libnpmpublish-->npm-registry-fetch;
   libnpmpublish-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmpublish-->npmcli-mock-globals["@npmcli/mock-globals"];
   libnpmpublish-->npmcli-mock-registry["@npmcli/mock-registry"];
   libnpmpublish-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmpublish-->proc-log;
   libnpmpublish-->semver;
+  libnpmpublish-->ssri;
+  libnpmsearch-->npm-registry-fetch;
   libnpmsearch-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmsearch-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmteam-->npm-registry-fetch;
   libnpmteam-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmteam-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmversion-->json-parse-even-better-errors;
   libnpmversion-->npmcli-eslint-config["@npmcli/eslint-config"];
   libnpmversion-->npmcli-git["@npmcli/git"];
   libnpmversion-->npmcli-run-script["@npmcli/run-script"];
   libnpmversion-->npmcli-template-oss["@npmcli/template-oss"];
+  libnpmversion-->proc-log;
   libnpmversion-->semver;
+  make-fetch-happen-->cacache;
+  make-fetch-happen-->minipass-fetch;
+  make-fetch-happen-->npmcli-agent["@npmcli/agent"];
+  make-fetch-happen-->proc-log;
+  make-fetch-happen-->ssri;
+  nopt-->abbrev;
+  normalize-package-data-->hosted-git-info;
+  normalize-package-data-->semver;
   npm-->abbrev;
+  npm-->cacache;
+  npm-->hosted-git-info;
+  npm-->ini;
+  npm-->init-package-json;
+  npm-->json-parse-even-better-errors;
   npm-->libnpmaccess;
   npm-->libnpmdiff;
   npm-->libnpmexec;
@@ -51,6 +100,17 @@ graph LR;
   npm-->libnpmsearch;
   npm-->libnpmteam;
   npm-->libnpmversion;
+  npm-->make-fetch-happen;
+  npm-->nopt;
+  npm-->normalize-package-data;
+  npm-->npm-audit-report;
+  npm-->npm-install-checks;
+  npm-->npm-package-arg;
+  npm-->npm-packlist;
+  npm-->npm-pick-manifest;
+  npm-->npm-profile;
+  npm-->npm-registry-fetch;
+  npm-->npm-user-validate;
   npm-->npmcli-arborist["@npmcli/arborist"];
   npm-->npmcli-config["@npmcli/config"];
   npm-->npmcli-docs["@npmcli/docs"];
@@ -66,8 +126,41 @@ graph LR;
   npm-->npmcli-run-script["@npmcli/run-script"];
   npm-->npmcli-smoke-tests["@npmcli/smoke-tests"];
   npm-->npmcli-template-oss["@npmcli/template-oss"];
+  npm-->pacote;
+  npm-->parse-conflict-json;
+  npm-->proc-log;
+  npm-->read;
   npm-->semver;
+  npm-->ssri;
+  npm-->validate-npm-package-name;
   npm-->which;
+  npm-bundled-->npm-normalize-package-bin;
+  npm-install-checks-->semver;
+  npm-package-arg-->hosted-git-info;
+  npm-package-arg-->proc-log;
+  npm-package-arg-->semver;
+  npm-package-arg-->validate-npm-package-name;
+  npm-packlist-->ignore-walk;
+  npm-pick-manifest-->npm-install-checks;
+  npm-pick-manifest-->npm-normalize-package-bin;
+  npm-pick-manifest-->npm-package-arg;
+  npm-pick-manifest-->semver;
+  npm-profile-->npm-registry-fetch;
+  npm-profile-->proc-log;
+  npm-registry-fetch-->make-fetch-happen;
+  npm-registry-fetch-->minipass-fetch;
+  npm-registry-fetch-->npm-package-arg;
+  npm-registry-fetch-->npmcli-redact["@npmcli/redact"];
+  npm-registry-fetch-->proc-log;
+  npmcli-arborist-->bin-links;
+  npmcli-arborist-->cacache;
+  npmcli-arborist-->hosted-git-info;
+  npmcli-arborist-->minify-registry-metadata;
+  npmcli-arborist-->nopt;
+  npmcli-arborist-->npm-install-checks;
+  npmcli-arborist-->npm-package-arg;
+  npmcli-arborist-->npm-pick-manifest;
+  npmcli-arborist-->npm-registry-fetch;
   npmcli-arborist-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-arborist-->npmcli-fs["@npmcli/fs"];
   npmcli-arborist-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
@@ -81,40 +174,83 @@ graph LR;
   npmcli-arborist-->npmcli-redact["@npmcli/redact"];
   npmcli-arborist-->npmcli-run-script["@npmcli/run-script"];
   npmcli-arborist-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-arborist-->pacote;
+  npmcli-arborist-->parse-conflict-json;
+  npmcli-arborist-->proc-log;
+  npmcli-arborist-->proggy;
+  npmcli-arborist-->read-package-json-fast;
   npmcli-arborist-->semver;
+  npmcli-arborist-->ssri;
+  npmcli-config-->ini;
+  npmcli-config-->nopt;
   npmcli-config-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-config-->npmcli-map-workspaces["@npmcli/map-workspaces"];
   npmcli-config-->npmcli-mock-globals["@npmcli/mock-globals"];
   npmcli-config-->npmcli-package-json["@npmcli/package-json"];
   npmcli-config-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-config-->proc-log;
   npmcli-config-->semver;
+  npmcli-docs-->ignore-walk;
   npmcli-docs-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-docs-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-docs-->semver;
   npmcli-fs-->semver;
+  npmcli-git-->ini;
+  npmcli-git-->npm-pick-manifest;
   npmcli-git-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npmcli-git-->proc-log;
   npmcli-git-->semver;
   npmcli-git-->which;
+  npmcli-installed-package-contents-->npm-bundled;
+  npmcli-installed-package-contents-->npm-normalize-package-bin;
   npmcli-map-workspaces-->npmcli-name-from-folder["@npmcli/name-from-folder"];
   npmcli-map-workspaces-->npmcli-package-json["@npmcli/package-json"];
+  npmcli-metavuln-calculator-->cacache;
+  npmcli-metavuln-calculator-->json-parse-even-better-errors;
+  npmcli-metavuln-calculator-->pacote;
+  npmcli-metavuln-calculator-->proc-log;
   npmcli-metavuln-calculator-->semver;
   npmcli-mock-globals-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-mock-globals-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-mock-registry-->npm-package-arg;
   npmcli-mock-registry-->npmcli-arborist["@npmcli/arborist"];
   npmcli-mock-registry-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-mock-registry-->npmcli-template-oss["@npmcli/template-oss"];
+  npmcli-mock-registry-->pacote;
+  npmcli-package-json-->hosted-git-info;
+  npmcli-package-json-->json-parse-even-better-errors;
   npmcli-package-json-->npmcli-git["@npmcli/git"];
+  npmcli-package-json-->proc-log;
   npmcli-package-json-->semver;
   npmcli-promise-spawn-->which;
   npmcli-run-script-->npmcli-node-gyp["@npmcli/node-gyp"];
   npmcli-run-script-->npmcli-package-json["@npmcli/package-json"];
   npmcli-run-script-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  npmcli-run-script-->proc-log;
   npmcli-run-script-->which;
   npmcli-smoke-tests-->npmcli-eslint-config["@npmcli/eslint-config"];
   npmcli-smoke-tests-->npmcli-mock-registry["@npmcli/mock-registry"];
   npmcli-smoke-tests-->npmcli-promise-spawn["@npmcli/promise-spawn"];
   npmcli-smoke-tests-->npmcli-template-oss["@npmcli/template-oss"];
   npmcli-smoke-tests-->which;
+  pacote-->cacache;
+  pacote-->npm-package-arg;
+  pacote-->npm-packlist;
+  pacote-->npm-pick-manifest;
+  pacote-->npm-registry-fetch;
+  pacote-->npmcli-git["@npmcli/git"];
+  pacote-->npmcli-installed-package-contents["@npmcli/installed-package-contents"];
+  pacote-->npmcli-package-json["@npmcli/package-json"];
+  pacote-->npmcli-promise-spawn["@npmcli/promise-spawn"];
+  pacote-->npmcli-run-script["@npmcli/run-script"];
+  pacote-->proc-log;
+  pacote-->ssri;
+  parse-conflict-json-->json-parse-even-better-errors;
+  promzard-->read;
+  read-->mute-stream;
+  read-package-json-fast-->json-parse-even-better-errors;
+  read-package-json-fast-->npm-normalize-package-bin;
+  unique-filename-->unique-slug;
 ```
 
 ## all dependencies
@@ -642,9 +778,12 @@ packages higher up the chain.
 
  - npm
  - @npmcli/mock-registry, libnpmdiff, libnpmexec, libnpmfund, libnpmpack
- - @npmcli/arborist, @npmcli/config, libnpmversion
- - @npmcli/map-workspaces, @npmcli/run-script
- - @npmcli/package-json
- - @npmcli/smoke-tests, @npmcli/git, libnpmpublish
- - @npmcli/docs, @npmcli/promise-spawn, @npmcli/mock-globals, @npmcli/fs, @npmcli/metavuln-calculator, libnpmaccess, libnpmorg, libnpmsearch, libnpmteam
- - @npmcli/eslint-config, @npmcli/template-oss, semver, which, @npmcli/installed-package-contents, @npmcli/name-from-folder, @npmcli/node-gyp, @npmcli/query, @npmcli/redact, abbrev
+ - @npmcli/arborist
+ - @npmcli/metavuln-calculator
+ - pacote, @npmcli/config, libnpmversion
+ - @npmcli/run-script, @npmcli/map-workspaces, libnpmaccess, libnpmorg, libnpmpublish, libnpmsearch, libnpmteam, init-package-json, npm-profile
+ - @npmcli/package-json, npm-registry-fetch
+ - @npmcli/git, make-fetch-happen
+ - @npmcli/smoke-tests, npm-pick-manifest, @npmcli/installed-package-contents, cacache, promzard
+ - @npmcli/docs, npm-package-arg, @npmcli/promise-spawn, npm-install-checks, npm-bundled, @npmcli/fs, unique-filename, npm-packlist, @npmcli/mock-globals, bin-links, nopt, parse-conflict-json, read-package-json-fast, read, normalize-package-data
+ - @npmcli/eslint-config, @npmcli/template-oss, ignore-walk, semver, hosted-git-info, proc-log, validate-npm-package-name, which, ini, npm-normalize-package-bin, json-parse-even-better-errors, @npmcli/node-gyp, ssri, unique-slug, @npmcli/redact, @npmcli/agent, minipass-fetch, @npmcli/name-from-folder, @npmcli/query, cmd-shim, read-cmd-shim, write-file-atomic, abbrev, proggy, minify-registry-metadata, mute-stream, npm-audit-report, npm-user-validate

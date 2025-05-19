@@ -10,43 +10,87 @@
     "libnpmpack"
   ],
   [
-    "@npmcli/arborist",
+    "@npmcli/arborist"
+  ],
+  [
+    "@npmcli/metavuln-calculator"
+  ],
+  [
+    "pacote",
     "@npmcli/config",
     "libnpmversion"
   ],
   [
+    "@npmcli/run-script",
     "@npmcli/map-workspaces",
-    "@npmcli/run-script"
+    "libnpmaccess",
+    "libnpmorg",
+    "libnpmpublish",
+    "libnpmsearch",
+    "libnpmteam",
+    "init-package-json",
+    "npm-profile"
   ],
   [
-    "@npmcli/package-json"
+    "@npmcli/package-json",
+    "npm-registry-fetch"
+  ],
+  [
+    "@npmcli/git",
+    "make-fetch-happen"
   ],
   [
     "@npmcli/smoke-tests",
-    "@npmcli/git",
-    "libnpmpublish"
+    "npm-pick-manifest",
+    "@npmcli/installed-package-contents",
+    "cacache",
+    "promzard"
   ],
   [
     "@npmcli/docs",
+    "npm-package-arg",
     "@npmcli/promise-spawn",
-    "@npmcli/mock-globals",
+    "npm-install-checks",
+    "npm-bundled",
     "@npmcli/fs",
-    "@npmcli/metavuln-calculator",
-    "libnpmaccess",
-    "libnpmorg",
-    "libnpmsearch",
-    "libnpmteam"
+    "unique-filename",
+    "npm-packlist",
+    "@npmcli/mock-globals",
+    "bin-links",
+    "nopt",
+    "parse-conflict-json",
+    "read-package-json-fast",
+    "read",
+    "normalize-package-data"
   ],
   [
     "@npmcli/eslint-config",
     "@npmcli/template-oss",
+    "ignore-walk",
     "semver",
+    "hosted-git-info",
+    "proc-log",
+    "validate-npm-package-name",
     "which",
-    "@npmcli/installed-package-contents",
-    "@npmcli/name-from-folder",
+    "ini",
+    "npm-normalize-package-bin",
+    "json-parse-even-better-errors",
     "@npmcli/node-gyp",
-    "@npmcli/query",
+    "ssri",
+    "unique-slug",
     "@npmcli/redact",
-    "abbrev"
+    "@npmcli/agent",
+    "minipass-fetch",
+    "@npmcli/name-from-folder",
+    "@npmcli/query",
+    "cmd-shim",
+    "read-cmd-shim",
+    "write-file-atomic",
+    "abbrev",
+    "proggy",
+    "minify-registry-metadata",
+    "mute-stream",
+    "npm-audit-report",
+    "npm-user-validate"
   ]
 ]
