@@ -3209,7 +3209,7 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      workspaces: ['hello'],
+      workspaces: ['hello', 'nested/goodbye'],
       dependencies: {},
       overrides: {
         print: 'file:./print',
