@@ -3269,8 +3269,8 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
 
   t.equal(
     normalizeLinkTarget(secondSymlink),
-    '../second',
-    'print symlink points to ../second (normalized for platform)'
+    '../nested/goodbye',
+    'print symlink points to ../nested/goodbye (normalized for platform)'
   )
 })
 
