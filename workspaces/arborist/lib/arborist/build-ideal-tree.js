@@ -194,7 +194,7 @@ module.exports = cls => class IdealTreeBuilder extends cls {
   async #checkEngineAndPlatform () {
     const { engineStrict, npmVersion, nodeVersion } = this.options
     for (const node of this.idealTree.inventory.values()) {
-      if (!node.optional) {
+      if (!node.optional && !node.extraneous) {
         try {
           // if devEngines is present in the root node we ignore the engines check
           if (!(node.isRoot && node.package.devEngines)) {
