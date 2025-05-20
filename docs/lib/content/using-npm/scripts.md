@@ -232,7 +232,7 @@ Due to the lack of necessary context, `uninstall` lifecycle scripts are not impl
 
 Scripts are always run from the root of the package folder, regardless of what the current working directory is when npm is invoked. This means your scripts can reliably assume they are running in the package root.
 
-If you want your script to behave differently based on the directory you were in when you ran npm, you can use the INIT_CWD environment variable, which holds the full path you were in when you ran npm run.
+If you want your script to behave differently based on the directory you were in when you ran `npm`, you can use the `INIT_CWD` environment variable, which holds the full path you were in when you ran `npm run`.
 
 #### Historical Behavior in Older npm Versions
 
