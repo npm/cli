@@ -236,8 +236,6 @@ If you want your script to behave differently based on the directory you were in
 
 #### Historical Behavior in Older npm Versions
 
-In npm v7 and later, scripts are always executed from the root of the package folder, regardless of your current working directory. This behavior is now reliable and consistent.
-
 For npm v6 and earlier, scripts were generally run from the root of the package, but there were rare cases and bugs in older versions where this was not guaranteed. If your package must support very old npm versions, you may wish to add a safeguard in your scripts (for example, by checking process.cwd()).
 
 For more details, see:
@@ -366,7 +364,6 @@ file.
   preinstall or install script. If you are doing this, please consider if
   there is another option. The only valid use of `install` or `preinstall`
   scripts is for compilation which must be done on the target architecture.
-
 
 ### See Also
 
