@@ -22,7 +22,11 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
-if (-not $MyInvocation.ExpectingInput -and $MyInvocation.Line) { # used "-Command" argument
+if ($MyInvocation.ExpectingInput) { # takes pipeline input
+  $input | & $NODE_EXE $NPM_CLI_JS $args
+} elseif (-not $MyInvocation.Line) { # used "-File" argument
+  & $NODE_EXE $NPM_CLI_JS $args
+} else { # used "-Command" argument
   if ($MyInvocation.Statement) {
     $NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
   } else {
@@ -36,13 +40,6 @@ if (-not $MyInvocation.ExpectingInput -and $MyInvocation.Line) { # used "-Comman
   $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
   Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
-} else { # used "-File" argument
-  # Support pipeline input
-  if ($MyInvocation.ExpectingInput) {
-    $input | & $NODE_EXE $NPM_CLI_JS $args
-  } else {
-    & $NODE_EXE $NPM_CLI_JS $args
-  }
 }
 
 exit $LASTEXITCODE
