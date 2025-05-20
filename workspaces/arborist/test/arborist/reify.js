@@ -221,7 +221,7 @@ t.test('malformed package.json should not be overwitten', async t => {
 })
 
 t.test('packageLockOnly does not work on globals', t => {
-  const path = t.testdir({ '': '{}' })
+  const path = t.testdir({ 'package.json': '{}' })
   createRegistry(t, false)
   return t.rejects(() => reify(path, { global: true, packageLockOnly: true }))
 })
@@ -455,7 +455,7 @@ t.test('do not update shrinkwrapped deps', async t => {
 })
 
 t.test('tracks changes of shrinkwrapped dep correctly', async t => {
-  const path = t.testdir({ '': '{}' })
+  const path = t.testdir({ 'package.json': '{}' })
   createRegistry(t, true)
 
   const install1 = await printReified(path, { add: ['@nlf/shrinkwrapped-dep-updates-a@1.0.0'] })
@@ -556,7 +556,7 @@ t.test('reifying with shronk warp dep', t => {
       })
       t.matchSnapshot(tree)
       const dep = `${path}/node_modules/@isaacs/shrinkwrapped-dependency`
-      t.equal(fs.statSync(`${dep}/`).isFile(), true, 'has ')
+      t.equal(fs.statSync(`${dep}/package.json`).isFile(), true, 'has package.json')
     })
   }
 })
@@ -1038,9 +1038,9 @@ t.test('saving the ideal tree', t => {
     const npa = require('npm-package-arg')
     const kResolvedAdd = Symbol.for('resolvedAdd')
     const path = t.testdir({
-      '': JSON.stringify(pkg),
+      'package.json': JSON.stringify(pkg),
       e: {
-        '': JSON.stringify({ name: 'e' }),
+        'package.json': JSON.stringify({ name: 'e' }),
       },
       node_modules: {
         e: t.fixture('symlink', '../e'),
@@ -1150,7 +1150,7 @@ t.test('saving the ideal tree', t => {
     }).then(saved => {
       t.ok(saved, 'true, because it was saved')
       t.matchSnapshot(require(path + '/package-lock.json'), 'lock after save')
-      t.strictSame(require(path + '/'), {
+      t.strictSame(require(path + '/package.json'), {
         bundleDependencies: ['a', 'b', 'c'],
         dependencies: {
           a: 'github:foo/bar#baz',
@@ -1220,7 +1220,7 @@ t.test('scoped registries', async t => {
 
 t.test('bin links adding and removing', t => {
   const path = t.testdir({
-    '': JSON.stringify({}),
+    'package.json': JSON.stringify({}),
   })
   const rbin = resolve(path, 'node_modules/.bin/rimraf')
   return reify(path, { add: ['rimraf@2.7.1'] })
@@ -3209,7 +3209,7 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      workspaces: ['hello', 'nested/goodbye'],
+      workspaces: ['hello'],
       dependencies: {},
       overrides: {
         print: 'file:./print',
