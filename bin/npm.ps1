@@ -23,9 +23,6 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
 }
 
 if ($MyInvocation.ExpectingInput) { # takes pipeline input
-  if ($args | Where-Object { $_ -is [array] }) {
-    echo "WARNING: arguments passed to NPM contains array"
-  }
   $input | & $NODE_EXE $NPM_CLI_JS $args
 } elseif (-not $MyInvocation.Line) { # used "-File" argument
   & $NODE_EXE $NPM_CLI_JS $args
