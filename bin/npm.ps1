@@ -36,10 +36,14 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
     $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
 
-  $NODE_EXE = $NODE_EXE.Replace("``", "````")
-  $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
+  if ($NPM_ARGS.Contains(">")) {
+    & $NODE_EXE $NPM_CLI_JS $args
+  } else {
+    $NODE_EXE = $NODE_EXE.Replace("``", "````")
+    $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
-  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+    Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+  }
 }
 
 exit $LASTEXITCODE
