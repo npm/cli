@@ -1,5 +1,21 @@
 # Changelog
 
+## [11.4.1](https://github.com/npm/cli/compare/v11.4.0...v11.4.1) (2025-05-21)
+### Documentation
+* [`3ed764a`](https://github.com/npm/cli/commit/3ed764aa08f2087fa1d1bd7391a646ba47565294) [#8308](https://github.com/npm/cli/pull/8308) Clarify script working directory behavior (fixes #8305) (#8308) (@tarekwfa0110, @owlstronaut)
+### Chores
+* [`2f30251`](https://github.com/npm/cli/commit/2f302516401928239593dd2eebc171729df60537) [#8314](https://github.com/npm/cli/pull/8314) remove references to skimdb.npmjs.com (#8314) (@shmam)
+* [`9cb9d50`](https://github.com/npm/cli/commit/9cb9d5030b1fdb83e3ffa45b7c8d2de80a657768) [#8298](https://github.com/npm/cli/pull/8298) add contributor to changelog entry (#8298) (@wraithgar)
+
+
+### Dependencies
+
+* [workspace](https://github.com/npm/cli/releases/tag/arborist-v9.1.1): `@npmcli/arborist@9.1.1`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmdiff-v8.0.4): `libnpmdiff@8.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmexec-v10.1.3): `libnpmexec@10.1.3`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmfund-v7.0.4): `libnpmfund@7.0.4`
+* [workspace](https://github.com/npm/cli/releases/tag/libnpmpack-v9.0.4): `libnpmpack@9.0.4`
+
 ## [11.4.0](https://github.com/npm/cli/compare/v11.3.0...v11.4.0) (2025-05-15)
 ### Features
 * [`a0e60fb`](https://github.com/npm/cli/commit/a0e60fb1893ac77a78380d9a9faaaaa54da1fe85) [#8246](https://github.com/npm/cli/pull/8246) added init-private option (@owlstronaut)

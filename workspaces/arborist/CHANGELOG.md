@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.1.1](https://github.com/npm/cli/compare/arborist-v9.1.0...arborist-v9.1.1) (2025-05-21)
+### Bug Fixes
+* [`8f6eb6b`](https://github.com/npm/cli/commit/8f6eb6b29904b5a807c5c4c01c1246afc70a77f1) [#8312](https://github.com/npm/cli/pull/8312) arborist: fix file dep making wrong link (#8312) (@alexsch01)
+
 ## [9.1.0](https://github.com/npm/cli/compare/arborist-v9.0.2...arborist-v9.1.0) (2025-05-15)
 ### Features
 * [`57aa89f`](https://github.com/npm/cli/commit/57aa89ff70e0c6186a43888b944b5799b25c7bc8) [#8265](https://github.com/npm/cli/pull/8265) use run by default and run-script as the alias (#8265) (@owlstronaut)
