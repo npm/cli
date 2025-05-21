@@ -1,0 +1,20 @@
+{
+  "name": "dependency-with-optional-platform-dependancies",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "dependency-with-optional-platform-dependancies",
+      "version": "0.1.0",
+      "optionalDependencies": {
+        "platform-specifying-test-package": "^1.0.0"
+      },
+      "dist": {
+        "shasum": "977166c896cbeaa1b56e593096244ff184adafb0",
+        "tarball": "https://registry.npmjs.org/shrinkwrapped-package-with-optional-platform-dependancies/-/shrinkwrapped-package-with-optional-platform-dependancies-0.1.0.tgz"
+      }
+    }
+  },
+  "modified": "2025-05-22T00:25:09.206Z"
+}
