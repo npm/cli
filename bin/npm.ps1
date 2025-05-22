@@ -22,34 +22,55 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
-if ($MyInvocation.Line) { # used "-Command" argument
+if ($MyInvocation.ExpectingInput) { # takes pipeline input
+  $input | & $NODE_EXE $NPM_CLI_JS $args
+} elseif (-not $MyInvocation.Line) { # used "-File" argument
+  & $NODE_EXE $NPM_CLI_JS $args
+} else { # used "-Command" argument
   if ($MyInvocation.Statement) {
-    $NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
+    $NPM_OG_COMMAND = $MyInvocation.Statement
   } else {
     $NPM_OG_COMMAND = (
       [System.Management.Automation.InvocationInfo].GetProperty('ScriptPosition', [System.Reflection.BindingFlags] 'Instance, NonPublic')
     ).GetValue($MyInvocation).Text
-    $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
 
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
-  # Support pipeline input
-  if ($MyInvocation.ExpectingInput) {
-    $input = (@($input) -join "`n").Replace("``", "````")
+  $ast = [System.Management.Automation.Language.Parser]::ParseInput($NPM_OG_COMMAND, [ref]$null, [ref]$null)
+  $redirections = $ast.FindAll({$args[0] -is [System.Management.Automation.Language.FileRedirectionAst]}, $true)
 
-    Invoke-Expression "Write-Output `"$input`" | & `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+  $prevEndOffset = 0
+  $i = 0
+  $numberOfRedirects = @($redirections).Length
+
+  if ($numberOfRedirects -gt 0) {
+    $NPM_NO_REDIRECTS_COMMAND = ""
+
+    foreach ($redirection in $redirections) {
+      $parentExtentText = $redirection.Parent.Extent.Text
+      $startOffset = $redirection.Extent.StartOffset
+      $endOffset = $redirection.Extent.EndOffset
+
+      if ($i -lt $numberOfRedirects-1) {
+        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
+      } else {
+        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset) + $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
+      }
+
+      $NPM_NO_REDIRECTS_COMMAND += $changed
+
+      $prevEndOffset = $endOffset
+      $i++
+    }
+
+    $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   } else {
-    Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
+    $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
-} else { # used "-File" argument
-  # Support pipeline input
-  if ($MyInvocation.ExpectingInput) {
-    $input | & $NODE_EXE $NPM_CLI_JS $args
-  } else {
-    & $NODE_EXE $NPM_CLI_JS $args
-  }
+
+  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
 }
 
 exit $LASTEXITCODE
