@@ -52,12 +52,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
       $startOffset = $redirection.Extent.StartOffset
       $endOffset = $redirection.Extent.EndOffset
 
-      if ($startOffset - $prevEndOffset -lt 0) {
-        $changed = $parentExtentText.Substring($prevEndOffset, 0)
-      } else {
-        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
-      }
-
+      $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
       if ($i -eq $numberOfRedirects-1) {
         $changed += $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
       }
