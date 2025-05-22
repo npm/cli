@@ -40,13 +40,12 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
 
   $ast = [System.Management.Automation.Language.Parser]::ParseInput($NPM_OG_COMMAND, [ref]$null, [ref]$null)
   $redirections = $ast.FindAll({$args[0] -is [System.Management.Automation.Language.FileRedirectionAst]}, $true)
-
-  $prevEndOffset = 0
-  $i = 0
   $numberOfRedirects = @($redirections).Length
 
   if ($numberOfRedirects -gt 0) {
     $NPM_NO_REDIRECTS_COMMAND = ""
+    $prevEndOffset = 0
+    $i = 0
 
     foreach ($redirection in $redirections) {
       $parentExtentText = $redirection.Parent.Extent.Text
@@ -60,7 +59,6 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
       }
 
       $NPM_NO_REDIRECTS_COMMAND += $changed
-
       $prevEndOffset = $endOffset
       $i++
     }
