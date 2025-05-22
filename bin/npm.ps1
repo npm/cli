@@ -54,17 +54,17 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
 
       $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
       if ($i -eq $numberOfRedirects-1) {
-        $changed += $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
+        if ($endOffset -eq $parentExtentText.Length) {
+          ### make valid powershell syntax when redirect on last line is removed
+          $changed += ";"
+        } else {
+          $changed += $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
+        }
       }
 
       $NPM_NO_REDIRECTS_COMMAND += $changed
       $prevEndOffset = $endOffset
       $i++
-    }
-
-    $NPM_NO_REDIRECTS_COMMAND = $NPM_NO_REDIRECTS_COMMAND.Trim()
-    if ($NPM_NO_REDIRECTS_COMMAND.EndsWith("``")) {
-      $NPM_NO_REDIRECTS_COMMAND = $NPM_NO_REDIRECTS_COMMAND.Substring(0, $NPM_NO_REDIRECTS_COMMAND.Length - 1) + ";"
     }
 
     $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
