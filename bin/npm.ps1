@@ -39,7 +39,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
   $ast = [System.Management.Automation.Language.Parser]::ParseInput($NPM_OG_COMMAND, [ref]$null, [ref]$null)
-  $redirections = $ast.FindAll({$args[0] -is [System.Management.Automation.Language.FileRedirectionAst]}, $true)
+  $redirections = $ast.FindAll({$args[0] -is [System.Management.Automation.Language.FileRedirectionAst]}, $true) | Sort-Object { $_.Extent.StartOffset }
   $numberOfRedirects = @($redirections).Length
 
   if ($numberOfRedirects -gt 0) {
@@ -52,15 +52,24 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
       $startOffset = $redirection.Extent.StartOffset
       $endOffset = $redirection.Extent.EndOffset
 
-      if ($i -lt $numberOfRedirects-1) {
-        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
+      if ($startOffset - $prevEndOffset -lt 0) {
+        $changed = $parentExtentText.Substring($prevEndOffset, 0)
       } else {
-        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset) + $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
+        $changed = $parentExtentText.Substring($prevEndOffset, $startOffset - $prevEndOffset)
+      }
+
+      if ($i -eq $numberOfRedirects-1) {
+        $changed += $parentExtentText.Substring($endOffset, $parentExtentText.Length - $endOffset)
       }
 
       $NPM_NO_REDIRECTS_COMMAND += $changed
       $prevEndOffset = $endOffset
       $i++
+    }
+
+    $NPM_NO_REDIRECTS_COMMAND = $NPM_NO_REDIRECTS_COMMAND.Trim()
+    if ($NPM_NO_REDIRECTS_COMMAND.EndsWith("``")) {
+      $NPM_NO_REDIRECTS_COMMAND = $NPM_NO_REDIRECTS_COMMAND.Substring(0, $NPM_NO_REDIRECTS_COMMAND.Length - 1) + ";"
     }
 
     $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
