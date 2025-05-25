@@ -3209,7 +3209,7 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
   const path = t.testdir({
     'package.json': JSON.stringify({
       name: 'root',
-      workspaces: ['hello'],
+      workspaces: ['hello', 'nested/goodbye'],
       dependencies: {},
       overrides: {
         print: 'file:./print',
@@ -3224,6 +3224,17 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
         },
       }),
     },
+    nested: {
+      goodbye: {
+        'package.json': JSON.stringify({
+          name: 'second',
+          version: '1.0.0',
+          dependencies: {
+            print: '../print',
+          },
+        }),
+      },
+    },
     print: {
       'package.json': JSON.stringify({
         name: 'print',
@@ -3237,6 +3248,7 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
   await reify(path)
 
   const printSymlink = fs.readlinkSync(resolve(path, 'node_modules/print'))
+  const secondSymlink = fs.readlinkSync(resolve(path, 'node_modules/second'))
 
   // Create a platform-agnostic way to compare symlink targets
   const normalizeLinkTarget = target => {
@@ -3253,6 +3265,12 @@ t.test('root overrides with file: paths are visible to workspaces', async t => {
     normalizeLinkTarget(printSymlink),
     '../print',
     'print symlink points to ../print (normalized for platform)'
+  )
+
+  t.equal(
+    normalizeLinkTarget(secondSymlink),
+    '../nested/goodbye',
+    'print symlink points to ../nested/goodbye (normalized for platform)'
   )
 })
 

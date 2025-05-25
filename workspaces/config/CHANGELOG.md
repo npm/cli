@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.3.0](https://github.com/npm/cli/compare/config-v10.2.0...config-v10.3.0) (2025-05-15)
+### Features
+* [`a0e60fb`](https://github.com/npm/cli/commit/a0e60fb1893ac77a78380d9a9faaaaa54da1fe85) [#8246](https://github.com/npm/cli/pull/8246) added init-private option (@owlstronaut)
+* [`57aa89f`](https://github.com/npm/cli/commit/57aa89ff70e0c6186a43888b944b5799b25c7bc8) [#8265](https://github.com/npm/cli/pull/8265) use run by default and run-script as the alias (#8265) (@owlstronaut)
+### Bug Fixes
+* [`ed1a28e`](https://github.com/npm/cli/commit/ed1a28ed51d1cf1ed2421293c830201da4ce1fb6) [#8238](https://github.com/npm/cli/pull/8238) config: use exclusive for save types (@owlstronaut)
+
 ## [10.2.0](https://github.com/npm/cli/compare/config-v10.1.0...config-v10.2.0) (2025-04-08)
 ### Features
 * [`b306d25`](https://github.com/npm/cli/commit/b306d25df2f2e6ae75fd4f6657e0858b6dd71c43) [#8129](https://github.com/npm/cli/pull/8129) add `node-gyp` as actual config (@wraithgar)

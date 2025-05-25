@@ -871,13 +871,9 @@ module.exports = cls => class Reifier extends cls {
       return relative(dir, resolve(rootDir, overridePath))
     }
 
-    // Fallback: derive the package name from node.resolved in a platform-agnostic way
+    // Fallback: derive the file path from node.resolved in a platform-agnostic way
     const filePath = node.resolved.replace(/^file:/, '')
-    // A node.package.name could be different than the folder name
-    const pathParts = filePath.split(/[\\/]/)
-    const packageName = pathParts[pathParts.length - 1]
-
-    return join('..', packageName)
+    return join(filePath)
   }
 
   #registryResolved (resolved) {

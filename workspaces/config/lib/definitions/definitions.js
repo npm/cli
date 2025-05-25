@@ -847,7 +847,7 @@ const definitions = {
     type: Boolean,
     envExport: false,
     description: `
-      If true, npm will not exit with an error code when \`run-script\` is
+      If true, npm will not exit with an error code when \`run\` is
       invoked for a script that isn't defined in the \`scripts\` section of
       \`package.json\`. This option can be used when it's desirable to
       optionally run a script when it's present and fail if the script fails.
@@ -864,7 +864,7 @@ const definitions = {
 
       Note that commands explicitly intended to run a particular script, such
       as \`npm start\`, \`npm stop\`, \`npm restart\`, \`npm test\`, and \`npm
-      run-script\` will still run their intended script if \`ignore-scripts\` is
+      run\` will still run their intended script if \`ignore-scripts\` is
       set, but they will *not* run any pre- or post-scripts.
     `,
     flatten,
@@ -970,6 +970,14 @@ const definitions = {
       The value that \`npm init\` should use by default for the package
       version number, if not already set in package.json.
     `,
+  }),
+  'init-private': new Definition('init-private', {
+    default: false,
+    type: Boolean,
+    description: `
+      The value \`npm init\` should use by default for the package's private flag.
+    `,
+    flatten,
   }),
   // these "aliases" are historically supported in .npmrc files, unfortunately
   // They should be removed in a future npm version.

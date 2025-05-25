@@ -27,10 +27,9 @@ All commands:
     help-search, init, install, install-ci-test, install-test,
     link, ll, login, logout, ls, org, outdated, owner, pack,
     ping, pkg, prefix, profile, prune, publish, query, rebuild,
-    repo, restart, root, run-script, sbom, search, set,
-    shrinkwrap, star, stars, start, stop, team, test, token,
-    undeprecate, uninstall, unpublish, unstar, update, version,
-    view, whoami
+    repo, restart, root, run, sbom, search, set, shrinkwrap,
+    star, stars, start, stop, team, test, token, undeprecate,
+    uninstall, unpublish, unstar, update, version, view, whoami
 
 Specify configs in the ini-formatted file:
     {NPM}/{TESTDIR}/home/.npmrc
@@ -355,7 +354,7 @@ exports[`test/index.js TAP basic npm prefix > should have expected prefix output
 {NPM}/{TESTDIR}/project
 `
 
-exports[`test/index.js TAP basic npm run-script > should have expected run-script output 1`] = `
+exports[`test/index.js TAP basic npm run > should have expected run output 1`] = `
 > project@1.0.0 hello
 > echo Hello
 

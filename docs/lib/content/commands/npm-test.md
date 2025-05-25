@@ -37,7 +37,7 @@ npm test
 
 ### See Also
 
-* [npm run-script](/commands/npm-run-script)
+* [npm run](/commands/npm-run)
 * [npm scripts](/using-npm/scripts)
 * [npm start](/commands/npm-start)
 * [npm restart](/commands/npm-restart)

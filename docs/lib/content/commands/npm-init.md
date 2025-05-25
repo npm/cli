@@ -87,6 +87,11 @@ Generate it without having it ask any questions:
 $ npm init -y
 ```
 
+Set the private flag to `true` in package.json:
+```bash
+$ npm init --init-private -y
+```
+
 ### Workspaces support
 
 It's possible to create a new workspace within your project by using the

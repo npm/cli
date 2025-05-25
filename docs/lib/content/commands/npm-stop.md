@@ -42,7 +42,7 @@ npm stop
 
 ### See Also
 
-* [npm run-script](/commands/npm-run-script)
+* [npm run](/commands/npm-run)
 * [npm scripts](/using-npm/scripts)
 * [npm test](/commands/npm-test)
 * [npm start](/commands/npm-start)

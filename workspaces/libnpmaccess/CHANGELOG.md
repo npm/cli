@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.0.1](https://github.com/npm/cli/compare/libnpmaccess-v10.0.0...libnpmaccess-v10.0.1) (2025-05-15)
+### Bug Fixes
+* [`5b5e886`](https://github.com/npm/cli/commit/5b5e886edadf77ee48368695e6bc52ad6c4f06c3) [#8289](https://github.com/npm/cli/pull/8289) libnpmaccess: formatting of options in README (#8289) (@mbtools)
+
 ## [10.0.0](https://github.com/npm/cli/compare/libnpmaccess-v10.0.0-pre.0...libnpmaccess-v10.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)

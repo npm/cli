@@ -182,10 +182,10 @@ t.test('basic', async t => {
     )
   })
 
-  await t.test('npm run-script', async t => {
-    const cmdRes = await npm('run', 'hello')
+  await t.test('npm run', async t => {
+    const cmdRes = await npm('run-script', 'hello')
 
-    t.matchSnapshot(cmdRes.stdout, 'should have expected run-script output')
+    t.matchSnapshot(cmdRes.stdout, 'should have expected run output')
   })
 
   await t.test('npm prefix', async t => {
