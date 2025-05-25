@@ -94,7 +94,7 @@ t.test('can do progress', async (t) => {
   log.error('', 'after input')
   output.standard('after input')
 
-  t.strictSame([...new Set(outputErrors)].sort(), ['\u001b[?25h', '\u001b[?25l', '-', '/', '\\', '|'])
+  t.strictSame([...new Set(outputErrors)].sort(), ['-', '/', '\\', '|'])
   t.strictSame(logs, ['error before input', 'error during input', 'error after input'])
   t.strictSame(outputs, ['before input', 'during input', 'after input'])
 })
