@@ -771,8 +771,14 @@ const definitions = {
     default: false,
     type: Boolean,
     description: `
-      Tells npm when executing a npm script within a workspace, 
-      to fail on the first package failing. Defailt behavior is to continue executing. 
+      Designed to be used with the \`--workspaces\` or multiple \`--workspace\` option.
+
+      If true, when executing commands with the \`run\` across a workspace. 
+      Rather than the default behavior of running the command in all packages 
+      in the workspace and logging the failure, on the first failing package,
+      exit with the error code of the failing command. This is helpful if 
+      packages have relationship and the work should not continue if the 
+      previous package failed.
     `
   }),
   'fetch-retries': new Definition('fetch-retries', {
