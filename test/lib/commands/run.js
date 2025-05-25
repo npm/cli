@@ -759,4 +759,26 @@ t.test('workspaces', async t => {
       },
     ])
   })
+
+  t.test('failed workspace run fails fast', async t => {
+    const { cleanLogs, RUN_SCRIPTS, prefix } = await mockWorkspaces(t, {
+      runScript: (opts) => {
+        if (opts.pkg.name === 'a') {
+          throw new Error('ERR')
+        }
+      },
+      exec: ['glorp'],
+      workspaces: ['a', 'b'],
+      'fail-fast': true
+    })
+
+    t.matchSnapshot(
+      cleanLogs(),
+      'should log error msgs for each workspace script'
+    )
+
+    t.match(RUN_SCRIPTS(), [])
+  })
 })
+
+

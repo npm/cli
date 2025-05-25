@@ -767,6 +767,14 @@ const definitions = {
     `,
     flatten,
   }),
+  'fail-fast':  new Definition('fail-fast', {
+    default: false,
+    type: Boolean,
+    description: `
+      Tells npm when executing a npm script within a workspace, 
+      to fail on the first package failing. Defailt behavior is to continue executing. 
+    `
+  }),
   'fetch-retries': new Definition('fetch-retries', {
     default: 2,
     type: Number,

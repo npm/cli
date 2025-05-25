@@ -728,6 +728,16 @@ expiration.
 
 
 
+#### \`fail-fast\`
+
+* Default: false
+* Type: Boolean
+
+Tells npm when executing a npm script within a workspace, to fail on the
+first package failing. Defailt behavior is to continue executing.
+
+
+
 #### \`fetch-retries\`
 
 * Default: 2
@@ -2457,6 +2467,7 @@ Array [
   "expect-result-count",
   "expect-results",
   "expires",
+  "fail-fast",
   "fetch-retries",
   "fetch-retry-factor",
   "fetch-retry-maxtimeout",
@@ -2753,6 +2764,7 @@ exports[`test/lib/docs.js TAP config > keys that are not flattened 1`] = `
 Array [
   "expect-result-count",
   "expect-results",
+  "fail-fast",
   "init-author-email",
   "init-author-name",
   "init-author-url",
@@ -5715,7 +5727,7 @@ npm run <command> [-- <args>]
 Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--if-present] [--ignore-scripts]
-[--foreground-scripts] [--script-shell <script-shell>]
+[--foreground-scripts] [--script-shell <script-shell>] [--fail-fast]
 
   -w|--workspace
     Enable running a command in the context of the configured workspaces of the
@@ -5756,6 +5768,7 @@ aliases: run-script, rum, urn
 #### \`ignore-scripts\`
 #### \`foreground-scripts\`
 #### \`script-shell\`
+#### \`fail-fast\`
 `
 
 exports[`test/lib/docs.js TAP usage sbom > must match snapshot 1`] = `
