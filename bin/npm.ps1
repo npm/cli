@@ -22,34 +22,27 @@ if (Test-Path $NPM_PREFIX_NPM_CLI_JS) {
   $NPM_CLI_JS=$NPM_PREFIX_NPM_CLI_JS
 }
 
-if ($MyInvocation.Line) { # used "-Command" argument
+if ($MyInvocation.ExpectingInput) { # takes pipeline input
+  $input | & $NODE_EXE $NPM_CLI_JS $args
+} elseif (-not $MyInvocation.Line) { # used "-File" argument
+  & $NODE_EXE $NPM_CLI_JS $args
+} else { # used "-Command" argument
   if ($MyInvocation.Statement) {
-    $NPM_ARGS = $MyInvocation.Statement.Substring($MyInvocation.InvocationName.Length).Trim()
+    $NPM_ORIGINAL_COMMAND = $MyInvocation.Statement
   } else {
-    $NPM_OG_COMMAND = (
-      [System.Management.Automation.InvocationInfo].GetProperty('ScriptPosition', [System.Reflection.BindingFlags] 'Instance, NonPublic')
+    $NPM_ORIGINAL_COMMAND = (
+      [Management.Automation.InvocationInfo].GetProperty('ScriptPosition', [Reflection.BindingFlags] 'Instance, NonPublic')
     ).GetValue($MyInvocation).Text
-    $NPM_ARGS = $NPM_OG_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
   }
 
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
-  # Support pipeline input
-  if ($MyInvocation.ExpectingInput) {
-    $input = (@($input) -join "`n").Replace("``", "````")
+  $NPM_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPM_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
+    EndBlock.Statements.PipelineElements.CommandElements.Extent.Text -join ' '
+  $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
 
-    Invoke-Expression "Write-Output `"$input`" | & `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
-  } else {
-    Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
-  }
-} else { # used "-File" argument
-  # Support pipeline input
-  if ($MyInvocation.ExpectingInput) {
-    $input | & $NODE_EXE $NPM_CLI_JS $args
-  } else {
-    & $NODE_EXE $NPM_CLI_JS $args
-  }
+  Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
 }
 
 exit $LASTEXITCODE
