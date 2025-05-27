@@ -895,7 +895,7 @@ module.exports = cls => class Reifier extends cls {
         // Replace the host with the registry host while keeping the path intact
         resolvedURL.hostname = registryURL.hostname
         resolvedURL.port = registryURL.port
-        if (registryURL.protocol === 'http:') {
+        if (registryURL.protocol === 'https:' || registryURL.protocol === 'http:') {
           resolvedURL.protocol = registryURL.protocol
         }
 
