@@ -28,9 +28,9 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   & $NODE_EXE $NPX_CLI_JS $args
 } else { # used "-Command" argument
   if ($MyInvocation.Statement) {
-    $NPX_OG_COMMAND = $MyInvocation.Statement
+    $NPX_ORIGINAL_COMMAND = $MyInvocation.Statement
   } else {
-    $NPX_OG_COMMAND = (
+    $NPX_ORIGINAL_COMMAND = (
       [Management.Automation.InvocationInfo].GetProperty('ScriptPosition', [Reflection.BindingFlags] 'Instance, NonPublic')
     ).GetValue($MyInvocation).Text
   }
@@ -38,7 +38,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPX_CLI_JS = $NPX_CLI_JS.Replace("``", "````")
 
-  $NPX_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPX_OG_COMMAND, [ref] $null, [ref] $null).
+  $NPX_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text -join ' '
   $NPX_ARGS = $NPX_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
 
