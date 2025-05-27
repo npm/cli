@@ -3557,7 +3557,7 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     })
 
     // Set up the registry with a deep path
-    const registryHost = 'https://registry.example.com'
+    const registryHost = 'http://registry.example.com'
     const registryPath = '/custom/deep/path/registry'
     const registry = `${registryHost}${registryPath}`
 
