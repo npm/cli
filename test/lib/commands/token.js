@@ -265,6 +265,7 @@ t.test('token create', async t => {
   registry.createToken({ password, cidr })
   await npm.exec('token', ['create'])
   t.strictSame(outputs, [
+    '',
     'Created publish token n3wt0k3n',
     'with IP whitelist: 10.0.0.0/8,192.168.1.0/24',
   ])
@@ -291,6 +292,7 @@ t.test('token create read only', async t => {
   registry.createToken({ readonly: true, password })
   await npm.exec('token', ['create'])
   t.strictSame(outputs, [
+    '',
     'Created read only token n3wt0k3n',
   ])
 })
@@ -347,10 +349,10 @@ t.test('token create parseable output', async t => {
   }, { replace: true })
   registry.createToken({ password, cidr })
   await npm.exec('token', ['create'])
-  t.equal(outputs[0], 'token\tn3wt0k3n')
-  t.ok(outputs[1].startsWith('created\t'))
-  t.equal(outputs[2], 'readonly\tfalse')
-  t.equal(outputs[3], 'cidr_whitelist\t10.0.0.0/8,192.168.1.0/24')
+  t.equal(outputs[1], 'token\tn3wt0k3n')
+  t.ok(outputs[2].startsWith('created\t'))
+  t.equal(outputs[3], 'readonly\tfalse')
+  t.equal(outputs[4], 'cidr_whitelist\t10.0.0.0/8,192.168.1.0/24')
 })
 
 t.test('token create ipv6 cidr', async t => {
