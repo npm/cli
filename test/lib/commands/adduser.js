@@ -133,6 +133,24 @@ t.test('legacy', async t => {
     })
     await t.rejects(adduser.exec([]))
   })
+
+  t.test('canceled input', async t => {
+    const { logs, adduser } = await mockAddUser(t, {
+      config: { 'auth-type': 'legacy' },
+      mocks: {
+        '{LIB}/utils/read-user-info.js': {
+          username: async () => {
+            const error = new Error('canceled')
+            throw error
+          },
+          password: async () => 'test-password',
+          email: async () => 'test-email@npmjs.org',
+        },
+      },
+    })
+    await adduser.exec([])
+    t.match(logs.warn, ['adduser canceled'], 'should log warning about canceled input')
+  })
   t.end()
 })
 
