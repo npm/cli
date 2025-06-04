@@ -191,5 +191,20 @@ t.test('web', t => {
     await login.exec([])
     t.same(npm.config.get('//registry.npmjs.org/:_authToken'), 'npm_test-token')
   })
+
+  t.test('canceled open browser prompt', async t => {
+    const { logs, login } = await mockLogin(t, {
+      config: { 'auth-type': 'web' },
+      mocks: {
+        '{LIB}/utils/open-url.js': {
+          createOpener: () => {
+            throw new Error('canceled')
+          },
+        },
+      },
+    })
+    await login.exec([])
+    t.match(logs.warn, ['login canceled'], 'should log warning about canceled prompt')
+  })
   t.end()
 })

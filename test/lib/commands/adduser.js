@@ -7,6 +7,7 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const MockRegistry = require('@npmcli/mock-registry')
 const stream = require('node:stream')
+const { create } = require('node:domain')
 
 const mockAddUser = async (t, { stdin: stdinLines, registry: registryUrl, ...options } = {}) => {
   if (stdinLines) {
@@ -142,8 +143,6 @@ t.test('legacy', async t => {
           username: async () => {
             throw new Error('canceled')
           },
-          password: async () => 'test-password',
-          email: async () => 'test-email@npmjs.org',
         },
       },
     })
@@ -159,8 +158,6 @@ t.test('legacy', async t => {
           username: async () => {
             throw new Error('input error')
           },
-          password: async () => 'test-password',
-          email: async () => 'test-email@npmjs.org',
         },
       },
     })
@@ -212,6 +209,21 @@ t.test('web', t => {
     })
     await adduser.exec([])
     t.same(npm.config.get('//registry.npmjs.org/:_authToken'), 'npm_test-token')
+  })
+
+  t.test('canceled open browser prompt', async t => {
+    const { logs, adduser } = await mockAddUser(t, {
+      config: { 'auth-type': 'web' },
+      mocks: {
+        '{LIB}/utils/open-url.js': {
+          createOpener: () => {
+            throw new Error('canceled')
+          },
+        },
+      },
+    })
+    await adduser.exec([])
+    t.match(logs.warn, ['adduser canceled'], 'should log warning about canceled prompt')
   })
   t.end()
 })
