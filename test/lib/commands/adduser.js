@@ -7,7 +7,6 @@ const { load: loadMockNpm } = require('../../fixtures/mock-npm.js')
 const mockGlobals = require('@npmcli/mock-globals')
 const MockRegistry = require('@npmcli/mock-registry')
 const stream = require('node:stream')
-const { create } = require('node:domain')
 
 const mockAddUser = async (t, { stdin: stdinLines, registry: registryUrl, ...options } = {}) => {
   if (stdinLines) {
