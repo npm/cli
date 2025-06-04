@@ -123,8 +123,6 @@ t.test('legacy', t => {
           username: async () => {
             throw new Error('canceled')
           },
-          password: async () => 'test-password',
-          email: async () => 'test-email@npmjs.org',
         },
       },
     })
@@ -140,8 +138,6 @@ t.test('legacy', t => {
           username: async () => {
             throw new Error('input error')
           },
-          password: async () => 'test-password',
-          email: async () => 'test-email@npmjs.org',
         },
       },
     })
