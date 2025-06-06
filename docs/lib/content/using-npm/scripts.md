@@ -334,7 +334,7 @@ fine:
 
 ### Exiting
 
-Scripts are run by passing the line as a script argument to `sh`.
+Scripts are run by passing the line as a script argument to `/bin/sh` on POSIX systems or `cmd.exe` on Windows. You can control which shell is used by setting the [`script-shell`](/using-npm/config#script-shell) configuration option.
 
 If the script exits with a code other than 0, then this will abort the
 process.
