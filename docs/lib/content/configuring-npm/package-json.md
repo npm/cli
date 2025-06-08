@@ -612,7 +612,8 @@ See [semver](https://github.com/npm/node-semver#versions) for more details about
 * `~version` "Approximately equivalent to version"  See
   [semver](https://github.com/npm/node-semver#versions)
 * `^version` "Compatible with version"  See [semver](https://github.com/npm/node-semver#versions)
-* `1.2.x` 1.2.0, 1.2.1, etc., but not 1.3.0
+* `1.2.x` 1.2.0, 1.2.1, etc., but not 1.3.0. Same as ~1.2.1.
+* `1.x` 1.2.0, 1.2.1, ..., 1.3.0, ..., 1.4.1, etc., but not 2.0.0. Same as ^1.2.1.
 * `http://...` See 'URLs as Dependencies' below
 * `*` Matches any version
 * `""` (just an empty string) Same as `*`
