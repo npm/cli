@@ -3343,6 +3343,24 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
     },
   })
 
+  const customGitSshPackument = JSON.stringify({
+    _id: 'gitssh',
+    _rev: 'lkjadflkjasdf',
+    name: 'gitssh',
+    'dist-tags': { latest: '1.1.1' },
+    versions: {
+      '1.1.1': {
+        name: 'gitssh',
+        version: '1.1.1',
+        dist: {
+          // this is a url that `new URL()` cant parse
+          // https://github.com/npm/cli/issues/5278
+          tarball: 'git+ssh://git@customgit.com:a/b/c.git#lkjadflkjasdf',
+        },
+      },
+    },
+  })
+
   const notAUrlPackument = JSON.stringify({
     _id: 'notaurl',
     _rev: 'lkjadflkjasdf',
@@ -3357,6 +3375,36 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
         },
       },
     },
+  })
+
+  t.test('valid custom hosted git url', async (t) => {
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            gitssh: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    tnock(t, 'https://registry.github.com')
+      .get('/gitssh')
+      .reply(200, customGitSshPackument)
+
+    const getLogs = warningTracker()
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry: 'https://registry.github.com',
+      cache: resolve(testdir, 'cache'),
+    })
+    await arb.reify()
+    // since it's not throwing an error on invalid url and returning undefined
+    // which trashes the node, so here we can only check if it has no warnings
+    t.strictSame(getLogs(), [], 'did not get warnings')
   })
 
   t.test('host should not be replaced replaceRegistryHost=never', async (t) => {
