@@ -9,6 +9,7 @@ const debug = require('../debug.js')
 const { walkUp } = require('walk-up-path')
 const { log, time } = require('proc-log')
 const rpj = require('read-package-json-fast')
+const hgi = require('hosted-git-info')
 
 const { dirname, resolve, relative, join } = require('node:path')
 const { depth: dfwalk } = require('treeverse')
@@ -886,7 +887,7 @@ module.exports = cls => class Reifier extends cls {
     // Shrinkwrap and Node classes carefully, so for now, just treat
     // the default reg as the magical animal that it has been.
     try {
-      const resolvedURL = new URL(resolved)
+      const resolvedURL = hgi.parseUrl(resolved)
 
       if ((this.options.replaceRegistryHost === resolvedURL.hostname) ||
            this.options.replaceRegistryHost === 'always') {
