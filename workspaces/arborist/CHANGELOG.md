@@ -1,5 +1,9 @@
 # Changelog
 
+## [9.1.2](https://github.com/npm/cli/compare/arborist-v9.1.1...arborist-v9.1.2) (2025-06-11)
+### Bug Fixes
+* [`887385d`](https://github.com/npm/cli/commit/887385d7c0b6b584e0973a1f667c3b22eafc6e28) [#8356](https://github.com/npm/cli/pull/8356) arborist: use hosted-git-info to correctly parse resolved git urls (#8356) (@milaninfy)
+
 ## [9.1.1](https://github.com/npm/cli/compare/arborist-v9.1.0...arborist-v9.1.1) (2025-05-21)
 ### Bug Fixes
 * [`8f6eb6b`](https://github.com/npm/cli/commit/8f6eb6b29904b5a807c5c4c01c1246afc70a77f1) [#8312](https://github.com/npm/cli/pull/8312) arborist: fix file dep making wrong link (#8312) (@alexsch01)
