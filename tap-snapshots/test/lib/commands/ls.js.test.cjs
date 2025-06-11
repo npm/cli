@@ -528,7 +528,7 @@ exports[`test/lib/commands/ls.js TAP ls missing package.json > should output tre
 +-- chai@1.0.0 extraneous
 +-- dog@1.0.0 extraneous
 \`-- foo@1.0.0 extraneous
-  \`-- dog@1.0.0 deduped
+  \`-- dog@1.0.0 deduped extraneous
 `
 
 exports[`test/lib/commands/ls.js TAP ls missing/invalid/extraneous > should output tree containing missing, invalid, extraneous labels 1`] = `
