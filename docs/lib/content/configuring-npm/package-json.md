@@ -222,6 +222,29 @@ Both email and url are optional either way.
 
 npm also sets a top-level "maintainers" field with your npm user info.
 
+### type
+
+This _optional_ field of value _string_ helps Node.js determine the module format used in the package, affecting _import_ and _export_ behavior.
+
+By default, Node.js utilizes the [CommonJS modules](https://nodejs.org/docs/latest/api/modules.html#modules-commonjs-modules) system for files with a `.js` or `.cjs` extension regardless whether the `type` field was provided or not. To use the modern [ECMAScript modules](https://nodejs.org/docs/latest/api/esm.html) (AKA ES modules) system, a `.mjs` file extension is required.
+
+In a package.json file, the `type` field currently accepts two values:
+
+- `commonjs` (default): Specifies that `.js` files within the package should be treated as CommonJS modules.
+
+- `module`: Specifies that `.js` files within the package should be treated as ES modules.
+
+Example:
+
+```json
+// ECMAScript
+{
+  "type": "module"
+}
+```
+
+For more details see the [node.js documentation on package type](https://nodejs.org/api/packages.html#type)
+
 ### funding
 
 You can specify an object containing a URL that provides up-to-date
