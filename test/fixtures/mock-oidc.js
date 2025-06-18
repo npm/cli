@@ -72,7 +72,7 @@ class MockOidc {
   mockGithubOidc ({ idToken = this.GITHUB_ID_TOKEN, audience, statusCode = 200 } = {}) {
     const url = new URL(this.ACTIONS_ID_TOKEN_REQUEST_URL)
     return nock(url.origin)
-      .post(url.pathname)
+      .get(url.pathname)
       .query({ audience })
       .matchHeader('authorization', `Bearer ${this.ACTIONS_ID_TOKEN_REQUEST_TOKEN}`)
       .matchHeader('accept', 'application/json')
