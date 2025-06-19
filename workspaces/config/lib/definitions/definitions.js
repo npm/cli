@@ -260,7 +260,7 @@ const definitions = {
   browser: new Definition('browser', {
     default: null,
     defaultDescription: `
-    OS X: \`"open"\`, Windows: \`"start"\`, Others: \`"xdg-open"\`
+    macOS: \`"open"\`, Windows: \`"start"\`, Others: \`"xdg-open"\`
     `,
     type: [null, Boolean, String],
     description: `
