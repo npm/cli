@@ -148,7 +148,7 @@ class AuditReport extends Map {
       if (!seen.has(k)) {
         const p = []
         for (const node of this.tree.inventory.query('packageName', name)) {
-          if (!shouldAudit(node, this[_omit], this.filterSet)) {
+          if (!this.shouldAudit(node)) {
             continue
           }
 
@@ -282,7 +282,7 @@ class AuditReport extends Map {
 
     const timeEnd = time.start('auditReport:getReport')
     try {
-      const body = prepareBulkData(this.tree, this[_omit], this.filterSet)
+      const body = this.prepareBulkData()
       log.silly('audit', 'bulk request', body)
 
       // no sense asking if we don't have anything to audit,
@@ -309,37 +309,33 @@ class AuditReport extends Map {
       timeEnd()
     }
   }
-}
 
-// return true if we should audit this one
-const shouldAudit = (node, omit, filterSet) =>
-  !node.version ? false
-  : node.isRoot ? false
-  : filterSet && filterSet.size !== 0 && !filterSet.has(node) ? false
-  : omit.size === 0 ? true
-  : !( // otherwise, just ensure we're not omitting this one
-    node.dev && omit.has('dev') ||
-    node.optional && omit.has('optional') ||
-    node.devOptional && omit.has('dev') && omit.has('optional') ||
-    node.peer && omit.has('peer')
-  )
-
-const prepareBulkData = (tree, omit, filterSet) => {
-  const payload = {}
-  for (const name of tree.inventory.query('packageName')) {
-    const set = new Set()
-    for (const node of tree.inventory.query('packageName', name)) {
-      if (!shouldAudit(node, omit, filterSet)) {
-        continue
-      }
-
-      set.add(node.version)
-    }
-    if (set.size) {
-      payload[name] = [...set]
-    }
+  // return true if we should audit this one
+  shouldAudit (node) {
+    return !node.version ? false
+      : node.isRoot ? false
+      : this.filterSet && this.filterSet.size !== 0 && !this.filterSet.has(node) ? false
+      : this[_omit].size === 0 ? true
+      : !node.shouldOmit(this[_omit])
   }
-  return payload
+
+  prepareBulkData () {
+    const payload = {}
+    for (const name of this.tree.inventory.query('packageName')) {
+      const set = new Set()
+      for (const node of this.tree.inventory.query('packageName', name)) {
+        if (!this.shouldAudit(node)) {
+          continue
+        }
+
+        set.add(node.version)
+      }
+      if (set.size) {
+        payload[name] = [...set]
+      }
+    }
+    return payload
+  }
 }
 
 module.exports = AuditReport

@@ -4091,3 +4091,47 @@ t.test('should take devEngines in account', async t => {
   const tree = await buildIdeal(path)
   t.matchSnapshot(String(tree.meta))
 })
+
+t.test('engine checking respects omit flags', async t => {
+  const testFixture = resolve(fixtures, 'engine-omit-test')
+
+  t.test('fail on engine mismatch in devDependencies without omit=dev', async t => {
+    await t.rejects(buildIdeal(testFixture, {
+      nodeVersion: '12.18.4',
+      engineStrict: true,
+    }),
+    { code: 'EBADENGINE' },
+    'should fail with EBADENGINE when devDependencies have engine mismatch'
+    )
+  })
+
+  t.test('skip engine check for devDependencies with omit=dev', async t => {
+    // This should NOT throw an EBADENGINE error
+    await buildIdeal(testFixture, {
+      nodeVersion: '12.18.4',
+      engineStrict: true,
+      omit: ['dev'],
+    })
+    t.pass('should succeed when omitting dev dependencies with engine mismatches')
+  })
+
+  t.test('skip engine check for optionalDependencies with omit=optional', async t => {
+    const optionalFixture = resolve(fixtures, 'optional-engine-omit-test')
+    await buildIdeal(optionalFixture, {
+      nodeVersion: '12.18.4',
+      engineStrict: true,
+      omit: ['optional'],
+    })
+    t.pass('should succeed when omitting optional dependencies with engine mismatches')
+  })
+
+  t.test('skip engine check for peerDependencies with omit=peer', async t => {
+    const peerFixture = resolve(fixtures, 'peer-engine-omit-test')
+    await buildIdeal(peerFixture, {
+      nodeVersion: '12.18.4',
+      engineStrict: true,
+      omit: ['peer'],
+    })
+    t.pass('should succeed when omitting peer dependencies with engine mismatches')
+  })
+})
