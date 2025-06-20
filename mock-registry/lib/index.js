@@ -633,7 +633,7 @@ class MockRegistry {
 
   mockOidcTokenExchange ({ packageName, idToken, token, statusCode = 200 } = {}) {
     this.nock.post(this.fullPath('/-/npm/v1/oidc/token/exchange'), body => {
-      return body.package_name === packageName && body.id_token === idToken
+      return body.package_name === packageName
     })
       .matchHeader('authorization', `Bearer ${idToken}`)
       .reply(statusCode, statusCode !== 500 ? { token } : { message: 'Internal Server Error' })
