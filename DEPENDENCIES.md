@@ -259,8 +259,6 @@ graph LR;
 ## all dependencies
 ```mermaid
 graph LR;
-  aggregate-error-->clean-stack;
-  aggregate-error-->indent-string;
   bin-links-->cmd-shim;
   bin-links-->npm-normalize-package-bin;
   bin-links-->proc-log;
@@ -694,7 +692,6 @@ graph LR;
   npmcli-smoke-tests-->semver;
   npmcli-smoke-tests-->tap;
   npmcli-smoke-tests-->which;
-  p-map-->aggregate-error;
   pacote-->cacache;
   pacote-->fs-minipass;
   pacote-->minipass;
