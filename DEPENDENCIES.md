@@ -491,7 +491,6 @@ graph LR;
   npm-->minimatch;
   npm-->minipass-pipeline;
   npm-->minipass;
-  npm-->minizlib;
   npm-->ms;
   npm-->nock;
   npm-->node-gyp;
