@@ -4437,14 +4437,14 @@ Options:
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
-aliases: up, upgrade, udpate
+aliases: up, upgrade, update
 
 Run "npm help update" for more info
 
 \`\`\`bash
 npm update [<pkg>...]
 
-aliases: up, upgrade, udpate
+aliases: up, upgrade, update
 \`\`\`
 
 #### \`save\`
