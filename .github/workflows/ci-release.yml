@@ -18,6 +18,10 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: read
+  checks: write
+
 jobs:
   lint-all:
     name: Lint All
