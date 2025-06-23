@@ -110,14 +110,14 @@ Wrote to {NPM}/{TESTDIR}/project/package.json:
 {
   "name": "project",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo /"Error: no test specified/" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "ISC"
 }
 `
 
@@ -298,6 +298,7 @@ exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`
 {
   "name": "project",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo /"Error: no test specified/" && exit 1",
@@ -306,7 +307,6 @@ exports[`test/index.js TAP basic npm pkg > should print package.json contents 1`
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "abbrev": "^1.0.4"
   },
