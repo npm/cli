@@ -523,7 +523,6 @@ graph LR;
   npm-->p-map;
   npm-->pacote;
   npm-->parse-conflict-json;
-  npm-->postcss-selector-parser;
   npm-->proc-log;
   npm-->qrcode-terminal;
   npm-->read;
