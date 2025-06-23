@@ -259,7 +259,6 @@ graph LR;
 ## all dependencies
 ```mermaid
 graph LR;
-  agent-base-->debug;
   aggregate-error-->clean-stack;
   aggregate-error-->indent-string;
   bin-links-->cmd-shim;
