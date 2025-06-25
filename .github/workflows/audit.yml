@@ -8,6 +8,9 @@ on:
     # "At 08:00 UTC (01:00 PT) on Monday" https://crontab.guru/#0_8_*_*_1
     - cron: "0 8 * * 1"
 
+permissions:
+  contents: read
+
 jobs:
   audit:
     name: Audit Dependencies
