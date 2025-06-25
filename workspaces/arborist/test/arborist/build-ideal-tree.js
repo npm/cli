@@ -4091,3 +4091,15 @@ t.test('should take devEngines in account', async t => {
   const tree = await buildIdeal(path)
   t.matchSnapshot(String(tree.meta))
 })
+
+t.test(
+  'extraneous dependency not buildable on current platform does not throw',
+  async (t) => {
+    const path = resolve(fixtures, 'extraneous-platform')
+    createRegistry(t, true)
+    const tree = await buildIdeal(path, { prune: false })
+    console.log(tree)
+
+    // t.equal(tree.children.get('platform-specifying-test-package').package.version, '1.0.0', 'added the optional dep to the ideal tree')
+  }
+)
