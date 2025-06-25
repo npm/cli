@@ -51,9 +51,9 @@ jobs:
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Lint
-        run: npm run lint --ignore-scripts -w libnpmorg
+        run: npm run lint --ignore-scripts --workspace libnpmorg
       - name: Post Lint
-        run: npm run postlint --ignore-scripts -w libnpmorg
+        run: npm run postlint --ignore-scripts --workspace libnpmorg
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -120,6 +120,6 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: npm test --ignore-scripts -w libnpmorg
+        run: npm test --ignore-scripts --workspace libnpmorg
       - name: Check Git Status
         run: node scripts/git-dirty.js

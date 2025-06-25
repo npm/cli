@@ -51,9 +51,9 @@ jobs:
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Lint
-        run: npm run lint --ignore-scripts -w libnpmhook
+        run: npm run lint --ignore-scripts --workspace libnpmhook
       - name: Post Lint
-        run: npm run postlint --ignore-scripts -w libnpmhook
+        run: npm run postlint --ignore-scripts --workspace libnpmhook
 
   test:
     name: Test - ${{ matrix.platform.name }} - ${{ matrix.node-version }}
@@ -120,6 +120,6 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: npm test --ignore-scripts -w libnpmhook
+        run: npm test --ignore-scripts --workspace libnpmhook
       - name: Check Git Status
         run: node scripts/git-dirty.js
