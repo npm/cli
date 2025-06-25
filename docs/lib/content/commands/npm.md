@@ -1,3 +1,12 @@
+~/D/s/glob $ npm pkg get config
+{
+  "foo": "hello world"
+}
+~/D/s/glob $ npm config ls|grep foo
+~/D/s/glob $ npm run env|grep foo
+npm_package_config_foo=hello world
+~/D/s/glob $ npm -v 
+11.2.0
 ---
 title: npm
 section: 1
