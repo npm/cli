@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.1](https://github.com/npm/cli/compare/arborist-v8.0.0...arborist-v8.0.1) (2025-06-25)
+### Bug Fixes
+* [`78dc057`](https://github.com/npm/cli/commit/78dc0574cad0295fb49a96032871e17ea6c2cffc) [#8378](https://github.com/npm/cli/pull/8378) stop working around bug fixed in `npm-package-arg@12.0.2` (@TrevorBurnham)
+### Chores
+* [`15e545b`](https://github.com/npm/cli/commit/15e545b7a0301798b28056382325cd83e02621e7) [#8384](https://github.com/npm/cli/pull/8384) `@npmcli/template-oss@4.24.4` (#8384) (@wraithgar)
+* [`fb5a9f2`](https://github.com/npm/cli/commit/fb5a9f2ac7047655b79988c972ed99ef3b8fa8fe) [#8378](https://github.com/npm/cli/pull/8378) `@npmcli/template-oss@4.24.3` (@wraithgar)
+
 ## [8.0.0](https://github.com/npm/cli/compare/arborist-v7.5.4...arborist-v8.0.0) (2024-10-03)
 ### ⚠️ BREAKING CHANGES
 * `@npmcli/arborist` now supports node `^18.17.0 || >=20.5.0`
