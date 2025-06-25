@@ -59,9 +59,9 @@ jobs:
       - name: Reset Deps
         run: node scripts/resetdeps.js
       - name: Lint
-        run: node . run lint --ignore-scripts -ws -iwr --if-present
+        run: node . run lint --ignore-scripts --workspaces --include-workspace-root --if-present
       - name: Post Lint
-        run: node . run postlint --ignore-scripts -ws -iwr --if-present
+        run: node . run postlint --ignore-scripts --workspaces --include-workspace-root --if-present
       - name: Conclude Check
         uses: LouisBrunner/checks-action@v1.6.0
         if: steps.create-check.outputs.check-id && always()
@@ -138,7 +138,7 @@ jobs:
       - name: Add Problem Matcher
         run: echo "::add-matcher::.github/matchers/tap.json"
       - name: Test
-        run: node . test --ignore-scripts -ws -iwr --if-present
+        run: node . test --ignore-scripts --workspaces --include-workspace-root --if-present
       - name: Check Git Status
         run: node scripts/git-dirty.js
       - name: Conclude Check
