@@ -6,7 +6,6 @@ const pacote = require('pacote')
 const { join } = require('node:path')
 const { depth } = require('treeverse')
 const crypto = require('node:crypto')
-const path = require('node:path')
 
 // cache complicated function results
 const memoize = (fn) => {
@@ -82,7 +81,7 @@ module.exports = cls => class IsolatedReifier extends cls {
         }
         queue.push(e.to)
       })
-      if (!next.isProjectRoot && !next.isWorkspace && !next.ideallyInert) {
+      if (!next.isProjectRoot && !next.isWorkspace) {
         root.external.push(await this.externalProxyMemo(next))
       }
     }
@@ -150,8 +149,8 @@ module.exports = cls => class IsolatedReifier extends cls {
     const nonOptionalDeps = edges.filter(e => !e.optional).map(e => e.to.target)
 
     result.localDependencies = await Promise.all(nonOptionalDeps.filter(n => n.isWorkspace).map(this.workspaceProxyMemo))
-    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace && !n.ideallyInert).map(this.externalProxyMemo))
-    result.externalOptionalDependencies = await Promise.all(optionalDeps.filter(n => !n.ideallyInert).map(this.externalProxyMemo))
+    result.externalDependencies = await Promise.all(nonOptionalDeps.filter(n => !n.isWorkspace).map(this.externalProxyMemo))
+    result.externalOptionalDependencies = await Promise.all(optionalDeps.map(this.externalProxyMemo))
     result.dependencies = [
       ...result.externalDependencies,
       ...result.localDependencies,
@@ -324,11 +323,11 @@ module.exports = cls => class IsolatedReifier extends cls {
         isRoot: false,
         isInStore: inStore,
         path: node.isLink ?
-        join(proxiedIdealTree.root.localPath, node.locationPath || '', location) :
-        join(proxiedIdealTree.root.localPath, location),
+          join(proxiedIdealTree.root.localPath, node.localPath || '', location) :
+          join(proxiedIdealTree.root.localPath, location),
         realpath: node.isLink ?
-        join(proxiedIdealTree.root.localPath, node.locationPath || '', location) :
-        join(proxiedIdealTree.root.localPath, location),
+          join(proxiedIdealTree.root.localPath, node.localPath || '', location) :
+          join(proxiedIdealTree.root.localPath, location),
         resolved: node.resolved,
         version: pkg.version,
         package: pkg,
@@ -375,8 +374,8 @@ module.exports = cls => class IsolatedReifier extends cls {
       } else {
         from = node.isProjectRoot ? root : root.fsChildren.find(c => c.location === node.localLocation)
         nmFolder = node.isLink ?
-           join(proxiedIdealTree.root.localPath, node.localLocation || '', 'node_modules') :
-           join(node.localLocation, 'node_modules')
+          join(proxiedIdealTree.root.localPath, node.localLocation || '', 'node_modules') :
+          join(node.localLocation, 'node_modules')
       }
 
       const processDeps = (dep, optional, external) => {
@@ -386,7 +385,6 @@ module.exports = cls => class IsolatedReifier extends cls {
         const location = dep.isLink ?
           join(proxiedIdealTree.root.localPath, dep.localLocation || '', 'node_modules', dep.name) :
           join(nmFolder, dep.name)
-
         const binNames = dep.package.bin && Object.keys(dep.package.bin) || []
         const toKey = getKey(dep)
 
@@ -401,9 +399,9 @@ module.exports = cls => class IsolatedReifier extends cls {
 
         binNames.forEach(bn => {
           const binPath = dep.isLink ?
-            join(proxiedIdealTree.root.localPath, from.realpath, 'node_modules', '.bin' , bn) :
-            join(from.realpath, 'node_modules', 'bin', bn)
-            target.binpaths.push(binpath)
+            join(proxiedIdealTree.root.localPath, from.realpath, 'node_modules', '.bin', bn) :
+            join(from.realpath, 'node_modules', '.bin', bn)
+          target.binPaths.push(binPath)
         })
 
         const link = {
