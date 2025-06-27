@@ -635,7 +635,7 @@ class MockRegistry {
     const encodedPackageName = npa(packageName).escapedName
     this.nock.post(this.fullPath(`/-/npm/v1/oidc/token/exchange/package/${encodedPackageName}`))
       .matchHeader('authorization', `Bearer ${idToken}`)
-      .reply(statusCode, body || { message: 'Internal Server Error' })
+      .reply(statusCode, body || {})
   }
 }
 
