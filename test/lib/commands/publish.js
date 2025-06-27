@@ -1231,13 +1231,15 @@ t.test('oidc token exchange', t => {
       token: 'existing-fallback-token',
     },
     load: {
-      'ci-info': Object.defineProperty({}, 'GITHUB_ACTIONS', {
-        get () {
-          throw new Error('getter error')
-        },
-        enumerable: true,
-        configurable: true,
-      }),
+      mocks: {
+        'ci-info': Object.defineProperty({}, 'GITHUB_ACTIONS', {
+          get () {
+            throw new Error('getter error')
+          },
+          enumerable: true,
+          configurable: true,
+        }),
+      },
     },
   }))
 
