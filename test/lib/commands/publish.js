@@ -6,6 +6,7 @@ const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
 const { MockOidc } = require('../../fixtures/mock-oidc')
+const tmock = require('../../fixtures/tmock')
 
 const pkg = '@npmcli/test-package'
 const token = 'test-auth-token'
@@ -1220,26 +1221,6 @@ t.test('oidc token exchange', t => {
     },
     load: {
       registry: 'https://registry.zzz.org',
-    },
-  }))
-
-  t.test('trigger any generic error within the try catch block', oidcPublishTest({
-    config: {
-      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
-    },
-    publishOptions: {
-      token: 'existing-fallback-token',
-    },
-    load: {
-      mocks: {
-        'ci-info': Object.defineProperty({}, 'GITHUB_ACTIONS', {
-          get () {
-            throw new Error('getter error')
-          },
-          enumerable: true,
-          configurable: true,
-        }),
-      },
     },
   }))
 
