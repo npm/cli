@@ -6,7 +6,6 @@ const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
 const { MockOidc } = require('../../fixtures/mock-oidc')
-const tmock = require('../../fixtures/tmock')
 
 const pkg = '@npmcli/test-package'
 const token = 'test-auth-token'
