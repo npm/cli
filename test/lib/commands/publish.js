@@ -1071,6 +1071,9 @@ t.test('oidc token exchange', t => {
     mockOidcTokenExchangeOptions: {
       statusCode: 500,
       idToken: 'github-jwt-id-token',
+      body: {
+        message: 'oidc token exchange failed',
+      },
     },
     publishOptions: {
       token: 'existing-fallback-token',
@@ -1138,7 +1141,9 @@ t.test('oidc token exchange', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: 'github-jwt-id-token',
-      token: 'exchange-token',
+      body: {
+        token: 'exchange-token',
+      },
     },
     publishOptions: {
       token: 'exchange-token',
@@ -1152,7 +1157,9 @@ t.test('oidc token exchange', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: 'gitlab-jwt-id-token',
-      token: 'exchange-token',
+      body: {
+        token: 'exchange-token',
+      },
     },
     publishOptions: {
       token: 'exchange-token',
@@ -1172,7 +1179,9 @@ t.test('oidc token exchange', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: 'github-jwt-id-token',
-      token: 'exchange-token',
+      body: {
+        token: 'exchange-token',
+      },
     },
     publishOptions: {
       token: 'exchange-token',
@@ -1190,7 +1199,9 @@ t.test('oidc token exchange', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: 'github-jwt-id-token',
-      token: 'exchange-token',
+      body: {
+        token: 'exchange-token',
+      },
     },
     publishOptions: {
       token: 'exchange-token',
@@ -1213,7 +1224,9 @@ t.test('oidc token exchange', t => {
     },
     mockOidcTokenExchangeOptions: {
       idToken: 'github-jwt-id-token',
-      token: 'exchange-token',
+      body: {
+        token: 'exchange-token',
+      },
     },
     publishOptions: {
       token: 'exchange-token',
