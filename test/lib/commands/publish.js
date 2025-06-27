@@ -1223,5 +1223,23 @@ t.test('oidc token exchange', t => {
     },
   }))
 
+  t.test('trigger any generic error within the try catch block', oidcPublishTest({
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    publishOptions: {
+      token: 'existing-fallback-token',
+    },
+    load: {
+      'ci-info': Object.defineProperty({}, 'GITHUB_ACTIONS', {
+        get () {
+          throw new Error('getter error')
+        },
+        enumerable: true,
+        configurable: true,
+      }),
+    },
+  }))
+
   t.end()
 })
