@@ -20,6 +20,11 @@ t.test('not yet loaded', async t => {
   })
   t.throws(() => npm.config.set('foo', 'bar'))
   t.throws(() => npm.config.get('foo'))
+  t.throws(
+    () => npm.registry,
+    /Registry client not available\. Make sure npm\.load\(\) has been called\./,
+    'registry getter throws before load'
+  )
   t.same(logs, [])
 })
 
@@ -59,6 +64,8 @@ t.test('npm.load', async t => {
     mockGlobals(t, { process: { platform: 'posix' } })
     t.equal(resolve(npm.cache), resolve(cache), 'cache is cache')
     t.equal(npm.lockfileVersion, 2, 'lockfileVersion getter')
+    t.ok(npm.registry, 'registry getter returns registry client after load')
+    t.equal(typeof npm.registry.fetch, 'function', 'registry has fetch method')
     t.equal(npm.prefix, npm.localPrefix, 'prefix is local prefix')
     t.not(npm.prefix, npm.globalPrefix, 'prefix is not global prefix')
     t.equal(npm.bin, npm.localBin, 'bin is local bin')
