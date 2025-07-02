@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.0.1](https://github.com/npm/cli/compare/libnpmpublish-v11.0.0...libnpmpublish-v11.0.1) (2025-06-11)
+### Bug Fixes
+* [`71cb65b`](https://github.com/npm/cli/commit/71cb65b3c551e663a7bbdb25f5b3c3ddebb1a8c8) [#8317](https://github.com/npm/cli/pull/8317) libnpmpublish: Remove dependence on deprecated library (@owlstronaut)
+### Dependencies
+* [`dda6f87`](https://github.com/npm/cli/commit/dda6f871331280eeb37493a4ccc57361a27949eb) [#8317](https://github.com/npm/cli/pull/8317) `@npmcli/package-json@6.2.0`
+* [`bc08ac7`](https://github.com/npm/cli/commit/bc08ac7a82f047485885d9c41a8b6fc48e8981b0) [#8317](https://github.com/npm/cli/pull/8317) remove normalize-package-data
+
 ## [11.0.0](https://github.com/npm/cli/compare/libnpmpublish-v11.0.0-pre.0...libnpmpublish-v11.0.0) (2024-12-16)
 ### Features
 * [`a7bfc6d`](https://github.com/npm/cli/commit/a7bfc6df76882996ebb834dbca785fdf33b8c50d) [#7972](https://github.com/npm/cli/pull/7972) trigger release process (#7972) (@wraithgar)

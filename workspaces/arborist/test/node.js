@@ -3322,3 +3322,77 @@ t.test('should find inconsistency between the edge\'s override set and the targe
 
   t.end()
 })
+
+t.test('shouldOmit method', t => {
+  t.test('dev dependency with dev omit', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    node.dev = true
+    t.equal(node.shouldOmit(new Set(['dev'])), true, 'should omit dev dependency when dev is omitted')
+    t.equal(node.shouldOmit(new Set(['optional'])), false, 'should not omit dev dependency when only optional is omitted')
+    t.end()
+  })
+
+  t.test('optional dependency with optional omit', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    node.optional = true
+    t.equal(node.shouldOmit(new Set(['optional'])), true, 'should omit optional dependency when optional is omitted')
+    t.equal(node.shouldOmit(new Set(['dev'])), false, 'should not omit optional dependency when only dev is omitted')
+    t.end()
+  })
+
+  t.test('peer dependency with peer omit', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    node.peer = true
+    t.equal(node.shouldOmit(new Set(['peer'])), true, 'should omit peer dependency when peer is omitted')
+    t.equal(node.shouldOmit(new Set(['dev'])), false, 'should not omit peer dependency when only dev is omitted')
+    t.end()
+  })
+
+  t.test('devOptional dependency', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    node.devOptional = true
+    t.equal(node.shouldOmit(new Set(['dev', 'optional'])), true, 'should omit devOptional when both dev and optional are omitted')
+    t.equal(node.shouldOmit(new Set(['dev'])), false, 'should not omit devOptional when only dev is omitted')
+    t.equal(node.shouldOmit(new Set(['optional'])), false, 'should not omit devOptional when only optional is omitted')
+    t.end()
+  })
+
+  t.test('regular dependency', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    t.equal(node.shouldOmit(new Set(['dev', 'optional', 'peer'])), false, 'should never omit regular dependencies')
+    t.end()
+  })
+
+  t.test('empty omit set', t => {
+    const node = new Node({
+      pkg: { name: 'test' },
+      path: '/test',
+      dummy: true,
+    })
+    node.dev = true
+    t.equal(node.shouldOmit(new Set()), false, 'should not omit anything when omit set is empty')
+    t.end()
+  })
+
+  t.end()
+})

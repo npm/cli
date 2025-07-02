@@ -589,7 +589,7 @@ had the following:
 }
 ```
 
-It could also have a "start" command that referenced the
+It could also have a "start" script that referenced the
 `npm_package_config_port` environment variable.
 
 ### dependencies

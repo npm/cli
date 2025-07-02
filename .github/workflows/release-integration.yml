@@ -16,6 +16,9 @@ on:
         type: string
         description: 'A json array of releases. Required fields: publish: tagName, publishTag. publish check: pkgName, version'
 
+permissions:
+  contents: read
+
 jobs:
   publish:
     strategy:
