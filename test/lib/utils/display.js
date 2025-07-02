@@ -208,35 +208,35 @@ t.test('prompt functionality', async t => {
   })
 
   t.test('silent prompt completion works', async t => {
-    const { input, META } = await mockDisplay(t)
+    const { input } = await mockDisplay(t)
 
     const result = await input.read(
       () => Promise.resolve('secret-password'),
-      { [META]: { silentPrompt: true } }
+      { silent: true }
     )
 
     t.equal(result, 'secret-password', 'should return the input result for silent prompts')
   })
 
   t.test('metadata is correctly passed through', async t => {
-    const { input, META } = await mockDisplay(t)
+    const { input } = await mockDisplay(t)
 
     await input.read(
       () => Promise.resolve('result1'),
-      { [META]: { silentPrompt: false } }
+      { silent: false }
     )
-    t.pass('should handle silentPrompt: false metadata')
+    t.pass('should handle silent false option')
 
     await input.read(
       () => Promise.resolve('result2'),
-      { [META]: {} }
+      {}
     )
-    t.pass('should handle empty metadata')
+    t.pass('should handle empty options')
 
     await input.read(
       () => Promise.resolve('result3'),
-      { [META]: { silentPrompt: true } }
+      { silent: true }
     )
-    t.pass('should handle silentPrompt: true metadata')
+    t.pass('should handle silent true option')
   })
 })
