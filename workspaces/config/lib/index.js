@@ -683,7 +683,7 @@ class Config {
   }
 
   async loadLocalPrefix () {
-    const cliPrefix = this.#get('prefix', 'cli')
+    const cliPrefix = this.#get('prefix', 'cli') || this.#get('prefix', 'env')
     if (cliPrefix) {
       this.localPrefix = cliPrefix
       return
