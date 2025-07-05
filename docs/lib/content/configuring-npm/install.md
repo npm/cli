@@ -69,10 +69,3 @@ installers:
 
 Or see [this page](https://nodejs.org/en/download/package-manager/) to
 install npm for Linux in the way many Linux developers prefer.
-
-#### Less-common operating systems
-
-For more information on installing Node.js on a variety of operating
-systems, see [this page][pkg-mgr].
-
-[pkg-mgr]: https://nodejs.org/en/download/package-manager/
