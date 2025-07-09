@@ -1332,10 +1332,10 @@ t.test('oidc token exchange -- provenance', (t) => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.npmjs.org',
-      idToken: 'invalid-jwt',
+      idToken: 'x.invalid-jwt.x',
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'invalid-jwt',
+      idToken: 'x.invalid-jwt.x',
       body: {
         token: 'exchange-token',
       },
