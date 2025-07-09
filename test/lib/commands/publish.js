@@ -1334,7 +1334,8 @@ t.test('oidc token exchange -- provenance', (t) => {
   ]
 
   brokenJwts.map((brokenJwt) => {
-    t.test(`broken jwt ${brokenJwt}`, oidcPublishTest({
+    // windows does not like `.` in the filename
+    t.test(`broken jwt ${brokenJwt.replaceAll('.', '_')}`, oidcPublishTest({
       oidcOptions: { github: true },
       config: {
         '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
