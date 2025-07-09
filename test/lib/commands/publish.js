@@ -5,7 +5,8 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { MockOidc } = require('../../fixtures/mock-oidc')
+const { MockOidc, githubIdToken, gitlabIdToken } = require('../../fixtures/mock-oidc')
+const { MockProvenance } = require('@npmcli/mock-registry/lib/provenance')
 
 const pkg = '@npmcli/test-package'
 const token = 'test-auth-token'
@@ -990,46 +991,67 @@ t.test('semver highest dist tag', async t => {
   })
 })
 
-t.test('oidc token exchange', t => {
-  const oidcPublishTest = ({
-    oidcOptions = {},
-    packageName = '@npmcli/test-package',
-    config = {},
-    packageJson = {},
-    load = {},
-    mockGithubOidcOptions = null,
-    mockOidcTokenExchangeOptions = null,
-    publishOptions = {},
-  }) => {
-    return async (t) => {
-      const oidc = MockOidc.tnock(t, oidcOptions)
-      const { npm, registry } = await loadNpmWithRegistry(t, {
-        config,
-        prefixDir: {
-          'package.json': JSON.stringify({
-            name: packageName,
-            version: '1.0.0',
-            ...packageJson,
-          }, null, 2),
-        },
-        ...load,
-      })
-      if (mockGithubOidcOptions) {
-        oidc.mockGithubOidc(mockGithubOidcOptions)
-      }
-      if (mockOidcTokenExchangeOptions) {
-        registry.mockOidcTokenExchange({
-          packageName,
-          ...mockOidcTokenExchangeOptions,
-        })
-      }
-      registry.publish(packageName, publishOptions)
-      await npm.exec('publish', [])
-      oidc.reset()
+const oidcPublishTest = ({
+  oidcOptions = {},
+  packageName = '@npmcli/test-package',
+  config = {},
+  packageJson = {},
+  load = {},
+  mockGithubOidcOptions = null,
+  mockOidcTokenExchangeOptions = null,
+  publishOptions = {},
+  provenance = false,
+}) => {
+  return async (t) => {
+    const oidc = MockOidc.tnock(t, oidcOptions)
+    const { npm, registry } = await loadNpmWithRegistry(t, {
+      config,
+      prefixDir: {
+        'package.json': JSON.stringify({
+          name: packageName,
+          version: '1.0.0',
+          ...packageJson,
+        }, null, 2),
+      },
+      ...load,
+    })
+    if (mockGithubOidcOptions) {
+      oidc.mockGithubOidc(mockGithubOidcOptions)
     }
-  }
+    if (mockOidcTokenExchangeOptions) {
+      registry.mockOidcTokenExchange({
+        packageName,
+        ...mockOidcTokenExchangeOptions,
+      })
+    }
+    registry.publish(packageName, publishOptions)
 
-  // fallback failures
+    if ((oidc.github || oidc.gitlab) && provenance) {
+      registry.getVisibility({ spec: packageName, visibility: { public: true } })
+
+      MockProvenance.successfulNock({
+        oidcURL: oidc.ACTIONS_ID_TOKEN_REQUEST_URL,
+        requestToken: oidc.ACTIONS_ID_TOKEN_REQUEST_TOKEN,
+        workflowPath: '.github/workflows/publish.yml',
+        repository: 'github/foo',
+        serverUrl: 'https://github.com',
+        ref: 'refs/tags/pkg@1.0.0',
+        sha: 'deadbeef',
+        runID: '123456',
+        runAttempt: '1',
+        runnerEnv: 'github-hosted',
+      })
+    }
+
+    await npm.exec('publish', [])
+
+    oidc.reset()
+  }
+}
+
+t.test('oidc token exchange - no provenance', t => {
+  const githubPrivateIdToken = githubIdToken({ visibility: 'private' })
+  const gitlabPrivateIdToken = gitlabIdToken({ visibility: 'private' })
 
   t.test('oidc token 500 with fallback', oidcPublishTest({
     oidcOptions: { github: true },
@@ -1066,11 +1088,11 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.npmjs.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
       statusCode: 500,
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
       body: {
         message: 'oidc token exchange failed',
       },
@@ -1087,11 +1109,12 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.npmjs.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
+      idToken: githubPrivateIdToken,
       statusCode: 500,
-      idToken: 'github-jwt-id-token',
+      body: undefined,
     },
     publishOptions: {
       token: 'existing-fallback-token',
@@ -1105,11 +1128,13 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.npmjs.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
-      token: null,
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
+      body: {
+        token: null,
+      },
     },
     publishOptions: {
       token: 'existing-fallback-token',
@@ -1155,10 +1180,10 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.npmjs.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
       body: {
         token: 'exchange-token',
       },
@@ -1169,12 +1194,12 @@ t.test('oidc token exchange', t => {
   }))
 
   t.test('default registry success gitlab', oidcPublishTest({
-    oidcOptions: { gitlab: true, NPM_ID_TOKEN: 'gitlab-jwt-id-token' },
+    oidcOptions: { gitlab: true, NPM_ID_TOKEN: gitlabPrivateIdToken },
     config: {
       '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'gitlab-jwt-id-token',
+      idToken: gitlabPrivateIdToken,
       body: {
         token: 'exchange-token',
       },
@@ -1193,10 +1218,10 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.zzz.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
       body: {
         token: 'exchange-token',
       },
@@ -1213,10 +1238,10 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.zzz.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
       body: {
         token: 'exchange-token',
       },
@@ -1238,10 +1263,10 @@ t.test('oidc token exchange', t => {
     },
     mockGithubOidcOptions: {
       audience: 'npm:registry.zzz.org',
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
     },
     mockOidcTokenExchangeOptions: {
-      idToken: 'github-jwt-id-token',
+      idToken: githubPrivateIdToken,
       body: {
         token: 'exchange-token',
       },
@@ -1251,6 +1276,72 @@ t.test('oidc token exchange', t => {
     },
     load: {
       registry: 'https://registry.zzz.org',
+    },
+  }))
+
+  t.end()
+})
+
+t.test('oidc token exchange -- provenance', (t) => {
+  const githubPublicIdToken = githubIdToken({ visibility: 'public' })
+  const gitlabPublicIdToken = gitlabIdToken({ visibility: 'public' })
+  const SIGSTORE_ID_TOKEN = MockProvenance.sigstoreIdToken()
+
+  t.test('default registry success github', oidcPublishTest({
+    oidcOptions: { github: true },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockGithubOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+      idToken: githubPublicIdToken,
+    },
+    mockOidcTokenExchangeOptions: {
+      idToken: githubPublicIdToken,
+      body: {
+        token: 'exchange-token',
+      },
+    },
+    publishOptions: {
+      token: 'exchange-token',
+    },
+    provenance: true,
+  }))
+
+  t.test('default registry success gitlab', oidcPublishTest({
+    oidcOptions: { gitlab: true, NPM_ID_TOKEN: gitlabPublicIdToken, SIGSTORE_ID_TOKEN },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockOidcTokenExchangeOptions: {
+      idToken: gitlabPublicIdToken,
+      body: {
+        token: 'exchange-token',
+      },
+    },
+    publishOptions: {
+      token: 'exchange-token',
+    },
+    provenance: true,
+  }))
+
+  t.test('valid oidc publish without provenance, invalid jwt id token parsing', oidcPublishTest({
+    oidcOptions: { github: true },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockGithubOidcOptions: {
+      audience: 'npm:registry.npmjs.org',
+      idToken: 'invalid-jwt',
+    },
+    mockOidcTokenExchangeOptions: {
+      idToken: 'invalid-jwt',
+      body: {
+        token: 'exchange-token',
+      },
+    },
+    publishOptions: {
+      token: 'exchange-token',
     },
   }))
 

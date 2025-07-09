@@ -1,6 +1,45 @@
 const nock = require('nock')
 const ciInfo = require('ci-info')
 
+function tnock (t, host, opts) {
+  nock.disableNetConnect()
+  const server = nock(host, opts)
+  t.teardown(function () {
+    nock.enableNetConnect()
+    server.done()
+  })
+  return server
+}
+
+// this is an effort to not add a dependency to the cli just for testing
+function makeJwt (payload) {
+  const header = { alg: 'none', typ: 'JWT' }
+  const headerB64 = Buffer.from(JSON.stringify(header)).toString('base64')
+  const payloadB64 = Buffer.from(JSON.stringify(payload)).toString('base64')
+  // empty signature section
+  return `${headerB64}.${payloadB64}.`
+}
+
+function gitlabIdToken ({ visibility = 'public' } = { visibility: 'public' }) {
+  const now = Math.floor(Date.now() / 1000)
+  const payload = {
+    project_visibility: visibility,
+    iat: now,
+    exp: now + 3600, // 1 hour expiration
+  }
+  return makeJwt(payload)
+}
+
+function githubIdToken ({ visibility = 'public' } = { visibility: 'public' }) {
+  const now = Math.floor(Date.now() / 1000)
+  const payload = {
+    repository_visibility: visibility,
+    iat: now,
+    exp: now + 3600, // 1 hour expiration
+  }
+  return makeJwt(payload)
+}
+
 class MockOidc {
   constructor (opts) {
     const defaultOpts = {
@@ -17,6 +56,8 @@ class MockOidc {
     this.gitlab = options.gitlab
     this.ACTIONS_ID_TOKEN_REQUEST_URL = options.ACTIONS_ID_TOKEN_REQUEST_URL
     this.ACTIONS_ID_TOKEN_REQUEST_TOKEN = options.ACTIONS_ID_TOKEN_REQUEST_TOKEN
+    this.SIGSTORE_ID_TOKEN = options.SIGSTORE_ID_TOKEN
+
     this.NPM_ID_TOKEN = options.NPM_ID_TOKEN
     this.GITHUB_ID_TOKEN = options.GITHUB_ID_TOKEN
 
@@ -28,6 +69,7 @@ class MockOidc {
       ACTIONS_ID_TOKEN_REQUEST_TOKEN: process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN,
       GITLAB_CI: process.env.GITLAB_CI,
       NPM_ID_TOKEN: process.env.NPM_ID_TOKEN,
+      SIGSTORE_ID_TOKEN: process.env.SIGSTORE_ID_TOKEN,
     }
     this.originalCiInfo = {
       GITLAB: ciInfo.GITLAB,
@@ -53,6 +95,7 @@ class MockOidc {
     delete process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN
     delete process.env.GITLAB_CI
     delete process.env.NPM_ID_TOKEN
+    delete process.env.SIGSTORE_ID_TOKEN
 
     ciInfo.GITHUB_ACTIONS = false
     ciInfo.GITLAB = false
@@ -65,6 +108,7 @@ class MockOidc {
 
     if (this.gitlab) {
       process.env.NPM_ID_TOKEN = this.NPM_ID_TOKEN
+      process.env.SIGSTORE_ID_TOKEN = this.SIGSTORE_ID_TOKEN
       ciInfo.GITLAB = true
     }
   }
@@ -128,4 +172,7 @@ class MockOidc {
 
 module.exports = {
   MockOidc,
+  gitlabIdToken,
+  githubIdToken,
+  tnock,
 }

@@ -80,7 +80,11 @@ class MockRegistry {
         // XXX: this is opt-in currently because it breaks some existing CLI
         // tests. We should work towards making this the default for all tests.
         t.comment(logReq(req, 'interceptors', 'socket', 'response', '_events'))
-        t.fail(`Unmatched request: ${req.method} ${req.path}`)
+        const protocol = req?.options?.protocol || 'http:'
+        const hostname = req?.options?.hostname || req?.hostname || 'localhost'
+        const p = req?.path || '/'
+        const url = new URL(p, `${protocol}//${hostname}`).toString()
+        t.fail(`Unmatched request: ${req.method} ${url}`)
       }
     }
 
