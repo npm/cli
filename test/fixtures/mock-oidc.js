@@ -1,16 +1,6 @@
 const nock = require('nock')
 const ciInfo = require('ci-info')
 
-function tnock (t, host, opts) {
-  nock.disableNetConnect()
-  const server = nock(host, opts)
-  t.teardown(function () {
-    nock.enableNetConnect()
-    server.done()
-  })
-  return server
-}
-
 // this is an effort to not add a dependency to the cli just for testing
 function makeJwt (payload) {
   const header = { alg: 'none', typ: 'JWT' }
@@ -174,5 +164,4 @@ module.exports = {
   MockOidc,
   gitlabIdToken,
   githubIdToken,
-  tnock,
 }
