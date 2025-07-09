@@ -1325,25 +1325,35 @@ t.test('oidc token exchange -- provenance', (t) => {
     provenance: true,
   }))
 
-  t.test('valid oidc publish without provenance, invalid jwt id token parsing', oidcPublishTest({
-    oidcOptions: { github: true },
-    config: {
-      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
-    },
-    mockGithubOidcOptions: {
-      audience: 'npm:registry.npmjs.org',
-      idToken: 'x.invalid-jwt.x',
-    },
-    mockOidcTokenExchangeOptions: {
-      idToken: 'x.invalid-jwt.x',
-      body: {
+  const brokenJwts = [
+    'x.invalid-jwt.x',
+    'x.invalid-jwt.',
+    'x.invalid-jwt',
+    'x.',
+    'x',
+  ]
+
+  brokenJwts.map((brokenJwt) => {
+    t.test(`broken jwt ${brokenJwt}`, oidcPublishTest({
+      oidcOptions: { github: true },
+      config: {
+        '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+      },
+      mockGithubOidcOptions: {
+        audience: 'npm:registry.npmjs.org',
+        idToken: brokenJwt,
+      },
+      mockOidcTokenExchangeOptions: {
+        idToken: brokenJwt,
+        body: {
+          token: 'exchange-token',
+        },
+      },
+      publishOptions: {
         token: 'exchange-token',
       },
-    },
-    publishOptions: {
-      token: 'exchange-token',
-    },
-  }))
+    }))
+  })
 
   t.end()
 })
