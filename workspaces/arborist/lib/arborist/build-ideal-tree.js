@@ -1516,7 +1516,7 @@ This is a one-time fix-up, please be patient...
 
   #idealTreePrune () {
     for (const node of this.idealTree.inventory.values()) {
-      if (node.extraneous) {
+      if (node.extraneous || (node.peer && node.optional)) {
         node.parent = null
       }
     }
