@@ -1478,11 +1478,6 @@ This is a one-time fix-up, please be patient...
     const needPrune = metaFromDisk && (mutateTree || flagsSuspect)
     if (this.#prune && needPrune) {
       this.#idealTreePrune()
-      for (const node of this.idealTree.inventory.values()) {
-        if (node.extraneous) {
-          node.parent = null
-        }
-      }
     }
 
     timeEnd()
