@@ -39,7 +39,6 @@ t.test('prune with lockfile', async t => {
 })
 
 t.test('prune with lockfile with implicit optional peer dependencies', async t => {
-  registry.mocks({ dir: join(__dirname, '..', '..', 'fixtures') })
   registry.audit({})
   const path = fixture(t, 'prune-lockfile-optional-peer')
   const tree = await pruneTree(path)
