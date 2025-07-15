@@ -68,7 +68,10 @@ Use:
 ```bash
 node . exec -- <package>
 ```
-
+To update the snapshots run:
+```bash
+TAP_SNAPSHOT=1 npm run tst
+```
 
 ## Performance & Benchmarks
 
