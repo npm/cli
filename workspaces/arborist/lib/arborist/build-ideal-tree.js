@@ -6,7 +6,7 @@ const pacote = require('pacote')
 const cacache = require('cacache')
 const { callLimit: promiseCallLimit } = require('promise-call-limit')
 const realpath = require('../../lib/realpath.js')
-const { resolve, dirname } = require('node:path')
+const { resolve, dirname, sep } = require('node:path')
 const treeCheck = require('../tree-check.js')
 const { readdirScoped } = require('@npmcli/fs')
 const { lstat, readlink } = require('node:fs/promises')
@@ -1226,9 +1226,21 @@ This is a one-time fix-up, please be patient...
     const { installLinks, legacyPeerDeps } = this
     const isWorkspace = this.idealTree.workspaces && this.idealTree.workspaces.has(spec.name)
 
-    // spec is a directory, link it unless installLinks is set or it's a workspace
+    // spec is a directory, link it if:
+    // - it's a workspace, OR
+    // - it's a project-internal file: dependency (always linked), OR
+    // - it's external and installLinks is false
     // TODO post arborist refactor, will need to check for installStrategy=linked
-    if (spec.type === 'directory' && (isWorkspace || !installLinks)) {
+    let isProjectInternalFileSpec = false
+    if (edge?.rawSpec.startsWith('file:../') || edge?.rawSpec.startsWith('file:./')) {
+      const targetPath = resolve(parent.realpath, edge.rawSpec.slice(5))
+      const resolvedProjectRoot = resolve(this.idealTree.realpath)
+      // Check if the target is within the project root
+      isProjectInternalFileSpec = targetPath.startsWith(resolvedProjectRoot + sep) || targetPath === resolvedProjectRoot
+    }
+    // Decide whether to link or copy the dependency
+    const shouldLink = isWorkspace || isProjectInternalFileSpec || !installLinks
+    if (spec.type === 'directory' && shouldLink) {
       return this.#linkFromSpec(name, spec, parent, edge)
     }
 
