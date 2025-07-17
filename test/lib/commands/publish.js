@@ -1347,6 +1347,23 @@ t.test('oidc token exchange -- provenance', (t) => {
     provenance: true,
   }))
 
+  t.test('default registry success gitlab without SIGSTORE_ID_TOKEN', oidcPublishTest({
+    oidcOptions: { gitlab: true, NPM_ID_TOKEN: gitlabPublicIdToken },
+    config: {
+      '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+    },
+    mockOidcTokenExchangeOptions: {
+      idToken: gitlabPublicIdToken,
+      body: {
+        token: 'exchange-token',
+      },
+    },
+    publishOptions: {
+      token: 'exchange-token',
+    },
+    provenance: false,
+  }))
+
   t.test('setting provenance true in config should enable provenance', oidcPublishTest({
     oidcOptions: { github: true },
     config: {

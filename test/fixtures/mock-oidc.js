@@ -39,6 +39,7 @@ class MockOidc {
       ACTIONS_ID_TOKEN_REQUEST_TOKEN: 'ACTIONS_ID_TOKEN_REQUEST_TOKEN',
       NPM_ID_TOKEN: 'NPM_ID_TOKEN',
       GITHUB_ID_TOKEN: 'mock-github-id-token',
+      SIGSTORE_ID_TOKEN: undefined,
     }
     const options = { ...defaultOpts, ...opts }
 
@@ -61,6 +62,7 @@ class MockOidc {
       NPM_ID_TOKEN: process.env.NPM_ID_TOKEN,
       SIGSTORE_ID_TOKEN: process.env.SIGSTORE_ID_TOKEN,
     }
+
     this.originalCiInfo = {
       GITLAB: ciInfo.GITLAB,
       GITHUB_ACTIONS: ciInfo.GITHUB_ACTIONS,
@@ -91,14 +93,22 @@ class MockOidc {
     ciInfo.GITLAB = false
 
     if (this.github) {
-      process.env.ACTIONS_ID_TOKEN_REQUEST_URL = this.ACTIONS_ID_TOKEN_REQUEST_URL
-      process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN = this.ACTIONS_ID_TOKEN_REQUEST_TOKEN
+      if (typeof this.ACTIONS_ID_TOKEN_REQUEST_URL === 'string') {
+        process.env.ACTIONS_ID_TOKEN_REQUEST_URL = this.ACTIONS_ID_TOKEN_REQUEST_URL
+      }
+      if (typeof this.ACTIONS_ID_TOKEN_REQUEST_TOKEN === 'string') {
+        process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN = this.ACTIONS_ID_TOKEN_REQUEST_TOKEN
+      }
       ciInfo.GITHUB_ACTIONS = true
     }
 
     if (this.gitlab) {
-      process.env.NPM_ID_TOKEN = this.NPM_ID_TOKEN
-      process.env.SIGSTORE_ID_TOKEN = this.SIGSTORE_ID_TOKEN
+      if (typeof this.NPM_ID_TOKEN === 'string') {
+        process.env.NPM_ID_TOKEN = this.NPM_ID_TOKEN
+      }
+      if (typeof this.SIGSTORE_ID_TOKEN === 'string') {
+        process.env.SIGSTORE_ID_TOKEN = this.SIGSTORE_ID_TOKEN
+      }
       ciInfo.GITLAB = true
     }
   }
@@ -115,8 +125,13 @@ class MockOidc {
 
   reset () {
     // Restore only the backed-up environment variables
+
     for (const key in this.originalEnv) {
-      process.env[key] = this.originalEnv[key]
+      if (typeof this.originalEnv[key] === 'string') {
+        process.env[key] = this.originalEnv[key]
+      } else {
+        delete process.env[key]
+      }
     }
 
     // Restore the original ciInfo values
