@@ -40,8 +40,17 @@ t.test('prune with lockfile', async t => {
 
 t.test('prune with lockfile with implicit optional peer dependencies', async t => {
   registry.audit({})
+  const opts = {}
+
+  // todo: for some reason on Windows when doing this test NPM looks for
+  //   the cache in the home directory, resulting in an unexpected real 
+  //   call being made to the registry
+  if (process.platform === 'win32') {
+    opts['cache'] = 'C:\\npm\\cache\\_cacache'
+  }
+
   const path = fixture(t, 'prune-lockfile-optional-peer')
-  const tree = await pruneTree(path)
+  const tree = await pruneTree(path, opts)
 
   const dep = tree.children.get('dedent')
   t.ok(dep, 'required prod dep was pruned from tree')
