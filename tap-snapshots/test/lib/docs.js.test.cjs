@@ -3301,8 +3301,9 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--foreground-scripts] [--ignore-scripts] [--no-audit] [--before <before>]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3331,6 +3332,7 @@ aliases: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`audit\`
+#### \`before\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -3399,8 +3401,9 @@ Options:
 [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--prefer-dedupe] [--no-package-lock] [--package-lock-only]
-[--foreground-scripts] [--ignore-scripts] [--no-audit] [--no-bin-links]
-[--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>] [--libc <libc>]
+[--foreground-scripts] [--ignore-scripts] [--no-audit] [--before <before>]
+[--no-bin-links] [--no-fund] [--dry-run] [--cpu <cpu>] [--os <os>]
+[--libc <libc>]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -3429,6 +3432,7 @@ alias: it
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`audit\`
+#### \`before\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
@@ -3675,6 +3679,7 @@ npm outdated [<package-spec> ...]
 Options:
 [-a|--all] [--json] [-l|--long] [-p|--parseable] [-g|--global]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+[--before <before>]
 
 Run "npm help outdated" for more info
 
@@ -3688,6 +3693,7 @@ npm outdated [<package-spec> ...]
 #### \`parseable\`
 #### \`global\`
 #### \`workspace\`
+#### \`before\`
 `
 
 exports[`test/lib/docs.js TAP usage owner > must match snapshot 1`] = `
@@ -4433,7 +4439,8 @@ Options:
 [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
 [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
 [--strict-peer-deps] [--no-package-lock] [--foreground-scripts]
-[--ignore-scripts] [--no-audit] [--no-bin-links] [--no-fund] [--dry-run]
+[--ignore-scripts] [--no-audit] [--before <before>] [--no-bin-links] [--no-fund]
+[--dry-run]
 [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
 [--workspaces] [--include-workspace-root] [--install-links]
 
@@ -4459,6 +4466,7 @@ aliases: up, upgrade, udpate
 #### \`foreground-scripts\`
 #### \`ignore-scripts\`
 #### \`audit\`
+#### \`before\`
 #### \`bin-links\`
 #### \`fund\`
 #### \`dry-run\`
