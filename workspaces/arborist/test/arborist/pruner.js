@@ -40,7 +40,6 @@ t.test('prune with lockfile', async t => {
 })
 
 t.test('prune with lockfile with implicit optional peer dependencies', async t => {
-  registry.audit({})
   const opts = {}
 
   // todo: for some reason on Windows when doing this test NPM looks for
