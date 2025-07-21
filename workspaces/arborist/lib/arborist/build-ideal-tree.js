@@ -1472,7 +1472,12 @@ This is a one-time fix-up, please be patient...
 
   #idealTreePrune () {
     for (const node of this.idealTree.inventory.values()) {
-      if (node.extraneous) {
+      // optional peer dependencies are meant to be added to the tree
+      // through an explicit required dependency (most commonly in the
+      // root package.json), at which point they won't be optional so
+      // any dependencies still marked as both optional and peer at
+      // this point can be pruned as a special kind of extraneous
+      if (node.extraneous || (node.peer && node.optional)) {
         node.parent = null
       }
     }
