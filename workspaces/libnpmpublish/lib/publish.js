@@ -172,6 +172,7 @@ const buildMetadata = async (registry, manifest, tarballData, spec, opts) => {
 
 // Check that all the prereqs are met for provenance generation
 const ensureProvenanceGeneration = async (registry, spec, opts) => {
+  console.log(ciInfo.GITLAB, ciInfo.GITHUB_ACTIONS)
   if (ciInfo.GITHUB_ACTIONS) {
     // Ensure that the GHA OIDC token is available
     if (!process.env.ACTIONS_ID_TOKEN_REQUEST_URL) {

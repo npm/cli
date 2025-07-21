@@ -5,8 +5,8 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { MockOidc, githubIdToken, gitlabIdToken } = require('../../fixtures/mock-oidc')
-const { MockProvenance } = require('@npmcli/mock-registry/lib/provenance')
+const { githubIdToken, gitlabIdToken, oidcPublishTest } = require('../../fixtures/mock-oidc')
+const { sigstoreIdToken } = require('@npmcli/mock-registry/lib/provenance')
 
 const pkg = '@npmcli/test-package'
 const token = 'test-auth-token'
@@ -991,65 +991,6 @@ t.test('semver highest dist tag', async t => {
   })
 })
 
-const oidcPublishTest = ({
-  oidcOptions = {},
-  packageName = '@npmcli/test-package',
-  config = {},
-  packageJson = {},
-  load = {},
-  mockGithubOidcOptions = null,
-  mockOidcTokenExchangeOptions = null,
-  publishOptions = {},
-  provenance = false,
-}) => {
-  return async (t) => {
-    const oidc = MockOidc.tnock(t, oidcOptions)
-    const { npm, registry } = await loadNpmWithRegistry(t, {
-      config,
-      prefixDir: {
-        'package.json': JSON.stringify({
-          name: packageName,
-          version: '1.0.0',
-          ...packageJson,
-        }, null, 2),
-      },
-      ...load,
-    })
-    if (mockGithubOidcOptions) {
-      oidc.mockGithubOidc(mockGithubOidcOptions)
-    }
-    if (mockOidcTokenExchangeOptions) {
-      registry.mockOidcTokenExchange({
-        packageName,
-        ...mockOidcTokenExchangeOptions,
-      })
-    }
-
-    registry.publish(packageName, publishOptions)
-
-    if ((oidc.github || oidc.gitlab) && provenance) {
-      registry.getVisibility({ spec: packageName, visibility: { public: true } })
-
-      MockProvenance.successfulNock({
-        oidcURL: oidc.ACTIONS_ID_TOKEN_REQUEST_URL,
-        requestToken: oidc.ACTIONS_ID_TOKEN_REQUEST_TOKEN,
-        workflowPath: '.github/workflows/publish.yml',
-        repository: 'github/foo',
-        serverUrl: 'https://github.com',
-        ref: 'refs/tags/pkg@1.0.0',
-        sha: 'deadbeef',
-        runID: '123456',
-        runAttempt: '1',
-        runnerEnv: 'github-hosted',
-      })
-    }
-
-    await npm.exec('publish', [])
-
-    oidc.reset()
-  }
-}
-
 t.test('oidc token exchange - no provenance', t => {
   const githubPrivateIdToken = githubIdToken({ visibility: 'private' })
   const gitlabPrivateIdToken = gitlabIdToken({ visibility: 'private' })
@@ -1307,7 +1248,7 @@ t.test('oidc token exchange - no provenance', t => {
 t.test('oidc token exchange -- provenance', (t) => {
   const githubPublicIdToken = githubIdToken({ visibility: 'public' })
   const gitlabPublicIdToken = gitlabIdToken({ visibility: 'public' })
-  const SIGSTORE_ID_TOKEN = MockProvenance.sigstoreIdToken()
+  const SIGSTORE_ID_TOKEN = sigstoreIdToken()
 
   t.test('default registry success github', oidcPublishTest({
     oidcOptions: { github: true },

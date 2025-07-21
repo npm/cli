@@ -1,5 +1,8 @@
-const nock = require('nock')
 const ciInfo = require('ci-info')
+const nock = require('nock')
+const mockGlobals = require('@npmcli/mock-globals')
+const { loadNpmWithRegistry } = require('./mock-npm')
+const { mockProvenance } = require('@npmcli/mock-registry/lib/provenance')
 
 // this is an effort to not add a dependency to the cli just for testing
 function makeJwt (payload) {
@@ -30,138 +33,115 @@ function githubIdToken ({ visibility = 'public' } = { visibility: 'public' }) {
   return makeJwt(payload)
 }
 
-class MockOidc {
-  constructor (opts) {
-    const defaultOpts = {
-      github: false,
-      gitlab: false,
-      ACTIONS_ID_TOKEN_REQUEST_URL: 'https://github.com/actions/id-token',
-      ACTIONS_ID_TOKEN_REQUEST_TOKEN: 'ACTIONS_ID_TOKEN_REQUEST_TOKEN',
-      NPM_ID_TOKEN: 'NPM_ID_TOKEN',
-      GITHUB_ID_TOKEN: 'mock-github-id-token',
-    }
-    const options = { ...defaultOpts, ...opts }
+const mockOidc = async (t, {
+  oidcOptions = {},
+  packageName = '@npmcli/test-package',
+  config = {},
+  packageJson = {},
+  load = {},
+  mockGithubOidcOptions = null,
+  mockOidcTokenExchangeOptions = null,
+  publishOptions = {},
+  provenance = false,
+}) => {
+  const github = oidcOptions.github ?? false
+  const gitlab = oidcOptions.gitlab ?? false
 
-    this.github = options.github
-    this.gitlab = options.gitlab
-    this.ACTIONS_ID_TOKEN_REQUEST_URL = options.ACTIONS_ID_TOKEN_REQUEST_URL
-    this.ACTIONS_ID_TOKEN_REQUEST_TOKEN = options.ACTIONS_ID_TOKEN_REQUEST_TOKEN
-    this.SIGSTORE_ID_TOKEN = options.SIGSTORE_ID_TOKEN
+  const ACTIONS_ID_TOKEN_REQUEST_URL = oidcOptions.ACTIONS_ID_TOKEN_REQUEST_URL ?? 'https://github.com/actions/id-token'
+  const ACTIONS_ID_TOKEN_REQUEST_TOKEN = oidcOptions.ACTIONS_ID_TOKEN_REQUEST_TOKEN ?? 'ACTIONS_ID_TOKEN_REQUEST_TOKEN'
 
-    this.NPM_ID_TOKEN = options.NPM_ID_TOKEN
-    this.GITHUB_ID_TOKEN = options.GITHUB_ID_TOKEN
+  mockGlobals(t, {
+    process: {
+      env: {
+        ACTIONS_ID_TOKEN_REQUEST_TOKEN: ACTIONS_ID_TOKEN_REQUEST_TOKEN,
+        ACTIONS_ID_TOKEN_REQUEST_URL: ACTIONS_ID_TOKEN_REQUEST_URL,
+        CI: github || gitlab ? 'true' : undefined,
+        ...(github ? { GITHUB_ACTIONS: 'true' } : {}),
+        ...(gitlab ? { GITLAB_CI: 'true' } : {}),
+        ...(oidcOptions.NPM_ID_TOKEN ? { NPM_ID_TOKEN: oidcOptions.NPM_ID_TOKEN } : {}),
+        /* eslint-disable-next-line max-len */
+        ...(oidcOptions.SIGSTORE_ID_TOKEN ? { SIGSTORE_ID_TOKEN: oidcOptions.SIGSTORE_ID_TOKEN } : {}),
+      },
+    },
+  })
 
-    // Backup only the relevant environment variables and ciInfo values
-    this.originalEnv = {
-      CI: process.env.CI,
-      GITHUB_ACTIONS: process.env.GITHUB_ACTIONS,
-      ACTIONS_ID_TOKEN_REQUEST_URL: process.env.ACTIONS_ID_TOKEN_REQUEST_URL,
-      ACTIONS_ID_TOKEN_REQUEST_TOKEN: process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN,
-      GITLAB_CI: process.env.GITLAB_CI,
-      NPM_ID_TOKEN: process.env.NPM_ID_TOKEN,
-      SIGSTORE_ID_TOKEN: process.env.SIGSTORE_ID_TOKEN,
-    }
-    this.originalCiInfo = {
-      GITLAB: ciInfo.GITLAB,
-      GITHUB_ACTIONS: ciInfo.GITHUB_ACTIONS,
-    }
-    this.setupEnvironment()
+  const GITHUB_ACTIONS = ciInfo.GITHUB_ACTIONS
+  const GITLAB = ciInfo.GITLAB
+  delete ciInfo.GITHUB_ACTIONS
+  delete ciInfo.GITLAB
+  if (github) {
+    ciInfo.GITHUB_ACTIONS = 'true'
   }
-
-  get idToken () {
-    if (this.github) {
-      return this.GITHUB_ID_TOKEN
-    }
-    if (this.gitlab) {
-      return this.NPM_ID_TOKEN
-    }
-    return undefined
+  if (gitlab) {
+    ciInfo.GITLAB = 'true'
   }
+  t.teardown(() => {
+    ciInfo.GITHUB_ACTIONS = GITHUB_ACTIONS
+    ciInfo.GITLAB = GITLAB
+  })
 
-  setupEnvironment () {
-    delete process.env.CI
-    delete process.env.GITHUB_ACTIONS
-    delete process.env.ACTIONS_ID_TOKEN_REQUEST_URL
-    delete process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN
-    delete process.env.GITLAB_CI
-    delete process.env.NPM_ID_TOKEN
-    delete process.env.SIGSTORE_ID_TOKEN
+  const { npm, registry, joinedOutput } = await loadNpmWithRegistry(t, {
+    config,
+    prefixDir: {
+      'package.json': JSON.stringify({
+        name: packageName,
+        version: '1.0.0',
+        ...packageJson,
+      }, null, 2),
+    },
+    ...load,
+  })
 
-    ciInfo.GITHUB_ACTIONS = false
-    ciInfo.GITLAB = false
-
-    if (this.github) {
-      process.env.ACTIONS_ID_TOKEN_REQUEST_URL = this.ACTIONS_ID_TOKEN_REQUEST_URL
-      process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN = this.ACTIONS_ID_TOKEN_REQUEST_TOKEN
-      ciInfo.GITHUB_ACTIONS = true
-    }
-
-    if (this.gitlab) {
-      process.env.NPM_ID_TOKEN = this.NPM_ID_TOKEN
-      process.env.SIGSTORE_ID_TOKEN = this.SIGSTORE_ID_TOKEN
-      ciInfo.GITLAB = true
-    }
-  }
-
-  mockGithubOidc ({ idToken = this.GITHUB_ID_TOKEN, audience, statusCode = 200 } = {}) {
-    const url = new URL(this.ACTIONS_ID_TOKEN_REQUEST_URL)
-    return nock(url.origin)
+  if (mockGithubOidcOptions) {
+    const { idToken, audience, statusCode = 200 } = mockGithubOidcOptions
+    const url = new URL(ACTIONS_ID_TOKEN_REQUEST_URL)
+    nock(url.origin)
       .get(url.pathname)
       .query({ audience })
-      .matchHeader('authorization', `Bearer ${this.ACTIONS_ID_TOKEN_REQUEST_TOKEN}`)
+      .matchHeader('authorization', `Bearer ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}`)
       .matchHeader('accept', 'application/json')
       .reply(statusCode, statusCode !== 500 ? { value: idToken } : { message: 'Internal Server Error' })
   }
 
-  reset () {
-    // Restore only the backed-up environment variables
-    for (const key in this.originalEnv) {
-      process.env[key] = this.originalEnv[key]
-    }
-
-    // Restore the original ciInfo values
-    ciInfo.GITLAB = this.originalCiInfo.GITLAB
-    ciInfo.GITHUB_ACTIONS = this.originalCiInfo.GITHUB_ACTIONS
-
-    nock.cleanAll()
+  if (mockOidcTokenExchangeOptions) {
+    registry.mockOidcTokenExchange({
+      packageName,
+      ...mockOidcTokenExchangeOptions,
+    })
   }
 
-  static tnock (t, opts = {}, { debug = false, strict = false } = {}) {
-    const instance = new MockOidc(opts)
+  registry.publish(packageName, publishOptions)
 
-    const noMatch = (req) => {
-      if (debug) {
-        /* eslint-disable-next-line no-console */
-        console.error('NO MATCH', t.name, req.options ? req.options : req.path)
-      }
-      if (strict) {
-        t.comment(`Unmatched request: ${req.method} ${req.path}`)
-        t.fail(`Unmatched request: ${req.method} ${req.path}`)
-      }
-    }
-
-    nock.emitter.on('no match', noMatch)
-    nock.disableNetConnect()
-
-    if (strict) {
-      t.afterEach(() => {
-        t.strictSame(nock.pendingMocks(), [], 'no pending mocks after each')
-      })
-    }
-
-    t.teardown(() => {
-      nock.enableNetConnect()
-      nock.emitter.off('no match', noMatch)
-      nock.cleanAll()
-      instance.reset()
+  if ((github || gitlab) && provenance) {
+    registry.getVisibility({ spec: packageName, visibility: { public: true } })
+    mockProvenance(t, {
+      oidcURL: ACTIONS_ID_TOKEN_REQUEST_URL,
+      requestToken: ACTIONS_ID_TOKEN_REQUEST_TOKEN,
+      workflowPath: '.github/workflows/publish.yml',
+      repository: 'github/foo',
+      serverUrl: 'https://github.com',
+      ref: 'refs/tags/pkg@1.0.0',
+      sha: 'deadbeef',
+      runID: '123456',
+      runAttempt: '1',
+      runnerEnv: 'github-hosted',
     })
+  }
 
-    return instance
+  return { npm, joinedOutput }
+}
+
+const oidcPublishTest = (opts) => {
+  return async (t) => {
+    const { npm, joinedOutput } = await mockOidc(t, opts)
+    await npm.exec('publish', [])
+    t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
   }
 }
 
 module.exports = {
-  MockOidc,
   gitlabIdToken,
   githubIdToken,
+  mockOidc,
+  oidcPublishTest,
 }
