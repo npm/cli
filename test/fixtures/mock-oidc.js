@@ -74,7 +74,6 @@ const mockOidc = async (t, {
   }
   if (gitlab) {
     ciInfo.GITLAB = 'true'
-
   }
   t.teardown(() => {
     ciInfo.GITHUB_ACTIONS = GITHUB_ACTIONS
@@ -109,7 +108,6 @@ const mockOidc = async (t, {
       packageName,
       ...mockOidcTokenExchangeOptions,
     })
-
   }
 
   registry.publish(packageName, publishOptions)
