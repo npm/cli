@@ -1306,6 +1306,11 @@ This is a one-time fix-up, please be patient...
       .sort(({ name: a }, { name: b }) => localeCompare(a, b))
 
     for (const edge of peerEdges) {
+      // if node is detached/removed from the tree, or has no parent,
+      // then we can't place the peer dep, so skip it.
+      if (!node.parent) {
+        break
+      }
       // already placed this one, and we're happy with it.
       if (edge.valid && edge.to) {
         continue

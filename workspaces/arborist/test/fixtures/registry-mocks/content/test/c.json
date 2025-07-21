@@ -1,0 +1,95 @@
+{
+  "name": "@test/c",
+  "versions": {
+    "1.0.0": {
+      "name": "@test/c",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "@test/a": "1.0.0"
+      },
+      "_id": "@test/c@1.0.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-ikGDvMXxzqHgCkIycVNWmpfDs6G/aA7i3AY1Or+T+hO+2G/t+rfIxnLgIc4p10K7GM2ZxcipK9Z7U6LAtTO0iw==",
+        "shasum": "96b5a6fa92f8713c240686e9f3dfd5c00df7497e",
+        "tarball": "http://localhost:4873/@test/c/-/c-1.0.0.tgz"
+      },
+      "contributors": []
+    },
+    "1.1.0": {
+      "name": "@test/c",
+      "version": "1.1.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "@test/a": "1.1.0"
+      },
+      "_id": "@test/c@1.1.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-BNxNmwGwAhVxA8RQpog/wy/NNZfa5ruskwZePlKfu1zpLVtsrjO8zGau6C/c8iIw9mwrVqBAeBuFpUwJhLTAZA==",
+        "shasum": "01db72391f551fd7944adbf0f54eaebc389b90c4",
+        "tarball": "http://localhost:4873/@test/c/-/c-1.1.0.tgz"
+      },
+      "contributors": []
+    },
+    "1.2.0": {
+      "name": "@test/c",
+      "version": "1.2.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC",
+      "type": "commonjs",
+      "peerDependencies": {
+        "@test/a": "1.2.0"
+      },
+      "_id": "@test/c@1.2.0",
+      "_nodeVersion": "22.14.0",
+      "_npmVersion": "11.4.2",
+      "dist": {
+        "integrity": "sha512-pAHdEr8mb8mXuWPQL0mbkyHVulhzVWQ3HvpO9OBZ0azF56p9cr1+hVy/CajxPdEr/Crx6iBfjpoaNYscVPbvMg==",
+        "shasum": "e915f26882f8bbde7e238c02908bbc5625cf3c4e",
+        "tarball": "http://localhost:4873/@test/c/-/c-1.2.0.tgz"
+      },
+      "contributors": []
+    }
+  },
+  "time": {
+    "modified": "2025-07-29T13:03:42.407Z",
+    "created": "2025-07-29T13:03:29.009Z",
+    "1.0.0": "2025-07-29T13:03:29.009Z",
+    "1.1.0": "2025-07-29T13:03:36.559Z",
+    "1.2.0": "2025-07-29T13:03:42.407Z"
+  },
+  "users": {},
+  "dist-tags": {
+    "latest": "1.2.0"
+  },
+  "_rev": "9-19d0ff85a20ff576",
+  "_id": "@test/c",
+  "readme": "ERROR: No README data found!",
+  "_attachments": {}
+}

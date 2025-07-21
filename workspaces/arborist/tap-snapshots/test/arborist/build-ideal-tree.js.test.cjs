@@ -74672,6 +74672,315 @@ exports[`test/arborist/build-ideal-tree.js TAP more peer dep conflicts metadeps 
 Array []
 `
 
+exports[`test/arborist/build-ideal-tree.js TAP more peer dep conflicts peerDep replacement of top level dep with different version resulting detached top level dep > default result 1`] = `
+ArboristNode {
+  "children": Map {
+    "@test/a" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/a",
+          "spec": "^1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/b",
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "type": "peer",
+        },
+      },
+      "edgesOut": Map {
+        "@test/b" => EdgeOut {
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/b",
+          "type": "peerOptional",
+        },
+        "@test/c" => EdgeOut {
+          "name": "@test/c",
+          "spec": "1.1.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "lodash" => EdgeOut {
+          "name": "lodash",
+          "spec": "^4.17.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "uniq" => EdgeOut {
+          "name": "uniq",
+          "spec": "^1.0.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+      },
+      "location": "node_modules/@test/a",
+      "name": "@test/a",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/a",
+      "resolved": "http://localhost:4873/@test/a/-/a-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+    "@test/b" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/a",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "peerOptional",
+        },
+      },
+      "edgesOut": Map {
+        "@test/a" => EdgeOut {
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/a",
+          "type": "peer",
+        },
+      },
+      "location": "node_modules/@test/b",
+      "name": "@test/b",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/b",
+      "resolved": "http://localhost:4873/@test/b/-/b-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+  },
+  "edgesOut": Map {
+    "@test/a" => EdgeOut {
+      "name": "@test/a",
+      "spec": "^1.1.0",
+      "to": "node_modules/@test/a",
+      "type": "dev",
+    },
+    "@test/b" => EdgeOut {
+      "name": "@test/b",
+      "spec": "1.1.0",
+      "to": "node_modules/@test/b",
+      "type": "dev",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+  "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+}
+`
+
+exports[`test/arborist/build-ideal-tree.js TAP more peer dep conflicts peerDep replacement of top level dep with different version resulting detached top level dep > force result 1`] = `
+ArboristNode {
+  "children": Map {
+    "@test/a" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/a",
+          "spec": "^1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/b",
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "type": "peer",
+        },
+      },
+      "edgesOut": Map {
+        "@test/b" => EdgeOut {
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/b",
+          "type": "peerOptional",
+        },
+        "@test/c" => EdgeOut {
+          "name": "@test/c",
+          "spec": "1.1.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "lodash" => EdgeOut {
+          "name": "lodash",
+          "spec": "^4.17.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "uniq" => EdgeOut {
+          "name": "uniq",
+          "spec": "^1.0.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+      },
+      "location": "node_modules/@test/a",
+      "name": "@test/a",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/a",
+      "resolved": "http://localhost:4873/@test/a/-/a-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+    "@test/b" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/a",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "peerOptional",
+        },
+      },
+      "edgesOut": Map {
+        "@test/a" => EdgeOut {
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/a",
+          "type": "peer",
+        },
+      },
+      "location": "node_modules/@test/b",
+      "name": "@test/b",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/b",
+      "resolved": "http://localhost:4873/@test/b/-/b-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+  },
+  "edgesOut": Map {
+    "@test/a" => EdgeOut {
+      "name": "@test/a",
+      "spec": "^1.1.0",
+      "to": "node_modules/@test/a",
+      "type": "dev",
+    },
+    "@test/b" => EdgeOut {
+      "name": "@test/b",
+      "spec": "1.1.0",
+      "to": "node_modules/@test/b",
+      "type": "dev",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+  "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+}
+`
+
+exports[`test/arborist/build-ideal-tree.js TAP more peer dep conflicts peerDep replacement of top level dep with different version resulting detached top level dep > strict result 1`] = `
+ArboristNode {
+  "children": Map {
+    "@test/a" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/a",
+          "spec": "^1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/b",
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "type": "peer",
+        },
+      },
+      "edgesOut": Map {
+        "@test/b" => EdgeOut {
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/b",
+          "type": "peerOptional",
+        },
+        "@test/c" => EdgeOut {
+          "name": "@test/c",
+          "spec": "1.1.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "lodash" => EdgeOut {
+          "name": "lodash",
+          "spec": "^4.17.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+        "uniq" => EdgeOut {
+          "name": "uniq",
+          "spec": "^1.0.0",
+          "to": null,
+          "type": "peerOptional",
+        },
+      },
+      "location": "node_modules/@test/a",
+      "name": "@test/a",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/a",
+      "resolved": "http://localhost:4873/@test/a/-/a-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+    "@test/b" => ArboristNode {
+      "dev": true,
+      "edgesIn": Set {
+        EdgeIn {
+          "from": "",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "dev",
+        },
+        EdgeIn {
+          "from": "node_modules/@test/a",
+          "name": "@test/b",
+          "spec": "1.1.0",
+          "type": "peerOptional",
+        },
+      },
+      "edgesOut": Map {
+        "@test/a" => EdgeOut {
+          "name": "@test/a",
+          "spec": "1.1.0",
+          "to": "node_modules/@test/a",
+          "type": "peer",
+        },
+      },
+      "location": "node_modules/@test/b",
+      "name": "@test/b",
+      "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep/node_modules/@test/b",
+      "resolved": "http://localhost:4873/@test/b/-/b-1.1.0.tgz",
+      "version": "1.1.0",
+    },
+  },
+  "edgesOut": Map {
+    "@test/a" => EdgeOut {
+      "name": "@test/a",
+      "spec": "^1.1.0",
+      "to": "node_modules/@test/a",
+      "type": "dev",
+    },
+    "@test/b" => EdgeOut {
+      "name": "@test/b",
+      "spec": "1.1.0",
+      "to": "node_modules/@test/b",
+      "type": "dev",
+    },
+  },
+  "isProjectRoot": true,
+  "location": "",
+  "name": "tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+  "path": "{CWD}/test/arborist/tap-testdir-build-ideal-tree-more-peer-dep-conflicts-peerDep-replacement-of-top-level-dep-with-different-version-resulting-detached-top-level-dep",
+}
+`
+
 exports[`test/arborist/build-ideal-tree.js TAP more peer dep conflicts prod dep directly on conflicted peer, full peer set, newer > force result 1`] = `
 ArboristNode {
   "children": Map {

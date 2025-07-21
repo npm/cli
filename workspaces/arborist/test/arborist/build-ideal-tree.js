@@ -1655,6 +1655,16 @@ t.test('more peer dep conflicts', async t => {
       error: false,
       resolvable: true,
     },
+    'peerDep replacement of top level dep with different version resulting detached top level dep': {
+      pkg: {
+        description: 'a@ -> (PeerOptional(b, c, dep, dep))  b -> ( Peer(a) ) c -> ( Peer(a) )',
+        devDependencies: {
+          '@test/a': '^1.1.0',
+          '@test/b': '1.1.0',
+        },
+      },
+      error: false,
+      resolvable: true },
   })
 
   createRegistry(t, true)
