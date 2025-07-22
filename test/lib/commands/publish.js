@@ -1167,7 +1167,7 @@ t.test('oidc token exchange - no provenance', t => {
       constructor (...args) {
         const [url] = args
         if (url === ACTIONS_ID_TOKEN_REQUEST_URL) {
-          throw 'Borqued URL'
+          throw 'Specifically throwing a non errror object to test global try / catch'
         }
         super(...args)
       }
