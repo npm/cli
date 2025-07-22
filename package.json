@@ -93,7 +93,7 @@
     "ms": "^2.1.2",
     "node-gyp": "^11.2.0",
     "nopt": "^8.1.0",
-    "normalize-package-data": "^7.0.0",
+    "normalize-package-data": "^7.0.1",
     "npm-audit-report": "^6.0.0",
     "npm-install-checks": "^7.1.1",
     "npm-package-arg": "^12.0.2",
