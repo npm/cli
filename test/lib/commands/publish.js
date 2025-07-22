@@ -5,7 +5,7 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { githubIdToken, gitlabIdToken, oidcPublishTest } = require('../../fixtures/mock-oidc')
+const { githubIdToken, gitlabIdToken, oidcPublishTest, mockOidc } = require('../../fixtures/mock-oidc')
 const { sigstoreIdToken } = require('@npmcli/mock-registry/lib/provenance')
 
 const pkg = '@npmcli/test-package'
@@ -1134,6 +1134,22 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'exchange-token',
     },
   }))
+
+  t.test('global try / catch failure via malformed url', async (t) => {
+    mockOidc(t, {
+      config: {
+        '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+      },
+      oidcOptions: {
+        github: true,
+        // malformed url should trigger a global try / catch
+        ACTIONS_ID_TOKEN_REQUEST_URL: '//github.com',
+      },
+      publishOptions: {
+        token: 'existing-fallback-token',
+      },
+    })
+  })
 
   t.test('default registry success gitlab', oidcPublishTest({
     oidcOptions: { gitlab: true, NPM_ID_TOKEN: gitlabPrivateIdToken },
