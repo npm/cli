@@ -80,8 +80,11 @@ const mockOidc = async (t, {
     ciInfo.GITLAB = GITLAB
   })
 
-  const { npm, registry, joinedOutput } = await loadNpmWithRegistry(t, {
-    config,
+  const { npm, registry, joinedOutput, logs } = await loadNpmWithRegistry(t, {
+    config: {
+      loglevel: 'silly',
+      ...config,
+    },
     prefixDir: {
       'package.json': JSON.stringify({
         name: packageName,
@@ -128,7 +131,7 @@ const mockOidc = async (t, {
     })
   }
 
-  return { npm, joinedOutput }
+  return { npm, joinedOutput, logs, ACTIONS_ID_TOKEN_REQUEST_URL }
 }
 
 const oidcPublishTest = (opts) => {

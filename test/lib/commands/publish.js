@@ -5,8 +5,9 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { githubIdToken, gitlabIdToken, oidcPublishTest } = require('../../fixtures/mock-oidc')
+const { githubIdToken, gitlabIdToken, oidcPublishTest, mockOidc } = require('../../fixtures/mock-oidc')
 const { sigstoreIdToken } = require('@npmcli/mock-registry/lib/provenance')
+const mockGlobals = require('@npmcli/mock-globals')
 
 const pkg = '@npmcli/test-package'
 const token = 'test-auth-token'
@@ -1148,6 +1149,38 @@ t.test('oidc token exchange - no provenance', t => {
       token: 'existing-fallback-token',
     },
   }))
+
+  t.test('global try / catch failure via throw non Error', async t => {
+    const { npm, logs, joinedOutput, ACTIONS_ID_TOKEN_REQUEST_URL } = await mockOidc(t, {
+      config: {
+        '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+      },
+      oidcOptions: {
+        github: true,
+      },
+      publishOptions: {
+        token: 'existing-fallback-token',
+      },
+    })
+
+    class URLOverride extends URL {
+      constructor (...args) {
+        const [url] = args
+        if (url === ACTIONS_ID_TOKEN_REQUEST_URL) {
+          throw 'Borqued URL'
+        }
+        super(...args)
+      }
+    }
+
+    mockGlobals(t, {
+      URL: URLOverride,
+    })
+
+    await npm.exec('publish', [])
+    t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
+    t.ok(logs.includes('verbose oidc Failure with message "Unknown error"'))
+  })
 
   t.test('default registry success gitlab', oidcPublishTest({
     oidcOptions: { gitlab: true, NPM_ID_TOKEN: gitlabPrivateIdToken },
