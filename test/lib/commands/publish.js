@@ -5,7 +5,7 @@ const pacote = require('pacote')
 const Arborist = require('@npmcli/arborist')
 const path = require('node:path')
 const fs = require('node:fs')
-const { githubIdToken, gitlabIdToken, oidcPublishTest, mockOidc } = require('../../fixtures/mock-oidc')
+const { githubIdToken, gitlabIdToken, oidcPublishTest } = require('../../fixtures/mock-oidc')
 const { sigstoreIdToken } = require('@npmcli/mock-registry/lib/provenance')
 
 const pkg = '@npmcli/test-package'
