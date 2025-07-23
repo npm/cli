@@ -1008,6 +1008,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failed to fetch id_token from GitHub: received an invalid response',
+    ],
   }))
 
   t.test('oidc token invalid body with fallback', oidcPublishTest({
@@ -1022,6 +1025,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failed to fetch id_token from GitHub: missing value',
+    ],
   }))
 
   t.test('token exchange 500 with fallback', oidcPublishTest({
@@ -1043,9 +1049,12 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failed token exchange request with body message: oidc token exchange failed',
+    ],
   }))
 
-  t.test('token exchange 500 (with no body message) with fallback', oidcPublishTest({
+  t.test('token exchange 500 with no body message with fallback', oidcPublishTest({
     oidcOptions: { github: true },
     config: {
       '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
@@ -1062,6 +1071,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failed token exchange request with body message: Unknown error',
+    ],
   }))
 
   t.test('token exchange invalid body with fallback', oidcPublishTest({
@@ -1082,9 +1094,12 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failed because token exchange was missing the token in the response body',
+    ],
   }))
 
-  t.test('github + missing ACTIONS_ID_TOKEN_REQUEST_URL', oidcPublishTest({
+  t.test('github missing ACTIONS_ID_TOKEN_REQUEST_URL', oidcPublishTest({
     oidcOptions: { github: true, ACTIONS_ID_TOKEN_REQUEST_URL: '' },
     config: {
       '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
@@ -1092,9 +1107,12 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'silly oidc Skipped because incorrect permissions for id-token within GitHub workflow',
+    ],
   }))
 
-  t.test('gitlab + missing NPM_ID_TOKEN', oidcPublishTest({
+  t.test('gitlab missing NPM_ID_TOKEN', oidcPublishTest({
     oidcOptions: { gitlab: true, NPM_ID_TOKEN: '' },
     config: {
       '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
@@ -1102,6 +1120,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'silly oidc Skipped because no id_token available',
+    ],
   }))
 
   t.test('no ci', oidcPublishTest({
@@ -1112,6 +1133,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'silly oidc Skipped because unsupported CI environment',
+    ],
   }))
 
   // default registry success
@@ -1148,6 +1172,9 @@ t.test('oidc token exchange - no provenance', t => {
     publishOptions: {
       token: 'existing-fallback-token',
     },
+    logsContain: [
+      'verbose oidc Failure with message: Invalid URL',
+    ],
   }))
 
   t.test('global try / catch failure via throw non Error', async t => {
@@ -1179,7 +1206,7 @@ t.test('oidc token exchange - no provenance', t => {
 
     await npm.exec('publish', [])
     t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
-    t.ok(logs.includes('verbose oidc Failure with message "Unknown error"'))
+    t.ok(logs.includes('verbose oidc Failure with message: Unknown error'))
   })
 
   t.test('default registry success gitlab', oidcPublishTest({
@@ -1200,7 +1227,7 @@ t.test('oidc token exchange - no provenance', t => {
 
   // custom registry success
 
-  t.test('custom registry (config) success github', oidcPublishTest({
+  t.test('custom registry config success github', oidcPublishTest({
     oidcOptions: { github: true },
     config: {
       registry: 'https://registry.zzz.org',
@@ -1220,7 +1247,7 @@ t.test('oidc token exchange - no provenance', t => {
     },
   }))
 
-  t.test('custom registry (scoped config) success github', oidcPublishTest({
+  t.test('custom registry scoped config success github', oidcPublishTest({
     oidcOptions: { github: true },
     config: {
       '@npmcli:registry': 'https://registry.zzz.org',
@@ -1243,7 +1270,7 @@ t.test('oidc token exchange - no provenance', t => {
     },
   }))
 
-  t.test('custom registry (publishConfig) success github', oidcPublishTest({
+  t.test('custom registry publishConfig success github', oidcPublishTest({
     oidcOptions: { github: true },
     packageJson: {
       publishConfig: {
@@ -1292,7 +1319,7 @@ t.test('oidc token exchange - no provenance', t => {
   t.end()
 })
 
-t.test('oidc token exchange -- provenance', (t) => {
+t.test('oidc token exchange - provenance', (t) => {
   const githubPublicIdToken = githubIdToken({ visibility: 'public' })
   const gitlabPublicIdToken = gitlabIdToken({ visibility: 'public' })
   const SIGSTORE_ID_TOKEN = sigstoreIdToken()

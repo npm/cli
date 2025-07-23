@@ -136,8 +136,12 @@ const mockOidc = async (t, {
 
 const oidcPublishTest = (opts) => {
   return async (t) => {
-    const { npm, joinedOutput } = await mockOidc(t, opts)
+    const { logsContain } = opts
+    const { npm, joinedOutput, logs } = await mockOidc(t, opts)
     await npm.exec('publish', [])
+    logsContain?.forEach(item => {
+      t.ok(logs.includes(item), `Expected log to include: ${item}`)
+    })
     t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
   }
 }
