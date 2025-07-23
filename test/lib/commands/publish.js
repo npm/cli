@@ -1160,13 +1160,13 @@ t.test('oidc token exchange - no provenance', t => {
     },
   }))
 
-  t.test('global try / catch failure via malformed url', oidcPublishTest({
+  t.test('global try-catch failure via malformed url', oidcPublishTest({
     config: {
       '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
     },
     oidcOptions: {
       github: true,
-      // malformed url should trigger a global try / catch
+      // malformed url should trigger a global try-catch
       ACTIONS_ID_TOKEN_REQUEST_URL: '//github.com',
     },
     publishOptions: {
@@ -1177,7 +1177,7 @@ t.test('oidc token exchange - no provenance', t => {
     ],
   }))
 
-  t.test('global try / catch failure via throw non Error', async t => {
+  t.test('global try-catch failure via throw non Error', async t => {
     const { npm, logs, joinedOutput, ACTIONS_ID_TOKEN_REQUEST_URL } = await mockOidc(t, {
       config: {
         '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
@@ -1194,7 +1194,7 @@ t.test('oidc token exchange - no provenance', t => {
       constructor (...args) {
         const [url] = args
         if (url === ACTIONS_ID_TOKEN_REQUEST_URL) {
-          throw 'Specifically throwing a non errror object to test global try / catch'
+          throw 'Specifically throwing a non errror object to test global try-catch'
         }
         super(...args)
       }
