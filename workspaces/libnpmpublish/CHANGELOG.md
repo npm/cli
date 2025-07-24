@@ -1,5 +1,12 @@
 # Changelog
 
+## [11.1.0](https://github.com/npm/cli/compare/libnpmpublish-v11.0.1...libnpmpublish-v11.1.0) (2025-07-24)
+### Features
+* [`1cce318`](https://github.com/npm/cli/commit/1cce31810eb5ff1e0f7c8ee4516e7c73cedb38a1) [#8336](https://github.com/npm/cli/pull/8336) adds support for oidc publish (#8336) (@reggi)
+### Chores
+* [`3f60b5f`](https://github.com/npm/cli/commit/3f60b5f9621b43ae0b8796d3a7160a603748f756) [#8383](https://github.com/npm/cli/pull/8383) `@npmcli/template-oss@4.24.4` (#8383) (@wraithgar)
+* [`01f8cc6`](https://github.com/npm/cli/commit/01f8cc6f001e3211135fa0563f7129aed09dc46c) [#8381](https://github.com/npm/cli/pull/8381) `@npmcli/template-oss@4.24.3` (#8381) (@wraithgar)
+
 ## [11.0.1](https://github.com/npm/cli/compare/libnpmpublish-v11.0.0...libnpmpublish-v11.0.1) (2025-06-11)
 ### Bug Fixes
 * [`71cb65b`](https://github.com/npm/cli/commit/71cb65b3c551e663a7bbdb25f5b3c3ddebb1a8c8) [#8317](https://github.com/npm/cli/pull/8317) libnpmpublish: Remove dependence on deprecated library (@owlstronaut)
