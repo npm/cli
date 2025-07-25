@@ -70,7 +70,7 @@ node . exec -- <package>
 ```
 To update the snapshots run:
 ```bash
-TAP_SNAPSHOT=1 npm test
+TAP_SNAPSHOT=1 node . run test
 ```
 
 ## Performance & Benchmarks
