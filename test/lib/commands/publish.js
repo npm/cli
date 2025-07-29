@@ -1526,5 +1526,49 @@ t.test('oidc token exchange - provenance', (t) => {
     provenance: false,
   }))
 
+  ;[[
+    new Error('Valid error'),
+    'verbose oidc Failed to set provenance with message: Valid error',
+  ], [
+    'Valid error',
+    'verbose oidc Failed to set provenance with message: Unknown error',
+  ]].forEach(([error, logMessage], index) => {
+    t.test(`provenance visibility check failure, coverage for try-catch ${index}`, async t => {
+      const { npm, logs, joinedOutput } = await mockOidc(t, {
+        load: {
+          mocks: {
+            libnpmaccess: {
+              getVisibility: () => {
+                throw error
+              },
+            },
+          },
+        },
+        oidcOptions: { github: true },
+        config: {
+          '//registry.npmjs.org/:_authToken': 'existing-fallback-token',
+        },
+        mockGithubOidcOptions: {
+          audience: 'npm:registry.npmjs.org',
+          idToken: githubPublicIdToken,
+        },
+        mockOidcTokenExchangeOptions: {
+          idToken: githubPublicIdToken,
+          body: {
+            token: 'exchange-token',
+          },
+        },
+        publishOptions: {
+          token: 'exchange-token',
+        },
+        provenance: false,
+      })
+
+      await npm.exec('publish', [])
+      t.match(joinedOutput(), '+ @npmcli/test-package@1.0.0')
+      t.ok(logs.includes(logMessage))
+    })
+  })
+
   t.end()
 })
