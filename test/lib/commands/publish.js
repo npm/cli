@@ -1526,13 +1526,15 @@ t.test('oidc token exchange - provenance', (t) => {
     provenance: false,
   }))
 
-  ;[[
+  const provenanceFailures = [[
     new Error('Valid error'),
     'verbose oidc Failed to set provenance with message: Valid error',
   ], [
     'Valid error',
     'verbose oidc Failed to set provenance with message: Unknown error',
-  ]].forEach(([error, logMessage], index) => {
+  ]]
+
+  provenanceFailures.forEach(([error, logMessage], index) => {
     t.test(`provenance visibility check failure, coverage for try-catch ${index}`, async t => {
       const { npm, logs, joinedOutput } = await mockOidc(t, {
         load: {
