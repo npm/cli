@@ -3627,6 +3627,59 @@ t.test('should preserve exact ranges, missing actual tree', async (t) => {
 
     await t.resolves(arb.reify(), 'reify should complete successfully')
   })
+
+  t.test('registry with different protocol should swap protocol', async (t) => {
+    const abbrevPackument4 = JSON.stringify({
+      _id: 'abbrev',
+      _rev: 'lkjadflkjasdf',
+      name: 'abbrev',
+      'dist-tags': { latest: '1.1.1' },
+      versions: {
+        '1.1.1': {
+          name: 'abbrev',
+          version: '1.1.1',
+          dist: {
+            // Note: This URL has no path component that matches our registry path
+            tarball: 'https://external-registry.example.com/abbrev-1.1.1.tgz',
+          },
+        },
+      },
+    })
+
+    const testdir = t.testdir({
+      project: {
+        'package.json': JSON.stringify({
+          name: 'myproject',
+          version: '1.0.0',
+          dependencies: {
+            abbrev: '1.1.1',
+          },
+        }),
+      },
+    })
+
+    // Set up the registrywith an http protocol
+    const registryHost = 'http://registry.example.com'
+    const registryPath = '/custom/deep/path/registry'
+    const registry = `${registryHost}${registryPath}`
+
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev`)
+      .reply(200, abbrevPackument4)
+
+    tnock(t, registryHost)
+      .get(`${registryPath}/abbrev-1.1.1.tgz`)
+      .reply(200, abbrevTGZ)
+
+    const arb = new Arborist({
+      path: resolve(testdir, 'project'),
+      registry,
+      cache: resolve(testdir, 'cache'),
+      replaceRegistryHost: 'always',
+    })
+
+    await t.resolves(arb.reify(), 'reify should complete successfully when protocol changes from https to http')
+  })
 })
 
 t.test('install stategy linked', async (t) => {
