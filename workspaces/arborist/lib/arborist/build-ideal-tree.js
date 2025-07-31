@@ -1306,8 +1306,9 @@ This is a one-time fix-up, please be patient...
       .sort(({ name: a }, { name: b }) => localeCompare(a, b))
 
     for (const edge of peerEdges) {
-      // if node is detached/removed from the tree, or has no parent,
-      // then we can't place the peer dep, so skip it.
+      // node.parent gets mutated during loop execution due to recursive #nodeFromEdge calls.
+      // When a compatible peer is found (e.g. a@1.1.0 replaces a@1.2.0), the original node loses its parent.
+      // if node is detached/removed from the tree, or has no parent, so no need to check remaining edgesOut for that node.
       if (!node.parent) {
         break
       }
