@@ -442,7 +442,7 @@ See [folders](/configuring-npm/folders) for a more detailed description of
 the specific folder structures that npm creates.
 
 ### See Also
-
+f
 * [npm folders](/configuring-npm/folders)
 * [npm update](/commands/npm-update)
 * [npm audit](/commands/npm-audit)
