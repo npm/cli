@@ -1,5 +1,7 @@
 #!/usr/bin/env pwsh
 
+Set-StrictMode -Version 'Latest'
+
 $NODE_EXE="$PSScriptRoot/node.exe"
 if (-not (Test-Path $NODE_EXE)) {
   $NODE_EXE="$PSScriptRoot/node"
@@ -27,7 +29,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
 } elseif (-not $MyInvocation.Line) { # used "-File" argument
   & $NODE_EXE $NPX_CLI_JS $args
 } else { # used "-Command" argument
-  if ($MyInvocation.Statement) {
+  if (($MyInvocation | Get-Member -Name 'Statement') -and $MyInvocation.Statement) {
     $NPX_ORIGINAL_COMMAND = $MyInvocation.Statement
   } else {
     $NPX_ORIGINAL_COMMAND = (
