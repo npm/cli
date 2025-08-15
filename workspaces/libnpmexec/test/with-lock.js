@@ -11,20 +11,19 @@ const getTempDir = () => fs.realpathSync(os.tmpdir())
 t.test('concurrent locking', async (t) => {
   const dir = fs.mkdtempSync(path.join(getTempDir(), 'test-'))
   const events = []
-  const lockPromises = [
-    withLock(dir, async () => {
-      events.push('lock1 acquired')
-      await setTimeout(100)
-      events.push('lock1 released')
-    }),
-    withLock(dir, async () => {
-      events.push('lock2 acquired')
-      await setTimeout(100)
-      events.push('lock2 released')
-      return 'lock2'
-    }),
-  ]
-  await Promise.all(lockPromises)
+  const lockPromise1 = withLock(dir, async () => {
+    events.push('lock1 acquired')
+    await setTimeout(100)
+    events.push('lock1 released')
+  })
+  await setTimeout(50)
+  const lockPromise2 = withLock(dir, async () => {
+    events.push('lock2 acquired')
+    await setTimeout(100)
+    events.push('lock2 released')
+    return 'lock2'
+  })
+  await Promise.all([lockPromise1, lockPromise2])
   t.same(events, [
     'lock1 acquired',
     'lock1 released',
