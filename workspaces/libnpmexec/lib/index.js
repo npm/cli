@@ -16,6 +16,7 @@ const getBinFromManifest = require('./get-bin-from-manifest.js')
 const noTTY = require('./no-tty.js')
 const runScript = require('./run-script.js')
 const isWindows = require('./is-windows.js')
+const withLock = require('./with-lock.js')
 
 const binPaths = []
 
@@ -247,7 +248,7 @@ const exec = async (opts) => {
       ...flatOptions,
       path: installDir,
     })
-    const npxTree = await npxArb.loadActual()
+    const npxTree = await withLock(installDir, () => npxArb.loadActual())
     await Promise.all(needInstall.map(async ({ spec }) => {
       const { manifest } = await missingFromTree({
         spec,
@@ -290,11 +291,11 @@ const exec = async (opts) => {
           }
         }
       }
-      await npxArb.reify({
+      await withLock(installDir, () => npxArb.reify({
         ...flatOptions,
         save: true,
         add,
-      })
+      }))
     }
     binPaths.push(resolve(installDir, 'node_modules/.bin'))
     const pkgJson = await PackageJson.load(installDir)
