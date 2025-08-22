@@ -1528,7 +1528,7 @@ This is a one-time fix-up, please be patient...
       // root package.json), at which point they won't be optional so
       // any dependencies still marked as both optional and peer at
       // this point can be pruned as a special kind of extraneous
-      if (node.extraneous || (node.peer && node.optional)) {
+      if (node.extraneous || (node.peer && node.optional && !node.dev && !node.devOptional)) {
         node.parent = null
       }
     }
