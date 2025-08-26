@@ -4389,4 +4389,64 @@ t.test('installLinks behavior with project-internal file dependencies', async t 
     t.ok(nestedDep, 'nested-dep should be found')
     t.ok(nestedDep.isLink, 'nested-dep should be a link (project-internal)')
   })
+
+  t.test('installLinks=true with transitive external file dependencies', async t => {
+    // mainpkg installs b (external file dep) with --install-links
+    // b depends on a (another external file dep via file:../a)
+    // Both should be installed (not linked) and dependencies should resolve correctly
+    const testRoot = t.testdir({
+      a: {
+        'package.json': JSON.stringify({
+          name: 'a',
+          main: 'index.js',
+        }),
+        'index.js': 'export const A = "A";',
+      },
+      b: {
+        'package.json': JSON.stringify({
+          name: 'b',
+          main: 'index.js',
+          dependencies: {
+            a: 'file:../a',
+          },
+        }),
+        'index.js': 'import {A} from "a";export const fn = () => console.log(A);',
+      },
+      mainpkg: {
+        'package.json': JSON.stringify({}),
+      },
+    })
+
+    const mainpkgPath = join(testRoot, 'mainpkg')
+    const bPath = join(testRoot, 'b')
+    createRegistry(t, false)
+
+    const arb = newArb(mainpkgPath, { installLinks: true })
+
+    // Add the external file dependency using the full path
+    await arb.buildIdealTree({ add: [`file:${bPath}`] })
+
+    const tree = arb.idealTree
+
+    // Both packages should be present in the tree
+    const packageB = tree.children.get('b')
+    const packageA = tree.children.get('a')
+
+    t.ok(packageB, 'package b should be found in tree')
+    t.ok(packageA, 'package a should be found in tree (transitive dependency)')
+
+    // Both should be installed (not linked) due to installLinks=true
+    t.notOk(packageB.isLink, 'package b should not be a link (installLinks=true)')
+    t.notOk(packageA.isLink, 'package a should not be a link (transitive with installLinks=true)')
+
+    // Verify that the resolved paths are correct
+    t.match(packageB.resolved, /file:.*[/\\]b$/, 'package b should have correct resolved path')
+    t.match(packageA.resolved, /file:.*[/\\]a$/, 'package a should have correct resolved path')
+
+    // Verify the dependency relationship
+    const edgeToA = packageB.edgesOut.get('a')
+    t.ok(edgeToA, 'package b should have an edge to a')
+    t.ok(edgeToA.valid, 'the edge from b to a should be valid')
+    t.equal(edgeToA.to, packageA, 'the edge from b should point to package a')
+  })
 })
