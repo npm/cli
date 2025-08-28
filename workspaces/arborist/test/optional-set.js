@@ -9,17 +9,18 @@ tree (PROD a, PROD c, OPT i)
 +-- a (OPT o)
 +-- b (PROD c)
 +-- c (OPT b)
-+-- o (PROD m)
-+-- m (PROD n)
++-- o (PROD m, OPT i)
++-- m (OPT n)
 +-- n ()
 +-- OPT i (PROD j)
 +-- j ()
 
 Gathering the optional set from:
-j: [i],
+j: [j, i],
 a: [],
-o: [m, n],
-b: []
+o: [o, m, n],
+m: [o, m, n],
+b: [b],
 */
 
 const tree = new Node({
@@ -38,8 +39,8 @@ const tree = new Node({
     ['a', [], ['o']],
     ['b', ['c'], []],
     ['c', [], ['b']],
-    ['o', ['m'], []],
-    ['m', ['n'], []],
+    ['o', ['m'], ['i']],
+    ['m', [], ['n']],
     ['n', [], []],
     ['i', ['j'], []],
     ['j', [], []],
@@ -83,11 +84,11 @@ t.equal(setO.has(nodeO), true, 'set o includes o')
 t.equal(setO.has(nodeM), true, 'set o includes m')
 t.equal(setO.has(nodeN), true, 'set o includes n')
 
-const setN = optionalSet(nodeO)
-t.equal(setN.size, 3, 'three nodes in n set')
-t.equal(setN.has(nodeO), true, 'set n includes o')
-t.equal(setN.has(nodeM), true, 'set n includes m')
-t.equal(setN.has(nodeN), true, 'set n includes n')
+const setM = optionalSet(nodeM)
+t.equal(setM.size, 3, 'three nodes in m set')
+t.equal(setM.has(nodeO), true, 'set m includes o')
+t.equal(setM.has(nodeM), true, 'set m includes m')
+t.equal(setM.has(nodeN), true, 'set m includes n')
 
 const setB = optionalSet(nodeB)
 t.equal(setB.size, 1, 'gathering from b is only b')
