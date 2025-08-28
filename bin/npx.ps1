@@ -26,7 +26,7 @@ if (Test-Path $NPM_PREFIX_NPX_CLI_JS) {
 
 if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $input | & $NODE_EXE $NPX_CLI_JS $args
-} elseif (-not $MyInvocation.Line) { # used "-File" argument
+} elseif (-not $MyInvocation.Line -or $MyInvocation.InvocationName -in '&', '.') { # used "-File" argument
   & $NODE_EXE $NPX_CLI_JS $args
 } else { # used "-Command" argument
   if (($MyInvocation | Get-Member -Name 'Statement') -and $MyInvocation.Statement) {
