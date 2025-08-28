@@ -40,9 +40,14 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPM_CLI_JS = $NPM_CLI_JS.Replace("``", "````")
 
-  $NPM_NO_REDIRECTS_COMMAND_ARR = [Management.Automation.Language.Parser]::ParseInput($NPM_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
+  $NPM_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPM_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
-  $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND_ARR[1..($NPM_NO_REDIRECTS_COMMAND_ARR.Length - 1)] -join ' '
+
+  if ($NPM_NO_REDIRECTS_COMMAND -is [array] -and $NPM_NO_REDIRECTS_COMMAND.Length -gt 1) {
+    $NPM_ARGS = $NPM_NO_REDIRECTS_COMMAND[1..($NPM_NO_REDIRECTS_COMMAND.Length - 1)] -join ' '
+  } else {
+    $NPM_ARGS = ""
+  }
 
   Invoke-Expression "& `"$NODE_EXE`" `"$NPM_CLI_JS`" $NPM_ARGS"
 }
