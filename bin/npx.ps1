@@ -42,12 +42,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
 
   $NPX_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
-
-  if ($NPX_NO_REDIRECTS_COMMAND -is [array] -and $NPX_NO_REDIRECTS_COMMAND.Length -gt 1) {
-    $NPX_ARGS = $NPX_NO_REDIRECTS_COMMAND[1..($NPX_NO_REDIRECTS_COMMAND.Length - 1)] -join ' '
-  } else {
-    $NPX_ARGS = ""
-  }
+  $NPX_ARGS = ($NPX_NO_REDIRECTS_COMMAND | Select-Object -Skip 1) -join ' '
 
   Invoke-Expression "& `"$NODE_EXE`" `"$NPX_CLI_JS`" $NPX_ARGS"
 }
