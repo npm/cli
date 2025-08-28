@@ -40,7 +40,7 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPX_CLI_JS = $NPX_CLI_JS.Replace("``", "````")
 
-  $NPX_NO_REDIRECTS_COMMAND_ARR  = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
+  $NPX_NO_REDIRECTS_COMMAND_ARR = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
     EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
   $NPX_ARGS = $NPX_NO_REDIRECTS_COMMAND_ARR[1..($NPX_NO_REDIRECTS_COMMAND_ARR.Length - 1)] -join ' '
 
