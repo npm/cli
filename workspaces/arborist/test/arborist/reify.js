@@ -2444,26 +2444,18 @@ t.test('move aside symlink clutter', async t => {
       file: 'do not delete me please',
       'package.json': JSON.stringify({ name: 'ABBREV', version: '1.0.0' }),
     },
-    'sensitivity-test': t.fixture('symlink', './target'),
+    node_modules: {
+      ABBREV: t.fixture('symlink', '../target'),
+    },
   })
 
   // check to see if we're on a case-insensitive fs
   try {
-    const st = fs.lstatSync(path + '/SENSITIVITY-TEST')
+    const st = fs.lstatSync(path + '/node_modules/abbrev')
     t.equal(st.isSymbolicLink(), true, 'fs is case insensitive')
   } catch (er) {
     t.plan(0, 'case sensitive file system, test not relevant')
     return
-  }
-
-  const kReifyPackages = Symbol.for('reifyPackages')
-  const reifyPackages = Arborist.prototype[kReifyPackages]
-  t.teardown(() => Arborist.prototype[kReifyPackages] = reifyPackages)
-  Arborist.prototype[kReifyPackages] = async function () {
-    fs.mkdirSync(path + '/node_modules')
-    fs.symlinkSync('../target', path + '/node_modules/ABBREV')
-    Arborist.prototype[kReifyPackages] = reifyPackages
-    return this[kReifyPackages]()
   }
 
   createRegistry(t, true)
