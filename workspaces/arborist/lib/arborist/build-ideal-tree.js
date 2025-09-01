@@ -13,7 +13,7 @@ const { lstat, readlink } = require('node:fs/promises')
 const { depth } = require('treeverse')
 const { log, time } = require('proc-log')
 const { redact } = require('@npmcli/redact')
-const semver = require('semver')
+const semver = require('../cached-semver.js')
 
 const {
   OK,

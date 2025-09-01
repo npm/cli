@@ -7,7 +7,7 @@ const { log } = require('proc-log')
 const { minimatch } = require('minimatch')
 const npa = require('npm-package-arg')
 const pacote = require('pacote')
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const npmFetch = require('npm-registry-fetch')
 
 // handle results for parsed query asts, results are stored in a map that has a
@@ -366,7 +366,7 @@ class Results {
           // two ranges -> semver.intersects
           actualFunc = 'intersects'
         } else {
-          // anything else -> semver.satisfies
+          // anything else -> satisfies
           actualFunc = 'satisfies'
         }
       }

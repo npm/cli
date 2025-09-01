@@ -11,7 +11,7 @@
 //   @npmcli/metavuln-calculator
 // - via: dependency vulns which cause this one
 
-const { satisfies, simplifyRange } = require('semver')
+const semver = require('./cached-semver.js')
 const semverOpt = { loose: true, includePrerelease: true }
 
 const localeCompare = require('@isaacs/string-locale-compare')('en')
@@ -101,7 +101,7 @@ class Vuln {
     }
 
     for (const v of this.versions) {
-      if (satisfies(v, spec) && !satisfies(v, this.range, semverOpt)) {
+      if (semver.satisfies(v, spec) && !semver.satisfies(v, this.range, semverOpt)) {
         return false
       }
     }
@@ -185,7 +185,7 @@ class Vuln {
 
     const versions = [...this.advisories][0].versions
     const range = this.range
-    this.#simpleRange = simplifyRange(versions, range, semverOpt)
+    this.#simpleRange = semver.simplifyRange(versions, range, semverOpt)
     this.#range = this.#simpleRange
     return this.#simpleRange
   }

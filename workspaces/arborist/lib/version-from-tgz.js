@@ -1,4 +1,4 @@
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const { basename } = require('node:path')
 const { URL } = require('node:url')
 module.exports = (name, tgz) => {

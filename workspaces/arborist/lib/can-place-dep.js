@@ -36,7 +36,7 @@
 // the replaced node for resolution elsewhere.
 
 const localeCompare = require('@isaacs/string-locale-compare')('en')
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const debug = require('./debug.js')
 const peerEntrySets = require('./peer-entry-sets.js')
 const deepestNestingTarget = require('./deepest-nesting-target.js')

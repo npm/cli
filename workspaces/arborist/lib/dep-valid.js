@@ -4,7 +4,7 @@
 // client-specific package.json meta _fields, but most of
 // the time will be pulled out of a lockfile
 
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const npa = require('npm-package-arg')
 const { relative } = require('node:path')
 const fromPath = require('./from-path.js')

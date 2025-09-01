@@ -28,7 +28,7 @@
 // where we need to quickly find all instances of a given package name within a
 // tree.
 
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const nameFromFolder = require('@npmcli/name-from-folder')
 const Edge = require('./edge.js')
 const Inventory = require('./inventory.js')

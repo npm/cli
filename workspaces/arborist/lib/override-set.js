@@ -1,5 +1,5 @@
 const npa = require('npm-package-arg')
-const semver = require('semver')
+const semver = require('./cached-semver.js')
 const { log } = require('proc-log')
 
 class OverrideSet {

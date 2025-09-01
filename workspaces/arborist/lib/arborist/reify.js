@@ -2,9 +2,8 @@
 const onExit = require('../signal-handling.js')
 const pacote = require('pacote')
 const AuditReport = require('../audit-report.js')
-const { subset, intersects } = require('semver')
+const semver = require('../cached-semver.js')
 const npa = require('npm-package-arg')
-const semver = require('semver')
 const debug = require('../debug.js')
 const { walkUp } = require('walk-up-path')
 const { log, time } = require('proc-log')
@@ -1390,7 +1389,7 @@ module.exports = cls => class Reifier extends cls {
           if (
             !isRange ||
             spec === '*' ||
-            subset(prefixRange, spec, { loose: true })
+            semver.subset(prefixRange, spec, { loose: true })
           ) {
             range = prefixRange
           }
@@ -1445,11 +1444,11 @@ module.exports = cls => class Reifier extends cls {
           if (hasSubKey(pkg, 'devDependencies', name)) {
             pkg.devDependencies[name] = newSpec
             // don't update peer or optional if we don't have to
-            if (hasSubKey(pkg, 'peerDependencies', name) && (isLocalDep || !intersects(newSpec, pkg.peerDependencies[name]))) {
+            if (hasSubKey(pkg, 'peerDependencies', name) && (isLocalDep || !semver.intersects(newSpec, pkg.peerDependencies[name]))) {
               pkg.peerDependencies[name] = newSpec
             }
 
-            if (hasSubKey(pkg, 'optionalDependencies', name) && (isLocalDep || !intersects(newSpec, pkg.optionalDependencies[name]))) {
+            if (hasSubKey(pkg, 'optionalDependencies', name) && (isLocalDep || !semver.intersects(newSpec, pkg.optionalDependencies[name]))) {
               pkg.optionalDependencies[name] = newSpec
             }
           } else {
