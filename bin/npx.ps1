@@ -26,7 +26,7 @@ if (Test-Path $NPM_PREFIX_NPX_CLI_JS) {
 
 if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $input | & $NODE_EXE $NPX_CLI_JS $args
-} elseif (-not $MyInvocation.Line -or $MyInvocation.InvocationName -in '&', '.') { # used "-File" argument
+} elseif (-not $MyInvocation.Line) { # used "-File" argument
   & $NODE_EXE $NPX_CLI_JS $args
 } else { # used "-Command" argument
   if (($MyInvocation | Get-Member -Name 'Statement') -and $MyInvocation.Statement) {
@@ -40,9 +40,9 @@ if ($MyInvocation.ExpectingInput) { # takes pipeline input
   $NODE_EXE = $NODE_EXE.Replace("``", "````")
   $NPX_CLI_JS = $NPX_CLI_JS.Replace("``", "````")
 
-  $NPX_NO_REDIRECTS_COMMAND = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
-    EndBlock.Statements.PipelineElements.CommandElements.Extent.Text -join ' '
-  $NPX_ARGS = $NPX_NO_REDIRECTS_COMMAND.Substring($MyInvocation.InvocationName.Length).Trim()
+  $NPX_COMMAND_ARRAY = [Management.Automation.Language.Parser]::ParseInput($NPX_ORIGINAL_COMMAND, [ref] $null, [ref] $null).
+    EndBlock.Statements.PipelineElements.CommandElements.Extent.Text
+  $NPX_ARGS = ($NPX_COMMAND_ARRAY | Select-Object -Skip 1) -join ' '
 
   Invoke-Expression "& `"$NODE_EXE`" `"$NPX_CLI_JS`" $NPX_ARGS"
 }
