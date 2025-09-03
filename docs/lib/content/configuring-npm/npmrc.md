@@ -27,7 +27,7 @@ The four relevant files are:
 All npm config files are an ini-formatted list of `key = value` parameters.
 Environment variables can be replaced using `${VARIABLE_NAME}`. By default
 if the variable is not defined, it is left unreplaced. By adding `?` after
-variable name they can be forced to evaluate to an empty string instead.For
+variable name they can be forced to evaluate to an empty string instead. For
 example:
 
 ```bash
