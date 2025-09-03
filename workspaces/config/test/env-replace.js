@@ -21,4 +21,3 @@ t.equal(envReplace('\\\\${foo?}', env), '\\bar', 'double escape allows optional 
 t.equal(envReplace('${baz?}', env), '', 'replaces undefined variable with empty string when using ? modifier')
 t.equal(envReplace('\\${baz?}', env), '${baz?}', 'escapes undefined optional variable')
 t.equal(envReplace('\\\\${baz?}', env), '\\', 'double escape with undefined optional variable results in empty replacement')
-
