@@ -1,5 +1,9 @@
 # Changelog
 
+## [10.4.0](https://github.com/npm/cli/compare/config-v10.3.1...config-v10.4.0) (2025-09-03)
+### Features
+* [`bdcc10d`](https://github.com/npm/cli/commit/bdcc10d9f848940987b3d326ccd4673fab2bcfef) [#8359](https://github.com/npm/cli/pull/8359) add support for optional env var replacements in .npmrc (#8359) (@aczekajski, @owlstronaut)
+
 ## [10.3.1](https://github.com/npm/cli/compare/config-v10.3.0...config-v10.3.1) (2025-07-24)
 ### Bug Fixes
 * [`7f66f0a`](https://github.com/npm/cli/commit/7f66f0ae8fb84f567fe83a9a5738d06c7fe8fb54) [#8447](https://github.com/npm/cli/pull/8447) add better hint for `before` and clean up description (@wraithgar)

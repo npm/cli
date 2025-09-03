@@ -1,5 +1,13 @@
 # Changelog
 
+## [9.1.4](https://github.com/npm/cli/compare/arborist-v9.1.3...arborist-v9.1.4) (2025-09-03)
+### Bug Fixes
+* [`208c06e`](https://github.com/npm/cli/commit/208c06e91a187b03d6bdd75bff4e4285b365750c) [#8448](https://github.com/npm/cli/pull/8448) peer edge crash due to no parent or detached node (#8448) (@milaninfy)
+* [`3b54e9c`](https://github.com/npm/cli/commit/3b54e9c59c6dba342d2931cce6458a755e55960e) [#8534](https://github.com/npm/cli/pull/8534) installLinks works with transitive external file dependencies (#8534) (@owlstronaut)
+* [`ed71acb`](https://github.com/npm/cli/commit/ed71acb89fc3883e735987cc9be77efc2daff26a) [#8473](https://github.com/npm/cli/pull/8473) arborist: #8472 Keeps the registry protocol when modifying resolve URL (#8473) (@Jeepsboucher, Jean-Philippe Boucher)
+### Chores
+* [`619d43e`](https://github.com/npm/cli/commit/619d43e54ef7408d4ee6b38a776262b5132829b6) [#8540](https://github.com/npm/cli/pull/8540) fix pruner and reify tests for optional peer deps (#8540) (@liamcmitchell, Liam Mitchell)
+
 ## [9.1.3](https://github.com/npm/cli/compare/arborist-v9.1.2...arborist-v9.1.3) (2025-07-24)
 ### Bug Fixes
 * [`6dbe21a`](https://github.com/npm/cli/commit/6dbe21ab659c4e32657fec63fc58bb3f4992f4f1) [#8436](https://github.com/npm/cli/pull/8436) local transitive dependencies with --install-links=true (@owlstronaut)
