@@ -1,5 +1,5 @@
 // replace any ${ENV} values with the appropriate environ.
-// optional "?" modifier can be used like this: ${ENV?} so in case of the variable being not defined, it evaluates into empty string
+// optional "?" modifier can be used like this: ${ENV?} so in case of the variable being not defined, it evaluates into empty string.
 
 const envExpr = /(?<!\\)(\\*)\$\{([^${}?]+)(\?)?\}/g
 
