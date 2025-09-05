@@ -18,7 +18,19 @@ const validatePath = (data, k, val) => {
   if (typeof val !== 'string') {
     return false
   }
-  return noptValidatePath(data, k, val)
+  
+  // On Windows, normalize drive letter to uppercase for consistency
+  let normalizedVal = val
+  if (process.platform === 'win32' && /^[a-z]:/i.test(val)) {
+    normalizedVal = val.charAt(0).toUpperCase() + val.slice(1)
+  }
+  
+  const result = noptValidatePath(data, k, normalizedVal)
+  // If validation succeeded and we normalized the path, use the normalized version
+  if (result && normalizedVal !== val) {
+    data[k] = normalizedVal
+  }
+  return result
 }
 
 // add descriptions so we can validate more usefully

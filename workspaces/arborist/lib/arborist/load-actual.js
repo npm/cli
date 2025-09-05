@@ -1,3 +1,47 @@
+// mix-in implementation for building up the actual tree by reading the
+// node_modules folders and package.json files.
+// Not part of the "public API", but used by the Arborist class.
+
+const relpath = require('../relpath.js')
+const { realpathSync } = require('node:fs')
+
+// Helper function for case-insensitive cache operations on Windows
+const getCacheKey = (path) => {
+  if (process.platform !== 'win32') {
+    return path
+  }
+  
+  // Try to use the actual filesystem path first to maintain original case
+  try {
+    return realpathSync(path)
+  } catch {
+    // If realpathSync fails, fall back to lowercase normalization
+    return path.toLowerCase()
+  }
+}
+
+const getCacheKeyForLookup = (path, cache) => {
+  if (process.platform !== 'win32') {
+    return path
+  }
+  
+  // First try exact match
+  if (cache.has(path)) {
+    return path
+  }
+  
+  // Then try case-insensitive lookup
+  const lowerPath = path.toLowerCase()
+  for (const key of cache.keys()) {
+    if (key.toLowerCase() === lowerPath) {
+      return key
+    }
+  }
+  
+  // Return original path if no match found
+  return path
+}
+
 // mix-in implementing the loadActual method
 
 const { relative, dirname, resolve, join, normalize } = require('node:path')
@@ -176,7 +220,8 @@ module.exports = cls => class ActualLoader extends cls {
     if (this.#actualTree.workspaces && this.#actualTree.workspaces.size) {
       const promises = []
       for (const path of this.#actualTree.workspaces.values()) {
-        if (!this.#cache.has(path)) {
+        const workspaceLookupKey = getCacheKeyForLookup(path, this.#cache)
+        if (!this.#cache.has(workspaceLookupKey)) {
           // workspace overrides use the root overrides
           const p = this.#loadFSNode({ path, root: this.#actualTree, useRootOverrides: true })
             .then(node => this.#loadFSTree(node))
@@ -195,11 +240,13 @@ module.exports = cls => class ActualLoader extends cls {
     // resolve deps that node will find, but a legacy npm view of the
     // world would not have noticed.
     for (const path of this.#topNodes) {
-      const node = this.#cache.get(path)
+      const lookupCacheKey = getCacheKeyForLookup(path, this.#cache)
+      const node = this.#cache.get(lookupCacheKey)
       if (node && !node.parent && !node.fsParent) {
         for (const p of walkUp(dirname(path))) {
-          if (this.#cache.has(p)) {
-            node.fsParent = this.#cache.get(p)
+          const pLookupKey = getCacheKeyForLookup(p, this.#cache)
+          if (this.#cache.has(pLookupKey)) {
+            node.fsParent = this.#cache.get(pLookupKey)
             break
           }
         }
@@ -261,7 +308,8 @@ module.exports = cls => class ActualLoader extends cls {
       }
     }
 
-    const cached = this.#cache.get(path)
+    const pathLookupKey = getCacheKeyForLookup(path, this.#cache)
+    const cached = this.#cache.get(pathLookupKey)
     let node
     // missing edges get a dummy node, assign the parent and return it
     if (cached && !cached.dummy) {
@@ -297,7 +345,9 @@ module.exports = cls => class ActualLoader extends cls {
         node = await this.#newLink(params)
       }
     }
-    this.#cache.set(path, node)
+    // Store in cache using canonical path when possible
+    const storeCacheKey = getCacheKey(path)
+    this.#cache.set(storeCacheKey, node)
     return node
   }
 
@@ -315,12 +365,15 @@ module.exports = cls => class ActualLoader extends cls {
   async #newLink (options) {
     const { realpath } = options
     this.#topNodes.add(realpath)
-    const target = this.#cache.get(realpath)
+    // Look up target using case-insensitive search if needed
+    const targetLookupKey = getCacheKeyForLookup(realpath, this.#cache)
+    const target = this.#cache.get(targetLookupKey)
     const link = new Link({ ...options, target })
 
     if (!target) {
       // Link set its target itself in this case
-      this.#cache.set(realpath, link.target)
+      const targetStoreKey = getCacheKey(realpath)
+      this.#cache.set(targetStoreKey, link.target)
       // if a link target points at a node outside of the root tree's
       // node_modules hierarchy, then load that node as well.
       await this.#loadFSTree(link.target)
@@ -410,17 +463,21 @@ module.exports = cls => class ActualLoader extends cls {
           }
 
           let d
-          if (!this.#cache.has(p)) {
+          // Use case-insensitive cache operations when needed
+          const dummyLookupKey = getCacheKeyForLookup(p, this.#cache)
+          if (!this.#cache.has(dummyLookupKey)) {
             d = new Node({ path: p, root: node.root, dummy: true })
-            this.#cache.set(p, d)
+            const dummyStoreKey = getCacheKey(p)
+            this.#cache.set(dummyStoreKey, d)
           } else {
-            d = this.#cache.get(p)
+            d = this.#cache.get(dummyLookupKey)
           }
           if (d.dummy) {
             // it's a placeholder, so likely would not have loaded this dep,
             // unless another dep in the tree also needs it.
             const depPath = normalize(`${p}/node_modules/${name}`)
-            const cached = this.#cache.get(depPath)
+            const depLookupKey = getCacheKeyForLookup(depPath, this.#cache)
+            const cached = this.#cache.get(depLookupKey)
             if (!cached || cached.dummy) {
               depPromises.push(this.#loadFSNode({
                 path: depPath,

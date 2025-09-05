@@ -292,10 +292,17 @@ class Results {
       if (!this.currentAstNode.pathValue) {
         return true
       }
-      return minimatch(
-        node.realpath.replace(/\\+/g, '/'),
-        resolve(node.root.realpath, this.currentAstNode.pathValue).replace(/\\+/g, '/')
-      )
+      
+      let nodePath = node.realpath.replace(/\\+/g, '/')
+      let matchPath = resolve(node.root.realpath, this.currentAstNode.pathValue).replace(/\\+/g, '/')
+      
+      // On Windows, make path comparison case-insensitive
+      if (process.platform === 'win32') {
+        nodePath = nodePath.toLowerCase()
+        matchPath = matchPath.toLowerCase()
+      }
+      
+      return minimatch(nodePath, matchPath)
     })
   }
 
